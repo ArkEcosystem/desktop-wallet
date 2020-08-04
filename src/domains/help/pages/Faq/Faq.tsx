@@ -2,6 +2,7 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
+import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -20,7 +21,7 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 		<a
 			title={title}
 			href={path}
-			className="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-contrast text-theme-neutral-800 hover:text-theme-primary rounded-md"
+			className="flex px-2 py-6 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-contrast text-theme-neutral-800 hover:text-theme-primary"
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
@@ -36,17 +37,19 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 );
 
 export const Faq = ({ articles }: FaqProps) => {
+	const activeProfile = useActiveProfile();
+
 	const { t } = useTranslation();
 
 	const crumbs = [
 		{
-			route: "help",
-			label: "Go back to Help & Support",
+			route: `/profiles/${activeProfile?.id()}/support`,
+			label: t("HELP.GO_BACK_TO_HELP_SUPPORT"),
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<Header
 					title={t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}

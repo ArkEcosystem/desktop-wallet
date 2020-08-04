@@ -1,8 +1,11 @@
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { action } from "@storybook/addon-actions";
 import { boolean, withKnobs } from "@storybook/addon-knobs";
+import { httpClient } from "app/services";
 import React from "react";
+import { StubStorage } from "tests/mocks";
 
-import { contacts } from "../../data";
 import { SearchContact } from "./SearchContact";
 
 export default {
@@ -10,29 +13,24 @@ export default {
 	decorators: [withKnobs],
 };
 
-export const Default = () => {
-	return (
-		<div>
-			<SearchContact
-				isOpen={boolean("isOpen", true)}
-				contacts={contacts}
-				onClose={action("onClose")}
-				onAction={console.log}
-			/>
-		</div>
-	);
-};
+const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+const profile = env.profiles().create("Test profile");
 
-export const OneAction = () => {
-	return (
-		<div>
-			<SearchContact
-				isOpen={boolean("isOpen", true)}
-				contacts={contacts}
-				onClose={action("onClose")}
-				onAction={console.log}
-				options={[{ value: "select", label: "Select" }]}
-			/>
-		</div>
-	);
-};
+export const Default = () => (
+	<SearchContact
+		isOpen={boolean("isOpen", true)}
+		profile={profile}
+		onClose={action("onClose")}
+		onAction={console.log}
+	/>
+);
+
+export const OneAction = () => (
+	<SearchContact
+		isOpen={boolean("isOpen", true)}
+		profile={profile}
+		onClose={action("onClose")}
+		onAction={console.log}
+		options={[{ value: "select", label: "Select" }]}
+	/>
+);

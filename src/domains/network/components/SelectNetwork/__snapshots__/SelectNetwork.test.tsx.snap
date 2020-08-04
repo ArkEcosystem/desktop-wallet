@@ -21,7 +21,7 @@ exports[`SelectNetwork should render 1`] = `
         class="sc-AxhCb sc-AxhUy jFkFxS px-4"
       >
         <div
-          class="sc-AxjAm IjnG border-theme-neutral-light text-theme-neutral"
+          class="sc-AxjAm jDAceZ border-theme-neutral-light text-theme-neutral"
           data-testid="SelectNetworkInput__network"
         />
       </div>
@@ -67,7 +67,7 @@ exports[`SelectNetwork should render with networks 1`] = `
         class="sc-AxhCb sc-AxhUy jFkFxS px-4"
       >
         <div
-          class="sc-AxjAm IjnG border-theme-neutral-light text-theme-neutral"
+          class="sc-AxjAm jDAceZ border-theme-neutral-light text-theme-neutral"
           data-testid="SelectNetworkInput__network"
         />
       </div>
@@ -92,13 +92,14 @@ exports[`SelectNetwork should render with networks 1`] = `
     <li
       aria-selected="false"
       class="inline-block pt-6 mr-6 cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
       id="downshift-3-item-0"
       role="option"
     >
       <div
         aria-label="Ark"
         class="sc-AxjAm gIAugl border-theme-danger-light text-theme-danger-400"
-        data-testid="NetworkIcon"
+        data-testid="NetworkIcon-ARK-mainnet"
       >
         <div
           class="sc-AxirZ hyqZof"
@@ -115,13 +116,14 @@ exports[`SelectNetwork should render with networks 1`] = `
     <li
       aria-selected="false"
       class="inline-block pt-6 mr-6 cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
       id="downshift-3-item-1"
       role="option"
     >
       <div
         aria-label="Ark Devnet"
         class="sc-AxjAm gIAugl border-theme-primary-100 text-theme-primary-400"
-        data-testid="NetworkIcon"
+        data-testid="NetworkIcon-ARK-devnet"
       >
         <div
           class="sc-AxirZ hyqZof"
@@ -138,13 +140,14 @@ exports[`SelectNetwork should render with networks 1`] = `
     <li
       aria-selected="false"
       class="inline-block pt-6 mr-6 cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
       id="downshift-3-item-2"
       role="option"
     >
       <div
         aria-label="Bitcoin"
         class="sc-AxjAm gIAugl border-theme-warning-200 text-theme-warning-400"
-        data-testid="NetworkIcon"
+        data-testid="NetworkIcon-BTC-livenet"
       >
         <div
           class="sc-AxirZ hyqZof"

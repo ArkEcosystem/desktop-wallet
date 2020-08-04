@@ -1,19 +1,19 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
+import { WalletsDecorator } from "utils/storybook";
 
 import { WalletBottomSheetMenu } from "./WalletBottomSheetMenu";
 
-export default { title: "Domains / Wallet / Components / WalletBottomSheetMenu" };
+export default {
+	title: "Domains / Wallet / Components / WalletBottomSheetMenu",
+	decorators: [(storyFn: any) => <WalletsDecorator count={3}>{storyFn}</WalletsDecorator>],
+};
 
 const data = [
 	{
-		coinIcon: "Ark",
+		wallet: (null as unknown) as Wallet,
 		coinClassName: "text-theme-danger-400 border-theme-danger-light",
 		avatarId: "test1",
-		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		walletName: "ARK Wallet 1",
-		balance: "120 ARK",
-		fiat: "980 USD",
-		walletTypeIcons: ["Multisig", "Ledger"],
 		actions: [
 			{
 				label: "Action 1",
@@ -30,14 +30,9 @@ const data = [
 		],
 	},
 	{
-		coinIcon: "Ark",
+		wallet: (null as unknown) as Wallet,
 		coinClassName: "text-theme-danger-400 border-theme-danger-light",
 		avatarId: "test2",
-		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		walletName: "ARK Wallet 2",
-		balance: "20 ARK",
-		fiat: "480 USD",
-		walletTypeIcons: ["Star", "Ledger"],
 		actions: [
 			{
 				label: "Action 1",
@@ -54,14 +49,9 @@ const data = [
 		],
 	},
 	{
-		coinIcon: "Bitcoin",
+		wallet: (null as unknown) as Wallet,
 		coinClassName: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test3",
-		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		walletName: "BTC Wallet 1",
-		balance: "100 BTC",
-		fiat: "1,000,000 USD",
-		walletTypeIcons: ["Star", "Multisig", "Ledger"],
 		actions: [
 			{
 				label: "Action 1",
@@ -79,7 +69,11 @@ const data = [
 	},
 ];
 
-export const Default = () => {
+export const Default = ({ wallets }: { wallets: Wallet[] }) => {
+	for (const walletIndex of Object.keys(data)) {
+		data[walletIndex as any].wallet = wallets[walletIndex as any];
+	}
+
 	return (
 		<div className="relative" style={{ height: "calc(100vh - 1.25rem)" }}>
 			<p>

@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
@@ -7,29 +8,29 @@ import { TransactionStatus } from "../TransactionTable.models";
 
 type Props = {
 	isSignaturePending?: boolean;
-	confirmations: string;
+	transaction: Contracts.TransactionDataType;
 };
 
 // TODO: Replace by sdk
-const getStatus = (confirmations: string, isSignaturePending?: boolean): TransactionStatus => {
+const getStatus = (confirmations: BigNumber, isSignaturePending?: boolean): TransactionStatus => {
 	if (isSignaturePending) {
 		return "actionRequired";
-	} else if (BigNumber.make(confirmations).isGreaterThan(51)) {
+	} else if (confirmations.isGreaterThan(51)) {
 		return "confirmed";
 	} else {
 		return "pending";
 	}
 };
 
-export const TransactionRowConfirmation = ({ confirmations, isSignaturePending }: Props) => {
-	const status = React.useMemo(() => getStatus(confirmations, isSignaturePending), [
-		confirmations,
+export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: Props) => {
+	const status = React.useMemo(() => getStatus(transaction?.confirmations(), isSignaturePending), [
+		transaction,
 		isSignaturePending,
 	]);
 
 	const tooltipContent = React.useMemo(
-		() => (status === "actionRequired" ? "Action Required" : `${confirmations} confirmations`),
-		[confirmations, status],
+		() => (status === "actionRequired" ? "Action Required" : `${transaction?.confirmations()} confirmations`),
+		[transaction, status],
 	);
 
 	const iconName = {

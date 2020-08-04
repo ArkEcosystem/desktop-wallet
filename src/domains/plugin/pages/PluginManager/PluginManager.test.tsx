@@ -1,33 +1,45 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { act } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import React from "react";
-import TestUtils from "react-dom/test-utils";
 import { Route } from "react-router-dom";
-import { fireEvent, RenderResult, renderWithRouter, within } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
 
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
 
-jest.useFakeTimers();
-
+let consoleSpy: any;
 let rendered: RenderResult;
 const history = createMemoryHistory();
-const pluginsURL = `/profiles/${identity.profiles.bob.id}/plugins`;
+
+const fixtureProfileId = getDefaultProfileId();
+const pluginsURL = `/profiles/${fixtureProfileId}/plugins`;
 
 describe("PluginManager", () => {
-	beforeEach(() => {
+	beforeAll(() => {
+		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
+	});
+
+	beforeEach(async () => {
 		history.push(pluginsURL);
 
-		rendered = renderWithRouter(
-			<Route path="/profiles/:profileId/plugins">
-				<PluginManager />
-			</Route>,
-			{
-				routes: [pluginsURL],
-				history,
-			},
-		);
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/plugins">
+					<PluginManager />
+				</Route>,
+				{
+					routes: [pluginsURL],
+					history,
+				},
+			);
+
+			consoleSpy.mockReset();
+		});
+	});
+
+	afterAll(() => {
+		consoleSpy.mockRestore();
 	});
 
 	it("should render", () => {
@@ -177,9 +189,7 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should search for plugin", (done) => {
-		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-
+	it("should search for plugin", async () => {
 		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
@@ -189,18 +199,9 @@ describe("PluginManager", () => {
 			});
 		});
 
-		setTimeout(() => {
-			// expect(onSearch).toHaveBeenCalled();
-			expect(consoleSpy).toHaveBeenCalledTimes(1);
-			expect(consoleSpy).toHaveBeenCalledWith("search");
-			expect(asFragment()).toMatchSnapshot();
-			consoleSpy.mockRestore();
-			done();
-		}, 550);
-
-		TestUtils.act(() => {
-			jest.runAllTimers();
-		});
+		await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
+		expect(consoleSpy).toHaveBeenCalledWith("search");
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select plugin on home grids", () => {
@@ -212,7 +213,7 @@ describe("PluginManager", () => {
 			);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/plugins/ark-explorer-1`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/ark-explorer-1`);
 	});
 
 	it("should select plugin on game grid", () => {
@@ -223,13 +224,11 @@ describe("PluginManager", () => {
 			fireEvent.click(getAllByTestId("PluginCard--ark-explorer-1")[0]);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/plugins/ark-explorer-1`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/ark-explorer-1`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should delete plugin on home", () => {
-		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-
 		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
@@ -240,13 +239,9 @@ describe("PluginManager", () => {
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
 		expect(consoleSpy).toHaveBeenCalledTimes(1);
 		expect(asFragment()).toMatchSnapshot();
-
-		consoleSpy.mockRestore();
 	});
 
 	it("should delete plugin on game", () => {
-		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-
 		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
@@ -270,7 +265,5 @@ describe("PluginManager", () => {
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
 		expect(consoleSpy).toHaveBeenCalledTimes(2);
 		expect(asFragment()).toMatchSnapshot();
-
-		consoleSpy.mockRestore();
 	});
 });

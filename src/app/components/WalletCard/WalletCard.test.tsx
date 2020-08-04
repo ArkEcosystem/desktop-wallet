@@ -1,23 +1,31 @@
+import { Wallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { env, getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { WalletCard } from "./WalletCard";
 
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
-const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
+let wallet: Wallet;
 
-describe("Formatted Address", () => {
+describe("Wallet Card", () => {
 	beforeAll(() => {
 		history.push(dashboardURL);
+	});
+
+	beforeEach(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		wallet.data().set(WalletFlag.Starred, true);
+		wallet.data().set(WalletFlag.Ledger, true);
 	});
 
 	it("should render", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard id="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" />
+				<WalletCard wallet={wallet} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -31,7 +39,7 @@ describe("Formatted Address", () => {
 	it("should render blank", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard isBlank id="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" />
+				<WalletCard isBlank />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -43,18 +51,11 @@ describe("Formatted Address", () => {
 	});
 
 	it("should render with wallet data", () => {
+		wallet.settings().set(WalletSetting.Alias, "My wallet");
+
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard
-					id="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					coinIcon="Bitcoin"
-					coinClass="border-theme-warning-200"
-					avatarId="test"
-					walletName="My wallet"
-					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					balance="100,000 BTC"
-				/>
-				,
+				<WalletCard coinClass="border-theme-warning-200" wallet={wallet} />,
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -66,17 +67,11 @@ describe("Formatted Address", () => {
 	});
 
 	it("should render with wallet data and optional icon", () => {
+		wallet.settings().set(WalletSetting.Alias, "My wallet");
+
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard
-					id="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					coinIcon="Bitcoin"
-					coinClass="border-theme-warning-200"
-					avatarId="test"
-					walletName="My wallet"
-					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					balance="100,000 BTC"
-				/>
+				<WalletCard coinClass="border-theme-warning-200" wallet={wallet} />
 			</Route>,
 			{
 				routes: [dashboardURL],

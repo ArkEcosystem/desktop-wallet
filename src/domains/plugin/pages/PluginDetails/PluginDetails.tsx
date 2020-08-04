@@ -6,6 +6,7 @@ import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { ReviewBox } from "domains/plugin/components/ReviewBox";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { pluginData, reviewData } from "../../data";
 
@@ -21,19 +22,22 @@ type PluginDetailsProps = {
 };
 
 export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDetailsProps) => {
+	const activeProfile = useActiveProfile();
+
+	const { t } = useTranslation();
+
 	const { author, about, permissions, screenshots, category, url, averageRating, version, size } = pluginData;
 	const { comments, ratings, totalAvaliations } = reviewData;
-	const activeProfile = useActiveProfile();
 
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/plugins`,
-			label: "Go back to plugin store",
+			label: t("PLUGINS.GO_BACK_TO_PLUGIN_STORE"),
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<PluginHeader
 					author={author}

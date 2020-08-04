@@ -1,18 +1,39 @@
+import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
-import { contact1 as contact } from "../../data";
 import { ContactListItem } from "./ContactListItem";
 
-const option = [{ label: "Option 1", value: "1" }];
-const options = [
-	{ label: "Option 1", value: "1" },
-	{ label: "Option 1", value: "1" },
-];
+const singleOption = [{ label: "Option 1", value: "option_1" }];
+
+const multiOptions = [...singleOption, { label: "Option 2", value: "option_2" }];
+
+let contact: Contact;
 
 describe("ContactListItem", () => {
+	beforeAll(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		contact = profile.contacts().values()[0];
+	});
+
 	it("should render", () => {
+		const { asFragment } = render(
+			<table>
+				<tbody>
+					<ContactListItem contact={contact} />
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with multiple addresses", async () => {
+		await contact
+			.addresses()
+			.create({ coin: "ARK", network: "devnet", name: "test", address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" });
+
 		const { asFragment } = render(
 			<table>
 				<tbody>
@@ -28,7 +49,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} options={option} />
+					<ContactListItem contact={contact} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -40,7 +61,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} options={options} />
+					<ContactListItem contact={contact} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -51,12 +72,10 @@ describe("ContactListItem", () => {
 	it("should call onAction callback if provided with one option", () => {
 		const onAction = jest.fn();
 
-		const options = [{ label: "Option 1", value: "1" }];
-
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={options} />
+					<ContactListItem contact={contact} onAction={onAction} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -74,7 +93,7 @@ describe("ContactListItem", () => {
 		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={options} />
+					<ContactListItem contact={contact} onAction={onAction} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -96,7 +115,7 @@ describe("ContactListItem", () => {
 		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} options={options} />
+					<ContactListItem contact={contact} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -118,7 +137,7 @@ describe("ContactListItem", () => {
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={option} />
+					<ContactListItem contact={contact} onAction={onAction} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -127,7 +146,6 @@ describe("ContactListItem", () => {
 			fireEvent.click(getByTestId("ContactListItem__one-option-button-0"));
 		});
 
-		const address = contact.addresses?.()[0].address;
-		expect(onAction).toHaveBeenCalledWith(option[0], expect.objectContaining({ address }));
+		expect(onAction).toHaveBeenCalledWith(singleOption[0], contact.addresses().values()[0]);
 	});
 });

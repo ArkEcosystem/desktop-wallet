@@ -6,21 +6,19 @@ import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Backdrop = ({ isVisible }: { isVisible: boolean }) => {
-	return (
-		<AnimatePresence>
-			{isVisible && (
-				<motion.div
-					data-testid="Backdrop"
-					className="fixed inset-0 z-10 bg-theme-neutral-900"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 0.5 }}
-					exit={{ opacity: 0 }}
-				/>
-			)}
-		</AnimatePresence>
-	);
-};
+const Backdrop = ({ isVisible }: { isVisible: boolean }) => (
+	<AnimatePresence>
+		{isVisible && (
+			<motion.div
+				data-testid="Backdrop"
+				className="fixed inset-0 z-10 bg-theme-neutral-900"
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 0.5 }}
+				exit={{ opacity: 0 }}
+			/>
+		)}
+	</AnimatePresence>
+);
 
 const WalletTable = ({ data }: { data: WalletListItemProps[] }) => {
 	const { t } = useTranslation();

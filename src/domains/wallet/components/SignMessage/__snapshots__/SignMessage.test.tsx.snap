@@ -48,7 +48,7 @@ exports[`SignMessage should render 1`] = `
         <div
           class="mt-1 text-theme-neutral-dark"
         >
-          Sign Message
+          Insert a message below to sign using your private key
         </div>
         <div
           class="mt-8"
@@ -101,7 +101,7 @@ exports[`SignMessage should render 1`] = `
                     <span
                       class="ml-3 font-semibold "
                     >
-                      AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
+                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                     </span>
                   </div>
                 </div>
@@ -172,6 +172,7 @@ exports[`SignMessage should render 1`] = `
               <button
                 class="sc-AxirZ fhzkRl"
                 color="primary"
+                data-testid="SignMessage__cancel"
                 type="button"
               >
                 Cancel
@@ -241,7 +242,7 @@ exports[`SignMessage should sign message 1`] = `
         <div
           class="mt-1 text-theme-neutral-dark"
         >
-          Sign Message
+          Insert a message below to sign using your private key
         </div>
         <div
           class="mt-8"
@@ -294,7 +295,7 @@ exports[`SignMessage should sign message 1`] = `
                     <span
                       class="ml-3 font-semibold "
                     >
-                      AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
+                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                     </span>
                   </div>
                 </div>
@@ -365,6 +366,7 @@ exports[`SignMessage should sign message 1`] = `
               <button
                 class="sc-AxirZ fhzkRl"
                 color="primary"
+                data-testid="SignMessage__cancel"
                 type="button"
               >
                 Cancel

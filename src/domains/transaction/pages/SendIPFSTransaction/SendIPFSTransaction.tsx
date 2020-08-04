@@ -11,6 +11,7 @@ import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useActiveProfile } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -180,6 +181,8 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 	// const { formState } = form;
 	// const { isValid } = formState;
 
+	const activeProfile = useActiveProfile();
+
 	const { t } = useTranslation();
 
 	const handleBack = () => {
@@ -192,13 +195,13 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 
 	const crumbs = [
 		{
-			route: "portfolio",
-			label: "Go back to Portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit}>
 					<Tabs activeId={activeTab}>

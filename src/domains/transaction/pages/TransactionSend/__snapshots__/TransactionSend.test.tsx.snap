@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Transaction Send should render 1`] = `
+exports[`Transaction Send should navigate between teps 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -35,7 +35,7 @@ exports[`Transaction Send should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -46,7 +46,7 @@ exports[`Transaction Send should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -57,7 +57,7 @@ exports[`Transaction Send should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -68,7 +68,7 @@ exports[`Transaction Send should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -107,7 +107,7 @@ exports[`Transaction Send should render 1`] = `
                 aria-current="page"
                 class="active"
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -156,7 +156,9 @@ exports[`Transaction Send should render 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
-              />
+              >
+                1000
+              </div>
             </div>
             <div
               class="flex p-1 cusror-pointer"
@@ -170,7 +172,7 @@ exports[`Transaction Send should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
+                    class="sc-AxiKw jQtkkF -mr-2 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -187,11 +189,19 @@ exports[`Transaction Send should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxiKw jQtkkF relative bg-theme-primary border-theme-primary rotate-90"
+                    class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
-                    <span
-                      class="text-sm text-theme-background"
+                    <img
+                      alt="Profile avatar"
+                      class="rounded-full w-11 h-11"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      JO
+                    </span>
                     <span
                       class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
@@ -232,7 +242,7 @@ exports[`Transaction Send should render 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -254,22 +264,22 @@ exports[`Transaction Send should render 1`] = `
           >
             <div>
               <ul
-                class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+                class="sc-fznxsB hPecIE"
               >
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                  class="sc-fzpjYC bTIQoF"
                 />
               </ul>
               <div
@@ -297,7 +307,7 @@ exports[`Transaction Send should render 1`] = `
                       class="mt-8"
                     >
                       <div
-                        class="sc-fzoyTs fyIOmL"
+                        class="sc-fzoXWK jKOBZ"
                       >
                         <form
                           class="space-y-8"
@@ -338,7 +348,7 @@ exports[`Transaction Send should render 1`] = `
                                   class="sc-AxheI sc-Axmtr kSmZlB px-4"
                                 >
                                   <div
-                                    class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+                                    class="sc-AxiKw cxOZEi border-theme-neutral-light text-theme-neutral"
                                     data-testid="SelectNetworkInput__network"
                                   />
                                 </div>
@@ -381,7 +391,7 @@ exports[`Transaction Send should render 1`] = `
                             >
                               <div>
                                 <button
-                                  class="sc-fzqARJ dKMWCk SelectAddress  "
+                                  class="sc-fzoyTs bPtMIB SelectAddress  "
                                   data-testid="SelectAddress__wrapper"
                                   type="button"
                                 >
@@ -417,7 +427,7 @@ exports[`Transaction Send should render 1`] = `
                             data-testid="recipient-address"
                           >
                             <div
-                              class="sc-fzqNqU eijwDZ"
+                              class="sc-fzoNJl eJVwmX"
                             >
                               <div
                                 class="text-theme-neutral-dark hover:text-theme-primary"
@@ -468,8 +478,7 @@ exports[`Transaction Send should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="mt-8 mb-2 "
-                                data-testid="add-recipient__form-wrapper"
+                                class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
                               >
                                 <div
                                   class="space-y-8"
@@ -678,7 +687,7 @@ exports[`Transaction Send should render 1`] = `
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -687,7 +696,7 @@ exports[`Transaction Send should render 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -696,7 +705,7 @@ exports[`Transaction Send should render 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -765,7 +774,7 @@ exports[`Transaction Send should render 1st step 1`] = `
       class="mt-8"
     >
       <div
-        class="sc-fzoyTs fyIOmL"
+        class="sc-fzoXWK jKOBZ"
       >
         <form
           class="space-y-8"
@@ -806,7 +815,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                   class="sc-AxheI sc-Axmtr kSmZlB px-4"
                 >
                   <div
-                    class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+                    class="sc-AxiKw cxOZEi border-theme-neutral-light text-theme-neutral"
                     data-testid="SelectNetworkInput__network"
                   />
                 </div>
@@ -849,7 +858,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             >
               <div>
                 <button
-                  class="sc-fzqARJ dKMWCk SelectAddress  "
+                  class="sc-fzoyTs bPtMIB SelectAddress  "
                   data-testid="SelectAddress__wrapper"
                   type="button"
                 >
@@ -885,7 +894,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             data-testid="recipient-address"
           >
             <div
-              class="sc-fzqNqU eijwDZ"
+              class="sc-fzoNJl eJVwmX"
             >
               <div
                 class="text-theme-neutral-dark hover:text-theme-primary"
@@ -936,8 +945,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </div>
               </div>
               <div
-                class="mt-8 mb-2 "
-                data-testid="add-recipient__form-wrapper"
+                class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
               >
                 <div
                   class="space-y-8"
@@ -1146,7 +1154,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1155,7 +1163,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1164,7 +1172,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1336,7 +1344,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
             class="font-semibold"
           >
             <div
-              class="sc-fznWqX bzgpXZ"
+              class="sc-fzqARJ ftrYIN"
             >
               <div
                 class="sc-fzqBZW eiFWfG"
@@ -1851,7 +1859,7 @@ exports[`Transaction Send should render 4th step 1`] = `
         class="inline-flex items-center justify-center w-full mt-8 space-x-3"
       >
         <div
-          class="sc-fznJRM ffCWyi"
+          class="sc-fzoiQi ixtftH"
           color="primary"
         />
         <span

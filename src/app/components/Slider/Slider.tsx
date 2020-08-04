@@ -61,17 +61,11 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 
 			<div className="swiper-container" style={{ height: `${getContainerHeight()}px` }}>
 				<div className={`h-full swiper-wrapper ${className || ""}`}>
-					{data.map((item: any, index: number) => {
-						return (
-							<div
-								className="swiper-slide"
-								key={index}
-								style={{ height: `${swiperOptions.slideHeight}px` }}
-							>
-								{{ ...renderChildNode(item, index) }}
-							</div>
-						);
-					})}
+					{data.map((item: any, index: number) => (
+						<div className="swiper-slide" key={index} style={{ height: `${swiperOptions.slideHeight}px` }}>
+							{{ ...renderChildNode(item, index) }}
+						</div>
+					))}
 				</div>
 
 				{paginationPosition === "bottom-center" && <div className="swiper-pagination" />}

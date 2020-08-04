@@ -38,6 +38,9 @@ const isDashed = (dashed: boolean): any => {
 	return null;
 };
 
-export const getStyles = ({ size, type, dashed }: { size?: string; type?: string; dashed?: boolean }) => {
-	return [getSize(type!, size!), ...baseStyle, getType(type!), isDashed(dashed!)];
-};
+export const getStyles = ({ size, type, dashed }: { size?: string; type?: string; dashed?: boolean }) => [
+	getSize(type!, size!),
+	...baseStyle,
+	getType(type!),
+	isDashed(dashed!),
+];

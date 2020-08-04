@@ -14,7 +14,7 @@ test("Should open and cancel deletion modal in wallet detail page", async (t) =>
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129]"));
+	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click delete message in dropdown menu
@@ -33,7 +33,7 @@ test("Should open and close deletion modal in wallet detail page", async (t) => 
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129]"));
+	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click delete message in dropdown menu
@@ -52,7 +52,7 @@ test("Should delete wallet from wallet details page", async (t) => {
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129]"));
+	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click delete message in dropdown menu

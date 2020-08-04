@@ -1,18 +1,24 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { availableNetworksMock } from "domains/network/data";
+import { Contact } from "@arkecosystem/platform-sdk-profiles";
+import { availableNetworksMock as networks } from "domains/network/data";
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
-import { contact2 as contact } from "../../data";
 import { translations } from "../../i18n";
 import { ContactForm } from "./ContactForm";
 
-const networks = availableNetworksMock;
 const onDelete = jest.fn();
 const onSave = jest.fn();
 const onCancel = jest.fn();
 
+let contact: Contact;
+
 describe("ContactForm", () => {
+	beforeAll(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		contact = profile.contacts().values()[0];
+	});
+
 	it("should select network", () => {
 		const { getByTestId } = render(<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />);
 
@@ -71,15 +77,17 @@ describe("ContactForm", () => {
 			);
 		});
 
-		const { getAllByTestId } = renderContext;
+		const { getByTestId, getAllByTestId } = renderContext;
 
-		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().length);
+		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().count());
 
 		await act(async () => {
 			fireEvent.click(getAllByTestId("contact-form__remove-address-btn")[0]);
 		});
 
-		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().length - 1);
+		await waitFor(() => {
+			expect(() => getByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
+		});
 	});
 
 	it("should handle save", async () => {
@@ -130,7 +138,7 @@ describe("ContactForm", () => {
 			expect(getByTestId("contact-form__address-list")).toBeTruthy();
 			expect(getByTestId("contact-form__save-btn")).toBeTruthy();
 			expect(getByTestId("contact-form__delete-btn")).toBeTruthy();
-			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().length);
+			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().count());
 			expect(asFragment()).toMatchSnapshot();
 		});
 

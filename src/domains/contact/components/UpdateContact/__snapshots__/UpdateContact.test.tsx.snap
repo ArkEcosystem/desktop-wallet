@@ -55,7 +55,7 @@ exports[`UpdateContact should render a modal 1`] = `
             data-testid="contact-form"
           >
             <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -65,92 +65,182 @@ exports[`UpdateContact should render a modal 1`] = `
                 Name
               </label>
               <input
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="contact-form__name-input"
                 name="name"
-                value="Test"
-              />
-            </fieldset>
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="network"
-              >
-                Network
-              </label>
-              <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-owns="ContactForm__network-menu"
-                data-testid="SelectNetwork"
-                role="combobox"
-              >
-                <label
-                  for="ContactForm__network-input"
-                  id="ContactForm__network-label"
-                />
-                <div
-                  class="sc-fzoLsD rzdyj"
-                  data-testid="SelectNetworkInput"
-                >
-                  <div
-                    class="sc-Axmtr sc-AxmLO VVqBg px-4"
-                  >
-                    <div
-                      class="sc-AxhUy iPLNDc border-theme-neutral-light text-theme-neutral"
-                      data-testid="SelectNetworkInput__network"
-                    />
-                  </div>
-                  <input
-                    aria-autocomplete="list"
-                    aria-controls="ContactForm__network-menu"
-                    aria-labelledby="ContactForm__network-label"
-                    autocomplete="off"
-                    class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                    data-testid="SelectNetworkInput__input"
-                    id="ContactForm__network-input"
-                    placeholder="Enter a network name"
-                    value=""
-                  />
-                </div>
-              </div>
-              <ul
-                aria-labelledby="ContactForm__network-label"
-                id="ContactForm__network-menu"
-                role="listbox"
-              />
-            </fieldset>
-            <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="address"
-              >
-                Address
-              </label>
-              <input
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                data-testid="contact-form__address-input"
-                name="address"
+                value="Brian"
               />
             </fieldset>
             <div
-              class="mt-4"
+              class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
             >
-              <button
-                class="sc-AxjAm ddJBbC w-full"
-                color="primary"
-                data-testid="contact-form__add-address-btn"
-                disabled=""
-                type="button"
+              <fieldset
+                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
               >
-                Add address
-              </button>
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="network"
+                >
+                  Network
+                </label>
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="ContactForm__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
+                >
+                  <label
+                    for="ContactForm__network-input"
+                    id="ContactForm__network-label"
+                  />
+                  <div
+                    class="sc-fzozJi OgXfh"
+                    data-testid="SelectNetworkInput"
+                  >
+                    <div
+                      class="sc-AxheI sc-Axmtr kSmZlB px-4"
+                    >
+                      <div
+                        class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
+                        data-testid="SelectNetworkInput__network"
+                      />
+                    </div>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="ContactForm__network-menu"
+                      aria-labelledby="ContactForm__network-label"
+                      autocomplete="off"
+                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="ContactForm__network-input"
+                      placeholder="Enter a network name"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <ul
+                  aria-labelledby="ContactForm__network-label"
+                  id="ContactForm__network-menu"
+                  role="listbox"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="address"
+                >
+                  Address
+                </label>
+                <input
+                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="contact-form__address-input"
+                  name="address"
+                />
+              </fieldset>
+              <div
+                class="mt-4"
+              >
+                <button
+                  class="sc-AxjAm ddJBbC w-full"
+                  color="primary"
+                  data-testid="contact-form__add-address-btn"
+                  disabled=""
+                  type="button"
+                >
+                  Add address
+                </button>
+              </div>
+            </div>
+            <div
+              class="group"
+            >
+              <span
+                class="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
+              >
+                Addresses
+              </span>
+              <div
+                data-testid="contact-form__address-list"
+              >
+                <div
+                  class="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+                  data-testid="contact-form__address-list-item"
+                >
+                  <div
+                    class="mr-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-1"
+                    >
+                      <div
+                        aria-label="Ark Devnet"
+                        class="sc-fznyAO gQONjx border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-devnet"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    class="font-semibold"
+                  >
+                    <div
+                      class="inline-block truncate align-middle"
+                    >
+                      <span
+                        class="sc-AxhCb ccMvAG text-theme-text font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D61mfSggzb…oHaqJ3Dyib
+                      </span>
+                    </div>
+                  </span>
+                  <button
+                    class="sc-AxjAm kwTlRm flex items-center ml-auto"
+                    color="primary"
+                    data-testid="contact-form__remove-address-btn"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
             <div
               class="flex w-full justify-between"
@@ -189,7 +279,6 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="sc-AxjAm ddQVWI"
                   color="primary"
                   data-testid="contact-form__save-btn"
-                  disabled=""
                   type="submit"
                 >
                   Save

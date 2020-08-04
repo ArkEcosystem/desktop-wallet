@@ -15,15 +15,16 @@ type SelectNetworkProps = {
 	name?: string;
 	value?: string;
 	id?: string;
+	disabled?: boolean;
 	onSelect?: (network?: NetworkData | null) => void;
 };
 
 export const itemToString = (item: Network | null) => item?.extra?.displayName || "";
 
-export const SelectNetwork = ({ networks, placeholder, onSelect, name, id }: SelectNetworkProps) => {
+export const SelectNetwork = ({ networks, placeholder, onSelect, name, id, disabled }: SelectNetworkProps) => {
 	const [items] = React.useState(() =>
 		networks.map((network) => {
-			const extended = getNetworkExtendedData({ coin: network.coin(), network: network.name() });
+			const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 			return Object.assign(network, { extra: extended });
 		}),
 	);
@@ -94,6 +95,7 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name, id }: Sel
 				<SelectNetworkInput
 					network={selectedItem}
 					suggestion={inputTypeAhead}
+					disabled={disabled}
 					{...getInputProps({
 						name,
 						placeholder,
@@ -114,13 +116,14 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name, id }: Sel
 			<ul {...getMenuProps()}>
 				{items.map((item, index) => (
 					<li
+						data-testid="SelectNetwork__NetworkIcon--container"
 						key={index}
 						className="inline-block pt-6 mr-6 cursor-pointer"
-						{...getItemProps({ item, index })}
+						{...getItemProps({ item, index, disabled })}
 					>
 						<NetworkIcon
-							network={item.name()}
 							coin={item.coin()}
+							network={item.id()}
 							size="xl"
 							iconSize={26}
 							className={assetClassName(item)}
@@ -136,4 +139,5 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name, id }: Sel
 SelectNetwork.defaultProps = {
 	networks: [],
 	placeholder: "Enter a network name",
+	disabled: false,
 };

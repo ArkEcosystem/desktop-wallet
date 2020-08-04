@@ -2,14 +2,6 @@ import { styled } from "twin.macro";
 
 const defaultStyle = `
 	& {
-		.MultiRecipientWrapper {
-			background: var(--theme-color-neutral-100);
-			border-radius: 0.625rem;
-			padding: 1.25rem;
-			margin-left: -1.25rem;
-			margin-right: -1.25rem;
-		}
-
 		.select-buttons {
 			button:first-child {
 				border-top-right-radius: 0;

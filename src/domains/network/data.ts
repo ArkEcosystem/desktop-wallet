@@ -13,13 +13,13 @@ export interface CoinNetworkExtended {
 
 export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetworkExtended>> = {
 	ARK: {
-		Mainnet: {
+		mainnet: {
 			displayName: "Ark",
 			borderClass: "border-theme-danger-light",
 			textClass: "text-theme-danger-400",
 			iconName: "Ark",
 		},
-		Devnet: {
+		devnet: {
 			displayName: "Ark Devnet",
 			borderClass: "border-theme-primary-100",
 			textClass: "text-theme-primary-400",
@@ -27,7 +27,7 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 	},
 	BTC: {
-		Livenet: {
+		livenet: {
 			displayName: "Bitcoin",
 			borderClass: "border-theme-warning-200",
 			textClass: "text-theme-warning-400",

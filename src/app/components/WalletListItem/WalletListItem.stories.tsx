@@ -1,10 +1,13 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import React from "react";
+import { WalletsDecorator } from "utils/storybook";
 
 import { WalletListItem } from "./WalletListItem";
 
 export default {
 	title: "App / Components / WalletListItem",
+	decorators: [(storyFn: any) => <WalletsDecorator count={1}>{storyFn}</WalletsDecorator>],
 };
 
 const data = [
@@ -12,11 +15,9 @@ const data = [
 		coin: "Btc",
 		coinClassName: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
-		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		walletName: "My Wallet",
+		wallet: (null as unknown) as Wallet,
 		balance: "100 BTC",
 		fiat: "1,000,000 USD",
-		walletTypeIcons: ["Star", "Multisig", "Ledger"],
 		actions: [
 			{
 				label: "Action 1",
@@ -59,26 +60,26 @@ const columns = [
 	},
 ];
 
-export const Default = () => {
+export const Default = ({ wallets }: { wallets: Wallet[] }) => {
+	data[0].wallet = wallets[0];
+
 	return (
 		<div>
-			<div>
-				<Table columns={columns} data={data}>
-					{(rowData: any) => <WalletListItem {...rowData} />}
-				</Table>
-			</div>
+			<Table columns={columns} data={data}>
+				{(rowData: any) => <WalletListItem {...rowData} />}
+			</Table>
 		</div>
 	);
 };
 
-export const SingleAction = () => {
+export const SingleAction = ({ wallets }: { wallets: Wallet[] }) => {
+	data[0].wallet = wallets[0];
+
 	return (
 		<div>
-			<div>
-				<Table columns={columns} data={data}>
-					{(rowData: any) => <WalletListItem {...rowData} variant="singleAction" />}
-				</Table>
-			</div>
+			<Table columns={columns} data={data}>
+				{(rowData: any) => <WalletListItem {...rowData} variant="singleAction" />}
+			</Table>
 		</div>
 	);
 };

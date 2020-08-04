@@ -1,11 +1,11 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, ContactAddress, NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,37 +16,33 @@ type AddressListItemProps = {
 	onRemove: any;
 };
 
-const AddressListItem = ({ address, onRemove }: AddressListItemProps) => {
-	return (
-		<div
-			data-testid="contact-form__address-list-item"
-			className="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
-		>
-			<div className="mr-4">
-				<div className="flex items-center -space-x-1">
-					<Circle className={`-mr-1 ${address.coinClassName}`}>
-						<Icon name={address.coin} />
-					</Circle>
-					<Avatar address={address.address} />
-				</div>
+const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
+	<div
+		data-testid="contact-form__address-list-item"
+		className="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+	>
+		<div className="mr-4">
+			<div className="flex items-center -space-x-1">
+				<NetworkIcon coin={address.coin} network={address.network} />
+				<Avatar address={address.address} />
 			</div>
-
-			<span className="font-semibold">
-				<Address address={address.address} maxChars={24} />
-			</span>
-
-			<Button
-				data-testid="contact-form__remove-address-btn"
-				size="icon"
-				className="flex items-center ml-auto"
-				variant="plain"
-				onClick={() => onRemove(address)}
-			>
-				<Icon name="Trash" />
-			</Button>
 		</div>
-	);
-};
+
+		<span className="font-semibold">
+			<Address address={address.address} maxChars={24} />
+		</span>
+
+		<Button
+			data-testid="contact-form__remove-address-btn"
+			size="icon"
+			className="flex items-center ml-auto"
+			variant="plain"
+			onClick={() => onRemove(address)}
+		>
+			<Icon name="Trash" />
+		</Button>
+	</div>
+);
 
 type AddressListProps = {
 	addresses: any[];
@@ -72,7 +68,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 };
 
 type ContactFormProps = {
-	contact?: any;
+	contact?: Contact;
 	networks: NetworkData[];
 	onCancel?: any;
 	onDelete?: any;
@@ -80,9 +76,19 @@ type ContactFormProps = {
 };
 
 export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
-	const [contactAddresses, setContactAddresses] = useState(() => {
-		return contact ? contact.addresses() : [];
-	});
+	const [addresses, setAddresses] = useState(() =>
+		contact
+			? contact
+					.addresses()
+					.values()
+					.map((address: ContactAddress) => ({
+						network: address.network(),
+						address: address.address(),
+						name: address.name(),
+						coin: address.coin(),
+					}))
+			: [],
+	);
 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
@@ -94,10 +100,11 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 	}, [register]);
 
 	const handleAddAddress = () => {
-		setContactAddresses(
-			contactAddresses.concat({
+		setAddresses(
+			addresses.concat({
 				network: network.id(),
 				address,
+				name: address,
 				coin: network.coin(),
 			}),
 		);
@@ -107,10 +114,8 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 	};
 
 	const handleRemoveAddress = (item: any) => {
-		setContactAddresses(
-			contactAddresses.filter((curr: any) => {
-				return !(curr.address === item.address && curr.network === item.network);
-			}),
+		setAddresses(
+			addresses.filter((curr: any) => !(curr.address === item.address && curr.network === item.network)),
 		);
 	};
 
@@ -125,7 +130,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 			onSubmit={() =>
 				onSave({
 					name,
-					contactAddresses,
+					addresses,
 				})
 			}
 		>
@@ -139,33 +144,33 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 				<FormHelperText />
 			</FormField>
 
-			<FormField name="network">
-				<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-				<SelectNetwork id="ContactForm__network" networks={networks} onSelect={handleSelectNetwork} />
-				<FormHelperText />
-			</FormField>
+			<SubForm>
+				<FormField name="network">
+					<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
+					<SelectNetwork id="ContactForm__network" networks={networks} onSelect={handleSelectNetwork} />
+					<FormHelperText />
+				</FormField>
 
-			<FormField name="address">
-				<FormLabel>{t("CONTACTS.CONTACT_FORM.ADDRESS")}</FormLabel>
-				<Input data-testid="contact-form__address-input" ref={form.register({})} />
-				<FormHelperText />
-			</FormField>
+				<FormField name="address">
+					<FormLabel>{t("CONTACTS.CONTACT_FORM.ADDRESS")}</FormLabel>
+					<Input data-testid="contact-form__address-input" ref={form.register({})} />
+					<FormHelperText />
+				</FormField>
 
-			<div className="mt-4">
-				<Button
-					data-testid="contact-form__add-address-btn"
-					variant="plain"
-					className="w-full"
-					disabled={!network || !address}
-					onClick={handleAddAddress}
-				>
-					{t("CONTACTS.CONTACT_FORM.ADD_ADDRESS")}
-				</Button>
-			</div>
+				<div className="mt-4">
+					<Button
+						data-testid="contact-form__add-address-btn"
+						variant="plain"
+						className="w-full"
+						disabled={!network || !address}
+						onClick={handleAddAddress}
+					>
+						{t("CONTACTS.CONTACT_FORM.ADD_ADDRESS")}
+					</Button>
+				</div>
+			</SubForm>
 
-			{contactAddresses && contactAddresses.length > 0 && (
-				<AddressList addresses={contactAddresses} onRemove={handleRemoveAddress} />
-			)}
+			{addresses && addresses.length > 0 && <AddressList addresses={addresses} onRemove={handleRemoveAddress} />}
 
 			<div className={`flex w-full ${contact ? "justify-between" : "justify-end"}`}>
 				{contact && (
@@ -184,7 +189,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 						data-testid="contact-form__save-btn"
 						type="submit"
 						variant="solid"
-						disabled={!contactAddresses.length}
+						disabled={!addresses.length}
 					>
 						{t("COMMON.SAVE")}
 					</Button>

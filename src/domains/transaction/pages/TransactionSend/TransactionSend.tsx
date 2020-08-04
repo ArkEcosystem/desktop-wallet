@@ -50,7 +50,7 @@ const recipients = [
 	},
 ];
 
-export const FirstStep = ({ onSubmit, formValues }: any) => {
+export const FirstStep = ({ onSubmit, formValues, profile }: any) => {
 	const { t } = useTranslation();
 
 	return (
@@ -62,7 +62,7 @@ export const FirstStep = ({ onSubmit, formValues }: any) => {
 				</div>
 			</div>
 			<div className="mt-8">
-				<SendTransactionForm {...formValues} onSubmit={onSubmit} />
+				<SendTransactionForm {...formValues} profile={profile} onSubmit={onSubmit} />
 			</div>
 		</section>
 	);
@@ -221,12 +221,12 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<div className="max-w-xl mx-auto">
 					<Tabs activeId={activeTab}>
@@ -234,7 +234,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep onSubmit={handleNext} formValues={formValues} />
+								<FirstStep onSubmit={handleNext} formValues={formValues} profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep />

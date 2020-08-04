@@ -1,78 +1,52 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
-import nock from "nock";
+import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, render, RenderResult, waitFor } from "testing-library";
-import { profiles } from "tests/fixtures/env/data";
-import { identity } from "tests/fixtures/identity";
-import { StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { SignMessage } from "./SignMessage";
 
-let env: Environment;
 let profile: Profile;
 let wallet: Wallet;
+const mnemonic = "this is a top secret password";
 
 describe("SignMessage", () => {
 	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-	});
-
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
-		await env.bootFromObject({ data: {}, profiles });
-
-		profile = env.profiles().findById("bob");
-
-		wallet = await profile.wallets().importByMnemonic(identity.mnemonic, "ARK", "devnet");
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 
 	it("should render", () => {
-		const { asFragment } = render(
-			<EnvironmentProvider env={env}>
-				<SignMessage
-					profileId={profile.id()}
-					walletId={wallet.id()}
-					signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-					isOpen={true}
-				/>
-			</EnvironmentProvider>,
+		const { asFragment } = renderWithRouter(
+			<SignMessage
+				profileId={profile.id()}
+				walletId={wallet.id()}
+				signatoryAddress="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+				isOpen={true}
+			/>,
 		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should sign message", async () => {
+		const signedMessage = {
+			message: "Hello World",
+			signatory: "0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f",
+			signature:
+				"3044022045c46d10f1c12f0d1e80f4e7be44e6bf6885eb663eccf1d242eca0774bdbdcaf0220490f38e44addd959b077ef98f8cd01cf84fb91a3f8a2a938cfe61f7b477c734c",
+		};
+
 		let rendered: RenderResult;
 
 		await act(async () => {
-			rendered = render(
-				<EnvironmentProvider env={env}>
-					<SignMessage
-						profileId={profile.id()}
-						walletId={wallet.id()}
-						signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-						isOpen={true}
-					/>
-				</EnvironmentProvider>,
+			rendered = renderWithRouter(
+				<SignMessage
+					profileId={profile.id()}
+					walletId={wallet.id()}
+					signatoryAddress="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+					isOpen={true}
+				/>,
 			);
 
 			await waitFor(() =>
@@ -93,7 +67,7 @@ describe("SignMessage", () => {
 			const mnemonicInput = getByTestId("SignMessage__mnemonic-input");
 			expect(mnemonicInput).toBeTruthy();
 
-			await fireEvent.change(mnemonicInput, { target: { value: identity.mnemonic } });
+			await fireEvent.change(mnemonicInput, { target: { value: mnemonic } });
 
 			await fireEvent.click(getByTestId("SignMessage__submit-button"));
 
@@ -102,6 +76,18 @@ describe("SignMessage", () => {
 					translations.MODAL_SIGN_MESSAGE.SUCCESS_TITLE,
 				),
 			);
+
+			const writeTextMock = jest.fn();
+			const clipboardOriginal = navigator.clipboard;
+
+			// @ts-ignore
+			navigator.clipboard = { writeText: writeTextMock };
+
+			await fireEvent.click(getByTestId(`SignMessage__copy-button`));
+			await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith(JSON.stringify(signedMessage)));
+
+			// @ts-ignore
+			navigator.clipboard = clipboardOriginal;
 		});
 	});
 });

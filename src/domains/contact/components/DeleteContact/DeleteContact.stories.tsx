@@ -1,5 +1,10 @@
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { boolean, withKnobs } from "@storybook/addon-knobs";
+import { EnvironmentProvider } from "app/contexts";
+import { httpClient } from "app/services";
 import React from "react";
+import { StubStorage } from "tests/mocks";
 
 import { DeleteContact } from "./DeleteContact";
 
@@ -8,12 +13,21 @@ export default {
 	decorators: [withKnobs],
 };
 
-export const Default = () => (
-	<DeleteContact
-		profileId="1"
-		isOpen={boolean("isOpen", true)}
-		onClose={() => alert("closed")}
-		onCancel={() => alert("cancelled")}
-		onDelete={() => alert("deleted")}
-	/>
-);
+export const Default = () => {
+	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	const profile = env.profiles().create("Test profile");
+	const contact = profile.contacts().create("Test contact");
+
+	return (
+		<EnvironmentProvider env={env}>
+			<DeleteContact
+				contact={contact}
+				profile={profile}
+				isOpen={boolean("isOpen", true)}
+				onClose={() => alert("closed")}
+				onCancel={() => alert("cancelled")}
+				onDelete={() => alert("deleted")}
+			/>
+		</EnvironmentProvider>
+	);
+};

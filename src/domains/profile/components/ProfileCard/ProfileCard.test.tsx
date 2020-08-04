@@ -1,25 +1,38 @@
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
 import React from "react";
-import { fireEvent, render } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { ProfileCard } from "./ProfileCard";
 
-const profile = {
-	id: () => "fdda765f-fc57-5604-a269-52a7df8164ec",
-	name: () => "Oleg Gelo",
-	balance: () => "234,500.46 USD",
-	avatar: () =>
-		'<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><style>circle{mix-blend-mode:soft-light;}</style><rect fill="rgb(33, 150, 243)" width="100" height="100"/><circle r="40" cx="60" cy="50" fill="rgb(255, 87, 34)"/><circle r="55" cx="80" cy="40" fill="rgb(205, 220, 57)"/><circle r="35" cx="50" cy="70" fill="rgb(255, 193, 7)"/></svg>',
-};
+let profile: Profile;
 
 describe("ProfileCard", () => {
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		profile = env.profiles().findById(getDefaultProfileId());
+	});
+
 	it("should render", () => {
 		const { container, asFragment, getByTestId } = render(<ProfileCard profile={profile} />);
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("profile-card__user--name")).toHaveTextContent(profile.name());
-		expect(getByTestId("profile-card__user--balance")).toHaveTextContent(profile.balance());
+		expect(getByTestId("profile-card__user--balance")).toHaveTextContent(profile.balance().toString());
 		expect(getByTestId("profile-card__user--avatar")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render the profile with avatar image", () => {
+		profile.settings().set(ProfileSetting.Avatar, "avatarImage");
+
+		const { container, asFragment, getByTestId } = render(<ProfileCard profile={profile} />);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("profile-card__user--name")).toHaveTextContent(profile.name());
+		expect(getByTestId("profile-card__user--balance")).toHaveTextContent(profile.balance().toString());
+		expect(getByTestId("profile-card__user--avatarImage")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 

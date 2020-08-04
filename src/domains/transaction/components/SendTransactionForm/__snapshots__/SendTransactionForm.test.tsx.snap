@@ -44,7 +44,7 @@ exports[`SendTransactionForm should render 1`] = `
               class="sc-AxhCb sc-AxhUy jFkFxS px-4"
             >
               <div
-                class="sc-fzplWN fEJfwQ border-theme-neutral-light text-theme-neutral"
+                class="sc-fzplWN exzsOf border-theme-neutral-light text-theme-neutral"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -69,13 +69,14 @@ exports[`SendTransactionForm should render 1`] = `
           <li
             aria-selected="false"
             class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
             id="SendTransactionForm__network-item-0"
             role="option"
           >
             <div
               aria-label="Ark"
               class="sc-fzplWN bGwGlP border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-ARK-mainnet"
             >
               <div
                 class="sc-Axmtr wZFix"
@@ -92,13 +93,14 @@ exports[`SendTransactionForm should render 1`] = `
           <li
             aria-selected="false"
             class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
             id="SendTransactionForm__network-item-1"
             role="option"
           >
             <div
               aria-label="Ark Devnet"
               class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-ARK-devnet"
             >
               <div
                 class="sc-Axmtr wZFix"
@@ -115,13 +117,14 @@ exports[`SendTransactionForm should render 1`] = `
           <li
             aria-selected="false"
             class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
             id="SendTransactionForm__network-item-2"
             role="option"
           >
             <div
               aria-label="Bitcoin"
               class="sc-fzplWN bGwGlP border-theme-warning-200 text-theme-warning-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-BTC-livenet"
             >
               <div
                 class="sc-Axmtr wZFix"
@@ -193,7 +196,7 @@ exports[`SendTransactionForm should render 1`] = `
         data-testid="recipient-address"
       >
         <div
-          class="sc-fzoyAV cTkyTj"
+          class="sc-fzoyAV juexoF"
         >
           <div
             class="text-theme-neutral-dark hover:text-theme-primary"
@@ -244,8 +247,7 @@ exports[`SendTransactionForm should render 1`] = `
             </div>
           </div>
           <div
-            class="mt-8 mb-2 "
-            data-testid="add-recipient__form-wrapper"
+            class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
           >
             <div
               class="space-y-8"
@@ -551,7 +553,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
               class="sc-AxhCb sc-AxhUy jFkFxS px-4"
             >
               <div
-                class="sc-fzplWN fEJfwQ border-theme-neutral-light text-theme-neutral"
+                class="sc-fzplWN exzsOf border-theme-neutral-light text-theme-neutral"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -630,7 +632,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
         data-testid="recipient-address"
       >
         <div
-          class="sc-fzoyAV cTkyTj"
+          class="sc-fzoyAV juexoF"
         >
           <div
             class="text-theme-neutral-dark hover:text-theme-primary"
@@ -681,8 +683,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
             </div>
           </div>
           <div
-            class="mt-8 mb-2 "
-            data-testid="add-recipient__form-wrapper"
+            class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
           >
             <div
               class="space-y-8"

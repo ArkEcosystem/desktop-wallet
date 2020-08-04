@@ -25,12 +25,12 @@ export const News = ({ news, categories, assets }: Props) => {
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<Header
 					title={t("NEWS.PAGE_NEWS.TITLE")}

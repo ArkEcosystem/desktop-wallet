@@ -7,8 +7,12 @@ import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
-import React from "react";
+import { useActiveProfile } from "app/hooks/env";
+import { PlatformSdkChoices } from "data";
+import { AdvancedMode } from "domains/setting/components/AdvancedMode";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { openFile, setScreenshotProtection } from "utils/electron-utils";
 
 type GeneralProps = {
 	env: Environment;
@@ -17,10 +21,43 @@ type GeneralProps = {
 	onSubmit: (profile: Profile) => void;
 };
 
-export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps) => {
+export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
+	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
+	const [avatarImage, setAvatarImage] = useState(activeProfile?.settings().get(ProfileSetting.Avatar) || "");
+	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
+	const [isAdvancedMode, setIsAdvancedMode] = useState(
+		activeProfile?.settings().get(ProfileSetting.AdvancedMode) || false,
+	);
+
 	const { context, register } = formConfig;
+
+	const handleChangeAvatar = async () => {
+		const raw = await openFile(null, {
+			filters: { name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] },
+			encoding: "base64",
+		});
+
+		if (raw) {
+			setAvatarImage(`data:image/png;base64,${raw}`);
+		}
+	};
+
+	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { checked } = event.target;
+
+		if (checked) {
+			setIsOpenAdvancedModeModal(checked);
+		} else {
+			setIsAdvancedMode(false);
+		}
+	};
+
+	const handleAdvancedMode = (isAccepted: boolean) => {
+		setIsOpenAdvancedModeModal(false);
+		setIsAdvancedMode(isAccepted);
+	};
 
 	const personalDetails = [
 		{
@@ -35,20 +72,29 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						<button
 							type="button"
 							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+							onClick={handleChangeAvatar}
+							data-testid="General-settings__upload-button"
 						>
 							<Icon name="Upload" />
 						</button>
 					</div>
-					<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
-						<img
-							src="https://randomuser.me/api/portraits/men/3.jpg"
-							className="object-cover rounded"
-							alt="random avatar"
-						/>
-						<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
-							<Icon name="Close" height={12} width={12} />
-						</button>
-					</div>
+					{avatarImage && (
+						<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
+							<img
+								src={avatarImage}
+								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+								alt="Profile avatar"
+							/>
+							<button
+								type="button"
+								className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+								onClick={() => setAvatarImage("")}
+								data-testid="General-settings__remove-avatar"
+							>
+								<Icon name="Close" height={12} width={12} />
+							</button>
+						</div>
+					)}
 				</div>
 			),
 		},
@@ -69,6 +115,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						<Toggle
 							ref={register()}
 							name="isScreenshotProtection"
+							defaultChecked={activeProfile?.settings().get(ProfileSetting.ScreenshotProtection)}
 							data-testid="General-settings__toggle--isScreenshotProtection"
 						/>
 					</div>
@@ -89,9 +136,18 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						<Toggle
 							ref={register()}
 							name="isAdvancedMode"
+							checked={isAdvancedMode}
+							onChange={handleOpenAdvancedModeModal}
 							data-testid="General-settings__toggle--isAdvancedMode"
 						/>
 					</div>
+
+					<AdvancedMode
+						isOpen={isOpenAdvancedModeModal}
+						onClose={() => handleAdvancedMode(false)}
+						onDecline={() => handleAdvancedMode(false)}
+						onAccept={() => handleAdvancedMode(true)}
+					/>
 				</div>
 			),
 		},
@@ -106,9 +162,14 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						})}
 						ref={register()}
 						options={[
-							{ label: "Option 1", value: "option1" },
-							{ label: "Option 2", value: "option2" },
+							{ label: "1 Minute", value: 1 },
+							{ label: "5 Minutes", value: 5 },
+							{ label: "10 Minutes", value: 10 },
+							{ label: "15 Minutes", value: 15 },
+							{ label: "30 Minutes", value: 30 },
+							{ label: "60 Minutes", value: 60 },
 						]}
+						defaultValue={activeProfile?.settings().get(ProfileSetting.AutomaticLogoffPeriod)}
 					/>
 					<FormHelperText />
 				</FormField>
@@ -128,7 +189,12 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						{t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
-						<Toggle ref={register()} name="isDarkMode" data-testid="General-settings__toggle--isDarkMode" />
+						<Toggle
+							ref={register()}
+							name="isDarkMode"
+							defaultChecked={activeProfile?.settings().get(ProfileSetting.Theme) === "dark"}
+							data-testid="General-settings__toggle--isDarkMode"
+						/>
 					</div>
 				</div>
 			),
@@ -147,6 +213,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						<Toggle
 							ref={register()}
 							name="isUpdateLedger"
+							defaultChecked={activeProfile?.settings().get(ProfileSetting.LedgerUpdateMethod)}
 							data-testid="General-settings__toggle--isUpdateLedger"
 						/>
 					</div>
@@ -155,38 +222,43 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		},
 	];
 
-	const submitForm = async ({
+	const handleSubmit = async ({
 		name,
 		language,
 		passphraseLanguage,
 		marketProvider,
 		currency,
 		timeFormat,
+		autoLogoff,
 		isScreenshotProtection,
 		isAdvancedMode,
 		isDarkMode,
 		isUpdateLedger,
 	}: any) => {
-		const profile = env.profiles().create(name);
-		profile.settings().set(ProfileSetting.Locale, language);
-		profile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
-		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
-		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
-		profile.settings().set(ProfileSetting.TimeFormat, timeFormat);
-		profile.settings().set(ProfileSetting.ScreenshotProtection, isScreenshotProtection);
-		profile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
-		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-		profile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
+		activeProfile.settings().set(ProfileSetting.Avatar, avatarImage);
+		activeProfile.settings().set(ProfileSetting.Name, name);
+		activeProfile.settings().set(ProfileSetting.Locale, language);
+		activeProfile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
+		activeProfile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		activeProfile.settings().set(ProfileSetting.ExchangeCurrency, currency);
+		activeProfile.settings().set(ProfileSetting.TimeFormat, timeFormat);
+		activeProfile.settings().set(ProfileSetting.ScreenshotProtection, isScreenshotProtection);
+		activeProfile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
+		activeProfile.settings().set(ProfileSetting.AutomaticLogoffPeriod, autoLogoff);
+		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
+
+		setScreenshotProtection(isScreenshotProtection);
 
 		await env.persist();
 
-		onSubmit(profile);
+		onSubmit(activeProfile);
 	};
 
 	return (
 		<>
 			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
-			<Form data-testid="General-settings__form" context={context} onSubmit={submitForm}>
+			<Form data-testid="General-settings__form" context={context} onSubmit={handleSubmit}>
 				<div className="mt-8">
 					<ListDivided items={personalDetails} />
 
@@ -201,6 +273,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
 										}).toString(),
 									})}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.Name)}
 									data-testid="General-settings__input--name"
 								/>
 								<FormHelperText />
@@ -217,10 +290,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.passphraseLanguages}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.Bip39Locale)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -236,10 +307,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.currencies}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.ExchangeCurrency)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -257,10 +326,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.LANGUAGE"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.languages}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.Locale)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -276,10 +343,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.marketProviders}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.MarketProvider)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -295,10 +360,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.TIME_FORMAT"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.timeFormats}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.TimeFormat)}
 								/>
 								<FormHelperText />
 							</FormField>

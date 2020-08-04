@@ -1,43 +1,88 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
+import electron from "electron";
+import os from "os";
 import React from "react";
-import { act, fireEvent, renderWithRouter } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { Route } from "react-router-dom";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
 
+import { translations } from "../../i18n";
 import { Settings } from "./Settings";
 
-let env: Environment;
+jest.setTimeout(8000);
+
+jest.mock("electron", () => {
+	const setContentProtection = jest.fn();
+
+	return {
+		remote: {
+			dialog: {
+				showOpenDialog: jest.fn(),
+			},
+			getCurrentWindow: () => ({
+				setContentProtection,
+			}),
+		},
+	};
+});
+
+jest.mock("fs", () => ({
+	readFileSync: jest.fn(() => "avatarImage"),
+}));
+
+let profile: Profile;
+let showOpenDialogMock: jest.SpyInstance;
+const showOpenDialogParams = {
+	defaultPath: os.homedir(),
+	properties: ["openFile"],
+	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
+};
 
 describe("Settings", () => {
-	beforeEach(() => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
 	it("should render", () => {
-		const { container, asFragment } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should store profile", async () => {
+	it("should update profile", async () => {
 		let savedProfile: any = null;
+		const profilesCount = env.profiles().count();
+
 		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
+			<Route path="/profiles/:profileId/settings">
 				<Settings onSubmit={onSubmit} />
-			</EnvironmentProvider>,
+			</Route>,
 			{
-				routes: ["/", "/profiles/1/settings"],
+				routes: [`/profiles/${profile.id()}/settings`],
 			},
 		);
+
+		// Upload avatar image
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+			filePaths: ["filePath"],
+		}));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
 		// Select Language
@@ -55,10 +100,17 @@ describe("Settings", () => {
 		// Select Time Format
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[4]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Auto-logoff
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[5]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		// Toggle Screenshot Protection
 		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
 		// Toggle Advanced Mode
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		// Open Advanced Mode Modal
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		fireEvent.click(getByTestId("AdvancedMode__accept-button"));
 		// Toggle Update Ledger in Background
 		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
 
@@ -68,20 +120,37 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile");
 		expect(savedProfile.settings().all()).toEqual({
-			LOCALE: "option1",
-			BIP39_LOCALE: "option1",
-			MARKET_PROVIDER: "option1",
-			EXCHANGE_CURRENCY: "option1",
-			TIME_FORMAT: "option1",
-			SCREENSHOT_PROTECTION: true,
+			AVATAR: "data:image/png;base64,avatarImage",
+			NAME: "test profile",
+			LOCALE: "en-US",
+			BIP39_LOCALE: "chinese_simplified",
+			MARKET_PROVIDER: "coincap",
+			EXCHANGE_CURRENCY: "btc",
+			TIME_FORMAT: "h:mm A",
+			SCREENSHOT_PROTECTION: false,
 			ADVANCED_MODE: true,
+			AUTOMATIC_LOGOFF_PERIOD: "1",
 			THEME: "light",
 			LEDGER_UPDATE_METHOD: true,
 		});
 
+		// Upload and remove avatar image
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__remove-avatar"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile 2" } });
 		// Toggle Dark Theme
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
+		// Toggle Advanced Mode
+		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		// Open Advanced Mode Modal
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		fireEvent.click(getByTestId("AdvancedMode__decline-button"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
@@ -90,28 +159,48 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile 2");
 		expect(savedProfile.settings().all()).toEqual({
-			LOCALE: "option1",
-			BIP39_LOCALE: "option1",
-			MARKET_PROVIDER: "option1",
-			EXCHANGE_CURRENCY: "option1",
-			TIME_FORMAT: "option1",
-			SCREENSHOT_PROTECTION: true,
-			ADVANCED_MODE: true,
+			AVATAR: "",
+			NAME: "test profile 2",
+			LOCALE: "en-US",
+			BIP39_LOCALE: "chinese_simplified",
+			MARKET_PROVIDER: "coincap",
+			EXCHANGE_CURRENCY: "btc",
+			TIME_FORMAT: "h:mm A",
+			SCREENSHOT_PROTECTION: false,
+			ADVANCED_MODE: false,
+			AUTOMATIC_LOGOFF_PERIOD: "1",
 			THEME: "dark",
 			LEDGER_UPDATE_METHOD: true,
 		});
 
-		expect(env.profiles().all().length).toEqual(2);
+		// Not upload avatar image
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+			filePaths: undefined,
+		}));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+
+		// Open & close Advanced Mode Modal
+		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		fireEvent.click(getByTestId("modal__close-btn"));
+
+		expect(env.profiles().count()).toEqual(profilesCount);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should submit using default props", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Settings />
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
 			{
-				routes: ["/", "/profiles/1/settings"],
+				routes: [`/profiles/${profile.id()}/settings`],
 			},
 		);
 
@@ -146,9 +235,14 @@ describe("Settings", () => {
 	});
 
 	it("should render peer settings", async () => {
-		const { container, asFragment, findByText } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment, findByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
 		fireEvent.click(await findByText("Peer"));
@@ -156,22 +250,34 @@ describe("Settings", () => {
 	});
 
 	it("should render plugin settings", async () => {
-		const { container, asFragment, findByText } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment, findByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByText("Plugins"));
+		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should open & close modals in the plugin settings", async () => {
-		const { container, asFragment, getByTestId, findByText } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByText("Plugins"));
+		act(() => {
+			fireEvent.click(getByTestId("side-menu__item--Plugins"));
+		});
 		expect(asFragment()).toMatchSnapshot();
 
 		// Open `BlacklistPlugins` modal

@@ -5,10 +5,11 @@ import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { LayoutControls } from "app/components/LayoutControls";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
+import { useActiveProfile } from "app/hooks/env";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type PluginsCategoryProps = {
@@ -72,10 +73,12 @@ const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
 };
 
 export const PluginsCategory = ({ title, description, initialViewType }: PluginsCategoryProps) => {
-	const { t } = useTranslation();
+	const activeProfile = useActiveProfile();
 
-	const [viewType, setViewType] = React.useState(initialViewType);
-	const [installPlugin, setInstallPlugin] = React.useState(false);
+	const [viewType, setViewType] = useState(initialViewType);
+	const [installPlugin, setInstallPlugin] = useState(false);
+
+	const { t } = useTranslation();
 
 	const plugins = [];
 
@@ -108,14 +111,14 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 
 	const crumbs = [
 		{
-			route: "plugin-manager",
-			label: "Go back to Plugin Manager",
+			route: `/profiles/${activeProfile?.id()}/plugins`,
+			label: t("PLUGINS.GO_BACK_TO_PLUGIN_MANAGER"),
 		},
 	];
 
 	return (
 		<>
-			<Page crumbs={crumbs}>
+			<Page profile={activeProfile} crumbs={crumbs}>
 				<Section>
 					<Header
 						title={title}

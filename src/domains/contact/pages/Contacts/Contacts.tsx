@@ -1,15 +1,15 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
+import { CreateContact, DeleteContact, UpdateContact } from "domains/contact/components";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
-import { CreateContact } from "domains/contact/components/CreateContact";
-import { DeleteContact } from "domains/contact/components/DeleteContact";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const { ContactsBanner } = images.contacts.pages.contacts;
@@ -40,17 +40,34 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 };
 
 type ContactsProps = {
-	contacts: any[];
-	networks: NetworkData[];
 	onSearch?: any;
 };
 
-export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
-	const [createIsOpen, setCreateIsOpen] = useState(false);
-	const [contactToDelete, setContactToDelete] = useState(null);
+export const Contacts = ({ onSearch }: ContactsProps) => {
+	const { env, state } = useEnvironmentContext();
+
 	const activeProfile = useActiveProfile();
 
+	const [contacts, setContacts] = useState<Contact[]>([]);
+
+	const [createIsOpen, setCreateIsOpen] = useState(false);
+
+	const [contactAction, setContactAction] = useState<string | null>(null);
+	const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
+
+	const [availableNetworks] = useState<NetworkData[]>(env.availableNetworks());
+
 	const { t } = useTranslation();
+
+	useEffect(() => {
+		if (!contactAction) {
+			setSelectedContact(null);
+		}
+	}, [contactAction]);
+
+	useEffect(() => {
+		setContacts(activeProfile!.contacts().values());
+	}, [activeProfile, state]);
 
 	const contactOptions = [
 		{ label: t("COMMON.SEND"), value: "send" },
@@ -60,8 +77,8 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 	const crumbs = [
 		{
-			route: "portfolio",
-			label: "Go back to Portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
@@ -85,26 +102,25 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 		},
 	];
 
-	const handleOnSave = () => {
-		setCreateIsOpen(false);
+	const handleContactAction = (action: string, contact: Contact) => {
+		setContactAction(action);
+		setSelectedContact(contact);
 	};
 
-	const handleContactAction = (action: any, contact: any) => {
-		if (action === "delete") {
-			setContactToDelete(contact.id);
-		}
+	const resetContactAction = () => {
+		setContactAction(null);
 	};
 
 	return (
 		<>
-			<Page crumbs={crumbs}>
+			<Page profile={activeProfile} crumbs={crumbs}>
 				<Section>
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
 						extra={
 							<ContactsHeaderExtra
-								showSearchBar={contacts.length > 0}
+								showSearchBar={!!contacts.length}
 								onSearch={onSearch}
 								onAddContact={() => setCreateIsOpen(true)}
 							/>
@@ -113,7 +129,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 				</Section>
 
 				<Section className="flex-1">
-					{contacts.length === 0 && (
+					{!contacts.length && (
 						<div data-testid="contacts__banner" className="text-center">
 							<ContactsBanner height={175} className="mx-auto" />
 
@@ -123,14 +139,16 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 						</div>
 					)}
 
-					{contacts.length > 0 && (
+					{!!contacts.length && (
 						<div className="w-full" data-testid="ContactList">
 							<Table columns={listColumns} data={contacts}>
-								{(contact: any) => (
+								{(contact: Contact) => (
 									<ContactListItem
 										contact={contact}
 										options={contactOptions}
-										onAction={(action) => handleContactAction(action.value, contact)}
+										onAction={(action: { value: any }) =>
+											handleContactAction(action.value, contact)
+										}
 									/>
 								)}
 							</Table>
@@ -141,25 +159,36 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 			<CreateContact
 				isOpen={createIsOpen}
-				networks={networks}
+				profile={activeProfile!}
+				networks={availableNetworks}
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
-				onSave={handleOnSave}
+				onSave={() => setCreateIsOpen(false)}
 			/>
 
-			<DeleteContact
-				profileId={activeProfile?.id() as string}
-				contactId={contactToDelete}
-				isOpen={!!contactToDelete}
-				onClose={() => setContactToDelete(null)}
-				onCancel={() => setContactToDelete(null)}
-				onDelete={() => setContactToDelete(null)}
-			/>
+			{selectedContact && (
+				<>
+					<UpdateContact
+						isOpen={contactAction === "edit"}
+						contact={selectedContact}
+						profile={activeProfile!}
+						networks={availableNetworks}
+						onCancel={resetContactAction}
+						onClose={resetContactAction}
+						onDelete={() => setContactAction("delete")}
+						onSave={resetContactAction}
+					/>
+
+					<DeleteContact
+						isOpen={contactAction === "delete"}
+						contact={selectedContact}
+						profile={activeProfile!}
+						onCancel={resetContactAction}
+						onClose={resetContactAction}
+						onDelete={resetContactAction}
+					/>
+				</>
+			)}
 		</>
 	);
-};
-
-Contacts.defaultProps = {
-	contacts: [],
-	networks: [],
 };

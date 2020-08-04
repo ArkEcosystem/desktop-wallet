@@ -12,6 +12,7 @@ import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useActiveProfile } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -191,10 +192,13 @@ export const FourthStep = () => {
 };
 
 export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegistrationProps) => {
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const [activeTab, setActiveTab] = React.useState(1);
+
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const { formState } = form;
 	const { isValid } = formState;
+
+	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
 
@@ -208,13 +212,13 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 
 	const crumbs = [
 		{
-			route: "portfolio",
-			label: "Go back to Portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
 					<Tabs activeId={activeTab}>

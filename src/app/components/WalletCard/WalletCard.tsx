@@ -1,3 +1,5 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Card } from "app/components/Card";
@@ -15,20 +17,10 @@ type WalletCardProps = {
 	blankTitleClass?: string;
 	blankSubtitleClass?: string;
 	blankSubtitle: string;
-	coinIcon?: string;
 	coinClass?: string;
-	walletName?: string;
-	id?: string;
-	address?: string;
-	balance?: string;
+	wallet?: Wallet;
 	actions?: any;
-	walletTypeIcons?: any[];
 	onSelect?: any;
-};
-
-const renderCoin = (coinIcon?: string) => {
-	if (!coinIcon) return null;
-	return <Icon name={coinIcon} width={18} height={16} />;
 };
 
 export const WalletCard = ({
@@ -38,25 +30,16 @@ export const WalletCard = ({
 	blankTitleClass,
 	blankSubtitleClass,
 	className,
-	id,
-	address,
-	walletName,
-	balance,
-	coinIcon,
+	wallet,
 	coinClass,
 	actions,
 	onSelect,
-	walletTypeIcons,
 }: WalletCardProps) => {
-	const getIconTypeClass = (icon: string) => {
-		if (icon === "Star") return "text-theme-warning-400";
-		return "text-theme-neutral-600";
-	};
 	const activeProfile = useActiveProfile();
 
 	if (isBlank) {
 		return (
-			<div className={`w-64 inline-block ${className}`}>
+			<div data-testid="WalletCard__blank" className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="p-2">
 						<div>
@@ -76,8 +59,13 @@ export const WalletCard = ({
 		);
 	}
 
+	const coinName = wallet?.coin().manifest().get<string>("name");
+
 	return (
-		<Link to={`/profiles/${activeProfile?.id()}/wallets/${id}`} data-testid={`WalletCard__${id}`}>
+		<Link
+			to={`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`}
+			data-testid={`WalletCard__${wallet?.address()}`}
+		>
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="relative p-2">
@@ -85,26 +73,35 @@ export const WalletCard = ({
 							<Dropdown options={actions} onSelect={onSelect} />
 						</div>
 						<div className="absolute right-3 -top-1">
-							{walletTypeIcons &&
-								walletTypeIcons.map((type: string, index: number) => {
-									return (
-										<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
-											<Icon name={type} width={18} />
-										</div>
-									);
-								})}
+							{wallet?.isLedger() && (
+								<div className="inline-block mr-2 text text-theme-neutral-600">
+									<Icon name="Ledger" width={18} />
+								</div>
+							)}
+
+							{wallet?.hasSyncedWithNetwork() && wallet?.isMultiSignature() && (
+								<div className="inline-block mr-2 text text-theme-neutral-600">
+									<Icon name="Multisig" width={18} />
+								</div>
+							)}
+
+							{wallet?.isStarred() && (
+								<div className="inline-block mr-2 text text-theme-warning-400">
+									<Icon name="Star" width={18} />
+								</div>
+							)}
 						</div>
 						<div className="flex">
 							<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
-								{renderCoin(coinIcon)}
+								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={18} height={16} />}
 							</Circle>
-							<Avatar size="lg" address={address as string} />
+							<Avatar size="lg" address={wallet?.address()} />
 						</div>
 
 						<div className="mt-6 truncate max-w-12">
-							<Address walletName={walletName} address={address} maxChars={13} />
+							<Address walletName={wallet?.alias()} address={wallet?.address()} maxChars={13} />
 						</div>
-						<div className="font-bold text-theme-neutral-900">{balance}</div>
+						<div className="font-bold text-theme-neutral-900">{wallet?.balance().toString()}</div>
 					</div>
 				</Card>
 			</div>

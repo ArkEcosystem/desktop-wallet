@@ -143,16 +143,17 @@ export const ImportWallet = () => {
 	const history = useHistory();
 	const { persist } = useEnvironmentContext();
 
+	const activeProfile = useActiveProfile();
+
 	const { t } = useTranslation();
 
-	const activeProfile = useActiveProfile();
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;
 
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
@@ -191,7 +192,7 @@ export const ImportWallet = () => {
 	};
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form
 					className="max-w-xl mx-auto"

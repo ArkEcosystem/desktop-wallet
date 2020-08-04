@@ -5,22 +5,19 @@ import { EnvironmentProvider } from "app/contexts";
 import { i18n } from "app/i18n";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { Router } from "react-router-dom";
+import delegate from "tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
-import envFixture from "../tests/fixtures/env/data.json";
-
-export const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(envFixture) });
-
-const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => {
-	return (
-		<I18nextProvider i18n={i18n}>
-			<EnvironmentProvider env={env}>{children}</EnvironmentProvider>
-		</I18nextProvider>
-	);
-};
+const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
+	<I18nextProvider i18n={i18n}>
+		<EnvironmentProvider env={env}>{children}</EnvironmentProvider>
+	</I18nextProvider>
+);
 
 const customRender = (component: React.ReactElement, options: any = {}) =>
 	render(component, { wrapper: WithProviders, ...options });
@@ -47,3 +44,41 @@ const renderWithRouter = (
 export * from "@testing-library/react";
 
 export { customRender as render, renderWithRouter };
+
+export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
+
+export const defaultNetMocks = () => {
+	nock.disableNetConnect();
+
+	nock("https://dwallets.ark.io")
+		.get("/api/node/configuration")
+		.reply(200, require("../tests/fixtures/coins/ark/configuration-devnet.json"))
+		.get("/api/peers")
+		.reply(200, require("../tests/fixtures/coins/ark/peers.json"))
+		.get("/api/node/configuration/crypto")
+		.reply(200, require("../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+		.get("/api/node/syncing")
+		.reply(200, require("../tests/fixtures/coins/ark/syncing.json"))
+		.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+		.reply(200, delegate)
+		.get("/api/wallets/034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192")
+		.reply(200, delegate)
+		.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+		.reply(200, require("../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
+		.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes")
+		.reply(200, require("../tests/fixtures/coins/ark/votes.json"))
+		.get("/api/delegates")
+		.reply(200, require("../tests/fixtures/coins/ark/delegates.json"))
+		.get(/\/api\/delegates\/.+/)
+		.reply(200, delegate)
+		.persist();
+};
+
+export const useDefaultNetMocks = defaultNetMocks;
+
+const envWithMocks = () => {
+	defaultNetMocks();
+	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(fixtureData) });
+};
+
+export const env = envWithMocks();

@@ -72,9 +72,8 @@ const RegistrationTypeDropdown = ({ className, register, registrationTypes }: an
 	);
 };
 
-const getRegistrationByName = (registrationTypes: any[], registrationType: string) => {
-	return registrationTypes.find((type: any) => type.value === registrationType);
-};
+const getRegistrationByName = (registrationTypes: any[], registrationType: string) =>
+	registrationTypes.find((type: any) => type.value === registrationType);
 
 const FirstStep = ({
 	form,
@@ -394,11 +393,13 @@ export const Registration = ({
 	wallets,
 	registrationTypes,
 }: RegistrationProps) => {
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const activeProfile = useActiveProfile();
 	const [activeTab, setActiveTab] = React.useState(1);
+
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const { formState } = form;
 	const { isValid } = formState;
+
+	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
 
@@ -413,12 +414,12 @@ export const Registration = ({
 	const crumbs = [
 		{
 			route: `/wallets/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
 					<Tabs activeId={activeTab}>

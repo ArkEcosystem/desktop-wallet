@@ -12,3 +12,7 @@ beforeEach(() => {
 afterEach(() => {
 	MockDate.reset();
 });
+
+afterAll(() => {
+	global.gc();
+});

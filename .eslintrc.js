@@ -45,10 +45,12 @@ module.exports = {
 		"@typescript-eslint/no-unsafe-call": "off",
 		"@typescript-eslint/no-unsafe-member-access": "off",
 		"@typescript-eslint/no-unsafe-return": "off",
+		"@typescript-eslint/no-unused-vars": "off",
 		"@typescript-eslint/no-var-requires": "off",
 		"@typescript-eslint/prefer-regexp-exec": "off",
 		"@typescript-eslint/restrict-template-expressions": "off",
-		"unused-imports/no-unused-imports-ts": "error",
+		"@typescript-eslint/unbound-method": "off",
+		"arrow-body-style": ["error", "as-needed"],
 		"prefer-const": [
 			"error",
 			{
@@ -61,10 +63,11 @@ module.exports = {
 				endOfLine: "auto",
 			},
 		],
-		"simple-import-sort/sort": "error",
-		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
+		"react-hooks/rules-of-hooks": "error",
 		"react/self-closing-comp": "error",
+		"simple-import-sort/sort": "error",
+		"unused-imports/no-unused-imports-ts": "error",
 	},
 	settings: {
 		react: {

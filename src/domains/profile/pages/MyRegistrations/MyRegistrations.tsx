@@ -74,29 +74,28 @@ const renderRegistration = ({ type, registrations }: RegistrationProps, handleDr
 
 export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 	const activeProfile = useActiveProfile();
-	const history = useHistory();
-	const mountRegistrations = () =>
-		registrations.map((registrationsBlock: any) => {
-			return renderRegistration(registrationsBlock, handleDropdown);
-		});
 
+	const history = useHistory();
 	const { t } = useTranslation();
+
+	const mountRegistrations = () =>
+		registrations.map((registrationsBlock: any) => renderRegistration(registrationsBlock, handleDropdown));
 
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<Header
 					title={t("PROFILE.PAGE_MY_REGISTRATIONS.TITLE")}
 					subtitle={t("PROFILE.PAGE_MY_REGISTRATIONS.SUBTITLE")}
 					extra={
-						<div className="flex justify-end divide-theme-neutral-300 space-x-10 divide-x">
+						<div className="flex justify-end space-x-10 divide-x divide-theme-neutral-300">
 							<HeaderSearchBar onSearch={console.log} />
 							<div className="pl-10">
 								<Button

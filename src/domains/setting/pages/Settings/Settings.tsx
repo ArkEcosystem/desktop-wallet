@@ -1,6 +1,7 @@
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
 import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile } from "app/hooks/env";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -12,10 +13,14 @@ type SettingsProps = {
 };
 
 export const Settings = ({ onSubmit }: SettingsProps) => {
+	const [activeSettings, setActiveSettings] = useState("General");
+
 	const { env } = useEnvironmentContext();
+
 	const form = useForm();
 	const { register, errors } = form;
-	const [activeSettings, setActiveSettings] = useState("General");
+
+	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
 
@@ -40,26 +45,29 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 	const renderSettings = () => {
 		const ActiveSettings = availableSettings[activeSettings];
 
-		return <ActiveSettings env={env} formConfig={{ context: form, register, errors }} onSubmit={onSubmit} />;
+		return (
+			<ActiveSettings
+				env={env}
+				formConfig={{ context: form, register, errors }}
+				onSubmit={(savedSettings: any) => onSubmit?.(savedSettings)}
+			/>
+		);
 	};
 
 	const crumbs = [
 		{
-			route: "portfolio",
-			label: "Go back to Portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
 	return (
 		<Page
+			profile={activeProfile}
 			crumbs={crumbs}
 			sidebar={<SideBar items={settingsItems} activeItem={activeSettings} handleActiveItem={setActiveSettings} />}
 		>
 			<Section>{renderSettings()}</Section>
 		</Page>
 	);
-};
-
-Settings.defaultProps = {
-	onSubmit: (profileData: any) => profileData,
 };

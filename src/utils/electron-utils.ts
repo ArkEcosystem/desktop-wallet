@@ -6,12 +6,15 @@ import path from "path";
 type DialogOptions = {
 	filters?: FileFilter | FileFilter[];
 	restrictToPath?: string;
+	encoding?: "utf-8" | "base64";
 };
 
 const defaultFilters = [
 	{ name: "JSON", extensions: ["json"] },
 	{ name: "All Files", extensions: ["*"] },
 ];
+
+const defaultEncode = "utf8";
 
 const setScreenshotProtection = (enabled: boolean) => {
 	if (!electron.remote) {
@@ -26,12 +29,11 @@ const validatePath = (parentPath: string, filePath: string) => {
 	return relative && !relative.startsWith("..") && !path.isAbsolute(relative);
 };
 
-const parseFilters = (filters: FileFilter | FileFilter[]) => {
-	return Array.isArray(filters) ? filters : [filters];
-};
+const parseFilters = (filters: FileFilter | FileFilter[]) => (Array.isArray(filters) ? filters : [filters]);
 
 const saveFile = async (raw: any, defaultPath?: string, options?: DialogOptions) => {
 	const filters = options?.filters ? parseFilters(options.filters) : defaultFilters;
+	const encode = options?.encoding || defaultEncode;
 
 	const { filePath } = await electron.remote.dialog.showSaveDialog({
 		defaultPath,
@@ -44,13 +46,14 @@ const saveFile = async (raw: any, defaultPath?: string, options?: DialogOptions)
 		throw new Error(`Writing to "${filePath}" is not allowed`);
 	}
 
-	writeFileSync(filePath, raw, "utf8");
+	writeFileSync(filePath, raw, encode);
 
 	return filePath;
 };
 
-const openFile = async (defaultPath?: string, options?: DialogOptions) => {
+const openFile = async (defaultPath?: string | null, options?: DialogOptions) => {
 	const filters = options?.filters ? parseFilters(options.filters) : defaultFilters;
+	const encode = options?.encoding || defaultEncode;
 
 	const { filePaths } = await electron.remote.dialog.showOpenDialog({
 		defaultPath: defaultPath || os.homedir(),
@@ -64,7 +67,7 @@ const openFile = async (defaultPath?: string, options?: DialogOptions) => {
 		throw new Error(`Reading from "${filePaths[0]}" is not allowed`);
 	}
 
-	return readFileSync(filePaths[0], "utf8");
+	return readFileSync(filePaths[0], encode);
 };
 
 export { openFile, saveFile, setScreenshotProtection };
