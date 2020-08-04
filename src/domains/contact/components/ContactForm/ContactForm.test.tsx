@@ -124,19 +124,42 @@ describe("ContactForm", () => {
 	});
 
 	it("should handle save", async () => {
-		let renderContext: any;
+		const fn = jest.fn();
+		const { getByTestId, queryByTestId } = render(
+			<ContactForm networks={networks} onCancel={onCancel} onSave={fn} />,
+		);
+
+		const assetInput = getByTestId("SelectNetworkInput__input");
 
 		await act(async () => {
-			renderContext = render(
-				<ContactForm contact={contact} networks={networks} onCancel={onCancel} onSave={onSave} />,
-			);
+			await fireEvent.change(getByTestId("contact-form__address-input"), {
+				target: { value: "address" },
+			});
+
+			fireEvent.change(getByTestId("contact-form__name-input"), {
+				target: { value: "name" },
+			});
+
+			fireEvent.change(assetInput, { target: { value: "Bitco" } });
+
+			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+
+			await waitFor(() => {
+				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+			});
 		});
 
 		await act(async () => {
-			fireEvent.click(renderContext.getByTestId("contact-form__save-btn"));
+			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 		});
 
-		expect(onSave).toHaveBeenCalled();
+		await act(async () => {
+			fireEvent.click(getByTestId("contact-form__save-btn"));
+		});
+
+		await waitFor(() => {
+			expect(fn).toHaveBeenCalled();
+		});
 	});
 
 	describe("when creating a new contact", () => {
