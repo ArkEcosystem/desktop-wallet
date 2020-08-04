@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { WalletDataCollection } from "@arkecosystem/platform-sdk/dist/coins";
 import { WalletData } from "@arkecosystem/platform-sdk/dist/contracts";
@@ -15,7 +15,7 @@ import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomShe
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
 import { WalletVote } from "domains/wallet/components/WalletVote";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -23,13 +23,14 @@ export const WalletDetails = () => {
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
-	const [votes, setVotes] = React.useState<Coins.WalletDataCollection>();
-	const [walletData, setWalletData] = React.useState<WalletData>();
+	const [transactions, setTransactions] = useState<Contracts.TransactionDataType[]>([]);
+	const [votes, setVotes] = useState<Coins.WalletDataCollection>();
+	const [walletData, setWalletData] = useState<WalletData>();
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
-	const wallets = React.useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
+	const wallets = useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
 
 	const coinName = activeWallet!.coin().manifest().get<string>("name");
 	const networkName = activeWallet!.network().name;
@@ -48,7 +49,7 @@ export const WalletDetails = () => {
 	];
 
 	// TODO: Replace logic with sdk
-	const getVotes = React.useCallback(async () => {
+	const getVotes = useCallback(async () => {
 		let response;
 		// catch 404 wallet not found until sdk logic
 		try {
@@ -78,9 +79,12 @@ export const WalletDetails = () => {
 	}, [activeWallet]);
 
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
-	const getWalletData = React.useCallback(async () => {
+	const getWalletData = useCallback(async () => {
 		const data = await activeWallet!.coin().client().wallet(activeWallet!.address());
+		const walletTransactions = (await activeWallet!.transactions()).items();
+
 		setWalletData(data);
+		setTransactions(walletTransactions);
 	}, [activeWallet]);
 
 	const handleDeleteWallet = async () => {
@@ -96,15 +100,15 @@ export const WalletDetails = () => {
 		setIsUpdateWalletName(false);
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		getVotes();
 	}, [getVotes]);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		getWalletData();
 	}, [getWalletData]);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const timer = setInterval(async () => {
 			await activeWallet!.syncIdentity();
 			await persist();
@@ -164,12 +168,13 @@ export const WalletDetails = () => {
 				<Section>
 					<div className="mb-16">
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
-						<TransactionTable transactions={[]} showSignColumn />
+						{/* TODO: Deal with pending transactions once SDK methods for it are available */}
+						<TransactionTable transactions={transactions} showSignColumn />
 					</div>
 
 					<div>
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
-						<TransactionTable transactions={[]} currencyRate="2" />
+						<TransactionTable transactions={transactions} currencyRate="2" />
 					</div>
 				</Section>
 			</Page>
