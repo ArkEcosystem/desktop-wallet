@@ -64,7 +64,7 @@ export const SelectNetwork = ({
 
 	useEffect(() => {
 		selectItem(selected || null);
-	}, [selected]);
+	}, [selectItem, selected]);
 
 	const isMatch = React.useCallback(
 		(network: Network) => {
