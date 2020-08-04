@@ -19,8 +19,8 @@ type SignMessageProps = {
 	walletId: string;
 	signatoryAddress: string;
 	isOpen: boolean;
-	onClose?: any;
-	onCancel?: any;
+	onClose?: () => void;
+	onCancel?: () => void;
 };
 
 type SignedMessageProps = { message: string; signatory: string; signature: string };
@@ -119,7 +119,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 			>
 				<Address address={signedMessage.signatory} />
 			</TransactionDetail>
-			<TransactionDetail border label={t("COMMON.MESSAGE")} className="text-lg">
+			<TransactionDetail border label={t("COMMON.MESSAGE")} className="text-lg break-all">
 				{signedMessage.message}
 			</TransactionDetail>
 			<TransactionDetail border label={t("COMMON.SIGNATURE")}>
