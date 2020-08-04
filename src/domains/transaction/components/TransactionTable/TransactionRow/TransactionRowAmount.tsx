@@ -1,21 +1,19 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Label } from "app/components/Label";
 import React from "react";
 
 type Props = {
-	amount: string;
-	fee: string;
+	transaction: Contracts.TransactionDataType;
 	currencyRate?: string;
-	isSent?: boolean;
 };
 
-export const TransactionRowAmount = ({ amount, fee, isSent, currencyRate }: Props) => {
+export const TransactionRowAmount = ({ transaction, currencyRate }: Props) => {
 	// Decouple logic to sdk or a specific component/hook
 	const total = React.useMemo(() => {
-		let value = BigNumber.make(amount);
+		let value = transaction.amount();
 
-		if (isSent) {
-			value = value.plus(fee);
+		if (transaction.isSent()) {
+			value = value.plus(transaction.fee());
 		}
 
 		if (currencyRate) {
@@ -23,7 +21,7 @@ export const TransactionRowAmount = ({ amount, fee, isSent, currencyRate }: Prop
 		}
 
 		return value.toFixed(8);
-	}, [amount, fee, isSent, currencyRate]);
+	}, [transaction, currencyRate]);
 
 	if (currencyRate) {
 		return (
@@ -33,7 +31,7 @@ export const TransactionRowAmount = ({ amount, fee, isSent, currencyRate }: Prop
 		);
 	}
 
-	const color = isSent ? "danger" : "success";
+	const color = transaction.isSent() ? "danger" : "success";
 
 	return (
 		<Label data-testid="TransactionRowAmount" color={color}>

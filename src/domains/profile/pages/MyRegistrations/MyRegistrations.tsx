@@ -84,7 +84,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
@@ -95,7 +95,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 					title={t("PROFILE.PAGE_MY_REGISTRATIONS.TITLE")}
 					subtitle={t("PROFILE.PAGE_MY_REGISTRATIONS.SUBTITLE")}
 					extra={
-						<div className="flex justify-end divide-theme-neutral-300 space-x-10 divide-x">
+						<div className="flex justify-end space-x-10 divide-x divide-theme-neutral-300">
 							<HeaderSearchBar onSearch={console.log} />
 							<div className="pl-10">
 								<Button

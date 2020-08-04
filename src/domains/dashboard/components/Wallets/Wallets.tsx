@@ -1,3 +1,4 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
@@ -8,7 +9,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type WalletsProps = {
-	wallets?: any;
+	wallets: Wallet[];
 	title?: string;
 	walletsEmptyText?: string;
 	filterProperties: any;
@@ -91,16 +92,18 @@ export const Wallets = ({
 	};
 
 	// Pad with empty cards to fill the row
-	const walletsGridData = (wallets: any, walletsPerPage: number) => {
+	const walletsGridData = (wallets: Wallet[], walletsPerPage: number) => {
+		const walletObjects = wallets.map((wallet) => ({ wallet }));
 		if (wallets.length < walletsPerPage) {
 			const blankWalletsLength = walletsPerPage - wallets.length;
 			const blankWalletsCards = new Array(blankWalletsLength).fill({ isBlank: true });
-			return [...wallets, ...blankWalletsCards];
+			return [...walletObjects, ...blankWalletsCards];
 		}
-		return wallets;
+
+		return walletObjects;
 	};
 
-	const walletListItems = wallets.filter((wallet: any) => !wallet.isBlank);
+	const walletListItems = wallets.filter((wallet: any) => !wallet.isBlank).map((wallet) => ({ wallet }));
 
 	return (
 		<div>

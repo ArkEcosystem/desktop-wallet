@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import Tippy from "@tippyjs/react";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -6,17 +7,14 @@ import React from "react";
 import { TransactionRowRecipientIcon } from "./TransactionRowRecipientIcon";
 
 type Props = {
-	type: string;
-	isSent: boolean;
-	recipient: string;
-	recipients?: { amount: string; address: string }[];
+	transaction: Contracts.TransactionDataType;
 };
 
-export const TransactionRowMode = ({ type, isSent, recipient, recipients }: Props) => {
+export const TransactionRowMode = ({ transaction }: Props) => {
 	// TODO: i18n
-	const tooltipContent = isSent ? "Sent" : "Received";
-	const modeIconName = isSent ? "Sent" : "Received";
-	const modeCircleStyle = isSent
+	const tooltipContent = transaction?.isSent() ? "Sent" : "Received";
+	const modeIconName = transaction?.isSent() ? "Sent" : "Received";
+	const modeCircleStyle = transaction?.isSent()
 		? "border-theme-danger-contrast text-theme-danger"
 		: "border-theme-success-300 text-theme-success";
 
@@ -28,9 +26,9 @@ export const TransactionRowMode = ({ type, isSent, recipient, recipients }: Prop
 				</Circle>
 			</Tippy>
 			<TransactionRowRecipientIcon
-				recipients={recipients}
-				recipient={recipient}
-				type={type}
+				recipients={transaction?.recipients()}
+				recipient={transaction?.recipient()}
+				type={transaction?.type()}
 				className={`bg-theme-background font-semibold ${modeCircleStyle}`}
 			/>
 		</div>

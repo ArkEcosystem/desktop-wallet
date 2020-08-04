@@ -50,11 +50,11 @@ describe("Welcome", () => {
 	});
 
 	it("should delete profile from profile card menu", async () => {
-		const { getByText, queryByTestId, getByTestId } = renderWithRouter(<Welcome />);
+		const { getByText, queryByTestId, getAllByTestId, getByTestId } = renderWithRouter(<Welcome />);
 
 		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
-		const profileCardMenu = getByTestId("dropdown__toggle");
+		const profileCardMenu = getAllByTestId("dropdown__toggle")[0];
 		act(() => {
 			fireEvent.click(profileCardMenu);
 		});
@@ -72,7 +72,7 @@ describe("Welcome", () => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
-		await waitFor(() => expect(queryByTestId("ProfileCard")).toBeNull());
+		await waitFor(() => expect(getAllByTestId("ProfileCard").length).toBe(1));
 	});
 
 	it("should render without profiles", () => {
