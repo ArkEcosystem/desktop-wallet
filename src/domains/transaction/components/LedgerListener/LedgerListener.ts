@@ -9,12 +9,17 @@ export const LedgerListener = () => {
 	const [, dispatch] = useReducer(reducer, initialState);
 
 	useEffect(() => {
-		let subscription: { unsubscribe: Function };
+		let subscription: { unsubscribe: Function } | undefined;
 
 		const syncDevices = () => {
+			if (subscription) {
+				subscription.unsubscribe();
+			}
+
 			subscription = Observable.create(LedgerTransport.listen).subscribe(
 				// Next
 				({ device, deviceModel, type }: any) => {
+					console.log("Next");
 					if (device) {
 						dispatch({
 							type,
@@ -27,10 +32,12 @@ export const LedgerListener = () => {
 					}
 				},
 				// Error
-				() => {
+				// @ts-ignore
+				(e) => {
+					console.log(e);
 					dispatch({ type: "reset" });
 
-					syncDevices();
+					// syncDevices();
 				},
 				// Completed
 				() => {
@@ -41,14 +48,18 @@ export const LedgerListener = () => {
 			);
 		};
 
-		const timeoutSyncDevices = setTimeout(syncDevices, 1000);
+		const timeoutSyncDevices = setTimeout(syncDevices, 5000);
 
 		return () => {
 			clearTimeout(timeoutSyncDevices);
 
-			subscription.unsubscribe();
+			if (subscription) {
+				subscription.unsubscribe();
+			}
+
+			subscription = undefined;
 		};
-	});
+	}, []);
 
 	return null;
 };
