@@ -128,7 +128,7 @@ export const WalletDetails = () => {
 					isLedger={activeWallet?.isLedger()}
 					isMultisig={activeWallet?.hasSyncedWithNetwork() && activeWallet?.isMultiSignature()}
 					hasStarred={activeWallet?.isStarred()}
-					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
+					onSend={() => history.push(`/profiles/${activeProfile.id()}/transactions/transfer`)}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
 					onSignMessage={() => setIsSigningMessage(true)}
@@ -153,10 +153,8 @@ export const WalletDetails = () => {
 								activeWallet?.hasSyncedWithNetwork() && activeWallet?.isSecondSignature()
 							}
 							hasPlugins={true}
-							onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
-							onRegister={() =>
-								history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)
-							}
+							onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
+							onRegister={() => history.push(`/profiles/${activeProfile.id()}/transactions/registration`)}
 						/>
 					)}
 				</Section>

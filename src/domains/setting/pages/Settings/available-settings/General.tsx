@@ -25,7 +25,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
-	const [avatarImage, setAvatarImage] = useState(activeProfile?.settings().get(ProfileSetting.Avatar) || "");
+	const [avatarImage, setAvatarImage] = useState(activeProfile.settings().get(ProfileSetting.Avatar) || "");
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
 		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
@@ -291,7 +291,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.passphraseLanguages}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.Bip39Locale)}
+									defaultValue={activeProfile.settings().get(ProfileSetting.Bip39Locale)}
 								/>
 								<FormHelperText />
 							</FormField>
