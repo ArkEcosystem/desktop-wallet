@@ -441,6 +441,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                         </div>
                         <span
                           class="font-semibold"
+                          data-testid="ContactListItem__name"
                         >
                           Brian
                         </span>
@@ -572,6 +573,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                         </div>
                         <span
                           class="font-semibold"
+                          data-testid="ContactListItem__name"
                         >
                           name
                         </span>
