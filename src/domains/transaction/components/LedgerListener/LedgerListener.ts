@@ -19,7 +19,7 @@ export const LedgerListener = () => {
 			subscription = Observable.create(LedgerTransport.listen).subscribe(
 				// Next
 				({ device, deviceModel, type }: any) => {
-					console.log("Next");
+					console.log("Next", { device, deviceModel, type });
 					if (device) {
 						dispatch({
 							type,
@@ -34,13 +34,14 @@ export const LedgerListener = () => {
 				// Error
 				// @ts-ignore
 				(e) => {
-					console.log(e);
+					console.log("Error", e);
 					dispatch({ type: "reset" });
 
 					// syncDevices();
 				},
 				// Completed
 				() => {
+					console.log("Completed");
 					dispatch({ type: "reset" });
 
 					syncDevices();
@@ -48,7 +49,7 @@ export const LedgerListener = () => {
 			);
 		};
 
-		const timeoutSyncDevices = setTimeout(syncDevices, 5000);
+		const timeoutSyncDevices = setTimeout(syncDevices, 1000);
 
 		return () => {
 			clearTimeout(timeoutSyncDevices);

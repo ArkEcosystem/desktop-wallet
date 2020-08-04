@@ -30,7 +30,7 @@
 		"eject": "react-app-rewired eject",
 		"electron-rebuild": "electron-rebuild .",
 		"format": "yarn lint && yarn prettier",
-		"postinstall": "electron-builder install-app-deps && npm rebuild",
+		"postinstall": "electron-builder install-app-deps",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
 		"prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
 		"start": "react-app-rewired start",
@@ -265,7 +265,7 @@
 		"appId": "io.ark.desktop-wallet",
 		"artifactName": "${name}-${os}-${arch}-${version}.${ext}",
 		"afterSign": "scripts/notarize.js",
-		"npmRebuild": false,
+		"npmRebuild": true,
 		"publish": {
 			"provider": "github",
 			"vPrefixedTagName": false

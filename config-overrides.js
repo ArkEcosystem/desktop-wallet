@@ -20,6 +20,7 @@ module.exports = override(
 		};
 
 		config.externals = {
+			"node-hid": "commonjs node-hid",
 			"usb-detection": "commonjs usb-detection",
 		};
 
