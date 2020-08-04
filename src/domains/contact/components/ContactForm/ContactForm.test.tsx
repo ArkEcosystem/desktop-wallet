@@ -19,6 +19,39 @@ describe("ContactForm", () => {
 		contact = profile.contacts().values()[0];
 	});
 
+	it("should select", () => {
+		const { asFragment } = render(<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select with errors", () => {
+		const { asFragment } = render(
+			<ContactForm
+				networks={networks}
+				onCancel={onCancel}
+				onSave={onSave}
+				errors={{ name: "Contact name error" }}
+			/>,
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should handle onChange event", async () => {
+		const fn = jest.fn();
+		const { getByTestId } = render(
+			<ContactForm networks={networks} onChange={fn} onSave={onSave} errors={{ name: "Contact name error" }} />,
+		);
+
+		const input = getByTestId("contact-form__name-input");
+		act(() => {
+			fireEvent.change(input, { target: { value: "Sample name" } });
+		});
+
+		await waitFor(() => {
+			expect(fn).toHaveBeenCalled();
+		});
+	});
+
 	it("should select network", () => {
 		const { getByTestId } = render(<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />);
 
@@ -69,7 +102,7 @@ describe("ContactForm", () => {
 	});
 
 	it("should remove an address", async () => {
-		let renderContext;
+		let renderContext: any;
 
 		await act(async () => {
 			renderContext = render(
@@ -91,7 +124,7 @@ describe("ContactForm", () => {
 	});
 
 	it("should handle save", async () => {
-		let renderContext;
+		let renderContext: any;
 
 		await act(async () => {
 			renderContext = render(
@@ -124,7 +157,7 @@ describe("ContactForm", () => {
 
 	describe("when editing an existing contact", () => {
 		it("should render the form", async () => {
-			let renderContext;
+			let renderContext: any;
 
 			await act(async () => {
 				renderContext = render(<ContactForm contact={contact} onCancel={onCancel} onSave={onSave} />);
