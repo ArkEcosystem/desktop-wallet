@@ -11,7 +11,7 @@ describe("WalletVote", () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
-		votes = (await wallet.delegates()).data;
+		votes = await wallet.delegates();
 	});
 
 	it("should render", () => {
