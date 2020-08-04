@@ -136,6 +136,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			{wallets && wallets.length > 1 && <WalletBottomSheetMenu walletsData={wallets} />}
 
 			<UpdateWalletName
+				name={wallet?.walletName}
 				isOpen={isUpdateWalletName}
 				onClose={() => setIsUpdateWalletName(false)}
 				onCancel={() => setIsUpdateWalletName(false)}

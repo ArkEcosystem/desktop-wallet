@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type UpdateWalletNameProps = {
+	name?: string;
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
@@ -16,8 +17,8 @@ type UpdateWalletNameProps = {
 
 const { NameWalletBanner } = images.wallet.components.updateWalletName;
 
-export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWalletNameProps) => {
-	const methods = useForm({ mode: "onChange" });
+export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: UpdateWalletNameProps) => {
+	const methods = useForm({ mode: "onChange", defaultValues: { name } });
 
 	const { t } = useTranslation();
 	const nameMaxLength = 42;
@@ -25,6 +26,11 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 	const handleSubmit = ({ name }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
 		onSave?.({ name: formattedName });
+	};
+
+	const isNameValid = () => {
+		const { name } = methods.getValues();
+		return !!name && !methods.errors?.name;
 	};
 
 	return (
@@ -39,12 +45,17 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 				<FormField name="name">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input
-						maxLength={nameMaxLength}
 						data-testid="UpdateWalletName__input"
 						ref={methods.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("COMMON.NAME"),
 							}).toString(),
+							maxLength: {
+								value: nameMaxLength,
+								message: t("WALLETS.MODAL_NAME_WALLET.MAXLENGTH_ERROR", {
+									maxLength: nameMaxLength,
+								}),
+							},
 						})}
 					/>
 					<FormHelperText />
@@ -55,7 +66,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button type="submit" data-testid="UpdateWalletName__submit">
+					<Button type="submit" data-testid="UpdateWalletName__submit" disabled={!isNameValid()}>
 						{t("COMMON.SAVE")}
 					</Button>
 				</div>
