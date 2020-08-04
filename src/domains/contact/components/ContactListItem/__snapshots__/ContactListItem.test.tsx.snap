@@ -28,6 +28,7 @@ exports[`ContactListItem should render 1`] = `
             </div>
             <span
               class="font-semibold"
+              data-testid="ContactListItem__name"
             >
               Brian
             </span>
@@ -168,6 +169,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             </div>
             <span
               class="font-semibold"
+              data-testid="ContactListItem__name"
             >
               Brian
             </span>
@@ -385,6 +387,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
             </div>
             <span
               class="font-semibold"
+              data-testid="ContactListItem__name"
             >
               Brian
             </span>
@@ -602,6 +605,7 @@ exports[`ContactListItem should render with one option 1`] = `
             </div>
             <span
               class="font-semibold"
+              data-testid="ContactListItem__name"
             >
               Brian
             </span>
