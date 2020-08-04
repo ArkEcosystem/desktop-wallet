@@ -38,10 +38,12 @@ const renderPage = async () => {
 		},
 	);
 
+	jest.setTimeout(8000);
 	jest.useRealTimers();
 
 	await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeInTheDocument());
 	await waitFor(() => expect(rendered.getByTestId("WalletRegistrations")).toBeTruthy());
+	await waitFor(() => expect(rendered.getAllByTestId("TransactionRow")).toHaveLength(4));
 
 	return rendered;
 };
@@ -51,7 +53,11 @@ beforeAll(async () => {
 	wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
 	unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
+});
 
+beforeEach(() => {
+	dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
+	history.push(dashboardURL);
 	useDefaultNetMocks();
 
 	nock("https://dwallets.ark.io")
@@ -84,13 +90,12 @@ beforeAll(async () => {
 			error: "Not Found",
 			message: "Wallet not found",
 		})
+		.post("/api/transactions/search")
+		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 		.persist();
 });
 
-beforeEach(async () => {
-	dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
-	history.push(dashboardURL);
-});
+afterEach(() => nock.cleanAll());
 
 describe("WalletDetails", () => {
 	it("should render", async () => {
