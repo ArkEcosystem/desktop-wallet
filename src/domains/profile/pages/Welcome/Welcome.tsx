@@ -73,7 +73,6 @@ export const Welcome = () => {
 										/>
 									))}
 								</div>
-
 								<Divider />
 							</>
 						)}

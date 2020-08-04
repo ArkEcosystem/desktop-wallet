@@ -1,4 +1,4 @@
-import { Transaction } from "domains/transaction/components/TransactionTable";
+import { Contracts } from "@arkecosystem/platform-sdk";
 
 export type EmptyPlaceholderProps = {
 	title?: string;
@@ -21,7 +21,7 @@ export type PluginNotification = {
 export type NotificationsProps = {
 	plugins?: PluginNotification[];
 	pluginsHeader?: string;
-	transactions?: Transaction[];
+	transactions?: Contracts.TransactionDataType[];
 	transactionsHeader?: string;
 	onAction?: any;
 	emptyText?: string;

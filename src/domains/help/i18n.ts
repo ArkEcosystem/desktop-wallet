@@ -1,5 +1,6 @@
 export const translations: { [key: string]: any } = {
 	CONTACT_US: "Contact us",
+	GO_BACK_TO_HELP_SUPPORT: "Go back to Help & Support",
 	PAGE_ARTICLE: {
 		FOOTER: {
 			TITLE: "Do you still need help with your question?",

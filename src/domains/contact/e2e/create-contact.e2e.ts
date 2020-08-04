@@ -1,77 +1,47 @@
 import { Selector } from "testcafe";
 
-import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { buildTranslations } from "../../../app/i18n/helpers";
+import { goToContacts } from "./common";
 
-fixture`Create contact`.page`http://localhost:3000/`;
+const translations = buildTranslations();
+
+fixture`Create contact`.page`http://localhost:3000/`.beforeEach(async (t) => await goToContacts(t));
 
 test("should open and close contact creation modal", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
-
-	await t.click(Selector('[data-testid="navbar__useractions"]'));
-	await t
-		.expect(Selector('[data-testid="dropdown__option--0"]').withText(translations().COMMON.CONTACTS).exists)
-		.ok();
-	await t.click(Selector('[data-testid="dropdown__option--0"]').withText(translations().COMMON.CONTACTS));
-
-	await t.expect(Selector("h1").withText(translations().CONTACTS.CONTACTS_PAGE.TITLE).exists).ok();
-
 	await t.click(Selector('[data-testid="contacts__add-contact-btn"]'));
 	await t
 		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations().CONTACTS.CONTACTS_PAGE.ADD_CONTACT).exists,
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
 		)
 		.ok();
 	await t.click(Selector('[data-testid="modal__close-btn"]'));
 	await t
 		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations().CONTACTS.CONTACTS_PAGE.ADD_CONTACT).exists,
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
 		)
 		.notOk();
 });
 
 test("should open and cancel contact creation modal", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
-
-	await t.click(Selector('[data-testid="navbar__useractions"]'));
-	await t
-		.expect(Selector('[data-testid="dropdown__option--0"]').withText(translations().COMMON.CONTACTS).exists)
-		.ok();
-	await t.click(Selector('[data-testid="dropdown__option--0"]').withText(translations().COMMON.CONTACTS));
-
-	await t.expect(Selector("h1").withText(translations().CONTACTS.CONTACTS_PAGE.TITLE).exists).ok();
-
 	await t.click(Selector('[data-testid="contacts__add-contact-btn"]'));
 	await t
 		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations().CONTACTS.CONTACTS_PAGE.ADD_CONTACT).exists,
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
 		)
 		.ok();
 	await t.click(Selector('[data-testid="contact-form__cancel-btn"]'));
 	await t
 		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations().CONTACTS.CONTACTS_PAGE.ADD_CONTACT).exists,
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
 		)
 		.notOk();
 });
 
 test("should succesfully create contact", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
-
-	await t.click(Selector('[data-testid="navbar__useractions"]'));
-	await t
-		.expect(Selector('[data-testid="dropdown__option--0"]').withText(translations().COMMON.CONTACTS).exists)
-		.ok();
-	await t.click(Selector('[data-testid="dropdown__option--0"]').withText(translations().COMMON.CONTACTS));
-
-	await t.expect(Selector("h1").withText(translations().CONTACTS.CONTACTS_PAGE.TITLE).exists).ok();
-
 	await t.click(Selector('[data-testid="contacts__add-contact-btn"]'));
 	await t
 		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations().CONTACTS.CONTACTS_PAGE.ADD_CONTACT).exists,
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
 		)
 		.ok();
 
@@ -94,7 +64,7 @@ test("should succesfully create contact", async (t) => {
 
 	await t
 		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations().CONTACTS.CONTACTS_PAGE.ADD_CONTACT).exists,
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
 		)
 		.notOk();
 });

@@ -16,7 +16,7 @@ let contact: Contact;
 describe("ContactForm", () => {
 	beforeAll(() => {
 		const profile = env.profiles().findById(getDefaultProfileId());
-		contact = env.profiles().values()[0].contacts().values()[0];
+		contact = profile.contacts().values()[0];
 	});
 
 	it("should select network", () => {

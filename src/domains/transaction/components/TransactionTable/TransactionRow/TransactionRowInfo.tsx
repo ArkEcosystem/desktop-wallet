@@ -1,8 +1,13 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
 import React from "react";
 
-const VendorField = ({ vendorField }: { vendorField: string }) => (
+type Props = {
+	transaction: Contracts.TransactionDataType;
+};
+
+const VendorField = ({ vendorField }: { vendorField: string | undefined }) => (
 	<Tippy content={vendorField}>
 		<span className="p-1">
 			<Icon data-testid="TransactionRowInfo__vendorField" name="Smartbridge" />
@@ -18,14 +23,10 @@ const MultiSignature = () => (
 		</span>
 	</Tippy>
 );
-type Props = {
-	vendorField?: string;
-	isMultiSignature?: boolean;
-};
 
-export const TransactionRowInfo = ({ vendorField, isMultiSignature }: Props) => (
+export const TransactionRowInfo = ({ transaction }: Props) => (
 	<div data-testid="TransactionRowInfo" className="inline-flex align-middle space-x-1">
-		{isMultiSignature && <MultiSignature />}
-		{vendorField && <VendorField vendorField={vendorField} />}
+		{transaction?.isMultiSignature() && <MultiSignature />}
+		{transaction?.memo() && <VendorField vendorField={transaction?.memo()} />}
 	</div>
 );

@@ -1,0 +1,69 @@
+{
+	"meta": {
+		"count": 2,
+		"pageCount": 1,
+		"totalCount": 2,
+		"next": null,
+		"previous": null,
+		"self": "/delegates?page=1&limit=100",
+		"first": "/delegates?page=1&limit=100",
+		"last": "/delegates?page=1&limit=100"
+	},
+	"data": [
+		{
+			"address": "AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX",
+			"publicKey": "03da05c1c1d4f9c6bda13695b2f29fbc65d9589edc070fc61fe97974be3e59c14e",
+			"nonce": "111932",
+			"balance": "55827093444556",
+			"attributes": {
+				"delegate": {
+					"username": "arkx",
+					"voteBalance": "57037342430760",
+					"forgedFees": "124364463486",
+					"forgedRewards": "16899000000000",
+					"producedBlocks": 84709,
+					"lastBlock": {
+						"id": "682a1c53eb9e6fcf285d1b6819de08f88bd15b083a612c3fe32aa870001dbf22",
+						"height": 4269235,
+						"timestamp": 91907944,
+						"generatorPublicKey": "03bbfb43ecb5a54a1e227bb37b5812b5321213838d376e2b455b6af78442621dec"
+					},
+					"resigned": true
+				},
+				"vote": "03bbfb43ecb5a54a1e227bb37b5812b5321213838d376e2b455b6af78442621dec"
+			},
+			"isDelegate": true,
+			"isResigned": true,
+			"vote": "03bbfb43ecb5a54a1e227bb37b5812b5321213838d376e2b455b6af78442621dec",
+			"username": "arkx"
+		},
+		{
+			"username": "genesis_42",
+			"address": "AHJJ29sCdR5UNZjdz3BYeDpvvkZCGBjde9",
+			"publicKey": "02d29ba7ebe8823137f31ed8e71288274a1cefa23a98a94fa62d4124817d58b777",
+			"votes": "53411673185151",
+			"rank": 2,
+			"isResigned": false,
+			"blocks": {
+				"produced": 84472,
+				"last": {
+					"id": "3213d10a2c96f9f0a9aeddb0c2056e92f8b835c3c7e8a3e3575f2e4d7d47fe57",
+					"height": 5856920,
+					"timestamp": {
+						"epoch": 105497320,
+						"unix": 1595598520,
+						"human": "2020-07-24T13:48:40.000Z"
+					}
+				}
+			},
+			"production": {
+				"approval": 0.39
+			},
+			"forged": {
+				"fees": "169109715418",
+				"rewards": "16851800000000",
+				"total": "17020909715418"
+			}
+		}
+	]
+}

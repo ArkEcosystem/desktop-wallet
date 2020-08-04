@@ -21,7 +21,7 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 		<a
 			title={title}
 			href={path}
-			className="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-contrast text-theme-neutral-800 hover:text-theme-primary rounded-md"
+			className="flex px-2 py-6 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-contrast text-theme-neutral-800 hover:text-theme-primary"
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
@@ -44,7 +44,7 @@ export const Faq = ({ articles }: FaqProps) => {
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/support`,
-			label: "Go back to Help & Support",
+			label: t("HELP.GO_BACK_TO_HELP_SUPPORT"),
 		},
 	];
 

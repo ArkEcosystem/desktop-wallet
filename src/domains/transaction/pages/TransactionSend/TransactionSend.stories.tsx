@@ -15,7 +15,7 @@ export default { title: "Domains / Transaction / Pages / Transaction Send" };
 export const Default = () => {
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	const profile = env.profiles().create("Test profile");
-	const contact = profile.contacts().create("Test contact");
+	profile.contacts().create("Test contact");
 
 	const defaultFormValues = {
 		maxAvailableAmount: 80,

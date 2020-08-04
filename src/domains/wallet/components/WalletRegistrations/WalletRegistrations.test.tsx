@@ -1,9 +1,19 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { WalletRegistrations } from "./WalletRegistrations";
 
+let delegate: Contracts.WalletData;
+
 describe("WalletRegistrations", () => {
+	beforeEach(async () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+
+		delegate = await wallet.delegate("test");
+	});
+
 	it("should emit actions", () => {
 		const onShowAll = jest.fn();
 		const onRegister = jest.fn();
@@ -46,10 +56,8 @@ describe("WalletRegistrations", () => {
 	});
 
 	it("should show delegate", () => {
-		const { getByTestId, asFragment } = render(
-			<WalletRegistrations address="abc" delegate={{ username: "Test" }} />,
-		);
-		expect(getByTestId("WalletRegistrations__delegate")).toHaveTextContent("Test");
+		const { getByTestId, asFragment } = render(<WalletRegistrations address="abc" delegate={delegate} />);
+		expect(getByTestId("WalletRegistrations__delegate")).toHaveTextContent("arkx");
 		expect(asFragment()).toMatchSnapshot();
 	});
 

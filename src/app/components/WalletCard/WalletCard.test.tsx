@@ -1,24 +1,31 @@
+import { Wallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { getDefaultProfileId, renderWithRouter } from "testing-library";
+import { env, getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { WalletCard } from "./WalletCard";
 
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
-const fixtureWalletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
-const fixtureWalletAddress = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD";
+let wallet: Wallet;
 
 describe("Wallet Card", () => {
 	beforeAll(() => {
 		history.push(dashboardURL);
 	});
 
+	beforeEach(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		wallet.data().set(WalletFlag.Starred, true);
+		wallet.data().set(WalletFlag.Ledger, true);
+	});
+
 	it("should render", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard id={fixtureWalletId} />
+				<WalletCard wallet={wallet} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -44,17 +51,11 @@ describe("Wallet Card", () => {
 	});
 
 	it("should render with wallet data", () => {
+		wallet.settings().set(WalletSetting.Alias, "My wallet");
+
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard
-					id={fixtureWalletId}
-					coinIcon="Ark"
-					coinClass="border-theme-warning-200"
-					walletName="My wallet"
-					address={fixtureWalletAddress}
-					balance="100,000 ARK"
-				/>
-				,
+				<WalletCard coinClass="border-theme-warning-200" wallet={wallet} />,
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -66,16 +67,11 @@ describe("Wallet Card", () => {
 	});
 
 	it("should render with wallet data and optional icon", () => {
+		wallet.settings().set(WalletSetting.Alias, "My wallet");
+
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard
-					id={fixtureWalletId}
-					coinIcon="Ark"
-					coinClass="border-theme-warning-200"
-					walletName="My wallet"
-					address={fixtureWalletAddress}
-					balance="100,000 ARK"
-				/>
+				<WalletCard coinClass="border-theme-warning-200" wallet={wallet} />
 			</Route>,
 			{
 				routes: [dashboardURL],

@@ -66,7 +66,7 @@ describe("UpdateContact", () => {
 		});
 	});
 
-	it("should delete contact", async () => {
+	it("should call onDelete callback", async () => {
 		const contactToDelete = profile.contacts().create("Test");
 
 		const onDelete = jest.fn();
@@ -83,7 +83,6 @@ describe("UpdateContact", () => {
 
 		await waitFor(() => {
 			expect(onDelete).toBeCalled();
-			expect(() => profile.contacts().findById(contactToDelete.id())).toThrowError("Failed to find");
 		});
 	});
 

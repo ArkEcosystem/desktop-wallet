@@ -1,18 +1,14 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Environment, Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
-import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { StubStorage } from "tests/mocks";
 import {
 	act as actAsync,
+	env,
 	fireEvent,
 	getDefaultProfileId,
 	render,
@@ -24,53 +20,28 @@ import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./Cr
 
 jest.setTimeout(8000);
 
+let profile: Profile;
+let bip39GenerateMock: any;
+
+const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
+
+beforeAll(() => {
+	bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
+});
+
 const fixtureProfileId = getDefaultProfileId();
-const fixture = {
-	profiles: {
-		[fixtureProfileId]: {
-			id: fixtureProfileId,
-			contacts: {},
-			data: {},
-			notifications: {},
-			plugins: { data: {}, blacklist: [] },
-			settings: { NAME: "John Doe" },
-			wallets: {},
-		},
-	},
-	data: {},
-};
+
+afterAll(() => {
+	bip39GenerateMock.mockRestore();
+});
 
 describe("CreateWallet", () => {
-	let env: Environment;
-	let profile: Profile;
-	let bip39GenerateMock: any;
-
-	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
-
-	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://wallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.persist();
-
-		nock("https://neoscan.io")
-			.get(/\/api\/main_net\/v1\/get_last_transactions_by_address\/.+/)
-			.reply(200, [])
-			.persist();
-	});
-
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient: httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixture);
+	beforeEach(() => {
 		profile = env.profiles().findById(fixtureProfileId);
+
+		for (const wallet of profile.wallets().values()) {
+			profile.wallets().forget(wallet.id());
+		}
 
 		bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
 	});
@@ -94,7 +65,7 @@ describe("CreateWallet", () => {
 		expect(selectAssetsInput).toBeTruthy();
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
 		});
 
 		act(() => {
@@ -103,7 +74,7 @@ describe("CreateWallet", () => {
 
 		expect(selectAssetsInput).toHaveAttribute("disabled");
 
-		expect(selectAssetsInput).toHaveValue("Ark");
+		expect(selectAssetsInput).toHaveValue("Ark Devnet");
 
 		await waitFor(() => expect(selectAssetsInput).not.toHaveAttribute("disabled"));
 	});
@@ -163,7 +134,7 @@ describe("CreateWallet", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					network: availableNetworksMock[0],
+					network: availableNetworksMock[1],
 					wallet: {
 						address: () => "TEST-WALLET-ADDRESS",
 					},
@@ -180,7 +151,7 @@ describe("CreateWallet", () => {
 		expect(getByTestId("CreateWallet__fourth-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		expect(getByTestId("CreateWallet__network-name")).toHaveTextContent("Ark");
+		expect(getByTestId("CreateWallet__network-name")).toHaveTextContent("Ark Devnet");
 		expect(getByTestId("CreateWallet__wallet-address")).toHaveTextContent("TEST-WALLET-ADDRESS");
 
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
@@ -214,8 +185,8 @@ describe("CreateWallet", () => {
 		const continueButton = getByTestId("CreateWallet__continue-button");
 		const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
 
-		fireEvent.click(networkIcons[0]); // click ARK
 		fireEvent.click(networkIcons[1]); // click DARK
+		fireEvent.click(networkIcons[0]); // click ARK
 
 		expect(getByTestId("SelectNetworkInput__input")).toHaveAttribute("disabled");
 		for (const networkIcon of getAllByTestId("SelectNetwork__NetworkIcon--container")) {
@@ -223,7 +194,7 @@ describe("CreateWallet", () => {
 		}
 		expect(continueButton).toHaveAttribute("disabled");
 
-		expect(getByTestId("NetworkIcon-ARK-mainnet")).toHaveClass("border-theme-success-200");
+		expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
 
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 	});
@@ -251,7 +222,7 @@ describe("CreateWallet", () => {
 		const backButton = getByTestId("CreateWallet__back-button");
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
@@ -262,7 +233,7 @@ describe("CreateWallet", () => {
 		await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
@@ -354,11 +325,9 @@ describe("CreateWallet", () => {
 		history.push(createURL);
 
 		const { getByTestId, asFragment } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/wallets/create">
-					<CreateWallet />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/wallets/create">
+				<CreateWallet />
+			</Route>,
 			{
 				routes: [createURL, "/"],
 				history,
@@ -378,11 +347,9 @@ describe("CreateWallet", () => {
 		history.push(createURL);
 
 		const { getByTestId, asFragment } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/wallets/create">
-					<CreateWallet />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/wallets/create">
+				<CreateWallet />
+			</Route>,
 			{
 				routes: [createURL, "/"],
 				history,
@@ -395,7 +362,7 @@ describe("CreateWallet", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
