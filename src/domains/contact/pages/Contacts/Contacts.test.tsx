@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -35,7 +36,7 @@ describe("Contacts", () => {
 		const contactsURL = `/profiles/${profile.id()}/contacts`;
 		history.push(contactsURL);
 
-		const { getAllByTestId, getByTestId, queryByTestId, debug } = renderWithRouter(
+		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/contacts">
 				<Contacts />
 			</Route>,

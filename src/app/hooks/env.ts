@@ -14,3 +14,18 @@ export const useActiveProfile = () => {
 		}
 	}, [context, profileId]);
 };
+
+export const useActiveWallet = () => {
+	const profile = useActiveProfile();
+	const { walletId } = useParams();
+
+	return useMemo(() => {
+		if (profile) {
+			try {
+				return profile?.wallets().findById(walletId);
+			} catch {
+				return undefined;
+			}
+		}
+	}, [profile, walletId]);
+};

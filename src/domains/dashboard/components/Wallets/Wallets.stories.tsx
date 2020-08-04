@@ -1,11 +1,16 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
+import { WalletsDecorator } from "utils/storybook";
 
-import { networks, wallets } from "../../data";
+import { networks } from "../../data";
 import { Wallets } from "./Wallets";
 
-export default { title: "Domains / Dashboard / Components / Wallets" };
+export default {
+	title: "Domains / Dashboard / Components / Wallets",
+	decorators: [(storyFn: any) => <WalletsDecorator count={1}>{storyFn}</WalletsDecorator>],
+};
 
-export const Default = () => {
+export const Default = ({ wallets }: { wallets: Wallet[] }) => {
 	// Wallet filter properties
 	const filterProperties = {
 		visibleTransactionsView: true,

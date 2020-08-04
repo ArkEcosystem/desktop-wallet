@@ -20,13 +20,7 @@ type WalletCardProps = {
 	coinClass?: string;
 	wallet?: Wallet;
 	actions?: any;
-	walletTypeIcons?: any[];
 	onSelect?: any;
-};
-
-const renderCoin = (coinIcon?: string) => {
-	if (!coinIcon) return null;
-	return <Icon name={coinIcon} width={18} height={16} />;
 };
 
 export const WalletCard = ({
@@ -40,17 +34,12 @@ export const WalletCard = ({
 	coinClass,
 	actions,
 	onSelect,
-	walletTypeIcons,
 }: WalletCardProps) => {
-	const getIconTypeClass = (icon: string) => {
-		if (icon === "Star") return "text-theme-warning-400";
-		return "text-theme-neutral-600";
-	};
 	const activeProfile = useActiveProfile();
 
 	if (isBlank) {
 		return (
-			<div className={`w-64 inline-block ${className}`}>
+			<div data-testid="WalletCard__blank" className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="p-2">
 						<div>
@@ -73,24 +62,38 @@ export const WalletCard = ({
 	const coinName = wallet?.coin().manifest().get<string>("name");
 
 	return (
-		<Link to={`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`} data-testid={`WalletCard__${id}`}>
+		<Link
+			to={`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`}
+			data-testid={`WalletCard__${wallet?.address()}`}
+		>
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="relative p-2">
-						<div className="absolute top-0 right-0 flex items-center -mr-2 space-x-2">
-							{walletTypeIcons &&
-								walletTypeIcons.map((type: string, index: number) => (
-									<div key={index} className={`inline-block text ${getIconTypeClass(type)}`}>
-										<Icon name={type} width={18} />
-									</div>
-								))}
-							<span className="text-theme-neutral-400 hover:text-theme-neutral-500">
-								<Dropdown options={actions} onSelect={onSelect} />
-							</span>
+						<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
+							<Dropdown options={actions} onSelect={onSelect} />
+						</div>
+						<div className="absolute right-3 -top-1">
+							{wallet?.isLedger() && (
+								<div className="inline-block mr-2 text text-theme-neutral-600">
+									<Icon name="Ledger" width={18} />
+								</div>
+							)}
+
+							{wallet?.hasSyncedWithNetwork() && wallet?.isMultiSignature() && (
+								<div className="inline-block mr-2 text text-theme-neutral-600">
+									<Icon name="Multisig" width={18} />
+								</div>
+							)}
+
+							{wallet?.isStarred() && (
+								<div className="inline-block mr-2 text text-theme-warning-400">
+									<Icon name="Star" width={18} />
+								</div>
+							)}
 						</div>
 						<div className="flex">
 							<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
-								{renderCoin(coinName ? upperFirst(coinName.toLowerCase()) : "")}
+								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={18} height={16} />}
 							</Circle>
 							<Avatar size="lg" address={wallet?.address()} />
 						</div>

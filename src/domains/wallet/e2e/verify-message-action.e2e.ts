@@ -13,7 +13,7 @@ test("Should open and cancel verify message modal", async (t) => {
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129]"));
+	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click verify message option in dropdown menu
@@ -36,7 +36,7 @@ test("Should open and close verify message modal", async (t) => {
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129]"));
+	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click verify message option in dropdown menu
@@ -59,7 +59,7 @@ test("Should fail verification", async (t) => {
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129]"));
+	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click verify message option in dropdown menu
@@ -94,7 +94,7 @@ test("Should successfully verify message", async (t) => {
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129]"));
+	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click verify message option in dropdown menu

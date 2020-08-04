@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -41,9 +42,7 @@ type Props = {
 	hasPlugins?: boolean;
 	hasSecondSignature?: boolean;
 	isMultisig?: boolean;
-	delegate?: {
-		username: string;
-	};
+	delegate?: Contracts.WalletData;
 	business?: {
 		name: string;
 	};
@@ -119,14 +118,14 @@ export const WalletRegistrations = ({
 										<Circle size="lg" className="border-theme-neutral-900 text-theme-neutral-900">
 											<Icon name="Delegate" className="text-xl" />
 										</Circle>
-										<Avatar size="lg" address={address} />
+										<Avatar size="lg" address={delegate.address()} />
 									</div>
 									<div className="flex flex-col">
 										<span className="text-sm font-semibold text-theme-neutral">
 											{t("COMMON.DELEGATE")}
 										</span>
 										<span data-testid="WalletRegistrations__delegate" className="font-semibold">
-											{delegate?.username}
+											{delegate?.username()}
 										</span>
 									</div>
 								</div>
