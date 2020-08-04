@@ -1,18 +1,23 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "utils/testing-library";
 
-import { balances, portfolioPercentages, wallets } from "../../data";
+import { balances, portfolioPercentages, transactions } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
+let emptyProfile: Profile;
+
 const fixtureProfileId = getDefaultProfileId();
-const dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
+let dashboardURL: string;
 
 describe("Dashboard", () => {
 	beforeEach(() => {
+		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 		nock.disableNetConnect();
 
@@ -22,10 +27,8 @@ describe("Dashboard", () => {
 			.persist();
 	});
 
-	afterEach(() => nock.cleanAll());
-
-	it("should render", async () => {
-		const { getAllByTestId, asFragment } = renderWithRouter(
+	it("should render", () => {
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -35,14 +38,15 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should hide transaction view", async () => {
-		const { getByTestId, getAllByTestId } = renderWithRouter(
+	it("should render wallets", async () => {
+		Promise.resolve().then(() => jest.useFakeTimers());
+
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard wallets={wallets} />
+				<Dashboard />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -50,22 +54,51 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
 
-		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
-
-		act(() => {
-			fireEvent.click(filterNetwork);
-		});
-
-		const toggle = getByTestId("filter-wallets_toggle--transactions");
-		act(() => {
-			fireEvent.click(toggle);
-		});
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
-	it("should render portfolio percentage bar", async () => {
-		const { getAllByTestId, asFragment } = renderWithRouter(
+	it("should render with no wallets", async () => {
+		dashboardURL = `/profiles/${emptyProfile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		Promise.resolve().then(() => jest.useFakeTimers());
+
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
+
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+	});
+
+	it("should hide transaction view", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard transactions={transactions} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
+		fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render portfolio percentage bar", () => {
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard portfolioPercentages={portfolioPercentages} />
 			</Route>,
@@ -75,12 +108,11 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render portfolio chart", async () => {
-		const { getAllByTestId, asFragment } = renderWithRouter(
+	it("should render portfolio chart", () => {
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />
 			</Route>,
@@ -90,14 +122,13 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should hide portfolio view", async () => {
-		const { getByTestId, getAllByTestId, asFragment } = renderWithRouter(
+	it("should hide portfolio view", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} wallets={wallets} />
+				<Dashboard balances={balances} transactions={transactions} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -105,13 +136,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-
-		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
-
-		act(() => {
-			fireEvent.click(filterNetwork);
-		});
+		fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
 
 		const toggle = getByTestId("filter-wallets_toggle--portfolio");
 		act(() => {
@@ -121,8 +146,8 @@ describe("Dashboard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should navigate to import page", async () => {
-		const { getByText, getAllByTestId, asFragment } = renderWithRouter(
+	it("should navigate to import page", () => {
+		const { asFragment, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -132,22 +157,16 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-
-		const importButton = getByText("Import");
-
-		act(() => {
-			fireEvent.click(importButton);
-		});
+		fireEvent.click(getByText("Import"));
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should navigate to create page", async () => {
-		const { getByText, getAllByTestId, asFragment } = renderWithRouter(
+	it("should navigate to create page", () => {
+		const { asFragment, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} wallets={wallets} />
+				<Dashboard balances={balances} transactions={transactions} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -155,13 +174,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-
-		const createButton = getByText("Create");
-
-		act(() => {
-			fireEvent.click(createButton);
-		});
+		fireEvent.click(getByText("Create"));
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`);
 		expect(asFragment()).toMatchSnapshot();

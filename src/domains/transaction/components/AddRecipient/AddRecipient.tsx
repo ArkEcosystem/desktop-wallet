@@ -1,6 +1,6 @@
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
@@ -98,10 +98,7 @@ export const AddRecipient = ({
 		<AddRecipientWrapper>
 			<ToggleButtons isSingle={isSingle} onChange={(isSingle) => setIsSingle(isSingle)} />
 
-			<div
-				data-testid="add-recipient__form-wrapper"
-				className={`mt-8 mb-2 ${!isSingle ? "MultiRecipientWrapper" : ""}`}
-			>
+			<SubForm data-testid="add-recipient__form-wrapper" className="mt-8 mb-2" noBackground={isSingle}>
 				<div className="space-y-8">
 					<FormField name="recipientAddress" className="relative mt-1">
 						<div className="mb-2">
@@ -158,7 +155,7 @@ export const AddRecipient = ({
 						{t("TRANSACTION.ADD_RECIPIENT")}
 					</Button>
 				)}
-			</div>
+			</SubForm>
 
 			{!isSingle && addedRecipients.length > 0 && (
 				<div className="border-b border-dotted border-theme-neutral-200">

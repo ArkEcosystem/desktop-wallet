@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
-import { balances, portfolioPercentages, wallets } from "../../data";
+import { balances, portfolioPercentages } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
@@ -20,13 +20,14 @@ type DashboardProps = {
 	portfolioPercentages?: any[];
 };
 
-export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
+export const Dashboard = ({ networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
 	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
 	const activeProfile = useActiveProfile();
-	const history = useHistory();
+	const wallets = React.useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
 
+	const history = useHistory();
 	const { t } = useTranslation();
 
 	useEffect(() => {
@@ -73,7 +74,7 @@ export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }:
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
+					<div className="border-theme-neutral-200 pt-6 mb-2 border-b border-dotted" />
 					<PercentageBar
 						title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
 						data={portfolioPercentages}
@@ -104,5 +105,4 @@ export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }:
 Dashboard.defaultProps = {
 	balances,
 	portfolioPercentages,
-	wallets,
 };

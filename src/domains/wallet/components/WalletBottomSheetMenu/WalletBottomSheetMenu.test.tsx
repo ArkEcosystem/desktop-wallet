@@ -1,20 +1,35 @@
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { WalletBottomSheetMenu } from "./WalletBottomSheetMenu";
 
-const data = [
-	{
-		coinIcon: "Ark",
-		coinClassName: "text-theme-danger-400 border-theme-danger-light",
-		avatarId: "test1",
-		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		walletName: "ARK Wallet 1",
-		balance: "120 ARK",
-	},
-];
+let data: any;
+let bip39GenerateMock: any;
+
+const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
+
+beforeAll(() => {
+	bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
+});
+
+afterAll(() => {
+	bip39GenerateMock.mockRestore();
+});
 
 describe("WalletBottomSheetMenu", () => {
+	beforeEach(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+
+		data = [
+			{
+				coinClassName: "text-theme-danger-400 border-theme-danger-light",
+				wallet,
+			},
+		];
+	});
+
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(<WalletBottomSheetMenu walletsData={data} />);
 		expect(getByTestId("WalletBottomSheetMenu")).toBeTruthy();

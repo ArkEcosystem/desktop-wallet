@@ -1,15 +1,24 @@
+import { Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act } from "react-dom/test-utils";
-import { fireEvent, render } from "testing-library";
+import { act, env, fireEvent, render } from "testing-library";
 
 import { WalletListItem } from "./WalletListItem";
 
+let wallet: Wallet;
+
 describe("WalletListItem", () => {
+	beforeAll(() => {
+		const profile = env.profiles().values()[0];
+		wallet = profile.wallets().values()[0];
+		wallet.data().set(WalletFlag.Starred, true);
+		wallet.data().set(WalletFlag.Ledger, true);
+	});
+
 	it("should render", () => {
 		const { container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coinIcon="Bitcoin" walletTypeIcons={["Star", 'Multisig", "Ledger']} />
+					<WalletListItem wallet={wallet} />
 				</tbody>
 			</table>,
 		);
@@ -22,7 +31,7 @@ describe("WalletListItem", () => {
 		const { container, getByTestId } = render(
 			<table>
 				<tbody>
-					<WalletListItem coinIcon="Bitcoin" actions={actions} variant="singleAction" />
+					<WalletListItem wallet={wallet} actions={actions} variant="singleAction" />
 				</tbody>
 			</table>,
 		);
@@ -42,7 +51,7 @@ describe("WalletListItem", () => {
 		const { getByTestId, container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coin="Bitcoin" actions={options} onAction={fn} />
+					<WalletListItem wallet={wallet} actions={options} onAction={fn} />
 				</tbody>
 			</table>,
 		);
@@ -73,7 +82,7 @@ describe("WalletListItem", () => {
 		const { getByTestId, container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coin="Bitcoin" actions={options} />
+					<WalletListItem wallet={wallet} actions={options} />
 				</tbody>
 			</table>,
 		);
