@@ -77,6 +77,7 @@ type ContactFormProps = {
 
 export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
 	const nameMaxLength = 42;
+
 	const [addresses, setAddresses] = useState(() =>
 		contact
 			? contact
@@ -161,7 +162,12 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 			<SubForm>
 				<FormField name="network">
 					<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-					<SelectNetwork id="ContactForm__network" networks={networks} onSelect={handleSelectNetwork} />
+					<SelectNetwork
+						id="ContactForm__network"
+						networks={networks}
+						onSelect={handleSelectNetwork}
+						selected={network}
+					/>
 					<FormHelperText />
 				</FormField>
 
