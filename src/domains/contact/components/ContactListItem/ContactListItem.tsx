@@ -47,7 +47,9 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 											{contact.name().slice(0, 2).toUpperCase()}
 										</span>
 									</AvatarWrapper>
-									<span className="font-semibold">{contact.name()}</span>
+									<span className="font-semibold" data-testid="ContactListItem__name">
+										{contact.name()}
+									</span>
 								</div>
 							)}
 						</td>
