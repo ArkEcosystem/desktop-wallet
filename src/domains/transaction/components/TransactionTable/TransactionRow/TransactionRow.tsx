@@ -27,13 +27,13 @@ export const TransactionRow = ({
 	isSignaturePending,
 	...props
 }: Props) => (
-	<tr data-testid="TransactionRow" className="border-theme-neutral-300 border-b border-dotted" {...props}>
+	<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
 		<td className="w-16 py-6">
 			<div className="inline-block align-middle">
 				<Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id()} isExternal />
 			</div>
 		</td>
-		<td className="text-theme-neutral-600 w-48 py-1 text-sm">
+		<td className="w-48 py-1 text-sm text-theme-neutral-600">
 			<span data-testid="TransactionRow__timestamp">
 				{DateTime.fromUnix(transaction.timestamp()!).format("DD MMM YYYY HH:mm:ss")}
 			</span>
