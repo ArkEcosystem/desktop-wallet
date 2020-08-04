@@ -10,7 +10,7 @@ import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
-import React, { createRef, useState } from "react";
+import React, { createRef, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -42,14 +42,12 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 	const { register } = form;
 	const messageRef = createRef();
 
-	const handleClose = () => {
-		if (isSigned) {
+	useEffect(() => {
+		if (!isOpen) {
 			setSignedMessage(INITIAL_STATE);
 			setIsSigned(false);
 		}
-
-		onClose?.();
-	};
+	}, [isOpen]);
 
 	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
 		const profile = env?.profiles().findById(profileId);
@@ -161,7 +159,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 			isOpen={isOpen}
 			title={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : t("WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE")}
 			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.DESCRIPTION") : ""}
-			onClose={handleClose}
+			onClose={onClose}
 		>
 			<div className={!isSigned ? "mt-8" : "mt-2"}>{renderSignedMessageContent()}</div>
 		</Modal>
