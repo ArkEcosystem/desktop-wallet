@@ -59,7 +59,7 @@ export const App = () => {
 		}, idleCheckInterval * 1000);
 
 		return () => clearInterval(idleInterval);
-	}, []);
+	}, [history]);
 
 	return (
 		<I18nextProvider i18n={i18n}>
