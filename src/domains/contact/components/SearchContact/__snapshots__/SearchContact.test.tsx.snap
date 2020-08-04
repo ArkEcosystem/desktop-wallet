@@ -196,6 +196,7 @@ exports[`SearchContact should render a modal 1`] = `
                       </div>
                       <span
                         class="font-semibold"
+                        data-testid="ContactListItem__name"
                       >
                         Brian
                       </span>
@@ -490,6 +491,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       </div>
                       <span
                         class="font-semibold"
+                        data-testid="ContactListItem__name"
                       >
                         Brian
                       </span>
