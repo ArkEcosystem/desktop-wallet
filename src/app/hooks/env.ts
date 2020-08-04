@@ -6,26 +6,12 @@ export const useActiveProfile = () => {
 	const context = useEnvironmentContext();
 	const { profileId } = useParams();
 
-	return useMemo(() => {
-		try {
-			return context.env.profiles().findById(profileId);
-		} catch {
-			return undefined;
-		}
-	}, [context, profileId]);
+	return useMemo(() => context.env.profiles().findById(profileId), [context, profileId]);
 };
 
 export const useActiveWallet = () => {
 	const profile = useActiveProfile();
 	const { walletId } = useParams();
 
-	return useMemo(() => {
-		if (profile) {
-			try {
-				return profile?.wallets().findById(walletId);
-			} catch {
-				return undefined;
-			}
-		}
-	}, [profile, walletId]);
+	return useMemo(() => profile.wallets().findById(walletId), [profile, walletId]);
 };
