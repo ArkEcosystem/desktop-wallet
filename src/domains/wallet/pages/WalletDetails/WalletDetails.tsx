@@ -123,7 +123,7 @@ export const WalletDetails = () => {
 					address={activeWallet?.address()}
 					publicKey={activeWallet?.publicKey()}
 					balance={activeWallet?.balance().toString()}
-					currencyBalance={activeWallet?.fiat().toString()}
+					currencyBalance={activeWallet?.convertedBalance().toString()}
 					name={activeWallet?.alias()}
 					isLedger={activeWallet?.isLedger()}
 					isMultisig={activeWallet?.hasSyncedWithNetwork() && activeWallet?.isMultiSignature()}
