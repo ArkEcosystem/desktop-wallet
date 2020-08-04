@@ -76,6 +76,7 @@ type ContactFormProps = {
 };
 
 export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
+	const nameMaxLength = 42;
 	const [addresses, setAddresses] = useState(() =>
 		contact
 			? contact
@@ -123,6 +124,11 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 		form.setValue("network", network, true);
 	};
 
+	const isNameValid = () => {
+		const { name } = form.getValues();
+		return !!name && !form.errors?.name;
+	};
+
 	return (
 		<Form
 			data-testid="contact-form"
@@ -138,7 +144,15 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 				<FormLabel>{t("CONTACTS.CONTACT_FORM.NAME")}</FormLabel>
 				<Input
 					data-testid="contact-form__name-input"
-					ref={form.register({ required: t("COMMON.VALIDATION.REQUIRED").toString() })}
+					ref={form.register({
+						required: t("COMMON.VALIDATION.REQUIRED").toString(),
+						maxLength: {
+							message: t("CONTACTS.VALIDATION.MAXLENGTH_ERROR", {
+								maxLength: nameMaxLength,
+							}),
+							value: nameMaxLength,
+						},
+					})}
 					defaultValue={contact?.name?.()}
 				/>
 				<FormHelperText />
@@ -189,7 +203,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 						data-testid="contact-form__save-btn"
 						type="submit"
 						variant="solid"
-						disabled={!addresses.length}
+						disabled={!addresses.length && !isNameValid()}
 					>
 						{t("COMMON.SAVE")}
 					</Button>
