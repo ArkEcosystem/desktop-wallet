@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 // i18n
 import { translations } from "../../i18n";
@@ -31,23 +31,59 @@ describe("UpdateWalletName", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should rename wallet with max 42 characters", async () => {
+	it("should rename wallet", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} />);
 
-		const longName = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor";
-		const correctName = longName.substring(0, 42);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.DESCRIPTION);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.FIELD_NAME);
 
 		const input = getByTestId("UpdateWalletName__input");
+		const name = "Sample label";
+
+		act(() => {
+			fireEvent.change(input, { target: { value: name } });
+		});
+
+		expect(input).toHaveValue(name);
+
 		const submitBtn = getByTestId("UpdateWalletName__submit");
 
-		await act(async () => {
-			fireEvent.change(input, { target: { value: longName } });
+		act(() => {
 			fireEvent.click(submitBtn);
 		});
 
-		expect(fn).toHaveBeenCalledWith({ name: correctName });
-		wallet.settings().set(WalletSetting.Alias, name);
-		expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
+		waitFor(() => {
+			expect(fn).toHaveBeenCalledWith({ name }, expect.anything());
+			wallet.settings().set(WalletSetting.Alias, name);
+			expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
+		});
+	});
+
+	it("should show error message when name exceeds 42 characters", async () => {
+		const fn = jest.fn();
+		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} />);
+
+		const input = getByTestId("UpdateWalletName__input");
+		const name = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit distinctio";
+
+		act(() => {
+			fireEvent.change(input, { target: { value: name } });
+		});
+
+		expect(input).toHaveValue(name);
+		expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render form input with existing name", async () => {
+		const fn = jest.fn();
+		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} name="test" />);
+
+		const input = getByTestId("UpdateWalletName__input");
+		expect(input).toHaveValue("test");
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
