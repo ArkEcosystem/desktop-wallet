@@ -24,7 +24,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 	const { t } = useTranslation();
 	const nameMaxLength = 42;
 
-	const isNameValid = useMemo(() => !!formValues.name?.trim() && !methods.errors?.name, [formValues]);
+	const isNameValid = useMemo(() => !!formValues.name?.trim() && !methods.errors?.name, [formValues, methods.errors]);
 
 	const handleSubmit = ({ name }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
