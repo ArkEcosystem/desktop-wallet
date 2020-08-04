@@ -57,7 +57,7 @@ export const WalletDetails = () => {
 			return;
 		}
 
-		const transaction = response.data.first();
+		const transaction = response.items()[0];
 		const result: WalletData[] = [];
 
 		const votes = (transaction?.asset().votes as string[]) || [];
@@ -74,7 +74,7 @@ export const WalletDetails = () => {
 			result.push(data);
 		}
 
-		setVotes(() => new WalletDataCollection(result));
+		setVotes(() => new WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined }));
 	}, [activeWallet]);
 
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
