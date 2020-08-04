@@ -32,5 +32,6 @@ export const translations: { [key: string]: any } = {
 	VALIDATION: {
 		MAXLENGTH_ERROR: "The Contact Name should have less than {{maxLength}} characters.",
 		CONTACT_NAME_EXISTS: "Contact with name {{name}} already exists.",
+		CONTACT_NAME_EXISTS_SUFFIX: "already exists",
 	},
 };
