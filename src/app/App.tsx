@@ -1,6 +1,8 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { ApplicationError } from "domains/error/pages";
 import React, { useEffect, useLayoutEffect, useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
@@ -64,7 +66,9 @@ export const App = () => {
 	return (
 		<I18nextProvider i18n={i18n}>
 			<EnvironmentProvider env={env}>
-				<Main />
+				<ErrorBoundary FallbackComponent={ApplicationError}>
+					<Main />
+				</ErrorBoundary>
 			</EnvironmentProvider>
 		</I18nextProvider>
 	);
