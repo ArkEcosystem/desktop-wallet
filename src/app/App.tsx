@@ -1,13 +1,11 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { ApplicationError } from "domains/error/pages";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
-import { useHistory } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
-import { isIdle } from "utils/electron-utils";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
@@ -48,20 +46,6 @@ export const App = () => {
 	/* istanbul ignore next */
 	const storage = __DEV__ ? new StubStorage() : "indexeddb";
 	const [env] = useState(() => new Environment({ coins: { ARK }, httpClient, storage }));
-
-	const history = useHistory();
-
-	useEffect(() => {
-		const idleCheckInterval = 30; // 30 seconds
-
-		const idleInterval = setInterval(() => {
-			if (isIdle(idleCheckInterval * 2 * 10)) {
-				history.push("/");
-			}
-		}, idleCheckInterval * 1000);
-
-		return () => clearInterval(idleInterval);
-	}, [history]);
 
 	return (
 		<I18nextProvider i18n={i18n}>

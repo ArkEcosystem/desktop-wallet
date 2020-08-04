@@ -163,9 +163,9 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 						ref={register()}
 						options={[1, 5, 10, 15, 30, 60].map((count) => ({
 							label: t("COMMON.DATETIME.MINUTES", { count }),
-							value: count,
+							value: `${count}`,
 						}))}
-						defaultValue={activeProfile.settings().get(ProfileSetting.AutomaticLogoffPeriod)}
+						defaultValue={`${activeProfile.settings().get(ProfileSetting.AutomaticLogoffPeriod)}`}
 					/>
 					<FormHelperText />
 				</FormField>
@@ -240,7 +240,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 		activeProfile.settings().set(ProfileSetting.TimeFormat, timeFormat);
 		activeProfile.settings().set(ProfileSetting.ScreenshotProtection, isScreenshotProtection);
 		activeProfile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
-		activeProfile.settings().set(ProfileSetting.AutomaticLogoffPeriod, autoLogoff);
+		activeProfile.settings().set(ProfileSetting.AutomaticLogoffPeriod, +autoLogoff);
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 
