@@ -51,13 +51,13 @@ exports[`SelectNetwork should render with networks 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-owns="downshift-3-menu"
+    aria-owns="downshift-5-menu"
     data-testid="SelectNetwork"
     role="combobox"
   >
     <label
-      for="downshift-2-input"
-      id="downshift-3-label"
+      for="downshift-4-input"
+      id="downshift-5-label"
     />
     <div
       class="sc-AxheI IkGcK"
@@ -73,27 +73,27 @@ exports[`SelectNetwork should render with networks 1`] = `
       </div>
       <input
         aria-autocomplete="list"
-        aria-controls="downshift-3-menu"
-        aria-labelledby="downshift-3-label"
+        aria-controls="downshift-5-menu"
+        aria-labelledby="downshift-5-label"
         autocomplete="off"
         class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
         data-testid="SelectNetworkInput__input"
-        id="downshift-2-input"
+        id="downshift-4-input"
         placeholder="Enter a network name"
         value=""
       />
     </div>
   </div>
   <ul
-    aria-labelledby="downshift-3-label"
-    id="downshift-3-menu"
+    aria-labelledby="downshift-5-label"
+    id="downshift-5-menu"
     role="listbox"
   >
     <li
       aria-selected="false"
       class="inline-block pt-6 mr-6 cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-3-item-0"
+      id="downshift-5-item-0"
       role="option"
     >
       <div
@@ -117,7 +117,7 @@ exports[`SelectNetwork should render with networks 1`] = `
       aria-selected="false"
       class="inline-block pt-6 mr-6 cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-3-item-1"
+      id="downshift-5-item-1"
       role="option"
     >
       <div
@@ -141,7 +141,7 @@ exports[`SelectNetwork should render with networks 1`] = `
       aria-selected="false"
       class="inline-block pt-6 mr-6 cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-3-item-2"
+      id="downshift-5-item-2"
       role="option"
     >
       <div
