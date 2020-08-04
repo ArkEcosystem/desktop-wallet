@@ -30,7 +30,7 @@ export const WalletDetails = () => {
 
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
-	const wallets = useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
+	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const coinName = activeWallet.coin().manifest().get<string>("name");
 	const networkName = activeWallet.network().name;
@@ -80,8 +80,8 @@ export const WalletDetails = () => {
 
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
 	const getWalletData = useCallback(async () => {
-		const data = await activeWallet!.coin().client().wallet(activeWallet!.address());
-		const walletTransactions = (await activeWallet!.transactions()).items();
+		const data = await activeWallet.coin().client().wallet(activeWallet.address());
+		const walletTransactions = (await activeWallet.transactions()).items();
 
 		setWalletData(data);
 		setTransactions(walletTransactions);
