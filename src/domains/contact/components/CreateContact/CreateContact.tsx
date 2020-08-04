@@ -2,7 +2,7 @@ import { NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import { ContactForm } from "domains/contact/components/ContactForm";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type CreateContactProps = {
@@ -16,16 +16,35 @@ type CreateContactProps = {
 
 export const CreateContact = ({ isOpen, networks, profile, onClose, onCancel, onSave }: CreateContactProps) => {
 	const { t } = useTranslation();
+	const [errors, setErrors] = useState<any>({});
 
 	const { persist } = useEnvironmentContext();
 
+	const formatError = (errorMessage: string, name: string) => {
+		switch (true) {
+			case errorMessage.includes("already exists"):
+				return {
+					name: t("CONTACTS.VALIDATION.CONTACT_NAME_EXISTS", {
+						name,
+					}),
+				};
+		}
+	};
+
 	const handleOnSave = async ({ name, addresses }: any) => {
-		const contact = profile.contacts().create(name);
+		try {
+			const contact = profile.contacts().create(name);
+			await profile.contacts().update(contact?.id(), { addresses });
+			await persist();
+			onSave?.(contact.id());
+		} catch (e) {
+			setErrors(formatError(e.toString(), name));
+		}
+	};
 
-		await profile.contacts().update(contact?.id(), { addresses });
-		await persist();
-
-		onSave?.(contact.id());
+	const handleChange = (fieldName: string) => {
+		const { [fieldName]: _, ...restErrors } = errors;
+		setErrors(restErrors);
 	};
 
 	return (
@@ -36,7 +55,13 @@ export const CreateContact = ({ isOpen, networks, profile, onClose, onCancel, on
 			onClose={onClose}
 		>
 			<div className="mt-8">
-				<ContactForm networks={networks} onCancel={onCancel} onSave={handleOnSave} />
+				<ContactForm
+					onChange={handleChange}
+					networks={networks}
+					onCancel={onCancel}
+					onSave={handleOnSave}
+					errors={errors}
+				/>
 			</div>
 		</Modal>
 	);

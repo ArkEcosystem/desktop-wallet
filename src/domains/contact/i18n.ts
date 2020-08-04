@@ -29,4 +29,8 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION: "Find the contact you need quickly and conveniently",
 		PLACEHOLDER: "Search...",
 	},
+	VALIDATION: {
+		MAXLENGTH_ERROR: "The Contact Name should have less than {{maxLength}} characters.",
+		CONTACT_NAME_EXISTS: "Contact with name {{name}} already exists.",
+	},
 };
