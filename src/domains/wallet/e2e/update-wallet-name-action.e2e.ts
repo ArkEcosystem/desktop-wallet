@@ -86,7 +86,7 @@ test("Should prevent submittion on empty name", async (t) => {
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
 	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129]"));
+	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click wallet update name option in dropdown menu
