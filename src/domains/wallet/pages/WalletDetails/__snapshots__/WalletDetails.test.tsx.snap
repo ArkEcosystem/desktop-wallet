@@ -4271,7 +4271,7 @@ exports[`WalletDetails should render 2`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="grid grid-flow-row row-gap-6 px-1 py-4"
+                class="px-1 py-4 grid grid-flow-row row-gap-6"
               >
                 <div
                   class="flex items-center justify-between"
@@ -4315,7 +4315,7 @@ exports[`WalletDetails should render 2`] = `
                       class="flex flex-col justify-between"
                     >
                       <span
-                        class="text-theme-neutral text-sm font-semibold"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Delegate
                       </span>
@@ -4341,18 +4341,18 @@ exports[`WalletDetails should render 2`] = `
                     class="flex items-center"
                   >
                     <ul
-                      class="divide-x-1 divide-theme-neutral-300 flex items-stretch"
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
                     >
                       <li
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Rank
                         </span>
                         <span
-                          class="text-theme-neutral-dark font-bold"
+                          class="font-bold text-theme-neutral-dark"
                           data-testid="WalletVote__delegate__rank"
                         >
                           #
@@ -4362,7 +4362,7 @@ exports[`WalletDetails should render 2`] = `
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Explorer
                         </span>
@@ -4373,7 +4373,7 @@ exports[`WalletDetails should render 2`] = `
                           target="_blank"
                         >
                           <div
-                            class="sc-AxirZ iQaTP text-theme-primary text-2xl"
+                            class="sc-AxirZ iQaTP text-2xl text-theme-primary"
                             height="1em"
                             width="1em"
                           >
@@ -4387,7 +4387,7 @@ exports[`WalletDetails should render 2`] = `
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           MarketSquare
                         </span>
@@ -4398,7 +4398,7 @@ exports[`WalletDetails should render 2`] = `
                           target="_blank"
                         >
                           <div
-                            class="sc-AxirZ iQaTP text-theme-primary text-xl"
+                            class="sc-AxirZ iQaTP text-xl text-theme-primary"
                             height="1em"
                             width="1em"
                           >
@@ -4412,7 +4412,7 @@ exports[`WalletDetails should render 2`] = `
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Status
                         </span>
@@ -5855,7 +5855,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="grid grid-flow-row row-gap-6 px-1 py-4"
+                class="px-1 py-4 grid grid-flow-row row-gap-6"
               >
                 <div
                   class="flex items-center pr-8 space-x-4"
@@ -5885,16 +5885,16 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     class="flex flex-col"
                   >
                     <span
-                      class="text-theme-neutral text-sm font-semibold"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Address Delegate
                     </span>
                     <span
-                      class="text-theme-neutral-900 font-semibold"
+                      class="font-semibold text-theme-neutral-900"
                     >
                       You haven't voted for more than one delegate yet.
                       <a
-                        class="text-theme-primary px-2"
+                        class="px-2 text-theme-primary"
                         href="/#"
                       >
                         Learn more
@@ -8698,7 +8698,7 @@ exports[`WalletDetails should render with timers 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="grid grid-flow-row row-gap-6 px-1 py-4"
+                class="px-1 py-4 grid grid-flow-row row-gap-6"
               >
                 <div
                   class="flex items-center justify-between"
@@ -8742,7 +8742,7 @@ exports[`WalletDetails should render with timers 1`] = `
                       class="flex flex-col justify-between"
                     >
                       <span
-                        class="text-theme-neutral text-sm font-semibold"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Delegate
                       </span>
@@ -8768,18 +8768,18 @@ exports[`WalletDetails should render with timers 1`] = `
                     class="flex items-center"
                   >
                     <ul
-                      class="divide-x-1 divide-theme-neutral-300 flex items-stretch"
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
                     >
                       <li
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Rank
                         </span>
                         <span
-                          class="text-theme-neutral-dark font-bold"
+                          class="font-bold text-theme-neutral-dark"
                           data-testid="WalletVote__delegate__rank"
                         >
                           #
@@ -8789,7 +8789,7 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Explorer
                         </span>
@@ -8800,7 +8800,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           target="_blank"
                         >
                           <div
-                            class="sc-AxirZ iQaTP text-theme-primary text-2xl"
+                            class="sc-AxirZ iQaTP text-2xl text-theme-primary"
                             height="1em"
                             width="1em"
                           >
@@ -8814,7 +8814,7 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           MarketSquare
                         </span>
@@ -8825,7 +8825,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           target="_blank"
                         >
                           <div
-                            class="sc-AxirZ iQaTP text-theme-primary text-xl"
+                            class="sc-AxirZ iQaTP text-xl text-theme-primary"
                             height="1em"
                             width="1em"
                           >
@@ -8839,7 +8839,7 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Status
                         </span>
@@ -10297,7 +10297,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="grid grid-flow-row row-gap-6 px-1 py-4"
+                class="px-1 py-4 grid grid-flow-row row-gap-6"
               >
                 <div
                   class="flex items-center justify-between"
@@ -10341,7 +10341,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       class="flex flex-col justify-between"
                     >
                       <span
-                        class="text-theme-neutral text-sm font-semibold"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Delegate
                       </span>
@@ -10367,18 +10367,18 @@ exports[`WalletDetails should update wallet name 1`] = `
                     class="flex items-center"
                   >
                     <ul
-                      class="divide-x-1 divide-theme-neutral-300 flex items-stretch"
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
                     >
                       <li
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Rank
                         </span>
                         <span
-                          class="text-theme-neutral-dark font-bold"
+                          class="font-bold text-theme-neutral-dark"
                           data-testid="WalletVote__delegate__rank"
                         >
                           #
@@ -10388,7 +10388,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Explorer
                         </span>
@@ -10399,7 +10399,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           target="_blank"
                         >
                           <div
-                            class="sc-AxirZ iQaTP text-theme-primary text-2xl"
+                            class="sc-AxirZ iQaTP text-2xl text-theme-primary"
                             height="1em"
                             width="1em"
                           >
@@ -10413,7 +10413,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           MarketSquare
                         </span>
@@ -10424,7 +10424,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           target="_blank"
                         >
                           <div
-                            class="sc-AxirZ iQaTP text-theme-primary text-xl"
+                            class="sc-AxirZ iQaTP text-xl text-theme-primary"
                             height="1em"
                             width="1em"
                           >
@@ -10438,7 +10438,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="flex flex-col items-center justify-between px-10"
                       >
                         <span
-                          class="text-theme-neutral text-sm font-semibold"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Status
                         </span>
