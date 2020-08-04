@@ -257,27 +257,31 @@ exports[`SearchContact should render a modal 1`] = `
                     class="border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
+                      class="flex justify-end"
                     >
                       <div
-                        class="float-right"
+                        class="relative"
+                        data-testid="dropdown__toggle"
                       >
-                        <button
-                          class="sc-AxjAm kwTlRm"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="float-right"
                         >
-                          <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                          <button
+                            class="sc-AxjAm kwTlRm"
+                            color="primary"
+                            type="button"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </td>
@@ -547,27 +551,31 @@ exports[`SearchContact should render a modal with custom title and description 1
                     class="border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
+                      class="flex justify-end"
                     >
                       <div
-                        class="float-right"
+                        class="relative"
+                        data-testid="dropdown__toggle"
                       >
-                        <button
-                          class="sc-AxjAm kwTlRm"
-                          color="primary"
-                          type="button"
+                        <div
+                          class="float-right"
                         >
-                          <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                          <button
+                            class="sc-AxjAm kwTlRm"
+                            color="primary"
+                            type="button"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </td>

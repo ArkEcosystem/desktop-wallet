@@ -28,6 +28,7 @@ export const SelectNetworkInput = React.forwardRef<HTMLInputElement, Props>(
 					network={network?.id()}
 					size="sm"
 					showTooltip={false}
+					noShadow
 				/>
 			</InputAddonStart>
 			{suggestion && <TypeAhead value={suggestion} />}
