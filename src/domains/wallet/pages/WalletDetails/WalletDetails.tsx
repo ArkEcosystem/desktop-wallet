@@ -29,17 +29,17 @@ export const WalletDetails = () => {
 
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
-	const wallets = React.useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
+	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
-	const coinName = activeWallet!.coin().manifest().get<string>("name");
-	const networkName = activeWallet!.network().name;
+	const coinName = activeWallet.coin().manifest().get<string>("name");
+	const networkName = activeWallet.network().name;
 
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();
 	const history = useHistory();
 
-	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
+	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const crumbs = [
 		{
 			route: dashboardRoute,
@@ -52,7 +52,7 @@ export const WalletDetails = () => {
 		let response;
 		// catch 404 wallet not found until sdk logic
 		try {
-			response = await activeWallet!.votes();
+			response = await activeWallet.votes();
 		} catch (error) {
 			return;
 		}
@@ -69,7 +69,7 @@ export const WalletDetails = () => {
 				continue;
 			}
 
-			const data = await activeWallet!.coin().client().wallet(publicKey);
+			const data = await activeWallet.coin().client().wallet(publicKey);
 
 			result.push(data);
 		}
@@ -79,19 +79,19 @@ export const WalletDetails = () => {
 
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
 	const getWalletData = React.useCallback(async () => {
-		const data = await activeWallet!.coin().client().wallet(activeWallet!.address());
+		const data = await activeWallet.coin().client().wallet(activeWallet.address());
 		setWalletData(data);
 	}, [activeWallet]);
 
 	const handleDeleteWallet = async () => {
-		activeProfile?.wallets().forget(activeWallet!.id());
+		activeProfile.wallets().forget(activeWallet.id());
 		await persist();
 		setIsDeleteWallet(false);
 		history.push(dashboardRoute);
 	};
 
 	const handleUpdateName = async ({ name }: any) => {
-		activeWallet?.settings().set(WalletSetting.Alias, name);
+		activeWallet.settings().set(WalletSetting.Alias, name);
 		await persist();
 		setIsUpdateWalletName(false);
 	};
@@ -106,7 +106,7 @@ export const WalletDetails = () => {
 
 	React.useEffect(() => {
 		const timer = setInterval(async () => {
-			await activeWallet!.syncIdentity();
+			await activeWallet.syncIdentity();
 			await persist();
 		}, 30000);
 
@@ -120,15 +120,15 @@ export const WalletDetails = () => {
 				<WalletHeader
 					coin={coinName!}
 					network={networkName}
-					address={activeWallet?.address()}
-					publicKey={activeWallet?.publicKey()}
-					balance={activeWallet?.balance().toString()}
-					currencyBalance={activeWallet?.convertedBalance().toString()}
-					name={activeWallet?.alias()}
-					isLedger={activeWallet?.isLedger()}
-					isMultisig={activeWallet?.hasSyncedWithNetwork() && activeWallet?.isMultiSignature()}
-					hasStarred={activeWallet?.isStarred()}
-					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
+					address={activeWallet.address()}
+					publicKey={activeWallet.publicKey()}
+					balance={activeWallet.balance().toString()}
+					currencyBalance={activeWallet.convertedBalance().toString()}
+					name={activeWallet.alias()}
+					isLedger={activeWallet.isLedger()}
+					isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
+					hasStarred={activeWallet.isStarred()}
+					onSend={() => history.push(`/profiles/${activeProfile.id()}/transactions/transfer`)}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
 					onSignMessage={() => setIsSigningMessage(true)}
@@ -140,23 +140,19 @@ export const WalletDetails = () => {
 				<Section>
 					{walletData && (
 						<WalletRegistrations
-							address={activeWallet?.address()}
+							address={activeWallet.address()}
 							delegate={
-								activeWallet?.hasSyncedWithNetwork() && activeWallet?.isDelegate()
+								activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
 									? walletData
 									: undefined
 							}
 							business={undefined}
-							isMultisig={activeWallet?.hasSyncedWithNetwork() && activeWallet?.isMultiSignature()}
+							isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
 							hasBridgechains={true}
-							hasSecondSignature={
-								activeWallet?.hasSyncedWithNetwork() && activeWallet?.isSecondSignature()
-							}
+							hasSecondSignature={activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()}
 							hasPlugins={true}
-							onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
-							onRegister={() =>
-								history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)
-							}
+							onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
+							onRegister={() => history.push(`/profiles/${activeProfile.id()}/transactions/registration`)}
 						/>
 					)}
 				</Section>
@@ -186,9 +182,9 @@ export const WalletDetails = () => {
 			/>
 
 			<SignMessage
-				profileId={activeProfile!.id()}
-				walletId={activeWallet!.id()}
-				signatoryAddress={activeWallet!.address()}
+				profileId={activeProfile.id()}
+				walletId={activeWallet.id()}
+				signatoryAddress={activeWallet.address()}
 				isOpen={isSigningMessage}
 				onClose={() => setIsSigningMessage(false)}
 				onCancel={() => setIsSigningMessage(false)}
@@ -205,9 +201,9 @@ export const WalletDetails = () => {
 				isOpen={isVerifyingMessage}
 				onClose={() => setIsVerifyingMessage(false)}
 				onCancel={() => setIsVerifyingMessage(false)}
-				walletId={activeWallet!.id()}
-				profileId={activeProfile!.id()}
-				signatory={activeWallet!.publicKey()}
+				walletId={activeWallet.id()}
+				profileId={activeProfile.id()}
+				signatory={activeWallet.publicKey()}
 			/>
 		</>
 	);

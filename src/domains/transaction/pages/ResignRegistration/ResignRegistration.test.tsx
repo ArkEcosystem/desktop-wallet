@@ -2,15 +2,15 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter } from "testing-library";
+import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter } from "utils/testing-library";
 
 import { ResignRegistration } from "../ResignRegistration";
 
 let rendered: RenderResult;
-let defaultFormValues = {};
+let defaultFormValues: any = {};
 
 const history = createMemoryHistory();
-const resignRegistrationURL = "/profiles/qwe123/transactions/resignation";
+const resignRegistrationURL = `/profiles/${getDefaultProfileId()}/transactions/resignation`;
 
 describe("ResignRegistration", () => {
 	beforeAll(() => {

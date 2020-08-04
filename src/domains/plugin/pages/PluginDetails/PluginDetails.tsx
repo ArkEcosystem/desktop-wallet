@@ -31,7 +31,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/plugins`,
+			route: `/profiles/${activeProfile.id()}/plugins`,
 			label: t("PLUGINS.GO_BACK_TO_PLUGIN_STORE"),
 		},
 	];
