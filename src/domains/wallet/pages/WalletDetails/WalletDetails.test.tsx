@@ -46,53 +46,53 @@ const renderPage = async () => {
 	return rendered;
 };
 
+beforeAll(async () => {
+	profile = env.profiles().findById(getDefaultProfileId());
+	wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+	blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
+	unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
+
+	useDefaultNetMocks();
+
+	nock("https://dwallets.ark.io")
+		.get(`/api/wallets/${unvotedWallet.address()}`)
+		.reply(200, walletMock)
+		.get(`/api/wallets/${unvotedWallet.address()}/votes`)
+		.reply(200, {
+			meta: {
+				totalCountIsEstimate: false,
+				count: 0,
+				pageCount: 1,
+				totalCount: 0,
+				next: null,
+				previous: null,
+				self: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
+				first: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
+				last: null,
+			},
+			data: [],
+		})
+		.get(/\/api\/wallets\/.+/)
+		.reply(404, {
+			statusCode: 404,
+			error: "Not Found",
+			message: "Wallet not found",
+		})
+		.get(/\/api\/wallets\/.+\/votes/)
+		.reply(404, {
+			statusCode: 404,
+			error: "Not Found",
+			message: "Wallet not found",
+		})
+		.persist();
+});
+
+beforeEach(async () => {
+	dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
+	history.push(dashboardURL);
+});
+
 describe("WalletDetails", () => {
-	beforeAll(async () => {
-		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
-		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
-
-		useDefaultNetMocks();
-
-		nock("https://dwallets.ark.io")
-			.get(`/api/wallets/${unvotedWallet.address()}`)
-			.reply(200, walletMock)
-			.get(`/api/wallets/${unvotedWallet.address()}/votes`)
-			.reply(200, {
-				meta: {
-					totalCountIsEstimate: false,
-					count: 0,
-					pageCount: 1,
-					totalCount: 0,
-					next: null,
-					previous: null,
-					self: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-					first: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-					last: null,
-				},
-				data: [],
-			})
-			.get(/\/api\/wallets\/.+/)
-			.reply(404, {
-				statusCode: 404,
-				error: "Not Found",
-				message: "Wallet not found",
-			})
-			.get(/\/api\/wallets\/.+\/votes/)
-			.reply(404, {
-				statusCode: 404,
-				error: "Not Found",
-				message: "Wallet not found",
-			})
-			.persist();
-	});
-
-	beforeEach(async () => {
-		dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
-		history.push(dashboardURL);
-	});
-
 	it("should render", async () => {
 		const { asFragment, getByTestId } = await renderPage();
 
@@ -146,6 +146,9 @@ describe("WalletDetails", () => {
 		history.push(dashboardURL);
 
 		const { asFragment, queryByTestId } = await renderPage();
+
+		// Wait for fetch before unmount
+		await act(async () => new Promise((resolve) => setTimeout(resolve, 1000)));
 
 		expect(queryByTestId("WalletBottomSheetMenu")).toBeNull();
 		expect(asFragment()).toMatchSnapshot();
