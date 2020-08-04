@@ -2713,9 +2713,434 @@ exports[`Dashboard should render 1`] = `
               Transactions History
             </div>
             <div
-              class="text-theme-neutral-dark"
+              class="pt-8"
             >
-              This will display the history of your transactions. But you don't have more than one transaction at the moment.
+              <div
+                class="sc-AxheI VtiAt"
+                role="table"
+              >
+                <table
+                  class="table-auto"
+                >
+                  <thead>
+                    <tr
+                      role="row"
+                    >
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top "
+                        >
+                          <div>
+                            ID
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top "
+                        >
+                          <div>
+                            Date
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-color-neutral"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-AxirZ jMwzyA"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top invisible"
+                        >
+                          <div>
+                            Type
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top "
+                        >
+                          <div>
+                            Recipient
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--4"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-center"
+                        >
+                          <div>
+                            Info
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--5"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-center"
+                        >
+                          <div>
+                            Status
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--6"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end"
+                        >
+                          <div>
+                            Amount
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-color-neutral"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-AxirZ jMwzyA"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--7"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end"
+                        >
+                          <div>
+                            Currency
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="border-b border-dotted border-theme-neutral-300"
+                      data-testid="TransactionRow"
+                    >
+                      <td
+                        class="w-16 py-6"
+                      >
+                        <div
+                          class="inline-block align-middle"
+                        >
+                          <a
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            data-testid="TransactionRow__ID"
+                            href=""
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP flex-shrink-0 "
+                              data-testid="Link__external"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                redirect.svg
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </td>
+                      <td
+                        class="w-48 py-1 text-sm text-theme-neutral-600"
+                      >
+                        <span
+                          data-testid="TransactionRow__timestamp"
+                        >
+                          02 Jan 1970 05:14:44
+                        </span>
+                      </td>
+                      <td
+                        class="w-32"
+                      >
+                        <div
+                          class="flex items-center -space-x-1"
+                          data-testid="TransactionRowMode"
+                        >
+                          <div
+                            class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              data-testid="TransactionRowMode__Received"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                received.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                            data-testid="TransactionRowRecipientIcon"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            />
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span
+                          class="font-semibold text-theme-text"
+                          data-testid="TransactionRowRecipientLabel"
+                        />
+                      </td>
+                      <td
+                        class="text-center"
+                      >
+                        <div
+                          class="inline-flex align-middle space-x-1"
+                          data-testid="TransactionRowInfo"
+                        />
+                      </td>
+                      <td
+                        class="w-16 text-center"
+                      >
+                        <div
+                          class="inline-flex p-1 align-middle"
+                          data-testid="TransactionRowConfirmation"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-theme-success"
+                            data-testid="TransactionRowConfirmation__confirmed"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              ok.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="text-right"
+                      >
+                        <div
+                          class="sc-Axmtr fXByBf"
+                          color="success"
+                          data-testid="TransactionRowAmount"
+                        >
+                          0.00000000
+                        </div>
+                      </td>
+                      <td
+                        class="text-right"
+                        data-testid="TransactionRow__currency"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                          data-testid="TransactionRowAmount"
+                        >
+                          0.00
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-dotted border-theme-neutral-300"
+                      data-testid="TransactionRow"
+                    >
+                      <td
+                        class="w-16 py-6"
+                      >
+                        <div
+                          class="inline-block align-middle"
+                        >
+                          <a
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            data-testid="TransactionRow__ID"
+                            href=""
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP flex-shrink-0 "
+                              data-testid="Link__external"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                redirect.svg
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </td>
+                      <td
+                        class="w-48 py-1 text-sm text-theme-neutral-600"
+                      >
+                        <span
+                          data-testid="TransactionRow__timestamp"
+                        >
+                          02 Jan 1970 05:14:43
+                        </span>
+                      </td>
+                      <td
+                        class="w-32"
+                      >
+                        <div
+                          class="flex items-center -space-x-1"
+                          data-testid="TransactionRowMode"
+                        >
+                          <div
+                            class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              data-testid="TransactionRowMode__Received"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                received.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                            data-testid="TransactionRowRecipientIcon"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            />
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span
+                          class="font-semibold text-theme-text"
+                          data-testid="TransactionRowRecipientLabel"
+                        />
+                      </td>
+                      <td
+                        class="text-center"
+                      >
+                        <div
+                          class="inline-flex align-middle space-x-1"
+                          data-testid="TransactionRowInfo"
+                        />
+                      </td>
+                      <td
+                        class="w-16 text-center"
+                      >
+                        <div
+                          class="inline-flex p-1 align-middle"
+                          data-testid="TransactionRowConfirmation"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-theme-success"
+                            data-testid="TransactionRowConfirmation__confirmed"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              ok.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="text-right"
+                      >
+                        <div
+                          class="sc-Axmtr fXByBf"
+                          color="success"
+                          data-testid="TransactionRowAmount"
+                        >
+                          0.00000000
+                        </div>
+                      </td>
+                      <td
+                        class="text-right"
+                        data-testid="TransactionRow__currency"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                          data-testid="TransactionRowAmount"
+                        >
+                          0.00
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                class="sc-AxhCb BegvR w-full mt-10 mb-5"
+                color="primary"
+                type="button"
+              >
+                View More
+              </button>
             </div>
           </div>
         </div>
