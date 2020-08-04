@@ -16,7 +16,7 @@ export default {
 export const Default = () => {
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	const profile = env.profiles().create("Test profile");
-	profile.contacts().create("Test contact");
+	const contact = profile.contacts().create("Test contact");
 
 	return (
 		<EnvironmentProvider env={env}>
