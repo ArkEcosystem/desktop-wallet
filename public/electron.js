@@ -12,12 +12,18 @@ let deeplinkingUrl = null;
 
 const winURL = isDev ? "http://localhost:3000" : `file://${path.join(__dirname, "../build/index.html")}`;
 
-const installExtensions = async () => {
-	const installer = require("electron-devtools-installer");
-	const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
-	const extensions = ["REACT_DEVELOPER_TOOLS"];
+const isE2E = process.env.NODE_ENV === "e2e";
 
-	return Promise.all(extensions.map((name) => installer.default(installer[name], forceDownload))).catch(console.log);
+const installExtensions = async () => {
+	if (isDev && !isE2E) {
+		const installer = require("electron-devtools-installer");
+		const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
+		const extensions = ["REACT_DEVELOPER_TOOLS"];
+
+		return Promise.all(extensions.map((name) => installer.default(installer[name], forceDownload))).catch(
+			console.log,
+		);
+	}
 };
 
 function broadcastURL(url) {
@@ -89,7 +95,7 @@ function createWindow() {
 		broadcastURL(deeplinkingUrl);
 	});
 
-	if (isDev) {
+	if (isDev && !isE2E) {
 		installExtensions()
 			.then(() => mainWindow.webContents.openDevTools())
 			.catch((error) => console.error(error));
