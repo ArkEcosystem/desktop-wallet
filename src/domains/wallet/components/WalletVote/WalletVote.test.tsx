@@ -41,17 +41,17 @@ describe("WalletVote", () => {
 
 	it("should render votes", () => {
 		const { getAllByTestId } = render(<WalletVote votes={votes} />);
-		expect(getAllByTestId("WalletVote__delegate")).toHaveLength(votes.all().length);
+		expect(getAllByTestId("WalletVote__delegate")).toHaveLength(votes.items().length);
 	});
 
 	it("should emit action on unvote", () => {
 		const onUnvote = jest.fn();
 		const { getAllByTestId } = render(<WalletVote onUnvote={onUnvote} votes={votes} />);
 		const unvoteButtons = getAllByTestId("WalletVote__delegate__unvote");
-		expect(unvoteButtons).toHaveLength(votes.all().length);
+		expect(unvoteButtons).toHaveLength(votes.items().length);
 		act(() => {
 			fireEvent.click(unvoteButtons[0]);
 		});
-		expect(onUnvote).toHaveBeenCalledWith(votes.all()[0].address());
+		expect(onUnvote).toHaveBeenCalledWith(votes.items()[0].address());
 	});
 });

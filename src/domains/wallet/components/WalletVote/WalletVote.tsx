@@ -19,7 +19,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
-	const hasNoVotes = !votes || votes.all().length === 0;
+	const hasNoVotes = !votes || votes.items().length === 0;
 
 	return (
 		<section data-testid="WalletVote">
@@ -33,7 +33,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 			</div>
 
 			<Collapse isOpen={isOpen}>
-				<div className="px-1 py-4 grid grid-flow-row row-gap-6">
+				<div className="grid grid-flow-row row-gap-6 px-1 py-4">
 					{hasNoVotes ? (
 						<div data-testid="WalletVote__empty" className="flex items-center pr-8 space-x-4">
 							<div className="flex items-center -space-x-2">
@@ -43,12 +43,12 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 								<Circle size="lg" className="bg-theme-background" />
 							</div>
 							<div className="flex flex-col">
-								<span className="text-sm font-semibold text-theme-neutral">
+								<span className="text-theme-neutral text-sm font-semibold">
 									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.LABEL")}
 								</span>
-								<span className="font-semibold text-theme-neutral-900">
+								<span className="text-theme-neutral-900 font-semibold">
 									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.DESCRIPTION")}
-									<a href="/#" className="px-2 text-theme-primary">
+									<a href="/#" className="text-theme-primary px-2">
 										{t("COMMON.LEARN_MORE")}
 									</a>
 								</span>
@@ -69,7 +69,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 										<Avatar size="lg" address={delegate.address()} />
 									</div>
 									<div className="flex flex-col justify-between">
-										<span className="text-sm font-semibold text-theme-neutral">
+										<span className="text-theme-neutral text-sm font-semibold">
 											{t("COMMON.DELEGATE")}
 										</span>
 										<Address walletName={delegate.username()} address={delegate.address()} />
@@ -77,21 +77,21 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 								</div>
 
 								<div className="flex items-center">
-									<ul className="flex items-stretch divide-x-1 divide-theme-neutral-300">
+									<ul className="divide-x-1 divide-theme-neutral-300 flex items-stretch">
 										<li className="flex flex-col items-center justify-between px-10">
-											<span className="text-sm font-semibold text-theme-neutral">
+											<span className="text-theme-neutral text-sm font-semibold">
 												{t("COMMON.RANK")}
 											</span>
 											<span
 												data-testid="WalletVote__delegate__rank"
-												className="font-bold text-theme-neutral-dark"
+												className="text-theme-neutral-dark font-bold"
 											>
 												#{delegate.rank()}
 											</span>
 										</li>
 
 										<li className="flex flex-col items-center justify-between px-10">
-											<span className="text-sm font-semibold text-theme-neutral">
+											<span className="text-theme-neutral text-sm font-semibold">
 												{t("COMMON.EXPLORER")}
 											</span>
 											<a
@@ -100,12 +100,12 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 												target="_blank"
 												rel="noopener noreferrer"
 											>
-												<Icon name="Explorer" className="text-2xl text-theme-primary" />
+												<Icon name="Explorer" className="text-theme-primary text-2xl" />
 											</a>
 										</li>
 
 										<li className="flex flex-col items-center justify-between px-10">
-											<span className="text-sm font-semibold text-theme-neutral">
+											<span className="text-theme-neutral text-sm font-semibold">
 												{t("COMMON.MARKETSQUARE")}
 											</span>
 											<a
@@ -114,12 +114,12 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 												target="_blank"
 												rel="noopener noreferrer"
 											>
-												<Icon name="Link" className="text-xl text-theme-primary" />
+												<Icon name="Link" className="text-theme-primary text-xl" />
 											</a>
 										</li>
 
 										<li className="flex flex-col items-center justify-between px-10">
-											<span className="text-sm font-semibold text-theme-neutral">
+											<span className="text-theme-neutral text-sm font-semibold">
 												{t("COMMON.STATUS")}
 											</span>
 											<Icon
