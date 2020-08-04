@@ -42,7 +42,6 @@ const renderPage = async () => {
 	jest.useRealTimers();
 
 	await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeInTheDocument());
-	await waitFor(() => expect(rendered.getByTestId("WalletRegistrations")).toBeTruthy());
 	await waitFor(() => expect(rendered.getAllByTestId("TransactionRow")).toHaveLength(4));
 
 	return rendered;
