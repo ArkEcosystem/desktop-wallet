@@ -80,22 +80,28 @@ describe("AddRecipient", () => {
 	});
 
 	it("should toggle between single and multiple recipients", async () => {
-		const { getByTestId } = render(
+		const { getByTestId, queryByText } = render(
 			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
 		);
+
 		const singleButton = getByTestId("add-recipient-is-single-toggle");
 		const multipleButton = getByTestId("add-recipient-is-multiple-toggle");
+
+		const recipientLabel = "Recipient #1";
+
+		expect(queryByText(recipientLabel)).toBeFalsy();
 
 		await act(async () => {
 			fireEvent.click(multipleButton);
 		});
-		expect(getByTestId("add-recipient__form-wrapper")).toHaveClass("MultiRecipientWrapper");
+
+		expect(queryByText(recipientLabel)).toBeTruthy();
 
 		await act(async () => {
 			fireEvent.click(singleButton);
 		});
 
-		expect(getByTestId("add-recipient__form-wrapper")).not.toHaveClass("MultiRecipientWrapper");
+		expect(queryByText(recipientLabel)).toBeFalsy();
 	});
 
 	it("should show add recipient button when recipient and amount are set in multipe tab", async () => {
