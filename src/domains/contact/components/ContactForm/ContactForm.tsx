@@ -7,7 +7,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo,useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -133,10 +133,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 		form.setValue("network", network, true);
 	};
 
-	const isNameValid = () => {
-		const { name } = form.getValues();
-		return !!name && !form.errors?.name;
-	};
+	const isNameValid = useMemo(() => !!name?.trim() && !form.errors?.name, [name, form.errors]);
 
 	return (
 		<Form
@@ -222,7 +219,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 						data-testid="contact-form__save-btn"
 						type="submit"
 						variant="solid"
-						disabled={!addresses.length && !isNameValid()}
+						disabled={addresses.length === 0 || !isNameValid}
 					>
 						{t("COMMON.SAVE")}
 					</Button>
