@@ -8,3 +8,10 @@ export const useActiveProfile = () => {
 
 	return useMemo(() => context.env.profiles().findById(profileId), [context, profileId]);
 };
+
+export const useActiveWallet = () => {
+	const profile = useActiveProfile();
+	const { walletId } = useParams();
+
+	return useMemo(() => profile.wallets().findById(walletId), [profile, walletId]);
+};

@@ -19,7 +19,8 @@ describe("App", () => {
 	it("should render mock", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
-		const { getByTestId } = renderWithRouter(<App />, { withProviders: false });
-		await waitFor(() => expect(getByTestId("profile-card__user--avatar")).toBeInTheDocument());
+		const { getByText } = renderWithRouter(<App />, { withProviders: false });
+		await waitFor(() => expect(getByText("John Doe")).toBeInTheDocument());
+		await waitFor(() => expect(getByText("Jane Doe")).toBeInTheDocument());
 	});
 });

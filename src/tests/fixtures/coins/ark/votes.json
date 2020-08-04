@@ -1,0 +1,84 @@
+{
+	"meta": {
+		"totalCountIsEstimate": false,
+		"count": 3,
+		"pageCount": 1,
+		"totalCount": 3,
+		"next": null,
+		"previous": null,
+		"self": "/wallets/arkx/votes?transform=true&page=1&limit=100",
+		"first": "/wallets/arkx/votes?transform=true&page=1&limit=100",
+		"last": "/wallets/arkx/votes?transform=true&page=1&limit=100"
+	},
+	"data": [
+		{
+			"id": "111a299df536b6abfd27f7615f971fb92d1e2171ca1a97f66fa688a00f69372c",
+			"blockId": "2701894269979940537",
+			"version": 1,
+			"type": 3,
+			"typeGroup": 1,
+			"amount": "0",
+			"fee": "100000000",
+			"sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"senderPublicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+			"recipient": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"signature": "30450221008430825c3c8255350a2d056e16f739ae89aef9fe3e7bd961d9a77b96b9e4a47302207109644a2f213f6e9f5eea26ce77cf4beb3e796792d1659fc0a65c3fa7ee2eb2",
+			"asset": {
+				"votes": ["+034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"]
+			},
+			"confirmations": 4849450,
+			"timestamp": {
+				"epoch": 46471767,
+				"unix": 1536572967,
+				"human": "2018-09-10T09:49:27.000Z"
+			},
+			"nonce": "2320"
+		},
+		{
+			"id": "05d6ab7e784db9f869a5d832fd0c639e20ff4291fcca260988a79e79aca3c35b",
+			"blockId": "18003341089862311873",
+			"version": 1,
+			"type": 3,
+			"typeGroup": 1,
+			"amount": "0",
+			"fee": "100000000",
+			"sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"senderPublicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+			"recipient": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"signature": "3045022100f5b2ae43af548338afb73dbe3c94c7ccdd7cf6a10a95e1f161b9133c45deb2e7022007502692eeee97c474fad1eff95c7438fc43aecfe794ccf43d5da330d4178691",
+			"asset": {
+				"votes": ["-034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"]
+			},
+			"confirmations": 4849453,
+			"timestamp": {
+				"epoch": 46471740,
+				"unix": 1536572940,
+				"human": "2018-09-10T09:49:00.000Z"
+			},
+			"nonce": "2319"
+		},
+		{
+			"id": "e83bf5a92fcf84809e188d6b5cbff33e799b6deb0ff525d52c57d1cc23ef7698",
+			"blockId": "11542015850858065379",
+			"version": 1,
+			"type": 3,
+			"typeGroup": 1,
+			"amount": "0",
+			"fee": "100000000",
+			"sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"senderPublicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+			"recipient": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"signature": "304402201cef97b24178292654befc39667483e647d14a6cc8e255ae34c25e37a347e661022061d1405ac15d137197b9882e1f5afa807099296fa528db4095e40e677636901c",
+			"asset": {
+				"votes": ["+034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"]
+			},
+			"confirmations": 5027320,
+			"timestamp": {
+				"epoch": 45021768,
+				"unix": 1535122968,
+				"human": "2018-08-24T15:02:48.000Z"
+			},
+			"nonce": "2"
+		}
+	]
+}

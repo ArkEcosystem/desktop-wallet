@@ -70,7 +70,7 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile.id()}/support`,
-			label: "Go back to Help & Support",
+			label: t("HELP.GO_BACK_TO_HELP_SUPPORT"),
 		},
 	];
 

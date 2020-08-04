@@ -31,7 +31,7 @@ const ArticleListItem = ({ title, path }: ArticleListItemProps) => (
 		<a
 			title={title}
 			href={path}
-			className="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-contrast text-theme-neutral-800 hover:text-theme-primary rounded-md"
+			className="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-contrast text-theme-neutral-800 hover:text-theme-primary"
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
@@ -45,7 +45,7 @@ const ArticleListItem = ({ title, path }: ArticleListItemProps) => (
 
 const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 	<a href={path} title={title} className="flex flex-1 cursor-pointer">
-		<div className="flex flex-row w-full p-8 mx-2 ml-2 bg-white hover:shadow-xl rounded-md">
+		<div className="flex flex-row w-full p-8 mx-2 ml-2 bg-white rounded-md hover:shadow-xl">
 			<Circle className="mr-3 border-theme-neutral-800" size="xl">
 				<div className="text-theme-neutral-800">
 					<Icon name={icon} width={20} height={20} />
@@ -68,7 +68,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile.id()}/support`,
-			label: "Go back to Help & Support",
+			label: t("HELP.GO_BACK_TO_HELP_SUPPORT"),
 		},
 	];
 

@@ -7,9 +7,8 @@ import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
+import { CreateContact, DeleteContact, UpdateContact } from "domains/contact/components";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
-import { CreateContact } from "domains/contact/components/CreateContact";
-import { DeleteContact } from "domains/contact/components/DeleteContact";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -45,18 +44,26 @@ type ContactsProps = {
 };
 
 export const Contacts = ({ onSearch }: ContactsProps) => {
-	const { env, persist, state } = useEnvironmentContext();
+	const { env, state } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
 
 	const [contacts, setContacts] = useState<Contact[]>([]);
 
 	const [createIsOpen, setCreateIsOpen] = useState(false);
-	const [contactToDelete, setContactToDelete] = useState(null);
+
+	const [contactAction, setContactAction] = useState<string | null>(null);
+	const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
 
 	const [availableNetworks] = useState<NetworkData[]>(env.availableNetworks());
 
 	const { t } = useTranslation();
+
+	useEffect(() => {
+		if (!contactAction) {
+			setSelectedContact(null);
+		}
+	}, [contactAction]);
 
 	useEffect(() => {
 		setContacts(activeProfile.contacts().values());
@@ -70,8 +77,8 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			route: `/profiles/${activeProfile.id()}/dashboard`,
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
@@ -95,17 +102,13 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		},
 	];
 
-	const handleOnSave = async ({ name, addresses }: any) => {
-		const contact = activeProfile.contacts().create(name);
-		await activeProfile.contacts().update(contact.id(), { addresses });
-		await persist();
-		setCreateIsOpen(false);
+	const handleContactAction = (action: string, contact: Contact) => {
+		setContactAction(action);
+		setSelectedContact(contact);
 	};
 
-	const handleContactAction = (action: any, contact: any) => {
-		if (action === "delete") {
-			setContactToDelete(contact.id());
-		}
+	const resetContactAction = () => {
+		setContactAction(null);
 	};
 
 	return (
@@ -139,11 +142,13 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 					{!!contacts.length && (
 						<div className="w-full" data-testid="ContactList">
 							<Table columns={listColumns} data={contacts}>
-								{(contact: any) => (
+								{(contact: Contact) => (
 									<ContactListItem
 										contact={contact}
 										options={contactOptions}
-										onAction={(action) => handleContactAction(action.value, contact)}
+										onAction={(action: { value: any }) =>
+											handleContactAction(action.value, contact)
+										}
 									/>
 								)}
 							</Table>
@@ -154,20 +159,36 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 			<CreateContact
 				isOpen={createIsOpen}
+				profile={activeProfile}
 				networks={availableNetworks}
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
-				onSave={handleOnSave}
+				onSave={() => setCreateIsOpen(false)}
 			/>
 
-			<DeleteContact
-				profile={activeProfile}
-				contactId={contactToDelete}
-				isOpen={!!contactToDelete}
-				onClose={() => setContactToDelete(null)}
-				onCancel={() => setContactToDelete(null)}
-				onDelete={() => setContactToDelete(null)}
-			/>
+			{selectedContact && (
+				<>
+					<UpdateContact
+						isOpen={contactAction === "edit"}
+						contact={selectedContact}
+						profile={activeProfile}
+						networks={availableNetworks}
+						onCancel={resetContactAction}
+						onClose={resetContactAction}
+						onDelete={() => setContactAction("delete")}
+						onSave={resetContactAction}
+					/>
+
+					<DeleteContact
+						isOpen={contactAction === "delete"}
+						contact={selectedContact}
+						profile={activeProfile}
+						onCancel={resetContactAction}
+						onClose={resetContactAction}
+						onDelete={resetContactAction}
+					/>
+				</>
+			)}
 		</>
 	);
 };

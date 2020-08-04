@@ -228,7 +228,7 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 

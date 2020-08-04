@@ -1,24 +1,29 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
 import { env, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
 
-import { useActiveProfile } from "./env";
+import { useActiveProfile, useActiveWallet } from "./env";
 
 let profile: Profile;
+let wallet: Wallet;
 
 describe("useActiveProfile", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().values()[0];
 	});
+
 	const TestProfile: React.FC = () => {
 		const profile = useActiveProfile();
 
-		if (profile) {
-			return <h1>{profile.name()}</h1>;
-		}
+		return <h1>{profile.name()}</h1>;
+	};
 
-		return <span>404</span>;
+	const TestWallet: React.FC = () => {
+		const wallet = useActiveWallet();
+
+		return <h1>{wallet.address()}</h1>;
 	};
 
 	it("should return profile", () => {
@@ -33,15 +38,16 @@ describe("useActiveProfile", () => {
 		expect(getByText(profile.name())).toBeTruthy();
 	});
 
-	it("should return 404 when no profile is found", () => {
+	it("should return wallet", () => {
 		const { getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId">
-				<TestProfile />
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<TestWallet />
 			</Route>,
 			{
-				routes: [`/profiles/nonexistent-id`],
+				routes: [`/profiles/${profile.id()}/wallets/${wallet.id()}`],
 			},
 		);
-		expect(getByText("404")).toBeTruthy();
+
+		expect(getByText(wallet.address())).toBeTruthy();
 	});
 });

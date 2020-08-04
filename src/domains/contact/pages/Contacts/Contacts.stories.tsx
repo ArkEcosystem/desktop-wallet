@@ -12,7 +12,7 @@ export default { title: "Domains / Contact / Pages / Contacts" };
 
 export const Default = () => {
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-	const profile = env.profiles().create("Test profile");
+	env.profiles().create("Test profile");
 
 	return (
 		<EnvironmentProvider env={env}>

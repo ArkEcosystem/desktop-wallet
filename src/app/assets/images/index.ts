@@ -1,7 +1,7 @@
 import { contacts } from "domains/contact/images";
+import { error } from "domains/error/images";
 import { exchange } from "domains/exchange/images";
 import { news } from "domains/news/images";
-import { offline } from "domains/offline/images";
 import { plugin } from "domains/plugin/images";
 import { profile } from "domains/profile/images";
 import { transaction } from "domains/transaction/images";
@@ -27,7 +27,7 @@ export const images = {
 	contacts,
 	exchange,
 	news,
-	offline,
+	error,
 	plugin,
 	profile,
 	transaction,

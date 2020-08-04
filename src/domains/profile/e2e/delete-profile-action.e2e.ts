@@ -12,5 +12,5 @@ test("should delete profile from profile card menu", async (t) => {
 		),
 	);
 	await t.click(Selector('[data-testid="DeleteResource__submit-button"]'));
-	await t.expect(Selector('[data-testid="ProfileCard"]').exists).notOk();
+	await t.expect(Selector('[data-testid="ProfileCard"]').count).eql(1);
 });

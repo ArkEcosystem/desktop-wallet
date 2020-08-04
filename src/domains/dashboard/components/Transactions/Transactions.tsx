@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import React from "react";
@@ -5,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
 	title: string;
-	transactions?: any;
+	transactions: Contracts.TransactionDataType[];
 	emptyText?: string;
 };
 
