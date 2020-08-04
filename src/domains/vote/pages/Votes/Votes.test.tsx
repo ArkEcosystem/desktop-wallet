@@ -1,27 +1,42 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
-import { act, fireEvent, renderWithRouter } from "testing-library";
+import { Route } from "react-router-dom";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
 
 import { addressListData, delegateListData } from "../../data";
 import { translations } from "../../i18n";
 import { Votes } from "./Votes";
 
 const networks = availableNetworksMock;
+let profile: Profile;
+let route: string;
+
+const renderPage = () =>
+	renderWithRouter(
+		<Route path="/profiles/:profileId/votes">
+			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />
+		</Route>,
+		{
+			routes: [route],
+		},
+	);
 
 describe("Votes", () => {
+	beforeEach(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		route = `/profiles/${profile.id()}/votes`;
+	});
+
 	it("should render", () => {
-		const { container, asFragment } = renderWithRouter(
-			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
-		);
+		const { container, asFragment } = renderPage();
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select a network", () => {
-		const { container, asFragment, getByTestId } = renderWithRouter(
-			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
-		);
+		const { container, asFragment, getByTestId } = renderPage();
 		const selectAssetInput = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
@@ -39,9 +54,7 @@ describe("Votes", () => {
 	});
 
 	it("should select address", () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
-			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
-		);
+		const { asFragment, getByTestId, getAllByTestId } = renderPage();
 		const selectAssetInput = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
@@ -65,9 +78,7 @@ describe("Votes", () => {
 	});
 
 	it("should select a delegate", () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
-			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
-		);
+		const { asFragment, getByTestId, getAllByTestId } = renderPage();
 		const selectAssetInput = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
