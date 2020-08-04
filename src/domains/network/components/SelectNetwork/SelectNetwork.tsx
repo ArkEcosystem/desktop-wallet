@@ -3,13 +3,14 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import { useCombobox } from "downshift";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { SelectNetworkInput } from "./SelectNetworkInput";
 
 type Network = NetworkData & { extra?: CoinNetworkExtended };
 
 type SelectNetworkProps = {
+	selected?: NetworkData;
 	networks: NetworkData[];
 	placeholder?: string;
 	name?: string;
@@ -21,7 +22,15 @@ type SelectNetworkProps = {
 
 export const itemToString = (item: Network | null) => item?.extra?.displayName || "";
 
-export const SelectNetwork = ({ networks, placeholder, onSelect, name, id, disabled }: SelectNetworkProps) => {
+export const SelectNetwork = ({
+	networks,
+	placeholder,
+	onSelect,
+	name,
+	id,
+	disabled,
+	selected,
+}: SelectNetworkProps) => {
 	const [items] = React.useState(() =>
 		networks.map((network) => {
 			const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
@@ -52,6 +61,10 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name, id, disab
 			}
 		},
 	});
+
+	useEffect(() => {
+		selectItem(selected || null);
+	}, [selected]);
 
 	const isMatch = React.useCallback(
 		(network: Network) => {
