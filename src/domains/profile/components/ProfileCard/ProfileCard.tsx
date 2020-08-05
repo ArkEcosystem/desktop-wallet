@@ -70,7 +70,7 @@ export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSetti
 								className="font-semibold text-theme-neutral-dark"
 								data-testid="profile-card__user--balance"
 							>
-								{profile.balance().toString()}
+								{profile.balance().toHuman(8)}
 							</p>
 						</div>
 					</div>

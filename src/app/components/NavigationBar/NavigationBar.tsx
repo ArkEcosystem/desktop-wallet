@@ -227,7 +227,7 @@ export const NavigationBar = ({
 						<div className="p-2 ml-4 text-right">
 							<div className="text-xs text-theme-neutral">{t("COMMON.YOUR_BALANCE")}</div>
 							<div className="text-sm font-bold text-theme-neutral-dark">
-								{profile?.balance().toString()}
+								{profile?.balance().toHuman(8)}
 							</div>
 						</div>
 
