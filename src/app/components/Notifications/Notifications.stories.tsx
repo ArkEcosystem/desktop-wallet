@@ -35,6 +35,7 @@ export const Default = () => {
 			fee: () => BigNumber.make(21),
 			memo: () => "Test",
 			asset: () => ({ a: "b" }),
+			isConfirmed: () => false,
 			isSent: () => true,
 			isReceived: () => false,
 			isTransfer: () => true,
