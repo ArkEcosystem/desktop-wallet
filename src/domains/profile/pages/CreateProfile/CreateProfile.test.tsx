@@ -75,6 +75,10 @@ describe("CreateProfile", () => {
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
 		fireEvent.input(getByTestId("Input"), { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
