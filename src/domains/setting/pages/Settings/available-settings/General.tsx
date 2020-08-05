@@ -25,13 +25,14 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
+	const { context, register } = formConfig;
+	const nameMaxLength = 42;
+
 	const [avatarImage, setAvatarImage] = useState(activeProfile.settings().get(ProfileSetting.Avatar) || "");
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
 		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
 	);
-
-	const { context, register } = formConfig;
 
 	const handleChangeAvatar = async () => {
 		const raw = await openFile(null, {
@@ -231,8 +232,10 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 		isDarkMode,
 		isUpdateLedger,
 	}: any) => {
+		const formattedName = name.substring(0, nameMaxLength);
+
 		activeProfile.settings().set(ProfileSetting.Avatar, avatarImage);
-		activeProfile.settings().set(ProfileSetting.Name, name);
+		activeProfile.settings().set(ProfileSetting.Name, formattedName);
 		activeProfile.settings().set(ProfileSetting.Locale, language);
 		activeProfile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
 		activeProfile.settings().set(ProfileSetting.MarketProvider, marketProvider);
@@ -268,6 +271,12 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 											field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
 										}).toString(),
+										maxLength: {
+											value: nameMaxLength,
+											message: t("SETTINGS.GENERAL.VALIDATION.MAXLENGTH_ERROR", {
+												maxLength: nameMaxLength,
+											}),
+										},
 									})}
 									defaultValue={activeProfile.settings().get(ProfileSetting.Name)}
 									data-testid="General-settings__input--name"
