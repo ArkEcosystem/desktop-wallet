@@ -13,16 +13,24 @@ type Props = {
 	step: number;
 	name?: string;
 	magnitude?: number;
+	onChange?: (value: string) => void;
 };
 
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ min, max, step, defaultValue, magnitude }: Props, ref) => {
+	({ min, max, step, defaultValue, magnitude, onChange }: Props, ref) => {
 		const [values, setValues] = React.useState([defaultValue]);
+		const fraction = Math.pow(10, magnitude! * -1);
 
+		// TODO: tidy up storage of amount
 		const handleInput = (value: string) => {
-			const fraction = Math.pow(10, magnitude! * -1);
-			const amount = BigNumber.make(value).times(fraction);
+			const amount = BigNumber.make(value).divide(fraction);
 			setValues([amount.toNumber()]);
+			onChange?.(amount.toFixed(0));
+		};
+		const handleRange = (values: number[]) => {
+			const amount = BigNumber.make(values[0]).divide(fraction);
+			setValues(values);
+			onChange?.(amount.toFixed(0));
 		};
 
 		const trackBackgroundMinValue = Math.max(values[0], 3);
@@ -51,7 +59,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						step={step}
 						min={min}
 						max={max}
-						onChange={setValues}
+						onChange={handleRange}
 						values={rangeValues}
 					/>
 				</div>
