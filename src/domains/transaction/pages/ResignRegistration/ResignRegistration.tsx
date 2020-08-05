@@ -1,3 +1,4 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
@@ -47,7 +48,7 @@ const FirstStep = () => {
 					extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					border={false}
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral">
+					<div className="text-theme-neutral mb-2 text-sm font-semibold">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
@@ -80,25 +81,25 @@ const SecondStep = () => {
 					{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 				</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={
-						<div className="ml-1 text-theme-danger">
+						<div className="text-theme-danger ml-1">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
 					}
 				>
-					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
+					<div className="text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
 
 				<TransactionDetail extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral">
+					<div className="text-theme-neutral mb-2 text-sm font-semibold">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
@@ -110,7 +111,7 @@ const SecondStep = () => {
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>Delegate 3</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
 				</div>
 			</div>
 		</div>
@@ -178,7 +179,7 @@ export const FourthStep = () => {
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<div className="ml-1 text-theme-danger">
+					<div className="text-theme-danger ml-1">
 						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Sent" width={22} height={22} />
 						</Circle>

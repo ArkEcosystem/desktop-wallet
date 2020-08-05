@@ -1,4 +1,5 @@
 import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -241,14 +242,14 @@ const ThirdStep = () => {
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={
-						<div className="ml-1 text-theme-danger">
+						<div className="text-theme-danger ml-1">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
 					}
 				>
-					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
+					<div className="text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
@@ -257,7 +258,7 @@ const ThirdStep = () => {
 					extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					className="pt-4"
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral">
+					<div className="text-theme-neutral mb-2 text-sm font-semibold">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
@@ -270,7 +271,7 @@ const ThirdStep = () => {
 					label={t("TRANSACTION.TYPE")}
 					extra={
 						<div>
-							<Circle className="border-black bg-theme-background" size="lg">
+							<Circle className="bg-theme-background border-black" size="lg">
 								<Icon name="Business" width={20} height={20} />
 							</Circle>
 						</div>
@@ -298,7 +299,7 @@ const ThirdStep = () => {
 				</TransactionDetail>
 
 				<div>
-					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
 				</div>
 			</div>
 		</div>
@@ -373,7 +374,7 @@ export const FifthStep = () => {
 				label={t("TRANSACTION.AMOUNT")}
 				className="pb-0"
 				extra={
-					<div className="ml-1 text-theme-danger">
+					<div className="text-theme-danger ml-1">
 						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Sent" width={22} height={22} />
 						</Circle>

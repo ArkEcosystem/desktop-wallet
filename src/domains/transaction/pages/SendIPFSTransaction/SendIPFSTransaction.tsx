@@ -1,4 +1,5 @@
 import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -72,12 +73,12 @@ export const SecondStep = () => {
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-2 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-2">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={
-						<div className="ml-1 text-theme-danger">
+						<div className="text-theme-danger ml-1">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
@@ -98,7 +99,7 @@ export const SecondStep = () => {
 					label={t("TRANSACTION.IPFS_HASH")}
 					extra={
 						<div className="ml-1">
-							<Circle className="border-black bg-theme-background" size="lg">
+							<Circle className="bg-theme-background border-black" size="lg">
 								<Icon name="Ipfs" width={23} height={23} />
 							</Circle>
 						</div>
@@ -107,7 +108,7 @@ export const SecondStep = () => {
 					<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 				</TransactionDetail>
 
-				<TotalAmountBox transactionAmount="1.00" transactionFee="0.09660435" />
+				<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
 			</div>
 		</section>
 	);
@@ -155,7 +156,7 @@ export const FourthStep = () => {
 				label={t("TRANSACTION.AMOUNT")}
 				className="pb-0"
 				extra={
-					<div className="ml-1 text-theme-danger">
+					<div className="text-theme-danger ml-1">
 						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Sent" width={22} height={22} />
 						</Circle>

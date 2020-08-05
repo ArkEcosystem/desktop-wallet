@@ -1,3 +1,4 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -203,7 +204,7 @@ const SecondStep = () => {
 				</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
 				</div>
 			</div>
 		</div>
