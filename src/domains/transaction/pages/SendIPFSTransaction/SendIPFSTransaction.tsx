@@ -73,12 +73,12 @@ export const SecondStep = () => {
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}</div>
 
-			<div className="grid grid-flow-row gap-2 mt-2">
+			<div className="mt-2 grid grid-flow-row gap-2">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={
-						<div className="text-theme-danger ml-1">
+						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
@@ -99,7 +99,7 @@ export const SecondStep = () => {
 					label={t("TRANSACTION.IPFS_HASH")}
 					extra={
 						<div className="ml-1">
-							<Circle className="bg-theme-background border-black" size="lg">
+							<Circle className="border-black bg-theme-background" size="lg">
 								<Icon name="Ipfs" width={23} height={23} />
 							</Circle>
 						</div>
@@ -156,7 +156,7 @@ export const FourthStep = () => {
 				label={t("TRANSACTION.AMOUNT")}
 				className="pb-0"
 				extra={
-					<div className="text-theme-danger ml-1">
+					<div className="ml-1 text-theme-danger">
 						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Sent" width={22} height={22} />
 						</Circle>

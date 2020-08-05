@@ -242,14 +242,14 @@ const ThirdStep = () => {
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={
-						<div className="text-theme-danger ml-1">
+						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
 					}
 				>
-					<div className="text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">
+					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
@@ -258,7 +258,7 @@ const ThirdStep = () => {
 					extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					className="pt-4"
 				>
-					<div className="text-theme-neutral mb-2 text-sm font-semibold">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
@@ -271,7 +271,7 @@ const ThirdStep = () => {
 					label={t("TRANSACTION.TYPE")}
 					extra={
 						<div>
-							<Circle className="bg-theme-background border-black" size="lg">
+							<Circle className="border-black bg-theme-background" size="lg">
 								<Icon name="Business" width={20} height={20} />
 							</Circle>
 						</div>
@@ -374,7 +374,7 @@ export const FifthStep = () => {
 				label={t("TRANSACTION.AMOUNT")}
 				className="pb-0"
 				extra={
-					<div className="text-theme-danger ml-1">
+					<div className="ml-1 text-theme-danger">
 						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Sent" width={22} height={22} />
 						</Circle>
