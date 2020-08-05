@@ -1,6 +1,6 @@
 import electron from "electron";
 
-import { openFile, saveFile, setScreenshotProtection } from "./electron-utils";
+import { isIdle, openFile, saveFile, setScreenshotProtection } from "./electron-utils";
 
 jest.mock("electron", () => {
 	const setContentProtection = jest.fn();
@@ -14,6 +14,9 @@ jest.mock("electron", () => {
 			getCurrentWindow: () => ({
 				setContentProtection,
 			}),
+			powerMonitor: {
+				getSystemIdleState: jest.fn(),
+			},
 		},
 	};
 });
@@ -186,6 +189,28 @@ describe("Electron utils", () => {
 
 				await expect(openFile(null, { restrictToPath: "/home/foo" })).rejects.toThrow();
 			});
+		});
+	});
+
+	describe("isIdle", () => {
+		let getSystemIdleStateMock: jest.SpyInstance;
+
+		beforeEach(() => {
+			getSystemIdleStateMock = jest
+				.spyOn(electron.remote.powerMonitor, "getSystemIdleState")
+				.mockImplementation((threshold: number) => (threshold < 10 ? "idle" : "active"));
+		});
+
+		afterEach(() => {
+			getSystemIdleStateMock.mockRestore();
+		});
+
+		it("should return false if threshold is greater than idle time", () => {
+			expect(isIdle(15)).toBe(false);
+		});
+
+		it("should return true if threshold is smaller than idle time", () => {
+			expect(isIdle(5)).toBe(true);
 		});
 	});
 });
