@@ -1,7 +1,7 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { ApplicationError } from "domains/error/pages";
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import fixtureData from "tests/fixtures/env/storage.json";
@@ -17,7 +17,7 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 const Main = () => {
 	const { env, persist } = useEnvironmentContext();
 
-	React.useLayoutEffect(() => {
+	useLayoutEffect(() => {
 		const boot = async () => {
 			await env.bootFromObject(fixtureData);
 			await persist();
@@ -45,7 +45,7 @@ export const App = () => {
 
 	/* istanbul ignore next */
 	const storage = __DEV__ ? new StubStorage() : "indexeddb";
-	const [env] = React.useState(() => new Environment({ coins: { ARK }, httpClient, storage }));
+	const [env] = useState(() => new Environment({ coins: { ARK }, httpClient, storage }));
 
 	return (
 		<I18nextProvider i18n={i18n}>

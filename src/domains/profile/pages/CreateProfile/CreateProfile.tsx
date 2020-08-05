@@ -160,6 +160,11 @@ export const CreateProfile = () => {
 											}).toString(),
 										})}
 										options={PlatformSdkChoices.marketProviders}
+										onChange={() => {
+											if (form.errors.marketProvider) {
+												form.clearError("marketProvider");
+											}
+										}}
 									/>
 									<FormHelperText />
 								</FormField>
@@ -176,6 +181,11 @@ export const CreateProfile = () => {
 											}).toString(),
 										})}
 										options={PlatformSdkChoices.currencies}
+										onChange={() => {
+											if (form.errors.currency) {
+												form.clearError("currency");
+											}
+										}}
 									/>
 									<FormHelperText />
 								</FormField>
