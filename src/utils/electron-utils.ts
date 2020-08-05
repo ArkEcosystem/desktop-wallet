@@ -70,4 +70,6 @@ const openFile = async (defaultPath?: string | null, options?: DialogOptions) =>
 	return readFileSync(filePaths[0], encode);
 };
 
-export { openFile, saveFile, setScreenshotProtection };
+const isIdle = (idleTreshold: number) => electron.remote.powerMonitor.getSystemIdleState(idleTreshold) === "idle";
+
+export { isIdle, openFile, saveFile, setScreenshotProtection };
