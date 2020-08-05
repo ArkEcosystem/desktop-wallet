@@ -12,8 +12,16 @@ export class HttpClient extends Http.Request {
 	): Promise<Contracts.HttpResponse> {
 		let response;
 
+		if (data?.query) {
+			const hasQueryKeys: boolean = Object.keys(data.query).length > 0;
+
+			if (hasQueryKeys) {
+				url = `${url}?${new URLSearchParams(data.query as any)}`;
+			}
+		}
+
 		if (method === "GET") {
-			response = await fetch(data?.query ? `${url}?${new URLSearchParams(data.query as any)}` : url);
+			response = await fetch(url);
 		}
 
 		if (method === "POST") {

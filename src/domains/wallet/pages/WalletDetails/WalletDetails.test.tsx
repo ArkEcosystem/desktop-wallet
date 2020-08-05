@@ -90,6 +90,7 @@ beforeAll(async () => {
 			message: "Wallet not found",
 		})
 		.post("/api/transactions/search")
+		.query(true)
 		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 		.persist();
 });
