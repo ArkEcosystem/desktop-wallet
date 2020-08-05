@@ -14,7 +14,7 @@ export const InputAddress = React.forwardRef<HTMLInputElement, InputAddressProps
 				type="button"
 				className="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
 			>
-				<Icon name="Qrcode" />
+				<Icon name="Qrcode" width={20} height={20} />
 			</button>
 		</InputAddonEnd>
 	</InputGroup>
