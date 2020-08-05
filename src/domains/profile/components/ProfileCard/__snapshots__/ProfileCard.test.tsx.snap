@@ -38,7 +38,11 @@ exports[`ProfileCard should hide the settings icon 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              John Doe
+              <span
+                class="sc-AxhCb lnNDXb"
+              >
+                John Doe
+              </span>
             </p>
           </div>
         </div>
@@ -131,7 +135,11 @@ exports[`ProfileCard should render 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              John Doe
+              <span
+                class="sc-AxhCb lnNDXb"
+              >
+                John Doe
+              </span>
             </p>
           </div>
         </div>
@@ -220,7 +228,11 @@ exports[`ProfileCard should render the profile with avatar image 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              John Doe
+              <span
+                class="sc-AxhCb lnNDXb"
+              >
+                John Doe
+              </span>
             </p>
           </div>
         </div>
@@ -309,7 +321,11 @@ exports[`ProfileCard should render the settings icon 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              John Doe
+              <span
+                class="sc-AxhCb lnNDXb"
+              >
+                John Doe
+              </span>
             </p>
           </div>
         </div>

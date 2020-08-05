@@ -211,7 +211,11 @@ exports[`Welcome should navigate in profile settings from profile card menu 1`] 
                           class="font-semibold text-theme-neutral-dark"
                           data-testid="profile-card__user--name"
                         >
-                          John Doe
+                          <span
+                            class="sc-fzpjYC fVGxAr"
+                          >
+                            John Doe
+                          </span>
                         </p>
                       </div>
                     </div>
@@ -299,7 +303,11 @@ exports[`Welcome should navigate in profile settings from profile card menu 1`] 
                           class="font-semibold text-theme-neutral-dark"
                           data-testid="profile-card__user--name"
                         >
-                          Jane Doe
+                          <span
+                            class="sc-fzpjYC fVGxAr"
+                          >
+                            Jane Doe
+                          </span>
                         </p>
                       </div>
                     </div>
@@ -495,7 +503,11 @@ exports[`Welcome should render with profiles 1`] = `
                           class="font-semibold text-theme-neutral-dark"
                           data-testid="profile-card__user--name"
                         >
-                          John Doe
+                          <span
+                            class="sc-fzpjYC fVGxAr"
+                          >
+                            John Doe
+                          </span>
                         </p>
                       </div>
                     </div>
@@ -583,7 +595,11 @@ exports[`Welcome should render with profiles 1`] = `
                           class="font-semibold text-theme-neutral-dark"
                           data-testid="profile-card__user--name"
                         >
-                          Jane Doe
+                          <span
+                            class="sc-fzpjYC fVGxAr"
+                          >
+                            Jane Doe
+                          </span>
                         </p>
                       </div>
                     </div>
