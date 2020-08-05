@@ -226,12 +226,12 @@ exports[`Welcome should navigate in profile settings from profile card menu 1`] 
                         >
                           Total balance
                         </p>
-                        <p
+                        <span
                           class="font-semibold text-theme-neutral-dark"
                           data-testid="profile-card__user--balance"
                         >
-                          0.00001000
-                        </p>
+                          0.00001 BTC
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -314,12 +314,12 @@ exports[`Welcome should navigate in profile settings from profile card menu 1`] 
                         >
                           Total balance
                         </p>
-                        <p
+                        <span
                           class="font-semibold text-theme-neutral-dark"
                           data-testid="profile-card__user--balance"
                         >
-                          0.00000000
-                        </p>
+                          0 BTC
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -510,12 +510,12 @@ exports[`Welcome should render with profiles 1`] = `
                         >
                           Total balance
                         </p>
-                        <p
+                        <span
                           class="font-semibold text-theme-neutral-dark"
                           data-testid="profile-card__user--balance"
                         >
-                          0.00001000
-                        </p>
+                          0.00001 BTC
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -598,12 +598,12 @@ exports[`Welcome should render with profiles 1`] = `
                         >
                           Total balance
                         </p>
-                        <p
+                        <span
                           class="font-semibold text-theme-neutral-dark"
                           data-testid="profile-card__user--balance"
                         >
-                          0.00000000
-                        </p>
+                          0 BTC
+                        </span>
                       </div>
                     </div>
                   </div>
