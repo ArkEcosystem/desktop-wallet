@@ -101,7 +101,7 @@ export const WalletCard = ({
 						<div className="mt-6 truncate max-w-12">
 							<Address walletName={wallet?.alias()} address={wallet?.address()} maxChars={13} />
 						</div>
-						<div className="font-bold text-theme-neutral-900">{wallet?.balance().toString()}</div>
+						<div className="font-bold text-theme-neutral-900">{wallet?.balance().toHuman(8)}</div>
 					</div>
 				</Card>
 			</div>
