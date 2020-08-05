@@ -24,7 +24,10 @@ describe("Amount", () => {
 		expect(container).toHaveTextContent("0 DARK");
 	});
 
-	it("should format crypto with custom locale", () => {
+	/**
+	 * [CI] Node does not support the internationalization package
+	 */
+	it.skip("should format crypto with custom locale", () => {
 		const { container } = render(<Amount value={BigNumber.ONE} ticker="ARK" locale="pt-BR" />);
 		expect(container).toHaveTextContent("0,00000001 ARK");
 	});
