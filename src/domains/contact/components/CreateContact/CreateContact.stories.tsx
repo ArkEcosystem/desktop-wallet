@@ -1,5 +1,6 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
@@ -16,13 +17,15 @@ export const Default = () => {
 	const profile = env.profiles().create("Test profile");
 
 	return (
-		<CreateContact
-			isOpen={true}
-			profile={profile}
-			networks={availableNetworksMock}
-			onClose={() => alert("closed")}
-			onCancel={() => alert("cancelled")}
-			onSave={() => alert("saved")}
-		/>
+		<EnvironmentProvider env={env}>
+			<CreateContact
+				isOpen={true}
+				profile={profile}
+				networks={availableNetworksMock}
+				onClose={() => alert("closed")}
+				onCancel={() => alert("cancelled")}
+				onSave={() => alert("saved")}
+			/>
+		</EnvironmentProvider>
 	);
 };

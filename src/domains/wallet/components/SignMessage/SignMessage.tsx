@@ -10,7 +10,7 @@ import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
-import React, { createRef, useState } from "react";
+import React, { createRef, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -19,19 +19,21 @@ type SignMessageProps = {
 	walletId: string;
 	signatoryAddress: string;
 	isOpen: boolean;
-	onClose?: any;
-	onCancel?: any;
+	onClose?: () => void;
+	onCancel?: () => void;
 };
 
 type SignedMessageProps = { message: string; signatory: string; signature: string };
 
+const initialState = {
+	message: "",
+	signatory: "",
+	signature: "",
+};
+
 export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onClose, onCancel }: SignMessageProps) => {
 	const [isSigned, setIsSigned] = useState(false);
-	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>({
-		message: "",
-		signatory: "",
-		signature: "",
-	});
+	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>(initialState);
 
 	const { env } = useEnvironmentContext();
 	const form = useForm({ mode: "onChange" });
@@ -39,6 +41,13 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 
 	const { register } = form;
 	const messageRef = createRef();
+
+	useEffect(() => {
+		if (!isOpen) {
+			setSignedMessage(initialState);
+			setIsSigned(false);
+		}
+	}, [isOpen]);
 
 	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
 		const profile = env?.profiles().findById(profileId);
@@ -119,7 +128,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 			>
 				<Address address={signedMessage.signatory} />
 			</TransactionDetail>
-			<TransactionDetail border label={t("COMMON.MESSAGE")} className="text-lg">
+			<TransactionDetail border label={t("COMMON.MESSAGE")} className="text-lg break-all">
 				{signedMessage.message}
 			</TransactionDetail>
 			<TransactionDetail border label={t("COMMON.SIGNATURE")}>

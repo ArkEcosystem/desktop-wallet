@@ -34,7 +34,7 @@
 		"start": "react-app-rewired start",
 		"storybook": "start-storybook -p 5000",
 		"test": "react-app-rewired --expose-gc test --logHeapUsage --maxWorkers=8",
-		"test:coverage": "yarn test --coverage --watchAll=false",
+		"test:coverage": "react-app-rewired --expose-gc test --logHeapUsage --coverage --watchAll=false --maxWorkers=8",
 		"test:e2e": "testcafe \"electron:.\" \"./src/domains/**/e2e/*.e2e.ts\"",
 		"test:e2e:ci": "REACT_APP_BUILD_MODE=demo concurrently -k -s first \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && yarn test:e2e\"",
 		"preversion": "cross-env ./scripts/version-artifacts.sh"

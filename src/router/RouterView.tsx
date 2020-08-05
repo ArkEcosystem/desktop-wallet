@@ -1,7 +1,7 @@
 import { useEnvironmentContext } from "app/contexts";
 import React from "react";
 import { RouteConfig } from "react-router-config";
-import { Redirect, Route, Switch, useLocation } from "react-router-dom";
+import { Redirect, Route, Switch, useHistory, useLocation } from "react-router-dom";
 import { styled } from "twin.macro";
 
 import { Middleware } from "./interfaces";
@@ -16,12 +16,17 @@ type Props = {
 
 export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	const location = useLocation();
+	const history = useHistory();
+
 	const { env } = useEnvironmentContext();
 	const [redirectUrl, setRedirectUrl] = React.useState<string | undefined>(undefined);
 
 	const canActivate = React.useMemo(
-		() => middlewares!.every((middleware) => middleware.handler({ location, env, redirect: setRedirectUrl })),
-		[location, middlewares, env],
+		() =>
+			middlewares!.every((middleware) =>
+				middleware.handler({ location, env, redirect: setRedirectUrl, history }),
+			),
+		[location, middlewares, env, history],
 	);
 
 	return (
