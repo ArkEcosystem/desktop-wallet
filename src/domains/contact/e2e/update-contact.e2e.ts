@@ -81,3 +81,104 @@ test("should succesfully update contact", async (t) => {
 	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).notOk();
 	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists).ok();
 });
+
+test("should error if contact name is already taken", async (t) => {
+	const newContact = "Test contact";
+
+	await t.click(Selector('[data-testid="contacts__add-contact-btn"]'));
+	await t
+		.expect(
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
+		)
+		.ok();
+
+	const nameInput = Selector('[data-testid="contact-form__name-input"]');
+	await t.typeText(nameInput, newContact);
+
+	await t.click(Selector("#ContactForm__network-item-1"));
+
+	const addressInput = Selector('[data-testid="contact-form__address-input"]');
+	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
+	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
+
+	// Add address
+	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
+	await t.expect(Selector('[data-testid="contact-form__address-list-item"]').withText("D6Z26L69").exists).ok();
+
+	// Save
+	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).notOk();
+	await t.click(Selector('[data-testid="contact-form__save-btn"]'));
+
+	await t
+		.expect(
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
+		)
+		.notOk();
+
+	// Show in list
+	await t
+		.expect(
+			Selector('[data-testid="ContactList"] [data-testid="ContactListItem__name"]').withText(newContact).exists,
+		)
+		.ok();
+
+	// Rename existing contact to `Test Contact` expecting it to show 'already exists' error
+	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).ok();
+	await t
+		.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists)
+		.notOk();
+
+	await t.click(Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]'));
+	await t.click(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+			translations.COMMON.EDIT,
+		),
+	);
+	await t
+		.expect(
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
+		)
+		.ok();
+
+	const name = Selector('[data-testid="contact-form__name-input"]');
+	await t.typeText(name, "Test Contact", { replace: true });
+
+	// Save
+	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).notOk();
+	await t.click(Selector('[data-testid="contact-form__save-btn"]'));
+
+	await t
+		.expect(Selector("fieldset p").withText(translations.CONTACTS.VALIDATION.CONTACT_NAME_EXISTS_SUFFIX).exists)
+		.ok();
+
+	await t
+		.expect(
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
+		)
+		.ok();
+});
+
+test("should disable save button if name consists of empty spaces", async (t) => {
+	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).ok();
+	await t
+		.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists)
+		.notOk();
+
+	await t.click(Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]'));
+	await t.click(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+			translations.COMMON.EDIT,
+		),
+	);
+	await t
+		.expect(
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
+		)
+		.ok();
+
+	const nameInput = Selector('[data-testid="contact-form__name-input"]');
+	await t.typeText(nameInput, "          ", { replace: true });
+
+	// Save
+	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).ok();
+});
