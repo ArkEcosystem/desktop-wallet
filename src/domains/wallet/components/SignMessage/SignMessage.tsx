@@ -25,7 +25,7 @@ type SignMessageProps = {
 
 type SignedMessageProps = { message: string; signatory: string; signature: string };
 
-const INITIAL_STATE = {
+const initialState = {
 	message: "",
 	signatory: "",
 	signature: "",
@@ -33,7 +33,7 @@ const INITIAL_STATE = {
 
 export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onClose, onCancel }: SignMessageProps) => {
 	const [isSigned, setIsSigned] = useState(false);
-	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>(INITIAL_STATE);
+	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>(initialState);
 
 	const { env } = useEnvironmentContext();
 	const form = useForm({ mode: "onChange" });
@@ -44,7 +44,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 
 	useEffect(() => {
 		if (!isOpen) {
-			setSignedMessage(INITIAL_STATE);
+			setSignedMessage(initialState);
 			setIsSigned(false);
 		}
 	}, [isOpen]);
