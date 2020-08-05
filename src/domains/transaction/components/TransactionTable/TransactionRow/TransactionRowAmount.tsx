@@ -17,10 +17,10 @@ export const TransactionRowAmount = ({ transaction, currencyRate }: Props) => {
 		}
 
 		if (currencyRate) {
-			return value.times(currencyRate).toFixed(2);
+			return value.times(currencyRate).toHuman(2);
 		}
 
-		return value.toFixed(8);
+		return value.toHuman(8);
 	}, [transaction, currencyRate]);
 
 	if (currencyRate) {
