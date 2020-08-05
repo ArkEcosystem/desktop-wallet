@@ -132,11 +132,12 @@ exports[`Wallet Card should render 1`] = `
               </span>
             </div>
           </div>
-          <div
+          <span
             class="font-bold text-theme-neutral-900"
+            data-testid="Amount"
           >
-            0.00001000
-          </div>
+            0.00001 DARK
+          </span>
         </div>
       </div>
     </div>
@@ -313,11 +314,12 @@ exports[`Wallet Card should render with wallet data 1`] = `
               </span>
             </div>
           </div>
-          <div
+          <span
             class="font-bold text-theme-neutral-900"
+            data-testid="Amount"
           >
-            0.00001000
-          </div>
+            0.00001 DARK
+          </span>
         </div>
       </div>
     </div>
@@ -458,11 +460,12 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
               </span>
             </div>
           </div>
-          <div
+          <span
             class="font-bold text-theme-neutral-900"
+            data-testid="Amount"
           >
-            0.00001000
-          </div>
+            0.00001 DARK
+          </span>
         </div>
       </div>
     </div>
