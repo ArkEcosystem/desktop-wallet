@@ -31,7 +31,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 	useEffect(() => {
 		const fetchProfileTransactions = async () => {
-			const profileTransactions = await activeProfile.transactionAggregate().transactions();
+			const profileTransactions = await activeProfile.transactionAggregate().transactions({ limit: 10 });
 			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.items();
 
 			return allTransactions && setAllTransactions(allTransactions);

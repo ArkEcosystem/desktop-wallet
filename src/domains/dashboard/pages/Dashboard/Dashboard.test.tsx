@@ -22,6 +22,7 @@ beforeEach(() => {
 
 	nock("https://dwallets.ark.io")
 		.post("/api/transactions/search")
+		.query(true)
 		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 		.persist();
 });
