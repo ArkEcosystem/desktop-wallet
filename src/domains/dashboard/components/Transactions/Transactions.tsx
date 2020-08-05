@@ -7,10 +7,11 @@ import { useTranslation } from "react-i18next";
 type TransactionsProps = {
 	title: string;
 	transactions: Contracts.TransactionDataType[];
+	moreAction?: any;
 	emptyText?: string;
 };
 
-export const Transactions = ({ transactions, title, emptyText }: TransactionsProps) => {
+export const Transactions = ({ transactions, title, emptyText, moreAction }: TransactionsProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -20,7 +21,7 @@ export const Transactions = ({ transactions, title, emptyText }: TransactionsPro
 				<div className="pt-8">
 					<TransactionTable transactions={transactions} currencyRate="2" />
 
-					<Button variant="plain" className="w-full mt-10 mb-5">
+					<Button variant="plain" className="w-full mt-10 mb-5" onClick={() => moreAction()}>
 						{t("COMMON.VIEW_MORE")}
 					</Button>
 				</div>
