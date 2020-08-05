@@ -116,7 +116,7 @@ export const SecondStep = ({ profile }: any) => {
 				</TransactionDetail>
 
 				<div className="mt-2">
-					<TotalAmountBox amount={amount} transactionFee={fee} />
+					<TotalAmountBox amount={amount} fee={BigNumber.make(fee)} />
 				</div>
 			</div>
 		</section>

@@ -9,7 +9,7 @@ type InputFeeProps = {
 	max: number;
 	step: number;
 	selectionBarState: any;
-	onChange: (value: string) => void;
+	onChange?: (value: string) => void;
 };
 
 export const InputFee = ({ defaultValue, min, max, onChange, step, selectionBarState }: InputFeeProps) => {

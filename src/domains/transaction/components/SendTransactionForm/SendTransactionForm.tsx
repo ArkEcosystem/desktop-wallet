@@ -1,6 +1,6 @@
 import { NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import {  FormField, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import { useSelectionState } from "app/components/SelectionBar/useSelectionState";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -83,7 +83,7 @@ export const SendTransactionForm = ({
 					<SelectAddress
 						address={senderAddress}
 						wallets={wallets}
-						onChange={(address: string) => setValue("senderAddress", address, true)}
+						onChange={(address: any) => setValue("senderAddress", address, true)}
 					/>
 				</div>
 			</FormField>
@@ -126,7 +126,7 @@ export const SendTransactionForm = ({
 					min={0}
 					max={maxFee}
 					step={0.01}
-					onChange={(value: number) => setValue("fee", value, true)}
+					onChange={(value: any) => setValue("fee", value, true)}
 				/>
 			</FormField>
 
