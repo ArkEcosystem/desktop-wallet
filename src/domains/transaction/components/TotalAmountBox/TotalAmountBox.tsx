@@ -1,4 +1,5 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Amount } from "app/components/Amount";
 import { Icon } from "app/components/Icon";
 import React from "react";
 
@@ -13,15 +14,18 @@ export const TotalAmountBox = ({ amount, fee }: Props) => (
 			<div className="grid grid-cols-2 divide-x divide-gray-400">
 				<div className="flex flex-col justify-center px-6 py-5">
 					<span className="text-sm text-theme-neutral">Transaction(s) Amount</span>
-					<span className="mt-2 font-semibold" data-testid="total-amount-box__transaction-amount">
-						{amount.toHuman(8)} ARK
-					</span>
+					<Amount
+						className="mt-2 font-semibold"
+						data-testid="total-amount-box__transaction-amount"
+						ticker="ARK"
+						value={amount}
+					/>
 				</div>
 
 				<div className="flex flex-col justify-center px-6 py-5 text-right">
 					<span className="text-sm text-theme-neutral">Transaction fee</span>
 					<span className="mt-2 text-lg font-semibold" data-testid="total-amount-box__transaction-fee">
-						{fee.toHuman(8)} ARK
+						<Amount ticker="ARK" value={fee} />
 					</span>
 				</div>
 			</div>
@@ -34,9 +38,12 @@ export const TotalAmountBox = ({ amount, fee }: Props) => (
 		</div>
 		<div className="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast">
 			<span className="text-sm text-theme-neutral">Total Amount</span>
-			<span className="text-2xl font-bold" data-testid="total-amount-box__total">
-				{amount.plus(fee).toHuman(8)} ARK
-			</span>
+			<Amount
+				ticker="ARK"
+				value={amount.plus(fee)}
+				className="text-2xl font-bold"
+				data-testid="total-amount-box__total"
+			/>
 		</div>
 	</div>
 );

@@ -46,7 +46,7 @@ export const Amount = ({ ticker, value, locale, ...props }: Props) => {
 	const amount = (isFiat ? formatFiat : formatCrypto)({ ticker, value, locale, decimals });
 
 	return (
-		<span aria-label={ticker} data-testid="Amount" {...props}>
+		<span data-testid="Amount" {...props}>
 			{amount}
 		</span>
 	);
