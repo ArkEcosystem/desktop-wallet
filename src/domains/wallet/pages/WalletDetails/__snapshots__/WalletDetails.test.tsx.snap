@@ -155,7 +155,11 @@ exports[`WalletDetails should delete wallet 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                33.75089801
+                <span
+                  data-testid="Amount"
+                >
+                  33.75089801 BTC
+                </span>
               </div>
             </div>
             <div
@@ -2144,7 +2148,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                33.75089801
+                <span
+                  data-testid="Amount"
+                >
+                  33.75089801 BTC
+                </span>
               </div>
             </div>
             <div
@@ -3839,7 +3847,11 @@ exports[`WalletDetails should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -5988,7 +6000,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                33.75089801
+                <span
+                  data-testid="Amount"
+                >
+                  33.75089801 BTC
+                </span>
               </div>
             </div>
             <div
@@ -7997,7 +8013,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                33.75089801
+                <span
+                  data-testid="Amount"
+                >
+                  33.75089801 BTC
+                </span>
               </div>
             </div>
             <div
@@ -9916,7 +9936,11 @@ exports[`WalletDetails should render with timers 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                33.75089801
+                <span
+                  data-testid="Amount"
+                >
+                  33.75089801 BTC
+                </span>
               </div>
             </div>
             <div
@@ -12065,7 +12089,11 @@ exports[`WalletDetails should update wallet name 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                33.75089801
+                <span
+                  data-testid="Amount"
+                >
+                  33.75089801 BTC
+                </span>
               </div>
             </div>
             <div
