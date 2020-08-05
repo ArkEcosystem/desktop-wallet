@@ -116,7 +116,7 @@ export const SecondStep = ({ profile }: any) => {
 				</TransactionDetail>
 
 				<div className="mt-2">
-					<TotalAmountBox transactionAmount={amount.toString()} transactionFee={fee} />
+					<TotalAmountBox amount={amount} transactionFee={fee} />
 				</div>
 			</div>
 		</section>
@@ -239,7 +239,7 @@ export const TransactionSend = () => {
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];

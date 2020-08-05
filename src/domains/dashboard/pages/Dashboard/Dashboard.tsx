@@ -15,7 +15,6 @@ import { balances, portfolioPercentages } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
-	wallets?: any;
 	networks?: any;
 	portfolioPercentages?: any[];
 };
@@ -25,20 +24,20 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const [showPortfolio, setShowPortfolio] = useState(true);
 	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
 	const activeProfile = useActiveProfile();
-	const wallets = React.useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
+	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
 
 	useEffect(() => {
 		const fetchProfileTransactions = async () => {
-			const profileTransactions = await activeProfile?.transactionAggregate().transactions();
+			const profileTransactions = await activeProfile.transactionAggregate().transactions({ limit: 10 });
 			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.items();
 
 			return allTransactions && setAllTransactions(allTransactions);
 		};
 
-		setScreenshotProtection(activeProfile?.settings().get(ProfileSetting.ScreenshotProtection) === true);
+		setScreenshotProtection(activeProfile.settings().get(ProfileSetting.ScreenshotProtection) === true);
 		fetchProfileTransactions();
 	}, [activeProfile]);
 
@@ -84,8 +83,8 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 			<Section className="flex-1">
 				<Wallets
-					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
-					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
+					onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
+					onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
 					viewType="grid"
 					title={t("COMMON.WALLETS")}
 					wallets={wallets}

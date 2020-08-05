@@ -37,7 +37,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 	const history = useHistory();
 
 	const handleSelectPlugin = (pluginId: string) =>
-		history.push(`/profiles/${activeProfile?.id()}/plugins/${pluginId}`);
+		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginId}`);
 
 	const plugins = [];
 	for (let i = 0; i < 4; i++) {
@@ -159,7 +159,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const history = useHistory();
 
 	const handleSelectPlugin = (pluginId: string) =>
-		history.push(`/profiles/${activeProfile?.id()}/plugins/${pluginId}`);
+		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginId}`);
 
 	const plugins = [];
 	for (let i = 0; i < 10; i++) {

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
@@ -58,5 +59,31 @@ describe("UpdateWalletName", () => {
 			wallet.settings().set(WalletSetting.Alias, name);
 			expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
 		});
+	});
+
+	it("should show error message when name exceeds 42 characters", async () => {
+		const fn = jest.fn();
+		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} />);
+
+		const input = getByTestId("UpdateWalletName__input");
+		const name = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit distinctio";
+
+		act(() => {
+			fireEvent.change(input, { target: { value: name } });
+		});
+
+		expect(input).toHaveValue(name);
+		expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render form input with existing name", async () => {
+		const fn = jest.fn();
+		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} name="test" />);
+
+		const input = getByTestId("UpdateWalletName__input");
+		expect(input).toHaveValue("test");
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

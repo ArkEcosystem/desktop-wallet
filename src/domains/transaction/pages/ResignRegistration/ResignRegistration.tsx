@@ -1,3 +1,4 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
@@ -110,7 +111,7 @@ const SecondStep = () => {
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>Delegate 3</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
 				</div>
 			</div>
 		</div>
@@ -212,7 +213,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];

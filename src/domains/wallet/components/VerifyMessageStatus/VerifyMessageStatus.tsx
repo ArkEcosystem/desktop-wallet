@@ -6,11 +6,11 @@ type Props = {
 	type?: "success" | "error";
 	title?: string;
 	description?: string;
-	onClose?: any;
 	isOpen: boolean;
+	onClose?: () => void;
 };
 
-export const VerifyMessageStatus = ({ title, description, type, onClose, isOpen }: Props) => {
+export const VerifyMessageStatus = ({ title, description, type, isOpen, onClose }: Props) => {
 	const { ConfirmedBanner, MistakeBanner } = images.common;
 	const StatusInfo = type === "success" ? ConfirmedBanner : MistakeBanner;
 

@@ -7,7 +7,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -71,11 +71,15 @@ type ContactFormProps = {
 	contact?: Contact;
 	networks: NetworkData[];
 	onCancel?: any;
+	onChange?: any;
 	onDelete?: any;
 	onSave: any;
+	errors?: any;
 };
 
-export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
+export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, onSave, errors }: ContactFormProps) => {
+	const nameMaxLength = 42;
+
 	const [addresses, setAddresses] = useState(() =>
 		contact
 			? contact
@@ -98,6 +102,12 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 	useEffect(() => {
 		register({ name: "network" });
 	}, [register]);
+
+	useEffect(() => {
+		for (const [field, message] of Object.entries(errors)) {
+			form.setError(field, message as string);
+		}
+	}, [form, errors]);
 
 	const handleAddAddress = () => {
 		setAddresses(
@@ -123,6 +133,8 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 		form.setValue("network", network, true);
 	};
 
+	const isNameValid = useMemo(() => !!name?.trim() && !form.errors?.name, [name, form.errors]);
+
 	return (
 		<Form
 			data-testid="contact-form"
@@ -138,23 +150,41 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 				<FormLabel>{t("CONTACTS.CONTACT_FORM.NAME")}</FormLabel>
 				<Input
 					data-testid="contact-form__name-input"
-					ref={form.register({ required: t("COMMON.VALIDATION.REQUIRED").toString() })}
+					ref={form.register({
+						required: t("COMMON.VALIDATION.REQUIRED").toString(),
+						maxLength: {
+							message: t("CONTACTS.VALIDATION.MAXLENGTH_ERROR", {
+								maxLength: nameMaxLength,
+							}),
+							value: nameMaxLength,
+						},
+					})}
+					onChange={() => onChange?.("name", name)}
 					defaultValue={contact?.name?.()}
 				/>
-				<FormHelperText />
+				<FormHelperText errorMessage={errors?.name} />
 			</FormField>
 
 			<SubForm>
 				<FormField name="network">
 					<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-					<SelectNetwork id="ContactForm__network" networks={networks} onSelect={handleSelectNetwork} />
+					<SelectNetwork
+						id="ContactForm__network"
+						networks={networks}
+						onSelect={handleSelectNetwork}
+						selected={network}
+					/>
 					<FormHelperText />
 				</FormField>
 
 				<FormField name="address">
 					<FormLabel>{t("CONTACTS.CONTACT_FORM.ADDRESS")}</FormLabel>
-					<Input data-testid="contact-form__address-input" ref={form.register({})} />
-					<FormHelperText />
+					<Input
+						data-testid="contact-form__address-input"
+						ref={form.register({})}
+						onChange={() => onChange?.("address", address)}
+					/>
+					<FormHelperText errorMessage={errors?.address} />
 				</FormField>
 
 				<div className="mt-4">
@@ -189,7 +219,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 						data-testid="contact-form__save-btn"
 						type="submit"
 						variant="solid"
-						disabled={!addresses.length}
+						disabled={addresses.length === 0 || !isNameValid}
 					>
 						{t("COMMON.SAVE")}
 					</Button>
@@ -201,4 +231,5 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 
 ContactForm.defaultProps = {
 	networks: [],
+	errors: {},
 };

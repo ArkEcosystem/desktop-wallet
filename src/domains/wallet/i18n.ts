@@ -7,6 +7,7 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Name Wallet",
 		DESCRIPTION: "You can enter the name of your wallet for a quick search in your wallet.",
 		FIELD_NAME: "Enter a name",
+		MAXLENGTH_ERROR: "The Wallet Name should have less than {{maxLength}} characters.",
 	},
 
 	MODAL_DELETE_WALLET: {

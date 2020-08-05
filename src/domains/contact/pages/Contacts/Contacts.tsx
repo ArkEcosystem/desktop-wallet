@@ -66,7 +66,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	}, [contactAction]);
 
 	useEffect(() => {
-		setContacts(activeProfile!.contacts().values());
+		setContacts(activeProfile.contacts().values());
 	}, [activeProfile, state]);
 
 	const contactOptions = [
@@ -77,7 +77,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
@@ -159,7 +159,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 			<CreateContact
 				isOpen={createIsOpen}
-				profile={activeProfile!}
+				profile={activeProfile}
 				networks={availableNetworks}
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
@@ -171,7 +171,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 					<UpdateContact
 						isOpen={contactAction === "edit"}
 						contact={selectedContact}
-						profile={activeProfile!}
+						profile={activeProfile}
 						networks={availableNetworks}
 						onCancel={resetContactAction}
 						onClose={resetContactAction}
@@ -182,7 +182,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 					<DeleteContact
 						isOpen={contactAction === "delete"}
 						contact={selectedContact}
-						profile={activeProfile!}
+						profile={activeProfile}
 						onCancel={resetContactAction}
 						onClose={resetContactAction}
 						onDelete={resetContactAction}
