@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -30,6 +30,12 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 		const formattedName = name.substring(0, nameMaxLength);
 		onSave?.({ name: formattedName });
 	};
+
+	useEffect(() => {
+		if (isOpen) {
+			methods.setValue("name", name as string);
+		}
+	}, [name, isOpen]);
 
 	return (
 		<Modal
