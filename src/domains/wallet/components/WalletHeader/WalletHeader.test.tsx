@@ -1,3 +1,4 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { act, fireEvent, render, within } from "testing-library";
 
@@ -13,8 +14,10 @@ describe("WalletHeader", () => {
 		const { getByTestId, asFragment } = render(
 			<WalletHeader
 				address="abc"
-				balance="0"
+				balance={BigNumber.make(0)}
 				coin="Ark"
+				network="mainnet"
+				ticker="ARK"
 				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
@@ -32,8 +35,10 @@ describe("WalletHeader", () => {
 		const { getByTestId } = render(
 			<WalletHeader
 				address="abc"
-				balance="0"
+				balance={BigNumber.make(0)}
 				coin="Ark"
+				network="mainnet"
+				ticker="ARK"
 				onStar={onStar}
 				onSend={onSend}
 				onUpdateWalletName={onUpdateWalletName}
@@ -59,8 +64,10 @@ describe("WalletHeader", () => {
 				isLedger
 				isMultisig
 				address="abc"
-				balance="0"
+				balance={BigNumber.make(0)}
 				coin="Ark"
+				network="mainnet"
+				ticker="ARK"
 				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
@@ -77,11 +84,14 @@ describe("WalletHeader", () => {
 		const publicKey = "123";
 		const { getByTestId, asFragment } = render(
 			<WalletHeader
-				currencyBalance="10"
+				currencyBalance={BigNumber.make(10)}
+				exchangeCurrency="USD"
 				publicKey={publicKey}
 				address={address}
-				balance="0"
+				balance={BigNumber.make(0)}
 				coin="Ark"
+				network="mainnet"
+				ticker="ARK"
 				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
@@ -106,11 +116,14 @@ describe("WalletHeader", () => {
 	it("should handle sign message", () => {
 		const { getByTestId } = render(
 			<WalletHeader
-				currencyBalance="10"
+				currencyBalance={BigNumber.make(10)}
+				exchangeCurrency="USD"
 				publicKey="publicKey"
 				address="abc"
-				balance="0"
+				balance={BigNumber.make(0)}
 				coin="Ark"
+				network="mainnet"
+				ticker="ARK"
 				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
@@ -138,11 +151,14 @@ describe("WalletHeader", () => {
 	it("should handle verify message", () => {
 		const { getByTestId } = render(
 			<WalletHeader
-				currencyBalance="10"
+				currencyBalance={BigNumber.make(10)}
+				exchangeCurrency="USD"
 				publicKey="publicKey"
 				address="abc"
-				balance="0"
+				balance={BigNumber.make(0)}
 				coin="Ark"
+				network="mainnet"
+				ticker="ARK"
 				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
@@ -170,11 +186,14 @@ describe("WalletHeader", () => {
 	it("should handle delete wallet", () => {
 		const { getByTestId } = render(
 			<WalletHeader
-				currencyBalance="10"
+				currencyBalance={BigNumber.make(10)}
+				exchangeCurrency="USD"
 				publicKey="publicKey"
 				address="abc"
-				balance="0"
+				balance={BigNumber.make(0)}
 				coin="Ark"
+				network="mainnet"
+				ticker="ARK"
 				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
@@ -202,11 +221,14 @@ describe("WalletHeader", () => {
 	it("should handle update wallet name", () => {
 		const { getByTestId } = render(
 			<WalletHeader
-				currencyBalance="10"
+				currencyBalance={BigNumber.make(10)}
+				exchangeCurrency="USD"
 				publicKey="publicKey"
 				address="abc"
-				balance="0"
+				balance={BigNumber.make(0)}
 				coin="Ark"
+				network="mainnet"
+				ticker="ARK"
 				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}

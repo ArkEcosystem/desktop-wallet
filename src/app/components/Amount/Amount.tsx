@@ -35,7 +35,7 @@ const formatCrypto = ({ ticker, value, decimals, locale }: FormatProps): string 
 	/**
 	 * Intl.NumberFormat throws error for some tickers like DARK (?)
 	 */
-	const money = numeral.replace("BTC", ticker);
+	const money = numeral.replace("BTC", ticker.toUpperCase());
 	return money;
 };
 
