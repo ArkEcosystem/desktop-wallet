@@ -24,9 +24,12 @@ export const TotalAmountBox = ({ amount, fee }: Props) => (
 
 				<div className="flex flex-col justify-center px-6 py-5 text-right">
 					<span className="text-sm text-theme-neutral">Transaction fee</span>
-					<span className="mt-2 text-lg font-semibold" data-testid="total-amount-box__transaction-fee">
-						<Amount ticker="ARK" value={fee} />
-					</span>
+					<Amount
+						ticker="ARK"
+						value={fee}
+						className="mt-2 text-lg font-semibold"
+						data-testid="total-amount-box__transaction-fee"
+					/>
 				</div>
 			</div>
 
