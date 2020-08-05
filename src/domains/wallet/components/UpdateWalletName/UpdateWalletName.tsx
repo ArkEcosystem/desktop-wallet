@@ -19,23 +19,22 @@ const { NameWalletBanner } = images.wallet.components.updateWalletName;
 
 export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: UpdateWalletNameProps) => {
 	const methods = useForm({ mode: "onChange", defaultValues: { name } });
-	const formValues = methods.watch();
+	const { setValue, register, errors, watch } = methods;
+	const formValues = watch();
 
 	const { t } = useTranslation();
 	const nameMaxLength = 42;
 
-	const isNameValid = useMemo(() => !!formValues.name?.trim() && !methods.errors?.name, [formValues, methods.errors]);
+	useEffect(() => {
+		if (isOpen) setValue("name", name as string);
+	}, [name, isOpen, setValue]);
+
+	const isNameValid = useMemo(() => !!formValues.name?.trim() && !errors?.name, [formValues, errors]);
 
 	const handleSubmit = ({ name }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
 		onSave?.({ name: formattedName });
 	};
-
-	useEffect(() => {
-		if (isOpen) {
-			methods.setValue("name", name as string);
-		}
-	}, [name, isOpen]);
 
 	return (
 		<Modal
@@ -50,7 +49,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input
 						data-testid="UpdateWalletName__input"
-						ref={methods.register({
+						ref={register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("COMMON.NAME"),
 							}).toString(),
