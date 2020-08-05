@@ -66,6 +66,67 @@ describe("UpdateContact", () => {
 		});
 	});
 
+	it("should not update contact if provided name already exists", async () => {
+		const onSave = jest.fn();
+
+		const existingContactName = updatingContact.name();
+
+		const newAddress = {
+			name: "Test name",
+			network: "devnet",
+			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			coin: "ARK",
+		};
+
+		const newContact = profile.contacts().create("New name");
+
+		const { getByTestId, queryByTestId } = renderWithRouter(
+			<UpdateContact
+				isOpen={true}
+				onSave={onSave}
+				profile={profile}
+				contact={newContact}
+				networks={availableNetworksMock}
+			/>,
+		);
+
+		const saveButton = getByTestId("contact-form__save-btn");
+		const assetInput = getByTestId("SelectNetworkInput__input");
+
+		// Add network
+		await act(async () => {
+			await fireEvent.change(getByTestId("contact-form__address-input"), {
+				target: { value: newAddress.address },
+			});
+
+			fireEvent.change(assetInput, { target: { value: "Ark Devnet" } });
+			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+		});
+
+		await waitFor(() => {
+			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("contact-form__add-address-btn"));
+		});
+
+		const nameInput = getByTestId("contact-form__name-input");
+		expect(nameInput).toHaveValue(newContact.name());
+
+		await act(async () => {
+			fireEvent.change(nameInput, { target: { value: existingContactName } });
+		});
+
+		expect(nameInput).toHaveValue(existingContactName);
+
+		await act(async () => {
+			fireEvent.click(saveButton);
+		});
+
+		expect(onSave).not.toHaveBeenCalled();
+	});
+
 	it("should call onDelete callback", async () => {
 		const contactToDelete = profile.contacts().create("Test");
 
