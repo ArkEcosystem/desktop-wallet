@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Input, InputCounter, InputPassword } from "./index";
+import { Input, InputAddress, InputCounter, InputPassword } from "./index";
 
 export default {
 	title: "App / Components / Input",
@@ -14,14 +14,20 @@ export const Default = () => (
 	</div>
 );
 
-export const Password = () => (
+export const Address = () => (
 	<div className="max-w-xs">
-		<InputPassword defaultValue="secret" />
+		<InputAddress defaultValue="DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM" />
 	</div>
 );
 
 export const Counter = () => (
 	<div className="max-w-xs">
 		<InputCounter defaultValue="Hello" maxLength={255} />
+	</div>
+);
+
+export const Password = () => (
+	<div className="max-w-xs">
+		<InputPassword defaultValue="secret" />
 	</div>
 );
