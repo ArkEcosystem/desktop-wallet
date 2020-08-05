@@ -15,7 +15,6 @@ import { balances, portfolioPercentages } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
-	wallets?: any;
 	networks?: any;
 	portfolioPercentages?: any[];
 };

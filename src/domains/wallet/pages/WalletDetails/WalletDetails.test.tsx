@@ -40,8 +40,13 @@ const renderPage = async () => {
 
 	jest.useRealTimers();
 
+	// Wait for fetch before unmount
+	await act(async () => {
+		await new Promise((resolve) => setTimeout(resolve, 1000));
+	});
+
 	await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeInTheDocument());
-	await waitFor(() => expect(rendered.getByTestId("WalletRegistrations")).toBeTruthy());
+	await waitFor(() => expect(rendered.getAllByTestId("TransactionRow")).toHaveLength(4));
 
 	return rendered;
 };
@@ -84,10 +89,12 @@ beforeAll(async () => {
 			error: "Not Found",
 			message: "Wallet not found",
 		})
+		.post("/api/transactions/search")
+		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 		.persist();
 });
 
-beforeEach(async () => {
+beforeEach(() => {
 	dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 	history.push(dashboardURL);
 });

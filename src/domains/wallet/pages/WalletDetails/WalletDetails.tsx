@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { WalletDataCollection } from "@arkecosystem/platform-sdk/dist/coins";
 import { WalletData } from "@arkecosystem/platform-sdk/dist/contracts";
@@ -23,6 +23,7 @@ export const WalletDetails = () => {
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
+	const [transactions, setTransactions] = useState<Contracts.TransactionDataType[]>([]);
 	const [votes, setVotes] = useState<Coins.WalletDataCollection>();
 	const [walletData, setWalletData] = useState<WalletData>();
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
@@ -80,7 +81,10 @@ export const WalletDetails = () => {
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
 	const getWalletData = useCallback(async () => {
 		const data = await activeWallet.coin().client().wallet(activeWallet.address());
+		const walletTransactions = (await activeWallet.transactions()).items();
+
 		setWalletData(data);
+		setTransactions(walletTransactions);
 	}, [activeWallet]);
 
 	const handleDeleteWallet = async () => {
@@ -160,12 +164,13 @@ export const WalletDetails = () => {
 				<Section>
 					<div className="mb-16">
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
-						<TransactionTable transactions={[]} showSignColumn />
+						{/* TODO: Deal with pending transactions once SDK methods for it are available */}
+						<TransactionTable transactions={transactions} showSignColumn />
 					</div>
 
 					<div>
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
-						<TransactionTable transactions={[]} currencyRate="2" />
+						<TransactionTable transactions={transactions} currencyRate="2" />
 					</div>
 				</Section>
 			</Page>
