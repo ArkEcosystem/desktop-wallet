@@ -129,7 +129,7 @@ describe("Settings", () => {
 			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: false,
 			ADVANCED_MODE: true,
-			AUTOMATIC_LOGOFF_PERIOD: "1",
+			AUTOMATIC_LOGOFF_PERIOD: 1,
 			THEME: "light",
 			LEDGER_UPDATE_METHOD: true,
 		});
@@ -168,7 +168,7 @@ describe("Settings", () => {
 			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: false,
 			ADVANCED_MODE: false,
-			AUTOMATIC_LOGOFF_PERIOD: "1",
+			AUTOMATIC_LOGOFF_PERIOD: 1,
 			THEME: "dark",
 			LEDGER_UPDATE_METHOD: true,
 		});

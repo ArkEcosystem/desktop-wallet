@@ -35,7 +35,7 @@ export const TransactionRow = ({
 		</td>
 		<td className="w-48 py-1 text-sm text-theme-neutral-600">
 			<span data-testid="TransactionRow__timestamp">
-				{DateTime.make(transaction?.timestamp()).format("DD MMM YYYY HH:mm:ss")}
+				{DateTime.fromUnix(transaction.timestamp()!).format("DD MMM YYYY HH:mm:ss")}
 			</span>
 		</td>
 		<td className="w-32">

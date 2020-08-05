@@ -63,7 +63,7 @@ export const WalletCard = ({
 
 	return (
 		<Link
-			to={`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`}
+			to={`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`}
 			data-testid={`WalletCard__${wallet?.address()}`}
 		>
 			<div className={`w-64 inline-block ${className}`}>

@@ -171,6 +171,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	DATETIME: {
+		MINUTES: "{{count}} minute",
+		MINUTES_plural: "{{count}} minutes",
+
 		FEW_SECONDS_AGO: "A few seconds ago",
 		MINUTES_AGO: "A minute ago",
 		MINUTES_AGO_plural: "{{count}} minutes ago",
