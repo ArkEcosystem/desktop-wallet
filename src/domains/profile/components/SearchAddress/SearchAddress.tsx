@@ -1,3 +1,4 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -10,7 +11,7 @@ type SearchContactProps = {
 	title?: string;
 	description?: string;
 	isOpen: boolean;
-	wallets: any[];
+	wallets: Wallet[];
 	onClose?: any;
 	onSearch?: any;
 	selectActionLabel?: string;
@@ -84,12 +85,12 @@ export const SearchAddress = ({
 			onSearch={onSearch}
 		>
 			<Table columns={columns} data={wallets}>
-				{({ address, walletName, balance, fiat }: any, index: number) => (
+				{(wallet: Wallet, index: number) => (
 					<SearchAddressListItem
-						address={address}
-						walletName={walletName}
-						balance={balance}
-						fiat={fiat}
+						address={wallet.address()}
+						walletName={wallet.alias()}
+						balance={wallet.balance().toString()}
+						fiat={wallet.convertedBalance().toString()}
 						index={index}
 						selectActionLabel={selectActionLabel}
 						onAction={onAction}

@@ -1,3 +1,4 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -12,7 +13,7 @@ import { SelectAddressWrapper } from "./SelectAddress.styles";
 type SelectAddressProps = {
 	address?: string;
 	isVerified?: boolean;
-	wallets: any[];
+	wallets: Wallet[];
 	disabled?: boolean;
 	isInvalid?: boolean;
 	contactSearchTitle?: string;
