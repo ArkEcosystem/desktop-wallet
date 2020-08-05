@@ -126,8 +126,8 @@ export const WalletDetails = () => {
 					network={networkName}
 					address={activeWallet.address()}
 					publicKey={activeWallet.publicKey()}
-					balance={activeWallet.balance().toString()}
-					currencyBalance={activeWallet.convertedBalance().toString()}
+					balance={activeWallet.balance().toHuman(8)}
+					currencyBalance={activeWallet.convertedBalance().toHuman(2)}
 					name={activeWallet.alias()}
 					isLedger={activeWallet.isLedger()}
 					isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
