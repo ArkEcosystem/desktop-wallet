@@ -75,6 +75,7 @@ describe("CreateProfile", () => {
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
+		// Trigger field errors
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
