@@ -1,3 +1,4 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
@@ -62,16 +63,29 @@ export const AddRecipient = ({
 	recipients,
 	onChange,
 }: AddRecipientProps) => {
-	const [addedRecipients, setAddressRecipients] = useState(recipients as RecipientListItem[]);
+	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients || []);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
+	const magnitude = 8;
+	const fraction = Math.pow(10, magnitude * -1);
 
 	const { t } = useTranslation();
 
+	const defaultValues: any = {
+		amount: availableAmount,
+		recipientAddress: null,
+		isSingle: isSingleRecipient,
+	};
+
+	if (isSingle && addedRecipients.length) {
+		defaultValues.recipientAddress = addedRecipients[0].address;
+		defaultValues.amount = addedRecipients[0].amount;
+	}
+
 	const form = useForm({
-		defaultValues: { amount: availableAmount, recipientAddress: null, isSingle: isSingleRecipient },
+		defaultValues,
 	});
 
-	const { setValue, register } = form;
+	const { getValues, setValue, register } = form;
 	const { recipientAddress, amount } = form.watch();
 
 	const clearFields = () => {
@@ -79,8 +93,33 @@ export const AddRecipient = ({
 		setValue("recipientAddress", null);
 	};
 
+	const singleRecipientOnChange = () => {
+		const recipientAddress = getValues("recipientAddress");
+		const amount = getValues("amount");
+
+		if (!isSingle) {
+			return;
+		}
+
+		if (!recipientAddress || !amount) {
+			onChange?.([]);
+
+			return;
+		}
+
+		onChange?.([
+			{
+				amount: BigNumber.make(amount).divide(fraction).toFixed(0),
+				address: recipientAddress,
+			},
+		]);
+	};
+
 	const onAddRecipient = (address: string, amount: number) => {
-		addedRecipients.push({ amount, address });
+		addedRecipients.push({
+			amount: BigNumber.make(amount).divide(fraction).toFixed(0),
+			address,
+		});
 		setAddressRecipients(addedRecipients);
 		onChange?.(addedRecipients);
 		clearFields();
@@ -112,10 +151,13 @@ export const AddRecipient = ({
 						</div>
 
 						<SelectRecipient
-							address={recipientAddress as any}
+							address={recipientAddress}
 							ref={register}
 							profile={profile}
-							onChange={(address: any) => setValue("recipientAddress", address)}
+							onChange={(address: any) => {
+								setValue("recipientAddress", address);
+								singleRecipientOnChange();
+							}}
 						/>
 					</FormField>
 
@@ -131,11 +173,17 @@ export const AddRecipient = ({
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
 								ref={register}
+								onChange={singleRecipientOnChange}
+								value={amount}
 							/>
 							<InputAddonEnd>
 								<button
+									type="button"
 									data-testid="add-recipient__send-all"
-									onClick={() => setValue("amount", maxAvailableAmount)}
+									onClick={() => {
+										setValue("amount", maxAvailableAmount);
+										singleRecipientOnChange();
+									}}
 									className="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
 								>
 									{t("TRANSACTION.SEND_ALL")}
@@ -150,7 +198,7 @@ export const AddRecipient = ({
 						data-testid="add-recipient__add-btn"
 						variant="plain"
 						className="w-full mt-4"
-						onClick={() => onAddRecipient(recipientAddress as any, amount)}
+						onClick={() => onAddRecipient(recipientAddress as string, amount)}
 					>
 						{t("TRANSACTION.ADD_RECIPIENT")}
 					</Button>
@@ -174,7 +222,7 @@ export const AddRecipient = ({
 AddRecipient.defaultProps = {
 	maxAvailableAmount: 0,
 	assetSymbol: "ARK",
-	availableAmount: null,
+	availableAmount: undefined,
 	isSingleRecipient: true,
 	recipients: [],
 };

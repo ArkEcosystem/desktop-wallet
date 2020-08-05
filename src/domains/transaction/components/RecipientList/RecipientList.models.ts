@@ -1,5 +1,5 @@
 export type RecipientListItem = {
-	amount: number | string;
+	amount: string;
 	address: string;
 	walletName?: string;
 	assetSymbol?: string;
