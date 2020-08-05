@@ -31,7 +31,10 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 	const fetchMoreTransactions = async () => {
 		const cursor = allTransactions ? allTransactions.length + 1 : 0;
+		console.log("Fetching more transactions with cursor:", { cursor });
+
 		const transactions = (await activeProfile.transactionAggregate().transactions({ cursor, limit: 10 })).items();
+		console.log("Fetch result:", { transactions });
 
 		return transactions && setAllTransactions(allTransactions?.concat(transactions));
 	};
