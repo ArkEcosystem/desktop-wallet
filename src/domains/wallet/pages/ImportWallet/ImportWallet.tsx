@@ -82,13 +82,14 @@ export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) =>
 			<FormField name="address">
 				<FormLabel label={t("COMMON.ADDRESS")} />
 				<InputAddress
+					name="address"
+					coin={network.coin()}
+					network={network.id()}
 					ref={register({
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("COMMON.ADDRESS"),
 						}).toString(),
 					})}
-					coin={network.coin()}
-					network={network.id()}
 					data-testid="ImportWallet__address-input"
 				/>
 				<FormHelperText />

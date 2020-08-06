@@ -16,7 +16,7 @@ export const Default = () => (
 
 export const Address = () => (
 	<div className="max-w-xs">
-		<InputAddress coin="ARK" network="devnet" defaultValue="DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM" />
+		<InputAddress name="address" coin="ARK" network="devnet" defaultValue="DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM" />
 	</div>
 );
 

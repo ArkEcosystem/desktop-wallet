@@ -7,13 +7,13 @@ import { useFormContext } from "react-hook-form";
 import { Input } from "./Input";
 import { InputAddonEnd, InputGroup } from "./InputGroup";
 
-type InputAddressProps = { coin: string; network: string } & React.InputHTMLAttributes<any>;
+type InputAddressProps = { name: string; coin: string; network: string } & React.InputHTMLAttributes<any>;
 
 export const InputAddress = React.forwardRef<HTMLInputElement, InputAddressProps>((props: InputAddressProps, ref) => {
-	const { coin, network } = props;
+	const { name, coin, network } = props;
 
 	const { env } = useEnvironmentContext();
-	const { setError } = useFormContext();
+	const form = useFormContext();
 
 	const [address, setAddress] = useState("");
 
@@ -24,15 +24,16 @@ export const InputAddress = React.forwardRef<HTMLInputElement, InputAddressProps
 			if (debouncedAddress) {
 				const isValidAddress = await env.dataValidator().address(coin, network, debouncedAddress);
 
-				console.log("debouncedAddress", debouncedAddress);
-				console.log("isValid", isValidAddress);
-
-				setError("address", "required", "The address is not valid");
+				if (isValidAddress) {
+					form.clearError(name);
+				} else {
+					form.setError(name, "required", "The address is not valid");
+				}
 			}
 		};
 
 		validateAddress();
-	}, [coin, debouncedAddress, env, network, setError]);
+	}, [debouncedAddress, env, name, coin, network, form]);
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setAddress(event.target.value);
