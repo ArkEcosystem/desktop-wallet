@@ -22,9 +22,10 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const [avatarImage, setAvatarImage] = useState("");
-
 	const { register } = form;
+	const nameMaxLength = 42;
+
+	const [avatarImage, setAvatarImage] = useState("");
 
 	const handleChangeAvatar = async () => {
 		const raw = await openFile(null, {
@@ -97,7 +98,9 @@ export const CreateProfile = () => {
 	];
 
 	const submitForm = async ({ name, currency, isDarkMode, marketProvider }: any) => {
-		const profile = env.profiles().create(name);
+		const formattedName = name.substring(0, nameMaxLength);
+		const profile = env.profiles().create(formattedName);
+
 		profile.settings().set(ProfileSetting.Avatar, avatarImage);
 		profile.settings().set(ProfileSetting.AdvancedMode, false);
 		profile.settings().set(ProfileSetting.AutomaticLogoffPeriod, 15);
@@ -143,6 +146,12 @@ export const CreateProfile = () => {
 											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 												field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
 											}).toString(),
+											maxLength: {
+												value: nameMaxLength,
+												message: t("PROFILE.PAGE_CREATE_PROFILE.VALIDATION.MAXLENGTH_ERROR", {
+													maxLength: nameMaxLength,
+												}),
+											},
 										})}
 									/>
 									<FormHelperText />
