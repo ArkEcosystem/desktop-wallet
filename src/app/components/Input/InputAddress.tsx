@@ -15,7 +15,7 @@ export const InputAddress = React.forwardRef<HTMLInputElement, InputAddressProps
 
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
-	const form = useFormContext();
+	const { clearError, setError } = useFormContext();
 
 	const [address, setAddress] = useState("");
 
@@ -27,15 +27,15 @@ export const InputAddress = React.forwardRef<HTMLInputElement, InputAddressProps
 				const isValidAddress = await env.dataValidator().address(coin, network, debouncedAddress);
 
 				if (isValidAddress) {
-					form.clearError(name);
+					clearError(name);
 				} else {
-					form.setError(name, "required", t("COMMON.INPUT_ADDRESS.VALIDATION.NOT_VALID"));
+					setError(name, "required", t("COMMON.INPUT_ADDRESS.VALIDATION.NOT_VALID"));
 				}
 			}
 		};
 
 		validateAddress();
-	}, [name, coin, network, debouncedAddress, env, form, t]);
+	}, [debouncedAddress, name, coin, network, env, clearError, setError, t]);
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setAddress(event.target.value);

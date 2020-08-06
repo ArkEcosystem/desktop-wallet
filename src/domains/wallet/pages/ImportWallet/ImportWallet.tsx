@@ -11,7 +11,7 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -19,11 +19,11 @@ import { useHistory } from "react-router-dom";
 export const FirstStep = () => {
 	const { register, setValue } = useFormContext();
 	const context = useEnvironmentContext();
-	const networks = React.useMemo(() => context.env.availableNetworks(), [context]);
+	const networks = useMemo(() => context.env.availableNetworks(), [context]);
 
 	const { t } = useTranslation();
 
-	React.useEffect(() => {
+	useEffect(() => {
 		register("network", { required: true });
 	}, [register]);
 
@@ -235,7 +235,11 @@ export const ImportWallet = () => {
 										>
 											{t("COMMON.BACK")}
 										</Button>
-										<Button type="submit" data-testid="ImportWallet__submit-button">
+										<Button
+											disabled={!formState.isValid}
+											type="submit"
+											data-testid="ImportWallet__submit-button"
+										>
 											{t("COMMON.GO_TO_WALLET")}
 										</Button>
 									</>
