@@ -1,6 +1,7 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { BTC } from "@arkecosystem/platform-sdk-btc";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
+import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 
@@ -47,12 +48,26 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			textClass: "text-theme-primary-400",
 			iconName: "Lisk",
 		},
-		// betanet: {
-		// 	displayName: "Lisk Betanet",
-		// 	borderClass: "border-theme-primary-100",
-		// 	textClass: "text-theme-primary-400",
-		// 	iconName: "Lisk",
-		// },
+		betanet: {
+			displayName: "Lisk Betanet",
+			borderClass: "border-theme-primary-100",
+			textClass: "text-theme-primary-400",
+			iconName: "Lisk",
+		},
+	},
+	NEO: {
+		mainnet: {
+			displayName: "NEO",
+			borderClass: "border-theme-warning-200",
+			textClass: "text-theme-warning-400",
+			iconName: "Bitcoin",
+		},
+		testnet: {
+			displayName: "NEO Testnet",
+			borderClass: "border-theme-warning-200",
+			textClass: "text-theme-warning-400",
+			iconName: "Bitcoin",
+		},
 	},
 	// XRP: {
 	// 	Mainnet: {
@@ -70,6 +85,8 @@ export const availableNetworksMock: NetworkData[] = [
 	// new NetworkData(BTC.manifest.name, BTC.manifest.networks.livenet),
 	new NetworkData(LSK.manifest.name, LSK.manifest.networks.mainnet),
 	new NetworkData(LSK.manifest.name, LSK.manifest.networks.testnet),
+	new NetworkData(NEO.manifest.name, NEO.manifest.networks.mainnet),
+	new NetworkData(NEO.manifest.name, NEO.manifest.networks.testnet),
 	// new NetworkData(LSK.manifest.name, LSK.manifest.networks.betanet),
 	// new NetworkData(XRP.manifest.name, XRP.manifest.networks.mainnet),
 ];
