@@ -128,7 +128,11 @@ exports[`App should render mock 1`] = `
                               class="font-semibold text-theme-neutral-dark"
                               data-testid="profile-card__user--name"
                             >
-                              John Doe
+                              <span
+                                class="sc-fzoant cHyZLP"
+                              >
+                                John Doe
+                              </span>
                             </p>
                           </div>
                         </div>
@@ -216,7 +220,11 @@ exports[`App should render mock 1`] = `
                               class="font-semibold text-theme-neutral-dark"
                               data-testid="profile-card__user--name"
                             >
-                              Jane Doe
+                              <span
+                                class="sc-fzoant cHyZLP"
+                              >
+                                Jane Doe
+                              </span>
                             </p>
                           </div>
                         </div>
@@ -432,7 +440,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
     class="debug-screens"
   >
     <div
-      class="sc-fzoVTD fwKNiT"
+      class="sc-fzpisO ciFKdv"
       data-testid="RouterView__wrapper"
     >
       <div
@@ -554,7 +562,11 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               class="font-semibold text-theme-neutral-dark"
                               data-testid="profile-card__user--name"
                             >
-                              John Doe
+                              <span
+                                class="sc-fzoant cHyZLP"
+                              >
+                                John Doe
+                              </span>
                             </p>
                           </div>
                         </div>
@@ -642,7 +654,11 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               class="font-semibold text-theme-neutral-dark"
                               data-testid="profile-card__user--name"
                             >
-                              Jane Doe
+                              <span
+                                class="sc-fzoant cHyZLP"
+                              >
+                                Jane Doe
+                              </span>
                             </p>
                           </div>
                         </div>
