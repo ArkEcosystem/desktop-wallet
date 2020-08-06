@@ -28,7 +28,7 @@ export const Splash = ({ year }: any) => {
 				<div data-testid="Splash__text" className="mt-8">
 					<h1 className="text-4xl font-extrabold">{t("SPLASH.BRAND")}</h1>
 					<p className="text-theme-neutral-dark animate-pulse">{t("SPLASH.LOADING")}</p>
-					<div className="justify-center flex mt-4">
+					<div className="flex justify-center mt-4">
 						<div className="animate-spin">
 							<CircularProgressBar
 								showValue={false}
@@ -42,7 +42,7 @@ export const Splash = ({ year }: any) => {
 				</div>
 				<div
 					data-testid="Splash__footer"
-					className="fixed bottom-4 left-0 right-0 flex justify-center items-center font-semibold text-sm text-theme-neutral-500"
+					className="fixed left-0 right-0 flex items-center justify-center text-sm font-semibold bottom-4 text-theme-neutral-500"
 				>
 					<div>
 						{currentYear} {t("SPLASH.COPYRIGHT")}
@@ -52,7 +52,7 @@ export const Splash = ({ year }: any) => {
 					<Divider type="vertical" />
 					<img
 						src={commonAssets.ARKLogo}
-						className="h-4 w-4 bg-theme-neutral-500 rounded-sm p-px mr-2"
+						className="w-4 h-4 p-px mr-2 rounded-sm bg-theme-neutral-500"
 						alt={t("SPLASH.BRAND")}
 					/>
 					<div>{t("SPLASH.PRODUCT")}</div>

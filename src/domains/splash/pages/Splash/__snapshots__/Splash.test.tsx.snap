@@ -57,7 +57,7 @@ exports[`Splash should render 1`] = `
               Initializing...
             </p>
             <div
-              class="justify-center flex mt-4"
+              class="flex justify-center mt-4"
             >
               <div
                 class="animate-spin"
@@ -93,7 +93,7 @@ exports[`Splash should render 1`] = `
             </div>
           </div>
           <div
-            class="fixed bottom-4 left-0 right-0 flex justify-center items-center font-semibold text-sm text-theme-neutral-500"
+            class="fixed left-0 right-0 flex items-center justify-center text-sm font-semibold bottom-4 text-theme-neutral-500"
             data-testid="Splash__footer"
           >
             <div>
@@ -112,7 +112,7 @@ exports[`Splash should render 1`] = `
             />
             <img
               alt="ARK Desktop Wallet"
-              class="h-4 w-4 bg-theme-neutral-500 rounded-sm p-px mr-2"
+              class="w-4 h-4 p-px mr-2 rounded-sm bg-theme-neutral-500"
               src="ark-logo.png"
             />
             <div>
