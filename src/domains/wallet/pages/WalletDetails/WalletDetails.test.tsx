@@ -4,15 +4,7 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	useDefaultNetMocks,
-	waitFor,
-} from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 
 import { WalletDetails } from "./WalletDetails";
@@ -51,13 +43,13 @@ const renderPage = async () => {
 	return rendered;
 };
 
+jest.setTimeout(8000);
+
 beforeAll(async () => {
 	profile = env.profiles().findById(getDefaultProfileId());
 	wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
 	unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
-
-	useDefaultNetMocks();
 
 	nock("https://dwallets.ark.io")
 		.get(`/api/wallets/${unvotedWallet.address()}`)
