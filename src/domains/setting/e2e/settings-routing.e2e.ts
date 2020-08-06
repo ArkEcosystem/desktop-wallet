@@ -45,7 +45,7 @@ test("should save settings", async (t) => {
 	await t.click(Selector("[data-testid=AdvancedMode__accept-button]"));
 	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
 
-	await t.click(Selector("button").withText("15 minutes"));
+	await t.click(Selector("button").withText("1 minute"));
 	await t.click(Selector("li.select-list-option").withText("10 minutes"));
 
 	await t.click(Selector("input[name=isDarkMode]").parent());
