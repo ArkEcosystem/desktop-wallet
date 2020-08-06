@@ -70,6 +70,6 @@ export const availableNetworksMock: NetworkData[] = [
 	// new NetworkData(BTC.manifest.name, BTC.manifest.networks.livenet),
 	new NetworkData(LSK.manifest.name, LSK.manifest.networks.mainnet),
 	new NetworkData(LSK.manifest.name, LSK.manifest.networks.testnet),
-	new NetworkData(LSK.manifest.name, LSK.manifest.networks.betanet),
+	// new NetworkData(LSK.manifest.name, LSK.manifest.networks.betanet),
 	// new NetworkData(XRP.manifest.name, XRP.manifest.networks.mainnet),
 ];
