@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
@@ -35,7 +34,7 @@ export const TransactionRow = ({
 		</td>
 		<td className="w-48 py-1 text-sm text-theme-neutral-600">
 			<span data-testid="TransactionRow__timestamp">
-				{DateTime.fromUnix(transaction.timestamp()!).format("DD MMM YYYY HH:mm:ss")}
+				{transaction.timestamp()!.format("DD MMM YYYY HH:mm:ss")}
 			</span>
 		</td>
 		<td className="w-32">

@@ -1,4 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 
@@ -10,7 +11,7 @@ const transactions: Contracts.TransactionDataType[] = [
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 		type: () => "transfer",
-		timestamp: () => 1596213281,
+		timestamp: () => DateTime.fromUnix(1596213281),
 		confirmations: () => BigNumber.make(10),
 		votes: () => ["10"],
 		unvotes: () => ["10"],
@@ -54,7 +55,7 @@ const transactions: Contracts.TransactionDataType[] = [
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 		type: () => "transfer",
-		timestamp: () => 1596213281,
+		timestamp: () => DateTime.fromUnix(1596213281),
 		confirmations: () => BigNumber.make(5),
 		votes: () => ["10"],
 		unvotes: () => ["10"],
@@ -98,7 +99,7 @@ const transactions: Contracts.TransactionDataType[] = [
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 		type: () => "vote",
-		timestamp: () => 1596213281,
+		timestamp: () => DateTime.fromUnix(1596213281),
 		confirmations: () => BigNumber.make(5),
 		votes: () => ["10"],
 		unvotes: () => ["10"],
@@ -142,7 +143,7 @@ const transactions: Contracts.TransactionDataType[] = [
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 		type: () => "delegateRegistration",
-		timestamp: () => 1596213281,
+		timestamp: () => DateTime.fromUnix(1596213281),
 		confirmations: () => BigNumber.make(5),
 		votes: () => ["10"],
 		unvotes: () => ["10"],
