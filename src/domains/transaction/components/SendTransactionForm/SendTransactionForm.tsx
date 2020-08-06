@@ -2,7 +2,6 @@ import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profile
 import { Button } from "app/components/Button";
 import { FormField, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
-import { useSelectionState } from "app/components/SelectionBar/useSelectionState";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
@@ -40,16 +39,41 @@ export const SendTransactionForm = ({
 	const form = useFormContext();
 	const { formState, getValues, register, setValue } = form;
 	const { network, recipients, senderAddress, smartbridge } = form.watch();
-	const feeRangeValue = useSelectionState(0);
+	const [feeOptions, setFeeOptions] = useState({
+		last: undefined,
+		min: (0 * 1e8).toFixed(0),
+		max: (100 * 1e8).toFixed(0),
+		average: (14 * 1e8).toFixed(0),
+	});
 
 	// TODO: Get fees from SDK/API
-	const fee = getValues("fee") || 0;
+	const fee = getValues("fee") || null;
 	const maxFee = 100;
 	const maxAvailableAmount = 80;
-	const feeRange = {
-		last: 10,
-		min: 1,
-		average: 14,
+
+	const updateFees = async () => {
+		if (!senderAddress) {
+			return;
+		}
+
+		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
+		const senderWallet = profile
+			?.wallets()
+			.values()
+			.find((wallet: Wallet) => wallet.address() === senderAddress);
+
+		const transferFees = (await senderWallet?.fee().all(7))?.transfer;
+
+		if (transferFees) {
+			setFeeOptions({
+				last: undefined,
+				min: transferFees.min,
+				max: transferFees.max,
+				average: transferFees.avg,
+			});
+
+			setValue("fee", transferFees.avg, true);
+		}
 	};
 
 	useEffect(() => {
@@ -62,6 +86,10 @@ export const SendTransactionForm = ({
 			);
 		}
 	}, [network]);
+
+	useEffect(() => {
+		updateFees();
+	}, [senderAddress]);
 
 	const onSelectNetwork = (network?: NetworkData | null) => {
 		setValue("network", network, true);
@@ -132,10 +160,9 @@ export const SendTransactionForm = ({
 			<FormField name="fee">
 				<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 				<InputFee
-					selectionBarState={feeRangeValue}
-					defaultValue={fee}
-					min={0}
-					max={maxFee}
+					{...feeOptions}
+					defaultValue={fee || 0}
+					value={fee || 0}
 					step={0.01}
 					onChange={(value: any) => setValue("fee", value, true)}
 				/>
