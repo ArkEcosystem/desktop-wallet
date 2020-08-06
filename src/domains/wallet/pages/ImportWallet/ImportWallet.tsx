@@ -3,7 +3,7 @@ import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Input, InputPassword } from "app/components/Input";
+import { InputAddress, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -79,7 +79,7 @@ export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) =>
 			// TODO: Change to InputAddress
 			<FormField name="address">
 				<FormLabel label={t("COMMON.ADDRESS")} />
-				<Input
+				<InputAddress
 					ref={register({
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("COMMON.ADDRESS"),
