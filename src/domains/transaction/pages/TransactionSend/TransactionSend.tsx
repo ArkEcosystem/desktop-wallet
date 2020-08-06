@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
@@ -156,16 +157,11 @@ export const FourthStep = () => {
 	);
 };
 
-export const FifthStep = () => {
+export const FifthStep = ({ transaction }: { transaction: Contracts.TransactionData }) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful>
-			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")}>
-				<div className="mt-4 mr-1 font-semibold truncate text-theme-neutral-800 text-md">
-					JFKDJFKSDJFKDSJFKJKJFKDSJFKLJAKFJAKLJFKALSJFKLASJF
-				</div>
-			</TransactionDetail>
+		<TransactionSuccessful transactionId={transaction.id()}>
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				className="pb-0"
@@ -177,7 +173,7 @@ export const FifthStep = () => {
 					</div>
 				}
 			>
-				1.00 ARK
+				{transaction.amount().toHuman(8)}
 			</TransactionDetail>
 		</TransactionSuccessful>
 	);
@@ -188,10 +184,12 @@ export const TransactionSend = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [formData, setFormData] = useState(null);
+	const [transaction, setTransaction] = useState<Contracts.TransactionData>(
+		(null as unknown) as Contracts.TransactionData,
+	);
 	const activeProfile = useActiveProfile();
 
 	const form = useForm({ mode: "onChange" });
-
 	const { formState, getValues, register } = form;
 
 	useEffect(() => {
@@ -208,6 +206,7 @@ export const TransactionSend = () => {
 			?.wallets()
 			.values()
 			.find((wallet: Wallet) => wallet.address() === senderAddress);
+
 		const transactionId = await senderWallet?.transaction().signTransfer({
 			fee,
 			sign: {
@@ -221,9 +220,20 @@ export const TransactionSend = () => {
 			},
 		});
 
-		await senderWallet?.transaction().broadcast([transactionId]);
+		await senderWallet?.transaction().broadcast([transactionId!]);
 
-		handleNext();
+		// TODO: Remove timer and figure out a nicer way of doing this
+		const intervalId = setInterval(async () => {
+			try {
+				const transactionData = await senderWallet?.coin().client().transaction(transactionId!);
+				setTransaction(transactionData!);
+				clearInterval(intervalId);
+
+				handleNext();
+			} catch (error) {
+				console.log("Could not get transaction: ", error);
+			}
+		}, 500);
 	};
 
 	const handleBack = () => {
@@ -259,7 +269,7 @@ export const TransactionSend = () => {
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FifthStep />
+								<FifthStep transaction={transaction} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
