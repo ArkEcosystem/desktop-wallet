@@ -76,8 +76,8 @@ describe("ProfileMiddleware", () => {
 		expect(subject.handler(params)).toBe(true);
 		expect(subject.state).toEqual(
 			expect.objectContaining({
-				hasTimer: true,
-				idleInterval: expect.any(Number),
+				intervalId: expect.any(Number),
+				threshold: expect.any(Number),
 			}),
 		);
 	});
@@ -101,8 +101,8 @@ describe("ProfileMiddleware", () => {
 		expect(subject.handler(params)).toBe(true);
 		expect(subject.state).toEqual(
 			expect.objectContaining({
-				hasTimer: true,
-				idleInterval: expect.any(Number),
+				intervalId: expect.any(Number),
+				threshold: expect.any(Number),
 			}),
 		);
 
@@ -130,8 +130,8 @@ describe("ProfileMiddleware", () => {
 		expect(subject.handler(params)).toBe(true);
 		expect(subject.state).toEqual(
 			expect.objectContaining({
-				hasTimer: true,
-				idleInterval: expect.any(Number),
+				intervalId: expect.any(Number),
+				threshold: expect.any(Number),
 			}),
 		);
 
@@ -153,8 +153,8 @@ describe("ProfileMiddleware", () => {
 		expect(subject.handler(params)).toBe(true);
 		expect(subject.state).toEqual(
 			expect.objectContaining({
-				hasTimer: true,
-				idleInterval: expect.any(Number),
+				intervalId: expect.any(Number),
+				threshold: expect.any(Number),
 			}),
 		);
 
@@ -164,7 +164,7 @@ describe("ProfileMiddleware", () => {
 		params.location = location;
 		// @ts-ignore
 		expect(subject.handler(params)).toBe(true);
-		expect(subject.state).toEqual({ hasTimer: false });
+		expect(subject.state).toEqual({});
 	});
 
 	it("should reset timer if set and path matches but is a subrouter", () => {
@@ -181,8 +181,8 @@ describe("ProfileMiddleware", () => {
 		expect(subject.handler(params)).toBe(true);
 		expect(subject.state).toEqual(
 			expect.objectContaining({
-				hasTimer: true,
-				idleInterval: expect.any(Number),
+				intervalId: expect.any(Number),
+				threshold: expect.any(Number),
 			}),
 		);
 
@@ -192,7 +192,7 @@ describe("ProfileMiddleware", () => {
 		params.location = location;
 		// @ts-ignore
 		expect(subject.handler(params)).toBe(true);
-		expect(subject.state).toEqual({ hasTimer: false });
+		expect(subject.state).toEqual({});
 	});
 
 	it("should not reset timer if set and path matches", () => {
@@ -212,8 +212,8 @@ describe("ProfileMiddleware", () => {
 
 		expect(subject.state).toEqual(
 			expect.objectContaining({
-				hasTimer: true,
-				idleInterval: expect.any(Number),
+				intervalId: expect.any(Number),
+				threshold: expect.any(Number),
 			}),
 		);
 
