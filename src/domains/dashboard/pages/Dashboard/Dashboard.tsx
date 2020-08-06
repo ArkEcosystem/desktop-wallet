@@ -31,7 +31,6 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 	const fetchMoreTransactions = async () => {
 		const transactions = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
-		console.log("Fetch result:", { transactions });
 
 		return transactions && setAllTransactions(allTransactions?.concat(transactions));
 	};
@@ -101,7 +100,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
-					<Transactions transactions={allTransactions} moreAction={fetchMoreTransactions} />
+					<Transactions transactions={allTransactions} fetchMoreAction={fetchMoreTransactions} />
 				</Section>
 			)}
 		</Page>
