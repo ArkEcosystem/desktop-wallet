@@ -88,7 +88,7 @@ export const WalletListItem = ({
 			</td>
 			{actions && (
 				<td>
-						{actions.length > 0 &&
+					{actions.length > 0 &&
 						(() => {
 							if (variant === "singleAction") {
 								return (
