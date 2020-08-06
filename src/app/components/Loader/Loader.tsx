@@ -5,15 +5,14 @@ import React from "react";
 import { LoaderWrapper, LogoSpinner } from "./Loader.styles";
 
 type LoaderProps = {
-	position?: string;
 	show?: boolean;
 };
 
-export const Loader = ({ position, show }: LoaderProps) => {
+export const Loader = ({ show }: LoaderProps) => {
 	if (!show) return <></>;
 
 	return (
-		<LoaderWrapper className={position}>
+		<LoaderWrapper>
 			<LogoSpinner>
 				<div className="centered">
 					<CircularProgressBar
@@ -48,6 +47,5 @@ export const Loader = ({ position, show }: LoaderProps) => {
 };
 
 Loader.defaultProps = {
-	position: "absolute",
 	show: true,
 };

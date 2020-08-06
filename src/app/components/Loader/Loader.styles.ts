@@ -38,5 +38,5 @@ export const LogoSpinner = styled.div`
 `;
 
 export const LoaderWrapper = styled.div`
-	${tw`flex items-center justify-center top-0 right-0 left-0 bottom-0`}
+	${tw`absolute flex items-center justify-center top-0 right-0 left-0 bottom-0`}
 `;

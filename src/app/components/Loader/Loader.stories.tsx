@@ -12,9 +12,3 @@ export const Default = () => (
 		</div>
 	</div>
 );
-
-export const Fixed = () => (
-	<div className="space-y-5">
-		<Loader position="fixed" />
-	</div>
-);
