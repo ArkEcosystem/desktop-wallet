@@ -156,7 +156,11 @@ exports[`Dashboard should hide portfolio view 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -680,11 +684,12 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                                <div
+                                <span
                                   class="font-bold text-theme-neutral-900"
+                                  data-testid="Amount"
                                 >
-                                  0.00001000
-                                </div>
+                                  0.00001 DARK
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -995,7 +1000,11 @@ exports[`Dashboard should hide transaction view 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -1724,11 +1733,12 @@ exports[`Dashboard should hide transaction view 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                                <div
+                                <span
                                   class="font-bold text-theme-neutral-900"
+                                  data-testid="Amount"
                                 >
-                                  0.00001000
-                                </div>
+                                  0.00001 DARK
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -2021,7 +2031,11 @@ exports[`Dashboard should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -2566,11 +2580,12 @@ exports[`Dashboard should render 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                                <div
+                                <span
                                   class="font-bold text-theme-neutral-900"
+                                  data-testid="Amount"
                                 >
-                                  0.00001000
-                                </div>
+                                  0.00001 DARK
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -3306,7 +3321,11 @@ exports[`Dashboard should render portfolio chart 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -3851,11 +3870,12 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                                <div
+                                <span
                                   class="font-bold text-theme-neutral-900"
+                                  data-testid="Amount"
                                 >
-                                  0.00001000
-                                </div>
+                                  0.00001 DARK
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -4166,7 +4186,11 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -4711,11 +4735,12 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                                <div
+                                <span
                                   class="font-bold text-theme-neutral-900"
+                                  data-testid="Amount"
                                 >
-                                  0.00001000
-                                </div>
+                                  0.00001 DARK
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -5026,7 +5051,11 @@ exports[`Dashboard should render wallets 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -5571,11 +5600,12 @@ exports[`Dashboard should render wallets 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                                <div
+                                <span
                                   class="font-bold text-theme-neutral-900"
+                                  data-testid="Amount"
                                 >
-                                  0.00001000
-                                </div>
+                                  0.00001 DARK
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -5886,7 +5916,11 @@ exports[`Dashboard should render with no wallets 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00000000
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
               </div>
             </div>
             <div

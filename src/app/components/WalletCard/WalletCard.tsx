@@ -10,6 +10,8 @@ import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { Amount } from "../Amount";
+
 type WalletCardProps = {
 	className?: string;
 	isBlank?: boolean;
@@ -60,6 +62,7 @@ export const WalletCard = ({
 	}
 
 	const coinName = wallet?.coin().manifest().get<string>("name");
+	const ticker = wallet!.network().currency.ticker;
 
 	return (
 		<Link
@@ -101,7 +104,11 @@ export const WalletCard = ({
 						<div className="mt-6 truncate max-w-12">
 							<Address walletName={wallet?.alias()} address={wallet?.address()} maxChars={13} />
 						</div>
-						<div className="font-bold text-theme-neutral-900">{wallet?.balance().toHuman(8)}</div>
+						<Amount
+							value={wallet!.balance()}
+							ticker={ticker}
+							className="font-bold text-theme-neutral-900"
+						/>
 					</div>
 				</Card>
 			</div>
