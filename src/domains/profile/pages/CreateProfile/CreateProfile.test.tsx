@@ -31,6 +31,21 @@ const showOpenDialogParams = {
 	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 };
 
+const baseSettings = {
+	AVATAR: "",
+	ADVANCED_MODE: false,
+	AUTOMATIC_LOGOFF_PERIOD: 15,
+	BIP39_LOCALE: "english",
+	EXCHANGE_CURRENCY: "btc",
+	LEDGER_UPDATE_METHOD: false,
+	LOCALE: "en-US",
+	MARKET_PROVIDER: "coincap",
+	NAME: "test profile",
+	SCREENSHOT_PROTECTION: true,
+	THEME: "light",
+	TIME_FORMAT: "h:mm A",
+};
+
 describe("CreateProfile", () => {
 	beforeEach(() => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
@@ -94,18 +109,8 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
 		expect(profiles[0].settings().all()).toEqual({
+			...baseSettings,
 			AVATAR: "data:image/png;base64,avatarImage",
-			ADVANCED_MODE: false,
-			AUTOMATIC_LOGOFF_PERIOD: 15,
-			BIP39_LOCALE: "english",
-			EXCHANGE_CURRENCY: "btc",
-			LEDGER_UPDATE_METHOD: false,
-			LOCALE: "en-US",
-			MARKET_PROVIDER: "coincap",
-			NAME: "test profile",
-			SCREENSHOT_PROTECTION: true,
-			THEME: "light",
-			TIME_FORMAT: "h:mm A",
 		});
 
 		fireEvent.input(getByTestId("Input"), { target: { value: "test profile 2" } });
@@ -119,18 +124,10 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(2);
 		expect(profiles[1].name()).toEqual("test profile 2");
 		expect(profiles[1].settings().all()).toEqual({
+			...baseSettings,
 			AVATAR: "data:image/png;base64,avatarImage",
-			ADVANCED_MODE: false,
-			AUTOMATIC_LOGOFF_PERIOD: 15,
-			BIP39_LOCALE: "english",
-			EXCHANGE_CURRENCY: "btc",
-			LEDGER_UPDATE_METHOD: false,
-			LOCALE: "en-US",
-			MARKET_PROVIDER: "coincap",
 			NAME: "test profile 2",
-			SCREENSHOT_PROTECTION: true,
 			THEME: "dark",
-			TIME_FORMAT: "h:mm A",
 		});
 
 		expect(asFragment()).toMatchSnapshot();
@@ -171,20 +168,7 @@ describe("CreateProfile", () => {
 		const profiles = env.profiles().values();
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
-		expect(profiles[0].settings().all()).toEqual({
-			AVATAR: "",
-			ADVANCED_MODE: false,
-			AUTOMATIC_LOGOFF_PERIOD: 15,
-			BIP39_LOCALE: "english",
-			EXCHANGE_CURRENCY: "btc",
-			LEDGER_UPDATE_METHOD: false,
-			LOCALE: "en-US",
-			MARKET_PROVIDER: "coincap",
-			NAME: "test profile",
-			SCREENSHOT_PROTECTION: true,
-			THEME: "light",
-			TIME_FORMAT: "h:mm A",
-		});
+		expect(profiles[0].settings().all()).toEqual(baseSettings);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -224,20 +208,7 @@ describe("CreateProfile", () => {
 		const profiles = env.profiles().values();
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
-		expect(profiles[0].settings().all()).toEqual({
-			AVATAR: "",
-			ADVANCED_MODE: false,
-			AUTOMATIC_LOGOFF_PERIOD: 15,
-			BIP39_LOCALE: "english",
-			EXCHANGE_CURRENCY: "btc",
-			LEDGER_UPDATE_METHOD: false,
-			LOCALE: "en-US",
-			MARKET_PROVIDER: "coincap",
-			NAME: "test profile",
-			SCREENSHOT_PROTECTION: true,
-			THEME: "light",
-			TIME_FORMAT: "h:mm A",
-		});
+		expect(profiles[0].settings().all()).toEqual(baseSettings);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
