@@ -31,7 +31,7 @@ afterEach(() => nock.cleanAll());
 
 describe("Dashboard", () => {
 	it("should render", async () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -41,7 +41,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -58,7 +58,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
 
 		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
 
@@ -98,9 +98,15 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
 
-		fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
-		fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
+		act(() => {
+			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
+		});
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -117,6 +123,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -132,6 +139,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -147,6 +155,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
 
 		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
@@ -174,8 +183,11 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
 
-		fireEvent.click(getByText("Import"));
+		act(() => {
+			fireEvent.click(getByText("Import"));
+		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
 		expect(asFragment()).toMatchSnapshot();
@@ -193,10 +205,34 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
 
 		fireEvent.click(getByText("Create"));
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should fetch more transactions", async () => {
+		const { asFragment, container, getByTestId, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getByTestId("transactions__fetch-more-button")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("transactions__fetch-more-button"));
+		});
+
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
