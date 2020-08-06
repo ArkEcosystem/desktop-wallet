@@ -155,7 +155,11 @@ exports[`Article should render article support page 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -583,7 +587,11 @@ exports[`Article should render article support page with main image 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div

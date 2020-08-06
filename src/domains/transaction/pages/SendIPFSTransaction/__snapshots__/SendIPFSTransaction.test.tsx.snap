@@ -155,7 +155,11 @@ exports[`SendIPFSTransaction should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -383,7 +387,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                 class="absolute flex items-center ml-3"
                               >
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 laNXvc mr-3"
+                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mr-3"
                                   data-testid="Avatar"
                                 >
                                   <div
@@ -717,6 +721,78 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   </div>
                 </div>
               </li>
+              <li
+                aria-selected="false"
+                class="inline-block pt-6 mr-6 cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-3"
+                role="option"
+              >
+                <div
+                  aria-label="Lisk"
+                  class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
+                  data-testid="NetworkIcon-LSK-mainnet"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      lsk.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block pt-6 mr-6 cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-4"
+                role="option"
+              >
+                <div
+                  aria-label="Lisk Testnet"
+                  class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                  data-testid="NetworkIcon-LSK-testnet"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      lsk.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block pt-6 mr-6 cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-5"
+                role="option"
+              >
+                <div
+                  aria-label="Lisk Betanet"
+                  class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                  data-testid="NetworkIcon-LSK-betanet"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      lsk.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -748,7 +824,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 class="absolute flex items-center ml-3"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 laNXvc mr-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mr-3"
                   data-testid="Avatar"
                 >
                   <div
@@ -998,7 +1074,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
           data-testid="Avatar"
         >
           <div
@@ -1072,7 +1148,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
                 class="mt-2 font-semibold"
                 data-testid="total-amount-box__transaction-amount"
               >
-                0.00000000 ARK
+                0 ARK
               </span>
             </div>
             <div
@@ -1087,7 +1163,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
                 class="mt-2 text-lg font-semibold"
                 data-testid="total-amount-box__transaction-fee"
               >
-                0.00000000 ARK
+                0 ARK
               </span>
             </div>
           </div>
@@ -1121,7 +1197,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
             class="text-2xl font-bold"
             data-testid="total-amount-box__total"
           >
-            0.00000000 ARK
+            0 ARK
           </span>
         </div>
       </div>
@@ -1418,7 +1494,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
             data-testid="Avatar"
           >
             <div

@@ -1,6 +1,7 @@
 import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
+import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -11,13 +12,21 @@ import { Dropdown } from "../Dropdown";
 
 export type WalletListItemProps = {
 	wallet: Wallet;
+	exchangeCurrency?: string;
 	coinClass?: string;
 	actions?: any[];
 	variant?: "singleAction";
 	onAction?: any;
 };
 
-export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction }: WalletListItemProps) => {
+export const WalletListItem = ({
+	wallet,
+	coinClass,
+	actions,
+	variant,
+	onAction,
+	exchangeCurrency,
+}: WalletListItemProps) => {
 	const onDropdownAction = (action: any) => {
 		if (typeof onAction === "function") onAction(action);
 	};
@@ -61,10 +70,10 @@ export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction }
 				</td>
 			)}
 			<td className="font-semibold text-right">
-				<div>{wallet?.balance().toHuman(8)}</div>
+				<Amount value={wallet.balance()} ticker={wallet.network().currency.ticker} />
 			</td>
 			<td className="text-right text-theme-neutral-light">
-				<div>{wallet?.convertedBalance().toHuman(2)}</div>
+				<Amount value={wallet.convertedBalance()} ticker={exchangeCurrency!} />
 			</td>
 			<td>
 				{actions &&
@@ -94,4 +103,5 @@ export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction }
 WalletListItem.defaultProps = {
 	actions: [],
 	address: "",
+	exchangeCurrency: "",
 };
