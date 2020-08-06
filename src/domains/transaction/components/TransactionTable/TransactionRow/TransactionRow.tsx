@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
@@ -27,15 +26,15 @@ export const TransactionRow = ({
 	isSignaturePending,
 	...props
 }: Props) => (
-	<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
+	<tr data-testid="TransactionRow" className="border-theme-neutral-300 border-b border-dotted" {...props}>
 		<td className="w-16 py-6">
 			<div className="inline-block align-middle">
 				<Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id()} isExternal />
 			</div>
 		</td>
-		<td className="w-48 py-1 text-sm text-theme-neutral-600">
+		<td className="text-theme-neutral-600 w-48 py-1 text-sm">
 			<span data-testid="TransactionRow__timestamp">
-				{DateTime.fromUnix(transaction.timestamp()!).format("DD MMM YYYY HH:mm:ss")}
+				{transaction.timestamp()!.format("DD MMM YYYY HH:mm:ss")}
 			</span>
 		</td>
 		<td className="w-32">
