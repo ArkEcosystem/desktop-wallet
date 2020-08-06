@@ -7,7 +7,7 @@ import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type SearchContactProps = {
+type SearchAddressProps = {
 	title?: string;
 	description?: string;
 	isOpen: boolean;
@@ -18,26 +18,33 @@ type SearchContactProps = {
 	onAction?: (actionName: string, address: any) => void;
 };
 
-const SearchAddressListItem = ({ walletName, address, fiat, balance, onAction, index, selectActionLabel }: any) => (
+type SearchAddressListItemProps = {
+	wallet: Wallet;
+	selectActionLabel?: string;
+	index: number;
+	onAction?: (actionName: string, address: any) => void;
+};
+
+const SearchAddressListItem = ({ wallet, onAction, index, selectActionLabel }: SearchAddressListItemProps) => (
 	<tr className="border-b border-theme-neutral-200">
 		<td className="py-6 mt-1">
-			<Avatar size="lg" address={address} />
+			<Avatar size="lg" address={wallet.address()} />
 		</td>
 		<td className="py-1">
-			<Address walletName={walletName} address={address} maxChars={22} />
+			<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 		</td>
 		<td className="font-semibold">
-			<div>{balance}</div>
+			<div>{wallet.balance().toHuman(8)}</div>
 		</td>
 		<td className="text-theme-neutral-light">
-			<div>{fiat}</div>
+			<div>{wallet.convertedBalance().toHuman(8)}</div>
 		</td>
 		<td className="border-b border-dashed border-theme-neutral-200">
 			<Button
 				data-testid={`AddressListItem__select-${index}`}
 				className="float-right"
 				variant="plain"
-				onClick={() => onAction?.("select" as any, address)}
+				onClick={() => onAction?.("select" as any, wallet.address())}
 			>
 				{selectActionLabel}
 			</Button>
@@ -53,7 +60,7 @@ export const SearchAddress = ({
 	title,
 	description,
 	selectActionLabel,
-}: SearchContactProps) => {
+}: SearchAddressProps) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -87,10 +94,7 @@ export const SearchAddress = ({
 			<Table columns={columns} data={wallets}>
 				{(wallet: Wallet, index: number) => (
 					<SearchAddressListItem
-						address={wallet.address()}
-						walletName={wallet.alias()}
-						balance={wallet.balance().toString()}
-						fiat={wallet.convertedBalance().toString()}
+						wallet={wallet}
 						index={index}
 						selectActionLabel={selectActionLabel}
 						onAction={onAction}
