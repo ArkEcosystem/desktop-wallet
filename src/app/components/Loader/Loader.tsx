@@ -2,7 +2,7 @@ import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Icon } from "app/components/Icon";
 import React from "react";
 
-import { LoaderWrapper,LogoSpinner } from "./Loader.styles";
+import { LoaderWrapper, LogoSpinner } from "./Loader.styles";
 
 type LoaderProps = {
 	position?: string;
