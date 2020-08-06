@@ -11,7 +11,7 @@ type TransactionsProps = {
 	emptyText?: string;
 };
 
-export const Transactions = ({ transactions, title, emptyText, moreAction }: TransactionsProps) => {
+export const Transactions = ({ transactions, title, emptyText, fetchMoreAction }: TransactionsProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -21,7 +21,12 @@ export const Transactions = ({ transactions, title, emptyText, moreAction }: Tra
 				<div className="pt-8">
 					<TransactionTable transactions={transactions} currencyRate="2" />
 
-					<Button variant="plain" className="w-full mt-10 mb-5" onClick={() => moreAction()}>
+					<Button
+						data-testid="transactions__fetch-more-button"
+						variant="plain"
+						className="w-full mt-10 mb-5"
+						onClick={() => fetchMoreAction()}
+					>
 						{t("COMMON.VIEW_MORE")}
 					</Button>
 				</div>
