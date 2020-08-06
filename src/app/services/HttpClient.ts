@@ -2,7 +2,7 @@ import { Contracts, Http } from "@arkecosystem/platform-sdk";
 import fetch from "isomorphic-fetch";
 
 export class HttpClient extends Http.Request {
-	readonly #headers: Record<string, string> = {
+	private readonly headers: Record<string, string> = {
 		Accept: "application/json",
 		"Content-Type": "application/json",
 	};
@@ -26,11 +26,11 @@ export class HttpClient extends Http.Request {
 		}
 
 		if (method === "GET") {
-			response = await fetch(url, { headers: this.#headers });
+			response = await fetch(url, { headers: this.headers });
 		}
 
 		if (method === "POST") {
-			response = await fetch(url, { method: "POST", body: JSON.stringify(data?.data), headers: this.#headers });
+			response = await fetch(url, { method: "POST", body: JSON.stringify(data?.data), headers: this.headers });
 		}
 
 		return new Http.Response({
