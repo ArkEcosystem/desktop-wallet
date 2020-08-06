@@ -30,10 +30,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const { t } = useTranslation();
 
 	const fetchMoreTransactions = async () => {
-		const cursor = allTransactions ? allTransactions.length + 1 : 0;
-		console.log("Fetching more transactions with cursor:", { cursor });
-
-		const transactions = (await activeProfile.transactionAggregate().transactions({ cursor, limit: 10 })).items();
+		const transactions = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
 		console.log("Fetch result:", { transactions });
 
 		return transactions && setAllTransactions(allTransactions?.concat(transactions));
@@ -83,7 +80,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
+					<div className="border-theme-neutral-200 pt-6 mb-2 border-b border-dotted" />
 					<PercentageBar
 						title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
 						data={portfolioPercentages}
