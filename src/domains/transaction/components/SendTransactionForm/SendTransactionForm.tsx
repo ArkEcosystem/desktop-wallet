@@ -1,4 +1,4 @@
-import { NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
@@ -8,7 +8,7 @@ import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
@@ -35,7 +35,7 @@ export const SendTransactionForm = ({
 	profile,
 }: SendTransactionFormProps) => {
 	const { t } = useTranslation();
-	const wallets = profile.wallets().values();
+	const [wallets, setWallets] = useState<Wallet[]>([]);
 
 	const form = useFormContext();
 	const { formState, getValues, register, setValue } = form;
@@ -51,6 +51,17 @@ export const SendTransactionForm = ({
 		min: 1,
 		average: 14,
 	};
+
+	useEffect(() => {
+		if (network) {
+			setWallets(
+				profile
+					.wallets()
+					.values()
+					.filter((wallet) => wallet.network() === network.toObject()),
+			);
+		}
+	}, [network]);
 
 	const onSelectNetwork = (network?: NetworkData | null) => {
 		setValue("network", network, true);
