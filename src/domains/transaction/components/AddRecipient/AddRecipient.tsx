@@ -78,7 +78,7 @@ export const AddRecipient = ({
 
 	if (isSingle && addedRecipients.length) {
 		defaultValues.recipientAddress = addedRecipients[0].address;
-		defaultValues.amount = addedRecipients[0].amount;
+		defaultValues.amount = BigNumber.make(addedRecipients[0].amount).toHuman(8);
 	}
 
 	const form = useForm({
