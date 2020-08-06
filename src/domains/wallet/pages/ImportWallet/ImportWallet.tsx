@@ -78,7 +78,6 @@ export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) =>
 		}
 
 		return (
-			// TODO: Change to InputAddress
 			<FormField name="address">
 				<FormLabel label={t("COMMON.ADDRESS")} />
 				<InputAddress

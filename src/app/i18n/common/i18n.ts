@@ -192,4 +192,10 @@ export const translations: { [key: string]: any } = {
 	PERIODS: {
 		DAILY: "Daily",
 	},
+
+	INPUT_ADDRESS: {
+		VALIDATION: {
+			NOT_VALID: "The address is not valid",
+		},
+	},
 };
