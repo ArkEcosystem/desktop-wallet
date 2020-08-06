@@ -86,20 +86,17 @@ export const SecondStep = ({
 		return (
 			<FormField name="address">
 				<FormLabel label={t("COMMON.ADDRESS")} />
-				<InputAddress
+				{/* 				<InputAddress
 					name="address"
 					coin={network.coin()}
 					network={network.id()}
 					onValidAddress={(isValidAddress: boolean) => {
 						setIsValidAddress(isValidAddress);
 					}}
-					ref={register({
-						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-							field: t("COMMON.ADDRESS"),
-						}).toString(),
-					})}
 					data-testid="ImportWallet__address-input"
-				/>
+				/> */}
+
+				<InputAddress name="address" coin={network.coin()} network={network.id()} isRequired />
 				<FormHelperText />
 			</FormField>
 		);
@@ -246,7 +243,7 @@ export const ImportWallet = () => {
 											{t("COMMON.BACK")}
 										</Button>
 										<Button
-											disabled={!isValidAddress}
+											disabled={!formState.isValid}
 											type="submit"
 											data-testid="ImportWallet__submit-button"
 										>

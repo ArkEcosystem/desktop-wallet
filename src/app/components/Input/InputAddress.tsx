@@ -1,7 +1,6 @@
 import { Icon } from "app/components/Icon";
 import { useEnvironmentContext } from "app/contexts";
-import { useDebounce } from "app/hooks";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -12,49 +11,47 @@ type InputAddressProps = {
 	name: string;
 	coin: string;
 	network: string;
+	isRequired?: boolean;
 	onValidAddress?: (isValidAddress: boolean) => void;
 } & React.InputHTMLAttributes<any>;
 
 export const InputAddress = React.forwardRef<HTMLInputElement, InputAddressProps>(
-	({ name, coin, network, onValidAddress }: InputAddressProps, ref) => {
+	({ name, coin, network, isRequired, onValidAddress }: InputAddressProps, ref) => {
 		const { t } = useTranslation();
 		const { env } = useEnvironmentContext();
-		const form = useFormContext();
+		const { register } = useFormContext();
 
-		const [address, setAddress] = useState("");
+		const [validAddress, setValidAddress] = useState<string | null>(null);
 
-		const debouncedAddress = useDebounce(address, 100);
+		const validateAddress = async (address: string) => {
+			if (validAddress && validAddress !== address) {
+				setValidAddress(null);
+				return t("COMMON.INPUT_ADDRESS.VALIDATION.NOT_VALID");
+			}
 
-		useEffect(() => {
-			const validateAddress = async () => {
-				if (debouncedAddress) {
-					const isValidAddress = await env.dataValidator().address(coin, network, debouncedAddress);
-					onValidAddress?.(isValidAddress);
+			const isValidAddress = await env.dataValidator().address(coin, network, address);
 
-					if (isValidAddress) {
-						if (form.errors[name]) {
-							form.clearError(name);
-						}
-					} else {
-						form.setError(name, "required", t("COMMON.INPUT_ADDRESS.VALIDATION.NOT_VALID"));
-					}
-				}
-			};
+			if (isValidAddress) {
+				setValidAddress(address);
+				return isValidAddress;
+			}
 
-			validateAddress();
-		}, [debouncedAddress, name, coin, network, env, form, t, onValidAddress]);
-
-		const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-			setAddress(event.target.value);
+			return t("COMMON.INPUT_ADDRESS.VALIDATION.NOT_VALID");
 		};
 
 		return (
 			<InputGroup className="max-w-20">
 				<Input
-					ref={ref}
+					ref={register({
+						required: isRequired
+							? t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("COMMON.ADDRESS"),
+							  }).toString()
+							: false,
+						validate: validateAddress,
+					})}
 					type="text"
 					className="pr-12"
-					onChange={handleChange}
 					data-testid={`InputAddress__input--${name}`}
 				/>
 				<InputAddonEnd className="my-px mr-4">
@@ -71,3 +68,6 @@ export const InputAddress = React.forwardRef<HTMLInputElement, InputAddressProps
 );
 
 InputAddress.displayName = "InputAddress";
+InputAddress.defaultProps = {
+	isRequired: false,
+};
