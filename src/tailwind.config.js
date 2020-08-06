@@ -150,6 +150,7 @@ module.exports = {
 				"-14": "-3.5rem",
 			},
 			fontSize: {
+				0: "0",
 				"8xl": "6rem",
 			},
 			borderWidth: {

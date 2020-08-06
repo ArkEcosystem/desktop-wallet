@@ -1,6 +1,6 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, Wallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
 import React from "react";
 import { StubStorage } from "tests/mocks";
@@ -34,7 +34,14 @@ export const generateWallets = async ({
 		const wallets = await Promise.all(promises);
 
 		for (const walletIndex of Object.keys(wallets)) {
-			wallets[walletIndex as any].settings().set(WalletSetting.Alias, `ARK Wallet ${Number(walletIndex) + 1}`);
+			const index = Number(walletIndex);
+
+			if (!index) {
+				wallets[index].toggleStarred();
+				wallets[index].data().set(WalletFlag.Ledger, true);
+			}
+
+			wallets[index].settings().set(WalletSetting.Alias, `ARK Wallet ${index + 1}`);
 		}
 
 		await env.persist();

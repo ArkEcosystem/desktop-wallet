@@ -273,20 +273,24 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 text-sm font-bold text-center space-x-2"
+                    class="py-1 text-sm align-middle font-bold text-center"
                   >
                     <div
-                      class="inline-block align-middle text-theme-neutral-600"
+                      class="inline-flex items-center space-x-2"
                     >
-                      <div
-                        class="sc-AxjAm vZRQY"
-                        height="16"
-                        width="16"
+                      <span
+                        class="text-theme-neutral-600"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
+                        <div
+                          class="sc-AxjAm vZRQY"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </span>
                     </div>
                   </td>
                   <td
@@ -306,9 +310,6 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
               </tbody>
