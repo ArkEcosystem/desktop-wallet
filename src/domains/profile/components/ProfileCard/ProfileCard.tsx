@@ -1,3 +1,5 @@
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Amount } from "app/components/Amount";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Card } from "app/components/Card";
 import { Dropdown } from "app/components/Dropdown";
@@ -10,7 +12,7 @@ interface ISettingsOptions {
 }
 
 type ProfileCardProps = {
-	profile: any;
+	profile: Profile;
 	actions?: ISettingsOptions[];
 	onSelect?: any;
 	handleClick?: any;
@@ -66,12 +68,12 @@ export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSetti
 					<div className="flex items-center">
 						<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right">
 							<p className="text-sm font-semibold text-theme-neutral">{t("COMMON.TOTAL_BALANCE")}</p>
-							<p
+							<Amount
 								className="font-semibold text-theme-neutral-dark"
 								data-testid="profile-card__user--balance"
-							>
-								{profile.balance().toHuman(8)}
-							</p>
+								value={profile.balance()}
+								ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!}
+							/>
 						</div>
 					</div>
 				</div>

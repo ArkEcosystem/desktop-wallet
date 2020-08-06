@@ -155,7 +155,11 @@ exports[`Votes should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -679,7 +683,11 @@ exports[`Votes should select a delegate 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -2062,7 +2070,11 @@ exports[`Votes should select a network 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -3268,7 +3280,11 @@ exports[`Votes should select address 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div

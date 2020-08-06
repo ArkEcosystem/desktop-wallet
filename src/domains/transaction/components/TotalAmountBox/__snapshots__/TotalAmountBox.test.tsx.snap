@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IpfsDetailModal should not render if not open 1`] = `
+exports[`TotalAmountBox should render 1`] = `
 <DocumentFragment>
   <div
     class="border rounded-lg border-theme-neutral-300"
@@ -23,7 +23,7 @@ exports[`IpfsDetailModal should not render if not open 1`] = `
             class="mt-2 font-semibold"
             data-testid="total-amount-box__transaction-amount"
           >
-            1.00000000 ARK
+            1 ARK
           </span>
         </div>
         <div
@@ -38,7 +38,7 @@ exports[`IpfsDetailModal should not render if not open 1`] = `
             class="mt-2 text-lg font-semibold"
             data-testid="total-amount-box__transaction-fee"
           >
-            1.00000000 ARK
+            0.00000001 ARK
           </span>
         </div>
       </div>
@@ -72,7 +72,7 @@ exports[`IpfsDetailModal should not render if not open 1`] = `
         class="text-2xl font-bold"
         data-testid="total-amount-box__total"
       >
-        2.00000000 ARK
+        1.00000001 ARK
       </span>
     </div>
   </div>
