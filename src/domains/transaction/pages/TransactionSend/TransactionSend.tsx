@@ -15,6 +15,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
+import { useClipboard } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -25,7 +26,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ onSubmit, formData /*, formOptions*/, profile, wallets }: any) => {
+export const FirstStep = ({ onSubmit, formData, profile, wallets }: any) => {
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
@@ -187,6 +188,9 @@ export const TransactionSend = () => {
 	const [transaction, setTransaction] = useState<Contracts.TransactionData>(
 		(null as unknown) as Contracts.TransactionData,
 	);
+	const [hasCopied, copy] = useClipboard({
+		resetAfter: 1000,
+	});
 	const activeProfile = useActiveProfile();
 
 	const form = useForm({ mode: "onChange" });
@@ -242,6 +246,10 @@ export const TransactionSend = () => {
 
 	const handleNext = () => {
 		setActiveTab(activeTab + 1);
+	};
+
+	const copyTransaction = () => {
+		copy(JSON.stringify(transaction.toObject(), undefined, 2));
 	};
 
 	const crumbs = [
@@ -316,7 +324,7 @@ export const TransactionSend = () => {
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 										<Button
-											// onClick={onCopy}
+											onClick={copyTransaction}
 											data-testid="TransactionSend__button--copy"
 											variant="plain"
 											className="space-x-2"
