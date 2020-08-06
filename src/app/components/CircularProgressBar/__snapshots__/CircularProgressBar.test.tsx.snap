@@ -52,3 +52,35 @@ exports[`CircularProgressBar should render 1`] = `
   </svg>
 </DocumentFragment>
 `;
+
+exports[`CircularProgressBar should render without text content 1`] = `
+<DocumentFragment>
+  <svg
+    height="130"
+    viewBox="0 0 130 130"
+    width="130"
+  >
+    <circle
+      cx="65"
+      cy="65"
+      fill="transparent"
+      r="60"
+      stroke="var(--theme-color-success-200)"
+      stroke-width="10"
+    />
+    <circle
+      cx="65"
+      cy="65"
+      fill="transparent"
+      r="60"
+      stroke="var(--theme-color-success)"
+      stroke-dasharray="376.99111843077515"
+      stroke-dashoffset="376.99111843077515"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      transform="rotate(-90 65 65)"
+    />
+  </svg>
+</DocumentFragment>
+`;

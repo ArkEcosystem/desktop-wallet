@@ -4,6 +4,7 @@ import { exchange } from "domains/exchange/images";
 import { news } from "domains/news/images";
 import { plugin } from "domains/plugin/images";
 import { profile } from "domains/profile/images";
+import { splash } from "domains/splash/images";
 import { transaction } from "domains/transaction/images";
 import { vote } from "domains/vote/images";
 import { wallet } from "domains/wallet/images";
@@ -33,4 +34,5 @@ export const images = {
 	transaction,
 	vote,
 	wallet,
+	splash,
 };
