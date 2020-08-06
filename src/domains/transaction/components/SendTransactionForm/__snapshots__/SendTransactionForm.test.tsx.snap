@@ -138,6 +138,78 @@ exports[`SendTransactionForm should render 1`] = `
               </div>
             </div>
           </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-3"
+            role="option"
+          >
+            <div
+              aria-label="Lisk"
+              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
+              data-testid="NetworkIcon-LSK-mainnet"
+            >
+              <div
+                class="sc-Axmtr wZFix"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-4"
+            role="option"
+          >
+            <div
+              aria-label="Lisk Testnet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-testnet"
+            >
+              <div
+                class="sc-Axmtr wZFix"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-5"
+            role="option"
+          >
+            <div
+              aria-label="Lisk Betanet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-betanet"
+            >
+              <div
+                class="sc-Axmtr wZFix"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
         </ul>
       </fieldset>
       <fieldset

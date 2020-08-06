@@ -283,7 +283,7 @@ exports[`SearchWallet should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                         data-testid="Avatar"
                       >
                         <div
@@ -338,16 +338,20 @@ exports[`SearchWallet should render 1`] = `
                   <td
                     class="font-semibold text-right"
                   >
-                    <div>
-                      0.00001000
-                    </div>
+                    <span
+                      data-testid="Amount"
+                    >
+                      0.00001 DARK
+                    </span>
                   </td>
                   <td
                     class="text-right text-theme-neutral-light"
                   >
-                    <div>
-                      0.00
-                    </div>
+                    <span
+                      data-testid="Amount"
+                    >
+                      0 
+                    </span>
                   </td>
                   <td>
                     0

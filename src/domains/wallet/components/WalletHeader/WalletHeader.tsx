@@ -1,4 +1,6 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
+import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
@@ -13,9 +15,11 @@ import { useTranslation } from "react-i18next";
 type Props = {
 	coin: string;
 	network: string;
+	ticker: string;
 	address?: string;
-	balance?: string;
-	currencyBalance?: string;
+	balance: BigNumber;
+	currencyBalance?: BigNumber;
+	exchangeCurrency?: string;
 	hasStarred?: boolean;
 	isLedger?: boolean;
 	isMultisig?: boolean;
@@ -32,6 +36,7 @@ type Props = {
 export const WalletHeader = ({
 	coin,
 	network,
+	ticker,
 	hasStarred,
 	name,
 	address,
@@ -44,6 +49,7 @@ export const WalletHeader = ({
 	onUpdateWalletName,
 	balance,
 	currencyBalance,
+	exchangeCurrency,
 	isLedger,
 	isMultisig,
 }: Props) => {
@@ -185,9 +191,12 @@ export const WalletHeader = ({
 					{!showPublicKey && (
 						<li className="flex flex-col pl-8 space-y-2">
 							<span className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.BALANCE")}</span>
-							<span data-testid="WalletHeader__balance" className="text-lg font-medium">
-								{balance}
-							</span>
+							<Amount
+								value={balance}
+								ticker={ticker}
+								data-testid="WalletHeader__balance"
+								className="text-lg font-medium"
+							/>
 						</li>
 					)}
 
@@ -196,9 +205,12 @@ export const WalletHeader = ({
 							<span className="text-sm font-semibold text-theme-neutral-dark">
 								{t("COMMON.FIAT_VALUE")}
 							</span>
-							<span data-testid="WalletHeader__currency-balance" className="text-lg font-medium">
-								{currencyBalance}
-							</span>
+							<Amount
+								value={currencyBalance}
+								ticker={exchangeCurrency!}
+								data-testid="WalletHeader__currency-balance"
+								className="text-lg font-medium"
+							/>
 						</li>
 					)}
 				</ul>

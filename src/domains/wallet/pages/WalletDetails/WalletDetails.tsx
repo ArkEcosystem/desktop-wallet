@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { WalletDataCollection } from "@arkecosystem/platform-sdk/dist/coins";
 import { WalletData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Page, Section } from "app/components/Layout";
@@ -33,7 +33,9 @@ export const WalletDetails = () => {
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const coinName = activeWallet.coin().manifest().get<string>("name");
-	const networkName = activeWallet.network().name;
+	const networkId = activeWallet.network().id;
+	const ticker = activeWallet.network().currency.ticker;
+	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
 	const { t } = useTranslation();
 
@@ -123,11 +125,13 @@ export const WalletDetails = () => {
 			<Page profile={activeProfile} crumbs={crumbs}>
 				<WalletHeader
 					coin={coinName!}
-					network={networkName}
+					network={networkId}
+					ticker={ticker}
 					address={activeWallet.address()}
 					publicKey={activeWallet.publicKey()}
-					balance={activeWallet.balance().toHuman(8)}
-					currencyBalance={activeWallet.convertedBalance().toHuman(2)}
+					balance={activeWallet.balance()}
+					currencyBalance={activeWallet.convertedBalance()}
+					exchangeCurrency={exchangeCurrency}
 					name={activeWallet.alias()}
 					isLedger={activeWallet.isLedger()}
 					isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
