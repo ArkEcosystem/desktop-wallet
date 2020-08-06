@@ -51,7 +51,13 @@ export const FirstStep = () => {
 	);
 };
 
-export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) => {
+export const SecondStep = ({
+	errorMessage,
+	setIsValidAddress,
+}: {
+	errorMessage: string | null;
+	setIsValidAddress: (isValidAddress: boolean) => void;
+}) => {
 	const { getValues, register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
@@ -84,6 +90,9 @@ export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) =>
 					name="address"
 					coin={network.coin()}
 					network={network.id()}
+					onValidAddress={(isValidAddress: boolean) => {
+						setIsValidAddress(isValidAddress);
+					}}
 					ref={register({
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("COMMON.ADDRESS"),
@@ -143,6 +152,7 @@ export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) =>
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [error, setError] = useState(null);
+	const [isValidAddress, setIsValidAddress] = useState(false);
 
 	const history = useHistory();
 	const { persist } = useEnvironmentContext();
@@ -212,7 +222,7 @@ export const ImportWallet = () => {
 								<FirstStep />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep errorMessage={error} />
+								<SecondStep errorMessage={error} setIsValidAddress={setIsValidAddress} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -236,7 +246,7 @@ export const ImportWallet = () => {
 											{t("COMMON.BACK")}
 										</Button>
 										<Button
-											disabled={!formState.isValid}
+											disabled={!isValidAddress}
 											type="submit"
 											data-testid="ImportWallet__submit-button"
 										>
