@@ -1,4 +1,5 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { LSK } from "@arkecosystem/platform-sdk-lsk";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { ApplicationError } from "domains/error/pages";
 import React, { useLayoutEffect, useState } from "react";
@@ -45,7 +46,7 @@ export const App = () => {
 
 	/* istanbul ignore next */
 	const storage = __DEV__ ? new StubStorage() : "indexeddb";
-	const [env] = useState(() => new Environment({ coins: { ARK }, httpClient, storage }));
+	const [env] = useState(() => new Environment({ coins: { ARK, LSK }, httpClient, storage }));
 
 	return (
 		<I18nextProvider i18n={i18n}>
