@@ -51,13 +51,7 @@ export const FirstStep = () => {
 	);
 };
 
-export const SecondStep = ({
-	errorMessage,
-	setIsValidAddress,
-}: {
-	errorMessage: string | null;
-	setIsValidAddress: (isValidAddress: boolean) => void;
-}) => {
+export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) => {
 	const { getValues, register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
@@ -86,16 +80,6 @@ export const SecondStep = ({
 		return (
 			<FormField name="address">
 				<FormLabel label={t("COMMON.ADDRESS")} />
-				{/* 				<InputAddress
-					name="address"
-					coin={network.coin()}
-					network={network.id()}
-					onValidAddress={(isValidAddress: boolean) => {
-						setIsValidAddress(isValidAddress);
-					}}
-					data-testid="ImportWallet__address-input"
-				/> */}
-
 				<InputAddress name="address" coin={network.coin()} network={network.id()} isRequired />
 				<FormHelperText />
 			</FormField>
@@ -149,7 +133,6 @@ export const SecondStep = ({
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [error, setError] = useState(null);
-	const [isValidAddress, setIsValidAddress] = useState(false);
 
 	const history = useHistory();
 	const { persist } = useEnvironmentContext();
@@ -219,7 +202,7 @@ export const ImportWallet = () => {
 								<FirstStep />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep errorMessage={error} setIsValidAddress={setIsValidAddress} />
+								<SecondStep errorMessage={error} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
