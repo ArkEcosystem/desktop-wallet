@@ -149,6 +149,78 @@ exports[`ContactForm should select 1`] = `
               </div>
             </div>
           </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-3"
+            role="option"
+          >
+            <div
+              aria-label="Lisk"
+              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
+              data-testid="NetworkIcon-LSK-mainnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-4"
+            role="option"
+          >
+            <div
+              aria-label="Lisk Testnet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-testnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-5"
+            role="option"
+          >
+            <div
+              aria-label="Lisk Betanet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-betanet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
         </ul>
       </fieldset>
       <fieldset
@@ -361,6 +433,78 @@ exports[`ContactForm should select with errors 1`] = `
               >
                 <svg>
                   btc.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-3"
+            role="option"
+          >
+            <div
+              aria-label="Lisk"
+              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
+              data-testid="NetworkIcon-LSK-mainnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-4"
+            role="option"
+          >
+            <div
+              aria-label="Lisk Testnet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-testnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-5"
+            role="option"
+          >
+            <div
+              aria-label="Lisk Betanet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-betanet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
                 </svg>
               </div>
             </div>
@@ -709,7 +853,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
                 data-testid="Avatar"
               >
                 <div
