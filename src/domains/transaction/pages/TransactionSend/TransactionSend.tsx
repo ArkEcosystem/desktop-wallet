@@ -56,9 +56,9 @@ export const SecondStep = ({ profile }: any) => {
 		.find((wallet: Wallet) => wallet.address() === senderAddress);
 	const coinName = wallet?.coin().manifest().get<string>("name");
 
-	const amount = BigNumber.ZERO;
+	let amount = BigNumber.ZERO;
 	for (const recipient of recipients) {
-		amount.plus(recipient.amount);
+		amount = amount.plus(recipient.amount);
 	}
 
 	useEffect(() => {
