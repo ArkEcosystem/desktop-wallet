@@ -52,8 +52,10 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) => {
-	const { register, unregister } = useFormContext();
+	const { getValues, register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
+
+	const network: NetworkData = getValues("network");
 
 	const { t } = useTranslation();
 
@@ -85,6 +87,8 @@ export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) =>
 							field: t("COMMON.ADDRESS"),
 						}).toString(),
 					})}
+					coin={network.coin()}
+					network={network.id()}
 					data-testid="ImportWallet__address-input"
 				/>
 				<FormHelperText />
