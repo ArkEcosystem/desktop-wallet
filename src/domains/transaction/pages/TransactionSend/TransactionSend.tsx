@@ -196,7 +196,7 @@ export const TransactionSend = () => {
 
 	useEffect(() => {
 		register("network", { required: true });
-		register("recipients", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 }); // TODO: min doesn't work
+		register("recipients", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 		register("smartbridge");
@@ -207,10 +207,9 @@ export const TransactionSend = () => {
 		const senderWallet = activeProfile
 			?.wallets()
 			.values()
-			.find((wallet: Wallet) => wallet.address() === getValues("senderAddress"));
+			.find((wallet: Wallet) => wallet.address() === senderAddress);
 		const transactionId = await senderWallet?.transaction().signTransfer({
 			fee,
-			// nonce: senderWallet?.nonce().plus(1).toString(),
 			sign: {
 				mnemonic,
 			},
@@ -223,8 +222,6 @@ export const TransactionSend = () => {
 		});
 
 		await senderWallet?.transaction().broadcast([transactionId]);
-
-		await senderWallet?.transaction().confirm(transactionId);
 
 		handleNext();
 	};
@@ -266,40 +263,38 @@ export const TransactionSend = () => {
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
-								{
-									/*activeTab > 1 && */ activeTab < 4 && (
-										<>
+								{activeTab < 4 && (
+									<>
+										<Button
+											disabled={activeTab === 1}
+											data-testid="TransactionSend__button--back"
+											variant="plain"
+											onClick={handleBack}
+										>
+											{t("COMMON.BACK")}
+										</Button>
+
+										{activeTab < 3 && (
 											<Button
-												disabled={activeTab === 1}
-												data-testid="TransactionSend__button--back"
-												variant="plain"
-												onClick={handleBack}
+												data-testid="TransactionSend__button--continue"
+												disabled={!formState.isValid}
+												onClick={handleNext}
 											>
-												{t("COMMON.BACK")}
+												{t("COMMON.CONTINUE")}
 											</Button>
+										)}
 
-											{activeTab < 3 && (
-												<Button
-													data-testid="TransactionSend__button--continue"
-													disabled={!formState.isValid}
-													onClick={handleNext}
-												>
-													{t("COMMON.CONTINUE")}
-												</Button>
-											)}
-
-											{activeTab === 3 && (
-												<Button
-													type="submit"
-													data-testid="TransactionSend__button--submit"
-													disabled={!formState.isValid}
-												>
-													{t("COMMON.CONTINUE")} & SEND YO
-												</Button>
-											)}
-										</>
-									)
-								}
+										{activeTab === 3 && (
+											<Button
+												type="submit"
+												data-testid="TransactionSend__button--submit"
+												disabled={!formState.isValid}
+											>
+												{t("COMMON.CONTINUE")} & SEND YO
+											</Button>
+										)}
+									</>
+								)}
 
 								{activeTab === 4 && (
 									<>
