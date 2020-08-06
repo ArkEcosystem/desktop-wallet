@@ -155,7 +155,11 @@ exports[`UpdateRegistration should render 1st step 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -806,7 +810,11 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -1220,7 +1228,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                                   class="mt-2 font-semibold"
                                   data-testid="total-amount-box__transaction-amount"
                                 >
-                                  0.00000000 ARK
+                                  0 ARK
                                 </span>
                               </div>
                               <div
@@ -1235,7 +1243,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                                   class="mt-2 text-lg font-semibold"
                                   data-testid="total-amount-box__transaction-fee"
                                 >
-                                  0.00000000 ARK
+                                  0 ARK
                                 </span>
                               </div>
                             </div>
@@ -1269,7 +1277,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                               class="text-2xl font-bold"
                               data-testid="total-amount-box__total"
                             >
-                              0.00000000 ARK
+                              0 ARK
                             </span>
                           </div>
                         </div>
@@ -1462,7 +1470,11 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -1894,7 +1906,11 @@ exports[`UpdateRegistration should render 4th step 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -2589,7 +2605,11 @@ exports[`UpdateRegistration should should go back 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
@@ -3240,7 +3260,11 @@ exports[`UpdateRegistration should submit 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0.00001000
+                <span
+                  data-testid="Amount"
+                >
+                  0.00001 BTC
+                </span>
               </div>
             </div>
             <div
