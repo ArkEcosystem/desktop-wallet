@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; noShadow?: boolean }>`
-	${tw`inline-flex overflow-hidden rounded-full relative items-center justify-center align-middle`}
+	${tw`relative inline-flex items-center justify-center overflow-hidden align-middle rounded-full`}
 	${({ size }) => {
 		switch (size) {
 			case "sm":
