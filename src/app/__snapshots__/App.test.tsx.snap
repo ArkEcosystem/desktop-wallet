@@ -102,7 +102,7 @@ exports[`App should render mock 1`] = `
                           class="flex items-center"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                             data-testid="profile-card__user--avatar"
                           >
                             <img
@@ -190,7 +190,7 @@ exports[`App should render mock 1`] = `
                           class="flex items-center"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                             data-testid="profile-card__user--avatar"
                           >
                             <img
@@ -327,9 +327,13 @@ exports[`App should render splash screen 1`] = `
           <div
             class="w-64 mx-auto lg:w-128"
           >
-            <svg>
-              splash-banner.svg
-            </svg>
+            <div
+              class="ml-6"
+            >
+              <svg>
+                splash-banner.svg
+              </svg>
+            </div>
           </div>
           <div
             class="mt-8"
@@ -349,17 +353,35 @@ exports[`App should render splash screen 1`] = `
               class="justify-center flex mt-4"
             >
               <div
-                class="animate-spin text-theme-primary-400"
+                class="animate-spin"
               >
-                <div
-                  class="sc-AxiKw gZwZcb"
-                  height="32"
-                  width="32"
+                <svg
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <circle
+                    cx="20"
+                    cy="20"
+                    fill="transparent"
+                    r="19"
+                    stroke="var(--theme-color-success-200)"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="20"
+                    cy="20"
+                    fill="transparent"
+                    r="19"
+                    stroke="var(--theme-color-primary)"
+                    stroke-dasharray="119.38052083641213"
+                    stroke-dashoffset="95.50441666912971"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    transform="rotate(-90 20 20)"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -382,7 +404,7 @@ exports[`App should render splash screen 1`] = `
               type="vertical"
             />
             <img
-              alt="ARK Logo"
+              alt="ARK Desktop Wallet"
               class="h-4 w-4 bg-theme-neutral-500 rounded-sm p-px mr-2"
               src="ark-logo.png"
             />
@@ -506,7 +528,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                           class="flex items-center"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                             data-testid="profile-card__user--avatar"
                           >
                             <img
@@ -594,7 +616,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                           class="flex items-center"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                             data-testid="profile-card__user--avatar"
                           >
                             <img
