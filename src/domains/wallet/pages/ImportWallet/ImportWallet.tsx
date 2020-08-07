@@ -1,5 +1,4 @@
 import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
-import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -51,7 +50,7 @@ export const FirstStep = () => {
 	);
 };
 
-export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) => {
+export const SecondStep = () => {
 	const { getValues, register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
@@ -101,14 +100,6 @@ export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) =>
 				/>
 			</div>
 			<div className="flex flex-col mt-8">
-				{errorMessage && (
-					<div className="mb-8" data-testid="ImportWallet__error-alert">
-						<Alert variant="danger" size="sm" title={t("COMMON.ERROR")}>
-							{errorMessage}
-						</Alert>
-					</div>
-				)}
-
 				<div className="flex items-center justify-between">
 					<div className="text-lg font-semibold text-theme-neutral-dark">
 						{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.TITLE")}
@@ -138,7 +129,6 @@ export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) =>
 
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
-	const [error, setError] = useState(null);
 
 	const history = useHistory();
 	const { persist } = useEnvironmentContext();
@@ -176,14 +166,10 @@ export const ImportWallet = () => {
 	}) => {
 		let wallet: Wallet | undefined;
 
-		try {
-			if (passphrase) {
-				wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
-			} else {
-				wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
-			}
-		} catch (error) {
-			return setError(error.message);
+		if (passphrase) {
+			wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+		} else {
+			wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
 		}
 
 		await persist();
@@ -208,7 +194,7 @@ export const ImportWallet = () => {
 								<FirstStep />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep errorMessage={error} />
+								<SecondStep />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
