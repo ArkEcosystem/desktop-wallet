@@ -39,7 +39,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 			onChange?.(amount);
 		};
 
-		const trackBackgroundMinValue = values[0]; // Math.max(values[0], 0); // 3);
+		const trackBackgroundMinValue = values[0];
 		const rangeValues = [Math.min(values[0], max)];
 
 		useEffect(() => {
