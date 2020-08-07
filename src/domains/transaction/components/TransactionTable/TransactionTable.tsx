@@ -74,11 +74,11 @@ export const TransactionTable = ({
 		}
 
 		if (currencyRate) {
-			return [...commonColumns, { Header: t("COMMON.CURRENCY"), className: "justify-end" }];
+			return [...commonColumns, { Header: t("COMMON.CURRENCY"), className: "w-24 justify-end float-right" }];
 		}
 
 		if (showSignColumn) {
-			return [...commonColumns, { Header: t("COMMON.SIGN"), className: "invisible" }];
+			return [...commonColumns, { Header: t("COMMON.SIGN"), className: "invisible w-24" }];
 		}
 
 		return commonColumns;
