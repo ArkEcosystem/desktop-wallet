@@ -53,6 +53,7 @@ export const InputAddress = ({ name, coin, network, isRequired, onValidAddress, 
 				})}
 				type="text"
 				className="pr-12"
+				data-testid={`InputAddress__${name}-input`}
 				{...props}
 			/>
 			<InputAddonEnd className="my-px mr-4">
