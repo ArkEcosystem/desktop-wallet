@@ -9,6 +9,7 @@ const injectTailwindCSS = () =>
 	]);
 
 module.exports = override(
+	injectTailwindCSS(),
 	addWebpackExternals([
 		nodeExternals({
 			allowlist: [/tippy/, /swipe/],
