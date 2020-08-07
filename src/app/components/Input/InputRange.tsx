@@ -8,7 +8,7 @@ import { InputGroup } from "./InputGroup";
 
 type Props = {
 	defaultValue: string;
-	value: string;
+	value?: string;
 	min: number;
 	max: number;
 	step: number;
@@ -20,10 +20,14 @@ type Props = {
 // TODO: tidy up storage of amount (why array of values?)
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, defaultValue, magnitude, onChange, value }: Props, ref) => {
-		const [values, setValues] = React.useState<number[]>([Number(defaultValue)]);
+		const [values, setValues] = React.useState<number[]>([BigNumber.make(defaultValue).divide(1e8).toNumber()]);
 		const fraction = Math.pow(10, magnitude! * -1);
 
 		const handleInput = (value: string) => {
+			if (BigNumber.make(value).divide(1e8).toNumber() > max) {
+				value = BigNumber.make(max).times(1e8).toFixed(0);
+			}
+
 			const amount = BigNumber.make(value).times(fraction);
 			setValues([amount.toNumber()]);
 			onChange?.(amount.toFixed(0));
@@ -39,7 +43,9 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const rangeValues = [Math.min(values[0], max)];
 
 		useEffect(() => {
-			setValues([BigNumber.make(value).divide(1e8).toNumber()]);
+			if (value) {
+				setValues([BigNumber.make(value).divide(1e8).toNumber()]);
+			}
 		}, [value]);
 
 		return (
