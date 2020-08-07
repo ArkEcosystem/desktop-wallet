@@ -150,7 +150,7 @@ export const WalletRegistrations = ({
 							)}
 
 							{iconsList.length && (
-								<div className="px-8">
+								<div className="pr-8">
 									<IconList icons={iconsList} limit={2} />
 								</div>
 							)}
