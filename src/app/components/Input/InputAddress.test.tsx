@@ -4,7 +4,7 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import nock from "nock";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { fireEvent, render, waitFor } from "testing-library";
+import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
 import { InputAddress } from "./InputAddress";
 
@@ -37,18 +37,26 @@ describe("InputAddress", () => {
 		const { result: form } = renderHook(() => useForm({ mode: "onChange" }));
 		const onSubmit = jest.fn();
 
-		const { getByTestId, asFragment } = render(
-			<Form context={form.current} onSubmit={onSubmit}>
-				<FormField name="address">
-					<FormLabel label="Address" />
-					<InputAddress name="address" coin="ARK" network="devnet" isRequired />
-					<FormHelperText />
-				</FormField>
-			</Form>,
-		);
+		let rendered: RenderResult;
 
 		await act(async () => {
-			const addressInput = getByTestId("InputAddress__address-input");
+			rendered = render(
+				<Form context={form.current} onSubmit={onSubmit}>
+					<FormField name="address">
+						<FormLabel label="Address" />
+						<InputAddress name="address" coin="ARK" network="devnet" isRequired />
+						<FormHelperText />
+					</FormField>
+				</Form>,
+			);
+		});
+
+		const { getByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await act(async () => {
+			const addressInput = getByTestId("InputAddress");
 			expect(addressInput).toBeTruthy();
 
 			await fireEvent.input(addressInput, { target: { value: "123" } });
@@ -58,10 +66,12 @@ describe("InputAddress", () => {
 			});
 
 			await waitFor(() => {
-				expect(form.current.errors.address.message).toEqual("The address is not valid");
+				expect(form.current.formState.isValid).toEqual(false);
 			});
 
-			expect(asFragment()).toMatchSnapshot();
+			await waitFor(() => {
+				expect(form.current.errors.address.message).toEqual("The address is not valid");
+			});
 		});
 	});
 
@@ -69,31 +79,37 @@ describe("InputAddress", () => {
 		const { result: form } = renderHook(() => useForm({ mode: "onChange" }));
 		const onSubmit = jest.fn();
 
-		const { getByTestId, asFragment } = render(
-			<Form context={form.current} onSubmit={onSubmit}>
-				<FormField name="address">
-					<FormLabel label="Address" />
-					<InputAddress name="address" coin="ARK" network="devnet" isRequired />
-					<FormHelperText />
-				</FormField>
-			</Form>,
-		);
-
-		const addressInput = getByTestId("InputAddress__address-input");
-		expect(addressInput).toBeTruthy();
+		let rendered: RenderResult;
 
 		await act(async () => {
-			fireEvent.input(addressInput, { target: { value: identityAddress } });
+			rendered = render(
+				<Form context={form.current} onSubmit={onSubmit}>
+					<FormField name="address">
+						<FormLabel label="Address" />
+						<InputAddress name="address" coin="ARK" network="devnet" isRequired />
+						<FormHelperText />
+					</FormField>
+				</Form>,
+			);
 		});
 
-		await waitFor(() => {
-			expect(form.current.getValues()).toEqual({ address: identityAddress });
-		});
-
-		await waitFor(async () => {
-			expect(form.current.errors.address).toEqual(undefined);
-		});
+		const { getByTestId, asFragment } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
+
+		await act(async () => {
+			const addressInput = getByTestId("InputAddress");
+			expect(addressInput).toBeTruthy();
+
+			await fireEvent.input(addressInput, { target: { value: identityAddress } });
+
+			await waitFor(() => {
+				expect(form.current.getValues()).toEqual({ address: identityAddress });
+			});
+
+			await waitFor(async () => {
+				expect(form.current.errors.address).toEqual(undefined);
+			});
+		});
 	});
 });

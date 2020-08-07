@@ -24,12 +24,7 @@ export const Default = () => (
 export const Address = () => (
 	<EnvironmentProvider env={env}>
 		<div className="max-w-xs">
-			<InputAddress
-				name="address"
-				coin="ARK"
-				network="devnet"
-				defaultValue="DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM"
-			/>
+			<InputAddress coin="ARK" network="devnet" defaultValue="DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM" />
 		</div>
 	</EnvironmentProvider>
 );

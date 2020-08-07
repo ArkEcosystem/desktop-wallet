@@ -8,14 +8,13 @@ import { Input } from "./Input";
 import { InputAddonEnd, InputGroup } from "./InputGroup";
 
 type InputAddressProps = {
-	name: string;
 	coin: string;
 	network: string;
 	isRequired?: boolean;
 	onValidAddress?: (address: string) => void;
 } & React.InputHTMLAttributes<any>;
 
-export const InputAddress = ({ name, coin, network, isRequired, onValidAddress, ...props }: InputAddressProps) => {
+export const InputAddress = ({ coin, network, isRequired, onValidAddress, ...props }: InputAddressProps) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 	const form = useFormContext();
@@ -53,7 +52,7 @@ export const InputAddress = ({ name, coin, network, isRequired, onValidAddress, 
 				})}
 				type="text"
 				className="pr-12"
-				data-testid={`InputAddress__${name}-input`}
+				data-testid="InputAddress"
 				{...props}
 			/>
 			<InputAddonEnd className="my-px mr-4">

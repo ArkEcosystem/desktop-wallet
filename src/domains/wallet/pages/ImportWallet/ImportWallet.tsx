@@ -80,7 +80,6 @@ export const SecondStep = () => {
 			<FormField name="address">
 				<FormLabel label={t("COMMON.ADDRESS")} />
 				<InputAddress
-					name="address"
 					coin={network.coin()}
 					network={network.id()}
 					isRequired
