@@ -62,6 +62,20 @@ describe("SelectAddress", () => {
 		});
 	});
 
+	it("should not open if disabled", () => {
+		const { getByTestId } = render(
+			<SelectAddress wallets={wallets} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" disabled={true} />,
+		);
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		act(() => {
+			fireEvent.click(getByTestId("SelectAddress__wrapper"));
+		});
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+	});
+
 	it("should select address from wallets modal", async () => {
 		const { getByTestId, getAllByTestId } = render(
 			<SelectAddress wallets={wallets} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
