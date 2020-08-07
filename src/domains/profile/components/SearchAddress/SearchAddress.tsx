@@ -37,7 +37,7 @@ const SearchAddressListItem = ({ wallet, onAction, index, selectActionLabel }: S
 			<div>{wallet.balance().toHuman(8)}</div>
 		</td>
 		<td className="text-theme-neutral-light">
-			<div>{wallet.convertedBalance().toHuman(8)}</div>
+			<div>{wallet.convertedBalance().toHuman(2)}</div>
 		</td>
 		<td className="border-b border-dashed border-theme-neutral-200">
 			<Button
