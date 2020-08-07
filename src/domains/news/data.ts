@@ -39,3 +39,21 @@ export const assets = [
 		isSelected: true,
 	},
 ];
+
+export const coins: any = {
+	ark: {
+		name: "ARK Ecosystem",
+		coin: "ARK",
+		network: "mainnet",
+	},
+	btc: {
+		name: "Bitcoin",
+		coin: "BTC",
+		network: "livenet",
+	},
+	lsk: {
+		name: "List",
+		coin: "LSK",
+		network: "mainnet",
+	},
+};
