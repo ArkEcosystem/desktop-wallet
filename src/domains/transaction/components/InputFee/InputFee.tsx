@@ -36,7 +36,7 @@ export const InputFee = ({ defaultValue, value, average, last, min, max, onChang
 	}, [value]);
 
 	return (
-		<div className="flex space-x-2">
+		<div data-testid="InputFee" className="flex space-x-2">
 			<div className="flex-1">
 				<InputRange
 					name="fee"
