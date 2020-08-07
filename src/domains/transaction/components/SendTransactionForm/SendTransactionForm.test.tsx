@@ -56,8 +56,6 @@ describe("SendTransactionForm", () => {
 		const { form, rendered } = renderPage();
 		const { getByTestId, getAllByTestId, rerender } = rendered;
 
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
 		// Select network
 		const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
 		await act(async () => fireEvent.click(networkIcons[1]));
@@ -134,8 +132,6 @@ describe("SendTransactionForm", () => {
 		const { getByTestId, getAllByTestId, rerender } = rendered;
 
 		const consoleSpy = jest.spyOn(console, "error").mockImplementation();
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		// Select network
 		const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
