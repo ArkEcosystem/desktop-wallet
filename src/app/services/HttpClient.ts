@@ -17,7 +17,7 @@ export class HttpClient extends Http.Request {
 	): Promise<Contracts.HttpResponse> {
 		let response;
 
-		if (data?.query && Object.keys(data?.query || {}).length > 0) {
+		if (data?.query && Object.keys(data?.query).length > 0) {
 			url = `${url}?${new URLSearchParams(data.query as any)}`;
 		}
 
