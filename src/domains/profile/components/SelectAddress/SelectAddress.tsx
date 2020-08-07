@@ -54,18 +54,13 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 			onChange?.(address);
 		};
 
-		const openContacts = () => {
-			if (disabled) return;
-			setIsContactSearchOpen(true);
-		};
-
 		return (
 			<div>
 				<SelectAddressWrapper
 					data-testid="SelectAddress__wrapper"
 					className={`SelectAddress ${disabled ? "is-disabled" : ""} ${isInvalidField ? "is-invalid" : ""}`}
 					type="button"
-					onClick={openContacts}
+					onClick={() => setIsContactSearchOpen(true)}
 					disabled={disabled}
 				>
 					<ProfileAvatar address={selectedAddress} />
