@@ -7,6 +7,6 @@ export default { title: "Domains / Dashboard / Components / Transactions" };
 
 export const Default = () => (
 	<div>
-		<Transactions transactions={transactions} />
+		<Transactions transactions={transactions} fetchMoreAction={() => console.log("fetchMoreAction")} />
 	</div>
 );
