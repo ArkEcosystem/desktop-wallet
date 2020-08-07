@@ -1,5 +1,4 @@
 import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-import { Button } from "app/components/Button";
 import { FormField, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -10,29 +9,15 @@ import { RecipientListItem } from "domains/transaction/components/RecipientList/
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { styled } from "twin.macro";
 
-import { defaultStyle } from "./SendTransactionForm.styles";
 
 type SendTransactionFormProps = {
 	formDefaultData: any;
-	onSubmit?: (result: any) => void;
-	onBack?: () => void;
 	networks: NetworkData[];
 	profile: Profile;
 };
 
-const FormWrapper = styled.div`
-	${defaultStyle}
-`;
-
-export const SendTransactionForm = ({
-	formDefaultData,
-	onSubmit,
-	onBack,
-	networks,
-	profile,
-}: SendTransactionFormProps) => {
+export const SendTransactionForm = ({ formDefaultData, networks, profile }: SendTransactionFormProps) => {
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<Wallet[]>([]);
 
@@ -51,20 +36,26 @@ export const SendTransactionForm = ({
 	const maxFee = 100;
 	const maxAvailableAmount = 80;
 
-	const updateFees = async () => {
-		if (!senderAddress) {
-			return;
-		}
+	const onSelectNetwork = (network?: NetworkData | null) => {
+		setValue("network", network, true);
+
+		setWallets(
+			profile.wallets().findByCoinWithNetwork(network!.coin(), network!.id())
+		);
+	};
+
+	const onSelectSender = async (address: any) => {
+		setValue("senderAddress", address, true);
 
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 		const senderWallet = profile
 			?.wallets()
 			.values()
-			.find((wallet: Wallet) => wallet.address() === senderAddress);
+			.find((wallet: Wallet) => wallet.address() === address);
 
-		const transferFees = (await senderWallet?.fee().all(7))?.transfer;
+		try {
+			const transferFees = (await senderWallet?.fee().all(7))?.transfer;
 
-		if (transferFees) {
 			setFeeOptions({
 				last: undefined,
 				min: transferFees.min,
@@ -73,34 +64,13 @@ export const SendTransactionForm = ({
 			});
 
 			setValue("fee", transferFees.avg, true);
+		} catch (error) {
+			console.error("Could not load fees: ", error);
 		}
-	};
-
-	useEffect(() => {
-		if (network) {
-			setWallets(
-				profile
-					.wallets()
-					.values()
-					.filter((wallet) => wallet.network() === network.toObject()),
-			);
-		}
-	}, [network]);
-
-	useEffect(() => {
-		updateFees();
-	}, [senderAddress]);
-
-	const onSelectNetwork = (network?: NetworkData | null) => {
-		setValue("network", network, true);
-	};
-
-	const onFormSubmit = () => {
-		onSubmit?.(getValues());
 	};
 
 	return (
-		<FormWrapper>
+		<>
 			<FormField name="network" className="relative mt-1">
 				<div className="mb-2">
 					<FormLabel label="Network" />
@@ -122,7 +92,8 @@ export const SendTransactionForm = ({
 					<SelectAddress
 						address={senderAddress}
 						wallets={wallets}
-						onChange={(address: any) => setValue("senderAddress", address, true)}
+						disabled={wallets.length === 0}
+						onChange={onSelectSender}
 					/>
 				</div>
 			</FormField>
@@ -142,6 +113,7 @@ export const SendTransactionForm = ({
 				</div>
 				<InputGroup>
 					<Input
+						data-testid="Input__smartbridge"
 						type="text"
 						placeholder=" "
 						className="pr-20"
@@ -167,16 +139,7 @@ export const SendTransactionForm = ({
 					onChange={(value: any) => setValue("fee", value, true)}
 				/>
 			</FormField>
-
-			<div className="flex justify-end space-x-3 hidden">
-				<Button data-testid="send-transaction-click-back" variant="plain" onClick={onBack}>
-					Back
-				</Button>
-				<Button data-testid="send-transaction-click-submit" onSubmit={onFormSubmit}>
-					Continue
-				</Button>
-			</div>
-		</FormWrapper>
+		</>
 	);
 };
 
