@@ -41,9 +41,9 @@ export const TransactionRowRecipientIcon = ({ type, recipient, recipients, class
 		bridgechainRegistration: "Bridgechain",
 		bridgechainResignation: "Bridgechain",
 		bridgechainUpdate: "Bridgechain",
-		entityRegistration: "Business",
-		entityResignation: "Business",
-		entityUpdate: "Business",
+		entityRegistration: "Entity",
+		entityResignation: "Entity",
+		entityUpdate: "Entity",
 	};
 
 	if (type === "transfer") {
