@@ -6,10 +6,9 @@ import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-
 
 type SendTransactionFormProps = {
 	formDefaultData: any;
@@ -39,9 +38,7 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile }: Send
 	const onSelectNetwork = (network?: NetworkData | null) => {
 		setValue("network", network, true);
 
-		setWallets(
-			profile.wallets().findByCoinWithNetwork(network!.coin(), network!.id())
-		);
+		setWallets(profile.wallets().findByCoinWithNetwork(network!.coin(), network!.id()));
 	};
 
 	const onSelectSender = async (address: any) => {
