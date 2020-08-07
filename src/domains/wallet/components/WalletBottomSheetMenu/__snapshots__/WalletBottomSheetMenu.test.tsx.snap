@@ -215,7 +215,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-theme-neutral-200"
+                  class="border-theme-neutral-200 border-b"
                 >
                   <td
                     class="py-6 mt-1"
@@ -273,10 +273,10 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 text-sm font-bold text-center space-x-2"
+                    class="py-1 space-x-2 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block align-middle text-theme-neutral-600"
+                      class="text-theme-neutral-600 inline-block align-middle"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -299,7 +299,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </span>
                   </td>
                   <td
-                    class="text-right text-theme-neutral-light"
+                    class="text-theme-neutral-light text-right"
                   >
                     <span
                       data-testid="Amount"

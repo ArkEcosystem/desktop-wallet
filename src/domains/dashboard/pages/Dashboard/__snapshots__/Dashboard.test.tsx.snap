@@ -616,7 +616,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
                                 >
                                   <div
                                     class="relative"
@@ -638,10 +638,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="absolute right-3 -top-1"
+                                  class="right-3 -top-1 absolute"
                                 >
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="text text-theme-neutral-600 inline-block mr-2"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -686,7 +686,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="mt-6 truncate max-w-12"
+                                  class="max-w-12 mt-6 truncate"
                                 >
                                   <div
                                     class="inline-block truncate align-middle"
@@ -706,7 +706,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                   </div>
                                 </div>
                                 <span
-                                  class="font-bold text-theme-neutral-900"
+                                  class="text-theme-neutral-900 font-bold"
                                   data-testid="Amount"
                                 >
                                   0.00001 DARK
@@ -733,47 +733,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast undefined"
-                              >
-                                New wallet
-                              </div>
-                              <div
-                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzpjYC bVVEWC"
-                            data-testid="ProfileCard"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div>
-                                <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -807,10 +770,47 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                                />
+                              </div>
+                              <div
+                                class="mt-6 text-md text-theme-primary-contrast undefined"
+                              >
+                                New wallet
+                              </div>
+                              <div
+                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                              >
+                                Balance
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzpjYC bVVEWC"
+                            data-testid="ProfileCard"
+                          >
+                            <div
+                              class="p-2"
+                            >
+                              <div>
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
+                                />
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -4382,7 +4382,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
                                 >
                                   <div
                                     class="relative"
@@ -4404,10 +4404,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="absolute right-3 -top-1"
+                                  class="right-3 -top-1 absolute"
                                 >
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="text text-theme-neutral-600 inline-block mr-2"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4452,7 +4452,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="mt-6 truncate max-w-12"
+                                  class="max-w-12 mt-6 truncate"
                                 >
                                   <div
                                     class="inline-block truncate align-middle"
@@ -4472,7 +4472,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   </div>
                                 </div>
                                 <span
-                                  class="font-bold text-theme-neutral-900"
+                                  class="text-theme-neutral-900 font-bold"
                                   data-testid="Amount"
                                 >
                                   0.00001 DARK
@@ -4499,47 +4499,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast undefined"
-                              >
-                                New wallet
-                              </div>
-                              <div
-                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzpjYC bVVEWC"
-                            data-testid="ProfileCard"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div>
-                                <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -4573,10 +4536,47 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                                />
+                              </div>
+                              <div
+                                class="mt-6 text-md text-theme-primary-contrast undefined"
+                              >
+                                New wallet
+                              </div>
+                              <div
+                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                              >
+                                Balance
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzpjYC bVVEWC"
+                            data-testid="ProfileCard"
+                          >
+                            <div
+                              class="p-2"
+                            >
+                              <div>
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
+                                />
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -6977,7 +6977,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
                                 >
                                   <div
                                     class="relative"
@@ -6999,10 +6999,10 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="absolute right-3 -top-1"
+                                  class="right-3 -top-1 absolute"
                                 >
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="text text-theme-neutral-600 inline-block mr-2"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7047,7 +7047,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="mt-6 truncate max-w-12"
+                                  class="max-w-12 mt-6 truncate"
                                 >
                                   <div
                                     class="inline-block truncate align-middle"
@@ -7067,7 +7067,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   </div>
                                 </div>
                                 <span
-                                  class="font-bold text-theme-neutral-900"
+                                  class="text-theme-neutral-900 font-bold"
                                   data-testid="Amount"
                                 >
                                   0.00001 DARK
@@ -7094,47 +7094,10 @@ exports[`Dashboard should hide transaction view 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast undefined"
-                              >
-                                New wallet
-                              </div>
-                              <div
-                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzpjYC bVVEWC"
-                            data-testid="ProfileCard"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div>
-                                <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -7168,10 +7131,47 @@ exports[`Dashboard should hide transaction view 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                                />
+                              </div>
+                              <div
+                                class="mt-6 text-md text-theme-primary-contrast undefined"
+                              >
+                                New wallet
+                              </div>
+                              <div
+                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                              >
+                                Balance
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzpjYC bVVEWC"
+                            data-testid="ProfileCard"
+                          >
+                            <div
+                              class="p-2"
+                            >
+                              <div>
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
+                                />
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -7824,7 +7824,7 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
                                 >
                                   <div
                                     class="relative"
@@ -7846,10 +7846,10 @@ exports[`Dashboard should render 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="absolute right-3 -top-1"
+                                  class="right-3 -top-1 absolute"
                                 >
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="text text-theme-neutral-600 inline-block mr-2"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7894,7 +7894,7 @@ exports[`Dashboard should render 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="mt-6 truncate max-w-12"
+                                  class="max-w-12 mt-6 truncate"
                                 >
                                   <div
                                     class="inline-block truncate align-middle"
@@ -7914,7 +7914,7 @@ exports[`Dashboard should render 1`] = `
                                   </div>
                                 </div>
                                 <span
-                                  class="font-bold text-theme-neutral-900"
+                                  class="text-theme-neutral-900 font-bold"
                                   data-testid="Amount"
                                 >
                                   0.00001 DARK
@@ -7941,47 +7941,10 @@ exports[`Dashboard should render 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast undefined"
-                              >
-                                New wallet
-                              </div>
-                              <div
-                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzpjYC bVVEWC"
-                            data-testid="ProfileCard"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div>
-                                <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -8015,10 +7978,47 @@ exports[`Dashboard should render 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                                />
+                              </div>
+                              <div
+                                class="mt-6 text-md text-theme-primary-contrast undefined"
+                              >
+                                New wallet
+                              </div>
+                              <div
+                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                              >
+                                Balance
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzpjYC bVVEWC"
+                            data-testid="ProfileCard"
+                          >
+                            <div
+                              class="p-2"
+                            >
+                              <div>
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
+                                />
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -10235,7 +10235,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
                                 >
                                   <div
                                     class="relative"
@@ -10257,10 +10257,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="absolute right-3 -top-1"
+                                  class="right-3 -top-1 absolute"
                                 >
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="text text-theme-neutral-600 inline-block mr-2"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -10305,7 +10305,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="mt-6 truncate max-w-12"
+                                  class="max-w-12 mt-6 truncate"
                                 >
                                   <div
                                     class="inline-block truncate align-middle"
@@ -10325,7 +10325,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                   </div>
                                 </div>
                                 <span
-                                  class="font-bold text-theme-neutral-900"
+                                  class="text-theme-neutral-900 font-bold"
                                   data-testid="Amount"
                                 >
                                   0.00001 DARK
@@ -10352,47 +10352,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast undefined"
-                              >
-                                New wallet
-                              </div>
-                              <div
-                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzpjYC bVVEWC"
-                            data-testid="ProfileCard"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div>
-                                <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -10426,10 +10389,47 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                                />
+                              </div>
+                              <div
+                                class="mt-6 text-md text-theme-primary-contrast undefined"
+                              >
+                                New wallet
+                              </div>
+                              <div
+                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                              >
+                                Balance
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzpjYC bVVEWC"
+                            data-testid="ProfileCard"
+                          >
+                            <div
+                              class="p-2"
+                            >
+                              <div>
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
+                                />
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -12646,7 +12646,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
                                 >
                                   <div
                                     class="relative"
@@ -12668,10 +12668,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="absolute right-3 -top-1"
+                                  class="right-3 -top-1 absolute"
                                 >
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="text text-theme-neutral-600 inline-block mr-2"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -12716,7 +12716,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="mt-6 truncate max-w-12"
+                                  class="max-w-12 mt-6 truncate"
                                 >
                                   <div
                                     class="inline-block truncate align-middle"
@@ -12736,7 +12736,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                   </div>
                                 </div>
                                 <span
-                                  class="font-bold text-theme-neutral-900"
+                                  class="text-theme-neutral-900 font-bold"
                                   data-testid="Amount"
                                 >
                                   0.00001 DARK
@@ -12763,47 +12763,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast undefined"
-                              >
-                                New wallet
-                              </div>
-                              <div
-                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzpjYC bVVEWC"
-                            data-testid="ProfileCard"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div>
-                                <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -12837,10 +12800,47 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                                />
+                              </div>
+                              <div
+                                class="mt-6 text-md text-theme-primary-contrast undefined"
+                              >
+                                New wallet
+                              </div>
+                              <div
+                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                              >
+                                Balance
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzpjYC bVVEWC"
+                            data-testid="ProfileCard"
+                          >
+                            <div
+                              class="p-2"
+                            >
+                              <div>
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
+                                />
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -15057,7 +15057,7 @@ exports[`Dashboard should render wallets 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
                                 >
                                   <div
                                     class="relative"
@@ -15079,10 +15079,10 @@ exports[`Dashboard should render wallets 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="absolute right-3 -top-1"
+                                  class="right-3 -top-1 absolute"
                                 >
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="text text-theme-neutral-600 inline-block mr-2"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -15127,7 +15127,7 @@ exports[`Dashboard should render wallets 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="mt-6 truncate max-w-12"
+                                  class="max-w-12 mt-6 truncate"
                                 >
                                   <div
                                     class="inline-block truncate align-middle"
@@ -15147,7 +15147,7 @@ exports[`Dashboard should render wallets 1`] = `
                                   </div>
                                 </div>
                                 <span
-                                  class="font-bold text-theme-neutral-900"
+                                  class="text-theme-neutral-900 font-bold"
                                   data-testid="Amount"
                                 >
                                   0.00001 DARK
@@ -15174,47 +15174,10 @@ exports[`Dashboard should render wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast undefined"
-                              >
-                                New wallet
-                              </div>
-                              <div
-                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzpjYC bVVEWC"
-                            data-testid="ProfileCard"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div>
-                                <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -15248,10 +15211,47 @@ exports[`Dashboard should render wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                                />
+                              </div>
+                              <div
+                                class="mt-6 text-md text-theme-primary-contrast undefined"
+                              >
+                                New wallet
+                              </div>
+                              <div
+                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                              >
+                                Balance
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzpjYC bVVEWC"
+                            data-testid="ProfileCard"
+                          >
+                            <div
+                              class="p-2"
+                            >
+                              <div>
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
+                                />
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -17466,47 +17466,10 @@ exports[`Dashboard should render with no wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast undefined"
-                              >
-                                New wallet
-                              </div>
-                              <div
-                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzpjYC bVVEWC"
-                            data-testid="ProfileCard"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div>
-                                <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -17540,10 +17503,10 @@ exports[`Dashboard should render with no wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div
@@ -17577,10 +17540,47 @@ exports[`Dashboard should render with no wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                                />
+                              </div>
+                              <div
+                                class="mt-6 text-md text-theme-primary-contrast undefined"
+                              >
+                                New wallet
+                              </div>
+                              <div
+                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                              >
+                                Balance
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzpjYC bVVEWC"
+                            data-testid="ProfileCard"
+                          >
+                            <div
+                              class="p-2"
+                            >
+                              <div>
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 bg-white"
+                                />
+                                <div
+                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
                                 />
                               </div>
                               <div

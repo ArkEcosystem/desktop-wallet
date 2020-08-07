@@ -173,47 +173,10 @@ exports[`Wallets should render with empty wallets list 1`] = `
                     >
                       <div>
                         <div
-                          class="sc-AxgMl daFHdi -mr-2 bg-white border-theme-primary-contrast"
+                          class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 bg-white"
                         />
                         <div
-                          class="sc-AxgMl daFHdi bg-white border-theme-primary-contrast"
-                        />
-                      </div>
-                      <div
-                        class="mt-6 text-md text-theme-primary-contrast undefined"
-                      >
-                        New wallet
-                      </div>
-                      <div
-                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                      >
-                        Balance
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="height: 185px;"
-              >
-                <div
-                  class="w-64 inline-block w-full"
-                  data-testid="WalletCard__blank"
-                >
-                  <div
-                    class="sc-AxhUy gnuRcL"
-                    data-testid="ProfileCard"
-                  >
-                    <div
-                      class="p-2"
-                    >
-                      <div>
-                        <div
-                          class="sc-AxgMl daFHdi -mr-2 bg-white border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxgMl daFHdi bg-white border-theme-primary-contrast"
+                          class="sc-AxgMl daFHdi border-theme-primary-contrast bg-white"
                         />
                       </div>
                       <div
@@ -247,10 +210,10 @@ exports[`Wallets should render with empty wallets list 1`] = `
                     >
                       <div>
                         <div
-                          class="sc-AxgMl daFHdi -mr-2 bg-white border-theme-primary-contrast"
+                          class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 bg-white"
                         />
                         <div
-                          class="sc-AxgMl daFHdi bg-white border-theme-primary-contrast"
+                          class="sc-AxgMl daFHdi border-theme-primary-contrast bg-white"
                         />
                       </div>
                       <div
@@ -284,10 +247,47 @@ exports[`Wallets should render with empty wallets list 1`] = `
                     >
                       <div>
                         <div
-                          class="sc-AxgMl daFHdi -mr-2 bg-white border-theme-primary-contrast"
+                          class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 bg-white"
                         />
                         <div
-                          class="sc-AxgMl daFHdi bg-white border-theme-primary-contrast"
+                          class="sc-AxgMl daFHdi border-theme-primary-contrast bg-white"
+                        />
+                      </div>
+                      <div
+                        class="mt-6 text-md text-theme-primary-contrast undefined"
+                      >
+                        New wallet
+                      </div>
+                      <div
+                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                      >
+                        Balance
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide"
+                style="height: 185px;"
+              >
+                <div
+                  class="w-64 inline-block w-full"
+                  data-testid="WalletCard__blank"
+                >
+                  <div
+                    class="sc-AxhUy gnuRcL"
+                    data-testid="ProfileCard"
+                  >
+                    <div
+                      class="p-2"
+                    >
+                      <div>
+                        <div
+                          class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 bg-white"
+                        />
+                        <div
+                          class="sc-AxgMl daFHdi border-theme-primary-contrast bg-white"
                         />
                       </div>
                       <div
@@ -611,7 +611,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-theme-neutral-200"
+                  class="border-theme-neutral-200 border-b"
                 >
                   <td
                     class="py-6 mt-1"
@@ -669,10 +669,10 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 text-sm font-bold text-center space-x-2"
+                    class="py-1 space-x-2 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block align-middle text-theme-neutral-600"
+                      class="text-theme-neutral-600 inline-block align-middle"
                     >
                       <div
                         class="sc-AxirZ hPsuTj"
@@ -695,7 +695,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </span>
                   </td>
                   <td
-                    class="text-right text-theme-neutral-light"
+                    class="text-theme-neutral-light text-right"
                   >
                     <span
                       data-testid="Amount"
@@ -1019,7 +1019,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-theme-neutral-200"
+                  class="border-theme-neutral-200 border-b"
                 >
                   <td
                     class="py-6 mt-1"
@@ -1077,10 +1077,10 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </td>
                   <td
-                    class="py-1 text-sm font-bold text-center space-x-2"
+                    class="py-1 space-x-2 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block align-middle text-theme-neutral-600"
+                      class="text-theme-neutral-600 inline-block align-middle"
                     >
                       <div
                         class="sc-AxirZ hPsuTj"
@@ -1103,7 +1103,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </span>
                   </td>
                   <td
-                    class="text-right text-theme-neutral-light"
+                    class="text-theme-neutral-light text-right"
                   >
                     <span
                       data-testid="Amount"
