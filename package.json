@@ -26,17 +26,18 @@
 		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
 		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
 		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
-		"dev": "cross-env REACT_APP_BUILD_MODE=demo concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+		"dev": "cross-env REACT_APP_BUILD_MODE=demo concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 		"eject": "react-app-rewired eject",
 		"format": "yarn lint && yarn prettier",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
 		"prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
-		"start": "react-app-rewired start",
+		"start": "cross-env BROWSER=none react-app-rewired start",
 		"storybook": "start-storybook -p 5000",
 		"test": "react-app-rewired --expose-gc test --logHeapUsage",
 		"test:coverage": "react-app-rewired --expose-gc test --logHeapUsage --coverage --watchAll=false",
-		"test:e2e": "NODE_ENV=e2e testcafe \"electron:.\" \"./src/domains/**/e2e/*.e2e.ts\"",
-		"test:e2e:ci": "NODE_ENV=e2e  REACT_APP_BUILD_MODE=demo concurrently -k -s first \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && yarn test:e2e\"",
+		"test:e2e": "testcafe",
+		"test:e2e:ci-build": "yarn build:ci; testcafe",
+		"test:e2e:ci": "cross-env ELECTRON_IS_DEV=0 NODE_ENV=production REACT_APP_BUILD_MODE=demo yarn test:e2e:ci-build",
 		"preversion": "cross-env ./scripts/version-artifacts.sh"
 	},
 	"husky": {
@@ -246,6 +247,7 @@
 		"testcafe-browser-provider-electron": "^0.0.15",
 		"typescript": "^3.9.5",
 		"wait-on": "^5.1.0",
+		"webpack-cli": "^3.3.12",
 		"webpack-node-externals": "^2.5.0"
 	},
 	"babelMacros": {

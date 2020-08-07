@@ -1,8 +1,9 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Welcome Page Profile Card`.page`http://localhost:3000/`;
+fixture`Welcome Page Profile Card`.page(getPageURL());
 
 test("should navigate to profile setting from profile card menu", async (t) => {
 	await t.click(Selector('[data-testid="ProfileCard"] [data-testid="dropdown__toggle"]'));

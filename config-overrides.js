@@ -1,5 +1,12 @@
-const { override, addPostcssPlugins, addWebpackExternals, setWebpackTarget } = require("customize-cra");
+const { override, addPostcssPlugins, setWebpackTarget, addWebpackExternals } = require("customize-cra");
 const nodeExternals = require("webpack-node-externals");
+
+const addNodeExternals = ({ allowlist = [] }) =>
+	addWebpackExternals([
+		nodeExternals({
+			allowlist,
+		}),
+	]);
 
 const injectTailwindCSS = () =>
 	addPostcssPlugins([
@@ -9,13 +16,11 @@ const injectTailwindCSS = () =>
 	]);
 
 module.exports = override(
-	injectTailwindCSS(),
-	addWebpackExternals([
-		nodeExternals({
-			allowlist: [/tippy/, /swipe/],
-		}),
-	]),
 	setWebpackTarget("electron-renderer"),
+	injectTailwindCSS(),
+	addNodeExternals({
+		allowlist: [/tippy/, /swipe/],
+	}),
 );
 
 module.exports.injectTailwindCSS = injectTailwindCSS;

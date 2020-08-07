@@ -1,11 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 import { goToContacts } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Create contact`.page`http://localhost:3000/`.beforeEach(async (t) => await goToContacts(t));
+fixture`Create contact`.page(getPageURL()).beforeEach(async (t) => await goToContacts(t));
 
 test("should open and close contact creation modal", async (t) => {
 	await t.click(Selector('[data-testid="contacts__add-contact-btn"]'));

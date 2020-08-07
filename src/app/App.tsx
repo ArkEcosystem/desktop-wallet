@@ -24,12 +24,14 @@ const Main = () => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			await env.bootFromObject(fixtureData);
-			await persist();
 			setShowSplash(false);
+			await persist();
 		};
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
 			boot();
+		} else {
+			setShowSplash(false);
 		}
 	}, [env, persist]);
 

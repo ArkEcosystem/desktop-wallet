@@ -1,8 +1,9 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Create Profile action`.page`http://localhost:3000/profiles/create`;
+fixture`Create Profile action`.page(getPageURL());
 
 test("should return an error when submit without required fields", async (t) => {
 	await t.click(Selector("button").withExactText(translations().COMMON.COMPLETE));

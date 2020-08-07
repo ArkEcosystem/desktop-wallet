@@ -1,8 +1,9 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Splash screen`.page`http://localhost:3000/`;
+fixture`Splash screen`.page(getPageURL());
 
 test("should show splash screen", async (t) => {
 	await t.expect(Selector('[data-testid="Splash__text"]').exists).ok();
