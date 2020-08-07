@@ -3,18 +3,28 @@ import { Divider } from "app/components/Divider";
 import { FilterNetwork } from "app/components/FilterNetwork";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { SelectCategory } from "./components/SelectCategory";
 
 type Props = {
-	categories?: any[];
+	defaultCategories?: any[];
 	selectedAssets?: any[];
+	onCategoryChange?: (categories: any) => void;
+	onSearch?: (search: string) => void;
 };
 
-export const NewsOptions = ({ categories, selectedAssets }: Props) => {
+export const NewsOptions = ({ defaultCategories = [], selectedAssets, onCategoryChange, onSearch }: Props) => {
 	const { t } = useTranslation();
+	const [categories, setCategories] = useState(defaultCategories);
+
+	const handleCategoryChange = (name: string, isSelected: boolean) => {
+		const updatedCategories = categories.map((categoryItem: any) => name === categoryItem.name ? { name, isSelected } : categoryItem);
+
+		onCategoryChange?.(updatedCategories);
+		setCategories(updatedCategories);
+	};
 
 	return (
 		<div
@@ -24,6 +34,7 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 			<div className="flex flex-col space-y-8">
 				<div className="flex items-center justify-between px-2 py-4 shadow-xl rounded-md">
 					<Input
+						onChange={(e) => onSearch?.((e.target as HTMLInputElement).value)}
 						className="border-none shadow-none NewsOptions__search"
 						placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
 					/>
@@ -38,7 +49,12 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 
 					<div className="flex flex-wrap -mx-1">
 						{categories?.map((category, index) => (
-							<SelectCategory key={index} className="p-1" defaultChecked={category.isSelected}>
+							<SelectCategory
+								key={index}
+								className="p-1"
+								defaultChecked={category.isSelected}
+								onChange={({ target }: any) => handleCategoryChange(category.name, target.checked)}
+							>
 								#{t(`NEWS.CATEGORIES.${category.name.toUpperCase()}`)}
 							</SelectCategory>
 						))}
@@ -65,6 +81,6 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 };
 
 NewsOptions.defaultProps = {
-	categories: [],
+	defaultCategories: [],
 	selectedAssets: [],
 };
