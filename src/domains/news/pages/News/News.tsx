@@ -1,24 +1,35 @@
+import { Blockfolio, BlockfolioResponse, BlockfolioSignal } from "@arkecosystem/platform-sdk-news";
 import { SvgCollection } from "app/assets/svg";
 import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
 import { Pagination } from "app/components/Pagination";
 import { useActiveProfile } from "app/hooks/env";
+import { httpClient } from "app/services";
 import { BlockfolioAd } from "domains/news/components/BlockfolioAd";
 import { NewsCard } from "domains/news/components/NewsCard";
 import { NewsOptions } from "domains/news/components/NewsOptions";
-import React from "react";
+import React, { useEffect,useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { assets, categories, news } from "../../data";
+import { assets, categories as defaultCategories } from "../../data";
 
 type Props = {
-	news?: any[];
-	categories?: any[];
+	defaultCategories?: any[];
 	assets?: any[];
+	selectedCoin?: string;
 };
 
-export const News = ({ news, categories, assets }: Props) => {
+export const News = ({ defaultCategories = [], assets, selectedCoin }: Props) => {
 	const activeProfile = useActiveProfile();
+	const [blockfolio] = useState(() => new Blockfolio(httpClient));
+
+	const [categories, setCategories] = useState(defaultCategories);
+	const [searchValue, setSearchValue] = useState("");
+
+	const [news, setNews] = useState<BlockfolioSignal[]>([]);
+	const [filteredNews, setFilteredNews] = useState<BlockfolioSignal[]>([]);
+
+	const [coin] = useState(selectedCoin);
 
 	const { t } = useTranslation();
 
@@ -28,6 +39,38 @@ export const News = ({ news, categories, assets }: Props) => {
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
+
+	useEffect(() => {
+		fetchNews();
+	}, []);
+
+	useEffect(() => {
+		const byCategory = filterByCategories(news);
+		const bySearchInput = filterBySearchInput(searchValue, byCategory);
+
+		setFilteredNews(bySearchInput);
+	}, [news, searchValue, categories]);
+
+	const fetchNews = async () => {
+		const blockfolioNews: BlockfolioResponse = await blockfolio.findByCoin(coin as string);
+		setNews(blockfolioNews.data);
+	};
+
+	const filterByCategories = (items: BlockfolioSignal[]) => {
+		const selecteCategoryNames = categories.filter((c) => c.isSelected).map((c) => c.name);
+		if (selecteCategoryNames.includes("All")) return items;
+
+		return items.filter((item) => selecteCategoryNames.includes(item.category));
+	};
+
+	const filterBySearchInput = (input: string, items: BlockfolioSignal[]) => {
+		const searchInput = input.trim().toLowerCase();
+		return items.filter((item) => item.text.toLowerCase().match(searchInput));
+	};
+
+	const handleSelectPage = (page: number) => {
+		console.log("page", page);
+	};
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -48,24 +91,31 @@ export const News = ({ news, categories, assets }: Props) => {
 			<Section hasBackground={false}>
 				<div className="flex space-x-8">
 					<div className="w-full grid gap-5">
-						{news?.map((data, index) => (
-							<NewsCard key={index} {...data} />
+						{filteredNews?.map((data, index) => (
+							<NewsCard key={index} coin={coin} {...data} />
 						))}
 
-						<BlockfolioAd />
+						<div className="mb-10">
+							<BlockfolioAd />
+						</div>
 
 						<div className="flex justify-center w-full pt-10">
 							<Pagination
 								totalCount={12}
 								itemsPerPage={4}
-								onSelectPage={console.log}
+								onSelectPage={handleSelectPage}
 								currentPage={1}
 								size="md"
 							/>
 						</div>
 					</div>
 					<div className="max-w-xl">
-						<NewsOptions categories={categories} selectedAssets={assets} />
+						<NewsOptions
+							defaultCategories={categories}
+							selectedAssets={assets}
+							onCategoryChange={setCategories}
+							onSearch={setSearchValue}
+						/>
 					</div>
 				</div>
 			</Section>
@@ -74,7 +124,7 @@ export const News = ({ news, categories, assets }: Props) => {
 };
 
 News.defaultProps = {
-	news,
-	categories,
+	defaultCategories,
 	assets,
+	selectedCoin: "ark",
 };
