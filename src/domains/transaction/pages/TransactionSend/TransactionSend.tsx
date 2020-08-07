@@ -26,7 +26,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ onSubmit, formData, profile, wallets }: any) => {
+export const FirstStep = ({ profile, wallets }: any) => {
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
@@ -40,7 +40,7 @@ export const FirstStep = ({ onSubmit, formData, profile, wallets }: any) => {
 				</div>
 			</div>
 			<div className="mt-8">
-				<SendTransactionForm networks={networks} profile={profile} onSubmit={onSubmit} />
+				<SendTransactionForm networks={networks} profile={profile} />
 			</div>
 		</section>
 	);
@@ -125,7 +125,7 @@ export const SecondStep = ({ profile }: any) => {
 	);
 };
 
-export const ThirdStep = ({ onSubmit }: any) => {
+export const ThirdStep = () => {
 	const { register } = useFormContext();
 	const { t } = useTranslation();
 
@@ -184,7 +184,6 @@ export const TransactionSend = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [formData, setFormData] = useState(null);
 	const [transaction, setTransaction] = useState<Contracts.TransactionData>(
 		(null as unknown) as Contracts.TransactionData,
 	);
@@ -268,7 +267,7 @@ export const TransactionSend = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep onSubmit={handleNext} formData={formData} profile={activeProfile} />
+								<FirstStep profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep profile={activeProfile} />
