@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 type InputFeeProps = {
 	defaultValue: string;
-	value: string;
+	value?: string;
 	average: string;
 	last: string;
 	min: string;
@@ -30,7 +30,7 @@ export const InputFee = ({ defaultValue, value, average, last, min, max, onChang
 	};
 
 	useEffect(() => {
-		if (value !== fee) {
+		if (value && value !== fee) {
 			setFee(value);
 		}
 	}, [value]);
@@ -82,6 +82,6 @@ export const InputFee = ({ defaultValue, value, average, last, min, max, onChang
 };
 
 InputFee.defaultProps = {
-	last: null,
+	last: "0",
 	average: "0",
 };
