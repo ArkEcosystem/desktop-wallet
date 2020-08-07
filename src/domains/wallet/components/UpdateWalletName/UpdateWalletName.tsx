@@ -55,7 +55,8 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 							}).toString(),
 							maxLength: {
 								value: nameMaxLength,
-								message: t("WALLETS.MODAL_NAME_WALLET.MAXLENGTH_ERROR", {
+								message: t("COMMON.VALIDATION.MAX_LENGTH", {
+									field: t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME"),
 									maxLength: nameMaxLength,
 								}),
 							},

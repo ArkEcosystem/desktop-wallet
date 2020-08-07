@@ -91,6 +91,7 @@ export const translations: { [key: string]: any } = {
 	OPEN: "Open",
 	OTHER: "Other",
 	PAGE: "Page",
+	PASSWORDS: "Passwords",
 	PERIOD: "Period",
 	PLUGIN: "Plugin",
 	PLUGINS: "Plugins",
@@ -167,8 +168,11 @@ export const translations: { [key: string]: any } = {
 
 	VALIDATION: {
 		REQUIRED: "Field required",
-		FIELD_REQUIRED: "{{field}} is required",
+		FIELD_REQUIRED: "'{{field}}' is required",
 		IS_REQUIRED: "is required",
+		MAX_LENGTH: "'{{field}}' should have at most {{maxLength}} characters",
+		MIN_LENGTH: "'{{field}}' should have at least {{minLength}} characters",
+		SUBJECT_MISMATCH: "The {{subject}} do not match",
 	},
 
 	DATETIME: {

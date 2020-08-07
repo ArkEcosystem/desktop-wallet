@@ -273,7 +273,8 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 										maxLength: {
 											value: nameMaxLength,
-											message: t("SETTINGS.GENERAL.VALIDATION.MAXLENGTH_ERROR", {
+											message: t("COMMON.VALIDATION.MAX_LENGTH", {
+												field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
 												maxLength: nameMaxLength,
 											}),
 										},

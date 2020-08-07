@@ -148,7 +148,8 @@ export const CreateProfile = () => {
 											}).toString(),
 											maxLength: {
 												value: nameMaxLength,
-												message: t("PROFILE.PAGE_CREATE_PROFILE.VALIDATION.MAXLENGTH_ERROR", {
+												message: t("COMMON.VALIDATION.MAX_LENGTH", {
+													field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
 													maxLength: nameMaxLength,
 												}),
 											},

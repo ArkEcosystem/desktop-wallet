@@ -40,9 +40,19 @@ export const translations: { [key: string]: any } = {
 					"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
 			},
 		},
-		VALIDATION: {
-			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+	},
+	PASSWORD: {
+		MENU_ITEM: "Password",
+		TITLE: "Profile Password",
+		SUBTITLE_CREATE: "Provide a password below to secure your user profile.",
+		SUBTITLE_UPDATE: "Change the password used to access your profile below.",
+		BUTTON: {
+			CREATE: "Set Password",
+			UPDATE: "Change Password",
 		},
+		CURRENT: "Current Password",
+		NEW: "New Password",
+		CONFIRMATION: "Confirm New Password",
 	},
 	PEERS: {
 		MENU_ITEM: "Peer",

@@ -34,9 +34,6 @@ export const translations: { [key: string]: any } = {
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
 		DESCRIPTION: "Create a new Profile or login with your MarketSquare account to get started.",
-		VALIDATION: {
-			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
-		},
 	},
 	PAGE_MY_REGISTRATIONS: {
 		TITLE: "My Registrations",
