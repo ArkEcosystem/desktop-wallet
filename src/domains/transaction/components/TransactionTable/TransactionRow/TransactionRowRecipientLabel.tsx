@@ -14,6 +14,7 @@ export const TransactionRowRecipientLabel = ({ transaction, walletName }: Props)
 		secondSignature: "2nd Signature Creation",
 		delegateRegistration: "Delegate Registration",
 		vote: "Vote",
+		unvote: "Vote",
 		multiSignature: "Multisignature Registration",
 		ipfs: "IPFS",
 		multiPayment: "Multipayment",
@@ -27,6 +28,9 @@ export const TransactionRowRecipientLabel = ({ transaction, walletName }: Props)
 		bridgechainRegistration: "Bridgechain Registration",
 		bridgechainResignation: "Bridgechain Resignation",
 		bridgechainUpdate: "Bridgechain Update",
+		entityRegistration: "Entity Registration",
+		entityResignation: "Entity Resignation",
+		entityUpdate: "Entity Update",
 	};
 
 	if (transaction?.type() === "transfer") {
@@ -34,7 +38,7 @@ export const TransactionRowRecipientLabel = ({ transaction, walletName }: Props)
 	}
 
 	return (
-		<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
+		<span data-testid="TransactionRowRecipientLabel" className="text-theme-text font-semibold">
 			{transactionLabel[transaction?.type()]}
 		</span>
 	);
