@@ -1,10 +1,11 @@
 import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useActiveProfile } from "app/hooks/env";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type SettingsProps = {
@@ -14,6 +15,8 @@ type SettingsProps = {
 };
 
 export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) => {
+	const [status, setStatus] = useState<Record<string, string> | null>(null);
+
 	const activeProfile = useActiveProfile();
 	const usesPassword = activeProfile.usesPassword();
 
@@ -23,6 +26,14 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 
 	const { formState, register, reset, watch } = formConfig.context;
 
+	const formatError = (errorMessage: string) => {
+		if (errorMessage === "The current password does not match.") {
+			return t("SETTINGS.PASSWORD.ERROR.MISMATCH");
+		}
+
+		return t("SETTINGS.PASSWORD.ERROR.FALLBACK");
+	};
+
 	const handleSubmit = async ({ currentPassword, newPassword, newPasswordConfirmation }: any) => {
 		try {
 			if (usesPassword) {
@@ -30,22 +41,21 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 			} else {
 				activeProfile.auth().setPassword(newPassword);
 			}
-
-			reset();
-
-			await env.persist();
-
-			onSubmit(activeProfile);
-
-			// TODO handle success
 		} catch (error) {
-			// TODO show error toast
-			console.log(error);
+			return setStatus({ type: "error", message: formatError(error.message) });
 		}
+
+		reset();
+
+		setStatus({ type: "success", message: t("SETTINGS.PASSWORD.SUCCESS") });
+
+		await env.persist();
+
+		onSubmit(activeProfile);
 	};
 
 	return (
-		<>
+		<div className="space-y-8">
 			<Header
 				title={t("SETTINGS.PASSWORD.TITLE")}
 				subtitle={
@@ -53,11 +63,25 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 				}
 			/>
 
+			{status && (
+				<div className="mb-8" data-testid="Password__error-alert">
+					{status.type === "error" ? (
+						<Alert variant="danger" size="sm" title={t("COMMON.ERROR")}>
+							{status.message}
+						</Alert>
+					) : (
+						<Alert variant="success" size="sm" title={t("COMMON.SUCCESS")}>
+							{status.message}
+						</Alert>
+					)}
+				</div>
+			)}
+
 			<Form
 				id="password-settings__form"
 				context={formConfig.context}
 				onSubmit={handleSubmit}
-				className="mt-8 space-y-8"
+				className="space-y-8"
 			>
 				{usesPassword && (
 					<FormField name="currentPassword">
@@ -117,6 +141,6 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 					</Button>
 				</div>
 			</Form>
-		</>
+		</div>
 	);
 };

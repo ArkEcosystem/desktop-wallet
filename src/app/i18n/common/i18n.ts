@@ -126,6 +126,7 @@ export const translations: { [key: string]: any } = {
 	STARRED: "Starred",
 	START: "Start",
 	STATUS: "Status",
+	SUCCESS: "Success",
 	THEME: "Theme",
 	TITLE: "Title",
 	TIME_FORMAT: "Time format",

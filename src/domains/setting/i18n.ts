@@ -54,6 +54,11 @@ export const translations: { [key: string]: any } = {
 		CURRENT: "Current Password",
 		NEW: "New Password",
 		CONFIRMATION: "Confirm New Password",
+		ERROR: {
+			Fallback: "Something went wrong.",
+			MISMATCH: "The current password does not match.",
+		},
+		SUCCESS: "Your password has been successfully changed.",
 	},
 	PEERS: {
 		MENU_ITEM: "Peer",
