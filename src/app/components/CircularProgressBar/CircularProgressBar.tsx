@@ -8,6 +8,7 @@ type CircularProgressBarProps = {
 	value: number;
 	fontSize?: number;
 	showValue: boolean;
+	className?: string;
 };
 
 export const CircularProgressBar = ({
@@ -18,6 +19,7 @@ export const CircularProgressBar = ({
 	value,
 	fontSize,
 	showValue,
+	className,
 }: CircularProgressBarProps) => {
 	// Enclose circle in a circumscribed square
 	const viewBox = `0 0 ${size} ${size}`;
@@ -29,7 +31,7 @@ export const CircularProgressBar = ({
 	const dashOffset = dashArray - (dashArray * value) / 100;
 
 	return (
-		<svg width={size} height={size} viewBox={viewBox}>
+		<svg width={size} height={size} viewBox={viewBox} className={className}>
 			<circle
 				cx={size / 2}
 				cy={size / 2}
