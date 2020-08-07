@@ -54,7 +54,7 @@ export const SecondStep = ({ profile }: any) => {
 		.wallets()
 		.values()
 		.find((wallet: Wallet) => wallet.address() === senderAddress);
-	const coinName = wallet?.coin().manifest().get<string>("name");
+	const coinName = wallet?.manifest().get<string>("name");
 
 	let amount = BigNumber.ZERO;
 	for (const recipient of recipients) {
@@ -74,25 +74,25 @@ export const SecondStep = ({ profile }: any) => {
 				</div>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={
-						<div className="ml-1 text-theme-danger">
+						<div className="text-theme-danger ml-1">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
 				>
-					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+					<div className="text-md text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">
 						{wallet.network().name}
 					</div>
 				</TransactionDetail>
 
 				<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="mb-2 font-semibold text-theme-neutral">
+					<div className="text-theme-neutral mb-2 font-semibold">
 						<span className="mr-1 text-sm">Sender</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
@@ -167,7 +167,7 @@ export const FifthStep = ({ transaction }: { transaction: Contracts.TransactionD
 				label={t("TRANSACTION.AMOUNT")}
 				className="pb-0"
 				extra={
-					<div className="ml-1 text-theme-danger">
+					<div className="text-theme-danger ml-1">
 						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Sent" width={22} height={22} />
 						</Circle>
@@ -229,7 +229,7 @@ export const TransactionSend = () => {
 		// TODO: Remove timer and figure out a nicer way of doing this
 		const intervalId = setInterval(async () => {
 			try {
-				const transactionData = await senderWallet?.coin().client().transaction(transactionId!);
+				const transactionData = await senderWallet?.client().transaction(transactionId!);
 				setTransaction(transactionData!);
 				clearInterval(intervalId);
 

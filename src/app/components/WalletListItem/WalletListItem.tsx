@@ -31,12 +31,12 @@ export const WalletListItem = ({
 		if (typeof onAction === "function") onAction(action);
 	};
 
-	const coinName = wallet?.coin().manifest().get<string>("name");
+	const coinName = wallet?.manifest().get<string>("name");
 	const hasTypeIcons =
 		wallet?.isLedger() || wallet?.isStarred() || (wallet?.hasSyncedWithNetwork() && wallet?.isMultiSignature());
 
 	return (
-		<tr className="border-b border-theme-neutral-200">
+		<tr className="border-theme-neutral-200 border-b">
 			<td className="py-6 mt-1">
 				<div className="flex">
 					<Circle className={coinClass} size="lg">
@@ -49,21 +49,21 @@ export const WalletListItem = ({
 				<Address walletName={wallet?.alias()} address={wallet?.address()} maxChars={22} />
 			</td>
 			{hasTypeIcons && (
-				<td className="py-1 text-sm font-bold text-center space-x-2">
+				<td className="py-1 space-x-2 text-sm font-bold text-center">
 					{wallet?.isLedger() && (
-						<div className="inline-block align-middle text-theme-neutral-600">
+						<div className="text-theme-neutral-600 inline-block align-middle">
 							<Icon name="Ledger" width={16} height={16} />
 						</div>
 					)}
 
 					{wallet?.isMultiSignature() && (
-						<div className="inline-block align-middle text-theme-neutral-600">
+						<div className="text-theme-neutral-600 inline-block align-middle">
 							<Icon name="Multisig" width={16} height={16} />
 						</div>
 					)}
 
 					{wallet?.isStarred() && (
-						<div className="inline-block align-middle text-theme-warning-400">
+						<div className="text-theme-warning-400 inline-block align-middle">
 							<Icon name="Star" width={16} height={16} />
 						</div>
 					)}
@@ -72,7 +72,7 @@ export const WalletListItem = ({
 			<td className="font-semibold text-right">
 				<Amount value={wallet.balance()} ticker={wallet.network().currency.ticker} />
 			</td>
-			<td className="text-right text-theme-neutral-light">
+			<td className="text-theme-neutral-light text-right">
 				<Amount value={wallet.convertedBalance()} ticker={exchangeCurrency!} />
 			</td>
 			<td>

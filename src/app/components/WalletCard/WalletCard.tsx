@@ -45,8 +45,8 @@ export const WalletCard = ({
 				<Card>
 					<div className="p-2">
 						<div>
-							<Circle size="lg" className="-mr-2 bg-white border-theme-primary-contrast" />
-							<Circle size="lg" className="bg-white border-theme-primary-contrast" />
+							<Circle size="lg" className="border-theme-primary-contrast -mr-2 bg-white" />
+							<Circle size="lg" className="border-theme-primary-contrast bg-white" />
 						</div>
 
 						<div className={`mt-6 text-md text-theme-primary-contrast ${blankTitleClass}`}>
@@ -61,7 +61,7 @@ export const WalletCard = ({
 		);
 	}
 
-	const coinName = wallet?.coin().manifest().get<string>("name");
+	const coinName = wallet?.manifest().get<string>("name");
 	const ticker = wallet!.network().currency.ticker;
 
 	return (
@@ -72,24 +72,24 @@ export const WalletCard = ({
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="relative p-2">
-						<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
+						<div className="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute">
 							<Dropdown options={actions} onSelect={onSelect} />
 						</div>
-						<div className="absolute right-3 -top-1">
+						<div className="right-3 -top-1 absolute">
 							{wallet?.isLedger() && (
-								<div className="inline-block mr-2 text text-theme-neutral-600">
+								<div className="text text-theme-neutral-600 inline-block mr-2">
 									<Icon name="Ledger" width={18} />
 								</div>
 							)}
 
 							{wallet?.hasSyncedWithNetwork() && wallet?.isMultiSignature() && (
-								<div className="inline-block mr-2 text text-theme-neutral-600">
+								<div className="text text-theme-neutral-600 inline-block mr-2">
 									<Icon name="Multisig" width={18} />
 								</div>
 							)}
 
 							{wallet?.isStarred() && (
-								<div className="inline-block mr-2 text text-theme-warning-400">
+								<div className="text text-theme-warning-400 inline-block mr-2">
 									<Icon name="Star" width={18} />
 								</div>
 							)}
@@ -101,13 +101,13 @@ export const WalletCard = ({
 							<Avatar size="lg" address={wallet?.address()} />
 						</div>
 
-						<div className="mt-6 truncate max-w-12">
+						<div className="max-w-12 mt-6 truncate">
 							<Address walletName={wallet?.alias()} address={wallet?.address()} maxChars={13} />
 						</div>
 						<Amount
 							value={wallet!.balance()}
 							ticker={ticker}
-							className="font-bold text-theme-neutral-900"
+							className="text-theme-neutral-900 font-bold"
 						/>
 					</div>
 				</Card>
