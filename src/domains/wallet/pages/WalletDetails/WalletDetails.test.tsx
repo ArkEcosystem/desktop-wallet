@@ -185,14 +185,14 @@ describe("WalletDetails", () => {
 			fireEvent.click(deleteWalletOption);
 		});
 
-		expect(profile.wallets().count()).toEqual(4);
+		expect(profile.wallets().count()).toEqual(5);
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
-		await waitFor(() => expect(profile.wallets().count()).toEqual(3));
+		await waitFor(() => expect(profile.wallets().count()).toEqual(4));
 	});
 
 	it("should update wallet name", async () => {
