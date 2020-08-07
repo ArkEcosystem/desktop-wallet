@@ -669,20 +669,24 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 text-sm font-bold text-center space-x-2"
+                    class="py-1 text-sm font-bold text-center align-middle"
                   >
                     <div
-                      class="inline-block align-middle text-theme-neutral-600"
+                      class="inline-flex items-center space-x-2"
                     >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
+                      <span
+                        class="text-theme-neutral-600"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </span>
                     </div>
                   </td>
                   <td
@@ -702,9 +706,6 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
               </tbody>
@@ -1077,20 +1078,24 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     </div>
                   </td>
                   <td
-                    class="py-1 text-sm font-bold text-center space-x-2"
+                    class="py-1 text-sm font-bold text-center align-middle"
                   >
                     <div
-                      class="inline-block align-middle text-theme-neutral-600"
+                      class="inline-flex items-center space-x-2"
                     >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
+                      <span
+                        class="text-theme-neutral-600"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </span>
                     </div>
                   </td>
                   <td
@@ -1110,9 +1115,6 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
               </tbody>
