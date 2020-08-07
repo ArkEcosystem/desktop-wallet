@@ -52,10 +52,10 @@ export const translations: { [key: string]: any } = {
 			UPDATE: "Change Password",
 		},
 		CURRENT: "Current Password",
-		NEW: "New Password",
-		CONFIRMATION: "Confirm New Password",
+		PASSWORD_1: "New Password",
+		PASSWORD_2: "Confirm New Password",
 		ERROR: {
-			Fallback: "Something went wrong.",
+			FALLBACK: "Something went wrong.",
 			MISMATCH: "The current password does not match.",
 		},
 		SUCCESS: "Your password has been successfully changed.",

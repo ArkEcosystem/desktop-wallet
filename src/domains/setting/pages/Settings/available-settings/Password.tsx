@@ -24,7 +24,7 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 
 	const minLength = 6;
 
-	const { formState, register, reset, watch } = formConfig.context;
+	const { formState, register, reset, triggerValidation, watch } = formConfig.context;
 
 	const formatError = (errorMessage: string) => {
 		if (errorMessage === "The current password does not match.") {
@@ -34,12 +34,12 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 		return t("SETTINGS.PASSWORD.ERROR.FALLBACK");
 	};
 
-	const handleSubmit = async ({ currentPassword, newPassword, newPasswordConfirmation }: any) => {
+	const handleSubmit = async ({ currentPassword, password_1 }: any) => {
 		try {
 			if (usesPassword) {
-				activeProfile.auth().changePassword(currentPassword, newPassword);
+				activeProfile.auth().changePassword(currentPassword, password_1);
 			} else {
-				activeProfile.auth().setPassword(newPassword);
+				activeProfile.auth().setPassword(password_1);
 			}
 		} catch (error) {
 			return setStatus({ type: "error", message: formatError(error.message) });
@@ -97,43 +97,42 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 					</FormField>
 				)}
 
-				<FormField name="newPassword">
-					<FormLabel label={t("SETTINGS.PASSWORD.NEW")} />
-					<InputPassword
-						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("SETTINGS.PASSWORD.NEW"),
-							}).toString(),
-							minLength: {
-								value: minLength,
-								message: t("COMMON.VALIDATION.MIN_LENGTH", {
-									field: t("SETTINGS.PASSWORD.NEW"),
-									minLength,
-								}),
-							},
-						})}
-					/>
-					<FormHelperText />
-				</FormField>
+				{[1, 2].map((password: number) => {
+					const otherPassword = `password_${password === 1 ? 2 : 1}`;
 
-				<FormField name="newPasswordConfirmation">
-					<FormLabel label={t("SETTINGS.PASSWORD.CONFIRMATION")} />
-					<InputPassword
-						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("SETTINGS.PASSWORD.CONFIRMATION"),
-							}).toString(),
-							validate: {
-								equals: (confirmation: string) => confirmation === watch("newPassword"),
-							},
-						})}
-					/>
-					<FormHelperText
-						errorMessage={t("COMMON.VALIDATION.SUBJECT_MISMATCH", {
+					const validatePasswords = (password: string) =>
+						password === watch(otherPassword) ||
+						t("COMMON.VALIDATION.SUBJECT_MISMATCH", {
 							subject: t("COMMON.PASSWORDS"),
-						}).toString()}
-					/>
-				</FormField>
+						}).toString();
+
+					return (
+						<FormField key={`password_${password}`} name={`password_${password}`}>
+							<FormLabel label={t(`SETTINGS.PASSWORD.PASSWORD_${password}`)} />
+							<InputPassword
+								onChange={() => {
+									if (watch(otherPassword).length) {
+										triggerValidation(otherPassword);
+									}
+								}}
+								ref={register({
+									required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+										field: t(`SETTINGS.PASSWORD.PASSWORD_${password}`),
+									}).toString(),
+									minLength: {
+										value: minLength,
+										message: t("COMMON.VALIDATION.MIN_LENGTH", {
+											field: t(`SETTINGS.PASSWORD.PASSWORD_${password}`),
+											minLength,
+										}),
+									},
+									validate: validatePasswords,
+								})}
+							/>
+							<FormHelperText />
+						</FormField>
+					);
+				})}
 
 				<div className="flex justify-end w-full mt-8">
 					<Button disabled={!formState.isValid} type="submit">
