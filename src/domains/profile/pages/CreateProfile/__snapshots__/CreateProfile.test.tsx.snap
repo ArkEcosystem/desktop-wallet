@@ -145,10 +145,9 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
-                      label="Name"
                     >
                       Name
                     </label>
@@ -162,10 +161,54 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                      >
+                        Optional
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
-                      label="Market Provider"
                     >
                       Market Provider
                     </label>
@@ -187,18 +230,18 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-48-label downshift-48-toggle-button"
+                            aria-labelledby="downshift-50-label downshift-50-toggle-button"
                             class="sc-fznxsB hwZFkF  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-48-toggle-button"
+                            id="downshift-50-toggle-button"
                             type="button"
                           >
                             CoinCap
                           </button>
                           <ul
-                            aria-labelledby="downshift-48-label"
+                            aria-labelledby="downshift-50-label"
                             class="sc-fznJRM jFPFlO"
-                            id="downshift-48-menu"
+                            id="downshift-50-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -223,10 +266,9 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
-                      label="Currency"
                     >
                       Currency
                     </label>
@@ -248,18 +290,18 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-49-label downshift-49-toggle-button"
+                            aria-labelledby="downshift-51-label downshift-51-toggle-button"
                             class="sc-fznxsB hwZFkF  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-49-toggle-button"
+                            id="downshift-51-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-49-label"
+                            aria-labelledby="downshift-51-label"
                             class="sc-fznJRM jFPFlO"
-                            id="downshift-49-menu"
+                            id="downshift-51-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -522,10 +564,9 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
-                      label="Name"
                     >
                       Name
                     </label>
@@ -539,10 +580,54 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                      >
+                        Optional
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
-                      label="Market Provider"
                     >
                       Market Provider
                     </label>
@@ -600,10 +685,9 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
-                      label="Currency"
                     >
                       Currency
                     </label>
@@ -923,10 +1007,9 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
-                      label="Name"
                     >
                       Name
                     </label>
@@ -940,10 +1023,54 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                      >
+                        Optional
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
-                      label="Market Provider"
                     >
                       Market Provider
                     </label>
@@ -1001,10 +1128,9 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
-                      label="Currency"
                     >
                       Currency
                     </label>
@@ -1300,10 +1426,9 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
-                      label="Name"
                     >
                       Name
                     </label>
@@ -1317,10 +1442,54 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                      >
+                        Optional
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
-                      label="Market Provider"
                     >
                       Market Provider
                     </label>
@@ -1378,10 +1547,9 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
-                      label="Currency"
                     >
                       Currency
                     </label>

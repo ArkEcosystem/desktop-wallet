@@ -151,7 +151,9 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 				<Input
 					data-testid="contact-form__name-input"
 					ref={form.register({
-						required: t("COMMON.VALIDATION.REQUIRED").toString(),
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("CONTACTS.CONTACT_FORM.NAME"),
+						}).toString(),
 						maxLength: {
 							message: t("COMMON.VALIDATION.MAX_LENGTH", {
 								field: t("CONTACTS.CONTACT_FORM.NAME"),

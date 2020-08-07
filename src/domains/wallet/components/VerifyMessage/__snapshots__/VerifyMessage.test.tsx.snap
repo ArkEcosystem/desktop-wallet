@@ -133,10 +133,9 @@ exports[`VerifyMessage should render 1`] = `
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="signed-message-content"
-                    label="Signed message content"
                   >
                     Signed message content
                   </label>
@@ -282,10 +281,9 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="message"
-                  label="Message"
                 >
                   Message
                 </label>
@@ -300,10 +298,9 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="signatory"
-                  label="Public Key"
                 >
                   Public Key
                 </label>
@@ -320,10 +317,9 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="signature"
-                  label="Signature"
                 >
                   Signature
                 </label>

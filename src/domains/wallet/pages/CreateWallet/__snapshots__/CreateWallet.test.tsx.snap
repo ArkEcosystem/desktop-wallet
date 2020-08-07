@@ -324,10 +324,9 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
                           >
                             Network
                           </label>
@@ -784,10 +783,9 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
                           >
                             Network
                           </label>
@@ -1244,10 +1242,9 @@ exports[`CreateWallet should render 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
                           >
                             Network
                           </label>
@@ -1416,10 +1413,9 @@ exports[`CreateWallet should render 1st step 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
             data-testid="FormLabel"
             for="network"
-            label="Network"
           >
             Network
           </label>
@@ -1802,10 +1798,9 @@ exports[`CreateWallet should render 4th step 1`] = `
       class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
-        label="Wallet name (optional)"
       >
         Wallet name (optional)
       </label>

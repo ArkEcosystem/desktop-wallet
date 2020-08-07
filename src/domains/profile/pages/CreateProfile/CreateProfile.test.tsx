@@ -95,7 +95,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		fireEvent.input(getByTestId("Input"), { target: { value: "test profile" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
@@ -113,7 +113,7 @@ describe("CreateProfile", () => {
 			AVATAR: "data:image/png;base64,avatarImage",
 		});
 
-		fireEvent.input(getByTestId("Input"), { target: { value: "test profile 2" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 2" } });
 		fireEvent.click(container.querySelector("input[name=isDarkMode]"));
 
 		await act(async () => {
@@ -155,7 +155,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__remove-avatar"));
 		});
 
-		fireEvent.input(getByTestId("Input"), { target: { value: "test profile" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
@@ -195,7 +195,7 @@ describe("CreateProfile", () => {
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
-		fireEvent.input(getByTestId("Input"), { target: { value: "test profile" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);

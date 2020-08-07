@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input } from "app/components/Input";
+import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
@@ -18,12 +18,13 @@ import { openFile } from "utils/electron-utils";
 
 export const CreateProfile = () => {
 	const { env, persist } = useEnvironmentContext();
-	const form = useForm();
+	const form = useForm({ mode: "onChange" });
 	const history = useHistory();
 	const { t } = useTranslation();
 
 	const { register } = form;
 	const nameMaxLength = 42;
+	const passwordMinLength = 6;
 
 	const [avatarImage, setAvatarImage] = useState("");
 
@@ -97,7 +98,7 @@ export const CreateProfile = () => {
 		},
 	];
 
-	const submitForm = async ({ name, currency, isDarkMode, marketProvider }: any) => {
+	const submitForm = async ({ name, password, currency, isDarkMode, marketProvider }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
 		const profile = env.profiles().create(formattedName);
 
@@ -112,6 +113,10 @@ export const CreateProfile = () => {
 		profile.settings().set(ProfileSetting.ScreenshotProtection, true);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		profile.settings().set(ProfileSetting.TimeFormat, PlatformSdkChoices.timeFormats[0].value);
+
+		if (password) {
+			profile.auth().setPassword(password);
+		}
 
 		await persist();
 
@@ -151,6 +156,22 @@ export const CreateProfile = () => {
 												message: t("COMMON.VALIDATION.MAX_LENGTH", {
 													field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
 													maxLength: nameMaxLength,
+												}),
+											},
+										})}
+									/>
+									<FormHelperText />
+								</FormField>
+
+								<FormField name="password">
+									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} optional />
+									<InputPassword
+										ref={register({
+											minLength: {
+												value: passwordMinLength,
+												message: t("COMMON.VALIDATION.MIN_LENGTH", {
+													field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
+													minLength: passwordMinLength,
 												}),
 											},
 										})}

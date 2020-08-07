@@ -7,6 +7,7 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Personal Details",
 			PROFILE_IMAGE: "Profile Image",
 			NAME: "Name",
+			PASSWORD: "Password",
 			PASSPHRASE_LANGUAGE: "Passphrase Language",
 			CURRENCY: "Currency",
 			LANGUAGE: "Language",

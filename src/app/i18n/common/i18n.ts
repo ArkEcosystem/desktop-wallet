@@ -89,6 +89,7 @@ export const translations: { [key: string]: any } = {
 	OF: "of",
 	OFFICIAL: "Official",
 	OPEN: "Open",
+	OPTIONAL: "Optional",
 	OTHER: "Other",
 	PAGE: "Page",
 	PASSWORDS: "Passwords",
@@ -167,7 +168,8 @@ export const translations: { [key: string]: any } = {
 	},
 
 	VALIDATION: {
-		REQUIRED: "Field required",
+		REQUIRED: "This field is required",
+		OPTIONAL: "This field is optional",
 		FIELD_REQUIRED: "'{{field}}' is required",
 		IS_REQUIRED: "is required",
 		MAX_LENGTH: "'{{field}}' should have at most {{maxLength}} characters",

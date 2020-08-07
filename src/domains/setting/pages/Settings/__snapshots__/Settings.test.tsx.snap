@@ -549,7 +549,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="load-plugins"
                           >
@@ -1122,10 +1122,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            label="Name"
                           >
                             Name
                           </label>
@@ -1141,10 +1140,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
-                            label="Passphrase Language"
                           >
                             Passphrase Language
                           </label>
@@ -1202,10 +1200,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="currency"
-                            label="Currency"
                           >
                             Currency
                           </label>
@@ -1267,10 +1264,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="language"
-                            label="Language"
                           >
                             Language
                           </label>
@@ -1328,10 +1324,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="marketProvider"
-                            label="Market Provider"
                           >
                             Market Provider
                           </label>
@@ -1389,10 +1384,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="timeFormat"
-                            label="Time Format"
                           >
                             Time Format
                           </label>
@@ -1595,10 +1589,9 @@ exports[`Settings should render 1`] = `
                             class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                               data-testid="FormLabel"
                               for="autoLogoff"
-                              label="Auto-logoff"
                             >
                               Auto-logoff
                             </label>
@@ -3263,7 +3256,7 @@ exports[`Settings should render plugin settings 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="load-plugins"
                           >
@@ -3836,10 +3829,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            label="Name"
                           >
                             Name
                           </label>
@@ -3855,10 +3847,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
-                            label="Passphrase Language"
                           >
                             Passphrase Language
                           </label>
@@ -3916,10 +3907,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="currency"
-                            label="Currency"
                           >
                             Currency
                           </label>
@@ -3981,10 +3971,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="language"
-                            label="Language"
                           >
                             Language
                           </label>
@@ -4042,10 +4031,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="marketProvider"
-                            label="Market Provider"
                           >
                             Market Provider
                           </label>
@@ -4103,10 +4091,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="timeFormat"
-                            label="Time Format"
                           >
                             Time Format
                           </label>
@@ -4380,10 +4367,9 @@ exports[`Settings should submit using default props 1`] = `
                             class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                               data-testid="FormLabel"
                               for="autoLogoff"
-                              label="Auto-logoff"
                             >
                               Auto-logoff
                             </label>
@@ -5104,10 +5090,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            label="Name"
                           >
                             Name
                           </label>
@@ -5123,10 +5108,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
-                            label="Passphrase Language"
                           >
                             Passphrase Language
                           </label>
@@ -5184,10 +5168,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="currency"
-                            label="Currency"
                           >
                             Currency
                           </label>
@@ -5249,10 +5232,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="language"
-                            label="Language"
                           >
                             Language
                           </label>
@@ -5310,10 +5292,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="marketProvider"
-                            label="Market Provider"
                           >
                             Market Provider
                           </label>
@@ -5371,10 +5352,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="timeFormat"
-                            label="Time Format"
                           >
                             Time Format
                           </label>
@@ -5576,10 +5556,9 @@ exports[`Settings should update profile 1`] = `
                             class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
                               data-testid="FormLabel"
                               for="autoLogoff"
-                              label="Auto-logoff"
                             >
                               Auto-logoff
                             </label>

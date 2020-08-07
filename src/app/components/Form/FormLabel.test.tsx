@@ -45,7 +45,7 @@ describe("FormLabel", () => {
 			fireEvent.mouseEnter(getByTestId("FormLabel__required"));
 		});
 
-		expect(baseElement).toHaveTextContent("These fields are required to be filled in");
+		expect(baseElement).toHaveTextContent("This field is required");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
