@@ -6,12 +6,16 @@ import { Transactions } from "./Transactions";
 
 describe("Transactions", () => {
 	it("should render with", () => {
-		const { container } = renderWithRouter(<Transactions />);
+		const { container } = renderWithRouter(<Transactions fetchMoreAction={() => console.log("fetchMoreAction")} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with with transactions", () => {
-		const { container } = renderWithRouter(<Transactions transactions={transactions} />);
+		const { container } = renderWithRouter(
+			<Transactions transactions={transactions} fetchMoreAction={() => console.log("fetchMoreAction")} />,
+		);
+
 		expect(container).toMatchSnapshot();
 	});
 });

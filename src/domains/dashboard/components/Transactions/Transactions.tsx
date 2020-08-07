@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 type TransactionsProps = {
 	title: string;
 	transactions: Contracts.TransactionDataType[];
+	fetchMoreAction: Function;
 	moreAction?: any;
 	emptyText?: string;
 };
