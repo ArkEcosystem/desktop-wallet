@@ -23,6 +23,7 @@ import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Edit } from "./edit.svg";
+import { ReactComponent as Entity } from "./entity.svg";
 import { ReactComponent as Exchange } from "./exchange.svg";
 import { ReactComponent as Explorer } from "./explorer.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
@@ -115,6 +116,7 @@ export const SvgCollection: any = {
 	Discord,
 	Download,
 	Edit,
+	Entity,
 	Explorer,
 	Eye,
 	EyeOff,
