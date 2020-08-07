@@ -6,6 +6,8 @@ import { getPageURL } from "../../../utils/e2e-utils";
 fixture`Create Profile action`.page(getPageURL());
 
 test("should return an error when submit without required fields", async (t) => {
+	await t.click(Selector("button").withExactText(translations().PROFILE.CREATE_PROFILE));
+
 	await t.click(Selector("button").withExactText(translations().COMMON.COMPLETE));
 	await t.click(Selector("fieldset p").withText("Name is required"));
 	await t.click(Selector("fieldset p").withText("Market Provider is required"));
@@ -14,6 +16,8 @@ test("should return an error when submit without required fields", async (t) => 
 });
 
 test("should create a profile and navigate to welcome screen", async (t) => {
+	await t.click(Selector("button").withExactText(translations().PROFILE.CREATE_PROFILE));
+
 	const nameInput = Selector("input[name=name]");
 
 	await t.typeText(nameInput, "Anne Doe");
