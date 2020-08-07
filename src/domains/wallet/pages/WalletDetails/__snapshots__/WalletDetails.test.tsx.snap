@@ -520,7 +520,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
                   <div
-                    class="px-8"
+                    class="pr-8"
                   >
                     <div
                       class="flex items-center -space-x-2"
@@ -742,7 +742,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top invisible"
+                        class="flex flex-inline align-top invisible w-24"
                       >
                         <div>
                           Sign
@@ -2408,7 +2408,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top w-24 justify-end float-right"
                       >
                         <div>
                           Currency
@@ -4075,20 +4075,24 @@ exports[`WalletDetails should delete wallet 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 space-x-2 text-sm font-bold text-center"
+                    class="py-1 text-sm font-bold text-center align-middle"
                   >
                     <div
-                      class="text-theme-neutral-600 inline-block align-middle"
+                      class="inline-flex items-center space-x-2"
                     >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
+                      <span
+                        class="text-theme-neutral-600"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </span>
                     </div>
                   </td>
                   <td
@@ -4108,9 +4112,6 @@ exports[`WalletDetails should delete wallet 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -4166,6 +4167,13 @@ exports[`WalletDetails should delete wallet 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -4182,9 +4190,6 @@ exports[`WalletDetails should delete wallet 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -4240,6 +4245,13 @@ exports[`WalletDetails should delete wallet 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -4256,9 +4268,6 @@ exports[`WalletDetails should delete wallet 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -4314,6 +4323,13 @@ exports[`WalletDetails should delete wallet 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -4330,9 +4346,6 @@ exports[`WalletDetails should delete wallet 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
               </tbody>
@@ -5087,7 +5100,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
                   <div
-                    class="px-8"
+                    class="pr-8"
                   >
                     <div
                       class="flex items-center -space-x-2"
@@ -5315,7 +5328,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top invisible"
+                        class="flex flex-inline align-top invisible w-24"
                       >
                         <div>
                           Sign
@@ -6981,7 +6994,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top w-24 justify-end float-right"
                       >
                         <div>
                           Currency
@@ -9124,7 +9137,7 @@ exports[`WalletDetails should render 1`] = `
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
                   <div
-                    class="px-8"
+                    class="pr-8"
                   >
                     <div
                       class="flex items-center -space-x-2"
@@ -9352,7 +9365,7 @@ exports[`WalletDetails should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top invisible"
+                        class="flex flex-inline align-top invisible w-24"
                       >
                         <div>
                           Sign
@@ -11018,7 +11031,7 @@ exports[`WalletDetails should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top w-24 justify-end float-right"
                       >
                         <div>
                           Currency
@@ -12685,20 +12698,24 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 space-x-2 text-sm font-bold text-center"
+                    class="py-1 text-sm font-bold text-center align-middle"
                   >
                     <div
-                      class="text-theme-neutral-600 inline-block align-middle"
+                      class="inline-flex items-center space-x-2"
                     >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
+                      <span
+                        class="text-theme-neutral-600"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </span>
                     </div>
                   </td>
                   <td
@@ -12718,9 +12735,6 @@ exports[`WalletDetails should render 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -12776,6 +12790,13 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -12792,9 +12813,6 @@ exports[`WalletDetails should render 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -12850,6 +12868,13 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -12866,9 +12891,6 @@ exports[`WalletDetails should render 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
               </tbody>
@@ -13491,7 +13513,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
                   <div
-                    class="px-8"
+                    class="pr-8"
                   >
                     <div
                       class="flex items-center -space-x-2"
@@ -13713,7 +13735,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top invisible"
+                        class="flex flex-inline align-top invisible w-24"
                       >
                         <div>
                           Sign
@@ -15379,7 +15401,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top w-24 justify-end float-right"
                       >
                         <div>
                           Currency
@@ -17046,20 +17068,24 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 space-x-2 text-sm font-bold text-center"
+                    class="py-1 text-sm font-bold text-center align-middle"
                   >
                     <div
-                      class="text-theme-neutral-600 inline-block align-middle"
+                      class="inline-flex items-center space-x-2"
                     >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
+                      <span
+                        class="text-theme-neutral-600"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </span>
                     </div>
                   </td>
                   <td
@@ -17079,9 +17105,6 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -17137,6 +17160,13 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -17153,9 +17183,6 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -17211,6 +17238,13 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -17227,9 +17261,6 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
               </tbody>
@@ -17762,7 +17793,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
                   <div
-                    class="px-8"
+                    class="pr-8"
                   >
                     <div
                       class="flex items-center -space-x-2"
@@ -17984,7 +18015,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top invisible"
+                        class="flex flex-inline align-top invisible w-24"
                       >
                         <div>
                           Sign
@@ -19650,7 +19681,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top w-24 justify-end float-right"
                       >
                         <div>
                           Currency
@@ -21317,20 +21348,24 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 space-x-2 text-sm font-bold text-center"
+                    class="py-1 text-sm font-bold text-center align-middle"
                   >
                     <div
-                      class="text-theme-neutral-600 inline-block align-middle"
+                      class="inline-flex items-center space-x-2"
                     >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
+                      <span
+                        class="text-theme-neutral-600"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </span>
                     </div>
                   </td>
                   <td
@@ -21350,9 +21385,6 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -21408,6 +21440,13 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -21424,9 +21463,6 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -21482,6 +21518,13 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -21498,9 +21541,6 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
               </tbody>
@@ -22257,7 +22297,7 @@ exports[`WalletDetails should render with timers 1`] = `
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
                   <div
-                    class="px-8"
+                    class="pr-8"
                   >
                     <div
                       class="flex items-center -space-x-2"
@@ -22485,7 +22525,7 @@ exports[`WalletDetails should render with timers 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top invisible"
+                        class="flex flex-inline align-top invisible w-24"
                       >
                         <div>
                           Sign
@@ -24151,7 +24191,7 @@ exports[`WalletDetails should render with timers 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top w-24 justify-end float-right"
                       >
                         <div>
                           Currency
@@ -25818,20 +25858,24 @@ exports[`WalletDetails should render with timers 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 space-x-2 text-sm font-bold text-center"
+                    class="py-1 text-sm font-bold text-center align-middle"
                   >
                     <div
-                      class="text-theme-neutral-600 inline-block align-middle"
+                      class="inline-flex items-center space-x-2"
                     >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
+                      <span
+                        class="text-theme-neutral-600"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </span>
                     </div>
                   </td>
                   <td
@@ -25851,9 +25895,6 @@ exports[`WalletDetails should render with timers 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -25909,6 +25950,13 @@ exports[`WalletDetails should render with timers 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -25925,9 +25973,6 @@ exports[`WalletDetails should render with timers 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -25983,6 +26028,13 @@ exports[`WalletDetails should render with timers 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -25999,9 +26051,6 @@ exports[`WalletDetails should render with timers 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
               </tbody>
@@ -26758,7 +26807,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
                   <div
-                    class="px-8"
+                    class="pr-8"
                   >
                     <div
                       class="flex items-center -space-x-2"
@@ -26986,7 +27035,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top invisible"
+                        class="flex flex-inline align-top invisible w-24"
                       >
                         <div>
                           Sign
@@ -28652,7 +28701,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top w-24 justify-end float-right"
                       >
                         <div>
                           Currency
@@ -30319,20 +30368,24 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 space-x-2 text-sm font-bold text-center"
+                    class="py-1 text-sm font-bold text-center align-middle"
                   >
                     <div
-                      class="text-theme-neutral-600 inline-block align-middle"
+                      class="inline-flex items-center space-x-2"
                     >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
+                      <span
+                        class="text-theme-neutral-600"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </span>
                     </div>
                   </td>
                   <td
@@ -30352,9 +30405,6 @@ exports[`WalletDetails should update wallet name 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -30410,6 +30460,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -30426,9 +30483,6 @@ exports[`WalletDetails should update wallet name 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
                 <tr
@@ -30484,6 +30538,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </td>
                   <td
+                    class="py-1 text-sm font-bold text-center align-middle"
+                  >
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    />
+                  </td>
+                  <td
                     class="font-semibold text-right"
                   >
                     <span
@@ -30500,9 +30561,6 @@ exports[`WalletDetails should update wallet name 1`] = `
                     >
                       0 
                     </span>
-                  </td>
-                  <td>
-                    0
                   </td>
                 </tr>
               </tbody>

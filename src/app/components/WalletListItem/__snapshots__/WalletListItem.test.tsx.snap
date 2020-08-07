@@ -63,46 +63,50 @@ exports[`WalletListItem should render 1`] = `
           </div>
         </td>
         <td
-          class="py-1 space-x-2 text-sm font-bold text-center"
+          class="py-1 text-sm font-bold text-center align-middle"
         >
           <div
-            class="text-theme-neutral-600 inline-block align-middle"
+            class="inline-flex items-center space-x-2"
           >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+            <span
+              class="text-theme-neutral-600"
             >
-              <svg>
-                ledger.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="text-theme-neutral-600 inline-block align-middle"
-          >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  ledger.svg
+                </svg>
+              </div>
+            </span>
+            <span
+              class="text-theme-neutral-600"
             >
-              <svg>
-                multisig.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="text-theme-warning-400 inline-block align-middle"
-          >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </span>
+            <span
+              class="text-theme-warning-400"
             >
-              <svg>
-                star.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </span>
           </div>
         </td>
         <td
@@ -122,9 +126,6 @@ exports[`WalletListItem should render 1`] = `
           >
             0 
           </span>
-        </td>
-        <td>
-          0
         </td>
       </tr>
     </tbody>
@@ -195,46 +196,50 @@ exports[`WalletListItem should render a button if variant is 'singleAction' 1`] 
           </div>
         </td>
         <td
-          class="py-1 space-x-2 text-sm font-bold text-center"
+          class="py-1 text-sm font-bold text-center align-middle"
         >
           <div
-            class="text-theme-neutral-600 inline-block align-middle"
+            class="inline-flex items-center space-x-2"
           >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+            <span
+              class="text-theme-neutral-600"
             >
-              <svg>
-                ledger.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="text-theme-neutral-600 inline-block align-middle"
-          >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  ledger.svg
+                </svg>
+              </div>
+            </span>
+            <span
+              class="text-theme-neutral-600"
             >
-              <svg>
-                multisig.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="text-theme-warning-400 inline-block align-middle"
-          >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </span>
+            <span
+              class="text-theme-warning-400"
             >
-              <svg>
-                star.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </span>
           </div>
         </td>
         <td
