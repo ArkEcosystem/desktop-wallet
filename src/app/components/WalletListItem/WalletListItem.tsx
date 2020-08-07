@@ -65,7 +65,7 @@ export const WalletListItem = ({
 			<td className="py-1">
 				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 			</td>
-			<td className="py-1 text-sm align-middle font-bold text-center">
+			<td className="py-1 text-sm font-bold text-center align-middle">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
