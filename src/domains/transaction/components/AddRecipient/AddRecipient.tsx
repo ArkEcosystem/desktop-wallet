@@ -222,7 +222,7 @@ export const AddRecipient = ({
 AddRecipient.defaultProps = {
 	maxAvailableAmount: 0,
 	assetSymbol: "ARK",
-	availableAmount: undefined,
+	availableAmount: 0,
 	isSingleRecipient: true,
 	recipients: [],
 };
