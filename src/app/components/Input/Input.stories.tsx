@@ -1,6 +1,13 @@
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { EnvironmentProvider } from "app/contexts";
+import { httpClient } from "app/services";
 import React from "react";
+import { StubStorage } from "tests/mocks";
 
 import { Input, InputAddress, InputCounter, InputPassword } from "./index";
+
+const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 export default {
 	title: "App / Components / Input",
@@ -15,9 +22,16 @@ export const Default = () => (
 );
 
 export const Address = () => (
-	<div className="max-w-xs">
-		<InputAddress name="address" coin="ARK" network="devnet" defaultValue="DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM" />
-	</div>
+	<EnvironmentProvider env={env}>
+		<div className="max-w-xs">
+			<InputAddress
+				name="address"
+				coin="ARK"
+				network="devnet"
+				defaultValue="DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM"
+			/>
+		</div>
+	</EnvironmentProvider>
 );
 
 export const Counter = () => (

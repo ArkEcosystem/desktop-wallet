@@ -12,62 +12,61 @@ type InputAddressProps = {
 	coin: string;
 	network: string;
 	isRequired?: boolean;
-	onValidAddress?: (isValidAddress: boolean) => void;
+	onValidAddress?: (address: string) => void;
 } & React.InputHTMLAttributes<any>;
 
-export const InputAddress = React.forwardRef<HTMLInputElement, InputAddressProps>(
-	({ name, coin, network, isRequired, onValidAddress }: InputAddressProps, ref) => {
-		const { t } = useTranslation();
-		const { env } = useEnvironmentContext();
-		const { register } = useFormContext();
+export const InputAddress = ({ name, coin, network, isRequired, onValidAddress, ...props }: InputAddressProps) => {
+	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
+	const form = useFormContext();
 
-		const [validAddress, setValidAddress] = useState<string | null>(null);
+	const [validAddress, setValidAddress] = useState<string | null>(null);
 
-		const validateAddress = async (address: string) => {
-			if (validAddress && validAddress !== address) {
-				setValidAddress(null);
-				return t("COMMON.INPUT_ADDRESS.VALIDATION.NOT_VALID");
-			}
-
-			const isValidAddress = await env.dataValidator().address(coin, network, address);
-
-			if (isValidAddress) {
-				setValidAddress(address);
-				return isValidAddress;
-			}
-
+	const validateAddress = async (address: string) => {
+		if (validAddress && validAddress !== address) {
+			setValidAddress(null);
+			onValidAddress?.("");
 			return t("COMMON.INPUT_ADDRESS.VALIDATION.NOT_VALID");
-		};
+		}
 
-		return (
-			<InputGroup className="max-w-20">
-				<Input
-					ref={register({
-						required: isRequired
-							? t("COMMON.VALIDATION.FIELD_REQUIRED", {
-									field: t("COMMON.ADDRESS"),
-							  }).toString()
-							: false,
-						validate: validateAddress,
-					})}
-					type="text"
-					className="pr-12"
-					data-testid={`InputAddress__input--${name}`}
-				/>
-				<InputAddonEnd className="my-px mr-4">
-					<button
-						type="button"
-						className="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
-					>
-						<Icon name="Qrcode" width={20} height={20} />
-					</button>
-				</InputAddonEnd>
-			</InputGroup>
-		);
-	},
-);
+		const isValidAddress = await env.dataValidator().address(coin, network, address);
 
-InputAddress.displayName = "InputAddress";
+		if (isValidAddress) {
+			setValidAddress(address);
+			onValidAddress?.(address);
+			return isValidAddress;
+		}
+
+		return t("COMMON.INPUT_ADDRESS.VALIDATION.NOT_VALID");
+	};
+
+	return (
+		<InputGroup className="max-w-20">
+			<Input
+				ref={form?.register({
+					required: isRequired
+						? t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("COMMON.ADDRESS"),
+						  }).toString()
+						: false,
+					validate: validateAddress,
+				})}
+				type="text"
+				className="pr-12"
+				{...props}
+			/>
+			<InputAddonEnd className="my-px mr-4">
+				<button
+					type="button"
+					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+				>
+					<Icon name="Qrcode" width={20} height={20} />
+				</button>
+			</InputAddonEnd>
+		</InputGroup>
+	);
+};
+
 InputAddress.defaultProps = {
 	isRequired: false,
 };

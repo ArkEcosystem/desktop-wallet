@@ -80,7 +80,13 @@ export const SecondStep = ({ errorMessage }: { errorMessage: string | null }) =>
 		return (
 			<FormField name="address">
 				<FormLabel label={t("COMMON.ADDRESS")} />
-				<InputAddress name="address" coin={network.coin()} network={network.id()} isRequired />
+				<InputAddress
+					name="address"
+					coin={network.coin()}
+					network={network.id()}
+					isRequired
+					data-testid="ImportWallet__address-input"
+				/>
 				<FormHelperText />
 			</FormField>
 		);
