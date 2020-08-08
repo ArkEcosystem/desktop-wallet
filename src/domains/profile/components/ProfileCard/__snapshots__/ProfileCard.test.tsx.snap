@@ -38,7 +38,11 @@ exports[`ProfileCard should hide the settings icon 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              John Doe
+              <span
+                class="sc-AxhCb lnNDXb"
+              >
+                John Doe
+              </span>
             </p>
           </div>
         </div>
@@ -53,12 +57,12 @@ exports[`ProfileCard should hide the settings icon 1`] = `
             >
               Total balance
             </p>
-            <p
+            <span
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--balance"
             >
-              1000
-            </p>
+              91.43089801 BTC
+            </span>
           </div>
         </div>
       </div>
@@ -105,7 +109,7 @@ exports[`ProfileCard should render 1`] = `
           class="flex items-center"
         >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
             data-testid="profile-card__user--avatar"
           >
             <img
@@ -131,7 +135,11 @@ exports[`ProfileCard should render 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              John Doe
+              <span
+                class="sc-AxhCb lnNDXb"
+              >
+                John Doe
+              </span>
             </p>
           </div>
         </div>
@@ -146,12 +154,12 @@ exports[`ProfileCard should render 1`] = `
             >
               Total balance
             </p>
-            <p
+            <span
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--balance"
             >
-              1000
-            </p>
+              91.43089801 BTC
+            </span>
           </div>
         </div>
       </div>
@@ -220,7 +228,11 @@ exports[`ProfileCard should render the profile with avatar image 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              John Doe
+              <span
+                class="sc-AxhCb lnNDXb"
+              >
+                John Doe
+              </span>
             </p>
           </div>
         </div>
@@ -235,12 +247,12 @@ exports[`ProfileCard should render the profile with avatar image 1`] = `
             >
               Total balance
             </p>
-            <p
+            <span
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--balance"
             >
-              1000
-            </p>
+              91.43089801 BTC
+            </span>
           </div>
         </div>
       </div>
@@ -309,7 +321,11 @@ exports[`ProfileCard should render the settings icon 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              John Doe
+              <span
+                class="sc-AxhCb lnNDXb"
+              >
+                John Doe
+              </span>
             </p>
           </div>
         </div>
@@ -324,12 +340,12 @@ exports[`ProfileCard should render the settings icon 1`] = `
             >
               Total balance
             </p>
-            <p
+            <span
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--balance"
             >
-              1000
-            </p>
+              91.43089801 BTC
+            </span>
           </div>
         </div>
       </div>

@@ -1,8 +1,9 @@
 import { ClientFunction, Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Sign Message`.page`http://localhost:3000/`;
+fixture`Sign Message`.page(getPageURL());
 
 const scrollTop = ClientFunction(() => {
 	window.scrollTo({ top: 0 });

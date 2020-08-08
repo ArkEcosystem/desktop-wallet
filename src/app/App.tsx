@@ -1,6 +1,8 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { LSK } from "@arkecosystem/platform-sdk-lsk";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { ApplicationError } from "domains/error/pages";
+import { Splash } from "domains/splash/pages";
 import { LedgerListener } from "domains/transaction/components/LedgerListener";
 import React, { useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
@@ -16,11 +18,14 @@ import { httpClient } from "./services";
 const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
+	const [showSplash, setShowSplash] = useState(true);
+
 	const { env, persist } = useEnvironmentContext();
 
 	useLayoutEffect(() => {
 		const boot = async () => {
 			await env.bootFromObject(fixtureData);
+			setShowSplash(false);
 			await persist();
 		};
 
@@ -28,6 +33,8 @@ const Main = () => {
 			boot();
 		}
 	}, [env, persist]);
+
+	if (showSplash) return <Splash />;
 
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
@@ -41,12 +48,13 @@ const Main = () => {
 
 export const App = () => {
 	/**
-	 * Ensure that the Environment object will not be recreated when the state changes, as the data is stored in memory by the `DataRepository`.
+	 * Ensure that the Environment object will not be recreated when the state changes,
+	 * as the data is stored in memory by the `DataRepository`.
 	 */
 
 	/* istanbul ignore next */
 	const storage = __DEV__ ? new StubStorage() : "indexeddb";
-	const [env] = useState(() => new Environment({ coins: { ARK }, httpClient, storage }));
+	const [env] = useState(() => new Environment({ coins: { ARK, LSK }, httpClient, storage }));
 
 	return (
 		<I18nextProvider i18n={i18n}>

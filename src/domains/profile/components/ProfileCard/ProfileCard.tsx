@@ -1,21 +1,29 @@
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Amount } from "app/components/Amount";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Card } from "app/components/Card";
 import { Dropdown } from "app/components/Dropdown";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import tw, { styled } from "twin.macro";
 
-interface ISettingsOptions {
+type SettingsOptions = {
 	label: string;
 	value: string | number;
-}
+};
 
 type ProfileCardProps = {
-	profile: any;
-	actions?: ISettingsOptions[];
+	profile: Profile;
+	actions?: SettingsOptions[];
 	onSelect?: any;
 	handleClick?: any;
 	showSettings?: boolean;
 };
+
+const ProfileNameWrapper = styled.span`
+	${tw`block truncate`}
+	max-width: 250px;
+`;
 
 export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSettings }: ProfileCardProps) => {
 	const { t } = useTranslation();
@@ -59,19 +67,19 @@ export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSetti
 						<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
 							<p className="text-sm font-semibold text-theme-neutral">{t("COMMON.NAME")}</p>
 							<p className="font-semibold text-theme-neutral-dark" data-testid="profile-card__user--name">
-								{profile.name()}
+								<ProfileNameWrapper>{profile.name()}</ProfileNameWrapper>
 							</p>
 						</div>
 					</div>
 					<div className="flex items-center">
 						<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right">
 							<p className="text-sm font-semibold text-theme-neutral">{t("COMMON.TOTAL_BALANCE")}</p>
-							<p
+							<Amount
 								className="font-semibold text-theme-neutral-dark"
 								data-testid="profile-card__user--balance"
-							>
-								{profile.balance().toString()}
-							</p>
+								value={profile.balance()}
+								ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!}
+							/>
 						</div>
 					</div>
 				</div>

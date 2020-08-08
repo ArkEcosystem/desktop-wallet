@@ -1,4 +1,5 @@
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
 import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
@@ -14,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
+import { Amount } from "../Amount";
 import { defaultStyle } from "./NavigationBar.styles";
 
 const commonAssets = images.common;
@@ -227,7 +229,10 @@ export const NavigationBar = ({
 						<div className="p-2 ml-4 text-right">
 							<div className="text-xs text-theme-neutral">{t("COMMON.YOUR_BALANCE")}</div>
 							<div className="text-sm font-bold text-theme-neutral-dark">
-								{profile?.balance().toString()}
+								<Amount
+									value={profile?.balance() || BigNumber.ZERO}
+									ticker={profile?.settings().get<string>(ProfileSetting.ExchangeCurrency) || ""}
+								/>
 							</div>
 						</div>
 

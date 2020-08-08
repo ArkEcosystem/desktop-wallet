@@ -40,6 +40,9 @@ export const translations: { [key: string]: any } = {
 					"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
 			},
 		},
+		VALIDATION: {
+			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+		},
 	},
 	PEERS: {
 		MENU_ITEM: "Peer",

@@ -155,7 +155,11 @@ exports[`Vote For Delegate should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                1000
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
               </div>
             </div>
             <div
@@ -382,7 +386,7 @@ exports[`Vote For Delegate should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                           data-testid="Avatar"
                         >
                           <div
@@ -429,7 +433,7 @@ exports[`Vote For Delegate should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                           data-testid="Avatar"
                         >
                           <div
@@ -685,7 +689,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
           data-testid="Avatar"
         >
           <div
@@ -732,7 +736,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
           data-testid="Avatar"
         >
           <div
@@ -961,7 +965,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
           data-testid="Avatar"
         >
           <div
@@ -1008,7 +1012,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
           data-testid="Avatar"
         >
           <div
@@ -1046,7 +1050,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
                   class="mt-2 font-semibold"
                   data-testid="total-amount-box__transaction-amount"
                 >
-                  0.00 ARK
+                  0 ARK
                 </span>
               </div>
               <div
@@ -1061,7 +1065,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
                   class="mt-2 text-lg font-semibold"
                   data-testid="total-amount-box__transaction-fee"
                 >
-                  0.09660435 ARK
+                  0 ARK
                 </span>
               </div>
             </div>
@@ -1095,7 +1099,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
               class="text-2xl font-bold"
               data-testid="total-amount-box__total"
             >
-              0.09660435 ARK
+              0 ARK
             </span>
           </div>
         </div>
@@ -1531,7 +1535,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
             data-testid="Avatar"
           >
             <div
@@ -1578,7 +1582,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
             data-testid="Avatar"
           >
             <div

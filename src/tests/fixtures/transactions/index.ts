@@ -1,20 +1,22 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const TransactionFixture: Contracts.TransactionDataType = {
 	id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 	type: () => "transfer",
-	timestamp: () => 1596213281,
+	timestamp: () => DateTime.fromUnix(1596213281),
 	confirmations: () => BigNumber.make(10),
 	votes: () => ["10"],
 	unvotes: () => ["10"],
 	sender: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 	recipient: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 	recipients: () => [],
-	amount: () => BigNumber.make(100),
-	fee: () => BigNumber.make(21),
+	amount: () => BigNumber.make(100).times(1e8),
+	fee: () => BigNumber.make(21).times(1e8),
 	memo: () => "Test",
 	asset: () => ({ a: "b" }),
+	isConfirmed: () => false,
 	isSent: () => true,
 	isReceived: () => false,
 	isTransfer: () => true,

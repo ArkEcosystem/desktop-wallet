@@ -11,4 +11,11 @@ describe("CircularProgressBar", () => {
 		expect(asFragment()).toMatchSnapshot();
 		expect(getByTestId("CircularProgressBar__percentage")).toHaveTextContent("50%");
 	});
+
+	it("should render without text content", () => {
+		const { container, asFragment } = render(<CircularProgressBar showValue={false} />);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

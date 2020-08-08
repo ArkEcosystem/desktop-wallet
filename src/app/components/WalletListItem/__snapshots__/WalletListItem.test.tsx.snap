@@ -27,7 +27,7 @@ exports[`WalletListItem should render 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
               data-testid="Avatar"
             >
               <div
@@ -63,64 +63,69 @@ exports[`WalletListItem should render 1`] = `
           </div>
         </td>
         <td
-          class="py-1 text-sm font-bold text-center space-x-2"
+          class="py-1 text-sm font-bold text-center align-middle"
         >
           <div
-            class="inline-block align-middle text-theme-neutral-600"
+            class="inline-flex items-center space-x-2"
           >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+            <span
+              class="text-theme-neutral-600"
             >
-              <svg>
-                ledger.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block align-middle text-theme-neutral-600"
-          >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  ledger.svg
+                </svg>
+              </div>
+            </span>
+            <span
+              class="text-theme-neutral-600"
             >
-              <svg>
-                multisig.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block align-middle text-theme-warning-400"
-          >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </span>
+            <span
+              class="text-theme-warning-400"
             >
-              <svg>
-                star.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </span>
           </div>
         </td>
         <td
           class="font-semibold text-right"
         >
-          <div>
-            1000
-          </div>
+          <span
+            data-testid="Amount"
+          >
+            33.75089801 DARK
+          </span>
         </td>
         <td
           class="text-right text-theme-neutral-light"
         >
-          <div>
-            0
-          </div>
-        </td>
-        <td>
-          0
+          <span
+            data-testid="Amount"
+          >
+            0 
+          </span>
         </td>
       </tr>
     </tbody>
@@ -155,7 +160,7 @@ exports[`WalletListItem should render a button if variant is 'singleAction' 1`] 
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
               data-testid="Avatar"
             >
               <div
@@ -191,61 +196,69 @@ exports[`WalletListItem should render a button if variant is 'singleAction' 1`] 
           </div>
         </td>
         <td
-          class="py-1 text-sm font-bold text-center space-x-2"
+          class="py-1 text-sm font-bold text-center align-middle"
         >
           <div
-            class="inline-block align-middle text-theme-neutral-600"
+            class="inline-flex items-center space-x-2"
           >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+            <span
+              class="text-theme-neutral-600"
             >
-              <svg>
-                ledger.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block align-middle text-theme-neutral-600"
-          >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  ledger.svg
+                </svg>
+              </div>
+            </span>
+            <span
+              class="text-theme-neutral-600"
             >
-              <svg>
-                multisig.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block align-middle text-theme-warning-400"
-          >
-            <div
-              class="sc-AxhCb kAKLDr"
-              height="16"
-              width="16"
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </span>
+            <span
+              class="text-theme-warning-400"
             >
-              <svg>
-                star.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxhCb kAKLDr"
+                height="16"
+                width="16"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </span>
           </div>
         </td>
         <td
           class="font-semibold text-right"
         >
-          <div>
-            1000
-          </div>
+          <span
+            data-testid="Amount"
+          >
+            33.75089801 DARK
+          </span>
         </td>
         <td
           class="text-right text-theme-neutral-light"
         >
-          <div>
-            0
-          </div>
+          <span
+            data-testid="Amount"
+          >
+            0 
+          </span>
         </td>
         <td>
           <div

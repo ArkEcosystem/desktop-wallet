@@ -156,7 +156,11 @@ exports[`News should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                1000
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
               </div>
             </div>
             <div

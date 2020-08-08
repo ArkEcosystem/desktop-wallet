@@ -1,12 +1,19 @@
-const path = require("path");
-const { override, addPostcssPlugins, addWebpackPlugin } = require("customize-cra");
-const webpack = require("webpack");
+const { override, addPostcssPlugins, setWebpackTarget, addWebpackExternals } = require("customize-cra");
+const nodeExternals = require("webpack-node-externals");
 
-module.exports = override(
+const addNodeExternals = ({ allowlist = [] }) =>
+	addWebpackExternals([
+		nodeExternals({
+			allowlist,
+		}),
+	]);
+
+const injectTailwindCSS = () =>
 	addPostcssPlugins([
 		require("postcss-import"),
 		require("tailwindcss")("./src/tailwind.config.js"),
 		require("autoprefixer"),
+<<<<<<< HEAD
 	]),
 	addWebpackPlugin(
 		new webpack.NormalModuleReplacementPlugin(
@@ -38,36 +45,16 @@ module.exports = override(
 				utils: path.resolve(__dirname, "src/utils"),
 			},
 		};
+=======
+	]);
+>>>>>>> 3.0-react
 
-		config.module.rules.push({
-			test: /\.(ts|js|jsx|tsx)$/,
-			exclude: /node_modules/,
-			use: {
-				loader: require.resolve("babel-loader"),
-				options: {
-					presets: [require.resolve("@babel/preset-react"), require.resolve("@babel/preset-typescript")],
-					babelrc: false,
-				},
-			},
-		});
-
-		config.module.rules.push({
-			test: /\.node$/,
-			use: "node-loader",
-		});
-
-		config.optimization = {
-			usedExports: true,
-			providedExports: true,
-			sideEffects: true,
-			namedChunks: true,
-			namedModules: true,
-			removeAvailableModules: true,
-			mergeDuplicateChunks: true,
-			flagIncludedChunks: true,
-			removeEmptyChunks: true,
-		};
-
-		return config;
-	},
+module.exports = override(
+	setWebpackTarget("electron-renderer"),
+	injectTailwindCSS(),
+	addNodeExternals({
+		allowlist: [/tippy/, /swipe/],
+	}),
 );
+
+module.exports.injectTailwindCSS = injectTailwindCSS;

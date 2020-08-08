@@ -7,6 +7,8 @@ type CircularProgressBarProps = {
 	progressColor?: string;
 	value: number;
 	fontSize?: number;
+	showValue: boolean;
+	className?: string;
 };
 
 export const CircularProgressBar = ({
@@ -16,6 +18,8 @@ export const CircularProgressBar = ({
 	progressColor,
 	value,
 	fontSize,
+	showValue,
+	className,
 }: CircularProgressBarProps) => {
 	// Enclose circle in a circumscribed square
 	const viewBox = `0 0 ${size} ${size}`;
@@ -27,7 +31,7 @@ export const CircularProgressBar = ({
 	const dashOffset = dashArray - (dashArray * value) / 100;
 
 	return (
-		<svg width={size} height={size} viewBox={viewBox}>
+		<svg width={size} height={size} viewBox={viewBox} className={className}>
 			<circle
 				cx={size / 2}
 				cy={size / 2}
@@ -50,23 +54,25 @@ export const CircularProgressBar = ({
 				// Start progress marker at 12 O'Clock
 				transform={`rotate(-90 ${size / 2} ${size / 2})`}
 			/>
-			<text
-				x="50%"
-				y="50%"
-				dy="0.3em"
-				fill={progressColor}
-				fontSize={`${fontSize}rem`}
-				fontWeight="600"
-				textAnchor="middle"
-				data-testid="CircularProgressBar__percentage"
-			>
-				<tspan>
-					{value}
-					<tspan dy="-0.6em" fontSize={`${fontSize! / 2}rem`} fontWeight="bold">
-						%
+			{showValue && (
+				<text
+					x="50%"
+					y="50%"
+					dy="0.3em"
+					fill={progressColor}
+					fontSize={`${fontSize}rem`}
+					fontWeight="600"
+					textAnchor="middle"
+					data-testid="CircularProgressBar__percentage"
+				>
+					<tspan>
+						{value}
+						<tspan dy="-0.6em" fontSize={`${fontSize! / 2}rem`} fontWeight="bold">
+							%
+						</tspan>
 					</tspan>
-				</tspan>
-			</text>
+				</text>
+			)}
 		</svg>
 	);
 };
@@ -76,6 +82,7 @@ CircularProgressBar.defaultProps = {
 	strokeWidth: 10,
 	strokeColor: "var(--theme-color-success-200)",
 	progressColor: "var(--theme-color-success)",
-	value: 0,
 	fontSize: 2,
+	value: 0,
+	showValue: true,
 };

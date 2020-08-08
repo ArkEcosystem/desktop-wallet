@@ -1,4 +1,5 @@
 import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -298,7 +299,7 @@ const ThirdStep = () => {
 				</TransactionDetail>
 
 				<div>
-					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
 				</div>
 			</div>
 		</div>

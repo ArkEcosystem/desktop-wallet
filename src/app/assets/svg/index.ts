@@ -23,6 +23,7 @@ import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Edit } from "./edit.svg";
+import { ReactComponent as Entity } from "./entity.svg";
 import { ReactComponent as Exchange } from "./exchange.svg";
 import { ReactComponent as Explorer } from "./explorer.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
@@ -46,6 +47,7 @@ import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as LinkedIn } from "./linkedin.svg";
 import { ReactComponent as List } from "./list.svg";
+import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Medium } from "./medium.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
@@ -113,6 +115,7 @@ export const SvgCollection: any = {
 	Discord,
 	Download,
 	Edit,
+	Entity,
 	Explorer,
 	Eye,
 	EyeOff,
@@ -181,5 +184,6 @@ export const SvgCollection: any = {
 	ChartActiveDot,
 	Placeholder,
 	QuestionMark,
+	LoaderLogo,
 	...Currencies,
 };

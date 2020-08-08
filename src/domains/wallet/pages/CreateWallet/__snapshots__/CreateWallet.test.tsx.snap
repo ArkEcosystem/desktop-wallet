@@ -155,7 +155,11 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
               </div>
             </div>
             <div
@@ -611,7 +615,11 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
               </div>
             </div>
             <div
@@ -1067,7 +1075,11 @@ exports[`CreateWallet should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
               </div>
             </div>
             <div
@@ -1767,7 +1779,7 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
           data-testid="Avatar"
         >
           <div

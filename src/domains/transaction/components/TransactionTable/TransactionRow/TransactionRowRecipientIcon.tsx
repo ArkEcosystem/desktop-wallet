@@ -27,6 +27,7 @@ export const TransactionRowRecipientIcon = ({ type, recipient, recipients, class
 		secondSignature: "Key",
 		delegateRegistration: "Delegate",
 		vote: "Voted",
+		unvote: "Voted",
 		multiSignature: "Multisig",
 		ipfs: "Ipfs",
 		multiPayment: "Multisig",
@@ -40,6 +41,9 @@ export const TransactionRowRecipientIcon = ({ type, recipient, recipients, class
 		bridgechainRegistration: "Bridgechain",
 		bridgechainResignation: "Bridgechain",
 		bridgechainUpdate: "Bridgechain",
+		entityRegistration: "Entity",
+		entityResignation: "Entity",
+		entityUpdate: "Entity",
 	};
 
 	if (type === "transfer") {
