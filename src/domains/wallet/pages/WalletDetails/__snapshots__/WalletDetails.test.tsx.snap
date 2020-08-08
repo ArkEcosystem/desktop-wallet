@@ -487,7 +487,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                 Registrations
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletRegistrations__toggle"
               >
                 <span>
@@ -514,7 +514,7 @@ exports[`WalletDetails should delete wallet 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="flex items-center justify-between px-1 py-4"
+                class="flex items-center justify-between py-4"
               >
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -3829,7 +3829,7 @@ exports[`WalletDetails should delete wallet 1`] = `
           </span>
         </div>
         <div
-          class="inline-flex items-center space-x-1"
+          class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
             class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral-dark"
@@ -4935,7 +4935,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 My Vote
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletVote__toggle"
               >
                 <span>
@@ -4962,7 +4962,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="px-1 py-4 grid grid-flow-row row-gap-6"
+                class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
                   class="flex items-center justify-between"
@@ -5151,7 +5151,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 Registrations
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletRegistrations__toggle"
               >
                 <span>
@@ -5178,7 +5178,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="flex items-center justify-between px-1 py-4"
+                class="flex items-center justify-between py-4"
               >
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -8972,7 +8972,7 @@ exports[`WalletDetails should render 1`] = `
                 My Vote
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletVote__toggle"
               >
                 <span>
@@ -8999,7 +8999,7 @@ exports[`WalletDetails should render 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="px-1 py-4 grid grid-flow-row row-gap-6"
+                class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
                   class="flex items-center justify-between"
@@ -9188,7 +9188,7 @@ exports[`WalletDetails should render 1`] = `
                 Registrations
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletRegistrations__toggle"
               >
                 <span>
@@ -9215,7 +9215,7 @@ exports[`WalletDetails should render 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="flex items-center justify-between px-1 py-4"
+                class="flex items-center justify-between py-4"
               >
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -12536,7 +12536,7 @@ exports[`WalletDetails should render 1`] = `
           </span>
         </div>
         <div
-          class="inline-flex items-center space-x-1"
+          class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
             class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral-dark"
@@ -13551,7 +13551,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 My Vote
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletVote__toggle"
               >
                 <span>
@@ -13578,7 +13578,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="px-1 py-4 grid grid-flow-row row-gap-6"
+                class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
                   class="flex items-center pr-8 space-x-4"
@@ -13648,7 +13648,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 Registrations
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletRegistrations__toggle"
               >
                 <span>
@@ -13675,7 +13675,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="flex items-center justify-between px-1 py-4"
+                class="flex items-center justify-between py-4"
               >
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -16990,7 +16990,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           </span>
         </div>
         <div
-          class="inline-flex items-center space-x-1"
+          class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
             class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral-dark"
@@ -18012,7 +18012,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 Registrations
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletRegistrations__toggle"
               >
                 <span>
@@ -18039,7 +18039,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="flex items-center justify-between px-1 py-4"
+                class="flex items-center justify-between py-4"
               >
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -21354,7 +21354,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           </span>
         </div>
         <div
-          class="inline-flex items-center space-x-1"
+          class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
             class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral-dark"
@@ -22384,7 +22384,7 @@ exports[`WalletDetails should render with timers 1`] = `
                 My Vote
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletVote__toggle"
               >
                 <span>
@@ -22411,7 +22411,7 @@ exports[`WalletDetails should render with timers 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="px-1 py-4 grid grid-flow-row row-gap-6"
+                class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
                   class="flex items-center justify-between"
@@ -22600,7 +22600,7 @@ exports[`WalletDetails should render with timers 1`] = `
                 Registrations
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletRegistrations__toggle"
               >
                 <span>
@@ -22627,7 +22627,7 @@ exports[`WalletDetails should render with timers 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="flex items-center justify-between px-1 py-4"
+                class="flex items-center justify-between py-4"
               >
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -25948,7 +25948,7 @@ exports[`WalletDetails should render with timers 1`] = `
           </span>
         </div>
         <div
-          class="inline-flex items-center space-x-1"
+          class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
             class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral-dark"
@@ -26978,7 +26978,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 My Vote
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletVote__toggle"
               >
                 <span>
@@ -27005,7 +27005,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="px-1 py-4 grid grid-flow-row row-gap-6"
+                class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
                   class="flex items-center justify-between"
@@ -27194,7 +27194,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 Registrations
               </h2>
               <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
                 data-testid="WalletRegistrations__toggle"
               >
                 <span>
@@ -27221,7 +27221,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="flex items-center justify-between px-1 py-4"
+                class="flex items-center justify-between py-4"
               >
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -30542,7 +30542,7 @@ exports[`WalletDetails should update wallet name 1`] = `
           </span>
         </div>
         <div
-          class="inline-flex items-center space-x-1"
+          class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
             class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral-dark"
