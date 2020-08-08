@@ -5,7 +5,13 @@ let subject: Cache;
 beforeAll(() => (subject = new Cache(10)));
 
 describe("Cache", () => {
-	it("should remember a value and return it next time without calling any functions", async () => {
+	it("should remember a value if it is a string", async () => {
+		subject.flush();
+
+		await expect(subject.remember("cacheKey", "value")).resolves.toBe("value");
+	});
+
+	it("should remember a value if it is a function", async () => {
 		subject.flush();
 
 		const valueFn = jest.fn(() => "value");
