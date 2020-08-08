@@ -2,6 +2,7 @@ import { BlockfolioSignal } from "@arkecosystem/platform-sdk-news";
 import { Card } from "app/components/Card";
 import { Divider } from "app/components/Divider";
 import { Label } from "app/components/Label";
+import { Link } from "app/components/Link";
 import { TimeAgo } from "app/components/TimeAgo";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { coins } from "domains/news/data";
@@ -13,10 +14,25 @@ type Props = {
 	coverImage?: string;
 } & BlockfolioSignal;
 
-export const NewsCard = ({ text, category, author, created_at: createdAt, coin, coverImage }: Props) => {
+export const NewsCard = ({ text, category, author, created_at: createdAt, coin, coverImage, links }: Props) => {
 	const { t } = useTranslation();
 
 	const asset: any = coins[coin];
+
+	const renderLink = (link: string, key: number) => (
+		<Link to={{ pathname: link }} isExternal showExternalIcon={false} key={key}>
+			{link}
+		</Link>
+	);
+
+	const highlightLink = (link: string, text: string) => {
+		const parts = [...text.split(link), link];
+
+		const renderTextLink = (part: string, index: number) =>
+			part.match(link) ? renderLink(part, index) : <span key={index}>{part}</span>;
+
+		return <>{parts.map(renderTextLink)}</>;
+	};
 
 	return (
 		<Card className="bg-theme-background">
@@ -58,7 +74,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coin, 
 				<Divider />
 
 				<p className="text-theme-neutral-dark" data-testid="NewsCard__content">
-					{text}
+					{highlightLink(links[0], text)}
 				</p>
 
 				{coverImage && (
