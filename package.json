@@ -30,7 +30,7 @@
 		"eject": "react-app-rewired eject",
 		"electron-rebuild": "electron-rebuild .",
 		"format": "yarn lint && yarn prettier",
-		"postinstall": "electron-builder install-app-deps",
+		"postinstall": "electron-builder install-app-deps && npm rebuild",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
 		"prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
 		"start": "cross-env BROWSER=none react-app-rewired start",
