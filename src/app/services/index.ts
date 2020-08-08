@@ -1,3 +1,3 @@
 import { HttpClient } from "./HttpClient";
 
-export const httpClient = new HttpClient();
+export const httpClient = new HttpClient(10);

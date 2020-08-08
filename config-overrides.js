@@ -1,72 +1,26 @@
-const path = require("path");
-const { override, addPostcssPlugins, addWebpackPlugin } = require("customize-cra");
-const webpack = require("webpack");
+const { override, addPostcssPlugins, setWebpackTarget, addWebpackExternals } = require("customize-cra");
+const nodeExternals = require("webpack-node-externals");
 
-module.exports = override(
+const addNodeExternals = ({ allowlist = [] }) =>
+	addWebpackExternals([
+		nodeExternals({
+			allowlist,
+		}),
+	]);
+
+const injectTailwindCSS = () =>
 	addPostcssPlugins([
 		require("postcss-import"),
 		require("tailwindcss")("./src/tailwind.config.js"),
 		require("autoprefixer"),
-	]),
-	addWebpackPlugin(
-		new webpack.NormalModuleReplacementPlugin(
-			/node_modules\/@arkecosystem\/crypto\/dist\/index\.bundled\.js/,
-			"index.js",
-		),
-	),
-	(config) => {
-		config.node = {
-			fs: "empty",
-		};
+	]);
 
-		config.externals = {
-			"usb-detection": "commonjs usb-detection",
-		};
-
-		config.target = "electron-renderer";
-
-		config.resolve = {
-			extensions: [".ts", ".js", ".jsx", ".tsx", ".scss", ".json", ".node"],
-			alias: {
-				app: path.resolve(__dirname, "src/app/"),
-				data: path.resolve(__dirname, "src/data/"),
-				domains: path.resolve(__dirname, "src/domains"),
-				resources: path.resolve(__dirname, "src/resources"),
-				styles: path.resolve(__dirname, "src/styles"),
-				tests: path.resolve(__dirname, "src/tests"),
-				utils: path.resolve(__dirname, "src/utils"),
-			},
-		};
-
-		config.module.rules.push({
-			test: /\.(ts|js|jsx|tsx)$/,
-			exclude: /node_modules/,
-			use: {
-				loader: require.resolve("babel-loader"),
-				options: {
-					presets: [require.resolve("@babel/preset-react"), require.resolve("@babel/preset-typescript")],
-					babelrc: false,
-				},
-			},
-		});
-
-		config.module.rules.push({
-			test: /\.node$/,
-			use: "node-loader",
-		});
-
-		config.optimization = {
-			usedExports: true,
-			providedExports: true,
-			sideEffects: true,
-			namedChunks: true,
-			namedModules: true,
-			removeAvailableModules: true,
-			mergeDuplicateChunks: true,
-			flagIncludedChunks: true,
-			removeEmptyChunks: true,
-		};
-
-		return config;
-	},
+module.exports = override(
+	setWebpackTarget("electron-renderer"),
+	injectTailwindCSS(),
+	addNodeExternals({
+		allowlist: [/tippy/, /swipe/],
+	}),
 );
+
+module.exports.injectTailwindCSS = injectTailwindCSS;
