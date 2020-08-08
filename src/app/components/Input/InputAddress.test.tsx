@@ -1,115 +1,79 @@
-/* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
-import nock from "nock";
+import { EnvironmentProvider } from "app/contexts";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { fireEvent, render, RenderResult, waitFor } from "testing-library";
+import { env, fireEvent, render } from "utils/testing-library";
 
-import { InputAddress } from "./InputAddress";
-
-const identityAddress = "DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq";
+import { InputAddress, InputAddressProps } from "./InputAddress";
 
 describe("InputAddress", () => {
-	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
-			.persist();
-	});
+	const TestInputAddress = (props: InputAddressProps) => (
+		<EnvironmentProvider env={env}>
+			<InputAddress {...props} name="address" />
+		</EnvironmentProvider>
+	);
 
 	it("should render", () => {
-		const { asFragment } = render(<InputAddress name="address" coin="ARK" network="devnet" />);
+		const { getByTestId, asFragment } = render(<TestInputAddress coin="ARK" network="devnet" />);
+		expect(getByTestId("InputAddress")).toBeInTheDocument();
+		expect(getByTestId("InputAddress__qr-button")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should return an error message for invalid address", async () => {
-		const { result: form } = renderHook(() => useForm({ mode: "onChange" }));
-		const onSubmit = jest.fn();
-
-		let rendered: RenderResult;
-
-		await act(async () => {
-			rendered = render(
-				<Form context={form.current} onSubmit={onSubmit}>
-					<FormField name="address">
-						<FormLabel label="Address" />
-						<InputAddress name="address" coin="ARK" network="devnet" isRequired />
-						<FormHelperText />
-					</FormField>
-				</Form>,
-			);
-		});
-
-		const { getByTestId, asFragment } = rendered;
-
-		expect(asFragment()).toMatchSnapshot();
-
-		await act(async () => {
-			const addressInput = getByTestId("InputAddress");
-			expect(addressInput).toBeTruthy();
-
-			await fireEvent.input(addressInput, { target: { value: "123" } });
-
-			await waitFor(() => {
-				expect(form.current.getValues()).toEqual({ address: "123" });
-			});
-
-			await waitFor(() => {
-				expect(form.current.formState.isValid).toEqual(false);
-			});
-
-			await waitFor(() => {
-				expect(form.current.errors.address.message).toEqual("The address is not valid");
-			});
-		});
+	it("should emit event whe clicking on qr button", () => {
+		const onQRButtonClick = jest.fn();
+		const { getByTestId } = render(
+			<TestInputAddress coin="ARK" network="devnet" onQRCodeClick={onQRButtonClick} />,
+		);
+		fireEvent.click(getByTestId("InputAddress__qr-button"));
+		expect(onQRButtonClick).toHaveBeenCalled();
 	});
 
-	it("should return a valid address", async () => {
-		const { result: form } = renderHook(() => useForm({ mode: "onChange" }));
-		const onSubmit = jest.fn();
+	it("should validate a wrong address", async () => {
+		const { result, waitForNextUpdate } = renderHook(() => useForm({ mode: "onChange" }));
+		const { register, errors } = result.current;
 
-		let rendered: RenderResult;
+		const { getByTestId } = render(<TestInputAddress coin="ARK" network="devnet" registerRef={register} />);
 
-		await act(async () => {
-			rendered = render(
-				<Form context={form.current} onSubmit={onSubmit}>
-					<FormField name="address">
-						<FormLabel label="Address" />
-						<InputAddress name="address" coin="ARK" network="devnet" isRequired />
-						<FormHelperText />
-					</FormField>
-				</Form>,
-			);
+		act(() => {
+			fireEvent.input(getByTestId("InputAddress"), { target: { value: "Abc" } });
 		});
 
-		const { getByTestId, asFragment } = rendered;
+		await waitForNextUpdate();
+		expect(errors.address?.message).toBe("The address is not valid");
+	});
 
-		expect(asFragment()).toMatchSnapshot();
+	it("should validate a valid address and emit event", async () => {
+		const onValidAddress = jest.fn();
+		const { result, waitForNextUpdate } = renderHook(() => useForm({ mode: "onChange" }));
+		const { register, errors } = result.current;
 
-		await act(async () => {
-			const addressInput = getByTestId("InputAddress");
-			expect(addressInput).toBeTruthy();
+		const { getByTestId } = render(
+			<TestInputAddress coin="ARK" network="devnet" registerRef={register} onValidAddress={onValidAddress} />,
+		);
 
-			await fireEvent.input(addressInput, { target: { value: identityAddress } });
-
-			await waitFor(() => {
-				expect(form.current.getValues()).toEqual({ address: identityAddress });
-			});
-
-			await waitFor(async () => {
-				expect(form.current.errors.address).toEqual(undefined);
-			});
+		act(() => {
+			fireEvent.input(getByTestId("InputAddress"), { target: { value: "DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM" } });
 		});
+
+		await waitForNextUpdate();
+		expect(errors.address?.message).toBe(undefined);
+		expect(onValidAddress).toHaveBeenCalled();
+	});
+
+	it("should validate with additional rules", async () => {
+		const { result, waitForNextUpdate } = renderHook(() => useForm({ mode: "onChange" }));
+		const { register, errors } = result.current;
+
+		const { getByTestId } = render(
+			<TestInputAddress coin="ARK" network="devnet" registerRef={register} additionalRules={{ minLength: 10 }} />,
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("InputAddress"), { target: { value: "Abc" } });
+		});
+
+		await waitForNextUpdate();
+		expect(errors.address?.type).toBe("minLength");
 	});
 });

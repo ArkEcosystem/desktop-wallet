@@ -82,7 +82,12 @@ export const SecondStep = () => {
 				<InputAddress
 					coin={network.coin()}
 					network={network.id()}
-					isRequired
+					registerRef={register}
+					additionalRules={{
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.YOUR_PASSPHRASE"),
+						}).toString(),
+					}}
 					data-testid="ImportWallet__address-input"
 				/>
 				<FormHelperText />

@@ -3,23 +3,24 @@
 exports[`InputAddress should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxheI IkGcK max-w-20"
+    class="sc-AxgMl cZbWSE max-w-20"
   >
     <input
-      class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
       data-testid="InputAddress"
       name="address"
       type="text"
     />
     <div
-      class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
+      class="sc-AxiKw sc-AxhUy QmuzF my-px mr-4"
     >
       <button
         class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+        data-testid="InputAddress__qr-button"
         type="button"
       >
         <div
-          class="sc-AxirZ eEbZjj"
+          class="sc-AxjAm buCJuk"
           height="20"
           width="20"
         >
@@ -30,105 +31,5 @@ exports[`InputAddress should render 1`] = `
       </button>
     </div>
   </div>
-</DocumentFragment>
-`;
-
-exports[`InputAddress should return a valid address 1`] = `
-<DocumentFragment>
-  <form
-    class="space-y-8"
-    data-testid="Form"
-  >
-    <fieldset
-      class="sc-AxjAm fmGClo flex flex-col space-y-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-        data-testid="FormLabel"
-        for="address"
-        label="Address"
-      >
-        Address
-      </label>
-      <div
-        class="sc-AxheI IkGcK max-w-20"
-      >
-        <input
-          class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-          data-testid="InputAddress"
-          name="address"
-          type="text"
-        />
-        <div
-          class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
-        >
-          <button
-            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
-            type="button"
-          >
-            <div
-              class="sc-AxirZ eEbZjj"
-              height="20"
-              width="20"
-            >
-              <svg>
-                qrcode.svg
-              </svg>
-            </div>
-          </button>
-        </div>
-      </div>
-    </fieldset>
-  </form>
-</DocumentFragment>
-`;
-
-exports[`InputAddress should return an error message for invalid address 1`] = `
-<DocumentFragment>
-  <form
-    class="space-y-8"
-    data-testid="Form"
-  >
-    <fieldset
-      class="sc-AxjAm fmGClo flex flex-col space-y-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-        data-testid="FormLabel"
-        for="address"
-        label="Address"
-      >
-        Address
-      </label>
-      <div
-        class="sc-AxheI IkGcK max-w-20"
-      >
-        <input
-          class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-          data-testid="InputAddress"
-          name="address"
-          type="text"
-        />
-        <div
-          class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
-        >
-          <button
-            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
-            type="button"
-          >
-            <div
-              class="sc-AxirZ eEbZjj"
-              height="20"
-              width="20"
-            >
-              <svg>
-                qrcode.svg
-              </svg>
-            </div>
-          </button>
-        </div>
-      </div>
-    </fieldset>
-  </form>
 </DocumentFragment>
 `;
