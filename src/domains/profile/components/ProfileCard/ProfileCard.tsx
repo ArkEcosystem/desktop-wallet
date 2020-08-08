@@ -74,12 +74,16 @@ export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSetti
 					<div className="flex items-center">
 						<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right">
 							<p className="text-sm font-semibold text-theme-neutral">{t("COMMON.TOTAL_BALANCE")}</p>
-							<Amount
-								className="font-semibold text-theme-neutral-dark"
-								data-testid="profile-card__user--balance"
-								value={profile.balance()}
-								ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!}
-							/>
+							{profile.usesPassword() ? (
+								<span className="font-semibold text-theme-neutral">{t("COMMON.NOT_AVAILABLE")}</span>
+							) : (
+								<Amount
+									className="font-semibold text-theme-neutral-dark"
+									data-testid="profile-card__user--balance"
+									value={profile.balance()}
+									ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!}
+								/>
+							)}
 						</div>
 					</div>
 				</div>
