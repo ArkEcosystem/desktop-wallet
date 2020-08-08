@@ -9,13 +9,13 @@ import { InputAddress, InputAddressProps } from "./InputAddress";
 describe("InputAddress", () => {
 	const TestInputAddress = (props: InputAddressProps) => (
 		<EnvironmentProvider env={env}>
-			<InputAddress {...props} name="address" />
+			<InputAddress name="address" {...props} />
 		</EnvironmentProvider>
 	);
 
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(<TestInputAddress coin="ARK" network="devnet" />);
-		expect(getByTestId("InputAddress")).toBeInTheDocument();
+		expect(getByTestId("InputAddress__input")).toBeInTheDocument();
 		expect(getByTestId("InputAddress__qr-button")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -36,7 +36,7 @@ describe("InputAddress", () => {
 		const { getByTestId } = render(<TestInputAddress coin="ARK" network="devnet" registerRef={register} />);
 
 		act(() => {
-			fireEvent.input(getByTestId("InputAddress"), { target: { value: "Abc" } });
+			fireEvent.input(getByTestId("InputAddress__input"), { target: { value: "Abc" } });
 		});
 
 		await waitForNextUpdate();
@@ -47,18 +47,21 @@ describe("InputAddress", () => {
 		const onValidAddress = jest.fn();
 		const { result, waitForNextUpdate } = renderHook(() => useForm({ mode: "onChange" }));
 		const { register, errors } = result.current;
+		const validAddress = "DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM";
 
 		const { getByTestId } = render(
 			<TestInputAddress coin="ARK" network="devnet" registerRef={register} onValidAddress={onValidAddress} />,
 		);
 
 		act(() => {
-			fireEvent.input(getByTestId("InputAddress"), { target: { value: "DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM" } });
+			fireEvent.input(getByTestId("InputAddress__input"), {
+				target: { value: validAddress },
+			});
 		});
 
 		await waitForNextUpdate();
 		expect(errors.address?.message).toBe(undefined);
-		expect(onValidAddress).toHaveBeenCalled();
+		expect(onValidAddress).toHaveBeenCalledWith(validAddress);
 	});
 
 	it("should validate with additional rules", async () => {
@@ -70,7 +73,7 @@ describe("InputAddress", () => {
 		);
 
 		act(() => {
-			fireEvent.input(getByTestId("InputAddress"), { target: { value: "Abc" } });
+			fireEvent.input(getByTestId("InputAddress__input"), { target: { value: "Abc" } });
 		});
 
 		await waitForNextUpdate();

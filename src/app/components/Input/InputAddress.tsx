@@ -48,7 +48,7 @@ export const InputAddress = ({
 				})}
 				type="text"
 				className="pr-12"
-				data-testid="InputAddress"
+				data-testid="InputAddress__input"
 				{...props}
 			/>
 			<InputAddonEnd className="my-px mr-4">
