@@ -85,7 +85,7 @@ export const SecondStep = () => {
 					registerRef={register}
 					additionalRules={{
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-							field: t("COMMON.YOUR_PASSPHRASE"),
+							field: t("COMMON.ADDRESS"),
 						}).toString(),
 					}}
 					data-testid="ImportWallet__address-input"
