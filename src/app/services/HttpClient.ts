@@ -14,7 +14,7 @@ export class HttpClient extends Http.Request {
 	public constructor() {
 		super();
 
-		this.cache = new Cache(60);
+		this.cache = new Cache(10);
 	}
 
 	protected async send(
