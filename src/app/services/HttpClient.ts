@@ -11,10 +11,10 @@ export class HttpClient extends Http.Request {
 
 	private readonly cache: Cache;
 
-	public constructor() {
+	public constructor(ttl: number) {
 		super();
 
-		this.cache = new Cache(10);
+		this.cache = new Cache(ttl);
 	}
 
 	protected async send(

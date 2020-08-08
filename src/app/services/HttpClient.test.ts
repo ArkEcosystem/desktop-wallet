@@ -7,7 +7,7 @@ let subject: HttpClient;
 beforeAll(() => {
 	nock.disableNetConnect();
 
-	subject = new HttpClient();
+	subject = new HttpClient(0);
 });
 
 describe("HttpClient", () => {
