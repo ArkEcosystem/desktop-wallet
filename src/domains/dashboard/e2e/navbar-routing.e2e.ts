@@ -1,8 +1,9 @@
 import { ClientFunction, Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`NavBar routing`.page`http://localhost:3000`;
+fixture`NavBar routing`.page(getPageURL());
 
 const getLocation = ClientFunction(() => document.location.href);
 

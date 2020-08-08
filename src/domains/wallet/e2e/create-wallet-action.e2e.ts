@@ -1,8 +1,9 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Create Wallet action`.page`http://localhost:3000/`;
+fixture`Create Wallet action`.page(getPageURL());
 
 test("should create a wallet", async (t) => {
 	const mnemonicWords = [];
