@@ -3,7 +3,7 @@ const tailwindUI = require("@tailwindcss/ui");
 const tailwindcssDebugScreens = require("tailwindcss-debug-screens");
 
 module.exports = {
-	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.tsx?"],
+	purge: false,
 	theme: {
 		fontFamily: {
 			sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],

@@ -1,8 +1,9 @@
 import { RequestMock, Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Import Wallet action`.page`http://localhost:3000/`;
+fixture`Import Wallet action`.page(getPageURL());
 
 const neoscanMock = RequestMock()
 	.onRequestTo(

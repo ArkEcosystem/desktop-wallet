@@ -1,8 +1,9 @@
 import { ClientFunction, Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Wallet Labeling`.page`http://localhost:3000/`;
+fixture`Wallet Labeling`.page(getPageURL());
 
 const scrollTop = ClientFunction(() => {
 	window.scrollTo({ top: 0 });
