@@ -1,5 +1,6 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
 import fetch from "isomorphic-fetch";
+import { md5 } from "hash-wasm";
 
 import { Cache } from "./Cache";
 
@@ -29,7 +30,9 @@ export class HttpClient extends Http.Request {
 			url = `${url}?${new URLSearchParams(data.query as any)}`;
 		}
 
-		return this.cache.remember(url, async () => {
+		const cacheKey: string = await md5(`${method}.${url}.${JSON.stringify(data)}`);
+
+		return this.cache.remember(cacheKey, async () => {
 			let response;
 
 			if (method === "GET") {
