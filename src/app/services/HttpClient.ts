@@ -1,6 +1,6 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
-import fetch from "isomorphic-fetch";
 import { md5 } from "hash-wasm";
+import fetch from "isomorphic-fetch";
 
 import { Cache } from "./Cache";
 
