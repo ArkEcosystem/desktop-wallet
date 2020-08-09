@@ -21,7 +21,7 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile }: Send
 	const [wallets, setWallets] = useState<Wallet[]>([]);
 
 	const form = useFormContext();
-	const { formState, getValues, register, setValue } = form;
+	const { getValues, setValue } = form;
 	const { network, recipients, senderAddress, smartbridge } = form.watch();
 	const [feeOptions, setFeeOptions] = useState({
 		last: undefined,
@@ -30,9 +30,7 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile }: Send
 		average: (14 * 1e8).toFixed(0),
 	});
 
-	// TODO: Get fees from SDK/API
 	const fee = getValues("fee") || null;
-	const maxFee = 100;
 	const maxAvailableAmount = 80;
 
 	const onSelectNetwork = (network?: NetworkData | null) => {

@@ -187,7 +187,7 @@ export const TransactionSend = () => {
 	const [transaction, setTransaction] = useState<Contracts.TransactionData>(
 		(null as unknown) as Contracts.TransactionData,
 	);
-	const [hasCopied, copy] = useClipboard({
+	const [_, copy] = useClipboard({
 		resetAfter: 1000,
 	});
 	const activeProfile = useActiveProfile();

@@ -33,7 +33,7 @@ export const InputFee = ({ defaultValue, value, average, last, min, max, onChang
 		if (value && value !== fee) {
 			setFee(value);
 		}
-	}, [value]);
+	}, [fee, value]);
 
 	return (
 		<div data-testid="InputFee" className="flex space-x-2">
