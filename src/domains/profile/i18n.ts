@@ -33,7 +33,10 @@ export const translations: { [key: string]: any } = {
 	},
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
-		DESCRIPTION: "Create a new Profile or login with your MarketSquare account to get started.",
+		DESCRIPTION: "Login with your MarketSquare account or create a new Profile below.",
+		VALIDATION: {
+			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+		},
 	},
 	PAGE_MY_REGISTRATIONS: {
 		TITLE: "My Registrations",
@@ -58,7 +61,8 @@ export const translations: { [key: string]: any } = {
 	},
 	PAGE_WELCOME: {
 		TITLE: "Welcome to ARK",
-		DESCRIPTION: "Create a new Profile or login with your MarketSquare account to get started.",
-		HAS_PROFILES: "You already have a profile, you can choose any of them",
+		HAS_NO_PROFILES: "Login with your MarketSquare account or create a new Profile to get started.",
+		HAS_PROFILES:
+			"Choose from an existing Profile below, login with your MarketSquare account or create a new Profile to get started.",
 	},
 };
