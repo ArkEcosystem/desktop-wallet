@@ -44,7 +44,7 @@ exports[`App should render mock 1`] = `
                 Welcome to ARK
               </h1>
               <div
-                class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+                class="w-64 mx-auto lg:w-128"
               >
                 <svg>
                   welcome-banner.svg
@@ -61,10 +61,10 @@ exports[`App should render mock 1`] = `
                 <p
                   class="text-sm text-theme-neutral-dark md:text-base"
                 >
-                  You already have a profile, you can choose any of them
+                  Choose from an existing Profile below, login with your MarketSquare account or create a new Profile to get started.
                 </p>
                 <div
-                  class="mt-6 mb-8 space-y-3"
+                  class="mt-8 space-y-3"
                 >
                   <div
                     class="sc-fznJRM bTIrrd"
@@ -151,7 +151,7 @@ exports[`App should render mock 1`] = `
                               class="font-semibold text-theme-neutral-dark"
                               data-testid="profile-card__user--balance"
                             >
-                              0.00001 BTC
+                              91.43089801 BTC
                             </span>
                           </div>
                         </div>
@@ -252,19 +252,10 @@ exports[`App should render mock 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-AxirZ jjvtQn border-theme-neutral-300"
-                  type="horizontal"
-                />
-                <p
-                  class="mb-4 text-sm text-theme-neutral-dark md:text-base"
-                >
-                  Create a new Profile or login with your MarketSquare account to get started.
-                </p>
-                <div
-                  class="flex flex-col md:space-x-3 md:flex-row"
+                  class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
                   <button
-                    class="sc-AxjAm ddQVWI w-full"
+                    class="sc-AxjAm ddQVWI"
                     color="primary"
                     type="button"
                   >
@@ -284,7 +275,7 @@ exports[`App should render mock 1`] = `
                     </span>
                   </button>
                   <button
-                    class="sc-AxjAm ddJBbC w-full mt-2 md:mt-0"
+                    class="sc-AxjAm ddJBbC mt-2 md:mt-0"
                     color="primary"
                     type="button"
                   >
@@ -335,13 +326,9 @@ exports[`App should render splash screen 1`] = `
           <div
             class="w-64 mx-auto lg:w-128"
           >
-            <div
-              class="ml-6"
-            >
-              <svg>
-                splash-banner.svg
-              </svg>
-            </div>
+            <svg>
+              welcome-banner.svg
+            </svg>
           </div>
           <div
             class="mt-8"
@@ -394,7 +381,7 @@ exports[`App should render splash screen 1`] = `
             </div>
           </div>
           <div
-            class="fixed left-0 right-0 flex items-center justify-center text-sm font-semibold bottom-4 text-theme-neutral-500"
+            class="fixed left-0 right-0 flex items-center justify-center text-xs font-semibold bottom-5 text-theme-neutral-500"
             data-testid="Splash__footer"
           >
             <div>
@@ -478,7 +465,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                 Welcome to ARK
               </h1>
               <div
-                class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+                class="w-64 mx-auto lg:w-128"
               >
                 <svg>
                   welcome-banner.svg
@@ -495,10 +482,10 @@ exports[`App should render welcome screen after splash screen 1`] = `
                 <p
                   class="text-sm text-theme-neutral-dark md:text-base"
                 >
-                  You already have a profile, you can choose any of them
+                  Choose from an existing Profile below, login with your MarketSquare account or create a new Profile to get started.
                 </p>
                 <div
-                  class="mt-6 mb-8 space-y-3"
+                  class="mt-8 space-y-3"
                 >
                   <div
                     class="sc-fznJRM bTIrrd"
@@ -585,7 +572,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               class="font-semibold text-theme-neutral-dark"
                               data-testid="profile-card__user--balance"
                             >
-                              0.00001 BTC
+                              91.43089801 BTC
                             </span>
                           </div>
                         </div>
@@ -686,19 +673,10 @@ exports[`App should render welcome screen after splash screen 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-AxirZ jjvtQn border-theme-neutral-300"
-                  type="horizontal"
-                />
-                <p
-                  class="mb-4 text-sm text-theme-neutral-dark md:text-base"
-                >
-                  Create a new Profile or login with your MarketSquare account to get started.
-                </p>
-                <div
-                  class="flex flex-col md:space-x-3 md:flex-row"
+                  class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
                   <button
-                    class="sc-AxjAm ddQVWI w-full"
+                    class="sc-AxjAm ddQVWI"
                     color="primary"
                     type="button"
                   >
@@ -718,7 +696,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                     </span>
                   </button>
                   <button
-                    class="sc-AxjAm ddJBbC w-full mt-2 md:mt-0"
+                    class="sc-AxjAm ddJBbC mt-2 md:mt-0"
                     color="primary"
                     type="button"
                   >

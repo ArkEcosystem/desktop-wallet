@@ -37,7 +37,45 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
           data-testid="SelectNetworkInput"
         >
           <div
+<<<<<<< HEAD
             class="sc-AxiKw sc-AxhCb kpqYkD px-4"
+=======
+            class="sc-Axmtr jzhOwR"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+            >
+              <div
+                class="sc-fzplWN exzsOf border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a network name"
+              value=""
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        >
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-0"
+            role="option"
+>>>>>>> 3.0-react
           >
             <div
               aria-label="Ark Devnet"
@@ -45,7 +83,11 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
               data-testid="SelectNetworkInput__network"
             >
               <div
+<<<<<<< HEAD
                 class="sc-AxheI dSuoOi"
+=======
+                class="sc-AxhCb dCXdPH"
+>>>>>>> 3.0-react
                 data-testid="NetworkIcon__icon"
                 height="1em"
                 width="1em"
@@ -98,9 +140,22 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
               height="26"
               width="26"
             >
+<<<<<<< HEAD
               <svg>
                 ark.svg
               </svg>
+=======
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+>>>>>>> 3.0-react
             </div>
           </div>
         </li>
@@ -122,9 +177,22 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
               height="26"
               width="26"
             >
+<<<<<<< HEAD
               <svg>
                 ark.svg
               </svg>
+=======
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  btc.svg
+                </svg>
+              </div>
+>>>>>>> 3.0-react
             </div>
           </div>
         </li>
@@ -159,7 +227,14 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
               data-testid="Avatar"
             >
               <div
+<<<<<<< HEAD
                 class="w-full h-full"
+=======
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+>>>>>>> 3.0-react
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -171,9 +246,17 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
             <div
               class="inline-block truncate align-middle"
             >
+<<<<<<< HEAD
               <span
                 class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
+=======
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+>>>>>>> 3.0-react
               >
                 D8rr7B1d6TL6p…sKp1VBMs6YUYD
               </span>
@@ -182,9 +265,16 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
               class="absolute flex items-center right-4 space-x-3"
             >
               <div
+<<<<<<< HEAD
                 class="sc-AxheI gUAFhS"
                 height="20"
                 width="20"
+=======
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+>>>>>>> 3.0-react
               >
                 <svg>
                   user.svg
@@ -225,7 +315,11 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
                 class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
               >
                 <div
+<<<<<<< HEAD
                   class="sc-AxheI gUAFhS"
+=======
+                  class="sc-AxhCb VoPpj"
+>>>>>>> 3.0-react
                   height="20"
                   width="20"
                 >
@@ -436,8 +530,14 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
                   style="transform: scale(1); cursor: pointer;"
                 >
                   <div
+<<<<<<< HEAD
                     class="sc-AxmLO eaxOeJ"
                     data-testid="Range__track__filled"
+=======
+                    class="sc-AxhCb VoPpj"
+                    height="20"
+                    width="20"
+>>>>>>> 3.0-react
                   >
                     <div
                       aria-valuemax="100"
@@ -530,11 +630,11 @@ exports[`SendTransactionForm should render 1`] = `
           id="SendTransactionForm__network-label"
         />
         <div
-          class="sc-AxgMl cZbWSE"
+          class="sc-AxheI IkGcK"
           data-testid="SelectNetworkInput"
         >
           <div
-            class="sc-AxiKw sc-AxhCb kpqYkD px-4"
+            class="sc-AxhCb sc-AxhUy jFkFxS px-4"
           >
             <div
               class="sc-fzoLsD jpdwCK border-theme-neutral-light text-theme-neutral"
@@ -572,7 +672,7 @@ exports[`SendTransactionForm should render 1`] = `
             data-testid="NetworkIcon-ARK-mainnet"
           >
             <div
-              class="sc-AxheI fmcQTe"
+              class="sc-AxiKw fubePL"
               data-testid="NetworkIcon__icon"
               height="26"
               width="26"
@@ -596,7 +696,7 @@ exports[`SendTransactionForm should render 1`] = `
             data-testid="NetworkIcon-ARK-devnet"
           >
             <div
-              class="sc-AxheI fmcQTe"
+              class="sc-AxiKw fubePL"
               data-testid="NetworkIcon__icon"
               height="26"
               width="26"
@@ -641,7 +741,7 @@ exports[`SendTransactionForm should render 1`] = `
               class="absolute flex items-center right-4 space-x-3"
             >
               <div
-                class="sc-AxheI gUAFhS"
+                class="sc-AxiKw dklFyP"
                 height="20"
                 width="20"
               >
@@ -684,7 +784,7 @@ exports[`SendTransactionForm should render 1`] = `
                 class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
               >
                 <div
-                  class="sc-AxheI gUAFhS"
+                  class="sc-AxiKw dklFyP"
                   height="20"
                   width="20"
                 >
@@ -761,7 +861,7 @@ exports[`SendTransactionForm should render 1`] = `
                     data-testid="SelectRecipient__select-contact"
                   >
                     <div
-                      class="sc-AxheI gUAFhS"
+                      class="sc-AxiKw dklFyP"
                       height="20"
                       width="20"
                     >
@@ -789,7 +889,7 @@ exports[`SendTransactionForm should render 1`] = `
                 </label>
               </div>
               <div
-                class="sc-AxgMl cZbWSE"
+                class="sc-AxheI IkGcK"
               >
                 <input
                   class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
@@ -800,7 +900,7 @@ exports[`SendTransactionForm should render 1`] = `
                   value="0"
                 />
                 <div
-                  class="sc-AxiKw sc-AxhUy QmuzF"
+                  class="sc-AxhCb sc-AxgMl jreOpL"
                 >
                   <button
                     class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
@@ -832,7 +932,7 @@ exports[`SendTransactionForm should render 1`] = `
         </label>
       </div>
       <div
-        class="sc-AxgMl cZbWSE"
+        class="sc-AxheI IkGcK"
       >
         <input
           class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
@@ -844,7 +944,7 @@ exports[`SendTransactionForm should render 1`] = `
           value=""
         />
         <div
-          class="sc-AxiKw sc-AxhUy QmuzF"
+          class="sc-AxhCb sc-AxgMl jreOpL"
         >
           <button
             class="px-4 text-theme-neutral-light focus:outline-none"
@@ -873,7 +973,7 @@ exports[`SendTransactionForm should render 1`] = `
           class="flex-1"
         >
           <div
-            class="sc-AxgMl cZbWSE"
+            class="sc-AxheI IkGcK"
           >
             <input
               class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -989,11 +1089,11 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           id="SendTransactionForm__network-label"
         />
         <div
-          class="sc-AxgMl cZbWSE"
+          class="sc-AxheI IkGcK"
           data-testid="SelectNetworkInput"
         >
           <div
-            class="sc-AxiKw sc-AxhCb kpqYkD px-4"
+            class="sc-AxhCb sc-AxhUy jFkFxS px-4"
           >
             <div
               aria-label="Ark Devnet"
@@ -1001,7 +1101,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               data-testid="SelectNetworkInput__network"
             >
               <div
-                class="sc-AxheI dSuoOi"
+                class="sc-AxiKw dzBdqj"
                 data-testid="NetworkIcon__icon"
                 height="1em"
                 width="1em"
@@ -1013,7 +1113,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             </div>
           </div>
           <span
-            class="sc-AxiKw isrMEQ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+            class="sc-AxhCb dfnXnk py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
             data-testid="SelectNetworkInput__typeahead"
           >
             Ark Devnet
@@ -1049,7 +1149,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             data-testid="NetworkIcon-ARK-mainnet"
           >
             <div
-              class="sc-AxheI fmcQTe"
+              class="sc-AxiKw fubePL"
               data-testid="NetworkIcon__icon"
               height="26"
               width="26"
@@ -1073,7 +1173,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             data-testid="NetworkIcon-ARK-devnet"
           >
             <div
-              class="sc-AxheI fmcQTe"
+              class="sc-AxiKw fubePL"
               data-testid="NetworkIcon__icon"
               height="26"
               width="26"
@@ -1138,7 +1238,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               class="absolute flex items-center right-4 space-x-3"
             >
               <div
-                class="sc-AxheI gUAFhS"
+                class="sc-AxiKw dklFyP"
                 height="20"
                 width="20"
               >
@@ -1181,7 +1281,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
                 class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
               >
                 <div
-                  class="sc-AxheI gUAFhS"
+                  class="sc-AxiKw dklFyP"
                   height="20"
                   width="20"
                 >
@@ -1269,7 +1369,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
                     data-testid="SelectRecipient__select-contact"
                   >
                     <div
-                      class="sc-AxheI gUAFhS"
+                      class="sc-AxiKw dklFyP"
                       height="20"
                       width="20"
                     >
@@ -1297,7 +1397,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
                 </label>
               </div>
               <div
-                class="sc-AxgMl cZbWSE"
+                class="sc-AxheI IkGcK"
               >
                 <input
                   class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
@@ -1308,7 +1408,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
                   value="80"
                 />
                 <div
-                  class="sc-AxiKw sc-AxhUy QmuzF"
+                  class="sc-AxhCb sc-AxgMl jreOpL"
                 >
                   <button
                     class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
@@ -1340,7 +1440,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
         </label>
       </div>
       <div
-        class="sc-AxgMl cZbWSE"
+        class="sc-AxheI IkGcK"
       >
         <input
           class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
@@ -1352,7 +1452,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           value=""
         />
         <div
-          class="sc-AxiKw sc-AxhUy QmuzF"
+          class="sc-AxhCb sc-AxgMl jreOpL"
         >
           <button
             class="px-4 text-theme-neutral-light focus:outline-none"
@@ -1381,7 +1481,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           class="flex-1"
         >
           <div
-            class="sc-AxgMl cZbWSE"
+            class="sc-AxheI IkGcK"
           >
             <input
               class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "

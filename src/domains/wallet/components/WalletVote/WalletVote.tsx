@@ -27,13 +27,14 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 				<h2 className="font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE")}</h2>
 				<CollapseToggleButton
 					data-testid="WalletVote__toggle"
+					className="-mr-4 text-theme-neutral"
 					isOpen={isOpen}
 					onClick={() => setIsOpen(!isOpen)}
 				/>
 			</div>
 
 			<Collapse isOpen={isOpen}>
-				<div className="px-1 py-4 grid grid-flow-row row-gap-6">
+				<div className="py-4 grid grid-flow-row row-gap-6">
 					{hasNoVotes ? (
 						<div data-testid="WalletVote__empty" className="flex items-center pr-8 space-x-4">
 							<div className="flex items-center -space-x-2">
