@@ -83,7 +83,7 @@ describe("Welcome", () => {
 			</EnvironmentProvider>,
 		);
 
-		expect(getByText(translations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.HAS_NO_PROFILES)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -92,7 +92,7 @@ describe("Welcome", () => {
 	it("should change route to create profile", () => {
 		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
 
-		expect(getByText(translations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.HAS_NO_PROFILES)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
