@@ -27,7 +27,7 @@ beforeEach(() => {
 		.persist();
 });
 
-afterEach(() => nock.cleanAll());
+// afterEach(() => nock.cleanAll());
 
 describe("Dashboard", () => {
 	it("should render", async () => {
