@@ -201,7 +201,7 @@ export const TransactionSend = () => {
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 		register("smartbridge");
-	}, []);
+	}, [register]);
 
 	const submitForm = async () => {
 		const { fee, mnemonic, recipients, senderAddress, smartbridge } = getValues();
@@ -234,7 +234,7 @@ export const TransactionSend = () => {
 
 				handleNext();
 			} catch (error) {
-				console.log("Could not get transaction: ", error);
+				// eslint-disable no-empty
 			}
 		}, 500);
 	};

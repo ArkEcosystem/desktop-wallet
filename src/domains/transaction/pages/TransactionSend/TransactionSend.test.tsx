@@ -117,7 +117,7 @@ describe("Transaction Send", () => {
 		);
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FifthStep transaction={transaction} />
+				<FifthStep transaction={transaction!} />
 			</FormContext>,
 		);
 
@@ -147,7 +147,7 @@ describe("Transaction Send", () => {
 			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
 		});
 
-		const { asFragment, getAllByTestId, getByTestId } = rendered!;
+		const { asFragment, getAllByTestId, getByTestId, rerender } = rendered!;
 
 		// Step 1
 		// Select network
@@ -176,14 +176,6 @@ describe("Transaction Send", () => {
 				profile.wallets().values()[0].address(),
 			),
 		);
-
-		// await act(async () =>
-		// 	rerender(
-		// 		<Form context={form}>
-		// 			<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
-		// 		</Form>,
-		// 	),
-		// );
 
 		// Select recipient
 		await act(async () =>
@@ -244,55 +236,50 @@ describe("Transaction Send", () => {
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
 
-		// TransactionService.prototype.signTransfer
 		const signMock = jest
 			.spyOn(TransactionService.prototype, "signTransfer")
-			.mockReturnValue(transactionFixture.data.id);
+			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
 
-		fireEvent.click(getByTestId("TransactionSend__button--submit"));
-		await waitFor(() => expect(getByTestId("TransactionSend__step--fifth")).toBeTruthy());
-		expect(container).toHaveTextContent(transactionFixture.data.id);
+		await act(async () => fireEvent.click(getByTestId("TransactionSend__button--submit")));
 
-		// const copyMock = jest.fn();
-		// const clipboardOriginal = navigator.clipboard;
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e77…2f1b89abb49877");
 
-		// // @ts-ignore
-		// navigator.clipboard = { writeText: copyMock };
+		// Copy Transaction
+		const copyMock = jest.fn();
+		const clipboardOriginal = navigator.clipboard;
 
-		// await fireEvent.click(getByTestId(`TransactionSend__button--copy`));
-		// await waitFor(() => expect(copyMock).toHaveBeenCalledWith(JSON.stringify(signedMessage)));
+		// @ts-ignore
+		navigator.clipboard = { writeText: copyMock };
 
-		// // @ts-ignore
-		// navigator.clipboard = clipboardOriginal;
+		await fireEvent.click(getByTestId(`TransactionSend__button--copy`));
 
-		signMock.mcokRestore();
-		broadcastMock.mcokRestore();
+		await waitFor(() =>
+			expect(copyMock).toHaveBeenCalledWith(
+				JSON.stringify(
+					{
+						id: transactionFixture.data.id,
+						type: "transfer",
+						timestamp: transactionFixture.data.timestamp.human,
+						confirmations: {},
+						sender: transactionFixture.data.sender,
+						recipient: transactionFixture.data.recipient,
+						amount: {},
+						fee: {},
+					},
+					null,
+					2,
+				),
+			),
+		);
+
+		// @ts-ignore
+		navigator.clipboard = clipboardOriginal;
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
 
 		await waitFor(() => expect(rendered.container).toMatchSnapshot());
-		// expect(asFragment()).toMatchSnapshot();
-
-		// await act(async () => {
-		// 	// 1st step form
-		// 	const submit1st = getByTestId("send-transaction-click-submit");
-		// 	fireEvent.click(submit1st);
-
-		// 	const continueButton = getByTestId(`TransactionSend__button--continue`);
-		// 	expect(getByTestId(`TransactionSend__step--second`)).toBeTruthy();
-
-		// 	fireEvent.click(continueButton);
-		// 	expect(getByTestId(`TransactionSend__step--third`)).toBeTruthy();
-
-		// 	fireEvent.click(continueButton);
-		// 	expect(getByTestId(`TransactionSend__step--fourth`)).toBeTruthy();
-
-		// 	// Back
-		// 	fireEvent.click(getByTestId(`TransactionSend__button--back`));
-		// 	expect(getByTestId(`TransactionSend__step--third`)).toBeTruthy();
-
-		// 	fireEvent.click(continueButton);
-		// 	fireEvent.click(continueButton);
-		// 	await waitFor(() => expect(getByTestId(`TransactionSend__button--back-to-wallet`)).toBeTruthy());
-		// });
 	});
 });
