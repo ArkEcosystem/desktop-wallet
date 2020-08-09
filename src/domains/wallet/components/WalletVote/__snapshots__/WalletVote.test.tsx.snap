@@ -14,7 +14,7 @@ exports[`WalletVote should render 1`] = `
         My Vote
       </h2>
       <button
-        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
         data-testid="WalletVote__toggle"
       >
         <span>
@@ -41,7 +41,7 @@ exports[`WalletVote should render 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="px-1 py-4 grid grid-flow-row row-gap-6"
+        class="py-4 grid grid-flow-row row-gap-6"
       >
         <div
           class="flex items-center justify-between"
@@ -391,7 +391,7 @@ exports[`WalletVote should render without votes 1`] = `
         My Vote
       </h2>
       <button
-        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
         data-testid="WalletVote__toggle"
       >
         <span>
@@ -418,7 +418,7 @@ exports[`WalletVote should render without votes 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="px-1 py-4 grid grid-flow-row row-gap-6"
+        class="py-4 grid grid-flow-row row-gap-6"
       >
         <div
           class="flex items-center pr-8 space-x-4"

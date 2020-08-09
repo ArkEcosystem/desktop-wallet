@@ -27,7 +27,7 @@ describe("App", () => {
 			await new Promise((resolve) => setTimeout(resolve, 2000));
 		});
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 			expect(container).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
@@ -44,7 +44,7 @@ describe("App", () => {
 			await new Promise((resolve) => setTimeout(resolve, 2000));
 		});
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 			expect(container).toBeTruthy();
 

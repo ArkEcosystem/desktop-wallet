@@ -8,8 +8,7 @@ import { useTranslation } from "react-i18next";
 
 import { version } from "../../../../../package.json";
 
-const { SplashBanner } = images.splash.pages.splash;
-const commonAssets = images.common;
+const { ARKLogo, WelcomeBanner } = images.common;
 
 export const Splash = ({ year }: any) => {
 	const { t } = useTranslation();
@@ -20,9 +19,7 @@ export const Splash = ({ year }: any) => {
 		<Page navbarStyle="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
 				<div className="w-64 mx-auto lg:w-128">
-					<div className="ml-6">
-						<SplashBanner />
-					</div>
+					<WelcomeBanner />
 				</div>
 
 				<div data-testid="Splash__text" className="mt-8">
@@ -42,7 +39,7 @@ export const Splash = ({ year }: any) => {
 				</div>
 				<div
 					data-testid="Splash__footer"
-					className="fixed left-0 right-0 flex items-center justify-center text-sm font-semibold bottom-4 text-theme-neutral-500"
+					className="fixed left-0 right-0 flex items-center justify-center text-xs font-semibold bottom-5 text-theme-neutral-500"
 				>
 					<div>
 						{currentYear} {t("SPLASH.COPYRIGHT")}
@@ -51,7 +48,7 @@ export const Splash = ({ year }: any) => {
 					<div>{t("SPLASH.RIGHTS")}</div>
 					<Divider type="vertical" />
 					<img
-						src={commonAssets.ARKLogo}
+						src={ARKLogo}
 						className="w-4 h-4 p-px mr-2 rounded-sm bg-theme-neutral-500"
 						alt={t("SPLASH.BRAND")}
 					/>
