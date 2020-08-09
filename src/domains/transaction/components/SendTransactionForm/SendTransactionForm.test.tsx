@@ -26,7 +26,7 @@ const renderPage = () => {
 	return {
 		form: form.current,
 		rendered: render(
-			<Form context={form.current}>
+			<Form context={form.current} onSubmit={() => void 0}>
 				<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
 			</Form>,
 		),
@@ -85,7 +85,7 @@ describe("SendTransactionForm", () => {
 
 		await act(async () =>
 			rerender(
-				<Form context={form}>
+				<Form context={form} onSubmit={() => void 0}>
 					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
 				</Form>,
 			),
@@ -104,8 +104,10 @@ describe("SendTransactionForm", () => {
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		});
 
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(
-			profile.contacts().values()[0].addresses().values()[0].address(),
+		await waitFor(() =>
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(
+				profile.contacts().values()[0].addresses().values()[0].address(),
+			),
 		);
 
 		// Amount
@@ -131,7 +133,7 @@ describe("SendTransactionForm", () => {
 		const { form, rendered } = renderPage();
 		const { getByTestId, getAllByTestId, rerender } = rendered;
 
-		const consoleSpy = jest.spyOn(console, "error").mockImplementation();
+		const consoleSpy = jest.spyOn(console, "error"); //.mockImplementation();
 
 		// Select network
 		const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
@@ -172,7 +174,7 @@ describe("SendTransactionForm", () => {
 
 		await act(async () =>
 			rerender(
-				<Form context={form}>
+				<Form context={form} onSubmit={() => void 0}>
 					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
 				</Form>,
 			),
@@ -180,5 +182,7 @@ describe("SendTransactionForm", () => {
 
 		await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
 		await waitFor(() => expect(rendered.container).toMatchSnapshot());
+
+		consoleSpy.mockRestore();
 	});
 });

@@ -55,12 +55,12 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile }: Send
 
 			setFeeOptions({
 				last: undefined,
-				min: transferFees.min,
-				max: transferFees.max,
-				average: transferFees.avg,
+				min: transferFees!.min,
+				max: transferFees!.max,
+				average: transferFees!.avg,
 			});
 
-			setValue("fee", transferFees.avg, true);
+			setValue("fee", transferFees!.avg, true);
 		} catch (error) {
 			console.error("Could not load fees: ", error);
 		}
