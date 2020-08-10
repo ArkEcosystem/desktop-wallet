@@ -370,8 +370,13 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="website"
+                                required=""
                               >
                                 Website
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <input
                                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -529,8 +534,13 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
+                                required=""
                               >
                                 Transaction Fee
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <div
                                 class="flex space-x-2"
@@ -1633,8 +1643,13 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
+                            required=""
                           >
                             Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzozJi OgXfh max-w-20"
@@ -1673,8 +1688,13 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
+                            required=""
                           >
                             2nd Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzozJi OgXfh max-w-20"
@@ -2820,8 +2840,13 @@ exports[`UpdateRegistration should should go back 1`] = `
                                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="website"
+                                required=""
                               >
                                 Website
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <input
                                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -2979,8 +3004,13 @@ exports[`UpdateRegistration should should go back 1`] = `
                                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
+                                required=""
                               >
                                 Transaction Fee
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <div
                                 class="flex space-x-2"

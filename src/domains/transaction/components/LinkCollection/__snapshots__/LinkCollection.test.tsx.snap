@@ -49,8 +49,13 @@ exports[`LinkCollection should add and remove links 1`] = `
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Add media"
+                required=""
               >
                 Add media
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
             </div>
             <div
@@ -116,8 +121,13 @@ exports[`LinkCollection should add and remove links 1`] = `
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Link"
+                required=""
               >
                 Link
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
             </div>
             <div
@@ -329,8 +339,13 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Add media"
+                required=""
               >
                 Add media
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
             </div>
             <div
@@ -394,8 +409,13 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Link"
+                required=""
               >
                 Link
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
             </div>
             <div

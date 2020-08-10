@@ -21,8 +21,13 @@ exports[`SendTransactionForm should render 1`] = `
             data-testid="FormLabel"
             for="network"
             label="Network"
+            required=""
           >
             Network
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -315,9 +320,21 @@ exports[`SendTransactionForm should render 1`] = `
             role="option"
           >
             <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
+              aria-label="Lisk Betanet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-betanet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
           </li>
           <li
             aria-selected="false"
@@ -327,9 +344,21 @@ exports[`SendTransactionForm should render 1`] = `
             role="option"
           >
             <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
+              aria-label="Lisk"
+              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
+              data-testid="NetworkIcon-LSK-mainnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
           </li>
           <li
             aria-selected="false"
@@ -339,9 +368,21 @@ exports[`SendTransactionForm should render 1`] = `
             role="option"
           >
             <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
+              aria-label="Lisk Testnet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-testnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
           </li>
           <li
             aria-selected="false"
@@ -375,21 +416,9 @@ exports[`SendTransactionForm should render 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Betanet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-betanet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
           <li
             aria-selected="false"
@@ -399,21 +428,9 @@ exports[`SendTransactionForm should render 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk"
-              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
-              data-testid="NetworkIcon-LSK-mainnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
           <li
             aria-selected="false"
@@ -423,21 +440,9 @@ exports[`SendTransactionForm should render 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Testnet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-testnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
           <li
             aria-selected="false"
@@ -499,66 +504,6 @@ exports[`SendTransactionForm should render 1`] = `
               data-testid="NetworkIcon__placeholder"
             />
           </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="SendTransactionForm__network-item-30"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="SendTransactionForm__network-item-31"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="SendTransactionForm__network-item-32"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="SendTransactionForm__network-item-33"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="SendTransactionForm__network-item-34"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
         </ul>
       </fieldset>
       <fieldset
@@ -572,8 +517,13 @@ exports[`SendTransactionForm should render 1`] = `
             data-testid="FormLabel"
             for="sender"
             label="Sender"
+            required=""
           >
             Sender
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -684,8 +634,13 @@ exports[`SendTransactionForm should render 1`] = `
                     data-testid="FormLabel"
                     for="recipientAddress"
                     label="Recipient"
+                    required=""
                   >
                     Recipient
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
                   </label>
                 </div>
                 <div>
@@ -735,8 +690,13 @@ exports[`SendTransactionForm should render 1`] = `
                     data-testid="FormLabel"
                     for="amount"
                     label="Amount"
+                    required=""
                   >
                     Amount
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
                   </label>
                 </div>
                 <div
@@ -776,8 +736,13 @@ exports[`SendTransactionForm should render 1`] = `
             data-testid="FormLabel"
             for="smartbridge"
             label="Smartbridge"
+            required=""
           >
             Smartbridge
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -819,8 +784,13 @@ exports[`SendTransactionForm should render 1`] = `
                 data-testid="FormLabel"
                 for="fee"
                 label="Fee ARK"
+                required=""
               >
                 Fee ARK
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
               <div
                 class="sc-Axmtr jzhOwR"
@@ -951,8 +921,13 @@ exports[`SendTransactionForm should set available amount 1`] = `
             data-testid="FormLabel"
             for="network"
             label="Network"
+            required=""
           >
             Network
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -1009,8 +984,13 @@ exports[`SendTransactionForm should set available amount 1`] = `
             data-testid="FormLabel"
             for="sender"
             label="Sender"
+            required=""
           >
             Sender
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -1121,8 +1101,13 @@ exports[`SendTransactionForm should set available amount 1`] = `
                     data-testid="FormLabel"
                     for="recipientAddress"
                     label="Recipient"
+                    required=""
                   >
                     Recipient
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
                   </label>
                 </div>
                 <div>
@@ -1172,8 +1157,13 @@ exports[`SendTransactionForm should set available amount 1`] = `
                     data-testid="FormLabel"
                     for="amount"
                     label="Amount"
+                    required=""
                   >
                     Amount
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
                   </label>
                 </div>
                 <div
@@ -1213,8 +1203,13 @@ exports[`SendTransactionForm should set available amount 1`] = `
             data-testid="FormLabel"
             for="smartbridge"
             label="Smartbridge"
+            required=""
           >
             Smartbridge
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -1256,8 +1251,13 @@ exports[`SendTransactionForm should set available amount 1`] = `
                 data-testid="FormLabel"
                 for="fee"
                 label="Fee ARK"
+                required=""
               >
                 Fee ARK
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
               <div
                 class="sc-Axmtr jzhOwR"
