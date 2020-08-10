@@ -4,6 +4,8 @@ on:
     push:
         branches:
             - "3.0-react"
+    pull_request:
+        types: [ready_for_review, synchronize, opened]
 
 jobs:
     linux:
