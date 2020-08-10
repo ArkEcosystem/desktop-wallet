@@ -3,7 +3,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { BTC } from "@arkecosystem/platform-sdk-btc";
 import { EOS } from "@arkecosystem/platform-sdk-eos";
-import { ETH } from "@arkecosystem/platform-sdk-eth";
+// import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
@@ -281,11 +281,11 @@ export const availableNetworksMock: NetworkData[] = [
 	new NetworkData(EOS.manifest.name, EOS.manifest.networks["wax.mainnet"]),
 	new NetworkData(EOS.manifest.name, EOS.manifest.networks["worbli.mainnet"]),
 	new NetworkData(EOS.manifest.name, EOS.manifest.networks["worbli.testnet"]),
-	new NetworkData(ETH.manifest.name, ETH.manifest.networks.goerli),
-	new NetworkData(ETH.manifest.name, ETH.manifest.networks.kovan),
-	new NetworkData(ETH.manifest.name, ETH.manifest.networks.mainnet),
-	new NetworkData(ETH.manifest.name, ETH.manifest.networks.rinkeby),
-	new NetworkData(ETH.manifest.name, ETH.manifest.networks.ropsten),
+	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.goerli),
+	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.kovan),
+	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.mainnet),
+	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.rinkeby),
+	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.ropsten),
 	new NetworkData(LSK.manifest.name, LSK.manifest.networks.betanet),
 	new NetworkData(LSK.manifest.name, LSK.manifest.networks.mainnet),
 	new NetworkData(LSK.manifest.name, LSK.manifest.networks.testnet),

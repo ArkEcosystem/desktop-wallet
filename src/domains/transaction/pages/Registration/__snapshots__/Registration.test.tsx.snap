@@ -619,9 +619,21 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Betanet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-betanet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -631,9 +643,21 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk"
+                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
+                              data-testid="NetworkIcon-LSK-mainnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -643,9 +667,21 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Testnet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-testnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -679,21 +715,9 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Betanet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-betanet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -703,21 +727,9 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk"
-                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
-                              data-testid="NetworkIcon-LSK-mainnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -727,21 +739,9 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Testnet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-testnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -796,66 +796,6 @@ exports[`Registration should render 1st step 1`] = `
                             class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-29"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-30"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-31"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-32"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-33"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-34"
                             role="option"
                           >
                             <div
@@ -4111,9 +4051,21 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Betanet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-betanet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -4123,9 +4075,21 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk"
+                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
+                              data-testid="NetworkIcon-LSK-mainnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -4135,9 +4099,21 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Testnet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-testnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -4171,21 +4147,9 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Betanet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-betanet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -4195,21 +4159,9 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk"
-                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
-                              data-testid="NetworkIcon-LSK-mainnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -4219,21 +4171,9 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Testnet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-testnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -4288,66 +4228,6 @@ exports[`Registration should select registration type 1`] = `
                             class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-29"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-30"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-31"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-32"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-33"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-34"
                             role="option"
                           >
                             <div
@@ -5140,9 +5020,21 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Betanet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-betanet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -5152,9 +5044,21 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk"
+                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
+                              data-testid="NetworkIcon-LSK-mainnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -5164,9 +5068,21 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Testnet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-testnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -5200,21 +5116,9 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Betanet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-betanet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -5224,21 +5128,9 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk"
-                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
-                              data-testid="NetworkIcon-LSK-mainnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -5248,21 +5140,9 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Testnet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-testnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -5317,66 +5197,6 @@ exports[`Registration should should go back 1`] = `
                             class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-29"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-30"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-31"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-32"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-33"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-34"
                             role="option"
                           >
                             <div
