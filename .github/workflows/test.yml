@@ -10,7 +10,7 @@ on:
 
 jobs:
     unit:
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         strategy:
             matrix:
@@ -37,11 +37,14 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
-            - name: Update System
-              run: sudo apt-get update
+            # - name: Update System
+            #   run: sudo apt-get update
 
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+            # - name: Install (Ledger Requirements)
+            #   run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install TOR
+              run: brew install tor && tor &
 
             - name: Install (Yarn)
               run: yarn install --frozen-lockfile
