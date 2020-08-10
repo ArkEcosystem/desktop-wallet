@@ -126,12 +126,12 @@ export const SelectNetwork = ({
 					})}
 				/>
 			</div>
-			<ul {...getMenuProps()}>
+			<ul {...getMenuProps()} className="my-6 grid grid-cols-6 gap-6">
 				{items.map((item, index) => (
 					<li
 						data-testid="SelectNetwork__NetworkIcon--container"
 						key={index}
-						className="inline-block pt-6 mr-6 cursor-pointer"
+						className="inline-block cursor-pointer"
 						{...getItemProps({ item, index, disabled })}
 					>
 						<NetworkIcon

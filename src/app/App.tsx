@@ -1,6 +1,16 @@
+// import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
+// import { ATOM } from "@arkecosystem/platform-sdk-atom";
+// import { BTC } from "@arkecosystem/platform-sdk-btc";
+// import { EOS } from "@arkecosystem/platform-sdk-eos";
+// import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
+// import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+// import { TRX } from "@arkecosystem/platform-sdk-trx";
+// import { XLM } from "@arkecosystem/platform-sdk-xlm";
+// import { XMR } from "@arkecosystem/platform-sdk-xmr";
+// import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import React, { useLayoutEffect, useState } from "react";
@@ -53,7 +63,27 @@ export const App = () => {
 
 	/* istanbul ignore next */
 	const storage = __DEV__ ? new StubStorage() : "indexeddb";
-	const [env] = useState(() => new Environment({ coins: { ARK, LSK }, httpClient, storage }));
+	const [env] = useState(
+		() =>
+			new Environment({
+				coins: {
+					// ADA,
+					ARK,
+					// ATOM,
+					// BTC,
+					// EOS,
+					// ETH,
+					LSK,
+					// NEO,
+					// TRX,
+					// XLM,
+					// XMR,
+					// XRP,
+				},
+				httpClient,
+				storage,
+			}),
+	);
 
 	return (
 		<I18nextProvider i18n={i18n}>
