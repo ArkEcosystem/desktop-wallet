@@ -1,4 +1,4 @@
-import { ADA } from "@arkecosystem/platform-sdk-ada";
+// import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { BTC } from "@arkecosystem/platform-sdk-btc";
@@ -75,12 +75,12 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			textClass: "text-theme-warning-400",
 			iconName: "Bitcoin",
 		},
-		testnet: {
-			displayName: "Bitcoin Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
+		// testnet: {
+		// 	displayName: "Bitcoin Testnet",
+		// 	borderClass: "border-theme-primary-500",
+		// 	textClass: "text-theme-primary-dark",
+		// 	iconName: "Ripple",
+		// },
 	},
 	// EOS: {
 	// 	"eos.mainnet": {
@@ -263,7 +263,7 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 };
 
 export const availableNetworksMock: NetworkData[] = [
-	new NetworkData(ADA.manifest.name, ADA.manifest.networks.mainnet),
+	// new NetworkData(ADA.manifest.name, ADA.manifest.networks.mainnet),
 	new NetworkData(ARK.manifest.name, ARK.manifest.networks.devnet),
 	new NetworkData(ARK.manifest.name, ARK.manifest.networks.mainnet),
 	new NetworkData(ATOM.manifest.name, ATOM.manifest.networks["cosmos.mainnet"]),
