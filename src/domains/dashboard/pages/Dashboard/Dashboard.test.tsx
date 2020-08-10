@@ -27,8 +27,6 @@ beforeEach(() => {
 		.persist();
 });
 
-afterEach(() => nock.cleanAll());
-
 describe("Dashboard", () => {
 	it("should render", async () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(

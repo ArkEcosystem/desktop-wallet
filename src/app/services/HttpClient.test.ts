@@ -5,14 +5,10 @@ import { HttpClient } from "./HttpClient";
 let subject: HttpClient;
 
 beforeEach(() => {
-	nock.disableNetConnect();
-
-	nock.enableNetConnect((host: string) => host.includes("ipinfo.io"));
+	nock.enableNetConnect();
 
 	subject = new HttpClient(0);
 });
-
-afterEach(() => nock.cleanAll());
 
 describe("HttpClient", () => {
 	it("should get with params", async () => {
