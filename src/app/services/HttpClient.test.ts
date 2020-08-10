@@ -98,7 +98,7 @@ describe("HttpClient", () => {
 
 	it("should connect with TOR", async () => {
 		// We want to send real requests to ensure that the remote host detects different IPs.
-		nock.enableNetConnect();
+		nock.enableNetConnect("ipinfo.io");
 
 		const realAddress = await subject.get("https://ipinfo.io");
 		const newAddresses = await Promise.all([

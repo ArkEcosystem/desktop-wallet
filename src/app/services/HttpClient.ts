@@ -80,6 +80,7 @@ export class HttpClient extends Http.Request {
 					statusCode: response?.status,
 				});
 			} catch (error) {
+				console.log(error);
 				return new Http.Response(error.response, error);
 			}
 		});

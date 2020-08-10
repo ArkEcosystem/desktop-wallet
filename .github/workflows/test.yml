@@ -44,7 +44,10 @@ jobs:
             #   run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
             - name: Install TOR
-              run: brew install tor && tor &
+              run: brew install tor
+
+            - name: Run TOR
+              run: brew services start tor
 
             - name: Install (Yarn)
               run: yarn install --frozen-lockfile
@@ -52,13 +55,13 @@ jobs:
             - name: Test
               run: yarn test:coverage --maxWorkers=4 --coverageDirectory .coverage/unit
 
-            - name: Codecov
-              uses: codecov/codecov-action@v1
-              with:
-                  token: ${{ secrets.CODECOV_TOKEN }}
-                  file: .coverage/unit/lcov.info
-                  flags: unit
-                  fail_ci_if_error: true
+            # - name: Codecov
+            #   uses: codecov/codecov-action@v1
+            #   with:
+            #       token: ${{ secrets.CODECOV_TOKEN }}
+            #       file: .coverage/unit/lcov.info
+            #       flags: unit
+            #       fail_ci_if_error: true
 
     e2e:
         runs-on: ubuntu-latest
