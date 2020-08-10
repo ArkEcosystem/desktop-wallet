@@ -26,12 +26,15 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coin, 
 	);
 
 	const highlightLink = (link: string, text: string) => {
-		const parts = [...text.split(link), link];
+		const parts = text.split(link);
 
-		const renderTextLink = (part: string, index: number) =>
-			part.match(link) ? renderLink(part, index) : <span key={index}>{part}</span>;
+		return parts.reduce<any>((acc: any[], current: any, index: number) => {
+			if (!current) return acc;
 
-		return <>{parts.map(renderTextLink)}</>;
+			acc.push(<span key={index}>{current}</span>);
+			acc.push(renderLink(link, index + 1));
+			return acc;
+		}, []);
 	};
 
 	return (
