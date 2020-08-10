@@ -322,8 +322,13 @@ exports[`ImportWallet should go to previous step 1`] = `
                             data-testid="FormLabel"
                             for="network"
                             label="Network"
+                            required=""
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -766,8 +771,13 @@ exports[`ImportWallet should import by address 1`] = `
                             data-testid="FormLabel"
                             for="network"
                             label="Network"
+                            required=""
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -1210,8 +1220,13 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                             data-testid="FormLabel"
                             for="network"
                             label="Network"
+                            required=""
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -1374,8 +1389,13 @@ exports[`ImportWallet should render 1st step 1`] = `
             data-testid="FormLabel"
             for="network"
             label="Network"
+            required=""
           >
             Network
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -1550,8 +1570,13 @@ exports[`ImportWallet should render 2st step 1`] = `
           data-testid="FormLabel"
           for="passphrase"
           label="Your Passphrase"
+          required=""
         >
           Your Passphrase
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
         <div
           class="sc-Axmtr jzhOwR max-w-20"
@@ -1910,8 +1935,13 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                             data-testid="FormLabel"
                             for="network"
                             label="Network"
+                            required=""
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div

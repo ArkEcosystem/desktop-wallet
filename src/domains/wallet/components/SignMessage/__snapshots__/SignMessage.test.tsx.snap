@@ -65,8 +65,13 @@ exports[`SignMessage should render 1`] = `
                 data-testid="FormLabel"
                 for="signatory-address"
                 label="Signatory"
+                required=""
               >
                 Signatory
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
               <div
                 class="relative"
@@ -115,8 +120,13 @@ exports[`SignMessage should render 1`] = `
                 data-testid="FormLabel"
                 for="message"
                 label="Message"
+                required=""
               >
                 Message
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
               <input
                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -133,8 +143,13 @@ exports[`SignMessage should render 1`] = `
                 data-testid="FormLabel"
                 for="mnemonic"
                 label="Your Passphrase"
+                required=""
               >
                 Your Passphrase
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
               <div
                 class="sc-fzozJi OgXfh max-w-20"
@@ -259,8 +274,13 @@ exports[`SignMessage should sign message 1`] = `
                 data-testid="FormLabel"
                 for="signatory-address"
                 label="Signatory"
+                required=""
               >
                 Signatory
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
               <div
                 class="relative"
@@ -309,8 +329,13 @@ exports[`SignMessage should sign message 1`] = `
                 data-testid="FormLabel"
                 for="message"
                 label="Message"
+                required=""
               >
                 Message
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
               <input
                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -327,8 +352,13 @@ exports[`SignMessage should sign message 1`] = `
                 data-testid="FormLabel"
                 for="mnemonic"
                 label="Your Passphrase"
+                required=""
               >
                 Your Passphrase
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
               <div
                 class="sc-fzozJi OgXfh max-w-20"
