@@ -370,7 +370,7 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
                         </div>
                         <ul
                           aria-labelledby="CreateWallet__network-label"
-                          class="grid grid-cols-6 gap-6 my-6"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="CreateWallet__network-menu"
                           role="listbox"
                         >
@@ -831,7 +831,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                         </div>
                         <ul
                           aria-labelledby="CreateWallet__network-label"
-                          class="grid grid-cols-6 gap-6 my-6"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="CreateWallet__network-menu"
                           role="listbox"
                         >
@@ -1292,7 +1292,7 @@ exports[`CreateWallet should render 1`] = `
                         </div>
                         <ul
                           aria-labelledby="CreateWallet__network-label"
-                          class="grid grid-cols-6 gap-6 my-6"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="CreateWallet__network-menu"
                           role="listbox"
                         >
@@ -1465,7 +1465,7 @@ exports[`CreateWallet should render 1st step 1`] = `
         </div>
         <ul
           aria-labelledby="CreateWallet__network-label"
-          class="grid grid-cols-6 gap-6 my-6"
+          class="my-6 grid grid-cols-6 gap-6"
           id="CreateWallet__network-menu"
           role="listbox"
         >

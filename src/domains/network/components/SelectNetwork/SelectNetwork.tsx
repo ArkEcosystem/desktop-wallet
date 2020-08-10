@@ -126,7 +126,7 @@ export const SelectNetwork = ({
 					})}
 				/>
 			</div>
-			<ul {...getMenuProps()} className="grid grid-cols-6 gap-6 my-6">
+			<ul {...getMenuProps()} className="my-6 grid grid-cols-6 gap-6">
 				{items.map((item, index) => (
 					<li
 						data-testid="SelectNetwork__NetworkIcon--container"

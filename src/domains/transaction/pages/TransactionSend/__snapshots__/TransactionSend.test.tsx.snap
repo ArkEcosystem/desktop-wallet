@@ -371,6 +371,7 @@ exports[`Transaction Send should navigate between teps 1`] = `
                             </div>
                             <ul
                               aria-labelledby="SendTransactionForm__network-label"
+                              class="my-6 grid grid-cols-6 gap-6"
                               id="SendTransactionForm__network-menu"
                               role="listbox"
                             />
@@ -838,6 +839,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             </div>
             <ul
               aria-labelledby="SendTransactionForm__network-label"
+              class="my-6 grid grid-cols-6 gap-6"
               id="SendTransactionForm__network-menu"
               role="listbox"
             />
