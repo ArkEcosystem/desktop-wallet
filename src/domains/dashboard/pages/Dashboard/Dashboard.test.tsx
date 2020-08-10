@@ -41,7 +41,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -58,7 +58,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
 
 		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
 
@@ -98,7 +98,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
 
 		act(() => {
 			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
@@ -123,7 +123,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -139,7 +139,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -155,7 +155,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
 
 		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
@@ -183,7 +183,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
 
 		act(() => {
 			fireEvent.click(getByText("Import"));
@@ -205,7 +205,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
 
 		fireEvent.click(getByText("Create"));
 
@@ -224,7 +224,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(10));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
 		await waitFor(() => expect(getByTestId("transactions__fetch-more-button")).toBeInTheDocument());
 
 		act(() => {
@@ -233,7 +233,7 @@ describe("Dashboard", () => {
 
 		await waitFor(
 			() => {
-				expect(getAllByTestId("TransactionRow")).toHaveLength(20);
+				expect(getAllByTestId("TransactionRow")).toHaveLength(40);
 			},
 			{ timeout: 2000 },
 		);
