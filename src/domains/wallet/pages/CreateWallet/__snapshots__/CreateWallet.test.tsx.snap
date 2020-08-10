@@ -369,12 +369,13 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
                         </div>
                         <ul
                           aria-labelledby="CreateWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="CreateWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-0"
                             role="option"
@@ -398,7 +399,7 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-1"
                             role="option"
@@ -828,12 +829,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                         </div>
                         <ul
                           aria-labelledby="CreateWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="CreateWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-0"
                             role="option"
@@ -857,7 +859,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-1"
                             role="option"
@@ -1287,12 +1289,13 @@ exports[`CreateWallet should render 1`] = `
                         </div>
                         <ul
                           aria-labelledby="CreateWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="CreateWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-0"
                             role="option"
@@ -1316,7 +1319,7 @@ exports[`CreateWallet should render 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-1"
                             role="option"
@@ -1458,12 +1461,13 @@ exports[`CreateWallet should render 1st step 1`] = `
         </div>
         <ul
           aria-labelledby="CreateWallet__network-label"
+          class="my-6 grid grid-cols-6 gap-6"
           id="CreateWallet__network-menu"
           role="listbox"
         >
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="CreateWallet__network-item-0"
             role="option"
@@ -1487,7 +1491,7 @@ exports[`CreateWallet should render 1st step 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="CreateWallet__network-item-1"
             role="option"
