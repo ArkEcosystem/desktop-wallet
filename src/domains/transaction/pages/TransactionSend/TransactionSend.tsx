@@ -187,6 +187,7 @@ export const TransactionSend = () => {
 	const [transaction, setTransaction] = useState<Contracts.TransactionData>(
 		(null as unknown) as Contracts.TransactionData,
 	);
+	// eslint-disable-next-line
 	const [_, copy] = useClipboard({
 		resetAfter: 1000,
 	});
