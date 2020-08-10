@@ -9,7 +9,7 @@ test("should import a wallet by mnemonic", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
-	// Navigate to create page
+	// Navigate to import page
 	await t.click(Selector("button").withExactText(translations().COMMON.IMPORT));
 	await t
 		.expect(Selector("div").withText(translations().WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
@@ -36,7 +36,7 @@ test("should import a wallet by address", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
-	// Navigate to create page
+	// Navigate to import page
 	await t.click(Selector("button").withExactText(translations().COMMON.IMPORT));
 	await t
 		.expect(Selector("div").withText(translations().WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
@@ -90,4 +90,40 @@ test("should show an error message for invalid address", async (t) => {
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
 	await t.expect(Selector("fieldset p").withText("The address is not valid").exists).ok({ timeout: 5000 });
+});
+
+test("should show an error message for duplicate address", async (t) => {
+	await t.click(Selector("p").withText("John Doe"));
+	await t.expect(Selector("div").withText("Wallets").exists).ok();
+
+	// Navigate to import page
+	await t.click(Selector("button").withExactText("Import"));
+	await t
+		.expect(Selector("div").withText(translations().WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
+		.ok();
+
+	// Select a network and advance to step two
+	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t
+		.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled"))
+		.notOk("Network selected", { timeout: 5000 });
+	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
+	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
+
+	// Use the address only
+	await t.click(Selector("input[name=isAddressOnly]").parent());
+
+	// Input address
+	const addressInput = Selector("input[name=address]");
+
+	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
+	await t.click(Selector("button").withExactText("Go to Wallet"));
+
+	await t
+		.expect(
+			Selector("fieldset p").withText(
+				"The address D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib has already been imported as a wallet",
+			).exists,
+		)
+		.ok({ timeout: 5000 });
 });
