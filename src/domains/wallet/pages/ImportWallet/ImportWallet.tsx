@@ -54,6 +54,8 @@ export const SecondStep = () => {
 	const { getValues, register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
+	const activeProfile = useActiveProfile();
+
 	const network: NetworkData = getValues("network");
 
 	const { t } = useTranslation();
@@ -87,6 +89,11 @@ export const SecondStep = () => {
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("COMMON.ADDRESS"),
 						}).toString(),
+						validate: {
+							duplicateAddress: (address: string) =>
+								!activeProfile.wallets().findByAddress(address) ||
+								t("COMMON.INPUT_ADDRESS.VALIDATION.EXISTS_AS_WALLET", { address }).toString(),
+						},
 					}}
 					data-testid="ImportWallet__address-input"
 				/>
