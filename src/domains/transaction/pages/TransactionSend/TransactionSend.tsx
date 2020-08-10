@@ -213,13 +213,13 @@ export const TransactionSend = () => {
 
 		const transactionId = await senderWallet?.transaction().signTransfer({
 			fee,
+			from: senderAddress,
 			sign: {
 				mnemonic,
 			},
 			data: {
 				amount: recipients[0].amount,
 				to: recipients[0].address,
-				from: senderAddress,
 				memo: smartbridge,
 			},
 		});
