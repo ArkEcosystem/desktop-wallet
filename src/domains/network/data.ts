@@ -264,8 +264,8 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 
 export const availableNetworksMock: NetworkData[] = [
 	// new NetworkData(ADA.manifest.name, ADA.manifest.networks.mainnet),
-	new NetworkData(ARK.manifest.name, ARK.manifest.networks.devnet),
 	new NetworkData(ARK.manifest.name, ARK.manifest.networks.mainnet),
+	new NetworkData(ARK.manifest.name, ARK.manifest.networks.devnet),
 	new NetworkData(ATOM.manifest.name, ATOM.manifest.networks["cosmos.mainnet"]),
 	new NetworkData(ATOM.manifest.name, ATOM.manifest.networks["cosmos.testnet"]),
 	new NetworkData(ATOM.manifest.name, ATOM.manifest.networks["terra.mainnet"]),
