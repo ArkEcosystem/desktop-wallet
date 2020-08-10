@@ -329,8 +329,13 @@ exports[`Transaction Send should navigate between teps 1`] = `
                                 data-testid="FormLabel"
                                 for="network"
                                 label="Network"
+                                required=""
                               >
                                 Network
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                             </div>
                             <div
@@ -387,8 +392,13 @@ exports[`Transaction Send should navigate between teps 1`] = `
                                 data-testid="FormLabel"
                                 for="sender"
                                 label="Sender"
+                                required=""
                               >
                                 Sender
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                             </div>
                             <div
@@ -499,8 +509,13 @@ exports[`Transaction Send should navigate between teps 1`] = `
                                         data-testid="FormLabel"
                                         for="recipientAddress"
                                         label="Recipient"
+                                        required=""
                                       >
                                         Recipient
+                                        <div
+                                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                          data-testid="FormLabel__required"
+                                        />
                                       </label>
                                     </div>
                                     <div>
@@ -550,8 +565,13 @@ exports[`Transaction Send should navigate between teps 1`] = `
                                         data-testid="FormLabel"
                                         for="amount"
                                         label="Amount"
+                                        required=""
                                       >
                                         Amount
+                                        <div
+                                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                          data-testid="FormLabel__required"
+                                        />
                                       </label>
                                     </div>
                                     <div
@@ -591,8 +611,13 @@ exports[`Transaction Send should navigate between teps 1`] = `
                                 data-testid="FormLabel"
                                 for="smartbridge"
                                 label="Smartbridge"
+                                required=""
                               >
                                 Smartbridge
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                             </div>
                             <div
@@ -634,8 +659,13 @@ exports[`Transaction Send should navigate between teps 1`] = `
                                     data-testid="FormLabel"
                                     for="fee"
                                     label="Fee ARK"
+                                    required=""
                                   >
                                     Fee ARK
+                                    <div
+                                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                      data-testid="FormLabel__required"
+                                    />
                                   </label>
                                   <div
                                     class="sc-fzozJi OgXfh"
@@ -797,8 +827,13 @@ exports[`Transaction Send should render 1st step 1`] = `
                 data-testid="FormLabel"
                 for="network"
                 label="Network"
+                required=""
               >
                 Network
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
             </div>
             <div
@@ -855,8 +890,13 @@ exports[`Transaction Send should render 1st step 1`] = `
                 data-testid="FormLabel"
                 for="sender"
                 label="Sender"
+                required=""
               >
                 Sender
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
             </div>
             <div
@@ -967,8 +1007,13 @@ exports[`Transaction Send should render 1st step 1`] = `
                         data-testid="FormLabel"
                         for="recipientAddress"
                         label="Recipient"
+                        required=""
                       >
                         Recipient
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
                       </label>
                     </div>
                     <div>
@@ -1018,8 +1063,13 @@ exports[`Transaction Send should render 1st step 1`] = `
                         data-testid="FormLabel"
                         for="amount"
                         label="Amount"
+                        required=""
                       >
                         Amount
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
                       </label>
                     </div>
                     <div
@@ -1059,8 +1109,13 @@ exports[`Transaction Send should render 1st step 1`] = `
                 data-testid="FormLabel"
                 for="smartbridge"
                 label="Smartbridge"
+                required=""
               >
                 Smartbridge
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
               </label>
             </div>
             <div
@@ -1102,8 +1157,13 @@ exports[`Transaction Send should render 1st step 1`] = `
                     data-testid="FormLabel"
                     for="fee"
                     label="Fee ARK"
+                    required=""
                   >
                     Fee ARK
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
                   </label>
                   <div
                     class="sc-fzozJi OgXfh"
