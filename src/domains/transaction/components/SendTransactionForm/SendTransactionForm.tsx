@@ -14,9 +14,10 @@ type SendTransactionFormProps = {
 	formDefaultData: any;
 	networks: NetworkData[];
 	profile: Profile;
+	onFail?: any;
 };
 
-export const SendTransactionForm = ({ formDefaultData, networks, profile }: SendTransactionFormProps) => {
+export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail }: SendTransactionFormProps) => {
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<Wallet[]>([]);
 
@@ -41,6 +42,7 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile }: Send
 
 	const onSelectSender = async (address: any) => {
 		setValue("senderAddress", address, true);
+		console.log("on select sender");
 
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 		const senderWallet = profile
@@ -50,6 +52,7 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile }: Send
 
 		try {
 			const transferFees = (await senderWallet?.fee().all(7))?.transfer;
+			console.log("transferfees", transferFees);
 
 			setFeeOptions({
 				last: undefined,
@@ -60,7 +63,8 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile }: Send
 
 			setValue("fee", transferFees!.avg, true);
 		} catch (error) {
-			console.error("Could not load fees: ", error);
+			console.log("on error");
+			onFail?.(error);
 		}
 	};
 
