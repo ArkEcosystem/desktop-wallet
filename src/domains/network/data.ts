@@ -68,20 +68,20 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 		iconName: "Ripple",
 	// 	},
 	// },
-	// BTC: {
-	// 	livenet: {
-	// 		displayName: "Bitcoin",
-	// 		borderClass: "border-theme-warning-200",
-	// 		textClass: "text-theme-warning-400",
-	// 		iconName: "Bitcoin",
-	// 	},
-	// 	testnet: {
-	// 		displayName: "Bitcoin Testnet",
-	// 		borderClass: "border-theme-primary-500",
-	// 		textClass: "text-theme-primary-dark",
-	// 		iconName: "Ripple",
-	// 	},
-	// },
+	BTC: {
+		livenet: {
+			displayName: "Bitcoin",
+			borderClass: "border-theme-warning-200",
+			textClass: "text-theme-warning-400",
+			iconName: "Bitcoin",
+		},
+		testnet: {
+			displayName: "Bitcoin Testnet",
+			borderClass: "border-theme-primary-500",
+			textClass: "text-theme-primary-dark",
+			iconName: "Ripple",
+		},
+	},
 	// EOS: {
 	// 	"eos.mainnet": {
 	// 		displayName: "EOS",
