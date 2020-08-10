@@ -1,4 +1,4 @@
-import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -50,11 +50,9 @@ export const FirstStep = () => {
 	);
 };
 
-export const SecondStep = () => {
+export const SecondStep = ({ profile }: { profile: Profile }) => {
 	const { getValues, register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
-
-	const activeProfile = useActiveProfile();
 
 	const network: NetworkData = getValues("network");
 
@@ -91,7 +89,7 @@ export const SecondStep = () => {
 						}).toString(),
 						validate: {
 							duplicateAddress: (address: string) =>
-								!activeProfile.wallets().findByAddress(address) ||
+								!profile.wallets().findByAddress(address) ||
 								t("COMMON.INPUT_ADDRESS.VALIDATION.EXISTS_AS_WALLET", { address }).toString(),
 						},
 					}}
@@ -205,7 +203,7 @@ export const ImportWallet = () => {
 								<FirstStep />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep />
+								<SecondStep profile={activeProfile} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">

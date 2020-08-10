@@ -1,5 +1,6 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { env, fireEvent, render } from "utils/testing-library";
@@ -40,7 +41,7 @@ describe("InputAddress", () => {
 		});
 
 		await waitForNextUpdate();
-		expect(errors.address?.message).toBe("The address is not valid");
+		expect(errors.address?.message).toBe(commonTranslations.INPUT_ADDRESS.VALIDATION.NOT_VALID);
 	});
 
 	it("should validate a valid address and emit event", async () => {
