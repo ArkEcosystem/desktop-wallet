@@ -34,7 +34,7 @@ describe("HttpClient", () => {
 
 		nock("http://httpbin.org/").get("/get").query(true).reply(200, responseBody);
 
-		const response = await subject.get("http://httpbin.org/get", { data: { query: { limit: 10 } } });
+		const response = await subject.get("http://httpbin.org/get", { limit: 10 });
 
 		expect(response.json()).toEqual(responseBody);
 	});
@@ -94,5 +94,23 @@ describe("HttpClient", () => {
 			.post("http://httpbin.org/post", { key: "value" });
 
 		expect(response.json()).toEqual(responseBody);
+	});
+
+	it("should connect with TOR", async () => {
+		// We want to send real requests to ensure that the remote host detects different IPs.
+		nock.enableNetConnect();
+
+		const realAddress = await subject.get("https://ipinfo.io");
+		const newAddresses = await Promise.all([
+			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
+			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
+			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
+			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
+			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
+		]);
+
+		for (const newAddress of newAddresses) {
+			expect(newAddress.json().ip).not.toBe(realAddress);
+		}
 	});
 });

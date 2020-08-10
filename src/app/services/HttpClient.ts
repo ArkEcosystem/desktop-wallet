@@ -1,21 +1,31 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
+import got from "got";
 import { md5 } from "hash-wasm";
-import fetch from "isomorphic-fetch";
+import { SocksProxyAgent } from "socks-proxy-agent";
 
 import { Cache } from "./Cache";
 
 export class HttpClient extends Http.Request {
-	private readonly headers: Record<string, string> = {
-		Accept: "application/json",
-		"Content-Type": "application/json",
-	};
-
 	private readonly cache: Cache;
 
 	public constructor(ttl: number) {
 		super();
 
 		this.cache = new Cache(ttl);
+
+		this.withHeaders({
+			Accept: "application/json",
+			"Content-Type": "application/json",
+		});
+	}
+
+	public withSocksProxy(host: string): HttpClient {
+		this._options.agent = {
+			http: new SocksProxyAgent(host),
+			https: new SocksProxyAgent(host),
+		};
+
+		return this;
 	}
 
 	protected async send(
@@ -26,32 +36,52 @@ export class HttpClient extends Http.Request {
 			data?: any;
 		},
 	): Promise<Contracts.HttpResponse> {
-		if (data?.query && Object.keys(data?.query).length > 0) {
-			url = `${url}?${new URLSearchParams(data.query as any)}`;
+		const options: Http.RequestOptions = {
+			...this._options,
+			retry: 0,
+		};
+
+		if (data && data.query) {
+			options.searchParams = data.query;
+		}
+
+		if (data && data.data) {
+			if (this._bodyFormat === "json") {
+				options.json = data.data;
+			}
+
+			// if (this._bodyFormat === "form_params") {
+			// 	options.body = new URLSearchParams();
+
+			// 	for (const [key, value] of Object.entries(data.data)) {
+			// 		options.body.set(key, value);
+			// 	}
+			// }
+
+			// if (this._bodyFormat === "multipart") {
+			// 	options.body = new FormData();
+
+			// 	for (const [key, value] of Object.entries(data.data)) {
+			// 		options.body.append(key, value);
+			// 	}
+			// }
 		}
 
 		const cacheKey: string = await md5(`${method}.${url}.${JSON.stringify(data)}`);
 
 		return this.cache.remember(cacheKey, async () => {
-			let response;
+			try {
+				// @ts-ignore
+				const response = await got[method.toLowerCase()](url, options);
 
-			if (method === "GET") {
-				response = await fetch(url, { headers: this.headers });
-			}
-
-			if (method === "POST") {
-				response = await fetch(url, {
-					method: "POST",
-					body: JSON.stringify(data?.data),
-					headers: this.headers,
+				return new Http.Response({
+					body: response?.body,
+					headers: response?.headers,
+					statusCode: response?.status,
 				});
+			} catch (error) {
+				return new Http.Response(error.response, error);
 			}
-
-			return new Http.Response({
-				body: await response?.text(),
-				headers: response?.headers,
-				statusCode: response?.status,
-			});
 		});
 	}
 }
