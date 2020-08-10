@@ -37,32 +37,32 @@ describe("Votes", () => {
 
 	it("should select a network", () => {
 		const { container, asFragment, getByTestId } = renderPage();
-		const selectAssetInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
-			fireEvent.change(selectAssetInput, { target: { value: "Bitco" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectAssetInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
 		expect(container).toBeTruthy();
-		expect(selectAssetInput).toHaveValue("Bitcoin");
+		expect(selectNetworkInput).toHaveValue("Bitcoin");
 		expect(getByTestId("AddressList")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select address", () => {
 		const { asFragment, getByTestId, getAllByTestId } = renderPage();
-		const selectAssetInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
-			fireEvent.change(selectAssetInput, { target: { value: "Bitco" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectAssetInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
 		expect(getByTestId("AddressList")).toBeTruthy();
@@ -79,14 +79,14 @@ describe("Votes", () => {
 
 	it("should select a delegate", () => {
 		const { asFragment, getByTestId, getAllByTestId } = renderPage();
-		const selectAssetInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
-			fireEvent.change(selectAssetInput, { target: { value: "Bitco" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectAssetInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
 		expect(getByTestId("AddressList")).toBeTruthy();

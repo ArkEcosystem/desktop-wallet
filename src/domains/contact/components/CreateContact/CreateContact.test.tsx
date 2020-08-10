@@ -42,7 +42,7 @@ describe("CreateContact", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
 
-		const assetInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
@@ -53,9 +53,9 @@ describe("CreateContact", () => {
 				target: { value: existingContact.name() },
 			});
 
-			fireEvent.change(assetInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
 
-			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 			await waitFor(() => {
 				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
