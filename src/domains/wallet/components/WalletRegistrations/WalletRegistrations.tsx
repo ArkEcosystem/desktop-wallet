@@ -83,13 +83,14 @@ export const WalletRegistrations = ({
 				<h2 className="font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.TITLE")}</h2>
 				<CollapseToggleButton
 					data-testid="WalletRegistrations__toggle"
+					className="-mr-4 text-theme-neutral"
 					isOpen={isOpen}
 					onClick={() => setIsOpen(!isOpen)}
 				/>
 			</div>
 
 			<Collapse isOpen={isOpen}>
-				<div className="flex items-center justify-between px-1 py-4">
+				<div className="flex items-center justify-between py-4">
 					{hasNoRegistrations ? (
 						<div data-testid="WalletRegistrations__empty" className="flex items-center pr-8 space-x-4">
 							<div className="flex items-center -space-x-2">
@@ -150,7 +151,7 @@ export const WalletRegistrations = ({
 							)}
 
 							{iconsList.length && (
-								<div className="px-8">
+								<div className={delegate || business ? "px-8" : "pr-8"}>
 									<IconList icons={iconsList} limit={2} />
 								</div>
 							)}

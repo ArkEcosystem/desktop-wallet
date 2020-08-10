@@ -14,6 +14,7 @@ import { ReactComponent as DeleteBanner } from "./delete-banner.svg";
 import { ReactComponent as MistakeBanner } from "./mistake-banner.svg";
 import { ReactComponent as RegisterBanner } from "./register-banner.svg";
 import { ReactComponent as SuccessBanner } from "./success-banner.svg";
+import { ReactComponent as WelcomeBanner } from "./welcome-banner.svg";
 
 export const images = {
 	common: {
@@ -23,6 +24,7 @@ export const images = {
 		MistakeBanner,
 		RegisterBanner,
 		SuccessBanner,
+		WelcomeBanner,
 	},
 	contacts,
 	exchange,

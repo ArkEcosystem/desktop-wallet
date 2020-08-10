@@ -29,6 +29,12 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const history = useHistory();
 	const { t } = useTranslation();
 
+	const fetchMoreTransactions = async () => {
+		const transactions = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
+
+		return transactions && setAllTransactions(allTransactions?.concat(transactions));
+	};
+
 	useEffect(() => {
 		const fetchProfileTransactions = async () => {
 			const profileTransactions = await activeProfile.transactionAggregate().transactions({ limit: 10 });
@@ -94,7 +100,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
-					<Transactions transactions={allTransactions} />
+					<Transactions transactions={allTransactions} fetchMoreAction={fetchMoreTransactions} />
 				</Section>
 			)}
 		</Page>

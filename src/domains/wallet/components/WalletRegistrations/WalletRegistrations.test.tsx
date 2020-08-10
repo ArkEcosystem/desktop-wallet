@@ -50,7 +50,14 @@ describe("WalletRegistrations", () => {
 
 	it("should show icons list with rest", () => {
 		const { getByTestId } = render(
-			<WalletRegistrations address="abc" hasPlugins={true} isMultisig hasSecondSignature hasBridgechains />,
+			<WalletRegistrations
+				delegate={delegate}
+				address="abc"
+				hasPlugins={true}
+				isMultisig
+				hasSecondSignature
+				hasBridgechains
+			/>,
 		);
 		expect(getByTestId("WalletRegistrations__icon-list__rest")).toHaveTextContent("+2");
 	});

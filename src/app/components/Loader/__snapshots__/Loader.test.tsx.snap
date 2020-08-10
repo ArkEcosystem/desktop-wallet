@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader should render 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxiKw fuQwgu"
+  >
+    <div
+      class="sc-AxirZ cxNhXl"
+    >
+      <div
+        class="centered"
+      >
+        <svg
+          class="spin"
+          height="100"
+          viewBox="0 0 100 100"
+          width="100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            fill="transparent"
+            r="48.5"
+            stroke="var(--theme-color-neutral-300)"
+            stroke-width="3"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            fill="transparent"
+            r="48.5"
+            stroke="var(--theme-color-neutral-800)"
+            stroke-dasharray="304.7344873982099"
+            stroke-dashoffset="182.84069243892594"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+            transform="rotate(-90 50 50)"
+          />
+        </svg>
+      </div>
+      <div
+        class="centered"
+      >
+        <svg
+          class="spin left"
+          height="75"
+          viewBox="0 0 75 75"
+          width="75"
+        >
+          <circle
+            cx="37.5"
+            cy="37.5"
+            fill="transparent"
+            r="36"
+            stroke="var(--theme-color-neutral-300)"
+            stroke-width="3"
+          />
+          <circle
+            cx="37.5"
+            cy="37.5"
+            fill="transparent"
+            r="36"
+            stroke="var(--theme-color-neutral-800)"
+            stroke-dasharray="226.1946710584651"
+            stroke-dashoffset="158.33626974092556"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+            transform="rotate(-90 37.5 37.5)"
+          />
+        </svg>
+      </div>
+      <div
+        class="centered"
+      >
+        <div
+          class="sc-AxjAm iUlKmz"
+          height="60"
+          width="50"
+        >
+          <svg>
+            loader-logo.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Loader should render closed 1`] = `<DocumentFragment />`;

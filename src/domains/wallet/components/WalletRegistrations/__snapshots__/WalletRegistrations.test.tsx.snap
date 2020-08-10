@@ -14,7 +14,7 @@ exports[`WalletRegistrations should render empty mode 1`] = `
         Registrations
       </h2>
       <button
-        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
         data-testid="WalletRegistrations__toggle"
       >
         <span>
@@ -41,7 +41,7 @@ exports[`WalletRegistrations should render empty mode 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="flex items-center justify-between px-1 py-4"
+        class="flex items-center justify-between py-4"
       >
         <div
           class="flex items-center pr-8 space-x-4"
@@ -120,7 +120,7 @@ exports[`WalletRegistrations should show delegate 1`] = `
         Registrations
       </h2>
       <button
-        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
         data-testid="WalletRegistrations__toggle"
       >
         <span>
@@ -147,7 +147,7 @@ exports[`WalletRegistrations should show delegate 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="flex items-center justify-between px-1 py-4"
+        class="flex items-center justify-between py-4"
       >
         <div
           class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -172,7 +172,7 @@ exports[`WalletRegistrations should show delegate 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                 data-testid="Avatar"
               >
                 <div
@@ -242,7 +242,7 @@ exports[`WalletRegistrations should show icons list 1`] = `
         Registrations
       </h2>
       <button
-        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
         data-testid="WalletRegistrations__toggle"
       >
         <span>
@@ -269,13 +269,13 @@ exports[`WalletRegistrations should show icons list 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="flex items-center justify-between px-1 py-4"
+        class="flex items-center justify-between py-4"
       >
         <div
           class="flex items-center divide-x-1 divide-theme-neutral-light"
         >
           <div
-            class="px-8"
+            class="pr-8"
           >
             <div
               class="flex items-center -space-x-2"

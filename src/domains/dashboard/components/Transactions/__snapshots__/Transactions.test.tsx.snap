@@ -180,7 +180,7 @@ exports[`Transactions should render with with transactions 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top justify-end"
+                  class="flex flex-inline align-top w-24 justify-end float-right"
                 >
                   <div>
                     Currency
@@ -253,7 +253,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
                     data-testid="Avatar"
                   >
                     <div
@@ -406,7 +406,7 @@ exports[`Transactions should render with with transactions 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
                     data-testid="Avatar"
                   >
                     <div
@@ -802,6 +802,7 @@ exports[`Transactions should render with with transactions 1`] = `
       <button
         class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
         color="primary"
+        data-testid="transactions__fetch-more-button"
         type="button"
       >
         View More

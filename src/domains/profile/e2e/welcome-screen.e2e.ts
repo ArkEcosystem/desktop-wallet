@@ -1,12 +1,25 @@
 import { ClientFunction, Selector } from "testcafe";
 
-import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { buildTranslations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Welcome Screen routing`.page`http://localhost:3000`;
+const translations = buildTranslations();
+
+fixture`Welcome Screen routing`.page(getPageURL());
 
 const getLocation = ClientFunction(() => document.location.href);
 
 test("should load profiles welcome page", async (t) => {
-	await t.click(Selector("h1").withExactText(translations().COMMON.WELCOME));
-	await t.expect(getLocation()).contains("http://localhost:3000/");
+	await t.click(Selector("h1").withExactText(translations.COMMON.WELCOME));
+});
+
+test("should return to welcome page when application is idle", async (t) => {
+	await t.click(Selector("h1").withExactText(translations.COMMON.WELCOME));
+
+	await t.click(Selector("p").withText("John Doe"));
+
+	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
+
+	await t.expect(Selector("h1").withExactText(translations.COMMON.WELCOME).exists).ok({ timeout: 60000 });
+	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).notOk();
 });

@@ -83,7 +83,7 @@ export const WalletDetails = () => {
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
 	const getWalletData = useCallback(async () => {
 		const data = await activeWallet.coin().client().wallet(activeWallet.address());
-		const walletTransactions = (await activeWallet.transactions()).items();
+		const walletTransactions = (await activeWallet.transactions({ limit: 10 })).items();
 
 		setWalletData(data);
 		setTransactions(walletTransactions);

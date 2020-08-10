@@ -14,25 +14,43 @@
 							"explorer": "https://dexplorer.ark.io/",
 							"currency": { "ticker": "DARK", "symbol": "DѦ" },
 							"crypto": { "slip44": 111 },
-							"hosts": [
-								"https://dexplorer.ark.io",
-								"http://167.114.29.51:4003",
-								"http://167.114.29.52:4003",
-								"http://167.114.29.53:4003",
-								"http://167.114.29.54:4003",
-								"http://167.114.29.55:4003"
-							],
+							"hosts": ["https://dwallets.ark.io"],
 							"hostsMultiSignature": [],
 							"voting": { "enabled": true, "singular": true }
 						}
 					},
 					"network": "devnet",
 					"address": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-					"publicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbb",
-					"data": { "BALANCE": "1000", "SEQUENCE": "1" },
+					"publicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+					"data": { "BALANCE": "3375089801", "SEQUENCE": "245" },
 					"settings": {
-						"AVATAR": "conic-gradient(from 138.92820875068205deg at 10.341003346631878% 56.34369708791203%, #9B2C2C, calc(0 * 100% / 5), transparent 0),conic-gradient(from 501.2404426352248deg at 6.193536608927738% 20.020924742851292%, #FEB2B2, calc(1 * 100% / 5), transparent 0),conic-gradient(from 538.0014084095758deg at 32.870727463865066% 41.693174698534285%, #F6AD55, calc(2 * 100% / 5), transparent 0),conic-gradient(from 86.8716993412581deg at 45.65092691320694% 53.97053076646755%, #2C7A7B, calc(3 * 100% / 5), transparent 0),conic-gradient(from 453.1648835420749deg at 5.017317358847957% 27.456901944771822%, #FC8181, calc(4 * 100% / 5), transparent 0)",
+						"AVATAR": "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\"rgb(0, 150, 136)\" width=\"100\" height=\"100\"/><circle r=\"50\" cx=\"80\" cy=\"50\" fill=\"rgb(76, 175, 80)\"/><circle r=\"35\" cx=\"100\" cy=\"40\" fill=\"rgb(156, 39, 176)\"/><circle r=\"40\" cx=\"90\" cy=\"70\" fill=\"rgb(3, 169, 244)\"/></svg>",
 						"ALIAS": "ARK Wallet 1"
+					}
+				},
+				"d044a552-7a49-411c-ae16-8ff407acc430": {
+					"id": "d044a552-7a49-411c-ae16-8ff407acc430",
+					"coin": "ARK",
+					"coinConfig": {
+						"network": {
+							"id": "devnet",
+							"type": "test",
+							"name": "Devnet",
+							"explorer": "https://dexplorer.ark.io/",
+							"currency": { "ticker": "DARK", "symbol": "DѦ" },
+							"crypto": { "slip44": 111 },
+							"hosts": ["https://dwallets.ark.io"],
+							"hostsMultiSignature": [],
+							"voting": { "enabled": true, "singular": true }
+						}
+					},
+					"network": "devnet",
+					"address": "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+					"publicKey": "03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
+					"data": { "BALANCE": "5768000000", "SEQUENCE": "12" },
+					"settings": {
+						"AVATAR": "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\"rgb(244, 67, 54)\" width=\"100\" height=\"100\"/><circle r=\"50\" cx=\"20\" cy=\"50\" fill=\"rgb(205, 220, 57)\"/><circle r=\"60\" cx=\"0\" cy=\"70\" fill=\"rgb(0, 188, 212)\"/><circle r=\"55\" cx=\"80\" cy=\"30\" fill=\"rgb(76, 175, 80)\"/></svg>",
+						"ALIAS": "ARK Wallet 2"
 					}
 				}
 			},
@@ -65,7 +83,7 @@
 			"data": { "key": "value" },
 			"settings": {
 				"ADVANCED_MODE": false,
-				"AUTOMATIC_LOGOFF_PERIOD": 15,
+				"AUTOMATIC_LOGOFF_PERIOD": 1,
 				"BIP39_LOCALE": "english",
 				"EXCHANGE_CURRENCY": "btc",
 				"LEDGER_UPDATE_METHOD": false,
@@ -86,7 +104,7 @@
 			"data": { "key": "value" },
 			"settings": {
 				"ADVANCED_MODE": false,
-				"AUTOMATIC_LOGOFF_PERIOD": 15,
+				"AUTOMATIC_LOGOFF_PERIOD": 1,
 				"BIP39_LOCALE": "english",
 				"EXCHANGE_CURRENCY": "btc",
 				"LEDGER_UPDATE_METHOD": false,

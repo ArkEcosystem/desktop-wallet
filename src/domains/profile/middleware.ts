@@ -4,8 +4,8 @@ import { Middleware, MiddlewareParams } from "router/interfaces";
 import { isIdle } from "utils/electron-utils";
 
 type ActivityState = {
-	idleInterval?: ReturnType<typeof setInterval>;
-	hasTimer?: boolean;
+	intervalId?: ReturnType<typeof setInterval>;
+	threshold?: number;
 };
 
 type CallbackFunction = () => void;
@@ -22,8 +22,8 @@ export class ProfileMiddleware implements Middleware {
 			const { profileId } = match.params;
 
 			if (profileId === "create") {
-				if (this.state.hasTimer) {
-					this.clearIdleInterval();
+				if (this.state.intervalId) {
+					this.clearIntervalState();
 				}
 
 				return true;
@@ -31,40 +31,43 @@ export class ProfileMiddleware implements Middleware {
 
 			try {
 				const profile = env.profiles().findById(profileId);
+				const idleThreshold = (profile.settings().get(ProfileSetting.AutomaticLogoffPeriod) as number) * 60;
 
-				if (!this.state.hasTimer) {
-					const idleThreshold = (profile.settings().get(ProfileSetting.AutomaticLogoffPeriod) as number) * 60;
-
-					this.setIdleInterval(() => {
-						if (isIdle(idleThreshold)) {
-							history.push("/");
-						}
-					}, 15 * 1000);
+				if (this.state.intervalId === undefined || this.state.threshold !== idleThreshold) {
+					this.setIntervalState(
+						() => {
+							if (isIdle(idleThreshold)) {
+								history.push("/");
+							}
+						},
+						15 * 1000,
+						idleThreshold,
+					);
 				}
 			} catch {
 				return false;
 			}
 		} else {
-			if (this.state.hasTimer) {
-				this.clearIdleInterval();
+			if (this.state.intervalId) {
+				this.clearIntervalState();
 			}
 		}
 
 		return true;
 	}
 
-	setIdleInterval(callback: CallbackFunction, interval: number) {
+	setIntervalState(callback: CallbackFunction, interval: number, threshold: number) {
+		const intervalId = setInterval(callback, interval);
+
 		this.state = {
-			idleInterval: setInterval(callback, interval),
-			hasTimer: true,
+			intervalId,
+			threshold,
 		};
 	}
 
-	clearIdleInterval() {
-		clearInterval(this.state.idleInterval);
+	clearIntervalState() {
+		clearInterval(this.state.intervalId);
 
-		this.state = {
-			hasTimer: false,
-		};
+		this.state = {};
 	}
 }

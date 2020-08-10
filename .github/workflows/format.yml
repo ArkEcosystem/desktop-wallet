@@ -25,6 +25,9 @@ jobs:
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
                   restore-keys: ${{ runner.os }}-yarn-
 
+            - name: Update System
+              run: sudo apt-get update
+
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
@@ -59,6 +62,9 @@ jobs:
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
                   restore-keys: ${{ runner.os }}-yarn-
 
+            - name: Update System
+              run: sudo apt-get update
+
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
@@ -72,7 +78,7 @@ jobs:
                   rustywind --write src
 
             - name: Update Snapshots
-              run: yarn test --update-snapshot
+              run: yarn test --maxWorkers=4 --update-snapshot
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:

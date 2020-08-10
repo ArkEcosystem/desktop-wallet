@@ -1,5 +1,11 @@
 const path = require("path");
-const { override, addPostcssPlugins } = require("customize-cra");
+const { override, addWebpackAlias, addWebpackModuleRule } = require("customize-cra");
+const { injectTailwindCSS } = require("../config-overrides");
+
+const injectNode = () =>
+	addWebpackAlias({
+		fs: path.resolve(__dirname, "mocks/fsMock.js"),
+	});
 
 module.exports = {
 	stories: ["../src/**/**/*.stories.tsx"],
@@ -11,44 +17,19 @@ module.exports = {
 		"storybook-addon-themes",
 	],
 	webpackFinal: override(
-		addPostcssPlugins([
-			require("postcss-import"),
-			require("tailwindcss")("./src/tailwind.config.js"),
-			require("autoprefixer"),
-		]),
-		async (storybookConfig) => {
-			storybookConfig.module.rules = [
-				...storybookConfig.module.rules,
+		injectTailwindCSS(),
+		injectNode(),
+		addWebpackModuleRule({
+			test: /\.(ts|tsx)$/,
+			use: [
 				{
-					test: /\.(ts|tsx)$/,
-					use: [
-						{
-							loader: require.resolve("babel-loader"),
-							options: {
-								presets: [require.resolve("babel-preset-react-app")],
-							},
-						},
-						require.resolve("react-docgen-typescript-loader"),
-					],
+					loader: "babel-loader",
+					options: {
+						presets: ["babel-preset-react-app"],
+					},
 				},
-			];
-
-			storybookConfig.resolve = {
-				extensions: [".ts", ".js", ".jsx", ".tsx", ".scss", ".json", ".node"],
-				alias: {
-					app: path.resolve(__dirname, "../src/app/"),
-					data: path.resolve(__dirname, "../src/data/"),
-					domains: path.resolve(__dirname, "../src/domains"),
-					resources: path.resolve(__dirname, "../src/resources"),
-					styles: path.resolve(__dirname, "../src/styles"),
-					utils: path.resolve(__dirname, "../src/utils"),
-					tests: path.resolve(__dirname, "../src/tests"),
-					// Mocks
-					fs: path.resolve(__dirname, "mocks/fsMock.js"),
-				},
-			};
-
-			return storybookConfig;
-		},
+				"react-docgen-typescript-loader",
+			],
+		}),
 	),
 };
