@@ -364,12 +364,13 @@ exports[`ImportWallet should go to previous step 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-0"
                             role="option"
@@ -393,7 +394,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-1"
                             role="option"
@@ -807,12 +808,13 @@ exports[`ImportWallet should import by address 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-0"
                             role="option"
@@ -836,7 +838,7 @@ exports[`ImportWallet should import by address 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-1"
                             role="option"
@@ -1250,12 +1252,13 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-0"
                             role="option"
@@ -1279,7 +1282,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-1"
                             role="option"
@@ -1413,12 +1416,13 @@ exports[`ImportWallet should render 1st step 1`] = `
         </div>
         <ul
           aria-labelledby="ImportWallet__network-label"
+          class="my-6 grid grid-cols-6 gap-6"
           id="ImportWallet__network-menu"
           role="listbox"
         >
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ImportWallet__network-item-0"
             role="option"
@@ -1442,7 +1446,7 @@ exports[`ImportWallet should render 1st step 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ImportWallet__network-item-1"
             role="option"
@@ -1949,12 +1953,13 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-0"
                             role="option"
@@ -1978,7 +1983,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-1"
                             role="option"
