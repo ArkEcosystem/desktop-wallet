@@ -91,7 +91,7 @@ describe("UpdateContact", () => {
 		);
 
 		const saveButton = getByTestId("contact-form__save-btn");
-		const assetInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		// Add network
 		await act(async () => {
@@ -99,8 +99,8 @@ describe("UpdateContact", () => {
 				target: { value: newAddress.address },
 			});
 
-			fireEvent.change(assetInput, { target: { value: "Ark Devnet" } });
-			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
 		await waitFor(() => {
@@ -177,7 +177,7 @@ describe("UpdateContact", () => {
 
 		expect(nameInput).toHaveValue(newName);
 		const saveButton = getByTestId("contact-form__save-btn");
-		const assetInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		// Add network
 		await act(async () => {
@@ -185,8 +185,8 @@ describe("UpdateContact", () => {
 				target: { value: newAddress.address },
 			});
 
-			fireEvent.change(assetInput, { target: { value: "Ark Devnet" } });
-			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
 		await waitFor(() => {
