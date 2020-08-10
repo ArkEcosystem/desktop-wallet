@@ -35,5 +35,5 @@ export function FormLabel(props: FormLabelProps) {
 }
 
 FormLabel.defaultProps = {
-	required: false,
+	required: true,
 };
