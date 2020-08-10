@@ -75,9 +75,9 @@ export class HttpClient extends Http.Request {
 				const response = await got[method.toLowerCase()](url, options);
 
 				return new Http.Response({
-					body: response?.body,
-					headers: response?.headers,
-					statusCode: response?.status,
+					body: response.body,
+					headers: response.headers,
+					statusCode: response.status,
 				});
 			} catch (error) {
 				console.log(error);
