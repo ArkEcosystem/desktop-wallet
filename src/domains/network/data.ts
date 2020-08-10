@@ -20,14 +20,14 @@ export interface CoinNetworkExtended {
 }
 
 export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetworkExtended>> = {
-	ADA: {
-		mainnet: {
-			displayName: "Ripple",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-	},
+	// ADA: {
+	// 	mainnet: {
+	// 		displayName: "Ripple",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// },
 	ARK: {
 		mainnet: {
 			displayName: "Ark",
@@ -42,134 +42,134 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			iconName: "Ark",
 		},
 	},
-	ATOM: {
-		"cosmos.mainnet": {
-			displayName: "Cosmos",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"cosmos.testnet": {
-			displayName: "Cosmos Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"terra.mainnet": {
-			displayName: "Terra",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"terra.testnet": {
-			displayName: "Terra Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-	},
-	BTC: {
-		livenet: {
-			displayName: "Bitcoin",
-			borderClass: "border-theme-warning-200",
-			textClass: "text-theme-warning-400",
-			iconName: "Bitcoin",
-		},
-		testnet: {
-			displayName: "Bitcoin Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-	},
-	EOS: {
-		"eos.mainnet": {
-			displayName: "EOS",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"eos.testnet": {
-			displayName: "EOS Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"bos.mainnet": {
-			displayName: "Bos Mainnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"meetone.mainnet": {
-			displayName: "Meetone Mainnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"telos.mainnet": {
-			displayName: "Telos Mainnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"telos.testnet": {
-			displayName: "Telos Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"wax.mainnet": {
-			displayName: "Wax Mainnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"worbli.mainnet": {
-			displayName: "Worbli Mainnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		"worbli.testnet": {
-			displayName: "Worbli Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-	},
-	ETH: {
-		mainnet: {
-			displayName: "Ethereum",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		goerli: {
-			displayName: "Ethereum Goerli",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		kovan: {
-			displayName: "Ethereum Kovan",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		rinkeby: {
-			displayName: "Ethereum Rinkeby",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		ropsten: {
-			displayName: "Ethereum Ropsten",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-	},
+	// ATOM: {
+	// 	"cosmos.mainnet": {
+	// 		displayName: "Cosmos",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"cosmos.testnet": {
+	// 		displayName: "Cosmos Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"terra.mainnet": {
+	// 		displayName: "Terra",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"terra.testnet": {
+	// 		displayName: "Terra Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// },
+	// BTC: {
+	// 	livenet: {
+	// 		displayName: "Bitcoin",
+	// 		borderClass: "border-theme-warning-200",
+	// 		textClass: "text-theme-warning-400",
+	// 		iconName: "Bitcoin",
+	// 	},
+	// 	testnet: {
+	// 		displayName: "Bitcoin Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// },
+	// EOS: {
+	// 	"eos.mainnet": {
+	// 		displayName: "EOS",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"eos.testnet": {
+	// 		displayName: "EOS Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"bos.mainnet": {
+	// 		displayName: "Bos Mainnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"meetone.mainnet": {
+	// 		displayName: "Meetone Mainnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"telos.mainnet": {
+	// 		displayName: "Telos Mainnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"telos.testnet": {
+	// 		displayName: "Telos Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"wax.mainnet": {
+	// 		displayName: "Wax Mainnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"worbli.mainnet": {
+	// 		displayName: "Worbli Mainnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	"worbli.testnet": {
+	// 		displayName: "Worbli Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// },
+	// ETH: {
+	// 	mainnet: {
+	// 		displayName: "Ethereum",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	goerli: {
+	// 		displayName: "Ethereum Goerli",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	kovan: {
+	// 		displayName: "Ethereum Kovan",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	rinkeby: {
+	// 		displayName: "Ethereum Rinkeby",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	ropsten: {
+	// 		displayName: "Ethereum Ropsten",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// },
 	LSK: {
 		mainnet: {
 			displayName: "Lisk",
@@ -190,76 +190,76 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			iconName: "Lisk",
 		},
 	},
-	NEO: {
-		mainnet: {
-			displayName: "NEO",
-			borderClass: "border-theme-warning-200",
-			textClass: "text-theme-warning-400",
-			iconName: "Bitcoin",
-		},
-		testnet: {
-			displayName: "NEO Testnet",
-			borderClass: "border-theme-warning-200",
-			textClass: "text-theme-warning-400",
-			iconName: "Bitcoin",
-		},
-	},
-	TRX: {
-		mainnet: {
-			displayName: "Tron",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		testnet: {
-			displayName: "Tron Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-	},
-	XLM: {
-		mainnet: {
-			displayName: "Stellar",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		testnet: {
-			displayName: "Stellar Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-	},
-	XMR: {
-		mainnet: {
-			displayName: "Monero",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		testnet: {
-			displayName: "Monero Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-	},
-	XRP: {
-		mainnet: {
-			displayName: "Ripple",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-		testnet: {
-			displayName: "Ripple Testnet",
-			borderClass: "border-theme-primary-500",
-			textClass: "text-theme-primary-dark",
-			iconName: "Ripple",
-		},
-	},
+	// NEO: {
+	// 	mainnet: {
+	// 		displayName: "NEO",
+	// 		borderClass: "border-theme-warning-200",
+	// 		textClass: "text-theme-warning-400",
+	// 		iconName: "Bitcoin",
+	// 	},
+	// 	testnet: {
+	// 		displayName: "NEO Testnet",
+	// 		borderClass: "border-theme-warning-200",
+	// 		textClass: "text-theme-warning-400",
+	// 		iconName: "Bitcoin",
+	// 	},
+	// },
+	// TRX: {
+	// 	mainnet: {
+	// 		displayName: "Tron",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	testnet: {
+	// 		displayName: "Tron Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// },
+	// XLM: {
+	// 	mainnet: {
+	// 		displayName: "Stellar",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	testnet: {
+	// 		displayName: "Stellar Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// },
+	// XMR: {
+	// 	mainnet: {
+	// 		displayName: "Monero",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	testnet: {
+	// 		displayName: "Monero Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// },
+	// XRP: {
+	// 	mainnet: {
+	// 		displayName: "Ripple",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// 	testnet: {
+	// 		displayName: "Ripple Testnet",
+	// 		borderClass: "border-theme-primary-500",
+	// 		textClass: "text-theme-primary-dark",
+	// 		iconName: "Ripple",
+	// 	},
+	// },
 };
 
 export const availableNetworksMock: NetworkData[] = [
