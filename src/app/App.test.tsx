@@ -6,7 +6,11 @@ import { translations as profileTranslations } from "../domains/profile/i18n";
 import { App } from "./App";
 
 describe("App", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(() => {
+		useDefaultNetMocks();
+
+		process.env = Object.assign(process.env, { REACT_APP_BUILD_MODE: "demo" });
+	});
 
 	it("should render splash screen", () => {
 		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
