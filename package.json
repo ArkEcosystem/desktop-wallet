@@ -264,6 +264,9 @@
 		"artifactName": "${name}-${os}-${arch}-${version}.${ext}",
 		"afterSign": "scripts/notarize.js",
 		"npmRebuild": false,
+		"extraMetadata": {
+			"main": "build/electron/index.js"
+		},
 		"publish": {
 			"provider": "github",
 			"vPrefixedTagName": false
