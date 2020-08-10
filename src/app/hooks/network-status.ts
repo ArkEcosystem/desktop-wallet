@@ -12,8 +12,8 @@ export const useNetworkStatus = () => {
 		window.addEventListener("online", updateNetworkStatus);
 
 		return () => {
-			window.addEventListener("offline", updateNetworkStatus);
-			window.addEventListener("online", updateNetworkStatus);
+			window.removeEventListener("offline", updateNetworkStatus);
+			window.removeEventListener("online", updateNetworkStatus);
 		};
 	}, []);
 

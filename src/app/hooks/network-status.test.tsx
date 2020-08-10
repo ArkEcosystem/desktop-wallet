@@ -1,9 +1,12 @@
-import { translations } from "domains/error/i18n";
+import { act, renderHook } from "@testing-library/react-hooks";
+import { translations as errorTranslations } from "domains/error/i18n";
 import { Offline } from "domains/error/pages";
 import React from "react";
 import { render } from "utils/testing-library";
 
 import { useNetworkStatus } from "./network-status";
+
+let eventMap: any;
 
 describe("useNetworkStatus", () => {
 	const TestNetworkStatus: React.FC = () => {
@@ -14,6 +17,18 @@ describe("useNetworkStatus", () => {
 
 	beforeEach(() => {
 		jest.restoreAllMocks();
+
+		eventMap = {};
+
+		window.addEventListener = jest.fn((eventName, callback) => {
+			eventMap[eventName] = callback;
+		});
+	});
+
+	afterEach(() => {
+		window.removeEventListener = jest.fn((eventName) => {
+			delete eventMap[eventName];
+		});
 	});
 
 	it("should be online", () => {
@@ -29,7 +44,18 @@ describe("useNetworkStatus", () => {
 
 		const { getByTestId } = render(<TestNetworkStatus />);
 
-		expect(getByTestId("Offline__text")).toHaveTextContent(translations.OFFLINE.TITLE);
-		expect(getByTestId("Offline__text")).toHaveTextContent(translations.OFFLINE.DESCRIPTION);
+		expect(getByTestId("Offline__text")).toHaveTextContent(errorTranslations.OFFLINE.TITLE);
+		expect(getByTestId("Offline__text")).toHaveTextContent(errorTranslations.OFFLINE.DESCRIPTION);
+	});
+
+	it("should trigger event", () => {
+		jest.spyOn(window.navigator, "onLine", "get").mockReturnValueOnce(false);
+		const { result } = renderHook(() => useNetworkStatus());
+
+		act(() => {
+			eventMap.online();
+		});
+
+		expect(result.current.valueOf()).toEqual(true);
 	});
 });
