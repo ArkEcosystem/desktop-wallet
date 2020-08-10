@@ -31,7 +31,7 @@ beforeEach(() => {
 
 describe("Dashboard", () => {
 	it("should render", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -48,7 +48,7 @@ describe("Dashboard", () => {
 	it("should render wallets", async () => {
 		Promise.resolve().then(() => jest.useFakeTimers());
 
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -214,7 +214,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should fetch more transactions", async () => {
-		const { asFragment, container, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -231,7 +231,12 @@ describe("Dashboard", () => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
 		});
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(
+			() => {
+				expect(getAllByTestId("TransactionRow")).toHaveLength(20);
+			},
+			{ timeout: 2000 },
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

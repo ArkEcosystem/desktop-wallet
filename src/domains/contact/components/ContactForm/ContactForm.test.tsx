@@ -55,16 +55,16 @@ describe("ContactForm", () => {
 	it("should select network", () => {
 		const { getByTestId } = render(<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />);
 
-		const input = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		act(() => {
-			fireEvent.change(input, { target: { value: "Bitco" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
 		});
 
 		act(() => {
-			fireEvent.keyDown(input, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(input).toHaveValue("Bitcoin");
+		expect(selectNetworkInput).toHaveValue("Bitcoin");
 	});
 
 	it("should add an address", async () => {
@@ -74,7 +74,7 @@ describe("ContactForm", () => {
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		const assetInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
@@ -85,9 +85,9 @@ describe("ContactForm", () => {
 				target: { value: "name" },
 			});
 
-			fireEvent.change(assetInput, { target: { value: "Bitco" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
 
-			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 			await waitFor(() => {
 				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
@@ -129,7 +129,7 @@ describe("ContactForm", () => {
 			<ContactForm networks={networks} onCancel={onCancel} onSave={fn} />,
 		);
 
-		const assetInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
@@ -140,9 +140,9 @@ describe("ContactForm", () => {
 				target: { value: "name" },
 			});
 
-			fireEvent.change(assetInput, { target: { value: "Bitco" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
 
-			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 			await waitFor(() => {
 				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
