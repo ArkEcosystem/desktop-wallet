@@ -525,8 +525,13 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="load-plugins"
+                            required=""
                           >
                             Load plugins from
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1072,8 +1077,13 @@ exports[`Settings should render 1`] = `
                             data-testid="FormLabel"
                             for="name"
                             label="Name"
+                            required=""
                           >
                             Name
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <input
                             class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -1091,8 +1101,13 @@ exports[`Settings should render 1`] = `
                             data-testid="FormLabel"
                             for="passphraseLanguage"
                             label="Passphrase Language"
+                            required=""
                           >
                             Passphrase Language
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1152,8 +1167,13 @@ exports[`Settings should render 1`] = `
                             data-testid="FormLabel"
                             for="currency"
                             label="Currency"
+                            required=""
                           >
                             Currency
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1217,8 +1237,13 @@ exports[`Settings should render 1`] = `
                             data-testid="FormLabel"
                             for="language"
                             label="Language"
+                            required=""
                           >
                             Language
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1278,8 +1303,13 @@ exports[`Settings should render 1`] = `
                             data-testid="FormLabel"
                             for="marketProvider"
                             label="Market Provider"
+                            required=""
                           >
                             Market Provider
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1339,8 +1369,13 @@ exports[`Settings should render 1`] = `
                             data-testid="FormLabel"
                             for="timeFormat"
                             label="Time Format"
+                            required=""
                           >
                             Time Format
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1545,8 +1580,13 @@ exports[`Settings should render 1`] = `
                               data-testid="FormLabel"
                               for="autoLogoff"
                               label="Auto-logoff"
+                              required=""
                             >
                               Auto-logoff
+                              <div
+                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                data-testid="FormLabel__required"
+                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -3158,8 +3198,13 @@ exports[`Settings should render plugin settings 1`] = `
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="load-plugins"
+                            required=""
                           >
                             Load plugins from
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3705,8 +3750,13 @@ exports[`Settings should submit using default props 1`] = `
                             data-testid="FormLabel"
                             for="name"
                             label="Name"
+                            required=""
                           >
                             Name
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <input
                             class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -3724,8 +3774,13 @@ exports[`Settings should submit using default props 1`] = `
                             data-testid="FormLabel"
                             for="passphraseLanguage"
                             label="Passphrase Language"
+                            required=""
                           >
                             Passphrase Language
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3785,8 +3840,13 @@ exports[`Settings should submit using default props 1`] = `
                             data-testid="FormLabel"
                             for="currency"
                             label="Currency"
+                            required=""
                           >
                             Currency
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3850,8 +3910,13 @@ exports[`Settings should submit using default props 1`] = `
                             data-testid="FormLabel"
                             for="language"
                             label="Language"
+                            required=""
                           >
                             Language
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3911,8 +3976,13 @@ exports[`Settings should submit using default props 1`] = `
                             data-testid="FormLabel"
                             for="marketProvider"
                             label="Market Provider"
+                            required=""
                           >
                             Market Provider
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3972,8 +4042,13 @@ exports[`Settings should submit using default props 1`] = `
                             data-testid="FormLabel"
                             for="timeFormat"
                             label="Time Format"
+                            required=""
                           >
                             Time Format
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -4249,8 +4324,13 @@ exports[`Settings should submit using default props 1`] = `
                               data-testid="FormLabel"
                               for="autoLogoff"
                               label="Auto-logoff"
+                              required=""
                             >
                               Auto-logoff
+                              <div
+                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                data-testid="FormLabel__required"
+                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -4946,8 +5026,13 @@ exports[`Settings should update profile 1`] = `
                             data-testid="FormLabel"
                             for="name"
                             label="Name"
+                            required=""
                           >
                             Name
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <input
                             class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -4965,8 +5050,13 @@ exports[`Settings should update profile 1`] = `
                             data-testid="FormLabel"
                             for="passphraseLanguage"
                             label="Passphrase Language"
+                            required=""
                           >
                             Passphrase Language
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -5026,8 +5116,13 @@ exports[`Settings should update profile 1`] = `
                             data-testid="FormLabel"
                             for="currency"
                             label="Currency"
+                            required=""
                           >
                             Currency
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -5091,8 +5186,13 @@ exports[`Settings should update profile 1`] = `
                             data-testid="FormLabel"
                             for="language"
                             label="Language"
+                            required=""
                           >
                             Language
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -5152,8 +5252,13 @@ exports[`Settings should update profile 1`] = `
                             data-testid="FormLabel"
                             for="marketProvider"
                             label="Market Provider"
+                            required=""
                           >
                             Market Provider
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -5213,8 +5318,13 @@ exports[`Settings should update profile 1`] = `
                             data-testid="FormLabel"
                             for="timeFormat"
                             label="Time Format"
+                            required=""
                           >
                             Time Format
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -5418,8 +5528,13 @@ exports[`Settings should update profile 1`] = `
                               data-testid="FormLabel"
                               for="autoLogoff"
                               label="Auto-logoff"
+                              required=""
                             >
                               Auto-logoff
+                              <div
+                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                data-testid="FormLabel__required"
+                              />
                             </label>
                             <div
                               class="relative w-full"

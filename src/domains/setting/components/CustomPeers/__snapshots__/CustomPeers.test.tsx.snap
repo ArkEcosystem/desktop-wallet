@@ -58,8 +58,13 @@ exports[`CustomPeers should render a modal 1`] = `
               class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="network"
+              required=""
             >
               Network
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
             <div
               aria-expanded="false"
@@ -111,8 +116,13 @@ exports[`CustomPeers should render a modal 1`] = `
               class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
+              required=""
             >
               Name
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
             <input
               class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -127,8 +137,13 @@ exports[`CustomPeers should render a modal 1`] = `
               class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="peer-ip"
+              required=""
             >
               IP
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
             <input
               class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -143,8 +158,13 @@ exports[`CustomPeers should render a modal 1`] = `
               class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="peer-type"
+              required=""
             >
               Type
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
             <label
               class="inline-flex items-center"

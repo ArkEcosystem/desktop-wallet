@@ -400,8 +400,13 @@ exports[`MultiSignatureDetail should render 2nd step 1`] = `
         data-testid="FormLabel"
         for="passphrase"
         label="Your Passphrase"
+        required=""
       >
         Your Passphrase
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
       </label>
       <div
         class="sc-fzozJi OgXfh max-w-20"

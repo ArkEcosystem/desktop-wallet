@@ -149,8 +149,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       data-testid="FormLabel"
                       for="name"
                       label="Name"
+                      required=""
                     >
                       Name
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <input
                       class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -166,8 +171,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       data-testid="FormLabel"
                       for="marketProvider"
                       label="Market Provider"
+                      required=""
                     >
                       Market Provider
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -227,8 +237,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       data-testid="FormLabel"
                       for="currency"
                       label="Currency"
+                      required=""
                     >
                       Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -526,8 +541,13 @@ exports[`CreateProfile should render 1`] = `
                       data-testid="FormLabel"
                       for="name"
                       label="Name"
+                      required=""
                     >
                       Name
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <input
                       class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -543,8 +563,13 @@ exports[`CreateProfile should render 1`] = `
                       data-testid="FormLabel"
                       for="marketProvider"
                       label="Market Provider"
+                      required=""
                     >
                       Market Provider
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -604,8 +629,13 @@ exports[`CreateProfile should render 1`] = `
                       data-testid="FormLabel"
                       for="currency"
                       label="Currency"
+                      required=""
                     >
                       Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -927,8 +957,13 @@ exports[`CreateProfile should store profile 1`] = `
                       data-testid="FormLabel"
                       for="name"
                       label="Name"
+                      required=""
                     >
                       Name
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <input
                       class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -944,8 +979,13 @@ exports[`CreateProfile should store profile 1`] = `
                       data-testid="FormLabel"
                       for="marketProvider"
                       label="Market Provider"
+                      required=""
                     >
                       Market Provider
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -1005,8 +1045,13 @@ exports[`CreateProfile should store profile 1`] = `
                       data-testid="FormLabel"
                       for="currency"
                       label="Currency"
+                      required=""
                     >
                       Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -1304,8 +1349,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       data-testid="FormLabel"
                       for="name"
                       label="Name"
+                      required=""
                     >
                       Name
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <input
                       class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -1321,8 +1371,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       data-testid="FormLabel"
                       for="marketProvider"
                       label="Market Provider"
+                      required=""
                     >
                       Market Provider
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -1382,8 +1437,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       data-testid="FormLabel"
                       for="currency"
                       label="Currency"
+                      required=""
                     >
                       Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
