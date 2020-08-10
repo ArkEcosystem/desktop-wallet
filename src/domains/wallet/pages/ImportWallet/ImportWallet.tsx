@@ -105,7 +105,7 @@ export const SecondStep = () => {
 			</div>
 			<div className="flex flex-col mt-8">
 				<div className="flex items-center justify-between">
-					<div className="text-theme-neutral-dark text-lg font-semibold">
+					<div className="text-lg font-semibold text-theme-neutral-dark">
 						{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.TITLE")}
 					</div>
 
@@ -120,7 +120,7 @@ export const SecondStep = () => {
 					/>
 				</div>
 
-				<div className="text-theme-neutral pr-12 mt-1 text-sm">
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">
 					{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.DESCRIPTION")}
 				</div>
 			</div>
