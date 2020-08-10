@@ -4,11 +4,15 @@ import { HttpClient } from "./HttpClient";
 
 let subject: HttpClient;
 
-beforeAll(() => {
+beforeEach(() => {
 	nock.disableNetConnect();
+
+	nock.enableNetConnect((host: string) => host.includes("ipinfo.io"));
 
 	subject = new HttpClient(0);
 });
+
+afterEach(() => nock.cleanAll());
 
 describe("HttpClient", () => {
 	it("should get with params", async () => {
@@ -97,20 +101,9 @@ describe("HttpClient", () => {
 	});
 
 	it("should connect with TOR", async () => {
-		// We want to send real requests to ensure that the remote host detects different IPs.
-		nock.enableNetConnect("ipinfo.io:443");
-
 		const realAddress = await subject.get("https://ipinfo.io");
-		const newAddresses = await Promise.all([
-			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
-			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
-			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
-			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
-			await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io"),
-		]);
+		const newAddress = await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io");
 
-		for (const newAddress of newAddresses) {
-			expect(newAddress.json().ip).not.toBe(realAddress);
-		}
+		expect(newAddress.json().ip).not.toBe(realAddress);
 	});
 });

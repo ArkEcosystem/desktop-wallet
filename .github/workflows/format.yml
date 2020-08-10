@@ -62,11 +62,11 @@ jobs:
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
                   restore-keys: ${{ runner.os }}-yarn-
 
-            - name: Update System
-              run: sudo apt-get update
+            - name: Install TOR
+              run: brew install tor
 
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+            - name: Run TOR
+              run: brew services start tor
 
             - name: Install (Yarn)
               run: yarn install --frozen-lockfile
