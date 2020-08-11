@@ -12,7 +12,11 @@ let mainWindow;
 let windowState = null;
 let deeplinkingUrl = null;
 
-const winURL = isDev ? "http://localhost:3000" : `file://${path.resolve(__dirname, "../")}/index.html`;
+const winURL = isDev
+	? "http://localhost:3000"
+	: process.env.ELECTRON_IS_E2E
+	? `file://${path.resolve("build/index.html")}`
+	: `file://${path.resolve(__dirname, "../")}/index.html`;
 
 const installExtensions = async () => {
 	if (isDev) {
