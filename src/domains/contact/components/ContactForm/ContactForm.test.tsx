@@ -191,7 +191,9 @@ describe("ContactForm", () => {
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 
 			await waitFor(() => {
-				expect(getByTestId("ContactForm__address")).toHaveTextContent(translations.VALIDATION.ADDRESS_EXISTS);
+				expect(getByTestId("ContactForm__address")).toHaveTextContent(
+					translations.VALIDATION.ADDRESS_EXISTS_SUFFIX,
+				);
 				expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 			});
 		});

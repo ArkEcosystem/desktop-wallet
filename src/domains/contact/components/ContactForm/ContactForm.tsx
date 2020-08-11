@@ -113,15 +113,14 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 	}, [form, errors]);
 
 	const handleAddAddress = async () => {
-		const isValidAddress = await env.dataValidator().address(network.coin(), network.id(), address);
-
-		if (!isValidAddress) {
-			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID"));
-		}
-
 		const addressExists = addresses.some((addr) => addr.address === address);
 		if (addressExists) {
-			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_EXISTS"));
+			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_EXISTS", { address }));
+		}
+
+		const isValidAddress = await env.dataValidator().address(network.coin(), network.id(), address);
+		if (!isValidAddress) {
+			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID"));
 		}
 
 		setAddresses(
