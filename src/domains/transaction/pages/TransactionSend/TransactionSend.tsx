@@ -74,25 +74,25 @@ export const SecondStep = ({ profile }: any) => {
 				</div>
 			</div>
 
-			<div className="grid grid-flow-row gap-2 mt-4">
+			<div className="mt-4 grid grid-flow-row gap-2">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={
-						<div className="text-theme-danger ml-1">
+						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
 				>
-					<div className="text-md text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
 						{wallet.network().name}
 					</div>
 				</TransactionDetail>
 
 				<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="text-theme-neutral mb-2 font-semibold">
+					<div className="mb-2 font-semibold text-theme-neutral">
 						<span className="mr-1 text-sm">Sender</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
@@ -167,7 +167,7 @@ export const FifthStep = ({ transaction }: { transaction: Contracts.TransactionD
 				label={t("TRANSACTION.AMOUNT")}
 				className="pb-0"
 				extra={
-					<div className="text-theme-danger ml-1">
+					<div className="ml-1 text-theme-danger">
 						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Sent" width={22} height={22} />
 						</Circle>

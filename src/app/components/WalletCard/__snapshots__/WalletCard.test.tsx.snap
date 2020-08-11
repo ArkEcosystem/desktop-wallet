@@ -17,7 +17,7 @@ exports[`Wallet Card should render 1`] = `
           class="relative p-2"
         >
           <div
-            class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
+            class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
           >
             <div
               class="relative"
@@ -39,10 +39,10 @@ exports[`Wallet Card should render 1`] = `
             </div>
           </div>
           <div
-            class="right-3 -top-1 absolute"
+            class="absolute right-3 -top-1"
           >
             <div
-              class="text text-theme-neutral-600 inline-block mr-2"
+              class="inline-block mr-2 text text-theme-neutral-600"
             >
               <div
                 class="sc-AxiKw gETsj"
@@ -55,7 +55,7 @@ exports[`Wallet Card should render 1`] = `
               </div>
             </div>
             <div
-              class="text text-theme-neutral-600 inline-block mr-2"
+              class="inline-block mr-2 text text-theme-neutral-600"
             >
               <div
                 class="sc-AxiKw gETsj"
@@ -68,7 +68,7 @@ exports[`Wallet Card should render 1`] = `
               </div>
             </div>
             <div
-              class="text text-theme-warning-400 inline-block mr-2"
+              class="inline-block mr-2 text text-theme-warning-400"
             >
               <div
                 class="sc-AxiKw gETsj"
@@ -113,7 +113,7 @@ exports[`Wallet Card should render 1`] = `
             </div>
           </div>
           <div
-            class="max-w-12 mt-6 truncate"
+            class="mt-6 truncate max-w-12"
           >
             <div
               class="inline-block truncate align-middle"
@@ -133,7 +133,7 @@ exports[`Wallet Card should render 1`] = `
             </div>
           </div>
           <span
-            class="text-theme-neutral-900 font-bold"
+            class="font-bold text-theme-neutral-900"
             data-testid="Amount"
           >
             33.75089801 DARK
@@ -160,10 +160,10 @@ exports[`Wallet Card should render blank 1`] = `
       >
         <div>
           <div
-            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 bg-white"
+            class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
           />
           <div
-            class="sc-AxhCb bzWLYJ border-theme-primary-contrast bg-white"
+            class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
           />
         </div>
         <div
@@ -199,7 +199,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
           class="relative p-2"
         >
           <div
-            class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
+            class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
           >
             <div
               class="relative"
@@ -221,10 +221,10 @@ exports[`Wallet Card should render with wallet data 1`] = `
             </div>
           </div>
           <div
-            class="right-3 -top-1 absolute"
+            class="absolute right-3 -top-1"
           >
             <div
-              class="text text-theme-neutral-600 inline-block mr-2"
+              class="inline-block mr-2 text text-theme-neutral-600"
             >
               <div
                 class="sc-AxiKw gETsj"
@@ -237,7 +237,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
               </div>
             </div>
             <div
-              class="text text-theme-neutral-600 inline-block mr-2"
+              class="inline-block mr-2 text text-theme-neutral-600"
             >
               <div
                 class="sc-AxiKw gETsj"
@@ -250,7 +250,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
               </div>
             </div>
             <div
-              class="text text-theme-warning-400 inline-block mr-2"
+              class="inline-block mr-2 text text-theme-warning-400"
             >
               <div
                 class="sc-AxiKw gETsj"
@@ -295,7 +295,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
             </div>
           </div>
           <div
-            class="max-w-12 mt-6 truncate"
+            class="mt-6 truncate max-w-12"
           >
             <div
               class="inline-block truncate align-middle"
@@ -315,7 +315,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
             </div>
           </div>
           <span
-            class="text-theme-neutral-900 font-bold"
+            class="font-bold text-theme-neutral-900"
             data-testid="Amount"
           >
             33.75089801 DARK
@@ -345,7 +345,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
           class="relative p-2"
         >
           <div
-            class="-right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500 absolute"
+            class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
           >
             <div
               class="relative"
@@ -367,10 +367,10 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
             </div>
           </div>
           <div
-            class="right-3 -top-1 absolute"
+            class="absolute right-3 -top-1"
           >
             <div
-              class="text text-theme-neutral-600 inline-block mr-2"
+              class="inline-block mr-2 text text-theme-neutral-600"
             >
               <div
                 class="sc-AxiKw gETsj"
@@ -383,7 +383,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
               </div>
             </div>
             <div
-              class="text text-theme-neutral-600 inline-block mr-2"
+              class="inline-block mr-2 text text-theme-neutral-600"
             >
               <div
                 class="sc-AxiKw gETsj"
@@ -396,7 +396,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
               </div>
             </div>
             <div
-              class="text text-theme-warning-400 inline-block mr-2"
+              class="inline-block mr-2 text text-theme-warning-400"
             >
               <div
                 class="sc-AxiKw gETsj"
@@ -441,7 +441,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
             </div>
           </div>
           <div
-            class="max-w-12 mt-6 truncate"
+            class="mt-6 truncate max-w-12"
           >
             <div
               class="inline-block truncate align-middle"
@@ -461,7 +461,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
             </div>
           </div>
           <span
-            class="text-theme-neutral-900 font-bold"
+            class="font-bold text-theme-neutral-900"
             data-testid="Amount"
           >
             33.75089801 DARK
