@@ -36,13 +36,11 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail
 
 	const onSelectNetwork = (network?: NetworkData | null) => {
 		setValue("network", network, true);
-
 		setWallets(profile.wallets().findByCoinWithNetwork(network!.coin(), network!.id()));
 	};
 
 	const onSelectSender = async (address: any) => {
 		setValue("senderAddress", address, true);
-		console.log("on select sender");
 
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 		const senderWallet = profile
@@ -52,7 +50,6 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail
 
 		try {
 			const transferFees = (await senderWallet?.fee().all(7))?.transfer;
-			console.log("transferfees", transferFees);
 
 			setFeeOptions({
 				last: undefined,
@@ -63,7 +60,6 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail
 
 			setValue("fee", transferFees!.avg, true);
 		} catch (error) {
-			console.log("on error");
 			onFail?.(error);
 		}
 	};
