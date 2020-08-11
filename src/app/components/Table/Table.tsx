@@ -1,3 +1,4 @@
+import { SkeletonLoader } from "app/components/SkeletonLoader";
 import React, { useMemo } from "react";
 import { useSortBy, useTable } from "react-table";
 import { styled } from "twin.macro";
@@ -11,13 +12,14 @@ type TableProps = {
 	data: any[];
 	columns: any[];
 	hideHeader?: boolean;
+	isLoading?: boolean;
 };
 
 const TableWrapper = styled.div`
 	${defaultTableStyle}
 `;
 
-export const Table = ({ children, data, columns, hideHeader }: TableProps) => {
+export const Table = ({ children, data, columns, hideHeader, isLoading }: TableProps) => {
 	const tableData = useMemo(() => data, [data]);
 	const tableColumns = useMemo(() => columns, [columns]);
 
@@ -86,10 +88,12 @@ export const Table = ({ children, data, columns, hideHeader }: TableProps) => {
 				)}
 
 				<tbody {...getTableBodyProps()}>
-					{rows.map((row: any) => {
-						prepareRow(row);
-						return { ...renderChildNode(row.original, row.index), ...row.getRowProps() };
-					})}
+					{isLoading && <SkeletonLoader type="table" rows={5} columns={tableColumns} />}
+					{!isLoading &&
+						rows.map((row: any) => {
+							prepareRow(row);
+							return { ...renderChildNode(row.original, row.index), ...row.getRowProps() };
+						})}
 				</tbody>
 			</table>
 		</TableWrapper>
@@ -100,4 +104,5 @@ Table.defaultProps = {
 	data: [],
 	columns: [],
 	hideColumns: false,
+	isLoading: false,
 };

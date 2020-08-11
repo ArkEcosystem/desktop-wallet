@@ -1,14 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Button } from "app/components/Button";
-import { Icon } from "app/components/Icon";
-import { Link } from "app/components/Link";
 import React from "react";
+import Skeleton from "react-loading-skeleton";
 
-import { TransactionRowAmount } from "./TransactionRowAmount";
-import { TransactionRowConfirmation } from "./TransactionRowConfirmation";
-import { TransactionRowInfo } from "./TransactionRowInfo";
-import { TransactionRowMode } from "./TransactionRowMode";
-import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
+
+
+
+
+
 
 type Props = {
 	transaction: Contracts.TransactionDataType;
@@ -28,41 +26,50 @@ export const TransactionRow = ({
 }: Props) => (
 	<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
 		<td className="w-16 py-6">
-			<div className="inline-block align-middle">
-				<Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id()} isExternal />
-			</div>
+			{/* <div className="inline-block align-middle"> */}
+			<Skeleton />
+			{/* <Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id()} isExternal /> */}
+			{/* </div> */}
 		</td>
 		<td className="w-48 py-1 text-sm text-theme-neutral-600">
 			<span data-testid="TransactionRow__timestamp">
-				{transaction.timestamp()!.format("DD MMM YYYY HH:mm:ss")}
+				<Skeleton />
+				{/* {transaction.timestamp()!.format("DD MMM YYYY HH:mm:ss")} */}
 			</span>
 		</td>
 		<td className="w-32">
-			<TransactionRowMode transaction={transaction} />
+			{/* <TransactionRowMode transaction={transaction} /> */}
+			{/* <Skeleton /> */}
 		</td>
 		<td>
-			<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
+			{/* <TransactionRowRecipientLabel transaction={transaction} walletName={walletName} /> */}
+			<Skeleton />
 		</td>
 		<td className="text-center">
-			<TransactionRowInfo transaction={transaction} />
+			{/* <TransactionRowInfo transaction={transaction} /> */}
+			<Skeleton />
 		</td>
 		<td className="w-16 text-center">
-			<TransactionRowConfirmation transaction={transaction} />
+			{/* <TransactionRowConfirmation transaction={transaction} /> */}
+			<Skeleton />
 		</td>
 		<td className="text-right">
-			<TransactionRowAmount transaction={transaction} />
+			{/* <TransactionRowAmount transaction={transaction} /> */}
+			<Skeleton />
 		</td>
 		{isSignaturePending && (
 			<td className="text-right">
-				<Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
+				{/* <Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
 					<Icon name="Edit" />
 					<span>Sign</span>
-				</Button>
+				</Button> */}
+				<Skeleton />
 			</td>
 		)}
 		{currencyRate && !isSignaturePending && (
 			<td data-testid="TransactionRow__currency" className="text-right">
-				<TransactionRowAmount transaction={transaction} currencyRate={currencyRate} />
+				{/* <TransactionRowAmount transaction={transaction} currencyRate={currencyRate} /> */}
+				<Skeleton />
 			</td>
 		)}
 	</tr>
