@@ -53,7 +53,7 @@ export const WalletListItem = ({
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
 	return (
-		<tr className="border-theme-neutral-200 border-b">
+		<tr className="border-b border-theme-neutral-200">
 			<td className="py-6 mt-1">
 				<div className="flex">
 					<Circle className={coinClass} size="lg">
@@ -83,7 +83,7 @@ export const WalletListItem = ({
 			<td className="font-semibold text-right">
 				<Amount value={wallet.balance()} ticker={wallet.network().currency.ticker} />
 			</td>
-			<td className="text-theme-neutral-light text-right">
+			<td className="text-right text-theme-neutral-light">
 				<Amount value={wallet.convertedBalance()} ticker={exchangeCurrency!} />
 			</td>
 			{actions && (

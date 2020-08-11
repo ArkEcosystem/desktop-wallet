@@ -14,9 +14,10 @@ type SendTransactionFormProps = {
 	formDefaultData: any;
 	networks: NetworkData[];
 	profile: Profile;
+	onFail?: any;
 };
 
-export const SendTransactionForm = ({ formDefaultData, networks, profile }: SendTransactionFormProps) => {
+export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail }: SendTransactionFormProps) => {
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<Wallet[]>([]);
 
@@ -35,7 +36,6 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile }: Send
 
 	const onSelectNetwork = (network?: NetworkData | null) => {
 		setValue("network", network, true);
-
 		setWallets(profile.wallets().findByCoinWithNetwork(network!.coin(), network!.id()));
 	};
 
@@ -60,7 +60,7 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile }: Send
 
 			setValue("fee", transferFees!.avg, true);
 		} catch (error) {
-			console.error("Could not load fees: ", error);
+			onFail?.(error);
 		}
 	};
 
