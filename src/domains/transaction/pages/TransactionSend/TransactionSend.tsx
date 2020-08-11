@@ -6,7 +6,7 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Form } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
@@ -136,9 +136,11 @@ export const ThirdStep = () => {
 				<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 
 				<div className="grid grid-flow-row">
-					<TransactionDetail border={false} label={t("TRANSACTION.MNEMONIC")} className="pt-8 pb-0">
-						<InputPassword name="mnemonic" ref={register({ required: true })} />
-					</TransactionDetail>
+					<FormField name="mnemonic" className="pt-8 pb-0">
+						<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
+						<InputPassword ref={register({ required: true })} />
+						<FormHelperText />
+					</FormField>
 				</div>
 			</div>
 		</section>
@@ -191,10 +193,11 @@ export const TransactionSend = () => {
 	const [_, copy] = useClipboard({
 		resetAfter: 1000,
 	});
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
 	const form = useForm({ mode: "onChange" });
-	const { formState, getValues, register } = form;
+	const { clearError, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -205,39 +208,49 @@ export const TransactionSend = () => {
 	}, [register]);
 
 	const submitForm = async () => {
+		clearError("mnemonic");
 		const { fee, mnemonic, recipients, senderAddress, smartbridge } = getValues();
 		const senderWallet = activeProfile
 			?.wallets()
 			.values()
 			.find((wallet: Wallet) => wallet.address() === senderAddress);
 
-		const transactionId = await senderWallet?.transaction().signTransfer({
-			fee,
-			from: senderAddress,
-			sign: {
-				mnemonic,
-			},
-			data: {
-				amount: recipients[0].amount,
-				to: recipients[0].address,
-				memo: smartbridge,
-			},
-		});
+		try {
+			const transactionId = await senderWallet?.transaction().signTransfer({
+				fee,
+				from: senderAddress,
+				sign: {
+					mnemonic,
+				},
+				data: {
+					amount: recipients[0].amount,
+					to: recipients[0].address,
+					memo: smartbridge,
+				},
+			});
 
-		await senderWallet?.transaction().broadcast([transactionId!]);
+			await senderWallet?.transaction().broadcast([transactionId!]);
 
-		// TODO: Remove timer and figure out a nicer way of doing this
-		const intervalId = setInterval(async () => {
-			try {
-				const transactionData = await senderWallet?.client().transaction(transactionId!);
-				setTransaction(transactionData!);
-				clearInterval(intervalId);
+			await env.persist();
 
-				handleNext();
-			} catch (error) {
-				// eslint-disable no-empty
-			}
-		}, 500);
+			// TODO: Remove timer and figure out a nicer way of doing this
+			const intervalId = setInterval(async () => {
+				try {
+					const transactionData = await senderWallet?.client().transaction(transactionId!);
+					setTransaction(transactionData!);
+					clearInterval(intervalId);
+
+					handleNext();
+				} catch (error) {
+					// eslint-disable no-empty
+				}
+			}, 500);
+		} catch (error) {
+			console.error("Could not create transaction: ", error);
+
+			setValue("mnemonic", "");
+			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+		}
 	};
 
 	const handleBack = () => {
