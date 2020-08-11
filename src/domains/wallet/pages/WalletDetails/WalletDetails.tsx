@@ -180,14 +180,16 @@ export const WalletDetails = () => {
 						<>
 							Button
 							<TransactionTable transactions={transactions} showSignColumn />
-							<Button
-								data-testid="pending-transactions__fetch-more-button"
-								variant="plain"
-								className="w-full mt-10 mb-5"
-								onClick={() => fetchMoreTransactions("pending")}
-							>
-								{t("COMMON.VIEW_MORE")}
-							</Button>
+							{transactions.length > 0 && (
+								<Button
+									data-testid="pending-transactions__fetch-more-button"
+									variant="plain"
+									className="w-full mt-10 mb-5"
+									onClick={() => fetchMoreTransactions("pending")}
+								>
+									{t("COMMON.VIEW_MORE")}
+								</Button>
+							)}
 						</>
 					</div>
 
@@ -195,14 +197,16 @@ export const WalletDetails = () => {
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
 						<>
 							<TransactionTable transactions={transactions} currencyRate="2" />
-							<Button
-								data-testid="transactions__fetch-more-button"
-								variant="plain"
-								className="w-full mt-10 mb-5"
-								onClick={() => fetchMoreTransactions()}
-							>
-								{t("COMMON.VIEW_MORE")}
-							</Button>
+							{transactions.length > 0 && (
+								<Button
+									data-testid="transactions__fetch-more-button"
+									variant="plain"
+									className="w-full mt-10 mb-5"
+									onClick={() => fetchMoreTransactions()}
+								>
+									{t("COMMON.VIEW_MORE")}
+								</Button>
+							)}
 						</>
 					</div>
 				</Section>
