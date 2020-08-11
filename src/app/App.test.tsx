@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { translations as errorTranslations } from "domains/error/i18n";
+import { translations as profileTranslations } from "domains/profile/i18n";
 import React from "react";
 import { act, renderWithRouter, useDefaultNetMocks, waitFor } from "utils/testing-library";
 
-import { translations as profileTranslations } from "../domains/profile/i18n";
 import { App } from "./App";
 
 describe("App", () => {
@@ -30,6 +31,28 @@ describe("App", () => {
 			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 			expect(container).toBeTruthy();
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
+
+	it("should render the offline screen if there is no internet connection", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
+		jest.spyOn(window.navigator, "onLine", "get").mockReturnValueOnce(false);
+
+		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+		expect(getByTestId("Splash__text")).toBeInTheDocument();
+
+		await act(async () => {
+			await new Promise((resolve) => setTimeout(resolve, 2000));
+		});
+
+		await waitFor(() => {
+			expect(container).toBeTruthy();
+
+			expect(getByTestId("Offline__text")).toHaveTextContent(errorTranslations.OFFLINE.TITLE);
+			expect(getByTestId("Offline__text")).toHaveTextContent(errorTranslations.OFFLINE.DESCRIPTION);
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
