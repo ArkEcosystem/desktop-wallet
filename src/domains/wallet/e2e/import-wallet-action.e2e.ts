@@ -148,10 +148,6 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
 	await t
-		.expect(
-			Selector("fieldset p").withText(
-				"Failed to add address D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib as it already exists",
-			).exists,
-		)
+		.expect(Selector("fieldset p").withText("Address D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib already exists").exists)
 		.ok({ timeout: 5000 });
 });
