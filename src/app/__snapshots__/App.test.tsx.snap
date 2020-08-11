@@ -421,6 +421,70 @@ exports[`App should render splash screen 1`] = `
 </DocumentFragment>
 `;
 
+exports[`App should render the offline screen if there is no internet connection 1`] = `
+<DocumentFragment>
+  <main
+    class="debug-screens"
+  >
+    <div
+      class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-8 bg-theme-background"
+      >
+        <div
+          class="flex items-center flex-shrink-0 h-20 md:h-24"
+        >
+          <div
+            class="flex p-2 rounded-lg bg-logo"
+          >
+            <img
+              alt="ARK Logo"
+              class="h-6 md:h-8 lg:h-10"
+              src="ark-logo.png"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col flex-1 space-y-5 "
+      >
+        <div
+          class="sc-fzoLag fvqzEZ flex flex-col justify-center flex-1 text-center"
+        >
+          <div
+            class="container py-16 mx-auto px-14"
+          >
+            <div
+              class="sm:mx-auto sm:w-full sm:max-w-md"
+            >
+              <svg>
+                cannot-connect-banner.svg
+              </svg>
+            </div>
+            <div
+              class="mt-8"
+              data-testid="Offline__text"
+            >
+              <h2
+                class="text-2xl font-bold"
+              >
+                Cannot Connect
+              </h2>
+              <p
+                class="text-theme-neutral-dark"
+              >
+                Check your internet connection if it doesn't work, check it again.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</DocumentFragment>
+`;
+
 exports[`App should render welcome screen after splash screen 1`] = `
 <DocumentFragment>
   <main
