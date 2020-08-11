@@ -633,8 +633,13 @@ exports[`Transaction Send should render 1st step 1`] = `
             data-testid="FormLabel"
             for="network"
             label="Network"
+            required=""
           >
             Network
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -740,8 +745,13 @@ exports[`Transaction Send should render 1st step 1`] = `
             data-testid="FormLabel"
             for="senderAddress"
             label="Sender"
+            required=""
           >
             Sender
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -853,8 +863,13 @@ exports[`Transaction Send should render 1st step 1`] = `
                     data-testid="FormLabel"
                     for="recipientAddress"
                     label="Recipient"
+                    required=""
                   >
                     Recipient
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
                   </label>
                 </div>
                 <div>
@@ -904,8 +919,13 @@ exports[`Transaction Send should render 1st step 1`] = `
                     data-testid="FormLabel"
                     for="amount"
                     label="Amount"
+                    required=""
                   >
                     Amount
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
                   </label>
                 </div>
                 <div
@@ -947,8 +967,13 @@ exports[`Transaction Send should render 1st step 1`] = `
             data-testid="FormLabel"
             for="smartbridge"
             label="Smartbridge"
+            required=""
           >
             Smartbridge
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -982,8 +1007,13 @@ exports[`Transaction Send should render 1st step 1`] = `
           class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
           data-testid="FormLabel"
           for="fee"
+          required=""
         >
           Transaction Fee
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
         <div
           class="flex space-x-2"
