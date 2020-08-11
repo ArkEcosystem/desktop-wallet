@@ -44,7 +44,10 @@ export const InputAddress = ({
 			<Input
 				ref={registerRef?.({
 					...additionalRules,
-					validate: validateAddress,
+					validate: {
+						validateAddress,
+						...additionalRules?.validate,
+					},
 				})}
 				type="text"
 				className="pr-12"

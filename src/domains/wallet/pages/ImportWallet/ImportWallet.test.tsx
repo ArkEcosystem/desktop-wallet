@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -87,7 +88,7 @@ describe("ImportWallet", () => {
 		);
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<SecondStep />
+				<SecondStep profile={profile} />
 			</FormContext>,
 		);
 
@@ -354,7 +355,73 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: "123" } });
 
 			await waitFor(() => {
-				expect(getByText(/The address is not valid/i)).toBeVisible();
+				expect(getByText(commonTranslations.INPUT_ADDRESS.VALIDATION.NOT_VALID)).toBeVisible();
+			});
+
+			const submitButton = getByTestId("ImportWallet__submit-button");
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).toBeDisabled();
+			});
+		});
+	});
+
+	it("should show an error message for duplicate address", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		history.push(route);
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, asFragment, getByText } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+
+			const continueButton = getByTestId("ImportWallet__continue-button");
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			const addressToggle = getByTestId("ImportWallet__address-toggle");
+			expect(addressToggle).toBeTruthy();
+
+			await fireEvent.click(addressToggle);
+
+			const addressInput = getByTestId("ImportWallet__address-input");
+			expect(addressInput).toBeTruthy();
+
+			await fireEvent.input(addressInput, { target: { value: identityAddress } });
+
+			await waitFor(() => {
+				expect(getByText(`Address ${identityAddress} already exists`)).toBeVisible();
 			});
 
 			const submitButton = getByTestId("ImportWallet__submit-button");
