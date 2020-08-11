@@ -25,13 +25,13 @@ test("should load transactions with load more action", async (t) => {
 	// Navigate to wallet details page
 	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-	const fetchMoreButton = Selector("[data-testid=transactions__fetch-more-button]");
 
 	// Check for transactions rows
 	await t.expect(Selector("[data-testid=TransactionRow]").exists).ok();
-	await t.click(await fetchMoreButton());
+	await t.expect(Selector("[data-testid=transactions__fetch-more-button]").exists).ok();
+	await t.click(Selector("[data-testid=transactions__fetch-more-button]"));
 
 	await t.expect(Selector("[data-testid=TransactionRow]").count).eql(48, {
-		timeout: 5000,
+		timeout: 2000,
 	});
 });
