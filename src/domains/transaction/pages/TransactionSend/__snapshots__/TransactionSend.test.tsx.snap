@@ -1350,7 +1350,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         <div
                           class="font-bold text-right text-theme-neutral-800"
                         >
-                          100000000 ARK
+                          1.00000000 ARK
                         </div>
                       </td>
                     </tr>
@@ -1494,53 +1494,52 @@ exports[`Transaction Send should render 3rd step 1`] = `
       <div
         class="grid grid-flow-row"
       >
-        <div
-          class="flex items-center py-6 true pt-8 pb-0"
+        <fieldset
+          class="sc-AxhCb ckQmOL pt-8 pb-0"
         >
-          <div
-            class="flex-1 space-y-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="mnemonic"
+            required=""
           >
+            Mnemonic
             <div
-              class="text-sm font-semibold text-theme-neutral"
-            >
-              Mnemonic
-            </div>
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
+          <div
+            class="sc-fzozJi OgXfh max-w-20"
+            data-testid="InputPassword"
+          >
+            <input
+              class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+              data-testid="Input"
+              name="mnemonic"
+              type="password"
+            />
             <div
-              class="font-semibold"
+              class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
             >
-              <div
-                class="sc-fzozJi OgXfh max-w-20"
-                data-testid="InputPassword"
+              <button
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                data-testid="InputPassword__toggle"
+                type="button"
               >
-                <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                  data-testid="Input"
-                  name="mnemonic"
-                  type="password"
-                />
                 <div
-                  class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+                  class="sc-AxhUy cPXLjK"
+                  height="1em"
+                  width="1em"
                 >
-                  <button
-                    class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
-                    data-testid="InputPassword__toggle"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxhUy cPXLjK"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        eye.svg
-                      </svg>
-                    </div>
-                  </button>
+                  <svg>
+                    eye.svg
+                  </svg>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
-        </div>
+        </fieldset>
       </div>
     </div>
   </section>
