@@ -26,7 +26,6 @@ export const InputAddress = ({
 	onValidAddress,
 	onQRCodeClick,
 	useDefaultRules,
-	onChange,
 	...props
 }: InputAddressProps) => {
 	const { t } = useTranslation();
