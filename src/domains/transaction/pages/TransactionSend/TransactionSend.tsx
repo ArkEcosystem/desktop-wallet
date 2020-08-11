@@ -321,7 +321,7 @@ export const TransactionSend = () => {
 												data-testid="TransactionSend__button--submit"
 												disabled={!formState.isValid}
 											>
-												{t("COMMON.CONTINUE")} & SEND YO
+												{t("TRANSACTION.SIGN_CONTINUE")}
 											</Button>
 										)}
 									</>

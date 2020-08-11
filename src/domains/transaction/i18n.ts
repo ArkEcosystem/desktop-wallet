@@ -26,6 +26,7 @@ export const translations: { [key: string]: any } = {
 	SEND_ALL: "Send All",
 	SENDER: "Sender",
 	SIGN: "Sign",
+	SIGN_CONTINUE: "Sign & Continue",
 	SIGNATURES: "Signatures",
 	SINGLE: "Single",
 	SINGLE_OR_MULTI: "Select a Single or Multiple Recipient Transaction",
