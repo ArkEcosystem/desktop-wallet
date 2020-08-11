@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const electron = require("electron");
-const path = require("path");
 const isDev = require("electron-is-dev");
 const winState = require("electron-window-state");
+const path = require("path");
 const assignMenu = require("./menu");
 
 const { BrowserWindow, app, screen, ipcMain } = electron;
@@ -12,7 +12,11 @@ let mainWindow;
 let windowState = null;
 let deeplinkingUrl = null;
 
-const winURL = isDev ? "http://localhost:3000" : `file://${path.resolve("build/index.html")}`;
+const winURL = isDev
+	? "http://localhost:3000"
+	: process.env.ELECTRON_IS_E2E
+	? `file://${path.resolve("build/index.html")}`
+	: `file://${path.resolve(__dirname, "../")}/index.html`;
 
 const installExtensions = async () => {
 	if (isDev) {

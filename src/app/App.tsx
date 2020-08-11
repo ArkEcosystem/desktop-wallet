@@ -43,6 +43,8 @@ const Main = () => {
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
 			boot();
+		} else {
+			setShowSplash(false);
 		}
 	}, [env, persist]);
 
