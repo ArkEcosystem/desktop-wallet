@@ -32,6 +32,6 @@ test("should load transactions with load more action", async (t) => {
 	await t.click(Selector("[data-testid=transactions__fetch-more-button]"));
 
 	await t.expect(Selector("[data-testid=TransactionRow]").count).eql(48, {
-		timeout: 5000,
+		timeout: 2000,
 	});
 });
