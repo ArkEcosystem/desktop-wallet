@@ -5,6 +5,7 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { useEnvironmentContext } from "app/contexts";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useMemo, useState } from "react";
@@ -94,7 +95,9 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			: [],
 	);
 
+	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
+
 	const form = useForm({ mode: "onChange" });
 	const { watch, register } = form;
 	const { name, network, address } = watch();
@@ -109,7 +112,18 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 		}
 	}, [form, errors]);
 
-	const handleAddAddress = () => {
+	const handleAddAddress = async () => {
+		const isValidAddress = await env.dataValidator().address(network.coin(), network.id(), address);
+
+		if (!isValidAddress) {
+			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID"));
+		}
+
+		const addressExists = addresses.some((addr) => addr.address === address);
+		if (addressExists) {
+			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_EXISTS"));
+		}
+
 		setAddresses(
 			addresses.concat({
 				network: network.id(),
@@ -174,17 +188,17 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 						onSelect={handleSelectNetwork}
 						selected={network}
 					/>
-					<FormHelperText />
+					<FormHelperText errorMessage={form.errors} />
 				</FormField>
 
-				<FormField name="address">
+				<FormField name="address" data-testid="ContactForm__address">
 					<FormLabel>{t("CONTACTS.CONTACT_FORM.ADDRESS")}</FormLabel>
 					<Input
 						data-testid="contact-form__address-input"
 						ref={form.register({})}
 						onChange={() => onChange?.("address", address)}
 					/>
-					<FormHelperText errorMessage={errors?.address} />
+					<FormHelperText />
 				</FormField>
 
 				<div className="mt-4">
