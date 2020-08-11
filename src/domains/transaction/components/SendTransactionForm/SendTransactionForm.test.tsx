@@ -1,18 +1,38 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { httpClient } from "app/services";
 import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { env, fireEvent, getDefaultProfileId, render, waitFor, within } from "testing-library";
+import {
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	useDefaultNetMocks,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { SendTransactionForm } from "./";
 
 let profile: Profile;
+let defaultFee: string;
 
 describe("SendTransactionForm", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		const [wallet] = profile.wallets().values();
+		defaultFee = (await wallet.fee().all(7)).transfer.avg;
+	});
+
+	beforeEach(() => {
+		httpClient.clearCache();
+	});
+
+	afterAll(() => {
+		useDefaultNetMocks();
 	});
 
 	it("should render", async () => {
@@ -60,11 +80,11 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
-			const firstAddress = getByTestId("AddressListItem__select-1");
+			const firstAddress = getByTestId("AddressListItem__select-0");
 			fireEvent.click(firstAddress);
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
 
 			// Select recipient
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
@@ -94,12 +114,21 @@ describe("SendTransactionForm", () => {
 	});
 
 	it("should only update fees if provided", async () => {
+		let rendered: any;
 		const onFail = jest.fn();
 		const { result: form } = renderHook(() => useForm());
+
 		form.current.register("senderAddress");
 		form.current.register("fees");
 
-		let rendered: any;
+		nock.cleanAll();
+		nock("https://dwallets.ark.io")
+			.get("/api/node/fees")
+			.query(true)
+			.reply(500, {})
+			.get("/api/transactions/fees")
+			.reply(500, {})
+			.persist();
 
 		await act(async () => {
 			rendered = render(
@@ -110,16 +139,6 @@ describe("SendTransactionForm", () => {
 		});
 
 		const { getByTestId, getAllByTestId } = rendered;
-
-		nock.cleanAll();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/fees")
-			.query(true)
-			.reply(500, {})
-			.get("/api/transactions/fees")
-			.reply(500, {})
-			.persist();
 
 		await act(async () => {
 			// Select network
