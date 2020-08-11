@@ -6,16 +6,25 @@ import { translations as profileTranslations } from "../domains/profile/i18n";
 import { App } from "./App";
 
 describe("App", () => {
-	beforeAll(() => {
-		useDefaultNetMocks();
+	beforeAll(useDefaultNetMocks);
 
-		process.env = Object.assign(process.env, { REACT_APP_BUILD_MODE: "demo" });
-	});
+	it("should render splash screen", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
 
-	it("should render splash screen", () => {
 		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
 
-		expect(getByTestId("Splash__text")).toBeInTheDocument();
+		await waitFor(() => expect(getByTestId("Splash__text")).toBeInTheDocument());
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should close splash screen if not demo", async () => {
+		process.env.REACT_APP_BUILD_MODE = undefined;
+
+		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+
+		await waitFor(() => expect(() => getByTestId("Splash__text")).toThrow(/^Unable to find an element by/));
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
