@@ -421,7 +421,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: identityAddress } });
 
 			await waitFor(() => {
-				expect(getByText(`The address ${identityAddress} has already been imported as a wallet`)).toBeVisible();
+				expect(getByText(`Failed to add address ${identityAddress} as it already exists`)).toBeVisible();
 			});
 
 			const submitButton = getByTestId("ImportWallet__submit-button");

@@ -197,8 +197,7 @@ export const translations: { [key: string]: any } = {
 	INPUT_ADDRESS: {
 		VALIDATION: {
 			NOT_VALID: "The address is not valid",
-			EXISTS_AS_CONTACT: "The address {{address}} has already been added as a contact",
-			EXISTS_AS_WALLET: "The address {{address}} has already been imported as a wallet",
+			ADDRESS_ALREADY_EXISTS: "Failed to add address {{address}} as it already exists",
 		},
 	},
 };

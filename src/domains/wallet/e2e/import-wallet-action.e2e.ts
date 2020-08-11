@@ -150,7 +150,7 @@ test("should show an error message for duplicate address", async (t) => {
 	await t
 		.expect(
 			Selector("fieldset p").withText(
-				"The address D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib has already been imported as a wallet",
+				"Failed to add address D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib as it already exists",
 			).exists,
 		)
 		.ok({ timeout: 5000 });

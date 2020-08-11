@@ -90,7 +90,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 						validate: {
 							duplicateAddress: (address: string) =>
 								!profile.wallets().findByAddress(address) ||
-								t("COMMON.INPUT_ADDRESS.VALIDATION.EXISTS_AS_WALLET", { address }).toString(),
+								t("COMMON.INPUT_ADDRESS.VALIDATION.ADDRESS_ALREADY_EXISTS", { address }).toString(),
 						},
 					}}
 					data-testid="ImportWallet__address-input"
