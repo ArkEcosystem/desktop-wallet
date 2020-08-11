@@ -70,8 +70,13 @@ exports[`AddRecipient should render 1`] = `
               data-testid="FormLabel"
               for="recipientAddress"
               label="Recipient"
+              required=""
             >
               Recipient
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
           </div>
           <div>
@@ -121,8 +126,13 @@ exports[`AddRecipient should render 1`] = `
               data-testid="FormLabel"
               for="amount"
               label="Amount"
+              required=""
             >
               Amount
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
           </div>
           <div
@@ -225,8 +235,13 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
               data-testid="FormLabel"
               for="recipientAddress"
               label="Recipient #1"
+              required=""
             >
               Recipient #1
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
           </div>
           <div>
@@ -276,8 +291,13 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
               data-testid="FormLabel"
               for="amount"
               label="Amount"
+              required=""
             >
               Amount
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
           </div>
           <div
@@ -546,8 +566,13 @@ exports[`AddRecipient should render without recipients 1`] = `
               data-testid="FormLabel"
               for="recipientAddress"
               label="Recipient"
+              required=""
             >
               Recipient
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
           </div>
           <div>
@@ -597,8 +622,13 @@ exports[`AddRecipient should render without recipients 1`] = `
               data-testid="FormLabel"
               for="amount"
               label="Amount"
+              required=""
             >
               Amount
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
           </div>
           <div
@@ -701,8 +731,13 @@ exports[`AddRecipient should set available amount 1`] = `
               data-testid="FormLabel"
               for="recipientAddress"
               label="Recipient"
+              required=""
             >
               Recipient
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
           </div>
           <div>
@@ -752,8 +787,13 @@ exports[`AddRecipient should set available amount 1`] = `
               data-testid="FormLabel"
               for="amount"
               label="Amount"
+              required=""
             >
               Amount
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
           </div>
           <div

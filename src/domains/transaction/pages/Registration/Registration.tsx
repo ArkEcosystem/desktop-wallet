@@ -141,12 +141,12 @@ const SecondStep = ({ form }: { form: any }) => {
 			<div>
 				<FormWrapper className="pb-8 mt-8">
 					<FormField name="name" className="font-normal">
-						<FormLabel required>{t("TRANSACTION.NAME")}</FormLabel>
+						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input type="text" ref={register} />
 					</FormField>
 
 					<FormField name="description" className="mt-8 font-normal">
-						<FormLabel required>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
+						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
 						<TextArea ref={register} />
 					</FormField>
 

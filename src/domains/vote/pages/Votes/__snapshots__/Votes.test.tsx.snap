@@ -618,9 +618,21 @@ exports[`Votes should render 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk Betanet"
+                      class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
+                      data-testid="NetworkIcon-LSK-betanet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -630,9 +642,21 @@ exports[`Votes should render 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy border-theme-primary-400 text-theme-primary"
+                      data-testid="NetworkIcon-LSK-mainnet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -642,9 +666,21 @@ exports[`Votes should render 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk Testnet"
+                      class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
+                      data-testid="NetworkIcon-LSK-testnet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -678,21 +714,9 @@ exports[`Votes should render 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Betanet"
-                      class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
-                      data-testid="NetworkIcon-LSK-betanet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -702,21 +726,9 @@ exports[`Votes should render 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk"
-                      class="sc-AxirZ jatHdy border-theme-primary-400 text-theme-primary"
-                      data-testid="NetworkIcon-LSK-mainnet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -726,21 +738,9 @@ exports[`Votes should render 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Testnet"
-                      class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
-                      data-testid="NetworkIcon-LSK-testnet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -795,66 +795,6 @@ exports[`Votes should render 1`] = `
                     class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-29"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-30"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-31"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-32"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-33"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-34"
                     role="option"
                   >
                     <div
@@ -1585,9 +1525,21 @@ exports[`Votes should select a delegate 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk Betanet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-betanet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -1597,9 +1549,21 @@ exports[`Votes should select a delegate 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-mainnet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -1609,9 +1573,21 @@ exports[`Votes should select a delegate 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk Testnet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-testnet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -1645,21 +1621,9 @@ exports[`Votes should select a delegate 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Betanet"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-betanet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -1669,21 +1633,9 @@ exports[`Votes should select a delegate 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-mainnet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -1693,21 +1645,9 @@ exports[`Votes should select a delegate 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Testnet"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-testnet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -1762,66 +1702,6 @@ exports[`Votes should select a delegate 1`] = `
                     class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-29"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-30"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-31"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-32"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-33"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-34"
                     role="option"
                   >
                     <div
@@ -3393,9 +3273,21 @@ exports[`Votes should select a network 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk Betanet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-betanet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -3405,9 +3297,21 @@ exports[`Votes should select a network 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-mainnet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -3417,9 +3321,21 @@ exports[`Votes should select a network 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk Testnet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-testnet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -3453,21 +3369,9 @@ exports[`Votes should select a network 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Betanet"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-betanet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -3477,21 +3381,9 @@ exports[`Votes should select a network 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-mainnet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -3501,21 +3393,9 @@ exports[`Votes should select a network 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Testnet"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-testnet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -3570,66 +3450,6 @@ exports[`Votes should select a network 1`] = `
                     class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-29"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-30"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-31"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-32"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-33"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-34"
                     role="option"
                   >
                     <div
@@ -5024,9 +4844,21 @@ exports[`Votes should select address 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk Betanet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-betanet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -5036,9 +4868,21 @@ exports[`Votes should select address 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-mainnet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -5048,9 +4892,21 @@ exports[`Votes should select address 1`] = `
                     role="option"
                   >
                     <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
+                      aria-label="Lisk Testnet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-testnet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
                   </li>
                   <li
                     aria-selected="false"
@@ -5084,21 +4940,9 @@ exports[`Votes should select address 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Betanet"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-betanet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -5108,21 +4952,9 @@ exports[`Votes should select address 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-mainnet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -5132,21 +4964,9 @@ exports[`Votes should select address 1`] = `
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Testnet"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-testnet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                   <li
                     aria-selected="false"
@@ -5201,66 +5021,6 @@ exports[`Votes should select address 1`] = `
                     class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-29"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-30"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-31"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-32"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-33"
-                    role="option"
-                  >
-                    <div
-                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-34"
                     role="option"
                   >
                     <div

@@ -11,7 +11,7 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // import { XLM } from "@arkecosystem/platform-sdk-xlm";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
-import { ApplicationError } from "domains/error/pages";
+import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import React, { useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
@@ -21,6 +21,7 @@ import { StubStorage } from "tests/mocks";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
+import { useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
@@ -31,6 +32,8 @@ const Main = () => {
 
 	const { env, persist } = useEnvironmentContext();
 
+	const isOnline = useNetworkStatus();
+
 	useLayoutEffect(() => {
 		const boot = async () => {
 			await env.bootFromObject(fixtureData);
@@ -40,17 +43,21 @@ const Main = () => {
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
 			boot();
+		} else {
+			setShowSplash(false);
 		}
 	}, [env, persist]);
 
-	if (showSplash) return <Splash />;
+	if (showSplash) {
+		return <Splash />;
+	}
 
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
 
 	return (
 		<main className={className}>
-			<RouterView routes={routes} middlewares={middlewares} />
+			{isOnline ? <RouterView routes={routes} middlewares={middlewares} /> : <Offline />}
 		</main>
 	);
 };
