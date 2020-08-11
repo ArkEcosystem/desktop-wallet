@@ -19,6 +19,7 @@ import {
 } from "testing-library";
 import transactionFixture from "tests/fixtures/coins/ark/transaction.json";
 
+import { translations as transactionTranslations } from "../../i18n";
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
 const fixtureProfileId = getDefaultProfileId();
@@ -253,6 +254,113 @@ describe("Transaction Send", () => {
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should error if wrong mnemonic", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/transfer">
+					<TransactionSend />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+		});
+
+		const { getAllByTestId, getByTestId } = rendered!;
+
+		await act(async () => {
+			// Select network
+			const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
+			fireEvent.click(networkIcons[1]);
+			expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
+
+			expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper")).not.toHaveAttribute(
+				"disabled",
+			);
+
+			// Select sender & update fees
+			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			const firstAddress = getByTestId("AddressListItem__select-1");
+			fireEvent.click(firstAddress);
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			// Select recipient
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(
+				profile.contacts().values()[0].addresses().values()[0].address(),
+			);
+
+			// Amount
+			fireEvent.click(getByTestId("add-recipient__send-all"));
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
+
+			// Smartbridge
+			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[2]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("TransactionSend__button--continue"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("TransactionSend__button--continue"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--third")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("TransactionSend__button--back"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("TransactionSend__button--continue"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--third")).toBeTruthy());
+			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
+			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+
+			// Step 5 (skip step 4 for now - ledger confirmation)
+			const signMock = jest.spyOn(TransactionService.prototype, "signTransfer").mockImplementation(() => {
+				throw new Error();
+			});
+
+			const consoleSpy = jest.spyOn(console, "error").mockImplementation();
+
+			fireEvent.click(getByTestId("TransactionSend__button--submit"));
+
+			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
+			await waitFor(() => expect(passwordInput).toHaveValue(""));
+			await waitFor(() =>
+				expect(getByTestId("TransactionSend__step--third")).toHaveTextContent(
+					transactionTranslations.INVALID_MNEMONIC,
+				),
+			);
+
+			signMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
