@@ -148,11 +148,11 @@ export const ThirdStep = () => {
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="CreateWallet__fourth-step">
+		<section data-testid="ImportWallet__fourth-step">
 			<div className="my-8">
 				<Header
-					title={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
-					subtitle={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
+					title={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
 				/>
 			</div>
 
@@ -160,7 +160,7 @@ export const ThirdStep = () => {
 				<li className="flex justify-between">
 					<div>
 						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.NETWORK")}</p>
-						<p data-testid="CreateWallet__network-name" className="text-lg font-medium">
+						<p className="text-lg font-medium" data-testid="ImportWallet__network-name">
 							{networkConfig?.displayName}
 						</p>
 					</div>
@@ -172,7 +172,7 @@ export const ThirdStep = () => {
 				<li className="flex justify-between">
 					<div>
 						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.ADDRESS")}</p>
-						<p data-testid="CreateWallet__wallet-address" className="text-lg font-medium">
+						<p className="text-lg font-medium" data-testid="ImportWallet__wallet-address">
 							{wallet.address()}
 						</p>
 					</div>
@@ -183,8 +183,8 @@ export const ThirdStep = () => {
 			<Divider dashed />
 
 			<FormField name="name">
-				<FormLabel label={t("WALLETS.PAGE_CREATE_WALLET.WALLET_NAME")} />
-				<Input data-testid="CreateWallet__wallet-name" ref={register} />
+				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} />
+				<Input ref={register} data-testid="ImportWallet__wallet-name" />
 			</FormField>
 		</section>
 	);
