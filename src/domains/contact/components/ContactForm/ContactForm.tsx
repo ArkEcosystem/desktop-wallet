@@ -4,7 +4,7 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input } from "app/components/Input";
+import { Input, InputAddress } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -193,10 +193,12 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 
 				<FormField name="address" data-testid="ContactForm__address">
 					<FormLabel>{t("CONTACTS.CONTACT_FORM.ADDRESS")}</FormLabel>
-					<Input
-						data-testid="contact-form__address-input"
-						ref={form.register({})}
+
+					<InputAddress
+						useDefaultRules={false}
+						registerRef={form.register}
 						onChange={() => onChange?.("address", address)}
+						data-testid="contact-form__address-input"
 					/>
 					<FormHelperText />
 				</FormField>
