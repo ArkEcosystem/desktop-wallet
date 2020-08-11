@@ -148,7 +148,7 @@ export const ThirdStep = () => {
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="ImportWallet__fourth-step">
+		<section data-testid="ImportWallet__third-step">
 			<div className="my-8">
 				<Header
 					title={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
@@ -250,7 +250,7 @@ export const ImportWallet = () => {
 					data-testid="ImportWallet__form"
 				>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={2} activeIndex={activeTab} />
+						<StepIndicator size={3} activeIndex={activeTab} />
 
 						<div className="mt-4">
 							<TabPanel tabId={1}>
@@ -259,8 +259,22 @@ export const ImportWallet = () => {
 							<TabPanel tabId={2}>
 								<SecondStep profile={activeProfile} />
 							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
+								{activeTab < 3 && (
+									<Button
+										disabled={activeTab === 1}
+										variant="plain"
+										onClick={handleBack}
+										data-testid="ImportWallet__back-button"
+									>
+										{t("COMMON.BACK")}
+									</Button>
+								)}
+
 								{activeTab === 1 && (
 									<Button
 										disabled={!formState.isValid}
@@ -272,22 +286,23 @@ export const ImportWallet = () => {
 								)}
 
 								{activeTab === 2 && (
-									<>
-										<Button
-											variant="plain"
-											onClick={handleBack}
-											data-testid="ImportWallet__back-button"
-										>
-											{t("COMMON.BACK")}
-										</Button>
-										<Button
-											disabled={!formState.isValid}
-											type="submit"
-											data-testid="ImportWallet__submit-button"
-										>
-											{t("COMMON.GO_TO_WALLET")}
-										</Button>
-									</>
+									<Button
+										disabled={!formState.isValid}
+										onClick={handleNext}
+										data-testid="ImportWallet__submit-button"
+									>
+										{t("COMMON.GO_TO_WALLET")}
+									</Button>
+								)}
+
+								{activeTab === 3 && (
+									<Button
+										disabled={!formState.isValid}
+										type="submit"
+										data-testid="ImportWallet__save-button"
+									>
+										{t("COMMON.SAVE_FINISH")}
+									</Button>
 								)}
 							</div>
 						</div>
