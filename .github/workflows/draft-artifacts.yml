@@ -52,19 +52,19 @@ jobs:
             #   uses: actions/upload-artifact@master
             #   with:
             #     name: ark-desktop-wallet-linux-3.0.0.AppImage
-            #     path: build/target/ark-desktop-wallet-linux-x86_64-3.0.0.AppImage
+            #     path: dist/target/ark-desktop-wallet-linux-x86_64-3.0.0.AppImage
 
             # - name: Upload .tar.gz
             #   uses: actions/upload-artifact@master
             #   with:
             #     name: ark-desktop-wallet-linux-3.0.0.tar.gz
-            #     path: build/target/ark-desktop-wallet-linux-x64-3.0.0.tar.gz
+            #     path: dist/target/ark-desktop-wallet-linux-x64-3.0.0.tar.gz
 
             - name: Upload .deb
               uses: actions/upload-artifact@master
               with:
                   name: ark-desktop-wallet-linux-3.0.0-${{ github.sha }}.deb
-                  path: build/target/ark-desktop-wallet-linux-amd64-3.0.0.deb
+                  path: dist/target/ark-desktop-wallet-linux-amd64-3.0.0.deb
 
     macOS:
         runs-on: macos-latest
@@ -114,13 +114,13 @@ jobs:
             #   uses: actions/upload-artifact@master
             #   with:
             #     name: ark-desktop-wallet-mac-3.0.0.zip
-            #     path: build/target/ark-desktop-wallet-mac-3.0.0.zip
+            #     path: dist/target/ark-desktop-wallet-mac-3.0.0.zip
 
             - name: Upload .dmg
               uses: actions/upload-artifact@v2
               with:
                   name: ark-desktop-wallet-mac-3.0.0-${{ github.sha }}.dmg
-                  path: build/target/ark-desktop-wallet-mac-3.0.0.dmg
+                  path: dist/target/ark-desktop-wallet-mac-3.0.0.dmg
 
     windows:
         runs-on: windows-latest
@@ -162,4 +162,4 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: ark-desktop-wallet-win-3.0.0-${{ github.sha }}.exe
-                  path: build/target/ark-desktop-wallet-win-3.0.0.exe
+                  path: dist/target/ark-desktop-wallet-win-3.0.0.exe
