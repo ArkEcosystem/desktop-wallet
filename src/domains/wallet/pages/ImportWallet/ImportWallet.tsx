@@ -1,3 +1,4 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { NetworkData, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -55,6 +56,7 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = ({ profile }: { profile: Profile }) => {
+	const { env } = useEnvironmentContext();
 	const { getValues, register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
@@ -72,6 +74,16 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("COMMON.YOUR_PASSPHRASE"),
 							}).toString(),
+							validate: async (passphrase) => {
+								const instance: Coins.Coin = await env.coin(network.coin(), network.id());
+								const address = await instance.identity().address().fromMnemonic(passphrase);
+								return (
+									!profile.wallets().findByAddress(address) ||
+									t("COMMON.INPUT_PASSPHRASE.VALIDATION.ADDRESS_ALREADY_EXISTS", {
+										address,
+									}).toString()
+								);
+							},
 						})}
 						data-testid="ImportWallet__passphrase-input"
 					/>
@@ -92,7 +104,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 							field: t("COMMON.ADDRESS"),
 						}).toString(),
 						validate: {
-							duplicateAddress: (address: string) =>
+							duplicateAddress: (address) =>
 								!profile.wallets().findByAddress(address) ||
 								t("COMMON.INPUT_ADDRESS.VALIDATION.ADDRESS_ALREADY_EXISTS", { address }).toString(),
 						},
