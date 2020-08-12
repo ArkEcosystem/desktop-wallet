@@ -1,4 +1,4 @@
-import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
@@ -55,12 +55,27 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = ({ profile }: { profile: Profile }) => {
-	const { getValues, register, unregister } = useFormContext();
+	const { getValues, register, unregister, setValue } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
 	const network: NetworkData = getValues("network");
 
 	const { t } = useTranslation();
+
+	useEffect(
+		() => () => {
+			const { address, passphrase } = getValues();
+
+			if (passphrase) {
+				register("passphrase", { required: true });
+				setValue("passphrase", passphrase, true);
+			} else {
+				register("address", { required: true });
+				setValue("address", address, true);
+			}
+		},
+		[getValues, register, setValue],
+	);
 
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
@@ -143,7 +158,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 export const ThirdStep = () => {
 	const { getValues, register } = useFormContext();
 	const network: NetworkData = getValues("network");
-	const wallet: Wallet = getValues("wallet");
+	const address = getValues("address");
 	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 	const { t } = useTranslation();
 
@@ -173,10 +188,10 @@ export const ThirdStep = () => {
 					<div>
 						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.ADDRESS")}</p>
 						<p className="text-lg font-medium" data-testid="ImportWallet__wallet-address">
-							{wallet.address()}
+							{address}
 						</p>
 					</div>
-					<Avatar address={wallet.address()} />
+					<Avatar address={address} />
 				</li>
 			</ul>
 
@@ -222,10 +237,12 @@ export const ImportWallet = () => {
 		network,
 		passphrase,
 		address,
+		name,
 	}: {
 		network: NetworkData;
 		passphrase: string;
 		address: string;
+		name: string;
 	}) => {
 		let wallet: Wallet | undefined;
 
@@ -233,6 +250,10 @@ export const ImportWallet = () => {
 			wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
 		} else {
 			wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
+		}
+
+		if (name) {
+			activeProfile.wallets().findById(wallet?.id()).settings().set(WalletSetting.Alias, name);
 		}
 
 		await persist();
