@@ -1,3 +1,4 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -73,7 +74,7 @@ export const RecipientList = ({ recipients, onRemove, assetSymbol, isEditable }:
 				{(recipient: RecipientListItemProps, index: number) => (
 					<RecipientListItem
 						assetSymbol={assetSymbol}
-						amount={recipient.amount}
+						amount={BigNumber.make(recipient.amount).toHuman(8)}
 						address={recipient.address}
 						walletName={recipient.walletName}
 						onRemove={() => onRemoveRecipient(recipient?.address)}

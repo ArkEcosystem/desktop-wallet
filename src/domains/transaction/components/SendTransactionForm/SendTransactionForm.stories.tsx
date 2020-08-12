@@ -4,6 +4,7 @@ import { httpClient } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
 import { wallets } from "domains/wallet/data";
 import React from "react";
+import { FormContext, useForm } from "react-hook-form";
 import { StubStorage } from "tests/mocks";
 
 import { SendTransactionForm } from "./SendTransactionForm";
@@ -36,8 +37,14 @@ const defaultFormValues = {
 	wallets,
 };
 
-export const Default = () => (
-	<div>
-		<SendTransactionForm {...defaultFormValues} />
-	</div>
-);
+export const Default = () => {
+	const form = useForm();
+
+	return (
+		<div className="container mx-auto">
+			<FormContext {...form}>
+				<SendTransactionForm {...defaultFormValues} />
+			</FormContext>
+		</div>
+	);
+};

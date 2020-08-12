@@ -10,7 +10,6 @@ import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { Page, Section } from "app/components/Layout";
 import { Select } from "app/components/SelectDropdown";
-import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
@@ -132,8 +131,6 @@ const FirstStep = ({
 
 const SecondStep = ({ form }: { form: any }) => {
 	const { register } = form;
-	const selectionBarState = useSelectionState(1);
-
 	const { t } = useTranslation();
 
 	return (
@@ -203,7 +200,12 @@ const SecondStep = ({ form }: { form: any }) => {
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="fee">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
-						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+						<InputFee
+							defaultValue={(25 * 1e8).toFixed(0)}
+							min={(1 * 1e8).toFixed(0)}
+							max={(100 * 1e8).toFixed(0)}
+							step={1}
+						/>
 					</FormField>
 				</TransactionDetail>
 			</div>

@@ -8,7 +8,6 @@ import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { Page, Section } from "app/components/Layout";
-import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -23,8 +22,6 @@ import { useTranslation } from "react-i18next";
 
 export const FirstStep = () => {
 	const { register } = useFormContext();
-	const selectionBarState = useSelectionState(1);
-
 	const { t } = useTranslation();
 
 	useEffect(() => {
@@ -71,7 +68,12 @@ export const FirstStep = () => {
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="fee">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
-						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+						<InputFee
+							defaultValue={(25 * 1e8).toFixed(0)}
+							min={(1 * 1e8).toFixed(0)}
+							max={(100 * 1e8).toFixed(0)}
+							step={1}
+						/>
 					</FormField>
 				</TransactionDetail>
 			</div>

@@ -1,15 +1,24 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { action } from "@storybook/addon-actions";
 import { boolean, withKnobs } from "@storybook/addon-knobs";
-import { wallets } from "domains/wallet/data";
 import React from "react";
+import { WalletsDecorator } from "utils/storybook";
 
 import { SearchAddress } from "./SearchAddress";
+
 export default {
 	title: "Domains / Profile / Components / SearchAddress",
-	decorators: [withKnobs],
+	decorators: [
+		withKnobs,
+		(storyFn: any) => (
+			<WalletsDecorator count={1} withDelegates={true}>
+				{storyFn}
+			</WalletsDecorator>
+		),
+	],
 };
 
-export const Default = () => (
+export const Default = ({ wallets }: { wallets: Wallet[] }) => (
 	<div>
 		<SearchAddress
 			isOpen={boolean("isOpen", true)}
