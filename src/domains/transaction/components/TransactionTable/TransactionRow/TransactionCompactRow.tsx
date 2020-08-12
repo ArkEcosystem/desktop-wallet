@@ -11,7 +11,11 @@ type Props = {
 } & React.HTMLProps<any>;
 
 export const TransactionCompactRow = ({ transaction, walletName, ...props }: Props) => (
-	<tr data-testid="TransactionCompactRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
+	<tr
+		data-testid="TransactionCompactRow"
+		className="border-b border-dotted border-theme-neutral-300 cursor-pointer bg-opacity-10 hover:bg-theme-neutral-100"
+		{...props}
+	>
 		<td className="w-24 py-3">
 			<TransactionRowMode transaction={transaction} />
 		</td>
