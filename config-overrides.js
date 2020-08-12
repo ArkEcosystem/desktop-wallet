@@ -1,6 +1,7 @@
 const {
 	override,
 	addPostcssPlugins,
+	addWebpackAlias,
 	addWebpackExternals,
 	addWebpackPlugin,
 	setWebpackTarget,
@@ -11,6 +12,7 @@ const { EnvironmentPlugin } = require("webpack");
 const { dependencies } = require("./package.json");
 
 const whiteListedModules = [
+	"@arkecosystem/crypto",
 	"@arkecosystem/platform-sdk",
 	"@arkecosystem/platform-sdk-ada",
 	"@arkecosystem/platform-sdk-ark",
@@ -76,6 +78,15 @@ const copyFiles = () =>
 		}),
 	);
 
-module.exports = override(setWebpackTarget("electron-renderer"), injectTailwindCSS(), addNodeExternals(), copyFiles());
+module.exports = override(
+	setWebpackTarget("electron-renderer"),
+	injectTailwindCSS(),
+	addNodeExternals(),
+	copyFiles(),
+	addWebpackAlias({
+		"@arkecosystem/crypto": "@arkecosystem/crypto/dist/index.esm.js",
+		"@liskhq/lisk-cryptography": "@liskhq/lisk-cryptography/dist-browser/index.min.js",
+	}),
+);
 
 module.exports.injectTailwindCSS = injectTailwindCSS;
