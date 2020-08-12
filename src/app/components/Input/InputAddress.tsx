@@ -1,3 +1,4 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Icon } from "app/components/Icon";
 import { useEnvironmentContext } from "app/contexts";
 import React from "react";
@@ -32,7 +33,8 @@ export const InputAddress = ({
 	const { env } = useEnvironmentContext();
 
 	const validateAddress = async (address: string) => {
-		const isValidAddress = await env.dataValidator().address(coin as string, network as string, address);
+		const instance: Coins.Coin = await env.coin(coin!, network!);
+		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (isValidAddress) {
 			onValidAddress?.(address);
