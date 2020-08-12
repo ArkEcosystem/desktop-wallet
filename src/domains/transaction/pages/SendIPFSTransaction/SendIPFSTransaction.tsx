@@ -8,7 +8,6 @@ import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
-import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -24,7 +23,6 @@ import { useTranslation } from "react-i18next";
 
 export const FirstStep = ({ networks }: { networks: NetworkData[] }) => {
 	const { register } = useFormContext();
-	const selectionBarState = useSelectionState(1);
 
 	useEffect(() => {
 		register("hash", { required: true });
@@ -58,7 +56,12 @@ export const FirstStep = ({ networks }: { networks: NetworkData[] }) => {
 				</TransactionField>
 
 				<TransactionField border={false} label={t("TRANSACTION.TRANSACTION_FEE")} className="pb-0">
-					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+					<InputFee
+						defaultValue={(25 * 1e8).toFixed(0)}
+						min={(1 * 1e8).toFixed(0)}
+						max={(100 * 1e8).toFixed(0)}
+						step={1}
+					/>
 				</TransactionField>
 			</div>
 		</div>

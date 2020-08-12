@@ -1,11 +1,21 @@
-import { wallets } from "domains/wallet/data";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
+import { WalletsDecorator } from "utils/storybook";
 
 import { SelectAddress } from "./SelectAddress";
 
-export default { title: "Domains / Profile / Components / SelectAddress" };
+export default {
+	title: "Domains / Profile / Components / SelectAddress",
+	decorators: [
+		(storyFn: any) => (
+			<WalletsDecorator count={1} withDelegates={true}>
+				{storyFn}
+			</WalletsDecorator>
+		),
+	],
+};
 
-export const Default = () => (
+export const Default = ({ wallets }: { wallets: Wallet[] }) => (
 	<div className="max-w-lg space-y-8">
 		<div>
 			<SelectAddress wallets={wallets} />
@@ -18,11 +28,11 @@ export const Default = () => (
 		</div>
 		<div>
 			<div className="mb-3">Selected address (verified)</div>
-			<SelectAddress wallets={wallets} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" isVerified />
+			<SelectAddress wallets={wallets} address={wallets[0].address()} isVerified />
 		</div>
 		<div>
 			<div className="mb-3">Selected address (disabled)</div>
-			<SelectAddress disabled wallets={wallets} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />
+			<SelectAddress disabled wallets={wallets} address={wallets[0].address()} />
 		</div>
 	</div>
 );

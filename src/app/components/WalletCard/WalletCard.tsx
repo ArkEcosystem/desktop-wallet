@@ -61,7 +61,7 @@ export const WalletCard = ({
 		);
 	}
 
-	const coinName = wallet?.coin().manifest().get<string>("name");
+	const coinName = wallet?.manifest().get<string>("name");
 	const ticker = wallet!.network().currency.ticker;
 
 	return (
