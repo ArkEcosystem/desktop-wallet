@@ -15,6 +15,7 @@ type Props = {
 	isCompact?: boolean;
 	onRowClick?: (row: Contracts.TransactionDataType) => void;
 	isLoading?: boolean;
+	skeletonRowsCount?: number;
 };
 
 export const TransactionTable = ({
@@ -25,6 +26,7 @@ export const TransactionTable = ({
 	isCompact,
 	onRowClick,
 	isLoading,
+	skeletonRowsCount,
 }: Props) => {
 	const { t } = useTranslation();
 
@@ -87,10 +89,13 @@ export const TransactionTable = ({
 		return commonColumns;
 	}, [commonColumns, currencyRate, showSignColumn, isCompact, t]);
 
+	const skeletonRows = new Array(skeletonRowsCount).fill({});
+	const data = isLoading ? skeletonRows : transactions;
+
 	return (
 		<div className="relative">
 			<Loader show={isLoading} />
-			<Table hideHeader={hideHeader} columns={columns} data={transactions}>
+			<Table hideHeader={hideHeader} columns={columns} data={data}>
 				{(row: Contracts.TransactionDataType) =>
 					isCompact ? (
 						<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
@@ -100,6 +105,7 @@ export const TransactionTable = ({
 							onClick={() => onRowClick?.(row)}
 							transaction={row}
 							currencyRate={currencyRate}
+							showSign={showSignColumn}
 							isSignaturePending={row.isMultiSignature && showSignColumn}
 						/>
 					)
@@ -114,4 +120,5 @@ TransactionTable.defaultProps = {
 	isCompact: false,
 	hideHeader: false,
 	isLoading: false,
+	skeletonRowsCount: 8,
 };
