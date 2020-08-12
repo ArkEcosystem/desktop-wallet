@@ -1,8 +1,16 @@
-import { wallets } from "domains/wallet/data";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { SelectAddress } from "./SelectAddress";
+
+let wallets: Wallet[];
+
+beforeAll(async () => {
+	const profile = env.profiles().findById(getDefaultProfileId());
+	await profile.wallets().importByMnemonic("additional wallet", "ARK", "devnet");
+	wallets = profile.wallets().values();
+});
 
 describe("SelectAddress", () => {
 	it("should render empty", () => {
@@ -54,6 +62,20 @@ describe("SelectAddress", () => {
 		});
 	});
 
+	it("should not open if disabled", () => {
+		const { getByTestId } = render(
+			<SelectAddress wallets={wallets} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" disabled={true} />,
+		);
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		act(() => {
+			fireEvent.click(getByTestId("SelectAddress__wrapper"));
+		});
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+	});
+
 	it("should select address from wallets modal", async () => {
 		const { getByTestId, getAllByTestId } = render(
 			<SelectAddress wallets={wallets} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
@@ -78,7 +100,7 @@ describe("SelectAddress", () => {
 		await waitFor(() => {
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-			const selectedAddressValue = wallets[0].address;
+			const selectedAddressValue = wallets[0].address();
 			expect(getByTestId("SelectAddress__input")).toHaveValue(selectedAddressValue);
 		});
 	});

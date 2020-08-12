@@ -1,117 +1,176 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { availableNetworksMock as networks } from "domains/network/data";
-import { wallets } from "domains/wallet/data";
+import { act, renderHook } from "@testing-library/react-hooks";
+import { httpClient } from "app/services";
+import nock from "nock";
 import React from "react";
-import { act } from "react-dom/test-utils";
-import { env, fireEvent, getDefaultProfileId, render, waitFor, within } from "testing-library";
+import { FormContext, useForm } from "react-hook-form";
+import {
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	useDefaultNetMocks,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { SendTransactionForm } from "./";
 
 let profile: Profile;
+let defaultFee: string;
 
 describe("SendTransactionForm", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		const [wallet] = profile.wallets().values();
+		defaultFee = (await wallet.fee().all(7)).transfer.avg;
 	});
 
-	it("should render", () => {
-		const { container } = render(<SendTransactionForm wallets={wallets} profile={profile} networks={networks} />);
-		expect(container).toMatchSnapshot();
+	beforeEach(() => {
+		httpClient.clearCache();
 	});
 
-	it("should select sender and recipient", async () => {
-		const { getByTestId, getAllByTestId } = render(
-			<SendTransactionForm wallets={wallets} profile={profile} networks={networks} />,
-		);
+	afterAll(() => {
+		useDefaultNetMocks();
+	});
 
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+	it("should render", async () => {
+		let rendered: any;
+		const { result: form } = renderHook(() => useForm());
 
-		// Select sender
-		act(() => {
+		await act(async () => {
+			rendered = render(
+				<FormContext {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+				</FormContext>,
+			);
+		});
+
+		expect(rendered.container).toMatchSnapshot();
+	});
+
+	it("should select fill out form", async () => {
+		const { result: form } = renderHook(() => useForm());
+		form.current.register("fee");
+
+		let rendered: any;
+
+		await act(async () => {
+			rendered = render(
+				<FormContext {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+				</FormContext>,
+			);
+		});
+
+		const { getByTestId, getAllByTestId } = rendered;
+
+		await act(async () => {
+			// Select network
+			const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
+			fireEvent.click(networkIcons[1]);
+			expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
+
+			expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper")).not.toHaveAttribute(
+				"disabled",
+			);
+
+			// Select sender & update fees
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
-		});
-		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
-		});
 
-		const firstAddress = getByTestId("AddressListItem__select-0");
-
-		act(() => {
+			const firstAddress = getByTestId("AddressListItem__select-0");
 			fireEvent.click(firstAddress);
-		});
-
-		await waitFor(() => {
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-		});
 
-		const selectedAddressValue = profile.wallets().values()[0].address();
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
 
-		expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__input")).toHaveValue(
-			selectedAddressValue,
-		);
-
-		// Select recipient
-		act(() => {
+			// Select recipient
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
-		});
-		await waitFor(() => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(
+				profile.contacts().values()[0].addresses().values()[0].address(),
+			);
+
+			// Amount
+			fireEvent.click(getByTestId("add-recipient__send-all"));
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
+
+			// Smartbridge
+			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+
+			// Fee
+			expect(getByTestId("InputCurrency")).toHaveValue("0");
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[2]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			expect(rendered.container).toMatchSnapshot();
+		});
+	});
+
+	it("should only update fees if provided", async () => {
+		let rendered: any;
+		const onFail = jest.fn();
+		const { result: form } = renderHook(() => useForm());
+
+		form.current.register("senderAddress");
+		form.current.register("fees");
+
+		nock.cleanAll();
+		nock("https://dwallets.ark.io")
+			.get("/api/node/fees")
+			.query(true)
+			.reply(500, {})
+			.get("/api/transactions/fees")
+			.reply(500, {})
+			.persist();
+
+		await act(async () => {
+			rendered = render(
+				<FormContext {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} onFail={onFail} />
+				</FormContext>,
+			);
 		});
 
-		const address = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const { getByTestId, getAllByTestId } = rendered;
 
-		act(() => {
-			fireEvent.click(address);
-		});
+		await act(async () => {
+			// Select network
+			const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
+			fireEvent.click(networkIcons[1]);
+			expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
 
-		await waitFor(() => {
+			expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper")).not.toHaveAttribute(
+				"disabled",
+			);
+
+			// Select sender & update fees
+			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			const firstAddress = getByTestId("AddressListItem__select-1");
+			fireEvent.click(firstAddress);
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-		});
 
-		const selectedRecipientAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
+			await waitFor(() => expect(onFail).toHaveBeenCalledTimes(1));
+			await waitFor(() => expect(form.current.getValues("fee")).toBeFalsy());
 
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedRecipientAddressValue);
-	});
+			// Select recipient
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
+			expect(getByTestId("modal__inner")).toBeTruthy();
 
-	it("should set available amount", async () => {
-		const { getByTestId, container } = render(
-			<SendTransactionForm wallets={wallets} profile={profile} maxAvailableAmount={100} />,
-		);
-		const sendAll = getByTestId("add-recipient__send-all");
-		const amountInput = getByTestId("add-recipient__amount-input");
+			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(
+				profile.contacts().values()[0].addresses().values()[0].address(),
+			);
 
-		await act(async () => {
-			fireEvent.click(sendAll);
-		});
-
-		expect(amountInput).toHaveValue(100);
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should emit goBack button click", async () => {
-		// Select network to enable buttons
-		const fn = jest.fn();
-		const { getByTestId } = render(<SendTransactionForm onBack={fn} profile={profile} networks={networks} />);
-		const backBtn = getByTestId("send-transaction-click-back");
-
-		await act(async () => {
-			fireEvent.click(backBtn);
-		});
-
-		expect(fn).toBeCalled();
-	});
-
-	it("should submit form", async () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<SendTransactionForm onSubmit={fn} profile={profile} networks={networks} />);
-		const submit = getByTestId("send-transaction-click-submit");
-		act(() => {
-			fireEvent.click(submit);
-		});
-
-		await waitFor(() => {
-			expect(fn).toBeCalled();
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
 	});
 });

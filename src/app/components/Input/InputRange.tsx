@@ -1,32 +1,52 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Range } from "app/components/Range";
-import React from "react";
+import React, { useEffect } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
 import { InputGroup } from "./InputGroup";
 
 type Props = {
-	defaultValue: number;
+	defaultValue: string;
+	value?: string;
 	min: number;
 	max: number;
 	step: number;
 	name?: string;
 	magnitude?: number;
+	onChange?: (value: string) => void;
 };
 
+// TODO: tidy up storage of amount (why array of values?)
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ min, max, step, defaultValue, magnitude }: Props, ref) => {
-		const [values, setValues] = React.useState([defaultValue]);
+	({ min, max, step, defaultValue, magnitude, onChange, value }: Props, ref) => {
+		const [values, setValues] = React.useState<number[]>([BigNumber.make(defaultValue).divide(1e8).toNumber()]);
+		const fraction = Math.pow(10, magnitude! * -1);
 
 		const handleInput = (value: string) => {
-			const fraction = Math.pow(10, magnitude! * -1);
+			if (BigNumber.make(value).divide(1e8).toNumber() > max) {
+				value = BigNumber.make(max).times(1e8).toFixed(0);
+			}
+
 			const amount = BigNumber.make(value).times(fraction);
 			setValues([amount.toNumber()]);
+			onChange?.(amount.toFixed(0));
 		};
 
-		const trackBackgroundMinValue = Math.max(values[0], 3);
+		const handleRange = (values: number[]) => {
+			const amount = BigNumber.make(values[0]).divide(fraction).toFixed(0);
+			setValues(values);
+			onChange?.(amount);
+		};
+
+		const trackBackgroundMinValue = values[0];
 		const rangeValues = [Math.min(values[0], max)];
+
+		useEffect(() => {
+			if (value) {
+				setValues([BigNumber.make(value).divide(1e8).toNumber()]);
+			}
+		}, [value]);
 
 		return (
 			<InputGroup>
@@ -49,9 +69,9 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					<Range
 						colors={["var(--theme-color-primary)", "transparent"]}
 						step={step}
-						min={min}
-						max={max}
-						onChange={setValues}
+						min={Number(min)}
+						max={Number(max)}
+						onChange={handleRange}
 						values={rangeValues}
 					/>
 				</div>
