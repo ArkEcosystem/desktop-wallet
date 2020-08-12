@@ -234,4 +234,30 @@ describe("WalletDetails", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should fetch more transactions", async () => {
+		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+
+		const pendingFetchMoreBtn = getByTestId("pending-transactions__fetch-more-button");
+		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
+
+		act(() => {
+			fireEvent.click(pendingFetchMoreBtn);
+		});
+
+		act(() => {
+			fireEvent.click(fetchMoreTransactionsBtn);
+		});
+
+		await act(async () => {
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+		});
+
+		await waitFor(
+			() => {
+				expect(getAllByTestId("TransactionRow")).toHaveLength(40);
+			},
+			{ timeout: 2000 },
+		);
+	});
 });
