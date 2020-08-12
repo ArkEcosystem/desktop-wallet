@@ -85,4 +85,8 @@ export class HttpClient extends Http.Request {
 			}
 		});
 	}
+
+	public clearCache() {
+		this.cache.flush();
+	}
 }

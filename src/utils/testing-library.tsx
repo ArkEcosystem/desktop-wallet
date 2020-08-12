@@ -73,6 +73,11 @@ export const defaultNetMocks = () => {
 		.reply(200, require("../tests/fixtures/coins/ark/delegates.json"))
 		.get(/\/api\/delegates\/.+/)
 		.reply(200, delegate)
+		.get("/api/node/fees")
+		.query(true)
+		.reply(200, require("../tests/fixtures/coins/ark/node-fees.json"))
+		.get("/api/transactions/fees")
+		.reply(200, require("../tests/fixtures/coins/ark/transaction-fees.json"))
 		.persist();
 };
 

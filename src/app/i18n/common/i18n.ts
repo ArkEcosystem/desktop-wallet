@@ -197,6 +197,7 @@ export const translations: { [key: string]: any } = {
 	INPUT_ADDRESS: {
 		VALIDATION: {
 			NOT_VALID: "The address is not valid",
+			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
 		},
 	},
 };
