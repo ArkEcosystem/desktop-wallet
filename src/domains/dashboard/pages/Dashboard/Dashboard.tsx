@@ -23,6 +23,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
 	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
+	const [loadingTransactions, setLoadingTransactions] = useState(true);
 	const activeProfile = useActiveProfile();
 	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
@@ -40,6 +41,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 			const profileTransactions = await activeProfile.transactionAggregate().transactions({ limit: 10 });
 			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.items();
 
+			setLoadingTransactions(false);
 			return allTransactions && setAllTransactions(allTransactions);
 		};
 
@@ -100,7 +102,11 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
-					<Transactions transactions={allTransactions} fetchMoreAction={fetchMoreTransactions} />
+					<Transactions
+						isLoading={loadingTransactions}
+						transactions={allTransactions}
+						fetchMoreAction={fetchMoreTransactions}
+					/>
 				</Section>
 			)}
 		</Page>

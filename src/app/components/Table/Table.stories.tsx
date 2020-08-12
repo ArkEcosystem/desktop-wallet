@@ -52,7 +52,7 @@ export const Default = () => {
 	return (
 		<div>
 			<div>
-				<Table columns={columns} data={data} isLoading>
+				<Table columns={columns} data={data}>
 					{(rowData: any) => (
 						<tr className="border-b border-theme-neutral-200">
 							<td className="py-4 mt-1">
