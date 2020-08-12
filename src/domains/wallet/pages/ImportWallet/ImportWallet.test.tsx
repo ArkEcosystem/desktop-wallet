@@ -216,7 +216,17 @@ describe("ImportWallet", () => {
 
 			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
 
-			const submitButton = getByTestId("ImportWallet__submit-button");
+			const goToWalletButton = getByTestId("ImportWallet__gotowallet-button");
+			expect(goToWalletButton).toBeTruthy();
+			expect(goToWalletButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(goToWalletButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			});
+
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -286,7 +296,19 @@ describe("ImportWallet", () => {
 
 			await fireEvent.input(addressInput, { target: { value: randomAddress } });
 
-			const submitButton = getByTestId("ImportWallet__submit-button");
+			const goToWalletButton = getByTestId("ImportWallet__gotowallet-button");
+			expect(goToWalletButton).toBeTruthy();
+			await waitFor(() => {
+				expect(goToWalletButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(goToWalletButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			});
+
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -358,10 +380,10 @@ describe("ImportWallet", () => {
 				expect(getByText(commonTranslations.INPUT_ADDRESS.VALIDATION.NOT_VALID)).toBeVisible();
 			});
 
-			const submitButton = getByTestId("ImportWallet__submit-button");
-			expect(submitButton).toBeTruthy();
+			const goToWalletButton = getByTestId("ImportWallet__gotowallet-button");
+			expect(goToWalletButton).toBeTruthy();
 			await waitFor(() => {
-				expect(submitButton).toBeDisabled();
+				expect(goToWalletButton).toBeDisabled();
 			});
 		});
 	});
@@ -424,10 +446,10 @@ describe("ImportWallet", () => {
 				expect(getByText(`Address ${identityAddress} already exists`)).toBeVisible();
 			});
 
-			const submitButton = getByTestId("ImportWallet__submit-button");
-			expect(submitButton).toBeTruthy();
+			const goToWalletButton = getByTestId("ImportWallet__gotowallet-button");
+			expect(goToWalletButton).toBeTruthy();
 			await waitFor(() => {
-				expect(submitButton).toBeDisabled();
+				expect(goToWalletButton).toBeDisabled();
 			});
 		});
 	});

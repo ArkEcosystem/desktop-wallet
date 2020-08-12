@@ -310,7 +310,7 @@ export const ImportWallet = () => {
 									<Button
 										disabled={!formState.isValid}
 										onClick={handleNext}
-										data-testid="ImportWallet__submit-button"
+										data-testid="ImportWallet__gotowallet-button"
 									>
 										{t("COMMON.GO_TO_WALLET")}
 									</Button>
