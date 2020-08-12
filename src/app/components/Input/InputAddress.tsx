@@ -1,3 +1,4 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Icon } from "app/components/Icon";
 import { useEnvironmentContext } from "app/contexts";
 import React from "react";
@@ -6,7 +7,6 @@ import { useTranslation } from "react-i18next";
 
 import { Input } from "./Input";
 import { InputAddonEnd, InputGroup } from "./InputGroup";
-import { Coins } from "@arkecosystem/platform-sdk";
 
 export type InputAddressProps = {
 	coin?: string;
