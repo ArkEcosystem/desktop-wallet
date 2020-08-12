@@ -1,3 +1,4 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Contact, ContactAddress, NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -118,7 +119,9 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_EXISTS", { address }));
 		}
 
-		const isValidAddress = await env.dataValidator().address(network.coin(), network.id(), address);
+		const coin: Coins.Coin = await env.coin(network.coin(), network.id());
+		const isValidAddress: boolean = await coin.identity().address().validate(address);
+
 		if (!isValidAddress) {
 			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID"));
 		}
