@@ -77,6 +77,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 							validate: async (passphrase) => {
 								const instance: Coins.Coin = await env.coin(network.coin(), network.id());
 								const address = await instance.identity().address().fromMnemonic(passphrase);
+
 								return (
 									!profile.wallets().findByAddress(address) ||
 									t("COMMON.INPUT_PASSPHRASE.VALIDATION.ADDRESS_ALREADY_EXISTS", {
@@ -288,7 +289,7 @@ export const ImportWallet = () => {
 							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 3 && (
 									<Button
-										disabled={activeTab === 1}
+										disabled={activeTab === 1 || formState.isSubmitting}
 										variant="plain"
 										onClick={handleBack}
 										data-testid="ImportWallet__back-button"
@@ -309,7 +310,7 @@ export const ImportWallet = () => {
 
 								{activeTab === 2 && (
 									<Button
-										disabled={!formState.isValid}
+										disabled={!formState.isValid || formState.isSubmitting}
 										type="submit"
 										data-testid="ImportWallet__gotowallet-button"
 									>
@@ -319,7 +320,7 @@ export const ImportWallet = () => {
 
 								{activeTab === 3 && (
 									<Button
-										disabled={!formState.isValid}
+										disabled={!formState.isValid || formState.isSubmitting}
 										type="submit"
 										data-testid="ImportWallet__save-button"
 									>
