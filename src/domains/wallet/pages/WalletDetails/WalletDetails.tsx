@@ -25,6 +25,7 @@ export const WalletDetails = () => {
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [transactions, setTransactions] = useState<Contracts.TransactionDataType[]>([]);
+	const [loadingTransactions, setLoadingTransactions] = useState(false);
 	const [votes, setVotes] = useState<Coins.WalletDataCollection>();
 	const [walletData, setWalletData] = useState<WalletData>();
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
@@ -83,11 +84,15 @@ export const WalletDetails = () => {
 
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
 	const getWalletData = useCallback(async () => {
+		setLoadingTransactions(true);
+
 		const data = await activeWallet.client().wallet(activeWallet.address());
 		const walletTransactions = (await activeWallet.transactions({ limit: 10 })).items();
 
 		setWalletData(data);
 		setTransactions(walletTransactions);
+
+		setLoadingTransactions(false);
 	}, [activeWallet]);
 
 	const handleDeleteWallet = async () => {
@@ -178,8 +183,11 @@ export const WalletDetails = () => {
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 						{/* TODO: Deal with pending transactions once SDK methods for it are available */}
 						<>
-							Button
-							<TransactionTable transactions={transactions} showSignColumn />
+							<TransactionTable
+								transactions={transactions}
+								showSignColumn
+								isLoading={loadingTransactions}
+							/>
 							{transactions.length > 0 && (
 								<Button
 									data-testid="pending-transactions__fetch-more-button"
@@ -196,7 +204,11 @@ export const WalletDetails = () => {
 					<div>
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
 						<>
-							<TransactionTable transactions={transactions} currencyRate="2" />
+							<TransactionTable
+								transactions={transactions}
+								currencyRate="2"
+								isLoading={loadingTransactions}
+							/>
 							{transactions.length > 0 && (
 								<Button
 									data-testid="transactions__fetch-more-button"
