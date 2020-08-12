@@ -6,6 +6,7 @@ import { PercentageBar } from "app/components/PercentageBar";
 import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
+import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -22,6 +23,7 @@ type DashboardProps = {
 export const Dashboard = ({ networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
+	const [transactionModalItem, setTransactionModalItem] = useState(null);
 	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 	const activeProfile = useActiveProfile();
@@ -106,9 +108,16 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 						isLoading={isLoadingTransactions}
 						transactions={allTransactions}
 						fetchMoreAction={fetchMoreTransactions}
+						onRowClick={(row: any) => setTransactionModalItem(row)}
 					/>
 				</Section>
 			)}
+			<TransactionDetailModal
+				isOpen={Boolean(transactionModalItem)}
+				transactionItem={transactionModalItem}
+				onClose={() => setTransactionModalItem(null)}
+				onCancel={() => setTransactionModalItem(null)}
+			/>
 		</Page>
 	);
 };
