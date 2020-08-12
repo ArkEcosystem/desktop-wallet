@@ -86,5 +86,5 @@ export const TransactionRow = ({
 TransactionRow.defaultProps = {
 	isSignaturePending: false,
 	showSkeleton: true,
-	isLoading: true,
+	isLoading: false,
 };

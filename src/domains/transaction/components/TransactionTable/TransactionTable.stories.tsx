@@ -202,3 +202,9 @@ export const WithSign = () => (
 		<TransactionTable transactions={transactions} showSignColumn />
 	</div>
 );
+
+export const LoadingState = () => (
+	<div className="m-10">
+		<TransactionTable isLoading={true} transactions={transactions} />
+	</div>
+);

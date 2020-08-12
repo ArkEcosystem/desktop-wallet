@@ -1,4 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { Loader } from "app/components/Loader";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -13,6 +14,7 @@ type Props = {
 	hideHeader?: boolean;
 	isCompact?: boolean;
 	onRowClick?: (row: Contracts.TransactionDataType) => void;
+	isLoading?: boolean;
 };
 
 export const TransactionTable = ({
@@ -22,6 +24,7 @@ export const TransactionTable = ({
 	hideHeader,
 	isCompact,
 	onRowClick,
+	isLoading,
 }: Props) => {
 	const { t } = useTranslation();
 
@@ -85,20 +88,24 @@ export const TransactionTable = ({
 	}, [commonColumns, currencyRate, showSignColumn, isCompact, t]);
 
 	return (
-		<Table hideHeader={hideHeader} columns={columns} data={transactions}>
-			{(row: Contracts.TransactionDataType) =>
-				isCompact ? (
-					<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
-				) : (
-					<TransactionRow
-						onClick={() => onRowClick?.(row)}
-						transaction={row}
-						currencyRate={currencyRate}
-						isSignaturePending={row.isMultiSignature && showSignColumn}
-					/>
-				)
-			}
-		</Table>
+		<div className="relative">
+			<Loader show={isLoading} />
+			<Table hideHeader={hideHeader} columns={columns} data={transactions}>
+				{(row: Contracts.TransactionDataType) =>
+					isCompact ? (
+						<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
+					) : (
+						<TransactionRow
+							isLoading={isLoading}
+							onClick={() => onRowClick?.(row)}
+							transaction={row}
+							currencyRate={currencyRate}
+							isSignaturePending={row.isMultiSignature && showSignColumn}
+						/>
+					)
+				}
+			</Table>
+		</div>
 	);
 };
 
@@ -106,4 +113,5 @@ TransactionTable.defaultProps = {
 	showSignColumn: false,
 	isCompact: false,
 	hideHeader: false,
+	isLoading: false,
 };
