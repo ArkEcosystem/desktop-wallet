@@ -185,8 +185,20 @@ const transactions: Contracts.TransactionDataType[] = [
 		setMeta: () => "",
 	},
 ];
-export const Default = () => <TransactionTable transactions={transactions} />;
+export const Default = () => (
+	<div className="m-10">
+		<TransactionTable transactions={transactions} />
+	</div>
+);
 
-export const WithCurrency = () => <TransactionTable transactions={transactions} currencyRate="2" />;
+export const WithCurrency = () => (
+	<div className="m-10">
+		<TransactionTable transactions={transactions} currencyRate="2" />
+	</div>
+);
 
-export const WithSign = () => <TransactionTable transactions={transactions} showSignColumn />;
+export const WithSign = () => (
+	<div className="m-10">
+		<TransactionTable transactions={transactions} showSignColumn />
+	</div>
+);
