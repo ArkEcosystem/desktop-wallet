@@ -48,7 +48,6 @@ export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Pro
 );
 
 TransactionRowSkeleton.defaultProps = {
-	isSignaturePending: false,
 	showSign: false,
 	showCurrency: false,
 };

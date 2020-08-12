@@ -18,6 +18,7 @@ type Props = {
 	onSign?: () => void;
 	walletName?: string;
 	isLoading?: boolean;
+	showSign?: boolean;
 } & React.HTMLProps<any>;
 
 export const TransactionRow = ({
@@ -27,11 +28,15 @@ export const TransactionRow = ({
 	walletName,
 	isSignaturePending,
 	isLoading,
+	showSign,
 	...props
 }: Props) => {
 	if (isLoading)
 		return (
-			<TransactionRowSkeleton showCurrency={currencyRate && !isSignaturePending} showSign={isSignaturePending} />
+			<TransactionRowSkeleton
+				showCurrency={currencyRate && !isSignaturePending}
+				showSign={showSign || isSignaturePending}
+			/>
 		);
 
 	return (
@@ -85,6 +90,6 @@ export const TransactionRow = ({
 
 TransactionRow.defaultProps = {
 	isSignaturePending: false,
-	showSkeleton: true,
 	isLoading: false,
+	showSign: false,
 };
