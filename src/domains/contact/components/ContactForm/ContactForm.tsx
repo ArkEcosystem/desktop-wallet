@@ -119,8 +119,8 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_EXISTS", { address }));
 		}
 
-		const coin: Coins.Coin = await env.coin(network.coin(), network.id());
-		const isValidAddress: boolean = await coin.identity().address().validate(address);
+		const instance: Coins.Coin = await env.coin(network.coin(), network.id());
+		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (!isValidAddress) {
 			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID"));
