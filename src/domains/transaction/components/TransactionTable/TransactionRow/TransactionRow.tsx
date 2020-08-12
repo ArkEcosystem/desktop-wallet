@@ -34,6 +34,7 @@ export const TransactionRow = ({
 	if (isLoading)
 		return (
 			<TransactionRowSkeleton
+				data-testid="TransactionRow__skeleton"
 				showCurrency={currencyRate && !isSignaturePending}
 				showSign={showSign || isSignaturePending}
 			/>
