@@ -196,7 +196,7 @@ export const ThirdStep = ({ address }: { address: string }) => {
 
 			<FormField name="name">
 				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} />
-				<Input ref={register} data-testid="ImportWallet__wallet-name" />
+				<Input ref={register} data-testid="ImportWallet__name-input" />
 			</FormField>
 		</section>
 	);
@@ -257,6 +257,7 @@ export const ImportWallet = () => {
 		} else {
 			if (name) {
 				activeProfile.wallets().findById(walletData?.id()).settings().set(WalletSetting.Alias, name);
+				await persist();
 			}
 
 			history.push(`/profiles/${activeProfile.id()}/wallets/${walletData?.id()}`);
