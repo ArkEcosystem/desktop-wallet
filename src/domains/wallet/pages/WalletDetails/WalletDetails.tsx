@@ -3,6 +3,7 @@ import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { WalletDataCollection } from "@arkecosystem/platform-sdk/dist/coins";
 import { WalletData } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
@@ -32,7 +33,7 @@ export const WalletDetails = () => {
 	const activeWallet = useActiveWallet();
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
-	const coinName = activeWallet.coin().manifest().get<string>("name");
+	const coinName = activeWallet.manifest().get<string>("name");
 	const networkId = activeWallet.network().id;
 	const ticker = activeWallet.network().currency.ticker;
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
@@ -72,7 +73,7 @@ export const WalletDetails = () => {
 				continue;
 			}
 
-			const data = await activeWallet.coin().client().wallet(publicKey);
+			const data = await activeWallet.client().wallet(publicKey);
 
 			result.push(data);
 		}
@@ -82,7 +83,7 @@ export const WalletDetails = () => {
 
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
 	const getWalletData = useCallback(async () => {
-		const data = await activeWallet.coin().client().wallet(activeWallet.address());
+		const data = await activeWallet.client().wallet(activeWallet.address());
 		const walletTransactions = (await activeWallet.transactions({ limit: 10 })).items();
 
 		setWalletData(data);
@@ -118,6 +119,13 @@ export const WalletDetails = () => {
 
 		return () => clearInterval(timer);
 	}, [activeWallet, persist]);
+
+	const fetchMoreTransactions = async (type?: string) => {
+		//TODO: Fetch more type based / ex: pending and confirmed txs
+		const nextPage = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
+
+		return transactions && setTransactions(transactions?.concat(nextPage));
+	};
 
 	/* istanbul ignore next */
 	return (
@@ -169,12 +177,37 @@ export const WalletDetails = () => {
 					<div className="mb-16">
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 						{/* TODO: Deal with pending transactions once SDK methods for it are available */}
-						<TransactionTable transactions={transactions} showSignColumn />
+						<>
+							Button
+							<TransactionTable transactions={transactions} showSignColumn />
+							{transactions.length > 0 && (
+								<Button
+									data-testid="pending-transactions__fetch-more-button"
+									variant="plain"
+									className="w-full mt-10 mb-5"
+									onClick={() => fetchMoreTransactions("pending")}
+								>
+									{t("COMMON.VIEW_MORE")}
+								</Button>
+							)}
+						</>
 					</div>
 
 					<div>
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
-						<TransactionTable transactions={transactions} currencyRate="2" />
+						<>
+							<TransactionTable transactions={transactions} currencyRate="2" />
+							{transactions.length > 0 && (
+								<Button
+									data-testid="transactions__fetch-more-button"
+									variant="plain"
+									className="w-full mt-10 mb-5"
+									onClick={() => fetchMoreTransactions()}
+								>
+									{t("COMMON.VIEW_MORE")}
+								</Button>
+							)}
+						</>
 					</div>
 				</Section>
 			</Page>

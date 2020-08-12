@@ -1,3 +1,4 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -12,7 +13,7 @@ import { SelectAddressWrapper } from "./SelectAddress.styles";
 type SelectAddressProps = {
 	address?: string;
 	isVerified?: boolean;
-	wallets: any[];
+	wallets: Wallet[];
 	disabled?: boolean;
 	isInvalid?: boolean;
 	contactSearchTitle?: string;
@@ -53,18 +54,14 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 			onChange?.(address);
 		};
 
-		const openContacts = () => {
-			if (disabled) return;
-			setIsContactSearchOpen(true);
-		};
-
 		return (
 			<div>
 				<SelectAddressWrapper
 					data-testid="SelectAddress__wrapper"
 					className={`SelectAddress ${disabled ? "is-disabled" : ""} ${isInvalidField ? "is-invalid" : ""}`}
 					type="button"
-					onClick={openContacts}
+					onClick={() => setIsContactSearchOpen(true)}
+					disabled={disabled}
 				>
 					<ProfileAvatar address={selectedAddress} />
 					<Address maxChars={30} address={selectedAddress} />
