@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
@@ -79,5 +80,14 @@ describe("InputAddress", () => {
 
 		await waitForNextUpdate();
 		expect(errors.address?.type).toBe("minLength");
+	});
+
+	it("should not use default validation", async () => {
+		const { result } = renderHook(() => useForm({ mode: "onChange" }));
+		const { register } = result.current;
+
+		const { asFragment } = render(<TestInputAddress useDefaultRules={false} registerRef={register} />);
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
