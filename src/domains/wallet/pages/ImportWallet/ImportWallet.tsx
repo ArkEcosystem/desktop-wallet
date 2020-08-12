@@ -55,27 +55,12 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = ({ profile }: { profile: Profile }) => {
-	const { getValues, register, unregister, setValue } = useFormContext();
+	const { getValues, register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
 	const network: NetworkData = getValues("network");
 
 	const { t } = useTranslation();
-
-	useEffect(
-		() => () => {
-			const { address, passphrase } = getValues();
-
-			if (passphrase) {
-				register("passphrase", { required: true });
-				setValue("passphrase", passphrase, true);
-			} else {
-				register("address", { required: true });
-				setValue("address", address, true);
-			}
-		},
-		[getValues, register, setValue],
-	);
 
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
@@ -155,10 +140,9 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 	);
 };
 
-export const ThirdStep = () => {
+export const ThirdStep = ({ address }: { address: string }) => {
 	const { getValues, register } = useFormContext();
 	const network: NetworkData = getValues("network");
-	const address = getValues("address");
 	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 	const { t } = useTranslation();
 
@@ -207,6 +191,7 @@ export const ThirdStep = () => {
 
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
+	const [walletData, setWalletData] = useState<Wallet | null>(null);
 
 	const history = useHistory();
 	const { persist } = useEnvironmentContext();
@@ -246,19 +231,23 @@ export const ImportWallet = () => {
 	}) => {
 		let wallet: Wallet | undefined;
 
-		if (passphrase) {
-			wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+		if (!walletData) {
+			if (passphrase) {
+				wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+			} else {
+				wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
+			}
+
+			setWalletData(wallet);
+			await persist();
+			setActiveTab(activeTab + 1);
 		} else {
-			wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
+			if (name) {
+				activeProfile.wallets().findById(walletData?.id()).settings().set(WalletSetting.Alias, name);
+			}
+
+			history.push(`/profiles/${activeProfile.id()}/wallets/${walletData?.id()}`);
 		}
-
-		if (name) {
-			activeProfile.wallets().findById(wallet?.id()).settings().set(WalletSetting.Alias, name);
-		}
-
-		await persist();
-
-		history.push(`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`);
 	};
 
 	return (
@@ -281,7 +270,7 @@ export const ImportWallet = () => {
 								<SecondStep profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep />
+								<ThirdStep address={walletData?.address() as string} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -309,7 +298,7 @@ export const ImportWallet = () => {
 								{activeTab === 2 && (
 									<Button
 										disabled={!formState.isValid}
-										onClick={handleNext}
+										type="submit"
 										data-testid="ImportWallet__gotowallet-button"
 									>
 										{t("COMMON.GO_TO_WALLET")}
