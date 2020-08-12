@@ -267,28 +267,28 @@ exports[`Registration should render 1st step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -322,6 +322,10 @@ exports[`Registration should render 1st step 1`] = `
                           for="network"
                         >
                           Network
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
                         </label>
                         <div
                           aria-expanded="false"
@@ -613,9 +617,21 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Betanet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-betanet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -625,9 +641,21 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk"
+                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
+                              data-testid="NetworkIcon-LSK-mainnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -637,9 +665,21 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Testnet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-testnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -673,21 +713,9 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Betanet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-betanet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -697,21 +725,9 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk"
-                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
-                              data-testid="NetworkIcon-LSK-mainnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -721,21 +737,9 @@ exports[`Registration should render 1st step 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Testnet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-testnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -797,66 +801,6 @@ exports[`Registration should render 1st step 1`] = `
                               data-testid="NetworkIcon__placeholder"
                             />
                           </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-30"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-31"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-32"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-33"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-34"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
                         </ul>
                       </fieldset>
                       <fieldset
@@ -871,6 +815,10 @@ exports[`Registration should render 1st step 1`] = `
                             for="address"
                           >
                             Address
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -878,7 +826,7 @@ exports[`Registration should render 1st step 1`] = `
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress  "
+                              class="sc-fzqNqU jiheyj SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -923,6 +871,10 @@ exports[`Registration should render 1st step 1`] = `
                             for="registrationType"
                           >
                             Registration Type
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div>
@@ -1276,28 +1228,28 @@ exports[`Registration should render 2nd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -1373,6 +1325,10 @@ exports[`Registration should render 2nd step 1`] = `
                             for="website"
                           >
                             Website
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <input
                             class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -1529,9 +1485,14 @@ exports[`Registration should render 2nd step 1`] = `
                                 for="fee"
                               >
                                 Transaction Fee
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <div
                                 class="flex space-x-2"
+                                data-testid="InputFee"
                               >
                                 <div
                                   class="flex-1"
@@ -1586,8 +1547,8 @@ exports[`Registration should render 2nd step 1`] = `
                                     role="radiogroup"
                                   >
                                     <button
-                                      aria-checked="true"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      aria-checked="false"
+                                      class="sc-fzoyTs chLCDw relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -1596,7 +1557,7 @@ exports[`Registration should render 2nd step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzoyTs chLCDw relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -1605,7 +1566,7 @@ exports[`Registration should render 2nd step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzoyTs chLCDw relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -1919,28 +1880,28 @@ exports[`Registration should render 3rd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -2578,28 +2539,28 @@ exports[`Registration should render 4th step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -2634,9 +2595,14 @@ exports[`Registration should render 4th step 1`] = `
                             for="name"
                           >
                             Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzozJi OgXfh max-w-20"
+                            data-testid="InputPassword"
                           >
                             <input
                               class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
@@ -2674,9 +2640,14 @@ exports[`Registration should render 4th step 1`] = `
                             for="name"
                           >
                             2nd Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzozJi OgXfh max-w-20"
+                            data-testid="InputPassword"
                           >
                             <input
                               class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
@@ -3017,28 +2988,28 @@ exports[`Registration should render 5th step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div
@@ -3719,28 +3690,28 @@ exports[`Registration should select registration type 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -3774,6 +3745,10 @@ exports[`Registration should select registration type 1`] = `
                           for="network"
                         >
                           Network
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
                         </label>
                         <div
                           aria-expanded="false"
@@ -4065,9 +4040,21 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Betanet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-betanet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -4077,9 +4064,21 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk"
+                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
+                              data-testid="NetworkIcon-LSK-mainnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -4089,9 +4088,21 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Testnet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-testnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -4125,21 +4136,9 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Betanet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-betanet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -4149,21 +4148,9 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk"
-                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
-                              data-testid="NetworkIcon-LSK-mainnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -4173,21 +4160,9 @@ exports[`Registration should select registration type 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Testnet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-testnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -4249,66 +4224,6 @@ exports[`Registration should select registration type 1`] = `
                               data-testid="NetworkIcon__placeholder"
                             />
                           </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-30"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-31"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-32"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-33"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-34"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
                         </ul>
                       </fieldset>
                       <fieldset
@@ -4323,6 +4238,10 @@ exports[`Registration should select registration type 1`] = `
                             for="address"
                           >
                             Address
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -4330,7 +4249,7 @@ exports[`Registration should select registration type 1`] = `
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress  "
+                              class="sc-fzqNqU jiheyj SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -4375,6 +4294,10 @@ exports[`Registration should select registration type 1`] = `
                             for="registrationType"
                           >
                             Registration Type
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div>
@@ -4730,28 +4653,28 @@ exports[`Registration should should go back 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -4785,6 +4708,10 @@ exports[`Registration should should go back 1`] = `
                           for="network"
                         >
                           Network
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
                         </label>
                         <div
                           aria-expanded="false"
@@ -5076,9 +5003,21 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Betanet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-betanet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -5088,9 +5027,21 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk"
+                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
+                              data-testid="NetworkIcon-LSK-mainnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -5100,9 +5051,21 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
+                              aria-label="Lisk Testnet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-testnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
                           </li>
                           <li
                             aria-selected="false"
@@ -5136,21 +5099,9 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Betanet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-betanet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -5160,21 +5111,9 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk"
-                              class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
-                              data-testid="NetworkIcon-LSK-mainnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -5184,21 +5123,9 @@ exports[`Registration should should go back 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Testnet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-testnet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -5260,66 +5187,6 @@ exports[`Registration should should go back 1`] = `
                               data-testid="NetworkIcon__placeholder"
                             />
                           </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-30"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-31"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-32"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-33"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-34"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                              data-testid="NetworkIcon__placeholder"
-                            />
-                          </li>
                         </ul>
                       </fieldset>
                       <fieldset
@@ -5334,6 +5201,10 @@ exports[`Registration should should go back 1`] = `
                             for="address"
                           >
                             Address
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -5341,7 +5212,7 @@ exports[`Registration should should go back 1`] = `
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress  "
+                              class="sc-fzqNqU jiheyj SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -5386,6 +5257,10 @@ exports[`Registration should should go back 1`] = `
                             for="registrationType"
                           >
                             Registration Type
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div>
@@ -5739,28 +5614,28 @@ exports[`Registration should submit 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div

@@ -329,6 +329,10 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
                             for="network"
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -789,6 +793,10 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             for="network"
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -1249,6 +1257,10 @@ exports[`CreateWallet should render 1`] = `
                             for="network"
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -1421,6 +1433,10 @@ exports[`CreateWallet should render 1st step 1`] = `
             for="network"
           >
             Network
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -1807,6 +1823,10 @@ exports[`CreateWallet should render 4th step 1`] = `
         for="name"
       >
         Wallet name (optional)
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
       </label>
       <input
         class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "

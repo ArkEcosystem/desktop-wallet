@@ -23,6 +23,10 @@ exports[`FormLabel should render with name from context 1`] = `
     for="test"
   >
     Test Label
+    <div
+      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+      data-testid="FormLabel__required"
+    />
   </label>
 </DocumentFragment>
 `;

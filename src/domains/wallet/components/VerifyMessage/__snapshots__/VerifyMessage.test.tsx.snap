@@ -138,6 +138,10 @@ exports[`VerifyMessage should render 1`] = `
                     for="signed-message-content"
                   >
                     Signed message content
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
                   </label>
                   <input
                     class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -286,6 +290,10 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   for="message"
                 >
                   Message
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -303,6 +311,10 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   for="signatory"
                 >
                   Public Key
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -322,6 +334,10 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   for="signature"
                 >
                   Signature
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "

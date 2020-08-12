@@ -267,19 +267,19 @@ exports[`SendIPFSTransaction should render 1`] = `
           >
             <div>
               <ul
-                class="sc-fznJRM kDmVaQ"
+                class="sc-fznxsB hPecIE"
               >
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
               </ul>
               <div
@@ -460,6 +460,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                           >
                             <div
                               class="flex space-x-2"
+                              data-testid="InputFee"
                             >
                               <div
                                 class="flex-1"
@@ -513,8 +514,8 @@ exports[`SendIPFSTransaction should render 1`] = `
                                   role="radiogroup"
                                 >
                                   <button
-                                    aria-checked="true"
-                                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    aria-checked="false"
+                                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                     data-testid="SelectionBarOption"
                                     role="radio"
                                     type="button"
@@ -523,7 +524,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                   </button>
                                   <button
                                     aria-checked="false"
-                                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                     data-testid="SelectionBarOption"
                                     role="radio"
                                     type="button"
@@ -532,7 +533,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                   </button>
                                   <button
                                     aria-checked="false"
-                                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                     data-testid="SelectionBarOption"
                                     role="radio"
                                     type="button"
@@ -899,9 +900,21 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 role="option"
               >
                 <div
-                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                  data-testid="NetworkIcon__placeholder"
-                />
+                  aria-label="Lisk Betanet"
+                  class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                  data-testid="NetworkIcon-LSK-betanet"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      lsk.svg
+                    </svg>
+                  </div>
+                </div>
               </li>
               <li
                 aria-selected="false"
@@ -911,9 +924,21 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 role="option"
               >
                 <div
-                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                  data-testid="NetworkIcon__placeholder"
-                />
+                  aria-label="Lisk"
+                  class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
+                  data-testid="NetworkIcon-LSK-mainnet"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      lsk.svg
+                    </svg>
+                  </div>
+                </div>
               </li>
               <li
                 aria-selected="false"
@@ -923,9 +948,21 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 role="option"
               >
                 <div
-                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                  data-testid="NetworkIcon__placeholder"
-                />
+                  aria-label="Lisk Testnet"
+                  class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                  data-testid="NetworkIcon-LSK-testnet"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      lsk.svg
+                    </svg>
+                  </div>
+                </div>
               </li>
               <li
                 aria-selected="false"
@@ -959,21 +996,9 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 role="option"
               >
                 <div
-                  aria-label="Lisk Betanet"
-                  class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                  data-testid="NetworkIcon-LSK-betanet"
-                >
-                  <div
-                    class="sc-AxhUy gkBhrK"
-                    data-testid="NetworkIcon__icon"
-                    height="26"
-                    width="26"
-                  >
-                    <svg>
-                      lsk.svg
-                    </svg>
-                  </div>
-                </div>
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
               </li>
               <li
                 aria-selected="false"
@@ -983,21 +1008,9 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 role="option"
               >
                 <div
-                  aria-label="Lisk"
-                  class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
-                  data-testid="NetworkIcon-LSK-mainnet"
-                >
-                  <div
-                    class="sc-AxhUy gkBhrK"
-                    data-testid="NetworkIcon__icon"
-                    height="26"
-                    width="26"
-                  >
-                    <svg>
-                      lsk.svg
-                    </svg>
-                  </div>
-                </div>
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
               </li>
               <li
                 aria-selected="false"
@@ -1007,21 +1020,9 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 role="option"
               >
                 <div
-                  aria-label="Lisk Testnet"
-                  class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                  data-testid="NetworkIcon-LSK-testnet"
-                >
-                  <div
-                    class="sc-AxhUy gkBhrK"
-                    data-testid="NetworkIcon__icon"
-                    height="26"
-                    width="26"
-                  >
-                    <svg>
-                      lsk.svg
-                    </svg>
-                  </div>
-                </div>
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
               </li>
               <li
                 aria-selected="false"
@@ -1076,66 +1077,6 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 class="inline-block cursor-pointer"
                 data-testid="SelectNetwork__NetworkIcon--container"
                 id="SendIPFSTransaction__network-item-29"
-                role="option"
-              >
-                <div
-                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                  data-testid="NetworkIcon__placeholder"
-                />
-              </li>
-              <li
-                aria-selected="false"
-                class="inline-block cursor-pointer"
-                data-testid="SelectNetwork__NetworkIcon--container"
-                id="SendIPFSTransaction__network-item-30"
-                role="option"
-              >
-                <div
-                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                  data-testid="NetworkIcon__placeholder"
-                />
-              </li>
-              <li
-                aria-selected="false"
-                class="inline-block cursor-pointer"
-                data-testid="SelectNetwork__NetworkIcon--container"
-                id="SendIPFSTransaction__network-item-31"
-                role="option"
-              >
-                <div
-                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                  data-testid="NetworkIcon__placeholder"
-                />
-              </li>
-              <li
-                aria-selected="false"
-                class="inline-block cursor-pointer"
-                data-testid="SelectNetwork__NetworkIcon--container"
-                id="SendIPFSTransaction__network-item-32"
-                role="option"
-              >
-                <div
-                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                  data-testid="NetworkIcon__placeholder"
-                />
-              </li>
-              <li
-                aria-selected="false"
-                class="inline-block cursor-pointer"
-                data-testid="SelectNetwork__NetworkIcon--container"
-                id="SendIPFSTransaction__network-item-33"
-                role="option"
-              >
-                <div
-                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
-                  data-testid="NetworkIcon__placeholder"
-                />
-              </li>
-              <li
-                aria-selected="false"
-                class="inline-block cursor-pointer"
-                data-testid="SelectNetwork__NetworkIcon--container"
-                id="SendIPFSTransaction__network-item-34"
                 role="option"
               >
                 <div
@@ -1246,6 +1187,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           >
             <div
               class="flex space-x-2"
+              data-testid="InputFee"
             >
               <div
                 class="flex-1"
@@ -1299,8 +1241,8 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   role="radiogroup"
                 >
                   <button
-                    aria-checked="true"
-                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    aria-checked="false"
+                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1309,7 +1251,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1318,7 +1260,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1591,6 +1533,7 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
             >
               <div
                 class="sc-fzozJi OgXfh max-w-20"
+                data-testid="InputPassword"
               >
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"

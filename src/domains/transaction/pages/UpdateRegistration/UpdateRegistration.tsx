@@ -8,7 +8,6 @@ import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { Page, Section } from "app/components/Layout";
-import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
@@ -31,8 +30,6 @@ type UpdateRegistrationProps = {
 
 const FirstStep = ({ form }: { form: any }) => {
 	const { register } = form;
-	const selectionBarState = useSelectionState(1);
-
 	const { t } = useTranslation();
 
 	return (
@@ -45,12 +42,12 @@ const FirstStep = ({ form }: { form: any }) => {
 			<div>
 				<TransactionDetail border={false} className="pb-8">
 					<FormField name="name" className="font-normal">
-						<FormLabel required>{t("TRANSACTION.NAME")}</FormLabel>
+						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input type="text" ref={register} defaultValue="ROBank Ecosystem" />
 					</FormField>
 
 					<FormField name="description" className="mt-8 font-normal">
-						<FormLabel required>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
+						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
 						<TextArea ref={register} defaultValue="Not a trustworthy bank" />
 					</FormField>
 
@@ -104,7 +101,12 @@ const FirstStep = ({ form }: { form: any }) => {
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
-						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+						<InputFee
+							defaultValue={(25 * 1e8).toFixed(0)}
+							min={(1 * 1e8).toFixed(0)}
+							max={(100 * 1e8).toFixed(0)}
+							step={1}
+						/>
 					</FormField>
 				</TransactionDetail>
 			</div>
