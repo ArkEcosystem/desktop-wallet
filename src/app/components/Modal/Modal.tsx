@@ -1,6 +1,6 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React, { useEffect } from "react";
+import React from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
@@ -25,6 +25,11 @@ type ModalContentProps = {
 	size?: Size;
 	onClose?: any;
 };
+
+const Container = styled.div`
+	margin-top: -(calc(1.25rem * calc(1 - var(--space-y-reverse))));
+	margin-bottom: -(calc(1.25rem * calc(1 - var(--space-y-reverse))));
+`;
 
 const ModalContainer = styled.div<{ size?: Size }>`
 	${({ size }) => {
@@ -52,34 +57,42 @@ const ModalContainer = styled.div<{ size?: Size }>`
 const ModalContent = (props: ModalContentProps) => (
 	<ModalContainer
 		size={props.size}
-		className="fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+		className="absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mt-24 mx-auto rounded-xl bg-theme-background"
 		data-testid="modal__inner"
 	>
-		<div className="absolute top-0 right-0 z-50 mt-5 mr-5">
-			<Button data-testid="modal__close-btn" color="neutral" variant="plain" size="icon" onClick={props.onClose}>
-				<div className="p-1">
-					<Icon name="CrossSlim" width={12} height={12} />
+		<div className="relative">
+			<div className="absolute top-0 right-0 z-50 mt-5 mr-5">
+				<Button
+					data-testid="modal__close-btn"
+					color="neutral"
+					variant="plain"
+					size="icon"
+					onClick={props.onClose}
+				>
+					<div className="p-1">
+						<Icon name="CrossSlim" width={12} height={12} />
+					</div>
+				</Button>
+			</div>
+
+			<div className="py-4">
+				{props.banner ? (
+					<div className="relative mb-10 -mx-10 -mt-10">
+						{props.banner}
+
+						<h1 className="absolute bottom-0 left-0 mb-8 ml-12">{props.title}</h1>
+					</div>
+				) : (
+					<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
+				)}
+
+				<div className="flex-1">
+					{props.image}
+
+					{props.description && <div className="mt-1 text-theme-neutral-dark">{props.description}</div>}
+
+					{props.children}
 				</div>
-			</Button>
-		</div>
-
-		<div className="py-4">
-			{props.banner ? (
-				<div className="relative mb-10 -mx-10 -mt-10">
-					{props.banner}
-
-					<h1 className="absolute bottom-0 left-0 mb-8 ml-12">{props.title}</h1>
-				</div>
-			) : (
-				<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
-			)}
-
-			<div className="flex-1">
-				{props.image}
-
-				{props.description && <div className="mt-1 text-theme-neutral-dark">{props.description}</div>}
-
-				{props.children}
 			</div>
 		</div>
 	</ModalContainer>
@@ -90,37 +103,14 @@ interface BodyRightOffset {
 }
 
 export const Modal = (props: ModalProps) => {
-	// Disable scrolling when open
-	useEffect(() => {
-		const originalStyle = window.getComputedStyle(document.body).overflow;
-
-		// Prevent body content `glitching` upon change,
-		// by right padding if scrollbar existed initially
-		const rightPadding: BodyRightOffset = {
-			visible: "15px",
-			hidden: "0",
-		};
-
-		if (props.isOpen) {
-			document.body.style.overflow = "hidden";
-			document.body.style.paddingRight = rightPadding[originalStyle];
-		}
-
-		return () => {
-			document.body.style.overflow = originalStyle;
-			document.body.style.paddingRight = "0";
-			return;
-		};
-	}, [props.isOpen]);
-
 	if (!props.isOpen) {
 		return <></>;
 	}
 
 	return (
-		<>
+		<Container>
 			<div
-				className="fixed inset-0 z-50 bg-black opacity-50"
+				className="absolute inset-0 z-50 bg-black opacity-50 overflow-y-auto"
 				data-testid="modal__overlay"
 				onClick={props.onClose}
 			/>
@@ -136,7 +126,7 @@ export const Modal = (props: ModalProps) => {
 			>
 				{props.children}
 			</ModalContent>
-		</>
+		</Container>
 	);
 };
 
