@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import { Input } from "./Input";
 import { InputAddonEnd, InputGroup } from "./InputGroup";
+import { Coins } from "@arkecosystem/platform-sdk";
 
 export type InputAddressProps = {
 	coin?: string;
@@ -32,7 +33,8 @@ export const InputAddress = ({
 	const { env } = useEnvironmentContext();
 
 	const validateAddress = async (address: string) => {
-		const isValidAddress = await env.dataValidator().address(coin as string, network as string, address);
+		const coin: Coins.Coin = await env.coin(coin as string, network as string);
+		const isValidAddress: boolean = await coin.identity().address().validate(address);
 
 		if (isValidAddress) {
 			onValidAddress?.(address);
