@@ -11,13 +11,12 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type SendTransactionFormProps = {
-	formDefaultData: any;
 	networks: NetworkData[];
 	profile: Profile;
 	onFail?: any;
 };
 
-export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail }: SendTransactionFormProps) => {
+export const SendTransactionForm = ({ networks, profile, onFail }: SendTransactionFormProps) => {
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<Wallet[]>([]);
 
@@ -136,8 +135,4 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail
 			</FormField>
 		</>
 	);
-};
-
-SendTransactionForm.defaultProps = {
-	formDefaultData: {},
 };
