@@ -112,7 +112,7 @@ export const translations: { [key: string]: any } = {
 
 		PROCESS_COMPLETED_STEP: {
 			TITLE: "Completed",
-			SUBTITLE: "Wallet creation is complete. Now you can use it.",
+			SUBTITLE: "Wallet import is complete. Now you can use it.",
 		},
 
 		WALLET_NAME: "Wallet name (optional)",
