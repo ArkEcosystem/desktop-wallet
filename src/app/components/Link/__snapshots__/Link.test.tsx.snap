@@ -1,49 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link should render 1`] = `
+exports[`Link should open an external link 1`] = `
 <DocumentFragment>
   <a
-    class="sc-AxirZ bvOtTg inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+    class="sc-AxirZ fYobRB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
     data-testid="Link"
-    href="/test"
-  >
-    Test
-  </a>
-</DocumentFragment>
-`;
-
-exports[`Link should render external 1`] = `
-<DocumentFragment>
-  <a
-    class="sc-AxirZ fYobRB inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-    data-testid="Link"
-    href="https://ark.io"
     rel="noopener noreferrer"
-    target="_blank"
-  >
-    ARK.io
-    <div
-      class="sc-AxjAm cpczEI flex-shrink-0 ml-2 text-sm"
-      data-testid="Link__external"
-      height="1em"
-      width="1em"
-    >
-      <svg>
-        redirect.svg
-      </svg>
-    </div>
-  </a>
-</DocumentFragment>
-`;
-
-exports[`Link should render external without children 1`] = `
-<DocumentFragment>
-  <a
-    class="sc-AxirZ fYobRB inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-    data-testid="Link"
-    href="https://ark.io"
-    rel="noopener noreferrer"
-    target="_blank"
+    to="https://ark.io"
   >
     <div
       class="sc-AxjAm cpczEI flex-shrink-0 "
@@ -55,6 +18,52 @@ exports[`Link should render external without children 1`] = `
         redirect.svg
       </svg>
     </div>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Link should render 1`] = `
+<DocumentFragment>
+  <a
+    class="sc-AxirZ bvOtTg inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+    data-testid="Link"
+    href="/test"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Link should render external without children 1`] = `
+<DocumentFragment>
+  <a
+    class="sc-AxirZ fYobRB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+    data-testid="Link"
+    rel="noopener noreferrer"
+    to="https://ark.io"
+  >
+    <div
+      class="sc-AxjAm cpczEI flex-shrink-0 "
+      data-testid="Link__external"
+      height="1em"
+      width="1em"
+    >
+      <svg>
+        redirect.svg
+      </svg>
+    </div>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Link should render with tooltip 1`] = `
+<DocumentFragment>
+  <a
+    class="sc-AxirZ bvOtTg inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+    data-testid="Link"
+    href="/test"
+  >
+    Test
   </a>
 </DocumentFragment>
 `;
