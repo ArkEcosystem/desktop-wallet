@@ -5,6 +5,15 @@ import { TransactionDetailModal } from "./TransactionDetailModal";
 
 export default { title: "Domains / Transaction / Components / TransactionDetailModal" };
 
+const transactionItem = {
+	type: () => "transfer",
+};
+
 export const Default = () => (
-	<TransactionDetailModal isOpen={boolean("Is Open", true)} onClose={() => alert("closed")} />
+	<TransactionDetailModal
+		transactionItem={transactionItem}
+		isOpen={boolean("Is Open", true)}
+		onClose={() => alert("closed")}
+		onCancel={() => alert("closed")}
+	/>
 );
