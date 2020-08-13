@@ -30,7 +30,7 @@ export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Pro
 			<Skeleton height={6} width="60%" className="mt-4" />
 		</td>
 		<td className="text-right">
-			<span className="mt-1 px-2 pt-2 border-2 border-theme-neutral-200 rounded-lg">
+			<span className="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200">
 				<Skeleton height={6} width="80%" className="mt-4" />
 			</span>
 		</td>
