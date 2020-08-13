@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 type TransferDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
+	onCancel?: any;
 };
 
 export const TransferDetail = (props: TransferDetailProps) => {
