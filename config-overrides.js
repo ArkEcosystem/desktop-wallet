@@ -78,6 +78,12 @@ const copyFiles = () =>
 		}),
 	);
 
+const nodeBuiltIns = (config) => {
+	config.node.memcpy = true;
+
+	return config;
+};
+
 module.exports = override(
 	setWebpackTarget("electron-renderer"),
 	injectTailwindCSS(),
@@ -89,6 +95,7 @@ module.exports = override(
 		bytebuffer: "bytebuffer/dist/bytebuffer-node.js",
 		history: "history/umd/history.production.min.js",
 	}),
+	nodeBuiltIns,
 );
 
 module.exports.injectTailwindCSS = injectTailwindCSS;
