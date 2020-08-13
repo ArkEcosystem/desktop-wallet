@@ -86,8 +86,9 @@ module.exports = override(
 	addWebpackAlias({
 		"@arkecosystem/crypto": "@arkecosystem/crypto/dist/index.esm.js",
 		"@liskhq/lisk-cryptography": "@liskhq/lisk-cryptography/dist-browser/index.min.js",
-		bytebuffer: "bytebuffer/dist/bytebuffer.js",
-		history: "history/umd/history.production.min.js",
+		bytebuffer: "bytebuffer/dist/bytebuffer-node.js",
+		memcmp: path.resolve(__dirname, "polyfill/memcmp.js"),
+		history: "history/index.js",
 	}),
 );
 
