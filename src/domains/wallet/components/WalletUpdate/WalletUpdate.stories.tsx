@@ -1,31 +1,14 @@
 import { boolean } from "@storybook/addon-knobs";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { WalletUpdate } from "./WalletUpdate";
 
 export default { title: "Domains / Wallet / Components / WalletUpdate" };
 
-export const Default = () => {
-	const [isUpdate, setIsUpdate] = useState(false);
-	const [isReady, setIsReady] = useState(false);
-
-	useEffect(() => {
-		if (isUpdate) {
-			setTimeout(() => {
-				setIsReady(true);
-				setIsUpdate(false);
-			}, 2000);
-		}
-	}, [isUpdate]);
-
-	return (
-		<WalletUpdate
-			isOpen={boolean("Is Open", true)}
-			isUpdate={isUpdate}
-			isReady={isReady}
-			onClose={() => alert("closed")}
-			onCancel={() => alert("cancelled")}
-			onUpdate={() => setIsUpdate(true)}
-		/>
-	);
-};
+export const Default = () => (
+	<WalletUpdate
+		isOpen={boolean("Is Open", true)}
+		onClose={() => alert("closed")}
+		onCancel={() => alert("cancelled")}
+	/>
+);
