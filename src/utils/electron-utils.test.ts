@@ -1,6 +1,6 @@
 import electron from "electron";
 
-import { isIdle, openFile, saveFile, setScreenshotProtection } from "./electron-utils";
+import { isIdle, openExternal, openFile, saveFile, setScreenshotProtection } from "./electron-utils";
 
 jest.mock("electron", () => {
 	const setContentProtection = jest.fn();
@@ -17,6 +17,9 @@ jest.mock("electron", () => {
 			powerMonitor: {
 				getSystemIdleState: jest.fn(),
 			},
+		},
+		shell: {
+			openExternal: jest.fn(),
 		},
 	};
 });
@@ -189,6 +192,24 @@ describe("Electron utils", () => {
 
 				await expect(openFile(null, { restrictToPath: "/home/foo" })).rejects.toThrow();
 			});
+		});
+	});
+
+	describe("openExternal", () => {
+		const externalLink = "https://ark.io";
+		let openExternalMock: jest.SpyInstance;
+
+		beforeEach(() => {
+			openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
+		});
+
+		afterEach(() => {
+			openExternalMock.mockRestore();
+		});
+
+		it("should open an external link", () => {
+			openExternal(externalLink);
+			expect(openExternalMock).toHaveBeenCalledWith(externalLink);
 		});
 	});
 

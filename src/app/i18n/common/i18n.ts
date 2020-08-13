@@ -201,6 +201,12 @@ export const translations: { [key: string]: any } = {
 		DAILY: "Daily",
 	},
 
+	INPUT_PASSPHRASE: {
+		VALIDATION: {
+			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
+		},
+	},
+
 	INPUT_ADDRESS: {
 		VALIDATION: {
 			NOT_VALID: "The address is not valid",
