@@ -15,7 +15,7 @@ test("should import a wallet by mnemonic", async (t) => {
 		.expect(Selector("div").withText(translations().WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 
-	// Select a network and advance to step two
+	// Select a network and advance to second step
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
 		.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled"))
@@ -25,11 +25,17 @@ test("should import a wallet by mnemonic", async (t) => {
 		.expect(Selector("h1").withExactText(translations().WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists)
 		.ok();
 
-	// Input passphrase
+	// Fill a passphrase and advance to third step
 	const passphraseInput = Selector("input[name=passphrase]");
 
 	await t.typeText(passphraseInput, "this is a top secret passphrase oleg");
 	await t.click(Selector("button").withExactText(translations().COMMON.GO_TO_WALLET));
+
+	// Fill a wallet name
+	const walletNameInput = Selector("input[name=name]");
+
+	await t.typeText(walletNameInput, "Test");
+	await t.click(Selector("button").withExactText(translations().COMMON.SAVE_FINISH));
 });
 
 test("should import a wallet by address", async (t) => {
@@ -42,7 +48,7 @@ test("should import a wallet by address", async (t) => {
 		.expect(Selector("div").withText(translations().WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 
-	// Select a network and advance to step two
+	// Select a network and advance to the step two
 	await t.click(Selector("#ImportWallet__network-item-1"));
 	await t
 		.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled"))
@@ -55,11 +61,17 @@ test("should import a wallet by address", async (t) => {
 	// Use the address only
 	await t.click(Selector("input[name=isAddressOnly]").parent());
 
-	// Input address
+	// Fill an address and advance to the third step
 	const addressInput = Selector("input[name=address]");
 
 	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
 	await t.click(Selector("button").withExactText(translations().COMMON.GO_TO_WALLET));
+
+	// Fill a wallet name
+	const walletNameInput = Selector("input[name=name]");
+
+	await t.typeText(walletNameInput, "Test");
+	await t.click(Selector("button").withExactText(translations().COMMON.SAVE_FINISH));
 });
 
 test("should show an error message for invalid address", async (t) => {
