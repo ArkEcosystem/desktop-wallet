@@ -16,7 +16,7 @@ import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomShe
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
 import { WalletVote } from "domains/wallet/components/WalletVote";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -53,7 +53,7 @@ export const WalletDetails = () => {
 	];
 
 	// TODO: Replace logic with sdk
-	const getVotes = async () => {
+	const getVotes = useCallback(async () => {
 		let response;
 		// catch 404 wallet not found until sdk logic
 		try {
@@ -80,10 +80,10 @@ export const WalletDetails = () => {
 		}
 
 		setVotes(new WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined }));
-	};
+	}, [activeWallet]);
 
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
-	const getWalletData = async () => {
+	const getWalletData = useCallback(async () => {
 		setLoadingTransactions(true);
 
 		const data = await activeWallet.client().wallet(activeWallet.address());
@@ -92,7 +92,7 @@ export const WalletDetails = () => {
 
 		setLoadingTransactions(false);
 		setTransactions(walletTransactions);
-	};
+	}, [activeWallet]);
 
 	const handleDeleteWallet = async () => {
 		activeProfile.wallets().forget(activeWallet.id());
@@ -109,8 +109,11 @@ export const WalletDetails = () => {
 
 	useEffect(() => {
 		getVotes();
+	}, [getVotes]);
+
+	useEffect(() => {
 		getWalletData();
-	}, [activeWallet]);
+	}, [getWalletData]);
 
 	useEffect(() => {
 		const timer = setInterval(async () => {
