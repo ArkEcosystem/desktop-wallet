@@ -84,7 +84,8 @@
 			"!src/electron/**/*",
 			"!src/i18n/**/*",
 			"!src/tailwind.config.js",
-			"!src/utils/storybook.tsx"
+			"!src/utils/storybook.tsx",
+			"!src/polyfill/**/*"
 		],
 		"coveragePathIgnorePatterns": [
 			"index.ts",
