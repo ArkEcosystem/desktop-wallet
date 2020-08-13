@@ -6,7 +6,6 @@ import { TransferDetail } from "domains/transaction/components/TransferDetail";
 import { VoteDetail } from "domains/transaction/components/VoteDetail";
 // Component
 import React from "react";
-import { useTranslation } from "react-i18next";
 
 type TransactionDetailModalProps = {
 	isOpen: boolean;
@@ -16,7 +15,6 @@ type TransactionDetailModalProps = {
 };
 
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose, onCancel }: TransactionDetailModalProps) => {
-	const { t } = useTranslation();
 	const transactionType = transactionItem?.type();
 	console.log({ transactionType });
 	let TransactionModal;
