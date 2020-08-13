@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -16,7 +16,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { useClipboard } from "app/hooks";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
@@ -26,10 +26,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ profile, wallets }: any) => {
-	const { env } = useEnvironmentContext();
+export const FirstStep = ({ networks, profile, wallets }: any) => {
 	const { t } = useTranslation();
-	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	return (
 		<section data-testid="TransactionSend__step--first">
@@ -195,8 +193,12 @@ export const TransactionSend = () => {
 	});
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm({
+		mode: "onChange",
+	});
 	const { clearError, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
@@ -205,6 +207,26 @@ export const TransactionSend = () => {
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 		register("smartbridge");
+
+		if (activeWallet) {
+			setValue("senderAddress", activeWallet.address());
+
+			let walletNetwork: NetworkData | undefined;
+			for (const network of networks) {
+				if (
+					network.id() === activeWallet.network().id &&
+					network.coin() === activeWallet.manifest().get<string>("name")
+				) {
+					walletNetwork = network;
+
+					break;
+				}
+			}
+
+			if (walletNetwork) {
+				setValue("network", walletNetwork, true);
+			}
+		}
 	}, [register]);
 
 	const submitForm = async () => {
@@ -281,7 +303,7 @@ export const TransactionSend = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep profile={activeProfile} />
+								<FirstStep networks={networks} profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep profile={activeProfile} />
