@@ -12,4 +12,4 @@ export const External = () => (
 	</Link>
 );
 
-export const WithTooltip = () => <Link to="https://ark.io" isExternal tooltip="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" />;
+export const WithTooltip = () => <Link to="https://ark.io" tooltip="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" isExternal />;
