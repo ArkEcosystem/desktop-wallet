@@ -1,6 +1,6 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
@@ -25,11 +25,6 @@ type ModalContentProps = {
 	size?: Size;
 	onClose?: any;
 };
-
-const Container = styled.div`
-	margin-top: -(calc(1.25rem * calc(1 - var(--space-y-reverse))));
-	margin-bottom: -(calc(1.25rem * calc(1 - var(--space-y-reverse))));
-`;
 
 const ModalContainer = styled.div<{ size?: Size }>`
 	${({ size }) => {
@@ -57,7 +52,7 @@ const ModalContainer = styled.div<{ size?: Size }>`
 const ModalContent = (props: ModalContentProps) => (
 	<ModalContainer
 		size={props.size}
-		className="absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mt-24 mx-auto rounded-xl bg-theme-background"
+		className="absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mt-24 mb-24 mx-auto rounded-xl bg-theme-background"
 		data-testid="modal__inner"
 	>
 		<div className="relative">
@@ -103,14 +98,37 @@ interface BodyRightOffset {
 }
 
 export const Modal = (props: ModalProps) => {
+	// Disable scrolling when open
+	useEffect(() => {
+		const originalStyle = window.getComputedStyle(document.body).overflow;
+
+		// Prevent body content `glitching` upon change,
+		// by right padding if scrollbar existed initially
+		const rightPadding: BodyRightOffset = {
+			visible: "15px",
+			hidden: "0",
+		};
+
+		if (props.isOpen) {
+			document.body.style.overflow = "hidden";
+			document.body.style.paddingRight = rightPadding[originalStyle];
+		}
+
+		return () => {
+			document.body.style.overflow = originalStyle;
+			document.body.style.paddingRight = "0";
+			return;
+		};
+	}, [props.isOpen]);
+
 	if (!props.isOpen) {
 		return <></>;
 	}
 
 	return (
-		<Container>
+		<div className="w-full h-full z-50 fixed inset-0 overflow-y-scroll">
 			<div
-				className="absolute inset-0 z-50 bg-black opacity-50 overflow-y-auto"
+				className="w-full h-full fixed z-50 bg-black opacity-50"
 				data-testid="modal__overlay"
 				onClick={props.onClose}
 			/>
@@ -126,7 +144,7 @@ export const Modal = (props: ModalProps) => {
 			>
 				{props.children}
 			</ModalContent>
-		</Container>
+		</div>
 	);
 };
 

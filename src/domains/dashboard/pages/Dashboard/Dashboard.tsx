@@ -78,47 +78,48 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	];
 
 	return (
-		<Page profile={activeProfile}>
-			{showPortfolio && balances && (
-				<Section>
-					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
-					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
-					<PercentageBar
-						title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
-						data={portfolioPercentages}
+		<>
+			<Page profile={activeProfile}>
+				{showPortfolio && balances && (
+					<Section>
+						<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
+						<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
+						<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
+						<PercentageBar
+							title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
+							data={portfolioPercentages}
+						/>
+					</Section>
+				)}
+
+				<Section className="flex-1">
+					<Wallets
+						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
+						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
+						viewType="grid"
+						title={t("COMMON.WALLETS")}
+						wallets={wallets}
+						filterProperties={filterProperties}
 					/>
 				</Section>
-			)}
 
-			<Section className="flex-1">
-				<Wallets
-					onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
-					onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
-					viewType="grid"
-					title={t("COMMON.WALLETS")}
-					wallets={wallets}
-					filterProperties={filterProperties}
-				/>
-			</Section>
-
-			{showTransactions && (
-				<Section data-testid="dashboard__transactions-view">
-					<Transactions
-						isLoading={isLoadingTransactions}
-						transactions={allTransactions}
-						fetchMoreAction={fetchMoreTransactions}
-						onRowClick={(row: any) => setTransactionModalItem(row)}
-					/>
-				</Section>
-			)}
+				{showTransactions && (
+					<Section data-testid="dashboard__transactions-view">
+						<Transactions
+							transactions={allTransactions}
+							fetchMoreAction={fetchMoreTransactions}
+							onRowClick={(row: any) => setTransactionModalItem(row)}
+						/>
+					</Section>
+				)}
+			</Page>
 			<TransactionDetailModal
 				isOpen={Boolean(transactionModalItem)}
 				transactionItem={transactionModalItem}
 				onClose={() => setTransactionModalItem(null)}
 				onCancel={() => setTransactionModalItem(null)}
 			/>
-		</Page>
+		</>
 	);
 };
 
