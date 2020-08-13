@@ -78,13 +78,6 @@ const copyFiles = () =>
 		}),
 	);
 
-const nodeBuiltIns = (config) => {
-	config.node.memcpy = true;
-	console.log(config);
-
-	return config;
-};
-
 module.exports = override(
 	setWebpackTarget("electron-renderer"),
 	injectTailwindCSS(),
@@ -93,10 +86,9 @@ module.exports = override(
 	addWebpackAlias({
 		"@arkecosystem/crypto": "@arkecosystem/crypto/dist/index.esm.js",
 		"@liskhq/lisk-cryptography": "@liskhq/lisk-cryptography/dist-browser/index.min.js",
-		bytebuffer: "bytebuffer/dist/bytebuffer-node.js",
+		bytebuffer: "bytebuffer/dist/bytebuffer.js",
 		history: "history/umd/history.production.min.js",
 	}),
-	nodeBuiltIns,
 );
 
 module.exports.injectTailwindCSS = injectTailwindCSS;
