@@ -72,7 +72,7 @@ export const SendTransactionForm = ({ networks, profile, onFail }: SendTransacti
 				<SelectNetwork
 					id="SendTransactionForm__network"
 					networks={networks}
-					value={network}
+					selected={network}
 					onSelect={onSelectNetwork}
 				/>
 			</FormField>
