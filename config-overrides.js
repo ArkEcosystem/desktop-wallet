@@ -80,6 +80,7 @@ const copyFiles = () =>
 
 const nodeBuiltIns = (config) => {
 	config.node.memcpy = true;
+	console.log(config);
 
 	return config;
 };
