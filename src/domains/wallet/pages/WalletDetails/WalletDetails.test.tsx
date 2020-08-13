@@ -18,7 +18,7 @@ import {
 import { WalletDetails } from "./WalletDetails";
 
 const history = createMemoryHistory();
-let dashboardURL: string;
+let walletUrl: string;
 
 let profile: Profile;
 let wallet: Wallet;
@@ -36,7 +36,7 @@ const renderPage = async () => {
 			<WalletDetails />
 		</Route>,
 		{
-			routes: [dashboardURL],
+			routes: [walletUrl],
 			history,
 		},
 	);
@@ -51,8 +51,8 @@ describe("WalletDetails", () => {
 		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
 		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
 
-		// emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		// wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
+		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
 
 		useDefaultNetMocks();
 
@@ -86,18 +86,18 @@ describe("WalletDetails", () => {
 				error: "Not Found",
 				message: "Wallet not found",
 			})
-			// .get(`/api/wallets/${wallet2.address()}`)
-			// .reply(404, {
-			// 	statusCode: 404,
-			// 	error: "Not Found",
-			// 	message: "Wallet not found",
-			// })
-			// .get(`/api/wallets/${wallet2.address()}/votes`)
-			// .reply(404, {
-			// 	statusCode: 404,
-			// 	error: "Not Found",
-			// 	message: "Wallet not found",
-			// })
+			.get(`/api/wallets/${wallet2.address()}`)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
+			.get(`/api/wallets/${wallet2.address()}/votes`)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
 			.post("/api/transactions/search")
 			.query(true)
 			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
@@ -105,8 +105,8 @@ describe("WalletDetails", () => {
 	});
 
 	beforeEach(() => {
-		dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
-		history.push(dashboardURL);
+		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
+		history.push(walletUrl);
 	});
 
 	it("should render", async () => {
@@ -118,9 +118,31 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render with timers", async () => {
+		jest.useFakeTimers();
+
+		const { asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletDetails />
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
+
+		await act(async () => {
+			jest.advanceTimersByTime(30000);
+		});
+
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
+		expect(asFragment()).toMatchSnapshot();
+		jest.useRealTimers();
+	});
+
 	it("should render when wallet not found for votes", async () => {
-		dashboardURL = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
-		history.push(dashboardURL);
+		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
+		history.push(walletUrl);
 
 		const { asFragment, getByTestId } = await renderPage();
 
@@ -129,8 +151,8 @@ describe("WalletDetails", () => {
 	});
 
 	it("should render when wallet hasn't voted", async () => {
-		dashboardURL = `/profiles/${profile.id()}/wallets/${unvotedWallet.id()}`;
-		history.push(dashboardURL);
+		walletUrl = `/profiles/${profile.id()}/wallets/${unvotedWallet.id()}`;
+		history.push(walletUrl);
 
 		const { asFragment, getByTestId } = await renderPage();
 
@@ -140,6 +162,7 @@ describe("WalletDetails", () => {
 
 	it("should update wallet name", async () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		const dropdown = getAllByTestId("dropdown__toggle")[2];
 		expect(dropdown).toBeTruthy();
@@ -229,14 +252,15 @@ describe("WalletDetails", () => {
 
 		await waitFor(() => expect(profile.wallets().count()).toEqual(3));
 	});
-	// it("should not render the bottom sheet menu when there is only one wallet", async () => {
-	// 	dashboardURL = `/profiles/${emptyProfile.id()}/wallets/${wallet2.id()}`;
-	// 	history.push(dashboardURL);
-	//
-	// 	const { asFragment, getByTestId, queryAllByTestId } = await renderPage();
-	//
-	// 	expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet2.address());
-	// 	expect(queryAllByTestId("WalletBottomSheetMenu")).toHaveLength(0);
-	// 	expect(asFragment()).toMatchSnapshot();
-	// });
+
+	it("should not render the bottom sheet menu when there is only one wallet", async () => {
+		walletUrl = `/profiles/${emptyProfile.id()}/wallets/${wallet2.id()}`;
+		history.push(walletUrl);
+
+		const { asFragment, getByTestId, queryAllByTestId } = await renderPage();
+
+		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet2.address());
+		expect(queryAllByTestId("WalletBottomSheetMenu")).toHaveLength(0);
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
