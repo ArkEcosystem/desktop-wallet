@@ -70,6 +70,8 @@ const openFile = async (defaultPath?: string | null, options?: DialogOptions) =>
 	return readFileSync(filePaths[0], encode);
 };
 
+const openExternal = (url: string) => electron.shell.openExternal(url);
+
 const isIdle = (idleTreshold: number) => electron.remote.powerMonitor.getSystemIdleState(idleTreshold) === "idle";
 
-export { isIdle, openFile, saveFile, setScreenshotProtection };
+export { isIdle, openExternal, openFile, saveFile, setScreenshotProtection };
