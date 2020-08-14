@@ -16,10 +16,9 @@ type TransactionDetailModalProps = {
 
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose, onCancel }: TransactionDetailModalProps) => {
 	const transactionType = transactionItem?.type();
-	console.log({ transactionType });
 	let TransactionModal;
 
-	switch (transactionItem?.type()) {
+	switch (transactionType) {
 		case "transfer":
 			TransactionModal = TransferDetail;
 			break;
@@ -33,14 +32,22 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose, onCan
 			TransactionModal = IpfsDetail;
 			break;
 		case "vote":
+		case "unvote":
 			TransactionModal = VoteDetail;
 			break;
 
 		default:
-			return null;
+			break;
 	}
 
-	return <TransactionModal isOpen={isOpen} onClose={onClose} onCancel={onCancel} />;
+	if (!TransactionModal) {
+		// Throw error or show amodal that xyz is not supported
+		throw new Error(`Transaction type [${transactionType}] is not supported.`);
+
+		return null;
+	}
+
+	return <TransactionModal isOpen={isOpen} onClose={onClose} onCancel={onCancel} transaction={transactionItem} />;
 };
 
 TransactionDetailModal.defaultProps = {

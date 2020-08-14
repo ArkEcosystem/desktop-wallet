@@ -113,12 +113,14 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 					</Section>
 				)}
 			</Page>
-			<TransactionDetailModal
-				isOpen={Boolean(transactionModalItem)}
-				transactionItem={transactionModalItem}
-				onClose={() => setTransactionModalItem(null)}
-				onCancel={() => setTransactionModalItem(null)}
-			/>
+			{transactionModalItem && (
+				<TransactionDetailModal
+					isOpen={Boolean(transactionModalItem)}
+					transactionItem={transactionModalItem}
+					onClose={() => setTransactionModalItem(null)}
+					onCancel={() => setTransactionModalItem(null)}
+				/>
+			)}
 		</>
 	);
 };
