@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SendTransactionForm should change sender & route 1`] = `<div />`;
+
 exports[`SendTransactionForm should only update fees if provided 1`] = `
 <div>
   <fieldset
@@ -41,28 +43,10 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
           class="sc-AxhCb sc-AxhUy jFkFxS px-4"
         >
           <div
-            aria-label="Ark Devnet"
-            class="sc-fzoLsD jpdwCK border-theme-primary-100 text-theme-primary-400"
+            class="sc-fzoLsD jpdwCK border-theme-neutral-light text-theme-neutral"
             data-testid="SelectNetworkInput__network"
-          >
-            <div
-              class="sc-AxiKw dzBdqj"
-              data-testid="NetworkIcon__icon"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
+          />
         </div>
-        <span
-          class="sc-AxhCb dfnXnk py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-          data-testid="SelectNetworkInput__typeahead"
-        >
-          Ark Devnet
-        </span>
         <input
           aria-autocomplete="list"
           aria-controls="SendTransactionForm__network-menu"
@@ -70,9 +54,10 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
           autocomplete="off"
           class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
           data-testid="SelectNetworkInput__input"
+          disabled=""
           id="SendTransactionForm__network-input"
           placeholder="Enter a network name"
-          value="Ark Devnet"
+          value=""
         />
       </div>
     </div>
@@ -86,12 +71,13 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
         aria-selected="false"
         class="inline-block cursor-pointer"
         data-testid="SelectNetwork__NetworkIcon--container"
+        disabled=""
         id="SendTransactionForm__network-item-0"
         role="option"
       >
         <div
           aria-label="Ark"
-          class="sc-fzoLsD lgcyhO text-theme-neutral-light"
+          class="sc-fzoLsD lgcyhO border-theme-danger-light text-theme-danger-400"
           data-testid="NetworkIcon-ARK-mainnet"
         >
           <div
@@ -110,12 +96,13 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
         aria-selected="false"
         class="inline-block cursor-pointer"
         data-testid="SelectNetwork__NetworkIcon--container"
+        disabled=""
         id="SendTransactionForm__network-item-1"
         role="option"
       >
         <div
           aria-label="Ark Devnet"
-          class="sc-fzoLsD lgcyhO text-theme-success-500 border-theme-success-200"
+          class="sc-fzoLsD lgcyhO border-theme-primary-100 text-theme-primary-400"
           data-testid="NetworkIcon-ARK-devnet"
         >
           <div
@@ -157,8 +144,9 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
     >
       <div>
         <button
-          class="sc-fznZeY jUYMgc SelectAddress  "
+          class="sc-fznZeY jUYMgc SelectAddress is-disabled "
           data-testid="SelectAddress__wrapper"
+          disabled=""
           type="button"
         >
           <div
@@ -169,9 +157,9 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
               class="w-full h-full"
             >
               <img
-                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
               />
             </div>
           </div>
@@ -182,7 +170,7 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
               class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
               data-testid="address__wallet-address"
             >
-              D5sRKWckH4rE1…AepgyC3cvJtwb
+              D8rr7B1d6TL6p…sKp1VBMs6YUYD
             </span>
           </div>
           <div
@@ -205,7 +193,7 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
           name="senderAddress"
           readonly=""
           type="text"
-          value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+          value="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
         />
       </div>
     </div>
@@ -586,6 +574,7 @@ exports[`SendTransactionForm should render 1`] = `
           autocomplete="off"
           class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
           data-testid="SelectNetworkInput__input"
+          disabled=""
           id="SendTransactionForm__network-input"
           placeholder="Enter a network name"
           value=""
@@ -602,6 +591,7 @@ exports[`SendTransactionForm should render 1`] = `
         aria-selected="false"
         class="inline-block cursor-pointer"
         data-testid="SelectNetwork__NetworkIcon--container"
+        disabled=""
         id="SendTransactionForm__network-item-0"
         role="option"
       >
@@ -626,6 +616,7 @@ exports[`SendTransactionForm should render 1`] = `
         aria-selected="false"
         class="inline-block cursor-pointer"
         data-testid="SelectNetwork__NetworkIcon--container"
+        disabled=""
         id="SendTransactionForm__network-item-1"
         role="option"
       >
@@ -1060,28 +1051,10 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           class="sc-AxhCb sc-AxhUy jFkFxS px-4"
         >
           <div
-            aria-label="Ark Devnet"
-            class="sc-fzoLsD jpdwCK border-theme-primary-100 text-theme-primary-400"
+            class="sc-fzoLsD jpdwCK border-theme-neutral-light text-theme-neutral"
             data-testid="SelectNetworkInput__network"
-          >
-            <div
-              class="sc-AxiKw dzBdqj"
-              data-testid="NetworkIcon__icon"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                ark.svg
-              </svg>
-            </div>
-          </div>
+          />
         </div>
-        <span
-          class="sc-AxhCb dfnXnk py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-          data-testid="SelectNetworkInput__typeahead"
-        >
-          Ark Devnet
-        </span>
         <input
           aria-autocomplete="list"
           aria-controls="SendTransactionForm__network-menu"
@@ -1089,9 +1062,10 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           autocomplete="off"
           class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
           data-testid="SelectNetworkInput__input"
+          disabled=""
           id="SendTransactionForm__network-input"
           placeholder="Enter a network name"
-          value="Ark Devnet"
+          value=""
         />
       </div>
     </div>
@@ -1105,12 +1079,13 @@ exports[`SendTransactionForm should select fill out form 1`] = `
         aria-selected="false"
         class="inline-block cursor-pointer"
         data-testid="SelectNetwork__NetworkIcon--container"
+        disabled=""
         id="SendTransactionForm__network-item-0"
         role="option"
       >
         <div
           aria-label="Ark"
-          class="sc-fzoLsD lgcyhO text-theme-neutral-light"
+          class="sc-fzoLsD lgcyhO border-theme-danger-light text-theme-danger-400"
           data-testid="NetworkIcon-ARK-mainnet"
         >
           <div
@@ -1129,12 +1104,13 @@ exports[`SendTransactionForm should select fill out form 1`] = `
         aria-selected="false"
         class="inline-block cursor-pointer"
         data-testid="SelectNetwork__NetworkIcon--container"
+        disabled=""
         id="SendTransactionForm__network-item-1"
         role="option"
       >
         <div
           aria-label="Ark Devnet"
-          class="sc-fzoLsD lgcyhO text-theme-success-500 border-theme-success-200"
+          class="sc-fzoLsD lgcyhO border-theme-primary-100 text-theme-primary-400"
           data-testid="NetworkIcon-ARK-devnet"
         >
           <div
@@ -1176,8 +1152,9 @@ exports[`SendTransactionForm should select fill out form 1`] = `
     >
       <div>
         <button
-          class="sc-fznZeY jUYMgc SelectAddress  "
+          class="sc-fznZeY jUYMgc SelectAddress is-disabled "
           data-testid="SelectAddress__wrapper"
+          disabled=""
           type="button"
         >
           <div
