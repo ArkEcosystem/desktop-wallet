@@ -5,55 +5,29 @@ exports[`CustomPeers should not render if not open 1`] = `<DocumentFragment />`;
 exports[`CustomPeers should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-fzplWN hXndMY fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
+    class="w-full h-full z-50 fixed inset-0 overflow-y-scroll"
   >
     <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
+      class="w-full h-full fixed z-50 bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="sc-fzplWN hXndMY absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mt-24 mb-24 mx-auto rounded-xl bg-theme-background"
+      data-testid="modal__inner"
     >
-      <button
-        class="sc-AxjAm bThAoP"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
+      <div
+        class="relative"
       >
         <div
-          class="p-1"
+          class="absolute top-0 right-0 z-50 mt-5"
         >
-          <div
-            class="sc-AxhUy iFvBPK"
-            height="12"
-            width="12"
+          <button
+            class="sc-AxjAm bThAoP"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
-    <div
-      class="py-4"
-    >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Custom Peer
-      </h2>
-      <div
-        class="flex-1"
-      >
-        <form
-          class="space-y-8"
-          data-testid="Form"
-        >
-          <fieldset
-            class="sc-AxiKw iQzisX mt-8"
-          >
+<<<<<<< HEAD
             <label
               class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
@@ -66,40 +40,96 @@ exports[`CustomPeers should render a modal 1`] = `
                 data-testid="FormLabel__required"
               />
             </label>
+=======
+>>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
             <div
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-owns="CustomPeers__network-menu"
-              data-testid="SelectNetwork"
-              role="combobox"
+              class="p-1"
             >
-              <label
-                for="CustomPeers__network-input"
-                id="CustomPeers__network-label"
-              />
               <div
-                class="sc-AxmLO kuiknc"
-                data-testid="SelectNetworkInput"
+                class="sc-AxhUy iFvBPK"
+                height="12"
+                width="12"
               >
-                <div
-                  class="sc-AxgMl sc-AxheI hUEXQW px-4"
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Custom Peer
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <form
+              class="space-y-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="sc-AxiKw iQzisX mt-8"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="network"
+                  required=""
                 >
+                  Network
                   <div
-                    class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
-                    data-testid="SelectNetworkInput__network"
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
                   />
+                </label>
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="CustomPeers__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
+                >
+                  <label
+                    for="CustomPeers__network-input"
+                    id="CustomPeers__network-label"
+                  />
+                  <div
+                    class="sc-AxmLO kuiknc"
+                    data-testid="SelectNetworkInput"
+                  >
+                    <div
+                      class="sc-AxgMl sc-AxheI hUEXQW px-4"
+                    >
+                      <div
+                        class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
+                        data-testid="SelectNetworkInput__network"
+                      />
+                    </div>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="CustomPeers__network-menu"
+                      aria-labelledby="CustomPeers__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="CustomPeers__network-input"
+                      placeholder="Enter a network name"
+                      value=""
+                    />
+                  </div>
                 </div>
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="CustomPeers__network-menu"
+                <ul
                   aria-labelledby="CustomPeers__network-label"
-                  autocomplete="off"
-                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                  data-testid="SelectNetworkInput__input"
-                  id="CustomPeers__network-input"
-                  placeholder="Enter a network name"
-                  value=""
+                  class="my-6 grid grid-cols-6 gap-6"
+                  id="CustomPeers__network-menu"
+                  role="listbox"
                 />
+<<<<<<< HEAD
               </div>
             </div>
             <ul
@@ -161,40 +191,97 @@ exports[`CustomPeers should render a modal 1`] = `
               required=""
             >
               Type
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-            <label
-              class="inline-flex items-center"
-              for="multisig"
-            >
-              <input
-                class="sc-AxirZ dMNlTF"
-                color="success"
-                type="checkbox"
-              />
-              <span
-                class="ml-2 text-sm font-semibold text-theme-neutral-dark"
+=======
+              </fieldset>
+              <fieldset
+                class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
-                Multisignature
-              </span>
-            </label>
-          </fieldset>
-          <div
-            class="flex justify-end mt-4"
-          >
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              data-testid="peer-list__add-button"
-              type="submit"
-            >
-              Add Peer
-            </button>
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="name"
+                  required=""
+                >
+                  Name
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="Input"
+                  name="name"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="peer-ip"
+                  required=""
+                >
+                  IP
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="Input"
+                  name="peer-ip"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="peer-type"
+                  required=""
+                >
+                  Type
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <label
+                  class="inline-flex items-center"
+                  for="multisig"
+                >
+                  <input
+                    class="sc-AxirZ dMNlTF"
+                    color="success"
+                    type="checkbox"
+                  />
+                  <span
+                    class="ml-2 text-sm font-semibold text-theme-neutral-dark"
+                  >
+                    Multisignature
+                  </span>
+                </label>
+              </fieldset>
+>>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
+              <div
+                class="flex justify-end mt-4"
+              >
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  data-testid="peer-list__add-button"
+                  type="submit"
+                >
+                  Add Peer
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>

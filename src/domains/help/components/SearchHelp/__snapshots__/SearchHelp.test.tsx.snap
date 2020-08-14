@@ -5,266 +5,274 @@ exports[`SearchHelp should not render if not open 1`] = `<DocumentFragment />`;
 exports[`SearchHelp should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-AxhCb hthldP fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
+    class="w-full h-full z-50 fixed inset-0 overflow-y-scroll"
   >
     <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
-    >
-      <button
-        class="sc-AxiKw ha-DbdM"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
-      >
-        <div
-          class="p-1"
-        >
-          <div
-            class="sc-AxjAm HWmvM"
-            height="12"
-            width="12"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
+      class="w-full h-full fixed z-50 bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
     <div
-      class="py-4"
+      class="sc-AxhCb hthldP absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mt-24 mb-24 mx-auto rounded-xl bg-theme-background"
+      data-testid="modal__inner"
     >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Search
-      </h2>
       <div
-        class="flex-1"
+        class="relative"
       >
         <div
-          class="mt-1 text-theme-neutral-dark"
+          class="absolute top-0 right-0 z-50 mt-5"
         >
-          Quickly find the right answers to any questions
-        </div>
-        <div
-          class="-mx-12"
-        >
-          <div
-            class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
-            data-testid="SearchBar"
+          <button
+            class="sc-AxiKw ha-DbdM"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
+              class="p-1"
             >
               <div
-                class="flex items-center pr-8 my-1"
-                data-testid="SearchBarOptions"
+                class="sc-AxjAm HWmvM"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Search
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-neutral-dark"
+            >
+              Quickly find the right answers to any questions
+            </div>
+            <div
+              class="-mx-12"
+            >
+              <div
+                class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
+                data-testid="SearchBar"
               >
                 <div
-                  class="relative"
-                  data-testid="dropdown__toggle"
+                  class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
                 >
-                  <span
-                    class="font-semibold cursor-pointer select-none"
+                  <div
+                    class="flex items-center pr-8 my-1"
+                    data-testid="SearchBarOptions"
                   >
-                    All
-                    <svg
-                      class="inline-block w-2 ml-2 text-black"
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
                     >
-                      arrowdown.svg
-                    </svg>
-                  </span>
+                      <span
+                        class="font-semibold cursor-pointer select-none"
+                      >
+                        All
+                        <svg
+                          class="inline-block w-2 ml-2 text-black"
+                        >
+                          arrowdown.svg
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
+                  >
+                    <input
+                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                      data-testid="Input"
+                      placeholder="What would you like to search for?"
+                    />
+                  </div>
+                  <button
+                    class="sc-AxiKw wFYj my-1"
+                    color="primary"
+                    data-testid="SearchBar__button"
+                    type="button"
+                  >
+                    <span
+                      class="px-2 text-md"
+                    >
+                      Find it
+                    </span>
+                  </button>
                 </div>
               </div>
-              <div
-                class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
-              >
-                <input
-                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
-                  data-testid="Input"
-                  placeholder="What would you like to search for?"
-                />
-              </div>
-              <button
-                class="sc-AxiKw wFYj my-1"
-                color="primary"
-                data-testid="SearchBar__button"
-                type="button"
-              >
-                <span
-                  class="px-2 text-md"
-                >
-                  Find it
-                </span>
-              </button>
             </div>
-          </div>
-        </div>
-        <div
-          class="mt-8"
-        >
-          <div
-            class="mt-8"
-          >
             <div
-              class="sc-fzplWN tcxiV"
-              role="table"
+              class="mt-8"
             >
-              <table
-                class="table-auto"
+              <div
+                class="mt-8"
               >
-                <thead>
-                  <tr
-                    role="row"
-                  >
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--0"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                          Title
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxjAm hdgaLj"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                          Category
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxjAm hdgaLj"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  role="rowgroup"
+                <div
+                  class="sc-fzplWN tcxiV"
+                  role="table"
                 >
-                  <tr
-                    class="border-b border-theme-neutral-200"
+                  <table
+                    class="table-auto"
                   >
-                    <td
-                      class="py-4 pr-8"
-                    >
-                      <div
-                        class="font-semibold"
+                    <thead>
+                      <tr
+                        role="row"
                       >
-                        How do I install the plugin?
-                      </div>
-                      <div
-                        class="mt-2 text-sm text-theme-neutral-dark"
-                      >
-                        ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
-                      </div>
-                    </td>
-                    <td
-                      class="py-4 text-sm text-right align-top"
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--0"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top "
+                          >
+                            <div>
+                              Title
+                            </div>
+                            <div
+                              class="flex items-center ml-2 text-theme-color-neutral"
+                              data-testid="table__Sort"
+                            >
+                              <div
+                                class="sc-AxjAm hdgaLj"
+                                height="12"
+                                width="15"
+                              >
+                                <svg>
+                                  sort.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--1"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top "
+                          >
+                            <div>
+                              Category
+                            </div>
+                            <div
+                              class="flex items-center ml-2 text-theme-color-neutral"
+                              data-testid="table__Sort"
+                            >
+                              <div
+                                class="sc-AxjAm hdgaLj"
+                                height="12"
+                                width="15"
+                              >
+                                <svg>
+                                  sort.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      role="rowgroup"
                     >
-                      <div>
-                        Plugin
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="border-b border-theme-neutral-200"
-                  >
-                    <td
-                      class="py-4 pr-8"
-                    >
-                      <div
-                        class="font-semibold"
+                      <tr
+                        class="border-b border-theme-neutral-200"
                       >
-                        Installing the side plugin
-                      </div>
-                      <div
-                        class="mt-2 text-sm text-theme-neutral-dark"
+                        <td
+                          class="py-4 pr-8"
+                        >
+                          <div
+                            class="font-semibold"
+                          >
+                            How do I install the plugin?
+                          </div>
+                          <div
+                            class="mt-2 text-sm text-theme-neutral-dark"
+                          >
+                            ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
+                          </div>
+                        </td>
+                        <td
+                          class="py-4 text-sm text-right align-top"
+                        >
+                          <div>
+                            Plugin
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-theme-neutral-200"
                       >
-                        ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
-                      </div>
-                    </td>
-                    <td
-                      class="py-4 text-sm text-right align-top"
-                    >
-                      <div>
-                        Plugin
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="border-b border-theme-neutral-200"
-                  >
-                    <td
-                      class="py-4 pr-8"
-                    >
-                      <div
-                        class="font-semibold"
+                        <td
+                          class="py-4 pr-8"
+                        >
+                          <div
+                            class="font-semibold"
+                          >
+                            Installing the side plugin
+                          </div>
+                          <div
+                            class="mt-2 text-sm text-theme-neutral-dark"
+                          >
+                            ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
+                          </div>
+                        </td>
+                        <td
+                          class="py-4 text-sm text-right align-top"
+                        >
+                          <div>
+                            Plugin
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-theme-neutral-200"
                       >
-                        If the plugin is not installed, what do we do?
-                      </div>
-                      <div
-                        class="mt-2 text-sm text-theme-neutral-dark"
-                      >
-                        ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
-                      </div>
-                    </td>
-                    <td
-                      class="py-4 text-sm text-right align-top"
-                    >
-                      <div>
-                        Plugin
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                        <td
+                          class="py-4 pr-8"
+                        >
+                          <div
+                            class="font-semibold"
+                          >
+                            If the plugin is not installed, what do we do?
+                          </div>
+                          <div
+                            class="mt-2 text-sm text-theme-neutral-dark"
+                          >
+                            ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
+                          </div>
+                        </td>
+                        <td
+                          class="py-4 text-sm text-right align-top"
+                        >
+                          <div>
+                            Plugin
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -277,190 +285,198 @@ exports[`SearchHelp should render a modal 1`] = `
 exports[`SearchHelp should render a modal 2`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-AxhCb hthldP fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
+    class="w-full h-full z-50 fixed inset-0 overflow-y-scroll"
   >
     <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
-    >
-      <button
-        class="sc-AxiKw ha-DbdM"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
-      >
-        <div
-          class="p-1"
-        >
-          <div
-            class="sc-AxjAm HWmvM"
-            height="12"
-            width="12"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
+      class="w-full h-full fixed z-50 bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
     <div
-      class="py-4"
+      class="sc-AxhCb hthldP absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mt-24 mb-24 mx-auto rounded-xl bg-theme-background"
+      data-testid="modal__inner"
     >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Search
-      </h2>
       <div
-        class="flex-1"
+        class="relative"
       >
         <div
-          class="mt-1 text-theme-neutral-dark"
+          class="absolute top-0 right-0 z-50 mt-5"
         >
-          Quickly find the right answers to any questions
-        </div>
-        <div
-          class="-mx-12"
-        >
-          <div
-            class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
-            data-testid="SearchBar"
+          <button
+            class="sc-AxiKw ha-DbdM"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
+              class="p-1"
             >
               <div
-                class="flex items-center pr-8 my-1"
-                data-testid="SearchBarOptions"
+                class="sc-AxjAm HWmvM"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Search
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-neutral-dark"
+            >
+              Quickly find the right answers to any questions
+            </div>
+            <div
+              class="-mx-12"
+            >
+              <div
+                class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
+                data-testid="SearchBar"
               >
                 <div
-                  class="relative"
-                  data-testid="dropdown__toggle"
+                  class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
                 >
-                  <span
-                    class="font-semibold cursor-pointer select-none"
+                  <div
+                    class="flex items-center pr-8 my-1"
+                    data-testid="SearchBarOptions"
                   >
-                    Delegate
-                    <svg
-                      class="inline-block w-2 ml-2 text-black"
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
                     >
-                      arrowdown.svg
-                    </svg>
-                  </span>
+                      <span
+                        class="font-semibold cursor-pointer select-none"
+                      >
+                        Delegate
+                        <svg
+                          class="inline-block w-2 ml-2 text-black"
+                        >
+                          arrowdown.svg
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
+                  >
+                    <input
+                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                      data-testid="Input"
+                      placeholder="What would you like to search for?"
+                    />
+                  </div>
+                  <button
+                    class="sc-AxiKw wFYj my-1"
+                    color="primary"
+                    data-testid="SearchBar__button"
+                    type="button"
+                  >
+                    <span
+                      class="px-2 text-md"
+                    >
+                      Find it
+                    </span>
+                  </button>
                 </div>
               </div>
-              <div
-                class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
-              >
-                <input
-                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
-                  data-testid="Input"
-                  placeholder="What would you like to search for?"
-                />
-              </div>
-              <button
-                class="sc-AxiKw wFYj my-1"
-                color="primary"
-                data-testid="SearchBar__button"
-                type="button"
-              >
-                <span
-                  class="px-2 text-md"
-                >
-                  Find it
-                </span>
-              </button>
             </div>
-          </div>
-        </div>
-        <div
-          class="mt-8"
-        >
-          <div
-            class="mt-8"
-          >
             <div
-              class="sc-fzplWN tcxiV"
-              role="table"
+              class="mt-8"
             >
-              <table
-                class="table-auto"
+              <div
+                class="mt-8"
               >
-                <thead>
-                  <tr
-                    role="row"
+                <div
+                  class="sc-fzplWN tcxiV"
+                  role="table"
+                >
+                  <table
+                    class="table-auto"
                   >
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--0"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
+                    <thead>
+                      <tr
+                        role="row"
                       >
-                        <div>
-                          Title
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--0"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
                         >
                           <div
-                            class="sc-AxjAm hdgaLj"
-                            height="12"
-                            width="15"
+                            class="flex flex-inline align-top "
                           >
-                            <svg>
-                              sort.svg
-                            </svg>
+                            <div>
+                              Title
+                            </div>
+                            <div
+                              class="flex items-center ml-2 text-theme-color-neutral"
+                              data-testid="table__Sort"
+                            >
+                              <div
+                                class="sc-AxjAm hdgaLj"
+                                height="12"
+                                width="15"
+                              >
+                                <svg>
+                                  sort.svg
+                                </svg>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                          Category
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
+                        </th>
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--1"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
                         >
                           <div
-                            class="sc-AxjAm hdgaLj"
-                            height="12"
-                            width="15"
+                            class="flex flex-inline align-top "
                           >
-                            <svg>
-                              sort.svg
-                            </svg>
+                            <div>
+                              Category
+                            </div>
+                            <div
+                              class="flex items-center ml-2 text-theme-color-neutral"
+                              data-testid="table__Sort"
+                            >
+                              <div
+                                class="sc-AxjAm hdgaLj"
+                                height="12"
+                                width="15"
+                              >
+                                <svg>
+                                  sort.svg
+                                </svg>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  role="rowgroup"
-                />
-              </table>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      role="rowgroup"
+                    />
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>

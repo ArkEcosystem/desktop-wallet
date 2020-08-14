@@ -87,12 +87,31 @@ exports[`TransactionTable should render 1`] = `
                   Recipient
                 </div>
               </div>
+<<<<<<< HEAD
             </th>
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
+=======
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr
+          class="border-b border-dotted border-theme-neutral-300 cursor-pointer bg-opacity-10 hover:bg-theme-neutral-100"
+          data-testid="TransactionRow"
+        >
+          <td
+            class="w-16 py-6"
+          >
+            <div
+              class="inline-block align-middle"
+>>>>>>> d1eff8eda... tests: add transaction modal and update snapshots
             >
               <div
                 class="flex flex-inline align-top justify-center"
@@ -237,9 +256,35 @@ exports[`TransactionTable should render 1`] = `
                   ASuusX…GQ3kqT
                 </span>
               </div>
+<<<<<<< HEAD
             </td>
             <td
               class="text-center"
+=======
+            </div>
+          </td>
+          <td
+            class="text-right"
+          >
+            <div
+              class="sc-AxiKw BrXzA"
+              color="danger"
+              data-testid="TransactionRowAmount"
+            >
+              0.00000121
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-dotted border-theme-neutral-300 cursor-pointer bg-opacity-10 hover:bg-theme-neutral-100"
+          data-testid="TransactionRow"
+        >
+          <td
+            class="w-16 py-6"
+          >
+            <div
+              class="inline-block align-middle"
+>>>>>>> d1eff8eda... tests: add transaction modal and update snapshots
             >
               <div
                 class="inline-flex align-middle space-x-1"
@@ -527,11 +572,24 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
               </div>
+<<<<<<< HEAD
             </th>
           </tr>
         </thead>
         <tbody
           role="rowgroup"
+=======
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr
+          class="border-b border-dotted border-theme-neutral-300 cursor-pointer bg-opacity-10 hover:bg-theme-neutral-100"
+          data-testid="TransactionCompactRow"
+>>>>>>> d1eff8eda... tests: add transaction modal and update snapshots
         >
           <tr
             class="border-b border-dotted border-theme-neutral-300"
@@ -594,6 +652,7 @@ exports[`TransactionTable should render compact 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
+<<<<<<< HEAD
                 0.00000121
               </div>
             </td>
@@ -601,6 +660,30 @@ exports[`TransactionTable should render compact 1`] = `
           <tr
             class="border-b border-dotted border-theme-neutral-300"
             data-testid="TransactionCompactRow"
+=======
+                ASuusX…GQ3kqT
+              </span>
+            </div>
+          </td>
+          <td
+            class="text-right"
+          >
+            <div
+              class="sc-AxiKw BrXzA"
+              color="danger"
+              data-testid="TransactionRowAmount"
+            >
+              0.00000121
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-dotted border-theme-neutral-300 cursor-pointer bg-opacity-10 hover:bg-theme-neutral-100"
+          data-testid="TransactionCompactRow"
+        >
+          <td
+            class="w-24 py-3"
+>>>>>>> d1eff8eda... tests: add transaction modal and update snapshots
           >
             <td
               class="w-24 py-3"
@@ -729,12 +812,45 @@ exports[`TransactionTable should render loading state  1`] = `
                   </div>
                 </div>
               </div>
+<<<<<<< HEAD
             </th>
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
+=======
+            </div>
+          </th>
+          <th
+            class="text-sm text-left select-none text-theme-neutral"
+            colspan="1"
+            data-testid="table__th--7"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top invisible w-24"
+            >
+              <div>
+                Sign
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr
+          class="border-b border-dotted border-theme-neutral-300 cursor-pointer bg-opacity-10 hover:bg-theme-neutral-100"
+          data-testid="TransactionRow"
+        >
+          <td
+            class="w-16 py-6"
+          >
+            <div
+              class="inline-block align-middle"
+>>>>>>> d1eff8eda... tests: add transaction modal and update snapshots
             >
               <div
                 class="flex flex-inline align-top invisible"
@@ -836,9 +952,24 @@ exports[`TransactionTable should render loading state  1`] = `
                   ‌
                 </span>
               </span>
+<<<<<<< HEAD
             </td>
             <td
               class="w-48 py-1 text-sm text-theme-neutral-600"
+=======
+            </button>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-dotted border-theme-neutral-300 cursor-pointer bg-opacity-10 hover:bg-theme-neutral-100"
+          data-testid="TransactionRow"
+        >
+          <td
+            class="w-16 py-6"
+          >
+            <div
+              class="inline-block align-middle"
+>>>>>>> d1eff8eda... tests: add transaction modal and update snapshots
             >
               <span>
                 <span

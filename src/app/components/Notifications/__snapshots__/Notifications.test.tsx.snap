@@ -149,8 +149,14 @@ exports[`Notifications should render transactions 1`] = `
         <table
           class="table-auto"
         >
+<<<<<<< HEAD
           <tbody
             role="rowgroup"
+=======
+          <tr
+            class="border-b border-dotted border-theme-neutral-300 cursor-pointer bg-opacity-10 hover:bg-theme-neutral-100"
+            data-testid="TransactionCompactRow"
+>>>>>>> d1eff8eda... tests: add transaction modal and update snapshots
           >
             <tr
               class="border-b border-dotted border-theme-neutral-300"

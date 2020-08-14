@@ -3,185 +3,193 @@
 exports[`RepositoryModal should render empty state 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-AxiKw wLhVq fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
+    class="w-full h-full z-50 fixed inset-0 overflow-y-scroll"
   >
     <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
-    >
-      <button
-        class="sc-AxjAm bThAoP"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
-      >
-        <div
-          class="p-1"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
+      class="w-full h-full fixed z-50 bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
     <div
-      class="py-4"
+      class="sc-AxiKw wLhVq absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mt-24 mb-24 mx-auto rounded-xl bg-theme-background"
+      data-testid="modal__inner"
     >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Repository
-      </h2>
       <div
-        class="flex-1"
+        class="relative"
       >
         <div
-          class="flex flex-col mt-5 space-y-5"
+          class="absolute top-0 right-0 z-50 mt-5"
         >
-          <div
-            class="flex items-center space-x-5"
+          <button
+            class="sc-AxjAm bThAoP"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="sc-AxhCb bzWLYJ border-theme-neutral-800"
+              class="p-1"
             >
               <div
-                class="sc-AxirZ hmuEJr"
-                data-testid="repository-link__icon"
-                height="22"
-                width="22"
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
               >
                 <svg>
-                  github.svg
+                  cross-slim.svg
                 </svg>
               </div>
             </div>
-            <div
-              class="flex flex-col font-semibold space-y-1"
-            >
-              <span
-                class="text-sm text-theme-neutral-light"
-              >
-                GitHub
-              </span>
-              <a
-                class="text-theme-primary"
-                href="http://github.com/robank"
-                target="_blank"
-              >
-                http://github.com/robank
-              </a>
-            </div>
-          </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Repository
+          </h2>
           <div
-            class="flex items-center space-x-5"
+            class="flex-1"
           >
             <div
-              class="sc-AxhCb bzWLYJ border-theme-neutral-800"
+              class="flex flex-col mt-5 space-y-5"
             >
               <div
-                class="sc-AxirZ hmuEJr"
-                data-testid="repository-link__icon"
-                height="22"
-                width="22"
+                class="flex items-center space-x-5"
               >
-                <svg>
-                  gitlab.svg
-                </svg>
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxirZ hmuEJr"
+                    data-testid="repository-link__icon"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      github.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col font-semibold space-y-1"
+                >
+                  <span
+                    class="text-sm text-theme-neutral-light"
+                  >
+                    GitHub
+                  </span>
+                  <a
+                    class="text-theme-primary"
+                    href="http://github.com/robank"
+                    target="_blank"
+                  >
+                    http://github.com/robank
+                  </a>
+                </div>
               </div>
-            </div>
-            <div
-              class="flex flex-col font-semibold space-y-1"
-            >
-              <span
-                class="text-sm text-theme-neutral-light"
-              >
-                GitLab
-              </span>
-              <a
-                class="text-theme-primary"
-                href="http://gitlab.com/robank"
-                target="_blank"
-              >
-                http://gitlab.com/robank
-              </a>
-            </div>
-          </div>
-          <div
-            class="flex items-center space-x-5"
-          >
-            <div
-              class="sc-AxhCb bzWLYJ border-theme-neutral-800"
-            >
               <div
-                class="sc-AxirZ hmuEJr"
-                data-testid="repository-link__icon"
-                height="22"
-                width="22"
+                class="flex items-center space-x-5"
               >
-                <svg>
-                  bitbucket.svg
-                </svg>
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxirZ hmuEJr"
+                    data-testid="repository-link__icon"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      gitlab.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col font-semibold space-y-1"
+                >
+                  <span
+                    class="text-sm text-theme-neutral-light"
+                  >
+                    GitLab
+                  </span>
+                  <a
+                    class="text-theme-primary"
+                    href="http://gitlab.com/robank"
+                    target="_blank"
+                  >
+                    http://gitlab.com/robank
+                  </a>
+                </div>
               </div>
-            </div>
-            <div
-              class="flex flex-col font-semibold space-y-1"
-            >
-              <span
-                class="text-sm text-theme-neutral-light"
-              >
-                Bitbucket
-              </span>
-              <a
-                class="text-theme-primary"
-                href="http://bitbucket.com/robank"
-                target="_blank"
-              >
-                http://bitbucket.com/robank
-              </a>
-            </div>
-          </div>
-          <div
-            class="flex items-center space-x-5"
-          >
-            <div
-              class="sc-AxhCb bzWLYJ border-theme-neutral-800"
-            >
               <div
-                class="sc-AxirZ hmuEJr"
-                data-testid="repository-link__icon"
-                height="22"
-                width="22"
+                class="flex items-center space-x-5"
               >
-                <svg>
-                  npm.svg
-                </svg>
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxirZ hmuEJr"
+                    data-testid="repository-link__icon"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      bitbucket.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col font-semibold space-y-1"
+                >
+                  <span
+                    class="text-sm text-theme-neutral-light"
+                  >
+                    Bitbucket
+                  </span>
+                  <a
+                    class="text-theme-primary"
+                    href="http://bitbucket.com/robank"
+                    target="_blank"
+                  >
+                    http://bitbucket.com/robank
+                  </a>
+                </div>
               </div>
-            </div>
-            <div
-              class="flex flex-col font-semibold space-y-1"
-            >
-              <span
-                class="text-sm text-theme-neutral-light"
+              <div
+                class="flex items-center space-x-5"
               >
-                NPM
-              </span>
-              <a
-                class="text-theme-primary"
-                href="http://npmjs.com/robank"
-                target="_blank"
-              >
-                http://npmjs.com/robank
-              </a>
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxirZ hmuEJr"
+                    data-testid="repository-link__icon"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      npm.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col font-semibold space-y-1"
+                >
+                  <span
+                    class="text-sm text-theme-neutral-light"
+                  >
+                    NPM
+                  </span>
+                  <a
+                    class="text-theme-primary"
+                    href="http://npmjs.com/robank"
+                    target="_blank"
+                  >
+                    http://npmjs.com/robank
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

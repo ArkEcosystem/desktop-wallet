@@ -5,73 +5,81 @@ exports[`LedgerWallet should not render if not open 1`] = `<DocumentFragment />`
 exports[`LedgerWallet should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-AxiKw cTRlJa fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
+    class="w-full h-full z-50 fixed inset-0 overflow-y-scroll"
   >
     <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
-    >
-      <button
-        class="sc-AxjAm bThAoP"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
-      >
-        <div
-          class="p-1"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
+      class="w-full h-full fixed z-50 bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
     <div
-      class="py-4"
+      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mt-24 mb-24 mx-auto rounded-xl bg-theme-background"
+      data-testid="modal__inner"
     >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Ledger Wallet
-      </h2>
       <div
-        class="flex-1"
+        class="relative"
       >
         <div
-          class="container"
+          class="absolute top-0 right-0 z-50 mt-5"
         >
-          <p
-            class="mt-1 text-sm text-theme-neutral-dark md:text-base"
-          >
-            Connect your Ledger to PC and confirm the input.
-          </p>
-          <svg
-            class="my-8"
-          >
-            waiting-ledger.svg
-          </svg>
-          <div
-            class="inline-flex items-center space-x-4"
+          <button
+            class="sc-AxjAm bThAoP"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="sc-AxhCb irNmep"
-              color="primary"
-            />
-            <span
-              class="font-semibold text-black"
+              class="p-1"
             >
-              Waiting for Ledger...
-            </span>
+              <div
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Ledger Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="container"
+            >
+              <p
+                class="mt-1 text-sm text-theme-neutral-dark md:text-base"
+              >
+                Connect your Ledger to PC and confirm the input.
+              </p>
+              <svg
+                class="my-8"
+              >
+                waiting-ledger.svg
+              </svg>
+              <div
+                class="inline-flex items-center space-x-4"
+              >
+                <div
+                  class="sc-AxhCb irNmep"
+                  color="primary"
+                />
+                <span
+                  class="font-semibold text-black"
+                >
+                  Waiting for Ledger...
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
