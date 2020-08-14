@@ -38,7 +38,7 @@ export const SelectOptionsList = styled.ul`
 	}
 
 	&.is-open {
-		${tw`py-6 max-h-128 overflow-scroll`}
+		${tw`py-6 max-h-128 overflow-y-auto`}
 	}
 
 	.select-list-option {
