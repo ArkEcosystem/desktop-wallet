@@ -11,7 +11,6 @@ import {
 	fireEvent,
 	getDefaultProfileId,
 	renderWithRouter,
-	useDefaultNetMocks,
 	waitFor,
 } from "utils/testing-library";
 
@@ -33,14 +32,14 @@ const passphrase2 = "power return attend drink piece found tragic fire liar page
 const renderPage = async () => {
 	const rendered = renderWithRouter(
 		<Route path="/profiles/:profileId/wallets/:walletId">
-			<WalletDetails />
+			<WalletDetails txSkeletonRowsLimit={1} />
 		</Route>,
 		{
 			routes: [walletUrl],
 			history,
 		},
 	);
-	await waitFor(() => expect(rendered.queryAllByTestId("TransactionRow")).toHaveLength(20));
+	await waitFor(() => expect(rendered.queryAllByTestId("TransactionRow")).toHaveLength(2));
 	return rendered;
 };
 
@@ -53,8 +52,6 @@ describe("WalletDetails", () => {
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
-
-		useDefaultNetMocks();
 
 		nock("https://dwallets.ark.io")
 			.get(`/api/wallets/${unvotedWallet.address()}`)
@@ -100,7 +97,13 @@ describe("WalletDetails", () => {
 			})
 			.post("/api/transactions/search")
 			.query(true)
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+			.reply(200, () => {
+				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+				return {
+					meta,
+					data: data.slice(0, 1),
+				};
+			})
 			.persist();
 	});
 
@@ -110,34 +113,12 @@ describe("WalletDetails", () => {
 	});
 
 	it("should render", async () => {
-		const { getByTestId, asFragment, getAllByTestId } = await renderPage();
+		const { getByTestId, queryAllByTestId, asFragment } = await renderPage();
 
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
 
 		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address());
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render with timers", async () => {
-		jest.useFakeTimers();
-
-		const { asFragment, getAllByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletDetails />
-			</Route>,
-			{
-				routes: [walletUrl],
-				history,
-			},
-		);
-
-		await act(async () => {
-			jest.advanceTimersByTime(30000);
-		});
-
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
-		expect(asFragment()).toMatchSnapshot();
-		jest.useRealTimers();
 	});
 
 	it("should render when wallet not found for votes", async () => {
@@ -217,12 +198,31 @@ describe("WalletDetails", () => {
 			fireEvent.click(fetchMoreTransactionsBtn);
 		});
 
-		await waitFor(
-			() => {
-				expect(getAllByTestId("TransactionRow")).toHaveLength(40);
+		await waitFor(() => {
+			expect(getAllByTestId("TransactionRow")).toHaveLength(4);
+		});
+	});
+
+	it("should render with timers", async () => {
+		jest.useFakeTimers();
+
+		const { asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletDetails txSkeletonRowsLimit={1} />
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
 			},
-			{ timeout: 2000 },
 		);
+
+		await act(async () => {
+			jest.advanceTimersByTime(30000);
+		});
+
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
+		expect(asFragment()).toMatchSnapshot();
+		jest.useRealTimers();
 	});
 
 	it("should delete wallet", async () => {
