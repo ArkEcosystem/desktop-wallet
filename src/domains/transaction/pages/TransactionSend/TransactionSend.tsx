@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import {  Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
