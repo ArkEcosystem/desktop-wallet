@@ -103,7 +103,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
 					<Transactions
-						isLoading={loadingTransactions}
+						isLoading={isLoadingTransactions}
 						transactions={allTransactions}
 						fetchMoreAction={fetchMoreTransactions}
 					/>
