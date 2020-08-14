@@ -38,19 +38,19 @@ export const SendTransactionForm = ({ networks, profile, onFail }: SendTransacti
 	useEffect(() => {
 		const loadFees = async () => {
 			// TODO: shouldn't be necessary once SelectAddress returns wallets instead
-			const senderWallet = profile?.wallets().findByAddress(senderAddress);
+			const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 			try {
-				const transferFees = (await senderWallet?.fee().all(7))?.transfer;
+				const transferFees = (await senderWallet!.fee().all(7))?.transfer;
 
 				setFeeOptions({
 					last: undefined,
-					min: transferFees!.min,
-					max: transferFees!.max,
-					average: transferFees!.avg,
+					min: transferFees.min,
+					max: transferFees.max,
+					average: transferFees.avg,
 				});
 
-				setValue("fee", transferFees!.avg, true);
+				setValue("fee", transferFees.avg, true);
 			} catch (error) {
 				onFail?.(error);
 			}

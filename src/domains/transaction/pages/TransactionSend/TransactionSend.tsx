@@ -48,11 +48,8 @@ export const SecondStep = ({ profile }: any) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, recipients, senderAddress, smartbridge } = getValues();
-	const wallet: Wallet = profile
-		.wallets()
-		.values()
-		.find((wallet: Wallet) => wallet.address() === senderAddress);
-	const coinName = wallet?.manifest().get<string>("name");
+	const wallet: Wallet = profile.wallets().findByAddress(senderAddress);
+	const coinName = wallet.manifest().get<string>("name");
 
 	let amount = BigNumber.ZERO;
 	for (const recipient of recipients) {
@@ -225,13 +222,10 @@ export const TransactionSend = () => {
 	const submitForm = async () => {
 		clearError("mnemonic");
 		const { fee, mnemonic, recipients, senderAddress, smartbridge } = getValues();
-		const senderWallet = activeProfile
-			?.wallets()
-			.values()
-			.find((wallet: Wallet) => wallet.address() === senderAddress);
+		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		try {
-			const transactionId = await senderWallet?.transaction().signTransfer({
+			const transactionId = await senderWallet!.transaction().signTransfer({
 				fee,
 				from: senderAddress,
 				sign: {
@@ -244,15 +238,15 @@ export const TransactionSend = () => {
 				},
 			});
 
-			await senderWallet?.transaction().broadcast([transactionId!]);
+			await senderWallet!.transaction().broadcast([transactionId]);
 
 			await env.persist();
 
 			// TODO: Remove timer and figure out a nicer way of doing this
 			const intervalId = setInterval(async () => {
 				try {
-					const transactionData = await senderWallet?.client().transaction(transactionId!);
-					setTransaction(transactionData!);
+					const transactionData = await senderWallet!.client().transaction(transactionId);
+					setTransaction(transactionData);
 					clearInterval(intervalId);
 
 					handleNext();
