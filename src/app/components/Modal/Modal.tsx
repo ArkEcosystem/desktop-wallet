@@ -56,7 +56,7 @@ const ModalContent = (props: ModalContentProps) => (
 		data-testid="modal__inner"
 	>
 		<div className="relative">
-			<div className="absolute top-0 right-0 z-50 mt-5 mr-5">
+			<div className="absolute top-0 right-0 z-50 mt-5">
 				<Button
 					data-testid="modal__close-btn"
 					color="neutral"
