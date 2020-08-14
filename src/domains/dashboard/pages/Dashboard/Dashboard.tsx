@@ -23,7 +23,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
 	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
-	const [loadingTransactions, setLoadingTransactions] = useState(true);
+	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 	const activeProfile = useActiveProfile();
 	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
