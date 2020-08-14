@@ -36,7 +36,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
-	const [loadingTransactions, setLoadingTransactions] = useState(true);
+	const [loadingTransactions] = useState(true);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const { t } = useTranslation();
@@ -82,9 +82,9 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					continue;
 				}
 
-				const data = await activeWallet.client().wallet(publicKey);
+				const voteData = await activeWallet.client().wallet(publicKey);
 
-				result.push(data);
+				result.push(voteData);
 			}
 
 			return new WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined });
@@ -96,7 +96,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 			const votes = await fetchVotes();
 
 			setData({
-				...data,
 				walletData,
 				transactions,
 				votes,
