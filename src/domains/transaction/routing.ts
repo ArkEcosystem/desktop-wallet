@@ -24,7 +24,7 @@ export const TransactionRoutes = [
 		component: UpdateRegistration,
 	},
 	{
-		path: "/profiles/:profileId/transactions/:walletId?/transfer",
+		path: "/profiles/:profileId/transactions/:walletId/transfer",
 		exact: true,
 		component: TransactionSend,
 	},

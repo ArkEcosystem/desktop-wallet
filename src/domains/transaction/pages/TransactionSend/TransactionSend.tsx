@@ -208,18 +208,16 @@ export const TransactionSend = () => {
 		register("fee", { required: true });
 		register("smartbridge");
 
-		if (activeWallet) {
-			setValue("senderAddress", activeWallet.address());
+		setValue("senderAddress", activeWallet.address(), true);
 
-			for (const network of networks) {
-				if (
-					network.id() === activeWallet.network().id &&
-					network.coin() === activeWallet.manifest().get<string>("name")
-				) {
-					setValue("network", network, true);
+		for (const network of networks) {
+			if (
+				network.id() === activeWallet.network().id &&
+				network.coin() === activeWallet.manifest().get<string>("name")
+			) {
+				setValue("network", network, true);
 
-					break;
-				}
+				break;
 			}
 		}
 	}, [register]);
