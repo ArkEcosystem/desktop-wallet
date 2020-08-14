@@ -16,7 +16,7 @@ import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomShe
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
 import { WalletVote } from "domains/wallet/components/WalletVote";
-import React, {  useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
