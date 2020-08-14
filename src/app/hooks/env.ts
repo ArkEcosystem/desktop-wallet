@@ -13,5 +13,5 @@ export const useActiveWallet = () => {
 	const profile = useActiveProfile();
 	const { walletId } = useParams();
 
-	return useMemo(() => (walletId ? profile.wallets().findById(walletId) : undefined), [profile, walletId]);
+	return useMemo(() => profile.wallets().findById(walletId), [profile, walletId]);
 };
