@@ -38,8 +38,13 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		ref,
 	) => {
 		const [isContactSearchOpen, setIsContactSearchOpen] = useState(false);
-		const [selectedAddress, setSelectedAddress] = useState(address);
-		useEffect(() => setSelectedAddress(address), [address]);
+		const [selectedAddress, setSelectedAddress] = useState("");
+
+		useEffect(() => {
+			if (address) {
+				setSelectedAddress(address);
+			}
+		}, []);
 
 		const fieldContext = useFormField();
 		const isInvalidField = fieldContext?.isInvalid || isInvalid;
@@ -71,8 +76,8 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						data-testid="SelectRecipient__input"
 						type="text"
 						ref={ref}
-						value={selectedAddress || ""}
-						onChange={(ev: any) => onInputChange?.(ev.target.value)}
+						defaultValue={selectedAddress}
+						onChange={(ev: any) => onInputChange(ev.target.value)}
 						disabled={disabled}
 						isInvalid={isInvalidField}
 					/>
