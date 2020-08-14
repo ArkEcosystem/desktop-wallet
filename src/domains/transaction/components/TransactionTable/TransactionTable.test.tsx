@@ -127,7 +127,7 @@ describe("TransactionTable", () => {
 
 	it("should render loading state ", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
-			<TransactionTable transactions={transactions} isLoading skeletonRowsCount={5} />,
+			<TransactionTable transactions={[]} isLoading skeletonRowsLimit={5} />,
 		);
 		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
 		expect(asFragment()).toMatchSnapshot();
@@ -135,14 +135,14 @@ describe("TransactionTable", () => {
 
 	it("should render loading state with sign column", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
-			<TransactionTable transactions={transactions} isLoading showSignColumn skeletonRowsCount={5} />,
+			<TransactionTable transactions={[]} isLoading showSignColumn skeletonRowsLimit={5} />,
 		);
 		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
 		expect(asFragment()).toMatchSnapshot();
 	});
 	it("should render loading state with currency column", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
-			<TransactionTable transactions={transactions} isLoading currencyRate="2" skeletonRowsCount={5} />,
+			<TransactionTable transactions={[]} isLoading currencyRate="2" skeletonRowsLimit={5} />,
 		);
 		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
 		expect(asFragment()).toMatchSnapshot();

@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Loader } from "app/components/Loader";
 import { Table } from "app/components/Table";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
@@ -15,7 +14,7 @@ type Props = {
 	isCompact?: boolean;
 	onRowClick?: (row: Contracts.TransactionDataType) => void;
 	isLoading?: boolean;
-	skeletonRowsCount?: number;
+	skeletonRowsLimit?: number;
 };
 
 export const TransactionTable = ({
@@ -26,7 +25,7 @@ export const TransactionTable = ({
 	isCompact,
 	onRowClick,
 	isLoading,
-	skeletonRowsCount,
+	skeletonRowsLimit,
 }: Props) => {
 	const { t } = useTranslation();
 
@@ -60,7 +59,7 @@ export const TransactionTable = ({
 		},
 	];
 
-	const columns = React.useMemo(() => {
+	const columns = useMemo(() => {
 		if (isCompact) {
 			return [
 				{
@@ -89,19 +88,20 @@ export const TransactionTable = ({
 		return commonColumns;
 	}, [commonColumns, currencyRate, showSignColumn, isCompact, t]);
 
-	const skeletonRows = new Array(skeletonRowsCount).fill({});
-	const data = isLoading ? skeletonRows : transactions;
+	const showSkeleton = useMemo(() => isLoading && transactions.length === 0, [transactions, isLoading]);
+
+	const skeletonRows = new Array(skeletonRowsLimit).fill({});
+	const data = showSkeleton ? skeletonRows : transactions;
 
 	return (
 		<div className="relative">
-			<Loader show={isLoading} />
 			<Table hideHeader={hideHeader} columns={columns} data={data}>
 				{(row: Contracts.TransactionDataType) =>
 					isCompact ? (
 						<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
 					) : (
 						<TransactionRow
-							isLoading={isLoading}
+							isLoading={showSkeleton}
 							onClick={() => onRowClick?.(row)}
 							transaction={row}
 							currencyRate={currencyRate}
@@ -120,5 +120,5 @@ TransactionTable.defaultProps = {
 	isCompact: false,
 	hideHeader: false,
 	isLoading: false,
-	skeletonRowsCount: 8,
+	skeletonRowsLimit: 8,
 };
