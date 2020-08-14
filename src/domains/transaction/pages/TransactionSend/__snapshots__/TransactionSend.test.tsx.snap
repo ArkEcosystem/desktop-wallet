@@ -1080,56 +1080,7 @@ exports[`Transaction Send should render 1st step 1`] = `
           class="my-6 grid grid-cols-6 gap-6"
           id="SendTransactionForm__network-menu"
           role="listbox"
-        >
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="SendTransactionForm__network-item-0"
-            role="option"
-          >
-            <div
-              aria-label="Ark"
-              class="sc-AxiKw eqmOyq border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon-ARK-mainnet"
-            >
-              <div
-                class="sc-AxhUy gkBhrK"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="SendTransactionForm__network-item-1"
-            role="option"
-          >
-            <div
-              aria-label="Ark Devnet"
-              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-devnet"
-            >
-              <div
-                class="sc-AxhUy gkBhrK"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-          </li>
-        </ul>
+        />
       </fieldset>
       <fieldset
         class="sc-AxhCb ckQmOL relative mt-1"
