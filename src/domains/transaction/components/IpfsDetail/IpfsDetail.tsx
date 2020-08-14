@@ -9,7 +9,9 @@ import { useTranslation } from "react-i18next";
 
 type IpfsDetailProps = {
 	isOpen: boolean;
+	transaction?: any;
 	onClose?: any;
+	onCancel?: any;
 };
 
 export const IpfsDetail = (props: IpfsDetailProps) => {
