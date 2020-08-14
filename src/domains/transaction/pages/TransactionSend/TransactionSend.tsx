@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import {  Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -211,20 +211,15 @@ export const TransactionSend = () => {
 		if (activeWallet) {
 			setValue("senderAddress", activeWallet.address());
 
-			let walletNetwork: NetworkData | undefined;
 			for (const network of networks) {
 				if (
 					network.id() === activeWallet.network().id &&
 					network.coin() === activeWallet.manifest().get<string>("name")
 				) {
-					walletNetwork = network;
+					setValue("network", network, true);
 
 					break;
 				}
-			}
-
-			if (walletNetwork) {
-				setValue("network", walletNetwork, true);
 			}
 		}
 	}, [register]);
