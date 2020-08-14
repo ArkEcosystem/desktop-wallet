@@ -41,7 +41,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 			const profileTransactions = await activeProfile.transactionAggregate().transactions({ limit: 10 });
 			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.items();
 
-			setLoadingTransactions(false);
+			setIsLoadingTransactions(false);
 			return allTransactions && setAllTransactions(allTransactions);
 		};
 
