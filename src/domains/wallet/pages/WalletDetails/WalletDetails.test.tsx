@@ -5,14 +5,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	waitFor,
-} from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { WalletDetails } from "./WalletDetails";
 
