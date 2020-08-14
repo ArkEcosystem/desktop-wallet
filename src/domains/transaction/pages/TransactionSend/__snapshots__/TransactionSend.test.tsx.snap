@@ -314,7 +314,7 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
                           class="sc-AxhCb hXHxHb pt-8 pb-0"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="mnemonic"
                             required=""
@@ -1888,7 +1888,7 @@ exports[`Transaction Send should render 1st step 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="network"
             label="Network"
@@ -1951,7 +1951,7 @@ exports[`Transaction Send should render 1st step 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="senderAddress"
             label="Sender"
@@ -2069,7 +2069,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                   class="mb-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="recipientAddress"
                     label="Recipient"
@@ -2125,7 +2125,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                   class="mb-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="amount"
                     label="Amount"
@@ -2173,7 +2173,7 @@ exports[`Transaction Send should render 1st step 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="smartbridge"
             label="Smartbridge"
@@ -2214,7 +2214,7 @@ exports[`Transaction Send should render 1st step 1`] = `
         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="fee"
           required=""
@@ -2708,7 +2708,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
           class="sc-AxhCb ckQmOL pt-8 pb-0"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="mnemonic"
             required=""
