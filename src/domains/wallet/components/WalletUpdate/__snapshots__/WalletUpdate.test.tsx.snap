@@ -2,7 +2,7 @@
 
 exports[`WalletUpdate should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`WalletUpdate should render a modal 1`] = `
+exports[`WalletUpdate should render 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-50 bg-black opacity-50"
@@ -52,41 +52,166 @@ exports[`WalletUpdate should render a modal 1`] = `
         >
           wallet-update.svg
         </svg>
-        <div
-          class="container"
-        >
+        <div>
           <div
-            class="mb-8 text-center"
+            data-testid="tab-pabel__active-panel"
           >
-            <p
-              class="text-sm text-theme-neutral-dark md:text-base"
+            <section
+              data-testid="WalletUpdate__first-step"
             >
-              We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
-            </p>
+              <div
+                class="mb-8 text-center"
+              >
+                <p
+                  class="text-sm text-theme-neutral-dark md:text-base"
+                >
+                  We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
+                </p>
+              </div>
+            </section>
           </div>
           <div
             class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
           >
             <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              data-testid="wallet-update__update-button"
-              type="button"
-            >
-              Update Now
-            </button>
-            <button
               class="sc-AxjAm ddJBbC mt-2 sm:mt-0"
               color="primary"
-              data-testid="wallet-update__cancel-button"
+              data-testid="WalletUpdate__cancel-button"
               type="button"
             >
               Update Later
+            </button>
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              data-testid="WalletUpdate__update-button"
+              type="button"
+            >
+              Update Now
             </button>
           </div>
         </div>
       </div>
     </div>
   </div>
+</DocumentFragment>
+`;
+
+exports[`WalletUpdate should render 1st step 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="WalletUpdate__first-step"
+  >
+    <div
+      class="mb-8 text-center"
+    >
+      <p
+        class="text-sm text-theme-neutral-dark md:text-base"
+      >
+        We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`WalletUpdate should render 2st step 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="WalletUpdate__second-step"
+  >
+    <div
+      class="flex w-2/5 mx-auto mb-8"
+    >
+      <div
+        class="flex-1"
+      >
+        <p
+          class="text-sm font-semibold text-theme-neutral-light"
+        >
+          Downloaded
+        </p>
+        <p
+          class="text-sm font-bold text-theme-neutral-dark"
+        >
+          154 KB / 154 KB
+        </p>
+      </div>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="flex justify-center"
+        >
+          <svg
+            height="50"
+            viewBox="0 0 50 50"
+            width="50"
+          >
+            <circle
+              cx="25"
+              cy="25"
+              fill="transparent"
+              r="22.5"
+              stroke="var(--theme-color-success-200)"
+              stroke-width="5"
+            />
+            <circle
+              cx="25"
+              cy="25"
+              fill="transparent"
+              r="22.5"
+              stroke="var(--theme-color-success)"
+              stroke-dasharray="141.3716694115407"
+              stroke-dashoffset="31.101767270538943"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="5"
+              transform="rotate(-90 25 25)"
+            />
+            <text
+              data-testid="CircularProgressBar__percentage"
+              dy="0.3em"
+              fill="var(--theme-color-success)"
+              font-size="0.8rem"
+              font-weight="600"
+              text-anchor="middle"
+              x="50%"
+              y="50%"
+            >
+              <tspan>
+                78
+                <tspan
+                  dy="-0.6em"
+                  font-size="0.4rem"
+                  font-weight="bold"
+                >
+                  %
+                </tspan>
+              </tspan>
+            </text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`WalletUpdate should render 3st step 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="WalletUpdate__third-step"
+  >
+    <div
+      class="mb-6 text-center"
+    >
+      <p
+        class="text-sm text-theme-neutral-dark md:text-base"
+      >
+        Update downloaded and ready to install
+      </p>
+    </div>
+  </section>
 </DocumentFragment>
 `;
