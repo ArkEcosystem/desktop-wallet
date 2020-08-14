@@ -126,7 +126,7 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should load in sender wallet from route", async () => {
+	it("should navigate between steps", async () => {
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
 
@@ -136,34 +136,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId?/transfer">
-					<TransactionSend />
-				</Route>,
-				{
-					routes: [transferURL],
-					history,
-				},
-			);
-
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
-		});
-
-		expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
-		expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
-		expect(rendered.asFragment()).toMatchSnapshot();
-	});
-
-	it("should navigate between steps", async () => {
-		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/transactions/transfer`;
-
-		history.push(transferURL);
-
-		let rendered: RenderResult;
-
-		await act(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/transfer">
+				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
 					<TransactionSend />
 				</Route>,
 				{
@@ -178,22 +151,10 @@ describe("Transaction Send", () => {
 		const { getAllByTestId, getByTestId } = rendered!;
 
 		await act(async () => {
-			// Select network
-			const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
-			fireEvent.click(networkIcons[1]);
-			expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
-
-			expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper")).not.toHaveAttribute(
-				"disabled",
+			await waitFor(() =>
+				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
 			);
-
-			// Select sender & update fees
-			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			const firstAddress = getByTestId("AddressListItem__select-1");
-			fireEvent.click(firstAddress);
-			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 			// Select recipient
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
@@ -288,7 +249,7 @@ describe("Transaction Send", () => {
 
 	it("should error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/transactions/transfer`;
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
 
 		history.push(transferURL);
 
@@ -296,7 +257,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/transfer">
+				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
 					<TransactionSend />
 				</Route>,
 				{
@@ -311,23 +272,6 @@ describe("Transaction Send", () => {
 		const { getAllByTestId, getByTestId } = rendered!;
 
 		await act(async () => {
-			// Select network
-			const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
-			fireEvent.click(networkIcons[1]);
-			expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
-
-			expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper")).not.toHaveAttribute(
-				"disabled",
-			);
-
-			// Select sender & update fees
-			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			const firstAddress = getByTestId("AddressListItem__select-1");
-			fireEvent.click(firstAddress);
-			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
 			// Select recipient
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
 			expect(getByTestId("modal__inner")).toBeTruthy();
