@@ -5,6 +5,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
+import { Link } from "app/components/Link";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -47,12 +48,14 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 								<span className="text-sm font-semibold text-theme-neutral">
 									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.LABEL")}
 								</span>
-								<span className="font-semibold text-theme-neutral-900">
-									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.DESCRIPTION")}
-									<a href="/#" className="px-2 text-theme-primary">
+								<div className="font-semibold text-theme-neutral-900">
+									<span className="mr-2">
+										{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.DESCRIPTION")}
+									</span>
+									<Link to="https://guides.ark.dev/usage-guides/desktop-wallet-voting" isExternal>
 										{t("COMMON.LEARN_MORE")}
-									</a>
-								</span>
+									</Link>
+								</div>
 							</div>
 						</div>
 					) : (
