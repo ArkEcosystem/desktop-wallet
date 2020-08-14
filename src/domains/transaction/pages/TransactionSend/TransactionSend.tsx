@@ -220,7 +220,7 @@ export const TransactionSend = () => {
 				break;
 			}
 		}
-	}, [register]);
+	}, [activeWallet, networks, register, setValue]);
 
 	const submitForm = async () => {
 		clearError("mnemonic");
