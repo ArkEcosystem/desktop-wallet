@@ -16,20 +16,32 @@ import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomShe
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
 import { WalletVote } from "domains/wallet/components/WalletVote";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, {  useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-export const WalletDetails = () => {
+type WalletDetailsProps = {
+	txSkeletonRowsLimit?: number;
+};
+
+type WalletInfo = {
+	transactions: Contracts.TransactionDataType[];
+	walletData?: WalletData;
+	votes?: Coins.WalletDataCollection;
+};
+
+export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
+	const [data, setData] = useState<WalletInfo>({ transactions: [] });
+
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
-	const [transactions, setTransactions] = useState<Contracts.TransactionDataType[]>([]);
-	const [loadingTransactions, setLoadingTransactions] = useState(false);
-	const [votes, setVotes] = useState<Coins.WalletDataCollection>();
-	const [walletData, setWalletData] = useState<WalletData>();
+	const [loadingTransactions, setLoadingTransactions] = useState(true);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
+	const { t } = useTranslation();
+	const { persist } = useEnvironmentContext();
+	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
@@ -38,12 +50,7 @@ export const WalletDetails = () => {
 	const networkId = activeWallet.network().id;
 	const ticker = activeWallet.network().currency.ticker;
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
-
-	const { t } = useTranslation();
-
-	const { persist } = useEnvironmentContext();
-	const history = useHistory();
-
+	const { transactions, walletData, votes } = data;
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const crumbs = [
 		{
@@ -52,47 +59,61 @@ export const WalletDetails = () => {
 		},
 	];
 
-	// TODO: Replace logic with sdk
-	const getVotes = useCallback(async () => {
-		let response;
-		// catch 404 wallet not found until sdk logic
-		try {
-			response = await activeWallet.votes();
-		} catch (error) {
-			return;
-		}
-
-		const transaction = response.items()[0];
-		const result: WalletData[] = [];
-
-		const votes = (transaction?.asset().votes as string[]) || [];
-		for (const vote of votes) {
-			const mode = vote[0];
-			const publicKey = vote.substr(1);
-			/* istanbul ignore next */
-			if (mode === "-") {
-				continue;
+	useEffect(() => {
+		// TODO: Replace logic with sdk
+		const fetchVotes = async () => {
+			let response;
+			// catch 404 wallet not found until sdk logic
+			try {
+				response = await activeWallet.votes();
+			} catch (error) {
+				return;
 			}
 
-			const data = await activeWallet.client().wallet(publicKey);
+			const transaction = response.items()[0];
+			const result: WalletData[] = [];
 
-			result.push(data);
-		}
+			const votes = (transaction?.asset().votes as string[]) || [];
+			for (const vote of votes) {
+				const mode = vote[0];
+				const publicKey = vote.substr(1);
+				/* istanbul ignore next */
+				if (mode === "-") {
+					continue;
+				}
 
-		setVotes(new WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined }));
+				const data = await activeWallet.client().wallet(publicKey);
+
+				result.push(data);
+			}
+
+			return new WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined });
+		};
+
+		const fetchAllData = async () => {
+			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
+			const walletData = await activeWallet.client().wallet(activeWallet.address());
+			const votes = await fetchVotes();
+
+			setData({
+				...data,
+				walletData,
+				transactions,
+				votes,
+			});
+		};
+
+		fetchAllData();
 	}, [activeWallet]);
 
-	// TODO: Hacky to access `WalletData` instead of `Wallet`
-	const getWalletData = useCallback(async () => {
-		setLoadingTransactions(true);
+	useEffect(() => {
+		const timer = setInterval(async () => {
+			await activeWallet.syncIdentity();
+			await persist();
+		}, 30000);
 
-		const data = await activeWallet.client().wallet(activeWallet.address());
-		const walletTransactions = (await activeWallet.transactions({ limit: 10 })).items();
-		setWalletData(data);
-
-		setLoadingTransactions(false);
-		setTransactions(walletTransactions);
-	}, [activeWallet]);
+		return () => clearInterval(timer);
+	}, [activeWallet, persist]);
 
 	const handleDeleteWallet = async () => {
 		activeProfile.wallets().forget(activeWallet.id());
@@ -107,28 +128,11 @@ export const WalletDetails = () => {
 		setIsUpdateWalletName(false);
 	};
 
-	useEffect(() => {
-		getVotes();
-	}, [getVotes]);
-
-	useEffect(() => {
-		getWalletData();
-	}, [getWalletData]);
-
-	useEffect(() => {
-		const timer = setInterval(async () => {
-			await activeWallet.syncIdentity();
-			await persist();
-		}, 30000);
-
-		return () => clearInterval(timer);
-	}, [activeWallet, persist]);
-
 	const fetchMoreTransactions = async (type?: string) => {
 		//TODO: Fetch more type based / ex: pending and confirmed txs
 		const nextPage = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
 
-		return transactions && setTransactions(transactions?.concat(nextPage));
+		return transactions && setData({ ...data, transactions: transactions?.concat(nextPage) });
 	};
 
 	/* istanbul ignore next */
@@ -186,6 +190,7 @@ export const WalletDetails = () => {
 								transactions={transactions}
 								showSignColumn
 								isLoading={loadingTransactions}
+								skeletonRowsLimit={txSkeletonRowsLimit}
 							/>
 							{transactions.length > 0 && (
 								<Button
@@ -207,6 +212,7 @@ export const WalletDetails = () => {
 								transactions={transactions}
 								currencyRate="2"
 								isLoading={loadingTransactions}
+								skeletonRowsLimit={txSkeletonRowsLimit}
 							/>
 							{transactions.length > 0 && (
 								<Button
@@ -261,4 +267,8 @@ export const WalletDetails = () => {
 			/>
 		</>
 	);
+};
+
+WalletDetails.defaultProps = {
+	txSkeletonRowsLimit: 8,
 };
