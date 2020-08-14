@@ -1,73 +1,66 @@
-import { translations as COMMON } from "app/i18n/common/i18n";
+/* eslint-disable @typescript-eslint/require-await */
+import { act } from "@testing-library/react-hooks";
 import React from "react";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
-import { translations as WALLETS } from "../../i18n";
-import { WalletUpdate } from "./WalletUpdate";
+import { FirstStep, SecondStep, ThirdStep, WalletUpdate } from "./WalletUpdate";
 
 describe("WalletUpdate", () => {
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(<WalletUpdate isOpen={false} onUpdate={() => void 0} />);
+		const { asFragment, getByTestId } = render(<WalletUpdate isOpen={false} />);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(<WalletUpdate isOpen={true} onUpdate={() => void 0} />);
+	it("should render 1st step", () => {
+		const { asFragment, getByTestId } = render(<FirstStep />);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(WALLETS.MODAL_WALLET_UPDATE.DESCRIPTION_1);
+		expect(getByTestId("WalletUpdate__first-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should handle update action", () => {
-		const handleUpdate = jest.fn();
+	it("should render 2st step", () => {
+		const { asFragment, getByTestId } = render(<SecondStep />);
 
-		const { getByTestId } = render(<WalletUpdate isOpen={true} onUpdate={handleUpdate} />);
-
-		fireEvent.click(getByTestId("wallet-update__update-button"));
-		expect(handleUpdate).toHaveBeenCalled();
+		expect(getByTestId("WalletUpdate__second-step")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should handle cancel action", () => {
-		const handleCancel = jest.fn();
+	it("should render 3st step", () => {
+		const { asFragment, getByTestId } = render(<ThirdStep />);
 
-		const { getByTestId } = render(<WalletUpdate isOpen={true} onUpdate={() => void 0} onCancel={handleCancel} />);
-
-		fireEvent.click(getByTestId("wallet-update__cancel-button"));
-		expect(handleCancel).toHaveBeenCalled();
+		expect(getByTestId("WalletUpdate__third-step")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render download step", () => {
-		const { getByTestId } = render(<WalletUpdate isOpen={true} isUpdate={true} onUpdate={() => void 0} />);
+	it("should render", async () => {
+		let rendered: RenderResult;
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(COMMON.DOWNLOADED);
-	});
+		await act(async () => {
+			rendered = render(<WalletUpdate isOpen={true} />);
+			await waitFor(() => expect(rendered.getByTestId("WalletUpdate__first-step")).toBeTruthy());
+		});
 
-	it("should handle install action", () => {
-		const handleInstall = jest.fn();
+		const { asFragment, getByTestId } = rendered!;
 
-		const { getByTestId } = render(
-			<WalletUpdate
-				isOpen={true}
-				isUpdate={false}
-				isReady={true}
-				onUpdate={() => void 0}
-				onInstall={handleInstall}
-			/>,
-		);
+		expect(asFragment()).toMatchSnapshot();
 
-		fireEvent.click(getByTestId("wallet-update__install-button"));
-		expect(getByTestId("modal__inner")).toHaveTextContent(WALLETS.MODAL_WALLET_UPDATE.DESCRIPTION_2);
-		expect(handleInstall).toHaveBeenCalled();
-	});
+		await act(async () => {
+			// Navigation between steps
+			await fireEvent.click(getByTestId("WalletUpdate__update-button"));
+			expect(getByTestId("WalletUpdate__second-step")).toBeTruthy();
 
-	it("should handle close action", () => {
-		const handleClose = jest.fn();
+			// Back
+			await fireEvent.click(getByTestId("WalletUpdate__back-button"));
+			expect(getByTestId("WalletUpdate__first-step")).toBeTruthy();
 
-		const { getByTestId } = render(<WalletUpdate isOpen={true} onUpdate={() => void 0} onClose={handleClose} />);
+			// Navigation between steps
+			await fireEvent.click(getByTestId("WalletUpdate__update-button"));
+			expect(getByTestId("WalletUpdate__second-step")).toBeTruthy();
 
-		fireEvent.click(getByTestId("modal__close-btn"));
-		expect(handleClose).toHaveBeenCalled();
+			await fireEvent.click(getByTestId("WalletUpdate__continue-button"));
+			expect(getByTestId("WalletUpdate__third-step")).toBeTruthy();
+		});
 	});
 });

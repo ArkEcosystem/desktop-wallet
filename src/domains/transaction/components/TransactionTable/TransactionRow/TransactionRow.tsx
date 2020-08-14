@@ -29,7 +29,12 @@ export const TransactionRow = ({
 	<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
 		<td className="w-16 py-6">
 			<div className="inline-block align-middle">
-				<Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id()} isExternal />
+				<Link
+					data-testid="TransactionRow__ID"
+					to="https://explorer.ark.io/"
+					tooltip={transaction.id()}
+					isExternal
+				/>
 			</div>
 		</td>
 		<td className="w-48 py-1 text-sm text-theme-neutral-600">
