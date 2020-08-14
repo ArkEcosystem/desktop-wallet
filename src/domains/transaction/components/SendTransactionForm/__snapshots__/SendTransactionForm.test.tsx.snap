@@ -9,7 +9,7 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
       class="mb-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="network"
         label="Network"
@@ -139,7 +139,7 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
       class="mb-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="senderAddress"
         label="Sender"
@@ -277,7 +277,7 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="recipientAddress"
                 label="Recipient"
@@ -344,7 +344,7 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="amount"
                 label="Amount"
@@ -392,7 +392,7 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
       class="mb-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="smartbridge"
         label="Smartbridge"
@@ -433,7 +433,7 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
     class="sc-AxjAm fmGClo flex flex-col space-y-2"
   >
     <label
-      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
       data-testid="FormLabel"
       for="fee"
       required=""
@@ -543,7 +543,7 @@ exports[`SendTransactionForm should render 1`] = `
       class="mb-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="network"
         label="Network"
@@ -655,7 +655,7 @@ exports[`SendTransactionForm should render 1`] = `
       class="mb-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="senderAddress"
         label="Sender"
@@ -773,7 +773,7 @@ exports[`SendTransactionForm should render 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="recipientAddress"
                 label="Recipient"
@@ -829,7 +829,7 @@ exports[`SendTransactionForm should render 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="amount"
                 label="Amount"
@@ -877,7 +877,7 @@ exports[`SendTransactionForm should render 1`] = `
       class="mb-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="smartbridge"
         label="Smartbridge"
@@ -918,7 +918,7 @@ exports[`SendTransactionForm should render 1`] = `
     class="sc-AxjAm fmGClo flex flex-col space-y-2"
   >
     <label
-      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
       data-testid="FormLabel"
       for="fee"
       required=""
@@ -1028,7 +1028,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       class="mb-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="network"
         label="Network"
@@ -1158,7 +1158,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       class="mb-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="senderAddress"
         label="Sender"
@@ -1296,7 +1296,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="recipientAddress"
                 label="Recipient"
@@ -1363,7 +1363,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="amount"
                 label="Amount"
@@ -1411,7 +1411,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       class="mb-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="smartbridge"
         label="Smartbridge"
@@ -1452,7 +1452,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
     class="sc-AxjAm fmGClo flex flex-col space-y-2"
   >
     <label
-      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
       data-testid="FormLabel"
       for="fee"
       required=""

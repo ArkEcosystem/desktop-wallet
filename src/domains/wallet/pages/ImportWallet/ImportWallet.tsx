@@ -195,7 +195,7 @@ export const ThirdStep = ({ address }: { address: string }) => {
 			<Divider dashed />
 
 			<FormField name="name">
-				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} />
+				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} />
 				<Input ref={register} data-testid="ImportWallet__name-input" />
 			</FormField>
 		</section>

@@ -65,7 +65,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
               required=""
@@ -172,7 +172,7 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
               required=""
@@ -278,7 +278,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
               required=""
