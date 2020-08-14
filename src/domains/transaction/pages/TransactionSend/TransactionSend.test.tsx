@@ -126,6 +126,33 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should load in sender wallet from route", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/:walletId?/transfer">
+					<TransactionSend />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+		});
+
+		expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
+		expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
+		expect(rendered.asFragment()).toMatchSnapshot();
+	});
+
 	it("should navigate between steps", async () => {
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/transactions/transfer`;
