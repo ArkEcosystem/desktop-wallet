@@ -16,7 +16,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { useClipboard } from "app/hooks";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
@@ -26,10 +26,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ profile, wallets }: any) => {
-	const { env } = useEnvironmentContext();
+export const FirstStep = ({ networks, profile, wallets }: any) => {
 	const { t } = useTranslation();
-	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	return (
 		<section data-testid="TransactionSend__step--first">
@@ -50,11 +48,8 @@ export const SecondStep = ({ profile }: any) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, recipients, senderAddress, smartbridge } = getValues();
-	const wallet: Wallet = profile
-		.wallets()
-		.values()
-		.find((wallet: Wallet) => wallet.address() === senderAddress);
-	const coinName = wallet?.manifest().get<string>("name");
+	const wallet: Wallet = profile.wallets().findByAddress(senderAddress);
+	const coinName = wallet.manifest().get<string>("name");
 
 	let amount = BigNumber.ZERO;
 	for (const recipient of recipients) {
@@ -195,8 +190,12 @@ export const TransactionSend = () => {
 	});
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm({
+		mode: "onChange",
+	});
 	const { clearError, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
@@ -205,18 +204,28 @@ export const TransactionSend = () => {
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 		register("smartbridge");
-	}, [register]);
+
+		setValue("senderAddress", activeWallet.address(), true);
+
+		for (const network of networks) {
+			if (
+				network.id() === activeWallet.network().id &&
+				network.coin() === activeWallet.manifest().get<string>("name")
+			) {
+				setValue("network", network, true);
+
+				break;
+			}
+		}
+	}, [activeWallet, networks, register, setValue]);
 
 	const submitForm = async () => {
 		clearError("mnemonic");
 		const { fee, mnemonic, recipients, senderAddress, smartbridge } = getValues();
-		const senderWallet = activeProfile
-			?.wallets()
-			.values()
-			.find((wallet: Wallet) => wallet.address() === senderAddress);
+		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		try {
-			const transactionId = await senderWallet?.transaction().signTransfer({
+			const transactionId = await senderWallet!.transaction().signTransfer({
 				fee,
 				from: senderAddress,
 				sign: {
@@ -229,15 +238,15 @@ export const TransactionSend = () => {
 				},
 			});
 
-			await senderWallet?.transaction().broadcast([transactionId!]);
+			await senderWallet!.transaction().broadcast([transactionId]);
 
 			await env.persist();
 
 			// TODO: Remove timer and figure out a nicer way of doing this
 			const intervalId = setInterval(async () => {
 				try {
-					const transactionData = await senderWallet?.client().transaction(transactionId!);
-					setTransaction(transactionData!);
+					const transactionData = await senderWallet!.client().transaction(transactionId);
+					setTransaction(transactionData);
 					clearInterval(intervalId);
 
 					handleNext();
@@ -281,7 +290,7 @@ export const TransactionSend = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep profile={activeProfile} />
+								<FirstStep networks={networks} profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep profile={activeProfile} />

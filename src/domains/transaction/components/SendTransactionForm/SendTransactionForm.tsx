@@ -6,18 +6,19 @@ import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 type SendTransactionFormProps = {
-	formDefaultData: any;
 	networks: NetworkData[];
 	profile: Profile;
 	onFail?: any;
 };
 
-export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail }: SendTransactionFormProps) => {
+export const SendTransactionForm = ({ networks, profile, onFail }: SendTransactionFormProps) => {
+	const history = useHistory();
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<Wallet[]>([]);
 
@@ -34,34 +35,41 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail
 	const fee = getValues("fee") || null;
 	const maxAvailableAmount = 80;
 
-	const onSelectNetwork = (network?: NetworkData | null) => {
-		setValue("network", network, true);
-		setWallets(profile.wallets().findByCoinWithNetwork(network!.coin(), network!.id()));
-	};
+	useEffect(() => {
+		const loadFees = async () => {
+			// TODO: shouldn't be necessary once SelectAddress returns wallets instead
+			const senderWallet = profile.wallets().findByAddress(senderAddress);
 
-	const onSelectSender = async (address: any) => {
+			try {
+				const transferFees = (await senderWallet!.fee().all(7))?.transfer;
+
+				setFeeOptions({
+					last: undefined,
+					min: transferFees.min,
+					max: transferFees.max,
+					average: transferFees.avg,
+				});
+
+				setValue("fee", transferFees.avg, true);
+			} catch (error) {
+				onFail?.(error);
+			}
+		};
+
+		loadFees();
+	}, [setFeeOptions, setValue, onFail, profile, senderAddress]);
+
+	useEffect(() => {
+		if (network) {
+			setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
+		}
+	}, [network, profile]);
+
+	const onSelectSender = (address: any) => {
 		setValue("senderAddress", address, true);
 
-		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
-		const senderWallet = profile
-			?.wallets()
-			.values()
-			.find((wallet: Wallet) => wallet.address() === address);
-
-		try {
-			const transferFees = (await senderWallet?.fee().all(7))?.transfer;
-
-			setFeeOptions({
-				last: undefined,
-				min: transferFees!.min,
-				max: transferFees!.max,
-				average: transferFees!.avg,
-			});
-
-			setValue("fee", transferFees!.avg, true);
-		} catch (error) {
-			onFail?.(error);
-		}
+		const wallet = wallets.find((wallet) => wallet.address() === address);
+		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/transfer`);
 	};
 
 	return (
@@ -70,12 +78,7 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail
 				<div className="mb-2">
 					<FormLabel label="Network" />
 				</div>
-				<SelectNetwork
-					id="SendTransactionForm__network"
-					networks={networks}
-					value={network}
-					onSelect={onSelectNetwork}
-				/>
+				<SelectNetwork id="SendTransactionForm__network" networks={networks} selected={network} disabled />
 			</FormField>
 
 			<FormField name="senderAddress" className="relative mt-1">
@@ -136,8 +139,4 @@ export const SendTransactionForm = ({ formDefaultData, networks, profile, onFail
 			</FormField>
 		</>
 	);
-};
-
-SendTransactionForm.defaultProps = {
-	formDefaultData: {},
 };
