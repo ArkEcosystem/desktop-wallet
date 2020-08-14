@@ -44,7 +44,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 			if (address) {
 				setSelectedAddress(address);
 			}
-		}, []);
+		}, [address, setSelectedAddress]);
 
 		const fieldContext = useFormField();
 		const isInvalidField = fieldContext?.isInvalid || isInvalid;
