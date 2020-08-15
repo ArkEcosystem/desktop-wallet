@@ -132,7 +132,7 @@ describe("ImportWallet", () => {
 		);
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<ThirdStep address={identityAddress} />
+				<ThirdStep address={identityAddress} nameMaxLength={42} />
 			</FormContext>,
 		);
 

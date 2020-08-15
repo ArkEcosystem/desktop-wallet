@@ -144,7 +144,7 @@ describe("CreateWallet", () => {
 
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FourthStep />
+				<FourthStep nameMaxLength={42} />
 			</FormContext>,
 		);
 
