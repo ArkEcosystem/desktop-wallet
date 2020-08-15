@@ -4,131 +4,119 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	useDefaultNetMocks,
-	waitFor,
-} from "testing-library";
 import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { WalletDetails } from "./WalletDetails";
 
 const history = createMemoryHistory();
-let dashboardURL: string;
+let walletUrl: string;
 
 let profile: Profile;
 let wallet: Wallet;
 let blankWallet: Wallet;
 let unvotedWallet: Wallet;
 
+let emptyProfile: Profile;
+let wallet2: Wallet;
+
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
 const renderPage = async () => {
 	const rendered = renderWithRouter(
 		<Route path="/profiles/:profileId/wallets/:walletId">
-			<WalletDetails />
+			<WalletDetails txSkeletonRowsLimit={1} />
 		</Route>,
 		{
-			routes: [dashboardURL],
+			routes: [walletUrl],
 			history,
 		},
 	);
-
-	jest.useRealTimers();
-
-	// Wait for fetch before unmount
-	await act(async () => {
-		await new Promise((resolve) => setTimeout(resolve, 1000));
-	});
-
-	await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeInTheDocument());
-	await waitFor(() => expect(rendered.getAllByTestId("TransactionRow")).toHaveLength(20));
-
+	await waitFor(() => expect(rendered.queryAllByTestId("TransactionRow")).toHaveLength(2));
 	return rendered;
 };
 
-beforeAll(async () => {
-	profile = env.profiles().findById(getDefaultProfileId());
-	wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-	blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
-	unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
-
-	useDefaultNetMocks();
-
-	nock("https://dwallets.ark.io")
-		.get(`/api/wallets/${unvotedWallet.address()}`)
-		.reply(200, walletMock)
-		.get(`/api/wallets/${unvotedWallet.address()}/votes`)
-		.reply(200, {
-			meta: {
-				totalCountIsEstimate: false,
-				count: 0,
-				pageCount: 1,
-				totalCount: 0,
-				next: null,
-				previous: null,
-				self: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-				first: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-				last: null,
-			},
-			data: [],
-		})
-		.get(/\/api\/wallets\/.+/)
-		.reply(404, {
-			statusCode: 404,
-			error: "Not Found",
-			message: "Wallet not found",
-		})
-		.get(/\/api\/wallets\/.+\/votes/)
-		.reply(404, {
-			statusCode: 404,
-			error: "Not Found",
-			message: "Wallet not found",
-		})
-		.post("/api/transactions/search")
-		.query(true)
-		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
-		.persist();
-});
-
-beforeEach(() => {
-	dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
-	history.push(dashboardURL);
-});
-
 describe("WalletDetails", () => {
-	it("should render", async () => {
-		const { asFragment, getByTestId } = await renderPage();
+	beforeAll(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
+		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
 
-		await waitFor(() => expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address()));
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
+
+		nock("https://dwallets.ark.io")
+			.get(`/api/wallets/${unvotedWallet.address()}`)
+			.reply(200, walletMock)
+			.get(`/api/wallets/${unvotedWallet.address()}/votes`)
+			.reply(200, {
+				meta: {
+					totalCountIsEstimate: false,
+					count: 0,
+					pageCount: 1,
+					totalCount: 0,
+					next: null,
+					previous: null,
+					self: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
+					first: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
+					last: null,
+				},
+				data: [],
+			})
+			.get(`/api/wallets/${blankWallet.address()}`)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
+			.get(`/api/wallets/${blankWallet.address()}/votes`)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
+			.get(`/api/wallets/${wallet2.address()}`)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
+			.get(`/api/wallets/${wallet2.address()}/votes`)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
+			.post("/api/transactions/search")
+			.query(true)
+			.reply(200, () => {
+				const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+				return {
+					meta,
+					data: data.slice(0, 1),
+				};
+			})
+			.persist();
 	});
 
-	it("should render with timers", async () => {
-		jest.useFakeTimers();
-		const { asFragment } = await renderPage();
+	beforeEach(() => {
+		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
+		history.push(walletUrl);
+	});
 
-		act(() => {
-			jest.useFakeTimers();
-			jest.advanceTimersByTime(30000);
-			jest.useRealTimers();
-		});
+	it("should render", async () => {
+		const { getByTestId, queryAllByTestId, asFragment } = await renderPage();
 
-		// Wait for fetch before unmount
-		await act(async () => {
-			await new Promise((resolve) => setTimeout(resolve, 1000));
-		});
+		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
 
+		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render when wallet not found for votes", async () => {
-		dashboardURL = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
-		history.push(dashboardURL);
+		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
+		history.push(walletUrl);
 
 		const { asFragment, getByTestId } = await renderPage();
 
@@ -137,8 +125,8 @@ describe("WalletDetails", () => {
 	});
 
 	it("should render when wallet hasn't voted", async () => {
-		dashboardURL = `/profiles/${profile.id()}/wallets/${unvotedWallet.id()}`;
-		history.push(dashboardURL);
+		walletUrl = `/profiles/${profile.id()}/wallets/${unvotedWallet.id()}`;
+		history.push(walletUrl);
 
 		const { asFragment, getByTestId } = await renderPage();
 
@@ -146,57 +134,9 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should not render the bottom sheet menu when there is only one wallet", async () => {
-		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		const wallet2 = await profile.wallets().importByAddress(wallet.address(), "ARK", "devnet");
-
-		dashboardURL = `/profiles/${profile.id()}/wallets/${wallet2.id()}`;
-		history.push(dashboardURL);
-
-		const { asFragment, queryByTestId } = await renderPage();
-
-		// Wait for fetch before unmount
-		await act(async () => new Promise((resolve) => setTimeout(resolve, 1000)));
-
-		expect(queryByTestId("WalletBottomSheetMenu")).toBeNull();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should delete wallet", async () => {
-		const deleteWallet = await profile.wallets().importByMnemonic("delete wallet", "ARK", "devnet");
-		dashboardURL = `/profiles/${profile.id()}/wallets/${deleteWallet.id()}`;
-		history.push(dashboardURL);
-
-		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
-
-		expect(asFragment()).toMatchSnapshot();
-
-		const dropdown = getAllByTestId("dropdown__toggle")[2];
-		expect(dropdown).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(dropdown);
-		});
-
-		const deleteWalletOption = getByTestId("dropdown__option--4");
-		expect(deleteWalletOption).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(deleteWalletOption);
-		});
-
-		expect(profile.wallets().count()).toEqual(5);
-		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("DeleteResource__submit-button"));
-		});
-
-		await waitFor(() => expect(profile.wallets().count()).toEqual(4));
-	});
-
 	it("should update wallet name", async () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		const dropdown = getAllByTestId("dropdown__toggle")[2];
 		expect(dropdown).toBeTruthy();
@@ -236,7 +176,9 @@ describe("WalletDetails", () => {
 	});
 
 	it("should fetch more transactions", async () => {
-		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		const { getByTestId, getAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		const pendingFetchMoreBtn = getByTestId("pending-transactions__fetch-more-button");
 		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
@@ -249,15 +191,69 @@ describe("WalletDetails", () => {
 			fireEvent.click(fetchMoreTransactionsBtn);
 		});
 
+		await waitFor(() => {
+			expect(getAllByTestId("TransactionRow")).toHaveLength(4);
+		});
+	});
+
+	it("should render with timers", async () => {
+		jest.useFakeTimers();
+
+		const { asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletDetails txSkeletonRowsLimit={1} />
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
+
 		await act(async () => {
-			await new Promise((resolve) => setTimeout(resolve, 1000));
+			jest.advanceTimersByTime(30000);
 		});
 
-		await waitFor(
-			() => {
-				expect(getAllByTestId("TransactionRow")).toHaveLength(40);
-			},
-			{ timeout: 2000 },
-		);
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
+		expect(asFragment()).toMatchSnapshot();
+		jest.useRealTimers();
+	});
+
+	it("should delete wallet", async () => {
+		const { getByTestId, getAllByTestId } = await renderPage();
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
+
+		const dropdown = getAllByTestId("dropdown__toggle")[2];
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const deleteWalletOption = getByTestId("dropdown__option--4");
+		expect(deleteWalletOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(deleteWalletOption);
+		});
+
+		expect(profile.wallets().count()).toEqual(4);
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("DeleteResource__submit-button"));
+		});
+
+		await waitFor(() => expect(profile.wallets().count()).toEqual(3));
+	});
+
+	it("should not render the bottom sheet menu when there is only one wallet", async () => {
+		walletUrl = `/profiles/${emptyProfile.id()}/wallets/${wallet2.id()}`;
+		history.push(walletUrl);
+
+		const { asFragment, getByTestId, queryAllByTestId } = await renderPage();
+
+		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet2.address());
+		expect(queryAllByTestId("WalletBottomSheetMenu")).toHaveLength(0);
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
