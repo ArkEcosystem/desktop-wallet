@@ -10,18 +10,19 @@ type TransactionsProps = {
 	fetchMoreAction: Function;
 	moreAction?: any;
 	emptyText?: string;
+	isLoading?: boolean;
 };
 
-export const Transactions = ({ transactions, title, emptyText, fetchMoreAction }: TransactionsProps) => {
+export const Transactions = ({ transactions, title, emptyText, fetchMoreAction, isLoading }: TransactionsProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<div className="bg-white">
 			<div className="text-4xl font-bold">{title}</div>
-			{transactions.length > 0 && (
-				<div className="pt-8">
-					<TransactionTable transactions={transactions} currencyRate="2" />
+			<div className="pt-8">
+				<TransactionTable transactions={transactions} currencyRate="2" isLoading={isLoading} />
 
+				{transactions.length > 0 && (
 					<Button
 						data-testid="transactions__fetch-more-button"
 						variant="plain"
@@ -30,9 +31,9 @@ export const Transactions = ({ transactions, title, emptyText, fetchMoreAction }
 					>
 						{t("COMMON.VIEW_MORE")}
 					</Button>
-				</div>
-			)}
-			{transactions.length === 0 && <div className="text-theme-neutral-dark">{emptyText}</div>}
+				)}
+			</div>
+			{!isLoading && transactions.length === 0 && <div className="text-theme-neutral-dark">{emptyText}</div>}
 		</div>
 	);
 };

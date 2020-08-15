@@ -125,6 +125,29 @@ describe("TransactionTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render loading state ", () => {
+		const { getAllByTestId, asFragment } = renderWithRouter(
+			<TransactionTable transactions={[]} isLoading skeletonRowsLimit={5} />,
+		);
+		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render loading state with sign column", () => {
+		const { getAllByTestId, asFragment } = renderWithRouter(
+			<TransactionTable transactions={[]} isLoading showSignColumn skeletonRowsLimit={5} />,
+		);
+		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
+		expect(asFragment()).toMatchSnapshot();
+	});
+	it("should render loading state with currency column", () => {
+		const { getAllByTestId, asFragment } = renderWithRouter(
+			<TransactionTable transactions={[]} isLoading currencyRate="2" skeletonRowsLimit={5} />,
+		);
+		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should emit action on the row click", () => {
 		const onClick = jest.fn();
 		const { getAllByTestId } = renderWithRouter(

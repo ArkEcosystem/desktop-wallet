@@ -54,6 +54,7 @@ const whiteListedModules = [
 	"react-table",
 	"styled-components",
 	"swiper",
+	"react-loading-skeleton",
 ];
 
 const addNodeExternals = () =>
