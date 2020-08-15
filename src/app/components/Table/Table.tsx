@@ -17,7 +17,7 @@ const TableWrapper = styled.div`
 	${defaultTableStyle}
 `;
 
-export const Table = ({ children, data, columns, hideHeader }: TableProps) => {
+export const Table = ({ children, data, columns, hideHeader, className }: TableProps) => {
 	const tableData = useMemo(() => data, [data]);
 	const tableColumns = useMemo(() => columns, [columns]);
 
@@ -47,7 +47,7 @@ export const Table = ({ children, data, columns, hideHeader }: TableProps) => {
 	};
 
 	return (
-		<TableWrapper {...getTableProps()}>
+		<TableWrapper {...getTableProps({ className })}>
 			<table className="table-auto">
 				{!hideHeader && (
 					<thead>

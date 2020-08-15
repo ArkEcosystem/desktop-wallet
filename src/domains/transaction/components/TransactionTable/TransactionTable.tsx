@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Table } from "app/components/Table";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
@@ -13,6 +13,8 @@ type Props = {
 	hideHeader?: boolean;
 	isCompact?: boolean;
 	onRowClick?: (row: Contracts.TransactionDataType) => void;
+	isLoading?: boolean;
+	skeletonRowsLimit?: number;
 };
 
 export const TransactionTable = ({
@@ -22,6 +24,8 @@ export const TransactionTable = ({
 	hideHeader,
 	isCompact,
 	onRowClick,
+	isLoading,
+	skeletonRowsLimit,
 }: Props) => {
 	const { t } = useTranslation();
 
@@ -55,7 +59,7 @@ export const TransactionTable = ({
 		},
 	];
 
-	const columns = React.useMemo(() => {
+	const columns = useMemo(() => {
 		if (isCompact) {
 			return [
 				{
@@ -84,21 +88,30 @@ export const TransactionTable = ({
 		return commonColumns;
 	}, [commonColumns, currencyRate, showSignColumn, isCompact, t]);
 
+	const showSkeleton = useMemo(() => isLoading && transactions.length === 0, [transactions, isLoading]);
+
+	const skeletonRows = new Array(skeletonRowsLimit).fill({});
+	const data = showSkeleton ? skeletonRows : transactions;
+
 	return (
-		<Table hideHeader={hideHeader} columns={columns} data={transactions}>
-			{(row: Contracts.TransactionDataType) =>
-				isCompact ? (
-					<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
-				) : (
-					<TransactionRow
-						onClick={() => onRowClick?.(row)}
-						transaction={row}
-						currencyRate={currencyRate}
-						isSignaturePending={row.isMultiSignature && showSignColumn}
-					/>
-				)
-			}
-		</Table>
+		<div className="relative">
+			<Table hideHeader={hideHeader} columns={columns} data={data}>
+				{(row: Contracts.TransactionDataType) =>
+					isCompact ? (
+						<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
+					) : (
+						<TransactionRow
+							isLoading={showSkeleton}
+							onClick={() => onRowClick?.(row)}
+							transaction={row}
+							currencyRate={currencyRate}
+							showSign={showSignColumn}
+							isSignaturePending={row.isMultiSignature && showSignColumn}
+						/>
+					)
+				}
+			</Table>
+		</div>
 	);
 };
 
@@ -106,4 +119,6 @@ TransactionTable.defaultProps = {
 	showSignColumn: false,
 	isCompact: false,
 	hideHeader: false,
+	isLoading: false,
+	skeletonRowsLimit: 8,
 };
