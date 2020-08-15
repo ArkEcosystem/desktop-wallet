@@ -43,8 +43,6 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose, onCan
 	if (!TransactionModal) {
 		// Throw error or show amodal that xyz is not supported
 		throw new Error(`Transaction type [${transactionType}] is not supported.`);
-
-		return null;
 	}
 
 	return <TransactionModal isOpen={isOpen} onClose={onClose} onCancel={onCancel} transaction={transactionItem} />;
