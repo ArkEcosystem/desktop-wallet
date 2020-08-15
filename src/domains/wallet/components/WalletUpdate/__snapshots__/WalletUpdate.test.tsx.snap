@@ -42,44 +42,6 @@ exports[`WalletUpdate should render 1`] = `
             </div>
           </button>
         </div>
-<<<<<<< HEAD
-      </button>
-    </div>
-    <div
-      class="py-4"
-    >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Wallet Update 3.0.7
-      </h2>
-      <div
-        class="flex-1"
-      >
-        <svg
-          class="my-8"
-        >
-          wallet-update.svg
-        </svg>
-        <div>
-          <div
-            data-testid="tab-pabel__active-panel"
-          >
-            <section
-              data-testid="WalletUpdate__first-step"
-            >
-              <div
-                class="mb-8 text-center"
-              >
-                <p
-                  class="text-sm text-theme-neutral-dark md:text-base"
-                >
-                  We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
-                </p>
-              </div>
-            </section>
-          </div>
-=======
         <div
           class="py-4"
         >
@@ -88,67 +50,53 @@ exports[`WalletUpdate should render 1`] = `
           >
             Wallet Update 3.0.7
           </h2>
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
           <div
             class="flex-1"
           >
-<<<<<<< HEAD
-            <button
-              class="sc-AxjAm ddJBbC mt-2 sm:mt-0"
-              color="primary"
-              data-testid="WalletUpdate__cancel-button"
-              type="button"
-            >
-              Update Later
-            </button>
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              data-testid="WalletUpdate__update-button"
-              type="button"
-            >
-              Update Now
-            </button>
-=======
             <svg
               class="my-8"
             >
               wallet-update.svg
             </svg>
-            <div
-              class="container"
-            >
+            <div>
               <div
-                class="mb-8 text-center"
+                data-testid="tab-pabel__active-panel"
               >
-                <p
-                  class="text-sm text-theme-neutral-dark md:text-base"
+                <section
+                  data-testid="WalletUpdate__first-step"
                 >
-                  We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
-                </p>
+                  <div
+                    class="mb-8 text-center"
+                  >
+                    <p
+                      class="text-sm text-theme-neutral-dark md:text-base"
+                    >
+                      We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
+                    </p>
+                  </div>
+                </section>
               </div>
               <div
                 class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
               >
                 <button
-                  class="sc-AxjAm ddQVWI"
-                  color="primary"
-                  data-testid="wallet-update__update-button"
-                  type="button"
-                >
-                  Update Now
-                </button>
-                <button
                   class="sc-AxjAm ddJBbC mt-2 sm:mt-0"
                   color="primary"
-                  data-testid="wallet-update__cancel-button"
+                  data-testid="WalletUpdate__cancel-button"
                   type="button"
                 >
                   Update Later
                 </button>
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  data-testid="WalletUpdate__update-button"
+                  type="button"
+                >
+                  Update Now
+                </button>
               </div>
             </div>
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
           </div>
         </div>
       </div>

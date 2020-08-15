@@ -27,21 +27,6 @@ exports[`CustomPeers should render a modal 1`] = `
             data-testid="modal__close-btn"
             type="button"
           >
-<<<<<<< HEAD
-            <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="network"
-              required=""
-            >
-              Network
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-=======
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
             <div
               class="p-1"
             >
@@ -76,7 +61,7 @@ exports[`CustomPeers should render a modal 1`] = `
                 class="sc-AxiKw iQzisX mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="network"
                   required=""
@@ -129,75 +114,12 @@ exports[`CustomPeers should render a modal 1`] = `
                   id="CustomPeers__network-menu"
                   role="listbox"
                 />
-<<<<<<< HEAD
-              </div>
-            </div>
-            <ul
-              aria-labelledby="CustomPeers__network-label"
-              class="my-6 grid grid-cols-6 gap-6"
-              id="CustomPeers__network-menu"
-              role="listbox"
-            />
-          </fieldset>
-          <fieldset
-            class="sc-AxiKw iQzisX flex flex-col space-y-2"
-          >
-            <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="name"
-              required=""
-            >
-              Name
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-            <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-              data-testid="Input"
-              name="name"
-            />
-          </fieldset>
-          <fieldset
-            class="sc-AxiKw iQzisX flex flex-col space-y-2"
-          >
-            <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="peer-ip"
-              required=""
-            >
-              IP
-              <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-            <input
-              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-              data-testid="Input"
-              name="peer-ip"
-            />
-          </fieldset>
-          <fieldset
-            class="sc-AxiKw iQzisX flex flex-col space-y-2"
-          >
-            <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="peer-type"
-              required=""
-            >
-              Type
-=======
               </fieldset>
               <fieldset
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="name"
                   required=""
@@ -218,7 +140,7 @@ exports[`CustomPeers should render a modal 1`] = `
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="peer-ip"
                   required=""
@@ -239,7 +161,7 @@ exports[`CustomPeers should render a modal 1`] = `
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="peer-type"
                   required=""
@@ -266,7 +188,6 @@ exports[`CustomPeers should render a modal 1`] = `
                   </span>
                 </label>
               </fieldset>
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
               <div
                 class="flex justify-end mt-4"
               >

@@ -56,30 +56,8 @@ exports[`CreateContact should render create contact modal 1`] = `
             <div
               class="mt-1 text-theme-neutral-dark"
             >
-<<<<<<< HEAD
-              <label
-                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="name"
-                required=""
-              >
-                Name
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-              <input
-                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                data-testid="contact-form__name-input"
-                name="name"
-                value=""
-              />
-            </fieldset>
-=======
               Enter your contacts name and addresses and add them to your list.
             </div>
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
             <div
               class="mt-8"
             >
@@ -87,32 +65,11 @@ exports[`CreateContact should render create contact modal 1`] = `
                 class="space-y-8"
                 data-testid="contact-form"
               >
-<<<<<<< HEAD
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="network"
-                  required=""
-                >
-                  Network
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
-                </label>
-                <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-owns="ContactForm__network-menu"
-                  data-testid="SelectNetwork"
-                  role="combobox"
-=======
                 <fieldset
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="name"
                     required=""
@@ -137,7 +94,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                     class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="network"
                       required=""
@@ -629,7 +586,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                     data-testid="ContactForm__address"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="address"
                       required=""
@@ -680,163 +637,10 @@ exports[`CreateContact should render create contact modal 1`] = `
                       disabled=""
                       type="button"
                     >
-<<<<<<< HEAD
-                      <div
-                        class="sc-AxirZ hyqZof"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-20"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-21"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-22"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-23"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-24"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-25"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-26"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-27"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-28"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                  <li
-                    aria-selected="false"
-                    class="inline-block cursor-pointer"
-                    data-testid="SelectNetwork__NetworkIcon--container"
-                    id="ContactForm__network-item-29"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                      data-testid="NetworkIcon__placeholder"
-                    />
-                  </li>
-                </ul>
-              </fieldset>
-              <fieldset
-                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
-                data-testid="ContactForm__address"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="address"
-                  required=""
-                >
-                  Address
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
-                </label>
-=======
                       Add address
                     </button>
                   </div>
                 </div>
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
                 <div
                   class="flex w-full justify-end"
                 >

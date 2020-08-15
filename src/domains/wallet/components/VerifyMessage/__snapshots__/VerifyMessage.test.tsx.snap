@@ -139,7 +139,7 @@ exports[`VerifyMessage should render 1`] = `
                       class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="signed-message-content"
                         label="Signed message content"
@@ -170,24 +170,6 @@ exports[`VerifyMessage should render 1`] = `
                     data-testid="VerifyMessage__cancel"
                     type="button"
                   >
-<<<<<<< HEAD
-                    Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}
-                  </span>
-                </div>
-              </div>
-              <div
-                class="mt-8"
-              >
-                <fieldset
-                  class="sc-AxhUy dJlYTe flex flex-col space-y-2"
-                >
-                  <label
-                    class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                    data-testid="FormLabel"
-                    for="signed-message-content"
-                    label="Signed message content"
-                    required=""
-=======
                     Cancel
                   </button>
                   <button
@@ -195,7 +177,6 @@ exports[`VerifyMessage should render 1`] = `
                     color="primary"
                     data-testid="VerifyMessage__submit"
                     type="submit"
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
                   >
                     Verify
                   </button>
@@ -301,37 +282,6 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                       </div>
                     </label>
                   </div>
-<<<<<<< HEAD
-                </label>
-              </div>
-              <div
-                class="pr-12 mt-1 text-sm text-theme-neutral"
-              >
-                You can verify only text using a JSON public key
-              </div>
-            </div>
-          </div>
-          <form
-            class="space-y-8"
-            data-testid="Form"
-            id="VerifyMessage__form"
-          >
-            <div
-              data-testid="noverify-address__content"
-            >
-              <fieldset
-                class="sc-AxhUy dJlYTe mt-8"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="message"
-                  label="Message"
-                  required=""
-                >
-                  Message
-=======
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
                   <div
                     class="pr-12 mt-1 text-sm text-theme-neutral"
                   >
@@ -344,39 +294,6 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 data-testid="Form"
                 id="VerifyMessage__form"
               >
-<<<<<<< HEAD
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="signatory"
-                  label="Public Key"
-                  required=""
-                >
-                  Public Key
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
-                </label>
-                <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="VerifyMessage__signatory-input"
-                  disabled=""
-                  name="signatory"
-                  type="text"
-                  value="03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc"
-                />
-              </fieldset>
-              <fieldset
-                class="sc-AxhUy dJlYTe mt-8"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="signature"
-                  label="Signature"
-                  required=""
-=======
                 <div
                   data-testid="noverify-address__content"
                 >
@@ -384,7 +301,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     class="sc-AxhUy dJlYTe mt-8"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="message"
                       label="Message"
@@ -407,7 +324,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     class="sc-AxhUy dJlYTe mt-8"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="signatory"
                       label="Public Key"
@@ -432,7 +349,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     class="sc-AxhUy dJlYTe mt-8"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="signature"
                       label="Signature"
@@ -454,7 +371,6 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 </div>
                 <div
                   class="flex justify-end space-x-3"
->>>>>>> 28f4fe3bd... tests: add transaction modal and update snapshots
                 >
                   <button
                     class="sc-AxhCb BegvR"
