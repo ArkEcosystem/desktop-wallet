@@ -29,6 +29,8 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 	const [isGeneratingWallet, setIsGeneratingWallet] = React.useState(false);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
+	const selectedNetwork: NetworkData = getValues("network");
+
 	const { t } = useTranslation();
 
 	const handleSelect = async (network?: NetworkData | null) => {
@@ -69,6 +71,7 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 					<SelectNetwork
 						id="CreateWallet__network"
 						networks={networks}
+						selected={selectedNetwork}
 						onSelect={handleSelect}
 						disabled={isGeneratingWallet}
 					/>

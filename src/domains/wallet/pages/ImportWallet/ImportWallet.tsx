@@ -21,9 +21,11 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const FirstStep = () => {
-	const { register, setValue } = useFormContext();
+	const { getValues, register, setValue } = useFormContext();
 	const context = useEnvironmentContext();
 	const networks = useMemo(() => context.env.availableNetworks(), [context]);
+
+	const selectedNetwork: NetworkData = getValues("network");
 
 	const { t } = useTranslation();
 
@@ -48,7 +50,12 @@ export const FirstStep = () => {
 					<div className="mb-2">
 						<FormLabel label={t("COMMON.NETWORK")} />
 					</div>
-					<SelectNetwork id="ImportWallet__network" networks={networks} onSelect={handleSelect} />
+					<SelectNetwork
+						id="ImportWallet__network"
+						networks={networks}
+						selected={selectedNetwork}
+						onSelect={handleSelect}
+					/>
 				</FormField>
 			</div>
 		</section>
