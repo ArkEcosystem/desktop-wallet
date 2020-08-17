@@ -17,7 +17,7 @@ export const Default = () => {
 			<h1>Form</h1>
 			<Form context={methods} onSubmit={() => void 0}>
 				<FormField name="name">
-					<FormLabel required>Name</FormLabel>
+					<FormLabel>Name</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />
 				</FormField>

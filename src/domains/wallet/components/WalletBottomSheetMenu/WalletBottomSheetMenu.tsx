@@ -83,7 +83,7 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 								{walletsData.length}
 							</span>
 						</div>
-						<div className="inline-flex items-center space-x-1">
+						<div className="inline-flex items-center -mr-4 space-x-1">
 							{isOpen && (
 								<button
 									data-testid="WalletBottomSheetMenu__filters"

@@ -1,8 +1,9 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Delete Profile action`.page`http://localhost:3000/`;
+fixture`Delete Profile action`.page(getPageURL());
 
 test("should delete profile from profile card menu", async (t) => {
 	await t.click(Selector('[data-testid="ProfileCard"] [data-testid="dropdown__toggle"]'));

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputAddress should not use default validation 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxgMl cZbWSE max-w-20"
+  >
+    <input
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+      data-testid="InputAddress__input"
+      name="address"
+      type="text"
+    />
+    <div
+      class="sc-AxiKw sc-AxhUy QmuzF my-px mr-4"
+    >
+      <button
+        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+        data-testid="InputAddress__qr-button"
+        type="button"
+      >
+        <div
+          class="sc-AxjAm buCJuk"
+          height="20"
+          width="20"
+        >
+          <svg>
+            qrcode.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`InputAddress should render 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxgMl cZbWSE max-w-20"
+  >
+    <input
+      class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+      data-testid="InputAddress__input"
+      name="address"
+      type="text"
+    />
+    <div
+      class="sc-AxiKw sc-AxhUy QmuzF my-px mr-4"
+    >
+      <button
+        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+        data-testid="InputAddress__qr-button"
+        type="button"
+      >
+        <div
+          class="sc-AxjAm buCJuk"
+          height="20"
+          width="20"
+        >
+          <svg>
+            qrcode.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

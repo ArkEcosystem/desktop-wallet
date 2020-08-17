@@ -1,11 +1,22 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
+import { md5 } from "hash-wasm";
 import fetch from "isomorphic-fetch";
+
+import { Cache } from "./Cache";
 
 export class HttpClient extends Http.Request {
 	private readonly headers: Record<string, string> = {
 		Accept: "application/json",
 		"Content-Type": "application/json",
 	};
+
+	private readonly cache: Cache;
+
+	public constructor(ttl: number) {
+		super();
+
+		this.cache = new Cache(ttl);
+	}
 
 	protected async send(
 		method: string,
@@ -15,24 +26,36 @@ export class HttpClient extends Http.Request {
 			data?: any;
 		},
 	): Promise<Contracts.HttpResponse> {
-		let response;
-
 		if (data?.query && Object.keys(data?.query).length > 0) {
 			url = `${url}?${new URLSearchParams(data.query as any)}`;
 		}
 
-		if (method === "GET") {
-			response = await fetch(url, { headers: this.headers });
-		}
+		const cacheKey: string = await md5(`${method}.${url}.${JSON.stringify(data)}`);
 
-		if (method === "POST") {
-			response = await fetch(url, { method: "POST", body: JSON.stringify(data?.data), headers: this.headers });
-		}
+		return this.cache.remember(cacheKey, async () => {
+			let response;
 
-		return new Http.Response({
-			body: await response?.text(),
-			headers: response?.headers,
-			statusCode: response?.status,
+			if (method === "GET") {
+				response = await fetch(url, { headers: this.headers });
+			}
+
+			if (method === "POST") {
+				response = await fetch(url, {
+					method: "POST",
+					body: JSON.stringify(data?.data),
+					headers: this.headers,
+				});
+			}
+
+			return new Http.Response({
+				body: await response?.text(),
+				headers: response?.headers,
+				statusCode: response?.status,
+			});
 		});
+	}
+
+	public clearCache() {
+		this.cache.flush();
 	}
 }

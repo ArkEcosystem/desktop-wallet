@@ -158,7 +158,7 @@ exports[`Registration should render 1st step 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  0.00001 BTC
+                  91.43089801 BTC
                 </span>
               </div>
             </div>
@@ -267,28 +267,28 @@ exports[`Registration should render 1st step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -317,12 +317,17 @@ exports[`Registration should render 1st step 1`] = `
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="network"
                           label="Network"
+                          required=""
                         >
                           Network
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
                         </label>
                         <div
                           aria-expanded="false"
@@ -362,12 +367,13 @@ exports[`Registration should render 1st step 1`] = `
                         </div>
                         <ul
                           aria-labelledby="Registration__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="Registration__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-0"
                             role="option"
@@ -391,7 +397,7 @@ exports[`Registration should render 1st step 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-1"
                             role="option"
@@ -415,9 +421,57 @@ exports[`Registration should render 1st step 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-4"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-5"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-6"
                             role="option"
                           >
                             <div
@@ -439,9 +493,153 @@ exports[`Registration should render 1st step 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-3"
+                            id="Registration__network-item-7"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-8"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-9"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-10"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-11"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-12"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-13"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-14"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-15"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-16"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-17"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Lisk Betanet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-betanet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-18"
                             role="option"
                           >
                             <div
@@ -463,9 +661,9 @@ exports[`Registration should render 1st step 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-4"
+                            id="Registration__network-item-19"
                             role="option"
                           >
                             <div
@@ -487,27 +685,123 @@ exports[`Registration should render 1st step 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-5"
+                            id="Registration__network-item-20"
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Betanet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-betanet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-21"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-22"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-23"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-24"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-25"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-26"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-27"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-28"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-29"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                         </ul>
                       </fieldset>
@@ -518,12 +812,17 @@ exports[`Registration should render 1st step 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="address"
                             label="Address"
+                            required=""
                           >
                             Address
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -531,7 +830,7 @@ exports[`Registration should render 1st step 1`] = `
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress  "
+                              class="sc-fzqNqU jiheyj SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -571,12 +870,17 @@ exports[`Registration should render 1st step 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
                             label="Registration Type"
+                            required=""
                           >
                             Registration Type
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div>
@@ -606,7 +910,7 @@ exports[`Registration should render 1st step 1`] = `
                                 />
                                 <ul
                                   aria-labelledby="downshift-0-label"
-                                  class="sc-fznxsB djEbFm"
+                                  class="sc-fznxsB jPuBaU"
                                   id="downshift-0-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -821,7 +1125,7 @@ exports[`Registration should render 2nd step 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  0.00001 BTC
+                  91.43089801 BTC
                 </span>
               </div>
             </div>
@@ -930,28 +1234,28 @@ exports[`Registration should render 2nd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -981,7 +1285,7 @@ exports[`Registration should render 2nd step 1`] = `
                           class="sc-AxhCb ckQmOL font-normal"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
                             required=""
@@ -1003,7 +1307,7 @@ exports[`Registration should render 2nd step 1`] = `
                           class="sc-AxhCb ckQmOL mt-8 font-normal"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="description"
                             required=""
@@ -1024,11 +1328,16 @@ exports[`Registration should render 2nd step 1`] = `
                           class="sc-AxhCb ckQmOL mt-8 font-normal"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="website"
+                            required=""
                           >
                             Website
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <input
                             class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -1180,14 +1489,20 @@ exports[`Registration should render 2nd step 1`] = `
                               class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="fee"
+                                required=""
                               >
                                 Transaction Fee
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <div
                                 class="flex space-x-2"
+                                data-testid="InputFee"
                               >
                                 <div
                                   class="flex-1"
@@ -1242,8 +1557,8 @@ exports[`Registration should render 2nd step 1`] = `
                                     role="radiogroup"
                                   >
                                     <button
-                                      aria-checked="true"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      aria-checked="false"
+                                      class="sc-fzoyTs chLCDw relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -1252,7 +1567,7 @@ exports[`Registration should render 2nd step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzoyTs chLCDw relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -1261,7 +1576,7 @@ exports[`Registration should render 2nd step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzoyTs chLCDw relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -1466,7 +1781,7 @@ exports[`Registration should render 3rd step 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  0.00001 BTC
+                  91.43089801 BTC
                 </span>
               </div>
             </div>
@@ -1575,28 +1890,28 @@ exports[`Registration should render 3rd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -2125,7 +2440,7 @@ exports[`Registration should render 4th step 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  0.00001 BTC
+                  91.43089801 BTC
                 </span>
               </div>
             </div>
@@ -2234,28 +2549,28 @@ exports[`Registration should render 4th step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -2285,14 +2600,20 @@ exports[`Registration should render 4th step 1`] = `
                           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
+                            required=""
                           >
                             Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzozJi OgXfh max-w-20"
+                            data-testid="InputPassword"
                           >
                             <input
                               class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
@@ -2325,14 +2646,20 @@ exports[`Registration should render 4th step 1`] = `
                           class="sc-AxhCb ckQmOL mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
+                            required=""
                           >
                             2nd Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzozJi OgXfh max-w-20"
+                            data-testid="InputPassword"
                           >
                             <input
                               class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
@@ -2564,7 +2891,7 @@ exports[`Registration should render 5th step 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  0.00001 BTC
+                  91.43089801 BTC
                 </span>
               </div>
             </div>
@@ -2673,28 +3000,28 @@ exports[`Registration should render 5th step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div
@@ -3266,7 +3593,7 @@ exports[`Registration should select registration type 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  0.00001 BTC
+                  91.43089801 BTC
                 </span>
               </div>
             </div>
@@ -3375,28 +3702,28 @@ exports[`Registration should select registration type 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -3425,12 +3752,17 @@ exports[`Registration should select registration type 1`] = `
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="network"
                           label="Network"
+                          required=""
                         >
                           Network
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
                         </label>
                         <div
                           aria-expanded="false"
@@ -3470,12 +3802,13 @@ exports[`Registration should select registration type 1`] = `
                         </div>
                         <ul
                           aria-labelledby="Registration__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="Registration__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-0"
                             role="option"
@@ -3499,7 +3832,7 @@ exports[`Registration should select registration type 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-1"
                             role="option"
@@ -3523,9 +3856,57 @@ exports[`Registration should select registration type 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-4"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-5"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-6"
                             role="option"
                           >
                             <div
@@ -3547,9 +3928,153 @@ exports[`Registration should select registration type 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-3"
+                            id="Registration__network-item-7"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-8"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-9"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-10"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-11"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-12"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-13"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-14"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-15"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-16"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-17"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Lisk Betanet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-betanet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-18"
                             role="option"
                           >
                             <div
@@ -3571,9 +4096,9 @@ exports[`Registration should select registration type 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-4"
+                            id="Registration__network-item-19"
                             role="option"
                           >
                             <div
@@ -3595,27 +4120,123 @@ exports[`Registration should select registration type 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-5"
+                            id="Registration__network-item-20"
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Betanet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-betanet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-21"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-22"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-23"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-24"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-25"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-26"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-27"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-28"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-29"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                         </ul>
                       </fieldset>
@@ -3626,12 +4247,17 @@ exports[`Registration should select registration type 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="address"
                             label="Address"
+                            required=""
                           >
                             Address
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -3639,7 +4265,7 @@ exports[`Registration should select registration type 1`] = `
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress  "
+                              class="sc-fzqNqU jiheyj SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -3679,12 +4305,17 @@ exports[`Registration should select registration type 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
                             label="Registration Type"
+                            required=""
                           >
                             Registration Type
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div>
@@ -3716,7 +4347,7 @@ exports[`Registration should select registration type 1`] = `
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-17-label"
-                                  class="sc-fznxsB djEbFm"
+                                  class="sc-fznxsB jPuBaU"
                                   id="downshift-17-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -3931,7 +4562,7 @@ exports[`Registration should should go back 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  0.00001 BTC
+                  91.43089801 BTC
                 </span>
               </div>
             </div>
@@ -4040,28 +4671,28 @@ exports[`Registration should should go back 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -4090,12 +4721,17 @@ exports[`Registration should should go back 1`] = `
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="network"
                           label="Network"
+                          required=""
                         >
                           Network
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
                         </label>
                         <div
                           aria-expanded="false"
@@ -4135,12 +4771,13 @@ exports[`Registration should should go back 1`] = `
                         </div>
                         <ul
                           aria-labelledby="Registration__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="Registration__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-0"
                             role="option"
@@ -4164,7 +4801,7 @@ exports[`Registration should should go back 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-1"
                             role="option"
@@ -4188,9 +4825,57 @@ exports[`Registration should should go back 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="Registration__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-4"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-5"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-6"
                             role="option"
                           >
                             <div
@@ -4212,9 +4897,153 @@ exports[`Registration should should go back 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-3"
+                            id="Registration__network-item-7"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-8"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-9"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-10"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-11"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-12"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-13"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-14"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-15"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-16"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-17"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Lisk Betanet"
+                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-LSK-betanet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-18"
                             role="option"
                           >
                             <div
@@ -4236,9 +5065,9 @@ exports[`Registration should should go back 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-4"
+                            id="Registration__network-item-19"
                             role="option"
                           >
                             <div
@@ -4260,27 +5089,123 @@ exports[`Registration should should go back 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
-                            id="Registration__network-item-5"
+                            id="Registration__network-item-20"
                             role="option"
                           >
                             <div
-                              aria-label="Lisk Betanet"
-                              class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-LSK-betanet"
-                            >
-                              <div
-                                class="sc-AxhUy gkBhrK"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-21"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-22"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-23"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-24"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-25"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-26"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-27"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-28"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="Registration__network-item-29"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                         </ul>
                       </fieldset>
@@ -4291,12 +5216,17 @@ exports[`Registration should should go back 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="address"
                             label="Address"
+                            required=""
                           >
                             Address
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -4304,7 +5234,7 @@ exports[`Registration should should go back 1`] = `
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress  "
+                              class="sc-fzqNqU jiheyj SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -4344,12 +5274,17 @@ exports[`Registration should should go back 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
                             label="Registration Type"
+                            required=""
                           >
                             Registration Type
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div>
@@ -4379,7 +5314,7 @@ exports[`Registration should should go back 1`] = `
                                 />
                                 <ul
                                   aria-labelledby="downshift-3-label"
-                                  class="sc-fznxsB djEbFm"
+                                  class="sc-fznxsB jPuBaU"
                                   id="downshift-3-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -4594,7 +5529,7 @@ exports[`Registration should submit 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  0.00001 BTC
+                  91.43089801 BTC
                 </span>
               </div>
             </div>
@@ -4703,28 +5638,28 @@ exports[`Registration should submit 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div

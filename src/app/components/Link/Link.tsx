@@ -2,6 +2,7 @@ import Tippy from "@tippyjs/react";
 import React from "react";
 import { Link as RouterLink, LinkProps } from "react-router-dom";
 import { styled } from "twin.macro";
+import { openExternal } from "utils/electron-utils";
 
 import { Icon } from "../Icon";
 
@@ -22,22 +23,26 @@ const AnchorStyled = styled.a<{ isExternal: boolean }>`
 
 type AnchorProps = {
 	isExternal?: boolean;
+	navigate?: () => void;
 	showExternalIcon?: boolean;
 } & React.AnchorHTMLAttributes<any>;
 
 const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
-	({ isExternal, showExternalIcon, children, target, rel, ...props }: AnchorProps, ref) => (
+	({ isExternal, children, rel, ...props }: AnchorProps, ref) => (
 		<AnchorStyled
 			data-testid="Link"
 			isExternal={isExternal!}
 			className="inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-			target={isExternal ? "_blank" : target}
 			rel={isExternal ? "noopener noreferrer" : rel}
 			ref={ref}
+			onClick={(event) => {
+				event.preventDefault();
+				return props.navigate?.();
+			}}
 			{...props}
 		>
 			{children}
-			{isExternal && showExternalIcon && (
+			{isExternal && (
 				<Icon
 					data-testid="Link__external"
 					name="Redirect"
@@ -58,11 +63,20 @@ type Props = {
 
 export const Link = ({ tooltip, ...props }: Props) => (
 	<Tippy content={tooltip} disabled={!tooltip}>
-		<RouterLink component={Anchor} {...props} />
+		{props.isExternal ? (
+			<Anchor
+				onClick={(event) => {
+					event.preventDefault();
+					return openExternal(props.to);
+				}}
+				{...props}
+			/>
+		) : (
+			<RouterLink component={Anchor} {...props} />
+		)}
 	</Tippy>
 );
 
 Link.defaultProps = {
 	isExternal: false,
-	showExternalIcon: true,
 };

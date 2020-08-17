@@ -158,7 +158,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  0.00001 BTC
+                  91.43089801 BTC
                 </span>
               </div>
             </div>
@@ -267,19 +267,19 @@ exports[`SendIPFSTransaction should render 1`] = `
           >
             <div>
               <ul
-                class="sc-fznJRM kDmVaQ"
+                class="sc-fznxsB hPecIE"
               >
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
               </ul>
               <div
@@ -354,6 +354,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                             </div>
                             <ul
                               aria-labelledby="SendIPFSTransaction__network-label"
+                              class="my-6 grid grid-cols-6 gap-6"
                               id="SendIPFSTransaction__network-menu"
                               role="listbox"
                             />
@@ -459,6 +460,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                           >
                             <div
                               class="flex space-x-2"
+                              data-testid="InputFee"
                             >
                               <div
                                 class="flex-1"
@@ -512,8 +514,8 @@ exports[`SendIPFSTransaction should render 1`] = `
                                   role="radiogroup"
                                 >
                                   <button
-                                    aria-checked="true"
-                                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    aria-checked="false"
+                                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                     data-testid="SelectionBarOption"
                                     role="radio"
                                     type="button"
@@ -522,7 +524,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                   </button>
                                   <button
                                     aria-checked="false"
-                                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                     data-testid="SelectionBarOption"
                                     role="radio"
                                     type="button"
@@ -531,7 +533,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                   </button>
                                   <button
                                     aria-checked="false"
-                                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                     data-testid="SelectionBarOption"
                                     role="radio"
                                     type="button"
@@ -646,12 +648,13 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
             </div>
             <ul
               aria-labelledby="SendIPFSTransaction__network-label"
+              class="my-6 grid grid-cols-6 gap-6"
               id="SendIPFSTransaction__network-menu"
               role="listbox"
             >
               <li
                 aria-selected="false"
-                class="inline-block pt-6 mr-6 cursor-pointer"
+                class="inline-block cursor-pointer"
                 data-testid="SelectNetwork__NetworkIcon--container"
                 id="SendIPFSTransaction__network-item-0"
                 role="option"
@@ -675,7 +678,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
               </li>
               <li
                 aria-selected="false"
-                class="inline-block pt-6 mr-6 cursor-pointer"
+                class="inline-block cursor-pointer"
                 data-testid="SelectNetwork__NetworkIcon--container"
                 id="SendIPFSTransaction__network-item-1"
                 role="option"
@@ -699,9 +702,57 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
               </li>
               <li
                 aria-selected="false"
-                class="inline-block pt-6 mr-6 cursor-pointer"
+                class="inline-block cursor-pointer"
                 data-testid="SelectNetwork__NetworkIcon--container"
                 id="SendIPFSTransaction__network-item-2"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-3"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-4"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-5"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-6"
                 role="option"
               >
                 <div
@@ -723,9 +774,153 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
               </li>
               <li
                 aria-selected="false"
-                class="inline-block pt-6 mr-6 cursor-pointer"
+                class="inline-block cursor-pointer"
                 data-testid="SelectNetwork__NetworkIcon--container"
-                id="SendIPFSTransaction__network-item-3"
+                id="SendIPFSTransaction__network-item-7"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-8"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-9"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-10"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-11"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-12"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-13"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-14"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-15"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-16"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-17"
+                role="option"
+              >
+                <div
+                  aria-label="Lisk Betanet"
+                  class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                  data-testid="NetworkIcon-LSK-betanet"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      lsk.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-18"
                 role="option"
               >
                 <div
@@ -747,9 +942,9 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
               </li>
               <li
                 aria-selected="false"
-                class="inline-block pt-6 mr-6 cursor-pointer"
+                class="inline-block cursor-pointer"
                 data-testid="SelectNetwork__NetworkIcon--container"
-                id="SendIPFSTransaction__network-item-4"
+                id="SendIPFSTransaction__network-item-19"
                 role="option"
               >
                 <div
@@ -771,27 +966,123 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
               </li>
               <li
                 aria-selected="false"
-                class="inline-block pt-6 mr-6 cursor-pointer"
+                class="inline-block cursor-pointer"
                 data-testid="SelectNetwork__NetworkIcon--container"
-                id="SendIPFSTransaction__network-item-5"
+                id="SendIPFSTransaction__network-item-20"
                 role="option"
               >
                 <div
-                  aria-label="Lisk Betanet"
-                  class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
-                  data-testid="NetworkIcon-LSK-betanet"
-                >
-                  <div
-                    class="sc-AxhUy gkBhrK"
-                    data-testid="NetworkIcon__icon"
-                    height="26"
-                    width="26"
-                  >
-                    <svg>
-                      lsk.svg
-                    </svg>
-                  </div>
-                </div>
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-21"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-22"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-23"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-24"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-25"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-26"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-27"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-28"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block cursor-pointer"
+                data-testid="SelectNetwork__NetworkIcon--container"
+                id="SendIPFSTransaction__network-item-29"
+                role="option"
+              >
+                <div
+                  class="sc-AxiKw eqmOyq border-theme-neutral-light text-theme-neutral"
+                  data-testid="NetworkIcon__placeholder"
+                />
               </li>
             </ul>
           </div>
@@ -896,6 +1187,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           >
             <div
               class="flex space-x-2"
+              data-testid="InputFee"
             >
               <div
                 class="flex-1"
@@ -949,8 +1241,8 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   role="radiogroup"
                 >
                   <button
-                    aria-checked="true"
-                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    aria-checked="false"
+                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -959,7 +1251,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -968,7 +1260,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1241,6 +1533,7 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
             >
               <div
                 class="sc-fzozJi OgXfh max-w-20"
+                data-testid="InputPassword"
               >
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"

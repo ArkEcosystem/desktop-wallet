@@ -1,11 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 import { goToContacts } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Update contact`.page`http://localhost:3000/`.beforeEach(async (t) => await goToContacts(t));
+fixture`Update contact`.page(getPageURL()).beforeEach(async (t) => await goToContacts(t));
 
 test("should open and close contact update modal", async (t) => {
 	await t.click(Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]'));
@@ -80,6 +81,74 @@ test("should succesfully update contact", async (t) => {
 
 	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).notOk();
 	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists).ok();
+});
+
+test("should error for invalid address", async (t) => {
+	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).ok();
+	await t
+		.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists)
+		.notOk();
+
+	await t.click(Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]'));
+	await t.click(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+			translations.COMMON.EDIT,
+		),
+	);
+	await t
+		.expect(
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
+		)
+		.ok();
+
+	await t.click(Selector("#ContactForm__network-item-1"));
+	const addressInput = Selector('[data-testid="contact-form__address-input"]');
+	await t.typeText(addressInput, "invalid address");
+	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
+
+	// Add address
+	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
+	await t.expect(Selector("fieldset p").withText(translations.CONTACTS.VALIDATION.ADDRESS_IS_INVALID).exists).ok();
+
+	await t
+		.expect(
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
+		)
+		.ok();
+});
+
+test("should error on duplicate address addition", async (t) => {
+	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).ok();
+	await t
+		.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists)
+		.notOk();
+
+	await t.click(Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]'));
+	await t.click(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+			translations.COMMON.EDIT,
+		),
+	);
+	await t
+		.expect(
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
+		)
+		.ok();
+
+	await t.click(Selector("#ContactForm__network-item-1"));
+	const addressInput = Selector('[data-testid="contact-form__address-input"]');
+	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
+	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
+
+	// Add address
+	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
+	await t.expect(Selector("fieldset p").withText(translations.CONTACTS.VALIDATION.ADDRESS_EXISTS_SUFFIX).exists).ok();
+
+	await t
+		.expect(
+			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
+		)
+		.ok();
 });
 
 test("should error if contact name is already taken", async (t) => {

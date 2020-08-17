@@ -1,8 +1,9 @@
 import { ClientFunction, Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
+import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Delete Wallet action`.page`http://localhost:3000/`;
+fixture`Delete Wallet action`.page(getPageURL());
 
 const getLocation = ClientFunction(() => document.location.href);
 

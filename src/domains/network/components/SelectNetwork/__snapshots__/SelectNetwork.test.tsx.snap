@@ -40,6 +40,7 @@ exports[`SelectNetwork should render 1`] = `
   </div>
   <ul
     aria-labelledby="downshift-1-label"
+    class="my-6 grid grid-cols-6 gap-6"
     id="downshift-1-menu"
     role="listbox"
   />
@@ -86,12 +87,13 @@ exports[`SelectNetwork should render with networks 1`] = `
   </div>
   <ul
     aria-labelledby="downshift-5-label"
+    class="my-6 grid grid-cols-6 gap-6"
     id="downshift-5-menu"
     role="listbox"
   >
     <li
       aria-selected="false"
-      class="inline-block pt-6 mr-6 cursor-pointer"
+      class="inline-block cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
       id="downshift-5-item-0"
       role="option"
@@ -115,7 +117,7 @@ exports[`SelectNetwork should render with networks 1`] = `
     </li>
     <li
       aria-selected="false"
-      class="inline-block pt-6 mr-6 cursor-pointer"
+      class="inline-block cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
       id="downshift-5-item-1"
       role="option"
@@ -139,9 +141,57 @@ exports[`SelectNetwork should render with networks 1`] = `
     </li>
     <li
       aria-selected="false"
-      class="inline-block pt-6 mr-6 cursor-pointer"
+      class="inline-block cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
       id="downshift-5-item-2"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-3"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-4"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-5"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-6"
       role="option"
     >
       <div
@@ -163,9 +213,153 @@ exports[`SelectNetwork should render with networks 1`] = `
     </li>
     <li
       aria-selected="false"
-      class="inline-block pt-6 mr-6 cursor-pointer"
+      class="inline-block cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-3"
+      id="downshift-5-item-7"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-8"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-9"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-10"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-11"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-12"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-13"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-14"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-15"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-16"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-17"
+      role="option"
+    >
+      <div
+        aria-label="Lisk Betanet"
+        class="sc-AxjAm gIAugl border-theme-primary-100 text-theme-primary-400"
+        data-testid="NetworkIcon-LSK-betanet"
+      >
+        <div
+          class="sc-AxirZ hyqZof"
+          data-testid="NetworkIcon__icon"
+          height="26"
+          width="26"
+        >
+          <svg>
+            lsk.svg
+          </svg>
+        </div>
+      </div>
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-18"
       role="option"
     >
       <div
@@ -187,9 +381,9 @@ exports[`SelectNetwork should render with networks 1`] = `
     </li>
     <li
       aria-selected="false"
-      class="inline-block pt-6 mr-6 cursor-pointer"
+      class="inline-block cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-4"
+      id="downshift-5-item-19"
       role="option"
     >
       <div
@@ -211,27 +405,123 @@ exports[`SelectNetwork should render with networks 1`] = `
     </li>
     <li
       aria-selected="false"
-      class="inline-block pt-6 mr-6 cursor-pointer"
+      class="inline-block cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-5"
+      id="downshift-5-item-20"
       role="option"
     >
       <div
-        aria-label="Lisk Betanet"
-        class="sc-AxjAm gIAugl border-theme-primary-100 text-theme-primary-400"
-        data-testid="NetworkIcon-LSK-betanet"
-      >
-        <div
-          class="sc-AxirZ hyqZof"
-          data-testid="NetworkIcon__icon"
-          height="26"
-          width="26"
-        >
-          <svg>
-            lsk.svg
-          </svg>
-        </div>
-      </div>
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-21"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-22"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-23"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-24"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-25"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-26"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-27"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-28"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
+    </li>
+    <li
+      aria-selected="false"
+      class="inline-block cursor-pointer"
+      data-testid="SelectNetwork__NetworkIcon--container"
+      id="downshift-5-item-29"
+      role="option"
+    >
+      <div
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
     </li>
   </ul>
 </div>

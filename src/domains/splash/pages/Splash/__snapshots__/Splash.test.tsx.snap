@@ -34,13 +34,9 @@ exports[`Splash should render 1`] = `
           <div
             class="w-64 mx-auto lg:w-128"
           >
-            <div
-              class="ml-6"
-            >
-              <svg>
-                splash-banner.svg
-              </svg>
-            </div>
+            <svg>
+              welcome-banner.svg
+            </svg>
           </div>
           <div
             class="mt-8"
@@ -93,7 +89,7 @@ exports[`Splash should render 1`] = `
             </div>
           </div>
           <div
-            class="fixed left-0 right-0 flex items-center justify-center text-sm font-semibold bottom-4 text-theme-neutral-500"
+            class="fixed left-0 right-0 flex items-center justify-center text-xs font-semibold bottom-5 text-theme-neutral-500"
             data-testid="Splash__footer"
           >
             <div>

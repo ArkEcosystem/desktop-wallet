@@ -1,72 +1,96 @@
+const {
+	override,
+	addPostcssPlugins,
+	addWebpackAlias,
+	addWebpackExternals,
+	addWebpackPlugin,
+	setWebpackTarget,
+} = require("customize-cra");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
-const { override, addPostcssPlugins, addWebpackPlugin } = require("customize-cra");
-const webpack = require("webpack");
+const { EnvironmentPlugin } = require("webpack");
+const { dependencies } = require("./package.json");
 
-module.exports = override(
+const whiteListedModules = [
+	"@arkecosystem/crypto",
+	"@arkecosystem/platform-sdk",
+	"@arkecosystem/platform-sdk-ada",
+	"@arkecosystem/platform-sdk-ark",
+	"@arkecosystem/platform-sdk-atom",
+	"@arkecosystem/platform-sdk-btc",
+	"@arkecosystem/platform-sdk-crypto",
+	"@arkecosystem/platform-sdk-eos",
+	"@arkecosystem/platform-sdk-eth",
+	"@arkecosystem/platform-sdk-intl",
+	"@arkecosystem/platform-sdk-lsk",
+	"@arkecosystem/platform-sdk-markets",
+	"@arkecosystem/platform-sdk-neo",
+	"@arkecosystem/platform-sdk-news",
+	"@arkecosystem/platform-sdk-profiles",
+	"@arkecosystem/platform-sdk-support",
+	"@arkecosystem/platform-sdk-trx",
+	"@arkecosystem/platform-sdk-xlm",
+	"@arkecosystem/platform-sdk-xmr",
+	"@arkecosystem/platform-sdk-xrp",
+	"@arkecosystem/utils",
+	"@tippyjs/react",
+	"downshift",
+	"framer-motion",
+	"got",
+	"hash-wasm",
+	"i18next",
+	"isomorphic-fetch",
+	"recharts",
+	"react",
+	"react-dom",
+	"react-error-boundary",
+	"react-hook-form",
+	"react-inlinesvg",
+	"react-router-config",
+	"react-scripts",
+	"react-i18next",
+	"react-range",
+	"react-router-dom",
+	"react-table",
+	"styled-components",
+	"swiper",
+	"react-loading-skeleton",
+];
+
+const addNodeExternals = () =>
+	addWebpackExternals([...Object.keys(dependencies || {}).filter((d) => !whiteListedModules.includes(d))]);
+
+const injectTailwindCSS = () =>
 	addPostcssPlugins([
 		require("postcss-import"),
 		require("tailwindcss")("./src/tailwind.config.js"),
 		require("autoprefixer"),
-	]),
+	]);
+
+const copyFiles = () =>
 	addWebpackPlugin(
-		new webpack.NormalModuleReplacementPlugin(
-			/node_modules\/@arkecosystem\/crypto\/dist\/index\.bundled\.js/,
-			"index.js",
-		),
-	),
-	(config) => {
-		config.node = {
-			fs: "empty",
-		};
-
-		config.externals = {
-			"usb-detection": "commonjs usb-detection",
-		};
-
-		config.target = "electron-renderer";
-
-		config.resolve = {
-			extensions: [".ts", ".js", ".jsx", ".tsx", ".scss", ".json", ".node"],
-			alias: {
-				app: path.resolve(__dirname, "src/app/"),
-				data: path.resolve(__dirname, "src/data/"),
-				domains: path.resolve(__dirname, "src/domains"),
-				resources: path.resolve(__dirname, "src/resources"),
-				styles: path.resolve(__dirname, "src/styles"),
-				tests: path.resolve(__dirname, "src/tests"),
-				utils: path.resolve(__dirname, "src/utils"),
-			},
-		};
-
-		config.module.rules.push({
-			test: /\.(ts|js|jsx|tsx)$/,
-			exclude: /node_modules/,
-			use: {
-				loader: require.resolve("babel-loader"),
-				options: {
-					presets: [require.resolve("@babel/preset-react"), require.resolve("@babel/preset-typescript")],
-					babelrc: false,
+		new CopyWebpackPlugin({
+			patterns: [
+				{
+					from: path.join(__dirname, "src/electron"),
+					to: path.join(__dirname, "build/electron"),
 				},
-			},
-		});
+			],
+		}),
+	);
 
-		config.module.rules.push({
-			test: /\.node$/,
-			use: "node-loader",
-		});
-
-		config.optimization = {
-			usedExports: true,
-			providedExports: true,
-			sideEffects: true,
-			namedChunks: true,
-			namedModules: true,
-			removeAvailableModules: true,
-			mergeDuplicateChunks: true,
-			flagIncludedChunks: true,
-			removeEmptyChunks: true,
-		};
-
-		return config;
-	},
+module.exports = override(
+	setWebpackTarget("electron-renderer"),
+	injectTailwindCSS(),
+	addNodeExternals(),
+	copyFiles(),
+	addWebpackAlias({
+		"@arkecosystem/crypto": "@arkecosystem/crypto/dist/index.esm.js",
+		"@liskhq/lisk-cryptography": "@liskhq/lisk-cryptography/dist-browser/index.min.js",
+		bytebuffer: "bytebuffer/dist/bytebuffer-node.js",
+		memcpy: path.resolve(__dirname, "src/polyfill/memcpy.js"),
+		history: "history/index.js",
+	}),
 );
+
+module.exports.injectTailwindCSS = injectTailwindCSS;

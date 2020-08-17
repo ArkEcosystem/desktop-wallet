@@ -3,6 +3,7 @@ import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { WalletDataCollection } from "@arkecosystem/platform-sdk/dist/coins";
 import { WalletData } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
@@ -15,33 +16,41 @@ import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomShe
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
 import { WalletVote } from "domains/wallet/components/WalletVote";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-export const WalletDetails = () => {
+type WalletDetailsProps = {
+	txSkeletonRowsLimit?: number;
+};
+
+type WalletInfo = {
+	transactions: Contracts.TransactionDataType[];
+	walletData?: WalletData;
+	votes?: Coins.WalletDataCollection;
+};
+
+export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
+	const [data, setData] = useState<WalletInfo>({ transactions: [] });
+
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
-	const [transactions, setTransactions] = useState<Contracts.TransactionDataType[]>([]);
-	const [votes, setVotes] = useState<Coins.WalletDataCollection>();
-	const [walletData, setWalletData] = useState<WalletData>();
+	const [loadingTransactions] = useState(true);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
+	const { t } = useTranslation();
+	const { persist } = useEnvironmentContext();
+	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
-	const coinName = activeWallet.coin().manifest().get<string>("name");
+	const coinName = activeWallet.manifest().get<string>("name");
 	const networkId = activeWallet.network().id;
 	const ticker = activeWallet.network().currency.ticker;
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
-
-	const { t } = useTranslation();
-
-	const { persist } = useEnvironmentContext();
-	const history = useHistory();
-
+	const { transactions, walletData, votes } = data;
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const crumbs = [
 		{
@@ -50,44 +59,60 @@ export const WalletDetails = () => {
 		},
 	];
 
-	// TODO: Replace logic with sdk
-	const getVotes = useCallback(async () => {
-		let response;
-		// catch 404 wallet not found until sdk logic
-		try {
-			response = await activeWallet.votes();
-		} catch (error) {
-			return;
-		}
-
-		const transaction = response.items()[0];
-		const result: WalletData[] = [];
-
-		const votes = (transaction?.asset().votes as string[]) || [];
-		for (const vote of votes) {
-			const mode = vote[0];
-			const publicKey = vote.substr(1);
-			/* istanbul ignore next */
-			if (mode === "-") {
-				continue;
+	useEffect(() => {
+		// TODO: Replace logic with sdk
+		const fetchVotes = async () => {
+			let response;
+			// catch 404 wallet not found until sdk logic
+			try {
+				response = await activeWallet.votes();
+			} catch (error) {
+				return;
 			}
 
-			const data = await activeWallet.coin().client().wallet(publicKey);
+			const transaction = response.items()[0];
+			const result: WalletData[] = [];
 
-			result.push(data);
-		}
+			const votes = (transaction?.asset().votes as string[]) || [];
+			for (const vote of votes) {
+				const mode = vote[0];
+				const publicKey = vote.substr(1);
+				/* istanbul ignore next */
+				if (mode === "-") {
+					continue;
+				}
 
-		setVotes(() => new WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined }));
+				const voteData = await activeWallet.client().wallet(publicKey);
+
+				result.push(voteData);
+			}
+
+			return new WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined });
+		};
+
+		const fetchAllData = async () => {
+			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
+			const walletData = await activeWallet.client().wallet(activeWallet.address());
+			const votes = await fetchVotes();
+
+			setData({
+				walletData,
+				transactions,
+				votes,
+			});
+		};
+
+		fetchAllData();
 	}, [activeWallet]);
 
-	// TODO: Hacky to access `WalletData` instead of `Wallet`
-	const getWalletData = useCallback(async () => {
-		const data = await activeWallet.coin().client().wallet(activeWallet.address());
-		const walletTransactions = (await activeWallet.transactions({ limit: 10 })).items();
+	useEffect(() => {
+		const timer = setInterval(async () => {
+			await activeWallet.syncIdentity();
+			await persist();
+		}, 30000);
 
-		setWalletData(data);
-		setTransactions(walletTransactions);
-	}, [activeWallet]);
+		return () => clearInterval(timer);
+	}, [activeWallet, persist]);
 
 	const handleDeleteWallet = async () => {
 		activeProfile.wallets().forget(activeWallet.id());
@@ -102,22 +127,12 @@ export const WalletDetails = () => {
 		setIsUpdateWalletName(false);
 	};
 
-	useEffect(() => {
-		getVotes();
-	}, [getVotes]);
+	const fetchMoreTransactions = async (type?: string) => {
+		//TODO: Fetch more type based / ex: pending and confirmed txs
+		const nextPage = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
 
-	useEffect(() => {
-		getWalletData();
-	}, [getWalletData]);
-
-	useEffect(() => {
-		const timer = setInterval(async () => {
-			await activeWallet.syncIdentity();
-			await persist();
-		}, 30000);
-
-		return () => clearInterval(timer);
-	}, [activeWallet, persist]);
+		return transactions && setData({ ...data, transactions: transactions?.concat(nextPage) });
+	};
 
 	/* istanbul ignore next */
 	return (
@@ -136,7 +151,9 @@ export const WalletDetails = () => {
 					isLedger={activeWallet.isLedger()}
 					isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
 					hasStarred={activeWallet.isStarred()}
-					onSend={() => history.push(`/profiles/${activeProfile.id()}/transactions/transfer`)}
+					onSend={() =>
+						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/transfer`)
+					}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
 					onSignMessage={() => setIsSigningMessage(true)}
@@ -169,12 +186,46 @@ export const WalletDetails = () => {
 					<div className="mb-16">
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 						{/* TODO: Deal with pending transactions once SDK methods for it are available */}
-						<TransactionTable transactions={transactions} showSignColumn />
+						<>
+							<TransactionTable
+								transactions={transactions}
+								showSignColumn
+								isLoading={loadingTransactions}
+								skeletonRowsLimit={txSkeletonRowsLimit}
+							/>
+							{transactions.length > 0 && (
+								<Button
+									data-testid="pending-transactions__fetch-more-button"
+									variant="plain"
+									className="w-full mt-10 mb-5"
+									onClick={() => fetchMoreTransactions("pending")}
+								>
+									{t("COMMON.VIEW_MORE")}
+								</Button>
+							)}
+						</>
 					</div>
 
 					<div>
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
-						<TransactionTable transactions={transactions} currencyRate="2" />
+						<>
+							<TransactionTable
+								transactions={transactions}
+								currencyRate="2"
+								isLoading={loadingTransactions}
+								skeletonRowsLimit={txSkeletonRowsLimit}
+							/>
+							{transactions.length > 0 && (
+								<Button
+									data-testid="transactions__fetch-more-button"
+									variant="plain"
+									className="w-full mt-10 mb-5"
+									onClick={() => fetchMoreTransactions()}
+								>
+									{t("COMMON.VIEW_MORE")}
+								</Button>
+							)}
+						</>
 					</div>
 				</Section>
 			</Page>
@@ -217,4 +268,8 @@ export const WalletDetails = () => {
 			/>
 		</>
 	);
+};
+
+WalletDetails.defaultProps = {
+	txSkeletonRowsLimit: 8,
 };

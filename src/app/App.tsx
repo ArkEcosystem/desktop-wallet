@@ -1,7 +1,17 @@
+// import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
+// import { ATOM } from "@arkecosystem/platform-sdk-atom";
+// import { BTC } from "@arkecosystem/platform-sdk-btc";
+// import { EOS } from "@arkecosystem/platform-sdk-eos";
+// import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
+// import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { ApplicationError } from "domains/error/pages";
+// import { TRX } from "@arkecosystem/platform-sdk-trx";
+// import { XLM } from "@arkecosystem/platform-sdk-xlm";
+// import { XMR } from "@arkecosystem/platform-sdk-xmr";
+// import { XRP } from "@arkecosystem/platform-sdk-xrp";
+import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import React, { useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
@@ -11,6 +21,7 @@ import { StubStorage } from "tests/mocks";
 
 import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
+import { useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
@@ -21,26 +32,32 @@ const Main = () => {
 
 	const { env, persist } = useEnvironmentContext();
 
+	const isOnline = useNetworkStatus();
+
 	useLayoutEffect(() => {
 		const boot = async () => {
 			await env.bootFromObject(fixtureData);
-			await persist();
 			setShowSplash(false);
+			await persist();
 		};
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
 			boot();
+		} else {
+			setShowSplash(false);
 		}
 	}, [env, persist]);
 
-	if (showSplash) return <Splash />;
+	if (showSplash) {
+		return <Splash />;
+	}
 
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
 
 	return (
 		<main className={className}>
-			<RouterView routes={routes} middlewares={middlewares} />
+			{isOnline ? <RouterView routes={routes} middlewares={middlewares} /> : <Offline />}
 		</main>
 	);
 };
@@ -53,7 +70,27 @@ export const App = () => {
 
 	/* istanbul ignore next */
 	const storage = __DEV__ ? new StubStorage() : "indexeddb";
-	const [env] = useState(() => new Environment({ coins: { ARK, LSK }, httpClient, storage }));
+	const [env] = useState(
+		() =>
+			new Environment({
+				coins: {
+					// ADA,
+					ARK,
+					// ATOM,
+					// BTC,
+					// EOS,
+					// ETH,
+					LSK,
+					// NEO,
+					// TRX,
+					// XLM,
+					// XMR,
+					// XRP,
+				},
+				httpClient,
+				storage,
+			}),
+	);
 
 	return (
 		<I18nextProvider i18n={i18n}>

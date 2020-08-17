@@ -324,12 +324,17 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
                             label="Network"
+                            required=""
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -370,12 +375,13 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
                         </div>
                         <ul
                           aria-labelledby="CreateWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="CreateWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-0"
                             role="option"
@@ -399,7 +405,7 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-1"
                             role="option"
@@ -784,12 +790,17 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
                             label="Network"
+                            required=""
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -830,12 +841,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                         </div>
                         <ul
                           aria-labelledby="CreateWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="CreateWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-0"
                             role="option"
@@ -859,7 +871,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-1"
                             role="option"
@@ -1244,12 +1256,17 @@ exports[`CreateWallet should render 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
                             label="Network"
+                            required=""
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -1290,12 +1307,13 @@ exports[`CreateWallet should render 1`] = `
                         </div>
                         <ul
                           aria-labelledby="CreateWallet__network-label"
+                          class="my-6 grid grid-cols-6 gap-6"
                           id="CreateWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-0"
                             role="option"
@@ -1319,7 +1337,7 @@ exports[`CreateWallet should render 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="CreateWallet__network-item-1"
                             role="option"
@@ -1416,12 +1434,17 @@ exports[`CreateWallet should render 1st step 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="network"
             label="Network"
+            required=""
           >
             Network
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -1462,12 +1485,13 @@ exports[`CreateWallet should render 1st step 1`] = `
         </div>
         <ul
           aria-labelledby="CreateWallet__network-label"
+          class="my-6 grid grid-cols-6 gap-6"
           id="CreateWallet__network-menu"
           role="listbox"
         >
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="CreateWallet__network-item-0"
             role="option"
@@ -1491,7 +1515,7 @@ exports[`CreateWallet should render 1st step 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="CreateWallet__network-item-1"
             role="option"
@@ -1802,7 +1826,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
         label="Wallet name (optional)"

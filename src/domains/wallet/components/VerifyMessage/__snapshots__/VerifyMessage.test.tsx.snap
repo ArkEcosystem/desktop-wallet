@@ -133,12 +133,17 @@ exports[`VerifyMessage should render 1`] = `
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="signed-message-content"
                     label="Signed message content"
+                    required=""
                   >
                     Signed message content
+                    <div
+                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
                   </label>
                   <input
                     class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -282,12 +287,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="message"
                   label="Message"
+                  required=""
                 >
                   Message
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -300,12 +310,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="signatory"
                   label="Public Key"
+                  required=""
                 >
                   Public Key
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -320,12 +335,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="signature"
                   label="Signature"
+                  required=""
                 >
                   Signature
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "

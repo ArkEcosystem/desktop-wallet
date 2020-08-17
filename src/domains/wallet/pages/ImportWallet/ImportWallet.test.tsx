@@ -1,15 +1,14 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { renderHook } from "@testing-library/react-hooks";
-import { EnvironmentProvider } from "app/contexts";
+import { act, renderHook } from "@testing-library/react-hooks";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import TestRenderer from "react-test-renderer";
 import {
-	act,
+	act as actAsync,
 	env,
 	fireEvent,
 	getDefaultProfileId,
@@ -19,7 +18,7 @@ import {
 	waitFor,
 } from "testing-library";
 
-import { FirstStep, ImportWallet, SecondStep } from "./ImportWallet";
+import { FirstStep, ImportWallet, SecondStep, ThirdStep } from "./ImportWallet";
 
 let profile: Profile;
 const fixtureProfileId = getDefaultProfileId();
@@ -52,7 +51,6 @@ describe("ImportWallet", () => {
 	});
 
 	it("should render 1st step", async () => {
-		const { act } = TestRenderer;
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
@@ -63,26 +61,34 @@ describe("ImportWallet", () => {
 		expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-		expect(selectAssetsInput).toBeTruthy();
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		expect(selectNetworkInput).toBeTruthy();
 
 		await act(async () => {
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK D" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		});
 
 		await act(async () => {
-			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(selectAssetsInput).toHaveValue("Ark Devnet");
+		expect(selectNetworkInput).toHaveValue("Ark Devnet");
 	});
 
 	it("should render 2st step", async () => {
-		const { act } = TestRenderer;
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					network: {
+						id: () => "devnet",
+						coin: () => "ARK",
+					},
+				},
+			}),
+		);
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<SecondStep errorMessage={null} />
+				<SecondStep profile={profile} />
 			</FormContext>,
 		);
 
@@ -113,71 +119,54 @@ describe("ImportWallet", () => {
 		});
 	});
 
-	it("should go to previous step", async () => {
-		let rendered: RenderResult;
-
-		await act(async () => {
-			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/import">
-						<ImportWallet />
-					</Route>
-				</EnvironmentProvider>,
-				{
-					routes: [route],
+	it("should render 3st step", async () => {
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					network: {
+						id: () => "devnet",
+						coin: () => "ARK",
+					},
 				},
-			);
+			}),
+		);
+		const { getByTestId, asFragment } = render(
+			<FormContext {...form.current}>
+				<ThirdStep address={identityAddress} nameMaxLength={42} />
+			</FormContext>,
+		);
 
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
-		});
-
-		const { getByTestId, asFragment } = rendered;
-
+		expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-		await act(async () => {
-			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
-			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-		});
+		expect(getByTestId("ImportWallet__network-name")).toHaveTextContent("Ark Devnet");
+		expect(getByTestId("ImportWallet__wallet-address")).toHaveTextContent(identityAddress);
 
-		expect(selectAssetsInput).toHaveValue("Ark Devnet");
-
-		const continueButton = getByTestId("ImportWallet__continue-button");
-		act(() => {
-			fireEvent.click(continueButton);
-		});
-		await waitFor(() => {
-			expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
-		});
+		const walletNameInput = getByTestId("ImportWallet__name-input");
 
 		act(() => {
-			fireEvent.click(getByTestId("ImportWallet__back-button"));
+			fireEvent.change(walletNameInput, { target: { value: "Test" } });
 		});
-		await waitFor(() => {
-			expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
-		});
+
+		expect(form.current.getValues()).toEqual({ name: "Test" });
 	});
 
-	it("should import by mnemonic", async () => {
-		let rendered: RenderResult;
+	it("should go to previous step", async () => {
 		const history = createMemoryHistory();
-
 		history.push(route);
 
-		await act(async () => {
+		let rendered: RenderResult;
+
+		await actAsync(async () => {
 			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/import">
-						<ImportWallet />
-					</Route>
-				</EnvironmentProvider>,
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
 				{
 					routes: [route],
 					history,
 				},
 			);
-
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
@@ -185,50 +174,126 @@ describe("ImportWallet", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-		await act(async () => {
-			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
-			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+
+			const continueButton = getByTestId("ImportWallet__continue-button");
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			await fireEvent.click(getByTestId("ImportWallet__back-button"));
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
+			});
+		});
+	});
+
+	it("should import by mnemonic", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		expect(selectAssetsInput).toHaveValue("Ark Devnet");
+		const { getByTestId, asFragment } = rendered;
 
-		const continueButton = getByTestId("ImportWallet__continue-button");
-		act(() => {
-			fireEvent.click(continueButton);
-		});
-		await waitFor(() => {
-			expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
-		});
+		expect(asFragment()).toMatchSnapshot();
 
-		const passphraseInput = getByTestId("ImportWallet__passphrase-input");
-		expect(passphraseInput).toBeTruthy();
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
 
-		await act(async () => {
-			fireEvent.change(passphraseInput, { target: { value: mnemonic } });
-			fireEvent.click(getByTestId("ImportWallet__submit-button"));
-		});
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-		await waitFor(() => {
-			expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy();
+			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+
+			const continueButton = getByTestId("ImportWallet__continue-button");
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+			expect(passphraseInput).toBeTruthy();
+
+			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
+
+			const goToWalletButton = getByTestId("ImportWallet__gotowallet-button");
+			expect(goToWalletButton).toBeTruthy();
+			await waitFor(() => {
+				expect(goToWalletButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(goToWalletButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			});
+
+			const walletNameInput = getByTestId("ImportWallet__name-input");
+			expect(walletNameInput).toBeTruthy();
+
+			await fireEvent.input(walletNameInput, { target: { value: "Test" } });
+
+			const submitButton = getByTestId("ImportWallet__save-button");
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(submitButton);
+
+			await waitFor(() => {
+				expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy();
+			});
 		});
 	});
 
 	it("should import by address", async () => {
-		let rendered: RenderResult;
 		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
 
 		const randomAddress = "D8vwEEvKgMPVvvK2Zwzyb5uHzRadurCcKq";
 
 		history.push(route);
 
-		await act(async () => {
+		await actAsync(async () => {
 			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/import">
-						<ImportWallet />
-					</Route>
-				</EnvironmentProvider>,
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
 				{
 					routes: [route],
 					history,
@@ -241,79 +306,104 @@ describe("ImportWallet", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-		await act(async () => {
-			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
-			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-		});
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
 
-		expect(selectAssetsInput).toHaveValue("Ark Devnet");
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-		const continueButton = getByTestId("ImportWallet__continue-button");
-		act(() => {
-			fireEvent.click(continueButton);
-		});
-		await waitFor(() => {
-			expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
-		});
+			expect(selectNetworkInput).toHaveValue("Ark Devnet");
 
-		const addressToggle = getByTestId("ImportWallet__address-toggle");
-		expect(addressToggle).toBeTruthy();
+			const continueButton = getByTestId("ImportWallet__continue-button");
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
 
-		await act(async () => {
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			const addressToggle = getByTestId("ImportWallet__address-toggle");
+			expect(addressToggle).toBeTruthy();
+
 			await fireEvent.click(addressToggle);
-		});
 
-		const addressInput = getByTestId("ImportWallet__address-input");
-		expect(addressInput).toBeTruthy();
+			const addressInput = getByTestId("ImportWallet__address-input");
+			expect(addressInput).toBeTruthy();
 
-		await act(async () => {
-			await fireEvent.change(addressInput, { target: { value: randomAddress } });
-			await fireEvent.click(getByTestId("ImportWallet__submit-button"));
-		});
+			await fireEvent.input(addressInput, { target: { value: randomAddress } });
 
-		await waitFor(() => {
-			expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
+			const goToWalletButton = getByTestId("ImportWallet__gotowallet-button");
+			expect(goToWalletButton).toBeTruthy();
+			await waitFor(() => {
+				expect(goToWalletButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(goToWalletButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			});
+
+			const submitButton = getByTestId("ImportWallet__save-button");
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(submitButton);
+
+			await waitFor(() => {
+				expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
+			});
 		});
 	});
 
 	it("should show an error message for invalid address", async () => {
-		let rendered: RenderResult;
 		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
 
 		history.push(route);
 
-		await act(async () => {
+		await actAsync(async () => {
 			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/import">
-						<ImportWallet />
-					</Route>
-				</EnvironmentProvider>,
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
 				{
 					routes: [route],
 					history,
 				},
 			);
-
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		const { findByTestId, getByTestId, asFragment } = rendered;
+		const { getByTestId, asFragment, getByText } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 
-		await act(async () => {
-			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+
 			const continueButton = getByTestId("ImportWallet__continue-button");
-
-			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
-			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-
-			expect(selectAssetsInput).toHaveValue("Ark Devnet");
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
 
 			await fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
 
 			const addressToggle = getByTestId("ImportWallet__address-toggle");
 			expect(addressToggle).toBeTruthy();
@@ -323,61 +413,72 @@ describe("ImportWallet", () => {
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
 
-			await fireEvent.change(addressInput, { target: { value: "123" } });
+			await fireEvent.input(addressInput, { target: { value: "123" } });
 
-			fireEvent.click(getByTestId("ImportWallet__submit-button"));
+			await waitFor(() => {
+				expect(getByText(commonTranslations.INPUT_ADDRESS.VALIDATION.NOT_VALID)).toBeVisible();
+			});
 
-			const errorAlert = await findByTestId("ImportWallet__error-alert");
-			await waitFor(() => expect(errorAlert).toBeTruthy());
-
-			expect(errorAlert.textContent).toMatchInlineSnapshot(
-				`"alert-danger.svgErrorFailed to retrieve information for 123 because it is invalid."`,
-			);
+			const goToWalletButton = getByTestId("ImportWallet__gotowallet-button");
+			expect(goToWalletButton).toBeTruthy();
+			await waitFor(() => {
+				expect(goToWalletButton).toBeDisabled();
+			});
 		});
 	});
 
-	it("should show an error if import a NEO mainnet address", async () => {
-		nock("https://neoscan.io/api/main_net/v1/")
-			.get("/get_last_transactions_by_address/AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN/1")
-			.thrice()
-			.reply(200, require("../../../../tests/fixtures/coins/ark/neo-duplicate.json"));
+	it("should show an error message for duplicate address", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
 
 		let rendered: RenderResult;
-		const history = createMemoryHistory();
 
 		history.push(route);
 
-		await act(async () => {
+		await actAsync(async () => {
 			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/import">
-						<ImportWallet />
-					</Route>
-				</EnvironmentProvider>,
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
 				{
 					routes: [route],
 					history,
 				},
 			);
-
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		const { findByTestId, getByTestId, asFragment } = rendered;
+		const { getByTestId, asFragment, getByText } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 
-		await act(async () => {
-			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+
 			const continueButton = getByTestId("ImportWallet__continue-button");
-
-			await fireEvent.change(selectAssetsInput, { target: { value: "Ark" } });
-			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-
-			expect(selectAssetsInput).toHaveValue("Ark");
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
 
 			await fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+			expect(passphraseInput).toBeTruthy();
+
+			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
+
+			await waitFor(() => {
+				expect(getByText(`Address ${identityAddress} already exists`)).toBeVisible();
+			});
 
 			const addressToggle = getByTestId("ImportWallet__address-toggle");
 			expect(addressToggle).toBeTruthy();
@@ -387,80 +488,17 @@ describe("ImportWallet", () => {
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
 
-			// NEO address: https://neoscan.io/address/AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN/1
-			await fireEvent.change(addressInput, { target: { value: "AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN" } });
+			await fireEvent.input(addressInput, { target: { value: identityAddress } });
 
-			fireEvent.click(getByTestId("ImportWallet__submit-button"));
+			await waitFor(() => {
+				expect(getByText(`Address ${identityAddress} already exists`)).toBeVisible();
+			});
 
-			const errorAlert = await findByTestId("ImportWallet__error-alert");
-			await waitFor(() => expect(errorAlert).toBeTruthy());
-
-			expect(errorAlert.textContent).toMatchInlineSnapshot(
-				`"alert-danger.svgErrorFailed to discovery any peers."`,
-			);
-		});
-	});
-
-	it("should show an error message if trying to import a duplicate address", async () => {
-		let rendered: RenderResult;
-		const history = createMemoryHistory();
-		const route = `/profiles/${fixtureProfileId}/wallets/import`;
-
-		history.push(route);
-
-		const randomAddress = "DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t";
-		await profile.wallets().importByAddress(randomAddress, "ARK", "devnet");
-
-		await act(async () => {
-			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/import">
-						<ImportWallet />
-					</Route>
-				</EnvironmentProvider>,
-				{
-					routes: [route],
-					history,
-				},
-			);
-
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
-		});
-
-		const { findByTestId, getByTestId, asFragment } = rendered;
-
-		expect(asFragment()).toMatchSnapshot();
-
-		await act(async () => {
-			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-			const continueButton = getByTestId("ImportWallet__continue-button");
-
-			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
-			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-
-			expect(selectAssetsInput).toHaveValue("Ark Devnet");
-
-			await fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
-
-			const addressToggle = getByTestId("ImportWallet__address-toggle");
-			expect(addressToggle).toBeTruthy();
-
-			await fireEvent.click(addressToggle);
-
-			const addressInput = getByTestId("ImportWallet__address-input");
-			expect(addressInput).toBeTruthy();
-
-			await fireEvent.change(addressInput, { target: { value: randomAddress } });
-
-			fireEvent.click(getByTestId("ImportWallet__submit-button"));
-
-			const errorAlert = await findByTestId("ImportWallet__error-alert");
-			await waitFor(() => expect(errorAlert).toBeTruthy());
-
-			expect(errorAlert.textContent).toMatchInlineSnapshot(
-				`"alert-danger.svgErrorThe wallet [DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t] already exists."`,
-			);
+			const goToWalletButton = getByTestId("ImportWallet__gotowallet-button");
+			expect(goToWalletButton).toBeTruthy();
+			await waitFor(() => {
+				expect(goToWalletButton).toBeDisabled();
+			});
 		});
 	});
 });

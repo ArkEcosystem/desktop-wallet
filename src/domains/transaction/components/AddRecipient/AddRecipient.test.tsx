@@ -20,7 +20,26 @@ describe("AddRecipient", () => {
 	});
 
 	it("should render without recipients", () => {
-		const { container } = render(<AddRecipient profile={profile} />);
+		const { container } = render(<AddRecipient profile={profile} recipients={null} />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with single recipient data", () => {
+		const { container, getByTestId } = render(
+			<AddRecipient
+				profile={profile}
+				recipients={[
+					{
+						amount: (100 * 1e8).toString(),
+						address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+					},
+				]}
+			/>,
+		);
+
+		expect(getByTestId("SelectRecipient__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
+		expect(getByTestId("add-recipient__amount-input")).toHaveValue(100);
+
 		expect(container).toMatchSnapshot();
 	});
 

@@ -42,7 +42,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
             <div
               class="text-theme-neutral-dark"
             >
-              Create a new Profile or login with your MarketSquare account to get started.
+              Login with your MarketSquare account or create a new Profile below.
             </div>
             <div
               class="pb-4 mt-8"
@@ -145,12 +145,17 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                       label="Name"
+                      required=""
                     >
                       Name
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <input
                       class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -162,12 +167,17 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
                       label="Market Provider"
+                      required=""
                     >
                       Market Provider
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -197,7 +207,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-48-label"
-                            class="sc-fznJRM jFPFlO"
+                            class="sc-fznJRM KaIHo"
                             id="downshift-48-menu"
                             role="listbox"
                             tabindex="-1"
@@ -223,12 +233,17 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
                       label="Currency"
+                      required=""
                     >
                       Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -258,7 +273,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-49-label"
-                            class="sc-fznJRM jFPFlO"
+                            class="sc-fznJRM KaIHo"
                             id="downshift-49-menu"
                             role="listbox"
                             tabindex="-1"
@@ -419,7 +434,7 @@ exports[`CreateProfile should render 1`] = `
             <div
               class="text-theme-neutral-dark"
             >
-              Create a new Profile or login with your MarketSquare account to get started.
+              Login with your MarketSquare account or create a new Profile below.
             </div>
             <div
               class="pb-4 mt-8"
@@ -522,12 +537,17 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                       label="Name"
+                      required=""
                     >
                       Name
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <input
                       class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -539,12 +559,17 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
                       label="Market Provider"
+                      required=""
                     >
                       Market Provider
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -574,7 +599,7 @@ exports[`CreateProfile should render 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-0-label"
-                            class="sc-fznJRM jFPFlO"
+                            class="sc-fznJRM KaIHo"
                             id="downshift-0-menu"
                             role="listbox"
                             tabindex="-1"
@@ -600,12 +625,17 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
                       label="Currency"
+                      required=""
                     >
                       Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -635,7 +665,7 @@ exports[`CreateProfile should render 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-1-label"
-                            class="sc-fznJRM jFPFlO"
+                            class="sc-fznJRM KaIHo"
                             id="downshift-1-menu"
                             role="listbox"
                             tabindex="-1"
@@ -796,7 +826,7 @@ exports[`CreateProfile should store profile 1`] = `
             <div
               class="text-theme-neutral-dark"
             >
-              Create a new Profile or login with your MarketSquare account to get started.
+              Login with your MarketSquare account or create a new Profile below.
             </div>
             <div
               class="pb-4 mt-8"
@@ -923,12 +953,17 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                       label="Name"
+                      required=""
                     >
                       Name
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <input
                       class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -940,12 +975,17 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
                       label="Market Provider"
+                      required=""
                     >
                       Market Provider
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -975,7 +1015,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-2-label"
-                            class="sc-fznJRM jFPFlO"
+                            class="sc-fznJRM KaIHo"
                             id="downshift-2-menu"
                             role="listbox"
                             tabindex="-1"
@@ -1001,12 +1041,17 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
                       label="Currency"
+                      required=""
                     >
                       Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -1036,7 +1081,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-3-label"
-                            class="sc-fznJRM jFPFlO"
+                            class="sc-fznJRM KaIHo"
                             id="downshift-3-menu"
                             role="listbox"
                             tabindex="-1"
@@ -1197,7 +1242,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
             <div
               class="text-theme-neutral-dark"
             >
-              Create a new Profile or login with your MarketSquare account to get started.
+              Login with your MarketSquare account or create a new Profile below.
             </div>
             <div
               class="pb-4 mt-8"
@@ -1300,12 +1345,17 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                       label="Name"
+                      required=""
                     >
                       Name
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <input
                       class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -1317,12 +1367,17 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
                       label="Market Provider"
+                      required=""
                     >
                       Market Provider
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -1352,7 +1407,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-30-label"
-                            class="sc-fznJRM jFPFlO"
+                            class="sc-fznJRM KaIHo"
                             id="downshift-30-menu"
                             role="listbox"
                             tabindex="-1"
@@ -1378,12 +1433,17 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
                       label="Currency"
+                      required=""
                     >
                       Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -1413,7 +1473,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-31-label"
-                            class="sc-fznJRM jFPFlO"
+                            class="sc-fznJRM KaIHo"
                             id="downshift-31-menu"
                             role="listbox"
                             tabindex="-1"

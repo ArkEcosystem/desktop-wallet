@@ -1,17 +1,31 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { translations as errorTranslations } from "domains/error/i18n";
+import { translations as profileTranslations } from "domains/profile/i18n";
 import React from "react";
 import { act, renderWithRouter, useDefaultNetMocks, waitFor } from "utils/testing-library";
 
-import { translations as profileTranslations } from "../domains/profile/i18n";
 import { App } from "./App";
 
 describe("App", () => {
 	beforeAll(useDefaultNetMocks);
 
-	it("should render splash screen", () => {
+	it("should render splash screen", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
 		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
 
-		expect(getByTestId("Splash__text")).toBeInTheDocument();
+		await waitFor(() => expect(getByTestId("Splash__text")).toBeInTheDocument());
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should close splash screen if not demo", async () => {
+		process.env.REACT_APP_BUILD_MODE = undefined;
+
+		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+
+		await waitFor(() => expect(() => getByTestId("Splash__text")).toThrow(/^Unable to find an element by/));
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -27,9 +41,31 @@ describe("App", () => {
 			await new Promise((resolve) => setTimeout(resolve, 2000));
 		});
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 			expect(container).toBeTruthy();
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
+
+	it("should render the offline screen if there is no internet connection", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
+		jest.spyOn(window.navigator, "onLine", "get").mockReturnValueOnce(false);
+
+		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+		expect(getByTestId("Splash__text")).toBeInTheDocument();
+
+		await act(async () => {
+			await new Promise((resolve) => setTimeout(resolve, 2000));
+		});
+
+		await waitFor(() => {
+			expect(container).toBeTruthy();
+
+			expect(getByTestId("Offline__text")).toHaveTextContent(errorTranslations.OFFLINE.TITLE);
+			expect(getByTestId("Offline__text")).toHaveTextContent(errorTranslations.OFFLINE.DESCRIPTION);
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
@@ -44,7 +80,7 @@ describe("App", () => {
 			await new Promise((resolve) => setTimeout(resolve, 2000));
 		});
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 			expect(container).toBeTruthy();
 

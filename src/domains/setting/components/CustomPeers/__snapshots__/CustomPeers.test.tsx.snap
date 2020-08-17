@@ -25,7 +25,7 @@ exports[`CustomPeers should render a modal 1`] = `
           class="p-1"
         >
           <div
-            class="sc-AxmLO fZFkuY"
+            class="sc-AxhUy iFvBPK"
             height="12"
             width="12"
           >
@@ -55,11 +55,16 @@ exports[`CustomPeers should render a modal 1`] = `
             class="sc-AxiKw iQzisX mt-8"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="network"
+              required=""
             >
               Network
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
             <div
               aria-expanded="false"
@@ -73,11 +78,11 @@ exports[`CustomPeers should render a modal 1`] = `
                 id="CustomPeers__network-label"
               />
               <div
-                class="sc-Axmtr jzhOwR"
+                class="sc-AxmLO kuiknc"
                 data-testid="SelectNetworkInput"
               >
                 <div
-                  class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                  class="sc-AxgMl sc-AxheI hUEXQW px-4"
                 >
                   <div
                     class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
@@ -99,6 +104,7 @@ exports[`CustomPeers should render a modal 1`] = `
             </div>
             <ul
               aria-labelledby="CustomPeers__network-label"
+              class="my-6 grid grid-cols-6 gap-6"
               id="CustomPeers__network-menu"
               role="listbox"
             />
@@ -107,11 +113,16 @@ exports[`CustomPeers should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
+              required=""
             >
               Name
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
             <input
               class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -123,11 +134,16 @@ exports[`CustomPeers should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="peer-ip"
+              required=""
             >
               IP
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
             <input
               class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -139,11 +155,16 @@ exports[`CustomPeers should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="peer-type"
+              required=""
             >
               Type
+              <div
+                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                data-testid="FormLabel__required"
+              />
             </label>
             <label
               class="inline-flex items-center"

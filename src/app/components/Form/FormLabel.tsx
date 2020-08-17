@@ -16,7 +16,7 @@ export function FormLabel(props: FormLabelProps) {
 	return (
 		<label
 			data-testid="FormLabel"
-			className="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+			className="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
 			htmlFor={fieldContext?.name}
 			{...props}
 		>
@@ -35,5 +35,5 @@ export function FormLabel(props: FormLabelProps) {
 }
 
 FormLabel.defaultProps = {
-	required: false,
+	required: true,
 };
