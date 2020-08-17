@@ -72,7 +72,7 @@ exports[`NewsCard should render 1`] = `
         type="horizontal"
       />
       <p
-        class="text-theme-neutral-dark whitespace-pre-line"
+        class="whitespace-pre-line text-theme-neutral-dark"
         data-testid="NewsCard__content"
       >
         Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
@@ -162,7 +162,7 @@ exports[`NewsCard should render with cover image 1`] = `
         type="horizontal"
       />
       <p
-        class="text-theme-neutral-dark whitespace-pre-line"
+        class="whitespace-pre-line text-theme-neutral-dark"
         data-testid="NewsCard__content"
       >
         June is over and it's time for the Monthly Update. This blog post will cover last month’s highlights, activities, development, partner activities, news and updates of our upcoming releases. 

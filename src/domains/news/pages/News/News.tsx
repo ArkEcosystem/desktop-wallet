@@ -116,8 +116,8 @@ export const News = ({ defaultCategories = [], defaultAssets, selectedCoin, item
 			</Section>
 
 			<Section hasBackground={false}>
-				<div className="flex space-x-8 container">
-					<div className="w-4/6 flex-none">
+				<div className="container flex space-x-8">
+					<div className="flex-none w-4/6">
 						{!isLoading && filteredNews.length === 0 && <div className="m-4 text-lg">No results</div>}
 
 						{isLoading && (
@@ -150,7 +150,7 @@ export const News = ({ defaultCategories = [], defaultAssets, selectedCoin, item
 							/>
 						</div>
 					</div>
-					<div className="w-2/6 flex-none">
+					<div className="flex-none w-2/6">
 						<NewsOptions
 							defaultCategories={defaultCategories}
 							selectedAssets={assets}

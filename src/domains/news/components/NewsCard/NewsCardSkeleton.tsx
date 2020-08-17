@@ -15,7 +15,7 @@ export const NewsCardSkeleton = () => (
 						<div>
 							<Skeleton height={6} width={100} style={{ verticalAlign: "middle" }} />
 						</div>
-						<div className="flex items-center space-x-4 align-middle">
+						<div className="flex items-center align-middle space-x-4">
 							<p className="text-theme-neutral" data-testid="NewsCard__author">
 								<Skeleton height={6} width={100} style={{ verticalAlign: "middle" }} />
 								<Skeleton height={6} width={100} style={{ verticalAlign: "middle" }} className="ml-2" />
