@@ -20,7 +20,7 @@ type Props = {
 	itemsPerPage?: number;
 };
 
-export const News = ({ defaultCategories = [], defaultAssets, selectedCoin, itemsPerPage }: Props) => {
+export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerPage }: Props) => {
 	const activeProfile = useActiveProfile();
 	const [isLoading, setIsLoading] = useState(true);
 	const [blockfolio] = useState(() => new Blockfolio(httpClient));
@@ -72,10 +72,10 @@ export const News = ({ defaultCategories = [], defaultAssets, selectedCoin, item
 
 	useEffect(() => {
 		const filterByCategories = (items: BlockfolioSignal[]) => {
-			const selecteCategoryNames = categories.filter((c) => c.isSelected).map((c) => c.name);
-			if (selecteCategoryNames.includes("All")) return items;
+			const selecteCategoryNames = categories?.filter((c) => c.isSelected).map((c) => c.name);
+			if (selecteCategoryNames?.includes("All")) return items;
 
-			return items.filter((item) => selecteCategoryNames.includes(item.category));
+			return items.filter((item) => selecteCategoryNames?.includes(item.category));
 		};
 
 		const filterBySearchQuery = (input: string, items: BlockfolioSignal[]) => {
@@ -118,7 +118,11 @@ export const News = ({ defaultCategories = [], defaultAssets, selectedCoin, item
 			<Section hasBackground={false}>
 				<div className="container flex space-x-8">
 					<div className="flex-none w-4/6">
-						{!isLoading && filteredNews.length === 0 && <div className="m-4 text-lg">No results</div>}
+						{!isLoading && filteredNews.length === 0 && (
+							<div className="m-4 text-lg" data-testid="News__empty-results">
+								No results
+							</div>
+						)}
 
 						{isLoading && (
 							<div className="space-y-6">

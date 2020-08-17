@@ -13,7 +13,9 @@ describe("NewsCard", () => {
 	});
 
 	it("should render with cover image", () => {
-		const { container, asFragment } = render(<NewsCard {...data[1]} />);
+		const { container, asFragment } = render(
+			<NewsCard {...data[1]} coverImage="https://via.placeholder.com/150" />,
+		);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
