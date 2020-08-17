@@ -17,7 +17,7 @@ exports[`NewsCard should render 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="sc-AxhUy bjgvrq border-theme-neutral-light text-theme-neutral"
+            class="sc-AxgMl iqKzwo border-theme-neutral-light text-theme-neutral"
             data-testid="NetworkIcon__placeholder"
           />
           <div>
@@ -32,7 +32,7 @@ exports[`NewsCard should render 1`] = `
                 class="text-sm font-semibold text-theme-neutral"
                 data-testid="NewsCard__author"
               >
-                Travis Walker, 
+                Travis Walker, Co-Founder
               </p>
               <div
                 class="sc-AxiKw hpWYLk border-theme-neutral-300"
@@ -72,9 +72,19 @@ exports[`NewsCard should render 1`] = `
         type="horizontal"
       />
       <p
-        class="text-theme-neutral-dark"
+        class="text-theme-neutral-dark whitespace-pre-line"
         data-testid="NewsCard__content"
-      />
+      >
+        Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
+        <a
+          class="sc-AxhUy fEOaBg inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+          data-testid="Link"
+          rel="noopener noreferrer"
+          to="[object Object]"
+        >
+          https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
+        </a>
+      </p>
     </div>
   </div>
 </DocumentFragment>
@@ -97,7 +107,7 @@ exports[`NewsCard should render with cover image 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="sc-AxhUy bjgvrq border-theme-neutral-light text-theme-neutral"
+            class="sc-AxgMl iqKzwo border-theme-neutral-light text-theme-neutral"
             data-testid="NetworkIcon__placeholder"
           />
           <div>
@@ -112,7 +122,7 @@ exports[`NewsCard should render with cover image 1`] = `
                 class="text-sm font-semibold text-theme-neutral"
                 data-testid="NewsCard__author"
               >
-                Travis Walker, 
+                Travis Walker, Co-Founder
               </p>
               <div
                 class="sc-AxiKw hpWYLk border-theme-neutral-300"
@@ -142,7 +152,7 @@ exports[`NewsCard should render with cover image 1`] = `
               class="text-sm"
               data-testid="NewsCard__category"
             >
-              #Technical
+              #Marketing
             </span>
           </div>
         </div>
@@ -152,17 +162,19 @@ exports[`NewsCard should render with cover image 1`] = `
         type="horizontal"
       />
       <p
-        class="text-theme-neutral-dark"
+        class="text-theme-neutral-dark whitespace-pre-line"
         data-testid="NewsCard__content"
-      />
-      <div
-        class="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-contrast"
       >
-        <img
-          alt="ARK Banner"
-          src="https://miro.medium.com/max/1000/1*vMM0Z7qfGgA8a8NRhB_ZQA.png"
-        />
-      </div>
+        June is over and it's time for the Monthly Update. This blog post will cover last month’s highlights, activities, development, partner activities, news and updates of our upcoming releases. 
+        <a
+          class="sc-AxhUy fEOaBg inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+          data-testid="Link"
+          rel="noopener noreferrer"
+          to="[object Object]"
+        >
+          https://blog.ark.io/ark-monthly-update-june-2020-edition-279a3dd47a36
+        </a>
+      </p>
     </div>
   </div>
 </DocumentFragment>

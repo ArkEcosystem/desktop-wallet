@@ -51,6 +51,7 @@ exports[`NewsOptions should render 1`] = `
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
           >
             <input
+              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"
@@ -66,7 +67,6 @@ exports[`NewsOptions should render 1`] = `
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
           >
             <input
-              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"
@@ -82,7 +82,6 @@ exports[`NewsOptions should render 1`] = `
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
           >
             <input
-              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"
@@ -113,7 +112,6 @@ exports[`NewsOptions should render 1`] = `
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
           >
             <input
-              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"
@@ -189,7 +187,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--1"
               >
                 <div
-                  class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
+                  class="sc-AxhUy dSLmHc relative border-theme-neutral-200 text-theme-neutral-300"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -201,17 +199,8 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
                   >
-                    <div
-                      class="sc-AxiKw bopxJn"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        checkmark.svg
-                      </svg>
-                    </div>
                     <span />
                   </span>
                 </div>
@@ -221,7 +210,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--2"
               >
                 <div
-                  class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
+                  class="sc-AxhUy dSLmHc relative border-theme-neutral-200 text-theme-neutral-300"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -233,17 +222,8 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
                   >
-                    <div
-                      class="sc-AxiKw bopxJn"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        checkmark.svg
-                      </svg>
-                    </div>
                     <span />
                   </span>
                 </div>
@@ -253,7 +233,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--3"
               >
                 <div
-                  class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
+                  class="sc-AxhUy dSLmHc relative border-theme-neutral-200 text-theme-neutral-300"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -265,17 +245,8 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
                   >
-                    <div
-                      class="sc-AxiKw bopxJn"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        checkmark.svg
-                      </svg>
-                    </div>
                     <span />
                   </span>
                 </div>
@@ -286,6 +257,7 @@ exports[`NewsOptions should render 1`] = `
         <button
           class="sc-AxjAm ddJBbC w-full"
           color="primary"
+          data-testid="NewsOptions__submit"
           type="button"
         >
           Update Filter

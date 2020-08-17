@@ -106,7 +106,7 @@ export const NewsOptions = ({
 						<FilterNetwork networks={assets} hideViewAll onChange={handleSelectAsset} />
 					</div>
 
-					<Button className="w-full" variant="plain" onClick={handleSubmit}>
+					<Button className="w-full" variant="plain" onClick={handleSubmit} data-testid="NewsOptions__submit">
 						{t("NEWS.NEWS_OPTIONS.UPDATE_FILTER")}
 					</Button>
 				</div>
