@@ -75,23 +75,6 @@ describe("SendTransactionForm", () => {
 		await act(async () => {
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
 
-			// Select recipient
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
-			);
-
-			// Amount
-			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
-
-			// Smartbridge
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
-			expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
-
 			// Fee
 			expect(getByTestId("InputCurrency")).toHaveValue("0");
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
@@ -199,16 +182,6 @@ describe("SendTransactionForm", () => {
 		await act(async () => {
 			await waitFor(() => expect(onFail).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(form.current.getValues("fee")).toBeFalsy());
-
-			// Select recipient
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
-			);
-
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
 	});
