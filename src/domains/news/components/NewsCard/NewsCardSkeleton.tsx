@@ -5,52 +5,47 @@ import React from "react";
 import Skeleton from "react-loading-skeleton";
 
 export const NewsCardSkeleton = () => (
-		<Card className="bg-theme-background">
-			<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard">
-				<div className="flex justify-between w-full">
-					<div className="flex items-center space-x-4">
-						<Circle aria-label="network" className="border-theme-neutral-200" />
+	<Card className="bg-theme-background">
+		<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard">
+			<div className="flex justify-between w-full">
+				<div className="flex items-center space-x-4">
+					<Circle aria-label="network" className="border-theme-neutral-200" />
 
+					<div>
 						<div>
-							<div>
-								<Skeleton height={6} width={100} style={{ verticalAlign: "middle" }} />
-							</div>
-							<div className="flex items-center space-x-4 align-middle">
-								<p className="text-theme-neutral" data-testid="NewsCard__author">
-									<Skeleton height={6} width={100} style={{ verticalAlign: "middle" }} />
-									<Skeleton
-										height={6}
-										width={100}
-										style={{ verticalAlign: "middle" }}
-										className="ml-2"
-									/>
-								</p>
-
-								<Divider type="vertical" />
-
-								<Skeleton height={6} width={60} style={{ verticalAlign: "middle" }} />
-								<p
-									className="text-sm font-semibold text-theme-neutral"
-									data-testid="NewsCard__date-created"
-								>
-									<Skeleton height={6} width="80%" />
-								</p>
-							</div>
+							<Skeleton height={6} width={100} style={{ verticalAlign: "middle" }} />
 						</div>
-					</div>
+						<div className="flex items-center space-x-4 align-middle">
+							<p className="text-theme-neutral" data-testid="NewsCard__author">
+								<Skeleton height={6} width={100} style={{ verticalAlign: "middle" }} />
+								<Skeleton height={6} width={100} style={{ verticalAlign: "middle" }} className="ml-2" />
+							</p>
 
-					<div className="flex flex-col justify-end">
-						<Skeleton height={6} width={60} style={{ verticalAlign: "middle" }} />
+							<Divider type="vertical" />
+
+							<Skeleton height={6} width={60} style={{ verticalAlign: "middle" }} />
+							<p
+								className="text-sm font-semibold text-theme-neutral"
+								data-testid="NewsCard__date-created"
+							>
+								<Skeleton height={6} width="80%" />
+							</p>
+						</div>
 					</div>
 				</div>
 
-				<Divider />
-
-				<p className="text-theme-neutral-dark" data-testid="NewsCard__content">
-					<Skeleton height={6} width="100%" style={{ verticalAlign: "middle" }} />
-					<Skeleton height={6} width="100%" style={{ verticalAlign: "middle" }} />
-					<Skeleton height={6} width="100%" style={{ verticalAlign: "middle" }} />
-				</p>
+				<div className="flex flex-col justify-end">
+					<Skeleton height={6} width={60} style={{ verticalAlign: "middle" }} />
+				</div>
 			</div>
-		</Card>
-	);
+
+			<Divider />
+
+			<p className="text-theme-neutral-dark" data-testid="NewsCard__content">
+				<Skeleton height={6} width="100%" style={{ verticalAlign: "middle" }} />
+				<Skeleton height={6} width="100%" style={{ verticalAlign: "middle" }} />
+				<Skeleton height={6} width="100%" style={{ verticalAlign: "middle" }} />
+			</p>
+		</div>
+	</Card>
+);

@@ -1,7 +1,7 @@
 import { Badge } from "app/components/Badge";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Network = {
 	name: string;
