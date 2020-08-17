@@ -171,7 +171,10 @@ export const SendIPFSTransaction = () => {
 		register("network", { required: true });
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
-		register("hash");
+		register("hash", {
+			required: true,
+			validate: (value) => /^Qm/.test(value) && value.length > 2 && value.length <= 90,
+		});
 
 		setValue("senderAddress", activeWallet.address(), true);
 
