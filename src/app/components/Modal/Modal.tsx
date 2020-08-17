@@ -52,7 +52,7 @@ const ModalContainer = styled.div<{ size?: Size }>`
 const ModalContent = (props: ModalContentProps) => (
 	<ModalContainer
 		size={props.size}
-		className="absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mt-24 mb-24 mx-auto rounded-xl bg-theme-background"
+		className="absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
 		data-testid="modal__inner"
 	>
 		<div className="relative">
@@ -126,9 +126,9 @@ export const Modal = (props: ModalProps) => {
 	}
 
 	return (
-		<div className="w-full h-full z-50 fixed inset-0 overflow-y-scroll">
+		<div className="fixed inset-0 z-50 w-full h-full overflow-y-scroll">
 			<div
-				className="w-full h-full fixed z-50 bg-black opacity-50"
+				className="fixed z-50 w-full h-full bg-black opacity-50"
 				data-testid="modal__overlay"
 				onClick={props.onClose}
 			/>
