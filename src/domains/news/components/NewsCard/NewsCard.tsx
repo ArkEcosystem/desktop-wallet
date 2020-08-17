@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import Linkify from "react-linkify";
 
 type Props = {
-	coin: any;
+	coin?: any;
 	coverImage?: string;
 } & BlockfolioSignal;
 
@@ -62,10 +62,10 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coin, 
 				<p className="text-theme-neutral-dark" data-testid="NewsCard__content">
 					<Linkify
 						componentDecorator={(pathname: string, text: string, key: number) => (
-								<Link to={{ pathname }} key={key} isExternal showExternalIcon={false}>
-									{text}
-								</Link>
-							)}
+							<Link to={{ pathname }} key={key} isExternal showExternalIcon={false}>
+								{text}
+							</Link>
+						)}
 					>
 						{text}
 					</Linkify>

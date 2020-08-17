@@ -6,9 +6,9 @@ import { Pagination } from "app/components/Pagination";
 import { useActiveProfile } from "app/hooks/env";
 import { httpClient } from "app/services";
 import { BlockfolioAd } from "domains/news/components/BlockfolioAd";
-import { NewsCard } from "domains/news/components/NewsCard";
+import { NewsCard, NewsCardSkeleton } from "domains/news/components/NewsCard";
 import { NewsOptions } from "domains/news/components/NewsOptions";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { assets, categories as defaultCategories } from "../../data";
@@ -17,10 +17,12 @@ type Props = {
 	defaultCategories?: any[];
 	assets?: any[];
 	selectedCoin?: string;
+	pageItems?: number;
 };
 
-export const News = ({ defaultCategories = [], assets, selectedCoin }: Props) => {
+export const News = ({ defaultCategories = [], assets, selectedCoin, pageItems }: Props) => {
 	const activeProfile = useActiveProfile();
+	const [isLoading, setIsLoading] = useState(true);
 	const [blockfolio] = useState(() => new Blockfolio(httpClient));
 
 	const [categories, setCategories] = useState(defaultCategories);
@@ -30,6 +32,7 @@ export const News = ({ defaultCategories = [], assets, selectedCoin }: Props) =>
 	const [filteredNews, setFilteredNews] = useState<BlockfolioSignal[]>([]);
 
 	const [coin] = useState(selectedCoin);
+	const skeletonCards = new Array(pageItems).fill({});
 
 	const { t } = useTranslation();
 
@@ -41,32 +44,37 @@ export const News = ({ defaultCategories = [], assets, selectedCoin }: Props) =>
 	];
 
 	useEffect(() => {
+		const fetchNews = async () => {
+			console.log("fetching news");
+			setIsLoading(true);
+			const blockfolioNews: BlockfolioResponse = await blockfolio.findByCoin(coin as string);
+
+			setNews(blockfolioNews.data);
+			console.log("blockfolionews", blockfolioNews);
+			setIsLoading(false);
+		};
+
 		fetchNews();
-	}, []);
+	}, [blockfolio, coin]);
 
 	useEffect(() => {
+		const filterByCategories = (items: BlockfolioSignal[]) => {
+			const selecteCategoryNames = categories.filter((c) => c.isSelected).map((c) => c.name);
+			if (selecteCategoryNames.includes("All")) return items;
+
+			return items.filter((item) => selecteCategoryNames.includes(item.category));
+		};
+
+		const filterBySearchInput = (input: string, items: BlockfolioSignal[]) => {
+			const searchInput = input.trim().toLowerCase();
+			return items.filter((item) => item.text.toLowerCase().match(searchInput));
+		};
+
 		const byCategory = filterByCategories(news);
 		const bySearchInput = filterBySearchInput(searchValue, byCategory);
 
 		setFilteredNews(bySearchInput);
 	}, [news, searchValue, categories]);
-
-	const fetchNews = async () => {
-		const blockfolioNews: BlockfolioResponse = await blockfolio.findByCoin(coin as string);
-		setNews(blockfolioNews.data);
-	};
-
-	const filterByCategories = (items: BlockfolioSignal[]) => {
-		const selecteCategoryNames = categories.filter((c) => c.isSelected).map((c) => c.name);
-		if (selecteCategoryNames.includes("All")) return items;
-
-		return items.filter((item) => selecteCategoryNames.includes(item.category));
-	};
-
-	const filterBySearchInput = (input: string, items: BlockfolioSignal[]) => {
-		const searchInput = input.trim().toLowerCase();
-		return items.filter((item) => item.text.toLowerCase().match(searchInput));
-	};
 
 	const handleSelectPage = (page: number) => {
 		console.log("page", page);
@@ -91,6 +99,14 @@ export const News = ({ defaultCategories = [], assets, selectedCoin }: Props) =>
 			<Section hasBackground={false}>
 				<div className="flex space-x-8">
 					<div className="w-full grid gap-5">
+						{isLoading && filteredNews.length === 0 && (
+							<div className="space-y-6">
+								{skeletonCards.map((_, key: number) => (
+									<NewsCardSkeleton key={key} />
+								))}
+							</div>
+						)}
+
 						{filteredNews?.map((data, index) => (
 							<NewsCard key={index} coin={coin} {...data} />
 						))}
@@ -127,4 +143,5 @@ News.defaultProps = {
 	defaultCategories,
 	assets,
 	selectedCoin: "ark",
+	pageItems: 10,
 };
