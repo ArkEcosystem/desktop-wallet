@@ -8,7 +8,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { InputPassword } from "app/components/Input";
+import { Input, InputAddonEnd, InputGroup, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -17,8 +17,10 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { useClipboard } from "app/hooks";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { RecipientList } from "domains/transaction/components/RecipientList";
+import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
@@ -28,6 +30,8 @@ import { useTranslation } from "react-i18next";
 
 export const FirstStep = ({ networks, profile, wallets }: any) => {
 	const { t } = useTranslation();
+	const { getValues, setValue } = useFormContext();
+	const { recipients, smartbridge } = getValues();
 
 	return (
 		<section data-testid="TransactionSend__step--first">
@@ -38,7 +42,40 @@ export const FirstStep = ({ networks, profile, wallets }: any) => {
 				</div>
 			</div>
 			<div className="mt-8">
-				<SendTransactionForm networks={networks} profile={profile} />
+				<SendTransactionForm networks={networks} profile={profile}>
+					<>
+						<div data-testid="recipient-address">
+							<AddRecipient
+								maxAvailableAmount={80}
+								profile={profile}
+								onChange={(recipients: RecipientListItem[]) => setValue("recipients", recipients, true)}
+								recipients={recipients}
+							/>
+						</div>
+
+						<FormField name="smartbridge" className="relative mt-1">
+							<div className="mb-2">
+								<FormLabel label="Smartbridge" />
+							</div>
+							<InputGroup>
+								<Input
+									data-testid="Input__smartbridge"
+									type="text"
+									placeholder=" "
+									className="pr-20"
+									maxLength={255}
+									defaultValue={smartbridge}
+									onChange={(event: any) => setValue("smartbridge", event.target.value, true)}
+								/>
+								<InputAddonEnd>
+									<button type="button" className="px-4 text-theme-neutral-light focus:outline-none">
+										255 Max
+									</button>
+								</InputAddonEnd>
+							</InputGroup>
+						</FormField>
+					</>
+				</SendTransactionForm>
 			</div>
 		</section>
 	);
