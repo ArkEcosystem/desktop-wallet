@@ -11,10 +11,9 @@ type TransactionDetailModalProps = {
 	isOpen: boolean;
 	transactionItem?: any;
 	onClose?: any;
-	onCancel?: any;
 };
 
-export const TransactionDetailModal = ({ isOpen, transactionItem, onClose, onCancel }: TransactionDetailModalProps) => {
+export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
 	const transactionType = transactionItem?.type();
 	let TransactionModal;
 
@@ -45,7 +44,7 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose, onCan
 		throw new Error(`Transaction type [${transactionType}] is not supported.`);
 	}
 
-	return <TransactionModal isOpen={isOpen} onClose={onClose} onCancel={onCancel} transaction={transactionItem} />;
+	return <TransactionModal isOpen={isOpen} onClose={onClose} transaction={transactionItem} />;
 };
 
 TransactionDetailModal.defaultProps = {
