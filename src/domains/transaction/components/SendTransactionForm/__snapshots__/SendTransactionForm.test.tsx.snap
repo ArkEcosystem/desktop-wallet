@@ -205,6 +205,7 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
       class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
       data-testid="FormLabel"
       for="fee"
+      label="Transaction Fee"
       required=""
     >
       Transaction Fee
@@ -485,6 +486,7 @@ exports[`SendTransactionForm should render 1`] = `
       class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
       data-testid="FormLabel"
       for="fee"
+      label="Transaction Fee"
       required=""
     >
       Transaction Fee
@@ -786,6 +788,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
       data-testid="FormLabel"
       for="fee"
+      label="Transaction Fee"
       required=""
     >
       Transaction Fee
