@@ -1,10 +1,10 @@
-// Modal Types
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { useActiveProfile } from "app/hooks/env";
 import { IpfsDetail } from "domains/transaction/components/IpfsDetail";
 import { MultiPaymentDetail } from "domains/transaction/components/MultiPaymentDetail";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransferDetail } from "domains/transaction/components/TransferDetail";
 import { VoteDetail } from "domains/transaction/components/VoteDetail";
-// Component
 import React from "react";
 
 type TransactionDetailModalProps = {
@@ -14,6 +14,10 @@ type TransactionDetailModalProps = {
 };
 
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
+	const activeProfile = useActiveProfile();
+	const ticker = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!;
+	const walletAlias = activeProfile.wallets().findByAddress(transactionItem?.recipient())?.alias();
+
 	const transactionType = transactionItem?.type();
 	let TransactionModal;
 
@@ -43,7 +47,15 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 		throw new Error(`Transaction type [${transactionType}] is not supported.`);
 	}
 
-	return <TransactionModal isOpen={isOpen} onClose={onClose} transaction={transactionItem} />;
+	return (
+		<TransactionModal
+			isOpen={isOpen}
+			onClose={onClose}
+			transaction={transactionItem}
+			ticker={ticker}
+			walletAlias={walletAlias}
+		/>
+	);
 };
 
 TransactionDetailModal.defaultProps = {
