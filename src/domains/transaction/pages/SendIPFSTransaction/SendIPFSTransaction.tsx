@@ -144,34 +144,6 @@ export const ThirdStep = () => {
 	);
 };
 
-// export const ThirdStep = () => {
-// 	const { t } = useTranslation();
-// 	const { register } = useFormContext();
-
-// 	useEffect(() => {
-// 		register("passphrase", { required: true });
-// 	}, [register]);
-
-// 	return (
-// 		<section data-testid="SendIPFSTransaction__step--third">
-// 			<div>
-// 				<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
-// 				<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
-
-// 				<div className="grid grid-flow-row">
-// 					<TransactionDetail
-// 						border={false}
-// 						label={t("TRANSACTION.ENCRYPTION_PASSWORD")}
-// 						className="pt-8 pb-0"
-// 					>
-// 						<InputPassword name="passphrase" ref={register({ required: true })} />
-// 					</TransactionDetail>
-// 				</div>
-// 			</div>
-// 		</section>
-// 	);
-// };
-
 export const FourthStep = ({ transaction }: { transaction: Contracts.TransactionData }) => (
 	<TransactionSuccessful transactionId={transaction.id()} />
 );
