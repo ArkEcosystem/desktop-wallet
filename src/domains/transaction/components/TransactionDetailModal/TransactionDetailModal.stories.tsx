@@ -14,6 +14,5 @@ export const Default = () => (
 		transactionItem={transactionItem}
 		isOpen={boolean("Is Open", true)}
 		onClose={() => alert("closed")}
-		onCancel={() => alert("closed")}
 	/>
 );
