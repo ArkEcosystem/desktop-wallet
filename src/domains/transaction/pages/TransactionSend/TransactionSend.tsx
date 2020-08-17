@@ -262,8 +262,6 @@ export const TransactionSend = () => {
 		const { fee, mnemonic, recipients, senderAddress, smartbridge } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
-		console.log("getValues", getValues());
-
 		const isMultiPayment = recipients.length > 1;
 		const transferInput = {
 			fee,
@@ -280,9 +278,9 @@ export const TransactionSend = () => {
 				transactionId = await senderWallet!.transaction().signMultiPayment({
 					...transferInput,
 					data: {
-						payments: recipients.map(({ recipient }: { recipient: Record<string, string> }) => ({
-							to: recipient.address,
-							amount: recipient.amount,
+						payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
+							to: address,
+							amount,
 						})),
 					},
 				});
@@ -296,8 +294,6 @@ export const TransactionSend = () => {
 					},
 				});
 			}
-
-			console.log("transactionId", transactionId);
 
 			await senderWallet!.transaction().broadcast([transactionId]);
 
