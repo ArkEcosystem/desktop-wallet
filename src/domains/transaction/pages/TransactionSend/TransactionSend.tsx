@@ -106,7 +106,7 @@ export const SecondStep = ({ profile }: any) => {
 				</div>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -258,22 +258,46 @@ export const TransactionSend = () => {
 
 	const submitForm = async () => {
 		clearError("mnemonic");
+
 		const { fee, mnemonic, recipients, senderAddress, smartbridge } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
+		console.log("getValues", getValues());
+
+		const isMultiPayment = recipients.length > 1;
+		const transferInput = {
+			fee,
+			from: senderAddress,
+			sign: {
+				mnemonic,
+			},
+		};
+
 		try {
-			const transactionId = await senderWallet!.transaction().signTransfer({
-				fee,
-				from: senderAddress,
-				sign: {
-					mnemonic,
-				},
-				data: {
-					amount: recipients[0].amount,
-					to: recipients[0].address,
-					memo: smartbridge,
-				},
-			});
+			let transactionId: string;
+
+			if (isMultiPayment) {
+				transactionId = await senderWallet!.transaction().signMultiPayment({
+					...transferInput,
+					data: {
+						payments: recipients.map(({ recipient }: { recipient: Record<string, string> }) => ({
+							to: recipient.address,
+							amount: recipient.amount,
+						})),
+					},
+				});
+			} else {
+				transactionId = await senderWallet!.transaction().signTransfer({
+					...transferInput,
+					data: {
+						to: recipients[0].address,
+						amount: recipients[0].amount,
+						memo: smartbridge,
+					},
+				});
+			}
+
+			console.log("transactionId", transactionId);
 
 			await senderWallet!.transaction().broadcast([transactionId]);
 

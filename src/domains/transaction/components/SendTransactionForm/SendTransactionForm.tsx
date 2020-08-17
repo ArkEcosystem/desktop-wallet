@@ -96,7 +96,7 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 			{children}
 
 			<FormField name="fee">
-				<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
+				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 				<InputFee
 					{...feeOptions}
 					defaultValue={fee || 0}
