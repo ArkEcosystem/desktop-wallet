@@ -53,7 +53,7 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 							/>
 						</div>
 
-						<FormField name="smartbridge" className="relative mt-1">
+						<FormField name="smartbridge" className="relative">
 							<div className="mb-2">
 								<FormLabel label="Smartbridge" />
 							</div>
@@ -336,7 +336,7 @@ export const TransactionSend = () => {
 								<FifthStep transaction={transaction} />
 							</TabPanel>
 
-							<div className="flex justify-end mt-8 space-x-3">
+							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 4 && (
 									<>
 										<Button

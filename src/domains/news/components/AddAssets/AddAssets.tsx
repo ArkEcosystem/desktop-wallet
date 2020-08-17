@@ -33,7 +33,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 			onClose={onClose}
 		>
 			<Form context={form} onSubmit={onUpdate}>
-				<FormField name="network" className="mt-8">
+				<FormField name="network" className="my-8">
 					<FormLabel>{t("COMMON.CRYPTOASSET")}</FormLabel>
 					<SelectNetwork
 						id="AddAssets__network"

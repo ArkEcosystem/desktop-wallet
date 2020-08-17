@@ -137,7 +137,7 @@ export const AddRecipient = ({
 		<AddRecipientWrapper>
 			<ToggleButtons isSingle={isSingle} onChange={(isSingle) => setIsSingle(isSingle)} />
 
-			<SubForm data-testid="add-recipient__form-wrapper" className="mt-8 mb-2" noBackground={isSingle}>
+			<SubForm data-testid="add-recipient__form-wrapper" className="mt-6" noBackground={isSingle}>
 				<div className="space-y-8">
 					<FormField name="recipientAddress" className="relative mt-1">
 						<div className="mb-2">

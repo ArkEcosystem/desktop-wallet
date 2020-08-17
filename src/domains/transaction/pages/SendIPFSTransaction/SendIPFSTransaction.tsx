@@ -268,7 +268,7 @@ export const SendIPFSTransaction = () => {
 								<FourthStep transaction={transaction} />
 							</TabPanel>
 
-							<div className="flex justify-end mt-8 space-x-2">
+							<div className="flex justify-end mt-10 space-x-2">
 								{activeTab < 4 && (
 									<>
 										<Button
