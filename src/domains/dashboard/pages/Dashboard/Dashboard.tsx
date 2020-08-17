@@ -33,8 +33,10 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const { t } = useTranslation();
 
 	const fetchMoreTransactions = async () => {
+		setIsLoadingTransactions(true);
 		const transactions = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
 
+		setIsLoadingTransactions(false);
 		return transactions && setAllTransactions(allTransactions?.concat(transactions));
 	};
 
@@ -109,6 +111,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 							transactions={allTransactions}
 							fetchMoreAction={fetchMoreTransactions}
 							onRowClick={(row: any) => setTransactionModalItem(row)}
+							isLoading={isLoadingTransactions}
 						/>
 					</Section>
 				)}
