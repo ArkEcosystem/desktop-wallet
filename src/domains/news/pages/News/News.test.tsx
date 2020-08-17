@@ -26,6 +26,8 @@ describe("News", () => {
 			.persist();
 
 		subject = new Blockfolio(httpClient);
+
+		window.scrollTo = jest.fn();
 	});
 
 	beforeAll(() => {
