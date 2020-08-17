@@ -28,7 +28,7 @@ type AnchorProps = {
 } & React.AnchorHTMLAttributes<any>;
 
 const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
-	({ isExternal, children, rel, ...props }: AnchorProps, ref) => (
+	({ isExternal, showExternalIcon, children, rel, ...props }: AnchorProps, ref) => (
 		<AnchorStyled
 			data-testid="Link"
 			isExternal={isExternal!}
@@ -42,7 +42,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
 			{...props}
 		>
 			{children}
-			{isExternal && (
+			{isExternal && showExternalIcon && (
 				<Icon
 					data-testid="Link__external"
 					name="Redirect"
@@ -59,6 +59,7 @@ type Props = {
 	isExternal?: boolean;
 	children?: React.ReactNode;
 	tooltip?: string;
+	showExternalIcon?: boolean;
 } & LinkProps;
 
 export const Link = ({ tooltip, ...props }: Props) => (
@@ -79,4 +80,5 @@ export const Link = ({ tooltip, ...props }: Props) => (
 
 Link.defaultProps = {
 	isExternal: false,
+	showExternalIcon: true,
 };
