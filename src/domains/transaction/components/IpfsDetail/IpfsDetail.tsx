@@ -15,7 +15,6 @@ type IpfsDetailProps = {
 	ticker?: string;
 	walletAlias?: string;
 	onClose?: any;
-	onCancel?: any;
 };
 
 const renderConfirmationStatus = (confirmations: BigNumber) => {
