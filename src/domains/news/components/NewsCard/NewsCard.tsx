@@ -15,7 +15,7 @@ type Props = {
 	coverImage?: string;
 } & BlockfolioSignal;
 
-export const NewsCard = ({ text, category, author, created_at: createdAt, coin, coverImage, links }: Props) => {
+export const NewsCard = ({ text, category, author, created_at: createdAt, coin, coverImage }: Props) => {
 	const { t } = useTranslation();
 
 	const asset: any = coins[coin];
@@ -59,7 +59,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coin, 
 
 				<Divider />
 
-				<p className="text-theme-neutral-dark" data-testid="NewsCard__content">
+				<p className="text-theme-neutral-dark whitespace-pre-line" data-testid="NewsCard__content">
 					<Linkify
 						componentDecorator={(pathname: string, text: string, key: number) => (
 							<Link to={{ pathname }} key={key} isExternal showExternalIcon={false}>
