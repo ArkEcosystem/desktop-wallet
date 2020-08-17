@@ -1,5 +1,5 @@
 import React from "react";
-import { act, fireEvent,render } from "testing-library";
+import { act, fireEvent, render } from "testing-library";
 
 import { assets, categories } from "../../data";
 import { translations } from "../../i18n";
