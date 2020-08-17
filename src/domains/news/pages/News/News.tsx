@@ -17,13 +17,16 @@ type Props = {
 	defaultCategories?: any[];
 	assets?: any[];
 	selectedCoin?: string;
-	pageItems?: number;
+	itemsPerPage?: number;
 };
 
-export const News = ({ defaultCategories = [], assets, selectedCoin, pageItems }: Props) => {
+export const News = ({ defaultCategories = [], assets, selectedCoin, itemsPerPage }: Props) => {
 	const activeProfile = useActiveProfile();
 	const [isLoading, setIsLoading] = useState(true);
 	const [blockfolio] = useState(() => new Blockfolio(httpClient));
+
+	const [totalCount, setTotalCount] = useState(0);
+	const [currentPage, setCurrentPage] = useState(1);
 
 	const [categories, setCategories] = useState(defaultCategories);
 	const [searchValue, setSearchValue] = useState("");
@@ -32,7 +35,7 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, pageItems }
 	const [filteredNews, setFilteredNews] = useState<BlockfolioSignal[]>([]);
 
 	const [coin] = useState(selectedCoin);
-	const skeletonCards = new Array(pageItems).fill({});
+	const skeletonCards = new Array(itemsPerPage).fill({});
 
 	const { t } = useTranslation();
 
@@ -43,19 +46,21 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, pageItems }
 		},
 	];
 
+	useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [currentPage]);
+
 	useEffect(() => {
 		const fetchNews = async () => {
-			console.log("fetching news");
 			setIsLoading(true);
-			const blockfolioNews: BlockfolioResponse = await blockfolio.findByCoin(coin as string);
+			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(coin as string, currentPage);
+			console.log("meta", meta);
 
-			setNews(blockfolioNews.data);
-			console.log("blockfolionews", blockfolioNews);
+			setNews(data);
 			setIsLoading(false);
+			setTotalCount(meta.total);
 		};
 
 		fetchNews();
-	}, [blockfolio, coin]);
+	}, [blockfolio, coin, currentPage]);
 
 	useEffect(() => {
 		const filterByCategories = (items: BlockfolioSignal[]) => {
@@ -77,7 +82,8 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, pageItems }
 	}, [news, searchValue, categories]);
 
 	const handleSelectPage = (page: number) => {
-		console.log("page", page);
+		setNews([]);
+		setCurrentPage(page);
 	};
 
 	return (
@@ -99,7 +105,7 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, pageItems }
 			<Section hasBackground={false}>
 				<div className="flex space-x-8">
 					<div className="w-full grid gap-5">
-						{isLoading && filteredNews.length === 0 && (
+						{isLoading && (
 							<div className="space-y-6">
 								{skeletonCards.map((_, key: number) => (
 									<NewsCardSkeleton key={key} />
@@ -117,11 +123,11 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, pageItems }
 
 						<div className="flex justify-center w-full pt-10">
 							<Pagination
-								totalCount={12}
-								itemsPerPage={4}
+								totalCount={totalCount}
+								itemsPerPage={itemsPerPage}
 								onSelectPage={handleSelectPage}
-								currentPage={1}
-								size="md"
+								currentPage={currentPage}
+								size="sm"
 							/>
 						</div>
 					</div>
@@ -143,5 +149,5 @@ News.defaultProps = {
 	defaultCategories,
 	assets,
 	selectedCoin: "ark",
-	pageItems: 10,
+	itemsPerPage: 10,
 };
