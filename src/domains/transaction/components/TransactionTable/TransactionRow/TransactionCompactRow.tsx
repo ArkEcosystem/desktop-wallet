@@ -13,7 +13,7 @@ type Props = {
 export const TransactionCompactRow = ({ transaction, walletName, ...props }: Props) => (
 	<tr
 		data-testid="TransactionCompactRow"
-		className="border-b border-dotted border-theme-neutral-300 cursor-pointer bg-opacity-10 hover:bg-theme-neutral-100"
+		className="border-b border-dotted cursor-pointer border-theme-neutral-300 bg-opacity-10 hover:bg-theme-neutral-100"
 		{...props}
 	>
 		<td className="w-24 py-3">
