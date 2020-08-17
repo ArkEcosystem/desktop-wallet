@@ -54,7 +54,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             class="flex-1"
           >
             <div
-              class="flex items-center py-6 true "
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             >
               <div
                 class="flex-1 space-y-2"
@@ -67,11 +67,12 @@ exports[`IpfsDetail should render a modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  ROBank
+                  Wallet 1
                   <span
-                    class="ml-2 text-theme-neutral"
+                    class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
+                    data-testid="TruncateMiddle"
                   >
-                    ADDR...ESSS
+                    ASuusX…GQ3kqT
                   </span>
                 </div>
               </div>
@@ -99,42 +100,11 @@ exports[`IpfsDetail should render a modal 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="test"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                      title="test"
+                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                     />
                   </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-            >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Amount
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  0.00 ARK
-                </div>
-              </div>
-              <div
-                class="sc-AxjAm bLfakz border-theme-danger-contrast text-theme-danger-400"
-              >
-                <div
-                  class="sc-AxirZ hPsuTj"
-                  height="16"
-                  width="16"
-                >
-                  <svg>
-                    sent.svg
-                  </svg>
                 </div>
               </div>
             </div>
@@ -152,7 +122,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  0.09812015 ARK
+                  21.00000000 BTC
                 </div>
               </div>
             </div>
@@ -173,7 +143,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                   <div
                     class="flex justify-between"
                   >
-                    QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco
+                    QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
                   </div>
                 </div>
               </div>
@@ -181,9 +151,9 @@ exports[`IpfsDetail should render a modal 1`] = `
                 class="sc-AxjAm bLfakz border-black"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="sc-AxirZ lfxaA-d"
+                  height="24"
+                  width="22"
                 >
                   <svg>
                     ipfs.svg
@@ -205,7 +175,303 @@ exports[`IpfsDetail should render a modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  14.04.2020 21:42:40
+                  31.07.2020 16:34:41
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  Confirmations
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex"
+                  >
+                    Not Confirmed
+                    <div
+                      class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
+                    >
+                      <div
+                        class="m-auto"
+                      >
+                        <div
+                          class="sc-AxirZ hDwaov"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            cross-slim.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  ID
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <span
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    ee4175…3ecefe
+                  </span>
+                  <span
+                    class="inline-block ml-4 text-theme-primary-300"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  Block ID
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <span
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    as32d1…165das
+                  </span>
+                  <span
+                    class="inline-block ml-4 text-theme-primary-300"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`IpfsDetail should render as confirmed 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      data-testid="modal__inner"
+    >
+      <div
+        class="relative"
+      >
+        <div
+          class="absolute top-0 right-0 z-50 mt-5"
+        >
+          <button
+            class="sc-AxiKw ha-DbdM"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
+          >
+            <div
+              class="p-1"
+            >
+              <div
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Transaction IPFS Hash
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  Sender
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  Wallet 1
+                  <span
+                    class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
+                    data-testid="TruncateMiddle"
+                  >
+                    ASuusX…GQ3kqT
+                  </span>
+                </div>
+              </div>
+              <div
+                class="flex items-center"
+              >
+                <div
+                  class="sc-AxjAm bLfakz -mr-2 border-black"
+                >
+                  <div
+                    class="sc-AxirZ dCVESD"
+                    height="25"
+                    width="25"
+                  >
+                    <svg>
+                      delegate.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  Transaction Fee
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  21.00000000 BTC
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  IPFS Hash
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex justify-between"
+                  >
+                    QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-AxjAm bLfakz border-black"
+              >
+                <div
+                  class="sc-AxirZ lfxaA-d"
+                  height="24"
+                  width="22"
+                >
+                  <svg>
+                    ipfs.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  Timestamp
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  31.07.2020 16:34:41
                 </div>
               </div>
             </div>
@@ -263,9 +529,10 @@ exports[`IpfsDetail should render a modal 1`] = `
                   class="font-semibold"
                 >
                   <span
-                    class="text-theme-primary-dark"
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
                   >
-                    1234678...12312313
+                    ee4175…3ecefe
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"
@@ -298,9 +565,10 @@ exports[`IpfsDetail should render a modal 1`] = `
                   class="font-semibold"
                 >
                   <span
-                    class="text-theme-primary-dark"
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
                   >
-                    1234678...12312313
+                    as32d1…165das
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"

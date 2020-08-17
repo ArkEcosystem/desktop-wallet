@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TransferDetail should not render if not open 1`] = `
-<DocumentFragment>
-  ,
-</DocumentFragment>
-`;
+exports[`TransferDetail should not render if not open 1`] = `<DocumentFragment />`;
 
 exports[`TransferDetail should render a modal 1`] = `
 <DocumentFragment>
@@ -371,7 +367,6 @@ exports[`TransferDetail should render a modal 1`] = `
       </div>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;
 
@@ -740,7 +735,6 @@ exports[`TransferDetail should render as confirmed 1`] = `
       </div>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;
 
@@ -1109,7 +1103,6 @@ exports[`TransferDetail should render as not is sent 1`] = `
       </div>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;
 
@@ -1214,12 +1207,12 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  ARK Wallet 1
+                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   <span
                     class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
                     data-testid="TruncateMiddle"
                   >
-                    D8rr7B…s6YUYD
+                    ASuusX…GQ3kqT
                   </span>
                 </div>
               </div>
@@ -1247,9 +1240,9 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                     />
                   </div>
                 </div>
@@ -1479,6 +1472,5 @@ exports[`TransferDetail should render with wallet alias 1`] = `
       </div>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;

@@ -11954,15 +11954,923 @@ exports[`Dashboard should render with no wallets 1`] = `
                     </thead>
                     <tbody
                       role="rowgroup"
-                    />
+                    >
+                      <tr
+                        class="border-b border-dotted border-theme-neutral-300"
+                        data-testid="TransactionRow__skeleton"
+                      >
+                        <td
+                          class="w-16 py-6"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 24px; height: 24px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-48 py-1 text-sm text-theme-neutral-600"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-32 py-2"
+                        >
+                          <span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 ml-2 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-16 text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                        >
+                          <span
+                            class="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200"
+                          >
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 80%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                          data-testid="TransactionRow__currency"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted border-theme-neutral-300"
+                        data-testid="TransactionRow__skeleton"
+                      >
+                        <td
+                          class="w-16 py-6"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 24px; height: 24px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-48 py-1 text-sm text-theme-neutral-600"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-32 py-2"
+                        >
+                          <span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 ml-2 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-16 text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                        >
+                          <span
+                            class="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200"
+                          >
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 80%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                          data-testid="TransactionRow__currency"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted border-theme-neutral-300"
+                        data-testid="TransactionRow__skeleton"
+                      >
+                        <td
+                          class="w-16 py-6"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 24px; height: 24px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-48 py-1 text-sm text-theme-neutral-600"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-32 py-2"
+                        >
+                          <span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 ml-2 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-16 text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                        >
+                          <span
+                            class="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200"
+                          >
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 80%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                          data-testid="TransactionRow__currency"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted border-theme-neutral-300"
+                        data-testid="TransactionRow__skeleton"
+                      >
+                        <td
+                          class="w-16 py-6"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 24px; height: 24px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-48 py-1 text-sm text-theme-neutral-600"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-32 py-2"
+                        >
+                          <span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 ml-2 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-16 text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                        >
+                          <span
+                            class="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200"
+                          >
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 80%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                          data-testid="TransactionRow__currency"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted border-theme-neutral-300"
+                        data-testid="TransactionRow__skeleton"
+                      >
+                        <td
+                          class="w-16 py-6"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 24px; height: 24px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-48 py-1 text-sm text-theme-neutral-600"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-32 py-2"
+                        >
+                          <span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 ml-2 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-16 text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                        >
+                          <span
+                            class="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200"
+                          >
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 80%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                          data-testid="TransactionRow__currency"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted border-theme-neutral-300"
+                        data-testid="TransactionRow__skeleton"
+                      >
+                        <td
+                          class="w-16 py-6"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 24px; height: 24px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-48 py-1 text-sm text-theme-neutral-600"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-32 py-2"
+                        >
+                          <span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 ml-2 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-16 text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                        >
+                          <span
+                            class="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200"
+                          >
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 80%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                          data-testid="TransactionRow__currency"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted border-theme-neutral-300"
+                        data-testid="TransactionRow__skeleton"
+                      >
+                        <td
+                          class="w-16 py-6"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 24px; height: 24px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-48 py-1 text-sm text-theme-neutral-600"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-32 py-2"
+                        >
+                          <span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 ml-2 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-16 text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                        >
+                          <span
+                            class="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200"
+                          >
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 80%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                          data-testid="TransactionRow__currency"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted border-theme-neutral-300"
+                        data-testid="TransactionRow__skeleton"
+                      >
+                        <td
+                          class="w-16 py-6"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 24px; height: 24px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-48 py-1 text-sm text-theme-neutral-600"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-32 py-2"
+                        >
+                          <span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 ml-2 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 40%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 80%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="w-16 text-center"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                        >
+                          <span
+                            class="px-2 pt-2 mt-1 border-2 rounded-lg border-theme-neutral-200"
+                          >
+                            <span>
+                              <span
+                                class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                                style="width: 80%; height: 6px;"
+                              >
+                                ‌
+                              </span>
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          class="text-right"
+                          data-testid="TransactionRow__currency"
+                        >
+                          <span>
+                            <span
+                              class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 60%; height: 6px;"
+                            >
+                              ‌
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
                 </div>
               </div>
-            </div>
-            <div
-              class="text-theme-neutral-dark"
-            >
-              This will display the history of your transactions. But you don't have more than one transaction at the moment.
             </div>
           </div>
         </div>
