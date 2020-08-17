@@ -14,7 +14,7 @@ exports[`NewsOptions should render 1`] = `
       >
         <input
           class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
-          data-testid="Input"
+          data-testid="NewsOptions__search"
           placeholder="Search"
         />
         <div
@@ -49,6 +49,7 @@ exports[`NewsOptions should render 1`] = `
         >
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-All"
           >
             <input
               checked=""
@@ -65,6 +66,7 @@ exports[`NewsOptions should render 1`] = `
           </label>
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-Technical"
           >
             <input
               class="SelectCategory__Input-k7qbth-0 dbODum"
@@ -80,6 +82,7 @@ exports[`NewsOptions should render 1`] = `
           </label>
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-Marketing"
           >
             <input
               class="SelectCategory__Input-k7qbth-0 dbODum"
@@ -95,6 +98,7 @@ exports[`NewsOptions should render 1`] = `
           </label>
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-Community"
           >
             <input
               class="SelectCategory__Input-k7qbth-0 dbODum"
@@ -110,6 +114,7 @@ exports[`NewsOptions should render 1`] = `
           </label>
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-Emergency"
           >
             <input
               class="SelectCategory__Input-k7qbth-0 dbODum"

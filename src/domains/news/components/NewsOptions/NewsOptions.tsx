@@ -18,7 +18,7 @@ type Props = {
 };
 
 export const NewsOptions = ({
-	defaultCategories = [],
+	defaultCategories,
 	selectedAssets,
 	onCategoryChange,
 	onSearch,
@@ -31,7 +31,7 @@ export const NewsOptions = ({
 	const [searchQuery, setSearchQuery] = useState("");
 
 	const handleCategoryChange = (name: string, isSelected: boolean) => {
-		const updatedCategories = categories.map((categoryItem: any) =>
+		const updatedCategories = categories?.map((categoryItem: any) =>
 			name === categoryItem.name ? { name, isSelected } : categoryItem,
 		);
 
@@ -45,7 +45,7 @@ export const NewsOptions = ({
 			isSelected: asset.name === selectedAsset.name,
 		}));
 		setAssets(updatedAssets);
-		onAssetChange?.(updatedAssets, selectedAsset);
+		onAssetChange?.(updatedAssets, { ...selectedAsset, isSelected: true });
 	};
 
 	const handleSearchInput = (query: string) => {
@@ -69,6 +69,7 @@ export const NewsOptions = ({
 			<div className="flex flex-col space-y-8">
 				<div className="flex items-center justify-between px-2 py-4 shadow-xl rounded-md">
 					<Input
+						data-testid="NewsOptions__search"
 						onChange={(e) => handleSearchInput?.((e.target as HTMLInputElement).value)}
 						className="border-none shadow-none NewsOptions__search"
 						placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
@@ -85,6 +86,9 @@ export const NewsOptions = ({
 					<div className="flex flex-wrap -mx-1">
 						{categories?.map((category, index) => (
 							<SelectCategory
+								data-testid={`NewsOptions__category-${t(
+									`NEWS.CATEGORIES.${category.name.toUpperCase()}`,
+								)}`}
 								key={index}
 								className="p-1"
 								defaultChecked={category.isSelected}
