@@ -46,7 +46,6 @@ const renderConfirmationStatus = (confirmations: BigNumber) => {
 
 export const IpfsDetail = (props: IpfsDetailProps) => {
 	const { t } = useTranslation();
-	console.log({ transaction: props.transaction });
 
 	const renderSender = () => {
 		if (props.walletAlias) {
