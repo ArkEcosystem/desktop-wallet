@@ -15,12 +15,12 @@ import { assets, categories as defaultCategories } from "../../data";
 
 type Props = {
 	defaultCategories?: any[];
-	assets?: any[];
+	defaultAssets: any[];
 	selectedCoin?: string;
 	itemsPerPage?: number;
 };
 
-export const News = ({ defaultCategories = [], assets, selectedCoin, itemsPerPage }: Props) => {
+export const News = ({ defaultCategories = [], defaultAssets, selectedCoin, itemsPerPage }: Props) => {
 	const activeProfile = useActiveProfile();
 	const [isLoading, setIsLoading] = useState(true);
 	const [blockfolio] = useState(() => new Blockfolio(httpClient));
@@ -28,14 +28,17 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, itemsPerPag
 	const [totalCount, setTotalCount] = useState(0);
 	const [currentPage, setCurrentPage] = useState(1);
 
-	const [categories, setCategories] = useState(defaultCategories);
-	const [searchValue, setSearchValue] = useState("");
+	const [{ categories, searchQuery, assets }, setFilters] = useState({
+		searchQuery: "",
+		categories: defaultCategories,
+		assets: defaultAssets,
+	});
 
 	const [news, setNews] = useState<BlockfolioSignal[]>([]);
 	const [filteredNews, setFilteredNews] = useState<BlockfolioSignal[]>([]);
 
-	const [coin] = useState(selectedCoin);
-	const skeletonCards = new Array(itemsPerPage).fill({});
+	const [coin, setCoin] = useState(selectedCoin);
+	const skeletonCards = new Array(6).fill({});
 
 	const { t } = useTranslation();
 
@@ -46,21 +49,26 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, itemsPerPag
 		},
 	];
 
-	useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [currentPage]);
+	useEffect(() => window.scrollTo({ top: 100, behavior: "smooth" }), [currentPage]);
 
 	useEffect(() => {
 		const fetchNews = async () => {
 			setIsLoading(true);
-			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(coin as string, currentPage);
-			console.log("meta", meta);
+			setNews([]);
 
+			const selectedAsset = assets.find((asset: any) => asset.isSelected);
+			const selectedCoinName = selectedAsset.coin.toLowerCase();
+
+			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(selectedCoinName, currentPage);
+
+			setCoin(selectedCoinName);
 			setNews(data);
 			setIsLoading(false);
 			setTotalCount(meta.total);
 		};
 
 		fetchNews();
-	}, [blockfolio, coin, currentPage]);
+	}, [blockfolio, currentPage, categories, searchQuery, assets]);
 
 	useEffect(() => {
 		const filterByCategories = (items: BlockfolioSignal[]) => {
@@ -70,20 +78,25 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, itemsPerPag
 			return items.filter((item) => selecteCategoryNames.includes(item.category));
 		};
 
-		const filterBySearchInput = (input: string, items: BlockfolioSignal[]) => {
+		const filterBySearchQuery = (input: string, items: BlockfolioSignal[]) => {
 			const searchInput = input.trim().toLowerCase();
 			return items.filter((item) => item.text.toLowerCase().match(searchInput));
 		};
 
 		const byCategory = filterByCategories(news);
-		const bySearchInput = filterBySearchInput(searchValue, byCategory);
+		const bySearchInput = filterBySearchQuery(searchQuery, byCategory);
 
 		setFilteredNews(bySearchInput);
-	}, [news, searchValue, categories]);
+	}, [news, searchQuery, categories]);
 
 	const handleSelectPage = (page: number) => {
 		setNews([]);
 		setCurrentPage(page);
+	};
+
+	const handleFilterSubmit = (data: any) => {
+		setCurrentPage(1);
+		setFilters(data);
 	};
 
 	return (
@@ -103,8 +116,10 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, itemsPerPag
 			</Section>
 
 			<Section hasBackground={false}>
-				<div className="flex space-x-8">
-					<div className="w-full grid gap-5">
+				<div className="flex space-x-8 container">
+					<div className="w-4/6 flex-none">
+						{!isLoading && filteredNews.length === 0 && <div className="m-4 text-lg">No results</div>}
+
 						{isLoading && (
 							<div className="space-y-6">
 								{skeletonCards.map((_, key: number) => (
@@ -113,11 +128,15 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, itemsPerPag
 							</div>
 						)}
 
-						{filteredNews?.map((data, index) => (
-							<NewsCard key={index} coin={coin} {...data} />
-						))}
+						{!isLoading && (
+							<div className="space-y-6">
+								{filteredNews?.map((data, index) => (
+									<NewsCard key={index} coin={coin} {...data} />
+								))}
+							</div>
+						)}
 
-						<div className="mb-10">
+						<div className="my-10">
 							<BlockfolioAd />
 						</div>
 
@@ -131,12 +150,11 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, itemsPerPag
 							/>
 						</div>
 					</div>
-					<div className="max-w-xl">
+					<div className="w-2/6 flex-none">
 						<NewsOptions
-							defaultCategories={categories}
+							defaultCategories={defaultCategories}
 							selectedAssets={assets}
-							onCategoryChange={setCategories}
-							onSearch={setSearchValue}
+							onSubmit={handleFilterSubmit}
 						/>
 					</div>
 				</div>
@@ -147,7 +165,7 @@ export const News = ({ defaultCategories = [], assets, selectedCoin, itemsPerPag
 
 News.defaultProps = {
 	defaultCategories,
-	assets,
+	defaultAssets: assets,
 	selectedCoin: "ark",
 	itemsPerPage: 10,
 };
