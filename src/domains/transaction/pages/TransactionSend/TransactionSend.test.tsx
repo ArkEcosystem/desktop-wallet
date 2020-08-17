@@ -17,7 +17,7 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
-import transactionFixture from "tests/fixtures/coins/ark/transaction.json";
+import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
