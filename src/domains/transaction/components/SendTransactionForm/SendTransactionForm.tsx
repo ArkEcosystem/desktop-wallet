@@ -22,7 +22,7 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 
 	const form = useFormContext();
 	const { getValues, setValue } = form;
-	const { network, recipients, senderAddress, smartbridge } = form.watch();
+	const { network, senderAddress } = form.watch();
 	const [feeOptions, setFeeOptions] = useState({
 		last: undefined,
 		min: (0 * 1e8).toFixed(0),
