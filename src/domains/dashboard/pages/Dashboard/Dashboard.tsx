@@ -118,7 +118,6 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 					isOpen={Boolean(transactionModalItem)}
 					transactionItem={transactionModalItem}
 					onClose={() => setTransactionModalItem(null)}
-					onCancel={() => setTransactionModalItem(null)}
 				/>
 			)}
 		</>
