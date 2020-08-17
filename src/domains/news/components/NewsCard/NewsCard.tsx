@@ -8,6 +8,7 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { coins } from "domains/news/data";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import Linkify from "react-linkify";
 
 type Props = {
 	coin: any;
@@ -18,24 +19,6 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coin, 
 	const { t } = useTranslation();
 
 	const asset: any = coins[coin];
-
-	const renderLink = (link: string, key: number) => (
-		<Link to={{ pathname: link }} isExternal showExternalIcon={false} key={key}>
-			{link}
-		</Link>
-	);
-
-	const highlightLink = (link: string, text: string) => {
-		const parts = text.split(link);
-
-		return parts.reduce<any>((acc: any[], current: any, index: number) => {
-			if (!current) return acc;
-
-			acc.push(<span key={index}>{current}</span>);
-			acc.push(renderLink(link, index + 1));
-			return acc;
-		}, []);
-	};
 
 	return (
 		<Card className="bg-theme-background">
@@ -77,7 +60,15 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coin, 
 				<Divider />
 
 				<p className="text-theme-neutral-dark" data-testid="NewsCard__content">
-					{highlightLink(links[0], text)}
+					<Linkify
+						componentDecorator={(pathname: string, text: string, key: number) => (
+								<Link to={{ pathname }} key={key} isExternal showExternalIcon={false}>
+									{text}
+								</Link>
+							)}
+					>
+						{text}
+					</Linkify>
 				</p>
 
 				{coverImage && (
