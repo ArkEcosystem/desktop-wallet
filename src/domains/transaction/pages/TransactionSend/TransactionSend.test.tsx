@@ -46,7 +46,7 @@ describe("Transaction Send", () => {
 
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FirstStep profile={profile} />
+				<FirstStep networks={[]} profile={profile} />
 			</FormContext>,
 		);
 
@@ -73,7 +73,7 @@ describe("Transaction Send", () => {
 
 		const { asFragment, container, getByTestId } = render(
 			<FormContext {...form.current}>
-				<SecondStep profile={profile} />
+				<SecondStep wallet={wallet} />
 			</FormContext>,
 		);
 
