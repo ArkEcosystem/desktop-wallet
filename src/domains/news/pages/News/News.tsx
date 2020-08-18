@@ -160,5 +160,5 @@ News.defaultProps = {
 	defaultCategories,
 	defaultAssets: assets,
 	selectedCoin: "ark",
-	itemsPerPage: 10,
+	itemsPerPage: 15,
 };
