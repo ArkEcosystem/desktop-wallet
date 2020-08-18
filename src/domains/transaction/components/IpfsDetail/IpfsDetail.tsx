@@ -100,7 +100,7 @@ export const IpfsDetail = (props: IpfsDetailProps) => {
 					</Circle>
 				}
 			>
-				<div className="flex justify-between">{props.transaction.data.asset.ipfs}</div>
+				<div className="flex justify-between">{props.transaction.hash()}</div>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>
