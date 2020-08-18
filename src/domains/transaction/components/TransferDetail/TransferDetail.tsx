@@ -17,7 +17,6 @@ type TransferDetailProps = {
 	onCancel?: any;
 	transaction: any;
 	ticker?: string;
-	walletAlias?: string;
 };
 
 const renderConfirmationStatus = (confirmations: BigNumber) => {
@@ -100,8 +99,6 @@ export const TransferDetail = (props: TransferDetailProps) => {
 					<Label color="danger">{`${props.transaction
 						.amount()
 						.toHuman()} ${props.ticker?.toUpperCase()}`}</Label>
-
-					<span className="ml-2 text-theme-neutral">23,000.00 USD</span>
 				</TransactionDetail>
 			);
 		}
@@ -118,8 +115,6 @@ export const TransferDetail = (props: TransferDetailProps) => {
 				<Label color="success">{`${props.transaction
 					.amount()
 					.toHuman()} ${props.ticker?.toUpperCase()}`}</Label>
-
-				<span className="ml-2 text-theme-neutral">23,000.00 USD</span>
 			</TransactionDetail>
 		);
 	};

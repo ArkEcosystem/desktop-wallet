@@ -20,7 +20,7 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 	return (
 		<div className="text-theme-neutral-dark hover:text-theme-primary">
 			<div className="flex items-center mb-2 space-x-2">
-				<div className="font-normal text-md transition-colors duration-100">
+				<div className="font-normal transition-colors duration-100 text-md">
 					{t("TRANSACTION.SINGLE_OR_MULTI")}
 				</div>
 				<div>
@@ -81,9 +81,7 @@ export const AddRecipient = ({
 		defaultValues.amount = BigNumber.make(addedRecipients[0].amount).toHuman(8);
 	}
 
-	const form = useForm({
-		defaultValues,
-	});
+	const form = useForm({ defaultValues });
 
 	const { getValues, setValue, register } = form;
 	const { recipientAddress, amount } = form.watch();
@@ -137,7 +135,7 @@ export const AddRecipient = ({
 		<AddRecipientWrapper>
 			<ToggleButtons isSingle={isSingle} onChange={(isSingle) => setIsSingle(isSingle)} />
 
-			<SubForm data-testid="add-recipient__form-wrapper" className="mt-8 mb-2" noBackground={isSingle}>
+			<SubForm data-testid="add-recipient__form-wrapper" className="mt-6" noBackground={isSingle}>
 				<div className="space-y-8">
 					<FormField name="recipientAddress" className="relative mt-1">
 						<div className="mb-2">
@@ -174,7 +172,7 @@ export const AddRecipient = ({
 								className="pr-20"
 								ref={register}
 								onChange={singleRecipientOnChange}
-								value={amount}
+								defaultValue={amount}
 							/>
 							<InputAddonEnd>
 								<button
