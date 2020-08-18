@@ -21,9 +21,11 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const FirstStep = () => {
-	const { register, setValue } = useFormContext();
+	const { getValues, register, setValue } = useFormContext();
 	const context = useEnvironmentContext();
 	const networks = useMemo(() => context.env.availableNetworks(), [context]);
+
+	const selectedNetwork: NetworkData = getValues("network");
 
 	const { t } = useTranslation();
 
@@ -48,7 +50,12 @@ export const FirstStep = () => {
 					<div className="mb-2">
 						<FormLabel label={t("COMMON.NETWORK")} />
 					</div>
-					<SelectNetwork id="ImportWallet__network" networks={networks} onSelect={handleSelect} />
+					<SelectNetwork
+						id="ImportWallet__network"
+						networks={networks}
+						selected={selectedNetwork}
+						onSelect={handleSelect}
+					/>
 				</FormField>
 			</div>
 		</section>
@@ -153,7 +160,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 	);
 };
 
-export const ThirdStep = ({ address }: { address: string }) => {
+export const ThirdStep = ({ address, nameMaxLength }: { address: string; nameMaxLength: number }) => {
 	const { getValues, register } = useFormContext();
 	const network: NetworkData = getValues("network");
 	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
@@ -196,7 +203,18 @@ export const ThirdStep = ({ address }: { address: string }) => {
 
 			<FormField name="name">
 				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} />
-				<Input ref={register} data-testid="ImportWallet__name-input" />
+				<Input
+					ref={register({
+						maxLength: {
+							value: nameMaxLength,
+							message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
+								maxLength: nameMaxLength,
+							}),
+						},
+					})}
+					data-testid="ImportWallet__name-input"
+				/>
+				<FormHelperText />
 			</FormField>
 		</section>
 	);
@@ -215,6 +233,7 @@ export const ImportWallet = () => {
 
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;
+	const nameMaxLength = 42;
 
 	const crumbs = [
 		{
@@ -256,7 +275,8 @@ export const ImportWallet = () => {
 			setActiveTab(activeTab + 1);
 		} else {
 			if (name) {
-				activeProfile.wallets().findById(walletData?.id()).settings().set(WalletSetting.Alias, name);
+				const formattedName = name.substring(0, nameMaxLength);
+				activeProfile.wallets().findById(walletData?.id()).settings().set(WalletSetting.Alias, formattedName);
 				await persist();
 			}
 
@@ -284,7 +304,7 @@ export const ImportWallet = () => {
 								<SecondStep profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep address={walletData?.address() as string} />
+								<ThirdStep address={walletData?.address() as string} nameMaxLength={nameMaxLength} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -321,7 +341,7 @@ export const ImportWallet = () => {
 
 								{activeTab === 3 && (
 									<Button
-										disabled={!formState.isValid || formState.isSubmitting}
+										disabled={formState.isSubmitting}
 										type="submit"
 										data-testid="ImportWallet__save-button"
 									>

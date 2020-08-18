@@ -5,87 +5,95 @@ exports[`ProfileCreated should not render if not open 1`] = `<DocumentFragment /
 exports[`ProfileCreated should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-AxiKw cTRlJa fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
+    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
   >
     <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
-    >
-      <button
-        class="sc-AxjAm bThAoP"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
-      >
-        <div
-          class="p-1"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
     <div
-      class="py-4"
+      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      data-testid="modal__inner"
     >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Profile Created!
-      </h2>
       <div
-        class="flex-1"
+        class="relative"
       >
-        <svg
-          class="my-8"
-        >
-          profile-created-banner.svg
-        </svg>
         <div
-          class="container"
+          class="absolute top-0 right-0 z-50 mt-5"
         >
-          <div
-            class="mb-8 text-center"
+          <button
+            class="sc-AxjAm bThAoP"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            <p
-              class="mb-1 text-sm text-theme-neutral-dark md:text-base"
+            <div
+              class="p-1"
             >
-              If you are new to the ARK Desktop Wallet, view our tutorial to get started.
-            </p>
-            <p
-              class="text-sm text-theme-neutral-dark md:text-base"
-            >
-              If not, you can skip the tutorial to go directly to your portfolio.
-            </p>
-          </div>
-          <div
-            class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
+              <div
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
           >
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              type="button"
+            Profile Created!
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <svg
+              class="my-8"
             >
-              Start Tutorial
-            </button>
-            <button
-              class="sc-AxjAm ddJBbC mt-2 sm:mt-0"
-              color="primary"
-              type="button"
+              profile-created-banner.svg
+            </svg>
+            <div
+              class="container"
             >
-              Skip Tutorial
-            </button>
+              <div
+                class="mb-8 text-center"
+              >
+                <p
+                  class="mb-1 text-sm text-theme-neutral-dark md:text-base"
+                >
+                  If you are new to the ARK Desktop Wallet, view our tutorial to get started.
+                </p>
+                <p
+                  class="text-sm text-theme-neutral-dark md:text-base"
+                >
+                  If not, you can skip the tutorial to go directly to your portfolio.
+                </p>
+              </div>
+              <div
+                class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
+              >
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  type="button"
+                >
+                  Start Tutorial
+                </button>
+                <button
+                  class="sc-AxjAm ddJBbC mt-2 sm:mt-0"
+                  color="primary"
+                  type="button"
+                >
+                  Skip Tutorial
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

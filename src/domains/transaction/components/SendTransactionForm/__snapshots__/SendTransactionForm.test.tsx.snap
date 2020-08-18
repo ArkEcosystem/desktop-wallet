@@ -1,235 +1,183 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SendTransactionForm should change sender & route 1`] = `<div />`;
+
 exports[`SendTransactionForm should only update fees if provided 1`] = `
 <div>
-  <fieldset
-    class="sc-AxjAm fmGClo relative mt-1"
+  <div
+    class="SendTransactionForm space-y-8"
   >
-    <div
-      class="mb-2"
+    <fieldset
+      class="sc-AxjAm fmGClo relative"
     >
-      <label
-        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-        data-testid="FormLabel"
-        for="network"
-        label="Network"
-        required=""
-      >
-        Network
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-    </div>
-    <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="SendTransactionForm__network-menu"
-      data-testid="SelectNetwork"
-      role="combobox"
-    >
-      <label
-        for="SendTransactionForm__network-input"
-        id="SendTransactionForm__network-label"
-      />
       <div
-        class="sc-AxheI IkGcK"
-        data-testid="SelectNetworkInput"
+        class="mb-2"
       >
+        <label
+          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="network"
+          label="Network"
+          required=""
+        >
+          Network
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="SendTransactionForm__network-menu"
+        data-testid="SelectNetwork"
+        role="combobox"
+      >
+        <label
+          for="SendTransactionForm__network-input"
+          id="SendTransactionForm__network-label"
+        />
         <div
-          class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+          class="sc-Axmtr jzhOwR"
+          data-testid="SelectNetworkInput"
         >
           <div
-            aria-label="Ark Devnet"
-            class="sc-fzoLsD jpdwCK border-theme-primary-100 text-theme-primary-400"
-            data-testid="SelectNetworkInput__network"
+            class="sc-AxhUy sc-AxgMl kAPRWA px-4"
           >
             <div
-              class="sc-AxiKw dzBdqj"
+              class="sc-AxirZ HSPq border-theme-neutral-light text-theme-neutral"
+              data-testid="SelectNetworkInput__network"
+            />
+          </div>
+          <input
+            aria-autocomplete="list"
+            aria-controls="SendTransactionForm__network-menu"
+            aria-labelledby="SendTransactionForm__network-label"
+            autocomplete="off"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+            data-testid="SelectNetworkInput__input"
+            disabled=""
+            id="SendTransactionForm__network-input"
+            placeholder="Enter a network name"
+            value=""
+          />
+        </div>
+      </div>
+      <ul
+        aria-labelledby="SendTransactionForm__network-label"
+        class="mt-6 grid grid-cols-6 gap-6"
+        id="SendTransactionForm__network-menu"
+        role="listbox"
+      >
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          disabled=""
+          id="SendTransactionForm__network-item-0"
+          role="option"
+        >
+          <div
+            aria-label="Ark"
+            class="sc-AxirZ jatHdy border-theme-danger-light text-theme-danger-400"
+            data-testid="NetworkIcon-ARK-mainnet"
+          >
+            <div
+              class="sc-AxiKw fubePL"
               data-testid="NetworkIcon__icon"
-              height="1em"
-              width="1em"
+              height="26"
+              width="26"
             >
               <svg>
                 ark.svg
               </svg>
             </div>
           </div>
-        </div>
-        <span
-          class="sc-AxhCb dfnXnk py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-          data-testid="SelectNetworkInput__typeahead"
-        >
-          Ark Devnet
-        </span>
-        <input
-          aria-autocomplete="list"
-          aria-controls="SendTransactionForm__network-menu"
-          aria-labelledby="SendTransactionForm__network-label"
-          autocomplete="off"
-          class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-          data-testid="SelectNetworkInput__input"
-          id="SendTransactionForm__network-input"
-          placeholder="Enter a network name"
-          value="Ark Devnet"
-        />
-      </div>
-    </div>
-    <ul
-      aria-labelledby="SendTransactionForm__network-label"
-      class="my-6 grid grid-cols-6 gap-6"
-      id="SendTransactionForm__network-menu"
-      role="listbox"
-    >
-      <li
-        aria-selected="false"
-        class="inline-block cursor-pointer"
-        data-testid="SelectNetwork__NetworkIcon--container"
-        id="SendTransactionForm__network-item-0"
-        role="option"
-      >
-        <div
-          aria-label="Ark"
-          class="sc-fzoLsD lgcyhO text-theme-neutral-light"
-          data-testid="NetworkIcon-ARK-mainnet"
+        </li>
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          disabled=""
+          id="SendTransactionForm__network-item-1"
+          role="option"
         >
           <div
-            class="sc-AxiKw fubePL"
-            data-testid="NetworkIcon__icon"
-            height="26"
-            width="26"
-          >
-            <svg>
-              ark.svg
-            </svg>
-          </div>
-        </div>
-      </li>
-      <li
-        aria-selected="false"
-        class="inline-block cursor-pointer"
-        data-testid="SelectNetwork__NetworkIcon--container"
-        id="SendTransactionForm__network-item-1"
-        role="option"
-      >
-        <div
-          aria-label="Ark Devnet"
-          class="sc-fzoLsD lgcyhO text-theme-success-500 border-theme-success-200"
-          data-testid="NetworkIcon-ARK-devnet"
-        >
-          <div
-            class="sc-AxiKw fubePL"
-            data-testid="NetworkIcon__icon"
-            height="26"
-            width="26"
-          >
-            <svg>
-              ark.svg
-            </svg>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </fieldset>
-  <fieldset
-    class="sc-AxjAm fmGClo relative mt-1"
-  >
-    <div
-      class="mb-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-        data-testid="FormLabel"
-        for="senderAddress"
-        label="Sender"
-        required=""
-      >
-        Sender
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-    </div>
-    <div
-      data-testid="sender-address"
-    >
-      <div>
-        <button
-          class="sc-fznZeY jUYMgc SelectAddress  "
-          data-testid="SelectAddress__wrapper"
-          type="button"
-        >
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mx-4"
-            data-testid="Avatar"
+            aria-label="Ark Devnet"
+            class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
           >
             <div
-              class="w-full h-full"
-            >
-              <img
-                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-              />
-            </div>
-          </div>
-          <div
-            class="inline-block truncate align-middle"
-          >
-            <span
-              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
-              data-testid="address__wallet-address"
-            >
-              D5sRKWckH4rE1…AepgyC3cvJtwb
-            </span>
-          </div>
-          <div
-            class="absolute flex items-center right-4 space-x-3"
-          >
-            <div
-              class="sc-AxiKw dklFyP"
-              height="20"
-              width="20"
+              class="sc-AxiKw fubePL"
+              data-testid="NetworkIcon__icon"
+              height="26"
+              width="26"
             >
               <svg>
-                user.svg
+                ark.svg
               </svg>
             </div>
           </div>
-        </button>
-        <input
-          class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
-          data-testid="SelectAddress__input"
-          name="senderAddress"
-          readonly=""
-          type="text"
-          value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-        />
-      </div>
-    </div>
-  </fieldset>
-  <div
-    data-testid="recipient-address"
-  >
-    <div
-      class="sc-fzqNJr jRdglL"
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset
+      class="sc-AxjAm fmGClo relative"
     >
       <div
-        class="text-theme-neutral-dark hover:text-theme-primary"
+        class="mb-2"
       >
-        <div
-          class="flex items-center mb-2 space-x-2"
+        <label
+          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="senderAddress"
+          label="Sender"
+          required=""
         >
+          Sender
           <div
-            class="font-normal text-md transition-colors duration-100"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div
+        data-testid="sender-address"
+      >
+        <div>
+          <button
+            class="sc-fznZeY jUYMgc SelectAddress is-disabled "
+            data-testid="SelectAddress__wrapper"
+            disabled=""
+            type="button"
           >
-            Select a Single or Multiple Recipient Transaction
-          </div>
-          <div>
             <div
-              class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mx-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D8rr7B1d6TL6p…sKp1VBMs6YUYD
+              </span>
+            </div>
+            <div
+              class="absolute flex items-center right-4 space-x-3"
             >
               <div
                 class="sc-AxiKw dklFyP"
@@ -237,1018 +185,284 @@ exports[`SendTransactionForm should only update fees if provided 1`] = `
                 width="20"
               >
                 <svg>
-                  questionmark.svg
+                  user.svg
                 </svg>
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          class="flex items-stretch select-buttons"
-        >
-          <button
-            class="sc-fzplWN kShMau flex-1"
-            color="primary"
-            data-testid="add-recipient-is-single-toggle"
-            type="button"
-          >
-            Single
           </button>
-          <button
-            class="sc-fzplWN bszRLY flex-1 border-l-0"
-            color="primary"
-            data-testid="add-recipient-is-multiple-toggle"
-            type="button"
-          >
-            Multiple
-          </button>
+          <input
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+            data-testid="SelectAddress__input"
+            name="senderAddress"
+            readonly=""
+            type="text"
+            value="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+          />
         </div>
       </div>
-      <div
-        class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
-      >
-        <div
-          class="space-y-8"
-        >
-          <fieldset
-            class="sc-AxjAm fmGClo relative mt-1"
-          >
-            <div
-              class="mb-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="recipientAddress"
-                label="Recipient"
-                required=""
-              >
-                Recipient
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-            </div>
-            <div>
-              <div
-                class="relative flex items-center w-full text-left"
-                data-testid="SelectRecipient__wrapper"
-              >
-                <div
-                  class="absolute left-1"
-                >
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mx-3"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <input
-                  class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-                  data-testid="SelectRecipient__input"
-                  name="recipientAddress"
-                  type="text"
-                  value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                />
-                <div
-                  class="absolute flex items-center cursor-pointer right-4 space-x-3"
-                  data-testid="SelectRecipient__select-contact"
-                >
-                  <div
-                    class="sc-AxiKw dklFyP"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      user.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset
-            class="sc-AxjAm fmGClo relative mt-1"
-          >
-            <div
-              class="mb-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="amount"
-                label="Amount"
-                required=""
-              >
-                Amount
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-            </div>
-            <div
-              class="sc-AxheI IkGcK"
-            >
-              <input
-                class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="add-recipient__amount-input"
-                name="amount"
-                placeholder="Amount"
-                type="number"
-                value="0"
-              />
-              <div
-                class="sc-AxhCb sc-AxgMl jreOpL"
-              >
-                <button
-                  class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
-                  data-testid="add-recipient__send-all"
-                  type="button"
-                >
-                  Send All
-                </button>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-  </div>
-  <fieldset
-    class="sc-AxjAm fmGClo relative mt-1"
-  >
-    <div
-      class="mb-2"
+    </fieldset>
+    <fieldset
+      class="sc-AxjAm fmGClo flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
-        for="smartbridge"
-        label="Smartbridge"
+        for="fee"
+        label="Transaction Fee"
         required=""
       >
-        Smartbridge
+        Transaction Fee
         <div
           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
-    </div>
-    <div
-      class="sc-AxheI IkGcK"
-    >
-      <input
-        class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-        data-testid="Input__smartbridge"
-        maxlength="255"
-        name="smartbridge"
-        placeholder=" "
-        type="text"
-        value=""
-      />
       <div
-        class="sc-AxhCb sc-AxgMl jreOpL"
-      >
-        <button
-          class="px-4 text-theme-neutral-light focus:outline-none"
-          type="button"
-        >
-          255 Max
-        </button>
-      </div>
-    </div>
-  </fieldset>
-  <fieldset
-    class="sc-AxjAm fmGClo flex flex-col space-y-2"
-  >
-    <label
-      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-      data-testid="FormLabel"
-      for="fee"
-      required=""
-    >
-      Transaction Fee
-      <div
-        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-        data-testid="FormLabel__required"
-      />
-    </label>
-    <div
-      class="flex space-x-2"
-      data-testid="InputFee"
-    >
-      <div
-        class="flex-1"
+        class="flex space-x-2"
+        data-testid="InputFee"
       >
         <div
-          class="sc-AxheI IkGcK"
+          class="flex-1"
         >
-          <input
-            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-            data-testid="InputCurrency"
-            name="fee"
-            type="text"
-            value="0"
-          />
           <div
-            class="absolute bottom-0 w-full px-1"
+            class="sc-Axmtr jzhOwR"
           >
+            <input
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+              data-testid="InputCurrency"
+              name="fee"
+              type="text"
+              value="0"
+            />
             <div
-              class="flex flex-wrap justify-center"
-              data-testid="Range"
+              class="absolute bottom-0 w-full px-1"
             >
               <div
-                class="sc-Axmtr dcPJBl"
-                data-testid="Range__track"
-                style="transform: scale(1); cursor: pointer;"
+                class="flex flex-wrap justify-center"
+                data-testid="Range"
               >
                 <div
-                  class="sc-AxmLO eaxOeJ"
-                  data-testid="Range__track__filled"
+                  class="sc-AxmLO fErXAA"
+                  data-testid="Range__track"
+                  style="transform: scale(1); cursor: pointer;"
                 >
                   <div
-                    aria-valuemax="100"
-                    aria-valuemin="0"
-                    aria-valuenow="0"
-                    class="sc-fzozJi kmdscG"
-                    data-testid="Range__thumb"
-                    draggable="false"
-                    role="slider"
-                    style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                    tabindex="0"
-                  />
+                    class="sc-fzozJi fxOiEw"
+                    data-testid="Range__track__filled"
+                  >
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="0"
+                      class="sc-fzoLsD iBGNss"
+                      data-testid="Range__thumb"
+                      draggable="false"
+                      role="slider"
+                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                      tabindex="0"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div
-          class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-          data-testid="SelectionBar"
-          role="radiogroup"
-        >
-          <button
-            aria-checked="false"
-            class="sc-fzoyAV ceNOos relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-            data-testid="SelectionBarOption"
-            role="radio"
-            type="button"
+        <div>
+          <div
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+            data-testid="SelectionBar"
+            role="radiogroup"
           >
-            Last
-          </button>
-          <button
-            aria-checked="false"
-            class="sc-fzoyAV ceNOos relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-            data-testid="SelectionBarOption"
-            role="radio"
-            type="button"
-          >
-            Min
-          </button>
-          <button
-            aria-checked="false"
-            class="sc-fzoyAV ceNOos relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-            data-testid="SelectionBarOption"
-            role="radio"
-            type="button"
-          >
-            Average
-          </button>
+            <button
+              aria-checked="false"
+              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Last
+            </button>
+            <button
+              aria-checked="false"
+              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Min
+            </button>
+            <button
+              aria-checked="false"
+              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Average
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </div>
 </div>
 `;
 
 exports[`SendTransactionForm should render 1`] = `
 <div>
-  <fieldset
-    class="sc-AxjAm fmGClo relative mt-1"
-  >
-    <div
-      class="mb-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-        data-testid="FormLabel"
-        for="network"
-        label="Network"
-        required=""
-      >
-        Network
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-    </div>
-    <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="SendTransactionForm__network-menu"
-      data-testid="SelectNetwork"
-      role="combobox"
-    >
-      <label
-        for="SendTransactionForm__network-input"
-        id="SendTransactionForm__network-label"
-      />
-      <div
-        class="sc-AxheI IkGcK"
-        data-testid="SelectNetworkInput"
-      >
-        <div
-          class="sc-AxhCb sc-AxhUy jFkFxS px-4"
-        >
-          <div
-            class="sc-fzoLsD jpdwCK border-theme-neutral-light text-theme-neutral"
-            data-testid="SelectNetworkInput__network"
-          />
-        </div>
-        <input
-          aria-autocomplete="list"
-          aria-controls="SendTransactionForm__network-menu"
-          aria-labelledby="SendTransactionForm__network-label"
-          autocomplete="off"
-          class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-          data-testid="SelectNetworkInput__input"
-          id="SendTransactionForm__network-input"
-          placeholder="Enter a network name"
-          value=""
-        />
-      </div>
-    </div>
-    <ul
-      aria-labelledby="SendTransactionForm__network-label"
-      class="my-6 grid grid-cols-6 gap-6"
-      id="SendTransactionForm__network-menu"
-      role="listbox"
-    >
-      <li
-        aria-selected="false"
-        class="inline-block cursor-pointer"
-        data-testid="SelectNetwork__NetworkIcon--container"
-        id="SendTransactionForm__network-item-0"
-        role="option"
-      >
-        <div
-          aria-label="Ark"
-          class="sc-fzoLsD lgcyhO border-theme-danger-light text-theme-danger-400"
-          data-testid="NetworkIcon-ARK-mainnet"
-        >
-          <div
-            class="sc-AxiKw fubePL"
-            data-testid="NetworkIcon__icon"
-            height="26"
-            width="26"
-          >
-            <svg>
-              ark.svg
-            </svg>
-          </div>
-        </div>
-      </li>
-      <li
-        aria-selected="false"
-        class="inline-block cursor-pointer"
-        data-testid="SelectNetwork__NetworkIcon--container"
-        id="SendTransactionForm__network-item-1"
-        role="option"
-      >
-        <div
-          aria-label="Ark Devnet"
-          class="sc-fzoLsD lgcyhO border-theme-primary-100 text-theme-primary-400"
-          data-testid="NetworkIcon-ARK-devnet"
-        >
-          <div
-            class="sc-AxiKw fubePL"
-            data-testid="NetworkIcon__icon"
-            height="26"
-            width="26"
-          >
-            <svg>
-              ark.svg
-            </svg>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </fieldset>
-  <fieldset
-    class="sc-AxjAm fmGClo relative mt-1"
-  >
-    <div
-      class="mb-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-        data-testid="FormLabel"
-        for="senderAddress"
-        label="Sender"
-        required=""
-      >
-        Sender
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-    </div>
-    <div
-      data-testid="sender-address"
-    >
-      <div>
-        <button
-          class="sc-fznZeY jUYMgc SelectAddress is-disabled "
-          data-testid="SelectAddress__wrapper"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-fzoLsD jpdwCK mx-4 bg-theme-neutral-200 border-theme-neutral-200"
-          />
-          <div
-            class="absolute flex items-center right-4 space-x-3"
-          >
-            <div
-              class="sc-AxiKw dklFyP"
-              height="20"
-              width="20"
-            >
-              <svg>
-                user.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-        <input
-          class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
-          data-testid="SelectAddress__input"
-          name="senderAddress"
-          readonly=""
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-  </fieldset>
   <div
-    data-testid="recipient-address"
+    class="SendTransactionForm space-y-8"
   >
-    <div
-      class="sc-fzqNJr jRdglL"
+    <fieldset
+      class="sc-AxjAm fmGClo relative"
     >
       <div
-        class="text-theme-neutral-dark hover:text-theme-primary"
+        class="mb-2"
       >
-        <div
-          class="flex items-center mb-2 space-x-2"
+        <label
+          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="network"
+          label="Network"
+          required=""
         >
+          Network
           <div
-            class="font-normal text-md transition-colors duration-100"
-          >
-            Select a Single or Multiple Recipient Transaction
-          </div>
-          <div>
-            <div
-              class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
-            >
-              <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  questionmark.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex items-stretch select-buttons"
-        >
-          <button
-            class="sc-fzplWN kShMau flex-1"
-            color="primary"
-            data-testid="add-recipient-is-single-toggle"
-            type="button"
-          >
-            Single
-          </button>
-          <button
-            class="sc-fzplWN bszRLY flex-1 border-l-0"
-            color="primary"
-            data-testid="add-recipient-is-multiple-toggle"
-            type="button"
-          >
-            Multiple
-          </button>
-        </div>
-      </div>
-      <div
-        class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
-      >
-        <div
-          class="space-y-8"
-        >
-          <fieldset
-            class="sc-AxjAm fmGClo relative mt-1"
-          >
-            <div
-              class="mb-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="recipientAddress"
-                label="Recipient"
-                required=""
-              >
-                Recipient
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-            </div>
-            <div>
-              <div
-                class="relative flex items-center w-full text-left"
-                data-testid="SelectRecipient__wrapper"
-              >
-                <div
-                  class="absolute left-1"
-                >
-                  <div
-                    class="sc-fzoLsD jpdwCK mx-3 bg-theme-neutral-200 border-theme-neutral-200"
-                  />
-                </div>
-                <input
-                  class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-                  data-testid="SelectRecipient__input"
-                  name="recipientAddress"
-                  type="text"
-                  value=""
-                />
-                <div
-                  class="absolute flex items-center cursor-pointer right-4 space-x-3"
-                  data-testid="SelectRecipient__select-contact"
-                >
-                  <div
-                    class="sc-AxiKw dklFyP"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      user.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset
-            class="sc-AxjAm fmGClo relative mt-1"
-          >
-            <div
-              class="mb-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="amount"
-                label="Amount"
-                required=""
-              >
-                Amount
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-            </div>
-            <div
-              class="sc-AxheI IkGcK"
-            >
-              <input
-                class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="add-recipient__amount-input"
-                name="amount"
-                placeholder="Amount"
-                type="number"
-                value="0"
-              />
-              <div
-                class="sc-AxhCb sc-AxgMl jreOpL"
-              >
-                <button
-                  class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
-                  data-testid="add-recipient__send-all"
-                  type="button"
-                >
-                  Send All
-                </button>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-  </div>
-  <fieldset
-    class="sc-AxjAm fmGClo relative mt-1"
-  >
-    <div
-      class="mb-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-        data-testid="FormLabel"
-        for="smartbridge"
-        label="Smartbridge"
-        required=""
-      >
-        Smartbridge
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-    </div>
-    <div
-      class="sc-AxheI IkGcK"
-    >
-      <input
-        class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-        data-testid="Input__smartbridge"
-        maxlength="255"
-        name="smartbridge"
-        placeholder=" "
-        type="text"
-        value=""
-      />
-      <div
-        class="sc-AxhCb sc-AxgMl jreOpL"
-      >
-        <button
-          class="px-4 text-theme-neutral-light focus:outline-none"
-          type="button"
-        >
-          255 Max
-        </button>
-      </div>
-    </div>
-  </fieldset>
-  <fieldset
-    class="sc-AxjAm fmGClo flex flex-col space-y-2"
-  >
-    <label
-      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-      data-testid="FormLabel"
-      for="fee"
-      required=""
-    >
-      Transaction Fee
-      <div
-        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-        data-testid="FormLabel__required"
-      />
-    </label>
-    <div
-      class="flex space-x-2"
-      data-testid="InputFee"
-    >
-      <div
-        class="flex-1"
-      >
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-            data-testid="InputCurrency"
-            name="fee"
-            type="text"
-            value="0"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
           />
-          <div
-            class="absolute bottom-0 w-full px-1"
-          >
-            <div
-              class="flex flex-wrap justify-center"
-              data-testid="Range"
-            >
-              <div
-                class="sc-Axmtr dcPJBl"
-                data-testid="Range__track"
-                style="transform: scale(1); cursor: pointer;"
-              >
-                <div
-                  class="sc-AxmLO eaxOeJ"
-                  data-testid="Range__track__filled"
-                >
-                  <div
-                    aria-valuemax="100"
-                    aria-valuemin="0"
-                    aria-valuenow="0"
-                    class="sc-fzozJi kmdscG"
-                    data-testid="Range__thumb"
-                    draggable="false"
-                    role="slider"
-                    style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                    tabindex="0"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </label>
       </div>
-      <div>
-        <div
-          class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-          data-testid="SelectionBar"
-          role="radiogroup"
-        >
-          <button
-            aria-checked="false"
-            class="sc-fzoyAV ceNOos relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-            data-testid="SelectionBarOption"
-            role="radio"
-            type="button"
-          >
-            Last
-          </button>
-          <button
-            aria-checked="false"
-            class="sc-fzoyAV ceNOos relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-            data-testid="SelectionBarOption"
-            role="radio"
-            type="button"
-          >
-            Min
-          </button>
-          <button
-            aria-checked="false"
-            class="sc-fzoyAV ceNOos relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-            data-testid="SelectionBarOption"
-            role="radio"
-            type="button"
-          >
-            Average
-          </button>
-        </div>
-      </div>
-    </div>
-  </fieldset>
-</div>
-`;
-
-exports[`SendTransactionForm should select fill out form 1`] = `
-<div>
-  <fieldset
-    class="sc-AxjAm fmGClo relative mt-1"
-  >
-    <div
-      class="mb-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-        data-testid="FormLabel"
-        for="network"
-        label="Network"
-        required=""
-      >
-        Network
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-    </div>
-    <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="SendTransactionForm__network-menu"
-      data-testid="SelectNetwork"
-      role="combobox"
-    >
-      <label
-        for="SendTransactionForm__network-input"
-        id="SendTransactionForm__network-label"
-      />
       <div
-        class="sc-AxheI IkGcK"
-        data-testid="SelectNetworkInput"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="SendTransactionForm__network-menu"
+        data-testid="SelectNetwork"
+        role="combobox"
       >
+        <label
+          for="SendTransactionForm__network-input"
+          id="SendTransactionForm__network-label"
+        />
         <div
-          class="sc-AxhCb sc-AxhUy jFkFxS px-4"
+          class="sc-Axmtr jzhOwR"
+          data-testid="SelectNetworkInput"
         >
           <div
-            aria-label="Ark Devnet"
-            class="sc-fzoLsD jpdwCK border-theme-primary-100 text-theme-primary-400"
-            data-testid="SelectNetworkInput__network"
+            class="sc-AxhUy sc-AxgMl kAPRWA px-4"
           >
             <div
-              class="sc-AxiKw dzBdqj"
+              class="sc-AxirZ HSPq border-theme-neutral-light text-theme-neutral"
+              data-testid="SelectNetworkInput__network"
+            />
+          </div>
+          <input
+            aria-autocomplete="list"
+            aria-controls="SendTransactionForm__network-menu"
+            aria-labelledby="SendTransactionForm__network-label"
+            autocomplete="off"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+            data-testid="SelectNetworkInput__input"
+            disabled=""
+            id="SendTransactionForm__network-input"
+            placeholder="Enter a network name"
+            value=""
+          />
+        </div>
+      </div>
+      <ul
+        aria-labelledby="SendTransactionForm__network-label"
+        class="mt-6 grid grid-cols-6 gap-6"
+        id="SendTransactionForm__network-menu"
+        role="listbox"
+      >
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          disabled=""
+          id="SendTransactionForm__network-item-0"
+          role="option"
+        >
+          <div
+            aria-label="Ark"
+            class="sc-AxirZ jatHdy border-theme-danger-light text-theme-danger-400"
+            data-testid="NetworkIcon-ARK-mainnet"
+          >
+            <div
+              class="sc-AxiKw fubePL"
               data-testid="NetworkIcon__icon"
-              height="1em"
-              width="1em"
+              height="26"
+              width="26"
             >
               <svg>
                 ark.svg
               </svg>
             </div>
           </div>
-        </div>
-        <span
-          class="sc-AxhCb dfnXnk py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-          data-testid="SelectNetworkInput__typeahead"
-        >
-          Ark Devnet
-        </span>
-        <input
-          aria-autocomplete="list"
-          aria-controls="SendTransactionForm__network-menu"
-          aria-labelledby="SendTransactionForm__network-label"
-          autocomplete="off"
-          class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-          data-testid="SelectNetworkInput__input"
-          id="SendTransactionForm__network-input"
-          placeholder="Enter a network name"
-          value="Ark Devnet"
-        />
-      </div>
-    </div>
-    <ul
-      aria-labelledby="SendTransactionForm__network-label"
-      class="my-6 grid grid-cols-6 gap-6"
-      id="SendTransactionForm__network-menu"
-      role="listbox"
-    >
-      <li
-        aria-selected="false"
-        class="inline-block cursor-pointer"
-        data-testid="SelectNetwork__NetworkIcon--container"
-        id="SendTransactionForm__network-item-0"
-        role="option"
-      >
-        <div
-          aria-label="Ark"
-          class="sc-fzoLsD lgcyhO text-theme-neutral-light"
-          data-testid="NetworkIcon-ARK-mainnet"
+        </li>
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          disabled=""
+          id="SendTransactionForm__network-item-1"
+          role="option"
         >
           <div
-            class="sc-AxiKw fubePL"
-            data-testid="NetworkIcon__icon"
-            height="26"
-            width="26"
-          >
-            <svg>
-              ark.svg
-            </svg>
-          </div>
-        </div>
-      </li>
-      <li
-        aria-selected="false"
-        class="inline-block cursor-pointer"
-        data-testid="SelectNetwork__NetworkIcon--container"
-        id="SendTransactionForm__network-item-1"
-        role="option"
-      >
-        <div
-          aria-label="Ark Devnet"
-          class="sc-fzoLsD lgcyhO text-theme-success-500 border-theme-success-200"
-          data-testid="NetworkIcon-ARK-devnet"
-        >
-          <div
-            class="sc-AxiKw fubePL"
-            data-testid="NetworkIcon__icon"
-            height="26"
-            width="26"
-          >
-            <svg>
-              ark.svg
-            </svg>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </fieldset>
-  <fieldset
-    class="sc-AxjAm fmGClo relative mt-1"
-  >
-    <div
-      class="mb-2"
-    >
-      <label
-        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-        data-testid="FormLabel"
-        for="senderAddress"
-        label="Sender"
-        required=""
-      >
-        Sender
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-    </div>
-    <div
-      data-testid="sender-address"
-    >
-      <div>
-        <button
-          class="sc-fznZeY jUYMgc SelectAddress  "
-          data-testid="SelectAddress__wrapper"
-          type="button"
-        >
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mx-4"
-            data-testid="Avatar"
+            aria-label="Ark Devnet"
+            class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
           >
             <div
-              class="w-full h-full"
-            >
-              <img
-                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-              />
-            </div>
-          </div>
-          <div
-            class="inline-block truncate align-middle"
-          >
-            <span
-              class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
-              data-testid="address__wallet-address"
-            >
-              D8rr7B1d6TL6p…sKp1VBMs6YUYD
-            </span>
-          </div>
-          <div
-            class="absolute flex items-center right-4 space-x-3"
-          >
-            <div
-              class="sc-AxiKw dklFyP"
-              height="20"
-              width="20"
+              class="sc-AxiKw fubePL"
+              data-testid="NetworkIcon__icon"
+              height="26"
+              width="26"
             >
               <svg>
-                user.svg
+                ark.svg
               </svg>
             </div>
           </div>
-        </button>
-        <input
-          class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
-          data-testid="SelectAddress__input"
-          name="senderAddress"
-          readonly=""
-          type="text"
-          value="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-        />
-      </div>
-    </div>
-  </fieldset>
-  <div
-    data-testid="recipient-address"
-  >
-    <div
-      class="sc-fzqNJr jRdglL"
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset
+      class="sc-AxjAm fmGClo relative"
     >
       <div
-        class="text-theme-neutral-dark hover:text-theme-primary"
+        class="mb-2"
       >
-        <div
-          class="flex items-center mb-2 space-x-2"
+        <label
+          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="senderAddress"
+          label="Sender"
+          required=""
         >
+          Sender
           <div
-            class="font-normal text-md transition-colors duration-100"
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div
+        data-testid="sender-address"
+      >
+        <div>
+          <button
+            class="sc-fznZeY jUYMgc SelectAddress is-disabled "
+            data-testid="SelectAddress__wrapper"
+            disabled=""
+            type="button"
           >
-            Select a Single or Multiple Recipient Transaction
-          </div>
-          <div>
             <div
-              class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
+              class="sc-AxirZ HSPq mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+            />
+            <div
+              class="absolute flex items-center right-4 space-x-3"
             >
               <div
                 class="sc-AxiKw dklFyP"
@@ -1256,299 +470,431 @@ exports[`SendTransactionForm should select fill out form 1`] = `
                 width="20"
               >
                 <svg>
-                  questionmark.svg
+                  user.svg
                 </svg>
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          class="flex items-stretch select-buttons"
-        >
-          <button
-            class="sc-fzplWN kShMau flex-1"
-            color="primary"
-            data-testid="add-recipient-is-single-toggle"
-            type="button"
-          >
-            Single
           </button>
-          <button
-            class="sc-fzplWN bszRLY flex-1 border-l-0"
-            color="primary"
-            data-testid="add-recipient-is-multiple-toggle"
-            type="button"
-          >
-            Multiple
-          </button>
+          <input
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+            data-testid="SelectAddress__input"
+            name="senderAddress"
+            readonly=""
+            type="text"
+            value=""
+          />
         </div>
       </div>
-      <div
-        class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
-      >
-        <div
-          class="space-y-8"
-        >
-          <fieldset
-            class="sc-AxjAm fmGClo relative mt-1"
-          >
-            <div
-              class="mb-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="recipientAddress"
-                label="Recipient"
-                required=""
-              >
-                Recipient
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-            </div>
-            <div>
-              <div
-                class="relative flex items-center w-full text-left"
-                data-testid="SelectRecipient__wrapper"
-              >
-                <div
-                  class="absolute left-1"
-                >
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mx-3"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <input
-                  class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-                  data-testid="SelectRecipient__input"
-                  name="recipientAddress"
-                  type="text"
-                  value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                />
-                <div
-                  class="absolute flex items-center cursor-pointer right-4 space-x-3"
-                  data-testid="SelectRecipient__select-contact"
-                >
-                  <div
-                    class="sc-AxiKw dklFyP"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      user.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset
-            class="sc-AxjAm fmGClo relative mt-1"
-          >
-            <div
-              class="mb-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="amount"
-                label="Amount"
-                required=""
-              >
-                Amount
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-            </div>
-            <div
-              class="sc-AxheI IkGcK"
-            >
-              <input
-                class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="add-recipient__amount-input"
-                name="amount"
-                placeholder="Amount"
-                type="number"
-                value="80"
-              />
-              <div
-                class="sc-AxhCb sc-AxgMl jreOpL"
-              >
-                <button
-                  class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
-                  data-testid="add-recipient__send-all"
-                  type="button"
-                >
-                  Send All
-                </button>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-  </div>
-  <fieldset
-    class="sc-AxjAm fmGClo relative mt-1"
-  >
-    <div
-      class="mb-2"
+    </fieldset>
+    <fieldset
+      class="sc-AxjAm fmGClo flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
-        for="smartbridge"
-        label="Smartbridge"
+        for="fee"
+        label="Transaction Fee"
         required=""
       >
-        Smartbridge
+        Transaction Fee
         <div
           class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
-    </div>
-    <div
-      class="sc-AxheI IkGcK"
-    >
-      <input
-        class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-        data-testid="Input__smartbridge"
-        maxlength="255"
-        name="smartbridge"
-        placeholder=" "
-        type="text"
-        value=""
-      />
       <div
-        class="sc-AxhCb sc-AxgMl jreOpL"
-      >
-        <button
-          class="px-4 text-theme-neutral-light focus:outline-none"
-          type="button"
-        >
-          255 Max
-        </button>
-      </div>
-    </div>
-  </fieldset>
-  <fieldset
-    class="sc-AxjAm fmGClo flex flex-col space-y-2"
-  >
-    <label
-      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-      data-testid="FormLabel"
-      for="fee"
-      required=""
-    >
-      Transaction Fee
-      <div
-        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-        data-testid="FormLabel__required"
-      />
-    </label>
-    <div
-      class="flex space-x-2"
-      data-testid="InputFee"
-    >
-      <div
-        class="flex-1"
+        class="flex space-x-2"
+        data-testid="InputFee"
       >
         <div
-          class="sc-AxheI IkGcK"
+          class="flex-1"
         >
-          <input
-            class="sc-AxirZ cNbglv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-            data-testid="InputCurrency"
-            name="fee"
-            type="text"
-            value="0.71538139"
-          />
           <div
-            class="absolute bottom-0 w-full px-1"
+            class="sc-Axmtr jzhOwR"
           >
+            <input
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+              data-testid="InputCurrency"
+              name="fee"
+              type="text"
+              value="0"
+            />
             <div
-              class="flex flex-wrap justify-center"
-              data-testid="Range"
+              class="absolute bottom-0 w-full px-1"
             >
               <div
-                class="sc-Axmtr dcPJBl"
-                data-testid="Range__track"
-                style="transform: scale(1); cursor: pointer;"
+                class="flex flex-wrap justify-center"
+                data-testid="Range"
               >
                 <div
-                  class="sc-AxmLO eaxOeJ"
-                  data-testid="Range__track__filled"
+                  class="sc-AxmLO fErXAA"
+                  data-testid="Range__track"
+                  style="transform: scale(1); cursor: pointer;"
                 >
                   <div
-                    aria-valuemax="6.63"
-                    aria-valuemin="0.00357"
-                    aria-valuenow="0.71538139"
-                    class="sc-fzozJi kmdscG"
-                    data-testid="Range__thumb"
-                    draggable="false"
-                    role="slider"
-                    style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                    tabindex="0"
-                  />
+                    class="sc-fzozJi fxOiEw"
+                    data-testid="Range__track__filled"
+                  >
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="0"
+                      class="sc-fzoLsD iBGNss"
+                      data-testid="Range__thumb"
+                      draggable="false"
+                      role="slider"
+                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                      tabindex="0"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div
-          class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-          data-testid="SelectionBar"
-          role="radiogroup"
-        >
-          <button
-            aria-checked="false"
-            class="sc-fzoyAV ceNOos relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-            data-testid="SelectionBarOption"
-            role="radio"
-            type="button"
+        <div>
+          <div
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+            data-testid="SelectionBar"
+            role="radiogroup"
           >
-            Last
-          </button>
-          <button
-            aria-checked="false"
-            class="sc-fzoyAV ceNOos relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-            data-testid="SelectionBarOption"
-            role="radio"
-            type="button"
-          >
-            Min
-          </button>
-          <button
-            aria-checked="true"
-            class="sc-fzoyAV ceNOos relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-            data-testid="SelectionBarOption"
-            role="radio"
-            type="button"
-          >
-            Average
-          </button>
+            <button
+              aria-checked="false"
+              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Last
+            </button>
+            <button
+              aria-checked="false"
+              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Min
+            </button>
+            <button
+              aria-checked="false"
+              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Average
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`SendTransactionForm should select fill out form 1`] = `
+<div>
+  <div
+    class="SendTransactionForm space-y-8"
+  >
+    <fieldset
+      class="sc-AxjAm fmGClo relative"
+    >
+      <div
+        class="mb-2"
+      >
+        <label
+          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="network"
+          label="Network"
+          required=""
+        >
+          Network
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="SendTransactionForm__network-menu"
+        data-testid="SelectNetwork"
+        role="combobox"
+      >
+        <label
+          for="SendTransactionForm__network-input"
+          id="SendTransactionForm__network-label"
+        />
+        <div
+          class="sc-Axmtr jzhOwR"
+          data-testid="SelectNetworkInput"
+        >
+          <div
+            class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+          >
+            <div
+              class="sc-AxirZ HSPq border-theme-neutral-light text-theme-neutral"
+              data-testid="SelectNetworkInput__network"
+            />
+          </div>
+          <input
+            aria-autocomplete="list"
+            aria-controls="SendTransactionForm__network-menu"
+            aria-labelledby="SendTransactionForm__network-label"
+            autocomplete="off"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+            data-testid="SelectNetworkInput__input"
+            disabled=""
+            id="SendTransactionForm__network-input"
+            placeholder="Enter a network name"
+            value=""
+          />
+        </div>
+      </div>
+      <ul
+        aria-labelledby="SendTransactionForm__network-label"
+        class="mt-6 grid grid-cols-6 gap-6"
+        id="SendTransactionForm__network-menu"
+        role="listbox"
+      >
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          disabled=""
+          id="SendTransactionForm__network-item-0"
+          role="option"
+        >
+          <div
+            aria-label="Ark"
+            class="sc-AxirZ jatHdy border-theme-danger-light text-theme-danger-400"
+            data-testid="NetworkIcon-ARK-mainnet"
+          >
+            <div
+              class="sc-AxiKw fubePL"
+              data-testid="NetworkIcon__icon"
+              height="26"
+              width="26"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          disabled=""
+          id="SendTransactionForm__network-item-1"
+          role="option"
+        >
+          <div
+            aria-label="Ark Devnet"
+            class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
+          >
+            <div
+              class="sc-AxiKw fubePL"
+              data-testid="NetworkIcon__icon"
+              height="26"
+              width="26"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset
+      class="sc-AxjAm fmGClo relative"
+    >
+      <div
+        class="mb-2"
+      >
+        <label
+          class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+          data-testid="FormLabel"
+          for="senderAddress"
+          label="Sender"
+          required=""
+        >
+          Sender
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div
+        data-testid="sender-address"
+      >
+        <div>
+          <button
+            class="sc-fznZeY jUYMgc SelectAddress is-disabled "
+            data-testid="SelectAddress__wrapper"
+            disabled=""
+            type="button"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mx-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-fzpans kkFAbe text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D8rr7B1d6TL6p…sKp1VBMs6YUYD
+              </span>
+            </div>
+            <div
+              class="absolute flex items-center right-4 space-x-3"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+          <input
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+            data-testid="SelectAddress__input"
+            name="senderAddress"
+            readonly=""
+            type="text"
+            value="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+          />
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxjAm fmGClo flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="fee"
+        label="Transaction Fee"
+        required=""
+      >
+        Transaction Fee
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div
+        class="flex space-x-2"
+        data-testid="InputFee"
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="sc-Axmtr jzhOwR"
+          >
+            <input
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+              data-testid="InputCurrency"
+              name="fee"
+              type="text"
+              value="0.71538139"
+            />
+            <div
+              class="absolute bottom-0 w-full px-1"
+            >
+              <div
+                class="flex flex-wrap justify-center"
+                data-testid="Range"
+              >
+                <div
+                  class="sc-AxmLO fErXAA"
+                  data-testid="Range__track"
+                  style="transform: scale(1); cursor: pointer;"
+                >
+                  <div
+                    class="sc-fzozJi fxOiEw"
+                    data-testid="Range__track__filled"
+                  >
+                    <div
+                      aria-valuemax="6.63"
+                      aria-valuemin="0.00357"
+                      aria-valuenow="0.71538139"
+                      class="sc-fzoLsD iBGNss"
+                      data-testid="Range__thumb"
+                      draggable="false"
+                      role="slider"
+                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                      tabindex="0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+            data-testid="SelectionBar"
+            role="radiogroup"
+          >
+            <button
+              aria-checked="false"
+              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Last
+            </button>
+            <button
+              aria-checked="false"
+              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Min
+            </button>
+            <button
+              aria-checked="true"
+              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Average
+            </button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
 </div>
 `;

@@ -74,16 +74,19 @@ describe("SelectRecipient", () => {
 		});
 
 		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
-
 		act(() => {
 			fireEvent.click(firstAddress);
 		});
 
-		waitFor(() => expect(getByTestId("modal__inner")).toBeFalsy());
+		await waitFor(() => {
+			expect(() => getByTestId("modal__inner").toThrow(/Unable to find an element by/));
+		});
 
-		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
-
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedAddressValue);
+		await waitFor(() =>
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(
+				profile.contacts().values()[0].addresses().values()[0].address(),
+			),
+		);
 	});
 
 	it("should not open contacts modal if disabled", async () => {
@@ -112,6 +115,7 @@ describe("SelectRecipient", () => {
 			fireEvent.change(recipientInputField, { target: { value: address } });
 		});
 
+		expect(getByTestId("SelectRecipient__input")).toHaveValue(address);
 		expect(fn).toBeCalledWith(address);
 	});
 

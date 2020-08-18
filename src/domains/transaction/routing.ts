@@ -24,12 +24,12 @@ export const TransactionRoutes = [
 		component: UpdateRegistration,
 	},
 	{
-		path: "/profiles/:profileId/transactions/transfer",
+		path: "/profiles/:profileId/transactions/:walletId/transfer",
 		exact: true,
 		component: TransactionSend,
 	},
 	{
-		path: "/profiles/:profileId/transactions/ipfs",
+		path: "/profiles/:profileId/transactions/:walletId/ipfs",
 		exact: true,
 		component: SendIPFSTransaction,
 	},

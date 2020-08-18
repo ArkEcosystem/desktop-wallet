@@ -9,7 +9,7 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
 
 type TransactionSuccessfulProps = {
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	transactionId: string;
 };
 

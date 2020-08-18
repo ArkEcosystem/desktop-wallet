@@ -5,104 +5,112 @@ exports[`UpdateWalletName should not render if not open 1`] = `<DocumentFragment
 exports[`UpdateWalletName should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-fzpans hGJZle fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
+    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
   >
     <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
-    >
-      <button
-        class="sc-AxjAm bThAoP"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
-      >
-        <div
-          class="p-1"
-        >
-          <div
-            class="sc-AxhCb koOqYD"
-            height="12"
-            width="12"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
     <div
-      class="py-4"
+      class="sc-fzpans hGJZle absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      data-testid="modal__inner"
     >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Name Wallet
-      </h2>
       <div
-        class="flex-1"
+        class="relative"
       >
-        <svg
-          class="my-8"
-        >
-          name-wallet.svg
-        </svg>
         <div
-          class="mt-1 text-theme-neutral-dark"
+          class="absolute top-0 right-0 z-50 mt-5"
         >
-          You can enter the name of your wallet for a quick search in your wallet.
-        </div>
-        <form
-          class="mt-8"
-          data-testid="Form"
-        >
-          <fieldset
-            class="sc-AxirZ izhStr flex flex-col space-y-2"
+          <button
+            class="sc-AxjAm bThAoP"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="name"
-              required=""
+            <div
+              class="p-1"
             >
-              Enter a name
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-            <input
-              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-              data-testid="UpdateWalletName__input"
-              name="name"
-            />
-          </fieldset>
-          <div
-            class="flex justify-end mt-8 space-x-3"
+                class="sc-AxhCb koOqYD"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
           >
-            <button
-              class="sc-AxjAm ddJBbC"
-              color="primary"
-              type="button"
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <svg
+              class="my-8"
             >
-              Cancel
-            </button>
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              data-testid="UpdateWalletName__submit"
-              disabled=""
-              type="submit"
+              name-wallet.svg
+            </svg>
+            <div
+              class="mt-1 text-theme-neutral-dark"
             >
-              Save
-            </button>
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="sc-AxirZ izhStr flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="name"
+                  required=""
+                >
+                  Enter a name
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="sc-AxjAm ddJBbC"
+                  color="primary"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  data-testid="UpdateWalletName__submit"
+                  disabled=""
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
@@ -112,103 +120,111 @@ exports[`UpdateWalletName should render a modal 1`] = `
 exports[`UpdateWalletName should render form input with existing name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-fzpans hGJZle fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
+    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
   >
     <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
-    >
-      <button
-        class="sc-AxjAm bThAoP"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
-      >
-        <div
-          class="p-1"
-        >
-          <div
-            class="sc-AxhCb koOqYD"
-            height="12"
-            width="12"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
     <div
-      class="py-4"
+      class="sc-fzpans hGJZle absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      data-testid="modal__inner"
     >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Name Wallet
-      </h2>
       <div
-        class="flex-1"
+        class="relative"
       >
-        <svg
-          class="my-8"
-        >
-          name-wallet.svg
-        </svg>
         <div
-          class="mt-1 text-theme-neutral-dark"
+          class="absolute top-0 right-0 z-50 mt-5"
         >
-          You can enter the name of your wallet for a quick search in your wallet.
-        </div>
-        <form
-          class="mt-8"
-          data-testid="Form"
-        >
-          <fieldset
-            class="sc-AxirZ izhStr flex flex-col space-y-2"
+          <button
+            class="sc-AxjAm bThAoP"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="name"
-              required=""
+            <div
+              class="p-1"
             >
-              Enter a name
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-            <input
-              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-              data-testid="UpdateWalletName__input"
-              name="name"
-            />
-          </fieldset>
-          <div
-            class="flex justify-end mt-8 space-x-3"
+                class="sc-AxhCb koOqYD"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
           >
-            <button
-              class="sc-AxjAm ddJBbC"
-              color="primary"
-              type="button"
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <svg
+              class="my-8"
             >
-              Cancel
-            </button>
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              data-testid="UpdateWalletName__submit"
-              type="submit"
+              name-wallet.svg
+            </svg>
+            <div
+              class="mt-1 text-theme-neutral-dark"
             >
-              Save
-            </button>
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="sc-AxirZ izhStr flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="name"
+                  required=""
+                >
+                  Enter a name
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="sc-AxjAm ddJBbC"
+                  color="primary"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  data-testid="UpdateWalletName__submit"
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
@@ -218,104 +234,112 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
 exports[`UpdateWalletName should show error message when name exceeds 42 characters 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-fzpans hGJZle fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
+    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
   >
     <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
-    >
-      <button
-        class="sc-AxjAm bThAoP"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
-      >
-        <div
-          class="p-1"
-        >
-          <div
-            class="sc-AxhCb koOqYD"
-            height="12"
-            width="12"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
     <div
-      class="py-4"
+      class="sc-fzpans hGJZle absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      data-testid="modal__inner"
     >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Name Wallet
-      </h2>
       <div
-        class="flex-1"
+        class="relative"
       >
-        <svg
-          class="my-8"
-        >
-          name-wallet.svg
-        </svg>
         <div
-          class="mt-1 text-theme-neutral-dark"
+          class="absolute top-0 right-0 z-50 mt-5"
         >
-          You can enter the name of your wallet for a quick search in your wallet.
-        </div>
-        <form
-          class="mt-8"
-          data-testid="Form"
-        >
-          <fieldset
-            class="sc-AxirZ izhStr flex flex-col space-y-2"
+          <button
+            class="sc-AxjAm bThAoP"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
-              data-testid="FormLabel"
-              for="name"
-              required=""
+            <div
+              class="p-1"
             >
-              Enter a name
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
-            </label>
-            <input
-              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-              data-testid="UpdateWalletName__input"
-              name="name"
-            />
-          </fieldset>
-          <div
-            class="flex justify-end mt-8 space-x-3"
+                class="sc-AxhCb koOqYD"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
           >
-            <button
-              class="sc-AxjAm ddJBbC"
-              color="primary"
-              type="button"
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <svg
+              class="my-8"
             >
-              Cancel
-            </button>
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              data-testid="UpdateWalletName__submit"
-              disabled=""
-              type="submit"
+              name-wallet.svg
+            </svg>
+            <div
+              class="mt-1 text-theme-neutral-dark"
             >
-              Save
-            </button>
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="sc-AxirZ izhStr flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="name"
+                  required=""
+                >
+                  Enter a name
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="sc-AxjAm ddJBbC"
+                  color="primary"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  data-testid="UpdateWalletName__submit"
+                  disabled=""
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
