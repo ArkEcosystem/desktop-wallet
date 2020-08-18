@@ -1,5 +1,5 @@
 import React from "react";
-import blockfolioFixture from "tests/fixtures/news/blockfolio.json";
+import blockfolioFixture from "tests/fixtures/news/page-1.json";
 
 import { NewsCard } from "./NewsCard";
 

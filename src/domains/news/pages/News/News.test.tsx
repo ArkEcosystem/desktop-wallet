@@ -23,11 +23,29 @@ describe("News", () => {
 		nock.disableNetConnect();
 		nock("https://platform.ark.io/api")
 			.get("/coins/ark/signals")
-			.reply(200, page1Fixture)
+			.reply(200, () => {
+				const { meta, data } = page1Fixture;
+				return {
+					meta,
+					data: data.slice(0, 1),
+				};
+			})
 			.get("/coins/ark/signals?page=1")
-			.reply(200, page1Fixture)
+			.reply(200, () => {
+				const { meta, data } = page1Fixture;
+				return {
+					meta,
+					data: data.slice(0, 1),
+				};
+			})
 			.get("/coins/ark/signals?page=2")
-			.reply(200, require("tests/fixtures/news/page-2.json"))
+			.reply(200, () => {
+				const { meta, data } = require("tests/fixtures/news/page-2.json");
+				return {
+					meta,
+					data: data.slice(0, 1),
+				};
+			})
 			.get("/coins/ark/signals?query=NoResult&page=1")
 			.reply(200, require("tests/fixtures/news/empty-response.json"))
 			.get("/coins/ark/signals?query=Hacking&page=1&category=Technical")
@@ -55,7 +73,7 @@ describe("News", () => {
 		);
 
 		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(15);
+			expect(getAllByTestId("NewsCard")).toHaveLength(1);
 		});
 	});
 
@@ -63,7 +81,7 @@ describe("News", () => {
 		const result: BlockfolioResponse = await subject.findByCoin("ark");
 
 		expect(result.meta).toMatchObject(page1Fixture.meta);
-		expect(result.data).toMatchObject(page1Fixture.data);
+		expect(result.data).toMatchObject(page1Fixture.data.slice(0, 1));
 	});
 
 	it("should navigate on next and previous pages", async () => {
@@ -78,7 +96,7 @@ describe("News", () => {
 		);
 
 		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(15);
+			expect(getAllByTestId("NewsCard")).toHaveLength(1);
 		});
 
 		act(() => {
@@ -86,7 +104,7 @@ describe("News", () => {
 		});
 
 		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(15);
+			expect(getAllByTestId("NewsCard")).toHaveLength(1);
 		});
 
 		act(() => {
@@ -94,14 +112,14 @@ describe("News", () => {
 		});
 
 		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(15);
+			expect(getAllByTestId("NewsCard")).toHaveLength(1);
 		});
 	});
 
 	it("should show no results screen", async () => {
 		history.push(newsURL);
 
-		const { getAllByTestId, getByTestId, asFragment, queryAllByTestId } = renderWithRouter(
+		const { getAllByTestId, getByTestId, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/news">
 				<News defaultAssets={assets} />
 			</Route>,
@@ -112,7 +130,7 @@ describe("News", () => {
 		);
 
 		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).not.toHaveLength(0);
+			expect(getAllByTestId("NewsCard")).toHaveLength(1);
 		});
 
 		act(() => {
@@ -145,7 +163,7 @@ describe("News", () => {
 		);
 
 		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).not.toHaveLength(0);
+			expect(getAllByTestId("NewsCard")).toHaveLength(1);
 		});
 
 		act(() => {
