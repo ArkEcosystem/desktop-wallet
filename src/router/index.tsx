@@ -8,6 +8,7 @@ import { ProfileMiddleware } from "domains/profile/middleware";
 import { ProfileRoutes } from "domains/profile/routing";
 import { SettingRoutes } from "domains/setting/routing";
 import { TransactionRoutes } from "domains/transaction/routing";
+import { VoteRoutes } from "domains/vote/routing";
 import { WalletMiddleware } from "domains/wallet/middleware";
 import { WalletRoutes } from "domains/wallet/routing";
 
@@ -24,6 +25,7 @@ export const routes: Array<Object> = [
 	...PluginRoutes,
 	...SettingRoutes,
 	...TransactionRoutes,
+	...VoteRoutes,
 	...WalletRoutes,
 	...ProfileRoutes,
 ];

@@ -163,7 +163,14 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
 
-				<Section>{votes && <WalletVote votes={votes} />}</Section>
+				<Section>
+					{votes && (
+						<WalletVote
+							votes={votes}
+							onVote={() => history.push(`/profiles/${activeProfile.id()}/votes`)}
+						/>
+					)}
+				</Section>
 
 				<Section>
 					{walletData && (
