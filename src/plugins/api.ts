@@ -1,28 +1,31 @@
 import { httpClient } from "../app/services";
 import { HttpClient } from "../app/services/HttpClient";
 import { HTTPPluginAPI, PluginAPI, ProfilePluginAPI } from "./api.models";
-import { IPluginData, PluginPermission } from "./plugin.models";
-import { ProfilePluginService, profilePluginService } from "./services/profile.service";
+import { container } from "./container";
+import { Identifiers } from "./container.models";
+import { PluginData } from "./plugin";
+import { PluginPermission } from "./plugin.models";
+import { ProfilePluginService } from "./services/profile.service";
 
 class ProfileAPI implements ProfilePluginAPI {
 	service: ProfilePluginService;
-	plugin: IPluginData;
+	plugin: PluginData;
 
-	constructor(plugin: IPluginData) {
-		this.service = profilePluginService;
+	constructor(plugin: PluginData) {
+		this.service = container.get(Identifiers.ProfileService);
 		this.plugin = plugin;
 	}
 
 	onDidProfileChange(callback: (profile: any) => void) {
-		profilePluginService.onDidProfileChange(callback);
+		this.service.onDidProfileChange(callback);
 	}
 }
 
 class HttpAPI implements HTTPPluginAPI {
 	service: HttpClient;
-	plugin: IPluginData;
+	plugin: PluginData;
 
-	constructor(plugin: IPluginData) {
+	constructor(plugin: PluginData) {
 		this.service = httpClient;
 		this.plugin = plugin;
 	}
@@ -35,9 +38,9 @@ class HttpAPI implements HTTPPluginAPI {
 }
 
 export class API implements PluginAPI {
-	plugin: IPluginData;
+	plugin: PluginData;
 
-	constructor(plugin: IPluginData) {
+	constructor(plugin: PluginData) {
 		this.plugin = plugin;
 	}
 

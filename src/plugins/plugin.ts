@@ -1,23 +1,25 @@
-import { IPluginData, PluginManifest, PluginPermission, PluginSetting } from "./plugin.models";
+import { Plugin, PluginManifest, PluginPermission, PluginSetting } from "./plugin.models";
 
-export class PluginData implements IPluginData {
-	_manifest: PluginManifest;
+export class PluginData {
+	private _manifest: PluginManifest;
+	private _entry: Plugin;
 
-	constructor(manifest: PluginManifest) {
+	constructor(manifest: PluginManifest, entry: Plugin) {
 		this._manifest = manifest;
+		this._entry = entry;
 	}
 
-	static fromManifest(manifest: PluginManifest) {
+	static make(manifest: PluginManifest, entry: Plugin) {
 		// TODO: Sanitize
-		return new PluginData(manifest);
+		return new PluginData(manifest, entry);
 	}
 
-	authorize() {
-		throw new Error("Not implemented");
+	name() {
+		return this._manifest.name;
 	}
 
-	isAuthorized(): boolean {
-		throw new Error("Not implemented");
+	descrption() {
+		return this._manifest.description;
 	}
 
 	hasPermission(permission: PluginPermission) {
@@ -30,5 +32,9 @@ export class PluginData implements IPluginData {
 
 	manifest() {
 		return this._manifest;
+	}
+
+	entry() {
+		return this._entry;
 	}
 }

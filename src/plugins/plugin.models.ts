@@ -1,3 +1,5 @@
+import { RouteProps } from "react-router-dom";
+
 import { PluginAPI } from "./api.models";
 
 enum ColorMode {
@@ -17,6 +19,7 @@ export interface LanguageConfig {
 }
 
 export interface Plugin {
+	registerRoutes?: () => RouteProps[];
 	registerThemes?: () => ThemeConfig[];
 	registerLanguage?: () => LanguageConfig;
 	activate?: (pluginAPI: PluginAPI) => void;
@@ -39,12 +42,4 @@ export enum PluginPermission {
 
 export enum PluginSetting {
 	URLs = "urls",
-}
-
-export interface IPluginData {
-	hasPermission: (permission: PluginPermission) => boolean;
-	authorize: () => void;
-	isAuthorized: () => boolean;
-	config: (key: PluginSetting) => unknown;
-	manifest(): PluginManifest;
 }

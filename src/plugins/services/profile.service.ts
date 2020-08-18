@@ -10,6 +10,3 @@ export class ProfilePluginService {
 		this.subscribers.push(callback);
 	}
 }
-
-// TODO: Move this to a container or elsewhere
-export const profilePluginService = new ProfilePluginService();

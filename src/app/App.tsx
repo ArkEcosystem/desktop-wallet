@@ -13,6 +13,7 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
+import { PluginManagerWrapper, usePluginManager } from "plugins/use-manager";
 import React, { useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
@@ -33,20 +34,26 @@ const Main = () => {
 	const { env, persist } = useEnvironmentContext();
 
 	const isOnline = useNetworkStatus();
+	const pluginManager = usePluginManager();
 
 	useLayoutEffect(() => {
-		const boot = async () => {
+		const bootEnvrionment = async () => {
 			await env.bootFromObject(fixtureData);
-			setShowSplash(false);
 			await persist();
 		};
 
+		const bootPlugins = async () => {
+			await pluginManager.boot();
+		};
+
+		const promises = [bootPlugins()];
+
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
-			boot();
-		} else {
-			setShowSplash(false);
+			promises.push(bootEnvrionment());
 		}
-	}, [env, persist]);
+
+		Promise.all(promises).then(() => setShowSplash(false));
+	}, [env, persist, pluginManager]);
 
 	if (showSplash) {
 		return <Splash />;
@@ -55,9 +62,25 @@ const Main = () => {
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
 
+	/**
+	 * TODO: cannot be verified if the current profile enabled the plugin
+	 * because the url parameters are not accessible. Then all routes are registered
+	 * and a middleware will validate.
+	 */
+	const pluginsRoutes = pluginManager.services().route.all();
+	const allRoutes = [...pluginsRoutes, ...routes];
+
 	return (
 		<main className={className}>
-			{isOnline ? <RouterView routes={routes} middlewares={middlewares} /> : <Offline />}
+			{isOnline ? (
+				<RouterView
+					routes={allRoutes}
+					middlewares={middlewares}
+					wrapper={(props) => <PluginManagerWrapper pluginManager={pluginManager} {...props} />}
+				/>
+			) : (
+				<Offline />
+			)}
 		</main>
 	);
 };
