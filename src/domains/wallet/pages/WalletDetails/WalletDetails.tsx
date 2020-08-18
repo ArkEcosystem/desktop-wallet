@@ -154,6 +154,9 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/transfer`)
 					}
+					onStoreHash={() =>
+						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/ipfs`)
+					}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
 					onSignMessage={() => setIsSigningMessage(true)}

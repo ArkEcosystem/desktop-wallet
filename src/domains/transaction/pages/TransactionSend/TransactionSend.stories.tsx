@@ -1,4 +1,4 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import React from "react";
 import { MemoryRouter, Route } from "react-router";
@@ -11,7 +11,7 @@ export default {
 	decorators: [(storyFn: any) => <WalletsDecorator count={1}>{storyFn}</WalletsDecorator>],
 };
 
-export const Default = ({ env, profile }: { env: Environment; profile: Profile }) => {
+export const Default = ({ env, profile, wallets }: { env: Environment; profile: Profile; wallets: Wallet[] }) => {
 	const contact = profile.contacts().create("Test contact");
 	contact.setAddresses([
 		{
@@ -24,8 +24,11 @@ export const Default = ({ env, profile }: { env: Environment; profile: Profile }
 
 	return (
 		<EnvironmentProvider env={env}>
-			<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/transfer`]}>
-				<Route component={() => <TransactionSend />} path="/profiles/:profileId/transactions/transfer" />
+			<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/${wallets[0].id()}/transfer`]}>
+				<Route
+					component={() => <TransactionSend />}
+					path="/profiles/:profileId/transactions/:walletId/transfer"
+				/>
 			</MemoryRouter>
 		</EnvironmentProvider>
 	);
