@@ -47,6 +47,23 @@ describe("NewsOptions", () => {
 		expect(onSearch).toBeCalledWith("test query");
 	});
 
+	it("should limit search query to 32 letters", () => {
+		const onSearch = jest.fn();
+		const { getByTestId } = render(
+			<NewsOptions defaultCategories={categories} selectedAssets={assets} onSearch={onSearch} />,
+		);
+
+		act(() => {
+			fireEvent.change(getByTestId("NewsOptions__search"), {
+				target: {
+					value: "1111111111000000000011111111110000000000",
+				},
+			});
+		});
+
+		expect(onSearch).toBeCalledWith("11111111110000000000111111111100");
+	});
+
 	it("should select asset", () => {
 		const onAssetChange = jest.fn();
 		const { getByTestId } = render(

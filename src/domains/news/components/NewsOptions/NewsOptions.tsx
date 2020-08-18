@@ -49,7 +49,8 @@ export const NewsOptions = ({
 		onAssetChange?.(updatedAssets, { ...selectedAsset, isSelected: true });
 	};
 
-	const handleSearchInput = (query: string) => {
+	const handleSearchInput = (searchQuery: string) => {
+		const query = searchQuery.substr(0, 32);
 		setSearchQuery(query);
 		onSearch?.(query);
 	};
@@ -71,6 +72,7 @@ export const NewsOptions = ({
 				<div className="flex items-center justify-between px-2 py-4 shadow-xl rounded-md">
 					<Input
 						data-testid="NewsOptions__search"
+						maxLength={32}
 						onChange={(e) => handleSearchInput?.((e.target as HTMLInputElement).value)}
 						className="border-none shadow-none NewsOptions__search"
 						placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
