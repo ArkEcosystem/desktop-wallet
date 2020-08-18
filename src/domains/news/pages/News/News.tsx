@@ -1,4 +1,5 @@
 import { Blockfolio, BlockfolioResponse, BlockfolioSignal } from "@arkecosystem/platform-sdk-news";
+import { images } from "app/assets/images";
 import { SvgCollection } from "app/assets/svg";
 import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
@@ -13,11 +14,31 @@ import { useTranslation } from "react-i18next";
 
 import { assets, categories as defaultCategories } from "../../data";
 
+const { NoResultsBanner } = images.news.common;
+
 type Props = {
 	defaultCategories?: any[];
 	defaultAssets: any[];
 	selectedCoin?: string;
 	itemsPerPage?: number;
+};
+
+const EmptyScreen = () => {
+	const { t } = useTranslation();
+	return (
+		<div
+			className="border-theme-primary-contrast text-center border-2 h-full flex flex-col justify-center bg-theme-background rounded-lg"
+			data-testid="News__empty-results"
+		>
+			<div className="bg-theme-background">
+				<div className="text-lg font-bold mb-4">{t("NEWS.PAGE_NEWS.RESULT_NOT_FOUND.TITLE")}</div>
+				<div className="text-md mb-8">{t("NEWS.PAGE_NEWS.RESULT_NOT_FOUND.DESCRIPTION")}</div>
+				<div className="w-128 my-4 mx-auto">
+					<NoResultsBanner />
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerPage }: Props) => {
@@ -79,7 +100,6 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 	}, [blockfolio, currentPage, categories, searchQuery, assets]);
 
 	const handleSelectPage = (page: number) => {
-		setNews([]);
 		setCurrentPage(page);
 	};
 
@@ -107,11 +127,7 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 			<Section hasBackground={false}>
 				<div className="container flex space-x-8">
 					<div className="flex-none w-4/6">
-						{!isLoading && news.length === 0 && (
-							<div className="m-4 text-lg" data-testid="News__empty-results">
-								No results
-							</div>
-						)}
+						{!isLoading && news.length === 0 && <EmptyScreen />}
 
 						{isLoading && (
 							<div className="space-y-6">
@@ -129,19 +145,23 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 							</div>
 						)}
 
-						<div className="my-10">
-							<BlockfolioAd />
-						</div>
+						{!isLoading && news.length > 0 && (
+							<>
+								<div className="my-10">
+									<BlockfolioAd />
+								</div>
 
-						<div className="flex justify-center w-full pt-10">
-							<Pagination
-								totalCount={totalCount}
-								itemsPerPage={itemsPerPage}
-								onSelectPage={handleSelectPage}
-								currentPage={currentPage}
-								size="sm"
-							/>
-						</div>
+								<div className="flex justify-center w-full pt-10">
+									<Pagination
+										totalCount={totalCount}
+										itemsPerPage={itemsPerPage}
+										onSelectPage={handleSelectPage}
+										currentPage={currentPage}
+										size="sm"
+									/>
+								</div>
+							</>
+						)}
 					</div>
 					<div className="flex-none w-2/6">
 						<NewsOptions
