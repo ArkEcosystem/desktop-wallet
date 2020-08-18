@@ -100,7 +100,7 @@ export const IpfsDetail = (props: IpfsDetailProps) => {
 					</Circle>
 				}
 			>
-				<div className="flex justify-between">{props.transaction.data.asset.ipfs}</div>
+				<div className="flex justify-between">{props.transaction.hash()}</div>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>
@@ -120,7 +120,7 @@ export const IpfsDetail = (props: IpfsDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<TruncateMiddle text={props.transaction.data.blockId} className="text-theme-primary-dark" />
+				<TruncateMiddle text={props.transaction.blockId()} className="text-theme-primary-dark" />
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
