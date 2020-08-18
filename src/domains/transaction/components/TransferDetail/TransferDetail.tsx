@@ -17,6 +17,7 @@ type TransferDetailProps = {
 	onCancel?: any;
 	transaction: any;
 	ticker?: string;
+	walletAlias?: string;
 };
 
 const renderConfirmationStatus = (confirmations: BigNumber) => {
