@@ -120,7 +120,8 @@ export const IpfsDetail = (props: IpfsDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<TruncateMiddle text={props.transaction.data.blockId} className="text-theme-primary-dark" />
+				{/* TODO: provide Block ID through SDK */}
+				{/* <TruncateMiddle text={props.transaction.data.blockId} className="text-theme-primary-dark" /> */}
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
