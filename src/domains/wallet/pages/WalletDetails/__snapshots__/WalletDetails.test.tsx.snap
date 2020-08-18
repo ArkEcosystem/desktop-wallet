@@ -1767,7 +1767,7 @@ exports[`WalletDetails should render 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -3784,68 +3784,80 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
+                  class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center pr-8 space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc text-theme-neutral-light"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
-                  </div>
-                  <div
-                    class="flex flex-col"
-                  >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Address Delegate
-                    </span>
-                    <div
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      <span
-                        class="mr-2"
-                      >
-                        You haven't voted for more than one delegate yet.
-                      </span>
-                      <a
-                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                      >
-                        Learn more
                         <div
-                          class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                          data-testid="Link__external"
+                          class="sc-AxiKw dzBdqj"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            redirect.svg
+                            voted.svg
                           </svg>
                         </div>
-                      </a>
+                      </div>
+                      <div
+                        class="sc-AxhUy dSLmHc bg-theme-background"
+                      />
+                    </div>
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Address Delegate
+                      </span>
+                      <div
+                        class="font-semibold text-theme-neutral-900"
+                      >
+                        <span
+                          class="mr-2"
+                        >
+                          You haven't voted for more than one delegate yet.
+                        </span>
+                        <a
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                        >
+                          Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
+                  <button
+                    class="sc-AxjAm ddJBbC"
+                    color="primary"
+                    data-testid="WalletVote__delegate__vote"
+                    type="button"
+                  >
+                    Vote
+                  </button>
                 </div>
               </div>
             </div>
@@ -7509,7 +7521,7 @@ exports[`WalletDetails should render with timers 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -9541,7 +9553,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"

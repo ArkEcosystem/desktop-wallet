@@ -61,7 +61,7 @@ export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen }: Props) =>
 								</div>
 							</div>
 
-							<Button variant="plain" onClick={onVote}>
+							<Button variant="plain" onClick={onVote} data-testid="WalletVote__delegate__vote">
 								{t("COMMON.VOTE")}
 							</Button>
 						</div>
@@ -143,9 +143,9 @@ export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen }: Props) =>
 									</ul>
 
 									<Button
-										data-testid="WalletVote__delegate__unvote"
 										variant="plain"
 										onClick={() => onUnvote?.(delegate.address())}
+										data-testid="WalletVote__delegate__unvote"
 									>
 										{t("COMMON.UNVOTE")}
 									</Button>
