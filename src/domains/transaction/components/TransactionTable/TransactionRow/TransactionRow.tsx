@@ -16,6 +16,7 @@ type Props = {
 	currencyRate?: string;
 	isSignaturePending?: boolean;
 	onSign?: () => void;
+	onClick?: () => void;
 	walletName?: string;
 	isLoading?: boolean;
 	showSign?: boolean;
@@ -25,6 +26,7 @@ export const TransactionRow = ({
 	currencyRate,
 	transaction,
 	onSign,
+	onClick,
 	walletName,
 	isSignaturePending,
 	isLoading,
@@ -41,7 +43,12 @@ export const TransactionRow = ({
 		);
 
 	return (
-		<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
+		<tr
+			data-testid="TransactionRow"
+			className="border-b border-dotted border-theme-neutral-300"
+			{...props}
+			onClick={onClick}
+		>
 			<td className="w-16 py-6">
 				<div className="inline-block align-middle">
 					<Link

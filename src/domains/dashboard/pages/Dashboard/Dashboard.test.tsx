@@ -243,4 +243,32 @@ describe("Dashboard", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should open detail modal on transaction row click", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
+
+		act(() => {
+			fireEvent.click(getAllByTestId("TransactionRow")[0]);
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeInTheDocument();
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

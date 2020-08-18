@@ -534,7 +534,7 @@ exports[`TransactionTable should render compact 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 bg-opacity-10 hover:bg-theme-neutral-100"
             data-testid="TransactionCompactRow"
           >
             <td
@@ -599,7 +599,7 @@ exports[`TransactionTable should render compact 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 bg-opacity-10 hover:bg-theme-neutral-100"
             data-testid="TransactionCompactRow"
           >
             <td
