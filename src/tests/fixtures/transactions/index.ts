@@ -46,4 +46,6 @@ export const TransactionFixture: Contracts.TransactionDataType = {
 	hasFailed: () => false,
 	getMeta: () => "",
 	setMeta: () => "",
+	// IPFS Type
+	hash: () => "QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68",
 };
