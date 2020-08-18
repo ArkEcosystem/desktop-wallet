@@ -123,5 +123,17 @@ export const WalletsDecorator = ({ count, children, withDelegate, withDelegates 
 		return <>Loading Wallets</>;
 	}
 
-	return <>{children({ delegate, delegates, env, profile, wallets })}</>;
+	return (
+		<>
+			{children({
+				args: {
+					delegate,
+					delegates,
+					env,
+					profile,
+					wallets,
+				},
+			})}
+		</>
+	);
 };

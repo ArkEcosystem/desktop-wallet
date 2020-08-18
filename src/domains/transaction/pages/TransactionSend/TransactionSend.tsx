@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -28,7 +28,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ networks, profile, wallets }: any) => {
+export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
 	const { recipients, smartbridge } = getValues();
@@ -53,7 +53,7 @@ export const FirstStep = ({ networks, profile, wallets }: any) => {
 							/>
 						</div>
 
-						<FormField name="smartbridge" className="relative mt-1">
+						<FormField name="smartbridge" className="relative">
 							<div className="mb-2">
 								<FormLabel label="Smartbridge" />
 							</div>
@@ -81,11 +81,10 @@ export const FirstStep = ({ networks, profile, wallets }: any) => {
 	);
 };
 
-export const SecondStep = ({ profile }: any) => {
+export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
-	const { fee, recipients, senderAddress, smartbridge } = getValues();
-	const wallet: Wallet = profile.wallets().findByAddress(senderAddress);
+	const { fee, recipients, smartbridge } = getValues();
 	const coinName = wallet.manifest().get<string>("name");
 
 	let amount = BigNumber.ZERO;
@@ -230,9 +229,7 @@ export const TransactionSend = () => {
 	const activeWallet = useActiveWallet();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const form = useForm({
-		mode: "onChange",
-	});
+	const form = useForm({ mode: "onChange" });
 	const { clearError, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
@@ -330,7 +327,7 @@ export const TransactionSend = () => {
 								<FirstStep networks={networks} profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep profile={activeProfile} />
+								<SecondStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<ThirdStep />
@@ -339,7 +336,7 @@ export const TransactionSend = () => {
 								<FifthStep transaction={transaction} />
 							</TabPanel>
 
-							<div className="flex justify-end mt-8 space-x-3">
+							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 4 && (
 									<>
 										<Button

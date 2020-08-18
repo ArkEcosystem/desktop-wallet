@@ -29,7 +29,7 @@ export const TransactionRoutes = [
 		component: TransactionSend,
 	},
 	{
-		path: "/profiles/:profileId/transactions/ipfs",
+		path: "/profiles/:profileId/transactions/:walletId/ipfs",
 		exact: true,
 		component: SendIPFSTransaction,
 	},
