@@ -255,22 +255,42 @@ export const TransactionSend = () => {
 
 	const submitForm = async () => {
 		clearError("mnemonic");
+
 		const { fee, mnemonic, recipients, senderAddress, smartbridge } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
+		const isMultiPayment = recipients.length > 1;
+		const transferInput = {
+			fee,
+			from: senderAddress,
+			sign: {
+				mnemonic,
+			},
+		};
+
 		try {
-			const transactionId = await senderWallet!.transaction().signTransfer({
-				fee,
-				from: senderAddress,
-				sign: {
-					mnemonic,
-				},
-				data: {
-					amount: recipients[0].amount,
-					to: recipients[0].address,
-					memo: smartbridge,
-				},
-			});
+			let transactionId: string;
+
+			if (isMultiPayment) {
+				transactionId = await senderWallet!.transaction().signMultiPayment({
+					...transferInput,
+					data: {
+						payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
+							to: address,
+							amount,
+						})),
+					},
+				});
+			} else {
+				transactionId = await senderWallet!.transaction().signTransfer({
+					...transferInput,
+					data: {
+						to: recipients[0].address,
+						amount: recipients[0].amount,
+						memo: smartbridge,
+					},
+				});
+			}
 
 			await senderWallet!.transaction().broadcast([transactionId]);
 
