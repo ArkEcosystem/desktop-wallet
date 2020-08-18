@@ -13,7 +13,7 @@ const manifest1 = {
 let subject: PluginData;
 
 beforeEach(() => {
-	subject = PluginData.fromManifest(manifest1);
+	subject = PluginData.make(manifest1, {});
 });
 
 it("#hasPermisson", () => {

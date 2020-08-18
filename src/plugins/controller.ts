@@ -18,16 +18,6 @@ export class PluginController {
 		this.registerRoutes();
 	}
 
-	private registerRoutes() {
-		const routeService = container.get<RoutePluginService>(Identifiers.RouteService);
-		for (const plugin of this._plugins) {
-			const routes = plugin.entry().registerRoutes?.();
-			if (routes) {
-				routeService.add(plugin.name(), routes);
-			}
-		}
-	}
-
 	activate() {
 		// TODO: Check profile authorization
 		for (const plugin of this._plugins) {
@@ -41,6 +31,16 @@ export class PluginController {
 		for (const plugin of this._plugins) {
 			routeService.remove(plugin.name());
 			plugin.entry().deactivate?.();
+		}
+	}
+
+	private registerRoutes() {
+		const routeService = container.get<RoutePluginService>(Identifiers.RouteService);
+		for (const plugin of this._plugins) {
+			const routes = plugin.entry().registerRoutes?.();
+			if (routes) {
+				routeService.add(plugin.name(), routes);
+			}
 		}
 	}
 }
