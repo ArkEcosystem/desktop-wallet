@@ -48,7 +48,7 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 		},
 	];
 
-	useEffect(() => window.scrollTo({ top: 100, behavior: "smooth" }), [currentPage, coin]);
+	useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [currentPage, coin]);
 
 	useEffect(() => {
 		const fetchNews = async () => {
