@@ -70,15 +70,15 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 	};
 
 	return (
-		<>
-			<FormField name="network" className="relative mt-1">
+		<div className="SendTransactionForm space-y-8">
+			<FormField name="network" className="relative">
 				<div className="mb-2">
 					<FormLabel label="Network" />
 				</div>
 				<SelectNetwork id="SendTransactionForm__network" networks={networks} selected={network} disabled />
 			</FormField>
 
-			<FormField name="senderAddress" className="relative mt-1">
+			<FormField name="senderAddress" className="relative">
 				<div className="mb-2">
 					<FormLabel label="Sender" />
 				</div>
@@ -96,7 +96,7 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 			{children}
 
 			<FormField name="fee">
-				<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
+				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 				<InputFee
 					{...feeOptions}
 					defaultValue={fee || 0}
@@ -105,6 +105,6 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 					onChange={(value: any) => setValue("fee", value, true)}
 				/>
 			</FormField>
-		</>
+		</div>
 	);
 };

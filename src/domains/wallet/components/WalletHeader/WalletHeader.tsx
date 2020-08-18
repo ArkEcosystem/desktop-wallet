@@ -31,6 +31,7 @@ type Props = {
 	onUpdateWalletName: () => void;
 	onSend?: () => void;
 	onStar?: () => void;
+	onStoreHash: () => void;
 };
 
 export const WalletHeader = ({
@@ -43,6 +44,7 @@ export const WalletHeader = ({
 	publicKey,
 	onSend,
 	onStar,
+	onStoreHash,
 	onSignMessage,
 	onVerifyMessage,
 	onDeleteWallet,
@@ -140,6 +142,10 @@ export const WalletHeader = ({
 
 									if (option.value === "wallet-name") {
 										onUpdateWalletName();
+									}
+
+									if (option.value === "store-hash") {
+										onStoreHash();
 									}
 								}}
 								dropdownClass="top-5 right-3 text-left bg-white"
