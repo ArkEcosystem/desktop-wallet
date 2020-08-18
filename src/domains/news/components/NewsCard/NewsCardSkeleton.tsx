@@ -6,7 +6,7 @@ import Skeleton from "react-loading-skeleton";
 
 export const NewsCardSkeleton = () => (
 	<Card className="bg-theme-background">
-		<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard">
+		<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard__skeleton">
 			<div className="flex justify-between w-full">
 				<div className="flex items-center space-x-4">
 					<Circle aria-label="network" className="border-theme-neutral-200" />
