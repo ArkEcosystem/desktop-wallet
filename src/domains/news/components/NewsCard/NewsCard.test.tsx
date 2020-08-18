@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "testing-library";
-import { data } from "tests/fixtures/news/blockfolio.json";
+import { data } from "tests/fixtures/news/page-1.json";
 
 import { NewsCard } from "./NewsCard";
 
