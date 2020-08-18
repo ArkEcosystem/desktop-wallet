@@ -35,10 +35,9 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 	});
 
 	const [news, setNews] = useState<BlockfolioSignal[]>([]);
-	const [filteredNews, setFilteredNews] = useState<BlockfolioSignal[]>([]);
 
 	const [coin, setCoin] = useState(selectedCoin);
-	const skeletonCards = new Array(6).fill({});
+	const skeletonCards = new Array(8).fill({});
 
 	const { t } = useTranslation();
 
@@ -59,7 +58,16 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 			const selectedAsset = assets.find((asset: any) => asset.isSelected);
 			const selectedCoinName = selectedAsset.coin.toLowerCase();
 
-			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(selectedCoinName, currentPage);
+			const selectedCategory = categories?.find((category) => category.isSelected);
+			const category = selectedCategory.name;
+
+			const query = {
+				page: currentPage,
+				...(category !== "All" && { category }),
+				...(searchQuery !== "" && { query: searchQuery }),
+			};
+
+			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(selectedCoinName, query);
 
 			setCoin(selectedCoinName);
 			setNews(data);
@@ -69,25 +77,6 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 
 		fetchNews();
 	}, [blockfolio, currentPage, categories, searchQuery, assets]);
-
-	useEffect(() => {
-		const filterByCategories = (items: BlockfolioSignal[]) => {
-			const selecteCategoryNames = categories?.filter((c) => c.isSelected).map((c) => c.name);
-			if (selecteCategoryNames?.includes("All")) return items;
-
-			return items.filter((item) => selecteCategoryNames?.includes(item.category));
-		};
-
-		const filterBySearchQuery = (input: string, items: BlockfolioSignal[]) => {
-			const searchInput = input.trim().toLowerCase();
-			return items.filter((item) => item.text.toLowerCase().match(searchInput));
-		};
-
-		const byCategory = filterByCategories(news);
-		const bySearchInput = filterBySearchQuery(searchQuery, byCategory);
-
-		setFilteredNews(bySearchInput);
-	}, [news, searchQuery, categories]);
 
 	const handleSelectPage = (page: number) => {
 		setNews([]);
@@ -118,7 +107,7 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 			<Section hasBackground={false}>
 				<div className="container flex space-x-8">
 					<div className="flex-none w-4/6">
-						{!isLoading && filteredNews.length === 0 && (
+						{!isLoading && news.length === 0 && (
 							<div className="m-4 text-lg" data-testid="News__empty-results">
 								No results
 							</div>
@@ -134,7 +123,7 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 
 						{!isLoading && (
 							<div className="space-y-6">
-								{filteredNews?.map((data, index) => (
+								{news?.map((data, index) => (
 									<NewsCard key={index} coin={coin} {...data} />
 								))}
 							</div>
