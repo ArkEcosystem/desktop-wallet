@@ -140,6 +140,7 @@ export const translations: { [key: string]: any } = {
 	VERSION: "Version",
 	VIEW: "View",
 	VIEW_MORE: "View More",
+	VOTE: "Vote",
 	VOTES: "Votes",
 	VOTING: "Voting",
 	WALLET: "Wallet",
