@@ -30,10 +30,11 @@ export const NewsOptions = ({
 	const [assets, setAssets] = useState(selectedAssets);
 	const [searchQuery, setSearchQuery] = useState("");
 
-	const handleCategoryChange = (name: string, isSelected: boolean) => {
-		const updatedCategories = categories?.map((categoryItem: any) =>
-			name === categoryItem.name ? { name, isSelected } : categoryItem,
-		);
+	const handleCategoryChange = (name: string) => {
+		const updatedCategories = categories?.map((category: any) => ({
+			...category,
+			isSelected: category.name === name,
+		}));
 
 		setCategories(updatedCategories);
 		onCategoryChange?.(updatedCategories);
@@ -91,8 +92,8 @@ export const NewsOptions = ({
 								)}`}
 								key={index}
 								className="p-1"
-								defaultChecked={category.isSelected}
-								onChange={({ target }: any) => handleCategoryChange(category.name, target.checked)}
+								checked={category.isSelected}
+								onChange={() => handleCategoryChange(category.name)}
 							>
 								#{t(`NEWS.CATEGORIES.${category.name.toUpperCase()}`)}
 							</SelectCategory>
