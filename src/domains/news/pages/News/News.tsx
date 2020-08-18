@@ -27,13 +27,13 @@ const EmptyScreen = () => {
 	const { t } = useTranslation();
 	return (
 		<div
-			className="border-theme-primary-contrast text-center border-2 h-full flex flex-col justify-center bg-theme-background rounded-lg"
+			className="flex flex-col justify-center h-full text-center border-2 rounded-lg border-theme-primary-contrast bg-theme-background"
 			data-testid="News__empty-results"
 		>
 			<div className="bg-theme-background">
-				<div className="text-lg font-bold mb-4">{t("NEWS.PAGE_NEWS.RESULT_NOT_FOUND.TITLE")}</div>
-				<div className="text-md mb-8">{t("NEWS.PAGE_NEWS.RESULT_NOT_FOUND.DESCRIPTION")}</div>
-				<div className="w-128 my-4 mx-auto">
+				<div className="mb-4 text-lg font-bold">{t("NEWS.PAGE_NEWS.RESULT_NOT_FOUND.TITLE")}</div>
+				<div className="mb-8 text-md">{t("NEWS.PAGE_NEWS.RESULT_NOT_FOUND.DESCRIPTION")}</div>
+				<div className="mx-auto my-4 w-128">
 					<NoResultsBanner />
 				</div>
 			</div>
