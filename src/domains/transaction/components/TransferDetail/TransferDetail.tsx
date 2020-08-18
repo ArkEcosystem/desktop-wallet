@@ -1,5 +1,4 @@
 // import { Contracts } from "@arkecosystem/platform-sdk";
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -9,7 +8,6 @@ import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
 // UI Elements
-import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -18,6 +16,8 @@ type TransferDetailProps = {
 	onClose?: any;
 	onCancel?: any;
 	transaction: any;
+	ticker?: string;
+	walletAlias?: string;
 };
 
 const renderConfirmationStatus = (confirmations: BigNumber) => {
@@ -48,12 +48,9 @@ const renderConfirmationStatus = (confirmations: BigNumber) => {
 
 export const TransferDetail = (props: TransferDetailProps) => {
 	const { t } = useTranslation();
-	const activeProfile = useActiveProfile();
-	const ticker = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!;
-	const walletAlias = activeProfile.wallets().findByAddress(props.transaction.recipient())?.alias();
 
 	const renderRecipient = () => {
-		if (walletAlias) {
+		if (props.walletAlias) {
 			return (
 				<TransactionDetail
 					label={t("TRANSACTION.RECIPIENT")}
@@ -66,7 +63,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 						</div>
 					}
 				>
-					{walletAlias}
+					{props.walletAlias}
 					<TruncateMiddle text={props.transaction.recipient()} className="ml-2 text-theme-neutral" />
 				</TransactionDetail>
 			);
@@ -100,9 +97,9 @@ export const TransferDetail = (props: TransferDetailProps) => {
 						</Circle>
 					}
 				>
-					<Label color="danger">{`${props.transaction.amount().toHuman()} ${ticker.toUpperCase()}`}</Label>
-
-					<span className="ml-2 text-theme-neutral">23,000.00 USD</span>
+					<Label color="danger">{`${props.transaction
+						.amount()
+						.toHuman()} ${props.ticker?.toUpperCase()}`}</Label>
 				</TransactionDetail>
 			);
 		}
@@ -116,9 +113,9 @@ export const TransferDetail = (props: TransferDetailProps) => {
 					</Circle>
 				}
 			>
-				<Label color="success">{`${props.transaction.amount().toHuman()} ${ticker.toUpperCase()}`}</Label>
-
-				<span className="ml-2 text-theme-neutral">23,000.00 USD</span>
+				<Label color="success">{`${props.transaction
+					.amount()
+					.toHuman()} ${props.ticker?.toUpperCase()}`}</Label>
 			</TransactionDetail>
 		);
 	};
@@ -135,7 +132,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 
 			<TransactionDetail
 				label={t("TRANSACTION.TRANSACTION_FEE")}
-			>{`${props.transaction.fee().toHuman()} ${ticker.toUpperCase()}`}</TransactionDetail>
+			>{`${props.transaction.fee().toHuman()} ${props.ticker?.toUpperCase()}`}</TransactionDetail>
 
 			{props.transaction.memo() && (
 				<TransactionDetail label={t("TRANSACTION.SMARTBRIDGE")}>

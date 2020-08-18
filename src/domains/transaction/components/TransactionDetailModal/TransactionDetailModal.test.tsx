@@ -120,7 +120,10 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						data: {
+							asset: { ipfs: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+							blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						},
 						type: () => "ipfs",
 					}}
 				/>
