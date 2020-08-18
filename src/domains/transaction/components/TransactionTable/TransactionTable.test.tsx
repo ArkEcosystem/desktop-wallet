@@ -9,6 +9,7 @@ import { TransactionTable } from "./TransactionTable";
 const transactions: Contracts.TransactionDataType[] = [
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+		blockId: () => "71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9",
 		type: () => "transfer",
 		timestamp: () => DateTime.fromUnix(1596213281),
 		confirmations: () => BigNumber.make(10),
@@ -53,6 +54,7 @@ const transactions: Contracts.TransactionDataType[] = [
 	},
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+		blockId: () => "71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9",
 		type: () => "transfer",
 		timestamp: () => DateTime.fromUnix(1596213281),
 		confirmations: () => BigNumber.make(5),
