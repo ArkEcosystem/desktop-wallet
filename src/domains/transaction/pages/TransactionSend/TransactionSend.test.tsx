@@ -126,7 +126,7 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should navigate between steps", async () => {
+	it("should send a single transfer", async () => {
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
 
@@ -239,6 +239,103 @@ describe("Transaction Send", () => {
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should send a multi payment", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+					<TransactionSend />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+			);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Select multiple button
+			await waitFor(() => expect(getByTestId("add-recipient-is-multiple-toggle")).toBeTruthy());
+			fireEvent.click(getByTestId("add-recipient-is-multiple-toggle"));
+
+			// Add recipient #1
+			fireEvent.input(getByTestId("SelectRecipient__input"), {
+				target: { value: "DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM" },
+			});
+			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "10" } });
+			await waitFor(() => expect(getByTestId("add-recipient__add-btn")).toBeTruthy());
+			fireEvent.click(getByTestId("add-recipient__add-btn"));
+
+			// Add recipient #2
+			fireEvent.input(getByTestId("SelectRecipient__input"), {
+				target: { value: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" },
+			});
+			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "20" } });
+			await waitFor(() => expect(getByTestId("add-recipient__add-btn")).toBeTruthy());
+			fireEvent.click(getByTestId("add-recipient__add-btn"));
+
+			// Smartbridge
+			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[2]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("TransactionSend__button--continue"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("TransactionSend__button--continue"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--third")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("TransactionSend__button--back"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("TransactionSend__button--continue"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--third")).toBeTruthy());
+			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
+			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+
+			// Step 5 (skip step 4 for now - ledger confirmation)
+			const signMock = jest
+				.spyOn(TransactionService.prototype, "signMultiPayment")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
+
+			fireEvent.click(getByTestId("TransactionSend__button--submit"));
+
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e77…2f1b89abb49877");
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
