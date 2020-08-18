@@ -17,7 +17,7 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
-import transactionFixture from "tests/fixtures/coins/ark/transaction.json";
+import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
@@ -46,7 +46,7 @@ describe("Transaction Send", () => {
 
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FirstStep profile={profile} />
+				<FirstStep networks={[]} profile={profile} />
 			</FormContext>,
 		);
 
@@ -73,7 +73,7 @@ describe("Transaction Send", () => {
 
 		const { asFragment, container, getByTestId } = render(
 			<FormContext {...form.current}>
-				<SecondStep profile={profile} />
+				<SecondStep wallet={wallet} />
 			</FormContext>,
 		);
 

@@ -1,6 +1,5 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
-import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { MemoryRouter, Route } from "react-router";
 import { WalletsDecorator } from "utils/storybook";
@@ -12,13 +11,10 @@ export default {
 	decorators: [(storyFn: any) => <WalletsDecorator count={3}>{storyFn}</WalletsDecorator>],
 };
 
-export const Default = ({ env, profile }: { env: Environment; profile: Profile }) => (
+export const Default = ({ env, profile, wallets }: { env: Environment; profile: Profile; wallets: Wallet[] }) => (
 	<EnvironmentProvider env={env}>
-		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/ipfs`]}>
-			<Route
-				path="/profiles/:profileId/transactions/ipfs"
-				component={() => <SendIPFSTransaction networks={availableNetworksMock} />}
-			/>
+		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/${wallets[0].id()}/ipfs`]}>
+			<Route path="/profiles/:profileId/transactions/:walletId/ipfs" component={() => <SendIPFSTransaction />} />
 		</MemoryRouter>
 	</EnvironmentProvider>
 );
