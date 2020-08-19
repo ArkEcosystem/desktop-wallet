@@ -26,14 +26,6 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 
 	const { formState, register, reset, triggerValidation, watch } = formConfig.context;
 
-	const formatError = (errorMessage: string) => {
-		if (errorMessage === "The current password does not match.") {
-			return t("SETTINGS.PASSWORD.ERROR.MISMATCH");
-		}
-
-		return t("SETTINGS.PASSWORD.ERROR.FALLBACK");
-	};
-
 	const handleSubmit = async ({ currentPassword, password_1 }: any) => {
 		try {
 			if (usesPassword) {
@@ -42,7 +34,7 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 				activeProfile.auth().setPassword(password_1);
 			}
 		} catch (error) {
-			return setStatus({ type: "error", message: formatError(error.message) });
+			return setStatus({ type: "error", message: t("SETTINGS.PASSWORD.ERROR.MISMATCH") });
 		}
 
 		reset();
@@ -64,7 +56,7 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 			/>
 
 			{status && (
-				<div className="mb-8" data-testid="Password__error-alert">
+				<div className="mb-8" data-testid={`Password-settings__${status.type}-alert`}>
 					{status.type === "error" ? (
 						<Alert variant="danger" size="sm" title={t("COMMON.ERROR")}>
 							{status.message}
@@ -92,6 +84,7 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 									field: t("SETTINGS.PASSWORD.CURRENT"),
 								}).toString(),
 							})}
+							data-testid="Password-settings__input--currentPassword"
 						/>
 						<FormHelperText />
 					</FormField>
@@ -128,6 +121,7 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 									},
 									validate: validatePasswords,
 								})}
+								data-testid={`Password-settings__input--password_${password}`}
 							/>
 							<FormHelperText />
 						</FormField>
@@ -135,7 +129,7 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 				})}
 
 				<div className="flex justify-end w-full mt-8">
-					<Button disabled={!formState.isValid} type="submit">
+					<Button data-testid="Password-settings__submit-button" disabled={!formState.isValid} type="submit">
 						{usesPassword ? t("SETTINGS.PASSWORD.BUTTON.UPDATE") : t("SETTINGS.PASSWORD.BUTTON.CREATE")}
 					</Button>
 				</div>
