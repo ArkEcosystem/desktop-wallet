@@ -2,7 +2,7 @@ import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd } from "app/components/Input";
 import { useSelect } from "downshift";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { SelectOptionsList, SelectToggleButton } from "./styles";
 
@@ -27,11 +27,25 @@ const SelectDropdown = ({
 	isInvalid,
 	defaultSelectedItem,
 }: any) => {
-	const { isOpen, selectedItem, getToggleButtonProps, getMenuProps, highlightedIndex, getItemProps } = useSelect({
+	const {
+		isOpen,
+		selectedItem,
+		selectItem,
+		getToggleButtonProps,
+		getMenuProps,
+		highlightedIndex,
+		getItemProps,
+	} = useSelect({
 		items: options,
 		onSelectedItemChange,
 		defaultSelectedItem: defaultSelectedItem,
 	});
+
+	useEffect(() => {
+		if (defaultSelectedItem && (!selectedItem || selectedItem.value !== defaultSelectedItem.value)) {
+			selectItem(defaultSelectedItem || null);
+		}
+	}, [selectItem, defaultSelectedItem]);
 
 	const isOpenClassName = isOpen ? "is-open" : "";
 	const isSelectedClassName = selectedItem ? "is-selected" : "";
