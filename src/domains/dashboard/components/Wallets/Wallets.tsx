@@ -130,7 +130,7 @@ export const Wallets = ({
 									<Button
 										variant="plain"
 										className="w-full mt-10 mb-5"
-										data-testid="Wallets__ViewMore"
+										data-testid="WalletsList__ViewMore"
 										onClick={() => loadAllListWallets()}
 									>
 										{t("COMMON.VIEW_MORE")}

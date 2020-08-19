@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -9,6 +9,8 @@ import { Wallets } from "./Wallets";
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
+
+let profile: Profile;
 let wallet: Wallet;
 
 // Wallet filter properties
@@ -40,7 +42,7 @@ describe("Wallets", () => {
 	});
 
 	beforeEach(() => {
-		const profile = env.profiles().findById(getDefaultProfileId());
+		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 
@@ -201,6 +203,44 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(queryByTestId("Wallets__ViewMore")).toBeTruthy();
+		expect(queryByTestId("WalletsList__ViewMore")).toBeTruthy();
+	});
+
+	it("should click view", () => {
+		const lastWallet = profile.wallets().findById("d044a552-7a49-411c-ae16-8ff407acc430");
+
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets
+					wallets={[
+						wallet,
+						wallet,
+						wallet,
+						wallet,
+						wallet,
+						wallet,
+						wallet,
+						wallet,
+						wallet,
+						wallet,
+						lastWallet,
+					]}
+					viewType="list"
+					filterProperties={filterProperties}
+				/>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(container.innerHTML).not.toContain(lastWallet.address());
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletsList__ViewMore"));
+		});
+
+		expect(container.innerHTML).toContain(lastWallet.address());
 	});
 });
