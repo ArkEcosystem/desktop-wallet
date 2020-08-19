@@ -1,64 +1,34 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputPassword } from "app/components/Input";
-import { Label } from "app/components/Label";
+import { InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { Select } from "app/components/SelectDropdown";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TextArea } from "app/components/TextArea";
-import { TransactionDetail } from "app/components/TransactionDetail";
-import { useActiveProfile } from "app/hooks/env";
+import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import { availableNetworksMock } from "domains/network/data";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
-import { InputFee } from "domains/transaction/components/InputFee";
+import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
-import { LinkCollection } from "domains/transaction/components/LinkCollection";
-import { LinkList } from "domains/transaction/components/LinkList";
-import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useEffect, useMemo, useState } from "react";
+import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { styled } from "twin.macro";
+import { useHistory, useParams } from "react-router-dom";
 
-type RegistrationProps = {
-	formDefaultData?: any;
-	onDownload?: any;
-	networks?: NetworkData[];
-	registrationTypes?: any;
-	wallets: any[];
+import { RegistrationForm, RegistrationType } from "./Registration.models";
+
+const registrationComponents: any = {
+	delegateRegistration: DelegateRegistrationForm,
 };
 
-type RegistrationType = { label: string; value: string };
-
-const FormWrapper = styled.div`
-	.select-transparent {
-		> div:first-child {
-			width: 100%;
-		}
-
-		select {
-			&:not([disabled]) {
-				background-color: transparent;
-				color: transparent;
-			}
-			option {
-				color: var(--theme-color-neutral-900);
-			}
-		}
-	}
-`;
-
-const RegistrationTypeDropdown = ({ className, register, registrationTypes }: any) => {
+const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
 	const { t } = useTranslation();
+	const { setValue } = useFormContext();
 
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
@@ -66,54 +36,87 @@ const RegistrationTypeDropdown = ({ className, register, registrationTypes }: an
 				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
 			</div>
 			<div>
-				<Select ref={register} data-testid="Registration__type-select" options={registrationTypes} />
+				<Select
+					data-testid="Registration__type-select"
+					options={registrationTypes}
+					defaultValue={defaultValue}
+					onChange={onChange}
+				/>
 			</div>
 		</FormField>
 	);
 };
 
-const getRegistrationByName = (registrationTypes: any[], registrationType: string) =>
+const getRegistrationByName = (registrationTypes: RegistrationType[], registrationType: string) =>
 	registrationTypes.find((type: any) => type.value === registrationType);
 
-const FirstStep = ({
-	form,
-	networks,
-	registrationTypes,
-	wallets,
-}: {
-	form: any;
-	networks: NetworkData[];
-	registrationTypes: RegistrationType[];
-	wallets: any[];
-}) => {
-	const { register } = form;
-	const { address, registrationType } = form.watch();
-
+const FirstStep = ({ networks, profile, wallet }: { networks: NetworkData[]; profile: Profile; wallet: Wallet }) => {
 	const { t } = useTranslation();
+	const history = useHistory();
+
+	const [wallets, setWallets] = useState<Wallet[]>([]);
+
+	const registrationTypes: RegistrationType[] = [
+		{
+			value: "business",
+			label: "Business",
+		},
+	];
+
+	if (!wallet.isDelegate()) {
+		registrationTypes.push({
+			value: "delegateRegistration",
+			label: "Delegate",
+		});
+	}
+
+	const form = useFormContext();
+	const { setValue } = form;
+	const { network, senderAddress, registrationType } = form.watch();
+
+	useEffect(() => {
+		if (network) {
+			setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
+		}
+	}, [network, profile]);
+
+	const onSelectSender = (address: any) => {
+		setValue("senderAddress", address, true);
+
+		const wallet = wallets.find((wallet) => wallet.address() === address);
+		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/registration/${registrationType}`);
+	};
+
+	const onSelectType = (selectedItem: any) => {
+		setValue("registrationType", selectedItem.value, true);
+
+		history.push(`/profiles/${profile.id()}/transactions/${wallet.id()}/registration/${selectedItem.value}`);
+	};
 
 	return (
 		<div data-testid="Registration__first-step">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.DESCRIPTION")}</div>
 
-			<FormWrapper className="mt-8">
-				<FormField name="network">
-					<FormLabel label={t("TRANSACTION.NETWORK")} />
-					<SelectNetwork id="Registration__network" networks={networks} />
+			<div className="mt-8 space-y-8">
+				<FormField name="network" className="relative">
+					<div className="mb-2">
+						<FormLabel label="Network" />
+					</div>
+					<SelectNetwork id="SendTransactionForm__network" networks={networks} selected={network} disabled />
 				</FormField>
 
-				<FormField name="address" className="relative mt-8">
+				<FormField name="senderAddress" className="relative">
 					<div className="mb-2">
-						<FormLabel label={t("TRANSACTION.ADDRESS")} />
+						<FormLabel label="Sender" />
 					</div>
 
-					<div data-testid="Registration__address-field">
+					<div data-testid="sender-address">
 						<SelectAddress
-							contactSearchTitle={t("TRANSACTION.CONTACT_SEARCH.TITLE")}
-							contactSearchDescription={t("TRANSACTION.CONTACT_SEARCH.DESCRIPTION")}
-							address={address}
-							ref={register}
+							address={senderAddress}
 							wallets={wallets}
+							disabled={wallets.length === 0}
+							onChange={onSelectSender}
 						/>
 					</div>
 				</FormField>
@@ -121,200 +124,27 @@ const FirstStep = ({
 				<RegistrationTypeDropdown
 					selectedType={getRegistrationByName(registrationTypes, registrationType)}
 					registrationTypes={registrationTypes}
+					defaultValue={registrationType}
+					onChange={onSelectType}
 					className="mt-8"
-					register={register}
 				/>
-			</FormWrapper>
-		</div>
-	);
-};
-
-const SecondStep = ({ form }: { form: any }) => {
-	const { register } = form;
-	const { t } = useTranslation();
-
-	return (
-		<div data-testid="Registration__second-step">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.DESCRIPTION")}</div>
-
-			<div>
-				<FormWrapper className="pb-8 mt-8">
-					<FormField name="name" className="font-normal">
-						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input type="text" ref={register} />
-					</FormField>
-
-					<FormField name="description" className="mt-8 font-normal">
-						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea ref={register} />
-					</FormField>
-
-					<FormField name="website" className="mt-8 font-normal">
-						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input type="website" ref={register} />
-					</FormField>
-				</FormWrapper>
-
-				<TransactionDetail className="pb-8">
-					<LinkCollection
-						title={t("TRANSACTION.REPOSITORIES.TITLE")}
-						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
-						types={[
-							{ label: "BitBucket", value: "bitbucket" },
-							{ label: "GitHub", value: "github" },
-							{ label: "GitLab", value: "gitlab" },
-						]}
-						typeName="repository"
-					/>
-				</TransactionDetail>
-
-				<TransactionDetail className="pb-8">
-					<LinkCollection
-						title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
-						description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
-						types={[
-							{ label: "Facebook", value: "facebook" },
-							{ label: "Twitter", value: "twitter" },
-							{ label: "LinkedIn", value: "linkedin" },
-						]}
-						typeName="media"
-					/>
-				</TransactionDetail>
-
-				<TransactionDetail className="pb-8">
-					<LinkCollection
-						title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
-						description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
-						types={[
-							{ label: "YouTube", value: "youtube" },
-							{ label: "Vimeo", value: "vimeo" },
-							{ label: "Flickr", value: "flickr" },
-						]}
-						typeName="files"
-						selectionTypes={["flickr"]}
-						selectionTypeTitle="Avatar"
-					/>
-				</TransactionDetail>
-
-				<TransactionDetail className="pt-6 pb-0">
-					<FormField name="fee">
-						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
-						<InputFee
-							defaultValue={(25 * 1e8).toFixed(0)}
-							min={(1 * 1e8).toFixed(0)}
-							max={(100 * 1e8).toFixed(0)}
-							step={1}
-						/>
-					</FormField>
-				</TransactionDetail>
 			</div>
 		</div>
 	);
 };
 
-const ThirdStep = () => {
+const SigningStep = ({
+	passwordType,
+	wallet,
+}: {
+	passwordType: "mnemonic" | "password" | "ledger";
+	wallet: Wallet;
+}) => {
 	const { t } = useTranslation();
-
-	const links = [
-		{
-			link: "http://github.com/robank",
-			type: "github",
-		},
-		{
-			link: "http://gitlab.com/robank",
-			type: "gitlab",
-		},
-		{
-			link: "http://bitbucket.com/robank",
-			type: "bitbucket",
-		},
-		{
-			link: "http://npmjs.com/robank",
-			type: "npm",
-		},
-	];
+	const { register } = useFormContext();
 
 	return (
-		<div data-testid="Registration__third-step">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.DESCRIPTION")}</div>
-			<div className="mt-4">
-				<TransactionDetail
-					border={false}
-					label={t("TRANSACTION.NETWORK")}
-					extra={
-						<div className="ml-1 text-theme-danger">
-							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
-							</Circle>
-						</div>
-					}
-				>
-					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
-						ARK Ecosystem
-					</div>
-				</TransactionDetail>
-
-				<TransactionDetail
-					extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
-					className="pt-4"
-				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral">
-						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
-						<Label color="warning">
-							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
-						</Label>
-					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
-				</TransactionDetail>
-
-				<TransactionDetail
-					label={t("TRANSACTION.TYPE")}
-					extra={
-						<div>
-							<Circle className="border-black bg-theme-background" size="lg">
-								<Icon name="Business" width={20} height={20} />
-							</Circle>
-						</div>
-					}
-				>
-					Business Registration
-				</TransactionDetail>
-
-				<TransactionDetail label={t("TRANSACTION.NAME")}>ROBank Eco</TransactionDetail>
-
-				<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>Not a trustworthy bank</TransactionDetail>
-
-				<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
-					<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
-						http://robank.com
-					</a>
-				</TransactionDetail>
-
-				<TransactionDetail className="mb-2">
-					<LinkList
-						title="Repository"
-						description="Show your projects through the repository"
-						links={links}
-					/>
-				</TransactionDetail>
-
-				<div>
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
-				</div>
-			</div>
-		</div>
-	);
-};
-
-const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
-	const { register } = form;
-
-	const { t } = useTranslation();
-
-	return (
-		<div data-testid="Registration__fourth-step">
+		<div data-testid="Registration__signing-step">
 			{passwordType !== "ledger" && (
 				<div>
 					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
@@ -330,7 +160,7 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 							<InputPassword name={passwordType} ref={register} />
 						</FormField>
 
-						{passwordType === "mnemonic" && (
+						{wallet.isSecondSignature() && (
 							<FormField name="name" className="mt-8">
 								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
 								<InputPassword name="secondMnemonic" ref={register} />
@@ -350,61 +180,112 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 	);
 };
 
-export const FifthStep = () => {
+const FinalStep = ({ registrationForm, transaction }: { registrationForm: any; transaction: any }) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful>
-			<TransactionDetail
-				label={t("TRANSACTION.TRANSACTION_TYPE")}
-				extra={
-					<Circle className="border-black" size="lg">
-						<Icon name="Business" width={20} height={20} />
-					</Circle>
-				}
-			>
-				Business Registration
-			</TransactionDetail>
-			<TransactionDetail label={t("TRANSACTION.NAME")}>ROBank Eco</TransactionDetail>
-			<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>Not a trustworthy bank</TransactionDetail>
-			<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
-				<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
-					http://robank.com
-				</a>
-			</TransactionDetail>
-			<TransactionDetail
-				label={t("TRANSACTION.AMOUNT")}
-				className="pb-0"
-				extra={
-					<div className="ml-1 text-theme-danger">
-						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-							<Icon name="Sent" width={22} height={22} />
-						</Circle>
-					</div>
-				}
-			>
-				1.09660435 ARK
-			</TransactionDetail>
+		<TransactionSuccessful transactionId={transaction.id()}>
+			{registrationForm.transactionDetails && (
+				<registrationForm.transactionDetails transaction={transaction} translations={t} />
+			)}
 		</TransactionSuccessful>
 	);
 };
 
-export const Registration = ({
-	formDefaultData,
-	onDownload,
-	networks,
-	wallets,
-	registrationTypes,
-}: RegistrationProps) => {
-	const [activeTab, setActiveTab] = React.useState(1);
-
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const { formState } = form;
-	const { isValid } = formState;
-
-	const activeProfile = useActiveProfile();
-
+export const Registration = () => {
 	const { t } = useTranslation();
+	const history = useHistory();
+
+	const [activeTab, setActiveTab] = React.useState(1);
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+	const [registrationForm, setRegistrationForm] = React.useState<RegistrationForm>(undefined);
+
+	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+	const networks = useMemo(() => env.availableNetworks(), [env]);
+
+	const form = useForm({ mode: "onChange" });
+	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { registrationType, senderAddress } = getValues();
+
+	const [feeOptions, setFeeOptions] = useState<Record<string, any>>({});
+	const urlParams = useParams();
+	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
+
+	useEffect(() => {
+		register("fee");
+		register("network", { required: true });
+		register("registrationType", { required: true });
+		register("senderAddress", { required: true });
+		setValue("senderAddress", activeWallet.address(), true);
+
+		for (const network of networks) {
+			if (
+				network.id() === activeWallet.network().id &&
+				network.coin() === activeWallet.manifest().get<string>("name")
+			) {
+				setValue("network", network, true);
+
+				break;
+			}
+		}
+	}, [activeWallet, networks, register, setValue]);
+
+	useEffect(() => {
+		if (urlParams.registrationType) {
+			setValue("registrationType", urlParams.registrationType, true);
+		}
+	}, [setValue, urlParams.registrationType]);
+
+	useEffect(() => {
+		const loadFees = async () => {
+			// TODO: shouldn't be necessary once SelectAddress returns wallets instead
+			const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
+
+			try {
+				const fees = Object.entries(await senderWallet!.fee().all(7)).reduce(
+					(mapping, [transactionType, fees]) => {
+						mapping[transactionType] = {
+							last: undefined,
+							min: fees.min,
+							max: fees.max,
+							average: fees.avg,
+						};
+
+						return mapping;
+					},
+					{} as Record<string, any>,
+				);
+
+				setFeeOptions(fees);
+			} catch (error) {
+				//
+			}
+		};
+
+		loadFees();
+	}, [setFeeOptions, setValue, activeProfile, senderAddress]);
+
+	useEffect(() => {
+		if (registrationType) {
+			setRegistrationForm(registrationComponents[registrationType]);
+
+			if (feeOptions && feeOptions[registrationType]) {
+				setValue("fee", feeOptions[registrationType].average, true);
+			}
+		}
+	}, [feeOptions, registrationType, setValue]);
+
+	const submitForm = () =>
+		registrationForm.signTransaction({
+			env,
+			form,
+			handleNext,
+			profile: activeProfile,
+			setTransaction,
+			translations: t,
+		});
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -424,37 +305,33 @@ export const Registration = ({
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={7} activeIndex={activeTab} />
+						<StepIndicator size={stepCount} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep
-									wallets={wallets}
-									form={form}
-									networks={networks!}
-									registrationTypes={registrationTypes}
+								<FirstStep networks={networks} profile={activeProfile} wallet={activeWallet} />
+							</TabPanel>
+
+							{activeTab > 1 && (
+								<registrationForm.component
+									activeTab={activeTab}
+									feeOptions={feeOptions[registrationType]}
+									wallet={activeWallet}
 								/>
-							</TabPanel>
-							<TabPanel tabId={2}>
-								<SecondStep form={form} />
-							</TabPanel>
-							<TabPanel tabId={3}>
-								<ThirdStep />
-							</TabPanel>
-							<TabPanel tabId={4}>
-								<FourthStep form={form} passwordType="mnemonic" />
-							</TabPanel>
-							<TabPanel tabId={5}>
-								<FourthStep form={form} passwordType="password" />
-							</TabPanel>
-							<TabPanel tabId={6}>
-								<FourthStep form={form} passwordType="ledger" />
-							</TabPanel>
-							<TabPanel tabId={7}>
-								<FifthStep />
-							</TabPanel>
+							)}
+
+							{registrationForm && feeOptions[registrationType] && (
+								<>
+									<TabPanel tabId={stepCount - 1}>
+										<SigningStep passwordType="mnemonic" wallet={activeWallet} />
+									</TabPanel>
+									<TabPanel tabId={stepCount}>
+										<FinalStep transaction={transaction} registrationForm={registrationForm} />
+									</TabPanel>
+								</>
+							)}
 
 							<div className="flex justify-end mt-8 space-x-3">
 								{activeTab < 7 && (
@@ -471,18 +348,18 @@ export const Registration = ({
 								{activeTab < 4 && (
 									<Button
 										data-testid="Registration__continue-button"
-										disabled={!isValid}
+										disabled={!formState.isValid}
 										onClick={handleNext}
 									>
 										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
 
-								{activeTab >= 4 && activeTab < 7 && (
+								{registrationForm && activeTab >= 4 && activeTab < stepCount && (
 									<Button
+										type="submit"
 										data-testid="Registration__send-button"
-										disabled={!isValid}
-										onClick={handleNext}
+										disabled={!formState.isValid}
 										className="space-x-2"
 									>
 										<Icon name="Send" width={20} height={20} />
@@ -490,17 +367,25 @@ export const Registration = ({
 									</Button>
 								)}
 
-								{activeTab === 7 && (
+								{registrationForm && activeTab === stepCount && (
 									<div className="flex justify-end space-x-3">
-										<Button data-testid="Registration__wallet-button" variant="plain">
+										<Button
+											data-testid="Registration__wallet-button"
+											variant="plain"
+											onClick={() =>
+												history.push(
+													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+												)
+											}
+										>
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 
 										<Button
-											type="submit"
 											data-testid="Registration__download-button"
 											variant="plain"
 											className="space-x-2"
+											onClick={() => void 0}
 										>
 											<Icon name="Download" />
 											<span>{t("COMMON.DOWNLOAD")}</span>
@@ -514,19 +399,4 @@ export const Registration = ({
 			</Section>
 		</Page>
 	);
-};
-
-Registration.defaultProps = {
-	networks: availableNetworksMock,
-	registrationTypes: [
-		{
-			value: "business",
-			label: "Business",
-		},
-	],
-	formDefaultData: {
-		network: null,
-		address: null,
-	},
-	wallets: [],
 };

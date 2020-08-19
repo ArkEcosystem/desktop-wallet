@@ -1,6 +1,11 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 
+export type RegistrationType = {
+	label: string;
+	value: string;
+};
+
 export type RegistrationForm = {
 	transactionDetails: ({
 		transaction,
