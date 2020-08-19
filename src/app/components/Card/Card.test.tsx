@@ -13,7 +13,7 @@ describe("Card", () => {
 
 	it("should handle click", () => {
 		const handleClick = jest.fn();
-		const { container, asFragment, getByText } = render(<Card handleClick={() => handleClick()}>Test</Card>);
+		const { container, asFragment, getByText } = render(<Card onClick={() => handleClick()}>Test</Card>);
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("Test"));

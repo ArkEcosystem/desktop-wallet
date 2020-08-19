@@ -93,6 +93,7 @@ export const translations: { [key: string]: any } = {
 	OPTIONAL: "optional",
 	OTHER: "Other",
 	PAGE: "Page",
+	PASSWORD: "Password",
 	PASSWORDS: "Passwords",
 	PERIOD: "Period",
 	PLUGIN: "Plugin",
@@ -120,6 +121,7 @@ export const translations: { [key: string]: any } = {
 	SHOW: "Show",
 	SHOW_ALL: "Show All",
 	SIGN: "Sign",
+	SIGN_IN: "Sign In",
 	SIGNATURE: "Signature",
 	SIZE: "Size",
 	SKIP: "Skip",
@@ -172,10 +174,11 @@ export const translations: { [key: string]: any } = {
 	VALIDATION: {
 		REQUIRED: "This field is required",
 		OPTIONAL: "This field is optional",
-		FIELD_REQUIRED: "'{{field}}' is required",
+		FIELD_REQUIRED: "{{field}} is required",
 		IS_REQUIRED: "is required",
 		MAX_LENGTH: "'{{field}}' should have at most {{maxLength}} characters",
 		MIN_LENGTH: "'{{field}}' should have at least {{minLength}} characters",
+		SUBJECT_INVALID: "The {{subject}} is invalid",
 		SUBJECT_MISMATCH: "The {{subject}} do not match",
 	},
 
