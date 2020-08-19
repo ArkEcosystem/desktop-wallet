@@ -4,7 +4,7 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks/env";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -13,13 +13,7 @@ import { BusinessTable } from "./components/BusinessTable";
 import { DelegateTable } from "./components/DelegateTable";
 
 type Props = {
-	registrations?: any;
-	handleDropdown?: any;
-};
-
-type RegistrationProps = {
-	type: string;
-	registrations: any;
+	onAction?: any;
 };
 
 const { RegisterBanner } = images.common;
@@ -40,47 +34,13 @@ const EmptyRegistrations = () => {
 	);
 };
 
-const renderRegistration = ({ type, registrations }: RegistrationProps, handleDropdown: any) => {
-	switch (type) {
-		case "business":
-			return (
-				<BusinessTable
-					key={type}
-					data={registrations}
-					handleDropdown={(option: any) => handleDropdown(type, option)}
-				/>
-			);
-		case "blockchain":
-			return (
-				<BlockchainTable
-					key={type}
-					data={registrations}
-					handleDropdown={(option: any) => handleDropdown(type, option)}
-				/>
-			);
-		case "delegate":
-			return (
-				<DelegateTable
-					key={type}
-					data={registrations}
-					handleDropdown={(option: any) => handleDropdown(type, option)}
-				/>
-			);
-
-		default:
-			return null;
-	}
-};
-
-export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
-	const activeProfile = useActiveProfile();
+export const MyRegistrations = ({ onAction }: Props) => {
 	const [delegates, setDelegates] = useState([]);
+	const [blockchain] = useState([]);
+	const [business] = useState([]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
-
-	const mountRegistrations = () =>
-		registrations.map((registrationsBlock: any) => renderRegistration(registrationsBlock, handleDropdown));
 	const activeProfile = useActiveProfile();
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
@@ -129,11 +89,11 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 				/>
 			</Section>
 
-			{!registrations.length ? <EmptyRegistrations /> : mountRegistrations()}
+			{business.length > 0 && <BusinessTable data={business} onAction={console.log} />}
+			{blockchain.length > 0 && <BlockchainTable data={blockchain} onAction={console.log} />}
+			{delegates.length > 0 && <DelegateTable data={delegates} onAction={console.log} />}
+
+			{!registrations.length && <EmptyRegistrations />}
 		</Page>
 	);
-};
-
-MyRegistrations.defaultProps = {
-	registrations: [],
 };
