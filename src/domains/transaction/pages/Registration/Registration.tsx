@@ -210,7 +210,7 @@ export const Registration = () => {
 	const { registrationType, senderAddress } = getValues();
 
 	const [feeOptions, setFeeOptions] = useState<Record<string, any>>({});
-	const urlParams = useParams();
+	const { registrationType: defaultRegistrationType } = useParams();
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
 
 	useEffect(() => {
@@ -233,10 +233,10 @@ export const Registration = () => {
 	}, [activeWallet, networks, register, setValue]);
 
 	useEffect(() => {
-		if (urlParams.registrationType) {
-			setValue("registrationType", urlParams.registrationType, true);
+		if (defaultRegistrationType) {
+			setValue("registrationType", defaultRegistrationType, true);
 		}
-	}, [setValue, urlParams.registrationType]);
+	}, [setValue, defaultRegistrationType]);
 
 	useEffect(() => {
 		const loadFees = async () => {
