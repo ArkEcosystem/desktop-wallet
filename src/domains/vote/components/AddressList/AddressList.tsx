@@ -1,3 +1,4 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -5,11 +6,11 @@ import { useTranslation } from "react-i18next";
 import { AddressListItem } from "../AddressListItem";
 
 type AddressListProps = {
-	data?: any;
+	wallets: Wallet[];
 	onSelect?: (address: string) => void;
 };
 
-export const AddressList = (props: AddressListProps) => {
+export const AddressList = ({ wallets, onSelect }: AddressListProps) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -29,7 +30,7 @@ export const AddressList = (props: AddressListProps) => {
 			Header: t("COMMON.BALANCE"),
 			accessor: "balance",
 		},
-		{
+		/* 		{
 			accessor: "delegateAddressAvatar",
 			disableSortBy: true,
 		},
@@ -52,7 +53,7 @@ export const AddressList = (props: AddressListProps) => {
 			accessor: "status",
 			disableSortBy: true,
 			className: "justify-center",
-		},
+		}, */
 		{
 			accessor: "onSelect",
 			disableSortBy: true,
@@ -61,14 +62,16 @@ export const AddressList = (props: AddressListProps) => {
 
 	return (
 		<div data-testid="AddressList">
-			<h2 className="py-5 text-2xl font-bold">Select Address</h2>
-			<Table columns={columns} data={props.data}>
-				{(rowData: any) => <AddressListItem {...rowData} onSelect={props.onSelect} />}
+			<h2 className="py-5 text-2xl font-bold">{t("VOTE.ADDRESS_LIST.TITLE")}</h2>
+			<Table columns={columns} data={wallets}>
+				{(wallet: Wallet, index: number) => (
+					<AddressListItem index={index} wallet={wallet} onSelect={onSelect} />
+				)}
 			</Table>
 		</div>
 	);
 };
 
 AddressList.defaultProps = {
-	data: [],
+	wallets: [],
 };

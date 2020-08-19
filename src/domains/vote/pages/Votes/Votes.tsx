@@ -1,4 +1,4 @@
-import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -24,13 +24,42 @@ type VotesProps = {
 
 const { PlaceholderVotes } = images.vote.pages.votes;
 
+const InputAddress = ({ profile, address }: { profile: Profile; address: string }) => {
+	const { t } = useTranslation();
+	const walletName = profile.wallets().findByAddress(address)?.alias();
+
+	return (
+		<div className="relative flex items-center pb-24">
+			<Input type="text" disabled />
+			<div className="absolute flex items-center justify-between w-full ml-3">
+				<div className="flex items-center">
+					{address ? (
+						<>
+							<Avatar className="mr-3" address={address} size="sm" noShadow />
+							<Address walletName={walletName} address={address} />
+						</>
+					) : (
+						<>
+							<Circle className="mr-3" avatarId="test" size="sm" noShadow />
+							<span className="text-base font-semibold text-theme-neutral-light">
+								{t("COMMON.SELECT_OPTION", { option: t("COMMON.ADDRESS") })}
+							</span>
+						</>
+					)}
+				</div>
+				<Icon name="User" className="mr-6" width={20} height={20} />
+			</div>
+		</div>
+	);
+};
+
 export const Votes = ({ addressList, delegateList }: VotesProps) => {
 	const context = useEnvironmentContext();
 	const networks = useMemo(() => context.env.availableNetworks(), [context]);
 
+	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<Wallet[]>([]);
-	const [selectedNetwork, setSelectedNetwork] = useState<NetworkData | null>(null);
-	const [selectedAddress, setSelectedAddress] = useState("");
+	const [address, setAddress] = useState("");
 
 	const activeProfile = useActiveProfile();
 
@@ -44,21 +73,18 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 	];
 
 	useEffect(() => {
-		if (selectedNetwork) {
-			setWallets(activeProfile.wallets().findByCoinWithNetwork(selectedNetwork.coin(), selectedNetwork.id()));
+		if (network) {
+			setWallets(activeProfile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
-	}, [activeProfile, selectedNetwork]);
+	}, [activeProfile, network]);
 
 	const handleSelectNetwork = (network?: NetworkData | null) => {
-		setSelectedNetwork(network!);
+		setNetwork(network!);
 	};
 
 	const handleSelectAddress = (address: string) => {
-		setSelectedAddress(address);
+		setAddress(address);
 	};
-
-	/* 	console.log("wallets", wallets[0]?.toObject());
-	console.log("wallets", wallets[1]?.toObject()); */
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -81,42 +107,22 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 						/>
 					</TransactionDetail>
 					<TransactionDetail border={false} label={t("COMMON.ADDRESS")} className="mt-2">
-						<div className="relative flex items-center pb-24">
-							<Input type="text" disabled />
-							<div className="absolute flex items-center justify-between w-full ml-3">
-								<div className="flex items-center">
-									{selectedAddress ? (
-										<>
-											<Avatar className="mr-3" address={selectedAddress} size="sm" noShadow />
-											<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName="ROBank" />
-										</>
-									) : (
-										<>
-											<Circle className="mr-3" avatarId="test" size="sm" noShadow />
-											<span className="text-base font-semibold text-theme-neutral-light">
-												{t("COMMON.SELECT_OPTION", { option: t("COMMON.ADDRESS") })}
-											</span>
-										</>
-									)}
-								</div>
-								<Icon name="User" className="mr-6" width={20} height={20} />
-							</div>
-						</div>
+						<InputAddress profile={activeProfile} address={address} />
 					</TransactionDetail>
 				</div>
 			</div>
 
 			<Section className="flex-1">
-				{!selectedNetwork ? (
+				{!network ? (
 					<div className="flex flex-col space-y-5">
 						{addressList?.map((item) => (
 							<PlaceholderVotes key={item.walletAddress} />
 						))}
 					</div>
-				) : selectedAddress ? (
+				) : address ? (
 					<DelegateList data={delegateList} />
 				) : (
-					<AddressList data={addressList} onSelect={handleSelectAddress} />
+					<AddressList wallets={wallets} onSelect={handleSelectAddress} />
 				)}
 			</Section>
 		</Page>

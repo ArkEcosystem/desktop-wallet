@@ -5,6 +5,10 @@ export const translations: { [key: string]: any } = {
 		SEARCH_PLACEHOLDER: "Enter the delegate’s name or address for a quick search",
 	},
 
+	ADDRESS_LIST: {
+		TITLE: "Select Address",
+	},
+
 	DELEGATE_LIST: {
 		TITLE: "Select a Delegate",
 		COMMISSION: "Comm.",
