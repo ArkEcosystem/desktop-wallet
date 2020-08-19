@@ -7,6 +7,6 @@ export default { title: "Domains / News / Components / News Options" };
 
 export const Default = () => (
 	<div className="max-w-sm">
-		<NewsOptions categories={categories} selectedAssets={assets} />
+		<NewsOptions defaultCategories={categories} selectedAssets={assets} />
 	</div>
 );
