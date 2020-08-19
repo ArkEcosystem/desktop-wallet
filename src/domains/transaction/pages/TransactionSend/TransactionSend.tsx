@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { DTO } from "@arkecosystem/platform-sdk";
 import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
@@ -105,7 +105,7 @@ export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 				</div>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -191,7 +191,7 @@ export const FourthStep = () => {
 	);
 };
 
-export const FifthStep = ({ transaction }: { transaction: Contracts.TransactionData }) => {
+export const FifthStep = ({ transaction }: { transaction: DTO.SignedTransactionData }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -207,7 +207,8 @@ export const FifthStep = ({ transaction }: { transaction: Contracts.TransactionD
 					</div>
 				}
 			>
-				{transaction.amount().toHuman(8)}
+				{/* TODO: signed transaction info through the SDK */}
+				{BigNumber.make(transaction.data().amount).toHuman(8)}
 			</TransactionDetail>
 		</TransactionSuccessful>
 	);
@@ -217,9 +218,7 @@ export const TransactionSend = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [transaction, setTransaction] = useState<Contracts.TransactionData>(
-		(null as unknown) as Contracts.TransactionData,
-	);
+	const [transaction, setTransaction] = useState((null as unknown) as DTO.SignedTransactionData);
 	// eslint-disable-next-line
 	const [_, copy] = useClipboard({
 		resetAfter: 1000,
@@ -296,18 +295,9 @@ export const TransactionSend = () => {
 
 			await env.persist();
 
-			// TODO: Remove timer and figure out a nicer way of doing this
-			const intervalId = setInterval(async () => {
-				try {
-					const transactionData = await senderWallet!.client().transaction(transactionId);
-					setTransaction(transactionData);
-					clearInterval(intervalId);
+			setTransaction(senderWallet!.transaction().transaction(transactionId));
 
-					handleNext();
-				} catch (error) {
-					// eslint-disable no-empty
-				}
-			}, 500);
+			handleNext();
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
 
@@ -325,7 +315,7 @@ export const TransactionSend = () => {
 	};
 
 	const copyTransaction = () => {
-		copy(JSON.stringify(transaction.toObject(), undefined, 2));
+		copy(JSON.stringify(transaction.data(), undefined, 2));
 	};
 
 	const crumbs = [
@@ -346,12 +336,15 @@ export const TransactionSend = () => {
 							<TabPanel tabId={1}>
 								<FirstStep networks={networks} profile={activeProfile} />
 							</TabPanel>
+
 							<TabPanel tabId={2}>
 								<SecondStep wallet={activeWallet} />
 							</TabPanel>
+
 							<TabPanel tabId={3}>
 								<ThirdStep />
 							</TabPanel>
+
 							<TabPanel tabId={4}>
 								<FifthStep transaction={transaction} />
 							</TabPanel>
