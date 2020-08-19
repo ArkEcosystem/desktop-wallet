@@ -9,25 +9,27 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React, { useState } from "react";
+import { AddressList } from "domains/vote/components/AddressList";
+import { DelegateList } from "domains/vote/components/DelegateList";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { AddressList } from "../../components/AddressList";
-import { DelegateList } from "../../components/DelegateList";
-
 type VotesProps = {
-	networks?: any[];
 	addressList?: any[];
 	delegateList?: any[];
 };
 
 const { PlaceholderVotes } = images.vote.pages.votes;
 
-export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
-	const [selectedCrypto, setSelectCrypto] = useState<NetworkData | undefined | null>(undefined);
-	const [selectedAddress, setSelectAddress] = useState("");
+export const Votes = ({ addressList, delegateList }: VotesProps) => {
+	const context = useEnvironmentContext();
+	const networks = useMemo(() => context.env.availableNetworks(), [context]);
+
+	const [selectedNetwork, setSelectedNetwork] = useState<NetworkData | null>(null);
+	const [selectedAddress, setSelectedAddress] = useState("");
 
 	const activeProfile = useActiveProfile();
 
@@ -40,12 +42,12 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 		},
 	];
 
-	const handleSelectCrypto = (network?: NetworkData | null) => {
-		setSelectCrypto(network);
+	const handleSelectNetwork = (network?: NetworkData | null) => {
+		setSelectedNetwork(network!);
 	};
 
 	const handleSelectAddress = (address: string) => {
-		setSelectAddress(address);
+		setSelectedAddress(address);
 	};
 
 	return (
@@ -59,13 +61,13 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 			</Section>
 
 			<div className="container mx-auto px-14">
-				<div className="-my-5 grid grid-flow-col grid-cols-2 gap-6">
+				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
 					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetwork
-							networks={networks}
 							id="Votes__network"
+							networks={networks}
 							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.NETWORK") })}
-							onSelect={handleSelectCrypto}
+							onSelect={handleSelectNetwork}
 						/>
 					</TransactionDetail>
 					<TransactionDetail border={false} label={t("COMMON.ADDRESS")} className="mt-2">
@@ -95,7 +97,7 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 			</div>
 
 			<Section className="flex-1">
-				{!selectedCrypto ? (
+				{!selectedNetwork ? (
 					<div className="flex flex-col space-y-5">
 						{addressList?.map((item) => (
 							<PlaceholderVotes key={item.walletAddress} />
@@ -112,7 +114,6 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 };
 
 Votes.defaultProps = {
-	networks: [],
 	addressList: [],
 	delegateList: [],
 };

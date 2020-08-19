@@ -1,6 +1,5 @@
 import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
-import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { MemoryRouter, Route } from "react-router-dom";
 import { WalletsDecorator } from "utils/storybook";
@@ -18,13 +17,7 @@ export const Default = ({ env, profile }: { env: Environment; profile: Profile }
 		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/dashboard`]}>
 			<Route
 				path="/profiles/:profileId/dashboard"
-				component={() => (
-					<Votes
-						networks={availableNetworksMock}
-						addressList={addressListData}
-						delegateList={delegateListData}
-					/>
-				)}
+				component={() => <Votes addressList={addressListData} delegateList={delegateListData} />}
 			/>
 		</MemoryRouter>
 	</EnvironmentProvider>
