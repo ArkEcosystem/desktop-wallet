@@ -1,3 +1,5 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -5,12 +7,16 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
-import React from "react";
+import { useActiveProfile } from "app/hooks/env";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Skeleton from "react-loading-skeleton";
 
 type VoteDetailProps = {
 	isOpen: boolean;
 	transaction?: any;
+	ticker?: string;
+	walletAlias?: string;
 	onClose?: any;
 };
 
@@ -40,8 +46,37 @@ const renderConfirmationStatus = (confirmations: BigNumber) => {
 	);
 };
 
+const getDelegates = async (transaction: Contracts.TransactionDataType, wallet: any) => {
+	const voteTransaction = await wallet?.client().transaction(transaction?.id());
+	const delegates = wallet?.mapDelegates(voteTransaction?.votes());
+
+	return delegates;
+};
+
 export const VoteDetail = (props: VoteDetailProps) => {
 	const { t } = useTranslation();
+	const activeProfile = useActiveProfile();
+	const transactionWallet = activeProfile.wallets().findByAddress(props.transaction?.sender());
+	const [isLoadingDelegates, setIsLoadingDelegates] = useState(true);
+	const [delegates, setDelegates] = useState([]);
+
+	useEffect(() => {
+		const syncDelegates = async () => {
+			setIsLoadingDelegates(true);
+			await transactionWallet?.syncDelegates();
+			const delegates = await getDelegates(props.transaction, transactionWallet);
+
+			setDelegates(delegates);
+			setIsLoadingDelegates(false);
+		};
+
+		syncDelegates();
+
+		return () => {
+			setIsLoadingDelegates(false);
+			setDelegates([]);
+		};
+	}, [transactionWallet, props.transaction]);
 
 	const renderAccount = () => {
 		if (props.walletAlias) {
@@ -80,23 +115,46 @@ export const VoteDetail = (props: VoteDetailProps) => {
 		);
 	};
 
+	const renderDelegates = () => {
+		if (isLoadingDelegates)
+			return (
+				<TransactionDetail
+					label={t("TRANSACTION.VOTER")}
+					extra={<Skeleton circle width={40} height={40} className="mt-3" />}
+				>
+					<Skeleton height={6} width="90%" />
+				</TransactionDetail>
+			);
+
+		return delegates.map((delegate: any) => {
+			const username = delegate?.username();
+			const address = delegate?.address();
+
+			return (
+				<TransactionDetail
+					key={address}
+					label={t("TRANSACTION.VOTER")}
+					extra={
+						<div className="flex">
+							<Circle className="-mr-2 border-black">
+								<Icon name="Voted" width={13} height={13} />
+							</Circle>
+							<Avatar address={address} />
+						</div>
+					}
+				>
+					{username}
+					<TruncateMiddle text={address} className="ml-2 text-theme-neutral" />
+				</TransactionDetail>
+			);
+		});
+	};
+
 	return (
 		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
 			{renderAccount()}
 
-			<TransactionDetail
-				label={t("TRANSACTION.VOTER")}
-				extra={
-					<div className="flex">
-						<Circle className="-mr-2 border-black">
-							<Icon name="Voted" width={13} height={13} />
-						</Circle>
-						<Avatar address="test" />
-					</div>
-				}
-			>
-				Delegate 3<span className="ml-2 text-theme-neutral">ADDR...ESSS</span>
-			</TransactionDetail>
+			{renderDelegates()}
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
 				{`${props.transaction.fee().toHuman()} ${props.ticker?.toUpperCase()}`}
