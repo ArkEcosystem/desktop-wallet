@@ -12,6 +12,9 @@ let mainWindow;
 let windowState = null;
 let deeplinkingUrl = null;
 
+const pluginRpc = require("../plugins/loader/rpc");
+pluginRpc.handleLoad();
+
 const winURL = isDev
 	? "http://localhost:3000"
 	: process.env.ELECTRON_IS_E2E

@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
-
-import React from "react";
-
 import { container } from "./container";
 import { Identifiers } from "./container.models";
 import { PluginController } from "./controller";
+import * as pluginRpc from "./loader/rpc";
 import { PluginData } from "./plugin";
 import { PluginLoader } from "./plugin.models";
 import { ProfilePluginService } from "./services/profile.service";
@@ -42,26 +40,8 @@ export class PluginManager {
 	}
 
 	private async loadFromFileSystem(): Promise<PluginLoader[]> {
-		// TODO
-		return [
-			{
-				manifest: {
-					name: "example",
-					description: "Test",
-					permissions: [],
-					config: {},
-				},
-				entry: {
-					registerRoutes: () => [
-						{
-							path: "/test",
-							// eslint-disable-next-line react/display-name
-							component: () => React.createElement("h1", null, "test"),
-						},
-					],
-				},
-			},
-		];
+		const result = await pluginRpc.load();
+		return result;
 	}
 
 	private registerBindings() {
