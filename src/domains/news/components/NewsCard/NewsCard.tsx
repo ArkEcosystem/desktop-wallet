@@ -1,43 +1,31 @@
+import { BlockfolioSignal } from "@arkecosystem/platform-sdk-news";
 import { Card } from "app/components/Card";
-import { Circle } from "app/components/Circle";
 import { Divider } from "app/components/Divider";
-import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
+import { Link } from "app/components/Link";
 import { TimeAgo } from "app/components/TimeAgo";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
+import { coins } from "domains/news/data";
 import React from "react";
 import { useTranslation } from "react-i18next";
-
-type Asset = {
-	icon: string;
-	name: string;
-	className?: string;
-};
-
-type Author = {
-	name: string;
-	role: string;
-};
+import Linkify from "react-linkify";
 
 type Props = {
-	asset: Asset;
-	author: Author;
-	dateCreated: string;
-	category: string;
-	content: string;
+	coin?: any;
 	coverImage?: string;
-};
+} & BlockfolioSignal;
 
-export const NewsCard = ({ asset, author, dateCreated, category, content, coverImage }: Props) => {
+export const NewsCard = ({ text, category, author, created_at: createdAt, coin, coverImage }: Props) => {
 	const { t } = useTranslation();
+
+	const asset: any = coins[coin];
 
 	return (
 		<Card className="bg-theme-background">
 			<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard">
 				<div className="flex justify-between w-full">
 					<div className="flex items-center space-x-4">
-						<Circle className={asset?.className} size="lg" data-testid={`NewsCard__asset-${asset?.icon}`}>
-							<Icon name={asset?.icon} width={20} height={20} />
-						</Circle>
+						<NetworkIcon coin={asset?.coin} network={asset?.network} noShadow />
 
 						<div>
 							<h4 className="text-lg font-semibold" data-testid={`NewsCard__asset-${asset?.name}`}>
@@ -45,7 +33,7 @@ export const NewsCard = ({ asset, author, dateCreated, category, content, coverI
 							</h4>
 							<div className="flex items-center space-x-4">
 								<p className="text-sm font-semibold text-theme-neutral" data-testid="NewsCard__author">
-									{author?.name}, {author?.role}
+									{author?.name}, {author?.title}
 								</p>
 
 								<Divider type="vertical" />
@@ -54,7 +42,7 @@ export const NewsCard = ({ asset, author, dateCreated, category, content, coverI
 									className="text-sm font-semibold text-theme-neutral"
 									data-testid="NewsCard__date-created"
 								>
-									<TimeAgo date={dateCreated} />
+									<TimeAgo date={createdAt} />
 								</p>
 							</div>
 						</div>
@@ -71,8 +59,16 @@ export const NewsCard = ({ asset, author, dateCreated, category, content, coverI
 
 				<Divider />
 
-				<p className="text-theme-neutral-dark" data-testid="NewsCard__content">
-					{content}
+				<p className="whitespace-pre-line text-theme-neutral-dark" data-testid="NewsCard__content">
+					<Linkify
+						componentDecorator={(pathname: string, text: string, key: number) => (
+							<Link to={{ pathname }} key={key} isExternal showExternalIcon={false}>
+								{text}
+							</Link>
+						)}
+					>
+						{text}
+					</Linkify>
 				</p>
 
 				{coverImage && (

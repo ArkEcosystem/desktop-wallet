@@ -1,11 +1,12 @@
 import { Badge } from "app/components/Badge";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Network = {
 	name: string;
 	isSelected: Boolean;
+	coin: string;
 };
 
 type NetworkProps = {
@@ -41,7 +42,9 @@ const renderNetworks = (networks: any[], onClick: any) => (
 );
 
 export const FilterNetwork = ({ networks, onChange, onViewAll, hideViewAll }: NetworkProps) => {
-	const [networkList, setNetworkList] = useState(networks.concat());
+	const [networkList, setNetworkList] = useState(networks);
+
+	useEffect(() => setNetworkList(networks), [networks]);
 
 	const onClick = (network: Network, index: number) => {
 		const list = networkList.concat();
@@ -51,7 +54,7 @@ export const FilterNetwork = ({ networks, onChange, onViewAll, hideViewAll }: Ne
 		setNetworkList(list);
 
 		if (typeof onChange === "function") {
-			onChange(network, list);
+			onChange?.(network, list);
 		}
 	};
 

@@ -191,7 +191,7 @@ export const FourthStep = () => {
 	);
 };
 
-export const FifthStep = ({ transaction }: { transaction: Contracts.TransactionData }) => {
+export const FifthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -217,9 +217,7 @@ export const TransactionSend = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [transaction, setTransaction] = useState<Contracts.TransactionData>(
-		(null as unknown) as Contracts.TransactionData,
-	);
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	// eslint-disable-next-line
 	const [_, copy] = useClipboard({
 		resetAfter: 1000,
@@ -296,18 +294,9 @@ export const TransactionSend = () => {
 
 			await env.persist();
 
-			// TODO: Remove timer and figure out a nicer way of doing this
-			const intervalId = setInterval(async () => {
-				try {
-					const transactionData = await senderWallet!.client().transaction(transactionId);
-					setTransaction(transactionData);
-					clearInterval(intervalId);
+			setTransaction(senderWallet!.transaction().transaction(transactionId));
 
-					handleNext();
-				} catch (error) {
-					// eslint-disable no-empty
-				}
-			}, 500);
+			handleNext();
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
 
@@ -325,7 +314,7 @@ export const TransactionSend = () => {
 	};
 
 	const copyTransaction = () => {
-		copy(JSON.stringify(transaction.toObject(), undefined, 2));
+		copy(transaction.id());
 	};
 
 	const crumbs = [
@@ -346,12 +335,15 @@ export const TransactionSend = () => {
 							<TabPanel tabId={1}>
 								<FirstStep networks={networks} profile={activeProfile} />
 							</TabPanel>
+
 							<TabPanel tabId={2}>
 								<SecondStep wallet={activeWallet} />
 							</TabPanel>
+
 							<TabPanel tabId={3}>
 								<ThirdStep />
 							</TabPanel>
+
 							<TabPanel tabId={4}>
 								<FifthStep transaction={transaction} />
 							</TabPanel>
@@ -406,7 +398,7 @@ export const TransactionSend = () => {
 											className="space-x-2"
 										>
 											<Icon name="Copy" />
-											<span>{t("COMMON.COPY")}</span>
+											<span>{t("COMMON.COPY_TRANSACTION_ID")}</span>
 										</Button>
 									</>
 								)}

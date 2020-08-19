@@ -5,6 +5,10 @@ import { getPageURL } from "../../../utils/e2e-utils";
 
 fixture`NavBar routing`.page(getPageURL());
 
+const scrollTop = ClientFunction(() => {
+	window.scrollTo({ top: 0 });
+});
+
 const getLocation = ClientFunction(() => document.location.href);
 
 test("should navigate to profile dashboard", async (t) => {
@@ -45,6 +49,7 @@ test("should navigate to news", async (t) => {
 test("should navigate back to portfolio", async (t) => {
 	await t.click(Selector("p").withExactText("John Doe"));
 	await t.click(Selector("a").withExactText(translations().NEWS.NEWS));
+	await scrollTop();
 	await t.click(Selector("a").withExactText(translations().COMMON.GO_BACK_TO_PORTFOLIO));
 	await t.expect(getLocation()).contains("/dashboard");
 });

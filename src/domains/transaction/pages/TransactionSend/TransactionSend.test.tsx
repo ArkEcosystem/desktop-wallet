@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+// TODO: Import and Mocking like this is a big no-go. Remove this and instead mock network requests and avoid mocking offline method calls.
 import { TransactionService } from "@arkecosystem/platform-sdk-profiles/dist/wallets/wallet-transaction-service";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -25,23 +27,32 @@ import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSen
 
 const fixtureProfileId = getDefaultProfileId();
 
-const onCopy = jest.fn();
+// @ts-ignore
+const createTransactionMock = () =>
+	jest.spyOn(TransactionService.prototype, "transaction").mockReturnValue({
+		id: () => transactionFixture.data.id,
+		sender: () => transactionFixture.data.sender,
+		recipient: () => transactionFixture.data.recipient,
+		amount: () => BigNumber.make(transactionFixture.data.amount),
+		fee: () => BigNumber.make(transactionFixture.data.fee),
+		data: () => transactionFixture.data,
+	});
 
 let profile: Profile;
 let wallet: Wallet;
 
+beforeAll(async () => {
+	profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	wallet = profile.wallets().values()[0];
+
+	nock("https://dwallets.ark.io")
+		.post("/api/transactions/search")
+		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+		.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
+		.reply(200, transactionFixture);
+});
+
 describe("Transaction Send", () => {
-	beforeAll(async () => {
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
-		wallet = profile.wallets().values()[0];
-
-		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
-			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
-			.reply(200, transactionFixture);
-	});
-
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 
@@ -204,6 +215,7 @@ describe("Transaction Send", () => {
 				.spyOn(TransactionService.prototype, "signTransfer")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock();
 
 			fireEvent.click(getByTestId("TransactionSend__button--submit"));
 
@@ -221,20 +233,7 @@ describe("Transaction Send", () => {
 
 			await waitFor(() =>
 				expect(copyMock).toHaveBeenCalledWith(
-					JSON.stringify(
-						{
-							id: transactionFixture.data.id,
-							type: "transfer",
-							timestamp: transactionFixture.data.timestamp.human,
-							confirmations: {},
-							sender: transactionFixture.data.sender,
-							recipient: transactionFixture.data.recipient,
-							amount: {},
-							fee: {},
-						},
-						null,
-						2,
-					),
+					"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
 				),
 			);
 
@@ -243,6 +242,7 @@ describe("Transaction Send", () => {
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
@@ -338,6 +338,7 @@ describe("Transaction Send", () => {
 				.spyOn(TransactionService.prototype, "signMultiPayment")
 				.mockReturnValue(Promise.resolve(transactionMultipleFixture.data.id));
 			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock();
 
 			fireEvent.click(getByTestId("TransactionSend__button--submit"));
 
@@ -378,6 +379,7 @@ describe("Transaction Send", () => {
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});

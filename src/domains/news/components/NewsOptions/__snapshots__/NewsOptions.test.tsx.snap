@@ -14,7 +14,8 @@ exports[`NewsOptions should render 1`] = `
       >
         <input
           class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
-          data-testid="Input"
+          data-testid="NewsOptions__search"
+          maxlength="32"
           placeholder="Search"
         />
         <div
@@ -49,8 +50,10 @@ exports[`NewsOptions should render 1`] = `
         >
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-All"
           >
             <input
+              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"
@@ -64,9 +67,9 @@ exports[`NewsOptions should render 1`] = `
           </label>
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-Technical"
           >
             <input
-              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"
@@ -80,9 +83,9 @@ exports[`NewsOptions should render 1`] = `
           </label>
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-Marketing"
           >
             <input
-              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"
@@ -96,6 +99,7 @@ exports[`NewsOptions should render 1`] = `
           </label>
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-Community"
           >
             <input
               class="SelectCategory__Input-k7qbth-0 dbODum"
@@ -111,9 +115,9 @@ exports[`NewsOptions should render 1`] = `
           </label>
           <label
             class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+            data-testid="NewsOptions__category-Emergency"
           >
             <input
-              checked=""
               class="SelectCategory__Input-k7qbth-0 dbODum"
               data-testid="SelectCategory__undefined"
               type="checkbox"
@@ -189,7 +193,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--1"
               >
                 <div
-                  class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
+                  class="sc-AxhUy dSLmHc relative border-theme-neutral-200 text-theme-neutral-300"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -201,17 +205,8 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
                   >
-                    <div
-                      class="sc-AxiKw bopxJn"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        checkmark.svg
-                      </svg>
-                    </div>
                     <span />
                   </span>
                 </div>
@@ -221,7 +216,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--2"
               >
                 <div
-                  class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
+                  class="sc-AxhUy dSLmHc relative border-theme-neutral-200 text-theme-neutral-300"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -233,17 +228,8 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
                   >
-                    <div
-                      class="sc-AxiKw bopxJn"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        checkmark.svg
-                      </svg>
-                    </div>
                     <span />
                   </span>
                 </div>
@@ -253,7 +239,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="network__option--3"
               >
                 <div
-                  class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
+                  class="sc-AxhUy dSLmHc relative border-theme-neutral-200 text-theme-neutral-300"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -265,17 +251,8 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                    class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
                   >
-                    <div
-                      class="sc-AxiKw bopxJn"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        checkmark.svg
-                      </svg>
-                    </div>
                     <span />
                   </span>
                 </div>
@@ -286,6 +263,7 @@ exports[`NewsOptions should render 1`] = `
         <button
           class="sc-AxjAm ddJBbC w-full"
           color="primary"
+          data-testid="NewsOptions__submit"
           type="button"
         >
           Update Filter
