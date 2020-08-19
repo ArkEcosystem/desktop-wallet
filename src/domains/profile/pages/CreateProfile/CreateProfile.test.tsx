@@ -112,6 +112,7 @@ describe("CreateProfile", () => {
 			...baseSettings,
 			AVATAR: "data:image/png;base64,avatarImage",
 		});
+		expect(profiles[0].usesPassword()).toBe(false);
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 2" } });
 		fireEvent.click(container.querySelector("input[name=isDarkMode]"));
@@ -129,6 +130,34 @@ describe("CreateProfile", () => {
 			NAME: "test profile 2",
 			THEME: "dark",
 		});
+		expect(profiles[1].usesPassword()).toBe(false);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should store profile with password", async () => {
+		const { asFragment, container, getAllByTestId, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<CreateProfile />
+			</EnvironmentProvider>,
+			{
+				routes: ["/", "/profile/create"],
+				withProviders: false,
+			},
+		);
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
+		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
+		expect(env.profiles().first().usesPassword()).toBe(true);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
