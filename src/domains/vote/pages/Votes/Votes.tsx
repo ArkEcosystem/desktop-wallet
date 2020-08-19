@@ -1,5 +1,4 @@
 import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -16,12 +15,6 @@ import { AddressList } from "domains/vote/components/AddressList";
 import { DelegateList } from "domains/vote/components/DelegateList";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-
-type VotesProps = {
-	addressList?: any[];
-};
-
-const { PlaceholderVotes } = images.vote.pages.votes;
 
 const InputAddress = ({ profile, address }: { profile: Profile; address: string }) => {
 	const { t } = useTranslation();
@@ -52,7 +45,7 @@ const InputAddress = ({ profile, address }: { profile: Profile; address: string 
 	);
 };
 
-export const Votes = ({ addressList }: VotesProps) => {
+export const Votes = () => {
 	const context = useEnvironmentContext();
 	const networks = useMemo(() => context.env.availableNetworks(), [context]);
 
@@ -116,13 +109,7 @@ export const Votes = ({ addressList }: VotesProps) => {
 			</div>
 
 			<Section className="flex-1">
-				{!network ? (
-					<div className="flex flex-col space-y-5">
-						{addressList?.map((item) => (
-							<PlaceholderVotes key={item.walletAddress} />
-						))}
-					</div>
-				) : address ? (
+				{address ? (
 					<DelegateList delegates={delegates} />
 				) : (
 					<AddressList wallets={wallets} onSelect={handleSelectAddress} />
@@ -130,8 +117,4 @@ export const Votes = ({ addressList }: VotesProps) => {
 			</Section>
 		</Page>
 	);
-};
-
-Votes.defaultProps = {
-	addressList: [],
 };
