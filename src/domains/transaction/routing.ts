@@ -9,7 +9,7 @@ import {
 
 export const TransactionRoutes = [
 	{
-		path: "/profiles/:profileId/transactions/registration",
+		path: "/profiles/:profileId/transactions/:walletId/registration/:registrationType?",
 		exact: true,
 		component: Registration,
 	},
