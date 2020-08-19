@@ -1,49 +1,15 @@
-export const news = [
-	{
-		asset: {
-			icon: "Ark",
-			name: "ARK Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-light",
-		},
-		author: {
-			name: "Travis Walker",
-			role: "Co-Founder",
-		},
-		dateCreated: "2020-06-30T23:00:00.000Z",
-		category: "Technical",
-		content:
-			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, voluptate! Rem molestiae mollitia error quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi recusandae ab.",
-	},
-	{
-		asset: {
-			icon: "Ark",
-			name: "ARK Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-light",
-		},
-		author: {
-			name: "Travis Walker",
-			role: "Co-Founder",
-		},
-		dateCreated: "2020-06-30T23:00:00.000Z",
-		category: "Technical",
-		content:
-			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, voluptate! Rem molestiae mollitia error quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi recusandae ab.",
-		coverImage: "https://miro.medium.com/max/1000/1*vMM0Z7qfGgA8a8NRhB_ZQA.png",
-	},
-];
-
 export const categories = [
 	{
 		name: "All",
-		isSelected: false,
+		isSelected: true,
 	},
 	{
 		name: "Technical",
-		isSelected: true,
+		isSelected: false,
 	},
 	{
 		name: "Marketing",
-		isSelected: true,
+		isSelected: false,
 	},
 	{
 		name: "Community",
@@ -51,7 +17,7 @@ export const categories = [
 	},
 	{
 		name: "Emergency",
-		isSelected: true,
+		isSelected: false,
 	},
 ];
 
@@ -59,17 +25,44 @@ export const assets = [
 	{
 		name: "Ark",
 		isSelected: true,
+		coin: "ark",
 	},
 	{
 		name: "Ethereum",
-		isSelected: true,
+		isSelected: false,
+		coin: "eth",
 	},
 	{
 		name: "Bitcoin",
-		isSelected: true,
+		isSelected: false,
+		coin: "btc",
 	},
 	{
 		name: "Lisk",
-		isSelected: true,
+		isSelected: false,
+		coin: "lsk",
 	},
 ];
+
+export const coins: any = {
+	eth: {
+		name: "Ethereum",
+		coin: "ETH",
+		network: "mainnet",
+	},
+	ark: {
+		name: "ARK Ecosystem",
+		coin: "ARK",
+		network: "mainnet",
+	},
+	btc: {
+		name: "Bitcoin",
+		coin: "BTC",
+		network: "livenet",
+	},
+	lsk: {
+		name: "Lisk",
+		coin: "LSK",
+		network: "mainnet",
+	},
+};
