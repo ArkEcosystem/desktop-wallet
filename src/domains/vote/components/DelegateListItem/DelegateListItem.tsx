@@ -1,52 +1,33 @@
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type DelegateListItemProps = {
-	delegateAddress?: string;
-	delegateName?: string;
-	rank?: number;
-	votes?: number;
-	msqUrl?: string;
-	commissionPercentage?: number;
-	commissionDaily?: number;
-	payout?: string;
-	min?: number;
+	index: number;
+	delegate: any;
 	selected?: any[];
 	onSelect?: ({ address, username, rank }: { address: string; username: string; rank: number }) => void;
 };
 
-export const DelegateListItem = ({
-	delegateAddress,
-	delegateName,
-	rank,
-	votes,
-	msqUrl,
-	commissionPercentage,
-	commissionDaily,
-	payout,
-	min,
-	selected,
-	onSelect,
-}: DelegateListItemProps) => {
+export const DelegateListItem = ({ index, delegate, selected, onSelect }: DelegateListItemProps) => {
 	const { t } = useTranslation();
-	const isSelected = selected?.find((selectedDelegate: any) => selectedDelegate.username === delegateName) || false;
+	const isSelected =
+		selected?.find((selectedDelegate: any) => selectedDelegate.username === delegate.username()) || false;
 
 	return (
 		<tr className={`border-b border-theme-neutral-200 ${isSelected && "bg-theme-success-contrast"}`}>
 			<td className="py-5">
-				<Avatar address={delegateAddress} noShadow />
+				<Avatar address={delegate.address()} noShadow />
 			</td>
 
-			<td className="py-5 font-bold">{delegateName}</td>
+			<td className="py-5 font-bold">{delegate.username()}</td>
 
-			<td className="py-5 font-bold text-theme-neutral-dark">#{rank}</td>
+			<td className="py-5 font-bold text-theme-neutral-dark">#{delegate.rank()}</td>
 
-			<td className="py-5 font-bold text-theme-neutral-dark">{votes}%</td>
+			<td className="py-5 font-bold text-theme-neutral-dark">%</td>
 
-			<td className="py-5">
+			{/* 			<td className="py-5">
 				{msqUrl && (
 					<div className="flex justify-center h-full">
 						<a href={msqUrl} target="_blank" rel="noopener noreferrer">
@@ -66,15 +47,21 @@ export const DelegateListItem = ({
 
 			<td className="py-5 font-bold text-theme-neutral-dark">
 				{commissionDaily && <span>{commissionDaily} Ѧ</span>}
-			</td>
+			</td> */}
 
 			<td className="py-5">
 				<div className="text-right">
 					<Button
 						variant="plain"
 						color={isSelected ? "danger" : "primary"}
-						onClick={() => onSelect?.({ address: delegateAddress!, username: delegateName!, rank: rank! })}
-						data-testid="DelegateListItem__button--toggle"
+						onClick={() =>
+							onSelect?.({
+								address: delegate.address(),
+								username: delegate.username(),
+								rank: delegate.rank(),
+							})
+						}
+						data-testid={`DelegateListItem__toggle-${index}`}
 					>
 						{isSelected ? t("COMMON.UNSELECT") : t("COMMON.SELECT")}
 					</Button>

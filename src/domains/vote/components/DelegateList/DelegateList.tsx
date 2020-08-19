@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { DelegateListItem } from "../DelegateListItem";
 
 type DelegateListProps = {
-	data?: any;
+	delegates: any;
 };
 
 const SelectedDelegateList = ({ delegates, className }: { delegates: any[]; className: string }) => {
@@ -55,10 +55,13 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: num
 	);
 };
 
-export const DelegateList = (props: DelegateListProps) => {
+export const DelegateList = ({ delegates }: DelegateListProps) => {
 	const { t } = useTranslation();
 	const [selected, setSelected] = useState([] as any);
 	const [showSelectedList, setShowSelectedList] = useState(false);
+
+	console.log("delegates", delegates);
+
 	const columns = [
 		{
 			accessor: "delegateAddressAvatar",
@@ -76,7 +79,7 @@ export const DelegateList = (props: DelegateListProps) => {
 			Header: t("VOTE.DELEGATE_LIST.VOTES"),
 			accessor: "votes",
 		},
-		{
+		/* 		{
 			Header: t("COMMON.PROFILE"),
 			accessor: "profile",
 			disableSortBy: true,
@@ -97,7 +100,7 @@ export const DelegateList = (props: DelegateListProps) => {
 		{
 			Header: t("VOTE.DELEGATE_LIST.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
 			accessor: "commissionDaily",
-		},
+		}, */
 		{
 			Header: t("VOTE.DELEGATE_LIST.VOTE"),
 			accessor: "onSelect",
@@ -118,9 +121,18 @@ export const DelegateList = (props: DelegateListProps) => {
 	return (
 		<div data-testid="DelegateList">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_LIST.TITLE")}</h2>
-			<Table columns={columns} data={props.data}>
-				{(rowData: any) => <DelegateListItem {...rowData} selected={selected} onSelect={toggleSelected} />}
-			</Table>
+			{delegates && (
+				<Table columns={columns} data={delegates}>
+					{(delegate: any, index: number) => (
+						<DelegateListItem
+							index={index}
+							delegate={delegate}
+							selected={selected}
+							onSelect={toggleSelected}
+						/>
+					)}
+				</Table>
+			)}
 
 			{selected.length ? (
 				<div

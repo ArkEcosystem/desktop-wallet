@@ -19,7 +19,6 @@ import { useTranslation } from "react-i18next";
 
 type VotesProps = {
 	addressList?: any[];
-	delegateList?: any[];
 };
 
 const { PlaceholderVotes } = images.vote.pages.votes;
@@ -53,13 +52,14 @@ const InputAddress = ({ profile, address }: { profile: Profile; address: string 
 	);
 };
 
-export const Votes = ({ addressList, delegateList }: VotesProps) => {
+export const Votes = ({ addressList }: VotesProps) => {
 	const context = useEnvironmentContext();
 	const networks = useMemo(() => context.env.availableNetworks(), [context]);
 
 	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<Wallet[]>([]);
 	const [address, setAddress] = useState("");
+	const [delegates, setDelegates] = useState<any>([]);
 
 	const activeProfile = useActiveProfile();
 
@@ -82,8 +82,11 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 		setNetwork(network!);
 	};
 
-	const handleSelectAddress = (address: string) => {
+	const handleSelectAddress = async (address: string) => {
 		setAddress(address);
+
+		const delegates = (await activeProfile.wallets().findByAddress(address)?.delegates({ limit: 10 }))?.items();
+		setDelegates(delegates);
 	};
 
 	return (
@@ -120,7 +123,7 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 						))}
 					</div>
 				) : address ? (
-					<DelegateList data={delegateList} />
+					<DelegateList delegates={delegates} />
 				) : (
 					<AddressList wallets={wallets} onSelect={handleSelectAddress} />
 				)}
@@ -131,5 +134,4 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 
 Votes.defaultProps = {
 	addressList: [],
-	delegateList: [],
 };
