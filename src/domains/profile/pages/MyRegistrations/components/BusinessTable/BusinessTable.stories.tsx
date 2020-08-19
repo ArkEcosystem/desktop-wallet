@@ -26,5 +26,5 @@ export const Default = () => {
 		},
 	];
 
-	return <BusinessTable data={registrations} handleDropdown={console.log} />;
+	return <BusinessTable data={registrations} onAction={console.log} />;
 };

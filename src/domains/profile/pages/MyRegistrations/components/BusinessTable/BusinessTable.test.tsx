@@ -31,10 +31,8 @@ describe("Welcome", () => {
 	});
 
 	it("should have a functional toggle", () => {
-		const handleDropdown = jest.fn();
-		const { getAllByTestId, getByTestId } = render(
-			<BusinessTable data={registrations} handleDropdown={handleDropdown} />,
-		);
+		const onAction = jest.fn();
+		const { getAllByTestId, getByTestId } = render(<BusinessTable data={registrations} onAction={onAction} />);
 
 		const toggle = getAllByTestId("dropdown__toggle");
 
@@ -49,6 +47,6 @@ describe("Welcome", () => {
 			fireEvent.click(secondOption);
 		});
 
-		expect(handleDropdown).toHaveBeenCalled();
+		expect(onAction).toHaveBeenCalled();
 	});
 });
