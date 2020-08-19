@@ -146,15 +146,15 @@ const ThirdStep = ({ wallet }: { wallet: Wallet }) => {
 };
 
 const component = ({ activeTab, feeOptions, wallet }: { activeTab: number; feeOptions: any; wallet: Wallet }) => (
-		<Tabs activeId={activeTab}>
-			<TabPanel tabId={2}>
-				<SecondStep feeOptions={feeOptions} wallet={wallet} />
-			</TabPanel>
-			<TabPanel tabId={3}>
-				<ThirdStep wallet={wallet} />
-			</TabPanel>
-		</Tabs>
-	);
+	<Tabs activeId={activeTab}>
+		<TabPanel tabId={2}>
+			<SecondStep feeOptions={feeOptions} wallet={wallet} />
+		</TabPanel>
+		<TabPanel tabId={3}>
+			<ThirdStep wallet={wallet} />
+		</TabPanel>
+	</Tabs>
+);
 
 const transactionDetails = ({
 	transaction,
