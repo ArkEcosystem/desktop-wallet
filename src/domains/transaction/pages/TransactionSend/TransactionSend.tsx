@@ -105,7 +105,7 @@ export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 				</div>
 			</div>
 
-			<div className="grid grid-flow-row gap-2 mt-4">
+			<div className="mt-4 grid grid-flow-row gap-2">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
