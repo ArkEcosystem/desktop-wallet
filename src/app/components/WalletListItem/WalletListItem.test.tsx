@@ -24,7 +24,7 @@ describe("WalletListItem", () => {
 	});
 
 	it("should render", () => {
-		const { container } = renderWithRouter(
+		const { container, getAllByTestId } = renderWithRouter(
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
@@ -37,6 +37,8 @@ describe("WalletListItem", () => {
 				history,
 			},
 		);
+
+		expect(getAllByTestId(`WalletListItem__${wallet.address()}`)).toBeTruthy();
 		expect(container).toMatchSnapshot();
 	});
 
