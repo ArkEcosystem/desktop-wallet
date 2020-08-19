@@ -121,6 +121,8 @@ export const translations: { [key: string]: any } = {
 		SECOND_STEP: {
 			TITLE: "Register Delegate",
 			DESCRIPTION: "Make up a name and register your delegate online.",
+			WARNING:
+				"Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.",
 		},
 	},
 

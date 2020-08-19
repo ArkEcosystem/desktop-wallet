@@ -38,7 +38,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 			</div>
 
 			<div className="mt-4 grid grid-flow-row gap-2">
-				<Alert>Hello</Alert>
+				<Alert>{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.WARNING")}</Alert>
 
 				<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 					<div className="mb-2 font-semibold text-theme-neutral">
