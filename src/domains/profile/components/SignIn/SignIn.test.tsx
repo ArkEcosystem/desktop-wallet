@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
-import {  Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent,  renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { SignIn } from "./SignIn";
