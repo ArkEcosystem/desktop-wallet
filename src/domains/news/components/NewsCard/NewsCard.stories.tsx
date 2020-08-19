@@ -1,10 +1,10 @@
 import React from "react";
+import blockfolioFixture from "tests/fixtures/news/page-1.json";
 
-import { news } from "../../data";
 import { NewsCard } from "./NewsCard";
 
 export default { title: "Domains / News / Components / News Card" };
 
-export const Default = () => <NewsCard {...news[0]} />;
+export const Default = () => <NewsCard {...blockfolioFixture.data[0]} coin="ark" />;
 
-export const WithCoverImage = () => <NewsCard {...news[1]} />;
+export const WithCoverImage = () => <NewsCard {...blockfolioFixture.data[1]} coin="ark" />;
