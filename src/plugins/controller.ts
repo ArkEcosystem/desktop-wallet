@@ -14,6 +14,21 @@ export class PluginController {
 		this.register();
 	}
 
+	get(name: string) {
+		return this._plugins.find((item) => item.name() === name);
+	}
+
+	render(name: string) {
+		const plugin = this.get(name);
+
+		if (!plugin) {
+			return;
+		}
+
+		const pluginAPI = new API(plugin);
+		return plugin.entry().render?.({ pluginAPI });
+	}
+
 	register() {
 		this.registerRoutes();
 	}

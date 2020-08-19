@@ -4,7 +4,7 @@ const { ipcMain, ipcRenderer } = require("electron");
  * The rendering process will trigger the event for loading the modules,
  * and execute the entry code through the vm to use the entry instance
  */
-const invokeLoader = async () => {
+export const invokeLoader = async () => {
 	const { PluginVM } = require("./vm");
 	const result = await ipcRenderer.invoke("plugin:load");
 
@@ -23,7 +23,7 @@ const invokeLoader = async () => {
 /**
  * The main process will listen for a call to load the plugins in the specified folders
  */
-const injectLoaderHandle = () => {
+export const injectLoaderHandle = () => {
 	const { PluginLoader } = require("./loader");
 	const isDev = require("electron-is-dev");
 	const path = require("path");

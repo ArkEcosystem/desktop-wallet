@@ -1,7 +1,7 @@
 import { RouteProps } from "react-router-dom";
 
 export class RoutePluginService {
-	_routes: Record<string, RouteProps[]> = {};
+	private _routes: Record<string, RouteProps[]> = {};
 
 	all() {
 		return Object.values(this._routes).flat();

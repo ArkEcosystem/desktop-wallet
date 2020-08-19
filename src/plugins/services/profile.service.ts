@@ -1,5 +1,5 @@
 export class ProfilePluginService {
-	subscribers: ((profile: any) => void)[] = [];
+	private subscribers: ((profile: any) => void)[] = [];
 
 	// Called by component
 	emitProfileChange(profile: any) {

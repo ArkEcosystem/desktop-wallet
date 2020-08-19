@@ -19,6 +19,7 @@ export interface LanguageConfig {
 }
 
 export interface Plugin {
+	render?: (props?: { pluginAPI: PluginAPI } & Record<string, any>) => React.ReactNode;
 	registerRoutes?: () => RouteProps[];
 	registerThemes?: () => ThemeConfig[];
 	registerLanguage?: () => LanguageConfig;

@@ -8,8 +8,8 @@ import { PluginPermission } from "./plugin.models";
 import { ProfilePluginService } from "./services/profile.service";
 
 class ProfileAPI implements ProfilePluginAPI {
-	service: ProfilePluginService;
-	plugin: PluginData;
+	private service: ProfilePluginService;
+	private plugin: PluginData;
 
 	constructor(plugin: PluginData) {
 		this.service = container.get(Identifiers.ProfileService);
@@ -22,8 +22,8 @@ class ProfileAPI implements ProfilePluginAPI {
 }
 
 class HttpAPI implements HTTPPluginAPI {
-	service: HttpClient;
-	plugin: PluginData;
+	private service: HttpClient;
+	private plugin: PluginData;
 
 	constructor(plugin: PluginData) {
 		this.service = httpClient;
