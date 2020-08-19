@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
-import { WalletDataCollection } from "@arkecosystem/platform-sdk/dist/coins";
-import { WalletData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
@@ -26,7 +24,7 @@ type WalletDetailsProps = {
 
 type WalletInfo = {
 	transactions: Contracts.TransactionDataType[];
-	walletData?: WalletData;
+	walletData?: Contracts.WalletData;
 	votes?: Coins.WalletDataCollection;
 };
 
@@ -71,7 +69,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 			}
 
 			const transaction = response.items()[0];
-			const result: WalletData[] = [];
+			const result: Contracts.WalletData[] = [];
 
 			const votes = (transaction?.asset().votes as string[]) || [];
 			for (const vote of votes) {
@@ -87,7 +85,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 				result.push(voteData);
 			}
 
-			return new WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined });
+			return new Coins.WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined });
 		};
 
 		const fetchAllData = async () => {

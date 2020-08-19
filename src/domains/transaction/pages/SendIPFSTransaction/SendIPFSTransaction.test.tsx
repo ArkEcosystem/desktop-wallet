@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-import { TransactionService } from "@arkecosystem/platform-sdk-profiles/dist/wallets/wallet-transaction-service";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -23,7 +23,17 @@ import { translations as transactionTranslations } from "../../i18n";
 import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } from "./SendIPFSTransaction";
 
 const fixtureProfileId = getDefaultProfileId();
-const onCopy = jest.fn();
+
+const createTransactionMock = (wallet: Wallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => ipfsFixture.data.id,
+		sender: () => ipfsFixture.data.sender,
+		recipient: () => ipfsFixture.data.recipient,
+		amount: () => BigNumber.make(ipfsFixture.data.amount),
+		fee: () => BigNumber.make(ipfsFixture.data.fee),
+		data: () => ipfsFixture.data,
+	});
 
 let profile: Profile;
 let wallet: Wallet;
@@ -168,9 +178,10 @@ describe("SendIPFSTransaction", () => {
 
 			// Step 4
 			const signMock = jest
-				.spyOn(TransactionService.prototype, "signIpfs")
+				.spyOn(wallet.transaction(), "signIpfs")
 				.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
-			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
 
 			fireEvent.click(getByTestId("SendIPFSTransaction__button--submit"));
 
@@ -186,33 +197,14 @@ describe("SendIPFSTransaction", () => {
 
 			fireEvent.click(getByTestId(`SendIPFSTransaction__button--copy`));
 
-			await waitFor(() =>
-				expect(copyMock).toHaveBeenCalledWith(
-					JSON.stringify(
-						{
-							id: ipfsFixture.data.id,
-							type: "ipfs",
-							timestamp: ipfsFixture.data.timestamp.human,
-							confirmations: {},
-							sender: ipfsFixture.data.sender,
-							recipient: ipfsFixture.data.recipient,
-							amount: {},
-							fee: {},
-							asset: {
-								ipfs: "QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68",
-							},
-						},
-						null,
-						2,
-					),
-				),
-			);
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(ipfsFixture.data.id));
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
@@ -275,7 +267,7 @@ describe("SendIPFSTransaction", () => {
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
-			const signMock = jest.spyOn(TransactionService.prototype, "signIpfs").mockImplementation(() => {
+			const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
 				throw new Error();
 			});
 

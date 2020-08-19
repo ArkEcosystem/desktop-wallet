@@ -55,6 +55,7 @@ const whiteListedModules = [
 	"styled-components",
 	"swiper",
 	"react-loading-skeleton",
+	"react-linkify",
 ];
 
 const addNodeExternals = () =>

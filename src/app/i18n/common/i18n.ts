@@ -34,6 +34,7 @@ export const translations: { [key: string]: any } = {
 	CONFIRM: "Confirm",
 	CONTINUE: "Continue",
 	COPY: "Copy",
+	COPY_TRANSACTION_ID: "Copy Transaction ID",
 	CURRENCY: "Currency",
 	CREATE: "Create",
 	CRYPTOASSET: "Cryptoasset",
