@@ -92,7 +92,7 @@ export const Wallets = ({
 		return allWallets || getWalletsForList().slice(0, 10);
 	};
 
-	const loadAllListWallets = async () => {
+	const loadAllListWallets = () => {
 		setAllWallets(getWalletsForList());
 		setHasMoreWallets(false);
 	};
