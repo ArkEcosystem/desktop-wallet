@@ -135,7 +135,7 @@ export const Wallets = ({
 				)}
 				{walletsViewType === "list" && (
 					<div>
-						{wallets.length > 0 && (
+						{wallets.length > 10 && (
 							<div>
 								<Table columns={listColumns} data={walletListItems}>
 									{(rowData: any) => <WalletListItem {...rowData} />}
