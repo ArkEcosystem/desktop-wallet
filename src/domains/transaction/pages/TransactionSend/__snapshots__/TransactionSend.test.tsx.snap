@@ -1609,7 +1609,7 @@ exports[`Transaction Send should render 5th step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Transaction Send should send a multi payment 1`] = `
+exports[`Transaction Send should send a multi payment transfer 1`] = `
 <div>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -1951,7 +1951,7 @@ exports[`Transaction Send should send a multi payment 1`] = `
                                     class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
-                                    8f913b6b719e77…2f1b89abb49877
+                                    34b557950ed485…cbbb907b2c829c
                                   </span>
                                 </div>
                                 <span
@@ -2143,7 +2143,7 @@ exports[`Transaction Send should send a multi payment 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              400000.00000000
+                              0.00000000
                             </div>
                           </div>
                           <div
