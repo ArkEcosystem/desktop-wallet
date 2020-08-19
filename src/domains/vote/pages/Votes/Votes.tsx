@@ -28,8 +28,8 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 	const context = useEnvironmentContext();
 	const networks = useMemo(() => context.env.availableNetworks(), [context]);
 
-	const [selectedNetwork, setSelectedNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<Wallet[]>([]);
+	const [selectedNetwork, setSelectedNetwork] = useState<NetworkData | null>(null);
 	const [selectedAddress, setSelectedAddress] = useState("");
 
 	const activeProfile = useActiveProfile();
@@ -47,7 +47,7 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 		if (selectedNetwork) {
 			setWallets(activeProfile.wallets().findByCoinWithNetwork(selectedNetwork.coin(), selectedNetwork.id()));
 		}
-	}, [selectedNetwork, activeProfile]);
+	}, [activeProfile, selectedNetwork]);
 
 	const handleSelectNetwork = (network?: NetworkData | null) => {
 		setSelectedNetwork(network!);
@@ -57,7 +57,8 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 		setSelectedAddress(address);
 	};
 
-	console.log("wallets", wallets);
+	/* 	console.log("wallets", wallets[0]?.toObject());
+	console.log("wallets", wallets[1]?.toObject()); */
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
