@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -14,7 +14,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressList } from "domains/vote/components/AddressList";
 import { DelegateList } from "domains/vote/components/DelegateList";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type VotesProps = {
@@ -29,6 +29,7 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 	const networks = useMemo(() => context.env.availableNetworks(), [context]);
 
 	const [selectedNetwork, setSelectedNetwork] = useState<NetworkData | null>(null);
+	const [wallets, setWallets] = useState<Wallet[]>([]);
 	const [selectedAddress, setSelectedAddress] = useState("");
 
 	const activeProfile = useActiveProfile();
@@ -42,6 +43,12 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 		},
 	];
 
+	useEffect(() => {
+		if (selectedNetwork) {
+			setWallets(activeProfile.wallets().findByCoinWithNetwork(selectedNetwork.coin(), selectedNetwork.id()));
+		}
+	}, [selectedNetwork, activeProfile]);
+
 	const handleSelectNetwork = (network?: NetworkData | null) => {
 		setSelectedNetwork(network!);
 	};
@@ -49,6 +56,8 @@ export const Votes = ({ addressList, delegateList }: VotesProps) => {
 	const handleSelectAddress = (address: string) => {
 		setSelectedAddress(address);
 	};
+
+	console.log("wallets", wallets);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
