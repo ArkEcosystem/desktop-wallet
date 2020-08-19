@@ -1,4 +1,6 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
@@ -13,12 +15,20 @@ const history = createMemoryHistory();
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
-beforeEach(() => {
-	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
-	history.push(dashboardURL);
-});
-
 describe("VoteDetail", () => {
+	beforeAll(() => {
+		nock.disableNetConnect();
+		nock("https://dwallets.ark.io")
+			.get("/delegates")
+			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
+			.persist();
+	});
+
+	beforeEach(() => {
+		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
+		history.push(dashboardURL);
+	});
+
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
@@ -46,6 +56,41 @@ describe("VoteDetail", () => {
 		);
 
 		waitFor(() => expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE));
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a modal as confirmed", () => {
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<VoteDetail
+					isOpen={true}
+					transaction={{ ...TransactionFixture, confirmations: () => BigNumber.make(52) }}
+				/>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		waitFor(() => expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE));
+		waitFor(() => expect(getByText("Well Confirmed")).toBeInTheDocument());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a modal with wallet alias", () => {
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<VoteDetail isOpen={true} transaction={TransactionFixture} walletAlias="Wallet Alias" />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		waitFor(() => expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE));
+		waitFor(() => expect(getByText("Wallet Alias")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
