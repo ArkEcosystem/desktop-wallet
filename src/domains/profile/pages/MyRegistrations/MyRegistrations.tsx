@@ -74,12 +74,15 @@ const renderRegistration = ({ type, registrations }: RegistrationProps, handleDr
 
 export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 	const activeProfile = useActiveProfile();
+	const [delegates, setDelegates] = useState([]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
 
 	const mountRegistrations = () =>
 		registrations.map((registrationsBlock: any) => renderRegistration(registrationsBlock, handleDropdown));
+	const activeProfile = useActiveProfile();
+	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const crumbs = [
 		{
@@ -88,6 +91,21 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 		},
 	];
 
+	useEffect(() => {
+		const fetchAllDelegateRegistrations = async () => {
+			const allDelegateRegistrations = await wallets.reduce(async (prev: any, wallet: any) => {
+				// TODO: use activeWallet.registrationAggregate().delegates() when both
+				//		 aip36 and standard txs will be available from sdk.
+				const transactions = (await wallet.transactions()).items();
+				const delegateRegistration = transactions.find((tx: any) => tx.isDelegateRegistration());
+				return delegateRegistration ? [...(await prev), delegateRegistration] : await prev;
+			}, Promise.resolve([]));
+
+			setDelegates(allDelegateRegistrations);
+		};
+
+		fetchAllDelegateRegistrations();
+	}, []);
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
