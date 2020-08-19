@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-import { TransactionService } from "@arkecosystem/platform-sdk-profiles/dist/wallets/wallet-transaction-service";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -168,9 +167,9 @@ describe("SendIPFSTransaction", () => {
 
 			// Step 4
 			const signMock = jest
-				.spyOn(TransactionService.prototype, "signIpfs")
+				.spyOn(wallet.transaction(), "signIpfs")
 				.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
-			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 
 			fireEvent.click(getByTestId("SendIPFSTransaction__button--submit"));
 
@@ -275,7 +274,7 @@ describe("SendIPFSTransaction", () => {
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
-			const signMock = jest.spyOn(TransactionService.prototype, "signIpfs").mockImplementation(() => {
+			const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
 				throw new Error();
 			});
 
