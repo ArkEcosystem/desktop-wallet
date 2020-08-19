@@ -167,4 +167,40 @@ describe("Wallets", () => {
 
 		expect(toggle).toHaveClass("text-theme-danger-300");
 	});
+
+	it("should hide the view more button if there are less than 10 wallets", () => {
+		const { queryByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets
+					wallets={[wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet]}
+					viewType="list"
+					filterProperties={filterProperties}
+				/>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(queryByTestId("Wallets__ViewMore")).toBeFalsy();
+	});
+
+	it("should show the view more button if there are more than 10 wallets", () => {
+		const { queryByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets
+					wallets={[wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet]}
+					viewType="list"
+					filterProperties={filterProperties}
+				/>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(queryByTestId("Wallets__ViewMore")).toBeTruthy();
+	});
 });

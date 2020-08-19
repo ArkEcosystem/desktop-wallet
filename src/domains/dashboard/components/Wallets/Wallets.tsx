@@ -142,7 +142,11 @@ export const Wallets = ({
 								</Table>
 
 								{wallets.length > 10 && (
-									<Button variant="plain" className="w-full mt-10 mb-5">
+									<Button
+										variant="plain"
+										className="w-full mt-10 mb-5"
+										data-testid="Wallets__ViewMore"
+									>
 										{t("COMMON.VIEW_MORE")}
 									</Button>
 								)}
