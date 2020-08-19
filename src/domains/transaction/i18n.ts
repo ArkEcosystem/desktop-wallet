@@ -117,6 +117,13 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
+	PAGE_DELEGATE_REGISTRATION: {
+		SECOND_STEP: {
+			TITLE: "Register Delegate",
+			DESCRIPTION: "Make up a name and register your delegate online.",
+		},
+	},
+
 	PAGE_RESIGN_REGISTRATION: {
 		FIRST_STEP: {
 			DELEGATE: {
