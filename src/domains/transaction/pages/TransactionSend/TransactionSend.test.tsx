@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-// TODO: Import and Mocking like this is a big no-go. Remove this and instead mock network requests and avoid mocking offline method calls.
-import { TransactionService } from "@arkecosystem/platform-sdk-profiles/dist/wallets/wallet-transaction-service";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
@@ -27,9 +25,20 @@ import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSen
 
 const fixtureProfileId = getDefaultProfileId();
 
-// @ts-ignore
-const createTransactionMock = () =>
-	jest.spyOn(TransactionService.prototype, "transaction").mockReturnValue({
+const createTransactionMultipleMock = (wallet: Wallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => transactionMultipleFixture.data.id,
+		sender: () => transactionMultipleFixture.data.sender,
+		recipient: () => transactionMultipleFixture.data.recipient,
+		amount: () => BigNumber.make(transactionMultipleFixture.data.amount),
+		fee: () => BigNumber.make(transactionMultipleFixture.data.fee),
+		data: () => transactionMultipleFixture.data,
+	});
+
+const createTransactionMock = (wallet: Wallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => transactionFixture.data.id,
 		sender: () => transactionFixture.data.sender,
 		recipient: () => transactionFixture.data.recipient,
@@ -157,7 +166,7 @@ describe("Transaction Send", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("TransactionSend__step--first")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
@@ -212,10 +221,10 @@ describe("Transaction Send", () => {
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest
-				.spyOn(TransactionService.prototype, "signTransfer")
+				.spyOn(wallet.transaction(), "signTransfer")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
-			const transactionMock = createTransactionMock();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
 
 			fireEvent.click(getByTestId("TransactionSend__button--submit"));
 
@@ -229,13 +238,9 @@ describe("Transaction Send", () => {
 			// @ts-ignore
 			navigator.clipboard = { writeText: copyMock };
 
-			fireEvent.click(getByTestId(`TransactionSend__button--copy`));
+			fireEvent.click(getByTestId("TransactionSend__button--copy"));
 
-			await waitFor(() =>
-				expect(copyMock).toHaveBeenCalledWith(
-					"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
-				),
-			);
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionFixture.data.id));
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
@@ -273,7 +278,7 @@ describe("Transaction Send", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("TransactionSend__step--first")).toBeTruthy());
 		});
 
 		const { getByTestId } = rendered!;
@@ -335,10 +340,10 @@ describe("Transaction Send", () => {
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest
-				.spyOn(TransactionService.prototype, "signMultiPayment")
+				.spyOn(wallet.transaction(), "signMultiPayment")
 				.mockReturnValue(Promise.resolve(transactionMultipleFixture.data.id));
-			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
-			const transactionMock = createTransactionMock();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMultipleMock(wallet);
 
 			fireEvent.click(getByTestId("TransactionSend__button--submit"));
 
@@ -352,27 +357,9 @@ describe("Transaction Send", () => {
 			// @ts-ignore
 			navigator.clipboard = { writeText: copyMock };
 
-			fireEvent.click(getByTestId(`TransactionSend__button--copy`));
+			fireEvent.click(getByTestId("TransactionSend__button--copy"));
 
-			await waitFor(() =>
-				expect(copyMock).toHaveBeenCalledWith(
-					JSON.stringify(
-						{
-							id: transactionMultipleFixture.data.id,
-							type: "multiPayment",
-							timestamp: transactionMultipleFixture.data.timestamp.human,
-							confirmations: {},
-							sender: transactionMultipleFixture.data.sender,
-							recipient: transactionMultipleFixture.data.recipient,
-							amount: {},
-							fee: {},
-							asset: transactionMultipleFixture.data.asset,
-						},
-						null,
-						2,
-					),
-				),
-			);
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionMultipleFixture.data.id));
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
@@ -404,7 +391,7 @@ describe("Transaction Send", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("TransactionSend__step--first")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
@@ -453,7 +440,7 @@ describe("Transaction Send", () => {
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
-			const signMock = jest.spyOn(TransactionService.prototype, "signTransfer").mockImplementation(() => {
+			const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
 				throw new Error();
 			});
 
