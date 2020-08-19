@@ -1,4 +1,4 @@
-import { Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -9,6 +9,7 @@ import { WalletListItem } from "./WalletListItem";
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
 
+let profile: Profile;
 let wallet: Wallet;
 
 describe("WalletListItem", () => {
@@ -17,7 +18,7 @@ describe("WalletListItem", () => {
 	});
 
 	beforeEach(() => {
-		const profile = env.profiles().findById(getDefaultProfileId());
+		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(WalletFlag.Starred, true);
 		wallet.data().set(WalletFlag.Ledger, true);
@@ -136,5 +137,29 @@ describe("WalletListItem", () => {
 		});
 
 		expect(container.querySelectorAll("ul").length).toEqual(0);
+	});
+
+	it("should click a wallet and redirect to it", () => {
+		const { getByTestId } = renderWithRouter(
+			<table>
+				<tbody>
+					<Route path="/profiles/:profileId/dashboard">
+						<WalletListItem wallet={wallet} />
+					</Route>
+				</tbody>
+			</table>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/dashboard`);
+
+		act(() => {
+			fireEvent.click(getByTestId(`WalletListItem__${wallet.address()}`));
+		});
+
+		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 	});
 });
