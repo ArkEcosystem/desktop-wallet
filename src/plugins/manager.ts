@@ -1,18 +1,14 @@
 /* eslint-disable @typescript-eslint/require-await */
+
 import React from "react";
 
 import { container } from "./container";
 import { Identifiers } from "./container.models";
 import { PluginController } from "./controller";
 import { PluginData } from "./plugin";
-import { Plugin, PluginManifest } from "./plugin.models";
+import { PluginLoader } from "./plugin.models";
 import { ProfilePluginService } from "./services/profile.service";
 import { RoutePluginService } from "./services/route.service";
-
-interface PluginLoader {
-	manifest: PluginManifest;
-	entry: Plugin;
-}
 
 export class PluginManager {
 	private _controller: PluginController;

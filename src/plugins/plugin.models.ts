@@ -43,3 +43,8 @@ export enum PluginPermission {
 export enum PluginSetting {
 	URLs = "urls",
 }
+
+export interface PluginLoader {
+	manifest: PluginManifest;
+	entry: Plugin;
+}
