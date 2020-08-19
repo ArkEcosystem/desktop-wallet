@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 type Props = {
 	data: any;
-	handleDropdown: any;
+	onAction: any;
 };
 
 const options = [
@@ -27,7 +27,7 @@ const getStatusIcon = (confirmed: boolean) => {
 	return <Icon name="Checkmark" className="ml-1 text-theme-success" width={30} height={30} />;
 };
 
-export const DelegateTable = ({ data, handleDropdown }: Props) => {
+export const DelegateTable = ({ data, onAction }: Props) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -102,7 +102,7 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => {
 									<Dropdown
 										toggleIcon="Settings"
 										options={options}
-										onSelect={(option: any) => handleDropdown(option)}
+										onSelect={(option: any) => onAction?.(option)}
 									/>
 								</Button>
 							</span>

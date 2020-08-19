@@ -83,11 +83,11 @@ describe("Welcome", () => {
 	});
 
 	it.each(["business", "blockchain", "delegate"])("should handle %s dropdown", (type) => {
-		const handleDropdown = jest.fn();
+		const onAction = jest.fn();
 
 		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
-				<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />
+				<MyRegistrations registrations={registrations} onAction={onAction} />
 			</Route>,
 			{
 				routes: [registrationsURL],
@@ -108,6 +108,6 @@ describe("Welcome", () => {
 			fireEvent.click(secondOption);
 		});
 
-		expect(handleDropdown).toHaveBeenCalled();
+		expect(onAction).toHaveBeenCalled();
 	});
 });

@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 type Props = {
 	data: any;
-	handleDropdown: any;
+	onAction: any;
 };
 
 const options = [
@@ -19,7 +19,7 @@ const options = [
 	{ label: "Resign", value: "resign" },
 ];
 
-export const BusinessTable = ({ data, handleDropdown }: Props) => {
+export const BusinessTable = ({ data, onAction }: Props) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -92,7 +92,7 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => {
 									<Dropdown
 										toggleIcon="Settings"
 										options={options}
-										onSelect={(option: any) => handleDropdown(option)}
+										onSelect={(option: any) => onAction(option)}
 									/>
 								</Button>
 							</span>
