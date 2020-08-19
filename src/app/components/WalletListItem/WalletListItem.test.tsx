@@ -1,39 +1,63 @@
-import { Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { createMemoryHistory } from "history";
 import React from "react";
-import { act, env, fireEvent, render } from "testing-library";
+import { Route } from "react-router-dom";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { WalletListItem } from "./WalletListItem";
 
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
+const history = createMemoryHistory();
+
+let profile: Profile;
 let wallet: Wallet;
 
 describe("WalletListItem", () => {
 	beforeAll(() => {
-		const profile = env.profiles().values()[0];
-		wallet = profile.wallets().values()[0];
+		history.push(dashboardURL);
+	});
+
+	beforeEach(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(WalletFlag.Starred, true);
 		wallet.data().set(WalletFlag.Ledger, true);
 	});
 
 	it("should render", () => {
-		const { container } = render(
+		const { container, getAllByTestId } = renderWithRouter(
 			<table>
 				<tbody>
-					<WalletListItem wallet={wallet} />
+					<Route path="/profiles/:profileId/dashboard">
+						<WalletListItem wallet={wallet} />
+					</Route>
 				</tbody>
 			</table>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
+
+		expect(getAllByTestId(`WalletListItem__${wallet.address()}`)).toBeTruthy();
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a button if variant is 'singleAction'", () => {
 		const actions = [{ label: "Option 1", value: "1" }];
 
-		const { container, getByTestId } = render(
+		const { container, getByTestId } = renderWithRouter(
 			<table>
 				<tbody>
-					<WalletListItem wallet={wallet} actions={actions} variant="singleAction" />
+					<Route path="/profiles/:profileId/dashboard">
+						<WalletListItem wallet={wallet} actions={actions} variant="singleAction" />
+					</Route>
 				</tbody>
 			</table>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
 
 		expect(() => getByTestId("dropdown__toggle")).toThrow(/Unable to find an element by/);
@@ -48,12 +72,18 @@ describe("WalletListItem", () => {
 			{ label: "Option 2", value: "2" },
 		];
 
-		const { getByTestId, container } = render(
+		const { getByTestId, container } = renderWithRouter(
 			<table>
 				<tbody>
-					<WalletListItem wallet={wallet} actions={options} onAction={fn} />
+					<Route path="/profiles/:profileId/dashboard">
+						<WalletListItem wallet={wallet} actions={options} onAction={fn} />
+					</Route>
 				</tbody>
 			</table>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
 		const toggle = getByTestId("dropdown__toggle");
 		act(() => {
@@ -79,12 +109,18 @@ describe("WalletListItem", () => {
 			{ label: "Option 2", value: "2" },
 		];
 
-		const { getByTestId, container } = render(
+		const { getByTestId, container } = renderWithRouter(
 			<table>
 				<tbody>
-					<WalletListItem wallet={wallet} actions={options} />
+					<Route path="/profiles/:profileId/dashboard">
+						<WalletListItem wallet={wallet} actions={options} />
+					</Route>
 				</tbody>
 			</table>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
 		const toggle = getByTestId("dropdown__toggle");
 		act(() => {
@@ -101,5 +137,29 @@ describe("WalletListItem", () => {
 		});
 
 		expect(container.querySelectorAll("ul").length).toEqual(0);
+	});
+
+	it("should click a wallet and redirect to it", () => {
+		const { getByTestId } = renderWithRouter(
+			<table>
+				<tbody>
+					<Route path="/profiles/:profileId/dashboard">
+						<WalletListItem wallet={wallet} />
+					</Route>
+				</tbody>
+			</table>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/dashboard`);
+
+		act(() => {
+			fireEvent.click(getByTestId(`WalletListItem__${wallet.address()}`));
+		});
+
+		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 	});
 });
