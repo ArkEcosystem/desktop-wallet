@@ -289,6 +289,9 @@ export const TransactionSend = () => {
 					},
 				});
 			}
+			console.log(transactionId);
+			console.log(senderWallet!.transaction().signed());
+			console.log(senderWallet!.transaction().broadcasted());
 
 			await senderWallet!.transaction().broadcast([transactionId]);
 

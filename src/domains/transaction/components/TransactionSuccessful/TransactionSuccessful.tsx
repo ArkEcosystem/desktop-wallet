@@ -41,6 +41,23 @@ export const TransactionSuccessful = ({ children, transactionId }: TransactionSu
 					</div>
 				</TransactionDetail>
 
+				<TransactionDetail label="Block ID">
+					<div className="flex items-center">
+						<Address
+							addressClass="text-theme-primary"
+							address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+							maxChars={32}
+						/>
+						<span className="ml-5">
+							<Clipboard>
+								<div className="text-theme-primary-300">
+									<Icon name="Copy" />
+								</div>
+							</Clipboard>
+						</span>
+					</div>
+				</TransactionDetail>
+
 				<TransactionDetail
 					label="Network"
 					extra={

@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+// TODO: Import and Mocking like this is a big no-go. Remove this and instead mock network requests and avoid mocking offline method calls.
 import { TransactionService } from "@arkecosystem/platform-sdk-profiles/dist/wallets/wallet-transaction-service";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -24,23 +26,32 @@ import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSen
 
 const fixtureProfileId = getDefaultProfileId();
 
-const onCopy = jest.fn();
+// @ts-ignore
+const createTransactionMock = () =>
+	jest.spyOn(TransactionService.prototype, "transaction").mockReturnValue({
+		id: () => transactionFixture.data.id,
+		sender: () => transactionFixture.data.sender,
+		recipient: () => transactionFixture.data.recipient,
+		amount: () => BigNumber.make(transactionFixture.data.amount),
+		fee: () => BigNumber.make(transactionFixture.data.fee),
+		data: () => transactionFixture.data,
+	});
 
 let profile: Profile;
 let wallet: Wallet;
 
+beforeAll(async () => {
+	profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	wallet = profile.wallets().values()[0];
+
+	nock("https://dwallets.ark.io")
+		.post("/api/transactions/search")
+		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+		.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
+		.reply(200, transactionFixture);
+});
+
 describe("Transaction Send", () => {
-	beforeAll(async () => {
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
-		wallet = profile.wallets().values()[0];
-
-		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
-			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
-			.reply(200, transactionFixture);
-	});
-
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 
@@ -203,6 +214,7 @@ describe("Transaction Send", () => {
 				.spyOn(TransactionService.prototype, "signTransfer")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock();
 
 			fireEvent.click(getByTestId("TransactionSend__button--submit"));
 
@@ -222,14 +234,27 @@ describe("Transaction Send", () => {
 				expect(copyMock).toHaveBeenCalledWith(
 					JSON.stringify(
 						{
-							id: transactionFixture.data.id,
-							type: "transfer",
-							timestamp: transactionFixture.data.timestamp.human,
-							confirmations: {},
-							sender: transactionFixture.data.sender,
-							recipient: transactionFixture.data.recipient,
-							amount: {},
-							fee: {},
+							id: "8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+							blockId: "2a690f25cb1603275936665162e26415cad14199dda141d33666597c8bca8c5c",
+							version: 2,
+							type: 0,
+							typeGroup: 1,
+							amount: "40000000000000",
+							fee: "10000000",
+							sender: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+							senderPublicKey: "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff",
+							recipient: "D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv",
+							signature:
+								"a6244e06e0f0d446326de249a56a26c432e4af18f3f6374dcea599a691877441dcaff88c0c8cfb73ecc5e923ee93996e6157382bc906f2ab588695354e40a92d",
+							signSignature:
+								"e09755da1246e3c27786f4048ef9b633784d05bfa3071dffc0a50a996660830db2befc057a34b30faded87b1c0f59e19ee54fb330764c8f45588711d70aa6aa8",
+							confirmations: 154178,
+							timestamp: {
+								epoch: 105390200,
+								unix: 1595491400,
+								human: "2020-07-23T08:03:20.000Z",
+							},
+							nonce: "276",
 						},
 						null,
 						2,
@@ -242,6 +267,7 @@ describe("Transaction Send", () => {
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
@@ -331,6 +357,7 @@ describe("Transaction Send", () => {
 				.spyOn(TransactionService.prototype, "signMultiPayment")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock();
 
 			fireEvent.click(getByTestId("TransactionSend__button--submit"));
 
@@ -339,6 +366,7 @@ describe("Transaction Send", () => {
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});

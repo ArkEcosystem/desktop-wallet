@@ -875,7 +875,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
       </div>
     </div>
     <div
-      class="mt-4 grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-6 true "
@@ -1347,7 +1347,7 @@ exports[`Transaction Send should render 5th step 1`] = `
       <h1
         class="mb-0"
       >
-        Transaction Successful
+        Transaction Sent
       </h1>
       <div
         class="grid grid-flow-row gap-2"
@@ -1391,59 +1391,6 @@ exports[`Transaction Send should render 5th step 1`] = `
                     data-testid="address__wallet-address"
                   >
                     8f913b6b719e77…2f1b89abb49877
-                  </span>
-                </div>
-                <span
-                  class="ml-5"
-                >
-                  <div
-                    class="inline-block cursor-pointer"
-                    data-testid="clipboard__wrapper"
-                  >
-                    <div
-                      class="text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral"
-            >
-              Block ID
-            </div>
-            <div
-              class="font-semibold"
-            >
-              <div
-                class="flex items-center"
-              >
-                <div
-                  class="inline-block truncate align-middle"
-                >
-                  <span
-                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                   </span>
                 </div>
                 <span
@@ -1908,7 +1855,7 @@ exports[`Transaction Send should send a multi payment 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"
@@ -1952,59 +1899,6 @@ exports[`Transaction Send should send a multi payment 1`] = `
                                     data-testid="address__wallet-address"
                                   >
                                     8f913b6b719e77…2f1b89abb49877
-                                  </span>
-                                </div>
-                                <span
-                                  class="ml-5"
-                                >
-                                  <div
-                                    class="inline-block cursor-pointer"
-                                    data-testid="clipboard__wrapper"
-                                  >
-                                    <div
-                                      class="text-theme-primary-300"
-                                    >
-                                      <div
-                                        class="sc-AxhUy cPXLjK"
-                                        height="1em"
-                                        width="1em"
-                                      >
-                                        <svg>
-                                          copy.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Block ID
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              <div
-                                class="flex items-center"
-                              >
-                                <div
-                                  class="inline-block truncate align-middle"
-                                >
-                                  <span
-                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                    data-testid="address__wallet-address"
-                                  >
-                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                                   </span>
                                 </div>
                                 <span
@@ -2508,7 +2402,7 @@ exports[`Transaction Send should send a single transfer 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"
@@ -2552,59 +2446,6 @@ exports[`Transaction Send should send a single transfer 1`] = `
                                     data-testid="address__wallet-address"
                                   >
                                     8f913b6b719e77…2f1b89abb49877
-                                  </span>
-                                </div>
-                                <span
-                                  class="ml-5"
-                                >
-                                  <div
-                                    class="inline-block cursor-pointer"
-                                    data-testid="clipboard__wrapper"
-                                  >
-                                    <div
-                                      class="text-theme-primary-300"
-                                    >
-                                      <div
-                                        class="sc-AxhUy cPXLjK"
-                                        height="1em"
-                                        width="1em"
-                                      >
-                                        <svg>
-                                          copy.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Block ID
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              <div
-                                class="flex items-center"
-                              >
-                                <div
-                                  class="inline-block truncate align-middle"
-                                >
-                                  <span
-                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                    data-testid="address__wallet-address"
-                                  >
-                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                                   </span>
                                 </div>
                                 <span
