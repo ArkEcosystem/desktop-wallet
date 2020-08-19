@@ -170,6 +170,14 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 		iconName: "Ripple",
 	// 	},
 	// },
+	ETH: {
+		mainnet: {
+			displayName: "Ethereum",
+			borderClass: "border-theme-neutral-800",
+			textClass: "text-theme-neutral-800",
+			iconName: "Ethereum",
+		},
+	},
 	LSK: {
 		mainnet: {
 			displayName: "Lisk",

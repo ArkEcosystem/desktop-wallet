@@ -12,7 +12,7 @@ exports[`AddRecipient should render 1`] = `
         class="flex items-center mb-2 space-x-2"
       >
         <div
-          class="font-normal text-md transition-colors duration-100"
+          class="font-normal transition-colors duration-100 text-md"
         >
           Select a Single or Multiple Recipient Transaction
         </div>
@@ -54,7 +54,7 @@ exports[`AddRecipient should render 1`] = `
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
+      class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-6"
     >
       <div
         class="space-y-8"
@@ -66,7 +66,7 @@ exports[`AddRecipient should render 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="recipientAddress"
             >
@@ -120,7 +120,7 @@ exports[`AddRecipient should render 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="amount"
             >
@@ -173,7 +173,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
         class="flex items-center mb-2 space-x-2"
       >
         <div
-          class="font-normal text-md transition-colors duration-100"
+          class="font-normal transition-colors duration-100 text-md"
         >
           Select a Single or Multiple Recipient Transaction
         </div>
@@ -215,7 +215,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI mt-8 mb-2"
+      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI mt-6"
     >
       <div
         class="space-y-8"
@@ -227,7 +227,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="recipientAddress"
             >
@@ -281,7 +281,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="amount"
             >
@@ -334,7 +334,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
         class="flex items-center mb-2 space-x-2"
       >
         <div
-          class="font-normal text-md transition-colors duration-100"
+          class="font-normal transition-colors duration-100 text-md"
         >
           Select a Single or Multiple Recipient Transaction
         </div>
@@ -376,7 +376,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
+      class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-6"
     >
       <div
         class="space-y-8"
@@ -388,7 +388,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="recipientAddress"
             >
@@ -453,7 +453,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="amount"
             >
@@ -506,7 +506,7 @@ exports[`AddRecipient should render without recipients 1`] = `
         class="flex items-center mb-2 space-x-2"
       >
         <div
-          class="font-normal text-md transition-colors duration-100"
+          class="font-normal transition-colors duration-100 text-md"
         >
           Select a Single or Multiple Recipient Transaction
         </div>
@@ -548,7 +548,7 @@ exports[`AddRecipient should render without recipients 1`] = `
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
+      class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-6"
     >
       <div
         class="space-y-8"
@@ -560,7 +560,7 @@ exports[`AddRecipient should render without recipients 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="recipientAddress"
             >
@@ -614,7 +614,7 @@ exports[`AddRecipient should render without recipients 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="amount"
             >
@@ -667,7 +667,7 @@ exports[`AddRecipient should set available amount 1`] = `
         class="flex items-center mb-2 space-x-2"
       >
         <div
-          class="font-normal text-md transition-colors duration-100"
+          class="font-normal transition-colors duration-100 text-md"
         >
           Select a Single or Multiple Recipient Transaction
         </div>
@@ -709,7 +709,7 @@ exports[`AddRecipient should set available amount 1`] = `
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-8 mb-2"
+      class="SubForm__SubFormWrapper-c4tqfs-0 gIKSHW mt-6"
     >
       <div
         class="space-y-8"
@@ -721,7 +721,7 @@ exports[`AddRecipient should set available amount 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="recipientAddress"
             >
@@ -775,7 +775,7 @@ exports[`AddRecipient should set available amount 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="amount"
             >

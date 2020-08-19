@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-import { TransactionService } from "@arkecosystem/platform-sdk-profiles/dist/wallets/wallet-transaction-service";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -17,36 +17,57 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
-import transactionFixture from "tests/fixtures/coins/ark/transaction.json";
+import transactionMultipleFixture from "tests/fixtures/coins/ark/transactions/transfer-multiple.json";
+import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
 const fixtureProfileId = getDefaultProfileId();
 
-const onCopy = jest.fn();
+const createTransactionMultipleMock = (wallet: Wallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => transactionMultipleFixture.data.id,
+		sender: () => transactionMultipleFixture.data.sender,
+		recipient: () => transactionMultipleFixture.data.recipient,
+		amount: () => BigNumber.make(transactionMultipleFixture.data.amount),
+		fee: () => BigNumber.make(transactionMultipleFixture.data.fee),
+		data: () => transactionMultipleFixture.data,
+	});
+
+const createTransactionMock = (wallet: Wallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => transactionFixture.data.id,
+		sender: () => transactionFixture.data.sender,
+		recipient: () => transactionFixture.data.recipient,
+		amount: () => BigNumber.make(transactionFixture.data.amount),
+		fee: () => BigNumber.make(transactionFixture.data.fee),
+		data: () => transactionFixture.data,
+	});
 
 let profile: Profile;
 let wallet: Wallet;
 
+beforeAll(async () => {
+	profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	wallet = profile.wallets().values()[0];
+
+	nock("https://dwallets.ark.io")
+		.post("/api/transactions/search")
+		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+		.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
+		.reply(200, transactionFixture);
+});
+
 describe("Transaction Send", () => {
-	beforeAll(async () => {
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
-		wallet = profile.wallets().values()[0];
-
-		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
-			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
-			.reply(200, transactionFixture);
-	});
-
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FirstStep profile={profile} />
+				<FirstStep networks={[]} profile={profile} />
 			</FormContext>,
 		);
 
@@ -73,7 +94,7 @@ describe("Transaction Send", () => {
 
 		const { asFragment, container, getByTestId } = render(
 			<FormContext {...form.current}>
-				<SecondStep profile={profile} />
+				<SecondStep wallet={wallet} />
 			</FormContext>,
 		);
 
@@ -126,9 +147,9 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should navigate between steps", async () => {
+	it("should send a single transfer", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/transactions/transfer`;
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
 
 		history.push(transferURL);
 
@@ -136,7 +157,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/transfer">
+				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
 					<TransactionSend />
 				</Route>,
 				{
@@ -145,28 +166,16 @@ describe("Transaction Send", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("TransactionSend__step--first")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
 
 		await act(async () => {
-			// Select network
-			const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
-			fireEvent.click(networkIcons[1]);
-			expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
-
-			expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper")).not.toHaveAttribute(
-				"disabled",
+			await waitFor(() =>
+				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
 			);
-
-			// Select sender & update fees
-			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			const firstAddress = getByTestId("AddressListItem__select-1");
-			fireEvent.click(firstAddress);
-			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 			// Select recipient
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
@@ -212,9 +221,10 @@ describe("Transaction Send", () => {
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest
-				.spyOn(TransactionService.prototype, "signTransfer")
+				.spyOn(wallet.transaction(), "signTransfer")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-			const broadcastMock = jest.spyOn(TransactionService.prototype, "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
 
 			fireEvent.click(getByTestId("TransactionSend__button--submit"));
 
@@ -228,40 +238,30 @@ describe("Transaction Send", () => {
 			// @ts-ignore
 			navigator.clipboard = { writeText: copyMock };
 
-			fireEvent.click(getByTestId(`TransactionSend__button--copy`));
+			fireEvent.click(getByTestId("TransactionSend__button--copy"));
 
-			await waitFor(() =>
-				expect(copyMock).toHaveBeenCalledWith(
-					JSON.stringify(
-						{
-							id: transactionFixture.data.id,
-							type: "transfer",
-							timestamp: transactionFixture.data.timestamp.human,
-							confirmations: {},
-							sender: transactionFixture.data.sender,
-							recipient: transactionFixture.data.recipient,
-							amount: {},
-							fee: {},
-						},
-						null,
-						2,
-					),
-				),
-			);
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionFixture.data.id));
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
 	});
 
-	it("should error if wrong mnemonic", async () => {
+	it("should send a multi payment transfer", async () => {
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+			.get("/api/transactions/34b557950ed485985aad81ccefaa374b7c81150c52f8ef4621cbbb907b2c829c")
+			.reply(200, transactionMultipleFixture);
+
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/transactions/transfer`;
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
 
 		history.push(transferURL);
 
@@ -269,7 +269,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/transfer">
+				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
 					<TransactionSend />
 				</Route>,
 				{
@@ -278,29 +278,125 @@ describe("Transaction Send", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("TransactionSend__step--first")).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+			);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Select multiple button
+			await waitFor(() => expect(getByTestId("add-recipient-is-multiple-toggle")).toBeTruthy());
+			fireEvent.click(getByTestId("add-recipient-is-multiple-toggle"));
+
+			// Add recipient #1
+			fireEvent.input(getByTestId("SelectRecipient__input"), {
+				target: { value: "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd" },
+			});
+			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "10" } });
+			await waitFor(() => expect(getByTestId("add-recipient__add-btn")).toBeTruthy());
+			fireEvent.click(getByTestId("add-recipient__add-btn"));
+
+			// Add recipient #2
+			fireEvent.input(getByTestId("SelectRecipient__input"), {
+				target: { value: "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP" },
+			});
+			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "10" } });
+			await waitFor(() => expect(getByTestId("add-recipient__add-btn")).toBeTruthy());
+			fireEvent.click(getByTestId("add-recipient__add-btn"));
+
+			// Smartbridge
+			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[2]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("TransactionSend__button--continue"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("TransactionSend__button--continue"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--third")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("TransactionSend__button--back"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("TransactionSend__button--continue"));
+			await waitFor(() => expect(getByTestId("TransactionSend__step--third")).toBeTruthy());
+			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
+			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+
+			// Step 5 (skip step 4 for now - ledger confirmation)
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signMultiPayment")
+				.mockReturnValue(Promise.resolve(transactionMultipleFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMultipleMock(wallet);
+
+			fireEvent.click(getByTestId("TransactionSend__button--submit"));
+
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("34b557950ed485…cbbb907b2c829c");
+
+			// Copy Transaction
+			const copyMock = jest.fn();
+			const clipboardOriginal = navigator.clipboard;
+
+			// @ts-ignore
+			navigator.clipboard = { writeText: copyMock };
+
+			fireEvent.click(getByTestId("TransactionSend__button--copy"));
+
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionMultipleFixture.data.id));
+
+			// @ts-ignore
+			navigator.clipboard = clipboardOriginal;
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should error if wrong mnemonic", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+					<TransactionSend />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("TransactionSend__step--first")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
 
 		await act(async () => {
-			// Select network
-			const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
-			fireEvent.click(networkIcons[1]);
-			expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
-
-			expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper")).not.toHaveAttribute(
-				"disabled",
-			);
-
-			// Select sender & update fees
-			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			const firstAddress = getByTestId("AddressListItem__select-1");
-			fireEvent.click(firstAddress);
-			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
 			// Select recipient
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
 			expect(getByTestId("modal__inner")).toBeTruthy();
@@ -344,7 +440,7 @@ describe("Transaction Send", () => {
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
-			const signMock = jest.spyOn(TransactionService.prototype, "signTransfer").mockImplementation(() => {
+			const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
 				throw new Error();
 			});
 

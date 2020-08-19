@@ -321,7 +321,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
                           >
@@ -370,7 +370,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
-                          class="my-6 grid grid-cols-6 gap-6"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
@@ -780,7 +780,7 @@ exports[`ImportWallet should import by address 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
                           >
@@ -829,7 +829,7 @@ exports[`ImportWallet should import by address 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
-                          class="my-6 grid grid-cols-6 gap-6"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
@@ -1239,7 +1239,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
                           >
@@ -1288,7 +1288,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
-                          class="my-6 grid grid-cols-6 gap-6"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
@@ -1415,7 +1415,7 @@ exports[`ImportWallet should render 1st step 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="network"
           >
@@ -1464,7 +1464,7 @@ exports[`ImportWallet should render 1st step 1`] = `
         </div>
         <ul
           aria-labelledby="ImportWallet__network-label"
-          class="my-6 grid grid-cols-6 gap-6"
+          class="mt-6 grid grid-cols-6 gap-6"
           id="ImportWallet__network-menu"
           role="listbox"
         >
@@ -1594,7 +1594,7 @@ exports[`ImportWallet should render 2st step 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="passphrase"
         >
@@ -1747,15 +1747,11 @@ exports[`ImportWallet should render 3st step 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
       >
         Wallet name (optional)
-        <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <input
         class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -2088,7 +2084,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
                           >
@@ -2137,7 +2133,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
-                          class="my-6 grid grid-cols-6 gap-6"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
@@ -2547,7 +2543,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
                           >
@@ -2596,7 +2592,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
-                          class="my-6 grid grid-cols-6 gap-6"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >

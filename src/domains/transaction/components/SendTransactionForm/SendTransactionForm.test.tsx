@@ -1,15 +1,18 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
+import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
+import { Route } from "react-router-dom";
 import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
 	render,
+	renderWithRouter,
 	useDefaultNetMocks,
 	waitFor,
 	within,
@@ -18,12 +21,13 @@ import {
 import { SendTransactionForm } from "./";
 
 let profile: Profile;
+let wallet: Wallet;
 let defaultFee: string;
 
 describe("SendTransactionForm", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		const [wallet] = profile.wallets().values();
+		wallet = profile.wallets().values()[0];
 		defaultFee = (await wallet.fee().all(7)).transfer.avg;
 	});
 
@@ -53,6 +57,8 @@ describe("SendTransactionForm", () => {
 	it("should select fill out form", async () => {
 		const { result: form } = renderHook(() => useForm());
 		form.current.register("fee");
+		form.current.register("senderAddress");
+		form.current.setValue("senderAddress", wallet.address());
 
 		let rendered: any;
 
@@ -67,41 +73,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId, getAllByTestId } = rendered;
 
 		await act(async () => {
-			// Select network
-			const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
-			fireEvent.click(networkIcons[1]);
-			expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
-
-			expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper")).not.toHaveAttribute(
-				"disabled",
-			);
-
-			// Select sender & update fees
-			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			const firstAddress = getByTestId("AddressListItem__select-0");
-			fireEvent.click(firstAddress);
-			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
-
-			// Select recipient
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
-			);
-
-			// Amount
-			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue(80);
-
-			// Smartbridge
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
-			expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
 
 			// Fee
 			expect(getByTestId("InputCurrency")).toHaveValue("0");
@@ -113,13 +85,80 @@ describe("SendTransactionForm", () => {
 		});
 	});
 
+	it("should change sender & route", async () => {
+		const { result: form } = renderHook(() => useForm());
+
+		form.current.register("fee");
+		form.current.register("network");
+		form.current.register("senderAddress");
+		form.current.setValue("senderAddress", wallet.address());
+
+		for (const network of env.availableNetworks()) {
+			if (network.id() === wallet.network().id && network.coin() === wallet.manifest().get<string>("name")) {
+				form.current.setValue("network", network, true);
+
+				break;
+			}
+		}
+
+		const history = createMemoryHistory();
+		const sendUrl = `/profiles/${profile.id()}/transactions/${wallet.id()}/transfer`;
+		history.push(sendUrl);
+
+		let rendered: any;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+					<FormContext {...form.current}>
+						<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+					</FormContext>
+				</Route>,
+				{
+					routes: [sendUrl],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__wrapper")).toBeTruthy());
+		});
+
+		const { getByTestId, getAllByTestId } = rendered;
+
+		await act(async () => {
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
+
+			// Select sender & update fees
+			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
+			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+			const historySpy = jest.spyOn(history, "push");
+
+			const firstAddress = getByTestId("AddressListItem__select-1");
+			fireEvent.click(firstAddress);
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			const secondWallet = profile.wallets().values()[1];
+			await waitFor(() =>
+				expect(historySpy).toHaveBeenCalledWith(
+					`/profiles/${profile?.id()}/transactions/${secondWallet.id()}/transfer`,
+				),
+			);
+
+			historySpy.mockRestore();
+
+			expect(rendered.container).toMatchSnapshot();
+		});
+	});
+
 	it("should only update fees if provided", async () => {
 		let rendered: any;
 		const onFail = jest.fn();
 		const { result: form } = renderHook(() => useForm());
 
-		form.current.register("senderAddress");
 		form.current.register("fees");
+		form.current.register("senderAddress");
+		form.current.setValue("senderAddress", wallet.address());
 
 		nock.cleanAll();
 		nock("https://dwallets.ark.io")
@@ -141,35 +180,8 @@ describe("SendTransactionForm", () => {
 		const { getByTestId, getAllByTestId } = rendered;
 
 		await act(async () => {
-			// Select network
-			const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
-			fireEvent.click(networkIcons[1]);
-			expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
-
-			expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper")).not.toHaveAttribute(
-				"disabled",
-			);
-
-			// Select sender & update fees
-			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			const firstAddress = getByTestId("AddressListItem__select-1");
-			fireEvent.click(firstAddress);
-			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
 			await waitFor(() => expect(onFail).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(form.current.getValues("fee")).toBeFalsy());
-
-			// Select recipient
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			fireEvent.click(getAllByTestId("ContactListItem__one-option-button-0")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
-			);
-
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
 	});

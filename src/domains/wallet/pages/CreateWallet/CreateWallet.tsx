@@ -4,7 +4,7 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
@@ -28,6 +28,8 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 	const { getValues, setValue } = useFormContext();
 	const [isGeneratingWallet, setIsGeneratingWallet] = React.useState(false);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
+
+	const selectedNetwork: NetworkData = getValues("network");
 
 	const { t } = useTranslation();
 
@@ -69,6 +71,7 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 					<SelectNetwork
 						id="CreateWallet__network"
 						networks={networks}
+						selected={selectedNetwork}
 						onSelect={handleSelect}
 						disabled={isGeneratingWallet}
 					/>
@@ -176,7 +179,7 @@ export const ThirdStep = () => {
 	);
 };
 
-export const FourthStep = () => {
+export const FourthStep = ({ nameMaxLength }: { nameMaxLength: number }) => {
 	const { getValues, register } = useFormContext();
 	const network: NetworkData = getValues("network");
 	const wallet: Wallet = getValues("wallet");
@@ -220,8 +223,19 @@ export const FourthStep = () => {
 			<Divider dashed />
 
 			<FormField name="name">
-				<FormLabel label={t("WALLETS.PAGE_CREATE_WALLET.WALLET_NAME")} />
-				<Input data-testid="CreateWallet__wallet-name" ref={register} />
+				<FormLabel label={t("WALLETS.PAGE_CREATE_WALLET.WALLET_NAME")} required={false} />
+				<Input
+					data-testid="CreateWallet__wallet-name"
+					ref={register({
+						maxLength: {
+							value: nameMaxLength,
+							message: t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.MAXLENGTH_ERROR", {
+								maxLength: nameMaxLength,
+							}),
+						},
+					})}
+				/>
+				<FormHelperText />
 			</FormField>
 		</section>
 	);
@@ -235,6 +249,7 @@ export const CreateWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const activeProfile = useActiveProfile();
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
+	const nameMaxLength = 42;
 
 	const crumbs = [
 		{
@@ -253,7 +268,8 @@ export const CreateWallet = () => {
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
-		activeProfile.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
+		const formattedName = name.substring(0, nameMaxLength);
+		activeProfile.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, formattedName);
 
 		await persist();
 
@@ -299,7 +315,7 @@ export const CreateWallet = () => {
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep />
+								<FourthStep nameMaxLength={nameMaxLength} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -323,7 +339,11 @@ export const CreateWallet = () => {
 								)}
 
 								{activeTab === 4 && (
-									<Button type="submit" data-testid="CreateWallet__save-button">
+									<Button
+										disabled={formState.isSubmitting}
+										type="submit"
+										data-testid="CreateWallet__save-button"
+									>
 										{t("COMMON.SAVE_FINISH")}
 									</Button>
 								)}

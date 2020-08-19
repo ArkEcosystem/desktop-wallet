@@ -86,6 +86,10 @@ export const translations: { [key: string]: any } = {
 		},
 
 		WALLET_NAME: "Wallet name (optional)",
+
+		VALIDATION: {
+			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+		},
 	},
 
 	PAGE_IMPORT_WALLET: {
@@ -115,6 +119,10 @@ export const translations: { [key: string]: any } = {
 		},
 
 		WALLET_NAME: "Wallet name (optional)",
+
+		VALIDATION: {
+			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+		},
 	},
 
 	PAGE_WALLET_DETAILS: {

@@ -317,7 +317,7 @@ exports[`Registration should render 1st step 1`] = `
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -365,7 +365,7 @@ exports[`Registration should render 1st step 1`] = `
                         </div>
                         <ul
                           aria-labelledby="Registration__network-label"
-                          class="my-6 grid grid-cols-6 gap-6"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="Registration__network-menu"
                           role="listbox"
                         >
@@ -810,7 +810,7 @@ exports[`Registration should render 1st step 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="address"
                           >
@@ -866,7 +866,7 @@ exports[`Registration should render 1st step 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
                           >
@@ -904,7 +904,7 @@ exports[`Registration should render 1st step 1`] = `
                                 />
                                 <ul
                                   aria-labelledby="downshift-0-label"
-                                  class="sc-fznxsB djEbFm"
+                                  class="sc-fznxsB jPuBaU"
                                   id="downshift-0-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -1279,7 +1279,7 @@ exports[`Registration should render 2nd step 1`] = `
                           class="sc-AxhCb ckQmOL font-normal"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
                           >
@@ -1300,7 +1300,7 @@ exports[`Registration should render 2nd step 1`] = `
                           class="sc-AxhCb ckQmOL mt-8 font-normal"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="description"
                           >
@@ -1320,7 +1320,7 @@ exports[`Registration should render 2nd step 1`] = `
                           class="sc-AxhCb ckQmOL mt-8 font-normal"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="website"
                           >
@@ -1480,7 +1480,7 @@ exports[`Registration should render 2nd step 1`] = `
                               class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="fee"
                               >
@@ -2590,7 +2590,7 @@ exports[`Registration should render 4th step 1`] = `
                           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
                           >
@@ -2635,7 +2635,7 @@ exports[`Registration should render 4th step 1`] = `
                           class="sc-AxhCb ckQmOL mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
                           >
@@ -3026,7 +3026,7 @@ exports[`Registration should render 5th step 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"
@@ -3740,7 +3740,7 @@ exports[`Registration should select registration type 1`] = `
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -3788,7 +3788,7 @@ exports[`Registration should select registration type 1`] = `
                         </div>
                         <ul
                           aria-labelledby="Registration__network-label"
-                          class="my-6 grid grid-cols-6 gap-6"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="Registration__network-menu"
                           role="listbox"
                         >
@@ -4233,7 +4233,7 @@ exports[`Registration should select registration type 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="address"
                           >
@@ -4289,7 +4289,7 @@ exports[`Registration should select registration type 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
                           >
@@ -4329,7 +4329,7 @@ exports[`Registration should select registration type 1`] = `
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-17-label"
-                                  class="sc-fznxsB djEbFm"
+                                  class="sc-fznxsB jPuBaU"
                                   id="downshift-17-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -4703,7 +4703,7 @@ exports[`Registration should should go back 1`] = `
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -4751,7 +4751,7 @@ exports[`Registration should should go back 1`] = `
                         </div>
                         <ul
                           aria-labelledby="Registration__network-label"
-                          class="my-6 grid grid-cols-6 gap-6"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="Registration__network-menu"
                           role="listbox"
                         >
@@ -5196,7 +5196,7 @@ exports[`Registration should should go back 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="address"
                           >
@@ -5252,7 +5252,7 @@ exports[`Registration should should go back 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
                           >
@@ -5290,7 +5290,7 @@ exports[`Registration should should go back 1`] = `
                                 />
                                 <ul
                                   aria-labelledby="downshift-3-label"
-                                  class="sc-fznxsB djEbFm"
+                                  class="sc-fznxsB jPuBaU"
                                   id="downshift-3-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -5652,7 +5652,7 @@ exports[`Registration should submit 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"

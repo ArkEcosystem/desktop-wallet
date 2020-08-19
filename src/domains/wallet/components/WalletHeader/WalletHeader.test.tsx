@@ -9,6 +9,7 @@ describe("WalletHeader", () => {
 	const onVerifyMessage = jest.fn();
 	const onDeleteWallet = jest.fn();
 	const onUpdateWalletName = jest.fn();
+	const onStoreHash = jest.fn();
 
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(
@@ -22,6 +23,7 @@ describe("WalletHeader", () => {
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
 				onDeleteWallet={onDeleteWallet}
+				onStoreHash={onStoreHash}
 			/>,
 		);
 		expect(() => getByTestId("WalletHeader__currency-balance")).toThrowError();
@@ -45,6 +47,7 @@ describe("WalletHeader", () => {
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
 				onDeleteWallet={onDeleteWallet}
+				onStoreHash={onStoreHash}
 			/>,
 		);
 
@@ -72,6 +75,7 @@ describe("WalletHeader", () => {
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
 				onDeleteWallet={onDeleteWallet}
+				onStoreHash={onStoreHash}
 			/>,
 		);
 		expect(getByTestId("WalletHeader__ledger")).toBeTruthy();
@@ -96,6 +100,7 @@ describe("WalletHeader", () => {
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
 				onDeleteWallet={onDeleteWallet}
+				onStoreHash={onStoreHash}
 			/>,
 		);
 
@@ -128,6 +133,7 @@ describe("WalletHeader", () => {
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
 				onDeleteWallet={onDeleteWallet}
+				onStoreHash={onStoreHash}
 			/>,
 		);
 
@@ -163,6 +169,7 @@ describe("WalletHeader", () => {
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
 				onDeleteWallet={onDeleteWallet}
+				onStoreHash={onStoreHash}
 			/>,
 		);
 
@@ -198,6 +205,7 @@ describe("WalletHeader", () => {
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
 				onDeleteWallet={onDeleteWallet}
+				onStoreHash={onStoreHash}
 			/>,
 		);
 
@@ -233,6 +241,7 @@ describe("WalletHeader", () => {
 				onSignMessage={onSignMessage}
 				onVerifyMessage={onVerifyMessage}
 				onDeleteWallet={onDeleteWallet}
+				onStoreHash={onStoreHash}
 			/>,
 		);
 
@@ -251,5 +260,41 @@ describe("WalletHeader", () => {
 		});
 
 		expect(onUpdateWalletName).toHaveBeenCalled();
+	});
+
+	it("should handle store hash option", () => {
+		const { getByTestId } = render(
+			<WalletHeader
+				currencyBalance={BigNumber.make(10)}
+				exchangeCurrency="USD"
+				publicKey="publicKey"
+				address="abc"
+				balance={BigNumber.make(0)}
+				coin="Ark"
+				network="mainnet"
+				ticker="ARK"
+				onUpdateWalletName={onUpdateWalletName}
+				onSignMessage={onSignMessage}
+				onVerifyMessage={onVerifyMessage}
+				onDeleteWallet={onDeleteWallet}
+				onStoreHash={onStoreHash}
+			/>,
+		);
+
+		const dropdown = getByTestId("dropdown__toggle");
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const storeHashOption = getByTestId("dropdown__option--3");
+		expect(storeHashOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(storeHashOption);
+		});
+
+		expect(onStoreHash).toHaveBeenCalled();
 	});
 });

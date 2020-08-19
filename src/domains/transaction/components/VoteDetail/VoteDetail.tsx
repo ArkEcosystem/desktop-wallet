@@ -9,7 +9,9 @@ import { useTranslation } from "react-i18next";
 
 type VoteDetailProps = {
 	isOpen: boolean;
+	transaction?: any;
 	onClose?: any;
+	onCancel?: any;
 };
 
 export const VoteDetail = (props: VoteDetailProps) => {

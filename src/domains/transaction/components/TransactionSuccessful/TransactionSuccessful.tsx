@@ -9,7 +9,7 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
 
 type TransactionSuccessfulProps = {
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	transactionId: string;
 };
 
@@ -19,7 +19,7 @@ const { TransactionSuccessfulBanner } = images.transaction.common;
 export const TransactionSuccessful = ({ children, transactionId }: TransactionSuccessfulProps) => (
 	<section data-testid="TransactionSuccessful" className="space-y-8">
 		<div>
-			<h1 className="mb-0">Transaction Successful</h1>
+			<h1 className="mb-0">Transaction Sent</h1>
 			<div className="grid grid-flow-row gap-2">
 				<div className="w-full my-10">
 					<TransactionSuccessfulBanner className="w-full" />

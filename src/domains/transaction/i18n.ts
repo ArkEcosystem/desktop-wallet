@@ -68,7 +68,7 @@ export const translations: { [key: string]: any } = {
 			DESCRIPTION: "Enter your passphrase in order to sign the Multisignature transaction.",
 		},
 		STEP_3: {
-			TITLE: "Transaction Successful",
+			TITLE: "Transaction Sent",
 			DESCRIPTION: "Your signature was successfully confirmed and sent.",
 		},
 		WAITING_FOR_SIGNATURES: "Waiting for Signatures",
