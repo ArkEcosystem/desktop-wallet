@@ -17,12 +17,24 @@ import {
 	waitFor,
 	within,
 } from "testing-library";
+import transactionMultipleFixture from "tests/fixtures/coins/ark/transactions/transfer-multiple.json";
 import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
 const fixtureProfileId = getDefaultProfileId();
+
+const createTransactionMultipleMock = (wallet: Wallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => transactionMultipleFixture.data.id,
+		sender: () => transactionMultipleFixture.data.sender,
+		recipient: () => transactionMultipleFixture.data.recipient,
+		amount: () => BigNumber.make(transactionMultipleFixture.data.amount),
+		fee: () => BigNumber.make(transactionMultipleFixture.data.fee),
+		data: () => transactionMultipleFixture.data,
+	});
 
 const createTransactionMock = (wallet: Wallet) =>
 	// @ts-ignore
@@ -154,7 +166,7 @@ describe("Transaction Send", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("TransactionSend__step--first")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
@@ -226,7 +238,7 @@ describe("Transaction Send", () => {
 			// @ts-ignore
 			navigator.clipboard = { writeText: copyMock };
 
-			fireEvent.click(getByTestId(`TransactionSend__button--copy`));
+			fireEvent.click(getByTestId("TransactionSend__button--copy"));
 
 			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionFixture.data.id));
 
@@ -241,7 +253,13 @@ describe("Transaction Send", () => {
 		});
 	});
 
-	it("should send a multi payment", async () => {
+	it("should send a multi payment transfer", async () => {
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+			.get("/api/transactions/34b557950ed485985aad81ccefaa374b7c81150c52f8ef4621cbbb907b2c829c")
+			.reply(200, transactionMultipleFixture);
+
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
 
@@ -260,7 +278,7 @@ describe("Transaction Send", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("TransactionSend__step--first")).toBeTruthy());
 		});
 
 		const { getByTestId } = rendered!;
@@ -277,7 +295,7 @@ describe("Transaction Send", () => {
 
 			// Add recipient #1
 			fireEvent.input(getByTestId("SelectRecipient__input"), {
-				target: { value: "DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM" },
+				target: { value: "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd" },
 			});
 			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "10" } });
 			await waitFor(() => expect(getByTestId("add-recipient__add-btn")).toBeTruthy());
@@ -285,9 +303,9 @@ describe("Transaction Send", () => {
 
 			// Add recipient #2
 			fireEvent.input(getByTestId("SelectRecipient__input"), {
-				target: { value: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" },
+				target: { value: "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP" },
 			});
-			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "20" } });
+			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "10" } });
 			await waitFor(() => expect(getByTestId("add-recipient__add-btn")).toBeTruthy());
 			fireEvent.click(getByTestId("add-recipient__add-btn"));
 
@@ -323,14 +341,28 @@ describe("Transaction Send", () => {
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signMultiPayment")
-				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+				.mockReturnValue(Promise.resolve(transactionMultipleFixture.data.id));
 			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-			const transactionMock = createTransactionMock(wallet);
+			const transactionMock = createTransactionMultipleMock(wallet);
 
 			fireEvent.click(getByTestId("TransactionSend__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e77…2f1b89abb49877");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("34b557950ed485…cbbb907b2c829c");
+
+			// Copy Transaction
+			const copyMock = jest.fn();
+			const clipboardOriginal = navigator.clipboard;
+
+			// @ts-ignore
+			navigator.clipboard = { writeText: copyMock };
+
+			fireEvent.click(getByTestId("TransactionSend__button--copy"));
+
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionMultipleFixture.data.id));
+
+			// @ts-ignore
+			navigator.clipboard = clipboardOriginal;
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
@@ -359,7 +391,7 @@ describe("Transaction Send", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("TransactionSend__step--first")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
