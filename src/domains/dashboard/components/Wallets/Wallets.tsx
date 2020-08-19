@@ -84,13 +84,9 @@ export const Wallets = ({
 	};
 
 	// List
-	const getWalletsForList = () => {
-		return wallets.filter((wallet: any) => !wallet.isBlank).map((wallet) => ({ wallet }));
-	};
+	const getWalletsForList = () => wallets.filter((wallet: any) => !wallet.isBlank).map((wallet) => ({ wallet }));
 
-	const loadListWallets = () => {
-		return allWallets || getWalletsForList().slice(0, 10);
-	};
+	const loadListWallets = () => allWallets || getWalletsForList().slice(0, 10);
 
 	const loadAllListWallets = () => {
 		setAllWallets(getWalletsForList());
