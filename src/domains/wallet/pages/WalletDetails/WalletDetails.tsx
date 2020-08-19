@@ -24,7 +24,7 @@ type WalletDetailsProps = {
 
 type WalletInfo = {
 	transactions: Contracts.TransactionDataType[];
-	walletData?: Coins.WalletData;
+	walletData?: Contracts.WalletData;
 	votes?: Coins.WalletDataCollection;
 };
 
@@ -69,7 +69,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 			}
 
 			const transaction = response.items()[0];
-			const result: Coins.WalletData[] = [];
+			const result: Contracts.WalletData[] = [];
 
 			const votes = (transaction?.asset().votes as string[]) || [];
 			for (const vote of votes) {
