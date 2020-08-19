@@ -31,6 +31,7 @@ export const Wallets = ({
 }: WalletsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 	const [allWallets, setAllWallets] = useState<any>(undefined);
+	const [hasMoreWallets, setHasMoreWallets] = useState<any>(wallets.length > 10);
 
 	const { t } = useTranslation();
 
@@ -93,6 +94,7 @@ export const Wallets = ({
 
 	const loadAllListWallets = async () => {
 		setAllWallets(getWalletsForList());
+		setHasMoreWallets(false);
 	};
 
 	return (
@@ -128,7 +130,7 @@ export const Wallets = ({
 									{(rowData: any) => <WalletListItem {...rowData} />}
 								</Table>
 
-								{wallets.length > 10 && (
+								{hasMoreWallets && (
 									<Button
 										variant="plain"
 										className="w-full mt-10 mb-5"
