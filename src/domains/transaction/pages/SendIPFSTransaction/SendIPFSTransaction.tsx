@@ -144,7 +144,7 @@ export const ThirdStep = () => {
 	);
 };
 
-export const FourthStep = ({ transaction }: { transaction: Contracts.TransactionData }) => (
+export const FourthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => (
 	<TransactionSuccessful transactionId={transaction.id()} />
 );
 

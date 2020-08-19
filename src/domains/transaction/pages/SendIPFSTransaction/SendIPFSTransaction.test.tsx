@@ -23,7 +23,6 @@ import { translations as transactionTranslations } from "../../i18n";
 import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } from "./SendIPFSTransaction";
 
 const fixtureProfileId = getDefaultProfileId();
-const onCopy = jest.fn();
 
 const createTransactionMock = (wallet: Wallet) =>
 	// @ts-ignore
