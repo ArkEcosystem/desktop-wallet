@@ -105,7 +105,7 @@ export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 				</div>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -289,9 +289,6 @@ export const TransactionSend = () => {
 					},
 				});
 			}
-			console.log(transactionId);
-			console.log(senderWallet!.transaction().signed());
-			console.log(senderWallet!.transaction().broadcasted());
 
 			await senderWallet!.transaction().broadcast([transactionId]);
 
