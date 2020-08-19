@@ -197,9 +197,7 @@ describe("SendIPFSTransaction", () => {
 
 			fireEvent.click(getByTestId(`SendIPFSTransaction__button--copy`));
 
-			await waitFor(() =>
-				expect(copyMock).toHaveBeenCalledWith(ipfsFixture.data.id),
-			);
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(ipfsFixture.data.id));
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
