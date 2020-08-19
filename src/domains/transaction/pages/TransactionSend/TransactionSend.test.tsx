@@ -228,9 +228,7 @@ describe("Transaction Send", () => {
 
 			fireEvent.click(getByTestId(`TransactionSend__button--copy`));
 
-			await waitFor(() =>
-				expect(copyMock).toHaveBeenCalledWith(transactionFixture.data.id),
-			);
+			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionFixture.data.id));
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
