@@ -152,9 +152,7 @@ export const SendIPFSTransaction = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [transaction, setTransaction] = useState<Contracts.TransactionData>(
-		(null as unknown) as Contracts.TransactionData,
-	);
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	// eslint-disable-next-line
 	const [_, copy] = useClipboard({
 		resetAfter: 1000,
