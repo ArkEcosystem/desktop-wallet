@@ -126,7 +126,7 @@ export const VoteDetail = (props: VoteDetailProps) => {
 				</TransactionDetail>
 			);
 
-		return delegates.map((delegate: any) => {
+		return delegates?.map((delegate: any) => {
 			const username = delegate?.username();
 			const address = delegate?.address();
 

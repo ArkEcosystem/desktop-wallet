@@ -1703,7 +1703,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
             class="flex-1"
           >
             <div
-              class="flex items-center py-6 true "
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             >
               <div
                 class="flex-1 space-y-2"
@@ -1716,16 +1716,16 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  ROBank
                   <span
-                    class="ml-2 text-theme-neutral"
+                    class="sc-AxhUy kMyssT text-theme-neutral"
+                    data-testid="TruncateMiddle"
                   >
-                    ADDR...ESSS
+                    ASuusX…GQ3kqT
                   </span>
                 </div>
               </div>
               <div
-                class="flex"
+                class="flex items-center"
               >
                 <div
                   class="sc-AxjAm bLfakz -mr-2 border-black"
@@ -1748,9 +1748,9 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="test"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                      title="test"
+                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                     />
                   </div>
                 </div>
@@ -1770,45 +1770,24 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  Delegate 3
-                  <span
-                    class="ml-2 text-theme-neutral"
-                  >
-                    ADDR...ESSS
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 90%; height: 6px;"
+                    >
+                      ‌
+                    </span>
                   </span>
                 </div>
               </div>
-              <div
-                class="flex"
-              >
-                <div
-                  class="sc-AxjAm bLfakz -mr-2 border-black"
+              <span>
+                <span
+                  class="react-loading-skeleton mt-3 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40px; height: 40px; border-radius: 50%;"
                 >
-                  <div
-                    class="sc-AxirZ eyApFr"
-                    height="13"
-                    width="13"
-                  >
-                    <svg>
-                      voted.svg
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt="test"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                      title="test"
-                    />
-                  </div>
-                </div>
-              </div>
+                  ‌
+                </span>
+              </span>
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
@@ -1824,7 +1803,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  0.09812015 ARK
+                  21.00000000 BTC
                 </div>
               </div>
             </div>
@@ -1842,7 +1821,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  14.04.2020 21:42:40
+                  31.07.2020 16:34:41
                 </div>
               </div>
             </div>
@@ -1863,20 +1842,20 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                   <div
                     class="flex"
                   >
-                    Well Confirmed
+                    Not Confirmed
                     <div
-                      class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
+                      class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                     >
                       <div
                         class="m-auto"
                       >
                         <div
-                          class="sc-AxirZ fkjLBb"
-                          height="15"
-                          width="15"
+                          class="sc-AxirZ hDwaov"
+                          height="12"
+                          width="12"
                         >
                           <svg>
-                            checkmark.svg
+                            cross-slim.svg
                           </svg>
                         </div>
                       </div>
@@ -1900,9 +1879,10 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                   class="font-semibold"
                 >
                   <span
-                    class="text-theme-primary-dark"
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
                   >
-                    1234678...12312313
+                    ee4175…3ecefe
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"
@@ -1935,9 +1915,10 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                   class="font-semibold"
                 >
                   <span
-                    class="text-theme-primary-dark"
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
                   >
-                    1234678...12312313
+                    71fd1a…5d67e9
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"
@@ -2016,7 +1997,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
             class="flex-1"
           >
             <div
-              class="flex items-center py-6 true "
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             >
               <div
                 class="flex-1 space-y-2"
@@ -2029,16 +2010,16 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  ROBank
                   <span
-                    class="ml-2 text-theme-neutral"
+                    class="sc-AxhUy kMyssT text-theme-neutral"
+                    data-testid="TruncateMiddle"
                   >
-                    ADDR...ESSS
+                    ASuusX…GQ3kqT
                   </span>
                 </div>
               </div>
               <div
-                class="flex"
+                class="flex items-center"
               >
                 <div
                   class="sc-AxjAm bLfakz -mr-2 border-black"
@@ -2061,9 +2042,9 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="test"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                      title="test"
+                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                     />
                   </div>
                 </div>
@@ -2083,45 +2064,24 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  Delegate 3
-                  <span
-                    class="ml-2 text-theme-neutral"
-                  >
-                    ADDR...ESSS
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 90%; height: 6px;"
+                    >
+                      ‌
+                    </span>
                   </span>
                 </div>
               </div>
-              <div
-                class="flex"
-              >
-                <div
-                  class="sc-AxjAm bLfakz -mr-2 border-black"
+              <span>
+                <span
+                  class="react-loading-skeleton mt-3 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40px; height: 40px; border-radius: 50%;"
                 >
-                  <div
-                    class="sc-AxirZ eyApFr"
-                    height="13"
-                    width="13"
-                  >
-                    <svg>
-                      voted.svg
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt="test"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                      title="test"
-                    />
-                  </div>
-                </div>
-              </div>
+                  ‌
+                </span>
+              </span>
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
@@ -2137,7 +2097,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  0.09812015 ARK
+                  21.00000000 BTC
                 </div>
               </div>
             </div>
@@ -2155,7 +2115,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  14.04.2020 21:42:40
+                  31.07.2020 16:34:41
                 </div>
               </div>
             </div>
@@ -2176,20 +2136,20 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                   <div
                     class="flex"
                   >
-                    Well Confirmed
+                    Not Confirmed
                     <div
-                      class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
+                      class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                     >
                       <div
                         class="m-auto"
                       >
                         <div
-                          class="sc-AxirZ fkjLBb"
-                          height="15"
-                          width="15"
+                          class="sc-AxirZ hDwaov"
+                          height="12"
+                          width="12"
                         >
                           <svg>
-                            checkmark.svg
+                            cross-slim.svg
                           </svg>
                         </div>
                       </div>
@@ -2213,9 +2173,10 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                   class="font-semibold"
                 >
                   <span
-                    class="text-theme-primary-dark"
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
                   >
-                    1234678...12312313
+                    ee4175…3ecefe
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"
@@ -2248,9 +2209,10 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                   class="font-semibold"
                 >
                   <span
-                    class="text-theme-primary-dark"
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
                   >
-                    1234678...12312313
+                    71fd1a…5d67e9
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"
