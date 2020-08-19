@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
