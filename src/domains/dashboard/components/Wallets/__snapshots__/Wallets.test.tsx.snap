@@ -611,7 +611,8 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-theme-neutral-200"
+                  class="border-b cursor-pointer border-theme-neutral-200"
+                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <td
                     class="py-6 mt-1"
@@ -711,13 +712,6 @@ exports[`Wallets should render with list view enabled as default 1`] = `
               </tbody>
             </table>
           </div>
-          <button
-            class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
-            color="primary"
-            type="button"
-          >
-            View More
-          </button>
         </div>
       </div>
     </div>
@@ -1020,7 +1014,8 @@ exports[`Wallets should render with list view enabled as default and empty walle
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-theme-neutral-200"
+                  class="border-b cursor-pointer border-theme-neutral-200"
+                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
                   <td
                     class="py-6 mt-1"
@@ -1120,13 +1115,6 @@ exports[`Wallets should render with list view enabled as default and empty walle
               </tbody>
             </table>
           </div>
-          <button
-            class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
-            color="primary"
-            type="button"
-          >
-            View More
-          </button>
         </div>
       </div>
     </div>

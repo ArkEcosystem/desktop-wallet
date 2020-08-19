@@ -7,8 +7,10 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 import { Dropdown } from "../Dropdown";
 
@@ -29,6 +31,8 @@ export const WalletListItem = ({
 	onAction,
 	exchangeCurrency,
 }: WalletListItemProps) => {
+	const activeProfile = useActiveProfile();
+	const history = useHistory();
 	const { t } = useTranslation();
 
 	const onDropdownAction = (action: any) => {
@@ -53,7 +57,11 @@ export const WalletListItem = ({
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
 	return (
-		<tr className="border-b border-theme-neutral-200">
+		<tr
+			className="border-b cursor-pointer border-theme-neutral-200"
+			onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}
+			data-testid={`WalletListItem__${wallet.address()}`}
+		>
 			<td className="py-6 mt-1">
 				<div className="flex">
 					<Circle className={coinClass} size="lg">

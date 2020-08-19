@@ -30,6 +30,8 @@ export const Wallets = ({
 	walletsEmptyText,
 }: WalletsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
+	const [allWallets, setAllWallets] = useState<any>(undefined);
+	const [hasMoreWallets, setHasMoreWallets] = useState<any>(wallets.length > 10);
 
 	const { t } = useTranslation();
 
@@ -64,46 +66,32 @@ export const Wallets = ({
 		slidesPerColumn: 2,
 		slidesPerGroup: 4,
 		spaceBetween: 20,
-
-		// Responsive breakpoints
-		// breakpoints: {
-		// 	// 	// when window width is >= 320px
-		// 	320: {
-		// 		slidesPerView: 1,
-		// 		slidesPerColumn: 2,
-		// 	},
-		// 	600: {
-		// 		slidesPerView: 2,
-		// 		slidesPerColumn: 2,
-		// 	},
-		// 	860: {
-		// 		slidesPerView: 3,
-		// 		slidesPerColumn: 2,
-		// 	},
-		// 	1140: {
-		// 		slidesPerView: 4,
-		// 		slidesPerColumn: 2,
-		// 	},
-		// 	1320: {
-		// 		slidesPerView: 5,
-		// 		slidesPerColumn: 2,
-		// 	},
-		// },
 	};
 
-	// Pad with empty cards to fill the row
-	const walletsGridData = (wallets: Wallet[], walletsPerPage: number) => {
+	// Grid
+	const loadGridWallets = () => {
 		const walletObjects = wallets.map((wallet) => ({ wallet }));
+		const walletsPerPage = walletSliderOptions.slidesPerView;
+
 		if (wallets.length < walletsPerPage) {
 			const blankWalletsLength = walletsPerPage - wallets.length;
 			const blankWalletsCards = new Array(blankWalletsLength).fill({ isBlank: true });
+
 			return [...walletObjects, ...blankWalletsCards];
 		}
 
 		return walletObjects;
 	};
 
-	const walletListItems = wallets.filter((wallet: any) => !wallet.isBlank).map((wallet) => ({ wallet }));
+	// List
+	const getWalletsForList = () => wallets.filter((wallet: any) => !wallet.isBlank).map((wallet) => ({ wallet }));
+
+	const loadListWallets = () => allWallets || getWalletsForList().slice(0, 10);
+
+	const loadAllListWallets = () => {
+		setAllWallets(getWalletsForList());
+		setHasMoreWallets(false);
+	};
 
 	return (
 		<div>
@@ -123,10 +111,7 @@ export const Wallets = ({
 			<div className="mt-1">
 				{walletsViewType === "grid" && (
 					<div className="w-full">
-						<Slider
-							data={walletsGridData(wallets, walletSliderOptions.slidesPerView)}
-							options={walletSliderOptions}
-						>
+						<Slider data={loadGridWallets()} options={walletSliderOptions}>
 							{(walletData: any) => (
 								<WalletCard {...walletData} onSelect={onWalletAction} className="w-full" />
 							)}
@@ -137,13 +122,20 @@ export const Wallets = ({
 					<div>
 						{wallets.length > 0 && (
 							<div>
-								<Table columns={listColumns} data={walletListItems}>
+								<Table columns={listColumns} data={loadListWallets()}>
 									{(rowData: any) => <WalletListItem {...rowData} />}
 								</Table>
 
-								<Button variant="plain" className="w-full mt-10 mb-5">
-									{t("COMMON.VIEW_MORE")}
-								</Button>
+								{hasMoreWallets && (
+									<Button
+										variant="plain"
+										className="w-full mt-10 mb-5"
+										data-testid="WalletsList__ViewMore"
+										onClick={() => loadAllListWallets()}
+									>
+										{t("COMMON.VIEW_MORE")}
+									</Button>
+								)}
 							</div>
 						)}
 						{wallets.length === 0 && <div className="text-theme-neutral-dark">{walletsEmptyText}</div>}
