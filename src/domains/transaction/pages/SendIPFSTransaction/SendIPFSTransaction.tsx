@@ -75,7 +75,7 @@ export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -211,18 +211,9 @@ export const SendIPFSTransaction = () => {
 
 			await env.persist();
 
-			// TODO: Remove timer and figure out a nicer way of doing this
-			const intervalId = setInterval(async () => {
-				try {
-					const transactionData = await senderWallet!.client().transaction(transactionId);
-					setTransaction(transactionData);
-					clearInterval(intervalId);
+			setTransaction(senderWallet!.transaction().transaction(transactionId));
 
-					handleNext();
-				} catch (error) {
-					// eslint-disable no-empty
-				}
-			}, 500);
+			handleNext();
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
 
@@ -240,7 +231,7 @@ export const SendIPFSTransaction = () => {
 	};
 
 	const copyTransaction = () => {
-		copy(JSON.stringify(transaction.toObject(), undefined, 2));
+		copy(transaction.id());
 	};
 
 	const crumbs = [
