@@ -45,7 +45,7 @@ const SelectDropdown = ({
 		if (defaultSelectedItem && (!selectedItem || selectedItem.value !== defaultSelectedItem.value)) {
 			selectItem(defaultSelectedItem || null);
 		}
-	}, [selectItem, defaultSelectedItem]);
+	}, [selectItem, selectedItem, defaultSelectedItem]);
 
 	const isOpenClassName = isOpen ? "is-open" : "";
 	const isSelectedClassName = selectedItem ? "is-selected" : "";

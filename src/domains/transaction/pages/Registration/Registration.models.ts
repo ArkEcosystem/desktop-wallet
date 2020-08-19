@@ -14,7 +14,18 @@ export type RegistrationForm = {
 		transaction: Contracts.SignedTransactionData;
 		translations: any;
 	}) => void;
+
 	signTransaction: ({ env, form, handleNext, profile, setTransaction, translations }: any) => Promise<void>;
+
 	tabSteps: number;
-	component: ({ activeTab, feeOptions, wallet }: { activeTab: number; feeOptions: any; wallet: Wallet }) => void;
+
+	component: ({
+		activeTab,
+		feeOptions,
+		wallet,
+	}: {
+		activeTab: number;
+		feeOptions: any;
+		wallet: Wallet;
+	}) => JSX.Element;
 };

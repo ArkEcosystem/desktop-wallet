@@ -28,7 +28,6 @@ const registrationComponents: any = {
 
 const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
 	const { t } = useTranslation();
-	const { setValue } = useFormContext();
 
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
@@ -198,7 +197,7 @@ export const Registration = () => {
 
 	const [activeTab, setActiveTab] = React.useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
-	const [registrationForm, setRegistrationForm] = React.useState<RegistrationForm>(undefined);
+	const [registrationForm, setRegistrationForm] = React.useState<RegistrationForm>();
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -206,7 +205,7 @@ export const Registration = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { formState, getValues, register, setValue } = form;
 	const { registrationType, senderAddress } = getValues();
 
 	const [feeOptions, setFeeOptions] = useState<Record<string, any>>({});
@@ -278,7 +277,7 @@ export const Registration = () => {
 	}, [feeOptions, registrationType, setValue]);
 
 	const submitForm = () =>
-		registrationForm.signTransaction({
+		registrationForm!.signTransaction({
 			env,
 			form,
 			handleNext,
@@ -314,7 +313,7 @@ export const Registration = () => {
 								<FirstStep networks={networks} profile={activeProfile} wallet={activeWallet} />
 							</TabPanel>
 
-							{activeTab > 1 && (
+							{activeTab > 1 && registrationForm && (
 								<registrationForm.component
 									activeTab={activeTab}
 									feeOptions={feeOptions[registrationType]}
