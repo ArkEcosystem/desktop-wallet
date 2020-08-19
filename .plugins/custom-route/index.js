@@ -2,9 +2,9 @@ const React = require("react");
 
 const Page = () => {
 	return React.createElement(
-		h1,
+		"h1",
 		{
-			class: "text-2xl font-semibold",
+			className: "text-2xl font-semibold",
 		},
 		"My Custom Route",
 	);

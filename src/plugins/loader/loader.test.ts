@@ -33,21 +33,23 @@ describe("PluginLoader", () => {
 		]);
 	});
 
-	it("should require plugins from manifests", () => {
+	it("should read plugins from manifests", () => {
 		const customMainPlugin = path.resolve(".plugins", "custom-main/package.json");
 		const helloPlugin = path.resolve(".plugins", "hello/package.json");
 
 		const assets = subject.loadManifestsFromPaths([customMainPlugin, helloPlugin]);
-		const result = subject.requirePluginFromManifests(assets);
+		const result = subject.readEntryFromManifests(assets);
 		expect(result).toHaveLength(2);
-		expect(result[0].entry).toBeTruthy();
+		expect(result[0].entryPath).toBeTruthy();
+		expect(result[0].entryCode).toBeTruthy();
 		expect(result[0].manifest).toBeTruthy();
 	});
 
 	it("should load plugins", () => {
 		const result = subject.load();
 		expect(result).toHaveLength(4);
-		expect(result[0].entry).toBeTruthy();
+		expect(result[0].entryPath).toBeTruthy();
+		expect(result[0].entryCode).toBeTruthy();
 		expect(result[0].manifest).toBeTruthy();
 	});
 });

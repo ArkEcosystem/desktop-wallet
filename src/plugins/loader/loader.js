@@ -22,22 +22,23 @@ class PluginLoader {
 		const manifestsPath = this.findManifestsPath();
 		const manifestsAssets = this.loadManifestsFromPaths(manifestsPath);
 
-		return this.requirePluginFromManifests(manifestsAssets);
+		return this.readEntryFromManifests(manifestsAssets);
 	}
 
-	requirePluginFromManifests(manifestsAssets) {
+	readEntryFromManifests(manifestsAssets) {
 		const loads = [];
 		for (const { manifest, dir } of manifestsAssets) {
 			try {
-				const main = manifest.main || "index.js";
-				const entry = require(path.resolve(dir, main));
+				const entryPath = manifest.main || "index.js";
+				const entryCode = fs.readFileSync(path.resolve(dir, entryPath), "utf-8");
 
 				loads.push({
 					manifest,
-					entry,
+					entryPath,
+					entryCode,
 				});
 			} catch (e) {
-				throw new Error("[PluginLoader] Failed to require entry file");
+				throw new Error("[PluginLoader] Failed to read entry file");
 			}
 		}
 		return loads;

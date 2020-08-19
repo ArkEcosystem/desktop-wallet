@@ -67,7 +67,7 @@ const Main = () => {
 	 * because the url parameters are not accessible. Then all routes are registered
 	 * and a middleware will validate.
 	 */
-	const pluginsRoutes = pluginManager.services().route.all();
+	const pluginsRoutes = pluginManager.services().route().all();
 	const allRoutes = [...pluginsRoutes, ...routes];
 
 	return (

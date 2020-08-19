@@ -38,7 +38,7 @@ class HttpAPI implements HTTPPluginAPI {
 }
 
 export class API implements PluginAPI {
-	plugin: PluginData;
+	private plugin: PluginData;
 
 	constructor(plugin: PluginData) {
 		this.plugin = plugin;

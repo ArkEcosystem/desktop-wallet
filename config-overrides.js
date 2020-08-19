@@ -56,10 +56,16 @@ const whiteListedModules = [
 	"swiper",
 	"react-loading-skeleton",
 	"react-linkify",
+	"vm2",
 ];
 
 const addNodeExternals = () =>
-	addWebpackExternals([...Object.keys(dependencies || {}).filter((d) => !whiteListedModules.includes(d))]);
+	addWebpackExternals([
+		...Object.keys(dependencies || {}).filter((d) => !whiteListedModules.includes(d)),
+		{
+			vm2: "commonjs vm2",
+		},
+	]);
 
 const injectTailwindCSS = () =>
 	addPostcssPlugins([

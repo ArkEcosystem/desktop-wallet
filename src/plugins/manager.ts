@@ -34,13 +34,13 @@ export class PluginManager {
 
 	services() {
 		return {
-			profile: container.get<ProfilePluginService>(Identifiers.ProfileService),
-			route: container.get<RoutePluginService>(Identifiers.RouteService),
+			profile: () => container.get<ProfilePluginService>(Identifiers.ProfileService),
+			route: () => container.get<RoutePluginService>(Identifiers.RouteService),
 		};
 	}
 
 	private async loadFromFileSystem(): Promise<PluginLoader[]> {
-		const result = await pluginRpc.load();
+		const result = await pluginRpc.invokeLoader();
 		return result;
 	}
 

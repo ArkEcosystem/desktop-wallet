@@ -13,7 +13,7 @@ let windowState = null;
 let deeplinkingUrl = null;
 
 const pluginRpc = require("../plugins/loader/rpc");
-pluginRpc.handleLoad();
+pluginRpc.injectLoaderHandle();
 
 const winURL = isDev
 	? "http://localhost:3000"
