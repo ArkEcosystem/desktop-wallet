@@ -105,7 +105,7 @@ export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 				</div>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -314,7 +314,7 @@ export const TransactionSend = () => {
 	};
 
 	const copyTransaction = () => {
-		copy(JSON.stringify(transaction.data(), undefined, 2));
+		copy(transaction.id());
 	};
 
 	const crumbs = [
@@ -398,7 +398,7 @@ export const TransactionSend = () => {
 											className="space-x-2"
 										>
 											<Icon name="Copy" />
-											<span>{t("COMMON.COPY")}</span>
+											<span>{t("COMMON.COPY_TRANSACTION_ID")}</span>
 										</Button>
 									</>
 								)}
