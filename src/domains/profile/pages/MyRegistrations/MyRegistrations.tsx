@@ -44,6 +44,8 @@ export const MyRegistrations = ({ onAction }: Props) => {
 	const activeProfile = useActiveProfile();
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
+	const isEmptyRegistrations = !delegates.length && !blockchain.length && !business.length;
+
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile.id()}/dashboard`,
@@ -89,11 +91,11 @@ export const MyRegistrations = ({ onAction }: Props) => {
 				/>
 			</Section>
 
-			{business.length > 0 && <BusinessTable data={business} onAction={console.log} />}
-			{blockchain.length > 0 && <BlockchainTable data={blockchain} onAction={console.log} />}
-			{delegates.length > 0 && <DelegateTable data={delegates} onAction={console.log} />}
+			{business.length > 0 && <BusinessTable data={business} onAction={onAction} />}
+			{blockchain.length > 0 && <BlockchainTable data={blockchain} onAction={onAction} />}
+			{delegates.length > 0 && <DelegateTable data={delegates} onAction={onAction} />}
 
-			{!registrations.length && <EmptyRegistrations />}
+			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
 	);
 };

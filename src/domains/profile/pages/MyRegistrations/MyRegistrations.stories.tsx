@@ -1,7 +1,6 @@
-import { boolean, withKnobs } from "@storybook/addon-knobs";
+import {  withKnobs } from "@storybook/addon-knobs";
 import React from "react";
 
-import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
 export default {
@@ -9,8 +8,4 @@ export default {
 	decorators: [withKnobs],
 };
 
-export const Default = () => {
-	const isEmpty = boolean("Empty State?", false);
-
-	return <MyRegistrations registrations={isEmpty ? [] : registrations} />;
-};
+export const Default = () => <MyRegistrations />;
