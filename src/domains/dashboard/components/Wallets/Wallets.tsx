@@ -135,15 +135,17 @@ export const Wallets = ({
 				)}
 				{walletsViewType === "list" && (
 					<div>
-						{wallets.length > 10 && (
+						{wallets.length > 0 && (
 							<div>
 								<Table columns={listColumns} data={walletListItems}>
 									{(rowData: any) => <WalletListItem {...rowData} />}
 								</Table>
 
-								<Button variant="plain" className="w-full mt-10 mb-5">
-									{t("COMMON.VIEW_MORE")}
-								</Button>
+								{wallets.length > 10 && (
+									<Button variant="plain" className="w-full mt-10 mb-5">
+										{t("COMMON.VIEW_MORE")}
+									</Button>
+								)}
 							</div>
 						)}
 						{wallets.length === 0 && <div className="text-theme-neutral-dark">{walletsEmptyText}</div>}
