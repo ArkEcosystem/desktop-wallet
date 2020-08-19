@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -23,6 +24,17 @@ import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } fro
 
 const fixtureProfileId = getDefaultProfileId();
 const onCopy = jest.fn();
+
+const createTransactionMock = (wallet: Wallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => ipfsFixture.data.id,
+		sender: () => ipfsFixture.data.sender,
+		recipient: () => ipfsFixture.data.recipient,
+		amount: () => BigNumber.make(ipfsFixture.data.amount),
+		fee: () => BigNumber.make(ipfsFixture.data.fee),
+		data: () => ipfsFixture.data,
+	});
 
 let profile: Profile;
 let wallet: Wallet;
@@ -170,6 +182,7 @@ describe("SendIPFSTransaction", () => {
 				.spyOn(wallet.transaction(), "signIpfs")
 				.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
 			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
 
 			fireEvent.click(getByTestId("SendIPFSTransaction__button--submit"));
 
@@ -186,25 +199,7 @@ describe("SendIPFSTransaction", () => {
 			fireEvent.click(getByTestId(`SendIPFSTransaction__button--copy`));
 
 			await waitFor(() =>
-				expect(copyMock).toHaveBeenCalledWith(
-					JSON.stringify(
-						{
-							id: ipfsFixture.data.id,
-							type: "ipfs",
-							timestamp: ipfsFixture.data.timestamp.human,
-							confirmations: {},
-							sender: ipfsFixture.data.sender,
-							recipient: ipfsFixture.data.recipient,
-							amount: {},
-							fee: {},
-							asset: {
-								ipfs: "QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68",
-							},
-						},
-						null,
-						2,
-					),
-				),
+				expect(copyMock).toHaveBeenCalledWith(ipfsFixture.data.id),
 			);
 
 			// @ts-ignore
@@ -212,6 +207,7 @@ describe("SendIPFSTransaction", () => {
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
