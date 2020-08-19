@@ -207,8 +207,7 @@ export const FifthStep = ({ transaction }: { transaction: DTO.SignedTransactionD
 					</div>
 				}
 			>
-				{/* TODO: signed transaction info through the SDK */}
-				{BigNumber.make(transaction.data().amount).toHuman(8)}
+				{transaction.amount().toHuman(8)}
 			</TransactionDetail>
 		</TransactionSuccessful>
 	);
