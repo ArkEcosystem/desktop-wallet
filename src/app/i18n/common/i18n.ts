@@ -90,7 +90,7 @@ export const translations: { [key: string]: any } = {
 	OF: "of",
 	OFFICIAL: "Official",
 	OPEN: "Open",
-	OPTIONAL: "Optional",
+	OPTIONAL: "optional",
 	OTHER: "Other",
 	PAGE: "Page",
 	PASSWORDS: "Passwords",

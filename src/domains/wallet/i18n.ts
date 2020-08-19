@@ -85,7 +85,7 @@ export const translations: { [key: string]: any } = {
 			SUBTITLE: "Wallet creation is complete. Now you can use it.",
 		},
 
-		WALLET_NAME: "Wallet name (optional)",
+		WALLET_NAME: "Wallet name",
 
 		VALIDATION: {
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
@@ -118,7 +118,7 @@ export const translations: { [key: string]: any } = {
 			SUBTITLE: "Wallet import is complete. Now you can use it.",
 		},
 
-		WALLET_NAME: "Wallet name (optional)",
+		WALLET_NAME: "Wallet name",
 
 		VALIDATION: {
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",

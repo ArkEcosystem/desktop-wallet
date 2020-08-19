@@ -164,7 +164,11 @@ export const CreateProfile = () => {
 								</FormField>
 
 								<FormField name="password">
-									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} optional />
+									<FormLabel
+										label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")}
+										required={false}
+										optional
+									/>
 									<InputPassword
 										ref={register({
 											minLength: {

@@ -1751,7 +1751,13 @@ exports[`ImportWallet should render 3st step 1`] = `
         data-testid="FormLabel"
         for="name"
       >
-        Wallet name (optional)
+        Wallet name
+        <span
+          class="ml-1 text-theme-neutral-light"
+          data-testid="FormLabel__optional"
+        >
+          (optional)
+        </span>
       </label>
       <input
         class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "

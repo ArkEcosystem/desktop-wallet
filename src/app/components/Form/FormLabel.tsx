@@ -42,7 +42,9 @@ export function FormLabel(props: FormLabelProps) {
 
 			{props.optional && (
 				<Tippy content={t("COMMON.VALIDATION.OPTIONAL")}>
-					<span className="ml-1 text-theme-neutral-light">{t("COMMON.OPTIONAL")}</span>
+					<span data-testid="FormLabel__optional" className="ml-1 text-theme-neutral-light">
+						({t("COMMON.OPTIONAL")})
+					</span>
 				</Tippy>
 			)}
 		</label>

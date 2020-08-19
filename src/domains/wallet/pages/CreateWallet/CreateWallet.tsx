@@ -223,7 +223,7 @@ export const FourthStep = ({ nameMaxLength }: { nameMaxLength: number }) => {
 			<Divider dashed />
 
 			<FormField name="name">
-				<FormLabel label={t("WALLETS.PAGE_CREATE_WALLET.WALLET_NAME")} required={false} />
+				<FormLabel label={t("WALLETS.PAGE_CREATE_WALLET.WALLET_NAME")} required={false} optional />
 				<Input
 					data-testid="CreateWallet__wallet-name"
 					ref={register({

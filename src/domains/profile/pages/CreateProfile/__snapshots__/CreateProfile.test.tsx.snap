@@ -170,14 +170,11 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       for="password"
                     >
                       Password
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                       <span
                         class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
                       >
-                        Optional
+                        (optional)
                       </span>
                     </label>
                     <div
@@ -606,14 +603,11 @@ exports[`CreateProfile should render 1`] = `
                       for="password"
                     >
                       Password
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                       <span
                         class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
                       >
-                        Optional
+                        (optional)
                       </span>
                     </label>
                     <div
@@ -1066,14 +1060,11 @@ exports[`CreateProfile should store profile 1`] = `
                       for="password"
                     >
                       Password
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                       <span
                         class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
                       >
-                        Optional
+                        (optional)
                       </span>
                     </label>
                     <div
@@ -1502,14 +1493,11 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       for="password"
                     >
                       Password
-                      <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                       <span
                         class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
                       >
-                        Optional
+                        (optional)
                       </span>
                     </label>
                     <div

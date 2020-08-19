@@ -48,4 +48,17 @@ describe("FormLabel", () => {
 		expect(baseElement).toHaveTextContent("This field is required");
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render & hover if optional", () => {
+		const { asFragment, baseElement, getByTestId } = render(<FormLabel label="Test" optional />);
+
+		expect(getByTestId("FormLabel__required")).toBeTruthy();
+
+		act(() => {
+			fireEvent.mouseEnter(getByTestId("FormLabel__optional"));
+		});
+
+		expect(baseElement).toHaveTextContent("This field is optional");
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
