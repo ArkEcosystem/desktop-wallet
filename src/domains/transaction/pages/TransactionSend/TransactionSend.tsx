@@ -1,4 +1,4 @@
-import { DTO } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
@@ -191,7 +191,7 @@ export const FourthStep = () => {
 	);
 };
 
-export const FifthStep = ({ transaction }: { transaction: DTO.SignedTransactionData }) => {
+export const FifthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -217,7 +217,7 @@ export const TransactionSend = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [transaction, setTransaction] = useState((null as unknown) as DTO.SignedTransactionData);
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	// eslint-disable-next-line
 	const [_, copy] = useClipboard({
 		resetAfter: 1000,
