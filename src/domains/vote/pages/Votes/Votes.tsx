@@ -83,6 +83,10 @@ export const Votes = () => {
 		setDelegates(delegates!);
 	};
 
+	console.log("wallets 1", wallets);
+	console.log("wallets 2", wallets[2]);
+	console.log("wallets 3", JSON.stringify(wallets[2]?.toObject()));
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>

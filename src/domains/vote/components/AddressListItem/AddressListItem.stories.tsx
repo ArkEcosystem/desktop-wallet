@@ -30,31 +30,31 @@ const columns = [
 		Header: "Balance",
 		accessor: "balance",
 	},
-	// {
-	// 	Header: "",
-	// 	accessor: "delegateAddressAvatar",
-	// 	disableSortBy: true,
-	// },
-	// {
-	// 	Header: "Delegate",
-	// 	accessor: "delegate",
-	// },
-	// {
-	// 	Header: "Rank",
-	// 	accessor: "rank",
-	// },
-	// {
-	// 	Header: "Profile",
-	// 	accessor: "profile",
-	// 	disableSortBy: true,
-	// 	className: "flex justify-center",
-	// },
-	// {
-	// 	Header: "Status",
-	// 	accessor: "status",
-	// 	disableSortBy: true,
-	// 	className: "flex justify-center",
-	// },
+	{
+		Header: "",
+		accessor: "delegateAddressAvatar",
+		disableSortBy: true,
+	},
+	{
+		Header: "Delegate",
+		accessor: "delegate",
+	},
+	{
+		Header: "Rank",
+		accessor: "rank",
+	},
+	{
+		Header: "Profile",
+		accessor: "profile",
+		disableSortBy: true,
+		className: "flex justify-center",
+	},
+	{
+		Header: "Status",
+		accessor: "status",
+		disableSortBy: true,
+		className: "flex justify-center",
+	},
 	{
 		Header: "",
 		accessor: "onSelect",

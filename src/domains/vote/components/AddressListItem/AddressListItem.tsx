@@ -1,11 +1,13 @@
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
+import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type AddressListItemProps = {
@@ -15,6 +17,8 @@ type AddressListItemProps = {
 };
 
 export const AddressListItem = ({ index, wallet, onSelect }: AddressListItemProps) => {
+	const [votes, setVotes] = useState<Coins.WalletDataCollection>((null as unknown) as Coins.WalletDataCollection);
+
 	const { t } = useTranslation();
 
 	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
@@ -31,6 +35,46 @@ export const AddressListItem = ({ index, wallet, onSelect }: AddressListItemProp
 	};
 
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
+
+	useEffect(() => {
+		const fetchVotes = async () => {
+			let response;
+
+			try {
+				response = await wallet.votes();
+			} catch (error) {
+				return;
+			}
+
+			const transaction = response.items()[0];
+			const result: Contracts.WalletData[] = [];
+
+			const votes = (transaction?.asset().votes as string[]) || [];
+			for (const vote of votes) {
+				const mode = vote[0];
+				const publicKey = vote.substr(1);
+				/* istanbul ignore next */
+				if (mode === "-") {
+					continue;
+				}
+
+				const voteData = await wallet.client().wallet(publicKey);
+
+				result.push(voteData);
+			}
+
+			return new Coins.WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined });
+		};
+
+		const setVotesData = async () => {
+			const votes = await fetchVotes();
+			setVotes(votes!);
+		};
+
+		setVotesData();
+	}, [wallet]);
+
+	const hasVotes = votes?.items().length > 0;
 
 	return (
 		<tr className="border-b border-theme-neutral-200">
@@ -62,41 +106,44 @@ export const AddressListItem = ({ index, wallet, onSelect }: AddressListItemProp
 				<Amount value={wallet.balance()} ticker={wallet.network().currency.ticker} />
 			</td>
 
-			{/* 			<td className="py-5">
-				{delegateAddress ? (
-					<Avatar address={delegateAddress} />
+			<td className="py-5">
+				{hasVotes ? (
+					<Avatar address={votes?.items()[0].address()} />
 				) : (
 					<Circle className="border-theme-neutral-300" />
 				)}
 			</td>
 
 			<td className="py-5 font-bold">
-				{delegateName ? (
-					<span>{delegateName}</span>
+				{hasVotes ? (
+					<span>{votes?.items()[0].username()}</span>
 				) : (
 					<span className="text-theme-neutral-light">{t("COMMON.NOT_AVAILABLE")}</span>
 				)}
 			</td>
 
-			<td className="py-5 font-bold text-theme-neutral-dark">{rank && <span>#{rank}</span>}</td>
+			<td className="py-5 font-bold text-theme-neutral-dark">
+				{hasVotes && <span>#{votes?.items()[0].rank()}</span>}
+			</td>
 
 			<td className="py-5">
-				{msqUrl && (
+				{hasVotes && (
 					<div className="flex justify-center h-full">
-						<a href={msqUrl} target="_blank" rel="noopener noreferrer">
-							<Icon name="Msq" className="text-xl text-theme-primary" />
-						</a>
+						<Icon name="Msq" className="text-xl text-theme-primary" />
 					</div>
 				)}
 			</td>
 
 			<td className="py-5">
-				{isActive && (
+				{hasVotes && (
 					<div className="flex justify-center h-full">
-						<Icon name="Ok" className="text-theme-success" />
+						<Icon
+							name={votes?.items()[0].rank() ? "Ok" : "StatusClock"}
+							className={votes?.items()[0].rank() ? "text-theme-success" : "text-theme-neutral"}
+						/>
 					</div>
 				)}
-			</td> */}
+			</td>
 
 			<td className="py-5">
 				<div className="text-right">

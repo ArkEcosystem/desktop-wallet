@@ -30,30 +30,30 @@ export const AddressList = ({ wallets, onSelect }: AddressListProps) => {
 			Header: t("COMMON.BALANCE"),
 			accessor: "balance",
 		},
-		// {
-		// 	accessor: "delegateAddressAvatar",
-		// 	disableSortBy: true,
-		// },
-		// {
-		// 	Header: t("COMMON.DELEGATE"),
-		// 	accessor: "delegate",
-		// },
-		// {
-		// 	Header: t("COMMON.RANK"),
-		// 	accessor: "rank",
-		// },
-		// {
-		// 	Header: t("COMMON.PROFILE"),
-		// 	accessor: "profile",
-		// 	disableSortBy: true,
-		// 	className: "justify-center",
-		// },
-		// {
-		// 	Header: t("COMMON.STATUS"),
-		// 	accessor: "status",
-		// 	disableSortBy: true,
-		// 	className: "justify-center",
-		// },
+		{
+			accessor: "delegateAddressAvatar",
+			disableSortBy: true,
+		},
+		{
+			Header: t("COMMON.DELEGATE"),
+			accessor: "delegate",
+		},
+		{
+			Header: t("COMMON.RANK"),
+			accessor: "rank",
+		},
+		{
+			Header: t("COMMON.PROFILE"),
+			accessor: "profile",
+			disableSortBy: true,
+			className: "justify-center",
+		},
+		{
+			Header: t("COMMON.STATUS"),
+			accessor: "status",
+			disableSortBy: true,
+			className: "justify-center",
+		},
 		{
 			accessor: "onSelect",
 			disableSortBy: true,
