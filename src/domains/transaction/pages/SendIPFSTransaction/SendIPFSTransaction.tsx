@@ -54,6 +54,7 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 									onChange={(event: any) => setValue("hash", event.target.value, true)}
 								/>
 							</InputGroup>
+							<FormHelperText />
 						</FormField>
 					</>
 				</SendTransactionForm>
@@ -173,7 +174,7 @@ export const SendIPFSTransaction = () => {
 		register("fee", { required: true });
 		register("hash", {
 			required: true,
-			validate: (value) => cid(value) || "Invalid IPFS Hash",
+			validate: (value) => cid(value) || t("COMMON.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
 		});
 
 		setValue("senderAddress", activeWallet.address(), true);
@@ -188,7 +189,7 @@ export const SendIPFSTransaction = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, setValue]);
+	}, [activeWallet, networks, register, setValue, t]);
 
 	const submitForm = async () => {
 		clearError("mnemonic");
