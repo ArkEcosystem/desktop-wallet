@@ -18,7 +18,7 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import { RegistrationForm, RegistrationType } from "./Registration.models";
 
@@ -75,13 +75,7 @@ const FirstStep = ({ networks, profile, wallet }: { networks: NetworkData[]; pro
 		setValue("senderAddress", address, true);
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
-		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/registration/${registrationType}`);
-	};
-
-	const onSelectType = (selectedItem: any) => {
-		setValue("registrationType", selectedItem.value, true);
-
-		history.push(`/profiles/${profile.id()}/transactions/${wallet.id()}/registration/${selectedItem.value}`);
+		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/registration`);
 	};
 
 	return (
@@ -113,10 +107,11 @@ const FirstStep = ({ networks, profile, wallet }: { networks: NetworkData[]; pro
 				</FormField>
 
 				<RegistrationTypeDropdown
-					selectedType={getRegistrationByName(registrationTypes, registrationType)}
+					selectedType={registrationTypes.find((type: RegistrationType) => type.value === registrationType)}
 					registrationTypes={registrationTypes}
-					defaultValue={registrationType}
-					onChange={onSelectType}
+					onChange={(selectedItem: RegistrationType) =>
+						setValue("registrationType", selectedItem.value, true)
+					}
 					className="mt-8"
 				/>
 			</div>
@@ -201,7 +196,6 @@ export const Registration = () => {
 	const { registrationType, senderAddress } = getValues();
 
 	const [feeOptions, setFeeOptions] = useState<Record<string, any>>({});
-	const { registrationType: defaultRegistrationType } = useParams();
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
 
 	useEffect(() => {
@@ -222,12 +216,6 @@ export const Registration = () => {
 			}
 		}
 	}, [activeWallet, networks, register, setValue]);
-
-	useEffect(() => {
-		if (defaultRegistrationType) {
-			setValue("registrationType", defaultRegistrationType, true);
-		}
-	}, [setValue, defaultRegistrationType]);
 
 	useEffect(() => {
 		const loadFees = async () => {
