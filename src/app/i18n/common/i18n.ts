@@ -207,10 +207,4 @@ export const translations: { [key: string]: any } = {
 			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
 		},
 	},
-
-	INPUT_IPFS_HASH: {
-		VALIDATION: {
-			NOT_VALID: "The IPFS hash is not valid",
-		},
-	},
 };

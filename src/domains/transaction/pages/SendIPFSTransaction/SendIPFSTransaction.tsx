@@ -76,7 +76,7 @@ export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -174,7 +174,7 @@ export const SendIPFSTransaction = () => {
 			required: true,
 			validate: (value) =>
 				/(Qm[A-HJ-NP-Za-km-z1-9]{44,45})/.test(value) ||
-				t("COMMON.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
+				t("TRANSACTION.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
 		});
 
 		setValue("senderAddress", activeWallet.address(), true);
