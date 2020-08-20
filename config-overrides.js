@@ -38,7 +38,6 @@ const whiteListedModules = [
 	"framer-motion",
 	"got",
 	"hash-wasm",
-	"is-ipfs",
 	"i18next",
 	"isomorphic-fetch",
 	"recharts",
