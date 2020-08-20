@@ -17,8 +17,8 @@ type SignInProps = {
 	onSuccess: any;
 };
 
-const ATTEMPT_THRESHOLD = 3;
-const TIMEOUT = 60;
+const MAX_ATTEMPTS = 3;
+const TIMEOUT = 5;
 
 export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignInProps) => {
 	const { t } = useTranslation();
@@ -29,10 +29,10 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 	const [count, setCount] = useState(0);
 	const [remainingTime, setRemainingTime] = useState(0);
 
-	const hasReachedThreshold = useCallback(() => count >= ATTEMPT_THRESHOLD, [count]);
+	const hasReachedLimit = useCallback(() => count >= MAX_ATTEMPTS, [count]);
 
 	useEffect(() => {
-		if (hasReachedThreshold()) {
+		if (hasReachedLimit()) {
 			setRemainingTime(TIMEOUT);
 		}
 
@@ -43,7 +43,7 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 
 			return () => clearInterval(timer);
 		}
-	}, [count, hasReachedThreshold]);
+	}, [count, hasReachedLimit]);
 
 	useEffect(() => {
 		if (remainingTime) {
@@ -66,10 +66,6 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 	}, [errors, remainingTime, setError, t]);
 
 	const handleSubmit = ({ password }: any) => {
-		if (hasReachedThreshold()) {
-			return;
-		}
-
 		if (profile.auth().verifyPassword(password)) {
 			onSuccess();
 		} else {
@@ -107,7 +103,7 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 								field: t("COMMON.PASSWORD"),
 							}).toString(),
 						})}
-						disabled={hasReachedThreshold()}
+						disabled={hasReachedLimit()}
 						data-testid="SignIn__input--password"
 					/>
 					<FormHelperText />

@@ -95,4 +95,37 @@ describe("SignIn", () => {
 		expect(queryByText("The Password is invalid")).toBeTruthy();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 	});
+
+	it("should set an error and disable the input if the password is invalid multiple times", async () => {
+		jest.useFakeTimers();
+
+		const onSuccess = jest.fn();
+
+		const { findByTestId, getByTestId, queryByText } = renderWithRouter(
+			<SignIn isOpen={true} profile={profile} onSuccess={onSuccess} />,
+		);
+
+		for (const i of [1, 2, 3]) {
+			await act(async () => {
+				fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: `wrong password ${i}` } });
+			});
+
+			// wait for formState.isValid to be updated
+			await findByTestId("SignIn__submit-button");
+
+			act(() => {
+				fireEvent.click(getByTestId("SignIn__submit-button"));
+			});
+
+			// wait for formState.isValid to be updated
+			await findByTestId("SignIn__submit-button");
+		}
+
+		expect(queryByText(/Maximum sign in attempts reached/)).toBeTruthy();
+		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
+
+		await waitFor(() => {
+			expect(queryByText("The Password is invalid")).toBeTruthy();
+		});
+	});
 });
