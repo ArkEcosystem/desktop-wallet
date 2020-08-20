@@ -1,9 +1,9 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-// UI Elements
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
@@ -14,10 +14,10 @@ import Skeleton from "react-loading-skeleton";
 
 type VoteDetailProps = {
 	isOpen: boolean;
-	transaction?: any;
+	transaction?: Contracts.TransactionDataType;
 	ticker?: string;
 	walletAlias?: string;
-	onClose?: any;
+	onClose?: () => void;
 };
 
 const renderConfirmationStatus = (confirmations: BigNumber) => {
@@ -46,27 +46,26 @@ const renderConfirmationStatus = (confirmations: BigNumber) => {
 	);
 };
 
-const getDelegates = async (transaction: Contracts.TransactionDataType, wallet: any) => {
-	const voteTransaction = await wallet?.client().transaction(transaction?.id());
-	const delegates = wallet?.mapDelegates(voteTransaction?.votes());
-
-	return delegates;
-};
-
-export const VoteDetail = (props: VoteDetailProps) => {
+export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }: VoteDetailProps) => {
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
-	const transactionWallet = activeProfile.wallets().findByAddress(props.transaction?.sender());
+	const senderWallet = activeProfile.wallets().findByAddress(transaction!.sender());
+
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(true);
-	const [delegates, setDelegates] = useState([]);
+	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
+
+	const getDelegates = React.useCallback(
+		() => senderWallet?.mapDelegates((transaction as Contracts.VoteData).votes()),
+		[senderWallet, transaction],
+	);
 
 	useEffect(() => {
 		const syncDelegates = async () => {
 			setIsLoadingDelegates(true);
-			await transactionWallet?.syncDelegates();
-			const delegates = await getDelegates(props.transaction, transactionWallet);
+			await senderWallet?.syncDelegates();
+			const delegates = getDelegates();
 
-			setDelegates(delegates);
+			setDelegates(delegates || []);
 			setIsLoadingDelegates(false);
 		};
 
@@ -76,10 +75,10 @@ export const VoteDetail = (props: VoteDetailProps) => {
 			setIsLoadingDelegates(false);
 			setDelegates([]);
 		};
-	}, [transactionWallet, props.transaction]);
+	}, [senderWallet, getDelegates]);
 
 	const renderAccount = () => {
-		if (props.walletAlias) {
+		if (walletAlias) {
 			return (
 				<TransactionDetail
 					label={t("TRANSACTION.ACCOUNT")}
@@ -88,12 +87,12 @@ export const VoteDetail = (props: VoteDetailProps) => {
 							<Circle className="-mr-2 border-black">
 								<Icon name="Delegate" width={25} height={25} />
 							</Circle>
-							<Avatar address={props.transaction.sender()} />
+							<Avatar address={transaction!.sender()} />
 						</div>
 					}
 				>
-					{props.walletAlias}
-					<TruncateMiddle text={props.transaction.sender()} className="ml-2 text-theme-neutral" />
+					{walletAlias}
+					<TruncateMiddle text={transaction!.sender()} className="ml-2 text-theme-neutral" />
 				</TransactionDetail>
 			);
 		}
@@ -106,17 +105,17 @@ export const VoteDetail = (props: VoteDetailProps) => {
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Avatar address={props.transaction.sender()} />
+						<Avatar address={transaction!.sender()} />
 					</div>
 				}
 			>
-				<TruncateMiddle text={props.transaction.sender()} className="text-theme-neutral" />
+				<TruncateMiddle text={transaction!.sender()} className="text-theme-neutral" />
 			</TransactionDetail>
 		);
 	};
 
 	const renderDelegates = () => {
-		if (isLoadingDelegates)
+		if (isLoadingDelegates) {
 			return (
 				<TransactionDetail
 					label={t("TRANSACTION.VOTER")}
@@ -125,6 +124,7 @@ export const VoteDetail = (props: VoteDetailProps) => {
 					<Skeleton height={6} width="90%" />
 				</TransactionDetail>
 			);
+		}
 
 		return delegates?.map((delegate: any) => {
 			const username = delegate?.username();
@@ -151,38 +151,40 @@ export const VoteDetail = (props: VoteDetailProps) => {
 	};
 
 	return (
-		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
+		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			{renderAccount()}
 
 			{renderDelegates()}
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
-				{`${props.transaction.fee().toHuman()} ${props.ticker?.toUpperCase()}`}
+				{`${transaction!.fee().toHuman()} ${ticker?.toUpperCase()}`}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>
-				{props.transaction.timestamp()!.format("DD.MM.YYYY HH:mm:ss")}
+				{transaction!.timestamp()!.format("DD.MM.YYYY HH:mm:ss")}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
-				{renderConfirmationStatus(props.transaction.confirmations())}
+				{renderConfirmationStatus(transaction!.confirmations())}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<TruncateMiddle text={props.transaction.id()} className="text-theme-primary-dark" />
+				<TruncateMiddle text={transaction!.id()} className="text-theme-primary-dark" />
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
 				</span>
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<TruncateMiddle text={props.transaction.blockId()} className="text-theme-primary-dark" />
+			{transaction!.blockId() && (
+				<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
+					<TruncateMiddle text={transaction!.blockId()!} className="text-theme-primary-dark" />
 
-				<span className="inline-block ml-4 text-theme-primary-300">
-					<Icon name="Copy" />
-				</span>
-			</TransactionDetail>
+					<span className="inline-block ml-4 text-theme-primary-300">
+						<Icon name="Copy" />
+					</span>
+				</TransactionDetail>
+			)}
 		</Modal>
 	);
 };

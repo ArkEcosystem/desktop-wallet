@@ -6,7 +6,6 @@ import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
 import { getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
 
-// i18n
 import { translations } from "../../i18n";
 import { VoteDetail } from "./VoteDetail";
 
@@ -19,7 +18,8 @@ describe("VoteDetail", () => {
 	beforeAll(() => {
 		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
-			.get("/delegates")
+			.get("/api/delegates")
+			.query({ page: "1" })
 			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
 			.persist();
 	});
@@ -66,7 +66,12 @@ describe("VoteDetail", () => {
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail
 					isOpen={true}
-					transaction={{ ...TransactionFixture, confirmations: () => BigNumber.make(52) }}
+					transaction={{
+						...TransactionFixture,
+						sender: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+						votes: () => ["03da05c1c1d4f9c6bda13695b2f29fbc65d9589edc070fc61fe97974be3e59c14e"],
+						confirmations: () => BigNumber.make(52),
+					}}
 				/>
 			</Route>,
 			{
@@ -79,6 +84,7 @@ describe("VoteDetail", () => {
 			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
 		);
 		await waitFor(() => expect(getByText("Well Confirmed")).toBeInTheDocument());
+		await waitFor(() => expect(getByText("arkx")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
