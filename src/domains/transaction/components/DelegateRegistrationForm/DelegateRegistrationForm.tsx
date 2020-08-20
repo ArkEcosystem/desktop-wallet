@@ -195,8 +195,7 @@ export const DelegateRegistrationForm: RegistrationForm = {
 				},
 			});
 
-			const { errors } = await senderWallet.transaction().broadcast([transactionId]);
-			console.log("broadcast errors", errors);
+			await senderWallet.transaction().broadcast([transactionId]);
 
 			await env.persist();
 
