@@ -20,8 +20,6 @@ import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-// @ts-ignore - Could not find a declaration file for module 'is-ipfs'.
-import { cid } from "is-ipfs";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -174,7 +172,9 @@ export const SendIPFSTransaction = () => {
 		register("fee", { required: true });
 		register("hash", {
 			required: true,
-			validate: (value) => cid(value) || t("COMMON.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
+			validate: (value) =>
+				/(Qm[A-HJ-NP-Za-km-z1-9]{44,45})/.test(value) ||
+				t("COMMON.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
 		});
 
 		setValue("senderAddress", activeWallet.address(), true);
