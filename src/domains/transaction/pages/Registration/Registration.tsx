@@ -35,19 +35,11 @@ const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrat
 				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
 			</div>
 			<div>
-				<Select
-					data-testid="Registration__type-select"
-					options={registrationTypes}
-					defaultValue={defaultValue}
-					onChange={onChange}
-				/>
+				<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
 			</div>
 		</FormField>
 	);
 };
-
-const getRegistrationByName = (registrationTypes: RegistrationType[], registrationType: string) =>
-	registrationTypes.find((type: any) => type.value === registrationType);
 
 const FirstStep = ({ networks, profile, wallet }: { networks: NetworkData[]; profile: Profile; wallet: Wallet }) => {
 	const { t } = useTranslation();
@@ -304,7 +296,12 @@ export const Registration = () => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
+				<Form
+					data-testid="Registration__form"
+					className="max-w-xl mx-auto"
+					context={form}
+					onSubmit={submitForm}
+				>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={stepCount} activeIndex={activeTab} />
 
