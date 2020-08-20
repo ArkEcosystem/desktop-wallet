@@ -16,7 +16,7 @@ export const DelegateListItem = ({ index, delegate, selected, onSelect }: Delega
 		selected?.find((selectedDelegate: any) => selectedDelegate.username === delegate.username()) || false;
 
 	return (
-		<tr className={`border-b border-theme-neutral-200 ${isSelected && "bg-theme-success-contrast"}`}>
+		<tr className={`border-b border-dotted border-theme-neutral-300 ${isSelected && "bg-theme-success-contrast"}`}>
 			<td className="py-5">
 				<Avatar address={delegate.address()} noShadow />
 			</td>

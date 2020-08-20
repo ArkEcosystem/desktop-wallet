@@ -1,4 +1,4 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import React from "react";
 import { MemoryRouter, Route } from "react-router-dom";
@@ -11,10 +11,10 @@ export default {
 	decorators: [(storyFn: any) => <WalletsDecorator count={1}>{storyFn}</WalletsDecorator>],
 };
 
-export const Default = ({ env, profile }: { env: Environment; profile: Profile }) => (
+export const Default = ({ env, profile, wallets }: { env: Environment; profile: Profile; wallets: Wallet[] }) => (
 	<EnvironmentProvider env={env}>
-		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/votes`]}>
-			<Route path="/profiles/:profileId/votes" component={() => <Votes />} />
+		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/votes/${wallets[0].id()}`]}>
+			<Route path="/profiles/:profileId/votes/:walletId" component={() => <Votes />} />
 		</MemoryRouter>
 	</EnvironmentProvider>
 );

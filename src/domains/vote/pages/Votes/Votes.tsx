@@ -10,7 +10,7 @@ import { Input } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressList } from "domains/vote/components/AddressList";
 import { DelegateList } from "domains/vote/components/DelegateList";
@@ -33,7 +33,7 @@ const InputAddress = ({ profile, address }: { profile: Profile; address: string 
 						</>
 					) : (
 						<>
-							<Circle className="mr-3" avatarId="test" size="sm" noShadow />
+							<Circle className="mr-3" avatarId="emptyAddress" size="sm" noShadow />
 							<span className="text-base font-semibold text-theme-neutral-light">
 								{t("COMMON.SELECT_OPTION", { option: t("COMMON.ADDRESS") })}
 							</span>
@@ -47,9 +47,10 @@ const InputAddress = ({ profile, address }: { profile: Profile; address: string 
 };
 
 export const Votes = () => {
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
-	const context = useEnvironmentContext();
-	const networks = useMemo(() => context.env.availableNetworks(), [context]);
+	const activeWallet = useActiveWallet();
+	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<Wallet[]>([]);
@@ -68,14 +69,23 @@ export const Votes = () => {
 	];
 
 	useEffect(() => {
+		for (const network of networks) {
+			if (
+				network.id() === activeWallet.network().id &&
+				network.coin() === activeWallet.manifest().get<string>("name")
+			) {
+				setNetwork(network);
+
+				break;
+			}
+		}
+	}, [activeWallet, networks]);
+
+	useEffect(() => {
 		if (network) {
 			setWallets(activeProfile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
 	}, [activeProfile, network]);
-
-	const handleSelectNetwork = (network?: NetworkData | null) => {
-		setNetwork(network!);
-	};
 
 	const handleSelectAddress = async (address: string) => {
 		setAddress(address);
@@ -99,8 +109,9 @@ export const Votes = () => {
 						<SelectNetwork
 							id="Votes__network"
 							networks={networks}
+							selected={network!}
 							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.NETWORK") })}
-							onSelect={handleSelectNetwork}
+							disabled
 						/>
 					</TransactionDetail>
 					<TransactionDetail border={false} label={t("COMMON.ADDRESS")} className="mt-2">

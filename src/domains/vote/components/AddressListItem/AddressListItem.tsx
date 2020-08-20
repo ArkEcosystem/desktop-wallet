@@ -77,7 +77,7 @@ export const AddressListItem = ({ index, wallet, onSelect }: AddressListItemProp
 	const hasVotes = votes?.items().length > 0;
 
 	return (
-		<tr className="border-b border-theme-neutral-200">
+		<tr className="border-b border-dotted border-theme-neutral-300">
 			<td className="py-5">
 				<Avatar address={wallet.address()} />
 			</td>
