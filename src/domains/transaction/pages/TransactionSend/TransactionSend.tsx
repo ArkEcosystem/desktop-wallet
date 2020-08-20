@@ -62,7 +62,7 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 									data-testid="Input__smartbridge"
 									type="text"
 									placeholder=" "
-									className="pr-20"
+									className="pr-24"
 									maxLength={255}
 									defaultValue={smartbridge}
 									onChange={(event: any) => setValue("smartbridge", event.target.value, true)}
@@ -105,7 +105,7 @@ export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 				</div>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
