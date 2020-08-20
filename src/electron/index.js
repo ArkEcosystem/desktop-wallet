@@ -59,6 +59,14 @@ ipcMain.on("disable-iframe-protection", function (_event, urls) {
 	});
 });
 
+ipcMain.on("delegates-sync", function (_event, wallets) {
+	console.log("Delegates sync called...");
+
+	wallets.forEach(async (wallet) => {
+		await wallet.syncDelegates();
+	});
+});
+
 function createWindow() {
 	const { width, height } = screen.getPrimaryDisplay().workAreaSize;
 

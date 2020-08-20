@@ -7,6 +7,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
+import { ipcRenderer } from "electron";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -30,7 +31,6 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 	const activeProfile = useActiveProfile();
 	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
-
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -46,6 +46,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 		const fetchProfileTransactions = async () => {
 			const profileTransactions = await activeProfile.transactionAggregate().transactions({ limit: 10 });
 			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.items();
+			ipcRenderer.send("delegates-sync", wallets);
 
 			setIsLoadingTransactions(false);
 			return allTransactions && setAllTransactions(allTransactions);
@@ -53,7 +54,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 		setScreenshotProtection(activeProfile.settings().get(ProfileSetting.ScreenshotProtection) === true);
 		fetchProfileTransactions();
-	}, [activeProfile]);
+	}, [activeProfile, wallets]);
 
 	// Wallet controls data
 	const filterProperties = {
