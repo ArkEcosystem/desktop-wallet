@@ -34,6 +34,8 @@ export const translations: { [key: string]: any } = {
 	MODAL_SIGN_IN: {
 		TITLE: "Sign In",
 		DESCRIPTION: "Sign in to access your profile.",
+		MAX_ATTEMPTS_ERROR:
+			"Maximum sign in attempts reached - please wait {{remainingTime}} seconds before trying again.",
 	},
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
