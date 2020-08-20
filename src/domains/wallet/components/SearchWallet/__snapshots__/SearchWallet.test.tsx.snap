@@ -267,7 +267,8 @@ exports[`SearchWallet should render 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-theme-neutral-200"
+                      class="border-b cursor-pointer border-theme-neutral-200"
+                      data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                     >
                       <td
                         class="py-6 mt-1"

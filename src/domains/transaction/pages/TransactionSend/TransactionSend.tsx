@@ -63,7 +63,7 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 									data-testid="Input__smartbridge"
 									type="text"
 									placeholder=" "
-									className="pr-20"
+									className="pr-24"
 									maxLength={255}
 									defaultValue={smartbridge}
 									onChange={(event: any) => setValue("smartbridge", event.target.value, true)}

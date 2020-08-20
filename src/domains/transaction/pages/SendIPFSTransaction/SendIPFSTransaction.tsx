@@ -145,7 +145,7 @@ export const ThirdStep = () => {
 	);
 };
 
-export const FourthStep = ({ transaction }: { transaction: Contracts.TransactionData }) => (
+export const FourthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => (
 	<TransactionSuccessful transactionId={transaction.id()} />
 );
 
@@ -154,9 +154,7 @@ export const SendIPFSTransaction = () => {
 	const history = useHistory();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [transaction, setTransaction] = useState<Contracts.TransactionData>(
-		(null as unknown) as Contracts.TransactionData,
-	);
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	// eslint-disable-next-line
 	const [_, copy] = useClipboard({
 		resetAfter: 1000,
@@ -213,18 +211,9 @@ export const SendIPFSTransaction = () => {
 
 			await env.persist();
 
-			// TODO: Remove timer and figure out a nicer way of doing this
-			const intervalId = setInterval(async () => {
-				try {
-					const transactionData = await senderWallet!.client().transaction(transactionId);
-					setTransaction(transactionData);
-					clearInterval(intervalId);
+			setTransaction(senderWallet!.transaction().transaction(transactionId));
 
-					handleNext();
-				} catch (error) {
-					// eslint-disable no-empty
-				}
-			}, 500);
+			handleNext();
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
 
@@ -242,7 +231,7 @@ export const SendIPFSTransaction = () => {
 	};
 
 	const copyTransaction = () => {
-		copy(JSON.stringify(transaction.toObject(), undefined, 2));
+		copy(transaction.id());
 	};
 
 	const crumbs = [
