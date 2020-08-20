@@ -173,7 +173,7 @@ export const SendIPFSTransaction = () => {
 		register("fee", { required: true });
 		register("hash", {
 			required: true,
-			validate: (value) => cid(value),
+			validate: (value) => cid(value) || "Invalid IPFS Hash",
 		});
 
 		setValue("senderAddress", activeWallet.address(), true);
