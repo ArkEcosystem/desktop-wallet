@@ -70,9 +70,9 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 			content: (
 				<div className="flex flex-row mt-2">
 					<div className="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200">
-						<div className="w-20 h-20 rounded-full overflow-hidden">
+						<div className="w-20 h-20 overflow-hidden rounded-full">
 							<Button
-								className="h-20 w-20"
+								className="w-20 h-20"
 								variant="plain"
 								onClick={handleChangeAvatar}
 								data-testid="General-settings__upload-button"
