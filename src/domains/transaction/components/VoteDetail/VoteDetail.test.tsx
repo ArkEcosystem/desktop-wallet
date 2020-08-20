@@ -29,7 +29,7 @@ describe("VoteDetail", () => {
 		history.push(dashboardURL);
 	});
 
-	it("should not render if not open", () => {
+	it("should not render if not open", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail isOpen={false} transaction={TransactionFixture} />
@@ -40,11 +40,11 @@ describe("VoteDetail", () => {
 			},
 		);
 
-		waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal", () => {
+	it("should render a modal", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail isOpen={true} transaction={TransactionFixture} />
@@ -55,11 +55,13 @@ describe("VoteDetail", () => {
 			},
 		);
 
-		waitFor(() => expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE));
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal as confirmed", () => {
+	it("should render a modal as confirmed", async () => {
 		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail
@@ -73,12 +75,14 @@ describe("VoteDetail", () => {
 			},
 		);
 
-		waitFor(() => expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE));
-		waitFor(() => expect(getByText("Well Confirmed")).toBeInTheDocument());
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
+		);
+		await waitFor(() => expect(getByText("Well Confirmed")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal with wallet alias", () => {
+	it("should render a modal with wallet alias", async () => {
 		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail isOpen={true} transaction={TransactionFixture} walletAlias="Wallet Alias" />
@@ -89,8 +93,10 @@ describe("VoteDetail", () => {
 			},
 		);
 
-		waitFor(() => expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE));
-		waitFor(() => expect(getByText("Wallet Alias")).toBeInTheDocument());
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
+		);
+		await waitFor(() => expect(getByText("Wallet Alias")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
