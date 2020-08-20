@@ -88,7 +88,7 @@ describe("Registration", () => {
 
 			fireEvent.click(getByTestId("Registration__continue-button"));
 
-			await waitFor(() => expect(getByTestId("SendDelegateRegistration__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
 			await waitFor(() => expect(getByTestId("Registration__back-button")).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(getByTestId("Registration__back-button"));
@@ -118,7 +118,7 @@ describe("Registration", () => {
 
 			fireEvent.click(getByTestId("Registration__continue-button"));
 
-			await waitFor(() => expect(getByTestId("SendDelegateRegistration__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
 			await waitFor(() => expect(typeSelectInput).toHaveValue("delegateRegistration"));
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});

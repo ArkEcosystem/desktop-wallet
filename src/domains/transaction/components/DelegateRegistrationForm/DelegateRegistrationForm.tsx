@@ -31,7 +31,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 	}, [register]);
 
 	return (
-		<section data-testid="SendDelegateRegistration__step--second">
+		<section data-testid="DelegateRegistrationForm__step--second">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">
 				{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
@@ -92,7 +92,7 @@ const ThirdStep = ({ wallet }: { wallet: Wallet }) => {
 	}, [unregister]);
 
 	return (
-		<section data-testid="SendDelegateRegistration__step--second">
+		<section data-testid="DelegateRegistrationForm__step--third">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">
 				{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
