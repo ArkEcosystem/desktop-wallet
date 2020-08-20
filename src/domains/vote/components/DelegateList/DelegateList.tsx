@@ -2,7 +2,7 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Table } from "app/components/Table";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { DelegateListItem } from "../DelegateListItem";
@@ -77,28 +77,28 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 			Header: t("VOTE.DELEGATE_LIST.VOTES"),
 			accessor: "votes",
 		},
-		/* 		{
-			Header: t("COMMON.PROFILE"),
-			accessor: "profile",
-			disableSortBy: true,
-			className: "flex justify-center",
-		},
-		{
-			Header: t("VOTE.DELEGATE_LIST.COMMISSION"),
-			accessor: "commissionPercentage",
-		},
-		{
-			Header: t("VOTE.DELEGATE_LIST.PAYOUT_INTERVAL"),
-			accessor: "payout",
-		},
-		{
-			Header: t("VOTE.DELEGATE_LIST.MIN"),
-			accessor: "min",
-		},
-		{
-			Header: t("VOTE.DELEGATE_LIST.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
-			accessor: "commissionDaily",
-		}, */
+		// {
+		// 	Header: t("COMMON.PROFILE"),
+		// 	accessor: "profile",
+		// 	disableSortBy: true,
+		// 	className: "flex justify-center",
+		// },
+		// {
+		// 	Header: t("VOTE.DELEGATE_LIST.COMMISSION"),
+		// 	accessor: "commissionPercentage",
+		// },
+		// {
+		// 	Header: t("VOTE.DELEGATE_LIST.PAYOUT_INTERVAL"),
+		// 	accessor: "payout",
+		// },
+		// {
+		// 	Header: t("VOTE.DELEGATE_LIST.MIN"),
+		// 	accessor: "min",
+		// },
+		// {
+		// 	Header: t("VOTE.DELEGATE_LIST.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
+		// 	accessor: "commissionDaily",
+		// },
 		{
 			Header: t("VOTE.DELEGATE_LIST.VOTE"),
 			accessor: "onSelect",
@@ -116,21 +116,24 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 		setSelected([...selected, delegate]);
 	};
 
+	const showSkeleton = useMemo(() => !delegates, [delegates]);
+	const skeletonList = new Array(8).fill({});
+	const data = showSkeleton ? skeletonList : delegates;
+
 	return (
 		<div data-testid="DelegateList">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_LIST.TITLE")}</h2>
-			{delegates && (
-				<Table columns={columns} data={delegates}>
-					{(delegate: any, index: number) => (
-						<DelegateListItem
-							index={index}
-							delegate={delegate}
-							selected={selected}
-							onSelect={toggleSelected}
-						/>
-					)}
-				</Table>
-			)}
+			<Table columns={columns} data={data}>
+				{(delegate: any, index: number) => (
+					<DelegateListItem
+						index={index}
+						delegate={delegate}
+						selected={selected}
+						isLoading={showSkeleton}
+						onSelect={toggleSelected}
+					/>
+				)}
+			</Table>
 
 			{selected.length ? (
 				<div
