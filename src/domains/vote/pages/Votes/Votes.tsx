@@ -1,3 +1,4 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -46,15 +47,16 @@ const InputAddress = ({ profile, address }: { profile: Profile; address: string 
 };
 
 export const Votes = () => {
+	const activeProfile = useActiveProfile();
 	const context = useEnvironmentContext();
 	const networks = useMemo(() => context.env.availableNetworks(), [context]);
 
 	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<Wallet[]>([]);
 	const [address, setAddress] = useState("");
-	const [delegates, setDelegates] = useState<any>([]);
-
-	const activeProfile = useActiveProfile();
+	const [delegates, setDelegates] = useState<Coins.WalletDataCollection>(
+		(null as unknown) as Coins.WalletDataCollection,
+	);
 
 	const { t } = useTranslation();
 
@@ -77,9 +79,8 @@ export const Votes = () => {
 
 	const handleSelectAddress = async (address: string) => {
 		setAddress(address);
-
-		const delegates = (await activeProfile.wallets().findByAddress(address)?.delegates({ limit: 10 }))?.items();
-		setDelegates(delegates);
+		const delegates = await activeProfile.wallets().findByAddress(address)?.delegates({ limit: 10 });
+		setDelegates(delegates!);
 	};
 
 	return (
@@ -110,7 +111,7 @@ export const Votes = () => {
 
 			<Section className="flex-1">
 				{address ? (
-					<DelegateList delegates={delegates} />
+					<DelegateList delegates={delegates?.items()} />
 				) : (
 					<AddressList wallets={wallets} onSelect={handleSelectAddress} />
 				)}
