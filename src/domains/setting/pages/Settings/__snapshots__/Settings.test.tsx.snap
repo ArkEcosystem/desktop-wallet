@@ -1043,21 +1043,26 @@ exports[`Settings should render 1`] = `
                             <div
                               class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                             >
-                              <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                                data-testid="General-settings__upload-button"
-                                type="button"
+                              <div
+                                class="w-20 h-20 rounded-full overflow-hidden"
                               >
-                                <div
-                                  class="sc-AxirZ iQaTP"
-                                  height="1em"
-                                  width="1em"
+                                <button
+                                  class="sc-AxhCb BegvR h-20 w-20"
+                                  color="primary"
+                                  data-testid="General-settings__upload-button"
+                                  type="button"
                                 >
-                                  <svg>
-                                    upload.svg
-                                  </svg>
-                                </div>
-                              </button>
+                                  <div
+                                    class="sc-AxirZ iQaTP"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      upload.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3716,21 +3721,26 @@ exports[`Settings should submit using default props 1`] = `
                             <div
                               class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                             >
-                              <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                                data-testid="General-settings__upload-button"
-                                type="button"
+                              <div
+                                class="w-20 h-20 rounded-full overflow-hidden"
                               >
-                                <div
-                                  class="sc-AxirZ iQaTP"
-                                  height="1em"
-                                  width="1em"
+                                <button
+                                  class="sc-AxhCb BegvR h-20 w-20"
+                                  color="primary"
+                                  data-testid="General-settings__upload-button"
+                                  type="button"
                                 >
-                                  <svg>
-                                    upload.svg
-                                  </svg>
-                                </div>
-                              </button>
+                                  <div
+                                    class="sc-AxirZ iQaTP"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      upload.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -5000,21 +5010,26 @@ exports[`Settings should update profile 1`] = `
                             <div
                               class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                             >
-                              <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                                data-testid="General-settings__upload-button"
-                                type="button"
+                              <div
+                                class="w-20 h-20 rounded-full overflow-hidden"
                               >
-                                <div
-                                  class="sc-AxirZ iQaTP"
-                                  height="1em"
-                                  width="1em"
+                                <button
+                                  class="sc-AxhCb BegvR h-20 w-20"
+                                  color="primary"
+                                  data-testid="General-settings__upload-button"
+                                  type="button"
                                 >
-                                  <svg>
-                                    upload.svg
-                                  </svg>
-                                </div>
-                              </button>
+                                  <div
+                                    class="sc-AxirZ iQaTP"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      upload.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
