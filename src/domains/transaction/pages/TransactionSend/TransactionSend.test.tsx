@@ -250,6 +250,14 @@ describe("Transaction Send", () => {
 			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+
+			// Go back to wallet
+			const historySpy = jest.spyOn(history, "push");
+			fireEvent.click(getByTestId("TransactionSend__button--back-to-wallet"));
+			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+			historySpy.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
 	});
 
