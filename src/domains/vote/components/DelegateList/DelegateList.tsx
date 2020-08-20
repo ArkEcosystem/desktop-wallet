@@ -60,8 +60,6 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 	const [selected, setSelected] = useState([] as any);
 	const [showSelectedList, setShowSelectedList] = useState(false);
 
-	console.log("delegates", delegates);
-
 	const columns = [
 		{
 			accessor: "delegateAddressAvatar",
