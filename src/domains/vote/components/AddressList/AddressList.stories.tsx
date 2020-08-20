@@ -1,9 +1,12 @@
-/* import React from "react";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import React from "react";
+import { WalletsDecorator } from "utils/storybook";
 
-import { addressListData } from "../../data";
 import { AddressList } from "./AddressList";
 
-export default { title: "Domains / Vote / Components / AddressList" };
+export default {
+	title: "Domains / Vote / Components / AddressList",
+	decorators: [(storyFn: any) => <WalletsDecorator count={1}>{storyFn}</WalletsDecorator>],
+};
 
-export const Default = () => <AddressList data={addressListData} />;
- */
+export const Default = ({ wallets }: { wallets: Wallet[] }) => <AddressList wallets={wallets} />;
