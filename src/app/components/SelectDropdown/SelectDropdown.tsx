@@ -11,12 +11,21 @@ type Option = {
 	value: string | number;
 };
 
-type Props = {
+type SelectProps = {
 	defaultValue?: string;
 	isInvalid?: boolean;
 	disabled?: any;
 	options: Option[];
 	onChange?: (selected: Option) => void;
+} & React.InputHTMLAttributes<any>;
+
+type SelectDropdownProps = {
+	placeholder?: string;
+	options: Option[];
+	onSelectedItemChange: any;
+	disabled?: boolean;
+	isInvalid?: boolean;
+	defaultSelectedItem?: Option;
 } & React.InputHTMLAttributes<any>;
 
 const SelectDropdown = ({
@@ -26,7 +35,7 @@ const SelectDropdown = ({
 	disabled,
 	isInvalid,
 	defaultSelectedItem,
-}: any) => {
+}: SelectDropdownProps) => {
 	const {
 		isOpen,
 		selectedItem,
@@ -35,14 +44,13 @@ const SelectDropdown = ({
 		getMenuProps,
 		highlightedIndex,
 		getItemProps,
-	} = useSelect({
+	} = useSelect<Option>({
 		items: options,
 		onSelectedItemChange,
-		defaultSelectedItem: defaultSelectedItem,
 	});
 
 	useEffect(() => {
-		if (defaultSelectedItem && (!selectedItem || selectedItem.value !== defaultSelectedItem.value)) {
+		if (defaultSelectedItem && !selectedItem) {
 			selectItem(defaultSelectedItem || null);
 		}
 	}, [selectItem, selectedItem, defaultSelectedItem]);
@@ -91,8 +99,8 @@ const SelectDropdown = ({
 	);
 };
 
-export const Select = React.forwardRef<HTMLInputElement, Props>(
-	({ isInvalid, placeholder, onChange, defaultValue, options, disabled }: Props, ref) => {
+export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
+	({ isInvalid, placeholder, onChange, defaultValue, options, disabled }: SelectProps, ref) => {
 		const defaultSelectedItem = options.find((option: Option) => option.value === defaultValue);
 		const [selected, setSelected] = useState(defaultSelectedItem);
 
