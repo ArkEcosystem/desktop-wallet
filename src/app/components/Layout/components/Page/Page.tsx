@@ -36,7 +36,7 @@ export const Page = ({ navbarStyle = "full", profile, crumbs, sidebar, children 
 					<div className="container flex mx-auto">
 						<div className="px-10 my-16 border-r-1 border-theme-primary-contrast">{sidebar}</div>
 
-						<div className="ml-16">{children}</div>
+						<div className="w-full ml-16">{children}</div>
 					</div>
 				</div>
 			) : (

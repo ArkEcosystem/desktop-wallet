@@ -66,7 +66,7 @@ export const InputAddress = ({
 				<button
 					data-testid="InputAddress__qr-button"
 					type="button"
-					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
 					onClick={onQRCodeClick}
 				>
 					<Icon name="Qrcode" width={20} height={20} />
