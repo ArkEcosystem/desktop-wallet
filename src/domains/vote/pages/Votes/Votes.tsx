@@ -30,7 +30,7 @@ const InputAddress = ({ profile, address }: { profile: Profile; address: string 
 					{address ? (
 						<>
 							<Avatar className="mr-3" address={address} size="sm" noShadow />
-							<Address walletName={walletName} address={address} />
+							<Address address={address} walletName={walletName} />
 						</>
 					) : (
 						<>

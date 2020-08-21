@@ -37,7 +37,7 @@ export const AddressListItem = ({ index, wallet, onSelect }: AddressListItemProp
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
 	useEffect(() => {
-		const fetchVotes = async () => {
+		const loadVotes = async () => {
 			let response;
 
 			try {
@@ -63,15 +63,16 @@ export const AddressListItem = ({ index, wallet, onSelect }: AddressListItemProp
 				result.push(voteData);
 			}
 
-			return new Coins.WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined });
+			const votesResult = new Coins.WalletDataCollection(result, {
+				prev: undefined,
+				self: undefined,
+				next: undefined,
+			});
+
+			setVotes(votesResult);
 		};
 
-		const setVotesData = async () => {
-			const votes = await fetchVotes();
-			setVotes(votes!);
-		};
-
-		setVotesData();
+		loadVotes();
 	}, [wallet]);
 
 	const hasVotes = votes?.items().length > 0;

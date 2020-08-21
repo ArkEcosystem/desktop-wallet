@@ -1,4 +1,7 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -11,68 +14,114 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useActiveProfile } from "app/hooks/env";
+import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
-export const FirstStep = () => {
-	const { register } = useFormContext();
+export const FirstStep = ({
+	delegate,
+	profile,
+	wallet,
+}: {
+	delegate: Contracts.WalletData;
+	profile: Profile;
+	wallet: Wallet;
+}) => {
 	const { t } = useTranslation();
+	const { getValues, setValue } = useFormContext();
+
+	const [feeOptions, setFeeOptions] = useState({
+		last: undefined,
+		min: (0 * 1e8).toFixed(0),
+		max: (100 * 1e8).toFixed(0),
+		average: (14 * 1e8).toFixed(0),
+	});
+
+	const senderAddress = getValues("senderAddress");
+	const fee = getValues("fee") || null;
+	const coinName = wallet.manifest().get<string>("name");
+	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
 
 	useEffect(() => {
-		register("fee", { required: true });
-	}, [register]);
+		const loadFees = async () => {
+			// TODO: shouldn't be necessary once SelectAddress returns wallets instead
+			const senderWallet = profile.wallets().findByAddress(senderAddress);
+
+			try {
+				// const transferFees = (await senderWallet!.fee().all(7))?.transfer;
+				const transferFees = (await senderWallet!.fee().all(7))?.vote;
+
+				setFeeOptions({
+					last: undefined,
+					min: transferFees.min,
+					max: transferFees.max,
+					average: transferFees.avg,
+				});
+
+				setValue("fee", transferFees.avg, true);
+			} catch (error) {
+				return;
+			}
+		};
+
+		loadFees();
+	}, [setFeeOptions, setValue, profile, senderAddress]);
 
 	return (
 		<section data-testid="SendVoteTransaction__step--first">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
+								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
 				>
-					ARK Ecosystem
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+						{wallet.network().name}
+					</div>
 				</TransactionDetail>
 
-				<TransactionDetail extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<TransactionDetail extra={<Avatar size="lg" address={senderAddress} />}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
 				<TransactionDetail
 					label={t("TRANSACTION.DELEGATE")}
-					extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+					extra={<Avatar size="lg" address={delegate?.address()} />}
 				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
+					<Address address={delegate ? delegate?.address() : ""} walletName={delegate?.username()} />
 				</TransactionDetail>
 
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="fee">
-						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
+						<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 						<InputFee
-							defaultValue={(25 * 1e8).toFixed(0)}
-							min={(1 * 1e8).toFixed(0)}
-							max={(100 * 1e8).toFixed(0)}
-							step={1}
+							{...feeOptions}
+							defaultValue={fee || 0}
+							value={fee || 0}
+							step={0.01}
+							onChange={(value: any) => setValue("fee", value, true)}
 						/>
 					</FormField>
 				</TransactionDetail>
@@ -91,7 +140,7 @@ export const SecondStep = () => {
 				<p className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}</p>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -155,7 +204,7 @@ export const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mn
 
 						{passwordType === "mnemonic" && (
 							<FormField name="name" className="mt-8">
-								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
+								<FormLabel label={t("TRANSACTION.SECOND_MNEMONIC")} />
 								<InputPassword name="secondMnemonic" ref={register} />
 							</FormField>
 						)}
@@ -210,15 +259,48 @@ type Props = {
 };
 
 export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
-	const [activeTab, setActiveTab] = React.useState(1);
+	const { voteId, senderId } = useParams();
+	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+	const networks = useMemo(() => env.availableNetworks(), [env]);
+
+	const [activeTab, setActiveTab] = useState(1);
+	const [delegate, setDelegate] = useState<Contracts.WalletData>((null as unknown) as Contracts.WalletData);
 
 	const form = useForm({ mode: "onChange" });
-	// const { formState } = form;
-	// const { isValid } = formState;
+	const { clearError, formState, getValues, register, setError, setValue } = form;
 
-	const activeProfile = useActiveProfile();
+	useEffect(() => {
+		register("network", { required: true });
+		register("senderAddress", { required: true });
+		register("vote", { required: true });
+		register("fee", { required: true });
 
-	const { t } = useTranslation();
+		setValue("senderAddress", senderId, true);
+		setValue("vote", voteId, true);
+
+		for (const network of networks) {
+			if (
+				network.id() === activeWallet.network().id &&
+				network.coin() === activeWallet.manifest().get<string>("name")
+			) {
+				setValue("network", network, true);
+
+				break;
+			}
+		}
+	}, [activeWallet, networks, register, senderId, setValue, voteId]);
+
+	useEffect(() => {
+		const loadDelegate = async () => {
+			const delegate = await activeWallet.delegate(voteId);
+			setDelegate(delegate);
+		};
+
+		loadDelegate();
+	}, [activeWallet, voteId]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -244,7 +326,7 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep />
+								<FirstStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep />
