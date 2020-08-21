@@ -130,8 +130,25 @@ export const FirstStep = ({
 	);
 };
 
-export const SecondStep = () => {
+export const SecondStep = ({
+	delegate,
+	profile,
+	wallet,
+}: {
+	delegate: Contracts.WalletData;
+	profile: Profile;
+	wallet: Wallet;
+}) => {
 	const { t } = useTranslation();
+	const { getValues, unregister } = useFormContext();
+
+	const { fee, senderAddress } = getValues();
+	const coinName = wallet.manifest().get<string>("name");
+	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
+
+	useEffect(() => {
+		unregister("mnemonic");
+	}, [unregister]);
 
 	return (
 		<section data-testid="SendVoteTransaction__step--second">
@@ -147,33 +164,35 @@ export const SecondStep = () => {
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
+								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
 				>
-					ARK Ecosystem
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+						{wallet.network().name}
+					</div>
 				</TransactionDetail>
 
-				<TransactionDetail extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<TransactionDetail extra={<Avatar size="lg" address={senderAddress} />}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
 				<TransactionDetail
 					label={t("TRANSACTION.DELEGATE")}
-					extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+					extra={<Avatar size="lg" address={delegate?.address()} />}
 				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
+					<Address address={delegate?.address()} walletName={delegate?.username()} />
 				</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
 				</div>
 			</div>
 		</section>
@@ -329,7 +348,7 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 								<FirstStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep />
+								<SecondStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<ThirdStep form={form} passwordType="mnemonic" />
