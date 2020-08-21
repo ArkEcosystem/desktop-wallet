@@ -128,7 +128,7 @@ const ThirdStep = ({ wallet }: { wallet: Wallet }) => {
 				</TransactionDetail>
 
 				<TransactionDetail
-					label={t("TRANSACTION.DELEGATE_REGISTRATION")}
+					label={t("TRANSACTION.DELEGATE_NAME")}
 					className="pt-6"
 					extra={
 						<div className="mx-2">
