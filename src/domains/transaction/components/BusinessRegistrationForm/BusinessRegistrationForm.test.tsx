@@ -1,9 +1,8 @@
-
-import {  Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { act, env,  getDefaultProfileId, render, RenderResult, waitFor } from "utils/testing-library";
+import { act, env, getDefaultProfileId, render, RenderResult, waitFor } from "utils/testing-library";
 
 import { BusinessRegistrationForm } from "./BusinessRegistrationForm";
 
