@@ -215,7 +215,6 @@ export const Registration = () => {
 
 	const [feeOptions, setFeeOptions] = useState<Record<string, any>>({});
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
-	const registrationFeeOptions = feeOptions[registrationType] || feeOptions["entityRegistration"];
 
 	useEffect(() => {
 		register("fee");
@@ -315,19 +314,19 @@ export const Registration = () => {
 									profile={activeProfile}
 									wallet={activeWallet}
 									setRegistrationForm={setRegistrationForm}
-									feeOptions={registrationFeeOptions}
+									feeOptions={feeOptions}
 								/>
 							</TabPanel>
 
 							{activeTab > 1 && registrationForm && (
 								<registrationForm.component
 									activeTab={activeTab}
-									feeOptions={registrationFeeOptions}
+									feeOptions={feeOptions[registrationType]}
 									wallet={activeWallet}
 								/>
 							)}
 
-							{registrationForm && registrationFeeOptions && (
+							{registrationForm && feeOptions[registrationType] && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
 										<SigningStep passwordType="mnemonic" wallet={activeWallet} />
