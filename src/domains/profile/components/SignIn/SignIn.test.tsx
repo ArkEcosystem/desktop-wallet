@@ -13,6 +13,14 @@ describe("SignIn", () => {
 		profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 	});
 
+	beforeAll(() => {
+		jest.useFakeTimers();
+	});
+
+	afterAll(() => {
+		jest.useRealTimers();
+	});
+
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(<SignIn profile={profile} isOpen={false} />);
 
@@ -96,15 +104,11 @@ describe("SignIn", () => {
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 	});
 
-	jest.setTimeout(100000);
-
 	it("should set an error and disable the input if the password is invalid multiple times", async () => {
-		jest.useFakeTimers();
-
-		let renderContext: any;
 		const onSuccess = jest.fn();
 
-		// const { findByTestId, getByTestId, queryByText } = renderWithRouter(
+		let renderContext: any;
+
 		await act(async () => {
 			renderContext = renderWithRouter(<SignIn isOpen={true} profile={profile} onSuccess={onSuccess} />);
 		});
@@ -132,8 +136,10 @@ describe("SignIn", () => {
 		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
 		act(() => {
-			jest.advanceTimersByTime(65000);
-			jest.clearAllTimers();
+			Promise.resolve().then(() => {
+				jest.advanceTimersByTime(65000);
+				jest.clearAllTimers();
+			});
 		});
 
 		// wait for form to be updated
