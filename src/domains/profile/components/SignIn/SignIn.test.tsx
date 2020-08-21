@@ -126,6 +126,7 @@ describe("SignIn", () => {
 
 		await act(async () => {
 			jest.advanceTimersByTime(60000);
+			jest.clearAllTimers();
 		});
 
 		await waitFor(() => {
