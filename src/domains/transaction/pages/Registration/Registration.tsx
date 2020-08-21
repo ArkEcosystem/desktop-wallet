@@ -134,7 +134,8 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 	);
 };
 
-const SigningStep = ({
+// TODO: Move to own component
+export const SigningStep = ({
 	passwordType,
 	wallet,
 }: {
@@ -371,7 +372,7 @@ export const Registration = () => {
 								{registrationForm && activeTab === stepCount && (
 									<div className="flex justify-end space-x-3">
 										<Button
-											data-testid="Registration__wallet-button"
+											data-testid="Registration__button--back-to-wallet"
 											variant="plain"
 											onClick={() =>
 												history.push(
@@ -386,7 +387,6 @@ export const Registration = () => {
 											data-testid="Registration__download-button"
 											variant="plain"
 											className="space-x-2"
-											onClick={() => void 0}
 										>
 											<Icon name="Download" />
 											<span>{t("COMMON.DOWNLOAD")}</span>
