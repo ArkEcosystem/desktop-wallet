@@ -99,21 +99,25 @@ describe("SignIn", () => {
 	it("should set an error and disable the input if the password is invalid multiple times", async () => {
 		jest.useFakeTimers();
 
+		let renderContext: any;
 		const onSuccess = jest.fn();
 
-		const { findByTestId, getByTestId, queryByText } = renderWithRouter(
-			<SignIn isOpen={true} profile={profile} onSuccess={onSuccess} />,
-		);
+		// const { findByTestId, getByTestId, queryByText } = renderWithRouter(
+		await act(async () => {
+			renderContext = renderWithRouter(<SignIn isOpen={true} profile={profile} onSuccess={onSuccess} />);
+		});
+
+		const { findByTestId, getByTestId, queryByText } = renderContext;
 
 		for (const i of [1, 2, 3]) {
-			await act(async () => {
+			act(() => {
 				fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: `wrong password ${i}` } });
 			});
 
 			// wait for form to be updated
 			await findByTestId("SignIn__submit-button");
 
-			await act(async () => {
+			act(() => {
 				fireEvent.click(getByTestId("SignIn__submit-button"));
 			});
 
@@ -125,15 +129,18 @@ describe("SignIn", () => {
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
-		await act(async () => {
+		act(() => {
 			jest.runOnlyPendingTimers();
 		});
 
 		// wait for form to be updated
 		await findByTestId("SignIn__submit-button");
 
-		await waitFor(() => {
-			expect(queryByText("The Password is invalid")).toBeTruthy();
-		}, { timeout: 10000 });
+		await waitFor(
+			() => {
+				expect(queryByText("The Password is invalid")).toBeTruthy();
+			},
+			{ timeout: 60000 },
+		);
 	});
 });
