@@ -106,7 +106,7 @@ export const CreateProfile = () => {
 
 		profile.settings().set(ProfileSetting.Avatar, avatarImage);
 		profile.settings().set(ProfileSetting.AdvancedMode, false);
-		profile.settings().set(ProfileSetting.AutomaticLogoffPeriod, 15);
+		profile.settings().set(ProfileSetting.AutomaticSignOutPeriod, 15);
 		profile.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.LedgerUpdateMethod, false);
@@ -135,7 +135,7 @@ export const CreateProfile = () => {
 					<div className="pb-4 mt-8">
 						<Button className="w-full">
 							<Icon name="Msq" width={20} height={20} />
-							<span className="ml-2">{t("PROFILE.LOGIN")}</span>
+							<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
 						</Button>
 					</div>
 
