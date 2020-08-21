@@ -1,9 +1,11 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { getLocation, getPageURL } from "../../../utils/e2e-utils";
 
 fixture`Create Profile action`.page(getPageURL());
+
+const nameInput = Selector("input[name=name]");
 
 test("should return an error when submit without required fields", async (t) => {
 	await t.click(Selector("button").withExactText(translations().PROFILE.CREATE_PROFILE));
@@ -18,7 +20,7 @@ test("should return an error when submit without required fields", async (t) => 
 test("should create a profile and navigate to welcome screen", async (t) => {
 	await t.click(Selector("button").withExactText(translations().PROFILE.CREATE_PROFILE));
 
-	const nameInput = Selector("input[name=name]");
+	await t.expect(getLocation()).contains("/profiles/create");
 
 	await t.typeText(nameInput, "Anne Doe");
 	await t.click(Selector("button").withText("Select Market Provider"));
@@ -28,8 +30,33 @@ test("should create a profile and navigate to welcome screen", async (t) => {
 	await t.click(Selector("input[name=isDarkMode]").parent());
 	await t.click(Selector("button").withExactText(translations().COMMON.COMPLETE));
 
-	// Check welcome with created profiles
 	await t.wait(1000); // TODO: the profile loading is async so we need to give it a moment
+
+	// Check welcome with created profiles
+	await t.expect(getLocation()).notContains("/profiles/create");
 	await t.expect(Selector("p").withText("John Doe").exists).ok();
 	await t.expect(Selector("p").withText("Anne Doe").exists).ok();
+});
+
+test("should create a profile with password and navigate to welcome screen", async (t) => {
+	await t.click(Selector("button").withExactText(translations().PROFILE.CREATE_PROFILE));
+
+	await t.expect(getLocation()).contains("/profiles/create");
+
+	await t.typeText(nameInput, "Joe Bloggs");
+	await t.typeText(Selector("input[name=password]"), "password");
+	await t.click(Selector("button").withText("Select Market Provider"));
+	await t.click(Selector("li.select-list-option").withText("CoinGecko"));
+	await t.click(Selector("button").withText("Select Currency"));
+	await t.click(Selector("li.select-list-option").withText("ETH"));
+	await t.click(Selector("input[name=isDarkMode]").parent());
+	await t.click(Selector("button").withExactText(translations().COMMON.COMPLETE));
+
+	await t.wait(1000); // TODO: the profile loading is async so we need to give it a moment
+
+	// Check welcome with created profiles
+	await t.expect(getLocation()).notContains("/profiles/create");
+	await t.expect(Selector("p").withText("John Doe").exists).ok();
+	await t.expect(Selector("p").withText("Joe Bloggs").exists).ok();
+	await t.expect(Selector("span").withText("N/A").exists).ok();
 });
