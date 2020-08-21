@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
+import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -35,27 +36,19 @@ export const DelegateListItem = ({ index, delegate, selected, isLoading, onSelec
 
 			<td className="py-5 font-bold text-theme-neutral-dark">%</td>
 
-			{/* <td className="py-5">
-				{msqUrl && (
-					<div className="flex justify-center h-full">
-						<a href={msqUrl} target="_blank" rel="noopener noreferrer">
-							<Icon name="Msq" className="text-xl text-theme-primary" />
-						</a>
-					</div>
-				)}
+			<td className="py-5">
+				<div className="flex justify-center h-full">
+					<Icon name="Msq" className="text-xl text-theme-primary" />
+				</div>
 			</td>
 
-			<td className="py-5 font-bold text-theme-neutral-dark">
-				{commissionPercentage && <span>{commissionPercentage}%</span>}
-			</td>
+			<td className="py-5 font-bold text-theme-neutral-dark" />
 
-			<td className="py-5 font-bold text-theme-neutral-dark">{payout && <span>{payout}</span>}</td>
+			<td className="py-5 font-bold text-theme-neutral-dark" />
 
-			<td className="py-5 font-bold text-theme-neutral-dark">{min && <span>{min} Ѧ</span>}</td>
+			<td className="py-5 font-bold text-theme-neutral-dark" />
 
-			<td className="py-5 font-bold text-theme-neutral-dark">
-				{commissionDaily && <span>{commissionDaily} Ѧ</span>}
-			</td> */}
+			<td className="py-5 font-bold text-theme-neutral-dark" />
 
 			<td className="py-5">
 				<div className="text-right">

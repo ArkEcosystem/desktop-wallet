@@ -20,8 +20,10 @@ export const DelegateListItemSkeleton = () => (
 			<Skeleton width="40%" height={6} className="mt-4" />
 		</td>
 
-		{/* <td className="py-5">
-			<Skeleton width={24} height={24} />
+		<td className="py-5">
+			<div className="flex justify-center h-full">
+				<Skeleton width={24} height={24} />
+			</div>
 		</td>
 
 		<td className="py-5">
@@ -38,7 +40,7 @@ export const DelegateListItemSkeleton = () => (
 
 		<td className="py-5">
 			<Skeleton width="60%" height={6} className="mt-4" />
-		</td> */}
+		</td>
 
 		<td className="py-5">
 			<div className="text-right">

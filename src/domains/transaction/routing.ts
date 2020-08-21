@@ -34,7 +34,7 @@ export const TransactionRoutes = [
 		component: SendIPFSTransaction,
 	},
 	{
-		path: "/profiles/:profileId/wallets/:walletId/transactions/vote",
+		path: "/profiles/:profileId/wallets/:walletId/transactions/vote/:voteId/sender/:senderId",
 		exact: true,
 		component: SendVoteTransaction,
 	},

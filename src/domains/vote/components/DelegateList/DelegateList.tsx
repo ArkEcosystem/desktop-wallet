@@ -78,28 +78,28 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 			Header: t("VOTE.DELEGATE_LIST.VOTES"),
 			accessor: "votes",
 		},
-		// {
-		// 	Header: t("COMMON.PROFILE"),
-		// 	accessor: "profile",
-		// 	disableSortBy: true,
-		// 	className: "flex justify-center",
-		// },
-		// {
-		// 	Header: t("VOTE.DELEGATE_LIST.COMMISSION"),
-		// 	accessor: "commissionPercentage",
-		// },
-		// {
-		// 	Header: t("VOTE.DELEGATE_LIST.PAYOUT_INTERVAL"),
-		// 	accessor: "payout",
-		// },
-		// {
-		// 	Header: t("VOTE.DELEGATE_LIST.MIN"),
-		// 	accessor: "min",
-		// },
-		// {
-		// 	Header: t("VOTE.DELEGATE_LIST.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
-		// 	accessor: "commissionDaily",
-		// },
+		{
+			Header: t("COMMON.PROFILE"),
+			accessor: "profile",
+			disableSortBy: true,
+			className: "flex justify-center",
+		},
+		{
+			Header: t("VOTE.DELEGATE_LIST.COMMISSION"),
+			accessor: "commissionPercentage",
+		},
+		{
+			Header: t("VOTE.DELEGATE_LIST.PAYOUT_INTERVAL"),
+			accessor: "payout",
+		},
+		{
+			Header: t("VOTE.DELEGATE_LIST.MIN"),
+			accessor: "min",
+		},
+		{
+			Header: t("VOTE.DELEGATE_LIST.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
+			accessor: "commissionDaily",
+		},
 		{
 			Header: t("VOTE.DELEGATE_LIST.VOTE"),
 			accessor: "onSelect",

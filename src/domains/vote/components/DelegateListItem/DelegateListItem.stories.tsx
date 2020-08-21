@@ -1,3 +1,4 @@
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Table } from "app/components/Table";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
@@ -33,28 +34,28 @@ const columns = [
 		Header: "Votes",
 		accessor: "votes",
 	},
-	// {
-	// 	Header: "Profile",
-	// 	accessor: "profile",
-	// 	disableSortBy: true,
-	// 	className: "flex justify-center",
-	// },
-	// {
-	// 	Header: "Comm.",
-	// 	accessor: "commissionPercentage",
-	// },
-	// {
-	// 	Header: "Payout",
-	// 	accessor: "payout",
-	// },
-	// {
-	// 	Header: "Min",
-	// 	accessor: "min",
-	// },
-	// {
-	// 	Header: "Commission (Daily)",
-	// 	accessor: "commissionDaily",
-	// },
+	{
+		Header: "Profile",
+		accessor: "profile",
+		disableSortBy: true,
+		className: "flex justify-center",
+	},
+	{
+		Header: "Comm.",
+		accessor: "commissionPercentage",
+	},
+	{
+		Header: "Payout",
+		accessor: "payout",
+	},
+	{
+		Header: "Min",
+		accessor: "min",
+	},
+	{
+		Header: "Commission (Daily)",
+		accessor: "commissionDaily",
+	},
 	{
 		Header: "",
 		accessor: "onSelect",
@@ -62,8 +63,8 @@ const columns = [
 	},
 ];
 
-export const Default = ({ delegates }: { delegates: any }) => (
+export const Default = ({ delegates }: { delegates: Coins.WalletDataCollection }) => (
 	<Table columns={columns} data={[delegates.items()[0]]}>
-		{(delegate: any, index: number) => <DelegateListItem index={index} delegate={delegate} />}
+		{(delegate: Contracts.WalletData, index: number) => <DelegateListItem index={index} delegate={delegate} />}
 	</Table>
 );
