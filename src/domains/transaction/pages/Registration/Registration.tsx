@@ -12,6 +12,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
+import { BusinessRegistrationForm } from "domains/transaction/components/BusinessRegistrationForm/BusinessRegistrationForm";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
@@ -24,6 +25,7 @@ import { RegistrationForm, RegistrationType } from "./Registration.models";
 
 const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
+	businessRegistration: BusinessRegistrationForm,
 };
 
 const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
@@ -57,7 +59,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 
 	const registrationTypes: RegistrationType[] = [
 		{
-			value: "business",
+			value: "businessRegistration",
 			label: "Business",
 		},
 	];
@@ -213,6 +215,7 @@ export const Registration = () => {
 
 	const [feeOptions, setFeeOptions] = useState<Record<string, any>>({});
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
+	const registrationFeeOptions = feeOptions[registrationType] || feeOptions["entityRegistration"];
 
 	useEffect(() => {
 		register("fee");
@@ -312,19 +315,19 @@ export const Registration = () => {
 									profile={activeProfile}
 									wallet={activeWallet}
 									setRegistrationForm={setRegistrationForm}
-									feeOptions={feeOptions}
+									feeOptions={registrationFeeOptions}
 								/>
 							</TabPanel>
 
 							{activeTab > 1 && registrationForm && (
 								<registrationForm.component
 									activeTab={activeTab}
-									feeOptions={feeOptions[registrationType]}
+									feeOptions={registrationFeeOptions}
 									wallet={activeWallet}
 								/>
 							)}
 
-							{registrationForm && feeOptions[registrationType] && (
+							{registrationForm && registrationFeeOptions && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
 										<SigningStep passwordType="mnemonic" wallet={activeWallet} />
