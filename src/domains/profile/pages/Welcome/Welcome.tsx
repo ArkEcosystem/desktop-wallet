@@ -105,7 +105,7 @@ export const Welcome = () => {
 						<div className="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row">
 							<Button>
 								<Icon name="Msq" width={20} height={20} />
-								<span className="ml-2">{t("PROFILE.LOGIN")}</span>
+								<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
 							</Button>
 
 							<Button
