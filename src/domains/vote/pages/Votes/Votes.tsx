@@ -33,7 +33,7 @@ const InputAddress = ({ profile, address }: { profile: Profile; address: string 
 						</>
 					) : (
 						<>
-							<Circle className="mr-3" avatarId="emptyAddress" size="sm" noShadow />
+							<Circle className="mr-3 bg-theme-neutral-200 border-theme-neutral-200" size="sm" noShadow />
 							<span className="text-base font-semibold text-theme-neutral-light">
 								{t("COMMON.SELECT_OPTION", { option: t("COMMON.ADDRESS") })}
 							</span>
@@ -89,7 +89,7 @@ export const Votes = () => {
 
 	const handleSelectAddress = async (address: string) => {
 		setAddress(address);
-		const delegates = await activeProfile.wallets().findByAddress(address)?.delegates({ limit: 10 });
+		const delegates = await activeProfile.wallets().findByAddress(address)?.delegates({ limit: 51 });
 		setDelegates(delegates!);
 	};
 

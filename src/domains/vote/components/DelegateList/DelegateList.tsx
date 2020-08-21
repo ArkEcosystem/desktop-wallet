@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -116,7 +117,7 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 		setSelected([...selected, delegate]);
 	};
 
-	const showSkeleton = useMemo(() => !delegates, [delegates]);
+	const showSkeleton = useMemo(() => delegates.length === 0, [delegates]);
 	const skeletonList = new Array(8).fill({});
 	const data = showSkeleton ? skeletonList : delegates;
 
@@ -124,7 +125,7 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 		<div data-testid="DelegateList">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_LIST.TITLE")}</h2>
 			<Table columns={columns} data={data}>
-				{(delegate: any, index: number) => (
+				{(delegate: Contracts.WalletData, index: number) => (
 					<DelegateListItem
 						index={index}
 						delegate={delegate}
@@ -135,7 +136,7 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 				)}
 			</Table>
 
-			{selected.length ? (
+			{selected.length > 0 && (
 				<div
 					className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
 					data-testid="DelegateList__footer"
@@ -186,13 +187,11 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 						</div>
 					</div>
 				</div>
-			) : (
-				""
 			)}
 		</div>
 	);
 };
 
 DelegateList.defaultProps = {
-	data: [],
+	delegates: [],
 };

@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import React from "react";
@@ -7,7 +8,7 @@ import { DelegateListItemSkeleton } from "./DelegateListItemSkeleton";
 
 type DelegateListItemProps = {
 	index: number;
-	delegate: any;
+	delegate: Contracts.WalletData;
 	selected?: any[];
 	isLoading?: boolean;
 	onSelect?: ({ address, username, rank }: { address: string; username: string; rank: number }) => void;
@@ -64,8 +65,8 @@ export const DelegateListItem = ({ index, delegate, selected, isLoading, onSelec
 						onClick={() =>
 							onSelect?.({
 								address: delegate.address(),
-								username: delegate.username(),
-								rank: delegate.rank(),
+								username: delegate.username()!,
+								rank: delegate.rank()!,
 							})
 						}
 						data-testid={`DelegateListItem__toggle-${index}`}
