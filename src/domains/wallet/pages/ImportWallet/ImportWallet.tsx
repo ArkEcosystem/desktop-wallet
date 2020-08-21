@@ -202,7 +202,7 @@ export const ThirdStep = ({ address, nameMaxLength }: { address: string; nameMax
 			<Divider dashed />
 
 			<FormField name="name">
-				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} />
+				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} optional />
 				<Input
 					ref={register({
 						maxLength: {

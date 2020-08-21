@@ -302,11 +302,9 @@ exports[`Registration should render 1st step 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
-                            required=""
                           >
                             Network
                             <div
@@ -435,11 +433,9 @@ exports[`Registration should render 1st step 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="senderAddress"
-                            label="Sender"
-                            required=""
                           >
                             Sender
                             <div
@@ -514,11 +510,9 @@ exports[`Registration should render 1st step 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
-                            label="Registration Type"
-                            required=""
                           >
                             Registration Type
                             <div
@@ -1010,11 +1004,9 @@ exports[`Registration should select registration type & show form 1`] = `
                             class="mb-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
                               for="username"
-                              label="Delegate Name"
-                              required=""
                             >
                               Delegate Name
                               <div
@@ -1040,11 +1032,9 @@ exports[`Registration should select registration type & show form 1`] = `
                           class="sc-AxirZ izhStr flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="fee"
-                            label="Transaction Fee"
-                            required=""
                           >
                             Transaction Fee
                             <div
@@ -1448,11 +1438,9 @@ exports[`Registration should should go back 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
-                            required=""
                           >
                             Network
                             <div
@@ -1581,11 +1569,9 @@ exports[`Registration should should go back 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="senderAddress"
-                            label="Sender"
-                            required=""
                           >
                             Sender
                             <div
@@ -1660,11 +1646,9 @@ exports[`Registration should should go back 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
-                            label="Registration Type"
-                            required=""
                           >
                             Registration Type
                             <div
@@ -1692,16 +1676,16 @@ exports[`Registration should should go back 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-14-label downshift-14-toggle-button"
+                                  aria-labelledby="downshift-15-label downshift-15-toggle-button"
                                   class="sc-fzpjYC krtBbm   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-14-toggle-button"
+                                  id="downshift-15-toggle-button"
                                   type="button"
                                 />
                                 <ul
-                                  aria-labelledby="downshift-14-label"
+                                  aria-labelledby="downshift-15-label"
                                   class="sc-fznxsB jPuBaU"
-                                  id="downshift-14-menu"
+                                  id="downshift-15-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />

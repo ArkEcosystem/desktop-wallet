@@ -8,7 +8,7 @@ type TransactionsProps = {
 	title: string;
 	transactions: Contracts.TransactionDataType[];
 	fetchMoreAction?: Function;
-	onRowClick?: any;
+	onRowClick?: (row: Contracts.TransactionDataType) => void;
 	emptyText?: string;
 	isLoading?: boolean;
 };

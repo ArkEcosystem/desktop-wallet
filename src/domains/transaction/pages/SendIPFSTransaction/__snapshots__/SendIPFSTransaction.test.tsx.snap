@@ -309,10 +309,9 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
                           class="sc-AxhCb hXHxHb pt-8 pb-0"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="mnemonic"
-                            required=""
                           >
                             Mnemonic
                             <div
@@ -335,7 +334,7 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
                               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -986,11 +985,9 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="network"
-              label="Network"
-              required=""
             >
               Network
               <div
@@ -1050,11 +1047,9 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="senderAddress"
-              label="Sender"
-              required=""
             >
               Sender
               <div
@@ -1108,11 +1103,9 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="hash"
-              label="IPFS Hash"
-              required=""
             >
               IPFS Hash
               <div
@@ -1138,11 +1131,9 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="fee"
-            label="Transaction Fee"
-            required=""
           >
             Transaction Fee
             <div
@@ -1489,10 +1480,9 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
           class="sc-AxhCb ckQmOL pt-8 pb-0"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="mnemonic"
-            required=""
           >
             Mnemonic
             <div
@@ -1514,7 +1504,7 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
@@ -2090,11 +2080,9 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                             class="mb-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
                               for="network"
-                              label="Network"
-                              required=""
                             >
                               Network
                               <div
@@ -2223,11 +2211,9 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                             class="mb-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
                               for="senderAddress"
-                              label="Sender"
-                              required=""
                             >
                               Sender
                               <div
@@ -2301,11 +2287,9 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                             class="mb-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
                               for="hash"
-                              label="IPFS Hash"
-                              required=""
                             >
                               IPFS Hash
                               <div
@@ -2337,11 +2321,9 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="fee"
-                            label="Transaction Fee"
-                            required=""
                           >
                             Transaction Fee
                             <div

@@ -31,6 +31,12 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Select address",
 		DESCRIPTION: "Find and select an address from your wallets",
 	},
+	MODAL_SIGN_IN: {
+		TITLE: "Sign In",
+		DESCRIPTION: "Sign in to access your profile.",
+		MAX_ATTEMPTS_ERROR:
+			"Maximum sign in attempts reached - please wait {{remainingTime}} seconds before trying again.",
+	},
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
 		DESCRIPTION: "Login with your MarketSquare account or create a new Profile below.",
