@@ -70,14 +70,16 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 			content: (
 				<div className="flex flex-row mt-2">
 					<div className="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200">
-						<button
-							type="button"
-							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-							onClick={handleChangeAvatar}
-							data-testid="General-settings__upload-button"
-						>
-							<Icon name="Upload" />
-						</button>
+						<div className="w-20 h-20 overflow-hidden rounded-full">
+							<Button
+								className="w-20 h-20"
+								variant="plain"
+								onClick={handleChangeAvatar}
+								data-testid="General-settings__upload-button"
+							>
+								<Icon name="Upload" />
+							</Button>
+						</div>
 					</div>
 					{avatarImage && (
 						<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
@@ -273,7 +275,8 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 										maxLength: {
 											value: nameMaxLength,
-											message: t("SETTINGS.GENERAL.VALIDATION.MAXLENGTH_ERROR", {
+											message: t("COMMON.VALIDATION.MAX_LENGTH", {
+												field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
 												maxLength: nameMaxLength,
 											}),
 										},

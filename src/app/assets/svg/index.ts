@@ -48,6 +48,7 @@ import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as LinkedIn } from "./linkedin.svg";
 import { ReactComponent as List } from "./list.svg";
 import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
+import { ReactComponent as Lock } from "./lock.svg";
 import { ReactComponent as Medium } from "./medium.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
@@ -137,6 +138,7 @@ export const SvgCollection: any = {
 	Link,
 	LinkedIn,
 	List,
+	Lock,
 	Medium,
 	Msq,
 	Multisig,

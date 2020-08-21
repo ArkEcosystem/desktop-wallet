@@ -23,7 +23,9 @@ type DashboardProps = {
 export const Dashboard = ({ networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
-	const [transactionModalItem, setTransactionModalItem] = useState(null);
+	const [transactionModalItem, setTransactionModalItem] = useState<Contracts.TransactionDataType | undefined>(
+		undefined,
+	);
 	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 	const activeProfile = useActiveProfile();
@@ -110,7 +112,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 						<Transactions
 							transactions={allTransactions}
 							fetchMoreAction={fetchMoreTransactions}
-							onRowClick={(row: any) => setTransactionModalItem(row)}
+							onRowClick={(row) => setTransactionModalItem(row)}
 							isLoading={isLoadingTransactions}
 						/>
 					</Section>
@@ -120,7 +122,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 				<TransactionDetailModal
 					isOpen={Boolean(transactionModalItem)}
 					transactionItem={transactionModalItem}
-					onClose={() => setTransactionModalItem(null)}
+					onClose={() => setTransactionModalItem(undefined)}
 				/>
 			)}
 		</>

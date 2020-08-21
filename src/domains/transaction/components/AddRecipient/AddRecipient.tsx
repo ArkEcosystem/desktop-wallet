@@ -182,7 +182,7 @@ export const AddRecipient = ({
 										setValue("amount", maxAvailableAmount);
 										singleRecipientOnChange();
 									}}
-									className="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
 								>
 									{t("TRANSACTION.SEND_ALL")}
 								</button>

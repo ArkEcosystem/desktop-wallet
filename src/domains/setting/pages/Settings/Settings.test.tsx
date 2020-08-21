@@ -5,7 +5,7 @@ import electron from "electron";
 import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { Settings } from "./Settings";
@@ -301,5 +301,130 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+	});
+
+	it("should render password settings", async () => {
+		const { container, asFragment, findByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+		fireEvent.click(await findByTestId("side-menu__item--Password"));
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should set a password", async () => {
+		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+		fireEvent.click(await findByTestId("side-menu__item--Password"));
+
+		const currentPasswordInput = "Password-settings__input--currentPassword";
+
+		expect(() => getByTestId(currentPasswordInput)).toThrow(/Unable to find an element by/);
+
+		fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "password" } });
+		fireEvent.input(getByTestId("Password-settings__input--password_2"), { target: { value: "password" } });
+
+		// wait for formState.isValid to be updated
+		await findByTestId("Password-settings__submit-button");
+
+		await act(async () => {
+			fireEvent.click(getByTestId("Password-settings__submit-button"));
+		});
+
+		await waitFor(() => {
+			expect(getByTestId(currentPasswordInput)).toBeInTheDocument();
+			expect(getByTestId("Password-settings__success-alert")).toBeInTheDocument();
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should change a password", async () => {
+		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+		fireEvent.click(await findByTestId("side-menu__item--Password"));
+
+		const currentPasswordInput = "Password-settings__input--currentPassword";
+
+		expect(getByTestId(currentPasswordInput)).toBeTruthy();
+
+		fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "password" } });
+		fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "new password" } });
+		fireEvent.input(getByTestId("Password-settings__input--password_2"), { target: { value: "new password" } });
+
+		// wait for formState.isValid to be updated
+		await findByTestId("Password-settings__submit-button");
+
+		await act(async () => {
+			fireEvent.click(getByTestId("Password-settings__submit-button"));
+		});
+
+		await waitFor(() => {
+			expect(getByTestId(currentPasswordInput)).toBeInTheDocument();
+			expect(getByTestId("Password-settings__success-alert")).toBeInTheDocument();
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show an error alert if the current password does not match", async () => {
+		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+		fireEvent.click(await findByTestId("side-menu__item--Password"));
+
+		const currentPasswordInput = "Password-settings__input--currentPassword";
+
+		expect(getByTestId(currentPasswordInput)).toBeTruthy();
+
+		fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "wrong!" } });
+		fireEvent.input(getByTestId("Password-settings__input--password_1"), {
+			target: { value: "another new password" },
+		});
+		fireEvent.input(getByTestId("Password-settings__input--password_2"), {
+			target: { value: "another new password" },
+		});
+
+		// wait for formState.isValid to be updated
+		await findByTestId("Password-settings__submit-button");
+
+		await act(async () => {
+			fireEvent.click(getByTestId("Password-settings__submit-button"));
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("Password-settings__error-alert")).toBeInTheDocument();
+		});
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

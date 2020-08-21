@@ -118,21 +118,26 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
                         >
-                          <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                            data-testid="CreateProfile__upload-button"
-                            type="button"
+                          <div
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <div
-                              class="sc-AxhCb fxrKLH"
-                              height="1em"
-                              width="1em"
+                            <button
+                              class="sc-AxjAm ddJBbC w-20 h-20"
+                              color="primary"
+                              data-testid="CreateProfile__upload-button"
+                              type="button"
                             >
-                              <svg>
-                                upload.svg
-                              </svg>
-                            </div>
-                          </button>
+                              <div
+                                class="sc-AxhCb fxrKLH"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -145,11 +150,9 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
-                      label="Name"
-                      required=""
                     >
                       Name
                       <div
@@ -167,11 +170,56 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
+                      >
+                        (optional)
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                      data-testid="InputPassword"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
-                      label="Market Provider"
-                      required=""
                     >
                       Market Provider
                       <div
@@ -197,18 +245,18 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-48-label downshift-48-toggle-button"
+                            aria-labelledby="downshift-68-label downshift-68-toggle-button"
                             class="sc-fznxsB hwZFkF  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-48-toggle-button"
+                            id="downshift-68-toggle-button"
                             type="button"
                           >
                             CoinCap
                           </button>
                           <ul
-                            aria-labelledby="downshift-48-label"
+                            aria-labelledby="downshift-68-label"
                             class="sc-fznJRM KaIHo"
-                            id="downshift-48-menu"
+                            id="downshift-68-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -233,11 +281,9 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
-                      label="Currency"
-                      required=""
                     >
                       Currency
                       <div
@@ -263,18 +309,18 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-49-label downshift-49-toggle-button"
+                            aria-labelledby="downshift-69-label downshift-69-toggle-button"
                             class="sc-fznxsB hwZFkF  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-49-toggle-button"
+                            id="downshift-69-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-49-label"
+                            aria-labelledby="downshift-69-label"
                             class="sc-fznJRM KaIHo"
-                            id="downshift-49-menu"
+                            id="downshift-69-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -510,21 +556,26 @@ exports[`CreateProfile should render 1`] = `
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
                         >
-                          <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                            data-testid="CreateProfile__upload-button"
-                            type="button"
+                          <div
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <div
-                              class="sc-AxhCb fxrKLH"
-                              height="1em"
-                              width="1em"
+                            <button
+                              class="sc-AxjAm ddJBbC w-20 h-20"
+                              color="primary"
+                              data-testid="CreateProfile__upload-button"
+                              type="button"
                             >
-                              <svg>
-                                upload.svg
-                              </svg>
-                            </div>
-                          </button>
+                              <div
+                                class="sc-AxhCb fxrKLH"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -537,11 +588,9 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
-                      label="Name"
-                      required=""
                     >
                       Name
                       <div
@@ -559,11 +608,56 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
+                      >
+                        (optional)
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                      data-testid="InputPassword"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
-                      label="Market Provider"
-                      required=""
                     >
                       Market Provider
                       <div
@@ -625,11 +719,9 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
-                      label="Currency"
-                      required=""
                     >
                       Currency
                       <div
@@ -902,21 +994,26 @@ exports[`CreateProfile should store profile 1`] = `
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
                         >
-                          <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                            data-testid="CreateProfile__upload-button"
-                            type="button"
+                          <div
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <div
-                              class="sc-AxhCb fxrKLH"
-                              height="1em"
-                              width="1em"
+                            <button
+                              class="sc-AxjAm ddJBbC w-20 h-20"
+                              color="primary"
+                              data-testid="CreateProfile__upload-button"
+                              type="button"
                             >
-                              <svg>
-                                upload.svg
-                              </svg>
-                            </div>
-                          </button>
+                              <div
+                                class="sc-AxhCb fxrKLH"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                         <div
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
@@ -953,11 +1050,9 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
-                      label="Name"
-                      required=""
                     >
                       Name
                       <div
@@ -975,11 +1070,56 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
+                      >
+                        (optional)
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                      data-testid="InputPassword"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
-                      label="Market Provider"
-                      required=""
                     >
                       Market Provider
                       <div
@@ -1041,11 +1181,9 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
-                      label="Currency"
-                      required=""
                     >
                       Currency
                       <div
@@ -1083,6 +1221,444 @@ exports[`CreateProfile should store profile 1`] = `
                             aria-labelledby="downshift-3-label"
                             class="sc-fznJRM KaIHo"
                             id="downshift-3-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
+                        >
+                          <div
+                            class="sc-AxhCb dxfUlj"
+                            height="8"
+                            width="8"
+                          >
+                            <svg>
+                              arrowdown.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="mt-8"
+                >
+                  <ul
+                    class="sc-fzpjYC eNSRJG"
+                    data-testid="list-divided__items"
+                  >
+                    <li
+                      class="flex flex-col w-full "
+                      data-testid="list-divided-item__wrapper"
+                    >
+                      <div
+                        class="flex justify-between flex-col items-start"
+                        data-testid="list-divided-item__inner-wrapper"
+                      >
+                        <div
+                          class="flex flex-col"
+                        >
+                          <span
+                            class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                            data-testid="list-divided-item__label"
+                          >
+                            Dark Theme
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class=""
+                        data-testid="list-divided-item__content"
+                      >
+                        <div
+                          class="flex flex-row justify-between"
+                        >
+                          <span
+                            class="mt-1 text-sm font-medium text-theme-neutral"
+                          >
+                            Want to set the wallet to dark mode?
+                          </span>
+                          <div
+                            class="-mt-4"
+                          >
+                            <label
+                              class="flex"
+                            >
+                              <input
+                                class="sc-fznWqX iacyMP"
+                                name="isDarkMode"
+                                type="checkbox"
+                              />
+                              <div
+                                class="sc-fzoiQi eGdcKs"
+                              >
+                                <span
+                                  class="sc-fzqARJ hZWoJI"
+                                />
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="sc-AxirZ jJscrd border-theme-neutral-300"
+                  type="horizontal"
+                />
+              </div>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="sc-AxjAm ddJBbC"
+                  color="primary"
+                  type="button"
+                >
+                  Back
+                </button>
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  data-testid="CreateProfile__submit-button"
+                  type="submit"
+                >
+                  Complete
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CreateProfile should store profile with password 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <div
+      class="px-4 sm:px-6 lg:px-8 bg-theme-background"
+    >
+      <div
+        class="flex items-center flex-shrink-0 h-20 md:h-24"
+      >
+        <div
+          class="flex p-2 rounded-lg bg-logo"
+        >
+          <img
+            alt="ARK Logo"
+            class="h-6 md:h-8 lg:h-10"
+            src="ark-logo.png"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="max-w-lg mx-auto"
+          >
+            <h1
+              class="mb-0 md:text-4xl"
+            >
+              Create Profile
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+            >
+              Sign in via MarketSquare or create a new Profile below.
+            </div>
+            <div
+              class="pb-4 mt-8"
+            >
+              <button
+                class="sc-AxjAm ddQVWI w-full"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="sc-AxhCb VoPpj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    msq.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Sign In via MarketSquare
+                </span>
+              </button>
+            </div>
+            <div
+              class="sc-AxirZ jjvtQn border-theme-neutral-300"
+              type="horizontal"
+            />
+            <form
+              class="mt-8"
+              data-testid="CreateProfile__form"
+            >
+              <div
+                class=""
+              >
+                <ul
+                  class="sc-fzpjYC eNSRJG"
+                  data-testid="list-divided__items"
+                >
+                  <li
+                    class="flex flex-col w-full "
+                    data-testid="list-divided-item__wrapper"
+                  >
+                    <div
+                      class="flex justify-between flex-col items-start"
+                      data-testid="list-divided-item__inner-wrapper"
+                    >
+                      <div
+                        class="flex flex-col"
+                      >
+                        <span
+                          class="mr-5 text-xl font-semibold"
+                          data-testid="list-divided-item__label"
+                        >
+                          Personal Details
+                        </span>
+                        <span
+                          class="text-sm text-theme-neutral-dark mt-1 font-medium text-theme-neutral-dark"
+                          data-testid="list-divided-item__label--description"
+                        >
+                          Profile Image
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class=""
+                      data-testid="list-divided-item__content"
+                    >
+                      <div
+                        class="flex flex-row mt-2 mb-8"
+                      >
+                        <div
+                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
+                        >
+                          <div
+                            class="w-20 h-20 overflow-hidden rounded-full"
+                          >
+                            <button
+                              class="sc-AxjAm ddJBbC w-20 h-20"
+                              color="primary"
+                              data-testid="CreateProfile__upload-button"
+                              type="button"
+                            >
+                              <div
+                                class="sc-AxhCb fxrKLH"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div
+                  class="relative space-y-8"
+                >
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      Name
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <input
+                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                      data-testid="Input"
+                      name="name"
+                    />
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
+                      >
+                        (optional)
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                      data-testid="InputPassword"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="marketProvider"
+                    >
+                      Market Provider
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="relative w-full"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                        data-testid="select-list__input"
+                        name="marketProvider"
+                        readonly=""
+                        type="text"
+                        value="coincap"
+                      />
+                      <div
+                        class="relative w-full cursor-pointer"
+                      >
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-30-label downshift-30-toggle-button"
+                            class="sc-fznxsB hwZFkF  is-selected "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-30-toggle-button"
+                            type="button"
+                          >
+                            CoinCap
+                          </button>
+                          <ul
+                            aria-labelledby="downshift-30-label"
+                            class="sc-fznJRM KaIHo"
+                            id="downshift-30-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
+                        >
+                          <div
+                            class="sc-AxhCb dxfUlj"
+                            height="8"
+                            width="8"
+                          >
+                            <svg>
+                              arrowdown.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="currency"
+                    >
+                      Currency
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="relative w-full"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        type="text"
+                        value="btc"
+                      />
+                      <div
+                        class="relative w-full cursor-pointer"
+                      >
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-31-label downshift-31-toggle-button"
+                            class="sc-fznxsB hwZFkF  is-selected "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-31-toggle-button"
+                            type="button"
+                          >
+                            BTC (Ƀ)
+                          </button>
+                          <ul
+                            aria-labelledby="downshift-31-label"
+                            class="sc-fznJRM KaIHo"
+                            id="downshift-31-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -1242,7 +1818,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
             <div
               class="text-theme-neutral-dark"
             >
-              Sign in via MarketSquare or create a new Profile below.
+              Login with your MarketSquare account or create a new Profile below.
             </div>
             <div
               class="pb-4 mt-8"
@@ -1264,7 +1840,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                 <span
                   class="ml-2"
                 >
-                  Sign In via MarketSquare
+                  Login with MarketSquare
                 </span>
               </button>
             </div>
@@ -1345,11 +1921,9 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
-                      label="Name"
-                      required=""
                     >
                       Name
                       <div
@@ -1367,11 +1941,56 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="password"
+                    >
+                      Password
+                      <span
+                        class="ml-1 text-theme-neutral-light"
+                        data-testid="FormLabel__optional"
+                      >
+                        (optional)
+                      </span>
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                      data-testid="InputPassword"
+                    >
+                      <input
+                        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                        data-testid="Input"
+                        name="password"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="marketProvider"
-                      label="Market Provider"
-                      required=""
                     >
                       Market Provider
                       <div
@@ -1397,18 +2016,18 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-30-label downshift-30-toggle-button"
+                            aria-labelledby="downshift-48-label downshift-48-toggle-button"
                             class="sc-fznxsB hwZFkF  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-30-toggle-button"
+                            id="downshift-48-toggle-button"
                             type="button"
                           >
                             CoinCap
                           </button>
                           <ul
-                            aria-labelledby="downshift-30-label"
+                            aria-labelledby="downshift-48-label"
                             class="sc-fznJRM KaIHo"
-                            id="downshift-30-menu"
+                            id="downshift-48-menu"
                             role="listbox"
                             tabindex="-1"
                           />
@@ -1433,11 +2052,9 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="currency"
-                      label="Currency"
-                      required=""
                     >
                       Currency
                       <div
@@ -1463,18 +2080,18 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           <button
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-31-label downshift-31-toggle-button"
+                            aria-labelledby="downshift-49-label downshift-49-toggle-button"
                             class="sc-fznxsB hwZFkF  is-selected "
                             data-testid="select-list__toggle-button"
-                            id="downshift-31-toggle-button"
+                            id="downshift-49-toggle-button"
                             type="button"
                           >
                             BTC (Ƀ)
                           </button>
                           <ul
-                            aria-labelledby="downshift-31-label"
+                            aria-labelledby="downshift-49-label"
                             class="sc-fznJRM KaIHo"
-                            id="downshift-31-menu"
+                            id="downshift-49-menu"
                             role="listbox"
                             tabindex="-1"
                           />
