@@ -481,7 +481,7 @@ exports[`Settings should change a password 1`] = `
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -526,7 +526,7 @@ exports[`Settings should change a password 1`] = `
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -571,7 +571,7 @@ exports[`Settings should change a password 1`] = `
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -1709,21 +1709,26 @@ exports[`Settings should render 1`] = `
                             <div
                               class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                             >
-                              <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                                data-testid="General-settings__upload-button"
-                                type="button"
+                              <div
+                                class="w-20 h-20 overflow-hidden rounded-full"
                               >
-                                <div
-                                  class="sc-AxirZ iQaTP"
-                                  height="1em"
-                                  width="1em"
+                                <button
+                                  class="sc-AxhCb BegvR w-20 h-20"
+                                  color="primary"
+                                  data-testid="General-settings__upload-button"
+                                  type="button"
                                 >
-                                  <svg>
-                                    upload.svg
-                                  </svg>
-                                </div>
-                              </button>
+                                  <div
+                                    class="sc-AxirZ iQaTP"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      upload.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2916,7 +2921,7 @@ exports[`Settings should render password settings 1`] = `
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -2961,7 +2966,7 @@ exports[`Settings should render password settings 1`] = `
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -5006,7 +5011,7 @@ exports[`Settings should set a password 1`] = `
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -5051,7 +5056,7 @@ exports[`Settings should set a password 1`] = `
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -5096,7 +5101,7 @@ exports[`Settings should set a password 1`] = `
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -5619,7 +5624,7 @@ exports[`Settings should show an error alert if the current password does not ma
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -5664,7 +5669,7 @@ exports[`Settings should show an error alert if the current password does not ma
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -5709,7 +5714,7 @@ exports[`Settings should show an error alert if the current password does not ma
                           class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -6208,21 +6213,26 @@ exports[`Settings should submit using default props 1`] = `
                             <div
                               class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                             >
-                              <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                                data-testid="General-settings__upload-button"
-                                type="button"
+                              <div
+                                class="w-20 h-20 overflow-hidden rounded-full"
                               >
-                                <div
-                                  class="sc-AxirZ iQaTP"
-                                  height="1em"
-                                  width="1em"
+                                <button
+                                  class="sc-AxhCb BegvR w-20 h-20"
+                                  color="primary"
+                                  data-testid="General-settings__upload-button"
+                                  type="button"
                                 >
-                                  <svg>
-                                    upload.svg
-                                  </svg>
-                                </div>
-                              </button>
+                                  <div
+                                    class="sc-AxirZ iQaTP"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      upload.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -7505,21 +7515,26 @@ exports[`Settings should update profile 1`] = `
                             <div
                               class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                             >
-                              <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                                data-testid="General-settings__upload-button"
-                                type="button"
+                              <div
+                                class="w-20 h-20 overflow-hidden rounded-full"
                               >
-                                <div
-                                  class="sc-AxirZ iQaTP"
-                                  height="1em"
-                                  width="1em"
+                                <button
+                                  class="sc-AxhCb BegvR w-20 h-20"
+                                  color="primary"
+                                  data-testid="General-settings__upload-button"
+                                  type="button"
                                 >
-                                  <svg>
-                                    upload.svg
-                                  </svg>
-                                </div>
-                              </button>
+                                  <div
+                                    class="sc-AxirZ iQaTP"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      upload.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
