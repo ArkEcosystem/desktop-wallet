@@ -1,8 +1,9 @@
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { getDefaultProfileId, renderWithRouter } from "utils/testing-library";
+import { getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
 
 // i18n
 import { translations } from "../../i18n";
@@ -13,12 +14,20 @@ const history = createMemoryHistory();
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
-beforeEach(() => {
-	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
-	history.push(dashboardURL);
-});
-
 describe("TransactionDetailModal", () => {
+	beforeAll(() => {
+		nock.disableNetConnect();
+		nock("https://dwallets.ark.io")
+			.get("/api/delegates")
+			.query({ page: "1" })
+			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
+			.persist();
+	});
+
+	beforeEach(() => {
+		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
+		history.push(dashboardURL);
+	});
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
@@ -42,7 +51,7 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a transfer modal", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
@@ -61,6 +70,7 @@ describe("TransactionDetailModal", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
+		waitFor(() => expect(getByText("Voter")).not.toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -137,7 +147,7 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a vote modal", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
