@@ -10,6 +10,7 @@ import { DelegateListItem } from "../DelegateListItem";
 
 type DelegateListProps = {
 	delegates: any;
+	onContinue?: (username: string) => void;
 };
 
 const SelectedDelegateList = ({ delegates, className }: { delegates: any[]; className: string }) => {
@@ -39,15 +40,15 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: num
 	const rest = Math.max(0, delegates.length - limit);
 
 	return (
-		<div data-testid="DelegateAvatarList__avatar-list" className="flex items-center -space-x-2">
+		<div className="flex items-center -space-x-2" data-testid="DelegateAvatarList__avatar-list">
 			{items.map((item, index) => (
 				<Avatar data-testid="DelegateAvatarList__avatar-list__avatar" key={index} address={item.address} />
 			))}
 			{rest > 0 && (
 				<Circle
-					data-testid="DelegateAvatarList__avatar-list__rest"
 					size="lg"
 					className="text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-dark"
+					data-testid="DelegateAvatarList__avatar-list__rest"
 				>
 					+{rest}
 				</Circle>
@@ -56,7 +57,7 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: num
 	);
 };
 
-export const DelegateList = ({ delegates }: DelegateListProps) => {
+export const DelegateList = ({ delegates, onContinue }: DelegateListProps) => {
 	const { t } = useTranslation();
 	const [selected, setSelected] = useState([] as any);
 	const [showSelectedList, setShowSelectedList] = useState(false);
@@ -168,9 +169,9 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 										<div className="inline-flex items-center">
 											<DelegateAvatarList delegates={selected} limit={2} />
 											<div
-												data-testid="DelegateList__toggle-show-selected"
 												className="ml-4 cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
 												onClick={() => setShowSelectedList(!showSelectedList)}
+												data-testid="DelegateList__toggle-show-selected"
 											>
 												{showSelectedList
 													? t("VOTE.DELEGATE_LIST.HIDE_LIST")
@@ -180,7 +181,12 @@ export const DelegateList = ({ delegates }: DelegateListProps) => {
 									)}
 								</div>
 
-								<Button>{t("COMMON.CONTINUE")}</Button>
+								<Button
+									onClick={() => onContinue?.(selected[0].username)}
+									data-testid="DelegateList__continue-button"
+								>
+									{t("COMMON.CONTINUE")}
+								</Button>
 							</div>
 
 							{showSelectedList && <SelectedDelegateList delegates={selected} className="mt-2" />}

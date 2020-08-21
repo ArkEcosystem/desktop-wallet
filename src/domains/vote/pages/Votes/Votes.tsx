@@ -16,6 +16,7 @@ import { AddressList } from "domains/vote/components/AddressList";
 import { DelegateList } from "domains/vote/components/DelegateList";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 const InputAddress = ({ profile, address }: { profile: Profile; address: string }) => {
 	const { t } = useTranslation();
@@ -47,6 +48,7 @@ const InputAddress = ({ profile, address }: { profile: Profile; address: string 
 };
 
 export const Votes = () => {
+	const history = useHistory();
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
@@ -122,7 +124,14 @@ export const Votes = () => {
 
 			<Section className="flex-1">
 				{address ? (
-					<DelegateList delegates={delegates?.items()} />
+					<DelegateList
+						delegates={delegates?.items()}
+						onContinue={(username) =>
+							history.push(
+								`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/transactions/vote/${username}/sender/${address}`,
+							)
+						}
+					/>
 				) : (
 					<AddressList wallets={wallets} onSelect={handleSelectAddress} />
 				)}
