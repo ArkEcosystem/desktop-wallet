@@ -124,7 +124,7 @@ describe("Registration", () => {
 		});
 	});
 
-	it("should change sender & route", async () => {
+	it.skip("should change sender & route", async () => {
 		const { asFragment, getAllByTestId, getByTestId, history } = await renderPage();
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
