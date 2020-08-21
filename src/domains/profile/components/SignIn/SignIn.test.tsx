@@ -124,6 +124,11 @@ describe("SignIn", () => {
 		expect(queryByText(/Maximum sign in attempts reached/)).toBeTruthy();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 
+		await act(async () => {
+			jest.advanceTimersByTime(60000);
+			jest.clearAllTimers();
+		});
+
 		await waitFor(() => {
 			expect(queryByText("The Password is invalid")).toBeTruthy();
 		});
