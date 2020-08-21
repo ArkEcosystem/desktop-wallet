@@ -23,7 +23,7 @@ export class ProfileMiddleware implements Middleware {
 
 			if (profileId === "create") {
 				if (this.state.intervalId) {
-					this.clearIntervalState();
+					this.clearActivityState();
 				}
 
 				return true;
@@ -31,10 +31,10 @@ export class ProfileMiddleware implements Middleware {
 
 			try {
 				const profile = env.profiles().findById(profileId);
-				const idleThreshold = (profile.settings().get(ProfileSetting.AutomaticLogoffPeriod) as number) * 60;
+				const idleThreshold = (profile.settings().get(ProfileSetting.AutomaticSignOutPeriod) as number) * 60;
 
 				if (this.state.intervalId === undefined || this.state.threshold !== idleThreshold) {
-					this.setIntervalState(
+					this.setActivityState(
 						() => {
 							if (isIdle(idleThreshold)) {
 								history.push("/");
@@ -49,14 +49,14 @@ export class ProfileMiddleware implements Middleware {
 			}
 		} else {
 			if (this.state.intervalId) {
-				this.clearIntervalState();
+				this.clearActivityState();
 			}
 		}
 
 		return true;
 	}
 
-	setIntervalState(callback: CallbackFunction, interval: number, threshold: number) {
+	setActivityState(callback: CallbackFunction, interval: number, threshold: number) {
 		const intervalId = setInterval(callback, interval);
 
 		this.state = {
@@ -65,7 +65,7 @@ export class ProfileMiddleware implements Middleware {
 		};
 	}
 
-	clearIntervalState() {
+	clearActivityState() {
 		clearInterval(this.state.intervalId);
 
 		this.state = {};

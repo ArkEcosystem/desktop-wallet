@@ -87,7 +87,7 @@ export const WalletsDecorator = ({ count, children, withDelegate, withDelegates 
 			profileObject = env.profiles().create("John Doe");
 
 			profileObject.settings().set(ProfileSetting.AdvancedMode, false);
-			profileObject.settings().set(ProfileSetting.AutomaticLogoffPeriod, 15);
+			profileObject.settings().set(ProfileSetting.AutomaticSignOutPeriod, 15);
 			profileObject.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);
 			profileObject.settings().set(ProfileSetting.ExchangeCurrency, PlatformSdkChoices.currencies[0].value);
 			profileObject.settings().set(ProfileSetting.LedgerUpdateMethod, false);
