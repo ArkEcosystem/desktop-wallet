@@ -4,11 +4,11 @@ import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { BTC } from "@arkecosystem/platform-sdk-btc";
 import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
-import { LSK } from "@arkecosystem/platform-sdk-lsk";
+// import { LSK } from "@arkecosystem/platform-sdk-lsk";
 import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { TRX } from "@arkecosystem/platform-sdk-trx";
-import { XLM } from "@arkecosystem/platform-sdk-xlm";
+// import { XLM } from "@arkecosystem/platform-sdk-xlm";
 import { XMR } from "@arkecosystem/platform-sdk-xmr";
 import { XRP } from "@arkecosystem/platform-sdk-xrp";
 
@@ -294,15 +294,15 @@ export const availableNetworksMock: NetworkData[] = [
 	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.mainnet),
 	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.rinkeby),
 	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.ropsten),
-	new NetworkData(LSK.manifest.name, LSK.manifest.networks.betanet),
-	new NetworkData(LSK.manifest.name, LSK.manifest.networks.mainnet),
-	new NetworkData(LSK.manifest.name, LSK.manifest.networks.testnet),
+	// new NetworkData(LSK.manifest.name, LSK.manifest.networks.betanet),
+	// new NetworkData(LSK.manifest.name, LSK.manifest.networks.mainnet),
+	// new NetworkData(LSK.manifest.name, LSK.manifest.networks.testnet),
 	new NetworkData(NEO.manifest.name, NEO.manifest.networks.mainnet),
 	new NetworkData(NEO.manifest.name, NEO.manifest.networks.testnet),
 	new NetworkData(TRX.manifest.name, TRX.manifest.networks.mainnet),
 	new NetworkData(TRX.manifest.name, TRX.manifest.networks.testnet),
-	new NetworkData(XLM.manifest.name, XLM.manifest.networks.mainnet),
-	new NetworkData(XLM.manifest.name, XLM.manifest.networks.testnet),
+	// new NetworkData(XLM.manifest.name, XLM.manifest.networks.mainnet),
+	// new NetworkData(XLM.manifest.name, XLM.manifest.networks.testnet),
 	new NetworkData(XMR.manifest.name, XMR.manifest.networks.mainnet),
 	new NetworkData(XMR.manifest.name, XMR.manifest.networks.testnet),
 	new NetworkData(XRP.manifest.name, XRP.manifest.networks.mainnet),
