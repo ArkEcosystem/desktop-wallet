@@ -51,7 +51,7 @@ const SelectDropdown = ({
 
 	useEffect(() => {
 		if (defaultSelectedItem && !selectedItem) {
-			selectItem(defaultSelectedItem || null);
+			selectItem(defaultSelectedItem);
 		}
 	}, [selectItem, selectedItem, defaultSelectedItem]);
 
