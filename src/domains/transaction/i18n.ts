@@ -204,4 +204,10 @@ export const translations: { [key: string]: any } = {
 		TITLE: "My addresses",
 		DESCRIPTION: "Find and select preferred address from you saved wallets",
 	},
+
+	INPUT_IPFS_HASH: {
+		VALIDATION: {
+			NOT_VALID: "The IPFS hash is not valid",
+		},
+	},
 };

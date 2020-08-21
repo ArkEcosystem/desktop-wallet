@@ -312,10 +312,9 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
                           class="sc-AxhCb hXHxHb pt-8 pb-0"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="mnemonic"
-                            required=""
                           >
                             Mnemonic
                             <div
@@ -338,7 +337,7 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
                               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -425,11 +424,9 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="network"
-              label="Network"
-              required=""
             >
               Network
               <div
@@ -489,11 +486,9 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="senderAddress"
-              label="Sender"
-              required=""
             >
               Sender
               <div
@@ -607,11 +602,9 @@ exports[`Transaction Send should render 1st step 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="recipientAddress"
-                      label="Recipient"
-                      required=""
                     >
                       Recipient
                       <div
@@ -663,11 +656,9 @@ exports[`Transaction Send should render 1st step 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="amount"
-                      label="Amount"
-                      required=""
                     >
                       Amount
                       <div
@@ -691,7 +682,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                       class="sc-AxheI sc-AxmLO jcthaj"
                     >
                       <button
-                        class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                        class="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
                         data-testid="add-recipient__send-all"
                         type="button"
                       >
@@ -711,11 +702,9 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
               data-testid="FormLabel"
               for="smartbridge"
-              label="Smartbridge"
-              required=""
             >
               Smartbridge
               <div
@@ -728,7 +717,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="sc-fzozJi OgXfh"
           >
             <input
-              class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="Input__smartbridge"
               maxlength="255"
               name="smartbridge"
@@ -752,11 +741,9 @@ exports[`Transaction Send should render 1st step 1`] = `
           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="fee"
-            label="Transaction Fee"
-            required=""
           >
             Transaction Fee
             <div
@@ -1248,10 +1235,9 @@ exports[`Transaction Send should render 3rd step 1`] = `
           class="sc-AxhCb ckQmOL pt-8 pb-0"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="mnemonic"
-            required=""
           >
             Mnemonic
             <div
@@ -1273,7 +1259,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
