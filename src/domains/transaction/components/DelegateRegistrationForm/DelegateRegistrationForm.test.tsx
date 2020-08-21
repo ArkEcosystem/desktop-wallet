@@ -58,8 +58,6 @@ describe("DelegateRegistrationForm", () => {
 			max: (10 * 1e8).toFixed(0),
 			average: (1.354 * 1e8).toFixed(0),
 		};
-
-		// await profile.wallets().importByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", "ARK", "devnet");
 	});
 
 	it("should render step 2", async () => {
