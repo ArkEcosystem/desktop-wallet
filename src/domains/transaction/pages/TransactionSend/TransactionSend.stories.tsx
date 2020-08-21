@@ -1,49 +1,33 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
-import { availableNetworksMock } from "domains/network/data";
-import { wallets } from "domains/wallet/data";
 import React from "react";
 import { MemoryRouter, Route } from "react-router";
-import { StubStorage } from "tests/mocks";
+import { WalletsDecorator } from "utils/storybook";
 
 import { TransactionSend } from "./TransactionSend";
 
-export default { title: "Domains / Transaction / Pages / Transaction Send" };
+export default {
+	title: "Domains / Transaction / Pages / Transaction Send",
+	decorators: [(storyFn: any) => <WalletsDecorator count={1}>{storyFn}</WalletsDecorator>],
+};
 
-export const Default = () => {
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-	const profile = env.profiles().create("Test profile");
-	profile.contacts().create("Test contact");
-
-	const defaultFormValues = {
-		maxAvailableAmount: 80,
-		assetSymbol: "ARK",
-		feeRange: {
-			last: 10,
-			min: 1,
-			average: 14,
+export const Default = ({ env, profile, wallets }: { env: Environment; profile: Profile; wallets: Wallet[] }) => {
+	const contact = profile.contacts().create("Test contact");
+	contact.setAddresses([
+		{
+			address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+			coin: "ARK",
+			name: "John Doe",
+			network: "devnet",
 		},
-		networks: availableNetworksMock,
-		defaultFee: 0,
-		formDefaultData: {
-			network: null,
-			sender: null,
-			amount: null,
-			smartbridge: null,
-			fee: 0,
-		},
-		profile,
-		wallets,
-	};
+	]);
 
 	return (
 		<EnvironmentProvider env={env}>
-			<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/transfer`]}>
+			<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/${wallets[0].id()}/transfer`]}>
 				<Route
-					component={() => <TransactionSend formValues={defaultFormValues} />}
-					path="/profiles/:profileId/transactions/transfer"
+					component={() => <TransactionSend />}
+					path="/profiles/:profileId/transactions/:walletId/transfer"
 				/>
 			</MemoryRouter>
 		</EnvironmentProvider>

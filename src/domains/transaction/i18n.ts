@@ -12,6 +12,7 @@ export const translations: { [key: string]: any } = {
 	DESCRIPTION: "Description",
 	ENCRYPTION_PASSWORD: "Encryption Password",
 	ID: "ID",
+	INVALID_MNEMONIC: "Invalid Mnemonic",
 	IPFS_HASH: "IPFS Hash",
 	MNEMONIC: "Mnemonic",
 	MULTIPLE: "Multiple",
@@ -25,6 +26,7 @@ export const translations: { [key: string]: any } = {
 	SEND_ALL: "Send All",
 	SENDER: "Sender",
 	SIGN: "Sign",
+	SIGN_CONTINUE: "Sign & Continue",
 	SIGNATURES: "Signatures",
 	SINGLE: "Single",
 	SINGLE_OR_MULTI: "Select a Single or Multiple Recipient Transaction",
@@ -66,7 +68,7 @@ export const translations: { [key: string]: any } = {
 			DESCRIPTION: "Enter your passphrase in order to sign the Multisignature transaction.",
 		},
 		STEP_3: {
-			TITLE: "Transaction Successful",
+			TITLE: "Transaction Sent",
 			DESCRIPTION: "Your signature was successfully confirmed and sent.",
 		},
 		WAITING_FOR_SIGNATURES: "Waiting for Signatures",
@@ -201,5 +203,11 @@ export const translations: { [key: string]: any } = {
 	CONTACT_SEACH: {
 		TITLE: "My addresses",
 		DESCRIPTION: "Find and select preferred address from you saved wallets",
+	},
+
+	INPUT_IPFS_HASH: {
+		VALIDATION: {
+			NOT_VALID: "The IPFS hash is not valid",
+		},
 	},
 };

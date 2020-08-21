@@ -10,11 +10,15 @@ exports[`ContactForm should select 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
       >
         Name
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
       </label>
       <input
         class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -30,11 +34,15 @@ exports[`ContactForm should select 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="network"
         >
           Network
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
         <div
           aria-expanded="false"
@@ -74,12 +82,13 @@ exports[`ContactForm should select 1`] = `
         </div>
         <ul
           aria-labelledby="ContactForm__network-label"
+          class="mt-6 grid grid-cols-6 gap-6"
           id="ContactForm__network-menu"
           role="listbox"
         >
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ContactForm__network-item-0"
             role="option"
@@ -103,7 +112,7 @@ exports[`ContactForm should select 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ContactForm__network-item-1"
             role="option"
@@ -127,9 +136,57 @@ exports[`ContactForm should select 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ContactForm__network-item-2"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-3"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-4"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-5"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-6"
             role="option"
           >
             <div
@@ -151,9 +208,153 @@ exports[`ContactForm should select 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-3"
+            id="ContactForm__network-item-7"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-8"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-9"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-10"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-11"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-12"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-13"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-14"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-15"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-16"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-17"
+            role="option"
+          >
+            <div
+              aria-label="Lisk Betanet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-betanet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-18"
             role="option"
           >
             <div
@@ -175,9 +376,9 @@ exports[`ContactForm should select 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-4"
+            id="ContactForm__network-item-19"
             role="option"
           >
             <div
@@ -199,45 +400,170 @@ exports[`ContactForm should select 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-5"
+            id="ContactForm__network-item-20"
             role="option"
           >
             <div
-              aria-label="Lisk Betanet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-betanet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-21"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-22"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-23"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-24"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-25"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-26"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-27"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-28"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-29"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
         </ul>
       </fieldset>
       <fieldset
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
+        data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="address"
         >
           Address
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
-        <input
-          class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-          data-testid="contact-form__address-input"
-          name="address"
-        />
+        <div
+          class="sc-AxmLO kuiknc max-w-20"
+        >
+          <input
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            data-testid="contact-form__address-input"
+            name="address"
+            type="text"
+          />
+          <div
+            class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+          >
+            <button
+              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              data-testid="InputAddress__qr-button"
+              type="button"
+            >
+              <div
+                class="sc-AxhCb VoPpj"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  qrcode.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
       </fieldset>
       <div
         class="mt-4"
@@ -292,11 +618,15 @@ exports[`ContactForm should select with errors 1`] = `
       class="sc-AxiKw HGhoX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
       >
         Name
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
       </label>
       <input
         aria-invalid="true"
@@ -318,11 +648,15 @@ exports[`ContactForm should select with errors 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="network"
         >
           Network
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
         <div
           aria-expanded="false"
@@ -362,12 +696,13 @@ exports[`ContactForm should select with errors 1`] = `
         </div>
         <ul
           aria-labelledby="ContactForm__network-label"
+          class="mt-6 grid grid-cols-6 gap-6"
           id="ContactForm__network-menu"
           role="listbox"
         >
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ContactForm__network-item-0"
             role="option"
@@ -391,7 +726,7 @@ exports[`ContactForm should select with errors 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ContactForm__network-item-1"
             role="option"
@@ -415,9 +750,57 @@ exports[`ContactForm should select with errors 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ContactForm__network-item-2"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-3"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-4"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-5"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-6"
             role="option"
           >
             <div
@@ -439,9 +822,153 @@ exports[`ContactForm should select with errors 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-3"
+            id="ContactForm__network-item-7"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-8"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-9"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-10"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-11"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-12"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-13"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-14"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-15"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-16"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-17"
+            role="option"
+          >
+            <div
+              aria-label="Lisk Betanet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-betanet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-18"
             role="option"
           >
             <div
@@ -463,9 +990,9 @@ exports[`ContactForm should select with errors 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-4"
+            id="ContactForm__network-item-19"
             role="option"
           >
             <div
@@ -487,45 +1014,170 @@ exports[`ContactForm should select with errors 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-5"
+            id="ContactForm__network-item-20"
             role="option"
           >
             <div
-              aria-label="Lisk Betanet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-betanet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-21"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-22"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-23"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-24"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-25"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-26"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-27"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-28"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ContactForm__network-item-29"
+            role="option"
+          >
+            <div
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
         </ul>
       </fieldset>
       <fieldset
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
+        data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="address"
         >
           Address
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
-        <input
-          class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-          data-testid="contact-form__address-input"
-          name="address"
-        />
+        <div
+          class="sc-AxmLO kuiknc max-w-20"
+        >
+          <input
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            data-testid="contact-form__address-input"
+            name="address"
+            type="text"
+          />
+          <div
+            class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+          >
+            <button
+              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              data-testid="InputAddress__qr-button"
+              type="button"
+            >
+              <div
+                class="sc-AxhCb VoPpj"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  qrcode.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
       </fieldset>
       <div
         class="mt-4"
@@ -580,11 +1232,15 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
       >
         Name
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
       </label>
       <input
         class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -600,11 +1256,15 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="network"
         >
           Network
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
         <div
           aria-expanded="false"
@@ -644,25 +1304,55 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         </div>
         <ul
           aria-labelledby="ContactForm__network-label"
+          class="mt-6 grid grid-cols-6 gap-6"
           id="ContactForm__network-menu"
           role="listbox"
         />
       </fieldset>
       <fieldset
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
+        data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="address"
         >
           Address
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
-        <input
-          class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-          data-testid="contact-form__address-input"
-          name="address"
-        />
+        <div
+          class="sc-AxmLO kuiknc max-w-20"
+        >
+          <input
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            data-testid="contact-form__address-input"
+            name="address"
+            type="text"
+          />
+          <div
+            class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+          >
+            <button
+              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              data-testid="InputAddress__qr-button"
+              type="button"
+            >
+              <div
+                class="sc-AxhCb VoPpj"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  qrcode.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
       </fieldset>
       <div
         class="mt-4"
@@ -717,11 +1407,15 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
       >
         Name
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
       </label>
       <input
         class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -737,11 +1431,15 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="network"
         >
           Network
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
         <div
           aria-expanded="false"
@@ -781,25 +1479,55 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         </div>
         <ul
           aria-labelledby="ContactForm__network-label"
+          class="mt-6 grid grid-cols-6 gap-6"
           id="ContactForm__network-menu"
           role="listbox"
         />
       </fieldset>
       <fieldset
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
+        data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="address"
         >
           Address
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
-        <input
-          class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-          data-testid="contact-form__address-input"
-          name="address"
-        />
+        <div
+          class="sc-AxmLO kuiknc max-w-20"
+        >
+          <input
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            data-testid="contact-form__address-input"
+            name="address"
+            type="text"
+          />
+          <div
+            class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+          >
+            <button
+              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              data-testid="InputAddress__qr-button"
+              type="button"
+            >
+              <div
+                class="sc-AxhCb VoPpj"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  qrcode.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
       </fieldset>
       <div
         class="mt-4"

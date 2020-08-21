@@ -366,12 +366,13 @@ exports[`Votes should render 1`] = `
                 </div>
                 <ul
                   aria-labelledby="Votes__network-label"
+                  class="mt-6 grid grid-cols-6 gap-6"
                   id="Votes__network-menu"
                   role="listbox"
                 >
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-0"
                     role="option"
@@ -395,7 +396,7 @@ exports[`Votes should render 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-1"
                     role="option"
@@ -419,9 +420,57 @@ exports[`Votes should render 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-5"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-6"
                     role="option"
                   >
                     <div
@@ -443,9 +492,153 @@ exports[`Votes should render 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-3"
+                    id="Votes__network-item-7"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-8"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-9"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-10"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-11"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-12"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-13"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-14"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-15"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-16"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-17"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk Betanet"
+                      class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
+                      data-testid="NetworkIcon-LSK-betanet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-18"
                     role="option"
                   >
                     <div
@@ -467,9 +660,9 @@ exports[`Votes should render 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-4"
+                    id="Votes__network-item-19"
                     role="option"
                   >
                     <div
@@ -491,27 +684,123 @@ exports[`Votes should render 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-5"
+                    id="Votes__network-item-20"
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Betanet"
-                      class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
-                      data-testid="NetworkIcon-LSK-betanet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-21"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-22"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-23"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-24"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-25"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-26"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-27"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-28"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-29"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                 </ul>
               </div>
@@ -984,12 +1273,13 @@ exports[`Votes should select a delegate 1`] = `
                 </div>
                 <ul
                   aria-labelledby="Votes__network-label"
+                  class="mt-6 grid grid-cols-6 gap-6"
                   id="Votes__network-menu"
                   role="listbox"
                 >
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-0"
                     role="option"
@@ -1013,7 +1303,7 @@ exports[`Votes should select a delegate 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-1"
                     role="option"
@@ -1037,9 +1327,57 @@ exports[`Votes should select a delegate 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-5"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-6"
                     role="option"
                   >
                     <div
@@ -1061,9 +1399,153 @@ exports[`Votes should select a delegate 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-3"
+                    id="Votes__network-item-7"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-8"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-9"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-10"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-11"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-12"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-13"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-14"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-15"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-16"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-17"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk Betanet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-betanet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-18"
                     role="option"
                   >
                     <div
@@ -1085,9 +1567,9 @@ exports[`Votes should select a delegate 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-4"
+                    id="Votes__network-item-19"
                     role="option"
                   >
                     <div
@@ -1109,27 +1591,123 @@ exports[`Votes should select a delegate 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-5"
+                    id="Votes__network-item-20"
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Betanet"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-betanet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-21"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-22"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-23"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-24"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-25"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-26"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-27"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-28"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-29"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                 </ul>
               </div>
@@ -2443,12 +3021,13 @@ exports[`Votes should select a network 1`] = `
                 </div>
                 <ul
                   aria-labelledby="Votes__network-label"
+                  class="mt-6 grid grid-cols-6 gap-6"
                   id="Votes__network-menu"
                   role="listbox"
                 >
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-0"
                     role="option"
@@ -2472,7 +3051,7 @@ exports[`Votes should select a network 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-1"
                     role="option"
@@ -2496,9 +3075,57 @@ exports[`Votes should select a network 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-5"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-6"
                     role="option"
                   >
                     <div
@@ -2520,9 +3147,153 @@ exports[`Votes should select a network 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-3"
+                    id="Votes__network-item-7"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-8"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-9"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-10"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-11"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-12"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-13"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-14"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-15"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-16"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-17"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk Betanet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-betanet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-18"
                     role="option"
                   >
                     <div
@@ -2544,9 +3315,9 @@ exports[`Votes should select a network 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-4"
+                    id="Votes__network-item-19"
                     role="option"
                   >
                     <div
@@ -2568,27 +3339,123 @@ exports[`Votes should select a network 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-5"
+                    id="Votes__network-item-20"
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Betanet"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-betanet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-21"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-22"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-23"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-24"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-25"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-26"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-27"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-28"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-29"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                 </ul>
               </div>
@@ -3725,12 +4592,13 @@ exports[`Votes should select address 1`] = `
                 </div>
                 <ul
                   aria-labelledby="Votes__network-label"
+                  class="mt-6 grid grid-cols-6 gap-6"
                   id="Votes__network-menu"
                   role="listbox"
                 >
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-0"
                     role="option"
@@ -3754,7 +4622,7 @@ exports[`Votes should select address 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-1"
                     role="option"
@@ -3778,9 +4646,57 @@ exports[`Votes should select address 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
                     id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-5"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-6"
                     role="option"
                   >
                     <div
@@ -3802,9 +4718,153 @@ exports[`Votes should select address 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-3"
+                    id="Votes__network-item-7"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-8"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-9"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-10"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-11"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-12"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-13"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-14"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-15"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-16"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-17"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk Betanet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon-LSK-betanet"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-18"
                     role="option"
                   >
                     <div
@@ -3826,9 +4886,9 @@ exports[`Votes should select address 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-4"
+                    id="Votes__network-item-19"
                     role="option"
                   >
                     <div
@@ -3850,27 +4910,123 @@ exports[`Votes should select address 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    class="inline-block cursor-pointer"
                     data-testid="SelectNetwork__NetworkIcon--container"
-                    id="Votes__network-item-5"
+                    id="Votes__network-item-20"
                     role="option"
                   >
                     <div
-                      aria-label="Lisk Betanet"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon-LSK-betanet"
-                    >
-                      <div
-                        class="sc-AxiKw fubePL"
-                        data-testid="NetworkIcon__icon"
-                        height="26"
-                        width="26"
-                      >
-                        <svg>
-                          lsk.svg
-                        </svg>
-                      </div>
-                    </div>
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-21"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-22"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-23"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-24"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-25"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-26"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-27"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-28"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-29"
+                    role="option"
+                  >
+                    <div
+                      class="sc-AxirZ jatHdy border-theme-neutral-light text-theme-neutral"
+                      data-testid="NetworkIcon__placeholder"
+                    />
                   </li>
                 </ul>
               </div>

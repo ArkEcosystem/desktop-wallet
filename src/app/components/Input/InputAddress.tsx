@@ -1,3 +1,4 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Icon } from "app/components/Icon";
 import { useEnvironmentContext } from "app/contexts";
 import React from "react";
@@ -8,12 +9,14 @@ import { Input } from "./Input";
 import { InputAddonEnd, InputGroup } from "./InputGroup";
 
 export type InputAddressProps = {
-	coin: string;
-	network: string;
+	coin?: string;
+	network?: string;
 	registerRef?: (options: ValidationOptions) => (ref: HTMLInputElement | null) => void;
 	additionalRules?: ValidationOptions;
 	onValidAddress?: (address: string) => void;
 	onQRCodeClick?: () => void;
+	onChange?: (address: string) => void;
+	useDefaultRules?: boolean;
 } & React.InputHTMLAttributes<any>;
 
 export const InputAddress = ({
@@ -23,13 +26,15 @@ export const InputAddress = ({
 	additionalRules,
 	onValidAddress,
 	onQRCodeClick,
+	useDefaultRules,
 	...props
 }: InputAddressProps) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
 	const validateAddress = async (address: string) => {
-		const isValidAddress = await env.dataValidator().address(coin, network, address);
+		const instance: Coins.Coin = await env.coin(coin!, network!);
+		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (isValidAddress) {
 			onValidAddress?.(address);
@@ -39,13 +44,19 @@ export const InputAddress = ({
 		return t("COMMON.INPUT_ADDRESS.VALIDATION.NOT_VALID");
 	};
 
+	const defaultRules = {
+		...additionalRules,
+		validate: {
+			validateAddress,
+			...additionalRules?.validate,
+		},
+	};
+	const rules = useDefaultRules ? defaultRules : {};
+
 	return (
 		<InputGroup className="max-w-20">
 			<Input
-				ref={registerRef?.({
-					...additionalRules,
-					validate: validateAddress,
-				})}
+				ref={registerRef?.(rules)}
 				type="text"
 				className="pr-12"
 				data-testid="InputAddress__input"
@@ -55,7 +66,7 @@ export const InputAddress = ({
 				<button
 					data-testid="InputAddress__qr-button"
 					type="button"
-					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
 					onClick={onQRCodeClick}
 				>
 					<Icon name="Qrcode" width={20} height={20} />
@@ -67,4 +78,5 @@ export const InputAddress = ({
 
 InputAddress.defaultProps = {
 	additionalRules: {},
+	useDefaultRules: true,
 };

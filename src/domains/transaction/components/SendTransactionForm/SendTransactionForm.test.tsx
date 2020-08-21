@@ -1,117 +1,188 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { availableNetworksMock as networks } from "domains/network/data";
-import { wallets } from "domains/wallet/data";
+import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { act, renderHook } from "@testing-library/react-hooks";
+import { httpClient } from "app/services";
+import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
-import { act } from "react-dom/test-utils";
-import { env, fireEvent, getDefaultProfileId, render, waitFor, within } from "testing-library";
+import { FormContext, useForm } from "react-hook-form";
+import { Route } from "react-router-dom";
+import {
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	renderWithRouter,
+	useDefaultNetMocks,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { SendTransactionForm } from "./";
 
 let profile: Profile;
+let wallet: Wallet;
+let defaultFee: string;
 
 describe("SendTransactionForm", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().values()[0];
+		defaultFee = (await wallet.fee().all(7)).transfer.avg;
 	});
 
-	it("should render", () => {
-		const { container } = render(<SendTransactionForm wallets={wallets} profile={profile} networks={networks} />);
-		expect(container).toMatchSnapshot();
+	beforeEach(() => {
+		httpClient.clearCache();
 	});
 
-	it("should select sender and recipient", async () => {
-		const { getByTestId, getAllByTestId } = render(
-			<SendTransactionForm wallets={wallets} profile={profile} networks={networks} />,
-		);
+	afterAll(() => {
+		useDefaultNetMocks();
+	});
 
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+	it("should render", async () => {
+		let rendered: any;
+		const { result: form } = renderHook(() => useForm());
 
-		// Select sender
-		act(() => {
+		await act(async () => {
+			rendered = render(
+				<FormContext {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+				</FormContext>,
+			);
+		});
+
+		expect(rendered.container).toMatchSnapshot();
+	});
+
+	it("should select fill out form", async () => {
+		const { result: form } = renderHook(() => useForm());
+		form.current.register("fee");
+		form.current.register("senderAddress");
+		form.current.setValue("senderAddress", wallet.address());
+
+		let rendered: any;
+
+		await act(async () => {
+			rendered = render(
+				<FormContext {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+				</FormContext>,
+			);
+		});
+
+		const { getByTestId, getAllByTestId } = rendered;
+
+		await act(async () => {
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
+
+			// Fee
+			expect(getByTestId("InputCurrency")).toHaveValue("0");
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[2]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			expect(rendered.container).toMatchSnapshot();
+		});
+	});
+
+	it("should change sender & route", async () => {
+		const { result: form } = renderHook(() => useForm());
+
+		form.current.register("fee");
+		form.current.register("network");
+		form.current.register("senderAddress");
+		form.current.setValue("senderAddress", wallet.address());
+
+		for (const network of env.availableNetworks()) {
+			if (network.id() === wallet.network().id && network.coin() === wallet.manifest().get<string>("name")) {
+				form.current.setValue("network", network, true);
+
+				break;
+			}
+		}
+
+		const history = createMemoryHistory();
+		const sendUrl = `/profiles/${profile.id()}/transactions/${wallet.id()}/transfer`;
+		history.push(sendUrl);
+
+		let rendered: any;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+					<FormContext {...form.current}>
+						<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+					</FormContext>
+				</Route>,
+				{
+					routes: [sendUrl],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__wrapper")).toBeTruthy());
+		});
+
+		const { getByTestId, getAllByTestId } = rendered;
+
+		await act(async () => {
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
+
+			// Select sender & update fees
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
-		});
-		await waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeTruthy();
-		});
+			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-		const firstAddress = getByTestId("AddressListItem__select-0");
+			const historySpy = jest.spyOn(history, "push");
 
-		act(() => {
+			const firstAddress = getByTestId("AddressListItem__select-1");
 			fireEvent.click(firstAddress);
-		});
-
-		await waitFor(() => {
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			const secondWallet = profile.wallets().values()[1];
+			await waitFor(() =>
+				expect(historySpy).toHaveBeenCalledWith(
+					`/profiles/${profile?.id()}/transactions/${secondWallet.id()}/transfer`,
+				),
+			);
+
+			historySpy.mockRestore();
+
+			expect(rendered.container).toMatchSnapshot();
 		});
-
-		const selectedAddressValue = profile.wallets().values()[0].address();
-
-		expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__input")).toHaveValue(
-			selectedAddressValue,
-		);
-
-		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
-		});
-		await waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeTruthy();
-		});
-
-		const address = getAllByTestId("ContactListItem__one-option-button-0")[0];
-
-		act(() => {
-			fireEvent.click(address);
-		});
-
-		await waitFor(() => {
-			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-		});
-
-		const selectedRecipientAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
-
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedRecipientAddressValue);
 	});
 
-	it("should set available amount", async () => {
-		const { getByTestId, container } = render(
-			<SendTransactionForm wallets={wallets} profile={profile} maxAvailableAmount={100} />,
-		);
-		const sendAll = getByTestId("add-recipient__send-all");
-		const amountInput = getByTestId("add-recipient__amount-input");
+	it("should only update fees if provided", async () => {
+		let rendered: any;
+		const onFail = jest.fn();
+		const { result: form } = renderHook(() => useForm());
+
+		form.current.register("fees");
+		form.current.register("senderAddress");
+		form.current.setValue("senderAddress", wallet.address());
+
+		nock.cleanAll();
+		nock("https://dwallets.ark.io")
+			.get("/api/node/fees")
+			.query(true)
+			.reply(500, {})
+			.get("/api/transactions/fees")
+			.reply(500, {})
+			.persist();
 
 		await act(async () => {
-			fireEvent.click(sendAll);
+			rendered = render(
+				<FormContext {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} onFail={onFail} />
+				</FormContext>,
+			);
 		});
 
-		expect(amountInput).toHaveValue(100);
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should emit goBack button click", async () => {
-		// Select network to enable buttons
-		const fn = jest.fn();
-		const { getByTestId } = render(<SendTransactionForm onBack={fn} profile={profile} networks={networks} />);
-		const backBtn = getByTestId("send-transaction-click-back");
+		const { getByTestId, getAllByTestId } = rendered;
 
 		await act(async () => {
-			fireEvent.click(backBtn);
-		});
-
-		expect(fn).toBeCalled();
-	});
-
-	it("should submit form", async () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<SendTransactionForm onSubmit={fn} profile={profile} networks={networks} />);
-		const submit = getByTestId("send-transaction-click-submit");
-		act(() => {
-			fireEvent.click(submit);
-		});
-
-		await waitFor(() => {
-			expect(fn).toBeCalled();
+			await waitFor(() => expect(onFail).toHaveBeenCalledTimes(1));
+			await waitFor(() => expect(form.current.getValues("fee")).toBeFalsy());
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
 	});
 });

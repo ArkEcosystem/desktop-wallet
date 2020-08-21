@@ -87,7 +87,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                 class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -108,7 +108,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -131,7 +131,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -180,7 +180,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                       class="text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxhCb fxrKLH"
+                        class="sc-AxhUy cPXLjK"
                         height="1em"
                         width="1em"
                       >
@@ -208,7 +208,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
-                        class="sc-AxhCb idmnCf"
+                        class="sc-AxhUy gKrfcW"
                         height="10"
                         width="10"
                       >
@@ -231,7 +231,7 @@ exports[`ImportWallet should go to previous step 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
+        class="sc-AxhUy deKzQP"
         height="10"
         width="19"
       >
@@ -275,6 +275,9 @@ exports[`ImportWallet should go to previous step 1`] = `
                 <li
                   class="sc-fzpjYC bTIQoF"
                 />
+                <li
+                  class="sc-fzpjYC bTIQoF"
+                />
               </ul>
               <div
                 class="mt-4"
@@ -312,18 +315,21 @@ exports[`ImportWallet should go to previous step 1`] = `
                       class="space-y-2"
                     >
                       <fieldset
-                        class="sc-AxirZ izhStr relative mt-1"
+                        class="sc-AxiKw iQzisX relative mt-1"
                       >
                         <div
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -338,11 +344,11 @@ exports[`ImportWallet should go to previous step 1`] = `
                             id="ImportWallet__network-label"
                           />
                           <div
-                            class="sc-Axmtr jzhOwR"
+                            class="sc-AxmLO kuiknc"
                             data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                              class="sc-AxgMl sc-AxheI hUEXQW px-4"
                             >
                               <div
                                 class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
@@ -354,7 +360,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a network name"
@@ -364,12 +370,13 @@ exports[`ImportWallet should go to previous step 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-0"
                             role="option"
@@ -380,7 +387,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                               data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
-                                class="sc-AxhCb dCXdPH"
+                                class="sc-AxhUy gkBhrK"
                                 data-testid="NetworkIcon__icon"
                                 height="26"
                                 width="26"
@@ -393,7 +400,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-1"
                             role="option"
@@ -404,7 +411,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                               data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
-                                class="sc-AxhCb dCXdPH"
+                                class="sc-AxhUy gkBhrK"
                                 data-testid="NetworkIcon__icon"
                                 height="26"
                                 width="26"
@@ -423,6 +430,15 @@ exports[`ImportWallet should go to previous step 1`] = `
                 <div
                   class="flex justify-end mt-10 space-x-3"
                 >
+                  <button
+                    class="sc-AxjAm ddJBbC"
+                    color="primary"
+                    data-testid="ImportWallet__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
                   <button
                     class="sc-AxjAm ddQVWI"
                     color="primary"
@@ -530,7 +546,7 @@ exports[`ImportWallet should import by address 1`] = `
                 class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -551,7 +567,7 @@ exports[`ImportWallet should import by address 1`] = `
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -574,7 +590,7 @@ exports[`ImportWallet should import by address 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -623,7 +639,7 @@ exports[`ImportWallet should import by address 1`] = `
                       class="text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxhCb fxrKLH"
+                        class="sc-AxhUy cPXLjK"
                         height="1em"
                         width="1em"
                       >
@@ -651,7 +667,7 @@ exports[`ImportWallet should import by address 1`] = `
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
-                        class="sc-AxhCb idmnCf"
+                        class="sc-AxhUy gKrfcW"
                         height="10"
                         width="10"
                       >
@@ -674,7 +690,7 @@ exports[`ImportWallet should import by address 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
+        class="sc-AxhUy deKzQP"
         height="10"
         width="19"
       >
@@ -718,6 +734,9 @@ exports[`ImportWallet should import by address 1`] = `
                 <li
                   class="sc-fzpjYC bTIQoF"
                 />
+                <li
+                  class="sc-fzpjYC bTIQoF"
+                />
               </ul>
               <div
                 class="mt-4"
@@ -755,18 +774,21 @@ exports[`ImportWallet should import by address 1`] = `
                       class="space-y-2"
                     >
                       <fieldset
-                        class="sc-AxirZ izhStr relative mt-1"
+                        class="sc-AxiKw iQzisX relative mt-1"
                       >
                         <div
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -781,11 +803,11 @@ exports[`ImportWallet should import by address 1`] = `
                             id="ImportWallet__network-label"
                           />
                           <div
-                            class="sc-Axmtr jzhOwR"
+                            class="sc-AxmLO kuiknc"
                             data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                              class="sc-AxgMl sc-AxheI hUEXQW px-4"
                             >
                               <div
                                 class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
@@ -797,7 +819,7 @@ exports[`ImportWallet should import by address 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a network name"
@@ -807,12 +829,13 @@ exports[`ImportWallet should import by address 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-0"
                             role="option"
@@ -823,7 +846,7 @@ exports[`ImportWallet should import by address 1`] = `
                               data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
-                                class="sc-AxhCb dCXdPH"
+                                class="sc-AxhUy gkBhrK"
                                 data-testid="NetworkIcon__icon"
                                 height="26"
                                 width="26"
@@ -836,7 +859,7 @@ exports[`ImportWallet should import by address 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-1"
                             role="option"
@@ -847,7 +870,7 @@ exports[`ImportWallet should import by address 1`] = `
                               data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
-                                class="sc-AxhCb dCXdPH"
+                                class="sc-AxhUy gkBhrK"
                                 data-testid="NetworkIcon__icon"
                                 height="26"
                                 width="26"
@@ -866,6 +889,15 @@ exports[`ImportWallet should import by address 1`] = `
                 <div
                   class="flex justify-end mt-10 space-x-3"
                 >
+                  <button
+                    class="sc-AxjAm ddJBbC"
+                    color="primary"
+                    data-testid="ImportWallet__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
                   <button
                     class="sc-AxjAm ddQVWI"
                     color="primary"
@@ -973,7 +1005,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                 class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -994,7 +1026,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -1017,7 +1049,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -1066,7 +1098,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                       class="text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxhCb fxrKLH"
+                        class="sc-AxhUy cPXLjK"
                         height="1em"
                         width="1em"
                       >
@@ -1094,7 +1126,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
-                        class="sc-AxhCb idmnCf"
+                        class="sc-AxhUy gKrfcW"
                         height="10"
                         width="10"
                       >
@@ -1117,7 +1149,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
+        class="sc-AxhUy deKzQP"
         height="10"
         width="19"
       >
@@ -1161,6 +1193,9 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                 <li
                   class="sc-fzpjYC bTIQoF"
                 />
+                <li
+                  class="sc-fzpjYC bTIQoF"
+                />
               </ul>
               <div
                 class="mt-4"
@@ -1198,18 +1233,21 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                       class="space-y-2"
                     >
                       <fieldset
-                        class="sc-AxirZ izhStr relative mt-1"
+                        class="sc-AxiKw iQzisX relative mt-1"
                       >
                         <div
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -1224,11 +1262,11 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                             id="ImportWallet__network-label"
                           />
                           <div
-                            class="sc-Axmtr jzhOwR"
+                            class="sc-AxmLO kuiknc"
                             data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                              class="sc-AxgMl sc-AxheI hUEXQW px-4"
                             >
                               <div
                                 class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
@@ -1240,7 +1278,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a network name"
@@ -1250,12 +1288,13 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-0"
                             role="option"
@@ -1266,7 +1305,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                               data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
-                                class="sc-AxhCb dCXdPH"
+                                class="sc-AxhUy gkBhrK"
                                 data-testid="NetworkIcon__icon"
                                 height="26"
                                 width="26"
@@ -1279,7 +1318,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-1"
                             role="option"
@@ -1290,7 +1329,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                               data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
-                                class="sc-AxhCb dCXdPH"
+                                class="sc-AxhUy gkBhrK"
                                 data-testid="NetworkIcon__icon"
                                 height="26"
                                 width="26"
@@ -1309,6 +1348,15 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                 <div
                   class="flex justify-end mt-10 space-x-3"
                 >
+                  <button
+                    class="sc-AxjAm ddJBbC"
+                    color="primary"
+                    data-testid="ImportWallet__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
                   <button
                     class="sc-AxjAm ddQVWI"
                     color="primary"
@@ -1361,18 +1409,21 @@ exports[`ImportWallet should render 1st step 1`] = `
       class="space-y-2"
     >
       <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
+        class="sc-AxiKw iQzisX relative mt-1"
       >
         <div
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="network"
-            label="Network"
           >
             Network
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
           </label>
         </div>
         <div
@@ -1387,11 +1438,11 @@ exports[`ImportWallet should render 1st step 1`] = `
             id="ImportWallet__network-label"
           />
           <div
-            class="sc-Axmtr jzhOwR"
+            class="sc-AxmLO kuiknc"
             data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+              class="sc-AxgMl sc-AxheI hUEXQW px-4"
             >
               <div
                 class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
@@ -1403,7 +1454,7 @@ exports[`ImportWallet should render 1st step 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="ImportWallet__network-input"
               placeholder="Enter a network name"
@@ -1413,12 +1464,13 @@ exports[`ImportWallet should render 1st step 1`] = `
         </div>
         <ul
           aria-labelledby="ImportWallet__network-label"
+          class="mt-6 grid grid-cols-6 gap-6"
           id="ImportWallet__network-menu"
           role="listbox"
         >
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ImportWallet__network-item-0"
             role="option"
@@ -1429,7 +1481,7 @@ exports[`ImportWallet should render 1st step 1`] = `
               data-testid="NetworkIcon-ARK-mainnet"
             >
               <div
-                class="sc-AxhCb dCXdPH"
+                class="sc-AxhUy gkBhrK"
                 data-testid="NetworkIcon__icon"
                 height="26"
                 width="26"
@@ -1442,7 +1494,7 @@ exports[`ImportWallet should render 1st step 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
+            class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ImportWallet__network-item-1"
             role="option"
@@ -1453,7 +1505,7 @@ exports[`ImportWallet should render 1st step 1`] = `
               data-testid="NetworkIcon-ARK-devnet"
             >
               <div
-                class="sc-AxhCb dCXdPH"
+                class="sc-AxhUy gkBhrK"
                 data-testid="NetworkIcon__icon"
                 height="26"
                 width="26"
@@ -1539,35 +1591,39 @@ exports[`ImportWallet should render 2st step 1`] = `
       data-testid="ImportWallet__fields"
     >
       <fieldset
-        class="sc-AxirZ izhStr flex flex-col space-y-2"
+        class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
           data-testid="FormLabel"
           for="passphrase"
-          label="Your Passphrase"
         >
           Your Passphrase
+          <div
+            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
         </label>
         <div
-          class="sc-Axmtr jzhOwR max-w-20"
+          class="sc-AxmLO kuiknc max-w-20"
+          data-testid="InputPassword"
         >
           <input
-            class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="ImportWallet__passphrase-input"
             name="passphrase"
             type="password"
           />
           <div
-            class="sc-AxhUy sc-AxheI bYHtKZ my-px mr-4"
+            class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
           >
             <button
-              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
               data-testid="InputPassword__toggle"
               type="button"
             >
               <div
-                class="sc-AxhCb fxrKLH"
+                class="sc-AxhUy cPXLjK"
                 height="1em"
                 width="1em"
               >
@@ -1581,6 +1637,594 @@ exports[`ImportWallet should render 2st step 1`] = `
       </fieldset>
     </div>
   </section>
+</DocumentFragment>
+`;
+
+exports[`ImportWallet should render 3st step 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="ImportWallet__third-step"
+  >
+    <div
+      class="my-8"
+    >
+      <div
+        class="flex items-end justify-between bg-theme-background"
+      >
+        <div>
+          <h1
+            class="mb-0 md:text-4xl"
+            data-testid="header__title"
+          >
+            Completed
+          </h1>
+          <div
+            class="text-theme-neutral-dark"
+            data-testid="header__subtitle"
+          >
+            Wallet import is complete. Now you can use it.
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li
+        class="flex justify-between"
+      >
+        <div>
+          <p
+            class="text-sm font-semibold text-theme-neutral-dark"
+          >
+            Network
+          </p>
+          <p
+            class="text-lg font-medium"
+            data-testid="ImportWallet__network-name"
+          >
+            Ark Devnet
+          </p>
+        </div>
+        <div
+          aria-label="Ark Devnet"
+          class="sc-fznyAO gQONjx border-theme-primary-100 text-theme-primary-400"
+          data-testid="NetworkIcon-ARK-devnet"
+        >
+          <div
+            class="sc-AxhUy cPXLjK"
+            data-testid="NetworkIcon__icon"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              ark.svg
+            </svg>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div
+          class="sc-AxirZ jJscrd border-theme-neutral-300"
+          type="horizontal"
+        />
+      </li>
+      <li
+        class="flex justify-between"
+      >
+        <div>
+          <p
+            class="text-sm font-semibold text-theme-neutral-dark"
+          >
+            Address
+          </p>
+          <p
+            class="text-lg font-medium"
+            data-testid="ImportWallet__wallet-address"
+          >
+            DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq
+          </p>
+        </div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+          data-testid="Avatar"
+        >
+          <div
+            class="w-full h-full"
+          >
+            <img
+              alt="DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+              title="DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq"
+            />
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      class="sc-AxirZ jJscrd border-theme-neutral-300"
+      type="horizontal"
+    />
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="name"
+      >
+        Wallet name
+        <span
+          class="ml-1 text-theme-neutral-light"
+          data-testid="FormLabel__optional"
+        >
+          (optional)
+        </span>
+      </label>
+      <input
+        class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        data-testid="ImportWallet__name-input"
+        name="name"
+      />
+    </fieldset>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`ImportWallet should show an error message for duplicate address 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoLag iezQBg"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+              >
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-fznyAO hUVUQM -mr-2 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
+                  >
+                    <img
+                      alt="Profile avatar"
+                      class="rounded-full w-11 h-11"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      JO
+                    </span>
+                    <span
+                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxhUy gKrfcW"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxhUy deKzQP"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoXzr imWwrn flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <form
+            class="max-w-xl mx-auto"
+            data-testid="ImportWallet__form"
+          >
+            <div>
+              <ul
+                class="sc-fznxsB hPecIE"
+              >
+                <li
+                  class="sc-fzpjYC giIDaA"
+                />
+                <li
+                  class="sc-fzpjYC bTIQoF"
+                />
+                <li
+                  class="sc-fzpjYC bTIQoF"
+                />
+              </ul>
+              <div
+                class="mt-4"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <section
+                    class="space-y-8"
+                    data-testid="ImportWallet__first-step"
+                  >
+                    <div
+                      class="my-8"
+                    >
+                      <div
+                        class="flex items-end justify-between bg-theme-background"
+                      >
+                        <div>
+                          <h1
+                            class="mb-0 md:text-4xl"
+                            data-testid="header__title"
+                          >
+                            Select a Network
+                          </h1>
+                          <div
+                            class="text-theme-neutral-dark"
+                            data-testid="header__subtitle"
+                          >
+                            Select a Network to import your existing wallet address
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="space-y-2"
+                    >
+                      <fieldset
+                        class="sc-AxiKw iQzisX relative mt-1"
+                      >
+                        <div
+                          class="mb-2"
+                        >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="network"
+                          >
+                            Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
+                        </div>
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="ImportWallet__network-menu"
+                          data-testid="SelectNetwork"
+                          role="combobox"
+                        >
+                          <label
+                            for="ImportWallet__network-input"
+                            id="ImportWallet__network-label"
+                          />
+                          <div
+                            class="sc-AxmLO kuiknc"
+                            data-testid="SelectNetworkInput"
+                          >
+                            <div
+                              class="sc-AxgMl sc-AxheI hUEXQW px-4"
+                            >
+                              <div
+                                class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
+                                data-testid="SelectNetworkInput__network"
+                              />
+                            </div>
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="ImportWallet__network-menu"
+                              aria-labelledby="ImportWallet__network-label"
+                              autocomplete="off"
+                              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              data-testid="SelectNetworkInput__input"
+                              id="ImportWallet__network-input"
+                              placeholder="Enter a network name"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                        <ul
+                          aria-labelledby="ImportWallet__network-label"
+                          class="mt-6 grid grid-cols-6 gap-6"
+                          id="ImportWallet__network-menu"
+                          role="listbox"
+                        >
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-0"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark"
+                              class="sc-fznyAO hDlzVD border-theme-danger-light text-theme-danger-400"
+                              data-testid="NetworkIcon-ARK-mainnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-1"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark Devnet"
+                              class="sc-fznyAO hDlzVD border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-devnet"
+                            >
+                              <div
+                                class="sc-AxhUy gkBhrK"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </fieldset>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                >
+                  <button
+                    class="sc-AxjAm ddJBbC"
+                    color="primary"
+                    data-testid="ImportWallet__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-AxjAm ddQVWI"
+                    color="primary"
+                    data-testid="ImportWallet__continue-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
@@ -1671,7 +2315,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                 class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -1692,7 +2336,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -1715,7 +2359,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxhCb draJkT"
+                  class="sc-AxhUy gwxBWy"
                   height="22"
                   width="22"
                 >
@@ -1764,7 +2408,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                       class="text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxhCb fxrKLH"
+                        class="sc-AxhUy cPXLjK"
                         height="1em"
                         width="1em"
                       >
@@ -1792,7 +2436,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
-                        class="sc-AxhCb idmnCf"
+                        class="sc-AxhUy gKrfcW"
                         height="10"
                         width="10"
                       >
@@ -1815,7 +2459,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxhCb jOCPoe"
+        class="sc-AxhUy deKzQP"
         height="10"
         width="19"
       >
@@ -1859,6 +2503,9 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                 <li
                   class="sc-fzpjYC bTIQoF"
                 />
+                <li
+                  class="sc-fzpjYC bTIQoF"
+                />
               </ul>
               <div
                 class="mt-4"
@@ -1896,18 +2543,21 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                       class="space-y-2"
                     >
                       <fieldset
-                        class="sc-AxirZ izhStr relative mt-1"
+                        class="sc-AxiKw iQzisX relative mt-1"
                       >
                         <div
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
                           >
                             Network
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                         </div>
                         <div
@@ -1922,11 +2572,11 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                             id="ImportWallet__network-label"
                           />
                           <div
-                            class="sc-Axmtr jzhOwR"
+                            class="sc-AxmLO kuiknc"
                             data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                              class="sc-AxgMl sc-AxheI hUEXQW px-4"
                             >
                               <div
                                 class="sc-fznyAO crOapn border-theme-neutral-light text-theme-neutral"
@@ -1938,7 +2588,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a network name"
@@ -1948,12 +2598,13 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                         </div>
                         <ul
                           aria-labelledby="ImportWallet__network-label"
+                          class="mt-6 grid grid-cols-6 gap-6"
                           id="ImportWallet__network-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-0"
                             role="option"
@@ -1964,7 +2615,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                               data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
-                                class="sc-AxhCb dCXdPH"
+                                class="sc-AxhUy gkBhrK"
                                 data-testid="NetworkIcon__icon"
                                 height="26"
                                 width="26"
@@ -1977,7 +2628,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            class="inline-block cursor-pointer"
                             data-testid="SelectNetwork__NetworkIcon--container"
                             id="ImportWallet__network-item-1"
                             role="option"
@@ -1988,7 +2639,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                               data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
-                                class="sc-AxhCb dCXdPH"
+                                class="sc-AxhUy gkBhrK"
                                 data-testid="NetworkIcon__icon"
                                 height="26"
                                 width="26"
@@ -2007,6 +2658,15 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                 <div
                   class="flex justify-end mt-10 space-x-3"
                 >
+                  <button
+                    class="sc-AxjAm ddJBbC"
+                    color="primary"
+                    data-testid="ImportWallet__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
                   <button
                     class="sc-AxjAm ddQVWI"
                     color="primary"

@@ -18,6 +18,7 @@ export const Default = () => (
 		onSignMessage={console.log}
 		onUpdateWalletName={console.log}
 		onDeleteWallet={console.log}
+		onStoreHash={console.log}
 		coin="ARK"
 		network="mainnet"
 		isLedger

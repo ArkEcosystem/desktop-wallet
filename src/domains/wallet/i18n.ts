@@ -7,7 +7,6 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Name Wallet",
 		DESCRIPTION: "You can enter the name of your wallet for a quick search in your wallet.",
 		FIELD_NAME: "Enter a name",
-		MAXLENGTH_ERROR: "The Wallet Name should have less than {{maxLength}} characters.",
 	},
 
 	MODAL_DELETE_WALLET: {
@@ -86,7 +85,11 @@ export const translations: { [key: string]: any } = {
 			SUBTITLE: "Wallet creation is complete. Now you can use it.",
 		},
 
-		WALLET_NAME: "Wallet name (optional)",
+		WALLET_NAME: "Wallet name",
+
+		VALIDATION: {
+			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+		},
 	},
 
 	PAGE_IMPORT_WALLET: {
@@ -112,10 +115,14 @@ export const translations: { [key: string]: any } = {
 
 		PROCESS_COMPLETED_STEP: {
 			TITLE: "Completed",
-			SUBTITLE: "Wallet creation is complete. Now you can use it.",
+			SUBTITLE: "Wallet import is complete. Now you can use it.",
 		},
 
-		WALLET_NAME: "Wallet name (optional)",
+		WALLET_NAME: "Wallet name",
+
+		VALIDATION: {
+			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+		},
 	},
 
 	PAGE_WALLET_DETAILS: {

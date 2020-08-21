@@ -8,12 +8,18 @@ import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
 
+type TransactionSuccessfulProps = {
+	children?: React.ReactNode;
+	transactionId: string;
+};
+
 const { TransactionSuccessfulBanner } = images.transaction.common;
 
-export const TransactionSuccessful = ({ children }: { children: React.ReactNode }) => (
+// TODO: require transaction object to fill out details
+export const TransactionSuccessful = ({ children, transactionId }: TransactionSuccessfulProps) => (
 	<section data-testid="TransactionSuccessful" className="space-y-8">
 		<div>
-			<h1 className="mb-0">Transaction Successful</h1>
+			<h1 className="mb-0">Transaction Sent</h1>
 			<div className="grid grid-flow-row gap-2">
 				<div className="w-full my-10">
 					<TransactionSuccessfulBanner className="w-full" />
@@ -24,11 +30,7 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 				</p>
 				<TransactionDetail label="ID" border={false}>
 					<div className="flex items-center">
-						<Address
-							addressClass="text-theme-primary"
-							address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-							maxChars={32}
-						/>
+						<Address addressClass="text-theme-primary" address={transactionId} maxChars={32} />
 						<span className="ml-5">
 							<Clipboard>
 								<div className="text-theme-primary-300">
@@ -84,3 +86,7 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 		</div>
 	</section>
 );
+
+TransactionSuccessful.defaultProps = {
+	transactionId: "AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK",
+};

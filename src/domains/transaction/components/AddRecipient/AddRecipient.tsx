@@ -1,3 +1,4 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
@@ -19,7 +20,7 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 	return (
 		<div className="text-theme-neutral-dark hover:text-theme-primary">
 			<div className="flex items-center mb-2 space-x-2">
-				<div className="font-normal text-md transition-colors duration-100">
+				<div className="font-normal transition-colors duration-100 text-md">
 					{t("TRANSACTION.SINGLE_OR_MULTI")}
 				</div>
 				<div>
@@ -62,16 +63,27 @@ export const AddRecipient = ({
 	recipients,
 	onChange,
 }: AddRecipientProps) => {
-	const [addedRecipients, setAddressRecipients] = useState(recipients as RecipientListItem[]);
+	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients || []);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
+	const magnitude = 8;
+	const fraction = Math.pow(10, magnitude * -1);
 
 	const { t } = useTranslation();
 
-	const form = useForm({
-		defaultValues: { amount: availableAmount, recipientAddress: null, isSingle: isSingleRecipient },
-	});
+	const defaultValues: any = {
+		amount: availableAmount,
+		recipientAddress: null,
+		isSingle: isSingleRecipient,
+	};
 
-	const { setValue, register } = form;
+	if (isSingle && addedRecipients.length) {
+		defaultValues.recipientAddress = addedRecipients[0].address;
+		defaultValues.amount = BigNumber.make(addedRecipients[0].amount).toHuman(8);
+	}
+
+	const form = useForm({ defaultValues });
+
+	const { getValues, setValue, register } = form;
 	const { recipientAddress, amount } = form.watch();
 
 	const clearFields = () => {
@@ -79,8 +91,33 @@ export const AddRecipient = ({
 		setValue("recipientAddress", null);
 	};
 
+	const singleRecipientOnChange = () => {
+		const recipientAddress = getValues("recipientAddress");
+		const amount = getValues("amount");
+
+		if (!isSingle) {
+			return;
+		}
+
+		if (!recipientAddress || !amount) {
+			onChange?.([]);
+
+			return;
+		}
+
+		onChange?.([
+			{
+				amount: BigNumber.make(amount).divide(fraction).toFixed(0),
+				address: recipientAddress,
+			},
+		]);
+	};
+
 	const onAddRecipient = (address: string, amount: number) => {
-		addedRecipients.push({ amount, address });
+		addedRecipients.push({
+			amount: BigNumber.make(amount).divide(fraction).toFixed(0),
+			address,
+		});
 		setAddressRecipients(addedRecipients);
 		onChange?.(addedRecipients);
 		clearFields();
@@ -98,7 +135,7 @@ export const AddRecipient = ({
 		<AddRecipientWrapper>
 			<ToggleButtons isSingle={isSingle} onChange={(isSingle) => setIsSingle(isSingle)} />
 
-			<SubForm data-testid="add-recipient__form-wrapper" className="mt-8 mb-2" noBackground={isSingle}>
+			<SubForm data-testid="add-recipient__form-wrapper" className="mt-6" noBackground={isSingle}>
 				<div className="space-y-8">
 					<FormField name="recipientAddress" className="relative mt-1">
 						<div className="mb-2">
@@ -112,10 +149,13 @@ export const AddRecipient = ({
 						</div>
 
 						<SelectRecipient
-							address={recipientAddress as any}
+							address={recipientAddress}
 							ref={register}
 							profile={profile}
-							onChange={(address: any) => setValue("recipientAddress", address)}
+							onChange={(address: any) => {
+								setValue("recipientAddress", address);
+								singleRecipientOnChange();
+							}}
 						/>
 					</FormField>
 
@@ -131,12 +171,18 @@ export const AddRecipient = ({
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
 								ref={register}
+								onChange={singleRecipientOnChange}
+								defaultValue={amount}
 							/>
 							<InputAddonEnd>
 								<button
+									type="button"
 									data-testid="add-recipient__send-all"
-									onClick={() => setValue("amount", maxAvailableAmount)}
-									className="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+									onClick={() => {
+										setValue("amount", maxAvailableAmount);
+										singleRecipientOnChange();
+									}}
+									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
 								>
 									{t("TRANSACTION.SEND_ALL")}
 								</button>
@@ -150,7 +196,7 @@ export const AddRecipient = ({
 						data-testid="add-recipient__add-btn"
 						variant="plain"
 						className="w-full mt-4"
-						onClick={() => onAddRecipient(recipientAddress as any, amount)}
+						onClick={() => onAddRecipient(recipientAddress as string, amount)}
 					>
 						{t("TRANSACTION.ADD_RECIPIENT")}
 					</Button>
@@ -174,7 +220,7 @@ export const AddRecipient = ({
 AddRecipient.defaultProps = {
 	maxAvailableAmount: 0,
 	assetSymbol: "ARK",
-	availableAmount: null,
+	availableAmount: 0,
 	isSingleRecipient: true,
 	recipients: [],
 };

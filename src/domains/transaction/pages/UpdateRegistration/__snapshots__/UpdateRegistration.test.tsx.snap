@@ -267,25 +267,25 @@ exports[`UpdateRegistration should render 1st step 1`] = `
           >
             <div>
               <ul
-                class="sc-fznJRM kDmVaQ"
+                class="sc-fznxsB hPecIE"
               >
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
               </ul>
               <div
@@ -321,10 +321,9 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-AxhCb ckQmOL font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
-                                required=""
                               >
                                 Name
                                 <div
@@ -344,10 +343,9 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-AxhCb ckQmOL mt-8 font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="description"
-                                required=""
                               >
                                 Description
                                 <div
@@ -367,11 +365,15 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-AxhCb ckQmOL mt-8 font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="website"
                               >
                                 Website
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <input
                                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -526,14 +528,19 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-AxhCb ckQmOL font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
                               >
                                 Transaction Fee
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <div
                                 class="flex space-x-2"
+                                data-testid="InputFee"
                               >
                                 <div
                                   class="flex-1"
@@ -588,8 +595,8 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                                     role="radiogroup"
                                   >
                                     <button
-                                      aria-checked="true"
-                                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      aria-checked="false"
+                                      class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -598,7 +605,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -607,7 +614,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -922,25 +929,25 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fznJRM kDmVaQ"
+                class="sc-fznxsB hPecIE"
               >
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
               </ul>
               <div
@@ -1582,25 +1589,25 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fznJRM kDmVaQ"
+                class="sc-fznxsB hPecIE"
               >
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
               </ul>
               <div
@@ -1630,14 +1637,19 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
                           >
                             Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzozJi OgXfh max-w-20"
+                            data-testid="InputPassword"
                           >
                             <input
                               class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
@@ -1649,7 +1661,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -1670,14 +1682,19 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                           class="sc-AxhCb ckQmOL mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
                           >
                             2nd Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzozJi OgXfh max-w-20"
+                            data-testid="InputPassword"
                           >
                             <input
                               class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
@@ -1689,7 +1706,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -2018,25 +2035,25 @@ exports[`UpdateRegistration should render 4th step 1`] = `
           >
             <div>
               <ul
-                class="sc-fznJRM kDmVaQ"
+                class="sc-fznxsB hPecIE"
               >
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
               </ul>
               <div
@@ -2053,7 +2070,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"
@@ -2717,25 +2734,25 @@ exports[`UpdateRegistration should should go back 1`] = `
           >
             <div>
               <ul
-                class="sc-fznJRM kDmVaQ"
+                class="sc-fznxsB hPecIE"
               >
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
                 <li
-                  class="sc-fznxsB exHzky"
+                  class="sc-fzpjYC bTIQoF"
                 />
               </ul>
               <div
@@ -2771,10 +2788,9 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-AxhCb ckQmOL font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
-                                required=""
                               >
                                 Name
                                 <div
@@ -2794,10 +2810,9 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-AxhCb ckQmOL mt-8 font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="description"
-                                required=""
                               >
                                 Description
                                 <div
@@ -2817,11 +2832,15 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-AxhCb ckQmOL mt-8 font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="website"
                               >
                                 Website
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <input
                                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -2976,14 +2995,19 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-AxhCb ckQmOL font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
                               >
                                 Transaction Fee
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <div
                                 class="flex space-x-2"
+                                data-testid="InputFee"
                               >
                                 <div
                                   class="flex-1"
@@ -3038,8 +3062,8 @@ exports[`UpdateRegistration should should go back 1`] = `
                                     role="radiogroup"
                                   >
                                     <button
-                                      aria-checked="true"
-                                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      aria-checked="false"
+                                      class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -3048,7 +3072,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -3057,7 +3081,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -3372,25 +3396,25 @@ exports[`UpdateRegistration should submit 1`] = `
           >
             <div>
               <ul
-                class="sc-fznJRM kDmVaQ"
+                class="sc-fznxsB hPecIE"
               >
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
                 <li
-                  class="sc-fznxsB keKrAv"
+                  class="sc-fzpjYC giIDaA"
                 />
               </ul>
               <div
@@ -3407,7 +3431,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"

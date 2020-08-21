@@ -90,7 +90,6 @@ module.exports = function () {
 		// File menu
 		template[0] = {
 			role: "appMenu",
-			label: packageJson.build.productName,
 			submenu: [
 				about,
 				{ type: "separator" },

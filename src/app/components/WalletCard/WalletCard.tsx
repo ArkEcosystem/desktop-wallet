@@ -8,7 +8,7 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { useActiveProfile } from "app/hooks/env";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import { Amount } from "../Amount";
 
@@ -38,6 +38,7 @@ export const WalletCard = ({
 	onSelect,
 }: WalletCardProps) => {
 	const activeProfile = useActiveProfile();
+	const history = useHistory();
 
 	if (isBlank) {
 		return (
@@ -61,58 +62,53 @@ export const WalletCard = ({
 		);
 	}
 
-	const coinName = wallet?.coin().manifest().get<string>("name");
+	const coinName = wallet?.manifest().get<string>("name");
 	const ticker = wallet!.network().currency.ticker;
 
 	return (
-		<Link
-			to={`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`}
+		<div
+			className={`w-64 inline-block ${className}`}
+			onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`)}
 			data-testid={`WalletCard__${wallet?.address()}`}
 		>
-			<div className={`w-64 inline-block ${className}`}>
-				<Card>
-					<div className="relative p-2">
-						<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
-							<Dropdown options={actions} onSelect={onSelect} />
-						</div>
-						<div className="absolute right-3 -top-1">
-							{wallet?.isLedger() && (
-								<div className="inline-block mr-2 text text-theme-neutral-600">
-									<Icon name="Ledger" width={18} />
-								</div>
-							)}
-
-							{wallet?.hasSyncedWithNetwork() && wallet?.isMultiSignature() && (
-								<div className="inline-block mr-2 text text-theme-neutral-600">
-									<Icon name="Multisig" width={18} />
-								</div>
-							)}
-
-							{wallet?.isStarred() && (
-								<div className="inline-block mr-2 text text-theme-warning-400">
-									<Icon name="Star" width={18} />
-								</div>
-							)}
-						</div>
-						<div className="flex">
-							<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
-								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={18} height={16} />}
-							</Circle>
-							<Avatar size="lg" address={wallet?.address()} />
-						</div>
-
-						<div className="mt-6 truncate max-w-12">
-							<Address walletName={wallet?.alias()} address={wallet?.address()} maxChars={13} />
-						</div>
-						<Amount
-							value={wallet!.balance()}
-							ticker={ticker}
-							className="font-bold text-theme-neutral-900"
-						/>
+			<Card>
+				<div className="relative p-2">
+					<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
+						<Dropdown options={actions} onSelect={onSelect} />
 					</div>
-				</Card>
-			</div>
-		</Link>
+					<div className="absolute right-3 -top-1">
+						{wallet?.isLedger() && (
+							<div className="inline-block mr-2 text text-theme-neutral-600">
+								<Icon name="Ledger" width={18} />
+							</div>
+						)}
+
+						{wallet?.hasSyncedWithNetwork() && wallet?.isMultiSignature() && (
+							<div className="inline-block mr-2 text text-theme-neutral-600">
+								<Icon name="Multisig" width={18} />
+							</div>
+						)}
+
+						{wallet?.isStarred() && (
+							<div className="inline-block mr-2 text text-theme-warning-400">
+								<Icon name="Star" width={18} />
+							</div>
+						)}
+					</div>
+					<div className="flex">
+						<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
+							{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={18} height={16} />}
+						</Circle>
+						<Avatar size="lg" address={wallet?.address()} />
+					</div>
+
+					<div className="mt-6 truncate max-w-12">
+						<Address walletName={wallet?.alias()} address={wallet?.address()} maxChars={13} />
+					</div>
+					<Amount value={wallet!.balance()} ticker={ticker} className="font-bold text-theme-neutral-900" />
+				</div>
+			</Card>
+		</div>
 	);
 };
 

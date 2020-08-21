@@ -1,7 +1,15 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, Wallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import {
+	Environment,
+	Profile,
+	ProfileSetting,
+	Wallet,
+	WalletFlag,
+	WalletSetting,
+} from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
+import { PlatformSdkChoices } from "data";
 import React from "react";
 import { StubStorage } from "tests/mocks";
 
@@ -71,11 +79,24 @@ export const WalletsDecorator = ({ count, children, withDelegate, withDelegates 
 				.profiles()
 				.values()
 				.find((profile) => profile.name() === "John Doe");
+
 			if (existingProfile) {
 				env.profiles().forget(existingProfile.id());
 			}
 
 			profileObject = env.profiles().create("John Doe");
+
+			profileObject.settings().set(ProfileSetting.AdvancedMode, false);
+			profileObject.settings().set(ProfileSetting.AutomaticLogoffPeriod, 15);
+			profileObject.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);
+			profileObject.settings().set(ProfileSetting.ExchangeCurrency, PlatformSdkChoices.currencies[0].value);
+			profileObject.settings().set(ProfileSetting.LedgerUpdateMethod, false);
+			profileObject.settings().set(ProfileSetting.Locale, PlatformSdkChoices.languages[0].value);
+			profileObject.settings().set(ProfileSetting.MarketProvider, PlatformSdkChoices.marketProviders[0].value);
+			profileObject.settings().set(ProfileSetting.ScreenshotProtection, true);
+			profileObject.settings().set(ProfileSetting.Theme, "light");
+			profileObject.settings().set(ProfileSetting.TimeFormat, PlatformSdkChoices.timeFormats[0].value);
+
 			setProfile(profileObject);
 		}
 
@@ -102,5 +123,17 @@ export const WalletsDecorator = ({ count, children, withDelegate, withDelegates 
 		return <>Loading Wallets</>;
 	}
 
-	return <>{children({ delegate, delegates, env, profile, wallets })}</>;
+	return (
+		<>
+			{children({
+				args: {
+					delegate,
+					delegates,
+					env,
+					profile,
+					wallets,
+				},
+			})}
+		</>
+	);
 };

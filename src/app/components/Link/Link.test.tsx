@@ -1,44 +1,67 @@
+import electron from "electron";
 import React from "react";
 import { act, fireEvent, renderWithRouter } from "testing-library";
 
 import { Link } from "./Link";
 
+jest.mock("electron", () => ({
+	shell: {
+		openExternal: jest.fn(),
+	},
+}));
+
 describe("Link", () => {
 	it("should render", () => {
-		const { getByTestId, asFragment } = renderWithRouter(<Link to="/test">Test</Link>);
+		const { asFragment, getByTestId } = renderWithRouter(<Link to="/test">Test</Link>);
 		expect(getByTestId("Link")).toHaveTextContent("Test");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render external", () => {
-		const { getByTestId, asFragment } = renderWithRouter(
-			<Link to={{ pathname: "https://ark.io" }} isExternal>
+		const { getByTestId } = renderWithRouter(
+			<Link to="https://ark.io" isExternal>
 				ARK.io
 			</Link>,
 		);
 		expect(getByTestId("Link")).toHaveAttribute("rel", "noopener noreferrer");
-		expect(getByTestId("Link")).toHaveAttribute("target", "_blank");
+		expect(getByTestId("Link__external")).toBeTruthy();
+	});
+
+	it("should render external without children", () => {
+		const { asFragment, getByTestId } = renderWithRouter(<Link to="https://ark.io" isExternal />);
 		expect(getByTestId("Link__external")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render external without children", () => {
-		const { getByTestId, asFragment } = renderWithRouter(<Link to={{ pathname: "https://ark.io" }} isExternal />);
-		expect(getByTestId("Link__external")).toBeTruthy();
+	it("should open an external link", () => {
+		const externalLink = "https://ark.io";
+		const openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
+		const { asFragment, getByTestId } = renderWithRouter(<Link to={externalLink} isExternal />);
+		const link = getByTestId("Link");
+
+		act(() => {
+			fireEvent.click(link);
+		});
+		expect(openExternalMock).toHaveBeenCalledWith(externalLink);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with tooltip", () => {
-		const { getByTestId, baseElement } = renderWithRouter(
+		const { asFragment, baseElement, getByTestId } = renderWithRouter(
 			<Link to="/test" tooltip="Custom Tooltip">
 				Test
 			</Link>,
 		);
+		const link = getByTestId("Link");
 
 		act(() => {
-			fireEvent.mouseEnter(getByTestId("Link"));
+			fireEvent.mouseEnter(link);
 		});
-
 		expect(baseElement).toHaveTextContent("Custom Tooltip");
+
+		act(() => {
+			fireEvent.click(link);
+		});
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

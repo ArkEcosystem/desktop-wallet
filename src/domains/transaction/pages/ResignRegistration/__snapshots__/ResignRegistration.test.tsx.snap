@@ -267,25 +267,25 @@ exports[`ResignRegistration should render 1st step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -420,14 +420,19 @@ exports[`ResignRegistration should render 1st step 1`] = `
                               class="sc-AxheI dThsOi font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
                               >
                                 Transaction Fee
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <div
                                 class="flex space-x-2"
+                                data-testid="InputFee"
                               >
                                 <div
                                   class="flex-1"
@@ -482,8 +487,8 @@ exports[`ResignRegistration should render 1st step 1`] = `
                                     role="radiogroup"
                                   >
                                     <button
-                                      aria-checked="true"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      aria-checked="false"
+                                      class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -492,7 +497,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -501,7 +506,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -816,25 +821,25 @@ exports[`ResignRegistration should render 2nd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -1351,25 +1356,25 @@ exports[`ResignRegistration should render 3rd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -1399,14 +1404,19 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                           class="sc-AxheI dThsOi flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
                           >
                             Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzpans diytpf max-w-20"
+                            data-testid="InputPassword"
                           >
                             <input
                               class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
@@ -1418,7 +1428,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                               class="sc-AxmLO sc-fzoLsD ijnrnY my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -1439,14 +1449,19 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                           class="sc-AxheI dThsOi mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
                           >
                             2nd Mnemonic
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
                           </label>
                           <div
                             class="sc-fzpans diytpf max-w-20"
+                            data-testid="InputPassword"
                           >
                             <input
                               class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
@@ -1458,7 +1473,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                               class="sc-AxmLO sc-fzoLsD ijnrnY my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -1787,25 +1802,25 @@ exports[`ResignRegistration should render 4th step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div
@@ -1822,7 +1837,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"
@@ -2443,25 +2458,25 @@ exports[`ResignRegistration should should go back 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -2596,14 +2611,19 @@ exports[`ResignRegistration should should go back 1`] = `
                               class="sc-AxheI dThsOi font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
                               >
                                 Transaction Fee
+                                <div
+                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                  data-testid="FormLabel__required"
+                                />
                               </label>
                               <div
                                 class="flex space-x-2"
+                                data-testid="InputFee"
                               >
                                 <div
                                   class="flex-1"
@@ -2658,8 +2678,8 @@ exports[`ResignRegistration should should go back 1`] = `
                                     role="radiogroup"
                                   >
                                     <button
-                                      aria-checked="true"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      aria-checked="false"
+                                      class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -2668,7 +2688,7 @@ exports[`ResignRegistration should should go back 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -2677,7 +2697,7 @@ exports[`ResignRegistration should should go back 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznJRM frbnBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                       type="button"
@@ -2992,25 +3012,25 @@ exports[`ResignRegistration should submit 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div
@@ -3027,7 +3047,7 @@ exports[`ResignRegistration should submit 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"

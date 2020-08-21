@@ -17,6 +17,7 @@ import { useTranslation } from "react-i18next";
 
 type MultiSignatureDetailProps = {
 	isOpen: boolean;
+	transaction?: any;
 	onClose?: any;
 	onCancel?: any;
 };

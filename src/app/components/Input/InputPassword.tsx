@@ -11,14 +11,14 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 	const togglePasswordVisibilty = () => setShow(!show);
 
 	return (
-		<InputGroup className="max-w-20">
+		<InputGroup data-testid="InputPassword" className="max-w-20">
 			<Input ref={ref} type={show ? "text" : "password"} className="pr-12" {...props} />
 			<InputAddonEnd className="my-px mr-4">
 				<button
 					data-testid="InputPassword__toggle"
 					type="button"
 					onClick={togglePasswordVisibilty}
-					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
 				>
 					<Icon name={show ? "EyeOff" : "Eye"} />
 				</button>

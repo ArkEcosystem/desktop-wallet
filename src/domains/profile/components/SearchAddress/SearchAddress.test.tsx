@@ -1,9 +1,17 @@
-import { wallets } from "domains/wallet/data";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { translations } from "../../i18n";
 import { SearchAddress } from "./SearchAddress";
+
+let wallets: Wallet[];
+
+beforeAll(async () => {
+	const profile = env.profiles().findById(getDefaultProfileId());
+	await profile.wallets().importByMnemonic("additional wallet", "ARK", "devnet");
+	wallets = profile.wallets().values();
+});
 
 describe("SearchAddress", () => {
 	it("should not render if not open", () => {
@@ -39,7 +47,7 @@ describe("SearchAddress", () => {
 		act(() => {
 			fireEvent.click(getByTestId("AddressListItem__select-0"));
 		});
-		const selectedWalletAddress = wallets[0]?.address;
+		const selectedWalletAddress = wallets[0]?.address();
 		expect(fn).toBeCalledWith("select", selectedWalletAddress);
 	});
 });

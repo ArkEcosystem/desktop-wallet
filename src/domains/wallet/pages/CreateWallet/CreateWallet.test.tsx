@@ -61,22 +61,22 @@ describe("CreateWallet", () => {
 		expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-		expect(selectAssetsInput).toBeTruthy();
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		expect(selectNetworkInput).toBeTruthy();
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(selectAssetsInput).toHaveAttribute("disabled");
+		expect(selectNetworkInput).toHaveAttribute("disabled");
 
-		expect(selectAssetsInput).toHaveValue("Ark Devnet");
+		expect(selectNetworkInput).toHaveValue("Ark Devnet");
 
-		await waitFor(() => expect(selectAssetsInput).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(selectNetworkInput).not.toHaveAttribute("disabled"));
 	});
 
 	it("should render 2nd step", async () => {
@@ -144,7 +144,7 @@ describe("CreateWallet", () => {
 
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FourthStep />
+				<FourthStep nameMaxLength={42} />
 			</FormContext>,
 		);
 
@@ -217,24 +217,24 @@ describe("CreateWallet", () => {
 		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		const continueButton = getByTestId("CreateWallet__continue-button");
 		const backButton = getByTestId("CreateWallet__back-button");
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "" } });
 		});
 		await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 		await waitFor(() => expect(profile.wallets().values().length).toBe(1));
@@ -357,13 +357,13 @@ describe("CreateWallet", () => {
 		);
 		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 
-		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		const continueButton = getByTestId("CreateWallet__continue-button");
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
