@@ -196,7 +196,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -634,7 +634,7 @@ exports[`CreateProfile should render 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -1096,7 +1096,7 @@ exports[`CreateProfile should store profile 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -1534,7 +1534,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -1894,21 +1894,26 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
                         >
-                          <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                            data-testid="CreateProfile__upload-button"
-                            type="button"
+                          <div
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <div
-                              class="sc-AxhCb fxrKLH"
-                              height="1em"
-                              width="1em"
+                            <button
+                              class="sc-AxjAm ddJBbC w-20 h-20"
+                              color="primary"
+                              data-testid="CreateProfile__upload-button"
+                              type="button"
                             >
-                              <svg>
-                                upload.svg
-                              </svg>
-                            </div>
-                          </button>
+                              <div
+                                class="sc-AxhCb fxrKLH"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1967,7 +1972,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
