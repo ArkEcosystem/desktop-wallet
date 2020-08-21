@@ -41,7 +41,15 @@ const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrat
 	);
 };
 
-const FirstStep = ({ networks, profile, wallet }: { networks: NetworkData[]; profile: Profile; wallet: Wallet }) => {
+type FirstStepProps = {
+	networks: NetworkData[];
+	profile: Profile;
+	wallet: Wallet;
+	setRegistrationForm: any;
+	feeOptions: Record<string, any>;
+};
+
+export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeOptions }: FirstStepProps) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
@@ -78,6 +86,15 @@ const FirstStep = ({ networks, profile, wallet }: { networks: NetworkData[]; pro
 		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/registration`);
 	};
 
+	const onSelectType = (selectedItem: RegistrationType) => {
+		setValue("registrationType", selectedItem.value, true);
+		setRegistrationForm(registrationComponents[selectedItem.value]);
+
+		if (feeOptions[selectedItem.value]) {
+			setValue("fee", feeOptions[selectedItem.value].average, true);
+		}
+	};
+
 	return (
 		<div data-testid="Registration__first-step">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.TITLE")}</h1>
@@ -109,9 +126,7 @@ const FirstStep = ({ networks, profile, wallet }: { networks: NetworkData[]; pro
 				<RegistrationTypeDropdown
 					selectedType={registrationTypes.find((type: RegistrationType) => type.value === registrationType)}
 					registrationTypes={registrationTypes}
-					onChange={(selectedItem: RegistrationType) =>
-						setValue("registrationType", selectedItem.value, true)
-					}
+					onChange={onSelectType}
 					className="mt-8"
 				/>
 			</div>
@@ -246,16 +261,6 @@ export const Registration = () => {
 		loadFees();
 	}, [setFeeOptions, setValue, activeProfile, senderAddress]);
 
-	useEffect(() => {
-		if (registrationType) {
-			setRegistrationForm(registrationComponents[registrationType]);
-
-			if (feeOptions && feeOptions[registrationType]) {
-				setValue("fee", feeOptions[registrationType].average, true);
-			}
-		}
-	}, [feeOptions, registrationType, setValue]);
-
 	const submitForm = () =>
 		registrationForm!.signTransaction({
 			env,
@@ -301,7 +306,13 @@ export const Registration = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep networks={networks} profile={activeProfile} wallet={activeWallet} />
+								<FirstStep
+									networks={networks}
+									profile={activeProfile}
+									wallet={activeWallet}
+									setRegistrationForm={setRegistrationForm}
+									feeOptions={feeOptions}
+								/>
 							</TabPanel>
 
 							{activeTab > 1 && registrationForm && (
