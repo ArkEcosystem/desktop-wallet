@@ -13,8 +13,8 @@ export default {
 
 export const Default = ({ env, profile, wallets }: { env: Environment; profile: Profile; wallets: Wallet[] }) => (
 	<EnvironmentProvider env={env}>
-		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/votes/${wallets[0].id()}`]}>
-			<Route path="/profiles/:profileId/votes/:walletId" component={() => <Votes />} />
+		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/wallets/${wallets[0].id()}/votes`]}>
+			<Route path="/profiles/:profileId/wallets/:walletId/votes" component={() => <Votes />} />
 		</MemoryRouter>
 	</EnvironmentProvider>
 );
