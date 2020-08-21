@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 type Props = {
 	data: any;
-	onAction: any;
+	onAction?: any;
 };
 
 const options = [

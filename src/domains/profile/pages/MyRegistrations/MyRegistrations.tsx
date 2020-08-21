@@ -13,10 +13,6 @@ import { BlockchainTable } from "./components/BlockchainTable";
 import { BusinessTable } from "./components/BusinessTable";
 import { DelegateTable } from "./components/DelegateTable";
 
-type Props = {
-	onAction?: any;
-};
-
 const { RegisterBanner } = images.common;
 
 const EmptyRegistrations = () => {
@@ -54,16 +50,10 @@ export const MyRegistrations = () => {
 		},
 	];
 
-	const handleAction = ({ action, txId }: any) => {
+	const handleAction = ({ action }: any) => {
 		switch (action) {
 			case "register":
 				history.push(`/profiles/${activeProfile.id()}/transactions/registration`);
-				break;
-			case "resign":
-				history.push(`/profiles/${activeProfile.id()}/transactions/${txId}/resignation`);
-				break;
-			case "update":
-				history.push(`/profiles/${activeProfile.id()}/transactions/${txId}/update`);
 				break;
 			default:
 				break;
@@ -99,9 +89,9 @@ export const MyRegistrations = () => {
 				/>
 			</Section>
 
-			{business.length > 0 && <BusinessTable data={business} onAction={handleAction} />}
-			{blockchain.length > 0 && <BlockchainTable data={blockchain} onAction={handleAction} />}
-			{delegates.length > 0 && <DelegateTable data={delegates} onAction={handleAction} />}
+			{business.length > 0 && <BusinessTable data={business} />}
+			{blockchain.length > 0 && <BlockchainTable data={blockchain} />}
+			{delegates.length > 0 && <DelegateTable data={delegates} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
