@@ -645,11 +645,9 @@ exports[`Registration should not set fee if no fee options 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="network"
-            label="Network"
-            required=""
           >
             Network
             <div
@@ -760,11 +758,9 @@ exports[`Registration should not set fee if no fee options 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="senderAddress"
-            label="Sender"
-            required=""
           >
             Sender
             <div
@@ -819,11 +815,9 @@ exports[`Registration should not set fee if no fee options 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="registrationType"
-            label="Registration Type"
-            required=""
           >
             Registration Type
             <div
@@ -1306,10 +1300,8 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                           <div
                             class="flex-1 space-y-2"
                           >
-                            <label
-                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                              data-testid="FormLabel"
-                              for="username"
+                            <div
+                              class="text-sm font-semibold text-theme-neutral"
                             >
                               TRANSACTION.DELEGATE_REGISTRATION
                             </div>
@@ -1336,17 +1328,6 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                         <div
                           class="mt-2"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="fee"
-                          >
-                            Transaction Fee
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
                           <div
                             class="border rounded-lg border-theme-neutral-300"
                           >
@@ -1764,10 +1745,8 @@ exports[`Registration should register delegate 1`] = `
                         <div
                           class="w-full my-10"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="network"
+                          <svg
+                            class="w-full"
                           >
                             transaction_successful.svg
                           </svg>
@@ -1925,10 +1904,8 @@ exports[`Registration should register delegate 1`] = `
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                           data-testid="TransactionDetail"
                         >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="senderAddress"
+                          <div
+                            class="flex-1 space-y-2"
                           >
                             <div
                               class="font-semibold"
@@ -2062,6 +2039,8 @@ exports[`Registration should register delegate 1`] = `
 `;
 
 exports[`Registration should register delegate 2`] = `<DocumentFragment />`;
+
+exports[`Registration should register delegate 3`] = `<DocumentFragment />`;
 
 exports[`Registration should render 1`] = `
 <DocumentFragment>
@@ -2365,11 +2344,9 @@ exports[`Registration should render 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
-                            required=""
                           >
                             Network
                             <div
@@ -2498,11 +2475,9 @@ exports[`Registration should render 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="senderAddress"
-                            label="Sender"
-                            required=""
                           >
                             Sender
                             <div
@@ -2577,11 +2552,9 @@ exports[`Registration should render 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
-                            label="Registration Type"
-                            required=""
                           >
                             Registration Type
                             <div
@@ -2700,11 +2673,9 @@ exports[`Registration should render 1st step 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="network"
-            label="Network"
-            required=""
           >
             Network
             <div
@@ -2815,11 +2786,9 @@ exports[`Registration should render 1st step 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="senderAddress"
-            label="Sender"
-            required=""
           >
             Sender
             <div
@@ -2874,11 +2843,9 @@ exports[`Registration should render 1st step 1`] = `
           class="mb-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="registrationType"
-            label="Registration Type"
-            required=""
           >
             Registration Type
             <div
@@ -3343,11 +3310,9 @@ exports[`Registration should select registration type & show form 1`] = `
                             class="mb-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
                               for="username"
-                              label="Delegate Name"
-                              required=""
                             >
                               Delegate Name
                               <div
@@ -3373,11 +3338,9 @@ exports[`Registration should select registration type & show form 1`] = `
                           class="sc-AxirZ izhStr flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="fee"
-                            label="Transaction Fee"
-                            required=""
                           >
                             Transaction Fee
                             <div
@@ -3866,11 +3829,9 @@ exports[`Registration should should go back and forth & correctly register field
                             class="mb-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
                               for="username"
-                              label="Delegate Name"
-                              required=""
                             >
                               Delegate Name
                               <div
@@ -3898,7 +3859,7 @@ exports[`Registration should should go back and forth & correctly register field
                           <label
                             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
-                            for="registrationType"
+                            for="fee"
                           >
                             Transaction Fee
                             <div
@@ -4010,10 +3971,9 @@ exports[`Registration should show encryption password & second mnemonic for sign
           class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="name"
-            required=""
           >
             Encryption Password
             <div
@@ -4035,7 +3995,7 @@ exports[`Registration should show encryption password & second mnemonic for sign
               class="sc-AxhUy sc-AxheI bYHtKZ my-px mr-4"
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
@@ -4056,10 +4016,9 @@ exports[`Registration should show encryption password & second mnemonic for sign
           class="sc-AxirZ izhStr mt-8"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="name"
-            required=""
           >
             2nd Mnemonic
             <div
@@ -4081,7 +4040,7 @@ exports[`Registration should show encryption password & second mnemonic for sign
               class="sc-AxhUy sc-AxheI bYHtKZ my-px mr-4"
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
