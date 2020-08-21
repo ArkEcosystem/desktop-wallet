@@ -1,5 +1,618 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Settings should change a password 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV bqFbiw"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
+                  >
+                    <img
+                      alt="Profile avatar"
+                      class="rounded-full w-11 h-11"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      TE
+                    </span>
+                    <span
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxirZ fttODj"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="flex flex-1 bg-theme-background"
+      >
+        <div
+          class="container flex mx-auto"
+        >
+          <div
+            class="px-10 my-16 border-r-1 border-theme-primary-contrast"
+          >
+            <div
+              class="sc-fzpjYC eMYFdv"
+            >
+              <ul>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--General"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          general.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      General
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Peer"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          peer.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Peer
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Plugins"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          plugin.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Plugins
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <div
+                    class="sc-fzoXzr hpqHyx absolute top-0 left-0 rounded-lg bg-theme-primary"
+                  />
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-semibold"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="w-full ml-16"
+          >
+            <div
+              class="sc-fzoLag fvqzEZ"
+            >
+              <div
+                class="container py-16 mx-auto px-14"
+              >
+                <div
+                  class="space-y-8"
+                >
+                  <div
+                    class="flex items-end justify-between bg-theme-background"
+                  >
+                    <div>
+                      <h1
+                        class="mb-0 md:text-4xl"
+                        data-testid="header__title"
+                      >
+                        Profile Password
+                      </h1>
+                      <div
+                        class="text-theme-neutral-dark"
+                        data-testid="header__subtitle"
+                      >
+                        Change the password used to access your profile below.
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="mb-8"
+                    data-testid="Password-settings__success-alert"
+                  >
+                    <div
+                      class="flex rounded-lg overflow-hidden bg-theme-success"
+                    >
+                      <div
+                        class="sc-fzoXWK gQTUAI flex items-center justify-center text-theme-success bg-theme-success-200"
+                      >
+                        <div
+                          class="sc-AxirZ bMjbpr"
+                          height="30"
+                          width="30"
+                        >
+                          <svg>
+                            alert-success.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-fzoNJl cMajEE flex-1 bg-theme-success-100"
+                      >
+                        <p
+                          class="text-xl font-bold text-theme-success"
+                          data-testid="alert__title"
+                        >
+                          Success
+                        </p>
+                        Your password has been successfully changed.
+                      </div>
+                    </div>
+                  </div>
+                  <form
+                    class="space-y-8"
+                    data-testid="Form"
+                    id="password-settings__form"
+                  >
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="currentPassword"
+                      >
+                        Current Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--currentPassword"
+                          name="currentPassword"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="password_1"
+                      >
+                        New Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--password_1"
+                          name="password_1"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="password_2"
+                      >
+                        Confirm New Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--password_2"
+                          name="password_2"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div
+                      class="flex justify-end w-full mt-8"
+                    >
+                      <button
+                        class="sc-AxhCb gBCygf"
+                        color="primary"
+                        data-testid="Password-settings__submit-button"
+                        disabled=""
+                        type="submit"
+                      >
+                        Change Password
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Settings should open & close modals in the plugin settings 1`] = `
 <DocumentFragment>
   <div
@@ -355,11 +968,38 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     </span>
                   </li>
                 </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
               </ul>
             </div>
           </div>
           <div
-            class="ml-16"
+            class="w-full ml-16"
           >
             <div
               class="sc-fzoLag fvqzEZ"
@@ -522,10 +1162,9 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="load-plugins"
-                            required=""
                           >
                             Load plugins from
                             <div
@@ -551,18 +1190,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-193-label downshift-193-toggle-button"
+                                  aria-labelledby="downshift-205-label downshift-205-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-193-toggle-button"
+                                  id="downshift-205-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-193-label"
+                                  aria-labelledby="downshift-205-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-193-menu"
+                                  id="downshift-205-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -967,11 +1606,38 @@ exports[`Settings should render 1`] = `
                     </span>
                   </li>
                 </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
               </ul>
             </div>
           </div>
           <div
-            class="ml-16"
+            class="w-full ml-16"
           >
             <div
               class="sc-fzoLag fvqzEZ"
@@ -1043,21 +1709,26 @@ exports[`Settings should render 1`] = `
                             <div
                               class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                             >
-                              <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                                data-testid="General-settings__upload-button"
-                                type="button"
+                              <div
+                                class="w-20 h-20 overflow-hidden rounded-full"
                               >
-                                <div
-                                  class="sc-AxirZ iQaTP"
-                                  height="1em"
-                                  width="1em"
+                                <button
+                                  class="sc-AxhCb BegvR w-20 h-20"
+                                  color="primary"
+                                  data-testid="General-settings__upload-button"
+                                  type="button"
                                 >
-                                  <svg>
-                                    upload.svg
-                                  </svg>
-                                </div>
-                              </button>
+                                  <div
+                                    class="sc-AxirZ iQaTP"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      upload.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1073,11 +1744,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            label="Name"
-                            required=""
                           >
                             Name
                             <div
@@ -1097,11 +1766,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
-                            label="Passphrase Language"
-                            required=""
                           >
                             Passphrase Language
                             <div
@@ -1163,11 +1830,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="currency"
-                            label="Currency"
-                            required=""
                           >
                             Currency
                             <div
@@ -1233,11 +1898,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="language"
-                            label="Language"
-                            required=""
                           >
                             Language
                             <div
@@ -1299,11 +1962,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="marketProvider"
-                            label="Market Provider"
-                            required=""
                           >
                             Market Provider
                             <div
@@ -1365,11 +2026,9 @@ exports[`Settings should render 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="timeFormat"
-                            label="Time Format"
-                            required=""
                           >
                             Time Format
                             <div
@@ -1576,13 +2235,11 @@ exports[`Settings should render 1`] = `
                             class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
-                              for="autoLogoff"
-                              label="Auto-logoff"
-                              required=""
+                              for="automaticSignOutPeriod"
                             >
-                              Auto-logoff
+                              Automatic Sign Out Period
                               <div
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -1594,7 +2251,7 @@ exports[`Settings should render 1`] = `
                               <input
                                 class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
                                 data-testid="select-list__input"
-                                name="autoLogoff"
+                                name="automaticSignOutPeriod"
                                 readonly=""
                                 type="text"
                                 value="1"
@@ -1806,6 +2463,541 @@ exports[`Settings should render 1`] = `
                     </div>
                   </div>
                 </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Settings should render password settings 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV bqFbiw"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
+                  >
+                    <img
+                      alt="Profile avatar"
+                      class="rounded-full w-11 h-11"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      TE
+                    </span>
+                    <span
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxirZ fttODj"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="flex flex-1 bg-theme-background"
+      >
+        <div
+          class="container flex mx-auto"
+        >
+          <div
+            class="px-10 my-16 border-r-1 border-theme-primary-contrast"
+          >
+            <div
+              class="sc-fzpjYC eMYFdv"
+            >
+              <ul>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--General"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          general.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      General
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Peer"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          peer.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Peer
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Plugins"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          plugin.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Plugins
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <div
+                    class="sc-fzoXzr hpqHyx absolute top-0 left-0 rounded-lg bg-theme-primary"
+                  />
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-semibold"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="w-full ml-16"
+          >
+            <div
+              class="sc-fzoLag fvqzEZ"
+            >
+              <div
+                class="container py-16 mx-auto px-14"
+              >
+                <div
+                  class="space-y-8"
+                >
+                  <div
+                    class="flex items-end justify-between bg-theme-background"
+                  >
+                    <div>
+                      <h1
+                        class="mb-0 md:text-4xl"
+                        data-testid="header__title"
+                      >
+                        Profile Password
+                      </h1>
+                      <div
+                        class="text-theme-neutral-dark"
+                        data-testid="header__subtitle"
+                      >
+                        Provide a password below to secure your user profile.
+                      </div>
+                    </div>
+                  </div>
+                  <form
+                    class="space-y-8"
+                    data-testid="Form"
+                    id="password-settings__form"
+                  >
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="password_1"
+                      >
+                        New Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--password_1"
+                          name="password_1"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="password_2"
+                      >
+                        Confirm New Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--password_2"
+                          name="password_2"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div
+                      class="flex justify-end w-full mt-8"
+                    >
+                      <button
+                        class="sc-AxhCb gBCygf"
+                        color="primary"
+                        data-testid="Password-settings__submit-button"
+                        disabled=""
+                        type="submit"
+                      >
+                        Set Password
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -2171,11 +3363,38 @@ exports[`Settings should render peer settings 1`] = `
                     </span>
                   </li>
                 </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
               </ul>
             </div>
           </div>
           <div
-            class="ml-16"
+            class="w-full ml-16"
           >
             <div
               class="sc-fzoLag fvqzEZ"
@@ -3028,11 +4247,38 @@ exports[`Settings should render plugin settings 1`] = `
                     </span>
                   </li>
                 </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
               </ul>
             </div>
           </div>
           <div
-            class="ml-16"
+            class="w-full ml-16"
           >
             <div
               class="sc-fzoLag fvqzEZ"
@@ -3195,10 +4441,9 @@ exports[`Settings should render plugin settings 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="load-plugins"
-                            required=""
                           >
                             Load plugins from
                             <div
@@ -3224,18 +4469,18 @@ exports[`Settings should render plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-180-label downshift-180-toggle-button"
+                                  aria-labelledby="downshift-192-label downshift-192-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-180-toggle-button"
+                                  id="downshift-192-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-180-label"
+                                  aria-labelledby="downshift-192-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-180-menu"
+                                  id="downshift-192-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3275,6 +4520,1231 @@ exports[`Settings should render plugin settings 1`] = `
                     </button>
                   </div>
                 </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Settings should set a password 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV bqFbiw"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
+                  >
+                    <img
+                      alt="Profile avatar"
+                      class="rounded-full w-11 h-11"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      TE
+                    </span>
+                    <span
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxirZ fttODj"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="flex flex-1 bg-theme-background"
+      >
+        <div
+          class="container flex mx-auto"
+        >
+          <div
+            class="px-10 my-16 border-r-1 border-theme-primary-contrast"
+          >
+            <div
+              class="sc-fzpjYC eMYFdv"
+            >
+              <ul>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--General"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          general.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      General
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Peer"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          peer.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Peer
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Plugins"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          plugin.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Plugins
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <div
+                    class="sc-fzoXzr hpqHyx absolute top-0 left-0 rounded-lg bg-theme-primary"
+                  />
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-semibold"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="w-full ml-16"
+          >
+            <div
+              class="sc-fzoLag fvqzEZ"
+            >
+              <div
+                class="container py-16 mx-auto px-14"
+              >
+                <div
+                  class="space-y-8"
+                >
+                  <div
+                    class="flex items-end justify-between bg-theme-background"
+                  >
+                    <div>
+                      <h1
+                        class="mb-0 md:text-4xl"
+                        data-testid="header__title"
+                      >
+                        Profile Password
+                      </h1>
+                      <div
+                        class="text-theme-neutral-dark"
+                        data-testid="header__subtitle"
+                      >
+                        Change the password used to access your profile below.
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="mb-8"
+                    data-testid="Password-settings__success-alert"
+                  >
+                    <div
+                      class="flex rounded-lg overflow-hidden bg-theme-success"
+                    >
+                      <div
+                        class="sc-fzoXWK gQTUAI flex items-center justify-center text-theme-success bg-theme-success-200"
+                      >
+                        <div
+                          class="sc-AxirZ bMjbpr"
+                          height="30"
+                          width="30"
+                        >
+                          <svg>
+                            alert-success.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-fzoNJl cMajEE flex-1 bg-theme-success-100"
+                      >
+                        <p
+                          class="text-xl font-bold text-theme-success"
+                          data-testid="alert__title"
+                        >
+                          Success
+                        </p>
+                        Your password has been successfully changed.
+                      </div>
+                    </div>
+                  </div>
+                  <form
+                    class="space-y-8"
+                    data-testid="Form"
+                    id="password-settings__form"
+                  >
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="currentPassword"
+                      >
+                        Current Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--currentPassword"
+                          name="currentPassword"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="password_1"
+                      >
+                        New Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--password_1"
+                          name="password_1"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="password_2"
+                      >
+                        Confirm New Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--password_2"
+                          name="password_2"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div
+                      class="flex justify-end w-full mt-8"
+                    >
+                      <button
+                        class="sc-AxhCb gBCygf"
+                        color="primary"
+                        data-testid="Password-settings__submit-button"
+                        disabled=""
+                        type="submit"
+                      >
+                        Change Password
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Settings should show an error alert if the current password does not match 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV bqFbiw"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
+                  >
+                    <img
+                      alt="Profile avatar"
+                      class="rounded-full w-11 h-11"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      TE
+                    </span>
+                    <span
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxirZ fttODj"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="flex flex-1 bg-theme-background"
+      >
+        <div
+          class="container flex mx-auto"
+        >
+          <div
+            class="px-10 my-16 border-r-1 border-theme-primary-contrast"
+          >
+            <div
+              class="sc-fzpjYC eMYFdv"
+            >
+              <ul>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--General"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          general.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      General
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Peer"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          peer.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Peer
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Plugins"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          plugin.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Plugins
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <div
+                    class="sc-fzoXzr hpqHyx absolute top-0 left-0 rounded-lg bg-theme-primary"
+                  />
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-semibold"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="w-full ml-16"
+          >
+            <div
+              class="sc-fzoLag fvqzEZ"
+            >
+              <div
+                class="container py-16 mx-auto px-14"
+              >
+                <div
+                  class="space-y-8"
+                >
+                  <div
+                    class="flex items-end justify-between bg-theme-background"
+                  >
+                    <div>
+                      <h1
+                        class="mb-0 md:text-4xl"
+                        data-testid="header__title"
+                      >
+                        Profile Password
+                      </h1>
+                      <div
+                        class="text-theme-neutral-dark"
+                        data-testid="header__subtitle"
+                      >
+                        Change the password used to access your profile below.
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="mb-8"
+                    data-testid="Password-settings__error-alert"
+                  >
+                    <div
+                      class="flex rounded-lg overflow-hidden bg-theme-danger"
+                    >
+                      <div
+                        class="sc-fzoXWK gQTUAI flex items-center justify-center text-theme-danger bg-theme-danger-200"
+                      >
+                        <div
+                          class="sc-AxirZ bMjbpr"
+                          height="30"
+                          width="30"
+                        >
+                          <svg>
+                            alert-danger.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-fzoNJl cMajEE flex-1 bg-theme-danger-100"
+                      >
+                        <p
+                          class="text-xl font-bold text-theme-danger"
+                          data-testid="alert__title"
+                        >
+                          Error
+                        </p>
+                        The current password does not match.
+                      </div>
+                    </div>
+                  </div>
+                  <form
+                    class="space-y-8"
+                    data-testid="Form"
+                    id="password-settings__form"
+                  >
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="currentPassword"
+                      >
+                        Current Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--currentPassword"
+                          name="currentPassword"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="password_1"
+                      >
+                        New Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--password_1"
+                          name="password_1"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset
+                      class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                    >
+                      <label
+                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                        data-testid="FormLabel"
+                        for="password_2"
+                      >
+                        Confirm New Password
+                        <div
+                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-fznZeY exqqJj max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="Password-settings__input--password_2"
+                          name="password_2"
+                          type="password"
+                        />
+                        <div
+                          class="sc-fzplWN sc-fznKkj fjTeZA my-px mr-4"
+                        >
+                          <button
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div
+                      class="flex justify-end w-full mt-8"
+                    >
+                      <button
+                        class="sc-AxhCb gBCygf"
+                        color="primary"
+                        data-testid="Password-settings__submit-button"
+                        type="submit"
+                      >
+                        Change Password
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -3640,11 +6110,38 @@ exports[`Settings should submit using default props 1`] = `
                     </span>
                   </li>
                 </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
               </ul>
             </div>
           </div>
           <div
-            class="ml-16"
+            class="w-full ml-16"
           >
             <div
               class="sc-fzoLag fvqzEZ"
@@ -3716,21 +6213,26 @@ exports[`Settings should submit using default props 1`] = `
                             <div
                               class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                             >
-                              <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                                data-testid="General-settings__upload-button"
-                                type="button"
+                              <div
+                                class="w-20 h-20 overflow-hidden rounded-full"
                               >
-                                <div
-                                  class="sc-AxirZ iQaTP"
-                                  height="1em"
-                                  width="1em"
+                                <button
+                                  class="sc-AxhCb BegvR w-20 h-20"
+                                  color="primary"
+                                  data-testid="General-settings__upload-button"
+                                  type="button"
                                 >
-                                  <svg>
-                                    upload.svg
-                                  </svg>
-                                </div>
-                              </button>
+                                  <div
+                                    class="sc-AxirZ iQaTP"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      upload.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3746,11 +6248,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            label="Name"
-                            required=""
                           >
                             Name
                             <div
@@ -3770,11 +6270,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
-                            label="Passphrase Language"
-                            required=""
                           >
                             Passphrase Language
                             <div
@@ -3800,18 +6298,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-116-label downshift-116-toggle-button"
+                                  aria-labelledby="downshift-122-label downshift-122-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-116-toggle-button"
+                                  id="downshift-122-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-116-label"
+                                  aria-labelledby="downshift-122-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-116-menu"
+                                  id="downshift-122-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3836,11 +6334,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="currency"
-                            label="Currency"
-                            required=""
                           >
                             Currency
                             <div
@@ -3866,18 +6362,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-117-label downshift-117-toggle-button"
+                                  aria-labelledby="downshift-123-label downshift-123-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-117-toggle-button"
+                                  id="downshift-123-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-117-label"
+                                  aria-labelledby="downshift-123-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-117-menu"
+                                  id="downshift-123-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3906,11 +6402,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="language"
-                            label="Language"
-                            required=""
                           >
                             Language
                             <div
@@ -3936,18 +6430,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-118-label downshift-118-toggle-button"
+                                  aria-labelledby="downshift-124-label downshift-124-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-118-toggle-button"
+                                  id="downshift-124-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-118-label"
+                                  aria-labelledby="downshift-124-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-118-menu"
+                                  id="downshift-124-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3972,11 +6466,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="marketProvider"
-                            label="Market Provider"
-                            required=""
                           >
                             Market Provider
                             <div
@@ -4002,18 +6494,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-119-label downshift-119-toggle-button"
+                                  aria-labelledby="downshift-125-label downshift-125-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-119-toggle-button"
+                                  id="downshift-125-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-119-label"
+                                  aria-labelledby="downshift-125-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-119-menu"
+                                  id="downshift-125-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -4038,11 +6530,9 @@ exports[`Settings should submit using default props 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="timeFormat"
-                            label="Time Format"
-                            required=""
                           >
                             Time Format
                             <div
@@ -4068,18 +6558,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-120-label downshift-120-toggle-button"
+                                  aria-labelledby="downshift-126-label downshift-126-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-120-toggle-button"
+                                  id="downshift-126-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-120-label"
+                                  aria-labelledby="downshift-126-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-120-menu"
+                                  id="downshift-126-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -4328,13 +6818,11 @@ exports[`Settings should submit using default props 1`] = `
                             class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
-                              for="autoLogoff"
-                              label="Auto-logoff"
-                              required=""
+                              for="automaticSignOutPeriod"
                             >
-                              Auto-logoff
+                              Automatic Sign Out Period
                               <div
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -4346,7 +6834,7 @@ exports[`Settings should submit using default props 1`] = `
                               <input
                                 class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
                                 data-testid="select-list__input"
-                                name="autoLogoff"
+                                name="automaticSignOutPeriod"
                                 readonly=""
                                 type="text"
                                 value="1"
@@ -4358,18 +6846,18 @@ exports[`Settings should submit using default props 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-121-label downshift-121-toggle-button"
+                                    aria-labelledby="downshift-127-label downshift-127-toggle-button"
                                     class="sc-fznWqX iNiXlu  is-selected "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-121-toggle-button"
+                                    id="downshift-127-toggle-button"
                                     type="button"
                                   >
                                     1 minute
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-121-label"
+                                    aria-labelledby="downshift-127-label"
                                     class="sc-fzoiQi gHZRjd"
-                                    id="downshift-121-menu"
+                                    id="downshift-127-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4924,11 +7412,38 @@ exports[`Settings should update profile 1`] = `
                     </span>
                   </li>
                 </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <li
+                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                  >
+                    <div
+                      class="text-theme-primary-light"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 text-lg font-medium"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
               </ul>
             </div>
           </div>
           <div
-            class="ml-16"
+            class="w-full ml-16"
           >
             <div
               class="sc-fzoLag fvqzEZ"
@@ -5000,21 +7515,26 @@ exports[`Settings should update profile 1`] = `
                             <div
                               class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                             >
-                              <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                                data-testid="General-settings__upload-button"
-                                type="button"
+                              <div
+                                class="w-20 h-20 overflow-hidden rounded-full"
                               >
-                                <div
-                                  class="sc-AxirZ iQaTP"
-                                  height="1em"
-                                  width="1em"
+                                <button
+                                  class="sc-AxhCb BegvR w-20 h-20"
+                                  color="primary"
+                                  data-testid="General-settings__upload-button"
+                                  type="button"
                                 >
-                                  <svg>
-                                    upload.svg
-                                  </svg>
-                                </div>
-                              </button>
+                                  <div
+                                    class="sc-AxirZ iQaTP"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      upload.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -5030,11 +7550,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            label="Name"
-                            required=""
                           >
                             Name
                             <div
@@ -5054,11 +7572,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
-                            label="Passphrase Language"
-                            required=""
                           >
                             Passphrase Language
                             <div
@@ -5120,11 +7636,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="currency"
-                            label="Currency"
-                            required=""
                           >
                             Currency
                             <div
@@ -5190,11 +7704,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="language"
-                            label="Language"
-                            required=""
                           >
                             Language
                             <div
@@ -5256,11 +7768,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="marketProvider"
-                            label="Market Provider"
-                            required=""
                           >
                             Market Provider
                             <div
@@ -5322,11 +7832,9 @@ exports[`Settings should update profile 1`] = `
                           class="sc-fznxsB bzZFHQ mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="timeFormat"
-                            label="Time Format"
-                            required=""
                           >
                             Time Format
                             <div
@@ -5532,13 +8040,11 @@ exports[`Settings should update profile 1`] = `
                             class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                           >
                             <label
-                              class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
-                              for="autoLogoff"
-                              label="Auto-logoff"
-                              required=""
+                              for="automaticSignOutPeriod"
                             >
-                              Auto-logoff
+                              Automatic Sign Out Period
                               <div
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -5550,7 +8056,7 @@ exports[`Settings should update profile 1`] = `
                               <input
                                 class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
                                 data-testid="select-list__input"
-                                name="autoLogoff"
+                                name="automaticSignOutPeriod"
                                 readonly=""
                                 type="text"
                                 value="1"

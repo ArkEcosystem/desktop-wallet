@@ -53,6 +53,7 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 									onChange={(event: any) => setValue("hash", event.target.value, true)}
 								/>
 							</InputGroup>
+							<FormHelperText />
 						</FormField>
 					</>
 				</SendTransactionForm>
@@ -173,7 +174,9 @@ export const SendIPFSTransaction = () => {
 		register("fee", { required: true });
 		register("hash", {
 			required: true,
-			validate: (value) => /^Qm/.test(value) && value.length > 2 && value.length <= 90,
+			validate: (value) =>
+				/(Qm[A-HJ-NP-Za-km-z1-9]{44,45})/.test(value) ||
+				t("TRANSACTION.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
 		});
 
 		setValue("senderAddress", activeWallet.address(), true);
@@ -188,7 +191,7 @@ export const SendIPFSTransaction = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, setValue]);
+	}, [activeWallet, networks, register, setValue, t]);
 
 	const submitForm = async () => {
 		clearError("mnemonic");

@@ -7,6 +7,7 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Personal Details",
 			PROFILE_IMAGE: "Profile Image",
 			NAME: "Name",
+			PASSWORD: "Password",
 			PASSPHRASE_LANGUAGE: "Passphrase Language",
 			CURRENCY: "Currency",
 			LANGUAGE: "Language",
@@ -24,8 +25,8 @@ export const translations: { [key: string]: any } = {
 				DESCRIPTION:
 					"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
 			},
-			AUTOMATIC_LOGOUT: {
-				TITLE: "Auto-logoff",
+			AUTOMATIC_SIGN_OUT_PERIOD: {
+				TITLE: "Automatic Sign Out Period",
 			},
 		},
 		OTHER: {
@@ -40,9 +41,24 @@ export const translations: { [key: string]: any } = {
 					"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
 			},
 		},
-		VALIDATION: {
-			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+	},
+	PASSWORD: {
+		MENU_ITEM: "Password",
+		TITLE: "Profile Password",
+		SUBTITLE_CREATE: "Provide a password below to secure your user profile.",
+		SUBTITLE_UPDATE: "Change the password used to access your profile below.",
+		BUTTON: {
+			CREATE: "Set Password",
+			UPDATE: "Change Password",
 		},
+		CURRENT: "Current Password",
+		PASSWORD_1: "New Password",
+		PASSWORD_2: "Confirm New Password",
+		ERROR: {
+			FALLBACK: "Something went wrong.",
+			MISMATCH: "The current password does not match.",
+		},
+		SUCCESS: "Your password has been successfully changed.",
 	},
 	PEERS: {
 		MENU_ITEM: "Peer",

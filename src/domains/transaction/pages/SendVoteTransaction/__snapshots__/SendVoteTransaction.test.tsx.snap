@@ -464,10 +464,9 @@ exports[`Vote For Delegate should render 1`] = `
                               class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="fee"
-                                required=""
                               >
                                 Transaction Fee
                                 <div
@@ -768,10 +767,9 @@ exports[`Vote For Delegate should render 1st step 1`] = `
               class="sc-AxhCb ckQmOL flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="fee"
-                required=""
               >
                 Transaction Fee
                 <div
@@ -1137,10 +1135,9 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="name"
-            required=""
           >
             Mnemonic
             <div
@@ -1162,7 +1159,7 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
@@ -1183,10 +1180,9 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
           class="sc-AxhCb ckQmOL mt-8"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="name"
-            required=""
           >
             2nd Mnemonic
             <div
@@ -1208,7 +1204,7 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
@@ -1254,10 +1250,9 @@ exports[`Vote For Delegate should render 3rd step 2`] = `
           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
         >
           <label
-            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
             data-testid="FormLabel"
             for="name"
-            required=""
           >
             Encryption Password
             <div
@@ -1279,7 +1274,7 @@ exports[`Vote For Delegate should render 3rd step 2`] = `
               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                 data-testid="InputPassword__toggle"
                 type="button"
               >

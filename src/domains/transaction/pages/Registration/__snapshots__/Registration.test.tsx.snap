@@ -302,11 +302,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="network"
-                            label="Network"
-                            required=""
                           >
                             Network
                             <div
@@ -435,11 +433,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="senderAddress"
-                            label="Sender"
-                            required=""
                           >
                             Sender
                             <div
@@ -514,11 +510,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="registrationType"
-                            label="Registration Type"
-                            required=""
                           >
                             Registration Type
                             <div
@@ -1312,8 +1306,10 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                           <div
                             class="flex-1 space-y-2"
                           >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
+                            <label
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              data-testid="FormLabel"
+                              for="username"
                             >
                               TRANSACTION.DELEGATE_REGISTRATION
                             </div>
@@ -1340,6 +1336,17 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                         <div
                           class="mt-2"
                         >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="fee"
+                          >
+                            Transaction Fee
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
                           <div
                             class="border rounded-lg border-theme-neutral-300"
                           >
@@ -1757,8 +1764,10 @@ exports[`Registration should register delegate 1`] = `
                         <div
                           class="w-full my-10"
                         >
-                          <svg
-                            class="w-full"
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="network"
                           >
                             transaction_successful.svg
                           </svg>
@@ -1916,8 +1925,10 @@ exports[`Registration should register delegate 1`] = `
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                           data-testid="TransactionDetail"
                         >
-                          <div
-                            class="flex-1 space-y-2"
+                          <label
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="senderAddress"
                           >
                             <div
                               class="font-semibold"
@@ -3885,11 +3896,9 @@ exports[`Registration should should go back and forth & correctly register field
                           class="sc-AxirZ izhStr flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
-                            for="fee"
-                            label="Transaction Fee"
-                            required=""
+                            for="registrationType"
                           >
                             Transaction Fee
                             <div

@@ -137,7 +137,7 @@ describe("SendIPFSTransaction", () => {
 			await waitFor(() => expect(rendered.getByTestId(`SendIPFSTransaction__step--first`)).toBeTruthy());
 		});
 
-		const { getAllByTestId, getByTestId } = rendered!;
+		const { getByTestId } = rendered!;
 
 		await act(async () => {
 			await waitFor(() =>
@@ -240,7 +240,7 @@ describe("SendIPFSTransaction", () => {
 			await waitFor(() => expect(rendered.getByTestId(`SendIPFSTransaction__step--first`)).toBeTruthy());
 		});
 
-		const { getAllByTestId, getByTestId } = rendered!;
+		const { getByTestId } = rendered!;
 
 		await act(async () => {
 			// Hash
@@ -294,6 +294,39 @@ describe("SendIPFSTransaction", () => {
 			signMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should show an error if an invalid IPFS hash is entered", async () => {
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+
+		history.push(ipfsURL);
+
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+				<SendIPFSTransaction />
+			</Route>,
+			{
+				routes: [ipfsURL],
+				history,
+			},
+		);
+
+		await act(async () => {
+			fireEvent.input(getByTestId("Input__hash"), {
+				target: { value: "invalid-ipfs-hash" },
+			});
+
+			expect(getByTestId("Input__hash")).toHaveValue("invalid-ipfs-hash");
+
+			await waitFor(() =>
+				expect(getByTestId("SendIPFSTransaction__step--first")).toHaveTextContent(
+					transactionTranslations.INPUT_IPFS_HASH.VALIDATION.NOT_VALID,
+				),
+			);
+
+			await waitFor(() => expect(container).toMatchSnapshot());
 		});
 	});
 });

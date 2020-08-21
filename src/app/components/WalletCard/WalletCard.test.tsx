@@ -86,13 +86,9 @@ describe("Wallet Card", () => {
 
 	it("should click a wallet and redirect to it", () => {
 		const { getByTestId } = renderWithRouter(
-			<table>
-				<tbody>
-					<Route path="/profiles/:profileId/dashboard">
-						<WalletCard wallet={wallet} />
-					</Route>
-				</tbody>
-			</table>,
+			<Route path="/profiles/:profileId/dashboard">
+				<WalletCard wallet={wallet} />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
