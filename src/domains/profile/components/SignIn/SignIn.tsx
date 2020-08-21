@@ -18,7 +18,7 @@ type SignInProps = {
 };
 
 const MAX_ATTEMPTS = 3;
-const TIMEOUT = 5;
+const TIMEOUT = 60;
 
 export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignInProps) => {
 	const { t } = useTranslation();
