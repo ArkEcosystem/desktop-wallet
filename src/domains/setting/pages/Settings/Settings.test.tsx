@@ -100,7 +100,7 @@ describe("Settings", () => {
 		// Select Time Format
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[4]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		// Select Auto-logoff
+		// Select Automatic Sign Out Period
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[5]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		// Toggle Screenshot Protection
@@ -129,7 +129,7 @@ describe("Settings", () => {
 			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: false,
 			ADVANCED_MODE: true,
-			AUTOMATIC_LOGOFF_PERIOD: 1,
+			AUTOMATIC_SIGN_OUT_PERIOD: 1,
 			THEME: "light",
 			LEDGER_UPDATE_METHOD: true,
 		});
@@ -168,7 +168,7 @@ describe("Settings", () => {
 			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: false,
 			ADVANCED_MODE: false,
-			AUTOMATIC_LOGOFF_PERIOD: 1,
+			AUTOMATIC_SIGN_OUT_PERIOD: 1,
 			THEME: "dark",
 			LEDGER_UPDATE_METHOD: true,
 		});
