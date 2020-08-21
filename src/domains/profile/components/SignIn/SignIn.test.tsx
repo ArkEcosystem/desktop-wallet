@@ -96,6 +96,8 @@ describe("SignIn", () => {
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 	});
 
+	jest.setTimeout(100000);
+
 	it("should set an error and disable the input if the password is invalid multiple times", async () => {
 		jest.useFakeTimers();
 
