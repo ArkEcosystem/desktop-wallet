@@ -91,7 +91,7 @@ export const MyRegistrations = () => {
 
 			{business.length > 0 && <BusinessTable data={business} />}
 			{blockchain.length > 0 && <BlockchainTable data={blockchain} />}
-			{delegates.length > 0 && <DelegateTable data={delegates} />}
+			{delegates.length > 0 && <DelegateTable wallets={delegates} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
