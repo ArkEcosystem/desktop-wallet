@@ -126,7 +126,7 @@ describe("SignIn", () => {
 		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
 		await act(async () => {
-			jest.advanceTimersByTime(60000);
+			jest.runOnlyPendingTimers();
 		});
 
 		// wait for form to be updated
@@ -134,6 +134,6 @@ describe("SignIn", () => {
 
 		await waitFor(() => {
 			expect(queryByText("The Password is invalid")).toBeTruthy();
-		});
+		}, { timeout: 10000 });
 	});
 });
