@@ -1,5 +1,5 @@
 export const translations: { [key: string]: any } = {
-	LOGIN: "Login with MarketSquare",
+	SIGN_IN: "Sign In via MarketSquare",
 	CREATE_PROFILE: "Create Profile",
 	MODAL_PROFILE_CREATED: {
 		TITLE: "Profile Created!",
@@ -33,7 +33,7 @@ export const translations: { [key: string]: any } = {
 	},
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
-		DESCRIPTION: "Login with your MarketSquare account or create a new Profile below.",
+		DESCRIPTION: "Sign in via MarketSquare or create a new Profile below.",
 		VALIDATION: {
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
 		},
@@ -61,8 +61,8 @@ export const translations: { [key: string]: any } = {
 	},
 	PAGE_WELCOME: {
 		TITLE: "Welcome to ARK",
-		HAS_NO_PROFILES: "Login with your MarketSquare account or create a new Profile to get started.",
+		HAS_NO_PROFILES: "Sign in via MarketSquare or create a new Profile to get started.",
 		HAS_PROFILES:
-			"Choose from an existing Profile below, login with your MarketSquare account or create a new Profile to get started.",
+			"Choose from an existing Profile below, sign in via MarketSquare or create a new Profile to get started.",
 	},
 };

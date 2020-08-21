@@ -1578,11 +1578,11 @@ exports[`Settings should render 1`] = `
                             <label
                               class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
-                              for="autoLogoff"
-                              label="Auto-logoff"
+                              for="automaticSignOutPeriod"
+                              label="Automatic Sign Out Period"
                               required=""
                             >
-                              Auto-logoff
+                              Automatic Sign Out Period
                               <div
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -1594,7 +1594,7 @@ exports[`Settings should render 1`] = `
                               <input
                                 class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
                                 data-testid="select-list__input"
-                                name="autoLogoff"
+                                name="automaticSignOutPeriod"
                                 readonly=""
                                 type="text"
                                 value="1"
@@ -4330,11 +4330,11 @@ exports[`Settings should submit using default props 1`] = `
                             <label
                               class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
-                              for="autoLogoff"
-                              label="Auto-logoff"
+                              for="automaticSignOutPeriod"
+                              label="Automatic Sign Out Period"
                               required=""
                             >
-                              Auto-logoff
+                              Automatic Sign Out Period
                               <div
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -4346,7 +4346,7 @@ exports[`Settings should submit using default props 1`] = `
                               <input
                                 class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
                                 data-testid="select-list__input"
-                                name="autoLogoff"
+                                name="automaticSignOutPeriod"
                                 readonly=""
                                 type="text"
                                 value="1"
@@ -5534,11 +5534,11 @@ exports[`Settings should update profile 1`] = `
                             <label
                               class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
                               data-testid="FormLabel"
-                              for="autoLogoff"
-                              label="Auto-logoff"
+                              for="automaticSignOutPeriod"
+                              label="Automatic Sign Out Period"
                               required=""
                             >
-                              Auto-logoff
+                              Automatic Sign Out Period
                               <div
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -5550,7 +5550,7 @@ exports[`Settings should update profile 1`] = `
                               <input
                                 class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
                                 data-testid="select-list__input"
-                                name="autoLogoff"
+                                name="automaticSignOutPeriod"
                                 readonly=""
                                 type="text"
                                 value="1"

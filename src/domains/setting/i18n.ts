@@ -24,8 +24,8 @@ export const translations: { [key: string]: any } = {
 				DESCRIPTION:
 					"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
 			},
-			AUTOMATIC_LOGOUT: {
-				TITLE: "Auto-logoff",
+			AUTOMATIC_SIGN_OUT_PERIOD: {
+				TITLE: "Automatic Sign Out Period",
 			},
 		},
 		OTHER: {

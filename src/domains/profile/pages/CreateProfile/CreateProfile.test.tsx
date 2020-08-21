@@ -34,7 +34,7 @@ const showOpenDialogParams = {
 const baseSettings = {
 	AVATAR: "",
 	ADVANCED_MODE: false,
-	AUTOMATIC_LOGOFF_PERIOD: 15,
+	AUTOMATIC_SIGN_OUT_PERIOD: 15,
 	BIP39_LOCALE: "english",
 	EXCHANGE_CURRENCY: "btc",
 	LEDGER_UPDATE_METHOD: false,
