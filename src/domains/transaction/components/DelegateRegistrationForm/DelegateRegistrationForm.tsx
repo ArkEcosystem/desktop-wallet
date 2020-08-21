@@ -27,8 +27,10 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 	const fee = getValues("fee") || null;
 
 	useEffect(() => {
-		register("username", { required: true });
-	}, [register]);
+		if (!username) {
+			register("username", { required: true });
+		}
+	}, [register, username]);
 
 	return (
 		<section data-testid="DelegateRegistrationForm__step--second">
