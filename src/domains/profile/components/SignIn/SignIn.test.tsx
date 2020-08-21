@@ -110,24 +110,27 @@ describe("SignIn", () => {
 				fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: `wrong password ${i}` } });
 			});
 
-			// wait for formState.isValid to be updated
+			// wait for form to be updated
 			await findByTestId("SignIn__submit-button");
 
-			act(() => {
+			await act(async () => {
 				fireEvent.click(getByTestId("SignIn__submit-button"));
 			});
 
-			// wait for formState.isValid to be updated
+			// wait for form to be updated
 			await findByTestId("SignIn__submit-button");
 		}
 
 		expect(queryByText(/Maximum sign in attempts reached/)).toBeTruthy();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
+		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
 		await act(async () => {
 			jest.advanceTimersByTime(60000);
-			jest.clearAllTimers();
 		});
+
+		// wait for form to be updated
+		await findByTestId("SignIn__submit-button");
 
 		await waitFor(() => {
 			expect(queryByText("The Password is invalid")).toBeTruthy();
