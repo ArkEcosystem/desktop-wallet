@@ -6,7 +6,8 @@ import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeleteProfile";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
-import React from "react";
+import { SignIn } from "domains/profile/components/SignIn/SignIn";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
@@ -15,30 +16,50 @@ const { WelcomeBanner } = images.common;
 
 export const Welcome = () => {
 	const context = useEnvironmentContext();
-	const { t } = useTranslation();
 	const history = useHistory();
-	const profiles = React.useMemo(() => context.env.profiles().values(), [context]);
-	const [deletingProfileId, setDeletingProfileId] = React.useState<string | undefined>();
+
+	const { t } = useTranslation();
+
+	const profiles = useMemo(() => context.env.profiles().values(), [context]);
+
+	const [deletingProfileId, setDeletingProfileId] = useState<string | undefined>();
+	const [selectedProfile, setSelectedProfile] = useState<Profile | undefined>();
 
 	const profileCardActions = [
 		{ label: t("COMMON.SETTINGS"), value: "setting" },
 		{ label: t("COMMON.DELETE"), value: "delete" },
 	];
 
-	React.useEffect(() => setScreenshotProtection(true));
+	useEffect(() => setScreenshotProtection(true));
+
+	const navigateToProfile = (profileId: string, subPath = "dashboard") => {
+		history.push(`/profiles/${profileId}/${subPath}`);
+	};
 
 	const closeDeleteProfileModal = () => {
 		setDeletingProfileId(undefined);
 	};
 
+	const closeSignInModal = () => {
+		setSelectedProfile(undefined);
+	};
+
 	const handleProfileCardAction = (profile: Profile, action: any) => {
 		switch (action?.value) {
 			case "setting":
-				history.push(`/profiles/${profile.id()}/settings`);
+				navigateToProfile(profile.id(), "settings");
 				break;
 			case "delete":
 				setDeletingProfileId(profile.id());
 				break;
+		}
+	};
+
+	const handleClick = (profile: Profile) => {
+		if (profile.usesPassword()) {
+			setSelectedProfile(profile);
+		} else {
+			navigateToProfile(profile.id());
 		}
 	};
 
@@ -66,7 +87,7 @@ export const Welcome = () => {
 								<div className="mt-8 space-y-3">
 									{profiles.map((profile: any, index: number) => (
 										<ProfileCard
-											handleClick={() => history.push(`/profiles/${profile.id()}/dashboard`)}
+											onClick={() => handleClick(profile)}
 											key={index}
 											profile={profile}
 											actions={profileCardActions}
@@ -106,6 +127,16 @@ export const Welcome = () => {
 				onClose={closeDeleteProfileModal}
 				onDelete={closeDeleteProfileModal}
 			/>
+
+			{selectedProfile && (
+				<SignIn
+					isOpen={!!selectedProfile}
+					profile={selectedProfile}
+					onCancel={closeSignInModal}
+					onClose={closeSignInModal}
+					onSuccess={() => navigateToProfile(selectedProfile.id())}
+				/>
+			)}
 		</>
 	);
 };

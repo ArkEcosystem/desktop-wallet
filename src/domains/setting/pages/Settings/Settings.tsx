@@ -17,7 +17,7 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 
 	const { env } = useEnvironmentContext();
 
-	const form = useForm();
+	const form = useForm({ mode: "onChange" });
 	const { register, errors } = form;
 
 	const activeProfile = useActiveProfile();
@@ -39,6 +39,11 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 			itemKey: "Plugins",
 			label: t("SETTINGS.PLUGINS.MENU_ITEM"),
 			icon: "Plugin",
+		},
+		{
+			itemKey: "Password",
+			label: t("SETTINGS.PASSWORD.MENU_ITEM"),
+			icon: "Lock",
 		},
 	];
 
