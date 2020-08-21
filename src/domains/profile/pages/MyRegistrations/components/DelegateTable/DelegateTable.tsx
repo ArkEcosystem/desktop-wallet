@@ -102,7 +102,7 @@ export const DelegateTable = ({ data, onAction }: Props) => {
 									<Dropdown
 										toggleIcon="Settings"
 										options={options}
-										onSelect={(option: any) => onAction?.(option)}
+										onSelect={({ value }: any) => onAction?.({ txId: rowData.id(), action: value })}
 									/>
 								</Button>
 							</span>

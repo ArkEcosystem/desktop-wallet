@@ -53,6 +53,22 @@ export const MyRegistrations = ({ onAction }: Props) => {
 		},
 	];
 
+	const handleAction = ({ action, txId }: any) => {
+		switch (action) {
+			case "register":
+				history.push(`/profiles/${activeProfile.id()}/transactions/registration`);
+				break;
+			case "resign":
+				history.push(`/profiles/${activeProfile.id()}/transactions/${txId}/resignation`);
+				break;
+			case "update":
+				history.push(`/profiles/${activeProfile.id()}/transactions/${txId}/update`);
+				break;
+			default:
+				break;
+		}
+	};
+
 	useEffect(() => {
 		const fetchAllDelegateRegistrations = async () => {
 			const allDelegateRegistrations = await wallets.reduce(async (prev: any, wallet: any) => {
@@ -78,11 +94,7 @@ export const MyRegistrations = ({ onAction }: Props) => {
 						<div className="flex justify-end space-x-10 divide-x divide-theme-neutral-300">
 							<HeaderSearchBar onSearch={console.log} />
 							<div className="pl-10">
-								<Button
-									onClick={() =>
-										history.push(`/profiles/${activeProfile.id()}/transactions/registration`)
-									}
-								>
+								<Button onClick={() => handleAction({ action: "register" })}>
 									{t("COMMON.REGISTER")}
 								</Button>
 							</div>
@@ -91,9 +103,9 @@ export const MyRegistrations = ({ onAction }: Props) => {
 				/>
 			</Section>
 
-			{business.length > 0 && <BusinessTable data={business} onAction={onAction} />}
-			{blockchain.length > 0 && <BlockchainTable data={blockchain} onAction={onAction} />}
-			{delegates.length > 0 && <DelegateTable data={delegates} onAction={onAction} />}
+			{business.length > 0 && <BusinessTable data={business} onAction={handleAction} />}
+			{blockchain.length > 0 && <BlockchainTable data={blockchain} onAction={handleAction} />}
+			{delegates.length > 0 && <DelegateTable data={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
