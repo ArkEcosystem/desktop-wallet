@@ -1,3 +1,4 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
@@ -34,8 +35,8 @@ const EmptyRegistrations = () => {
 	);
 };
 
-export const MyRegistrations = ({ onAction }: Props) => {
-	const [delegates, setDelegates] = useState([]);
+export const MyRegistrations = () => {
+	const [delegates, setDelegates] = useState<Wallet[]>([]);
 	const [blockchain] = useState([]);
 	const [business] = useState([]);
 
@@ -70,20 +71,15 @@ export const MyRegistrations = ({ onAction }: Props) => {
 	};
 
 	useEffect(() => {
-		const fetchAllDelegateRegistrations = async () => {
-			const allDelegateRegistrations = await wallets.reduce(async (prev: any, wallet: any) => {
-				// TODO: use activeWallet.registrationAggregate().delegates() when both
-				//		 aip36 and standard txs will be available from sdk.
-				const transactions = (await wallet.transactions()).items();
-				const delegateRegistration = transactions.find((tx: any) => tx.isDelegateRegistration());
-				return delegateRegistration ? [...(await prev), delegateRegistration] : await prev;
-			}, Promise.resolve([]));
+		const getDelegates = () =>
+			activeProfile
+				.wallets()
+				.values()
+				.filter((wallet: Wallet) => wallet.isDelegate());
 
-			setDelegates(allDelegateRegistrations);
-		};
+		setDelegates(getDelegates());
+	}, [activeProfile]);
 
-		fetchAllDelegateRegistrations();
-	}, []);
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
