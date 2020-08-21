@@ -32,7 +32,7 @@ export const ContactUs = (props: ContactUsProps) => {
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
-			<div className="flex px-12 pb-8 mt-4 mb-8 -mx-12 text-black border-b border-gray-500">
+			<div className="flex px-10 pb-8 mt-4 mb-8 -mx-10 text-black border-b border-gray-500">
 				<a href="https://twitter.ark.io" className="mr-2 rounded-full hover:bg-theme-neutral-300">
 					<Circle className="border-black hover:bg-transparent" noShadow={true}>
 						<Icon name="Twitter" />
