@@ -23,7 +23,13 @@ beforeEach(() => {
 	nock("https://dwallets.ark.io")
 		.post("/api/transactions/search")
 		.query(true)
-		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
+		.reply(200, () => {
+			const { meta, data } = require("tests/fixtures/coins/ark/transactions.json");
+			return {
+				meta,
+				data: data.slice(0, 2),
+			};
+		})
 		.persist();
 });
 
@@ -39,7 +45,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -56,7 +62,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 
 		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
 
@@ -96,7 +102,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 
 		act(() => {
 			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
@@ -121,7 +127,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -137,7 +143,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -153,7 +159,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 
 		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
@@ -181,7 +187,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 
 		act(() => {
 			fireEvent.click(getByText("Import"));
@@ -203,7 +209,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 
 		fireEvent.click(getByText("Create"));
 
@@ -222,19 +228,44 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(20));
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 		await waitFor(() => expect(getByTestId("transactions__fetch-more-button")).toBeInTheDocument());
 
 		act(() => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
 		});
 
-		await waitFor(
-			() => {
-				expect(getAllByTestId("TransactionRow")).toHaveLength(40);
+		await waitFor(() => {
+			expect(getAllByTestId("TransactionRow")).toHaveLength(4);
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should open detail modal on transaction row click", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
 			},
-			{ timeout: 2000 },
 		);
+
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
+
+		act(() => {
+			fireEvent.click(getAllByTestId("TransactionRow")[0]);
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeInTheDocument();
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
 
 		expect(asFragment()).toMatchSnapshot();
 	});

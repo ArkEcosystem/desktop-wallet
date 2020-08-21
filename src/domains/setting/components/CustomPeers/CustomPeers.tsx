@@ -23,7 +23,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 	return (
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
 			<Form context={form} onSubmit={onAddPeer}>
-				<FormField name="network" className="mt-8">
+				<FormField name="network" className="my-8">
 					<FormLabel>{t("SETTINGS.PEERS.NETWORK")}</FormLabel>
 					<SelectNetwork id="CustomPeers__network" networks={networks} />
 					<FormHelperText />

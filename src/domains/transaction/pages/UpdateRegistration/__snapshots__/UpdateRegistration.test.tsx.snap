@@ -321,10 +321,9 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-AxhCb ckQmOL font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
-                                required=""
                               >
                                 Name
                                 <div
@@ -344,10 +343,9 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-AxhCb ckQmOL mt-8 font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="description"
-                                required=""
                               >
                                 Description
                                 <div
@@ -367,10 +365,9 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-AxhCb ckQmOL mt-8 font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="website"
-                                required=""
                               >
                                 Website
                                 <div
@@ -531,10 +528,9 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-AxhCb ckQmOL font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
-                                required=""
                               >
                                 Transaction Fee
                                 <div
@@ -1641,10 +1637,9 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            required=""
                           >
                             Mnemonic
                             <div
@@ -1666,7 +1661,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -1687,10 +1682,9 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                           class="sc-AxhCb ckQmOL mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            required=""
                           >
                             2nd Mnemonic
                             <div
@@ -1712,7 +1706,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                               class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -2076,7 +2070,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"
@@ -2794,10 +2788,9 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-AxhCb ckQmOL font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
-                                required=""
                               >
                                 Name
                                 <div
@@ -2817,10 +2810,9 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-AxhCb ckQmOL mt-8 font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="description"
-                                required=""
                               >
                                 Description
                                 <div
@@ -2840,10 +2832,9 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-AxhCb ckQmOL mt-8 font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="website"
-                                required=""
                               >
                                 Website
                                 <div
@@ -3004,10 +2995,9 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-AxhCb ckQmOL font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
-                                required=""
                               >
                                 Transaction Fee
                                 <div
@@ -3441,7 +3431,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Successful
+                        Transaction Sent
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"

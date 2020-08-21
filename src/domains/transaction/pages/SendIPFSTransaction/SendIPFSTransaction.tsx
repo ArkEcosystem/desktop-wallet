@@ -1,130 +1,131 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Form } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputPassword } from "app/components/Input";
+import { Input, InputGroup, InputPassword } from "app/components/Input";
+import { Label } from "app/components/Label";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useActiveProfile } from "app/hooks/env";
-import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import { InputFee } from "domains/transaction/components/InputFee";
+import { useEnvironmentContext } from "app/contexts";
+import { useClipboard } from "app/hooks";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { TransactionField } from "domains/transaction/components/TransactionField";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ networks }: { networks: NetworkData[] }) => {
-	const { register } = useFormContext();
-
-	useEffect(() => {
-		register("hash", { required: true });
-		register("fee", { required: true });
-	}, [register]);
-
+export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
 	const { t } = useTranslation();
+	const { getValues, setValue } = useFormContext();
+	const { hash } = getValues();
 
 	return (
-		<div data-testid="SendIPFSTransaction__step--first">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.FIRST_STEP.DESCRIPTION")}</div>
-
+		<section data-testid="SendIPFSTransaction__step--first">
 			<div>
-				<TransactionField border={false} label={t("TRANSACTION.NETWORK")} padding={false}>
-					<SelectNetwork id="SendIPFSTransaction__network" networks={networks} />
-				</TransactionField>
-
-				<TransactionField border={false} label={t("TRANSACTION.SENDER")} padding={false}>
-					<div className="relative flex items-center">
-						<Input type="text" disabled />
-						<div className="absolute flex items-center ml-3">
-							<Avatar address="test" size="sm" noShadow className="mr-3" />
-							<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName="ROBank" />
-						</div>
-					</div>
-				</TransactionField>
-
-				<TransactionField border={false} label={t("TRANSACTION.IPFS_HASH")} padding={false}>
-					<Input name="hash" />
-				</TransactionField>
-
-				<TransactionField border={false} label={t("TRANSACTION.TRANSACTION_FEE")} className="pb-0">
-					<InputFee
-						defaultValue={(25 * 1e8).toFixed(0)}
-						min={(1 * 1e8).toFixed(0)}
-						max={(100 * 1e8).toFixed(0)}
-						step={1}
-					/>
-				</TransactionField>
+				<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE")}</h1>
+				<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.FIRST_STEP.DESCRIPTION")}</div>
 			</div>
-		</div>
+			<div className="mt-8">
+				<SendTransactionForm networks={networks} profile={profile}>
+					<>
+						<FormField name="hash" className="relative mt-1">
+							<div className="mb-2">
+								<FormLabel label={t("TRANSACTION.IPFS_HASH")} />
+							</div>
+							<InputGroup>
+								<Input
+									data-testid="Input__hash"
+									type="text"
+									placeholder=" "
+									className="pr-20"
+									defaultValue={hash}
+									onChange={(event: any) => setValue("hash", event.target.value, true)}
+								/>
+							</InputGroup>
+							<FormHelperText />
+						</FormField>
+					</>
+				</SendTransactionForm>
+			</div>
+		</section>
 	);
 };
 
-export const SecondStep = () => {
+export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 	const { t } = useTranslation();
+	const { getValues, unregister } = useFormContext();
+	const { fee, hash } = getValues();
+	const coinName = wallet.manifest().get<string>("name");
+
+	useEffect(() => {
+		unregister("mnemonic");
+	}, [unregister]);
 
 	return (
 		<section data-testid="SendIPFSTransaction__step--second">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-2 grid grid-flow-row gap-2">
+			<div className="mt-4 grid grid-flow-row gap-2">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
+								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
 				>
-					<span>ARK Ecosystem</span>
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+						{wallet.network().name}
+					</div>
 				</TransactionDetail>
 
-				<TransactionDetail
-					label="Sender"
-					extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" size="lg" />}
-				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+				<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+					<div className="mb-2 font-semibold text-theme-neutral">
+						<span className="mr-1 text-sm">Sender</span>
+						<Label color="warning">
+							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
+						</Label>
+					</div>
+					<Address address={wallet.address()} walletName={wallet.alias()} />
 				</TransactionDetail>
 
 				<TransactionDetail
 					label={t("TRANSACTION.IPFS_HASH")}
+					className="pt-6"
 					extra={
-						<div className="ml-1">
-							<Circle className="border-black bg-theme-background" size="lg">
-								<Icon name="Ipfs" width={23} height={23} />
-							</Circle>
+						<div className="mx-2">
+							<Icon name="Ipfs" width={32} height={32} />
 						</div>
 					}
 				>
-					<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
+					{hash}
 				</TransactionDetail>
 
-				<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
+				<div className="mt-2">
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
+				</div>
 			</div>
 		</section>
 	);
 };
 
 export const ThirdStep = () => {
-	const { register } = useFormContext();
-
-	useEffect(() => {
-		register("passphrase", { required: true });
-	}, [register]);
-
 	const { t } = useTranslation();
+	const { register } = useFormContext();
 
 	return (
 		<section data-testid="SendIPFSTransaction__step--third">
@@ -133,61 +134,94 @@ export const ThirdStep = () => {
 				<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 
 				<div className="grid grid-flow-row">
-					<TransactionDetail
-						border={false}
-						label={t("TRANSACTION.ENCRYPTION_PASSWORD")}
-						className="pt-8 pb-0"
-					>
-						<InputPassword name="passphrase" ref={register({ required: true })} />
-					</TransactionDetail>
+					<FormField name="mnemonic" className="pt-8 pb-0">
+						<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
+						<InputPassword ref={register({ required: true })} />
+						<FormHelperText />
+					</FormField>
 				</div>
 			</div>
 		</section>
 	);
 };
 
-export const FourthStep = () => {
+export const FourthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => (
+	<TransactionSuccessful transactionId={transaction.id()} />
+);
+
+export const SendIPFSTransaction = () => {
 	const { t } = useTranslation();
 
-	return (
-		<TransactionSuccessful>
-			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")}>
-				<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
-			</TransactionDetail>
-
-			<TransactionDetail
-				label={t("TRANSACTION.AMOUNT")}
-				className="pb-0"
-				extra={
-					<div className="ml-1 text-theme-danger">
-						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-							<Icon name="Sent" width={22} height={22} />
-						</Circle>
-					</div>
-				}
-			>
-				1.00 ARK
-			</TransactionDetail>
-		</TransactionSuccessful>
-	);
-};
-
-type Props = {
-	onCopy?: () => void;
-	onSubmit?: any;
-	networks?: NetworkData[];
-};
-
-export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
-	const [activeTab, setActiveTab] = React.useState(1);
+	const [activeTab, setActiveTab] = useState(1);
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+	// eslint-disable-next-line
+	const [_, copy] = useClipboard({
+		resetAfter: 1000,
+	});
+	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	// const { formState } = form;
-	// const { isValid } = formState;
+	const { clearError, formState, getValues, register, setError, setValue } = form;
 
-	const activeProfile = useActiveProfile();
+	useEffect(() => {
+		register("network", { required: true });
+		register("senderAddress", { required: true });
+		register("fee", { required: true });
+		register("hash", {
+			required: true,
+			validate: (value) =>
+				/(Qm[A-HJ-NP-Za-km-z1-9]{44,45})/.test(value) ||
+				t("TRANSACTION.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
+		});
 
-	const { t } = useTranslation();
+		setValue("senderAddress", activeWallet.address(), true);
+
+		for (const network of networks) {
+			if (
+				network.id() === activeWallet.network().id &&
+				network.coin() === activeWallet.manifest().get<string>("name")
+			) {
+				setValue("network", network, true);
+
+				break;
+			}
+		}
+	}, [activeWallet, networks, register, setValue, t]);
+
+	const submitForm = async () => {
+		clearError("mnemonic");
+		const { fee, mnemonic, senderAddress, hash } = getValues();
+		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
+
+		try {
+			const transactionId = await senderWallet!.transaction().signIpfs({
+				fee,
+				from: senderAddress,
+				sign: {
+					mnemonic,
+				},
+				data: {
+					hash,
+				},
+			});
+
+			await senderWallet!.transaction().broadcast([transactionId]);
+
+			await env.persist();
+
+			setTransaction(senderWallet!.transaction().transaction(transactionId));
+
+			handleNext();
+		} catch (error) {
+			console.error("Could not create transaction: ", error);
+
+			setValue("mnemonic", "");
+			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+		}
+	};
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -195,6 +229,10 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 
 	const handleNext = () => {
 		setActiveTab(activeTab + 1);
+	};
+
+	const copyTransaction = () => {
+		copy(transaction.id());
 	};
 
 	const crumbs = [
@@ -207,25 +245,25 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep networks={networks!} />
+								<FirstStep networks={networks} profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep />
+								<SecondStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep />
+								<FourthStep transaction={transaction} />
 							</TabPanel>
 
-							<div className="flex justify-end mt-8 space-x-2">
+							<div className="flex justify-end mt-10 space-x-2">
 								{activeTab < 4 && (
 									<>
 										<Button
@@ -236,14 +274,26 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 										>
 											{t("COMMON.BACK")}
 										</Button>
-										<Button
-											data-testid="SendIPFSTransaction__button--continue"
-											variant="solid"
-											// disabled={!isValid}
-											onClick={handleNext}
-										>
-											{t("COMMON.CONTINUE")}
-										</Button>
+
+										{activeTab < 3 && (
+											<Button
+												data-testid="SendIPFSTransaction__button--continue"
+												disabled={!formState.isValid}
+												onClick={handleNext}
+											>
+												{t("COMMON.CONTINUE")}
+											</Button>
+										)}
+
+										{activeTab === 3 && (
+											<Button
+												type="submit"
+												data-testid="SendIPFSTransaction__button--submit"
+												disabled={!formState.isValid}
+											>
+												{t("TRANSACTION.SIGN_CONTINUE")}
+											</Button>
+										)}
 									</>
 								)}
 
@@ -257,7 +307,7 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 										<Button
-											onClick={onCopy}
+											onClick={copyTransaction}
 											data-testid="SendIPFSTransaction__button--copy"
 											variant="plain"
 											className="space-x-2"

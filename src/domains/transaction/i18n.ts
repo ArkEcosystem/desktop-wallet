@@ -68,7 +68,7 @@ export const translations: { [key: string]: any } = {
 			DESCRIPTION: "Enter your passphrase in order to sign the Multisignature transaction.",
 		},
 		STEP_3: {
-			TITLE: "Transaction Successful",
+			TITLE: "Transaction Sent",
 			DESCRIPTION: "Your signature was successfully confirmed and sent.",
 		},
 		WAITING_FOR_SIGNATURES: "Waiting for Signatures",
@@ -203,5 +203,11 @@ export const translations: { [key: string]: any } = {
 	CONTACT_SEACH: {
 		TITLE: "My addresses",
 		DESCRIPTION: "Find and select preferred address from you saved wallets",
+	},
+
+	INPUT_IPFS_HASH: {
+		VALIDATION: {
+			NOT_VALID: "The IPFS hash is not valid",
+		},
 	},
 };
