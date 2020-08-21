@@ -118,21 +118,26 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
                         >
-                          <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                            data-testid="CreateProfile__upload-button"
-                            type="button"
+                          <div
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <div
-                              class="sc-AxhCb fxrKLH"
-                              height="1em"
-                              width="1em"
+                            <button
+                              class="sc-AxjAm ddJBbC w-20 h-20"
+                              color="primary"
+                              data-testid="CreateProfile__upload-button"
+                              type="button"
                             >
-                              <svg>
-                                upload.svg
-                              </svg>
-                            </div>
-                          </button>
+                              <div
+                                class="sc-AxhCb fxrKLH"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -510,21 +515,26 @@ exports[`CreateProfile should render 1`] = `
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
                         >
-                          <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                            data-testid="CreateProfile__upload-button"
-                            type="button"
+                          <div
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <div
-                              class="sc-AxhCb fxrKLH"
-                              height="1em"
-                              width="1em"
+                            <button
+                              class="sc-AxjAm ddJBbC w-20 h-20"
+                              color="primary"
+                              data-testid="CreateProfile__upload-button"
+                              type="button"
                             >
-                              <svg>
-                                upload.svg
-                              </svg>
-                            </div>
-                          </button>
+                              <div
+                                class="sc-AxhCb fxrKLH"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -902,21 +912,26 @@ exports[`CreateProfile should store profile 1`] = `
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
                         >
-                          <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                            data-testid="CreateProfile__upload-button"
-                            type="button"
+                          <div
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <div
-                              class="sc-AxhCb fxrKLH"
-                              height="1em"
-                              width="1em"
+                            <button
+                              class="sc-AxjAm ddJBbC w-20 h-20"
+                              color="primary"
+                              data-testid="CreateProfile__upload-button"
+                              type="button"
                             >
-                              <svg>
-                                upload.svg
-                              </svg>
-                            </div>
-                          </button>
+                              <div
+                                class="sc-AxhCb fxrKLH"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                         <div
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
@@ -1318,21 +1333,26 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
                         >
-                          <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                            data-testid="CreateProfile__upload-button"
-                            type="button"
+                          <div
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <div
-                              class="sc-AxhCb fxrKLH"
-                              height="1em"
-                              width="1em"
+                            <button
+                              class="sc-AxjAm ddJBbC w-20 h-20"
+                              color="primary"
+                              data-testid="CreateProfile__upload-button"
+                              type="button"
                             >
-                              <svg>
-                                upload.svg
-                              </svg>
-                            </div>
-                          </button>
+                              <div
+                                class="sc-AxhCb fxrKLH"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
