@@ -45,7 +45,7 @@ export const TransactionRow = ({
 	return (
 		<tr
 			data-testid="TransactionRow"
-			className="border-b border-dotted border-theme-neutral-300"
+			className="border-b border-dotted border-theme-neutral-300 hover:bg-theme-neutral-100 cursor-pointer"
 			{...props}
 			onClick={onClick}
 		>
