@@ -59,14 +59,6 @@ ipcMain.on("disable-iframe-protection", function (_event, urls) {
 	});
 });
 
-ipcMain.on("delegates-sync", function (_event, wallets) {
-	console.log("Delegates sync called...");
-
-	wallets.forEach(async (wallet) => {
-		await wallet.syncDelegates();
-	});
-});
-
 function createWindow() {
 	const { width, height } = screen.getPrimaryDisplay().workAreaSize;
 
@@ -139,3 +131,9 @@ app.on("open-url", (event, url) => {
 });
 
 app.setAsDefaultProtocolClient("ark", process.execPath, ["--"]);
+
+ipcMain.on("delegates-sync", function (_event, wallets) {
+	console.log("Delegates sync called...");
+
+	await Promise.allSettled(wallets.map((wallet) => wallet.syncDelegates()));
+});
