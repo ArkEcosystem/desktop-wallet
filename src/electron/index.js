@@ -132,7 +132,7 @@ app.on("open-url", (event, url) => {
 
 app.setAsDefaultProtocolClient("ark", process.execPath, ["--"]);
 
-ipcMain.on("delegates-sync", function (_event, wallets) {
+ipcMain.on("delegates-sync", async function (_event, wallets) {
 	console.log("Delegates sync called...");
 
 	await Promise.allSettled(wallets.map((wallet) => wallet.syncDelegates()));
