@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 type Props = {
 	data: any;
-	onAction: any;
+	onAction?: any;
 };
 
 const options = [
@@ -102,7 +102,7 @@ export const BlockchainTable = ({ data, onAction }: Props) => {
 									<Dropdown
 										toggleIcon="Settings"
 										options={options}
-										onSelect={(option: any) => onAction(option)}
+										onSelect={(option: any) => onAction?.(option)}
 									/>
 								</Button>
 							</span>
