@@ -16,7 +16,7 @@ export const Default = () => {
 
 	return (
 		<ProfileCard
-			handleClick={() => console.log(profile)}
+			onClick={() => console.log(profile)}
 			profile={profile}
 			actions={actions}
 			showSettings={showSettings}

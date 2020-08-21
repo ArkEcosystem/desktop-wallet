@@ -420,10 +420,9 @@ exports[`ResignRegistration should render 1st step 1`] = `
                               class="sc-AxheI dThsOi font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
-                                required=""
                               >
                                 Transaction Fee
                                 <div
@@ -1405,10 +1404,9 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                           class="sc-AxheI dThsOi flex flex-col space-y-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            required=""
                           >
                             Mnemonic
                             <div
@@ -1430,7 +1428,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                               class="sc-AxmLO sc-fzoLsD ijnrnY my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -1451,10 +1449,9 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                           class="sc-AxheI dThsOi mt-8"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="name"
-                            required=""
                           >
                             2nd Mnemonic
                             <div
@@ -1476,7 +1473,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                               class="sc-AxmLO sc-fzoLsD ijnrnY my-px mr-4"
                             >
                               <button
-                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                                 data-testid="InputPassword__toggle"
                                 type="button"
                               >
@@ -2614,10 +2611,9 @@ exports[`ResignRegistration should should go back 1`] = `
                               class="sc-AxheI dThsOi font-normal"
                             >
                               <label
-                                class="flex inline-block mb-2 text-sm font-medium transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
                                 data-testid="FormLabel"
                                 for="name"
-                                required=""
                               >
                                 Transaction Fee
                                 <div
