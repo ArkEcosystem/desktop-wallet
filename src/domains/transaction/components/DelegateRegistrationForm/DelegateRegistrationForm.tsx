@@ -175,6 +175,7 @@ export const DelegateRegistrationForm: RegistrationForm = {
 	tabSteps: 2,
 	component,
 	transactionDetails,
+	formFields: ["username"],
 
 	signTransaction: async ({ env, form, handleNext, profile, setTransaction, translations }: any) => {
 		const { clearError, getValues, setError, setValue } = form;

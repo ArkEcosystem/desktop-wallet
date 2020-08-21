@@ -13,11 +13,13 @@ export type RegistrationForm = {
 	}: {
 		transaction: Contracts.SignedTransactionData;
 		translations: any;
-	}) => void;
+	}) => JSX.Element;
 
 	signTransaction: ({ env, form, handleNext, profile, setTransaction, translations }: any) => Promise<void>;
 
 	tabSteps: number;
+
+	formFields: string[];
 
 	component: ({
 		activeTab,

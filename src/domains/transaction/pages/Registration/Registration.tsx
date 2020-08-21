@@ -192,7 +192,7 @@ export const Registration = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	const { formState, getValues, register, setValue } = form;
+	const { formState, getValues, register, setValue, unregister } = form;
 	const { registrationType, senderAddress } = getValues();
 
 	const [feeOptions, setFeeOptions] = useState<Record<string, any>>({});
@@ -268,6 +268,12 @@ export const Registration = () => {
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
+
+		if (activeTab - 1 === 1) {
+			for (const field of registrationForm!.formFields) {
+				unregister(field);
+			}
+		}
 	};
 
 	const handleNext = () => {
