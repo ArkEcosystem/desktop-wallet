@@ -25,33 +25,17 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			isFloatingLabel: true,
 			label: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelDescription: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.DESCRIPTION"),
+			labelAddon: <Toggle />,
 			wrapperClass: "pb-6",
-			content: (
-				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
-						{t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.DESCRIPTION")}
-					</span>
-					<div className="-mt-7">
-						<Toggle />
-					</div>
-				</div>
-			),
 		},
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PEERS.CUSTOM_PEERS.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelDescription: t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION"),
+			labelAddon: <Toggle />,
 			wrapperClass: "pt-6",
-			content: (
-				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
-						{t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION")}
-					</span>
-					<div className="-mt-7">
-						<Toggle />
-					</div>
-				</div>
-			),
 		},
 	];
 
