@@ -52,7 +52,7 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 			isOpen={isOpen}
 			onClose={onClose}
 		>
-			<div className="-mx-12">
+			<div className="-mx-10">
 				<SearchBar className="mt-8" placeholder={t("PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.SEARCH_PLACEHOLDER")} />
 			</div>
 			<div className="mt-8 -mb-6">
