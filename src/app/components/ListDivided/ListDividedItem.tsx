@@ -37,8 +37,7 @@ export const ListDividedItem = ({
 					<span className={labelClass} data-testid="list-divided-item__label">
 						{label}
 					</span>
-
-					{labelAddon && <span className="">{labelAddon}</span>}
+					{labelAddon && <span>{labelAddon}</span>}
 				</div>
 				{labelDescription && (
 					<span
