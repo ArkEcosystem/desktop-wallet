@@ -12,13 +12,13 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import { AddressList } from "domains/vote/components/AddressList";
+import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateList } from "domains/vote/components/DelegateList";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-const InputAddress = ({ profile, address }: { profile: Profile; address: string }) => {
+const InputAddress = ({ address, profile }: { address: string; profile: Profile }) => {
 	const { t } = useTranslation();
 	const walletName = profile.wallets().findByAddress(address)?.alias();
 
@@ -52,7 +52,6 @@ export const Votes = () => {
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
-	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<Wallet[]>([]);
@@ -69,6 +68,8 @@ export const Votes = () => {
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
+
+	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	useEffect(() => {
 		for (const network of networks) {
@@ -117,7 +118,7 @@ export const Votes = () => {
 						/>
 					</TransactionDetail>
 					<TransactionDetail border={false} label={t("COMMON.ADDRESS")} className="mt-2">
-						<InputAddress profile={activeProfile} address={address} />
+						<InputAddress address={address} profile={activeProfile} />
 					</TransactionDetail>
 				</div>
 			</div>
@@ -133,7 +134,7 @@ export const Votes = () => {
 						}
 					/>
 				) : (
-					<AddressList wallets={wallets} onSelect={handleSelectAddress} />
+					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
 				)}
 			</Section>
 		</Page>

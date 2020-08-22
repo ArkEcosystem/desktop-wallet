@@ -3,14 +3,14 @@ import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { AddressListItem } from "../AddressListItem";
+import { AddressRow } from "./AddressRow";
 
-type AddressListProps = {
+type AddressTableProps = {
 	wallets: Wallet[];
 	onSelect?: (address: string) => void;
 };
 
-export const AddressList = ({ wallets, onSelect }: AddressListProps) => {
+export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -61,17 +61,15 @@ export const AddressList = ({ wallets, onSelect }: AddressListProps) => {
 	];
 
 	return (
-		<div data-testid="AddressList">
+		<div data-testid="AddressTable">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.ADDRESS_LIST.TITLE")}</h2>
 			<Table columns={columns} data={wallets}>
-				{(wallet: Wallet, index: number) => (
-					<AddressListItem index={index} wallet={wallet} onSelect={onSelect} />
-				)}
+				{(wallet: Wallet, index: number) => <AddressRow index={index} wallet={wallet} onSelect={onSelect} />}
 			</Table>
 		</div>
 	);
 };
 
-AddressList.defaultProps = {
+AddressTable.defaultProps = {
 	wallets: [],
 };

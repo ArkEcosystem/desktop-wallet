@@ -10,13 +10,13 @@ import { Icon } from "app/components/Icon";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type AddressListItemProps = {
+type AddressRowProps = {
 	index: number;
 	wallet: Wallet;
 	onSelect?: (walletAddress: string) => void;
 };
 
-export const AddressListItem = ({ index, wallet, onSelect }: AddressListItemProps) => {
+export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 	const [votes, setVotes] = useState<Coins.WalletDataCollection>((null as unknown) as Coins.WalletDataCollection);
 
 	const { t } = useTranslation();
@@ -84,7 +84,7 @@ export const AddressListItem = ({ index, wallet, onSelect }: AddressListItemProp
 			</td>
 
 			<td className="w-20 py-5">
-				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
+				<Address address={wallet.address()} walletName={wallet.alias()} maxChars={22} />
 			</td>
 
 			<td className="w-20 py-5 text-sm font-bold text-center align-middle">
@@ -139,8 +139,8 @@ export const AddressListItem = ({ index, wallet, onSelect }: AddressListItemProp
 				{hasVotes && (
 					<div className="flex justify-center h-full">
 						<Icon
-							name={votes?.items()[0].rank() ? "Ok" : "StatusClock"}
-							className={votes?.items()[0].rank() ? "text-theme-success" : "text-theme-neutral"}
+							name={votes?.items()[0].hasPassed() ? "Ok" : "StatusClock"}
+							className={votes?.items()[0].hasPassed() ? "text-theme-success" : "text-theme-neutral"}
 						/>
 					</div>
 				)}
