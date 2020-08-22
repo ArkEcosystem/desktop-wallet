@@ -13,6 +13,14 @@ describe("SignIn", () => {
 		profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 	});
 
+	beforeAll(() => {
+		jest.useFakeTimers();
+	});
+
+	afterAll(() => {
+		jest.useRealTimers();
+	});
+
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(<SignIn profile={profile} isOpen={false} />);
 
@@ -97,32 +105,45 @@ describe("SignIn", () => {
 	});
 
 	it("should set an error and disable the input if the password is invalid multiple times", async () => {
-		jest.useFakeTimers();
-
 		const onSuccess = jest.fn();
 
-		const { findByTestId, getByTestId, queryByText } = renderWithRouter(
-			<SignIn isOpen={true} profile={profile} onSuccess={onSuccess} />,
-		);
+		let renderContext: any;
+
+		await act(async () => {
+			renderContext = renderWithRouter(<SignIn isOpen={true} profile={profile} onSuccess={onSuccess} />);
+		});
+
+		const { findByTestId, getByTestId, queryByText } = renderContext;
 
 		for (const i of [1, 2, 3]) {
-			await act(async () => {
+			act(() => {
 				fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: `wrong password ${i}` } });
 			});
 
-			// wait for formState.isValid to be updated
+			// wait for form to be updated
 			await findByTestId("SignIn__submit-button");
 
 			act(() => {
 				fireEvent.click(getByTestId("SignIn__submit-button"));
 			});
 
-			// wait for formState.isValid to be updated
+			// wait for form to be updated
 			await findByTestId("SignIn__submit-button");
 		}
 
 		expect(queryByText(/Maximum sign in attempts reached/)).toBeTruthy();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
+		expect(getByTestId("SignIn__input--password")).toBeDisabled();
+
+		act(() => {
+			Promise.resolve().then(() => {
+				jest.advanceTimersByTime(65000);
+				jest.clearAllTimers();
+			});
+		});
+
+		// wait for form to be updated
+		await findByTestId("SignIn__submit-button");
 
 		await waitFor(() => {
 			expect(queryByText("The Password is invalid")).toBeTruthy();

@@ -60,102 +60,37 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 		setIsAdvancedMode(isAccepted);
 	};
 
-	const personalDetails = [
-		{
-			isFloatingLabel: true,
-			label: t("SETTINGS.GENERAL.PERSONAL.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE"),
-			labelClass: "text-2xl font-semibold",
-			labelDescriptionClass: "mt-1",
-			content: (
-				<div className="flex flex-row mt-2">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200">
-						<div className="w-20 h-20 overflow-hidden rounded-full">
-							<Button
-								className="w-20 h-20"
-								variant="plain"
-								onClick={handleChangeAvatar}
-								data-testid="General-settings__upload-button"
-							>
-								<Icon name="Upload" />
-							</Button>
-						</div>
-					</div>
-					{avatarImage && (
-						<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
-							<img
-								src={avatarImage}
-								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-								alt="Profile avatar"
-							/>
-							<button
-								type="button"
-								className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
-								onClick={() => setAvatarImage("")}
-								data-testid="General-settings__remove-avatar"
-							>
-								<Icon name="Close" height={12} width={12} />
-							</button>
-						</div>
-					)}
-				</div>
-			),
-		},
-	];
-
 	const securityItems = [
 		{
-			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
-			wrapperClass: "pb-6",
-			content: (
-				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
-						{t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION")}
-					</span>
-					<div className="-mt-7">
-						<Toggle
-							ref={register()}
-							name="isScreenshotProtection"
-							defaultChecked={activeProfile.settings().get(ProfileSetting.ScreenshotProtection)}
-							data-testid="General-settings__toggle--isScreenshotProtection"
-						/>
-					</div>
-				</div>
+			labelDescription: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION"),
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="isScreenshotProtection"
+					defaultChecked={activeProfile.settings().get(ProfileSetting.ScreenshotProtection)}
+					data-testid="General-settings__toggle--isScreenshotProtection"
+				/>
 			),
+			wrapperClass: "pb-6",
 		},
 		{
-			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
-			wrapperClass: "py-6",
-			content: (
-				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
-						{t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.DESCRIPTION")}
-					</span>
-					<div className="-mt-7">
-						<Toggle
-							ref={register()}
-							name="isAdvancedMode"
-							checked={isAdvancedMode}
-							onChange={handleOpenAdvancedModeModal}
-							data-testid="General-settings__toggle--isAdvancedMode"
-						/>
-					</div>
-
-					<AdvancedMode
-						isOpen={isOpenAdvancedModeModal}
-						onClose={() => handleAdvancedMode(false)}
-						onDecline={() => handleAdvancedMode(false)}
-						onAccept={() => handleAdvancedMode(true)}
-					/>
-				</div>
+			labelDescription: t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.DESCRIPTION"),
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="isAdvancedMode"
+					checked={isAdvancedMode}
+					onChange={handleOpenAdvancedModeModal}
+					data-testid="General-settings__toggle--isAdvancedMode"
+				/>
 			),
+			wrapperClass: "py-6",
 		},
 		{
-			wrapperClass: "pt-8",
 			content: (
 				<FormField name="automaticSignOutPeriod">
 					<FormLabel label={t("SETTINGS.GENERAL.SECURITY.AUTOMATIC_SIGN_OUT_PERIOD.TITLE")} />
@@ -173,51 +108,38 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 					<FormHelperText />
 				</FormField>
 			),
+			wrapperClass: "pt-8",
 		},
 	];
 
 	const otherItems = [
 		{
-			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
-			wrapperClass: "pb-6",
-			content: (
-				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
-						{t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION")}
-					</span>
-					<div className="-mt-7">
-						<Toggle
-							ref={register()}
-							name="isDarkMode"
-							defaultChecked={activeProfile.settings().get(ProfileSetting.Theme) === "dark"}
-							data-testid="General-settings__toggle--isDarkMode"
-						/>
-					</div>
-				</div>
+			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="isDarkMode"
+					defaultChecked={activeProfile.settings().get(ProfileSetting.Theme) === "dark"}
+					data-testid="General-settings__toggle--isDarkMode"
+				/>
 			),
+			wrapperClass: "pb-6",
 		},
 		{
-			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
-			wrapperClass: "pt-6",
-			content: (
-				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
-						{t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.DESCRIPTION")}
-					</span>
-					<div className="-mt-7">
-						<Toggle
-							ref={register()}
-							name="isUpdateLedger"
-							defaultChecked={activeProfile.settings().get(ProfileSetting.LedgerUpdateMethod)}
-							data-testid="General-settings__toggle--isUpdateLedger"
-						/>
-					</div>
-				</div>
+			labelDescription: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.DESCRIPTION"),
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="isUpdateLedger"
+					defaultChecked={activeProfile.settings().get(ProfileSetting.LedgerUpdateMethod)}
+					data-testid="General-settings__toggle--isUpdateLedger"
+				/>
 			),
+			wrapperClass: "pt-6",
 		},
 	];
 
@@ -259,9 +181,48 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	return (
 		<>
 			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
+
 			<Form data-testid="General-settings__form" context={context} onSubmit={handleSubmit}>
-				<div className="mt-8">
-					<ListDivided items={personalDetails} />
+				<div className="relative mt-8">
+					<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
+
+					<div className="group">
+						<span className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark">
+							{t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE")}
+						</span>
+
+						<div className="flex flex-row mt-2">
+							<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast">
+								<div className="w-20 h-20 overflow-hidden rounded-full">
+									<Button
+										className="w-20 h-20"
+										variant="plain"
+										onClick={handleChangeAvatar}
+										data-testid="General-settings__upload-button"
+									>
+										<Icon name="Upload" />
+									</Button>
+								</div>
+							</div>
+							{avatarImage && (
+								<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
+									<img
+										src={avatarImage}
+										className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+										alt="Profile avatar"
+									/>
+									<button
+										type="button"
+										className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+										onClick={() => setAvatarImage("")}
+										data-testid="General-settings__remove-avatar"
+									>
+										<Icon name="Close" height={12} width={12} />
+									</button>
+								</div>
+							)}
+						</div>
+					</div>
 
 					<div className="flex justify-between w-full mt-8">
 						<div className="flex flex-col w-2/4">
@@ -400,6 +361,13 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 					</div>
 				</div>
 			</Form>
+
+			<AdvancedMode
+				isOpen={isOpenAdvancedModeModal}
+				onClose={() => handleAdvancedMode(false)}
+				onDecline={() => handleAdvancedMode(false)}
+				onAccept={() => handleAdvancedMode(true)}
+			/>
 		</>
 	);
 };
