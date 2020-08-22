@@ -46,6 +46,7 @@ export const FirstStep = ({
 	const senderAddress = getValues("senderAddress");
 	const fee = getValues("fee") || null;
 	const coinName = wallet.manifest().get<string>("name");
+	const network = `${coinName} ${wallet.network().name}`;
 	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
 
 	useEffect(() => {
@@ -53,7 +54,6 @@ export const FirstStep = ({
 			const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 			try {
-				// const transferFees = (await senderWallet!.fee().all(7))?.transfer;
 				const transferFees = (await senderWallet!.fee().all(7))?.vote;
 
 				setFeeOptions({
@@ -90,7 +90,7 @@ export const FirstStep = ({
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name}
+						{network}
 					</div>
 				</TransactionDetail>
 
@@ -142,6 +142,7 @@ export const SecondStep = ({
 
 	const { fee, senderAddress } = getValues();
 	const coinName = wallet.manifest().get<string>("name");
+	const network = `${coinName} ${wallet.network().name}`;
 	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
 
 	useEffect(() => {
@@ -168,7 +169,7 @@ export const SecondStep = ({
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name}
+						{network}
 					</div>
 				</TransactionDetail>
 
@@ -219,16 +220,22 @@ export const ThirdStep = () => {
 	);
 };
 
-export const FourthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => {
+export const FourthStep = ({
+	delegate,
+	transaction,
+}: {
+	delegate: Contracts.WalletData;
+	transaction: Contracts.SignedTransactionData;
+}) => {
 	const { t } = useTranslation();
 
 	return (
 		<TransactionSuccessful transactionId={transaction.id()}>
 			<TransactionDetail
 				label={t("TRANSACTION.DELEGATE")}
-				extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+				extra={<Avatar size="lg" address={delegate?.address()} />}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
+				<Address address={delegate?.address()} walletName={delegate?.username()} />
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09660435 ARK</TransactionDetail>
@@ -360,7 +367,7 @@ export const SendVoteTransaction = () => {
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep transaction={transaction} />
+								<FourthStep delegate={delegate} transaction={transaction} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
@@ -391,7 +398,7 @@ export const SendVoteTransaction = () => {
 												disabled={!formState.isValid}
 												data-testid="SendVoteTransaction__button--send"
 											>
-												Send
+												{t("COMMON.SEND")}
 											</Button>
 										)}
 									</>

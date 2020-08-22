@@ -70,7 +70,7 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 	};
 
 	return (
-		<div className="SendTransactionForm space-y-8">
+		<div className="space-y-8 SendTransactionForm">
 			<FormField name="network" className="relative">
 				<div className="mb-2">
 					<FormLabel label="Network" />
