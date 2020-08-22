@@ -152,7 +152,7 @@ exports[`TransactionTable should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
             <td
@@ -293,7 +293,7 @@ exports[`TransactionTable should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
             <td
@@ -2978,7 +2978,7 @@ exports[`TransactionTable should render with sign 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
             <td
@@ -3142,7 +3142,7 @@ exports[`TransactionTable should render with sign 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
             <td
