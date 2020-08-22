@@ -6,14 +6,16 @@ import { Table } from "app/components/Table";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { DelegateListItem } from "../DelegateListItem";
+import { DelegateRow } from "./DelegateRow";
 
-type DelegateListProps = {
-	delegates: any;
-	onContinue?: (username: string) => void;
+type Delegate = { address: string; username: string; rank: number };
+
+type DelegateTableProps = {
+	delegates: Contracts.WalletData[];
+	onContinue?: (delegateAddress: string) => void;
 };
 
-const SelectedDelegateList = ({ delegates, className }: { delegates: any[]; className: string }) => {
+const SelectedDelegateList = ({ delegates, className }: { delegates: Delegate[]; className: string }) => {
 	const output = [];
 
 	for (const delegate of delegates) {
@@ -35,14 +37,14 @@ const SelectedDelegateList = ({ delegates, className }: { delegates: any[]; clas
 	return <div className={className}>{output}</div>;
 };
 
-const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: number }) => {
+const DelegateAvatarList = ({ delegates, limit }: { delegates: Delegate[]; limit: number }) => {
 	const items = delegates.slice(0, limit);
 	const rest = Math.max(0, delegates.length - limit);
 
 	return (
 		<div className="flex items-center -space-x-2" data-testid="DelegateAvatarList__avatar-list">
 			{items.map((item, index) => (
-				<Avatar data-testid="DelegateAvatarList__avatar-list__avatar" key={index} address={item.address} />
+				<Avatar key={index} address={item.address} data-testid="DelegateAvatarList__avatar-list__avatar" />
 			))}
 			{rest > 0 && (
 				<Circle
@@ -57,7 +59,7 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: num
 	);
 };
 
-export const DelegateList = ({ delegates, onContinue }: DelegateListProps) => {
+export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [selected, setSelected] = useState([] as any);
 	const [showSelectedList, setShowSelectedList] = useState(false);
@@ -108,9 +110,11 @@ export const DelegateList = ({ delegates, onContinue }: DelegateListProps) => {
 		},
 	];
 
-	const toggleSelected = (delegate: any) => {
-		if (selected.find((selectedDelegate: any) => selectedDelegate.username === delegate.username)) {
-			setSelected(selected.filter((selectedDelegate: any) => selectedDelegate.username !== delegate.username));
+	const toggleSelected = (delegate: Delegate) => {
+		if (selected.find((selectedDelegate: Delegate) => selectedDelegate.username === delegate.username)) {
+			setSelected(
+				selected.filter((selectedDelegate: Delegate) => selectedDelegate.username !== delegate.username),
+			);
 
 			return;
 		}
@@ -123,11 +127,11 @@ export const DelegateList = ({ delegates, onContinue }: DelegateListProps) => {
 	const data = showSkeleton ? skeletonList : delegates;
 
 	return (
-		<div data-testid="DelegateList">
+		<div data-testid="DelegateTable">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_LIST.TITLE")}</h2>
 			<Table columns={columns} data={data}>
 				{(delegate: Contracts.WalletData, index: number) => (
-					<DelegateListItem
+					<DelegateRow
 						index={index}
 						delegate={delegate}
 						selected={selected}
@@ -182,7 +186,7 @@ export const DelegateList = ({ delegates, onContinue }: DelegateListProps) => {
 								</div>
 
 								<Button
-									onClick={() => onContinue?.(selected[0].username)}
+									onClick={() => onContinue?.(selected[0].address)}
 									data-testid="DelegateList__continue-button"
 								>
 									{t("COMMON.CONTINUE")}
@@ -198,6 +202,6 @@ export const DelegateList = ({ delegates, onContinue }: DelegateListProps) => {
 	);
 };
 
-DelegateList.defaultProps = {
+DelegateTable.defaultProps = {
 	delegates: [],
 };

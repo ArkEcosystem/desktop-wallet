@@ -13,7 +13,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
-import { DelegateList } from "domains/vote/components/DelegateList";
+import { DelegateTable } from "domains/vote/components/DelegateTable";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -125,11 +125,11 @@ export const Votes = () => {
 
 			<Section className="flex-1">
 				{address ? (
-					<DelegateList
+					<DelegateTable
 						delegates={delegates?.items()}
-						onContinue={(username) =>
+						onContinue={(delegateAddress) =>
 							history.push(
-								`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/transactions/vote/${username}/sender/${address}`,
+								`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/transactions/vote/${delegateAddress}/sender/${address}`,
 							)
 						}
 					/>

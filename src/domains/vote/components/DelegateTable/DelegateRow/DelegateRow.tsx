@@ -5,23 +5,25 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { DelegateListItemSkeleton } from "./DelegateListItemSkeleton";
+import { DelegateRowSkeleton } from "./DelegateRowSkeleton";
 
-type DelegateListItemProps = {
+type Delegate = { address: string; username: string; rank: number };
+
+type DelegateRowProps = {
 	index: number;
 	delegate: Contracts.WalletData;
-	selected?: any[];
+	selected?: Delegate[];
 	isLoading?: boolean;
-	onSelect?: ({ address, username, rank }: { address: string; username: string; rank: number }) => void;
+	onSelect?: ({ address, username, rank }: Delegate) => void;
 };
 
-export const DelegateListItem = ({ index, delegate, selected, isLoading, onSelect }: DelegateListItemProps) => {
+export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: DelegateRowProps) => {
 	const { t } = useTranslation();
 	const isSelected =
-		selected?.find((selectedDelegate: any) => selectedDelegate.username === delegate.username()) || false;
+		selected?.find((selectedDelegate: Delegate) => selectedDelegate.username === delegate.username()) || false;
 
 	if (isLoading) {
-		return <DelegateListItemSkeleton />;
+		return <DelegateRowSkeleton />;
 	}
 
 	return (
@@ -72,7 +74,7 @@ export const DelegateListItem = ({ index, delegate, selected, isLoading, onSelec
 	);
 };
 
-DelegateListItem.defaultProps = {
+DelegateRow.defaultProps = {
 	selected: [],
 	isLoading: false,
 };

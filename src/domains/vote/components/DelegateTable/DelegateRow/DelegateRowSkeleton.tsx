@@ -2,8 +2,8 @@ import { Circle } from "app/components/Circle";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 
-export const DelegateListItemSkeleton = () => (
-	<tr data-testid="DelegateListItemSkeleton" className="border-b border-dotted border-theme-neutral-300">
+export const DelegateRowSkeleton = () => (
+	<tr data-testid="DelegateRowSkeleton" className="border-b border-dotted border-theme-neutral-300">
 		<td className="py-5">
 			<Circle className="bg-theme-neutral-200 border-theme-neutral-200" />
 		</td>

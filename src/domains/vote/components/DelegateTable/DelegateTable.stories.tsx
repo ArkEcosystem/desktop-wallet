@@ -2,10 +2,10 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
 
-import { DelegateList } from "./DelegateList";
+import { DelegateTable } from "./DelegateTable";
 
 export default {
-	title: "Domains / Vote / Components / DelegateList",
+	title: "Domains / Vote / Components / DelegateTable",
 	decorators: [
 		(storyFn: any) => (
 			<WalletsDecorator count={1} withDelegates={true}>
@@ -16,5 +16,5 @@ export default {
 };
 
 export const Default = ({ delegates }: { delegates: Coins.WalletDataCollection }) => (
-	<DelegateList delegates={delegates.items().slice(0, 10)} />
+	<DelegateTable delegates={delegates.items().slice(0, 10)} />
 );
