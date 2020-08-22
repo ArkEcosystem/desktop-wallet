@@ -2,10 +2,11 @@ import React from "react";
 
 type Props = {
 	isFloatingLabel: boolean;
-	labelClass: string;
 	label: string;
+	labelClass: string;
 	labelDescription: string;
 	labelDescriptionClass?: string;
+	labelAddon?: React.ReactNode;
 	value: string;
 	itemValueClass: string;
 	content: React.ReactNode;
@@ -15,10 +16,11 @@ type Props = {
 
 export const ListDividedItem = ({
 	isFloatingLabel,
-	labelClass,
 	label,
+	labelClass,
 	labelDescription,
 	labelDescriptionClass,
+	labelAddon,
 	value,
 	itemValueClass,
 	content,
@@ -30,13 +32,16 @@ export const ListDividedItem = ({
 			className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"}`}
 			data-testid="list-divided-item__inner-wrapper"
 		>
-			<div className="flex flex-col">
-				<span className={`mr-5 ${labelClass}`} data-testid="list-divided-item__label">
-					{label}
-				</span>
+			<div className="flex flex-col w-full space-y-2">
+				<div className="flex items-center justify-between space-x-5">
+					<span className={labelClass} data-testid="list-divided-item__label">
+						{label}
+					</span>
+					{labelAddon && <span>{labelAddon}</span>}
+				</div>
 				{labelDescription && (
 					<span
-						className={`text-sm text-theme-neutral-dark ${labelDescriptionClass || ""}`}
+						className={`${labelDescriptionClass || "text-sm font-medium text-theme-neutral"}`}
 						data-testid="list-divided-item__label--description"
 					>
 						{labelDescription}

@@ -11,12 +11,15 @@ exports[`ListDividedItem should render an ListDividedItem 1`] = `
       data-testid="list-divided-item__inner-wrapper"
     >
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full space-y-2"
       >
-        <span
-          class="mr-5 undefined"
-          data-testid="list-divided-item__label"
-        />
+        <div
+          class="flex items-center justify-between space-x-5"
+        >
+          <span
+            data-testid="list-divided-item__label"
+          />
+        </div>
       </div>
     </div>
   </li>
@@ -34,12 +37,15 @@ exports[`ListDividedItem should render as floating label 1`] = `
       data-testid="list-divided-item__inner-wrapper"
     >
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full space-y-2"
       >
-        <span
-          class="mr-5 undefined"
-          data-testid="list-divided-item__label"
-        />
+        <div
+          class="flex items-center justify-between space-x-5"
+        >
+          <span
+            data-testid="list-divided-item__label"
+          />
+        </div>
       </div>
     </div>
   </li>
@@ -57,12 +63,15 @@ exports[`ListDividedItem should render the content 1`] = `
       data-testid="list-divided-item__inner-wrapper"
     >
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full space-y-2"
       >
-        <span
-          class="mr-5 undefined"
-          data-testid="list-divided-item__label"
-        />
+        <div
+          class="flex items-center justify-between space-x-5"
+        >
+          <span
+            data-testid="list-divided-item__label"
+          />
+        </div>
       </div>
     </div>
     <div
@@ -86,14 +95,17 @@ exports[`ListDividedItem should render the label 1`] = `
       data-testid="list-divided-item__inner-wrapper"
     >
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full space-y-2"
       >
-        <span
-          class="mr-5 undefined"
-          data-testid="list-divided-item__label"
+        <div
+          class="flex items-center justify-between space-x-5"
         >
-          Label
-        </span>
+          <span
+            data-testid="list-divided-item__label"
+          >
+            Label
+          </span>
+        </div>
       </div>
     </div>
   </li>
@@ -111,14 +123,17 @@ exports[`ListDividedItem should render the labelDescription 1`] = `
       data-testid="list-divided-item__inner-wrapper"
     >
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full space-y-2"
       >
+        <div
+          class="flex items-center justify-between space-x-5"
+        >
+          <span
+            data-testid="list-divided-item__label"
+          />
+        </div>
         <span
-          class="mr-5 undefined"
-          data-testid="list-divided-item__label"
-        />
-        <span
-          class="text-sm text-theme-neutral-dark "
+          class="text-sm font-medium text-theme-neutral"
           data-testid="list-divided-item__label--description"
         >
           Label Desc
@@ -140,12 +155,15 @@ exports[`ListDividedItem should render the value 1`] = `
       data-testid="list-divided-item__inner-wrapper"
     >
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full space-y-2"
       >
-        <span
-          class="mr-5 undefined"
-          data-testid="list-divided-item__label"
-        />
+        <div
+          class="flex items-center justify-between space-x-5"
+        >
+          <span
+            data-testid="list-divided-item__label"
+          />
+        </div>
       </div>
       <div
         class=""
