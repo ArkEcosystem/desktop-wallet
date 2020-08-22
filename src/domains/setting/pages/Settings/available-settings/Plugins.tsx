@@ -29,54 +29,37 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			isFloatingLabel: true,
 			label: t("SETTINGS.PLUGINS.APPLY_BLACKLIST.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelDescription: t("SETTINGS.PLUGINS.APPLY_BLACKLIST.DESCRIPTION"),
+			labelAddon: <Toggle />,
 			wrapperClass: "pb-6",
 			content: (
-				<>
-					<div className="flex flex-row justify-between">
-						<span className="text-sm text-theme-neutral">
-							{t("SETTINGS.PLUGINS.APPLY_BLACKLIST.DESCRIPTION")}
-						</span>
-						<div className="-mt-7">
-							<Toggle />
-						</div>
-					</div>
-					<div className="flex justify-end w-full pt-6 space-x-3">
-						<Button
-							variant="plain"
-							onClick={() => setModalOpenListIsOpen(true)}
-							data-testid="plugins__open-list"
-						>
-							{t("SETTINGS.PLUGINS.OPEN_BLACKLIST")}
-						</Button>
-						<Button
-							variant="plain"
-							onClick={() => setModalAddPluginIsOpen(true)}
-							data-testid="plugins__add-plugin"
-						>
-							{t("SETTINGS.PLUGINS.ADD_PLUGIN")}
-						</Button>
-					</div>
-
-					<BlacklistPlugins isOpen={modalOpenListIsOpen} onClose={() => setModalOpenListIsOpen(false)} />
-					<AddBlacklistPlugin isOpen={modalAddPluginIsOpen} onClose={() => setModalAddPluginIsOpen(false)} />
-				</>
+				<div className="flex justify-end w-full pt-6 space-x-3">
+					<Button
+						variant="plain"
+						onClick={() => setModalOpenListIsOpen(true)}
+						data-testid="plugins__open-list"
+					>
+						{t("SETTINGS.PLUGINS.OPEN_BLACKLIST")}
+					</Button>
+					<Button
+						variant="plain"
+						onClick={() => setModalAddPluginIsOpen(true)}
+						data-testid="plugins__add-plugin"
+					>
+						{t("SETTINGS.PLUGINS.ADD_PLUGIN")}
+					</Button>
+				</div>
 			),
 		},
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PLUGINS.PLUGIN_SOURCE.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			labelDescription: t("SETTINGS.PLUGINS.PLUGIN_SOURCE.DESCRIPTION"),
+			labelAddon: <Toggle />,
 			wrapperClass: "pt-6",
 			content: (
-				<>
-					<div className="flex flex-row justify-between mb-5">
-						<span className="text-sm text-theme-neutral">
-							{t("SETTINGS.PLUGINS.PLUGIN_SOURCE.DESCRIPTION")}
-						</span>
-						<div className="-mt-7">
-							<Toggle />
-						</div>
-					</div>
+				<div className="pt-6">
 					<FormField name="load-plugins">
 						<FormLabel>{t("SETTINGS.PLUGINS.PLUGIN_SOURCE.LOAD_FROM")}</FormLabel>
 						<Select
@@ -86,7 +69,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 							options={[{ label: "Github", value: "github" }]}
 						/>
 					</FormField>
-				</>
+				</div>
 			),
 		},
 	];
@@ -97,11 +80,16 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 
 			<Form id="plugin-settings__form" context={formConfig.context} onSubmit={onSubmit} className="mt-8">
 				<ListDivided items={pluginItems} />
+
 				<Divider dashed />
+
 				<div className="flex justify-end w-full pt-2">
 					<Button>{t("COMMON.SAVE")}</Button>
 				</div>
 			</Form>
+
+			<BlacklistPlugins isOpen={modalOpenListIsOpen} onClose={() => setModalOpenListIsOpen(false)} />
+			<AddBlacklistPlugin isOpen={modalAddPluginIsOpen} onClose={() => setModalAddPluginIsOpen(false)} />
 		</>
 	);
 };

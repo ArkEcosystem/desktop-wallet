@@ -33,7 +33,7 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Other",
 			DARK_THEME: {
 				TITLE: "Dark Theme",
-				DESCRIPTION: "Want to set the wallet to dark mode?",
+				DESCRIPTION: "Enables a dark, high contrast color scheme.",
 			},
 			UPDATE_LEDGER: {
 				TITLE: "Update Ledger in Background",
