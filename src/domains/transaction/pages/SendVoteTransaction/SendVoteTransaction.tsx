@@ -6,7 +6,7 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
@@ -17,7 +17,6 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
-import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect, useMemo, useState } from "react";
@@ -51,7 +50,6 @@ export const FirstStep = ({
 
 	useEffect(() => {
 		const loadFees = async () => {
-			// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 			const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 			try {
@@ -199,53 +197,33 @@ export const SecondStep = ({
 	);
 };
 
-export const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
-	const { register } = form;
-
+export const ThirdStep = () => {
+	const { register } = useFormContext();
 	const { t } = useTranslation();
 
 	return (
-		<div data-testid="SendVoteTransaction__step--third">
-			{passwordType !== "ledger" && (
-				<div>
-					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
-					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
+		<section data-testid="SendVoteTransaction__step--third">
+			<div>
+				<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
+				<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 
-					<div className="mt-8">
-						<FormField name="name">
-							<FormLabel>
-								{passwordType === "mnemonic"
-									? t("TRANSACTION.MNEMONIC")
-									: t("TRANSACTION.ENCRYPTION_PASSWORD")}
-							</FormLabel>
-							<InputPassword name={passwordType} ref={register} />
-						</FormField>
-
-						{passwordType === "mnemonic" && (
-							<FormField name="name" className="mt-8">
-								<FormLabel label={t("TRANSACTION.SECOND_MNEMONIC")} />
-								<InputPassword name="secondMnemonic" ref={register} />
-							</FormField>
-						)}
-					</div>
+				<div className="grid grid-flow-row">
+					<FormField name="mnemonic" className="pt-8 pb-0">
+						<FormLabel label={t("TRANSACTION.MNEMONIC")} />
+						<InputPassword ref={register({ required: true })} />
+						<FormHelperText />
+					</FormField>
 				</div>
-			)}
-
-			{passwordType === "ledger" && (
-				<div>
-					<h1>{t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}</h1>
-					<LedgerConfirmation />
-				</div>
-			)}
-		</div>
+			</div>
+		</section>
 	);
 };
 
-export const FourthStep = () => {
+export const FourthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful>
+		<TransactionSuccessful transactionId={transaction.id()}>
 			<TransactionDetail
 				label={t("TRANSACTION.DELEGATE")}
 				extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
@@ -272,14 +250,9 @@ export const FourthStep = () => {
 	);
 };
 
-type Props = {
-	onCopy: () => void;
-	onSubmit: () => void;
-};
-
-export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
-	const { voteId, senderId } = useParams();
+export const SendVoteTransaction = () => {
 	const { t } = useTranslation();
+	const { voteId, senderId } = useParams();
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
@@ -287,6 +260,7 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [delegate, setDelegate] = useState<Contracts.WalletData>((null as unknown) as Contracts.WalletData);
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
 	const { clearError, formState, getValues, register, setError, setValue } = form;
@@ -321,6 +295,13 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 		loadDelegate();
 	}, [activeWallet, voteId]);
 
+	const crumbs = [
+		{
+			route: `/profiles/${activeProfile.id()}/dashboard`,
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+		},
+	];
+
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
 	};
@@ -329,17 +310,42 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 		setActiveTab(activeTab + 1);
 	};
 
-	const crumbs = [
-		{
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
-		},
-	];
+	const submitForm = async () => {
+		clearError("mnemonic");
+		const { fee, mnemonic, senderAddress } = getValues();
+		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
+
+		try {
+			const transactionId = await senderWallet!.transaction().signVote({
+				fee,
+				from: senderAddress,
+				sign: {
+					mnemonic,
+				},
+				data: {
+					vote: `+${delegate.publicKey()}`,
+				},
+			});
+
+			await senderWallet!.transaction().broadcast([transactionId]);
+
+			await env.persist();
+
+			setTransaction(senderWallet!.transaction().transaction(transactionId));
+
+			handleNext();
+		} catch (error) {
+			console.error("Could not vote: ", error);
+
+			setValue("mnemonic", "");
+			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+		}
+	};
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -351,10 +357,10 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 								<SecondStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep form={form} passwordType="mnemonic" />
+								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep />
+								<FourthStep transaction={transaction} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
@@ -362,35 +368,47 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 									<>
 										<Button
 											disabled={activeTab === 1}
-											data-testid="SendVoteTransaction__button--back"
 											variant="plain"
 											onClick={handleBack}
+											data-testid="SendVoteTransaction__button--back"
 										>
 											{t("COMMON.BACK")}
 										</Button>
-										<Button
-											data-testid="SendVoteTransaction__button--continue"
-											// disabled={!isValid}
-											onClick={handleNext}
-										>
-											{t("COMMON.CONTINUE")}
-										</Button>
+
+										{activeTab < 3 && (
+											<Button
+												disabled={!formState.isValid}
+												onClick={handleNext}
+												data-testid="SendVoteTransaction__button--continue"
+											>
+												{t("COMMON.CONTINUE")}
+											</Button>
+										)}
+
+										{activeTab === 3 && (
+											<Button
+												type="submit"
+												disabled={!formState.isValid}
+												data-testid="SendVoteTransaction__button--send"
+											>
+												Send
+											</Button>
+										)}
 									</>
 								)}
 
 								{activeTab === 4 && (
 									<>
 										<Button
-											data-testid="SendVoteTransaction__button--back-to-wallet"
 											variant="plain"
+											data-testid="SendVoteTransaction__button--back-to-wallet"
 										>
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 										<Button
-											onClick={onCopy}
-											data-testid="SendVoteTransaction__button--copy"
 											variant="plain"
 											className="space-x-2"
+											data-testid="SendVoteTransaction__button--copy"
 										>
 											<Icon name="Copy" />
 											<span>{t("COMMON.COPY")}</span>
