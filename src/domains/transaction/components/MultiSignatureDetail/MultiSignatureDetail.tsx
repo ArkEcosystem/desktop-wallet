@@ -109,7 +109,7 @@ export const FirstStep = () => {
 				{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.WAITING_FOR_SIGNATURES")}
 			</TransactionDetail>
 
-			<div className="px-12 pt-8 mt-2 mt-8 -mx-12 text-black border-t border-gray-500">
+			<div className="px-10 pt-8 mt-8 -mx-10 text-black border-t border-gray-500">
 				<Signatures />
 			</div>
 		</section>
@@ -174,7 +174,7 @@ export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 					</TabPanel>
 
 					{activeStep < 3 && (
-						<div className="flex justify-end mt-6">
+						<div className="flex justify-end mt-8">
 							<div className="flex-1">
 								<Button variant="plain" onClick={props.onCancel} className="mr-2">
 									{t("COMMON.CANCEL")}
