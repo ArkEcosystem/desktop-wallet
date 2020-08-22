@@ -32,7 +32,7 @@ export const ListDividedItem = ({
 			className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"}`}
 			data-testid="list-divided-item__inner-wrapper"
 		>
-			<div className="flex w-full flex-col space-y-2">
+			<div className="flex flex-col w-full space-y-2">
 				<div className="flex items-center justify-between space-x-5">
 					<span className={labelClass} data-testid="list-divided-item__label">
 						{label}
