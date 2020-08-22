@@ -6,7 +6,7 @@ import { Circle } from "app/components/Circle";
 import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
@@ -19,7 +19,7 @@ type Props = {
 // TODO: Delegate Explorer URL
 export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen }: Props) => {
 	const { t } = useTranslation();
-	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
+	const [isOpen, setIsOpen] = useState(defaultIsOpen!);
 
 	const hasNoVotes = !votes || votes.items().length === 0;
 
@@ -134,9 +134,9 @@ export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen }: Props) =>
 												{t("COMMON.STATUS")}
 											</span>
 											<Icon
-												name={delegate.rank() ? "Ok" : "StatusClock"}
+												name={delegate.hasPassed() ? "Ok" : "StatusClock"}
 												className={
-													delegate.rank() ? "text-theme-success" : "text-theme-neutral"
+													delegate.hasPassed() ? "text-theme-success" : "text-theme-neutral"
 												}
 											/>
 										</li>
