@@ -1,26 +1,25 @@
+import { Profile, Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
-import { AddressListItem } from "./AddressListItem";
+import { AddressRow } from "./AddressRow";
 
-const data = {
-	walletAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-	walletName: "OLEBank",
-	type: "Multisig",
-	balance: "1,000,000 ARK",
-	delegateAddress: "DACFobAjNEKsc1CtPSMyp5uA4wp6uC3fgC",
-	delegateName: "Delegate 1",
-	rank: 2,
-	msqUrl: "https://marketsquare.ark.io",
-	isActive: true,
-};
+let profile: Profile;
+let wallet: Wallet;
 
-describe("AddressListItem", () => {
+describe("AddressRow", () => {
+	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		wallet.data().set(WalletFlag.Starred, true);
+		wallet.data().set(WalletFlag.Ledger, true);
+	});
+
 	it("should render", () => {
 		const { container, asFragment } = render(
 			<table>
 				<tbody>
-					<AddressListItem {...data} />
+					<AddressRow index={1} wallet={wallet} />
 				</tbody>
 			</table>,
 		);
@@ -34,18 +33,18 @@ describe("AddressListItem", () => {
 		const { container, asFragment, getByTestId } = render(
 			<table>
 				<tbody>
-					<AddressListItem {...data} onSelect={onSelect} />
+					<AddressRow index={1} wallet={wallet} onSelect={onSelect} />
 				</tbody>
 			</table>,
 		);
-		const selectButton = getByTestId("AddressListItem__button--select");
+		const selectButton = getByTestId("AddressRow__select-1");
 
 		act(() => {
 			fireEvent.click(selectButton);
 		});
 
 		expect(container).toBeTruthy();
-		expect(onSelect).toHaveBeenCalledWith(data.walletAddress);
+		expect(onSelect).toHaveBeenCalledWith(wallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

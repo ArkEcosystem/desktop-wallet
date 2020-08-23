@@ -1,67 +1,30 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { env, getDefaultProfileId, render } from "testing-library";
 
-import { delegateListData } from "../../data";
-import { translations } from "../../i18n";
-import { DelegateList } from "./DelegateList";
+import { DelegateTable } from "./DelegateTable";
 
-describe("DelegateList", () => {
+let delegates: Coins.WalletDataCollection;
+
+describe("DelegateTable", () => {
+	beforeAll(async () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+
+		delegates = await wallet.delegates();
+	});
+
 	it("should render", () => {
-		const { container, asFragment } = render(<DelegateList data={delegateListData} />);
+		const { container, asFragment } = render(<DelegateTable delegates={delegates.items()} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with empty list", () => {
-		const { container, asFragment } = render(<DelegateList data={[]} />);
+		const { container, asFragment } = render(<DelegateTable delegates={[]} />);
 
 		expect(container).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should select a delegate", () => {
-		const { asFragment, getByTestId, getAllByTestId } = render(<DelegateList data={delegateListData} />);
-		const selectButtons = getAllByTestId("DelegateListItem__button--toggle");
-
-		act(() => {
-			fireEvent.click(selectButtons[0]);
-		});
-
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Delegate 1");
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should unselect a delegate", () => {
-		const { asFragment, getByTestId, getAllByTestId } = render(<DelegateList data={delegateListData} />);
-		const selectButtons = getAllByTestId("DelegateListItem__button--toggle");
-
-		fireEvent.click(selectButtons[0]);
-
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Delegate 1");
-
-		fireEvent.click(selectButtons[0]);
-
-		expect(selectButtons[0]).toHaveTextContent("Select");
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should select multiple delegates", () => {
-		const { asFragment, getByTestId, getAllByTestId } = render(<DelegateList data={delegateListData} />);
-		const selectButtons = getAllByTestId("DelegateListItem__button--toggle");
-
-		fireEvent.click(selectButtons[0]);
-		fireEvent.click(selectButtons[1]);
-		fireEvent.click(selectButtons[2]);
-
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent(translations.DELEGATE_LIST.SHOW_LIST);
-
-		fireEvent.click(getByTestId("DelegateList__toggle-show-selected"));
-
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent(translations.DELEGATE_LIST.HIDE_LIST);
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Delegate 1");
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Delegate 2");
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Delegate 3");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

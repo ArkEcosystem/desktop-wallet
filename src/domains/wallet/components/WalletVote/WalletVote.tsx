@@ -134,9 +134,9 @@ export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen }: Props) =>
 												{t("COMMON.STATUS")}
 											</span>
 											<Icon
-												name={delegate.hasPassed() ? "Ok" : "StatusClock"}
+												name={delegate.rank() ? "Ok" : "StatusClock"}
 												className={
-													delegate.hasPassed() ? "text-theme-success" : "text-theme-neutral"
+													delegate.rank() ? "text-theme-success" : "text-theme-neutral"
 												}
 											/>
 										</li>

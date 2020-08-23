@@ -139,8 +139,8 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 				{hasVotes && (
 					<div className="flex justify-center h-full">
 						<Icon
-							name={votes?.items()[0].hasPassed() ? "Ok" : "StatusClock"}
-							className={votes?.items()[0].hasPassed() ? "text-theme-success" : "text-theme-neutral"}
+							name={votes?.items()[0].rank() ? "Ok" : "StatusClock"}
+							className={votes?.items()[0].rank() ? "text-theme-success" : "text-theme-neutral"}
 						/>
 					</div>
 				)}
@@ -151,7 +151,7 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 					<Button
 						variant="plain"
 						onClick={() => onSelect?.(wallet.address())}
-						data-testid={`AddressListItem__select-${index}`}
+						data-testid={`AddressRow__select-${index}`}
 					>
 						{t("COMMON.SELECT")}
 					</Button>
