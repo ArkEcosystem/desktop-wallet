@@ -144,7 +144,7 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 			{selected.length > 0 && (
 				<div
 					className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
-					data-testid="DelegateList__footer"
+					data-testid="DelegateTable__footer"
 				>
 					<div className="flex">
 						<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
@@ -175,7 +175,7 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 											<div
 												className="ml-4 cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
 												onClick={() => setShowSelectedList(!showSelectedList)}
-												data-testid="DelegateList__toggle-show-selected"
+												data-testid="DelegateTable__toggle-show-selected"
 											>
 												{showSelectedList
 													? t("VOTE.DELEGATE_LIST.HIDE_LIST")
@@ -187,7 +187,7 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 
 								<Button
 									onClick={() => onContinue?.(selected[0].address)}
-									data-testid="DelegateList__continue-button"
+									data-testid="DelegateTable__continue-button"
 								>
 									{t("COMMON.CONTINUE")}
 								</Button>

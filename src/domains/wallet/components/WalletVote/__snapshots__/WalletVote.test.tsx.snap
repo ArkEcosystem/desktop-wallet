@@ -371,6 +371,170 @@ exports[`WalletVote should render 1`] = `
             </button>
           </div>
         </div>
+        <div
+          class="flex items-center justify-between"
+          data-testid="WalletVote__delegate"
+        >
+          <div
+            class="flex items-center space-x-4"
+          >
+            <div
+              class="flex items-center -space-x-2"
+            >
+              <div
+                class="sc-AxiKw jQtkkF border-theme-neutral-900 text-theme-neutral-900"
+              >
+                <div
+                  class="sc-AxhCb fxrKLH"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    voted.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-between"
+            >
+              <span
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Delegate
+              </span>
+              <div
+                class="inline-block truncate align-middle"
+              >
+                <span
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  data-testid="address__wallet-name"
+                >
+                  genesis_17
+                </span>
+                <span
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  DRgF3P…Ay23ES
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <ul
+              class="flex items-stretch divide-x-1 divide-theme-neutral-300"
+            >
+              <li
+                class="flex flex-col items-center justify-between px-10"
+              >
+                <span
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  Rank
+                </span>
+                <span
+                  class="font-bold text-theme-neutral-dark"
+                  data-testid="WalletVote__delegate__rank"
+                >
+                  #3
+                </span>
+              </li>
+              <li
+                class="flex flex-col items-center justify-between px-10"
+              >
+                <span
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  Explorer
+                </span>
+                <a
+                  data-testid="WalletVote__delegate__explorer"
+                  href="https://explorer.ark.io"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-2xl text-theme-primary"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      explorer.svg
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li
+                class="flex flex-col items-center justify-between px-10"
+              >
+                <span
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  MarketSquare
+                </span>
+                <a
+                  data-testid="WalletVote__delegate__msq"
+                  href="https://marketsquare.io"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      link.svg
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li
+                class="flex flex-col items-center justify-between px-10"
+              >
+                <span
+                  class="text-sm font-semibold text-theme-neutral"
+                >
+                  Status
+                </span>
+                <div
+                  class="sc-AxhCb fxrKLH text-theme-success"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    ok.svg
+                  </svg>
+                </div>
+              </li>
+            </ul>
+            <button
+              class="sc-AxirZ fhzkRl"
+              color="primary"
+              data-testid="WalletVote__delegate__unvote"
+              type="button"
+            >
+              Unvote
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
