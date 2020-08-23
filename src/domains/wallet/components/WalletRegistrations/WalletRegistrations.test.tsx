@@ -19,7 +19,7 @@ describe("WalletRegistrations", () => {
 		const onRegister = jest.fn();
 
 		const { getByTestId } = render(
-			<WalletRegistrations address="abc" isMultisig onShowAll={onShowAll} onRegister={onRegister} />,
+			<WalletRegistrations isMultisig onShowAll={onShowAll} onRegister={onRegister} />,
 		);
 		fireEvent.click(getByTestId("WalletRegistrations__show-all"));
 		fireEvent.click(getByTestId("WalletRegistrations__register"));
@@ -28,12 +28,19 @@ describe("WalletRegistrations", () => {
 	});
 
 	it("should render closed", () => {
-		const { getByTestId } = render(<WalletRegistrations address="abc" defaultIsOpen={false} />);
+		const { getByTestId } = render(<WalletRegistrations defaultIsOpen={false} />);
 		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "true");
 	});
 
+	it("should render loading state", () => {
+		const { getByTestId, asFragment } = render(<WalletRegistrations isLoading={true} />);
+
+		expect(getByTestId("WalletRegistrations__skeleton")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should toggle", () => {
-		const { getByTestId } = render(<WalletRegistrations address="abc" />);
+		const { getByTestId } = render(<WalletRegistrations />);
 		act(() => {
 			fireEvent.click(getByTestId("WalletRegistrations__toggle"));
 		});
@@ -41,40 +48,31 @@ describe("WalletRegistrations", () => {
 	});
 
 	it("should show icons list", () => {
-		const { getAllByTestId, asFragment } = render(
-			<WalletRegistrations address="abc" hasSecondSignature isMultisig />,
-		);
+		const { getAllByTestId, asFragment } = render(<WalletRegistrations hasSecondSignature isMultisig />);
 		expect(getAllByTestId("WalletRegistrations__icon-list__icon")).toHaveLength(2);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should show icons list with rest", () => {
 		const { getByTestId } = render(
-			<WalletRegistrations
-				delegate={delegate}
-				address="abc"
-				hasPlugins={true}
-				isMultisig
-				hasSecondSignature
-				hasBridgechains
-			/>,
+			<WalletRegistrations delegate={delegate} hasPlugins={true} isMultisig hasSecondSignature hasBridgechains />,
 		);
 		expect(getByTestId("WalletRegistrations__icon-list__rest")).toHaveTextContent("+2");
 	});
 
 	it("should show delegate", () => {
-		const { getByTestId, asFragment } = render(<WalletRegistrations address="abc" delegate={delegate} />);
+		const { getByTestId, asFragment } = render(<WalletRegistrations delegate={delegate} />);
 		expect(getByTestId("WalletRegistrations__delegate")).toHaveTextContent("arkx");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should show business", () => {
-		const { getByTestId } = render(<WalletRegistrations address="abc" business={{ name: "Test" }} />);
+		const { getByTestId } = render(<WalletRegistrations business={{ name: "Test" }} />);
 		expect(getByTestId("WalletRegistrations__business")).toHaveTextContent("Test");
 	});
 
 	it("should render empty mode", () => {
-		const { getByTestId, asFragment } = render(<WalletRegistrations address="abc" />);
+		const { getByTestId, asFragment } = render(<WalletRegistrations />);
 		expect(getByTestId("WalletRegistrations__empty")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});

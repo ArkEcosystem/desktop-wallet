@@ -20,6 +20,13 @@ describe("WalletVote", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render loading state", () => {
+		const { getByTestId, asFragment } = render(<WalletVote votes={votes} isLoading={true} />);
+
+		expect(getByTestId("WalletVote__skeleton")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render without votes", () => {
 		const { getByTestId, asFragment } = render(<WalletVote />);
 		expect(getByTestId("WalletVote__empty")).toBeTruthy();
