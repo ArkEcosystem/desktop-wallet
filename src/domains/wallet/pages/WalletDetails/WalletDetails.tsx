@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { ProfileSetting, ReadOnlyWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
@@ -25,7 +25,7 @@ type WalletDetailsProps = {
 type WalletInfo = {
 	transactions: Contracts.TransactionDataType[];
 	walletData?: Contracts.WalletData;
-	votes?: Coins.WalletDataCollection;
+	votes?: ReadOnlyWallet[];
 };
 
 export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
@@ -58,45 +58,14 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	];
 
 	useEffect(() => {
-		// TODO: Replace logic with sdk
-		const fetchVotes = async () => {
-			let response;
-			// catch 404 wallet not found until sdk logic
-			try {
-				response = await activeWallet.votes();
-			} catch (error) {
-				return;
-			}
-
-			const transaction = response.items()[0];
-			const result: Contracts.WalletData[] = [];
-
-			const votes = (transaction?.asset().votes as string[]) || [];
-			for (const vote of votes) {
-				const mode = vote[0];
-				const publicKey = vote.substr(1);
-				/* istanbul ignore next */
-				if (mode === "-") {
-					continue;
-				}
-
-				const voteData = await activeWallet.client().wallet(publicKey);
-
-				result.push(voteData);
-			}
-
-			return new Coins.WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined });
-		};
-
 		const fetchAllData = async () => {
 			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
 			const walletData = await activeWallet.client().wallet(activeWallet.address());
-			const votes = await fetchVotes();
 
 			setData({
 				walletData,
 				transactions,
-				votes,
+				votes: activeWallet.votes(),
 			});
 		};
 

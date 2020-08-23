@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -7,6 +7,7 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -48,22 +49,24 @@ const renderConfirmationStatus = (confirmations: BigNumber) => {
 
 export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }: VoteDetailProps) => {
 	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const senderWallet = activeProfile.wallets().findByAddress(transaction!.sender());
 
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(true);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
-	const getDelegates = React.useCallback(
-		() => senderWallet?.mapDelegates((transaction as Contracts.VoteData).votes()),
-		[senderWallet, transaction],
-	);
-
 	useEffect(() => {
 		const syncDelegates = async () => {
 			setIsLoadingDelegates(true);
-			await senderWallet?.syncDelegates();
-			const delegates = getDelegates();
+			// TODO: make senderWallet non-nullable
+			// TODO: move this to profile initialising and run it every X period
+			await env.coins().syncDelegates(senderWallet?.coinId()!, senderWallet?.networkId()!);
+			const delegates = DelegateMapper.execute(
+				senderWallet?.coinId()!,
+				senderWallet?.networkId()!,
+				(transaction as Contracts.VoteData).votes(),
+			);
 
 			setDelegates(delegates || []);
 			setIsLoadingDelegates(false);
@@ -75,7 +78,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			setIsLoadingDelegates(false);
 			setDelegates([]);
 		};
-	}, [senderWallet, getDelegates]);
+	}, [senderWallet]);
 
 	const renderAccount = () => {
 		if (walletAlias) {

@@ -103,11 +103,11 @@ export const WalletsDecorator = ({ count, children, withDelegate, withDelegates 
 		const wallets = await generateWallets({ env, profile: profile || profileObject, count });
 
 		if (withDelegate) {
-			setDelegate(await wallets[0].delegate("arkx"));
+			setDelegate(await wallets[0].client().delegate("arkx"));
 		}
 
 		if (withDelegates) {
-			setDelegates(await wallets[0].delegates());
+			setDelegates(await wallets[0].client().delegates());
 		}
 
 		setWallets(wallets);
