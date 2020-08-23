@@ -38,7 +38,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const { t } = useTranslation();
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
@@ -59,18 +59,30 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	useEffect(() => {
 		const fetchAllData = async () => {
+			// TODO: move this to profile initialising and run it every X period
+			await env.coins().syncDelegates(activeWallet.coinId()!, activeWallet.networkId()!);
+			await activeWallet.syncVotes();
+
 			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
 			const walletData = await activeWallet.client().wallet(activeWallet.address());
+
+			// TODO: better handling in the SDK to remove the try/catch
+			let votes: ReadOnlyWallet[] = [];
+			try {
+				votes = activeWallet.votes();
+			} catch {
+				votes = [];
+			}
 
 			setData({
 				walletData,
 				transactions,
-				votes: activeWallet.votes(),
+				votes,
 			});
 		};
 
 		fetchAllData();
-	}, [activeWallet]);
+	}, [activeWallet, env]);
 
 	useEffect(() => {
 		const timer = setInterval(async () => {

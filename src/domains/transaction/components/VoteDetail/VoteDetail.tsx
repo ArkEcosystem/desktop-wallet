@@ -59,9 +59,11 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 	useEffect(() => {
 		const syncDelegates = async () => {
 			setIsLoadingDelegates(true);
+
 			// TODO: make senderWallet non-nullable
 			// TODO: move this to profile initialising and run it every X period
 			await env.coins().syncDelegates(senderWallet?.coinId()!, senderWallet?.networkId()!);
+
 			const delegates = DelegateMapper.execute(
 				senderWallet?.coinId()!,
 				senderWallet?.networkId()!,
@@ -78,7 +80,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			setIsLoadingDelegates(false);
 			setDelegates([]);
 		};
-	}, [senderWallet]);
+	}, [env, senderWallet, transaction]);
 
 	const renderAccount = () => {
 		if (walletAlias) {
