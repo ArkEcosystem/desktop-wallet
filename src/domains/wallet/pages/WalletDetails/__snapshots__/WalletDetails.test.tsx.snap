@@ -467,7 +467,113 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
       >
         <div
           class="container py-16 mx-auto px-14"
-        />
+        >
+          <section
+            data-testid="WalletVote"
+          >
+            <div
+              class="flex items-center justify-between"
+            >
+              <h2
+                class="font-bold"
+              >
+                My Vote
+              </h2>
+              <button
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
+                data-testid="WalletVote__toggle"
+              >
+                <span>
+                  Hide
+                </span>
+                <span
+                  class="sc-fzqARJ dgVUub"
+                >
+                  <div
+                    class="sc-AxiKw ksjdLL"
+                    height="10"
+                    width="10"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </span>
+              </button>
+            </div>
+            <div
+              aria-hidden="false"
+              data-testid="Collapse"
+              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+            >
+              <div
+                class="py-4 grid grid-flow-row row-gap-6"
+              >
+                <div
+                  class="flex items-center pr-8 space-x-4"
+                  data-testid="WalletVote__empty"
+                >
+                  <div
+                    class="flex items-center -space-x-2"
+                  >
+                    <div
+                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          voted.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxhUy dSLmHc bg-theme-background"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="text-sm font-semibold text-theme-neutral"
+                    >
+                      Address Delegate
+                    </span>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You haven't voted for more than one delegate yet.
+                      </span>
+                      <a
+                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                        <div
+                          class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                          data-testid="Link__external"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            redirect.svg
+                          </svg>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
       <div
         class="sc-fzoLag fvqzEZ"
@@ -5660,7 +5766,113 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
       >
         <div
           class="container py-16 mx-auto px-14"
-        />
+        >
+          <section
+            data-testid="WalletVote"
+          >
+            <div
+              class="flex items-center justify-between"
+            >
+              <h2
+                class="font-bold"
+              >
+                My Vote
+              </h2>
+              <button
+                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
+                data-testid="WalletVote__toggle"
+              >
+                <span>
+                  Hide
+                </span>
+                <span
+                  class="sc-fzqARJ dgVUub"
+                >
+                  <div
+                    class="sc-AxiKw ksjdLL"
+                    height="10"
+                    width="10"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </span>
+              </button>
+            </div>
+            <div
+              aria-hidden="false"
+              data-testid="Collapse"
+              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+            >
+              <div
+                class="py-4 grid grid-flow-row row-gap-6"
+              >
+                <div
+                  class="flex items-center pr-8 space-x-4"
+                  data-testid="WalletVote__empty"
+                >
+                  <div
+                    class="flex items-center -space-x-2"
+                  >
+                    <div
+                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          voted.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxhUy dSLmHc bg-theme-background"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="text-sm font-semibold text-theme-neutral"
+                    >
+                      Address Delegate
+                    </span>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You haven't voted for more than one delegate yet.
+                      </span>
+                      <a
+                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                        <div
+                          class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                          data-testid="Link__external"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            redirect.svg
+                          </svg>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
       <div
         class="sc-fzoLag fvqzEZ"
