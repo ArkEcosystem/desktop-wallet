@@ -974,7 +974,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
       class="mt-8"
     >
       <div
-        class="SendTransactionForm space-y-8"
+        class="space-y-8 SendTransactionForm"
       >
         <fieldset
           class="sc-AxhCb ckQmOL relative"
@@ -2078,7 +2078,7 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                       class="mt-8"
                     >
                       <div
-                        class="SendTransactionForm space-y-8"
+                        class="space-y-8 SendTransactionForm"
                       >
                         <fieldset
                           class="sc-AxhCb ckQmOL relative"
