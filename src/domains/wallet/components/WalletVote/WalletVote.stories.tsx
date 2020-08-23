@@ -21,3 +21,5 @@ export const Default = ({ delegates }: { delegates: Coins.WalletDataCollection }
 );
 
 export const Empty = () => <WalletVote onUnvote={action("onUnvote")} />;
+
+export const Loading = () => <WalletVote isLoading={true} />;
