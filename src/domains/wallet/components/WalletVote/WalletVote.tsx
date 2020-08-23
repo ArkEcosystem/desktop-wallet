@@ -9,14 +9,17 @@ import { Link } from "app/components/Link";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
+
 type Props = {
 	votes?: Coins.WalletDataCollection;
 	onUnvote?: (address: string) => void;
 	defaultIsOpen?: boolean;
+	isLoading?: boolean;
 };
 
 // TODO: Delegate Explorer URL
-export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
+export const WalletVote = ({ votes, onUnvote, defaultIsOpen, isLoading }: Props) => {
 	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
@@ -36,7 +39,8 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 
 			<Collapse isOpen={isOpen}>
 				<div className="py-4 grid grid-flow-row row-gap-6">
-					{hasNoVotes ? (
+					{isLoading && <WalletVoteSkeleton />}
+					{!isLoading && hasNoVotes ? (
 						<div data-testid="WalletVote__empty" className="flex items-center pr-8 space-x-4">
 							<div className="flex items-center -space-x-2">
 								<Circle size="lg" className="text-theme-neutral-light">
