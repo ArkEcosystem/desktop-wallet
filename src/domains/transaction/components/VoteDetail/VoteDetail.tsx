@@ -62,10 +62,13 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 
 			// TODO: make senderWallet non-nullable
 			// TODO: move this to profile initialising and run it every X period
+			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			await env.coins().syncDelegates(senderWallet?.coinId()!, senderWallet?.networkId()!);
 
 			const delegates = DelegateMapper.execute(
+				// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 				senderWallet?.coinId()!,
+				// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 				senderWallet?.networkId()!,
 				(transaction as Contracts.VoteData).votes(),
 			);
