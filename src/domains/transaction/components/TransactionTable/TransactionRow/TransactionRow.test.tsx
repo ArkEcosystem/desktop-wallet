@@ -1,6 +1,6 @@
 import React from "react";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { fireEvent, renderWithRouter } from "utils/testing-library";
+import {  fireEvent, renderWithRouter } from "utils/testing-library";
 
 import { TransactionRow } from "./TransactionRow";
 
@@ -55,5 +55,27 @@ describe("TransactionRow", () => {
 		);
 		fireEvent.click(getByTestId("TransactionRow__sign"));
 		expect(onSign).toHaveBeenCalled();
+	});
+
+	it("should set backgroundColor on mouse events", () => {
+		const setState = jest.fn();
+		const useStateSpy = jest.spyOn(React, "useState");
+
+		useStateSpy.mockImplementation((state) => [state, setState]);
+
+		const { getByTestId } = renderWithRouter(
+			<table>
+				<tbody>
+					{/* @ts-ignore */}
+					<TransactionRow transaction={TransactionFixture} exchangeCurrency="BTC" />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.mouseEnter(getByTestId("TransactionRow"));
+		fireEvent.mouseLeave(getByTestId("TransactionRow"));
+
+		expect(setState).toHaveBeenCalledWith("--theme-color-success-100");
+		expect(setState).toHaveBeenCalledWith("");
 	});
 });

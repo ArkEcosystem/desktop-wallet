@@ -2,7 +2,7 @@ import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
-import React, { useState } from "react";
+import React from "react";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
 import { TransactionRowConfirmation } from "./TransactionRowConfirmation";
@@ -33,7 +33,7 @@ export const TransactionRow = ({
 	showSign,
 	...props
 }: Props) => {
-	const [backgroundColor, setBackgroundColor] = useState<string>("");
+	const [backgroundColor, setBackgroundColor] = React.useState<string>("");
 
 	if (isLoading)
 		return (
