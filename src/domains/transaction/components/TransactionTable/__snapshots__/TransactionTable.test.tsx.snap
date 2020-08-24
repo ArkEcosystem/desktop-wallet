@@ -288,7 +288,11 @@ exports[`TransactionTable should render 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000121
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
           </tr>
@@ -443,7 +447,11 @@ exports[`TransactionTable should render 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000052
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
           </tr>
@@ -594,7 +602,11 @@ exports[`TransactionTable should render compact 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000121
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
           </tr>
@@ -659,7 +671,11 @@ exports[`TransactionTable should render compact 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000052
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
           </tr>
@@ -3114,7 +3130,11 @@ exports[`TransactionTable should render with sign 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000121
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
             <td
@@ -3292,7 +3312,11 @@ exports[`TransactionTable should render with sign 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000052
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
             <td
