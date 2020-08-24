@@ -1298,3 +1298,665 @@ exports[`Vote For Delegate should render 4th step 1`] = `
   </section>
 </DocumentFragment>
 `;
+
+exports[`Vote For Delegate should send a vote transaction 1`] = `
+<div>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoLag iezQBg"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+              >
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxiKw jQtkkF -mr-2 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
+                  >
+                    <img
+                      alt="Profile avatar"
+                      class="rounded-full w-11 h-11"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      JO
+                    </span>
+                    <span
+                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxhUy gKrfcW"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxhUy deKzQP"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoXzr imWwrn flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <form
+            class="max-w-xl mx-auto"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="sc-fznxsB hPecIE"
+              >
+                <li
+                  class="sc-fzpjYC giIDaA"
+                />
+                <li
+                  class="sc-fzpjYC giIDaA"
+                />
+                <li
+                  class="sc-fzpjYC giIDaA"
+                />
+                <li
+                  class="sc-fzpjYC giIDaA"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <section
+                    class="space-y-8"
+                    data-testid="TransactionSuccessful"
+                  >
+                    <div>
+                      <h1
+                        class="mb-0"
+                      >
+                        Transaction Sent
+                      </h1>
+                      <div
+                        class="grid grid-flow-row gap-2"
+                      >
+                        <div
+                          class="w-full my-10"
+                        >
+                          <svg
+                            class="w-full"
+                          >
+                            transaction_successful.svg
+                          </svg>
+                        </div>
+                        <p
+                          class="mb-4 text-theme-neutral-dark"
+                        >
+                          Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+                        </p>
+                        <div
+                          class="flex items-center py-6 true "
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral"
+                            >
+                              ID
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              <div
+                                class="flex items-center"
+                              >
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    8f913b6b719e77…2f1b89abb49877
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
+                                >
+                                  <div
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
+                                  >
+                                    <div
+                                      class="text-theme-primary-300"
+                                    >
+                                      <div
+                                        class="sc-AxhUy cPXLjK"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral"
+                            >
+                              Block ID
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              <div
+                                class="flex items-center"
+                              >
+                                <div
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
+                                >
+                                  <div
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
+                                  >
+                                    <div
+                                      class="text-theme-primary-300"
+                                    >
+                                      <div
+                                        class="sc-AxhUy cPXLjK"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral"
+                            >
+                              Network
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              ARK Ecosystem
+                            </div>
+                          </div>
+                          <div
+                            class="ml-1 text-theme-danger"
+                          >
+                            <div
+                              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
+                            >
+                              <div
+                                class="sc-AxhUy hSYVGy"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="font-semibold"
+                            >
+                              <div
+                                class="mb-2 text-sm font-semibold text-theme-neutral"
+                              >
+                                <span
+                                  class="mr-1"
+                                >
+                                  Sender
+                                </span>
+                                <div
+                                  class="sc-fznyAO dkNXHq"
+                                  color="warning"
+                                >
+                                  <span
+                                    class="text-sm"
+                                  >
+                                    Your address
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                class="inline-block truncate align-middle"
+                              >
+                                <span
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  data-testid="address__wallet-name"
+                                >
+                                  ROBank
+                                </span>
+                                <span
+                                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                                  data-testid="address__wallet-address"
+                                >
+                                  AUexKj…EVTQWK
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                                title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral"
+                            >
+                              Delegate
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              <div
+                                class="inline-block truncate align-middle"
+                              >
+                                <span
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  data-testid="address__wallet-name"
+                                >
+                                  arkx
+                                </span>
+                                <span
+                                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                                  data-testid="address__wallet-address"
+                                >
+                                  D61mfS…J3Dyib
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                                title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral"
+                            >
+                              Transaction Fee
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              0.09660435 ARK
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral"
+                            >
+                              Transaction Type
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              Vote
+                            </div>
+                          </div>
+                          <div
+                            class="ml-1 text-theme-neutral-900"
+                          >
+                            <div
+                              class="sc-AxiKw jQtkkF border-theme-neutral-900 bg-theme-background"
+                            >
+                              <div
+                                class="sc-AxhUy cPXLjK"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  voted.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="flex justify-end mt-8 space-x-3"
+                >
+                  <button
+                    class="sc-AxirZ fhzkRl"
+                    color="primary"
+                    data-testid="SendVoteTransaction__button--back-to-wallet"
+                    type="button"
+                  >
+                    Back to Wallet
+                  </button>
+                  <button
+                    class="sc-AxirZ fhzkRl space-x-2"
+                    color="primary"
+                    data-testid="SendVoteTransaction__button--copy"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxhUy cPXLjK"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Copy
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
