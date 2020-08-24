@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
@@ -7,6 +8,7 @@ import { FormContext, useForm } from "react-hook-form";
 import delegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor, within } from "utils/testing-library";
 
+import { translations as transactionTranslations } from "../../i18n";
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
 
 let profile: Profile;
@@ -89,6 +91,28 @@ describe("DelegateRegistrationForm", () => {
 
 		await waitFor(() => expect(input).toHaveValue("test_delegate"));
 		await waitFor(() => expect(form.getValues("username")).toEqual("test_delegate"));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+	});
+
+	it("should error for invalid username", async () => {
+		const { asFragment, container, form, getByTestId, rerender } = await renderComponent();
+
+		await act(async () => {
+			fireEvent.change(getByTestId("Input__username"), { target: { value: "invalid delegate" } });
+		});
+
+		await act(async () => {
+			rerender(
+				<FormContext {...form}>
+					<DelegateRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+				</FormContext>,
+			);
+
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")));
+		});
+
+		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("invalid delegate"));
+		await waitFor(() => expect(container).toHaveTextContent(transactionTranslations.INVALID_DELEGATE_NAME));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
