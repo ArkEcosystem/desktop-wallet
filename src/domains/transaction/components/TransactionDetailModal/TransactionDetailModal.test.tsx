@@ -28,6 +28,7 @@ describe("TransactionDetailModal", () => {
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 	});
+
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
@@ -70,11 +71,10 @@ describe("TransactionDetailModal", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		waitFor(() => expect(getByText("Voter")).not.toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a multiSignature modal", () => {
+	it("should render a multi signature modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
@@ -97,7 +97,7 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a multiPayment modal", () => {
+	it("should render a multi payment modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
@@ -204,7 +204,7 @@ describe("TransactionDetailModal", () => {
 						transactionItem={{
 							...TransactionFixture,
 							blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
-							type: () => "unknow",
+							type: () => "unknown",
 						}}
 					/>
 					,
