@@ -116,7 +116,7 @@ describe("SignIn", () => {
 		const { findByTestId, getByTestId, queryByText } = renderContext;
 
 		for (const i of [1, 2, 3]) {
-			act(() => {
+			await act(async () => {
 				fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: `wrong password ${i}` } });
 			});
 
