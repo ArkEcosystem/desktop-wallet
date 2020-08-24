@@ -78,6 +78,9 @@ export const transactions = [
 		hasFailed: () => false,
 		getMeta: () => "",
 		setMeta: () => "",
+		// @ts-ignore
+		explorerLink: () =>
+			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 	},
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -139,6 +142,9 @@ export const transactions = [
 		hasFailed: () => false,
 		getMeta: () => "",
 		setMeta: () => "",
+		// @ts-ignore
+		explorerLink: () =>
+			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 	},
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -200,6 +206,9 @@ export const transactions = [
 		hasFailed: () => false,
 		getMeta: () => "",
 		setMeta: () => "",
+		// @ts-ignore
+		explorerLink: () =>
+			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 	},
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -261,6 +270,9 @@ export const transactions = [
 		hasFailed: () => false,
 		getMeta: () => "",
 		setMeta: () => "",
+		// @ts-ignore
+		explorerLink: () =>
+			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 	},
 ];
 
