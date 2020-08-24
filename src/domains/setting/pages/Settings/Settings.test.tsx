@@ -79,7 +79,7 @@ describe("Settings", () => {
 		}));
 
 		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__upload-button"));
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
@@ -136,7 +136,7 @@ describe("Settings", () => {
 
 		// Upload and remove avatar image
 		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__remove-avatar"));
+			fireEvent.click(getByTestId("SelectProfileImage__remove-button"));
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
@@ -179,7 +179,7 @@ describe("Settings", () => {
 		}));
 
 		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__upload-button"));
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
