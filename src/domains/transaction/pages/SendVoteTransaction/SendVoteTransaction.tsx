@@ -395,7 +395,7 @@ export const SendVoteTransaction = () => {
 											<Button
 												type="submit"
 												disabled={!formState.isValid}
-												data-testid="SendVoteTransaction__button--send"
+												data-testid="SendVoteTransaction__button--submit"
 											>
 												{t("COMMON.SEND")}
 											</Button>

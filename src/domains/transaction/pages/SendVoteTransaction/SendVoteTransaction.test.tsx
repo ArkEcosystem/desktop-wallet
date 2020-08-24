@@ -1,15 +1,29 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
+import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { env, getDefaultProfileId, render } from "testing-library";
-import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
+import { Route } from "react-router-dom";
+import {
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	RenderResult,
+	renderWithRouter,
+	waitFor,
+	within,
+} from "testing-library";
+import { data as delegateData } from "tests/fixtures/coins/ark/delegates-devnet.json";
 import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
 
-import { FirstStep, FourthStep,SecondStep, ThirdStep } from "../SendVoteTransaction";
+import { translations as transactionTranslations } from "../../i18n";
+import { FirstStep, FourthStep, SecondStep, SendVoteTransaction,ThirdStep } from "../SendVoteTransaction";
+
+const fixtureProfileId = getDefaultProfileId();
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
@@ -19,7 +33,7 @@ describe("Vote For Delegate", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		delegate = await wallet.client().delegate(data[0].address);
+		delegate = await wallet.client().delegate(delegateData[0].address);
 
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
@@ -77,5 +91,84 @@ describe("Vote For Delegate", () => {
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should error if wrong mnemonic", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote/${
+			delegateData[0].address
+		}/sender/${wallet.address()}`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/transactions/vote/:voteId/sender/:senderId">
+					<SendVoteTransaction />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVoteTransaction__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVoteTransaction__step--first")).toHaveTextContent(
+					delegateData[0].username,
+				),
+			);
+		});
+
+		const { getAllByTestId, getByTestId } = rendered!;
+
+		await act(async () => {
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[2]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendVoteTransaction__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVoteTransaction__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("SendVoteTransaction__button--back"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVoteTransaction__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy());
+			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
+			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+
+			const signMock = jest.spyOn(wallet.transaction(), "signVote").mockImplementation(() => {
+				throw new Error();
+			});
+
+			const consoleSpy = jest.spyOn(console, "error").mockImplementation();
+
+			fireEvent.click(getByTestId("SendVoteTransaction__button--submit"));
+
+			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
+			await waitFor(() => expect(passwordInput).toHaveValue(""));
+			await waitFor(() =>
+				expect(getByTestId("SendVoteTransaction__step--third")).toHaveTextContent(
+					transactionTranslations.INVALID_MNEMONIC,
+				),
+			);
+
+			signMock.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
 	});
 });
