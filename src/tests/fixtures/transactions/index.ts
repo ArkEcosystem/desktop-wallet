@@ -64,4 +64,7 @@ export const TransactionFixture: Contracts.TransactionDataType = {
 	setMeta: () => "",
 	// IPFS Type
 	hash: () => "QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68",
+	// @ts-ignore
+	explorerLink: () =>
+		"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 };
