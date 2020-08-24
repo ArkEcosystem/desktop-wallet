@@ -10,7 +10,8 @@ let profile: Profile;
 
 describe("ProfileCard", () => {
 	beforeAll(async () => {
-		await env.bootFromObject(fixtureData);
+		await env.verify(fixtureData);
+		await env.boot();
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
