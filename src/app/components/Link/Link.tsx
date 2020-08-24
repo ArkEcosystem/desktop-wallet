@@ -36,6 +36,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
 			rel={isExternal ? "noopener noreferrer" : rel}
 			ref={ref}
 			onClick={(event) => {
+				event.stopPropagation();
 				event.preventDefault();
 				return props.navigate?.();
 			}}
@@ -67,6 +68,7 @@ export const Link = ({ tooltip, ...props }: Props) => (
 		{props.isExternal ? (
 			<Anchor
 				onClick={(event) => {
+					event.stopPropagation();
 					event.preventDefault();
 					return openExternal(props.to);
 				}}

@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 type TransactionsProps = {
 	title: string;
 	transactions: ExtendedTransactionData[];
+	exchangeCurrency?: string;
 	fetchMoreAction?: Function;
 	onRowClick?: (row: ExtendedTransactionData) => void;
 	emptyText?: string;
@@ -15,6 +16,7 @@ type TransactionsProps = {
 
 export const Transactions = ({
 	transactions,
+	exchangeCurrency,
 	title,
 	emptyText,
 	fetchMoreAction,
@@ -29,7 +31,7 @@ export const Transactions = ({
 			<div className="pt-8">
 				<TransactionTable
 					transactions={transactions}
-					currencyRate="2"
+					exchangeCurrency={exchangeCurrency}
 					isLoading={isLoading}
 					onRowClick={onRowClick}
 				/>
