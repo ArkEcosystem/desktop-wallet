@@ -35,7 +35,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={false}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "transfer",
 					}}
 				/>
@@ -57,7 +57,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "transfer",
 					}}
 				/>
@@ -81,7 +81,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiSignature",
 					}}
 				/>
@@ -104,7 +104,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiPayment",
 					}}
 				/>
@@ -153,7 +153,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "vote",
 					}}
 				/>
@@ -176,7 +176,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "unvote",
 					}}
 				/>
@@ -203,7 +203,7 @@ describe("TransactionDetailModal", () => {
 						isOpen={true}
 						transactionItem={{
 							...TransactionFixture,
-							data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+							blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 							type: () => "unknow",
 						}}
 					/>
