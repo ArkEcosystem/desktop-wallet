@@ -2,7 +2,7 @@ import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
-import React from "react";
+import React, { useState } from "react";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
 import { TransactionRowConfirmation } from "./TransactionRowConfirmation";
@@ -33,6 +33,8 @@ export const TransactionRow = ({
 	showSign,
 	...props
 }: Props) => {
+	const [backgroundColor, setBackgroundColor] = useState<string>("");
+
 	if (isLoading)
 		return (
 			<TransactionRowSkeleton
@@ -45,9 +47,11 @@ export const TransactionRow = ({
 	return (
 		<tr
 			data-testid="TransactionRow"
-			className="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+			className="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
 			{...props}
 			onClick={onClick}
+			onMouseEnter={() => setBackgroundColor("--theme-color-success-100")}
+			onMouseLeave={() => setBackgroundColor("")}
 		>
 			<td className="w-16 py-6">
 				<div className="inline-block align-middle">
@@ -65,7 +69,7 @@ export const TransactionRow = ({
 				</span>
 			</td>
 			<td className="w-32 py-2">
-				<TransactionRowMode transaction={transaction} />
+				<TransactionRowMode transaction={transaction} circleShadowColor={backgroundColor} />
 			</td>
 			<td>
 				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
