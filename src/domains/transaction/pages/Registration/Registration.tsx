@@ -1,7 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
@@ -155,19 +155,21 @@ export const SigningStep = ({
 					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 
 					<div className="mt-8">
-						<FormField name="name">
+						<FormField name={passwordType}>
 							<FormLabel>
 								{passwordType === "mnemonic"
 									? t("TRANSACTION.MNEMONIC")
 									: t("TRANSACTION.ENCRYPTION_PASSWORD")}
 							</FormLabel>
-							<InputPassword name={passwordType} ref={register} />
+							<InputPassword ref={register} />
+							<FormHelperText />
 						</FormField>
 
 						{wallet.isSecondSignature() && (
-							<FormField name="name" className="mt-8">
+							<FormField name="secondMnemonic" className="mt-8">
 								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
-								<InputPassword name="secondMnemonic" ref={register} />
+								<InputPassword ref={register} />
+								<FormHelperText />
 							</FormField>
 						)}
 					</div>
