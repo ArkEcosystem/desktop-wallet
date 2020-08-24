@@ -37,7 +37,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen, isLoading }: Props)
 			</div>
 
 			<Collapse isOpen={isOpen}>
-				<div className="grid grid-flow-row row-gap-6 py-4">
+				<div className="py-4 grid grid-flow-row row-gap-6">
 					{isLoading && <WalletVoteSkeleton />}
 					{!isLoading && hasNoVotes ? (
 						<div data-testid="WalletVote__empty" className="flex items-center pr-8 space-x-4">
