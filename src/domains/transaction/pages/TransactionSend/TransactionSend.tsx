@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -82,7 +82,7 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 	);
 };
 
-export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
+export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, recipients, smartbridge } = getValues();

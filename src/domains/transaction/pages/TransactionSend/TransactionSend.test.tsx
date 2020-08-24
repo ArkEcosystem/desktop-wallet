@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
@@ -25,7 +25,7 @@ import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSen
 
 const fixtureProfileId = getDefaultProfileId();
 
-const createTransactionMultipleMock = (wallet: Wallet) =>
+const createTransactionMultipleMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => transactionMultipleFixture.data.id,
@@ -36,7 +36,7 @@ const createTransactionMultipleMock = (wallet: Wallet) =>
 		data: () => transactionMultipleFixture.data,
 	});
 
-const createTransactionMock = (wallet: Wallet) =>
+const createTransactionMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => transactionFixture.data.id,
@@ -48,7 +48,7 @@ const createTransactionMock = (wallet: Wallet) =>
 	});
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 
 beforeAll(async () => {
 	profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");

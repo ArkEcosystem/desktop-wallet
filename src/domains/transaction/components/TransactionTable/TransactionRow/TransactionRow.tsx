@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
@@ -12,7 +12,7 @@ import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 import { TransactionRowSkeleton } from "./TransactionRowSkeleton";
 
 type Props = {
-	transaction: Contracts.TransactionDataType;
+	transaction: ExtendedTransactionData;
 	currencyRate?: string;
 	isSignaturePending?: boolean;
 	onSign?: () => void;
@@ -45,7 +45,7 @@ export const TransactionRow = ({
 	return (
 		<tr
 			data-testid="TransactionRow"
-			className="border-b border-dotted border-theme-neutral-300"
+			className="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
 			{...props}
 			onClick={onClick}
 		>
@@ -53,7 +53,7 @@ export const TransactionRow = ({
 				<div className="inline-block align-middle">
 					<Link
 						data-testid="TransactionRow__ID"
-						to={{ pathname: "" }}
+						to={{ pathname: transaction.explorerLink() }}
 						tooltip={transaction.id()}
 						isExternal
 					/>

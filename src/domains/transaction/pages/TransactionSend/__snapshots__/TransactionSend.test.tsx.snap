@@ -415,7 +415,7 @@ exports[`Transaction Send should render 1st step 1`] = `
       class="mt-8"
     >
       <div
-        class="SendTransactionForm space-y-8"
+        class="space-y-8 SendTransactionForm"
       >
         <fieldset
           class="sc-AxhCb ckQmOL relative"
@@ -511,7 +511,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                   class="sc-AxiKw cxOZEi mx-4 bg-theme-neutral-200 border-theme-neutral-200"
                 />
                 <div
-                  class="absolute flex items-center right-4 space-x-3"
+                  class="absolute flex items-center space-x-3 right-4"
                 >
                   <div
                     class="sc-AxhUy hSYVGy"

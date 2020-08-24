@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { action } from "@storybook/addon-actions";
 import { boolean, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
@@ -28,7 +28,7 @@ const networks = [
 
 export const Default = () => (
 	<WalletsDecorator count={3}>
-		{({ wallets }: { wallets: Wallet[] }) => (
+		{({ wallets }: { wallets: ReadWriteWallet[] }) => (
 			<SearchWallet
 				isOpen={boolean("isOpen", true)}
 				wallets={wallets}

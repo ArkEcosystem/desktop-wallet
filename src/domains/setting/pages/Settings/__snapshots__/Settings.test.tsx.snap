@@ -1043,13 +1043,40 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col"
+                          class="flex flex-col w-full space-y-2"
                         >
-                          <span
-                            class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                            data-testid="list-divided-item__label"
+                          <div
+                            class="flex items-center justify-between space-x-5"
                           >
-                            Apply Blacklist
+                            <span
+                              class="text-lg font-semibold text-theme-neutral-dark"
+                              data-testid="list-divided-item__label"
+                            >
+                              Apply Blacklist
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="sc-fzqARJ qvHrv"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="sc-fzqNqU dzXrIp"
+                                >
+                                  <span
+                                    class="sc-fzoyTs fiRIAF"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
+                          <span
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
+                          >
+                            This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
                           </span>
                         </div>
                       </div>
@@ -1057,34 +1084,6 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         class=""
                         data-testid="list-divided-item__content"
                       >
-                        <div
-                          class="flex flex-row justify-between"
-                        >
-                          <span
-                            class="text-sm text-theme-neutral"
-                          >
-                            This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
-                          </span>
-                          <div
-                            class="-mt-7"
-                          >
-                            <label
-                              class="flex"
-                            >
-                              <input
-                                class="sc-fzqARJ qvHrv"
-                                type="checkbox"
-                              />
-                              <div
-                                class="sc-fzqNqU dzXrIp"
-                              >
-                                <span
-                                  class="sc-fzoyTs fiRIAF"
-                                />
-                              </div>
-                            </label>
-                          </div>
-                        </div>
                         <div
                           class="flex justify-end w-full pt-6 space-x-3"
                         >
@@ -1116,13 +1115,40 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col"
+                          class="flex flex-col w-full space-y-2"
                         >
-                          <span
-                            class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                            data-testid="list-divided-item__label"
+                          <div
+                            class="flex items-center justify-between space-x-5"
                           >
-                            Plugin Source
+                            <span
+                              class="text-lg font-semibold text-theme-neutral-dark"
+                              data-testid="list-divided-item__label"
+                            >
+                              Plugin Source
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="sc-fzqARJ qvHrv"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="sc-fzqNqU dzXrIp"
+                                >
+                                  <span
+                                    class="sc-fzoyTs fiRIAF"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
+                          <span
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
+                          >
+                            Turn this feature on, you can upload plugins to your wallet from third-party sources.
                           </span>
                         </div>
                       </div>
@@ -1131,97 +1157,73 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         data-testid="list-divided-item__content"
                       >
                         <div
-                          class="flex flex-row justify-between mb-5"
+                          class="pt-6"
                         >
-                          <span
-                            class="text-sm text-theme-neutral"
-                          >
-                            Turn this feature on, you can upload plugins to your wallet from third-party sources.
-                          </span>
-                          <div
-                            class="-mt-7"
+                          <fieldset
+                            class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                           >
                             <label
-                              class="flex"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              data-testid="FormLabel"
+                              for="load-plugins"
+                            >
+                              Load plugins from
+                              <div
+                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                data-testid="FormLabel__required"
+                              />
+                            </label>
+                            <div
+                              class="relative w-full"
                             >
                               <input
-                                class="sc-fzqARJ qvHrv"
-                                type="checkbox"
+                                class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                                data-testid="select-list__input"
+                                name="load-plugins"
+                                readonly=""
+                                type="text"
+                                value=""
                               />
                               <div
-                                class="sc-fzqNqU dzXrIp"
+                                class="relative w-full cursor-pointer"
                               >
-                                <span
-                                  class="sc-fzoyTs fiRIAF"
-                                />
-                              </div>
-                            </label>
-                          </div>
-                        </div>
-                        <fieldset
-                          class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="load-plugins"
-                          >
-                            Load plugins from
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <div
-                            class="relative w-full"
-                          >
-                            <input
-                              class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                              data-testid="select-list__input"
-                              name="load-plugins"
-                              readonly=""
-                              type="text"
-                              value=""
-                            />
-                            <div
-                              class="relative w-full cursor-pointer"
-                            >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-205-label downshift-205-toggle-button"
-                                  class="sc-fznWqX iNiXlu   "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-205-toggle-button"
-                                  type="button"
-                                >
-                                  Select Plugin Source
-                                </button>
-                                <ul
-                                  aria-labelledby="downshift-205-label"
-                                  class="sc-fzoiQi gHZRjd"
-                                  id="downshift-205-menu"
-                                  role="listbox"
-                                  tabindex="-1"
-                                />
-                              </div>
-                              <div
-                                class="sc-fzplWN sc-fznKkj fjTeZA w-10 pointer-events-none text-theme-neutral"
-                              >
+                                <div>
+                                  <button
+                                    aria-expanded="false"
+                                    aria-haspopup="listbox"
+                                    aria-labelledby="downshift-205-label downshift-205-toggle-button"
+                                    class="sc-fznWqX iNiXlu   "
+                                    data-testid="select-list__toggle-button"
+                                    id="downshift-205-toggle-button"
+                                    type="button"
+                                  >
+                                    Select Plugin Source
+                                  </button>
+                                  <ul
+                                    aria-labelledby="downshift-205-label"
+                                    class="sc-fzoiQi gHZRjd"
+                                    id="downshift-205-menu"
+                                    role="listbox"
+                                    tabindex="-1"
+                                  />
+                                </div>
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-fzplWN sc-fznKkj fjTeZA w-10 pointer-events-none text-theme-neutral"
                                 >
-                                  <svg>
-                                    arrowdown.svg
-                                  </svg>
+                                  <div
+                                    class="sc-AxirZ ZmpmT"
+                                    height="8"
+                                    width="8"
+                                  >
+                                    <svg>
+                                      arrowdown.svg
+                                    </svg>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </fieldset>
+                          </fieldset>
+                        </div>
                       </div>
                     </li>
                   </ul>
@@ -1668,72 +1670,48 @@ exports[`Settings should render 1`] = `
                   data-testid="General-settings__form"
                 >
                   <div
-                    class="mt-8"
+                    class="relative mt-8"
                   >
-                    <ul
-                      class="sc-fznJRM dJtmVl"
-                      data-testid="list-divided__items"
+                    <h2>
+                      Personal Details
+                    </h2>
+                    <div
+                      class="group"
                     >
-                      <li
-                        class="flex flex-col w-full "
-                        data-testid="list-divided-item__wrapper"
+                      <span
+                        class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
+                      >
+                        Profile Image
+                      </span>
+                      <div
+                        class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
-                          data-testid="list-divided-item__inner-wrapper"
+                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
                         >
                           <div
-                            class="flex flex-col"
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <span
-                              class="mr-5 text-2xl font-semibold"
-                              data-testid="list-divided-item__label"
-                            >
-                              Personal Details
-                            </span>
-                            <span
-                              class="text-sm text-theme-neutral-dark mt-1"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Profile Image
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row mt-2"
-                          >
-                            <div
-                              class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
+                            <button
+                              class="sc-AxhCb BegvR w-20 h-20"
+                              color="primary"
+                              data-testid="General-settings__upload-button"
+                              type="button"
                             >
                               <div
-                                class="w-20 h-20 overflow-hidden rounded-full"
+                                class="sc-AxirZ iQaTP"
+                                height="1em"
+                                width="1em"
                               >
-                                <button
-                                  class="sc-AxhCb BegvR w-20 h-20"
-                                  color="primary"
-                                  data-testid="General-settings__upload-button"
-                                  type="button"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      upload.svg
-                                    </svg>
-                                  </div>
-                                </button>
+                                <svg>
+                                  upload.svg
+                                </svg>
                               </div>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                      </li>
-                    </ul>
+                      </div>
+                    </div>
                     <div
                       class="flex justify-between w-full mt-8"
                     >
@@ -2104,54 +2082,47 @@ exports[`Settings should render 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                            <div
+                              class="flex items-center justify-between space-x-5"
                             >
-                              Screenshot Protection
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Screenshot Protection
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isScreenshotProtection"
+                                    name="isScreenshotProtection"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
                             >
                               This protection will protect your money from unwanted Screenshot you PC.
                             </span>
-                            <div
-                              class="-mt-7"
-                            >
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  checked=""
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isScreenshotProtection"
-                                  name="isScreenshotProtection"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
-                                >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
-                                  />
-                                </div>
-                              </label>
-                            </div>
                           </div>
                         </div>
                       </li>
@@ -2160,53 +2131,47 @@ exports[`Settings should render 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                            <div
+                              class="flex items-center justify-between space-x-5"
                             >
-                              Advanced Mode
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Advanced Mode
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isAdvancedMode"
+                                    name="isAdvancedMode"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
-                            <div
-                              class="-mt-7"
-                            >
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isAdvancedMode"
-                                  name="isAdvancedMode"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
-                                >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
-                                  />
-                                </div>
-                              </label>
-                            </div>
                           </div>
                         </div>
                       </li>
@@ -2219,12 +2184,15 @@ exports[`Settings should render 1`] = `
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 undefined"
-                              data-testid="list-divided-item__label"
-                            />
+                            <div
+                              class="flex items-center justify-between space-x-5"
+                            >
+                              <span
+                                data-testid="list-divided-item__label"
+                              />
+                            </div>
                           </div>
                         </div>
                         <div
@@ -2314,53 +2282,47 @@ exports[`Settings should render 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
-                            >
-                              Dark Theme
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
-                            <span
-                              class="mt-1 text-sm text-theme-neutral"
-                            >
-                              Want to set the wallet to dark mode?
-                            </span>
                             <div
-                              class="-mt-7"
+                              class="flex items-center justify-between space-x-5"
                             >
-                              <label
-                                class="flex"
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
                               >
-                                <input
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isDarkMode"
-                                  name="isDarkMode"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
+                                Dark Theme
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
                                 >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
+                                  <input
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isDarkMode"
+                                    name="isDarkMode"
+                                    type="checkbox"
                                   />
-                                </div>
-                              </label>
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
                             </div>
+                            <span
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Enables a dark, high contrast color scheme.
+                            </span>
                           </div>
                         </div>
                       </li>
@@ -2369,53 +2331,47 @@ exports[`Settings should render 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                            <div
+                              class="flex items-center justify-between space-x-5"
                             >
-                              Update Ledger in Background
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Update Ledger in Background
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isUpdateLedger"
+                                    name="isUpdateLedger"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
-                            <div
-                              class="-mt-7"
-                            >
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isUpdateLedger"
-                                  name="isUpdateLedger"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
-                                >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
-                                  />
-                                </div>
-                              </label>
-                            </div>
                           </div>
                         </div>
                       </li>
@@ -3438,47 +3394,41 @@ exports[`Settings should render peer settings 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col"
+                          class="flex flex-col w-full space-y-2"
                         >
-                          <span
-                            class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                            data-testid="list-divided-item__label"
+                          <div
+                            class="flex items-center justify-between space-x-5"
                           >
-                            Broadcast to Multiple Peers
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class=""
-                        data-testid="list-divided-item__content"
-                      >
-                        <div
-                          class="flex flex-row justify-between"
-                        >
+                            <span
+                              class="text-lg font-semibold text-theme-neutral-dark"
+                              data-testid="list-divided-item__label"
+                            >
+                              Broadcast to Multiple Peers
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="sc-fzqARJ qvHrv"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="sc-fzqNqU dzXrIp"
+                                >
+                                  <span
+                                    class="sc-fzoyTs fiRIAF"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
                           <span
-                            class="mt-1 text-sm text-theme-neutral"
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
                           >
                             This protection will protect your money from unwanted Screenshot your PC.
                           </span>
-                          <div
-                            class="-mt-7"
-                          >
-                            <label
-                              class="flex"
-                            >
-                              <input
-                                class="sc-fzqARJ qvHrv"
-                                type="checkbox"
-                              />
-                              <div
-                                class="sc-fzqNqU dzXrIp"
-                              >
-                                <span
-                                  class="sc-fzoyTs fiRIAF"
-                                />
-                              </div>
-                            </label>
-                          </div>
                         </div>
                       </div>
                     </li>
@@ -3491,47 +3441,41 @@ exports[`Settings should render peer settings 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col"
+                          class="flex flex-col w-full space-y-2"
                         >
-                          <span
-                            class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                            data-testid="list-divided-item__label"
+                          <div
+                            class="flex items-center justify-between space-x-5"
                           >
-                            Use Custom Peers
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        class=""
-                        data-testid="list-divided-item__content"
-                      >
-                        <div
-                          class="flex flex-row justify-between"
-                        >
+                            <span
+                              class="text-lg font-semibold text-theme-neutral-dark"
+                              data-testid="list-divided-item__label"
+                            >
+                              Use Custom Peers
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="sc-fzqARJ qvHrv"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="sc-fzqNqU dzXrIp"
+                                >
+                                  <span
+                                    class="sc-fzoyTs fiRIAF"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
                           <span
-                            class="mt-1 text-sm text-theme-neutral"
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
                           >
                             You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                           </span>
-                          <div
-                            class="-mt-7"
-                          >
-                            <label
-                              class="flex"
-                            >
-                              <input
-                                class="sc-fzqARJ qvHrv"
-                                type="checkbox"
-                              />
-                              <div
-                                class="sc-fzqNqU dzXrIp"
-                              >
-                                <span
-                                  class="sc-fzoyTs fiRIAF"
-                                />
-                              </div>
-                            </label>
-                          </div>
                         </div>
                       </div>
                     </li>
@@ -4322,13 +4266,40 @@ exports[`Settings should render plugin settings 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col"
+                          class="flex flex-col w-full space-y-2"
                         >
-                          <span
-                            class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                            data-testid="list-divided-item__label"
+                          <div
+                            class="flex items-center justify-between space-x-5"
                           >
-                            Apply Blacklist
+                            <span
+                              class="text-lg font-semibold text-theme-neutral-dark"
+                              data-testid="list-divided-item__label"
+                            >
+                              Apply Blacklist
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="sc-fzqARJ qvHrv"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="sc-fzqNqU dzXrIp"
+                                >
+                                  <span
+                                    class="sc-fzoyTs fiRIAF"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
+                          <span
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
+                          >
+                            This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
                           </span>
                         </div>
                       </div>
@@ -4336,34 +4307,6 @@ exports[`Settings should render plugin settings 1`] = `
                         class=""
                         data-testid="list-divided-item__content"
                       >
-                        <div
-                          class="flex flex-row justify-between"
-                        >
-                          <span
-                            class="text-sm text-theme-neutral"
-                          >
-                            This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
-                          </span>
-                          <div
-                            class="-mt-7"
-                          >
-                            <label
-                              class="flex"
-                            >
-                              <input
-                                class="sc-fzqARJ qvHrv"
-                                type="checkbox"
-                              />
-                              <div
-                                class="sc-fzqNqU dzXrIp"
-                              >
-                                <span
-                                  class="sc-fzoyTs fiRIAF"
-                                />
-                              </div>
-                            </label>
-                          </div>
-                        </div>
                         <div
                           class="flex justify-end w-full pt-6 space-x-3"
                         >
@@ -4395,13 +4338,40 @@ exports[`Settings should render plugin settings 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col"
+                          class="flex flex-col w-full space-y-2"
                         >
-                          <span
-                            class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                            data-testid="list-divided-item__label"
+                          <div
+                            class="flex items-center justify-between space-x-5"
                           >
-                            Plugin Source
+                            <span
+                              class="text-lg font-semibold text-theme-neutral-dark"
+                              data-testid="list-divided-item__label"
+                            >
+                              Plugin Source
+                            </span>
+                            <span>
+                              <label
+                                class="flex"
+                              >
+                                <input
+                                  class="sc-fzqARJ qvHrv"
+                                  type="checkbox"
+                                />
+                                <div
+                                  class="sc-fzqNqU dzXrIp"
+                                >
+                                  <span
+                                    class="sc-fzoyTs fiRIAF"
+                                  />
+                                </div>
+                              </label>
+                            </span>
+                          </div>
+                          <span
+                            class="text-sm font-medium text-theme-neutral"
+                            data-testid="list-divided-item__label--description"
+                          >
+                            Turn this feature on, you can upload plugins to your wallet from third-party sources.
                           </span>
                         </div>
                       </div>
@@ -4410,97 +4380,73 @@ exports[`Settings should render plugin settings 1`] = `
                         data-testid="list-divided-item__content"
                       >
                         <div
-                          class="flex flex-row justify-between mb-5"
+                          class="pt-6"
                         >
-                          <span
-                            class="text-sm text-theme-neutral"
-                          >
-                            Turn this feature on, you can upload plugins to your wallet from third-party sources.
-                          </span>
-                          <div
-                            class="-mt-7"
+                          <fieldset
+                            class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
                           >
                             <label
-                              class="flex"
+                              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                              data-testid="FormLabel"
+                              for="load-plugins"
+                            >
+                              Load plugins from
+                              <div
+                                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                                data-testid="FormLabel__required"
+                              />
+                            </label>
+                            <div
+                              class="relative w-full"
                             >
                               <input
-                                class="sc-fzqARJ qvHrv"
-                                type="checkbox"
+                                class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                                data-testid="select-list__input"
+                                name="load-plugins"
+                                readonly=""
+                                type="text"
+                                value=""
                               />
                               <div
-                                class="sc-fzqNqU dzXrIp"
+                                class="relative w-full cursor-pointer"
                               >
-                                <span
-                                  class="sc-fzoyTs fiRIAF"
-                                />
-                              </div>
-                            </label>
-                          </div>
-                        </div>
-                        <fieldset
-                          class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
-                        >
-                          <label
-                            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                            data-testid="FormLabel"
-                            for="load-plugins"
-                          >
-                            Load plugins from
-                            <div
-                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                          <div
-                            class="relative w-full"
-                          >
-                            <input
-                              class="sc-fzpans jVpASP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                              data-testid="select-list__input"
-                              name="load-plugins"
-                              readonly=""
-                              type="text"
-                              value=""
-                            />
-                            <div
-                              class="relative w-full cursor-pointer"
-                            >
-                              <div>
-                                <button
-                                  aria-expanded="false"
-                                  aria-haspopup="listbox"
-                                  aria-labelledby="downshift-192-label downshift-192-toggle-button"
-                                  class="sc-fznWqX iNiXlu   "
-                                  data-testid="select-list__toggle-button"
-                                  id="downshift-192-toggle-button"
-                                  type="button"
-                                >
-                                  Select Plugin Source
-                                </button>
-                                <ul
-                                  aria-labelledby="downshift-192-label"
-                                  class="sc-fzoiQi gHZRjd"
-                                  id="downshift-192-menu"
-                                  role="listbox"
-                                  tabindex="-1"
-                                />
-                              </div>
-                              <div
-                                class="sc-fzplWN sc-fznKkj fjTeZA w-10 pointer-events-none text-theme-neutral"
-                              >
+                                <div>
+                                  <button
+                                    aria-expanded="false"
+                                    aria-haspopup="listbox"
+                                    aria-labelledby="downshift-192-label downshift-192-toggle-button"
+                                    class="sc-fznWqX iNiXlu   "
+                                    data-testid="select-list__toggle-button"
+                                    id="downshift-192-toggle-button"
+                                    type="button"
+                                  >
+                                    Select Plugin Source
+                                  </button>
+                                  <ul
+                                    aria-labelledby="downshift-192-label"
+                                    class="sc-fzoiQi gHZRjd"
+                                    id="downshift-192-menu"
+                                    role="listbox"
+                                    tabindex="-1"
+                                  />
+                                </div>
                                 <div
-                                  class="sc-AxirZ ZmpmT"
-                                  height="8"
-                                  width="8"
+                                  class="sc-fzplWN sc-fznKkj fjTeZA w-10 pointer-events-none text-theme-neutral"
                                 >
-                                  <svg>
-                                    arrowdown.svg
-                                  </svg>
+                                  <div
+                                    class="sc-AxirZ ZmpmT"
+                                    height="8"
+                                    width="8"
+                                  >
+                                    <svg>
+                                      arrowdown.svg
+                                    </svg>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </fieldset>
+                          </fieldset>
+                        </div>
                       </div>
                     </li>
                   </ul>
@@ -6172,72 +6118,48 @@ exports[`Settings should submit using default props 1`] = `
                   data-testid="General-settings__form"
                 >
                   <div
-                    class="mt-8"
+                    class="relative mt-8"
                   >
-                    <ul
-                      class="sc-fznJRM dJtmVl"
-                      data-testid="list-divided__items"
+                    <h2>
+                      Personal Details
+                    </h2>
+                    <div
+                      class="group"
                     >
-                      <li
-                        class="flex flex-col w-full "
-                        data-testid="list-divided-item__wrapper"
+                      <span
+                        class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
+                      >
+                        Profile Image
+                      </span>
+                      <div
+                        class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
-                          data-testid="list-divided-item__inner-wrapper"
+                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
                         >
                           <div
-                            class="flex flex-col"
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <span
-                              class="mr-5 text-2xl font-semibold"
-                              data-testid="list-divided-item__label"
-                            >
-                              Personal Details
-                            </span>
-                            <span
-                              class="text-sm text-theme-neutral-dark mt-1"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Profile Image
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row mt-2"
-                          >
-                            <div
-                              class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
+                            <button
+                              class="sc-AxhCb BegvR w-20 h-20"
+                              color="primary"
+                              data-testid="General-settings__upload-button"
+                              type="button"
                             >
                               <div
-                                class="w-20 h-20 overflow-hidden rounded-full"
+                                class="sc-AxirZ iQaTP"
+                                height="1em"
+                                width="1em"
                               >
-                                <button
-                                  class="sc-AxhCb BegvR w-20 h-20"
-                                  color="primary"
-                                  data-testid="General-settings__upload-button"
-                                  type="button"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      upload.svg
-                                    </svg>
-                                  </div>
-                                </button>
+                                <svg>
+                                  upload.svg
+                                </svg>
                               </div>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                      </li>
-                    </ul>
+                      </div>
+                    </div>
                     <div
                       class="flex justify-between w-full mt-8"
                     >
@@ -6608,54 +6530,47 @@ exports[`Settings should submit using default props 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                            <div
+                              class="flex items-center justify-between space-x-5"
                             >
-                              Screenshot Protection
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Screenshot Protection
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isScreenshotProtection"
+                                    name="isScreenshotProtection"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
                             >
                               This protection will protect your money from unwanted Screenshot you PC.
                             </span>
-                            <div
-                              class="-mt-7"
-                            >
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  checked=""
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isScreenshotProtection"
-                                  name="isScreenshotProtection"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
-                                >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
-                                  />
-                                </div>
-                              </label>
-                            </div>
                           </div>
                         </div>
                       </li>
@@ -6664,132 +6579,47 @@ exports[`Settings should submit using default props 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                            <div
+                              class="flex items-center justify-between space-x-5"
                             >
-                              Advanced Mode
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Advanced Mode
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isAdvancedMode"
+                                    name="isAdvancedMode"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
-                            <div
-                              class="-mt-7"
-                            >
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isAdvancedMode"
-                                  name="isAdvancedMode"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
-                                >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
-                                  />
-                                </div>
-                              </label>
-                            </div>
-                            <div
-                              class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
-                            >
-                              <div
-                                class="fixed z-50 w-full h-full bg-black opacity-50"
-                                data-testid="modal__overlay"
-                              />
-                              <div
-                                class="sc-fzoLsD hImDCl absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
-                                data-testid="modal__inner"
-                              >
-                                <div
-                                  class="relative"
-                                >
-                                  <div
-                                    class="absolute top-0 right-0 z-50 mt-5"
-                                  >
-                                    <button
-                                      class="sc-AxhCb idLVlI"
-                                      color="neutral"
-                                      data-testid="modal__close-btn"
-                                      type="button"
-                                    >
-                                      <div
-                                        class="p-1"
-                                      >
-                                        <div
-                                          class="sc-AxirZ hDwaov"
-                                          height="12"
-                                          width="12"
-                                        >
-                                          <svg>
-                                            cross-slim.svg
-                                          </svg>
-                                        </div>
-                                      </div>
-                                    </button>
-                                  </div>
-                                  <div
-                                    class="py-4"
-                                  >
-                                    <h2
-                                      class="mb-0 text-3xl font-bold"
-                                    >
-                                      Advanced Mode Disclaimer
-                                    </h2>
-                                    <div
-                                      class="flex-1"
-                                    >
-                                      <div
-                                        class="mt-1 text-theme-neutral-dark"
-                                      >
-                                        By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
-                                      </div>
-                                      <div
-                                        class="flex justify-end mt-8 space-x-3"
-                                      >
-                                        <button
-                                          class="sc-AxhCb BegvR"
-                                          color="primary"
-                                          data-testid="AdvancedMode__decline-button"
-                                          type="button"
-                                        >
-                                          I Decline
-                                        </button>
-                                        <button
-                                          class="sc-AxhCb gBCygf"
-                                          color="primary"
-                                          data-testid="AdvancedMode__accept-button"
-                                          type="button"
-                                        >
-                                          I Accept
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
                       </li>
@@ -6802,12 +6632,15 @@ exports[`Settings should submit using default props 1`] = `
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 undefined"
-                              data-testid="list-divided-item__label"
-                            />
+                            <div
+                              class="flex items-center justify-between space-x-5"
+                            >
+                              <span
+                                data-testid="list-divided-item__label"
+                              />
+                            </div>
                           </div>
                         </div>
                         <div
@@ -6897,54 +6730,48 @@ exports[`Settings should submit using default props 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
-                            >
-                              Dark Theme
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
-                            <span
-                              class="mt-1 text-sm text-theme-neutral"
-                            >
-                              Want to set the wallet to dark mode?
-                            </span>
                             <div
-                              class="-mt-7"
+                              class="flex items-center justify-between space-x-5"
                             >
-                              <label
-                                class="flex"
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
                               >
-                                <input
-                                  checked=""
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isDarkMode"
-                                  name="isDarkMode"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
+                                Dark Theme
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
                                 >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
+                                  <input
+                                    checked=""
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isDarkMode"
+                                    name="isDarkMode"
+                                    type="checkbox"
                                   />
-                                </div>
-                              </label>
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
                             </div>
+                            <span
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Enables a dark, high contrast color scheme.
+                            </span>
                           </div>
                         </div>
                       </li>
@@ -6953,53 +6780,47 @@ exports[`Settings should submit using default props 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                            <div
+                              class="flex items-center justify-between space-x-5"
                             >
-                              Update Ledger in Background
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Update Ledger in Background
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isUpdateLedger"
+                                    name="isUpdateLedger"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
-                            <div
-                              class="-mt-7"
-                            >
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isUpdateLedger"
-                                  name="isUpdateLedger"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
-                                >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
-                                  />
-                                </div>
-                              </label>
-                            </div>
                           </div>
                         </div>
                       </li>
@@ -7047,6 +6868,85 @@ exports[`Settings should submit using default props 1`] = `
                     </div>
                   </div>
                 </form>
+                <div
+                  class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+                >
+                  <div
+                    class="fixed z-50 w-full h-full bg-black opacity-50"
+                    data-testid="modal__overlay"
+                  />
+                  <div
+                    class="sc-fzoLsD hImDCl absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+                    data-testid="modal__inner"
+                  >
+                    <div
+                      class="relative"
+                    >
+                      <div
+                        class="absolute top-0 right-0 z-50 mt-5"
+                      >
+                        <button
+                          class="sc-AxhCb idLVlI"
+                          color="neutral"
+                          data-testid="modal__close-btn"
+                          type="button"
+                        >
+                          <div
+                            class="p-1"
+                          >
+                            <div
+                              class="sc-AxirZ hDwaov"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                cross-slim.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                      <div
+                        class="py-4"
+                      >
+                        <h2
+                          class="mb-0 text-3xl font-bold"
+                        >
+                          Advanced Mode Disclaimer
+                        </h2>
+                        <div
+                          class="flex-1"
+                        >
+                          <div
+                            class="mt-1 text-theme-neutral-dark"
+                          >
+                            By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
+                          </div>
+                          <div
+                            class="flex justify-end mt-8 space-x-3"
+                          >
+                            <button
+                              class="sc-AxhCb BegvR"
+                              color="primary"
+                              data-testid="AdvancedMode__decline-button"
+                              type="button"
+                            >
+                              I Decline
+                            </button>
+                            <button
+                              class="sc-AxhCb gBCygf"
+                              color="primary"
+                              data-testid="AdvancedMode__accept-button"
+                              type="button"
+                            >
+                              I Accept
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -7474,72 +7374,48 @@ exports[`Settings should update profile 1`] = `
                   data-testid="General-settings__form"
                 >
                   <div
-                    class="mt-8"
+                    class="relative mt-8"
                   >
-                    <ul
-                      class="sc-fznJRM dJtmVl"
-                      data-testid="list-divided__items"
+                    <h2>
+                      Personal Details
+                    </h2>
+                    <div
+                      class="group"
                     >
-                      <li
-                        class="flex flex-col w-full "
-                        data-testid="list-divided-item__wrapper"
+                      <span
+                        class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
+                      >
+                        Profile Image
+                      </span>
+                      <div
+                        class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
-                          data-testid="list-divided-item__inner-wrapper"
+                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
                         >
                           <div
-                            class="flex flex-col"
+                            class="w-20 h-20 overflow-hidden rounded-full"
                           >
-                            <span
-                              class="mr-5 text-2xl font-semibold"
-                              data-testid="list-divided-item__label"
-                            >
-                              Personal Details
-                            </span>
-                            <span
-                              class="text-sm text-theme-neutral-dark mt-1"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Profile Image
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row mt-2"
-                          >
-                            <div
-                              class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
+                            <button
+                              class="sc-AxhCb BegvR w-20 h-20"
+                              color="primary"
+                              data-testid="General-settings__upload-button"
+                              type="button"
                             >
                               <div
-                                class="w-20 h-20 overflow-hidden rounded-full"
+                                class="sc-AxirZ iQaTP"
+                                height="1em"
+                                width="1em"
                               >
-                                <button
-                                  class="sc-AxhCb BegvR w-20 h-20"
-                                  color="primary"
-                                  data-testid="General-settings__upload-button"
-                                  type="button"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      upload.svg
-                                    </svg>
-                                  </div>
-                                </button>
+                                <svg>
+                                  upload.svg
+                                </svg>
                               </div>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                      </li>
-                    </ul>
+                      </div>
+                    </div>
                     <div
                       class="flex justify-between w-full mt-8"
                     >
@@ -7910,53 +7786,48 @@ exports[`Settings should update profile 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                            <div
+                              class="flex items-center justify-between space-x-5"
                             >
-                              Screenshot Protection
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Screenshot Protection
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    checked=""
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isScreenshotProtection"
+                                    name="isScreenshotProtection"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
                             >
                               This protection will protect your money from unwanted Screenshot you PC.
                             </span>
-                            <div
-                              class="-mt-7"
-                            >
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isScreenshotProtection"
-                                  name="isScreenshotProtection"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
-                                >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
-                                  />
-                                </div>
-                              </label>
-                            </div>
                           </div>
                         </div>
                       </li>
@@ -7965,53 +7836,47 @@ exports[`Settings should update profile 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                            <div
+                              class="flex items-center justify-between space-x-5"
                             >
-                              Advanced Mode
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Advanced Mode
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isAdvancedMode"
+                                    name="isAdvancedMode"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
-                            <div
-                              class="-mt-7"
-                            >
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isAdvancedMode"
-                                  name="isAdvancedMode"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
-                                >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
-                                  />
-                                </div>
-                              </label>
-                            </div>
                           </div>
                         </div>
                       </li>
@@ -8024,12 +7889,15 @@ exports[`Settings should update profile 1`] = `
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 undefined"
-                              data-testid="list-divided-item__label"
-                            />
+                            <div
+                              class="flex items-center justify-between space-x-5"
+                            >
+                              <span
+                                data-testid="list-divided-item__label"
+                              />
+                            </div>
                           </div>
                         </div>
                         <div
@@ -8119,54 +7987,48 @@ exports[`Settings should update profile 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
-                            >
-                              Dark Theme
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
-                            <span
-                              class="mt-1 text-sm text-theme-neutral"
-                            >
-                              Want to set the wallet to dark mode?
-                            </span>
                             <div
-                              class="-mt-7"
+                              class="flex items-center justify-between space-x-5"
                             >
-                              <label
-                                class="flex"
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
                               >
-                                <input
-                                  checked=""
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isDarkMode"
-                                  name="isDarkMode"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
+                                Dark Theme
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
                                 >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
+                                  <input
+                                    checked=""
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isDarkMode"
+                                    name="isDarkMode"
+                                    type="checkbox"
                                   />
-                                </div>
-                              </label>
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
                             </div>
+                            <span
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Enables a dark, high contrast color scheme.
+                            </span>
                           </div>
                         </div>
                       </li>
@@ -8175,54 +8037,48 @@ exports[`Settings should update profile 1`] = `
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
-                          class="flex justify-between flex-col items-start"
+                          class="flex justify-between items-center"
                           data-testid="list-divided-item__inner-wrapper"
                         >
                           <div
-                            class="flex flex-col"
+                            class="flex flex-col w-full space-y-2"
                           >
-                            <span
-                              class="mr-5 text-lg font-semibold text-theme-neutral-dark"
-                              data-testid="list-divided-item__label"
+                            <div
+                              class="flex items-center justify-between space-x-5"
                             >
-                              Update Ledger in Background
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class=""
-                          data-testid="list-divided-item__content"
-                        >
-                          <div
-                            class="flex flex-row justify-between"
-                          >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-dark"
+                                data-testid="list-divided-item__label"
+                              >
+                                Update Ledger in Background
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    checked=""
+                                    class="sc-fzqARJ qvHrv"
+                                    data-testid="General-settings__toggle--isUpdateLedger"
+                                    name="isUpdateLedger"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="sc-fzqNqU dzXrIp"
+                                  >
+                                    <span
+                                      class="sc-fzoyTs fiRIAF"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-sm font-medium text-theme-neutral"
+                              data-testid="list-divided-item__label--description"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
-                            <div
-                              class="-mt-7"
-                            >
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  checked=""
-                                  class="sc-fzqARJ qvHrv"
-                                  data-testid="General-settings__toggle--isUpdateLedger"
-                                  name="isUpdateLedger"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="sc-fzqNqU dzXrIp"
-                                >
-                                  <span
-                                    class="sc-fzoyTs fiRIAF"
-                                  />
-                                </div>
-                              </label>
-                            </div>
                           </div>
                         </div>
                       </li>

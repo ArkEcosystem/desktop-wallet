@@ -68,11 +68,12 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                 <div
                   class="font-semibold"
                 >
+                  ARK Wallet 1
                   <span
-                    class="sc-AxhUy kMyssT text-theme-neutral"
+                    class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
                     data-testid="TruncateMiddle"
                   >
-                    ASuusX…GQ3kqT
+                    D8rr7B…s6YUYD
                   </span>
                 </div>
               </div>
@@ -100,9 +101,9 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                     />
                   </div>
                 </div>
@@ -305,7 +306,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
+exports[`TransactionDetailModal should render a multi payment modal 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
@@ -357,7 +358,7 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
             class="flex-1"
           >
             <div
-              class="flex items-center py-6 true "
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
               data-testid="TransactionDetail"
             >
               <div
@@ -371,11 +372,12 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  ROBank
+                  ARK Wallet 1
                   <span
-                    class="ml-2 text-theme-neutral"
+                    class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
+                    data-testid="TruncateMiddle"
                   >
-                    ADDR...ESSS
+                    D8rr7B…s6YUYD
                   </span>
                 </div>
               </div>
@@ -403,9 +405,9 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="test"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                      title="test"
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                     />
                   </div>
                 </div>
@@ -440,138 +442,6 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                       Amount
                     </div>
                   </div>
-                  <div
-                    class="flex justify-between items-center py-4 true pt-2"
-                  >
-                    <div
-                      class="flex items-center"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="test"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                            title="test"
-                          />
-                        </div>
-                      </div>
-                      <span
-                        class="ml-4"
-                      >
-                        ADDR...ESSS
-                      </span>
-                    </div>
-                    <div
-                      class="sc-AxgMl eXChH"
-                      color="danger"
-                    >
-                      -88.84557 ARK
-                    </div>
-                  </div>
-                  <div
-                    class="flex justify-between items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                  >
-                    <div
-                      class="flex items-center"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="test"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                            title="test"
-                          />
-                        </div>
-                      </div>
-                      <span
-                        class="ml-4"
-                      >
-                        ADDR...ESSS
-                      </span>
-                    </div>
-                    <div
-                      class="sc-AxgMl eXChH"
-                      color="danger"
-                    >
-                      -88.84557 ARK
-                    </div>
-                  </div>
-                  <div
-                    class="flex justify-between items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                  >
-                    <div
-                      class="flex items-center"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="test"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                            title="test"
-                          />
-                        </div>
-                      </div>
-                      <span
-                        class="ml-4"
-                      >
-                        ADDR...ESSS
-                      </span>
-                    </div>
-                    <div
-                      class="sc-AxgMl eXChH"
-                      color="danger"
-                    >
-                      -88.84557 ARK
-                    </div>
-                  </div>
-                  <div
-                    class="flex justify-between items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0"
-                  >
-                    <div
-                      class="flex items-center"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="test"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                            title="test"
-                          />
-                        </div>
-                      </div>
-                      <span
-                        class="ml-4"
-                      >
-                        ADDR...ESSS
-                      </span>
-                    </div>
-                    <div
-                      class="sc-AxgMl eXChH"
-                      color="danger"
-                    >
-                      -88.84557 ARK
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -585,7 +455,7 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Total Amount
+                  Amount
                 </div>
                 <div
                   class="font-semibold"
@@ -594,22 +464,17 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                     class="sc-AxgMl eXChH"
                     color="danger"
                   >
-                    2,088.84557 ARK
+                    100.00000000 BTC
                   </div>
-                  <span
-                    class="ml-2 text-theme-neutral"
-                  >
-                    23,000.00 USD
-                  </span>
                 </div>
               </div>
               <div
-                class="sc-AxjAm bLfakz border-theme-danger-contrast text-theme-danger-400"
+                class="sc-AxjAm bLfakz border-theme-danger-200 text-theme-danger-dark"
               >
                 <div
-                  class="sc-AxirZ hPsuTj"
-                  height="16"
-                  width="16"
+                  class="sc-AxirZ dCVESD"
+                  height="25"
+                  width="25"
                 >
                   <svg>
                     sent.svg
@@ -632,7 +497,7 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  0.09812015 ARK
+                  21.00000000 BTC
                 </div>
               </div>
             </div>
@@ -654,7 +519,7 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                   <div
                     class="flex justify-between"
                   >
-                    Hello!
+                    Test
                     <div
                       class="sc-AxirZ eEbZjj"
                       height="20"
@@ -683,7 +548,7 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  14.04.2020 21:42:40
+                  31.07.2020 16:34:41
                 </div>
               </div>
             </div>
@@ -705,20 +570,20 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                   <div
                     class="flex"
                   >
-                    Well Confirmed
+                    Not Confirmed
                     <div
-                      class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
+                      class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                     >
                       <div
                         class="m-auto"
                       >
                         <div
-                          class="sc-AxirZ fkjLBb"
-                          height="15"
-                          width="15"
+                          class="sc-AxirZ hDwaov"
+                          height="12"
+                          width="12"
                         >
                           <svg>
-                            checkmark.svg
+                            cross-slim.svg
                           </svg>
                         </div>
                       </div>
@@ -743,9 +608,10 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                   class="font-semibold"
                 >
                   <span
-                    class="text-theme-primary-dark"
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
                   >
-                    1234678...12312313
+                    ee4175…3ecefe
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"
@@ -779,9 +645,10 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
                   class="font-semibold"
                 >
                   <span
-                    class="text-theme-primary-dark"
+                    class="sc-AxhUy kMyssT text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
                   >
-                    1234678...12312313
+                    as32d1…165das
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"
@@ -808,7 +675,7 @@ exports[`TransactionDetailModal should render a multiPayment modal 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TransactionDetailModal should render a multiSignature modal 1`] = `
+exports[`TransactionDetailModal should render a multi signature modal 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
@@ -1379,7 +1246,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                   <div
                     class="mt-2 font-semibold"
                   >
-                    ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </div>
                 </div>
               </div>
@@ -1413,11 +1280,12 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                 <div
                   class="font-semibold"
                 >
+                  ARK Wallet 1
                   <span
-                    class="sc-AxhUy kMyssT text-theme-neutral"
+                    class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
                     data-testid="TruncateMiddle"
                   >
-                    ASuusX…GQ3kqT
+                    D8rr7B…s6YUYD
                   </span>
                 </div>
               </div>
@@ -1445,9 +1313,9 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                     />
                   </div>
                 </div>
@@ -1656,7 +1524,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                     class="sc-AxhUy kMyssT text-theme-primary-dark"
                     data-testid="TruncateMiddle"
                   >
-                    71fd1a…5d67e9
+                    as32d1…165das
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"
@@ -1749,11 +1617,12 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
+                  ARK Wallet 1
                   <span
-                    class="sc-AxhUy kMyssT text-theme-neutral"
+                    class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
                     data-testid="TruncateMiddle"
                   >
-                    ASuusX…GQ3kqT
+                    D8rr7B…s6YUYD
                   </span>
                 </div>
               </div>
@@ -1781,9 +1650,9 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                     />
                   </div>
                 </div>
@@ -1957,7 +1826,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                     class="sc-AxhUy kMyssT text-theme-primary-dark"
                     data-testid="TruncateMiddle"
                   >
-                    71fd1a…5d67e9
+                    as32d1…165das
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"
@@ -2050,11 +1919,12 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 <div
                   class="font-semibold"
                 >
+                  ARK Wallet 1
                   <span
-                    class="sc-AxhUy kMyssT text-theme-neutral"
+                    class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
                     data-testid="TruncateMiddle"
                   >
-                    ASuusX…GQ3kqT
+                    D8rr7B…s6YUYD
                   </span>
                 </div>
               </div>
@@ -2082,9 +1952,9 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                     />
                   </div>
                 </div>
@@ -2258,7 +2128,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                     class="sc-AxhUy kMyssT text-theme-primary-dark"
                     data-testid="TruncateMiddle"
                   >
-                    71fd1a…5d67e9
+                    as32d1…165das
                   </span>
                   <span
                     class="inline-block ml-4 text-theme-primary-300"

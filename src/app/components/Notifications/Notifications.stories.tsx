@@ -81,6 +81,12 @@ export const Default = () => {
 			hasFailed: () => false,
 			getMeta: () => "",
 			setMeta: () => "",
+			explorerLink: () => "",
+			total: () => BigNumber.make(121).times(1e8),
+			convertedTotal: () => BigNumber.ZERO,
+			wallet: () => undefined,
+			coin: () => undefined,
+			data: () => undefined,
 		},
 	];
 
@@ -90,6 +96,7 @@ export const Default = () => {
 				pluginsHeader="Plugin 17 Feb, 2020"
 				plugins={plugins}
 				transactionsHeader="Transactions 17 Feb, 2020"
+				// @ts-ignore
 				transactions={transactions}
 				onAction={console.log}
 			/>

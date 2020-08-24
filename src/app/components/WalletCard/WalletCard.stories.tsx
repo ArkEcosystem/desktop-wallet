@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
 
@@ -8,7 +8,7 @@ export default { title: "App / Components / WalletCard" };
 
 export const Default = () => (
 	<WalletsDecorator count={3}>
-		{({ wallets }: { wallets: Wallet[] }) => (
+		{({ wallets }: { wallets: ReadWriteWallet[] }) => (
 			<div className="">
 				<div className="mb-10">
 					<WalletCard

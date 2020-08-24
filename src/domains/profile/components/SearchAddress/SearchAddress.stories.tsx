@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { action } from "@storybook/addon-actions";
 import { boolean, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
@@ -18,7 +18,7 @@ export default {
 	],
 };
 
-export const Default = ({ wallets }: { wallets: Wallet[] }) => (
+export const Default = ({ wallets }: { wallets: ReadWriteWallet[] }) => (
 	<div>
 		<SearchAddress
 			isOpen={boolean("isOpen", true)}
