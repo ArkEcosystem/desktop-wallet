@@ -43,7 +43,7 @@ export const SelectProfileImage = ({ value, onSelect }: SelectProfileImageProps)
 
 			<div className="flex flex-row mt-2">
 				<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast">
-					<div className="w-22 h-22 overflow-hidden rounded-full">
+					<div className="overflow-hidden rounded-full w-22 h-22">
 						<Button
 							className="w-22 h-22"
 							variant="plain"
