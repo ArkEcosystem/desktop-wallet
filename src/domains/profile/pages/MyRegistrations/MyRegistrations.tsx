@@ -5,7 +5,7 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks/env";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -39,7 +39,6 @@ export const MyRegistrations = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
-	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const isEmptyRegistrations = !delegates.length && !blockchain.length && !business.length;
 
@@ -55,19 +54,20 @@ export const MyRegistrations = () => {
 			case "register":
 				history.push(`/profiles/${activeProfile.id()}/transactions/registration`);
 				break;
+			case "resign":
+				history.push(`/profiles/${activeProfile.id()}/resignation`);
+				break;
+			case "update":
+				history.push(`/profiles/${activeProfile.id()}/update`);
+				break;
 			default:
 				break;
 		}
 	};
 
 	useEffect(() => {
-		const getDelegates = () =>
-			activeProfile
-				.wallets()
-				.values()
-				.filter((wallet: Wallet) => wallet.isDelegate());
-
-		setDelegates(getDelegates());
+		const delegateRegistrations = activeProfile.registrationAggregate().delegates();
+		setDelegates(delegateRegistrations);
 	}, [activeProfile]);
 
 	return (
