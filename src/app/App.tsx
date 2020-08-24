@@ -36,7 +36,8 @@ const Main = () => {
 
 	useLayoutEffect(() => {
 		const boot = async () => {
-			await env.bootFromObject(fixtureData);
+			await env.verify(fixtureData);
+			await env.boot();
 			setShowSplash(false);
 			await persist();
 		};
