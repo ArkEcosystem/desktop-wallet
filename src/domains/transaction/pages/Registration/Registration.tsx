@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -46,7 +46,7 @@ const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrat
 type FirstStepProps = {
 	networks: NetworkData[];
 	profile: Profile;
-	wallet: Wallet;
+	wallet: ReadWriteWallet;
 	setRegistrationForm: any;
 	feeOptions: Record<string, any>;
 };
@@ -55,7 +55,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 	const { t } = useTranslation();
 	const history = useHistory();
 
-	const [wallets, setWallets] = useState<Wallet[]>([]);
+	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 
 	const registrationTypes: RegistrationType[] = [
 		{
@@ -142,7 +142,7 @@ export const SigningStep = ({
 	wallet,
 }: {
 	passwordType: "mnemonic" | "password" | "ledger";
-	wallet: Wallet;
+	wallet: ReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();

@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 
 export type RegistrationType = {
 	label: string;
@@ -28,6 +28,6 @@ export type RegistrationForm = {
 	}: {
 		activeTab: number;
 		feeOptions: any;
-		wallet: Wallet;
+		wallet: ReadWriteWallet;
 	}) => JSX.Element;
 };

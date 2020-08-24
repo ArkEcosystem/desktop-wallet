@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
@@ -10,7 +10,7 @@ import { act, env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 let feeOptions: Record<string, string>;
 
 const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) => {
@@ -37,7 +37,7 @@ const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) =>
 	};
 };
 
-const createTransactionMock = (wallet: Wallet) =>
+const createTransactionMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => delegateRegistrationFixture.data.id,

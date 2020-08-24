@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import { act, env, getDefaultProfileId, render, RenderResult, waitFor } from "ut
 import { BusinessRegistrationForm } from "./BusinessRegistrationForm";
 
 // let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 // let feeOptions: Record<string, string>;
 
 const renderComponent = async () => {
@@ -30,7 +30,7 @@ const renderComponent = async () => {
 	};
 };
 
-// const createTransactionMock = (wallet: Wallet) =>
+// const createTransactionMock = (wallet: ReadWriteWallet) =>
 // 	// @ts-ignore
 // 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 // 		id: () => delegateRegistrationFixture.data.id,

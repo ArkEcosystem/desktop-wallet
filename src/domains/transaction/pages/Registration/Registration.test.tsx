@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
@@ -25,10 +25,10 @@ import { translations as transactionTranslations } from "../../i18n";
 import { FirstStep, Registration, SigningStep } from "./Registration";
 
 let profile: Profile;
-let wallet: Wallet;
-let secondWallet: Wallet;
+let wallet: ReadWriteWallet;
+let secondWallet: ReadWriteWallet;
 
-const renderPage = async (walletOverride?: Wallet) => {
+const renderPage = async (walletOverride?: ReadWriteWallet) => {
 	const history = createMemoryHistory();
 	const registrationURL = `/profiles/${profile.id()}/transactions/${(walletOverride || wallet).id()}/registration`;
 	history.push(registrationURL);
@@ -55,7 +55,7 @@ const renderPage = async (walletOverride?: Wallet) => {
 	};
 };
 
-const createTransactionMock = (wallet: Wallet) =>
+const createTransactionMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => delegateRegistrationFixture.data.id,

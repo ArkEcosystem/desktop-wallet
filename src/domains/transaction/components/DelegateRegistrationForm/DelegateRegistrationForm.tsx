@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -83,7 +83,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 	);
 };
 
-const ThirdStep = ({ wallet }: { wallet: Wallet }) => {
+const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, username } = getValues();
@@ -147,7 +147,7 @@ const ThirdStep = ({ wallet }: { wallet: Wallet }) => {
 	);
 };
 
-const component = ({ activeTab, feeOptions, wallet }: { activeTab: number; feeOptions: any; wallet: Wallet }) => (
+const component = ({ activeTab, feeOptions, wallet }: { activeTab: number; feeOptions: any; wallet: ReadWriteWallet }) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={2}>
 			<SecondStep feeOptions={feeOptions} wallet={wallet} />
