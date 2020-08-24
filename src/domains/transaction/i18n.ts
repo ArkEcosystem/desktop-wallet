@@ -9,6 +9,8 @@ export const translations: { [key: string]: any } = {
 	CONFIRMATIONS: "Confirmations",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
+	DELEGATE_NAME_TOO_LONG: "Delegate Name too long (max 20 characters)",
+	DELEGATE_NAME_EXISTS: "Delegate Name already exists",
 	DESCRIPTION: "Description",
 	ENCRYPTION_PASSWORD: "Encryption Password",
 	ID: "ID",

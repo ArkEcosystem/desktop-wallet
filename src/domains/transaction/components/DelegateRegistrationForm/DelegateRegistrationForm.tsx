@@ -12,35 +12,45 @@ import { Input, InputGroup } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useEnvironmentContext } from "app/contexts";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { RegistrationForm } from "domains/transaction/pages/Registration/Registration.models";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 const SecondStep = ({ feeOptions, wallet }: any) => {
 	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
 
 	const { getValues, register, setValue } = useFormContext();
 	const username = getValues("username");
+	const [delegates, setDelegates] = useState([]);
 	const fee = getValues("fee") || null;
+
+	useEffect(() => {
+		setDelegates(env.coins().delegates(wallet.coinId(), wallet.networkId()));
+	}, [env, wallet]);
 
 	useEffect(() => {
 		if (!username) {
 			register("username", {
 				required: true,
 				validate: (value) => {
-					const matches = value.match(/^[a-z0-9!@$&_.]+$/);
-					if (!matches) {
+					if (!value.match(/^[a-z0-9!@$&_.]+$/)) {
 						return t<string>("TRANSACTION.INVALID_DELEGATE_NAME");
+					} else if (value.length > 20) {
+						return t<string>("TRANSACTION.DELEGATE_NAME_TOO_LONG");
+					} else if (delegates.find((delegate: any) => delegate.username === value)) {
+						return t<string>("TRANSACTION.DELEGATE_NAME_EXISTS");
 					}
 
 					return true;
 				},
 			});
 		}
-	}, [register, username, t]);
+	}, [delegates, register, username, t]);
 
 	return (
 		<section data-testid="DelegateRegistrationForm__step--second">
