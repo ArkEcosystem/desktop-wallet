@@ -70,6 +70,7 @@ export const defaultNetMocks = () => {
 		.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes")
 		.reply(200, require("../tests/fixtures/coins/ark/votes.json"))
 		.get("/api/delegates")
+		.query(true)
 		.reply(200, require("../tests/fixtures/coins/ark/delegates.json"))
 		.get(/\/api\/delegates\/.+/)
 		.reply(200, delegate)

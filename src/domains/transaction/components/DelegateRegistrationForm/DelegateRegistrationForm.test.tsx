@@ -51,9 +51,12 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 	});
 
 describe("DelegateRegistrationForm", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
+		await env.coins().syncDelegates("ARK", "devnet");
+
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+
 		feeOptions = {
 			last: (2 * 1e8).toFixed(0),
 			min: "0",
@@ -113,6 +116,52 @@ describe("DelegateRegistrationForm", () => {
 
 		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("invalid delegate"));
 		await waitFor(() => expect(container).toHaveTextContent(transactionTranslations.INVALID_DELEGATE_NAME));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+	});
+
+	it("should error for long username", async () => {
+		const { asFragment, container, form, getByTestId, rerender } = await renderComponent();
+
+		await act(async () => {
+			fireEvent.change(getByTestId("Input__username"), {
+				target: { value: "thisisaveryveryverylongdelegatename" },
+			});
+		});
+
+		await act(async () => {
+			rerender(
+				<FormContext {...form}>
+					<DelegateRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+				</FormContext>,
+			);
+
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")));
+		});
+
+		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("thisisaveryveryverylongdelegatename"));
+		await waitFor(() => expect(container).toHaveTextContent(transactionTranslations.DELEGATE_NAME_TOO_LONG));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+	});
+
+	it("should error if username already exists", async () => {
+		const { asFragment, container, form, getByTestId, rerender } = await renderComponent();
+
+		await act(async () => {
+			fireEvent.change(getByTestId("Input__username"), { target: { value: "arkx" } });
+		});
+
+		await act(async () => {
+			rerender(
+				<FormContext {...form}>
+					<DelegateRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+				</FormContext>,
+			);
+
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")));
+		});
+
+		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("arkx"));
+		await waitFor(() => expect(container).toHaveTextContent(transactionTranslations.DELEGATE_NAME_EXISTS));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 

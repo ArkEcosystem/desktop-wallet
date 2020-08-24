@@ -68,6 +68,8 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 
 describe("Registration", () => {
 	beforeAll(async () => {
+		await env.coins().syncDelegates("ARK", "devnet");
+
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
