@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import React from "react";
@@ -54,7 +54,7 @@ export const Notifications = ({
 }: NotificationsProps) => {
 	const hiddenTableHeaders = [{ Header: "-", className: "hidden" }];
 
-	const handleTransactionClick = (transaction: Contracts.TransactionDataType) => {
+	const handleTransactionClick = (transaction: ExtendedTransactionData) => {
 		onAction?.("click", transaction);
 	};
 

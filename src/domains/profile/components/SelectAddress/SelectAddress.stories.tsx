@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
 
@@ -15,7 +15,7 @@ export default {
 	],
 };
 
-export const Default = ({ wallets }: { wallets: Wallet[] }) => (
+export const Default = ({ wallets }: { wallets: ReadWriteWallet[] }) => (
 	<div className="max-w-lg space-y-8">
 		<div>
 			<SelectAddress wallets={wallets} />

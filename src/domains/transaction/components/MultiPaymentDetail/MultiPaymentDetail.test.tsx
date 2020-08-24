@@ -12,7 +12,7 @@ describe("MultiPaymentDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<MultiPaymentDetail
 				isOpen={false}
-				transaction={{ ...TransactionFixture, data: { blockId: "adsad12312xsd1w312e1s13203e12" } }}
+				transaction={{ ...TransactionFixture, blockId: () => "adsad12312xsd1w312e1s13203e12" }}
 				ticker="BTC"
 			/>,
 		);
@@ -25,7 +25,7 @@ describe("MultiPaymentDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<MultiPaymentDetail
 				isOpen={true}
-				transaction={{ ...TransactionFixture, data: { blockId: "adsad12312xsd1w312e1s13203e12" } }}
+				transaction={{ ...TransactionFixture, blockId: () => "adsad12312xsd1w312e1s13203e12" }}
 				ticker="BTC"
 			/>,
 		);
@@ -42,7 +42,7 @@ describe("MultiPaymentDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					isSent: () => false,
-					data: { blockId: "adsad12312xsd1w312e1s13203e12" },
+					blockId: () => "adsad12312xsd1w312e1s13203e12",
 				}}
 				walletAlias="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
 				ticker="BTC"
@@ -61,7 +61,7 @@ describe("MultiPaymentDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					confirmations: () => BigNumber.make(52),
-					data: { blockId: "adsad12312xsd1w312e1s13203e12" },
+					blockId: () => "adsad12312xsd1w312e1s13203e12",
 				}}
 				ticker="BTC"
 			/>,
@@ -94,7 +94,7 @@ describe("MultiPaymentDetail", () => {
 							amount: BigNumber.make(1990),
 						},
 					],
-					data: { blockId: "adsad12312xsd1w312e1s13203e12" },
+					blockId: () => "adsad12312xsd1w312e1s13203e12",
 				}}
 				ticker="BTC"
 			/>,
