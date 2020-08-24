@@ -9,7 +9,10 @@ describe("TransactionRow", () => {
 		const { getByTestId } = renderWithRouter(
 			<table>
 				<tbody>
-					<TransactionRow transaction={TransactionFixture} />
+					<TransactionRow
+						// @ts-ignore
+						transaction={{ ...TransactionFixture, wallet: () => ({ currency: () => "DARK" }) }}
+					/>
 				</tbody>
 			</table>,
 		);
@@ -26,7 +29,8 @@ describe("TransactionRow", () => {
 		const { getAllByTestId } = renderWithRouter(
 			<table>
 				<tbody>
-					<TransactionRow transaction={TransactionFixture} currencyRate="2" />
+					{/* @ts-ignore */}
+					<TransactionRow transaction={TransactionFixture} exchangeCurrency="BTC" />
 				</tbody>
 			</table>,
 		);
@@ -40,8 +44,9 @@ describe("TransactionRow", () => {
 			<table>
 				<tbody>
 					<TransactionRow
+						// @ts-ignore
 						transaction={TransactionFixture}
-						currencyRate="2"
+						exchangeCurrency="BTC"
 						onSign={onSign}
 						isSignaturePending
 					/>
