@@ -1,5 +1,4 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -7,19 +6,21 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type AddressRowProps = {
 	index: number;
-	wallet: Wallet;
+	wallet: ReadWriteWallet;
 	onSelect?: (walletAddress: string) => void;
 };
 
 export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
-	const [votes, setVotes] = useState<Coins.WalletDataCollection>((null as unknown) as Coins.WalletDataCollection);
+	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
 	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
 
 	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
 
@@ -38,44 +39,25 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 
 	useEffect(() => {
 		const loadVotes = async () => {
-			let response;
+			// TODO: move this to profile initialising and run it every X period
+			await env.coins().syncDelegates(wallet.coinId()!, wallet.networkId()!);
 
+			let votes: ReadOnlyWallet[] = [];
 			try {
-				response = await wallet.votes();
-			} catch (error) {
-				return;
+				await wallet.syncVotes();
+
+				votes = wallet.votes();
+			} catch {
+				votes = [];
 			}
 
-			const transaction = response.items()[0];
-			const result: Contracts.WalletData[] = [];
-
-			const votes = (transaction?.asset().votes as string[]) || [];
-			for (const vote of votes) {
-				const mode = vote[0];
-				const publicKey = vote.substr(1);
-				/* istanbul ignore next */
-				if (mode === "-") {
-					continue;
-				}
-
-				const voteData = await wallet.client().wallet(publicKey);
-
-				result.push(voteData);
-			}
-
-			const votesResult = new Coins.WalletDataCollection(result, {
-				prev: undefined,
-				self: undefined,
-				next: undefined,
-			});
-
-			setVotes(votesResult);
+			setVotes(votes);
 		};
 
 		loadVotes();
-	}, [wallet]);
+	}, [env, wallet]);
 
-	const hasVotes = votes?.items().length > 0;
+	const hasVotes = votes && votes?.length > 0;
 
 	return (
 		<tr className="border-b border-dotted border-theme-neutral-300">
@@ -108,24 +90,18 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 			</td>
 
 			<td className="py-5">
-				{hasVotes ? (
-					<Avatar address={votes?.items()[0].address()} />
-				) : (
-					<Circle className="border-theme-neutral-300" />
-				)}
+				{hasVotes ? <Avatar address={votes[0].address()} /> : <Circle className="border-theme-neutral-300" />}
 			</td>
 
 			<td className="py-5 font-bold">
 				{hasVotes ? (
-					<span>{votes?.items()[0].username()}</span>
+					<span>{votes[0].username()}</span>
 				) : (
 					<span className="text-theme-neutral-light">{t("COMMON.NOT_AVAILABLE")}</span>
 				)}
 			</td>
 
-			<td className="py-5 font-bold text-theme-neutral-dark">
-				{hasVotes && <span>#{votes?.items()[0].rank()}</span>}
-			</td>
+			<td className="py-5 font-bold text-theme-neutral-dark">{hasVotes && <span>#{votes[0].rank()}</span>}</td>
 
 			<td className="py-5">
 				{hasVotes && (
@@ -139,8 +115,8 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 				{hasVotes && (
 					<div className="flex justify-center h-full">
 						<Icon
-							name={votes?.items()[0].rank() ? "Ok" : "StatusClock"}
-							className={votes?.items()[0].rank() ? "text-theme-success" : "text-theme-neutral"}
+							name={votes[0].rank() ? "Ok" : "StatusClock"}
+							className={votes[0].rank() ? "text-theme-success" : "text-theme-neutral"}
 						/>
 					</div>
 				)}

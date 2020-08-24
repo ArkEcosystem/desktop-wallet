@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -31,7 +31,7 @@ export const FirstStep = ({
 }: {
 	delegate: Contracts.WalletData;
 	profile: Profile;
-	wallet: Wallet;
+	wallet: ReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
@@ -135,7 +135,7 @@ export const SecondStep = ({
 }: {
 	delegate: Contracts.WalletData;
 	profile: Profile;
-	wallet: Wallet;
+	wallet: ReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
@@ -295,8 +295,7 @@ export const SendVoteTransaction = () => {
 
 	useEffect(() => {
 		const loadDelegate = async () => {
-			const delegate = await activeWallet.delegate(voteId);
-			setDelegate(delegate);
+			setDelegate(await activeWallet.client().delegate(voteId));
 		};
 
 		loadDelegate();

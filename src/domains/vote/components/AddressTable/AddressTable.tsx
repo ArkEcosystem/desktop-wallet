@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { AddressRow } from "./AddressRow";
 
 type AddressTableProps = {
-	wallets: Wallet[];
+	wallets: ReadWriteWallet[];
 	onSelect?: (address: string) => void;
 };
 
@@ -64,7 +64,9 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		<div data-testid="AddressTable">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.ADDRESS_LIST.TITLE")}</h2>
 			<Table columns={columns} data={wallets}>
-				{(wallet: Wallet, index: number) => <AddressRow index={index} wallet={wallet} onSelect={onSelect} />}
+				{(wallet: ReadWriteWallet, index: number) => (
+					<AddressRow index={index} wallet={wallet} onSelect={onSelect} />
+				)}
 			</Table>
 		</div>
 	);

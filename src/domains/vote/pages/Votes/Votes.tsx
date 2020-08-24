@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -54,7 +54,7 @@ export const Votes = () => {
 	const activeWallet = useActiveWallet();
 
 	const [network, setNetwork] = useState<NetworkData | null>(null);
-	const [wallets, setWallets] = useState<Wallet[]>([]);
+	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState("");
 	const [delegates, setDelegates] = useState<Coins.WalletDataCollection>(
 		(null as unknown) as Coins.WalletDataCollection,
@@ -92,8 +92,8 @@ export const Votes = () => {
 
 	const handleSelectAddress = async (address: string) => {
 		setAddress(address);
-		const delegates = await activeProfile.wallets().findByAddress(address)?.delegates({ limit: 51 });
-		setDelegates(delegates!);
+		const wallet = activeProfile.wallets().findByAddress(address);
+		setDelegates(env.coins().delegates(wallet?.coinId()!, wallet?.networkId()!));
 	};
 
 	return (

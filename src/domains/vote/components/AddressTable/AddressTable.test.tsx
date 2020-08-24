@@ -1,11 +1,11 @@
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { env, getDefaultProfileId, render } from "testing-library";
 
 import { AddressTable } from "./AddressTable";
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 
 describe("AddressTable", () => {
 	beforeAll(() => {
