@@ -11,8 +11,8 @@ type Props = {
 export const TransactionRowAmount = ({ transaction, exchangeCurrency }: Props) => {
 	if (exchangeCurrency) {
 		return (
-			/* @ts-ignore */
 			<Amount
+				/* @ts-ignore waiting interface update */
 				value={transaction.convertedTotal()}
 				ticker={exchangeCurrency}
 				className="text-theme-neutral-dark"
