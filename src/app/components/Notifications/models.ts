@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 export type EmptyPlaceholderProps = {
 	title?: string;
 };
@@ -21,7 +20,7 @@ export type PluginNotification = {
 export type NotificationsProps = {
 	plugins?: PluginNotification[];
 	pluginsHeader?: string;
-	transactions?: Contracts.TransactionDataType[];
+	transactions?: ExtendedTransactionData[];
 	transactionsHeader?: string;
 	onAction?: any;
 	emptyText?: string;

@@ -1,4 +1,4 @@
-import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
@@ -18,7 +18,7 @@ type SendTransactionFormProps = {
 export const SendTransactionForm = ({ children, networks, profile, onFail }: SendTransactionFormProps) => {
 	const history = useHistory();
 	const { t } = useTranslation();
-	const [wallets, setWallets] = useState<Wallet[]>([]);
+	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 
 	const form = useFormContext();
 	const { getValues, setValue } = form;

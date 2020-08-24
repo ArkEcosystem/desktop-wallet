@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -10,18 +10,17 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	votes?: Coins.WalletDataCollection;
+	votes?: ReadOnlyWallet[];
 	onVote?: () => void;
 	onUnvote?: (address: string) => void;
 	defaultIsOpen?: boolean;
 };
 
-// TODO: Delegate Explorer URL
 export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen }: Props) => {
 	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = useState(defaultIsOpen!);
 
-	const hasNoVotes = !votes || votes.items().length === 0;
+	const hasNoVotes = !votes || votes.length === 0;
 
 	return (
 		<section data-testid="WalletVote">
@@ -66,7 +65,7 @@ export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen }: Props) =>
 							</Button>
 						</div>
 					) : (
-						votes?.items().map((delegate) => (
+						votes?.map((delegate: ReadOnlyWallet) => (
 							<div
 								data-testid="WalletVote__delegate"
 								className="flex items-center justify-between"
@@ -107,7 +106,7 @@ export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen }: Props) =>
 											</span>
 											<a
 												data-testid="WalletVote__delegate__explorer"
-												href="https://explorer.ark.io"
+												href={delegate.explorerLink()}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
