@@ -91,13 +91,14 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userIn
 					<AvatarWrapper size="lg">
 						{avatarImage?.endsWith("</svg>") ? (
 							<>
-								<img src={`data:image/svg+xml;utf8,${avatarImage}`} />
+								<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
 								<span className="absolute text-sm font-semibold text-theme-background">
 									{userInitials}
 								</span>
 							</>
 						) : (
 							<img
+								alt="Profile Image"
 								className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
 								src={avatarImage}
 							/>
