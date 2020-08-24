@@ -11,7 +11,15 @@ export default {
 	decorators: [(storyFn: any) => <WalletsDecorator count={3}>{storyFn}</WalletsDecorator>],
 };
 
-export const Default = ({ env, profile, wallets }: { env: Environment; profile: Profile; wallets: ReadWriteWallet[] }) => (
+export const Default = ({
+	env,
+	profile,
+	wallets,
+}: {
+	env: Environment;
+	profile: Profile;
+	wallets: ReadWriteWallet[];
+}) => (
 	<EnvironmentProvider env={env}>
 		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/${wallets[0].id()}/registration`]}>
 			<Route path="/profiles/:profileId/transactions/:walletId/registration" component={() => <Registration />} />

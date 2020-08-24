@@ -147,7 +147,15 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	);
 };
 
-const component = ({ activeTab, feeOptions, wallet }: { activeTab: number; feeOptions: any; wallet: ReadWriteWallet }) => (
+const component = ({
+	activeTab,
+	feeOptions,
+	wallet,
+}: {
+	activeTab: number;
+	feeOptions: any;
+	wallet: ReadWriteWallet;
+}) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={2}>
 			<SecondStep feeOptions={feeOptions} wallet={wallet} />
