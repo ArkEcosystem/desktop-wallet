@@ -1,7 +1,3 @@
-
-
-
-
 export default {
 	title: "Domains / Profile / Pages / MyRegistrations / Components / DelegateTable",
 };
