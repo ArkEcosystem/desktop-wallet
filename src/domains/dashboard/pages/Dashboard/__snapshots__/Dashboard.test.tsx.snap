@@ -1092,7 +1092,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1200,7 +1200,11 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            400000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              400,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -1211,7 +1215,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            800000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -1229,7 +1233,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1337,7 +1341,11 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            50000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              50,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -1348,7 +1356,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            100000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -1366,7 +1374,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1474,7 +1482,11 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            400000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              400,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -1485,7 +1497,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            800000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -1503,7 +1515,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1611,7 +1623,11 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            50000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              50,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -1622,7 +1638,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            100000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -3540,7 +3556,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -3648,7 +3664,11 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            400000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              400,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -3659,7 +3679,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            800000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -3677,7 +3697,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -3785,7 +3805,11 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            50000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              50,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -3796,7 +3820,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            100000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -6278,7 +6302,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -6386,7 +6410,11 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            400000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              400,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -6397,7 +6425,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            800000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -6415,7 +6443,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -6523,7 +6551,11 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            50000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              50,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -6534,7 +6566,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            100000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -7925,7 +7957,7 @@ exports[`Dashboard should render 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -8033,7 +8065,11 @@ exports[`Dashboard should render 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            400000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              400,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -8044,7 +8080,7 @@ exports[`Dashboard should render 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            800000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -8062,7 +8098,7 @@ exports[`Dashboard should render 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -8170,7 +8206,11 @@ exports[`Dashboard should render 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            50000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              50,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -8181,7 +8221,7 @@ exports[`Dashboard should render 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            100000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -9572,7 +9612,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -9680,7 +9720,11 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            400000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              400,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -9691,7 +9735,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            800000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -9709,7 +9753,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -9817,7 +9861,11 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            50000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              50,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -9828,7 +9876,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            100000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -11219,7 +11267,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -11327,7 +11375,11 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            400000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              400,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -11338,7 +11390,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            800000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -11356,7 +11408,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -11464,7 +11516,11 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            50000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              50,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -11475,7 +11531,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            100000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -12866,7 +12922,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -12974,7 +13030,11 @@ exports[`Dashboard should render wallets 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            400000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              400,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -12985,7 +13045,7 @@ exports[`Dashboard should render wallets 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            800000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
@@ -13003,7 +13063,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="[object Object]"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -13111,7 +13171,11 @@ exports[`Dashboard should render wallets 1`] = `
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
-                            50000.00000000
+                            <span
+                              data-testid="Amount"
+                            >
+                              50,000 DARK
+                            </span>
                           </div>
                         </td>
                         <td
@@ -13122,7 +13186,7 @@ exports[`Dashboard should render wallets 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="TransactionRowAmount"
                           >
-                            100000.00
+                            0 BTC
                           </span>
                         </td>
                       </tr>
