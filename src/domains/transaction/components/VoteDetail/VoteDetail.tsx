@@ -57,19 +57,13 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
 	useEffect(() => {
-		const syncDelegates = async () => {
+		const syncDelegates = () => {
 			setIsLoadingDelegates(true);
-
-			// TODO: make senderWallet non-nullable
-			// TODO: move this to profile initialising and run it every X period
-			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			await env.coins().syncDelegates(senderWallet?.coinId()!, senderWallet?.networkId()!);
 
 			setDelegates(DelegateMapper.execute(senderWallet!, (transaction as Contracts.VoteData).votes()));
 
 			setIsLoadingDelegates(false);
 		};
-
 		syncDelegates();
 
 		return () => {
