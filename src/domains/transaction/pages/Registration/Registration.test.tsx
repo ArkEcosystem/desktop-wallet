@@ -247,36 +247,6 @@ describe("Registration", () => {
 		});
 	});
 
-	// it("should only update fees if provided", async () => {
-	// 	nock.cleanAll();
-	// 	nock("https://dwallets.ark.io")
-	// 		.get("/api/node/fees")
-	// 		.query(true)
-	// 		.reply(500, {})
-	// 		.get("/api/transactions/fees")
-	// 		.reply(500, {})
-	// 		.persist();
-
-	// 	const { result: form } = renderHook(() => useForm());
-
-	// 	const formSetValueSpy = jest.spyOn(useForm.prototype, "constructor").mockImplementation(() => {
-	// 		console.log('wut', [...arguments]);
-	// 	});
-
-	// 	const { asFragment, getByTestId, getAllByTestId } = await renderPage();
-
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("select-list__toggle-button"));
-
-	// 		await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
-
-	// 		fireEvent.click(getByTestId("select-list__toggle-option-1"));
-
-	// 		expect(formSetValueSpy).not.toHaveBeenCalledWith("fee");
-	// 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	// 	});
-	// });
-
 	it("should should go back and forth & correctly register fields", async () => {
 		const { asFragment, getByTestId } = await renderPage();
 
@@ -436,6 +406,70 @@ describe("Registration", () => {
 			fireEvent.click(getByTestId("Registration__button--back-to-wallet"));
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 			historySpy.mockRestore();
+
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
+	});
+
+	it("should error for invalid mnemonic", async () => {
+		const { asFragment, getByTestId, history } = await renderPage();
+
+		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
+		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
+
+		await act(async () => {
+			// Step 1
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+			// Step 2
+			fireEvent.click(getByTestId("Registration__continue-button"));
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
+
+			const input = getByTestId("Input__username");
+			act(() => {
+				fireEvent.change(input, { target: { value: "test_delegate" } });
+			});
+
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[1]);
+
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+			// Step 3
+			fireEvent.click(getByTestId("Registration__continue-button"));
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--third")).toBeTruthy());
+
+			// Step 4 - signing
+			fireEvent.click(getByTestId("Registration__continue-button"));
+			await waitFor(() => expect(getByTestId("Registration__signing-step")).toBeTruthy());
+
+			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
+			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+
+			const signMock = jest.spyOn(wallet.transaction(), "signDelegateRegistration").mockImplementation(() => {
+				throw new Error();
+			});
+
+			const consoleSpy = jest.spyOn(console, "error").mockImplementation();
+
+			fireEvent.click(getByTestId("Registration__send-button"));
+
+			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
+			await waitFor(() => expect(passwordInput).toHaveValue(""));
+			await waitFor(() =>
+				expect(getByTestId("Registration__signing-step")).toHaveTextContent(
+					transactionTranslations.INVALID_MNEMONIC,
+				),
+			);
+
+			signMock.mockRestore();
 
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
