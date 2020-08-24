@@ -34,11 +34,38 @@ const Main = () => {
 
 	const isOnline = useNetworkStatus();
 
+	const syncDelegates = (env: Environment) => {
+		console.log("Running delegates sync...");
+		const coinsData = env.usedCoinsWithNetworks();
+		const coinsInUse = Object.keys(coinsData);
+		const delegatesPromises: any = [];
+
+		coinsInUse.forEach((coin) => {
+			const coinNetworks = coinsData[coin];
+			coinNetworks.forEach((network) => {
+				delegatesPromises.push(Promise.resolve(env.coins().syncDelegates(coin, network)));
+			});
+		});
+
+		Promise.allSettled(delegatesPromises).then((results: any) => {
+			results.forEach(({ status }: { status: string; value: any }) => {
+				if (status !== "fulfilled") throw new Error("Error synchronizing delegates");
+				setShowSplash(false);
+			});
+
+			setShowSplash(false);
+		});
+	};
+
 	useLayoutEffect(() => {
 		const boot = async () => {
 			await env.verify(fixtureData);
+			syncDelegates(env);
+
+			console.info("Scheduling next delegates synchronization...");
+			setInterval(() => syncDelegates(env), 300000);
+
 			await env.boot();
-			setShowSplash(false);
 			await persist();
 		};
 
@@ -95,11 +122,11 @@ export const App = () => {
 
 	return (
 		<I18nextProvider i18n={i18n}>
-			<EnvironmentProvider env={env}>
-				<ErrorBoundary FallbackComponent={ApplicationError}>
+			<ErrorBoundary FallbackComponent={ApplicationError}>
+				<EnvironmentProvider env={env}>
 					<Main />
-				</ErrorBoundary>
-			</EnvironmentProvider>
+				</EnvironmentProvider>
+			</ErrorBoundary>
 		</I18nextProvider>
 	);
 };
