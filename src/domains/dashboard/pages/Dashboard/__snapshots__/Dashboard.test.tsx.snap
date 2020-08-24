@@ -1079,7 +1079,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td
@@ -1216,7 +1216,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td
@@ -1353,7 +1353,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td
@@ -1490,7 +1490,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td
@@ -2640,8 +2640,14 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       class="border-b border-dotted border-theme-neutral-300"
                       data-testid="TransactionRow"
                     >
+<<<<<<< HEAD
                       <td
                         class="w-16 py-6"
+=======
+                      <tr
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                        data-testid="TransactionRow"
+>>>>>>> 3.0-react
                       >
                         <div
                           class="inline-block align-middle"
@@ -2991,10 +2997,18 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           >
                             D8c6zg…e9tUMR
                           </span>
+<<<<<<< HEAD
                         </div>
                       </td>
                       <td
                         class="text-center"
+=======
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                        data-testid="TransactionRow"
+>>>>>>> 3.0-react
                       >
                         <div
                           class="inline-flex align-middle space-x-1"
@@ -19973,7 +19987,7 @@ exports[`Dashboard should render 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td
@@ -20110,7 +20124,7 @@ exports[`Dashboard should render 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td
@@ -21883,6 +21897,193 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
+<<<<<<< HEAD
+=======
+                        >
+                          <div
+                            class="flex flex-inline align-top "
+                          >
+                            <div>
+                              ID
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--1"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top "
+                          >
+                            <div>
+                              Date
+                            </div>
+                            <div
+                              class="flex items-center ml-2 text-theme-color-neutral"
+                              data-testid="table__Sort"
+                            >
+                              <div
+                                class="sc-AxirZ jMwzyA"
+                                height="12"
+                                width="15"
+                              >
+                                <svg>
+                                  sort.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--2"
+                          role="columnheader"
+                        >
+                          <div
+                            class="flex flex-inline align-top invisible"
+                          >
+                            <div>
+                              Type
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--3"
+                          role="columnheader"
+                        >
+                          <div
+                            class="flex flex-inline align-top "
+                          >
+                            <div>
+                              Recipient
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--4"
+                          role="columnheader"
+                        >
+                          <div
+                            class="flex flex-inline align-top justify-center"
+                          >
+                            <div>
+                              Info
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--5"
+                          role="columnheader"
+                        >
+                          <div
+                            class="flex flex-inline align-top justify-center"
+                          >
+                            <div>
+                              Status
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--6"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top justify-end"
+                          >
+                            <div>
+                              Amount
+                            </div>
+                            <div
+                              class="flex items-center ml-2 text-theme-color-neutral"
+                              data-testid="table__Sort"
+                            >
+                              <div
+                                class="sc-AxirZ jMwzyA"
+                                height="12"
+                                width="15"
+                              >
+                                <svg>
+                                  sort.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="text-sm text-left select-none text-theme-neutral"
+                          colspan="1"
+                          data-testid="table__th--7"
+                          role="columnheader"
+                        >
+                          <div
+                            class="flex flex-inline align-top w-24 justify-end float-right"
+                          >
+                            <div>
+                              Currency
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      role="rowgroup"
+                    >
+                      <tr
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                        data-testid="TransactionRow"
+                      >
+                        <td
+                          class="w-16 py-6"
+                        >
+                          <div
+                            class="inline-block align-middle"
+                          >
+                            <a
+                              class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                              data-testid="TransactionRow__ID"
+                              rel="noopener noreferrer"
+                              to="[object Object]"
+                            >
+                              <div
+                                class="sc-AxirZ iQaTP flex-shrink-0 "
+                                data-testid="Link__external"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  redirect.svg
+                                </svg>
+                              </div>
+                            </a>
+                          </div>
+                        </td>
+                        <td
+                          class="w-48 py-1 text-sm text-theme-neutral-600"
+                        >
+                          <span
+                            data-testid="TransactionRow__timestamp"
+                          >
+                            23 Jul 2020 08:03:20
+                          </span>
+                        </td>
+                        <td
+                          class="w-32 py-2"
+>>>>>>> 3.0-react
                         >
                           <div
                             class="flex flex-inline align-top "
@@ -21929,11 +22130,25 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           class="font-semibold text-theme-text"
                           data-testid="TransactionRowRecipientLabel"
                         >
+<<<<<<< HEAD
                           2nd Signature Creation
                         </span>
                       </td>
                       <td
                         class="text-center"
+=======
+                          <span
+                            class="text-theme-neutral-dark"
+                            data-testid="TransactionRowAmount"
+                          >
+                            800000.00
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                        data-testid="TransactionRow"
+>>>>>>> 3.0-react
                       >
                         <div
                           class="inline-flex align-middle space-x-1"
@@ -23281,7 +23496,7 @@ exports[`Dashboard should render wallets 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td
@@ -23418,7 +23633,7 @@ exports[`Dashboard should render wallets 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td
@@ -25758,6 +25973,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               />
                             </div>
                           </div>
+<<<<<<< HEAD
                         </div>
                       </td>
                       <td>
@@ -25774,6 +25990,17 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </td>
                       <td
                         class="text-center"
+=======
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      role="rowgroup"
+                    >
+                      <tr
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                        data-testid="TransactionRow"
+>>>>>>> 3.0-react
                       >
                         <div
                           class="inline-flex align-middle space-x-1"
@@ -26040,10 +26267,18 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           >
                             D8c6zg…e9tUMR
                           </span>
+<<<<<<< HEAD
                         </div>
                       </td>
                       <td
                         class="text-center"
+=======
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                        data-testid="TransactionRow"
+>>>>>>> 3.0-react
                       >
                         <div
                           class="inline-flex align-middle space-x-1"
@@ -27319,7 +27554,7 @@ exports[`Dashboard should render wallets 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td
@@ -27456,7 +27691,7 @@ exports[`Dashboard should render wallets 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dotted border-theme-neutral-300"
+                        class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
                         <td

@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -11,7 +11,7 @@ type SearchAddressProps = {
 	title?: string;
 	description?: string;
 	isOpen: boolean;
-	wallets: Wallet[];
+	wallets: ReadWriteWallet[];
 	onClose?: any;
 	onSearch?: any;
 	selectActionLabel?: string;
@@ -19,7 +19,7 @@ type SearchAddressProps = {
 };
 
 type SearchAddressListItemProps = {
-	wallet: Wallet;
+	wallet: ReadWriteWallet;
 	selectActionLabel?: string;
 	index: number;
 	onAction?: (actionName: string, address: any) => void;
@@ -92,7 +92,7 @@ export const SearchAddress = ({
 			onSearch={onSearch}
 		>
 			<Table columns={columns} data={wallets}>
-				{(wallet: Wallet, index: number) => (
+				{(wallet: ReadWriteWallet, index: number) => (
 					<SearchAddressListItem
 						wallet={wallet}
 						index={index}

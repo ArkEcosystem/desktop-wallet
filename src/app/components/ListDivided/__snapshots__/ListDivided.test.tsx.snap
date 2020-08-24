@@ -25,16 +25,20 @@ exports[`ListDivided should render an list divided with items 1`] = `
         data-testid="list-divided-item__inner-wrapper"
       >
         <div
-          class="flex flex-col"
+          class="flex flex-col w-full space-y-2"
         >
-          <span
-            class="mr-5 "
-            data-testid="list-divided-item__label"
+          <div
+            class="flex items-center justify-between space-x-5"
           >
-            New Profile
-          </span>
+            <span
+              class=""
+              data-testid="list-divided-item__label"
+            >
+              New Profile
+            </span>
+          </div>
           <span
-            class="text-sm text-theme-neutral-dark "
+            class="text-sm font-medium text-theme-neutral"
             data-testid="list-divided-item__label--description"
           >
             Select Profile Image

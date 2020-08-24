@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { NetworkData, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
@@ -222,7 +222,7 @@ export const ThirdStep = ({ address, nameMaxLength }: { address: string; nameMax
 
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
-	const [walletData, setWalletData] = useState<Wallet | null>(null);
+	const [walletData, setWalletData] = useState<ReadWriteWallet | null>(null);
 
 	const history = useHistory();
 	const { persist } = useEnvironmentContext();
@@ -261,7 +261,7 @@ export const ImportWallet = () => {
 		address: string;
 		name: string;
 	}) => {
-		let wallet: Wallet | undefined;
+		let wallet: ReadWriteWallet | undefined;
 
 		if (!walletData) {
 			if (passphrase) {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor } from "testing-library";
 
@@ -7,7 +7,7 @@ import { translations } from "../../i18n";
 import { SignMessage } from "./SignMessage";
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 const mnemonic = "this is a top secret password";
 
 describe("SignMessage", () => {

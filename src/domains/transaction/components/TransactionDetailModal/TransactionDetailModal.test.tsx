@@ -1,4 +1,5 @@
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
@@ -13,12 +14,21 @@ const history = createMemoryHistory();
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
-beforeEach(() => {
-	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
-	history.push(dashboardURL);
-});
-
 describe("TransactionDetailModal", () => {
+	beforeAll(() => {
+		nock.disableNetConnect();
+		nock("https://dwallets.ark.io")
+			.get("/api/delegates")
+			.query({ page: "1" })
+			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
+			.persist();
+	});
+
+	beforeEach(() => {
+		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
+		history.push(dashboardURL);
+	});
+
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
@@ -26,7 +36,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={false}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "transfer",
 					}}
 				/>
@@ -42,13 +52,13 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a transfer modal", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "transfer",
 					}}
 				/>
@@ -64,14 +74,14 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a multiSignature modal", () => {
+	it("should render a multi signature modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiSignature",
 					}}
 				/>
@@ -87,14 +97,14 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a multiPayment modal", () => {
+	it("should render a multi payment modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiPayment",
 					}}
 				/>
@@ -137,13 +147,13 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a vote modal", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "vote",
 					}}
 				/>
@@ -166,7 +176,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "unvote",
 					}}
 				/>
@@ -193,8 +203,8 @@ describe("TransactionDetailModal", () => {
 						isOpen={true}
 						transactionItem={{
 							...TransactionFixture,
-							data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
-							type: () => "unknow",
+							blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+							type: () => "unknown",
 						}}
 					/>
 					,

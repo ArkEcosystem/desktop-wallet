@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { useActiveProfile } from "app/hooks/env";
 import { IpfsDetail } from "domains/transaction/components/IpfsDetail";
 import { MultiPaymentDetail } from "domains/transaction/components/MultiPaymentDetail";
@@ -10,14 +9,16 @@ import React from "react";
 
 type TransactionDetailModalProps = {
 	isOpen: boolean;
-	transactionItem?: Contracts.TransactionDataType;
+	transactionItem?: ExtendedTransactionData;
 	onClose?: any;
 };
 
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
 	const activeProfile = useActiveProfile();
 	const ticker = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!;
-	const walletAlias = activeProfile.wallets().findByAddress(transactionItem!.recipient())?.alias();
+	const walletAlias = transactionItem!.isSent()
+		? activeProfile.wallets().findByAddress(transactionItem!.sender())?.alias()
+		: activeProfile.wallets().findByAddress(transactionItem!.recipient())?.alias();
 
 	const transactionType = transactionItem?.type();
 	let TransactionModal;

@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -13,7 +13,7 @@ import { SelectAddressWrapper } from "./SelectAddress.styles";
 type SelectAddressProps = {
 	address?: string;
 	isVerified?: boolean;
-	wallets: Wallet[];
+	wallets: ReadWriteWallet[];
 	disabled?: boolean;
 	isInvalid?: boolean;
 	contactSearchTitle?: string;
@@ -65,7 +65,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 				>
 					<ProfileAvatar address={selectedAddress} />
 					<Address maxChars={30} address={selectedAddress} />
-					<div className="absolute flex items-center right-4 space-x-3">
+					<div className="absolute flex items-center space-x-3 right-4">
 						{isVerified && (
 							<div className="rounded-full text-theme-success-400 bg-theme-success-100">
 								<Icon name="Checkmark" width={18} height={18} />

@@ -1,9 +1,9 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Label } from "app/components/Label";
 import React from "react";
 
 type Props = {
-	transaction: Contracts.TransactionDataType;
+	transaction: ExtendedTransactionData;
 	currencyRate?: string;
 };
 

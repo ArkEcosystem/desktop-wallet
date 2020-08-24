@@ -39,64 +39,13 @@ export const CreateProfile = () => {
 		}
 	};
 
-	const personalDetails = [
-		{
-			isFloatingLabel: true,
-			label: t("SETTINGS.GENERAL.PERSONAL.TITLE"),
-			labelClass: "text-xl font-semibold",
-			labelDescription: t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE"),
-			labelDescriptionClass: "mt-1 font-medium text-theme-neutral-dark",
-			content: (
-				<div className="flex flex-row mt-2 mb-8">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300">
-						<div className="w-20 h-20 overflow-hidden rounded-full">
-							<Button
-								className="w-20 h-20"
-								variant="plain"
-								onClick={handleChangeAvatar}
-								data-testid="CreateProfile__upload-button"
-							>
-								<Icon name="Upload" />
-							</Button>
-						</div>
-					</div>
-					{avatarImage && (
-						<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
-							<img
-								src={avatarImage}
-								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-								alt="Profile avatar"
-							/>
-							<button
-								type="button"
-								className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
-								onClick={() => setAvatarImage("")}
-								data-testid="CreateProfile__remove-avatar"
-							>
-								<Icon name="Close" width={13} height={16} />
-							</button>
-						</div>
-					)}
-				</div>
-			),
-		},
-	];
-
 	const otherItems = [
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
-			content: (
-				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm font-medium text-theme-neutral">
-						{t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION")}
-					</span>
-					<div className="-mt-4">
-						<Toggle ref={register()} name="isDarkMode" />
-					</div>
-				</div>
-			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
+			labelAddon: <Toggle ref={register()} name="isDarkMode" />,
 		},
 	];
 
@@ -141,12 +90,50 @@ export const CreateProfile = () => {
 
 					<Divider />
 
-					<Form className="mt-8" context={form} onSubmit={submitForm} data-testid="CreateProfile__form">
-						<div className="">
-							<ListDivided items={personalDetails} />
+					<Form context={form} onSubmit={submitForm} data-testid="CreateProfile__form">
+						<div className="mt-8">
+							<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
+
+							<div className="group">
+								<span className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark">
+									{t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE")}
+								</span>
+
+								<div className="flex flex-row mt-2">
+									<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast">
+										<div className="w-20 h-20 overflow-hidden rounded-full">
+											<Button
+												className="w-20 h-20"
+												variant="plain"
+												onClick={handleChangeAvatar}
+												data-testid="CreateProfile__upload-button"
+											>
+												<Icon name="Upload" />
+											</Button>
+										</div>
+									</div>
+									{avatarImage && (
+										<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
+											<img
+												src={avatarImage}
+												className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+												alt="Profile avatar"
+											/>
+											<button
+												type="button"
+												className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+												onClick={() => setAvatarImage("")}
+												data-testid="CreateProfile__remove-avatar"
+											>
+												<Icon name="Close" height={12} width={12} />
+											</button>
+										</div>
+									)}
+								</div>
+							</div>
 
 							<div className="relative space-y-8">
-								<FormField name="name">
+								<FormField className="mt-8" name="name">
 									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 									<Input
 										ref={register({
@@ -229,6 +216,7 @@ export const CreateProfile = () => {
 							</div>
 
 							<div className="mt-8">
+								<h2>{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
 								<ListDivided items={otherItems} />
 							</div>
 
