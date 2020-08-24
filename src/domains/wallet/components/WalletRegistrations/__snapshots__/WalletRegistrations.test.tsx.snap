@@ -106,6 +106,114 @@ exports[`WalletRegistrations should render empty mode 1`] = `
 </DocumentFragment>
 `;
 
+exports[`WalletRegistrations should render loading state 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="WalletRegistrations"
+  >
+    <div
+      class="flex items-center justify-between"
+    >
+      <h2
+        class="font-bold"
+      >
+        Registrations
+      </h2>
+      <button
+        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
+        data-testid="WalletRegistrations__toggle"
+      >
+        <span>
+          Hide
+        </span>
+        <span
+          class="sc-AxhCb kwTXtP"
+        >
+          <div
+            class="sc-AxiKw ksjdLL"
+            height="10"
+            width="10"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+    </div>
+    <div
+      aria-hidden="false"
+      data-testid="Collapse"
+      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+    >
+      <div
+        class="flex items-center justify-between py-4"
+      >
+        <div
+          class="flex items-center pr-8 space-x-4"
+          data-testid="WalletRegistrations__skeleton"
+        >
+          <div
+            class="flex items-center -space-x-2"
+          >
+            <div
+              class="sc-AxirZ cZokSJ text-theme-neutral-light"
+            />
+            <div
+              class="sc-AxirZ cZokSJ bg-theme-background"
+            />
+          </div>
+          <div
+            class="flex flex-col"
+          >
+            <span
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 120px; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </span>
+            <span
+              class="font-semibold text-theme-neutral-900"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 120px; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+              <a
+                class="px-2 text-theme-primary"
+                href="/#"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 60px; height: 6px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div
+          class="flex items-center divide-x-1 divide-theme-neutral-light"
+        />
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
 exports[`WalletRegistrations should show delegate 1`] = `
 <DocumentFragment>
   <section
