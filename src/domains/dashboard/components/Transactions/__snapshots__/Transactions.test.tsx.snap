@@ -157,20 +157,6 @@ exports[`Transactions should render with 1`] = `
                     </div>
                   </div>
                 </th>
-                <th
-                  class="text-sm text-left select-none text-theme-neutral"
-                  colspan="1"
-                  data-testid="table__th--7"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top w-24 justify-end float-right"
-                  >
-                    <div>
-                      Currency
-                    </div>
-                  </div>
-                </th>
               </tr>
             </thead>
             <tbody
@@ -346,20 +332,6 @@ exports[`Transactions should render with with transactions 1`] = `
                     </div>
                   </div>
                 </th>
-                <th
-                  class="text-sm text-left select-none text-theme-neutral"
-                  colspan="1"
-                  data-testid="table__th--7"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top w-24 justify-end float-right"
-                  >
-                    <div>
-                      Currency
-                    </div>
-                  </div>
-                </th>
               </tr>
             </thead>
             <tbody
@@ -502,19 +474,12 @@ exports[`Transactions should render with with transactions 1`] = `
                     color="danger"
                     data-testid="TransactionRowAmount"
                   >
-                    121.00000000
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
                   </div>
-                </td>
-                <td
-                  class="text-right"
-                  data-testid="TransactionRow__currency"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                    data-testid="TransactionRowAmount"
-                  >
-                    242.00
-                  </span>
                 </td>
               </tr>
               <tr
@@ -654,19 +619,12 @@ exports[`Transactions should render with with transactions 1`] = `
                     color="danger"
                     data-testid="TransactionRowAmount"
                   >
-                    52.20000000
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
                   </div>
-                </td>
-                <td
-                  class="text-right"
-                  data-testid="TransactionRow__currency"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                    data-testid="TransactionRowAmount"
-                  >
-                    104.40
-                  </span>
                 </td>
               </tr>
               <tr
@@ -802,19 +760,12 @@ exports[`Transactions should render with with transactions 1`] = `
                     color="danger"
                     data-testid="TransactionRowAmount"
                   >
-                    1.20000000
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
                   </div>
-                </td>
-                <td
-                  class="text-right"
-                  data-testid="TransactionRow__currency"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                    data-testid="TransactionRowAmount"
-                  >
-                    2.40
-                  </span>
                 </td>
               </tr>
               <tr
@@ -950,19 +901,12 @@ exports[`Transactions should render with with transactions 1`] = `
                     color="danger"
                     data-testid="TransactionRowAmount"
                   >
-                    1.20000000
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
                   </div>
-                </td>
-                <td
-                  class="text-right"
-                  data-testid="TransactionRow__currency"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                    data-testid="TransactionRowAmount"
-                  >
-                    2.40
-                  </span>
                 </td>
               </tr>
             </tbody>
