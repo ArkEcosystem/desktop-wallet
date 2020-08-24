@@ -253,7 +253,7 @@ exports[`WalletVote should render if a delegate is missing its rank 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="py-4 grid grid-flow-row row-gap-6"
+        class="grid grid-flow-row row-gap-6 py-4"
       >
         <div
           class="flex items-center justify-between"
@@ -418,6 +418,106 @@ exports[`WalletVote should render if a delegate is missing its rank 1`] = `
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`WalletVote should render loading state 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex items-center justify-between"
+    >
+      <h2
+        class="font-bold"
+      >
+        My Vote
+      </h2>
+      <button
+        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 -mr-4 text-theme-neutral"
+        data-testid="WalletVote__toggle"
+      >
+        <span>
+          Hide
+        </span>
+        <span
+          class="sc-AxhUy icixlS"
+        >
+          <div
+            class="sc-AxhCb idmnCf"
+            height="10"
+            width="10"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+    </div>
+    <div
+      aria-hidden="false"
+      data-testid="Collapse"
+      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+    >
+      <div
+        class="grid grid-flow-row row-gap-6 py-4"
+      >
+        <div
+          class="flex items-center pr-8 space-x-4"
+          data-testid="WalletVote__skeleton"
+        >
+          <div
+            class="flex items-center -space-x-2"
+          >
+            <div
+              class="sc-AxiKw jQtkkF text-theme-neutral-light"
+            />
+            <div
+              class="sc-AxiKw jQtkkF bg-theme-background"
+            />
+          </div>
+          <div
+            class="flex flex-col w-full"
+          >
+            <span
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 120px; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </span>
+            <div
+              class="w-full font-semibold text-theme-neutral-900"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 50%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+              <span>
+                <span
+                  class="react-loading-skeleton ml-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 10%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
         <div
           class="flex items-center justify-between"
           data-testid="WalletVote__delegate"
@@ -449,9 +549,9 @@ exports[`WalletVote should render if a delegate is missing its rank 1`] = `
                   class="w-full h-full"
                 >
                   <img
-                    alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                    title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                   />
                 </div>
               </div>
@@ -471,13 +571,13 @@ exports[`WalletVote should render if a delegate is missing its rank 1`] = `
                   class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
-                  genesis_17
+                  arkx
                 </span>
                 <span
                   class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  DRgF3P…Ay23ES
+                  D8rr7B…s6YUYD
                 </span>
               </div>
             </div>
@@ -500,7 +600,7 @@ exports[`WalletVote should render if a delegate is missing its rank 1`] = `
                   class="font-bold text-theme-neutral-dark"
                   data-testid="WalletVote__delegate__rank"
                 >
-                  #3
+                  #1
                 </span>
               </li>
               <li
@@ -513,7 +613,6 @@ exports[`WalletVote should render if a delegate is missing its rank 1`] = `
                 </span>
                 <a
                   data-testid="WalletVote__delegate__explorer"
-                  href="https://explorer.ark.io"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

@@ -28,6 +28,13 @@ describe("WalletVote", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render loading state", () => {
+		const { getByTestId, asFragment } = render(<WalletVote votes={votes} isLoading={true} />);
+
+		expect(getByTestId("WalletVote__skeleton")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render if a delegate is missing its rank", () => {
 		const { getByTestId, asFragment } = render(
 			<WalletVote

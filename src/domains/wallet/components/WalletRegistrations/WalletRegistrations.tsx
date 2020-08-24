@@ -7,6 +7,8 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { WalletRegistrationsSkeleton } from "./WalletRegistrationsSkeleton";
+
 const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
 	const items = icons.slice(0, limit);
 	const rest = Math.max(0, icons.length - limit);
@@ -37,7 +39,6 @@ const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
 };
 
 type Props = {
-	address: string | undefined;
 	hasBridgechains?: boolean;
 	hasPlugins?: boolean;
 	hasSecondSignature?: boolean;
@@ -49,10 +50,10 @@ type Props = {
 	onRegister?: () => void;
 	onShowAll?: () => void;
 	defaultIsOpen?: boolean;
+	isLoading?: boolean;
 };
 
 export const WalletRegistrations = ({
-	address,
 	delegate,
 	business,
 	hasBridgechains,
@@ -62,6 +63,7 @@ export const WalletRegistrations = ({
 	onRegister,
 	onShowAll,
 	defaultIsOpen,
+	isLoading,
 }: Props) => {
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
@@ -91,7 +93,8 @@ export const WalletRegistrations = ({
 
 			<Collapse isOpen={isOpen}>
 				<div className="flex items-center justify-between py-4">
-					{hasNoRegistrations ? (
+					{isLoading && <WalletRegistrationsSkeleton />}
+					{!isLoading && hasNoRegistrations ? (
 						<div data-testid="WalletRegistrations__empty" className="flex items-center pr-8 space-x-4">
 							<div className="flex items-center -space-x-2">
 								<Circle size="lg" className="text-theme-neutral-light">
@@ -150,7 +153,7 @@ export const WalletRegistrations = ({
 								</div>
 							)}
 
-							{iconsList.length && (
+							{!isLoading && iconsList.length && (
 								<div className={delegate || business ? "px-8" : "pr-8"}>
 									<IconList icons={iconsList} limit={2} />
 								</div>
@@ -158,21 +161,23 @@ export const WalletRegistrations = ({
 						</div>
 					)}
 
-					<div className="space-x-2">
-						{!hasNoRegistrations && (
-							<button
-								data-testid="WalletRegistrations__show-all"
-								onClick={onShowAll}
-								className="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-							>
-								{t("COMMON.SHOW_ALL")}
-							</button>
-						)}
+					{!isLoading && (
+						<div className="space-x-2">
+							{!hasNoRegistrations && (
+								<button
+									data-testid="WalletRegistrations__show-all"
+									onClick={onShowAll}
+									className="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
+								>
+									{t("COMMON.SHOW_ALL")}
+								</button>
+							)}
 
-						<Button data-testid="WalletRegistrations__register" onClick={onRegister} variant="plain">
-							{t("COMMON.REGISTER")}
-						</Button>
-					</div>
+							<Button data-testid="WalletRegistrations__register" onClick={onRegister} variant="plain">
+								{t("COMMON.REGISTER")}
+							</Button>
+						</div>
+					)}
 				</div>
 			</Collapse>
 		</section>
