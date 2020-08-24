@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
 
@@ -10,7 +10,7 @@ export default {
 	decorators: [(storyFn: any) => <WalletsDecorator count={1}>{storyFn}</WalletsDecorator>],
 };
 
-export const Default = ({ wallets }: { wallets: Wallet[] }) => {
+export const Default = ({ wallets }: { wallets: ReadWriteWallet[] }) => {
 	// Wallet filter properties
 	const filterProperties = {
 		visibleTransactionsView: true,
