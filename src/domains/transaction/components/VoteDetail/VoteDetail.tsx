@@ -65,15 +65,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			await env.coins().syncDelegates(senderWallet?.coinId()!, senderWallet?.networkId()!);
 
-			setDelegates(
-				DelegateMapper.execute(
-					// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-					senderWallet?.coinId()!,
-					// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-					senderWallet?.networkId()!,
-					(transaction as Contracts.VoteData).votes(),
-				),
-			);
+			setDelegates(DelegateMapper.execute(senderWallet, (transaction as Contracts.VoteData).votes()));
 
 			setIsLoadingDelegates(false);
 		};
