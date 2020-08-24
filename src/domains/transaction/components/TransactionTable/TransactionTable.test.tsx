@@ -6,6 +6,7 @@ import { fireEvent, renderWithRouter } from "utils/testing-library";
 
 import { TransactionTable } from "./TransactionTable";
 
+// TODO: replace those with real transaction instances. These are highly fragile and make the tests brittle because every update requires them to be adjusted and they could have fake implementations.
 const transactions: Contracts.TransactionDataType[] = [
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -67,6 +68,9 @@ const transactions: Contracts.TransactionDataType[] = [
 		hasFailed: () => false,
 		getMeta: () => "",
 		setMeta: () => "",
+		// @ts-ignore
+		explorerLink: () =>
+			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 	},
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -128,6 +132,9 @@ const transactions: Contracts.TransactionDataType[] = [
 		hasFailed: () => false,
 		getMeta: () => "",
 		setMeta: () => "",
+		// @ts-ignore
+		explorerLink: () =>
+			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 	},
 ];
 
