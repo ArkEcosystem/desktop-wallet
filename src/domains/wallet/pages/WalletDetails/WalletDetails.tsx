@@ -47,7 +47,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	const coinName = activeWallet.manifest().get<string>("name");
 	const networkId = activeWallet.network().id;
-	const ticker = activeWallet.network().currency.ticker;
+	const ticker = activeWallet.currency();
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 	const { transactions, walletData, votes } = data;
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
@@ -203,7 +203,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 						<>
 							<TransactionTable
 								transactions={transactions}
-								currencyRate="2"
+								exchangeCurrency={exchangeCurrency}
 								isLoading={loadingTransactions}
 								skeletonRowsLimit={txSkeletonRowsLimit}
 							/>

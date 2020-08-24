@@ -8,7 +8,7 @@ import { TransactionRow } from "./TransactionRow/TransactionRow";
 
 type Props = {
 	transactions: ExtendedTransactionData[];
-	currencyRate?: string;
+	exchangeCurrency?: string;
 	showSignColumn?: boolean;
 	hideHeader?: boolean;
 	isCompact?: boolean;
@@ -19,7 +19,7 @@ type Props = {
 
 export const TransactionTable = ({
 	transactions,
-	currencyRate,
+	exchangeCurrency,
 	showSignColumn,
 	hideHeader,
 	isCompact,
@@ -77,7 +77,7 @@ export const TransactionTable = ({
 			];
 		}
 
-		if (currencyRate) {
+		if (exchangeCurrency) {
 			return [...commonColumns, { Header: t("COMMON.CURRENCY"), className: "w-24 justify-end float-right" }];
 		}
 
@@ -86,7 +86,7 @@ export const TransactionTable = ({
 		}
 
 		return commonColumns;
-	}, [commonColumns, currencyRate, showSignColumn, isCompact, t]);
+	}, [commonColumns, exchangeCurrency, showSignColumn, isCompact, t]);
 
 	const showSkeleton = useMemo(() => isLoading && transactions.length === 0, [transactions, isLoading]);
 
@@ -104,7 +104,7 @@ export const TransactionTable = ({
 							isLoading={showSkeleton}
 							onClick={() => onRowClick?.(row)}
 							transaction={row}
-							currencyRate={currencyRate}
+							exchangeCurrency={exchangeCurrency}
 							showSign={showSignColumn}
 							isSignaturePending={row.isMultiSignature && showSignColumn}
 						/>

@@ -157,12 +157,15 @@ describe("TransactionTable", () => {
 
 	it("should render with currency", () => {
 		// @ts-ignore - TODO: brittle fixtures
-		const { getAllByTestId } = renderWithRouter(<TransactionTable transactions={transactions} currencyRate="2" />);
+		const { getAllByTestId } = renderWithRouter(
+			<TransactionTable transactions={transactions} exchangeCurrency="BTC" />,
+		);
 		expect(getAllByTestId("TransactionRow__currency")).toHaveLength(transactions.length);
 	});
 
 	it("should render with sign", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
+			// @ts-ignore - TODO: brittle fixtures
 			<TransactionTable transactions={transactions} showSignColumn />,
 		);
 		expect(getAllByTestId("TransactionRow__sign")).toHaveLength(2);
@@ -195,7 +198,7 @@ describe("TransactionTable", () => {
 	});
 	it("should render loading state with currency column", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
-			<TransactionTable transactions={[]} isLoading currencyRate="2" skeletonRowsLimit={5} />,
+			<TransactionTable transactions={[]} isLoading exchangeCurrency="BTC" skeletonRowsLimit={5} />,
 		);
 		expect(getAllByTestId("TransactionRow__skeleton")).toHaveLength(5);
 		expect(asFragment()).toMatchSnapshot();
