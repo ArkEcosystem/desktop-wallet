@@ -15,11 +15,13 @@ type Props = {
 const getStatus = (confirmations: BigNumber, isSignaturePending?: boolean): TransactionStatus => {
 	if (isSignaturePending) {
 		return "actionRequired";
-	} else if (confirmations.isGreaterThan(51)) {
-		return "confirmed";
-	} else {
-		return "pending";
 	}
+
+	if (confirmations.isGreaterThan(51)) {
+		return "confirmed";
+	}
+
+	return "pending";
 };
 
 export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: Props) => {

@@ -15,7 +15,6 @@ type Props = {
 	defaultIsOpen?: boolean;
 };
 
-// TODO: Delegate Explorer URL
 export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
@@ -100,7 +99,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 											</span>
 											<a
 												data-testid="WalletVote__delegate__explorer"
-												href="https://explorer.ark.io"
+												href={delegate.explorerLink()}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
