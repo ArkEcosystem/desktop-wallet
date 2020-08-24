@@ -877,7 +877,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -985,7 +985,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -1208,7 +1212,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -1316,7 +1320,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -1327,7 +1335,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -2249,7 +2257,7 @@ exports[`WalletDetails should render 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -2357,7 +2365,11 @@ exports[`WalletDetails should render 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -2580,7 +2592,7 @@ exports[`WalletDetails should render 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -2688,7 +2700,11 @@ exports[`WalletDetails should render 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -2699,7 +2715,7 @@ exports[`WalletDetails should render 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -4161,7 +4177,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -4269,7 +4285,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -4492,7 +4512,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -4600,7 +4620,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -4611,7 +4635,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -6073,7 +6097,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -6181,7 +6205,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -6404,7 +6432,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -6512,7 +6540,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -6523,7 +6555,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -8006,7 +8038,7 @@ exports[`WalletDetails should render with timers 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -8114,7 +8146,11 @@ exports[`WalletDetails should render with timers 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -8337,7 +8373,7 @@ exports[`WalletDetails should render with timers 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -8445,7 +8481,11 @@ exports[`WalletDetails should render with timers 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -8456,7 +8496,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -9939,7 +9979,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -10047,7 +10087,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -10270,7 +10314,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -10378,7 +10422,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -10389,7 +10437,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
