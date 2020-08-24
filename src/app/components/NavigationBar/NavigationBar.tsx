@@ -79,7 +79,7 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userIn
 		onSelect={onUserAction}
 		options={userActions}
 		toggleContent={(isOpen: boolean) => (
-			<div className="cursor-pointer ml-4" data-testid="navbar__useractions">
+			<div className="ml-4 cursor-pointer" data-testid="navbar__useractions">
 				<Circle className="-mr-2 border-theme-primary-contrast" size="lg">
 					<span className="text-theme-neutral-dark">{currencyIcon && <Icon name={currencyIcon} />}</span>
 				</Circle>
