@@ -61,14 +61,14 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		const fetchAllData = async () => {
 			// TODO: move this to profile initialising and run it every X period
 			await env.coins().syncDelegates(activeWallet.coinId()!, activeWallet.networkId()!);
-			await activeWallet.syncVotes();
 
 			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
 			const walletData = await activeWallet.client().wallet(activeWallet.address());
 
-			// TODO: better handling in the SDK to remove the try/catch
 			let votes: ReadOnlyWallet[] = [];
 			try {
+				await activeWallet.syncVotes();
+
 				votes = activeWallet.votes();
 			} catch {
 				votes = [];
