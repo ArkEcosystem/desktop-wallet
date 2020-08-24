@@ -53,7 +53,8 @@ export const TransactionRow = ({
 				<div className="inline-block align-middle">
 					<Link
 						data-testid="TransactionRow__ID"
-						to={{ pathname: "" }}
+						// @ts-ignore - TODO: update contracts in platform-sdk-profile
+						to={{ pathname: transaction.explorerLink() }}
 						tooltip={transaction.id()}
 						isExternal
 					/>
