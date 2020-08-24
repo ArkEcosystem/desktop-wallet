@@ -2,6 +2,7 @@ import MockDate from "mockdate";
 import { env } from "./src/utils/testing-library";
 
 beforeAll(async () => {
+	await env.verify();
 	await env.boot();
 });
 
