@@ -130,7 +130,7 @@ test("should show an error message for duplicate address", async (t) => {
 	// Input address
 	addressInput = Selector("input[name=address]");
 
-	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
+	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", { replace: true, speed: 1, paste: true });
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
 	// Try to import a duplicate wallet
@@ -156,10 +156,10 @@ test("should show an error message for duplicate address", async (t) => {
 	// Input address
 	addressInput = Selector("input[name=address]");
 
-	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
+	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", { replace: true, speed: 1, paste: true });
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
 	await t
 		.expect(Selector("fieldset p").withText("Address D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib already exists").exists)
-		.ok({ timeout: 5000 });
+		.ok();
 });
