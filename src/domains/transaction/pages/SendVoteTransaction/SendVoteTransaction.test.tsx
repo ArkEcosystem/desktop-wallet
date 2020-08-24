@@ -21,7 +21,7 @@ import { data as delegateData } from "tests/fixtures/coins/ark/delegates-devnet.
 import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
 
 import { translations as transactionTranslations } from "../../i18n";
-import { FirstStep, FourthStep, SecondStep, SendVoteTransaction,ThirdStep } from "../SendVoteTransaction";
+import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "../SendVoteTransaction";
 
 const fixtureProfileId = getDefaultProfileId();
 
