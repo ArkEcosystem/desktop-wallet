@@ -1,11 +1,11 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { translations } from "../../i18n";
 import { SearchAddress } from "./SearchAddress";
 
-let wallets: Wallet[];
+let wallets: ReadWriteWallet[];
 
 beforeAll(async () => {
 	const profile = env.profiles().findById(getDefaultProfileId());

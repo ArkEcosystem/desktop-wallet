@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
@@ -15,7 +15,7 @@ import { useHistory } from "react-router-dom";
 import { Dropdown } from "../Dropdown";
 
 export type WalletListItemProps = {
-	wallet: Wallet;
+	wallet: ReadWriteWallet;
 	exchangeCurrency?: string;
 	coinClass?: string;
 	actions?: any[];

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
@@ -21,7 +21,7 @@ import {
 import { SendTransactionForm } from "./";
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 let defaultFee: string;
 
 describe("SendTransactionForm", () => {

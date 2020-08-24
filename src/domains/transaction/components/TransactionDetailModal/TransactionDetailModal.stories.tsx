@@ -8,6 +8,7 @@ export default { title: "Domains / Transaction / Components / TransactionDetailM
 
 export const Default = () => (
 	<TransactionDetailModal
+		// @ts-ignore - TODO: brittle fixture
 		transactionItem={TransactionFixture}
 		isOpen={boolean("Is Open", true)}
 		onClose={() => alert("closed")}

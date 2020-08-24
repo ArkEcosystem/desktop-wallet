@@ -11,7 +11,7 @@ describe("WalletRegistrations", () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
-		delegate = await wallet.delegate("test");
+		delegate = await wallet.client().delegate("test");
 	});
 
 	it("should emit actions", () => {

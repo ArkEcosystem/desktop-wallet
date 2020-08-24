@@ -1,17 +1,25 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { WalletVote } from "./WalletVote";
 
-let votes: Coins.WalletDataCollection;
+let wallet: ReadWriteWallet;
+let votes: ReadOnlyWallet[];
 
 describe("WalletVote", () => {
-	beforeEach(async () => {
+	beforeEach(() => {
 		const profile = env.profiles().findById(getDefaultProfileId());
-		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
-		votes = await wallet.delegates();
+		votes = [
+			new ReadOnlyWallet({
+				address: wallet.address(),
+				publicKey: wallet.publicKey(),
+				username: "arkx",
+				rank: 1,
+			}),
+		];
 	});
 
 	it("should render", () => {
@@ -24,6 +32,24 @@ describe("WalletVote", () => {
 		const { getByTestId, asFragment } = render(<WalletVote votes={votes} isLoading={true} />);
 
 		expect(getByTestId("WalletVote__skeleton")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render if a delegate is missing its rank", () => {
+		const { getByTestId, asFragment } = render(
+			<WalletVote
+				votes={[
+					new ReadOnlyWallet({
+						address: wallet.address(),
+						publicKey: wallet.publicKey(),
+						username: "arkx",
+						rank: undefined,
+					}),
+				]}
+			/>,
+		);
+
+		expect(getByTestId("WalletVote")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -48,17 +74,17 @@ describe("WalletVote", () => {
 
 	it("should render votes", () => {
 		const { getAllByTestId } = render(<WalletVote votes={votes} />);
-		expect(getAllByTestId("WalletVote__delegate")).toHaveLength(votes.items().length);
+		expect(getAllByTestId("WalletVote__delegate")).toHaveLength(votes.length);
 	});
 
 	it("should emit action on unvote", () => {
 		const onUnvote = jest.fn();
 		const { getAllByTestId } = render(<WalletVote onUnvote={onUnvote} votes={votes} />);
 		const unvoteButtons = getAllByTestId("WalletVote__delegate__unvote");
-		expect(unvoteButtons).toHaveLength(votes.items().length);
+		expect(unvoteButtons).toHaveLength(votes.length);
 		act(() => {
 			fireEvent.click(unvoteButtons[0]);
 		});
-		expect(onUnvote).toHaveBeenCalledWith(votes.items()[0].address());
+		expect(onUnvote).toHaveBeenCalledWith(votes[0].address());
 	});
 });

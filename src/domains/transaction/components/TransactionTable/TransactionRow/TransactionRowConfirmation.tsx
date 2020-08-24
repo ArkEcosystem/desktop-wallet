@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
@@ -8,18 +8,20 @@ import { TransactionStatus } from "../TransactionTable.models";
 
 type Props = {
 	isSignaturePending?: boolean;
-	transaction: Contracts.TransactionDataType;
+	transaction: ExtendedTransactionData;
 };
 
 // TODO: Replace by sdk
 const getStatus = (confirmations: BigNumber, isSignaturePending?: boolean): TransactionStatus => {
 	if (isSignaturePending) {
 		return "actionRequired";
-	} else if (confirmations.isGreaterThan(51)) {
-		return "confirmed";
-	} else {
-		return "pending";
 	}
+
+	if (confirmations.isGreaterThan(51)) {
+		return "confirmed";
+	}
+
+	return "pending";
 };
 
 export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: Props) => {

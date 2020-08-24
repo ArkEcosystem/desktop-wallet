@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -12,18 +12,17 @@ import { useTranslation } from "react-i18next";
 import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 
 type Props = {
-	votes?: Coins.WalletDataCollection;
+	votes?: ReadOnlyWallet[];
 	onUnvote?: (address: string) => void;
 	defaultIsOpen?: boolean;
 	isLoading?: boolean;
 };
 
-// TODO: Delegate Explorer URL
 export const WalletVote = ({ votes, onUnvote, defaultIsOpen, isLoading }: Props) => {
 	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
-	const hasNoVotes = !votes || votes.items().length === 0;
+	const hasNoVotes = !votes || votes.length === 0;
 
 	return (
 		<section data-testid="WalletVote">
@@ -38,7 +37,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen, isLoading }: Props)
 			</div>
 
 			<Collapse isOpen={isOpen}>
-				<div className="py-4 grid grid-flow-row row-gap-6">
+				<div className="grid grid-flow-row row-gap-6 py-4">
 					{isLoading && <WalletVoteSkeleton />}
 					{!isLoading && hasNoVotes ? (
 						<div data-testid="WalletVote__empty" className="flex items-center pr-8 space-x-4">
@@ -63,7 +62,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen, isLoading }: Props)
 							</div>
 						</div>
 					) : (
-						votes?.items().map((delegate) => (
+						votes?.map((delegate: ReadOnlyWallet) => (
 							<div
 								data-testid="WalletVote__delegate"
 								className="flex items-center justify-between"
@@ -104,7 +103,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen, isLoading }: Props)
 											</span>
 											<a
 												data-testid="WalletVote__delegate__explorer"
-												href="https://explorer.ark.io"
+												href={delegate.explorerLink()}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
