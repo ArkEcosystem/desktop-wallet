@@ -1,7 +1,7 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act,  fireEvent,  render } from "testing-library";
-import { data } from "tests/fixtures/coins/ark/delegates.json";
+import { act, fireEvent, render } from "testing-library";
+import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
 
 import { translations } from "../../i18n";
 import { DelegateTable } from "./DelegateTable";
@@ -84,13 +84,13 @@ describe("DelegateTable", () => {
 			fireEvent.click(selectButtons[2]);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_LIST.SHOW_LIST);
+		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_TABLE.SHOW_LIST);
 
 		act(() => {
 			fireEvent.click(getByTestId("DelegateTable__toggle-show-selected"));
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_LIST.HIDE_LIST);
+		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_TABLE.HIDE_LIST);
 		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[0].username()!);
 		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[1].username()!);
 		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[2].username()!);

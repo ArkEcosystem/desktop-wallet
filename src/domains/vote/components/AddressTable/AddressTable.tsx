@@ -62,7 +62,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 
 	return (
 		<div data-testid="AddressTable">
-			<h2 className="py-5 text-2xl font-bold">{t("VOTE.ADDRESS_LIST.TITLE")}</h2>
+			<h2 className="py-5 text-2xl font-bold">{t("VOTE.ADDRESS_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={wallets}>
 				{(wallet: ReadWriteWallet, index: number) => (
 					<AddressRow index={index} wallet={wallet} onSelect={onSelect} />

@@ -93,9 +93,12 @@ export const Votes = () => {
 		}
 	}, [activeProfile, network]);
 
-	const handleSelectAddress = (address: string) => {
+	const handleSelectAddress = async (address: string) => {
 		setAddress(address);
 		const wallet = activeProfile.wallets().findByAddress(address);
+		// TODO: move this to profile initialising and run it every X period
+		// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+		await env.coins().syncDelegates(wallet?.coinId()!, wallet?.networkId()!);
 		// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 		const delegates = env.coins().delegates(wallet?.coinId()!, wallet?.networkId()!);
 		const readOnlyDelegates = DelegateMapper.execute(
@@ -104,8 +107,6 @@ export const Votes = () => {
 		);
 		setDelegates(readOnlyDelegates);
 	};
-
-	console.log("delegates", delegates);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>

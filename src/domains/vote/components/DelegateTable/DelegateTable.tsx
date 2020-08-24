@@ -70,7 +70,7 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 			disableSortBy: true,
 		},
 		{
-			Header: t("VOTE.DELEGATE_LIST.NAME"),
+			Header: t("VOTE.DELEGATE_TABLE.NAME"),
 			accessor: "delegateName",
 		},
 		{
@@ -78,7 +78,7 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 			accessor: "rank",
 		},
 		{
-			Header: t("VOTE.DELEGATE_LIST.VOTES"),
+			Header: t("VOTE.DELEGATE_TABLE.VOTES"),
 			accessor: "votes",
 		},
 		{
@@ -88,23 +88,23 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 			className: "flex justify-center",
 		},
 		{
-			Header: t("VOTE.DELEGATE_LIST.COMMISSION"),
+			Header: t("VOTE.DELEGATE_TABLE.COMMISSION"),
 			accessor: "commissionPercentage",
 		},
 		{
-			Header: t("VOTE.DELEGATE_LIST.PAYOUT_INTERVAL"),
+			Header: t("VOTE.DELEGATE_TABLE.PAYOUT_INTERVAL"),
 			accessor: "payout",
 		},
 		{
-			Header: t("VOTE.DELEGATE_LIST.MIN"),
+			Header: t("VOTE.DELEGATE_TABLE.MIN"),
 			accessor: "min",
 		},
 		{
-			Header: t("VOTE.DELEGATE_LIST.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
+			Header: t("VOTE.DELEGATE_TABLE.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
 			accessor: "commissionDaily",
 		},
 		{
-			Header: t("VOTE.DELEGATE_LIST.VOTE"),
+			Header: t("VOTE.DELEGATE_TABLE.VOTE"),
 			accessor: "onSelect",
 			className: "justify-end",
 		},
@@ -128,7 +128,7 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 
 	return (
 		<div data-testid="DelegateTable">
-			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_LIST.TITLE")}</h2>
+			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={data}>
 				{(delegate: ReadOnlyWallet, index: number) => (
 					<DelegateRow
@@ -178,8 +178,8 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 												data-testid="DelegateTable__toggle-show-selected"
 											>
 												{showSelectedList
-													? t("VOTE.DELEGATE_LIST.HIDE_LIST")
-													: t("VOTE.DELEGATE_LIST.SHOW_LIST")}
+													? t("VOTE.DELEGATE_TABLE.HIDE_LIST")
+													: t("VOTE.DELEGATE_TABLE.SHOW_LIST")}
 											</div>
 										</div>
 									)}
