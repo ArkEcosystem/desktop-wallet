@@ -53,7 +53,8 @@ export const TransactionRow = ({
 				<div className="inline-block align-middle">
 					<Link
 						data-testid="TransactionRow__ID"
-						to={{ pathname: "" }}
+						to=""
+						onClick={onClick}
 						tooltip={transaction.id()}
 						isExternal
 					/>
