@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateMapper, ExtendedTransactionData, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -15,7 +15,7 @@ import Skeleton from "react-loading-skeleton";
 
 type VoteDetailProps = {
 	isOpen: boolean;
-	transaction?: Contracts.TransactionDataType;
+	transaction?: ExtendedTransactionData;
 	ticker?: string;
 	walletAlias?: string;
 	onClose?: () => void;

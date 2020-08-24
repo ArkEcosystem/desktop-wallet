@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
@@ -8,7 +8,7 @@ import { TransactionStatus } from "../TransactionTable.models";
 
 type Props = {
 	isSignaturePending?: boolean;
-	transaction: Contracts.TransactionDataType;
+	transaction: ExtendedTransactionData;
 };
 
 // TODO: Replace by sdk

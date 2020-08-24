@@ -4,7 +4,7 @@ import {
 	Environment,
 	Profile,
 	ProfileSetting,
-	Wallet,
+	ReadWriteWallet,
 	WalletFlag,
 	WalletSetting,
 } from "@arkecosystem/platform-sdk-profiles";
@@ -65,7 +65,7 @@ export const generateWallets = async ({
 const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 export const WalletsDecorator = ({ count, children, withDelegate, withDelegates }: WalletsDecoratorProps) => {
-	const [wallets, setWallets] = React.useState<Wallet[]>([]);
+	const [wallets, setWallets] = React.useState<ReadWriteWallet[]>([]);
 	const [profile, setProfile] = React.useState<Profile>((null as unknown) as Profile);
 	const [delegate, setDelegate] = React.useState<Contracts.WalletData>((null as unknown) as Contracts.WalletData);
 	const [delegates, setDelegates] = React.useState<Coins.WalletDataCollection>(

@@ -7,6 +7,7 @@ export default { title: "Domains / Dashboard / Components / Transactions" };
 
 export const Default = () => (
 	<div>
+	    {/* @ts-ignore - TODO: brittle fixture */}
 		<Transactions transactions={transactions} fetchMoreAction={() => console.log("fetchMoreAction")} />
 	</div>
 );

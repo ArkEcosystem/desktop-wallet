@@ -1,10 +1,10 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
 import React from "react";
 
 type Props = {
-	transaction: Contracts.TransactionDataType;
+	transaction: ExtendedTransactionData;
 };
 
 const VendorField = ({ vendorField }: { vendorField: string | undefined }) => (
@@ -25,7 +25,7 @@ const MultiSignature = () => (
 );
 
 export const TransactionRowInfo = ({ transaction }: Props) => (
-	<div data-testid="TransactionRowInfo" className="inline-flex align-middle space-x-1">
+	<div data-testid="TransactionRowInfo" className="inline-flex space-x-1 align-middle">
 		{transaction?.isMultiSignature() && <MultiSignature />}
 		{transaction?.memo() && <VendorField vendorField={transaction?.memo()} />}
 	</div>

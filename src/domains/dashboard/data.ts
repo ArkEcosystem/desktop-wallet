@@ -81,6 +81,11 @@ export const transactions = [
 		// @ts-ignore
 		explorerLink: () =>
 			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+			total: () => BigNumber.make(121).times(1e8),
+			convertedTotal: () => BigNumber.ZERO,
+			wallet: () => undefined,
+			coin: () => undefined,
+			data: () => undefined,
 	},
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -145,6 +150,11 @@ export const transactions = [
 		// @ts-ignore
 		explorerLink: () =>
 			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+			total: () => BigNumber.make(121).times(1e8),
+			convertedTotal: () => BigNumber.ZERO,
+			wallet: () => undefined,
+			coin: () => undefined,
+			data: () => undefined,
 	},
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -209,6 +219,11 @@ export const transactions = [
 		// @ts-ignore
 		explorerLink: () =>
 			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+			total: () => BigNumber.make(121).times(1e8),
+			convertedTotal: () => BigNumber.ZERO,
+			wallet: () => undefined,
+			coin: () => undefined,
+			data: () => undefined,
 	},
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
@@ -273,6 +288,11 @@ export const transactions = [
 		// @ts-ignore
 		explorerLink: () =>
 			"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+			total: () => BigNumber.make(121).times(1e8),
+			convertedTotal: () => BigNumber.ZERO,
+			wallet: () => undefined,
+			coin: () => undefined,
+			data: () => undefined,
 	},
 ];
 

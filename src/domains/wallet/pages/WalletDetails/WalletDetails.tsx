@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { ProfileSetting, ReadOnlyWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
@@ -23,7 +24,7 @@ type WalletDetailsProps = {
 };
 
 type WalletInfo = {
-	transactions: Contracts.TransactionDataType[];
+	transactions: ExtendedTransactionData[];
 	walletData?: Contracts.WalletData;
 	votes?: ReadOnlyWallet[];
 };

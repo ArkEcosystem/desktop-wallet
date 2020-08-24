@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -13,12 +13,12 @@ const history = createMemoryHistory();
 let walletUrl: string;
 
 let profile: Profile;
-let wallet: Wallet;
-let blankWallet: Wallet;
-let unvotedWallet: Wallet;
+let wallet: ReadWriteWallet;
+let blankWallet: ReadWriteWallet;
+let unvotedWallet: ReadWriteWallet;
 
 let emptyProfile: Profile;
-let wallet2: Wallet;
+let wallet2: ReadWriteWallet;
 
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 

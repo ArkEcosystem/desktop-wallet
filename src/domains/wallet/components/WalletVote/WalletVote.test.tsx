@@ -1,10 +1,10 @@
-import { ReadOnlyWallet, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { WalletVote } from "./WalletVote";
 
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 let votes: ReadOnlyWallet[];
 
 describe("WalletVote", () => {
