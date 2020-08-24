@@ -90,9 +90,10 @@ export const Votes = () => {
 		}
 	}, [activeProfile, network]);
 
-	const handleSelectAddress = async (address: string) => {
+	const handleSelectAddress = (address: string) => {
 		setAddress(address);
 		const wallet = activeProfile.wallets().findByAddress(address);
+		// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 		setDelegates(env.coins().delegates(wallet?.coinId()!, wallet?.networkId()!));
 	};
 
