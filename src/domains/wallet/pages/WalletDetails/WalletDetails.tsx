@@ -35,7 +35,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
-	const [loadingTransactions] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const { t } = useTranslation();
@@ -80,6 +80,8 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 				transactions,
 				votes,
 			});
+
+			setIsLoading(false);
 		};
 
 		fetchAllData();
@@ -143,30 +145,24 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
 
-				<Section>{votes && <WalletVote votes={votes} />}</Section>
+				<Section>
+					<WalletVote votes={votes} isLoading={isLoading} />
+				</Section>
 
 				<Section>
-					{walletData && (
-						<WalletRegistrations
-							address={activeWallet.address()}
-							delegate={
-								activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
-									? walletData
-									: undefined
-							}
-							business={undefined}
-							isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
-							hasBridgechains={true}
-							hasSecondSignature={activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()}
-							hasPlugins={true}
-							onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
-							onRegister={() =>
-								history.push(
-									`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/registration`,
-								)
-							}
-						/>
-					)}
+					<WalletRegistrations
+						isLoading={isLoading}
+						delegate={
+							activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate() ? walletData : undefined
+						}
+						business={undefined}
+						isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
+						hasBridgechains={true}
+						hasSecondSignature={activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()}
+						hasPlugins={true}
+						onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
+						onRegister={() => history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/registration`)}
+					/>
 				</Section>
 
 				<Section>
@@ -177,7 +173,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 							<TransactionTable
 								transactions={transactions}
 								showSignColumn
-								isLoading={loadingTransactions}
+								isLoading={isLoading}
 								skeletonRowsLimit={txSkeletonRowsLimit}
 							/>
 							{transactions.length > 0 && (
@@ -199,7 +195,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 							<TransactionTable
 								transactions={transactions}
 								exchangeCurrency={exchangeCurrency}
-								isLoading={loadingTransactions}
+								isLoading={isLoading}
 								skeletonRowsLimit={txSkeletonRowsLimit}
 							/>
 							{transactions.length > 0 && (
