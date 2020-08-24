@@ -6,7 +6,7 @@ import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText,FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputGroup } from "app/components/Input";
 import { Label } from "app/components/Label";
@@ -28,7 +28,17 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 
 	useEffect(() => {
 		if (!username) {
-			register("username", { required: true });
+			register("username", {
+				required: true,
+				validate: (value) => {
+					const matches = value.match(/^[a-z0-9!@$&_.]+$/);
+					if (!matches) {
+						return t<string>("TRANSACTION.INVALID_DELEGATE_NAME");
+					}
+
+					return true;
+				},
+			});
 		}
 	}, [register, username]);
 
@@ -66,6 +76,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 							onChange={(event: any) => setValue("username", event.target.value, true)}
 						/>
 					</InputGroup>
+					<FormHelperText />
 				</FormField>
 
 				<FormField name="fee">

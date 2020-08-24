@@ -12,6 +12,7 @@ export const translations: { [key: string]: any } = {
 	DESCRIPTION: "Description",
 	ENCRYPTION_PASSWORD: "Encryption Password",
 	ID: "ID",
+	INVALID_DELEGATE_NAME: "Invalid Delegate Name",
 	INVALID_MNEMONIC: "Invalid Mnemonic",
 	IPFS_HASH: "IPFS Hash",
 	MNEMONIC: "Mnemonic",
