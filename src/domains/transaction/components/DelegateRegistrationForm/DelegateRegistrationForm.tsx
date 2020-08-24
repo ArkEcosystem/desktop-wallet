@@ -6,7 +6,7 @@ import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
-import { FormField, FormHelperText,FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputGroup } from "app/components/Input";
 import { Label } from "app/components/Label";
