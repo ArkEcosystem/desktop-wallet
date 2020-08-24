@@ -98,7 +98,7 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userIn
 							</>
 						) : (
 							<img
-								alt="Profile Image"
+								alt="Profile Avatar"
 								className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
 								src={avatarImage}
 							/>
