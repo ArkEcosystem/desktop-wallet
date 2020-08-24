@@ -1,5 +1,10 @@
-import { Coins } from "@arkecosystem/platform-sdk";
-import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import {
+	DelegateMapper,
+	NetworkData,
+	Profile,
+	ReadOnlyWallet,
+	ReadWriteWallet,
+} from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -56,9 +61,7 @@ export const Votes = () => {
 	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState("");
-	const [delegates, setDelegates] = useState<Coins.WalletDataCollection>(
-		(null as unknown) as Coins.WalletDataCollection,
-	);
+	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
 	const { t } = useTranslation();
 
@@ -94,8 +97,15 @@ export const Votes = () => {
 		setAddress(address);
 		const wallet = activeProfile.wallets().findByAddress(address);
 		// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-		setDelegates(env.coins().delegates(wallet?.coinId()!, wallet?.networkId()!));
+		const delegates = env.coins().delegates(wallet?.coinId()!, wallet?.networkId()!);
+		const readOnlyDelegates = DelegateMapper.execute(
+			wallet!,
+			delegates.map((delegate: ReadOnlyWallet) => delegate.publicKey),
+		);
+		setDelegates(readOnlyDelegates);
 	};
+
+	console.log("delegates", delegates);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -127,7 +137,7 @@ export const Votes = () => {
 			<Section className="flex-1">
 				{address ? (
 					<DelegateTable
-						delegates={delegates?.items()}
+						delegates={delegates}
 						onContinue={(delegateAddress) =>
 							history.push(
 								`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/transactions/vote/${delegateAddress}/sender/${address}`,

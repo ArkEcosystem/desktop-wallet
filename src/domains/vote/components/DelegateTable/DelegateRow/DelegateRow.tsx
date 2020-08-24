@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
@@ -11,7 +11,7 @@ type Delegate = { address: string; username: string; rank: number };
 
 type DelegateRowProps = {
 	index: number;
-	delegate: Contracts.WalletData;
+	delegate: ReadOnlyWallet;
 	selected?: Delegate[];
 	isLoading?: boolean;
 	onSelect?: ({ address, username, rank }: Delegate) => void;

@@ -1,22 +1,29 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
+import { act,  fireEvent,  render } from "testing-library";
+import { data } from "tests/fixtures/coins/ark/delegates.json";
 
 import { translations } from "../../i18n";
 import { DelegateTable } from "./DelegateTable";
 
-let delegates: Coins.WalletDataCollection;
+let delegates: ReadOnlyWallet[];
 
 describe("DelegateTable", () => {
-	beforeAll(async () => {
-		const profile = env.profiles().findById(getDefaultProfileId());
-		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-
-		delegates = await wallet.delegates();
+	beforeAll(() => {
+		delegates = [0, 1, 2].map(
+			(index) =>
+				new ReadOnlyWallet({
+					address: data[index].address,
+					explorerLink: "",
+					publicKey: data[index].publicKey,
+					username: data[index].username,
+					rank: data[index].rank,
+				}),
+		);
 	});
 
 	it("should render", () => {
-		const { container, asFragment } = render(<DelegateTable delegates={delegates.items()} />);
+		const { container, asFragment } = render(<DelegateTable delegates={delegates} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -30,8 +37,8 @@ describe("DelegateTable", () => {
 	});
 
 	it("should select a delegate", () => {
-		const delegateName = delegates.items()[0].username()!;
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates.items()} />);
+		const delegateName = delegates[0].username()!;
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
@@ -43,8 +50,8 @@ describe("DelegateTable", () => {
 	});
 
 	it("should unselect a delegate", () => {
-		const delegateName = delegates.items()[0].username()!;
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates.items()} />);
+		const delegateName = delegates[0].username()!;
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
@@ -62,21 +69,19 @@ describe("DelegateTable", () => {
 	});
 
 	it("should select multiple delegates", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates.items()} />);
-		const selectButton0 = getByTestId("DelegateRow__toggle-0");
-		const selectButton1 = getByTestId("DelegateRow__toggle-1");
-		const selectButton2 = getByTestId("DelegateRow__toggle-2");
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} />);
+		const selectButtons = [0, 1, 2].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
 
 		act(() => {
-			fireEvent.click(selectButton0);
+			fireEvent.click(selectButtons[0]);
 		});
 
 		act(() => {
-			fireEvent.click(selectButton1);
+			fireEvent.click(selectButtons[1]);
 		});
 
 		act(() => {
-			fireEvent.click(selectButton2);
+			fireEvent.click(selectButtons[2]);
 		});
 
 		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_LIST.SHOW_LIST);
@@ -86,19 +91,19 @@ describe("DelegateTable", () => {
 		});
 
 		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_LIST.HIDE_LIST);
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates.items()[0].username()!);
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates.items()[1].username()!);
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates.items()[2].username()!);
+		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[0].username()!);
+		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[1].username()!);
+		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[2].username()!);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should emit action on continue button", () => {
-		const delegateName = delegates.items()[0].username()!;
-		const delegateAddress = delegates.items()[0].address()!;
+		const delegateName = delegates[0].username()!;
+		const delegateAddress = delegates[0].address()!;
 
 		const onContinue = jest.fn();
 		const { container, asFragment, getByTestId } = render(
-			<DelegateTable delegates={delegates.items()} onContinue={onContinue} />,
+			<DelegateTable delegates={delegates} onContinue={onContinue} />,
 		);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 

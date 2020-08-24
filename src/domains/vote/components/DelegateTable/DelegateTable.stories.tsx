@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
 
@@ -15,6 +15,4 @@ export default {
 	],
 };
 
-export const Default = ({ delegates }: { delegates: Coins.WalletDataCollection }) => (
-	<DelegateTable delegates={delegates.items().slice(0, 10)} />
-);
+export const Default = ({ delegates }: { delegates: ReadOnlyWallet[] }) => <DelegateTable delegates={delegates} />;

@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -11,7 +11,7 @@ import { DelegateRow } from "./DelegateRow";
 type Delegate = { address: string; username: string; rank: number };
 
 type DelegateTableProps = {
-	delegates: Contracts.WalletData[];
+	delegates: ReadOnlyWallet[];
 	onContinue?: (delegateAddress: string) => void;
 };
 
@@ -130,7 +130,7 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 		<div data-testid="DelegateTable">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_LIST.TITLE")}</h2>
 			<Table columns={columns} data={data}>
-				{(delegate: Contracts.WalletData, index: number) => (
+				{(delegate: ReadOnlyWallet, index: number) => (
 					<DelegateRow
 						index={index}
 						delegate={delegate}
