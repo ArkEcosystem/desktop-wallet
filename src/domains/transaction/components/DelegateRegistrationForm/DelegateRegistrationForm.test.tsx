@@ -2,11 +2,11 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import delegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
-import { act, env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor, within } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor, within } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
@@ -88,8 +88,18 @@ describe("DelegateRegistrationForm", () => {
 		const { asFragment, form, getByTestId, rerender } = await renderComponent();
 
 		const input = getByTestId("Input__username");
-		act(() => {
+		await act(async () => {
 			fireEvent.change(input, { target: { value: "test_delegate" } });
+		});
+
+		await act(async () => {
+			rerender(
+				<FormContext {...form}>
+					<DelegateRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+				</FormContext>,
+			);
+
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")));
 		});
 
 		await waitFor(() => expect(input).toHaveValue("test_delegate"));
