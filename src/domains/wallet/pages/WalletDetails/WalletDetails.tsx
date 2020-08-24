@@ -195,7 +195,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 							<TransactionTable
 								transactions={transactions}
 								exchangeCurrency={exchangeCurrency}
-								isLoading={loadingTransactions}
+								isLoading={isLoading}
 								skeletonRowsLimit={txSkeletonRowsLimit}
 							/>
 							{transactions.length > 0 && (
