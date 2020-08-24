@@ -41,7 +41,7 @@ exports[`WalletVote should render 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="grid grid-flow-row row-gap-6 py-4"
+        class="py-4 grid grid-flow-row row-gap-6"
       >
         <div
           class="flex items-center justify-between"
@@ -254,7 +254,7 @@ exports[`WalletVote should render if a delegate is missing its rank 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="grid grid-flow-row row-gap-6 py-4"
+        class="py-4 grid grid-flow-row row-gap-6"
       >
         <div
           class="flex items-center justify-between"
@@ -467,7 +467,7 @@ exports[`WalletVote should render loading state 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="grid grid-flow-row row-gap-6 py-4"
+        class="py-4 grid grid-flow-row row-gap-6"
       >
         <div
           class="flex items-center pr-8 space-x-4"
@@ -731,7 +731,7 @@ exports[`WalletVote should render without votes 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="grid grid-flow-row row-gap-6 py-4"
+        class="py-4 grid grid-flow-row row-gap-6"
       >
         <div
           class="flex items-center justify-between"
