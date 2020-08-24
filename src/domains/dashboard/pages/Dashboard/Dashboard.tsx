@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
@@ -24,10 +23,8 @@ type DashboardProps = {
 export const Dashboard = ({ networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
-	const [transactionModalItem, setTransactionModalItem] = useState<Contracts.TransactionDataType | undefined>(
-		undefined,
-	);
-	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
+	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
+	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 	const activeProfile = useActiveProfile();
 	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
@@ -36,7 +33,8 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 	const fetchMoreTransactions = async () => {
 		setIsLoadingTransactions(true);
-		const transactions = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
+		const response = await activeProfile.transactionAggregate().transactions({ limit: 10 });
+		const transactions = response.items();
 
 		setIsLoadingTransactions(false);
 		return transactions && setAllTransactions(allTransactions?.concat(transactions));
@@ -45,7 +43,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	useEffect(() => {
 		const fetchProfileTransactions = async () => {
 			const profileTransactions = await activeProfile.transactionAggregate().transactions({ limit: 10 });
-			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.items();
+			const allTransactions: ExtendedTransactionData[] | undefined = profileTransactions?.items();
 			ipcRenderer.send("delegates-sync", wallets);
 
 			setIsLoadingTransactions(false);

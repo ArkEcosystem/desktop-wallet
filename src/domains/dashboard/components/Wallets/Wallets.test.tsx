@@ -1,4 +1,4 @@
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -11,7 +11,7 @@ const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 
 // Wallet filter properties
 const filterProperties = {

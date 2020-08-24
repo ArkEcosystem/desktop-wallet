@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -7,7 +7,7 @@ import React from "react";
 import { TransactionRowRecipientIcon } from "./TransactionRowRecipientIcon";
 
 type Props = {
-	transaction: Contracts.TransactionDataType;
+	transaction: ExtendedTransactionData;
 };
 
 export const TransactionRowMode = ({ transaction }: Props) => {

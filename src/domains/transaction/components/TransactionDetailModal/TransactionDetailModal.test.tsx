@@ -3,7 +3,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
+import { getDefaultProfileId, renderWithRouter } from "utils/testing-library";
 
 // i18n
 import { translations } from "../../i18n";
@@ -28,6 +28,7 @@ describe("TransactionDetailModal", () => {
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 	});
+
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
@@ -35,7 +36,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={false}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "transfer",
 					}}
 				/>
@@ -57,7 +58,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "transfer",
 					}}
 				/>
@@ -70,18 +71,17 @@ describe("TransactionDetailModal", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		waitFor(() => expect(getByText("Voter")).not.toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a multiSignature modal", () => {
+	it("should render a multi signature modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiSignature",
 					}}
 				/>
@@ -97,14 +97,14 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a multiPayment modal", () => {
+	it("should render a multi payment modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "multiPayment",
 					}}
 				/>
@@ -153,7 +153,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "vote",
 					}}
 				/>
@@ -176,7 +176,7 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "unvote",
 					}}
 				/>
@@ -203,8 +203,8 @@ describe("TransactionDetailModal", () => {
 						isOpen={true}
 						transactionItem={{
 							...TransactionFixture,
-							data: { blockId: "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das" },
-							type: () => "unknow",
+							blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+							type: () => "unknown",
 						}}
 					/>
 					,

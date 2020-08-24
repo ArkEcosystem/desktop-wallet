@@ -1,4 +1,4 @@
-import { Environment, NetworkData, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, NetworkData, Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -182,7 +182,7 @@ export const ThirdStep = () => {
 export const FourthStep = ({ nameMaxLength }: { nameMaxLength: number }) => {
 	const { getValues, register } = useFormContext();
 	const network: NetworkData = getValues("network");
-	const wallet: Wallet = getValues("wallet");
+	const wallet: ReadWriteWallet = getValues("wallet");
 	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 
 	const { t } = useTranslation();

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -13,12 +13,12 @@ const history = createMemoryHistory();
 let walletUrl: string;
 
 let profile: Profile;
-let wallet: Wallet;
-let blankWallet: Wallet;
-let unvotedWallet: Wallet;
+let wallet: ReadWriteWallet;
+let blankWallet: ReadWriteWallet;
+let unvotedWallet: ReadWriteWallet;
 
 let emptyProfile: Profile;
-let wallet2: Wallet;
+let wallet2: ReadWriteWallet;
 
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
@@ -47,42 +47,18 @@ describe("WalletDetails", () => {
 		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
 
 		nock("https://dwallets.ark.io")
+			.get("/api/delegates")
+			.query({ page: "1" })
+			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
 			.get(`/api/wallets/${unvotedWallet.address()}`)
 			.reply(200, walletMock)
-			.get(`/api/wallets/${unvotedWallet.address()}/votes`)
-			.reply(200, {
-				meta: {
-					totalCountIsEstimate: false,
-					count: 0,
-					pageCount: 1,
-					totalCount: 0,
-					next: null,
-					previous: null,
-					self: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-					first: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-					last: null,
-				},
-				data: [],
-			})
 			.get(`/api/wallets/${blankWallet.address()}`)
 			.reply(404, {
 				statusCode: 404,
 				error: "Not Found",
 				message: "Wallet not found",
 			})
-			.get(`/api/wallets/${blankWallet.address()}/votes`)
-			.reply(404, {
-				statusCode: 404,
-				error: "Not Found",
-				message: "Wallet not found",
-			})
 			.get(`/api/wallets/${wallet2.address()}`)
-			.reply(404, {
-				statusCode: 404,
-				error: "Not Found",
-				message: "Wallet not found",
-			})
-			.get(`/api/wallets/${wallet2.address()}/votes`)
 			.reply(404, {
 				statusCode: 404,
 				error: "Not Found",
