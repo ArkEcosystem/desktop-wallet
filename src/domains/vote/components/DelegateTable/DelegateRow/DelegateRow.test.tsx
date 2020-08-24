@@ -1,25 +1,29 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { translations } from "app/i18n/common/i18n";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
+import { act, fireEvent, render } from "testing-library";
+import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
 
 import { DelegateRow } from "./DelegateRow";
 
-let delegates: Coins.WalletDataCollection;
+let delegate: ReadOnlyWallet;
 
 describe("DelegateRow", () => {
-	beforeAll(async () => {
-		const profile = env.profiles().findById(getDefaultProfileId());
-		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-
-		delegates = await wallet.delegates();
+	beforeAll(() => {
+		delegate = new ReadOnlyWallet({
+			address: data[0].address,
+			explorerLink: "",
+			publicKey: data[0].publicKey,
+			username: data[0].username,
+			rank: data[0].rank,
+		});
 	});
 
 	it("should render", () => {
 		const { container, asFragment } = render(
 			<table>
 				<tbody>
-					<DelegateRow index={1} delegate={delegates.items()[0]} />
+					<DelegateRow index={0} delegate={delegate} />
 				</tbody>
 			</table>,
 		);
@@ -33,11 +37,11 @@ describe("DelegateRow", () => {
 		const { container, asFragment, getByTestId } = render(
 			<table>
 				<tbody>
-					<DelegateRow index={1} delegate={delegates.items()[0]} onSelect={onSelect} />
+					<DelegateRow index={0} delegate={delegate} onSelect={onSelect} />
 				</tbody>
 			</table>,
 		);
-		const selectButton = getByTestId("DelegateRow__toggle-1");
+		const selectButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
 			fireEvent.click(selectButton);
@@ -45,9 +49,9 @@ describe("DelegateRow", () => {
 
 		expect(container).toBeTruthy();
 		expect(onSelect).toHaveBeenCalledWith({
-			address: delegates.items()[0].address(),
-			username: delegates.items()[0].username(),
-			rank: delegates.items()[0].rank(),
+			address: delegate.address(),
+			username: delegate.username(),
+			rank: delegate.rank(),
 		});
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -55,15 +59,15 @@ describe("DelegateRow", () => {
 	it("should render the selected delegate", () => {
 		const selected = [
 			{
-				address: delegates.items()[0].address(),
-				username: delegates.items()[0].username()!,
-				rank: delegates.items()[0].rank()!,
+				address: delegate.address(),
+				username: delegate.username()!,
+				rank: delegate.rank()!,
 			},
 		];
 		const { container, asFragment, getByTestId } = render(
 			<table>
 				<tbody>
-					<DelegateRow index={1} delegate={delegates.items()[0]} selected={selected} />
+					<DelegateRow index={1} delegate={delegate} selected={selected} />
 				</tbody>
 			</table>,
 		);
