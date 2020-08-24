@@ -1,6 +1,6 @@
 import React from "react";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import {  fireEvent, renderWithRouter } from "utils/testing-library";
+import { fireEvent, renderWithRouter } from "utils/testing-library";
 
 import { TransactionRow } from "./TransactionRow";
 
