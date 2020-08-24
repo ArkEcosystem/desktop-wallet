@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -9,7 +9,6 @@ import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import delegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
 import {
-	act,
 	defaultNetMocks,
 	env,
 	fireEvent,
@@ -82,13 +81,6 @@ describe("Registration", () => {
 		defaultNetMocks();
 	});
 
-	it("should render", async () => {
-		const { asFragment, getByTestId } = await renderPage();
-
-		expect(getByTestId("Registration__continue-button")).toHaveAttribute("disabled");
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	});
-
 	it("should render 1st step", async () => {
 		const setRegistrationForm = jest.fn();
 		const feeOptions = {
@@ -99,32 +91,40 @@ describe("Registration", () => {
 
 		const { result: form } = renderHook(() => useForm());
 		const setValueSpy = jest.spyOn(form.current, "setValue");
-		const { asFragment, getByTestId } = render(
-			<FormContext {...form.current}>
-				<FirstStep
-					networks={env.availableNetworks()}
-					profile={profile}
-					wallet={wallet}
-					setRegistrationForm={setRegistrationForm}
-					feeOptions={feeOptions}
-				/>
-			</FormContext>,
-		);
+		let rendered: RenderResult;
 
-		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+		await act(async () => {
+			rendered = render(
+				<FormContext {...form.current}>
+					<FirstStep
+						networks={env.availableNetworks()}
+						profile={profile}
+						wallet={wallet}
+						setRegistrationForm={setRegistrationForm}
+						feeOptions={feeOptions}
+					/>
+				</FormContext>,
+			);
 
-		fireEvent.click(getByTestId("select-list__toggle-button"));
+			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
+		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+		const { asFragment, getByTestId } = rendered!;
 
-		fireEvent.click(getByTestId("select-list__toggle-option-1"));
+		await act(async () => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
 
-		await waitFor(() =>
-			expect(setValueSpy).toHaveBeenNthCalledWith(1, "registrationType", "delegateRegistration", true),
-		);
-		await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
-		await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", true));
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+
+			await waitFor(() =>
+				expect(setValueSpy).toHaveBeenNthCalledWith(1, "registrationType", "delegateRegistration", true),
+			);
+			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
+			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", true));
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
 	});
 
 	it("should not set fee if no fee options", async () => {
@@ -133,32 +133,40 @@ describe("Registration", () => {
 
 		const { result: form } = renderHook(() => useForm());
 		const setValueSpy = jest.spyOn(form.current, "setValue");
-		const { asFragment, getByTestId } = render(
-			<FormContext {...form.current}>
-				<FirstStep
-					networks={env.availableNetworks()}
-					profile={profile}
-					wallet={wallet}
-					setRegistrationForm={setRegistrationForm}
-					feeOptions={feeOptions}
-				/>
-			</FormContext>,
-		);
+		let rendered: RenderResult;
 
-		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+		await act(async () => {
+			rendered = render(
+				<FormContext {...form.current}>
+					<FirstStep
+						networks={env.availableNetworks()}
+						profile={profile}
+						wallet={wallet}
+						setRegistrationForm={setRegistrationForm}
+						feeOptions={feeOptions}
+					/>
+				</FormContext>,
+			);
 
-		fireEvent.click(getByTestId("select-list__toggle-button"));
+			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
+		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+		const { asFragment, getByTestId } = rendered!;
 
-		fireEvent.click(getByTestId("select-list__toggle-option-1"));
+		await act(async () => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
 
-		await waitFor(() =>
-			expect(setValueSpy).toHaveBeenNthCalledWith(1, "registrationType", "delegateRegistration", true),
-		);
-		await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
-		await waitFor(() => expect(setValueSpy).not.toHaveBeenNthCalledWith(2, "fee", "1", true));
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeTruthy());
+
+			fireEvent.click(getByTestId("select-list__toggle-option-1"));
+
+			await waitFor(() =>
+				expect(setValueSpy).toHaveBeenNthCalledWith(1, "registrationType", "delegateRegistration", true),
+			);
+			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
+			await waitFor(() => expect(setValueSpy).not.toHaveBeenNthCalledWith(2, "fee", "1", true));
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
 	});
 
 	it("should show encryption password & second mnemonic for signing", async () => {
@@ -172,7 +180,7 @@ describe("Registration", () => {
 
 		expect(container).toHaveTextContent(transactionTranslations.ENCRYPTION_PASSWORD);
 		expect(container).toHaveTextContent(transactionTranslations.SECOND_MNEMONIC);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should show ledger confirmation & not show second mnemonic for signing", async () => {
