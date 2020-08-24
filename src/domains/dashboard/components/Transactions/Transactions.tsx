@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import React from "react";
@@ -6,9 +6,9 @@ import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
 	title: string;
-	transactions: Contracts.TransactionDataType[];
+	transactions: ExtendedTransactionData[];
 	fetchMoreAction?: Function;
-	onRowClick?: (row: Contracts.TransactionDataType) => void;
+	onRowClick?: (row: ExtendedTransactionData) => void;
 	emptyText?: string;
 	isLoading?: boolean;
 };

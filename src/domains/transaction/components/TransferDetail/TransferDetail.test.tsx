@@ -26,7 +26,7 @@ describe("TransferDetail", () => {
 			<TransferDetail
 				isOpen={false}
 				onClose={() => console.log("onClose")}
-				transaction={{ ...TransactionFixture, data: { blockId: "adsad12312xsd1w312e1s13203e12" } }}
+				transaction={{ ...TransactionFixture, blockId: () => "adsad12312xsd1w312e1s13203e12" }}
 				ticker="BTC"
 			/>,
 		);
@@ -40,7 +40,7 @@ describe("TransferDetail", () => {
 			<TransferDetail
 				isOpen={true}
 				onClose={() => console.log("onClose")}
-				transaction={{ ...TransactionFixture, data: { blockId: "adsad12312xsd1w312e1s13203e12" } }}
+				transaction={{ ...TransactionFixture, blockId: () => "adsad12312xsd1w312e1s13203e12" }}
 				ticker="BTC"
 			/>,
 		);
@@ -57,7 +57,7 @@ describe("TransferDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					confirmations: () => BigNumber.make(52),
-					data: { blockId: "adsad12312xsd1w312e1s13203e12" },
+					blockId: () => "adsad12312xsd1w312e1s13203e12",
 				}}
 				ticker="BTC"
 			/>,
@@ -76,7 +76,7 @@ describe("TransferDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					isSent: () => false,
-					data: { blockId: "adsad12312xsd1w312e1s13203e12" },
+					blockId: () => "adsad12312xsd1w312e1s13203e12",
 				}}
 				ticker="BTC"
 			/>,
@@ -94,7 +94,7 @@ describe("TransferDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					isSent: () => false,
-					data: { blockId: "adsad12312xsd1w312e1s13203e12" },
+					blockId: () => "adsad12312xsd1w312e1s13203e12",
 				}}
 				walletAlias="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
 				ticker="BTC"

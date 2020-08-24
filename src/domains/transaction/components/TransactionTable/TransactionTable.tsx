@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -7,12 +7,12 @@ import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
 import { TransactionRow } from "./TransactionRow/TransactionRow";
 
 type Props = {
-	transactions: Contracts.TransactionDataType[];
+	transactions: ExtendedTransactionData[];
 	currencyRate?: string;
 	showSignColumn?: boolean;
 	hideHeader?: boolean;
 	isCompact?: boolean;
-	onRowClick?: (row: Contracts.TransactionDataType) => void;
+	onRowClick?: (row: ExtendedTransactionData) => void;
 	isLoading?: boolean;
 	skeletonRowsLimit?: number;
 };
@@ -96,7 +96,7 @@ export const TransactionTable = ({
 	return (
 		<div className="relative">
 			<Table hideHeader={hideHeader} columns={columns} data={data}>
-				{(row: Contracts.TransactionDataType) =>
+				{(row: ExtendedTransactionData) =>
 					isCompact ? (
 						<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
 					) : (

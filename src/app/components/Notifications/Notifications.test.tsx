@@ -80,6 +80,11 @@ const transactions = [
 		hasFailed: () => false,
 		getMeta: () => "",
 		setMeta: () => "",
+		total: () => BigNumber.make(121).times(1e8),
+		convertedTotal: () => BigNumber.ZERO,
+		wallet: () => undefined,
+		coin: () => undefined,
+		data: () => undefined,
 	},
 ];
 

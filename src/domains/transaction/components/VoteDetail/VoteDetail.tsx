@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateMapper, ExtendedTransactionData, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -7,6 +7,7 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,7 +15,7 @@ import Skeleton from "react-loading-skeleton";
 
 type VoteDetailProps = {
 	isOpen: boolean;
-	transaction?: Contracts.TransactionDataType;
+	transaction?: ExtendedTransactionData;
 	ticker?: string;
 	walletAlias?: string;
 	onClose?: () => void;
@@ -48,24 +49,24 @@ const renderConfirmationStatus = (confirmations: BigNumber) => {
 
 export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }: VoteDetailProps) => {
 	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const senderWallet = activeProfile.wallets().findByAddress(transaction!.sender());
 
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(true);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
-	const getDelegates = React.useCallback(
-		() => senderWallet?.mapDelegates((transaction as Contracts.VoteData).votes()),
-		[senderWallet, transaction],
-	);
-
 	useEffect(() => {
 		const syncDelegates = async () => {
 			setIsLoadingDelegates(true);
-			await senderWallet?.syncDelegates();
-			const delegates = getDelegates();
 
-			setDelegates(delegates || []);
+			// TODO: make senderWallet non-nullable
+			// TODO: move this to profile initialising and run it every X period
+			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+			await env.coins().syncDelegates(senderWallet?.coinId()!, senderWallet?.networkId()!);
+
+			setDelegates(DelegateMapper.execute(senderWallet!, (transaction as Contracts.VoteData).votes()));
+
 			setIsLoadingDelegates(false);
 		};
 
@@ -75,7 +76,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			setIsLoadingDelegates(false);
 			setDelegates([]);
 		};
-	}, [senderWallet, getDelegates]);
+	}, [env, senderWallet, transaction]);
 
 	const renderAccount = () => {
 		if (walletAlias) {
