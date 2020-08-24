@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -20,7 +20,7 @@ type WalletCardProps = {
 	blankSubtitleClass?: string;
 	blankSubtitle: string;
 	coinClass?: string;
-	wallet?: Wallet;
+	wallet?: ReadWriteWallet;
 	actions?: any;
 	onSelect?: any;
 };

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
@@ -24,7 +24,7 @@ import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } fro
 
 const fixtureProfileId = getDefaultProfileId();
 
-const createTransactionMock = (wallet: Wallet) =>
+const createTransactionMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => ipfsFixture.data.id,
@@ -36,7 +36,7 @@ const createTransactionMock = (wallet: Wallet) =>
 	});
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 
 describe("SendIPFSTransaction", () => {
 	beforeAll(async () => {

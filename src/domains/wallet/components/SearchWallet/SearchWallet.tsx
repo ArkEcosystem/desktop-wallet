@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
 import { SearchResource } from "app/components/SearchResource";
 import { Table } from "app/components/Table";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 type SearchWalletProps = {
 	isOpen: boolean;
-	wallets?: Wallet[];
+	wallets?: ReadWriteWallet[];
 	networks?: any;
 	onNetworkChange?: any;
 	onViewAllNetworks?: any;

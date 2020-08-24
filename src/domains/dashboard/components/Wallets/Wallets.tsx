@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type WalletsProps = {
-	wallets: Wallet[];
+	wallets: ReadWriteWallet[];
 	title?: string;
 	walletsEmptyText?: string;
 	filterProperties: any;
