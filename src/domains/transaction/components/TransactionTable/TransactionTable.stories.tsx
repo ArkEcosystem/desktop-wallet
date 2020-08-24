@@ -285,7 +285,7 @@ export const Default = () => (
 export const WithCurrency = () => (
 	<div className="m-10">
 		{/* @ts-ignore - TODO: brittle fixtures */}
-		<TransactionTable transactions={transactions} currencyRate="2" />
+		<TransactionTable transactions={transactions} exchangeCurrency="BTC" />
 	</div>
 );
 

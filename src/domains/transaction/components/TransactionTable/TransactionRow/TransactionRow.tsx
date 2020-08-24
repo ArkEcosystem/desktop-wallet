@@ -13,7 +13,7 @@ import { TransactionRowSkeleton } from "./TransactionRowSkeleton";
 
 type Props = {
 	transaction: ExtendedTransactionData;
-	currencyRate?: string;
+	exchangeCurrency?: string;
 	isSignaturePending?: boolean;
 	onSign?: () => void;
 	onClick?: () => void;
@@ -23,7 +23,7 @@ type Props = {
 } & React.HTMLProps<any>;
 
 export const TransactionRow = ({
-	currencyRate,
+	exchangeCurrency,
 	transaction,
 	onSign,
 	onClick,
@@ -37,7 +37,7 @@ export const TransactionRow = ({
 		return (
 			<TransactionRowSkeleton
 				data-testid="TransactionRow__skeleton"
-				showCurrency={currencyRate && !isSignaturePending}
+				showCurrency={!!exchangeCurrency && !isSignaturePending}
 				showSign={showSign || isSignaturePending}
 			/>
 		);
@@ -87,9 +87,9 @@ export const TransactionRow = ({
 					</Button>
 				</td>
 			)}
-			{currencyRate && !isSignaturePending && (
+			{!!exchangeCurrency && !isSignaturePending && (
 				<td data-testid="TransactionRow__currency" className="text-right">
-					<TransactionRowAmount transaction={transaction} currencyRate={currencyRate} />
+					<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
 				</td>
 			)}
 		</tr>
