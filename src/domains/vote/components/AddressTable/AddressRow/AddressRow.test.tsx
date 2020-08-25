@@ -1,12 +1,26 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { AddressRow } from "./AddressRow";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
+
+const renderPage = async (wallet: ReadWriteWallet, onSelect?: any) => {
+	const rendered = render(
+		<table>
+			<tbody>
+				<AddressRow index={0} wallet={wallet} onSelect={onSelect} />
+			</tbody>
+		</table>,
+	);
+
+	await waitFor(() => expect(rendered.getByTestId("AddressRow__select-0")).toBeTruthy());
+	return rendered;
+};
 
 describe("AddressRow", () => {
 	beforeAll(() => {
@@ -24,28 +38,16 @@ describe("AddressRow", () => {
 			.persist();
 	});
 
-	it("should render", () => {
-		const { container, asFragment } = render(
-			<table>
-				<tbody>
-					<AddressRow index={1} wallet={wallet} />
-				</tbody>
-			</table>,
-		);
+	it("should render", async () => {
+		const { container, asFragment } = await renderPage(wallet);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should emit action on select button", () => {
+	it("should emit action on select button", async () => {
 		const onSelect = jest.fn();
-		const { container, asFragment, getByTestId } = render(
-			<table>
-				<tbody>
-					<AddressRow index={0} wallet={wallet} onSelect={onSelect} />
-				</tbody>
-			</table>,
-		);
+		const { container, asFragment, getByTestId } = await renderPage(wallet, onSelect);
 		const selectButton = getByTestId("AddressRow__select-0");
 
 		act(() => {
