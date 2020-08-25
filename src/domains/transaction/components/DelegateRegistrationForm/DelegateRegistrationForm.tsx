@@ -59,10 +59,14 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 				{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="mt-4">
 				<Alert>{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.WARNING")}</Alert>
 
-				<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<TransactionDetail
+					className="mt-2"
+					extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+					borderPosition="bottom"
+				>
 					<div className="mb-2 font-semibold text-theme-neutral">
 						<span className="mr-1 text-sm">Sender</span>
 						<Label color="warning">
@@ -72,7 +76,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 					<Address address={wallet.address()} walletName={wallet.alias()} />
 				</TransactionDetail>
 
-				<FormField name="username" className="relative mt-1">
+				<FormField name="username" className="relative mt-8">
 					<div className="mb-2">
 						<FormLabel label={t("TRANSACTION.DELEGATE_NAME")} />
 					</div>
@@ -89,7 +93,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 					<FormHelperText />
 				</FormField>
 
-				<FormField name="fee">
+				<FormField name="fee" className="mt-8">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
 						{...feeOptions}
