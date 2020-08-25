@@ -12,7 +12,7 @@ exports[`Votes should render 1`] = `
       class="sc-fzoLag iezQBg"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -79,14 +79,14 @@ exports[`Votes should render 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -103,9 +103,10 @@ exports[`Votes should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -124,13 +125,11 @@ exports[`Votes should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-fznKkj guwYPQ"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -147,10 +146,10 @@ exports[`Votes should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -165,21 +164,21 @@ exports[`Votes should render 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ -mr-2 border-theme-neutral-300"
+                    class="sc-AxirZ cZokSJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -196,18 +195,21 @@ exports[`Votes should render 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -318,6 +320,7 @@ exports[`Votes should render 1`] = `
         >
           <div
             class="flex items-center py-6 true "
+            data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
@@ -447,6 +450,7 @@ exports[`Votes should render 1`] = `
           </div>
           <div
             class="flex items-center py-6 true mt-2"
+            data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
@@ -514,7 +518,7 @@ exports[`Votes should render 1`] = `
               Select Address
             </h2>
             <div
-              class="sc-fzokOt dDPIyL"
+              class="sc-fznZeY gcZndM"
               role="table"
             >
               <table
@@ -836,7 +840,7 @@ exports[`Votes should render 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fznKkj iOlpkV"
+                          class="sc-fzqBZW hVlbxj"
                           color="primary"
                           data-testid="AddressRow__select-0"
                           type="button"
@@ -935,7 +939,7 @@ exports[`Votes should render 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fznKkj iOlpkV"
+                          class="sc-fzqBZW hVlbxj"
                           color="primary"
                           data-testid="AddressRow__select-1"
                           type="button"
@@ -966,7 +970,7 @@ exports[`Votes should select a delegate 1`] = `
       class="sc-fzoLag iezQBg"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -1033,14 +1037,14 @@ exports[`Votes should select a delegate 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -1057,9 +1061,10 @@ exports[`Votes should select a delegate 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -1078,13 +1083,11 @@ exports[`Votes should select a delegate 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-fznKkj guwYPQ"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -1101,10 +1104,10 @@ exports[`Votes should select a delegate 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -1113,6 +1116,240 @@ exports[`Votes should select a delegate 1`] = `
               >
                 <span
                   data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="ml-4 cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxirZ cZokSJ -mr-2 border-theme-primary-contrast"
+                  >
+                    <span
+                      class="text-theme-neutral-dark"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
+                  >
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                    >
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
+                    <span
+                      class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxiKw ksjdLL"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxiKw bGpsrC"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoXzr imWwrn"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex items-end justify-between bg-theme-background"
+          >
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                My Votes
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                Manage your cryptoasset staking
+              </div>
+            </div>
+            <div>
+              <div
+                class="relative"
+              >
+                <button
+                  class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                  data-testid="header-search-bar__button"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <div
+                      class="sc-AxiKw dklFyP"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        search.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container mx-auto px-14"
+      >
+        <div
+          class="-my-5 grid grid-flow-col grid-cols-2 gap-6"
+        >
+          <div
+            class="flex items-center py-6 true "
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Network
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
+                >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
+                  <div
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectNetworkInput"
+                  >
+                    <div
+                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                    >
+                      <div
+                        aria-label="Bitcoin"
+                        class="sc-AxirZ HSPq border-theme-warning-200 text-theme-warning-400"
+                        data-testid="SelectNetworkInput__network"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      data-testid="SelectNetworkInput__typeahead"
+                    >
+                      Bitcoin
+                    </span>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value="Bitcoin"
+                    />
+                  </div>
+                </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  class="mt-6 grid grid-cols-6 gap-6"
+                  id="Votes__network-menu"
+                  role="listbox"
                 >
                   91.43089801 BTC
                 </span>
@@ -1401,6 +1638,7 @@ exports[`Votes should select a delegate 1`] = `
           </div>
           <div
             class="flex items-center py-6 true mt-2"
+            data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
@@ -1490,7 +1728,7 @@ exports[`Votes should select a delegate 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt dDPIyL"
+              class="sc-fznZeY gcZndM"
               role="table"
             >
               <table
@@ -1705,6 +1943,61 @@ exports[`Votes should select a delegate 1`] = `
                               sort.svg
                             </svg>
                           </div>
+                        </a>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj text-theme-success"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ok.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="text-right"
+                      >
+                        <button
+                          class="sc-fzqBZW hVlbxj"
+                          color="primary"
+                          data-testid="AddressListItem__button--select"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                            title="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
                         </div>
                       </div>
                     </th>
@@ -1845,9 +2138,9 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fznKkj guLhWa"
-                          color="danger"
-                          data-testid="DelegateRow__toggle-0"
+                          class="sc-fzqBZW hVlbxj"
+                          color="primary"
+                          data-testid="AddressListItem__button--select"
                           type="button"
                         >
                           Unselect
@@ -1927,9 +2220,9 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fznKkj guLhWa"
-                          color="danger"
-                          data-testid="DelegateRow__toggle-1"
+                          class="sc-fzqBZW hVlbxj"
+                          color="primary"
+                          data-testid="AddressListItem__button--select"
                           type="button"
                         >
                           Unselect
@@ -2009,9 +2302,9 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fznKkj guLhWa"
-                          color="danger"
-                          data-testid="DelegateRow__toggle-2"
+                          class="sc-fzqBZW hVlbxj"
+                          color="primary"
+                          data-testid="AddressListItem__button--select"
                           type="button"
                         >
                           Unselect
@@ -2132,7 +2425,7 @@ exports[`Votes should select address 1`] = `
       class="sc-fzoLag iezQBg"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -2199,14 +2492,14 @@ exports[`Votes should select address 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -2223,9 +2516,10 @@ exports[`Votes should select address 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -2244,13 +2538,11 @@ exports[`Votes should select address 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-fznKkj guwYPQ"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -2267,10 +2559,10 @@ exports[`Votes should select address 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -2285,21 +2577,21 @@ exports[`Votes should select address 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ -mr-2 border-theme-neutral-300"
+                    class="sc-AxirZ cZokSJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -2316,18 +2608,21 @@ exports[`Votes should select address 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -2438,6 +2733,7 @@ exports[`Votes should select address 1`] = `
         >
           <div
             class="flex items-center py-6 true "
+            data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
@@ -2567,6 +2863,7 @@ exports[`Votes should select address 1`] = `
           </div>
           <div
             class="flex items-center py-6 true mt-2"
+            data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
@@ -2656,7 +2953,7 @@ exports[`Votes should select address 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt dDPIyL"
+              class="sc-fznZeY gcZndM"
               role="table"
             >
               <table

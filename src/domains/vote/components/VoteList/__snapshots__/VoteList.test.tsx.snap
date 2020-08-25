@@ -7,6 +7,7 @@ exports[`VoteList should render 1`] = `
   >
     <div
       class="flex items-center py-6 true "
+      data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"
@@ -49,6 +50,7 @@ exports[`VoteList should render 1`] = `
     </div>
     <div
       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+      data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"
@@ -91,6 +93,7 @@ exports[`VoteList should render 1`] = `
     </div>
     <div
       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+      data-testid="TransactionDetail"
     >
       <div
         class="flex-1 space-y-2"

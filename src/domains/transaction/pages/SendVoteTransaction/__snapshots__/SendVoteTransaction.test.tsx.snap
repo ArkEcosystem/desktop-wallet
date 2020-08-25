@@ -10,7 +10,7 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
       class="sc-fzoLag iezQBg"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -77,14 +77,14 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -101,9 +101,10 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -122,13 +123,11 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxirZ dACfZY"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -145,10 +144,10 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -163,21 +162,21 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxiKw jQtkkF -mr-2 border-theme-neutral-300"
+                    class="-mr-2 sc-AxiKw jQtkkF border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxhUy cPXLjK"
@@ -194,18 +193,21 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="flex items-center justify-center w-5 h-5 align-middle border-2 border-transparent rounded-full sc-fznZeY irzLuJ bg-theme-background bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxhUy gKrfcW"
@@ -227,7 +229,7 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="container flex items-center py-5 mx-auto space-x-2 font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -256,7 +258,7 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex-1"
+        class="flex-1 sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -291,22 +293,37 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
                   <section
                     data-testid="SendVoteTransaction__step--third"
                   >
-                    <div>
-                      <h1
-                        class="mb-0"
+                    <h1
+                      class="mb-0"
+                    >
+                      Vote Transaction
+                    </h1>
+                    <div
+                      class="text-theme-neutral-dark"
+                    >
+                      Select a fee to continue
+                    </div>
+                    <div
+                      class="grid grid-flow-row gap-2 mt-4"
+                    >
+                      <div
+                        class="flex items-center py-6 true "
+                        data-testid="TransactionDetail"
                       >
                         Authenticate
                       </h1>
                       <div
-                        class="text-theme-neutral-dark"
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
                       >
                         Enter your twelve word mnemonic to authenticate the transaction.
                       </div>
                       <div
-                        class="grid grid-flow-row"
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
                       >
                         <fieldset
-                          class="sc-AxhCb hXHxHb pt-8 pb-0"
+                          class="pt-8 pb-0 sc-AxhCb hXHxHb"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -318,20 +335,29 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
                               class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
                             />
-                          </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-6 pt-6 pb-0 border-t border-dashed border-theme-neutral-300"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
                           <div
                             class="sc-fzozJi OgXfh max-w-20"
                             data-testid="InputPassword"
                           >
                             <input
                               aria-invalid="true"
-                              class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                              class="w-full px-4 py-3 pr-12 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
                               data-testid="Input"
                               name="mnemonic"
                               type="password"
                             />
                             <div
-                              class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+                              class="my-px mr-4 sc-AxheI sc-AxmLO jcthaj"
                             >
                               <button
                                 class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -343,9 +369,74 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
                                   height="1em"
                                   width="1em"
                                 >
-                                  <svg>
-                                    eye.svg
-                                  </svg>
+                                  <div
+                                    class="sc-fzozJi OgXfh"
+                                  >
+                                    <input
+                                      class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
+                                      data-testid="InputCurrency"
+                                      name="fee"
+                                      type="text"
+                                      value="25"
+                                    />
+                                    <div
+                                      class="absolute bottom-0 w-full px-1"
+                                    >
+                                      <div
+                                        class="flex flex-wrap justify-center"
+                                        data-testid="Range"
+                                      >
+                                        <div
+                                          class="sc-fzoLsD gcqOdX"
+                                          data-testid="Range__track"
+                                          style="transform: scale(1); cursor: pointer;"
+                                        >
+                                          <div
+                                            class="sc-fzpans fDmiZy"
+                                            data-testid="Range__track__filled"
+                                          >
+                                            <div
+                                              aria-valuemax="100"
+                                              aria-valuemin="1"
+                                              aria-valuenow="25"
+                                              class="sc-fzplWN eSQZBV"
+                                              data-testid="Range__thumb"
+                                              draggable="false"
+                                              role="slider"
+                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                              tabindex="0"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <div
+                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                    data-testid="SelectionBar"
+                                    role="radiogroup"
+                                  >
+                                    <button
+                                      aria-checked="false"
+                                      class="relative px-5 transition-colors duration-300 border-transparent sc-fzoiQi xpDdP focus:outline-none border-b-3"
+                                      data-testid="SelectionBarOption"
+                                      role="radio"
+                                      type="button"
+                                    >
+                                      Min
+                                    </button>
+                                    <button
+                                      aria-checked="false"
+                                      class="relative px-5 transition-colors duration-300 border-transparent sc-fzoiQi xpDdP focus:outline-none border-b-3"
+                                      data-testid="SelectionBarOption"
+                                      role="radio"
+                                      type="button"
+                                    >
+                                      Average
+                                    </button>
+                                  </div>
                                 </div>
                               </button>
                             </div>
@@ -364,7 +455,7 @@ exports[`Vote For Delegate should error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxirZ fhzkRl"
+                    class="sc-AxirZ gzYIDB"
                     color="primary"
                     data-testid="SendVoteTransaction__button--back"
                     type="button"
@@ -407,10 +498,11 @@ exports[`Vote For Delegate should render 1st step 1`] = `
       Select a fee to continue
     </div>
     <div
-      class="mt-4 grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-6 true "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -450,6 +542,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
       </div>
       <div
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -495,6 +588,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
       </div>
       <div
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -511,13 +605,13 @@ exports[`Vote For Delegate should render 1st step 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                 data-testid="address__wallet-name"
               >
                 arkx
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                class="text-base font-semibold sc-AxjAm StDqN text-theme-neutral-light"
                 data-testid="address__wallet-address"
               >
                 D61mfS…J3Dyib
@@ -541,7 +635,8 @@ exports[`Vote For Delegate should render 1st step 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+        class="flex items-center py-6 pt-6 pb-0 border-t border-dashed border-theme-neutral-300"
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -550,7 +645,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
             class="font-semibold"
           >
             <fieldset
-              class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+              class="flex flex-col space-y-2 sc-AxhCb ckQmOL"
             >
               <label
                 class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -574,7 +669,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                     class="sc-fzozJi OgXfh"
                   >
                     <input
-                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                      class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -621,16 +716,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   >
                     <button
                       aria-checked="false"
-                      class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Last
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                      class="relative px-5 transition-colors duration-300 border-transparent sc-fzoiQi xpDdP focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -639,7 +725,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                      class="relative px-5 transition-colors duration-300 border-transparent sc-fzoiQi xpDdP focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -676,10 +762,11 @@ exports[`Vote For Delegate should render 2st step 1`] = `
       </p>
     </div>
     <div
-      class="mt-4 grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-6 true "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -719,6 +806,7 @@ exports[`Vote For Delegate should render 2st step 1`] = `
       </div>
       <div
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -764,6 +852,7 @@ exports[`Vote For Delegate should render 2st step 1`] = `
       </div>
       <div
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -780,13 +869,13 @@ exports[`Vote For Delegate should render 2st step 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                 data-testid="address__wallet-name"
               >
                 arkx
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                class="text-base font-semibold sc-AxjAm StDqN text-theme-neutral-light"
                 data-testid="address__wallet-address"
               >
                 D61mfS…J3Dyib
@@ -912,7 +1001,7 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
         class="grid grid-flow-row"
       >
         <fieldset
-          class="sc-AxhCb ckQmOL pt-8 pb-0"
+          class="pt-8 pb-0 sc-AxhCb ckQmOL"
         >
           <label
             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -930,13 +1019,13 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
             data-testid="InputPassword"
           >
             <input
-              class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+              class="w-full px-4 py-3 pr-12 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900"
               data-testid="Input"
               name="mnemonic"
               type="password"
             />
             <div
-              class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+              class="my-px mr-4 sc-AxheI sc-AxmLO jcthaj"
             >
               <button
                 class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -993,6 +1082,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
         </p>
         <div
           class="flex items-center py-6 true "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1012,7 +1102,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    class="text-base font-semibold sc-AxjAm StDqN text-theme-primary"
                     data-testid="address__wallet-address"
                   >
                     8f913b6b719e77…2f1b89abb49877
@@ -1046,6 +1136,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1065,7 +1156,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   class="inline-block truncate align-middle"
                 >
                   <span
-                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    class="text-base font-semibold sc-AxjAm StDqN text-theme-primary"
                     data-testid="address__wallet-address"
                   >
                     AUexKjGtgsSpVz…MM6vJ6znEVTQWK
@@ -1099,6 +1190,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1134,6 +1226,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1164,13 +1257,13 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                   data-testid="address__wallet-name"
                 >
                   ROBank
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="text-base font-semibold sc-AxjAm StDqN text-theme-neutral-light"
                   data-testid="address__wallet-address"
                 >
                   AUexKj…EVTQWK
@@ -1195,6 +1288,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1211,13 +1305,13 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                   data-testid="address__wallet-name"
                 >
                   arkx
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="text-base font-semibold sc-AxjAm StDqN text-theme-neutral-light"
                   data-testid="address__wallet-address"
                 >
                   D61mfS…J3Dyib
@@ -1242,6 +1336,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1259,7 +1354,8 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+          class="flex items-center py-6 pb-0 border-t border-dashed border-theme-neutral-300"
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1473,7 +1569,7 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxiKw jQtkkF -mr-2 border-theme-neutral-300"
+                    class="-mr-2 sc-AxiKw jQtkkF border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -1504,7 +1600,7 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
                       JO
                     </span>
                     <span
-                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="flex items-center justify-center w-5 h-5 align-middle transform border-2 border-transparent rounded-full sc-fznZeY irzLuJ bg-theme-background bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxhUy gKrfcW"
@@ -1526,7 +1622,7 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      class="container flex items-center py-5 mx-auto space-x-2 font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1555,7 +1651,7 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex-1"
+        class="flex-1 sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1635,7 +1731,7 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
                                   class="inline-block truncate align-middle"
                                 >
                                   <span
-                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    class="text-base font-semibold sc-AxjAm StDqN text-theme-primary"
                                     data-testid="address__wallet-address"
                                   >
                                     8f913b6b719e77…2f1b89abb49877
@@ -1688,7 +1784,7 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
                                   class="inline-block truncate align-middle"
                                 >
                                   <span
-                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    class="text-base font-semibold sc-AxjAm StDqN text-theme-primary"
                                     data-testid="address__wallet-address"
                                   >
                                     AUexKjGtgsSpVz…MM6vJ6znEVTQWK
@@ -1787,13 +1883,13 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                                   data-testid="address__wallet-name"
                                 >
                                   ROBank
                                 </span>
                                 <span
-                                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                                  class="text-base font-semibold sc-AxjAm StDqN text-theme-neutral-light"
                                   data-testid="address__wallet-address"
                                 >
                                   AUexKj…EVTQWK
@@ -1834,13 +1930,13 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                                   data-testid="address__wallet-name"
                                 >
                                   arkx
                                 </span>
                                 <span
-                                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                                  class="text-base font-semibold sc-AxjAm StDqN text-theme-neutral-light"
                                   data-testid="address__wallet-address"
                                 >
                                   D61mfS…J3Dyib
@@ -1882,7 +1978,7 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+                          class="flex items-center py-6 pb-0 border-t border-dashed border-theme-neutral-300"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -1932,7 +2028,7 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxirZ fhzkRl space-x-2"
+                    class="space-x-2 sc-AxirZ fhzkRl"
                     color="primary"
                     data-testid="SendVoteTransaction__button--copy"
                     type="button"

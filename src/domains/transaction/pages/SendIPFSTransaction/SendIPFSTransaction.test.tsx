@@ -154,7 +154,7 @@ describe("SendIPFSTransaction", () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[2]);
+			fireEvent.click(feeOptions[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			// Step 2
@@ -207,6 +207,14 @@ describe("SendIPFSTransaction", () => {
 			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+
+			// Go back to wallet
+			const historySpy = jest.spyOn(history, "push");
+			fireEvent.click(getByTestId("SendIPFSTransaction__button--back-to-wallet"));
+			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+			historySpy.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
 	});
 
@@ -244,7 +252,7 @@ describe("SendIPFSTransaction", () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[2]);
+			fireEvent.click(feeOptions[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			// Step 2
