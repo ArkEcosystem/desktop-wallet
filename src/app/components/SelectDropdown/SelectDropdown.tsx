@@ -2,7 +2,7 @@ import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd } from "app/components/Input";
 import { useSelect } from "downshift";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { SelectOptionsList, SelectToggleButton } from "./styles";
 
@@ -11,12 +11,21 @@ type Option = {
 	value: string | number;
 };
 
-type Props = {
+type SelectProps = {
 	defaultValue?: string;
 	isInvalid?: boolean;
 	disabled?: any;
 	options: Option[];
 	onChange?: (selected: Option) => void;
+} & React.InputHTMLAttributes<any>;
+
+type SelectDropdownProps = {
+	placeholder?: string;
+	options: Option[];
+	onSelectedItemChange: any;
+	disabled?: boolean;
+	isInvalid?: boolean;
+	defaultSelectedItem?: Option;
 } & React.InputHTMLAttributes<any>;
 
 const SelectDropdown = ({
@@ -26,12 +35,25 @@ const SelectDropdown = ({
 	disabled,
 	isInvalid,
 	defaultSelectedItem,
-}: any) => {
-	const { isOpen, selectedItem, getToggleButtonProps, getMenuProps, highlightedIndex, getItemProps } = useSelect({
+}: SelectDropdownProps) => {
+	const {
+		isOpen,
+		selectedItem,
+		selectItem,
+		getToggleButtonProps,
+		getMenuProps,
+		highlightedIndex,
+		getItemProps,
+	} = useSelect<Option>({
 		items: options,
 		onSelectedItemChange,
-		defaultSelectedItem: defaultSelectedItem,
 	});
+
+	useEffect(() => {
+		if (defaultSelectedItem && !selectedItem) {
+			selectItem(defaultSelectedItem);
+		}
+	}, [selectItem, selectedItem, defaultSelectedItem]);
 
 	const isOpenClassName = isOpen ? "is-open" : "";
 	const isSelectedClassName = selectedItem ? "is-selected" : "";
@@ -77,8 +99,8 @@ const SelectDropdown = ({
 	);
 };
 
-export const Select = React.forwardRef<HTMLInputElement, Props>(
-	({ isInvalid, placeholder, onChange, defaultValue, options, disabled }: Props, ref) => {
+export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
+	({ isInvalid, placeholder, onChange, defaultValue, options, disabled }: SelectProps, ref) => {
 		const defaultSelectedItem = options.find((option: Option) => option.value === defaultValue);
 		const [selected, setSelected] = useState(defaultSelectedItem);
 

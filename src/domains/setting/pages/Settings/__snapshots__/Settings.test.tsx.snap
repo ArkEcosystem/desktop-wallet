@@ -10,7 +10,7 @@ exports[`Settings should change a password 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -77,14 +77,14 @@ exports[`Settings should change a password 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -101,9 +101,10 @@ exports[`Settings should change a password 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -122,13 +123,11 @@ exports[`Settings should change a password 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -145,10 +144,10 @@ exports[`Settings should change a password 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -163,21 +162,21 @@ exports[`Settings should change a password 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -194,18 +193,21 @@ exports[`Settings should change a password 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      TE
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        TE
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -423,7 +425,7 @@ exports[`Settings should change a password 1`] = `
                       class="flex rounded-lg overflow-hidden bg-theme-success"
                     >
                       <div
-                        class="sc-fzoXWK gQTUAI flex items-center justify-center text-theme-success bg-theme-success-200"
+                        class="sc-fzpmMD glpZWL flex items-center justify-center text-theme-success bg-theme-success-200"
                       >
                         <div
                           class="sc-AxirZ bMjbpr"
@@ -436,7 +438,7 @@ exports[`Settings should change a password 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fzoNJl cMajEE flex-1 bg-theme-success-100"
+                        class="sc-fzoXWK ivcsdo flex-1 bg-theme-success-100"
                       >
                         <p
                           class="text-xl font-bold text-theme-success"
@@ -592,7 +594,7 @@ exports[`Settings should change a password 1`] = `
                       class="flex justify-end w-full mt-8"
                     >
                       <button
-                        class="sc-AxhCb gBCygf"
+                        class="sc-AxmLO hCnZlU"
                         color="primary"
                         data-testid="Password-settings__submit-button"
                         disabled=""
@@ -623,7 +625,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -690,14 +692,14 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -714,9 +716,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -735,13 +738,11 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -758,10 +759,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -776,21 +777,21 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -807,18 +808,21 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      TE
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        TE
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -1059,14 +1063,14 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                 class="flex"
                               >
                                 <input
-                                  class="sc-fzqARJ qvHrv"
+                                  class="sc-fzqNqU hkUWaQ"
                                   type="checkbox"
                                 />
                                 <div
-                                  class="sc-fzqNqU dzXrIp"
+                                  class="sc-fzoyTs gMaXzP"
                                 >
                                   <span
-                                    class="sc-fzoyTs fiRIAF"
+                                    class="sc-fzoNJl cTxNfD"
                                   />
                                 </div>
                               </label>
@@ -1088,7 +1092,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                           class="flex justify-end w-full pt-6 space-x-3"
                         >
                           <button
-                            class="sc-AxhCb BegvR"
+                            class="sc-AxmLO kmtPzS"
                             color="primary"
                             data-testid="plugins__open-list"
                             type="button"
@@ -1096,7 +1100,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                             Open List
                           </button>
                           <button
-                            class="sc-AxhCb BegvR"
+                            class="sc-AxmLO kmtPzS"
                             color="primary"
                             data-testid="plugins__add-plugin"
                             type="button"
@@ -1131,14 +1135,14 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                 class="flex"
                               >
                                 <input
-                                  class="sc-fzqARJ qvHrv"
+                                  class="sc-fzqNqU hkUWaQ"
                                   type="checkbox"
                                 />
                                 <div
-                                  class="sc-fzqNqU dzXrIp"
+                                  class="sc-fzoyTs gMaXzP"
                                 >
                                   <span
-                                    class="sc-fzoyTs fiRIAF"
+                                    class="sc-fzoNJl cTxNfD"
                                   />
                                 </div>
                               </label>
@@ -1191,18 +1195,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-169-label downshift-169-toggle-button"
+                                    aria-labelledby="downshift-205-label downshift-205-toggle-button"
                                     class="sc-fznWqX iNiXlu   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-169-toggle-button"
+                                    id="downshift-205-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-169-label"
+                                    aria-labelledby="downshift-205-label"
                                     class="sc-fzoiQi gHZRjd"
-                                    id="downshift-169-menu"
+                                    id="downshift-205-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -1235,7 +1239,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     class="flex justify-end w-full pt-2"
                   >
                     <button
-                      class="sc-AxhCb gBCygf"
+                      class="sc-AxmLO hCnZlU"
                       color="primary"
                       type="button"
                     >
@@ -1263,7 +1267,7 @@ exports[`Settings should render 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -1330,14 +1334,14 @@ exports[`Settings should render 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -1354,9 +1358,10 @@ exports[`Settings should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -1375,13 +1380,11 @@ exports[`Settings should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -1398,10 +1401,10 @@ exports[`Settings should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -1416,21 +1419,21 @@ exports[`Settings should render 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -1447,18 +1450,21 @@ exports[`Settings should render 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -1690,12 +1696,12 @@ exports[`Settings should render 1`] = `
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
                         >
                           <div
-                            class="w-20 h-20 overflow-hidden rounded-full"
+                            class="overflow-hidden rounded-full w-22 h-22"
                           >
                             <button
-                              class="sc-AxhCb BegvR w-20 h-20"
+                              class="sc-AxmLO kmtPzS w-22 h-22"
                               color="primary"
-                              data-testid="General-settings__upload-button"
+                              data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
                               <div
@@ -2102,16 +2108,16 @@ exports[`Settings should render 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isScreenshotProtection"
                                     name="isScreenshotProtection"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -2151,16 +2157,16 @@ exports[`Settings should render 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isAdvancedMode"
                                     name="isAdvancedMode"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -2302,16 +2308,16 @@ exports[`Settings should render 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isDarkMode"
                                     name="isDarkMode"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -2351,16 +2357,16 @@ exports[`Settings should render 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isUpdateLedger"
                                     name="isUpdateLedger"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -2381,7 +2387,7 @@ exports[`Settings should render 1`] = `
                     class="flex justify-between w-full pt-2"
                   >
                     <button
-                      class="sc-AxhCb clvjJS"
+                      class="sc-AxmLO dnWJWM"
                       color="danger"
                       type="button"
                     >
@@ -2402,14 +2408,14 @@ exports[`Settings should render 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxhCb BegvR"
+                        class="sc-AxmLO kmtPzS"
                         color="primary"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxhCb gBCygf"
+                        class="sc-AxmLO hCnZlU"
                         color="primary"
                         data-testid="General-settings__submit-button"
                         type="submit"
@@ -2439,7 +2445,7 @@ exports[`Settings should render password settings 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -2506,14 +2512,14 @@ exports[`Settings should render password settings 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -2530,9 +2536,10 @@ exports[`Settings should render password settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -2551,13 +2558,11 @@ exports[`Settings should render password settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -2574,10 +2579,10 @@ exports[`Settings should render password settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -2592,21 +2597,21 @@ exports[`Settings should render password settings 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -2623,18 +2628,21 @@ exports[`Settings should render password settings 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      TE
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        TE
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -2943,7 +2951,7 @@ exports[`Settings should render password settings 1`] = `
                       class="flex justify-end w-full mt-8"
                     >
                       <button
-                        class="sc-AxhCb gBCygf"
+                        class="sc-AxmLO hCnZlU"
                         color="primary"
                         data-testid="Password-settings__submit-button"
                         disabled=""
@@ -2974,7 +2982,7 @@ exports[`Settings should render peer settings 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -3041,14 +3049,14 @@ exports[`Settings should render peer settings 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3065,9 +3073,10 @@ exports[`Settings should render peer settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -3086,13 +3095,11 @@ exports[`Settings should render peer settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3109,10 +3116,10 @@ exports[`Settings should render peer settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -3127,21 +3134,21 @@ exports[`Settings should render peer settings 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -3158,18 +3165,21 @@ exports[`Settings should render peer settings 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      TE
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        TE
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -3410,14 +3420,14 @@ exports[`Settings should render peer settings 1`] = `
                                 class="flex"
                               >
                                 <input
-                                  class="sc-fzqARJ qvHrv"
+                                  class="sc-fzqNqU hkUWaQ"
                                   type="checkbox"
                                 />
                                 <div
-                                  class="sc-fzqNqU dzXrIp"
+                                  class="sc-fzoyTs gMaXzP"
                                 >
                                   <span
-                                    class="sc-fzoyTs fiRIAF"
+                                    class="sc-fzoNJl cTxNfD"
                                   />
                                 </div>
                               </label>
@@ -3457,14 +3467,14 @@ exports[`Settings should render peer settings 1`] = `
                                 class="flex"
                               >
                                 <input
-                                  class="sc-fzqARJ qvHrv"
+                                  class="sc-fzqNqU hkUWaQ"
                                   type="checkbox"
                                 />
                                 <div
-                                  class="sc-fzqNqU dzXrIp"
+                                  class="sc-fzoyTs gMaXzP"
                                 >
                                   <span
-                                    class="sc-fzoyTs fiRIAF"
+                                    class="sc-fzoNJl cTxNfD"
                                   />
                                 </div>
                               </label>
@@ -3485,7 +3495,7 @@ exports[`Settings should render peer settings 1`] = `
                   >
                     <div>
                       <div
-                        class="sc-AxheI VtiAt"
+                        class="sc-AxgMl grPENn"
                         role="table"
                       >
                         <table
@@ -3563,7 +3573,7 @@ exports[`Settings should render peer settings 1`] = `
                                 class="inline-flex items-center py-4 mt-1"
                               >
                                 <div
-                                  class="sc-AxhUy fHeTTV text-logo border-theme-danger-light"
+                                  class="sc-AxhCb fwVCao text-logo border-theme-danger-light"
                                 >
                                   <div
                                     class="sc-AxirZ iQaTP"
@@ -3642,7 +3652,7 @@ exports[`Settings should render peer settings 1`] = `
                                 class="inline-flex items-center py-4 mt-1"
                               >
                                 <div
-                                  class="sc-AxhUy fHeTTV border-theme-neutral-300"
+                                  class="sc-AxhCb fwVCao border-theme-neutral-300"
                                 >
                                   <div
                                     class="sc-AxirZ iQaTP"
@@ -3721,7 +3731,7 @@ exports[`Settings should render peer settings 1`] = `
                                 class="inline-flex items-center py-4 mt-1"
                               >
                                 <div
-                                  class="sc-AxhUy fHeTTV text-theme-warning-400 border-theme-warning-200"
+                                  class="sc-AxhCb fwVCao text-theme-warning-400 border-theme-warning-200"
                                 >
                                   <div
                                     class="sc-AxirZ iQaTP"
@@ -3797,7 +3807,7 @@ exports[`Settings should render peer settings 1`] = `
                         </table>
                       </div>
                       <button
-                        class="sc-AxhCb BegvR w-full mt-8 mb-2"
+                        class="sc-AxmLO kmtPzS w-full mt-8 mb-2"
                         color="primary"
                         data-testid="peer-list__add-button"
                         type="button"
@@ -3818,7 +3828,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="flex justify-end w-full"
                   >
                     <button
-                      class="sc-AxhCb gBCygf"
+                      class="sc-AxmLO hCnZlU"
                       color="primary"
                       type="button"
                     >
@@ -3846,7 +3856,7 @@ exports[`Settings should render plugin settings 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -3913,14 +3923,14 @@ exports[`Settings should render plugin settings 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3937,9 +3947,10 @@ exports[`Settings should render plugin settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -3958,13 +3969,11 @@ exports[`Settings should render plugin settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3981,10 +3990,10 @@ exports[`Settings should render plugin settings 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -3999,21 +4008,21 @@ exports[`Settings should render plugin settings 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -4030,18 +4039,21 @@ exports[`Settings should render plugin settings 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      TE
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        TE
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -4282,14 +4294,14 @@ exports[`Settings should render plugin settings 1`] = `
                                 class="flex"
                               >
                                 <input
-                                  class="sc-fzqARJ qvHrv"
+                                  class="sc-fzqNqU hkUWaQ"
                                   type="checkbox"
                                 />
                                 <div
-                                  class="sc-fzqNqU dzXrIp"
+                                  class="sc-fzoyTs gMaXzP"
                                 >
                                   <span
-                                    class="sc-fzoyTs fiRIAF"
+                                    class="sc-fzoNJl cTxNfD"
                                   />
                                 </div>
                               </label>
@@ -4311,7 +4323,7 @@ exports[`Settings should render plugin settings 1`] = `
                           class="flex justify-end w-full pt-6 space-x-3"
                         >
                           <button
-                            class="sc-AxhCb BegvR"
+                            class="sc-AxmLO kmtPzS"
                             color="primary"
                             data-testid="plugins__open-list"
                             type="button"
@@ -4319,7 +4331,7 @@ exports[`Settings should render plugin settings 1`] = `
                             Open List
                           </button>
                           <button
-                            class="sc-AxhCb BegvR"
+                            class="sc-AxmLO kmtPzS"
                             color="primary"
                             data-testid="plugins__add-plugin"
                             type="button"
@@ -4354,14 +4366,14 @@ exports[`Settings should render plugin settings 1`] = `
                                 class="flex"
                               >
                                 <input
-                                  class="sc-fzqARJ qvHrv"
+                                  class="sc-fzqNqU hkUWaQ"
                                   type="checkbox"
                                 />
                                 <div
-                                  class="sc-fzqNqU dzXrIp"
+                                  class="sc-fzoyTs gMaXzP"
                                 >
                                   <span
-                                    class="sc-fzoyTs fiRIAF"
+                                    class="sc-fzoNJl cTxNfD"
                                   />
                                 </div>
                               </label>
@@ -4414,18 +4426,18 @@ exports[`Settings should render plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-162-label downshift-162-toggle-button"
+                                    aria-labelledby="downshift-192-label downshift-192-toggle-button"
                                     class="sc-fznWqX iNiXlu   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-162-toggle-button"
+                                    id="downshift-192-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-162-label"
+                                    aria-labelledby="downshift-192-label"
                                     class="sc-fzoiQi gHZRjd"
-                                    id="downshift-162-menu"
+                                    id="downshift-192-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4458,7 +4470,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="flex justify-end w-full pt-2"
                   >
                     <button
-                      class="sc-AxhCb gBCygf"
+                      class="sc-AxmLO hCnZlU"
                       color="primary"
                       type="button"
                     >
@@ -4486,7 +4498,7 @@ exports[`Settings should set a password 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -4553,14 +4565,14 @@ exports[`Settings should set a password 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4577,9 +4589,10 @@ exports[`Settings should set a password 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -4598,13 +4611,11 @@ exports[`Settings should set a password 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4621,10 +4632,10 @@ exports[`Settings should set a password 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -4639,21 +4650,21 @@ exports[`Settings should set a password 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -4670,18 +4681,21 @@ exports[`Settings should set a password 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      TE
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        TE
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -4899,7 +4913,7 @@ exports[`Settings should set a password 1`] = `
                       class="flex rounded-lg overflow-hidden bg-theme-success"
                     >
                       <div
-                        class="sc-fzoXWK gQTUAI flex items-center justify-center text-theme-success bg-theme-success-200"
+                        class="sc-fzpmMD glpZWL flex items-center justify-center text-theme-success bg-theme-success-200"
                       >
                         <div
                           class="sc-AxirZ bMjbpr"
@@ -4912,7 +4926,7 @@ exports[`Settings should set a password 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-fzoNJl cMajEE flex-1 bg-theme-success-100"
+                        class="sc-fzoXWK ivcsdo flex-1 bg-theme-success-100"
                       >
                         <p
                           class="text-xl font-bold text-theme-success"
@@ -5068,7 +5082,7 @@ exports[`Settings should set a password 1`] = `
                       class="flex justify-end w-full mt-8"
                     >
                       <button
-                        class="sc-AxhCb gBCygf"
+                        class="sc-AxmLO hCnZlU"
                         color="primary"
                         data-testid="Password-settings__submit-button"
                         disabled=""
@@ -5099,7 +5113,7 @@ exports[`Settings should show an error alert if the current password does not ma
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -5166,14 +5180,14 @@ exports[`Settings should show an error alert if the current password does not ma
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -5190,9 +5204,10 @@ exports[`Settings should show an error alert if the current password does not ma
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -5211,13 +5226,11 @@ exports[`Settings should show an error alert if the current password does not ma
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -5234,10 +5247,10 @@ exports[`Settings should show an error alert if the current password does not ma
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -5252,21 +5265,21 @@ exports[`Settings should show an error alert if the current password does not ma
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -5283,18 +5296,21 @@ exports[`Settings should show an error alert if the current password does not ma
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      TE
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        TE
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -5512,7 +5528,7 @@ exports[`Settings should show an error alert if the current password does not ma
                       class="flex rounded-lg overflow-hidden bg-theme-danger"
                     >
                       <div
-                        class="sc-fzoXWK gQTUAI flex items-center justify-center text-theme-danger bg-theme-danger-200"
+                        class="sc-fzpmMD glpZWL flex items-center justify-center text-theme-danger bg-theme-danger-200"
                       >
                         <div
                           class="sc-AxirZ bMjbpr"
@@ -5525,7 +5541,7 @@ exports[`Settings should show an error alert if the current password does not ma
                         </div>
                       </div>
                       <div
-                        class="sc-fzoNJl cMajEE flex-1 bg-theme-danger-100"
+                        class="sc-fzoXWK ivcsdo flex-1 bg-theme-danger-100"
                       >
                         <p
                           class="text-xl font-bold text-theme-danger"
@@ -5681,7 +5697,7 @@ exports[`Settings should show an error alert if the current password does not ma
                       class="flex justify-end w-full mt-8"
                     >
                       <button
-                        class="sc-AxhCb gBCygf"
+                        class="sc-AxmLO hCnZlU"
                         color="primary"
                         data-testid="Password-settings__submit-button"
                         type="submit"
@@ -5711,7 +5727,7 @@ exports[`Settings should submit using default props 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -5778,14 +5794,14 @@ exports[`Settings should submit using default props 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -5802,9 +5818,10 @@ exports[`Settings should submit using default props 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -5823,13 +5840,11 @@ exports[`Settings should submit using default props 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -5846,10 +5861,10 @@ exports[`Settings should submit using default props 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -5864,21 +5879,21 @@ exports[`Settings should submit using default props 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -5895,18 +5910,21 @@ exports[`Settings should submit using default props 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      TE
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        TE
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -6138,12 +6156,12 @@ exports[`Settings should submit using default props 1`] = `
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
                         >
                           <div
-                            class="w-20 h-20 overflow-hidden rounded-full"
+                            class="overflow-hidden rounded-full w-22 h-22"
                           >
                             <button
-                              class="sc-AxhCb BegvR w-20 h-20"
+                              class="sc-AxmLO kmtPzS w-22 h-22"
                               color="primary"
-                              data-testid="General-settings__upload-button"
+                              data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
                               <div
@@ -6220,18 +6238,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-110-label downshift-110-toggle-button"
+                                  aria-labelledby="downshift-122-label downshift-122-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-110-toggle-button"
+                                  id="downshift-122-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-110-label"
+                                  aria-labelledby="downshift-122-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-110-menu"
+                                  id="downshift-122-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6284,18 +6302,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-111-label downshift-111-toggle-button"
+                                  aria-labelledby="downshift-123-label downshift-123-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-111-toggle-button"
+                                  id="downshift-123-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-111-label"
+                                  aria-labelledby="downshift-123-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-111-menu"
+                                  id="downshift-123-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6352,18 +6370,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-112-label downshift-112-toggle-button"
+                                  aria-labelledby="downshift-124-label downshift-124-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-112-toggle-button"
+                                  id="downshift-124-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-112-label"
+                                  aria-labelledby="downshift-124-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-112-menu"
+                                  id="downshift-124-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6416,18 +6434,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-113-label downshift-113-toggle-button"
+                                  aria-labelledby="downshift-125-label downshift-125-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-113-toggle-button"
+                                  id="downshift-125-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-113-label"
+                                  aria-labelledby="downshift-125-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-113-menu"
+                                  id="downshift-125-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6480,18 +6498,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-114-label downshift-114-toggle-button"
+                                  aria-labelledby="downshift-126-label downshift-126-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-114-toggle-button"
+                                  id="downshift-126-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-114-label"
+                                  aria-labelledby="downshift-126-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-114-menu"
+                                  id="downshift-126-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6550,16 +6568,16 @@ exports[`Settings should submit using default props 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isScreenshotProtection"
                                     name="isScreenshotProtection"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -6599,16 +6617,16 @@ exports[`Settings should submit using default props 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isAdvancedMode"
                                     name="isAdvancedMode"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -6679,18 +6697,18 @@ exports[`Settings should submit using default props 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-115-label downshift-115-toggle-button"
+                                    aria-labelledby="downshift-127-label downshift-127-toggle-button"
                                     class="sc-fznWqX iNiXlu  is-selected "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-115-toggle-button"
+                                    id="downshift-127-toggle-button"
                                     type="button"
                                   >
                                     1 minute
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-115-label"
+                                    aria-labelledby="downshift-127-label"
                                     class="sc-fzoiQi gHZRjd"
-                                    id="downshift-115-menu"
+                                    id="downshift-127-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -6751,16 +6769,16 @@ exports[`Settings should submit using default props 1`] = `
                                 >
                                   <input
                                     checked=""
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isDarkMode"
                                     name="isDarkMode"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -6800,16 +6818,16 @@ exports[`Settings should submit using default props 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isUpdateLedger"
                                     name="isUpdateLedger"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -6830,7 +6848,7 @@ exports[`Settings should submit using default props 1`] = `
                     class="flex justify-between w-full pt-2"
                   >
                     <button
-                      class="sc-AxhCb clvjJS"
+                      class="sc-AxmLO dnWJWM"
                       color="danger"
                       type="button"
                     >
@@ -6851,14 +6869,14 @@ exports[`Settings should submit using default props 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxhCb BegvR"
+                        class="sc-AxmLO kmtPzS"
                         color="primary"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxhCb gBCygf"
+                        class="sc-AxmLO hCnZlU"
                         color="primary"
                         data-testid="General-settings__submit-button"
                         type="submit"
@@ -6886,7 +6904,7 @@ exports[`Settings should submit using default props 1`] = `
                         class="absolute top-0 right-0 z-50 mt-5"
                       >
                         <button
-                          class="sc-AxhCb idLVlI"
+                          class="sc-AxmLO cBUgai"
                           color="neutral"
                           data-testid="modal__close-btn"
                           type="button"
@@ -6926,7 +6944,7 @@ exports[`Settings should submit using default props 1`] = `
                             class="flex justify-end mt-8 space-x-3"
                           >
                             <button
-                              class="sc-AxhCb BegvR"
+                              class="sc-AxmLO kmtPzS"
                               color="primary"
                               data-testid="AdvancedMode__decline-button"
                               type="button"
@@ -6934,7 +6952,7 @@ exports[`Settings should submit using default props 1`] = `
                               I Decline
                             </button>
                             <button
-                              class="sc-AxhCb gBCygf"
+                              class="sc-AxmLO hCnZlU"
                               color="primary"
                               data-testid="AdvancedMode__accept-button"
                               type="button"
@@ -6967,7 +6985,7 @@ exports[`Settings should update profile 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -7034,14 +7052,14 @@ exports[`Settings should update profile 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -7058,9 +7076,10 @@ exports[`Settings should update profile 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -7079,13 +7098,11 @@ exports[`Settings should update profile 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -7102,10 +7119,10 @@ exports[`Settings should update profile 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -7120,21 +7137,21 @@ exports[`Settings should update profile 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -7151,18 +7168,21 @@ exports[`Settings should update profile 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      TE
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        TE
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -7394,12 +7414,12 @@ exports[`Settings should update profile 1`] = `
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast"
                         >
                           <div
-                            class="w-20 h-20 overflow-hidden rounded-full"
+                            class="overflow-hidden rounded-full w-22 h-22"
                           >
                             <button
-                              class="sc-AxhCb BegvR w-20 h-20"
+                              class="sc-AxmLO kmtPzS w-22 h-22"
                               color="primary"
-                              data-testid="General-settings__upload-button"
+                              data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
                               <div
@@ -7476,18 +7496,18 @@ exports[`Settings should update profile 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-6-label downshift-6-toggle-button"
+                                  aria-labelledby="downshift-12-label downshift-12-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-6-toggle-button"
+                                  id="downshift-12-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-6-label"
+                                  aria-labelledby="downshift-12-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-6-menu"
+                                  id="downshift-12-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -7540,18 +7560,18 @@ exports[`Settings should update profile 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-7-label downshift-7-toggle-button"
+                                  aria-labelledby="downshift-13-label downshift-13-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-7-toggle-button"
+                                  id="downshift-13-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-7-label"
+                                  aria-labelledby="downshift-13-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-7-menu"
+                                  id="downshift-13-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -7608,18 +7628,18 @@ exports[`Settings should update profile 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-8-label downshift-8-toggle-button"
+                                  aria-labelledby="downshift-14-label downshift-14-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-8-toggle-button"
+                                  id="downshift-14-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-8-label"
+                                  aria-labelledby="downshift-14-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-8-menu"
+                                  id="downshift-14-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -7672,18 +7692,18 @@ exports[`Settings should update profile 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-9-label downshift-9-toggle-button"
+                                  aria-labelledby="downshift-15-label downshift-15-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-9-toggle-button"
+                                  id="downshift-15-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-9-label"
+                                  aria-labelledby="downshift-15-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-9-menu"
+                                  id="downshift-15-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -7736,18 +7756,18 @@ exports[`Settings should update profile 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-10-label downshift-10-toggle-button"
+                                  aria-labelledby="downshift-16-label downshift-16-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-10-toggle-button"
+                                  id="downshift-16-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-10-label"
+                                  aria-labelledby="downshift-16-label"
                                   class="sc-fzoiQi gHZRjd"
-                                  id="downshift-10-menu"
+                                  id="downshift-16-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -7807,16 +7827,16 @@ exports[`Settings should update profile 1`] = `
                                 >
                                   <input
                                     checked=""
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isScreenshotProtection"
                                     name="isScreenshotProtection"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -7856,16 +7876,16 @@ exports[`Settings should update profile 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isAdvancedMode"
                                     name="isAdvancedMode"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -7936,18 +7956,18 @@ exports[`Settings should update profile 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-11-label downshift-11-toggle-button"
+                                    aria-labelledby="downshift-17-label downshift-17-toggle-button"
                                     class="sc-fznWqX iNiXlu  is-selected "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-11-toggle-button"
+                                    id="downshift-17-toggle-button"
                                     type="button"
                                   >
                                     1 minute
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-11-label"
+                                    aria-labelledby="downshift-17-label"
                                     class="sc-fzoiQi gHZRjd"
-                                    id="downshift-11-menu"
+                                    id="downshift-17-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -8008,16 +8028,16 @@ exports[`Settings should update profile 1`] = `
                                 >
                                   <input
                                     checked=""
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isDarkMode"
                                     name="isDarkMode"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -8058,16 +8078,16 @@ exports[`Settings should update profile 1`] = `
                                 >
                                   <input
                                     checked=""
-                                    class="sc-fzqARJ qvHrv"
+                                    class="sc-fzqNqU hkUWaQ"
                                     data-testid="General-settings__toggle--isUpdateLedger"
                                     name="isUpdateLedger"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="sc-fzqNqU dzXrIp"
+                                    class="sc-fzoyTs gMaXzP"
                                   >
                                     <span
-                                      class="sc-fzoyTs fiRIAF"
+                                      class="sc-fzoNJl cTxNfD"
                                     />
                                   </div>
                                 </label>
@@ -8088,7 +8108,7 @@ exports[`Settings should update profile 1`] = `
                     class="flex justify-between w-full pt-2"
                   >
                     <button
-                      class="sc-AxhCb clvjJS"
+                      class="sc-AxmLO dnWJWM"
                       color="danger"
                       type="button"
                     >
@@ -8109,14 +8129,14 @@ exports[`Settings should update profile 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxhCb BegvR"
+                        class="sc-AxmLO kmtPzS"
                         color="primary"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxhCb gBCygf"
+                        class="sc-AxmLO hCnZlU"
                         color="primary"
                         data-testid="General-settings__submit-button"
                         type="submit"

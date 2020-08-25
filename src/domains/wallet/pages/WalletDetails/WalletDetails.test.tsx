@@ -168,7 +168,7 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => {
-			expect(getAllByTestId("TransactionRow")).toHaveLength(4);
+			expect(getAllByTestId("TransactionRow")).toHaveLength(6);
 		});
 	});
 

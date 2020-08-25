@@ -161,7 +161,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 						hasSecondSignature={activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()}
 						hasPlugins={true}
 						onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
-						onRegister={() => history.push(`/profiles/${activeProfile.id()}/transactions/registration`)}
+						onRegister={() =>
+							history.push(
+								`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/registration`,
+							)
+						}
 					/>
 				</Section>
 
