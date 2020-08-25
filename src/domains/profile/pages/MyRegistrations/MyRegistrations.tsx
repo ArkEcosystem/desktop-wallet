@@ -5,7 +5,7 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks/env";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo,useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -31,10 +31,15 @@ const EmptyRegistrations = () => {
 	);
 };
 
-export const MyRegistrations = () => {
+type Props = {
+	blockchainRegistrations: any[];
+	businessRegistrations: any[];
+};
+
+export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations }: Props) => {
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
-	const [blockchain] = useState([]);
-	const [business] = useState([]);
+	const [blockchain] = useState(blockchainRegistrations);
+	const [business] = useState(businessRegistrations);
 
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -104,4 +109,9 @@ export const MyRegistrations = () => {
 			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
 	);
+};
+
+MyRegistrations.defaultProps = {
+	blockchainRegistrations: [],
+	businessRegistrations: [],
 };
