@@ -105,6 +105,8 @@ describe("SignIn", () => {
 	});
 
 	it("should set an error and disable the input if the password is invalid multiple times", async () => {
+		jest.setTimeout(10000);
+
 		const onSuccess = jest.fn();
 
 		let renderContext: any;
