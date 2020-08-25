@@ -3,7 +3,7 @@ import React from "react";
 import Skeleton from "react-loading-skeleton";
 
 export const DelegateRowItemSkeleton = () => (
-	<tr data-testid="delegate-table__row" className="border-b border-dashed border-theme-neutral-light">
+	<tr data-testid="DelegateRowItemSkeleton" className="border-b border-dashed border-theme-neutral-light">
 		<td className="w-24 py-6 pr-4">
 			<div className="flex items-center">
 				<Circle className="border-theme-neutral-300" size="lg" />
