@@ -60,7 +60,11 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 		const syncDelegates = () => {
 			setIsLoadingDelegates(true);
 
-			setDelegates(DelegateMapper.execute(senderWallet!, (transaction as Contracts.VoteData).votes()));
+			if (senderWallet) {
+				setDelegates(DelegateMapper.execute(senderWallet, (transaction as Contracts.VoteData).votes()));
+			} else {
+				setDelegates([]);
+			}
 
 			setIsLoadingDelegates(false);
 		};
