@@ -12,7 +12,7 @@ import { DelegateRowItemSkeleton } from "./DelegateRowItemSkeleton";
 type DelegateRowItem = {
 	wallet: ReadWriteWallet;
 	onAction?: any;
-	isConfirmed?: boolean;
+	isConfirmed: boolean;
 };
 
 const getStatusIcon = (confirmed: boolean) => {
