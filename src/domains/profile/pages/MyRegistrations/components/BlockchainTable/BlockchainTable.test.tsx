@@ -27,7 +27,7 @@ describe("Welcome", () => {
 		const { getAllByTestId, asFragment } = render(<BlockchainTable data={registrations} />);
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(getAllByTestId("blockchain-table__row").length).toEqual(2);
+		expect(getAllByTestId("BlockchainRegistrationItem").length).toEqual(2);
 	});
 
 	it("should have a functional toggle", () => {

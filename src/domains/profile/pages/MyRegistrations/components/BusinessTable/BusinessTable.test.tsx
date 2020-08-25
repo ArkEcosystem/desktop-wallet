@@ -27,7 +27,7 @@ describe("Welcome", () => {
 		const { getAllByTestId, asFragment } = render(<BusinessTable data={registrations} />);
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(getAllByTestId("business-table__row").length).toEqual(2);
+		expect(getAllByTestId("BusinessRegistrationItem").length).toEqual(2);
 	});
 
 	it("should have a functional toggle", () => {

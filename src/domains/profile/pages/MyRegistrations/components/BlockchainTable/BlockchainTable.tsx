@@ -60,7 +60,7 @@ export const BlockchainTable = ({ data, onAction }: Props) => {
 			<Table columns={columns} data={data}>
 				{(rowData: any) => (
 					<tr
-						data-testid="blockchain-table__row"
+						data-testid="BlockchainRegistrationItem"
 						className="border-b border-dashed border-theme-neutral-light"
 					>
 						<td className="w-24 py-6">

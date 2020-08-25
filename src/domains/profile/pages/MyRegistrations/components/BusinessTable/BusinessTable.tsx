@@ -55,7 +55,10 @@ export const BusinessTable = ({ data, onAction }: Props) => {
 
 			<Table columns={columns} data={data}>
 				{(rowData: any) => (
-					<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
+					<tr
+						data-testid="BusinessRegistrationItem"
+						className="border-b border-dashed border-theme-neutral-light"
+					>
 						<td className="w-24 py-6">
 							<div className="flex items-center">
 								<Circle className="border-theme-neutral-800" size="lg">
