@@ -23,6 +23,7 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
 	const { t } = useTranslation();
@@ -151,6 +152,7 @@ export const FourthStep = ({ transaction }: { transaction: Contracts.SignedTrans
 
 export const SendIPFSTransaction = () => {
 	const { t } = useTranslation();
+	const history = useHistory();
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
@@ -302,10 +304,16 @@ export const SendIPFSTransaction = () => {
 										<Button
 											data-testid="SendIPFSTransaction__button--back-to-wallet"
 											variant="plain"
-											className={"block"}
+											className="block"
+											onClick={() =>
+												history.push(
+													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+												)
+											}
 										>
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
+
 										<Button
 											onClick={copyTransaction}
 											data-testid="SendIPFSTransaction__button--copy"

@@ -9,19 +9,20 @@ type Props = {
 	recipient?: string;
 	recipients?: Contracts.MultiPaymentRecipient[];
 	className?: string;
+	circleShadowColor?: string;
 };
 
-const Wrapper = ({ children, ...props }: { children: React.ReactNode; className?: string }) => (
+const Wrapper = ({ children, ...props }: { children: React.ReactNode; className?: string; shadowColor?: string }) => (
 	<Circle
 		data-testid="TransactionRowRecipientIcon"
-		className={"bg-theme-background border-theme-neutral-900 text-theme-neutral-900"}
+		className={"border-theme-neutral-900 text-theme-neutral-900"}
 		{...props}
 	>
 		{children}
 	</Circle>
 );
 
-export const TransactionRowRecipientIcon = ({ type, recipient, recipients, className }: Props) => {
+export const TransactionRowRecipientIcon = ({ type, recipient, recipients, className, circleShadowColor }: Props) => {
 	const transactionIcon: Record<string, string> = {
 		transfer: "Transfer",
 		secondSignature: "Key",
@@ -62,19 +63,19 @@ export const TransactionRowRecipientIcon = ({ type, recipient, recipients, class
 	};
 
 	if (type === "transfer") {
-		return <Avatar address={recipient} />;
+		return <Avatar address={recipient} shadowColor={circleShadowColor} />;
 	}
 
 	if (type === "multiPayment") {
 		return (
-			<Wrapper className={className}>
+			<Wrapper className={className} shadowColor={circleShadowColor}>
 				<span>{recipients!.length}</span>
 			</Wrapper>
 		);
 	}
 
 	return (
-		<Wrapper>
+		<Wrapper shadowColor={circleShadowColor}>
 			<Icon name={transactionIcon[type]} />
 		</Wrapper>
 	);
