@@ -29,7 +29,6 @@ export const DelegateRowItem = ({ wallet, onAction }: DelegateRowItem) => {
 
 	const options = [
 		{ label: t("COMMON.UPDATE"), value: "update" },
-		{ label: t("COMMON.TRANSFER"), value: "transfer" },
 		{ label: t("COMMON.RESIGN"), value: "resign" },
 	];
 
@@ -44,7 +43,7 @@ export const DelegateRowItem = ({ wallet, onAction }: DelegateRowItem) => {
 	if (!delegateInfo) return <DelegateRowItemSkeleton />;
 
 	return (
-		<tr data-testid="delegate-table__row" className="border-b border-dashed border-theme-neutral-light">
+		<tr data-testid="DelegateRowItem" className="border-b border-dashed border-theme-neutral-light">
 			<td className="w-24 py-6">
 				<div className="flex items-center">
 					<Circle className="border-theme-neutral-800" size="lg">
@@ -82,6 +81,7 @@ export const DelegateRowItem = ({ wallet, onAction }: DelegateRowItem) => {
 				<span className="flex justify-end">
 					<Button variant="plain" size="sm" className="ml-16">
 						<Dropdown
+							data-testid="DelegateRowItem__actions"
 							toggleIcon="Settings"
 							options={options}
 							onSelect={({ value }: any) => onAction?.({ walletId: wallet.id(), action: value })}

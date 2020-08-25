@@ -1,5 +1,4 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { Icon } from "app/components/Icon";
 import { Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import React from "react";
@@ -10,20 +9,6 @@ import { DelegateRowItem } from "./DelegateRowItem";
 type Props = {
 	wallets: ReadWriteWallet[];
 	onAction?: any;
-};
-
-const options = [
-	{ label: "Update", value: "update" },
-	{ label: "Transfer", value: "transfer" },
-	{ label: "Resign", value: "resign" },
-];
-
-const getStatusIcon = (confirmed: boolean) => {
-	if (!confirmed) {
-		return <Icon name="StatusClock" className="ml-2 text-theme-neutral" />;
-	}
-
-	return <Icon name="Checkmark" className="ml-1 text-theme-success" width={30} height={30} />;
 };
 
 type DelegateRowItem = {
