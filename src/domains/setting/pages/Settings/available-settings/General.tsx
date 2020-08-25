@@ -6,13 +6,14 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
+import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks/env";
 import { PlatformSdkChoices } from "data";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { openFile, setScreenshotProtection } from "utils/electron-utils";
+import { setScreenshotProtection } from "utils/electron-utils";
 
 type GeneralProps = {
 	env: Environment;
@@ -33,17 +34,6 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
 		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
 	);
-
-	const handleChangeAvatar = async () => {
-		const raw = await openFile(null, {
-			filters: { name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] },
-			encoding: "base64",
-		});
-
-		if (raw) {
-			setAvatarImage(`data:image/png;base64,${raw}`);
-		}
-	};
 
 	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
@@ -186,43 +176,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 				<div className="relative mt-8">
 					<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
-					<div className="group">
-						<span className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark">
-							{t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE")}
-						</span>
-
-						<div className="flex flex-row mt-2">
-							<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast">
-								<div className="w-20 h-20 overflow-hidden rounded-full">
-									<Button
-										className="w-20 h-20"
-										variant="plain"
-										onClick={handleChangeAvatar}
-										data-testid="General-settings__upload-button"
-									>
-										<Icon name="Upload" />
-									</Button>
-								</div>
-							</div>
-							{avatarImage && (
-								<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
-									<img
-										src={avatarImage}
-										className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-										alt="Profile avatar"
-									/>
-									<button
-										type="button"
-										className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
-										onClick={() => setAvatarImage("")}
-										data-testid="General-settings__remove-avatar"
-									>
-										<Icon name="Close" height={12} width={12} />
-									</button>
-								</div>
-							)}
-						</div>
-					</div>
+					<SelectProfileImage value={avatarImage} onSelect={setAvatarImage} />
 
 					<div className="flex justify-between w-full mt-8">
 						<div className="flex flex-col w-2/4">

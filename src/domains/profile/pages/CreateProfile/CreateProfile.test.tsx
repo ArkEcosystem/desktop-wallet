@@ -85,7 +85,7 @@ describe("CreateProfile", () => {
 
 		// Upload avatar image
 		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__upload-button"));
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
@@ -175,13 +175,13 @@ describe("CreateProfile", () => {
 
 		// Upload avatar image
 		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__upload-button"));
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__remove-avatar"));
+			fireEvent.click(getByTestId("SelectProfileImage__remove-button"));
 		});
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
@@ -219,7 +219,7 @@ describe("CreateProfile", () => {
 		}));
 
 		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__upload-button"));
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
