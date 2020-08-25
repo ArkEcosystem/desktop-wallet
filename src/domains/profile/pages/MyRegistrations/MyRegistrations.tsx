@@ -5,7 +5,7 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks/env";
-import React, { useEffect, useMemo,useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -69,8 +69,6 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 				break;
 			case "update":
 				history.push(`/profiles/${activeProfile.id()}/transactions/${walletId}/update`);
-				break;
-			default:
 				break;
 		}
 	};
