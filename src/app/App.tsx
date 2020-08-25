@@ -40,12 +40,12 @@ const Main = () => {
 		const coinsInUse = Object.keys(coinsData);
 		const delegatesPromises: any = [];
 
-		coinsInUse.forEach((coin) => {
+		for (const coin of coinsInUse) {
 			const coinNetworks = coinsData[coin];
-			coinNetworks.forEach((network) => {
+			for (const network of coinNetworks) {
 				delegatesPromises.push(Promise.resolve(env.coins().syncDelegates(coin, network)));
-			});
-		});
+			}
+		}
 
 		Promise.allSettled(delegatesPromises).then(() => {
 			setShowSplash(false);
