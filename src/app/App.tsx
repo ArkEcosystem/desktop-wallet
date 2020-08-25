@@ -47,12 +47,7 @@ const Main = () => {
 			});
 		});
 
-		Promise.allSettled(delegatesPromises).then((results: any) => {
-			results.forEach(({ status }: { status: string; value: any }) => {
-				if (status !== "fulfilled") throw new Error("Error synchronizing delegates");
-				setShowSplash(false);
-			});
-
+		Promise.allSettled(delegatesPromises).then(() => {
 			setShowSplash(false);
 		});
 	};
