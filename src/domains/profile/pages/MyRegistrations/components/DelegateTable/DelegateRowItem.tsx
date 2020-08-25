@@ -68,7 +68,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 				<span className="flex justify-center">{getStatusIcon(isConfirmed)}</span>
 			</td>
 			<td className="text-theme-neutral-light" data-testid="DelegateRowItem__forged">
-				<span className="flex justify-center">
+				<span className="flex justify-end">
 					<span className="whitespace-no-wrap">2,450.643 Ѧ</span>
 				</span>
 			</td>
