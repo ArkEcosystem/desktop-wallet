@@ -8,6 +8,8 @@ import { SignIn } from "./SignIn";
 
 let profile: Profile;
 
+jest.setTimeout(30000);
+
 describe("SignIn", () => {
 	beforeEach(async () => {
 		profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
@@ -105,8 +107,6 @@ describe("SignIn", () => {
 	});
 
 	it("should set an error and disable the input if the password is invalid multiple times", async () => {
-		jest.setTimeout(10000);
-
 		const onSuccess = jest.fn();
 
 		let renderContext: any;
