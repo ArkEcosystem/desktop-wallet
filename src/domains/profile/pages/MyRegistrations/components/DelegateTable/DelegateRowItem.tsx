@@ -35,7 +35,7 @@ export const DelegateRowItem = ({ wallet, onAction }: DelegateRowItem) => {
 
 	useEffect(() => {
 		const fetchDelegateInfo = async () => {
-			const delegate = await wallet.delegate(wallet.address());
+			const delegate = await wallet.client().delegate(wallet.address());
 			setDelegateInfo(delegate);
 		};
 		fetchDelegateInfo();
