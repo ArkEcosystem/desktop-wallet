@@ -26,9 +26,9 @@ export class ProfileMiddleware implements Middleware {
 					this.clearActivityState();
 				}
 
-				return true;
-
 				setScreenshotProtection(true);
+
+				return true;
 			}
 
 			try {
