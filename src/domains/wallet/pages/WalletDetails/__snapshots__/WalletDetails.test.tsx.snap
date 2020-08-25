@@ -10,7 +10,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -77,14 +77,14 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -101,9 +101,10 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/transactions/transfer"
               >
@@ -122,13 +123,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -145,10 +144,10 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -163,21 +162,21 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -194,18 +193,21 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JA
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JA
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -1369,7 +1371,7 @@ exports[`WalletDetails should render 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -1436,14 +1438,14 @@ exports[`WalletDetails should render 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -1460,9 +1462,10 @@ exports[`WalletDetails should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -1481,13 +1484,11 @@ exports[`WalletDetails should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -1504,10 +1505,10 @@ exports[`WalletDetails should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -1522,21 +1523,21 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -1553,18 +1554,21 @@ exports[`WalletDetails should render 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -3310,7 +3314,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -3377,14 +3381,14 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -3401,9 +3405,10 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -3422,13 +3427,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -3445,10 +3448,10 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -3463,21 +3466,21 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -3494,18 +3497,21 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -5230,7 +5236,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -5297,14 +5303,14 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -5321,9 +5327,10 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -5342,13 +5349,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -5365,10 +5370,10 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -5383,21 +5388,21 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -5414,18 +5419,21 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -7150,7 +7158,7 @@ exports[`WalletDetails should render with timers 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -7217,14 +7225,14 @@ exports[`WalletDetails should render with timers 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -7241,9 +7249,10 @@ exports[`WalletDetails should render with timers 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -7262,13 +7271,11 @@ exports[`WalletDetails should render with timers 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -7285,10 +7292,10 @@ exports[`WalletDetails should render with timers 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -7303,21 +7310,21 @@ exports[`WalletDetails should render with timers 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -7334,18 +7341,21 @@ exports[`WalletDetails should render with timers 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -9091,7 +9101,7 @@ exports[`WalletDetails should update wallet name 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -9158,14 +9168,14 @@ exports[`WalletDetails should update wallet name 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -9182,9 +9192,10 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -9203,13 +9214,11 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -9226,10 +9235,10 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -9244,21 +9253,21 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -9275,18 +9284,21 @@ exports[`WalletDetails should update wallet name 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"

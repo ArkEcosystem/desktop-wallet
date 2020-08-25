@@ -10,7 +10,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -78,14 +78,14 @@ exports[`Dashboard should fetch more transactions 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -102,9 +102,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -123,13 +124,11 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -146,10 +145,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -164,21 +163,21 @@ exports[`Dashboard should fetch more transactions 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -195,18 +194,21 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -529,7 +531,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -553,7 +555,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -655,7 +657,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -695,7 +697,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -756,7 +758,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -796,7 +798,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -830,10 +832,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -867,10 +869,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -919,7 +921,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI VtiAt"
+                  class="sc-AxgMl grPENn"
                   role="table"
                 >
                   <table
@@ -1124,7 +1126,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -1158,7 +1160,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -1196,7 +1198,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -1265,7 +1267,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -1299,7 +1301,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               DKY5ey…bNF53A
@@ -1337,7 +1339,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -1406,7 +1408,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -1440,7 +1442,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -1478,7 +1480,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -1547,7 +1549,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -1581,7 +1583,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               DKY5ey…bNF53A
@@ -1619,7 +1621,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -1647,7 +1649,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb BegvR w-full mt-10 mb-5"
+                class="sc-AxmLO ipkzTu w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -1673,7 +1675,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -1741,14 +1743,14 @@ exports[`Dashboard should hide portfolio view 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -1765,9 +1767,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -1786,13 +1789,11 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -1809,10 +1810,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -1827,21 +1828,21 @@ exports[`Dashboard should hide portfolio view 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -1858,18 +1859,21 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -1983,7 +1987,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </div>
                       </span>
                       <div
-                        class="sc-AxgMl ekvnZw right-0 undefined"
+                        class="sc-AxhUy iwnmXm right-0 undefined"
                       >
                         <div
                           data-testid="dropdown__content"
@@ -2019,7 +2023,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   data-testid="network__option"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc relative cursor-pointer border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ relative cursor-pointer border-theme-primary-contrast"
                                   data-testid="network__viewall"
                                 >
                                   <div
@@ -2171,7 +2175,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -2195,7 +2199,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -2297,7 +2301,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -2337,7 +2341,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -2398,7 +2402,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -2438,7 +2442,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -2472,10 +2476,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -2509,10 +2513,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -2561,7 +2565,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI VtiAt"
+                  class="sc-AxgMl grPENn"
                   role="table"
                 >
                   <table
@@ -2766,7 +2770,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -2800,7 +2804,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -2838,7 +2842,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -2907,7 +2911,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -2941,7 +2945,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               DKY5ey…bNF53A
@@ -2979,7 +2983,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -3007,7 +3011,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb BegvR w-full mt-10 mb-5"
+                class="sc-AxmLO ipkzTu w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -3033,7 +3037,7 @@ exports[`Dashboard should hide transaction view 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -3101,14 +3105,14 @@ exports[`Dashboard should hide transaction view 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3125,9 +3129,10 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -3146,13 +3151,11 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3169,10 +3172,10 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -3187,21 +3190,21 @@ exports[`Dashboard should hide transaction view 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -3218,18 +3221,21 @@ exports[`Dashboard should hide transaction view 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -3548,7 +3554,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                         </div>
                       </span>
                       <div
-                        class="sc-AxgMl ekvnZw right-0 undefined"
+                        class="sc-AxhUy iwnmXm right-0 undefined"
                       >
                         <div
                           data-testid="dropdown__content"
@@ -3584,7 +3590,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   data-testid="network__option"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc relative cursor-pointer border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ relative cursor-pointer border-theme-primary-contrast"
                                   data-testid="network__viewall"
                                 >
                                   <div
@@ -3736,7 +3742,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -3760,7 +3766,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -3862,7 +3868,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -3902,7 +3908,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -3963,7 +3969,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -4003,7 +4009,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -4037,10 +4043,10 @@ exports[`Dashboard should hide transaction view 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -4074,10 +4080,10 @@ exports[`Dashboard should hide transaction view 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -4124,7 +4130,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -4192,14 +4198,14 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4216,9 +4222,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -4237,13 +4244,11 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4260,10 +4265,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -4278,21 +4283,21 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -4309,18 +4314,21 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -4643,7 +4651,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -4667,7 +4675,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -4769,7 +4777,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -4809,7 +4817,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -4870,7 +4878,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -4910,7 +4918,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -4944,10 +4952,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -4981,10 +4989,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -5033,7 +5041,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI VtiAt"
+                  class="sc-AxgMl grPENn"
                   role="table"
                 >
                   <table
@@ -5238,7 +5246,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -5272,7 +5280,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -5310,7 +5318,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -5379,7 +5387,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -5413,7 +5421,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               DKY5ey…bNF53A
@@ -5451,7 +5459,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -5479,7 +5487,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb BegvR w-full mt-10 mb-5"
+                class="sc-AxmLO ipkzTu w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -5505,7 +5513,7 @@ exports[`Dashboard should render 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -5573,14 +5581,14 @@ exports[`Dashboard should render 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -5597,9 +5605,10 @@ exports[`Dashboard should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -5618,13 +5627,11 @@ exports[`Dashboard should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -5641,10 +5648,10 @@ exports[`Dashboard should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -5659,21 +5666,21 @@ exports[`Dashboard should render 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -5690,18 +5697,21 @@ exports[`Dashboard should render 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -6024,7 +6034,7 @@ exports[`Dashboard should render 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -6048,7 +6058,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -6150,7 +6160,7 @@ exports[`Dashboard should render 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -6190,7 +6200,7 @@ exports[`Dashboard should render 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -6251,7 +6261,7 @@ exports[`Dashboard should render 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -6291,7 +6301,7 @@ exports[`Dashboard should render 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -6325,10 +6335,10 @@ exports[`Dashboard should render 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -6362,10 +6372,10 @@ exports[`Dashboard should render 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -6414,7 +6424,7 @@ exports[`Dashboard should render 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI VtiAt"
+                  class="sc-AxgMl grPENn"
                   role="table"
                 >
                   <table
@@ -6619,7 +6629,7 @@ exports[`Dashboard should render 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -6653,7 +6663,7 @@ exports[`Dashboard should render 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -6691,7 +6701,7 @@ exports[`Dashboard should render 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -6760,7 +6770,7 @@ exports[`Dashboard should render 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -6794,7 +6804,7 @@ exports[`Dashboard should render 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               DKY5ey…bNF53A
@@ -6832,7 +6842,7 @@ exports[`Dashboard should render 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -6860,7 +6870,7 @@ exports[`Dashboard should render 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb BegvR w-full mt-10 mb-5"
+                class="sc-AxmLO ipkzTu w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -6886,7 +6896,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -6954,14 +6964,14 @@ exports[`Dashboard should render portfolio chart 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -6978,9 +6988,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -6999,13 +7010,11 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -7022,10 +7031,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -7040,21 +7049,21 @@ exports[`Dashboard should render portfolio chart 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -7071,18 +7080,21 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -7405,7 +7417,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -7429,7 +7441,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -7531,7 +7543,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -7571,7 +7583,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -7632,7 +7644,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -7672,7 +7684,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -7706,10 +7718,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -7743,10 +7755,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -7795,7 +7807,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI VtiAt"
+                  class="sc-AxgMl grPENn"
                   role="table"
                 >
                   <table
@@ -8000,7 +8012,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -8034,7 +8046,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -8072,7 +8084,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -8141,7 +8153,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -8175,7 +8187,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               DKY5ey…bNF53A
@@ -8213,7 +8225,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -8241,7 +8253,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb BegvR w-full mt-10 mb-5"
+                class="sc-AxmLO ipkzTu w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -8267,7 +8279,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -8335,14 +8347,14 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -8359,9 +8371,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -8380,13 +8393,11 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -8403,10 +8414,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -8421,21 +8432,21 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -8452,18 +8463,21 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -8786,7 +8800,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -8810,7 +8824,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -8912,7 +8926,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -8952,7 +8966,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -9013,7 +9027,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -9053,7 +9067,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -9087,10 +9101,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -9124,10 +9138,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -9176,7 +9190,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI VtiAt"
+                  class="sc-AxgMl grPENn"
                   role="table"
                 >
                   <table
@@ -9381,7 +9395,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -9415,7 +9429,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -9453,7 +9467,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -9522,7 +9536,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -9556,7 +9570,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               DKY5ey…bNF53A
@@ -9594,7 +9608,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -9622,7 +9636,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb BegvR w-full mt-10 mb-5"
+                class="sc-AxmLO ipkzTu w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -9648,7 +9662,7 @@ exports[`Dashboard should render wallets 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -9716,14 +9730,14 @@ exports[`Dashboard should render wallets 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -9740,9 +9754,10 @@ exports[`Dashboard should render wallets 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -9761,13 +9776,11 @@ exports[`Dashboard should render wallets 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -9784,10 +9797,10 @@ exports[`Dashboard should render wallets 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -9802,21 +9815,21 @@ exports[`Dashboard should render wallets 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -9833,18 +9846,21 @@ exports[`Dashboard should render wallets 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -10167,7 +10183,7 @@ exports[`Dashboard should render wallets 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -10191,7 +10207,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -10293,7 +10309,7 @@ exports[`Dashboard should render wallets 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -10333,7 +10349,7 @@ exports[`Dashboard should render wallets 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -10394,7 +10410,7 @@ exports[`Dashboard should render wallets 1`] = `
                                 class="flex"
                               >
                                 <div
-                                  class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
+                                  class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
                                 >
                                   <div
                                     class="sc-AxirZ eViLYR"
@@ -10434,7 +10450,7 @@ exports[`Dashboard should render wallets 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                    class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -10468,10 +10484,10 @@ exports[`Dashboard should render wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -10505,10 +10521,10 @@ exports[`Dashboard should render wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -10557,7 +10573,7 @@ exports[`Dashboard should render wallets 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI VtiAt"
+                  class="sc-AxgMl grPENn"
                   role="table"
                 >
                   <table
@@ -10762,7 +10778,7 @@ exports[`Dashboard should render wallets 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -10796,7 +10812,7 @@ exports[`Dashboard should render wallets 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -10834,7 +10850,7 @@ exports[`Dashboard should render wallets 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -10903,7 +10919,7 @@ exports[`Dashboard should render wallets 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
+                              class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success"
                             >
                               <div
                                 class="sc-AxirZ iQaTP"
@@ -10937,7 +10953,7 @@ exports[`Dashboard should render wallets 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                              class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               DKY5ey…bNF53A
@@ -10975,7 +10991,7 @@ exports[`Dashboard should render wallets 1`] = `
                           class="text-right"
                         >
                           <div
-                            class="sc-Axmtr fXByBf"
+                            class="sc-AxheI dbuKLQ"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -11003,7 +11019,7 @@ exports[`Dashboard should render wallets 1`] = `
                 </div>
               </div>
               <button
-                class="sc-AxhCb BegvR w-full mt-10 mb-5"
+                class="sc-AxmLO ipkzTu w-full mt-10 mb-5"
                 color="primary"
                 data-testid="transactions__fetch-more-button"
                 type="button"
@@ -11029,7 +11045,7 @@ exports[`Dashboard should render with no wallets 1`] = `
       class="sc-fzoyAV bqFbiw"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -11097,14 +11113,14 @@ exports[`Dashboard should render with no wallets 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -11121,9 +11137,10 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/transactions/transfer"
               >
@@ -11142,13 +11159,11 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxhCb dVGCEE"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -11165,10 +11180,10 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -11183,21 +11198,21 @@ exports[`Dashboard should render with no wallets 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxirZ iQaTP"
@@ -11214,18 +11229,21 @@ exports[`Dashboard should render with no wallets 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JA
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JA
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -11548,7 +11566,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                     class="space-x-3"
                   >
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -11572,7 +11590,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxhCb BegvR"
+                      class="sc-AxmLO ipkzTu"
                       color="primary"
                       type="button"
                     >
@@ -11633,47 +11651,10 @@ exports[`Dashboard should render with no wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
-                                />
-                              </div>
-                              <div
-                                class="mt-6 text-md text-theme-primary-contrast undefined"
-                              >
-                                New wallet
-                              </div>
-                              <div
-                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
-                              >
-                                Balance
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
-                        >
-                          <div
-                            class="sc-fzpjYC bVVEWC"
-                            data-testid="ProfileCard"
-                          >
-                            <div
-                              class="p-2"
-                            >
-                              <div>
-                                <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
-                                />
-                                <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -11707,10 +11688,10 @@ exports[`Dashboard should render with no wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -11744,10 +11725,47 @@ exports[`Dashboard should render with no wallets 1`] = `
                             >
                               <div>
                                 <div
-                                  class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
                                 />
                                 <div
-                                  class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
+                                />
+                              </div>
+                              <div
+                                class="mt-6 text-md text-theme-primary-contrast undefined"
+                              >
+                                New wallet
+                              </div>
+                              <div
+                                class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                              >
+                                Balance
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzpjYC bVVEWC"
+                            data-testid="ProfileCard"
+                          >
+                            <div
+                              class="p-2"
+                            >
+                              <div>
+                                <div
+                                  class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
+                                />
+                                <div
+                                  class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
                                 />
                               </div>
                               <div
@@ -11796,7 +11814,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI VtiAt"
+                  class="sc-AxgMl grPENn"
                   role="table"
                 >
                   <table
