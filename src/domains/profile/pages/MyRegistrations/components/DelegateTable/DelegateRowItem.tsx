@@ -1,4 +1,4 @@
-import { Wallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import { DelegateRowItemSkeleton } from "./DelegateRowItemSkeleton";
 
 type DelegateRowItem = {
-	wallet: Wallet;
+	wallet: ReadWriteWallet;
 	onAction?: any;
 };
 

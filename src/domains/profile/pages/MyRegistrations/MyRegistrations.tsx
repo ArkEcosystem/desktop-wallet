@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
@@ -32,7 +32,7 @@ const EmptyRegistrations = () => {
 };
 
 export const MyRegistrations = () => {
-	const [delegates, setDelegates] = useState<Wallet[]>([]);
+	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
 	const [blockchain] = useState([]);
 	const [business] = useState([]);
 

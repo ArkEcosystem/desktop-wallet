@@ -1,4 +1,4 @@
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
 import { env, getDefaultProfileId, render } from "testing-library";
@@ -6,7 +6,7 @@ import { env, getDefaultProfileId, render } from "testing-library";
 import { DelegateTable } from "./DelegateTable";
 
 let profile: Profile;
-let delegates: Wallet[];
+let delegates: ReadWriteWallet[];
 
 describe("Welcome", () => {
 	beforeAll(async () => {
@@ -17,7 +17,7 @@ describe("Welcome", () => {
 		await env.persist();
 		nock.enableNetConnect();
 
-		delegates = wallets.filter((wallet: Wallet) => wallet.isDelegate());
+		delegates = wallets.filter((wallet: ReadWriteWallet) => wallet.isDelegate());
 	});
 
 	it("should render empty state", () => {

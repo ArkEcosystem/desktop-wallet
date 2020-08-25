@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Icon } from "app/components/Icon";
 import { Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { DelegateRowItem } from "./DelegateRowItem";
 
 type Props = {
-	wallets: Wallet[];
+	wallets: ReadWriteWallet[];
 	onAction?: any;
 };
 
@@ -27,7 +27,7 @@ const getStatusIcon = (confirmed: boolean) => {
 };
 
 type DelegateRowItem = {
-	wallet: Wallet;
+	wallet: ReadWriteWallet;
 	onAction?: any;
 };
 
@@ -65,7 +65,7 @@ export const DelegateTable = ({ wallets, onAction }: Props) => {
 			<h2 className="mb-8 font-bold">{t("PROFILE.PAGE_MY_REGISTRATIONS.DELEGATE")}</h2>
 
 			<Table columns={columns} data={wallets}>
-				{(wallet: Wallet) => <DelegateRowItem wallet={wallet} onAction={onAction} />}
+				{(wallet: ReadWriteWallet) => <DelegateRowItem wallet={wallet} onAction={onAction} />}
 			</Table>
 		</Section>
 	);
