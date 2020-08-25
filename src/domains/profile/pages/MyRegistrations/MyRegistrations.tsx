@@ -20,7 +20,7 @@ const EmptyRegistrations = () => {
 
 	return (
 		<Section className="flex-1">
-			<div data-testid="my-registrations__empty-state" className="text-center">
+			<div data-testid="MyRegistrations__empty-state" className="text-center">
 				<RegisterBanner className="mx-auto" />
 
 				<div className="mt-8 text-theme-neutral-dark">
@@ -40,7 +40,11 @@ export const MyRegistrations = () => {
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const isEmptyRegistrations = !delegates.length && !blockchain.length && !business.length;
+	const isEmptyRegistrations = useMemo(() => !delegates.length && !blockchain.length && !business.length, [
+		business,
+		delegates,
+		blockchain,
+	]);
 
 	const crumbs = [
 		{
@@ -49,16 +53,17 @@ export const MyRegistrations = () => {
 		},
 	];
 
-	const handleAction = ({ action }: any) => {
+	const handleAction = ({ action, walletId }: any) => {
 		switch (action) {
 			case "register":
+				//TODO: Determine wallet selection. Which wallet should be registered?
 				history.push(`/profiles/${activeProfile.id()}/transactions/registration`);
 				break;
 			case "resign":
-				history.push(`/profiles/${activeProfile.id()}/resignation`);
+				history.push(`/profiles/${activeProfile.id()}/transactions/${walletId}/resignation`);
 				break;
 			case "update":
-				history.push(`/profiles/${activeProfile.id()}/update`);
+				history.push(`/profiles/${activeProfile.id()}/transactions/${walletId}/update`);
 				break;
 			default:
 				break;
@@ -80,7 +85,10 @@ export const MyRegistrations = () => {
 						<div className="flex justify-end space-x-10 divide-x divide-theme-neutral-300">
 							<HeaderSearchBar onSearch={console.log} />
 							<div className="pl-10">
-								<Button onClick={() => handleAction({ action: "register" })}>
+								<Button
+									data-testid="MyRegistrations__cta-register"
+									onClick={() => handleAction({ action: "register" })}
+								>
 									{t("COMMON.REGISTER")}
 								</Button>
 							</div>
@@ -91,7 +99,7 @@ export const MyRegistrations = () => {
 
 			{business.length > 0 && <BusinessTable data={business} />}
 			{blockchain.length > 0 && <BlockchainTable data={blockchain} />}
-			{delegates.length > 0 && <DelegateTable wallets={delegates} />}
+			{delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
