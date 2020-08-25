@@ -50,7 +50,7 @@ export const InputFee = ({ defaultValue, value, average, last, min, max, onChang
 			</div>
 			<div>
 				<SelectionBar>
-					{last && (
+					{last && last !== "0" && (
 						<SelectionBarOption
 							value={last}
 							isValueChecked={() => fee === last}

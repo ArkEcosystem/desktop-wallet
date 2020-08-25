@@ -338,6 +338,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                     <div>
                       <div
                         class="flex items-center py-6 true "
+                        data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
@@ -393,6 +394,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                       </div>
                       <div
                         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
@@ -411,6 +413,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                       </div>
                       <div
                         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+                        data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
@@ -488,15 +491,6 @@ exports[`ResignRegistration should render 1st step 1`] = `
                                     data-testid="SelectionBar"
                                     role="radiogroup"
                                   >
-                                    <button
-                                      aria-checked="false"
-                                      class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Last
-                                    </button>
                                     <button
                                       aria-checked="false"
                                       class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
@@ -872,6 +866,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                     >
                       <div
                         class="flex items-center py-6 true "
+                        data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
@@ -911,6 +906,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                       </div>
                       <div
                         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
@@ -966,6 +962,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                       </div>
                       <div
                         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
@@ -1866,6 +1863,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                         </p>
                         <div
                           class="flex items-center py-6 true "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -1919,6 +1917,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -1972,6 +1971,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -2007,6 +2007,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -2068,6 +2069,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -2099,6 +2101,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -2117,6 +2120,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -2537,6 +2541,7 @@ exports[`ResignRegistration should should go back 1`] = `
                     <div>
                       <div
                         class="flex items-center py-6 true "
+                        data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
@@ -2592,6 +2597,7 @@ exports[`ResignRegistration should should go back 1`] = `
                       </div>
                       <div
                         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                        data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
@@ -2610,6 +2616,7 @@ exports[`ResignRegistration should should go back 1`] = `
                       </div>
                       <div
                         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+                        data-testid="TransactionDetail"
                       >
                         <div
                           class="flex-1 space-y-2"
@@ -2687,15 +2694,6 @@ exports[`ResignRegistration should should go back 1`] = `
                                     data-testid="SelectionBar"
                                     role="radiogroup"
                                   >
-                                    <button
-                                      aria-checked="false"
-                                      class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                      data-testid="SelectionBarOption"
-                                      role="radio"
-                                      type="button"
-                                    >
-                                      Last
-                                    </button>
                                     <button
                                       aria-checked="false"
                                       class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
@@ -3080,6 +3078,7 @@ exports[`ResignRegistration should submit 1`] = `
                         </p>
                         <div
                           class="flex items-center py-6 true "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -3133,6 +3132,7 @@ exports[`ResignRegistration should submit 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -3186,6 +3186,7 @@ exports[`ResignRegistration should submit 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -3221,6 +3222,7 @@ exports[`ResignRegistration should submit 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -3282,6 +3284,7 @@ exports[`ResignRegistration should submit 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -3313,6 +3316,7 @@ exports[`ResignRegistration should submit 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -3331,6 +3335,7 @@ exports[`ResignRegistration should submit 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"

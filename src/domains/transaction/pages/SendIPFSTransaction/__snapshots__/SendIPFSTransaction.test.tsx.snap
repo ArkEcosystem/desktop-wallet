@@ -712,6 +712,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                         </p>
                         <div
                           class="flex items-center py-6 true "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -765,6 +766,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -818,6 +820,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -853,6 +856,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -956,6 +960,8 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
   </div>
 </div>
 `;
+
+exports[`SendIPFSTransaction should navigate between steps 2`] = `<div />`;
 
 exports[`SendIPFSTransaction should render 1st step 1`] = `
 <DocumentFragment>
@@ -1206,15 +1212,6 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   role="radio"
                   type="button"
                 >
-                  Last
-                </button>
-                <button
-                  aria-checked="false"
-                  class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                  data-testid="SelectionBarOption"
-                  role="radio"
-                  type="button"
-                >
                   Min
                 </button>
                 <button
@@ -1256,6 +1253,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
     >
       <div
         class="flex items-center py-6 true "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -1295,6 +1293,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
       </div>
       <div
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -1356,6 +1355,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
       </div>
       <div
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6"
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -1569,6 +1569,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
         </p>
         <div
           class="flex items-center py-6 true "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1622,6 +1623,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1675,6 +1677,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1710,6 +1713,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -2400,15 +2404,6 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                                 data-testid="SelectionBar"
                                 role="radiogroup"
                               >
-                                <button
-                                  aria-checked="false"
-                                  class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Last
-                                </button>
                                 <button
                                   aria-checked="false"
                                   class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"

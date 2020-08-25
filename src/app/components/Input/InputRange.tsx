@@ -65,16 +65,18 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					ref={ref}
 					onChange={handleInput}
 				/>
-				<div className="absolute bottom-0 w-full px-1">
-					<Range
-						colors={["var(--theme-color-primary)", "transparent"]}
-						step={step}
-						min={Number(min)}
-						max={Number(max)}
-						onChange={handleRange}
-						values={rangeValues}
-					/>
-				</div>
+				{Number(min) < Number(max) && (
+					<div className="absolute bottom-0 w-full px-1">
+						<Range
+							colors={["var(--theme-color-primary)", "transparent"]}
+							step={step}
+							min={Number(min)}
+							max={Number(max)}
+							onChange={handleRange}
+							values={rangeValues}
+						/>
+					</div>
+				)}
 			</InputGroup>
 		);
 	},
