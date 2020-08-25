@@ -4,7 +4,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { getDefaultProfileId, renderWithRouter, syncDelegates,waitFor } from "utils/testing-library";
+import { getDefaultProfileId, renderWithRouter, syncDelegates, waitFor } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { VoteDetail } from "./VoteDetail";
