@@ -16,6 +16,10 @@ describe("App", () => {
 
 		await waitFor(() => expect(getByTestId("Splash__text")).toBeInTheDocument());
 
+		await act(async () => {
+			await new Promise((resolve) => setTimeout(resolve, 500));
+		});
+
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
