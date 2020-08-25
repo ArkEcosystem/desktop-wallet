@@ -5,6 +5,24 @@ import { getPageURL } from "../../../utils/e2e-utils";
 
 fixture`My Registrations`.page(getPageURL());
 
+test("should navigate to my registrations from navigation bar", async (t) => {
+	await t.click(Selector("p").withText("John Doe"));
+	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
+
+	await t.click(Selector('[data-testid="navbar__useractions"]'));
+	await t
+		.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations().COMMON.REGISTRATIONS).exists)
+		.ok();
+	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations().COMMON.REGISTRATIONS));
+
+	await t.expect(Selector("[data-testid=header__title]").exists).ok();
+	await t
+		.expect(
+			Selector("[data-testid=header__title]").withText(translations().PROFILE.PAGE_MY_REGISTRATIONS.TITLE).exists,
+		)
+		.ok();
+});
+
 test("should navigate to my registrations page", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
