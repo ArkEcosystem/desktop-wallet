@@ -27,7 +27,11 @@ import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
 
-const Main = () => {
+type Props = {
+	syncInterval?: number;
+};
+
+const Main = ({ syncInterval }: Props) => {
 	const [showSplash, setShowSplash] = useState(true);
 
 	const { env, persist } = useEnvironmentContext();
@@ -58,7 +62,7 @@ const Main = () => {
 			syncDelegates(env);
 
 			console.info("Scheduling next delegates synchronization...");
-			setInterval(() => syncDelegates(env), 300000);
+			setInterval(() => syncDelegates(env), syncInterval);
 
 			await env.boot();
 			await persist();
@@ -69,7 +73,7 @@ const Main = () => {
 		} else {
 			setShowSplash(false);
 		}
-	}, [env, persist]);
+	}, [env, persist, syncInterval]);
 
 	if (showSplash) {
 		return <Splash />;
@@ -85,7 +89,11 @@ const Main = () => {
 	);
 };
 
-export const App = () => {
+Main.defaultProps = {
+	syncInterval: 300000,
+};
+
+export const App = ({ syncInterval }: Props) => {
 	/**
 	 * Ensure that the Environment object will not be recreated when the state changes,
 	 * as the data is stored in memory by the `DataRepository`.
@@ -116,12 +124,12 @@ export const App = () => {
 	);
 
 	return (
-		<I18nextProvider i18n={i18n}>
-			<ErrorBoundary FallbackComponent={ApplicationError}>
+		<ErrorBoundary FallbackComponent={ApplicationError}>
+			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
-					<Main />
+					<Main syncInterval={syncInterval} />
 				</EnvironmentProvider>
-			</ErrorBoundary>
-		</I18nextProvider>
+			</I18nextProvider>
+		</ErrorBoundary>
 	);
 };
