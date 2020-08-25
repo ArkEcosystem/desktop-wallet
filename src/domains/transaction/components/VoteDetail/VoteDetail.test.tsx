@@ -91,7 +91,7 @@ describe("VoteDetail", () => {
 	});
 
 	it("should render a modal with wallet alias", async () => {
-		const { asFragment, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId, getByText, debug } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail isOpen={true} transaction={TransactionFixture} walletAlias="Wallet Alias" />
 			</Route>,
@@ -105,6 +105,25 @@ describe("VoteDetail", () => {
 			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
 		);
 		await waitFor(() => expect(getByText("Wallet Alias")).toBeInTheDocument());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with a unknown sender", async () => {
+		const { queryByTestId, getByTestId, asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<VoteDetail isOpen={true} transaction={{ ...TransactionFixture, sender: () => "" }} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
+		);
+
+		await waitFor(() => expect(queryByTestId("VoteDetail__delegate__address")).toBeNull());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

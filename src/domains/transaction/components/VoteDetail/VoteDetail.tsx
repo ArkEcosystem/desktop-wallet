@@ -143,7 +143,11 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 					}
 				>
 					{username}
-					<TruncateMiddle text={address} className="ml-2 text-theme-neutral" />
+					<TruncateMiddle
+						data-testid="VoteDetail__delegate__address"
+						text={address}
+						className="ml-2 text-theme-neutral"
+					/>
 				</TransactionDetail>
 			);
 		});
