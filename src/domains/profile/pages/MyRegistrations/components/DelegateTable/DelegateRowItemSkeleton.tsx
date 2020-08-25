@@ -34,7 +34,7 @@ export const DelegateRowItemSkeleton = () => (
 		<td className="font-semibold text-theme-neutral-dark">
 			<div className="flex items-center justify-end">
 				<Skeleton height={6} width={40} className="mt-4" />
-				<Skeleton height={6} width={80} className="ml-4 mt-4" />
+				<Skeleton height={6} width={80} className="mt-4 ml-4" />
 			</div>
 		</td>
 		<td className="align-middle">
