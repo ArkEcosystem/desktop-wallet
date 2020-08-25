@@ -86,7 +86,7 @@ describe("NavigationBar", () => {
 
 		const { getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
 
-		expect(getByTestId("navbar__user--avatarImage")).toBeTruthy();
+		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
 	});
 
 	it.each(["Contacts", "Settings", "Support"])("should handle '%s' click on user actions dropdown", async (label) => {

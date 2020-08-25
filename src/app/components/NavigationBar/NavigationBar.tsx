@@ -1,8 +1,8 @@
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
+import { AvatarWrapper } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
-import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
@@ -49,7 +49,7 @@ const NotificationsDropdown = ({
 }: NotificationsProps) => (
 	<Dropdown
 		toggleContent={
-			<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+			<div className="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300">
 				<Icon name="Notification" width={22} height={22} />
 			</div>
 		}
@@ -79,52 +79,40 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userIn
 		onSelect={onUserAction}
 		options={userActions}
 		toggleContent={(isOpen: boolean) => (
-			<div className="cursor-pointer" data-testid="navbar__useractions">
-				<Circle className="-mr-2 border-theme-neutral-300" size="lg">
-					<span className="text-theme-neutral-600">{currencyIcon && <Icon name={currencyIcon} />}</span>
+			<div className="ml-4 cursor-pointer" data-testid="navbar__useractions">
+				<Circle className="-mr-2 border-theme-primary-contrast" size="lg">
+					<span className="text-theme-neutral-dark">{currencyIcon && <Icon name={currencyIcon} />}</span>
 				</Circle>
-				{avatarImage?.endsWith("</svg>") ? (
-					<div
-						className="relative inline-flex items-center justify-center align-middle rounded-full"
-						data-testid="navbar__user--avatar"
-					>
-						<img
-							className="rounded-full w-11 h-11"
-							src={`data:image/svg+xml;utf8,${avatarImage}`}
-							alt="Profile avatar"
-						/>
-						<span className="absolute text-sm font-semibold text-theme-background">{userInitials}</span>
-						<Badge
-							className={`transform ${
-								isOpen ? "rotate-180" : ""
-							} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
-							position="right"
-							icon="ChevronDown"
-							iconWidth={10}
-							iconHeight={10}
-						/>
-					</div>
-				) : (
-					<div
-						className="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
-						data-testid="navbar__user--avatarImage"
-					>
-						<img
-							className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
-							src={avatarImage}
-							alt="Profile avatar"
-						/>
-						<Badge
-							className={`transform ${
-								isOpen ? "rotate-180" : ""
-							} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
-							position="right"
-							icon="ChevronDown"
-							iconWidth={10}
-							iconHeight={10}
-						/>
-					</div>
-				)}
+
+				<div
+					className="relative inline-flex items-center justify-center align-middle rounded-full"
+					data-testid="navbar__user--avatar"
+				>
+					<AvatarWrapper size="lg">
+						{avatarImage?.endsWith("</svg>") ? (
+							<>
+								<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
+								<span className="absolute text-sm font-semibold text-theme-background">
+									{userInitials}
+								</span>
+							</>
+						) : (
+							<img
+								alt="Profile Avatar"
+								className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+								src={avatarImage}
+							/>
+						)}
+					</AvatarWrapper>
+
+					<Badge
+						className="bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+						position="right"
+						icon={isOpen ? "ChevronUp" : "ChevronDown"}
+						iconWidth={10}
+						iconHeight={10}
+					/>
+				</div>
 			</div>
 		)}
 	/>
@@ -189,7 +177,7 @@ export const NavigationBar = ({
 
 	return (
 		<NavWrapper aria-labelledby="main menu">
-			<div className="px-4 sm:px-6 lg:px-">
+			<div className="px-4 sm:px-6 lg:px-10">
 				<div className="relative flex justify-between h-20 md:h-24">
 					<div className="flex items-center flex-shrink-0">
 						<div className="flex p-2 mr-4 rounded-lg bg-logo">
@@ -198,13 +186,14 @@ export const NavigationBar = ({
 						<ul className="flex h-20 md:h-24">{renderMenu()}</ul>
 					</div>
 
-					<div className="flex items-center">
+					<div className="flex items-center h-full mr-4">
 						<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
 
 						<div className="h-8 border-r border-theme-neutral-200" />
 
-						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+						<div className="flex items-center h-full text-theme-primary-300">
 							<NavLink
+								className="p-2 mx-6 my-auto"
 								to={`/profiles/${profile?.id()}/transactions/transfer`}
 								data-testid="navbar__buttons--send"
 							>
@@ -214,20 +203,20 @@ export const NavigationBar = ({
 
 						<div className="h-8 border-r border-theme-neutral-200" />
 
-						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
-							<Button
-								variant="transparent"
+						<div className="flex items-center h-full text-theme-primary-300">
+							<button
+								className="p-2 mx-6 my-auto"
 								onClick={() => setIsSearchingWallet(true)}
 								data-testid="navbar__buttons--receive"
 							>
 								<Icon name="Receive" width={22} height={22} />
-							</Button>
+							</button>
 						</div>
 
 						<div className="h-8 border-r border-theme-neutral-200" />
 
-						<div className="p-2 ml-4 text-right">
-							<div className="text-xs text-theme-neutral">{t("COMMON.YOUR_BALANCE")}</div>
+						<div className="ml-8 text-right">
+							<div className="text-xs font-medium text-theme-neutral">{t("COMMON.YOUR_BALANCE")}</div>
 							<div className="text-sm font-bold text-theme-neutral-dark">
 								<Amount
 									value={profile?.balance() || BigNumber.ZERO}
@@ -236,7 +225,7 @@ export const NavigationBar = ({
 							</div>
 						</div>
 
-						<div className="flex p-1 cusror-pointer">
+						<div className="flex cusror-pointer">
 							<UserInfo
 								userInitials={getUserInitials()}
 								currencyIcon={getCurrencyIcon()}

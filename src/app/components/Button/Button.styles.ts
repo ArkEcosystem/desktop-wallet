@@ -35,7 +35,8 @@ const getVariant = (name: string, colorName: string, color: ReturnType<typeof ge
 				color: ${color.base};
 				background-color: ${color.contrast};
 				&:not(:focus):hover:enabled {
-					background-color: ${color.light};
+					color: ${colorName === "danger" ? "var(--theme-white)" : color.base};
+					background-color: ${colorName === "danger" ? "var(--theme-color-danger-400)" : color.light};
 				}
 			`;
 		case "outline":

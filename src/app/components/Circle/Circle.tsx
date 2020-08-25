@@ -10,6 +10,7 @@ export type CircleProps = {
 	size?: Size;
 	className?: string | null;
 	noShadow?: boolean;
+	shadowColor?: string;
 };
 
 export const Circle = styled.div<CircleProps>(getStyles);
