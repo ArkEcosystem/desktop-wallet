@@ -46,7 +46,7 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select address", () => {
+	it("should select address", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
@@ -58,6 +58,9 @@ describe("Votes", () => {
 		});
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
+		});
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -77,7 +80,8 @@ describe("Votes", () => {
 			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
 
-		const selectDelegateButtons = [0, 1, 2].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
+		// const selectDelegateButtons = [0, 1, 2].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
+		const selectDelegateButtons = [0, 1].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
 
 		act(() => {
 			fireEvent.click(selectDelegateButtons[0]);
@@ -87,9 +91,9 @@ describe("Votes", () => {
 			fireEvent.click(selectDelegateButtons[1]);
 		});
 
-		act(() => {
-			fireEvent.click(selectDelegateButtons[2]);
-		});
+		// act(() => {
+		// 	fireEvent.click(selectDelegateButtons[2]);
+		// });
 
 		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_TABLE.SHOW_LIST);
 		expect(asFragment()).toMatchSnapshot();
