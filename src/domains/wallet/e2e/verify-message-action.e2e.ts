@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL, scrollTo } from "../../../utils/e2e-utils";
+import { getPageURL, scrollToTop } from "../../../utils/e2e-utils";
 import { goToWallet } from "./common";
 
 const translations = buildTranslations();
@@ -9,7 +9,7 @@ const translations = buildTranslations();
 fixture`Verify Message`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
 
 test("Should open and cancel verify message modal", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click verify message option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -26,7 +26,7 @@ test("Should open and cancel verify message modal", async (t) => {
 });
 
 test("Should open and close verify message modal", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click verify message option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -43,7 +43,7 @@ test("Should open and close verify message modal", async (t) => {
 });
 
 test("Should fail verification", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click verify message option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -72,7 +72,7 @@ test("Should fail verification", async (t) => {
 });
 
 test("Should successfully verify message", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click verify message option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));

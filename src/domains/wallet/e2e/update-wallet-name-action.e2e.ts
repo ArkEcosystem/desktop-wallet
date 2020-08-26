@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL, scrollTo } from "../../../utils/e2e-utils";
+import { getPageURL, scrollToTop } from "../../../utils/e2e-utils";
 import { goToWallet } from "./common";
 
 const translations = buildTranslations();
@@ -9,7 +9,7 @@ const translations = buildTranslations();
 fixture`Wallet Labeling`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
 
 test("Should open and close wallet update name modal", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click wallet update name option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -26,7 +26,7 @@ test("Should open and close wallet update name modal", async (t) => {
 });
 
 test("Should open and cancel wallet update name modal", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click wallet update name option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -43,7 +43,7 @@ test("Should open and cancel wallet update name modal", async (t) => {
 });
 
 test("Should succesfully update wallet name", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click wallet update name option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -64,7 +64,7 @@ test("Should succesfully update wallet name", async (t) => {
 });
 
 test("Should error when name is empty", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click wallet update name option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -84,7 +84,7 @@ test("Should error when name is empty", async (t) => {
 });
 
 test("Should error when name exceeds 42 characters", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click wallet update name option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -109,7 +109,7 @@ test("Should error when name exceeds 42 characters", async (t) => {
 });
 
 test("Should disallow empty spaces", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click wallet update name option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -132,7 +132,7 @@ test("Should disallow empty spaces", async (t) => {
 });
 
 test("Should persist wallet name", async (t) => {
-	await scrollTo(0);
+	await scrollToTop();
 
 	const newName = "New Name";
 
@@ -155,7 +155,7 @@ test("Should persist wallet name", async (t) => {
 
 	// Open modal again to see the updated wallet name in input field
 
-	await scrollTo(0);
+	await scrollToTop();
 
 	// Click wallet update name option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
