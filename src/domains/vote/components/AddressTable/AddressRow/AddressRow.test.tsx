@@ -71,31 +71,37 @@ describe("AddressRow", () => {
 		const { asFragment, getByTestId } = render(
 			<table>
 				<tbody>
-					<AddressRow index={0} wallet={blankWallet} />
+					<AddressRow index={0} wallet={wallet} />
+					<AddressRow index={1} wallet={blankWallet} />
 				</tbody>
 			</table>,
 		);
 
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("AddressRow__select-1")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render when wallet hasn't voted", async () => {
-		const { asFragment, getByTestId } = render(
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<AddressRow index={0} wallet={unvotedWallet} />
+					<AddressRow index={0} wallet={wallet} />
+					<AddressRow index={1} wallet={unvotedWallet} />
 				</tbody>
 			</table>,
 		);
 
+		await waitFor(() => expect(getAllByTestId("AddressRow__status")).toBeTruthy());
 		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("AddressRow__select-1")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should emit action on select button", async () => {
 		const onSelect = jest.fn();
-		const { container, asFragment, getByTestId } = render(
+		const { asFragment, container, getByTestId } = render(
 			<table>
 				<tbody>
 					<AddressRow index={0} wallet={wallet} onSelect={onSelect} />

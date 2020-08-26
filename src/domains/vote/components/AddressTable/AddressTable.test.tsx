@@ -1,7 +1,7 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
-import { env, getDefaultProfileId, render } from "testing-library";
+import { env, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { AddressTable } from "./AddressTable";
 
@@ -22,15 +22,16 @@ describe("AddressTable", () => {
 			.persist();
 	});
 
-	it("should render", () => {
-		const { container, asFragment } = render(<AddressTable wallets={[wallet]} />);
+	it("should render", async () => {
+		const { asFragment, container, getByTestId } = render(<AddressTable wallets={[wallet]} />);
 
 		expect(container).toBeTruthy();
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with empty list", () => {
-		const { container, asFragment } = render(<AddressTable wallets={[]} />);
+		const { asFragment, container } = render(<AddressTable wallets={[]} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

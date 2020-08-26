@@ -39,10 +39,11 @@ describe("Votes", () => {
 		route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 	});
 
-	it("should render", () => {
-		const { container, asFragment } = renderPage();
+	it("should render", async () => {
+		const { asFragment, container, getByTestId } = renderPage();
 
 		expect(container).toBeTruthy();
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -50,6 +51,8 @@ describe("Votes", () => {
 		const { asFragment, getByTestId } = renderPage();
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
+
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 
 		const selectAddressButton = getByTestId("AddressRow__select-0");
 
@@ -69,6 +72,8 @@ describe("Votes", () => {
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+
 		const selectAddressButton = getByTestId("AddressRow__select-0");
 
 		act(() => {
@@ -80,7 +85,6 @@ describe("Votes", () => {
 			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
 
-		// const selectDelegateButtons = [0, 1, 2].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
 		const selectDelegateButtons = [0, 1].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
 
 		act(() => {
@@ -91,10 +95,6 @@ describe("Votes", () => {
 			fireEvent.click(selectDelegateButtons[1]);
 		});
 
-		// act(() => {
-		// 	fireEvent.click(selectDelegateButtons[2]);
-		// });
-
 		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_TABLE.SHOW_LIST);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -103,6 +103,8 @@ describe("Votes", () => {
 		const { asFragment, getByTestId } = renderPage();
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
+
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 
 		const selectAddressButton = getByTestId("AddressRow__select-0");
 
