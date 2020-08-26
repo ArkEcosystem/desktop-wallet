@@ -9,11 +9,10 @@ import { Votes } from "./Votes";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
-let route: string;
 
-const renderPage = () =>
+const renderPage = (route: string, routePath = "/profiles/:profileId/wallets/:walletId/votes") =>
 	renderWithRouter(
-		<Route path="/profiles/:profileId/wallets/:walletId/votes">
+		<Route path={routePath}>
 			<Votes />
 		</Route>,
 		{
@@ -35,11 +34,11 @@ describe("Votes", () => {
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 	});
 
 	it("should render", async () => {
-		const { asFragment, container, getByTestId } = renderPage();
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, container, getByTestId } = renderPage(route);
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("DelegateTable")).toBeTruthy();
@@ -47,8 +46,59 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should select network, address and delegate", async () => {
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
+
+		expect(getAllByTestId("AddressRowSkeleton")).toBeTruthy();
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		expect(selectNetworkInput).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		expect(selectNetworkInput).toHaveValue("Ark Devnet");
+
+		expect(getByTestId("AddressTable")).toBeTruthy();
+
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+
+		const selectAddressButton = getByTestId("AddressRow__select-0");
+
+		act(() => {
+			fireEvent.click(selectAddressButton);
+		});
+
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
+		});
+
+		const selectDelegateButton = getByTestId("DelegateRow__toggle-0");
+
+		act(() => {
+			fireEvent.click(selectDelegateButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("DelegateTable__continue-button"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should select a delegate", async () => {
-		const { asFragment, getByTestId } = renderPage();
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, getByTestId } = renderPage(route);
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
 		await waitFor(() => {
@@ -66,7 +116,8 @@ describe("Votes", () => {
 	});
 
 	it("should emit action on continue button", async () => {
-		const { asFragment, getByTestId } = renderPage();
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, getByTestId } = renderPage(route);
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
 		await waitFor(() => {
