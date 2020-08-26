@@ -5,7 +5,7 @@ export const getPageURL = () => path.resolve("build/index.html");
 
 export const getLocation = ClientFunction(() => document.location.href);
 
-export const scrollTo = ClientFunction((top: number, left = 0, behavior = "smooth") => {
+export const scrollTo = ClientFunction((top: number, left = 0, behavior = "auto") => {
 	window.scrollTo({ top, left, behavior });
 });
 
