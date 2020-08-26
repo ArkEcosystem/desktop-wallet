@@ -15,7 +15,7 @@ test("should show initial loading state", async (t) => {
 		.ok();
 });
 
-test.only("should load transactions with load more action", async (t) => {
+test("should load transactions with load more action", async (t) => {
 	// Check for transactions rows
 	await t.expect(Selector("[data-testid=TransactionRow]").exists).ok();
 	await t.expect(Selector("[data-testid=transactions__fetch-more-button]").exists).ok();
