@@ -25,7 +25,7 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 				</div>
 				<div>
 					<Tippy content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-						<div className="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500">
+						<div className="rounded-full cursor-pointer text-theme-primary-600 hover:text-theme-primary-100 questionmark">
 							<Icon name="QuestionMark" width={20} height={20} />
 						</div>
 					</Tippy>
