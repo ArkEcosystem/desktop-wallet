@@ -201,7 +201,7 @@ export const WalletHeader = ({
 								value={balance}
 								ticker={ticker}
 								data-testid="WalletHeader__balance"
-								className="text-lg font-medium"
+								className="text-lg font-semibold"
 							/>
 						</li>
 					)}
@@ -215,7 +215,7 @@ export const WalletHeader = ({
 								value={currencyBalance}
 								ticker={exchangeCurrency!}
 								data-testid="WalletHeader__currency-balance"
-								className="text-lg font-medium"
+								className="text-lg font-semibold"
 							/>
 						</li>
 					)}
