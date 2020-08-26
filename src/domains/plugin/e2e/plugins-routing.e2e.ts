@@ -2,11 +2,11 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { getPageURL, scrollToTop } from "../../../utils/e2e-utils";
-import { gotToPlugins } from "./common";
+import { goToPlugins } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Plugins routing`.page(getPageURL()).beforeEach(async (t) => await gotToPlugins(t));
+fixture`Plugins routing`.page(getPageURL()).beforeEach(async (t) => await goToPlugins(t));
 
 test("should navigate and apply filters", async (t) => {
 	// Filtering by game
