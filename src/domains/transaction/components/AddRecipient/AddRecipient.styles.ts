@@ -16,6 +16,20 @@ const defaultStyle = `
 	}
 `;
 
+const questionMarkStyle = `
+	& {
+		.questionmark {
+			svg {
+				fill: var(--theme-color-primary-100);
+			}
+			&:hover svg {
+				fill: var(--theme-color-primary-600);
+			}
+		}
+	}
+`;
+
 export const AddRecipientWrapper = styled.div`
 	${defaultStyle}
+	${questionMarkStyle}
 `;
