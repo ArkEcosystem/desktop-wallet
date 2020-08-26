@@ -74,7 +74,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			setIsLoadingDelegates(false);
 			setDelegates([]);
 		};
-	}, [env, senderWallet, transaction]);
+	}, [env, senderWallet, transaction, isOpen]);
 
 	const renderAccount = () => {
 		if (walletAlias) {
@@ -156,8 +156,10 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 	return (
 		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			{renderAccount()}
-
-			{renderDelegates()}
+      
+      <div data-testid="VoteDetails__delegates-container">
+  			{renderDelegates()}
+      </div>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
 				{`${transaction!.fee().toHuman()} ${ticker?.toUpperCase()}`}
