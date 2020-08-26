@@ -6,6 +6,7 @@ const {
 	addWebpackPlugin,
 	setWebpackTarget,
 } = require("customize-cra");
+const { BaseHrefWebpackPlugin } = require("base-href-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 const { EnvironmentPlugin } = require("webpack");
@@ -68,6 +69,11 @@ const injectTailwindCSS = () =>
 		require("autoprefixer"),
 	]);
 
+const addBaseHref = () => {
+	addWebpackPlugin(new HtmlWebpackPlugin());
+	addWebpackPlugin(new BaseHrefWebpackPlugin({ baseHref: './' }));
+};
+
 const copyFiles = () =>
 	addWebpackPlugin(
 		new CopyWebpackPlugin({
@@ -84,6 +90,7 @@ module.exports = override(
 	setWebpackTarget("electron-renderer"),
 	injectTailwindCSS(),
 	addNodeExternals(),
+	addBaseHref(),
 	copyFiles(),
 	addWebpackAlias({
 		"@arkecosystem/crypto": "@arkecosystem/crypto/dist/index.esm.js",
