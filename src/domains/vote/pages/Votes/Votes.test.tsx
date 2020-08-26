@@ -42,42 +42,13 @@ describe("Votes", () => {
 		const { asFragment, container, getByTestId } = renderPage();
 
 		expect(container).toBeTruthy();
-		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should select address", async () => {
-		const { asFragment, getByTestId } = renderPage();
-
-		expect(getByTestId("AddressTable")).toBeTruthy();
-
-		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
-
-		const selectAddressButton = getByTestId("AddressRow__select-0");
-
-		act(() => {
-			fireEvent.click(selectAddressButton);
-		});
-
 		expect(getByTestId("DelegateTable")).toBeTruthy();
-		await waitFor(() => {
-			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
-		});
+		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select a delegate", async () => {
 		const { asFragment, getByTestId } = renderPage();
-
-		expect(getByTestId("AddressTable")).toBeTruthy();
-
-		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
-
-		const selectAddressButton = getByTestId("AddressRow__select-0");
-
-		act(() => {
-			fireEvent.click(selectAddressButton);
-		});
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
 		await waitFor(() => {
@@ -96,16 +67,6 @@ describe("Votes", () => {
 
 	it("should emit action on continue button", async () => {
 		const { asFragment, getByTestId } = renderPage();
-
-		expect(getByTestId("AddressTable")).toBeTruthy();
-
-		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
-
-		const selectAddressButton = getByTestId("AddressRow__select-0");
-
-		act(() => {
-			fireEvent.click(selectAddressButton);
-		});
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
 		await waitFor(() => {
