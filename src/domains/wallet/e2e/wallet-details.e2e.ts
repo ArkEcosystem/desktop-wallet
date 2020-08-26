@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-import { getPageURL, scrollTo } from "../../../utils/e2e-utils";
+import { getPageURL, scrollToBottom } from "../../../utils/e2e-utils";
 import { goToWallet } from "./common";
 
 fixture`Wallet Details`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
@@ -15,17 +15,16 @@ test("should show initial loading state", async (t) => {
 		.ok();
 });
 
-test("should load transactions with load more action", async (t) => {
+test.only("should load transactions with load more action", async (t) => {
 	// Check for transactions rows
 	await t.expect(Selector("[data-testid=TransactionRow]").exists).ok();
 	await t.expect(Selector("[data-testid=transactions__fetch-more-button]").exists).ok();
 
 	const count = await Selector("[data-testid=TransactionRow]").count;
 
-	await scrollTo(2560);
+	await scrollToBottom();
+
 	await t.click(Selector("[data-testid=transactions__fetch-more-button]"));
 
-	await t.expect(Selector("[data-testid=TransactionRow]").count).gt(count, {
-		timeout: 4000,
-	});
+	await t.expect(Selector("[data-testid=TransactionRow]").count).gt(count);
 });
