@@ -14,6 +14,8 @@ const history = createMemoryHistory();
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
+jest.setTimeout(10000);
+
 describe("VoteDetail", () => {
 	beforeAll(async () => {
 		nock.cleanAll();
@@ -89,7 +91,6 @@ describe("VoteDetail", () => {
 			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
 		);
 		await waitFor(() => expect(getByText("Well Confirmed")).toBeInTheDocument());
-		await waitFor(() => expect(queryAllByTestId("VoteDetail__delegates")).toHaveLength(1));
 		await waitFor(() => expect(getByText("arkx")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});

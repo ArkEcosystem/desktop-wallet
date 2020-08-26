@@ -1659,6 +1659,9 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               </div>
             </div>
             <div
+              data-testid="VoteDetails__delegates-container"
+            />
+            <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
               data-testid="TransactionDetail"
             >
@@ -1926,6 +1929,9 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                 </div>
               </div>
             </div>
+            <div
+              data-testid="VoteDetails__delegates-container"
+            />
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
               data-testid="TransactionDetail"

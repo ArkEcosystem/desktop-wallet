@@ -108,7 +108,9 @@ exports[`VoteDetail should render a modal 1`] = `
                 </div>
               </div>
             </div>
-            <div data-testid="VoteDetails__delegates-container" />
+            <div
+              data-testid="VoteDetails__delegates-container"
+            />
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
               data-testid="TransactionDetail"
@@ -385,24 +387,18 @@ exports[`VoteDetail should render a modal as confirmed 1`] = `
                 <div
                   class="flex-1 space-y-2"
                 >
-                  arkx
-                  <span
-                    class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
-                    data-testid="VoteDetail__delegate__address"
+                  <div
+                    class="text-sm font-semibold text-theme-neutral"
                   >
                     Voter
                   </div>
                   <div
                     class="font-semibold"
                   >
-                    <span
-                      data-testid="VoteDetail__delegates"
-                    >
-                      arkx
-                    </span>
+                    arkx
                     <span
                       class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
-                      data-testid="TruncateMiddle"
+                      data-testid="VoteDetail__delegate__address"
                     >
                       AXzxJ8…EJb8HX
                     </span>
