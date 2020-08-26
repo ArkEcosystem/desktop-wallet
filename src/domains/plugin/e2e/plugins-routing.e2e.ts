@@ -2,16 +2,13 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { getPageURL, scrollToTop } from "../../../utils/e2e-utils";
+import { gotToPlugins } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Plugins screen routing`.page(getPageURL());
+fixture`Plugins routing`.page(getPageURL()).beforeEach(async (t) => await gotToPlugins(t));
 
 test("should navigate and apply filters", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.click(Selector("a").withText(translations.COMMON.PLUGINS));
-	await t.expect(Selector("h1").withText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.TITLE).exists).ok();
-
 	// Filtering by game
 	await t.click(Selector("span").withExactText(translations.PLUGINS.CATEGORIES.GAME));
 	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.GAME).exists).ok();
@@ -34,18 +31,11 @@ test("should navigate and apply filters", async (t) => {
 });
 
 test("should navigate to plugin details", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.click(Selector("a").withText(translations.COMMON.PLUGINS));
-	await t.expect(Selector("h1").withText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.TITLE).exists).ok();
-
 	await t.click(Selector('[data-testid="PluginCard--ark-explorer-0"]'));
 	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
 });
 
 test("should navigate back to plugin store from plugin details", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.click(Selector("a").withText(translations.COMMON.PLUGINS));
-	await t.expect(Selector("h1").withText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.TITLE).exists).ok();
 	await t.click(Selector('[data-testid="PluginCard--ark-explorer-0"]'));
 	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
 

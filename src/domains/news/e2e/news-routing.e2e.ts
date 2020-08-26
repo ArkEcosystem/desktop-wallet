@@ -8,6 +8,8 @@ fixture`News routing`.page(getPageURL());
 test("should navigate to news page", async (t) => await goToNews(t));
 
 test("should navigate between pages", async (t) => {
+	await goToNews(t);
+
 	await t.expect(Selector('[data-testid="NewsCard"]').count).eql(itemsPerPage);
 
 	await t.hover(Selector('[data-testid="CompactPagination__next"]'));

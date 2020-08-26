@@ -8,7 +8,7 @@ const itemsPerPage = 15;
 
 const translations = buildTranslations();
 
-fixture`News filtering`.page(getPageURL()).beforeEach(goToNews);
+fixture`News filtering`.page(getPageURL()).beforeEach(async (t) => await goToNews(t));
 
 test("should display news feed", async (t) => {
 	await t.expect(Selector('[data-testid="NewsCard"]').exists).ok();
