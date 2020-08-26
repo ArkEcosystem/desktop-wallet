@@ -7,7 +7,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,64 +19,64 @@ exports[`Dashboard should fetch more transactions 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex mr-auto h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
             class="flex items-center h-full mr-4"
           >
@@ -233,7 +233,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -249,7 +249,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fzoXzr hqEepg text-theme-neutral-300 pb"
+              class="sc-fzpjYC dRuPXP text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -438,7 +438,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -608,7 +608,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -723,7 +723,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -824,7 +824,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -863,7 +863,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -905,7 +905,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1098,7 +1098,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1239,7 +1239,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1380,7 +1380,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1521,7 +1521,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1662,7 +1662,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1803,7 +1803,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1944,7 +1944,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -2085,7 +2085,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -2240,7 +2240,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2252,64 +2252,64 @@ exports[`Dashboard should hide portfolio view 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex mr-auto h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
             class="flex items-center h-full mr-4"
           >
@@ -2466,7 +2466,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2679,15 +2679,15 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   >
                                     <input
                                       checked=""
-                                      class="sc-fznxsB dVTXMU"
+                                      class="sc-fznJRM iRBZpo"
                                       data-testid="filter-wallets_toggle--portfolio"
                                       type="checkbox"
                                     />
                                     <div
-                                      class="sc-fznJRM cjWbrJ"
+                                      class="sc-fznWqX KhVHO"
                                     >
                                       <span
-                                        class="sc-fznWqX kLTWXY"
+                                        class="sc-fzoiQi jmuiQa"
                                       />
                                     </div>
                                   </label>
@@ -2714,15 +2714,15 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   >
                                     <input
                                       checked=""
-                                      class="sc-fznxsB dVTXMU"
+                                      class="sc-fznJRM iRBZpo"
                                       data-testid="filter-wallets_toggle--transactions"
                                       type="checkbox"
                                     />
                                     <div
-                                      class="sc-fznJRM cjWbrJ"
+                                      class="sc-fznWqX KhVHO"
                                     >
                                       <span
-                                        class="sc-fznWqX kLTWXY"
+                                        class="sc-fzoiQi jmuiQa"
                                       />
                                     </div>
                                   </label>
@@ -2820,7 +2820,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -2935,7 +2935,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -3036,7 +3036,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -3075,7 +3075,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -3117,7 +3117,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3310,7 +3310,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -3451,7 +3451,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -3592,7 +3592,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -3733,7 +3733,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -3888,7 +3888,7 @@ exports[`Dashboard should hide transaction view 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3900,64 +3900,64 @@ exports[`Dashboard should hide transaction view 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex mr-auto h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
             class="flex items-center h-full mr-4"
           >
@@ -4114,7 +4114,7 @@ exports[`Dashboard should hide transaction view 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4130,7 +4130,7 @@ exports[`Dashboard should hide transaction view 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fzoXzr hqEepg text-theme-neutral-300 pb"
+              class="sc-fzpjYC dRuPXP text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -4319,7 +4319,7 @@ exports[`Dashboard should hide transaction view 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4532,15 +4532,15 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   >
                                     <input
                                       checked=""
-                                      class="sc-fznxsB dVTXMU"
+                                      class="sc-fznJRM iRBZpo"
                                       data-testid="filter-wallets_toggle--portfolio"
                                       type="checkbox"
                                     />
                                     <div
-                                      class="sc-fznJRM cjWbrJ"
+                                      class="sc-fznWqX KhVHO"
                                     >
                                       <span
-                                        class="sc-fznWqX kLTWXY"
+                                        class="sc-fzoiQi jmuiQa"
                                       />
                                     </div>
                                   </label>
@@ -4567,15 +4567,15 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   >
                                     <input
                                       checked=""
-                                      class="sc-fznxsB dVTXMU"
+                                      class="sc-fznJRM iRBZpo"
                                       data-testid="filter-wallets_toggle--transactions"
                                       type="checkbox"
                                     />
                                     <div
-                                      class="sc-fznJRM cjWbrJ"
+                                      class="sc-fznWqX KhVHO"
                                     >
                                       <span
-                                        class="sc-fznWqX kLTWXY"
+                                        class="sc-fzoiQi jmuiQa"
                                       />
                                     </div>
                                   </label>
@@ -4673,7 +4673,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -4788,7 +4788,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -4889,7 +4889,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -4928,7 +4928,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -4985,7 +4985,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4997,64 +4997,64 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex mr-auto h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
             class="flex items-center h-full mr-4"
           >
@@ -5211,7 +5211,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5227,7 +5227,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fzoXzr hqEepg text-theme-neutral-300 pb"
+              class="sc-fzpjYC dRuPXP text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -5416,7 +5416,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5586,7 +5586,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -5701,7 +5701,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -5802,7 +5802,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -5841,7 +5841,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -5883,7 +5883,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -6076,7 +6076,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -6217,7 +6217,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -6358,7 +6358,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -6499,7 +6499,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -6654,7 +6654,7 @@ exports[`Dashboard should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6666,64 +6666,64 @@ exports[`Dashboard should render 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex mr-auto h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
             class="flex items-center h-full mr-4"
           >
@@ -6880,7 +6880,7 @@ exports[`Dashboard should render 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -6896,7 +6896,7 @@ exports[`Dashboard should render 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fzoXzr hqEepg text-theme-neutral-300 pb"
+              class="sc-fzpjYC dRuPXP text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -7085,7 +7085,7 @@ exports[`Dashboard should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7255,7 +7255,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -7370,7 +7370,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -7471,7 +7471,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -7510,7 +7510,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -7552,7 +7552,7 @@ exports[`Dashboard should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7745,7 +7745,7 @@ exports[`Dashboard should render 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -7886,7 +7886,7 @@ exports[`Dashboard should render 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -8027,7 +8027,7 @@ exports[`Dashboard should render 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -8168,7 +8168,7 @@ exports[`Dashboard should render 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -8323,7 +8323,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8335,64 +8335,64 @@ exports[`Dashboard should render portfolio chart 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex mr-auto h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
             class="flex items-center h-full mr-4"
           >
@@ -8549,7 +8549,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -8565,7 +8565,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fzoXzr hqEepg text-theme-neutral-300 pb"
+              class="sc-fzpjYC dRuPXP text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -8754,7 +8754,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -8924,7 +8924,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -9039,7 +9039,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -9140,7 +9140,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -9179,7 +9179,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -9221,7 +9221,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -9414,7 +9414,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -9555,7 +9555,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -9696,7 +9696,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -9837,7 +9837,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -9992,7 +9992,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -10004,64 +10004,64 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex mr-auto h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
             class="flex items-center h-full mr-4"
           >
@@ -10218,7 +10218,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -10234,7 +10234,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fzoXzr hqEepg text-theme-neutral-300 pb"
+              class="sc-fzpjYC dRuPXP text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -10423,7 +10423,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -10593,7 +10593,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -10708,7 +10708,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -10809,7 +10809,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -10848,7 +10848,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -10890,7 +10890,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -11083,7 +11083,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -11224,7 +11224,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -11365,7 +11365,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -11506,7 +11506,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -11661,7 +11661,7 @@ exports[`Dashboard should render wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11673,64 +11673,64 @@ exports[`Dashboard should render wallets 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex mr-auto h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
             class="flex items-center h-full mr-4"
           >
@@ -11887,7 +11887,7 @@ exports[`Dashboard should render wallets 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -11903,7 +11903,7 @@ exports[`Dashboard should render wallets 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fzoXzr hqEepg text-theme-neutral-300 pb"
+              class="sc-fzpjYC dRuPXP text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -12092,7 +12092,7 @@ exports[`Dashboard should render wallets 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -12262,7 +12262,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -12377,7 +12377,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -12478,7 +12478,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -12517,7 +12517,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -12559,7 +12559,7 @@ exports[`Dashboard should render wallets 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -12752,7 +12752,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -12893,7 +12893,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -13034,7 +13034,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                              to="https://dexplorer.ark.io/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -13175,7 +13175,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                               data-testid="TransactionRow__ID"
                               rel="noopener noreferrer"
-                              to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                              to="https://dexplorer.ark.io/transactions/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                             >
                               <div
                                 class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -13330,7 +13330,7 @@ exports[`Dashboard should render with no wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -13342,64 +13342,64 @@ exports[`Dashboard should render with no wallets 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex mr-auto h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
             class="flex items-center h-full mr-4"
           >
@@ -13556,7 +13556,7 @@ exports[`Dashboard should render with no wallets 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13572,7 +13572,7 @@ exports[`Dashboard should render with no wallets 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fzoXzr hqEepg text-theme-neutral-300 pb"
+              class="sc-fzpjYC dRuPXP text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -13761,7 +13761,7 @@ exports[`Dashboard should render with no wallets 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13931,7 +13931,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -13970,7 +13970,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -14009,7 +14009,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -14048,7 +14048,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzpjYC bVVEWC"
+                            class="sc-fznxsB fVNnJp"
                             data-testid="ProfileCard"
                           >
                             <div
@@ -14090,7 +14090,7 @@ exports[`Dashboard should render with no wallets 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"

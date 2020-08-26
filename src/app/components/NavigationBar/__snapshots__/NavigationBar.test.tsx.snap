@@ -4,7 +4,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-fzoyAV bqFbiw"
+    class="sc-fzoyAV crDFRs"
   >
     <div
       class="px-4 sm:px-6 lg:px-10"
@@ -16,41 +16,41 @@ exports[`NavigationBar should not render if no active profile 1`] = `
           class="flex items-center flex-shrink-0"
         >
           <div
-            class="flex p-2 mr-4 rounded-lg bg-logo"
+            class="sc-fzoLag jtxrqn"
           >
-            <img
-              alt="ARK Logo"
-              class="h-6 md:h-8 lg:h-10"
-              src="ark-logo.png"
-            />
+            <svg
+              width="40"
+            >
+              ark-logo.svg
+            </svg>
           </div>
-          <ul
-            class="flex h-20 md:h-24"
-          >
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                title="Portfolio"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                href="/test"
-                title="test"
-              >
-                test
-              </a>
-            </li>
-          </ul>
         </div>
+        <ul
+          class="flex mr-auto h-20 md:h-24"
+        >
+          <li
+            class="flex"
+          >
+            <a
+              class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+              href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+              title="Portfolio"
+            >
+              Portfolio
+            </a>
+          </li>
+          <li
+            class="flex"
+          >
+            <a
+              class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+              href="/test"
+              title="test"
+            >
+              test
+            </a>
+          </li>
+        </ul>
         <div
           class="flex items-center h-full mr-4"
         >
@@ -206,7 +206,7 @@ exports[`NavigationBar should render 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-fzoyAV bqFbiw"
+    class="sc-fzoyAV crDFRs"
   >
     <div
       class="px-4 sm:px-6 lg:px-10"
@@ -218,63 +218,63 @@ exports[`NavigationBar should render 1`] = `
           class="flex items-center flex-shrink-0"
         >
           <div
-            class="flex p-2 mr-4 rounded-lg bg-logo"
+            class="sc-fzoLag jtxrqn"
           >
-            <img
-              alt="ARK Logo"
-              class="h-6 md:h-8 lg:h-10"
-              src="ark-logo.png"
-            />
+            <svg
+              width="40"
+            >
+              ark-logo.svg
+            </svg>
           </div>
-          <ul
-            class="flex h-20 md:h-24"
-          >
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                title="Portfolio"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                title="Plugins"
-              >
-                Plugins
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                title="Exchange"
-              >
-                Exchange
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                title="News"
-              >
-                News
-              </a>
-            </li>
-          </ul>
         </div>
+        <ul
+          class="flex mr-auto h-20 md:h-24"
+        >
+          <li
+            class="flex"
+          >
+            <a
+              class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+              href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+              title="Portfolio"
+            >
+              Portfolio
+            </a>
+          </li>
+          <li
+            class="flex"
+          >
+            <a
+              class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+              href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+              title="Plugins"
+            >
+              Plugins
+            </a>
+          </li>
+          <li
+            class="flex"
+          >
+            <a
+              class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+              href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+              title="Exchange"
+            >
+              Exchange
+            </a>
+          </li>
+          <li
+            class="flex"
+          >
+            <a
+              class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+              href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+              title="News"
+            >
+              News
+            </a>
+          </li>
+        </ul>
         <div
           class="flex items-center h-full mr-4"
         >
@@ -434,7 +434,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-fzoyAV bqFbiw"
+    class="sc-fzoyAV crDFRs"
   >
     <div
       class="px-4 sm:px-6 lg:px-10"
@@ -446,41 +446,41 @@ exports[`NavigationBar should render with custom menu 1`] = `
           class="flex items-center flex-shrink-0"
         >
           <div
-            class="flex p-2 mr-4 rounded-lg bg-logo"
+            class="sc-fzoLag jtxrqn"
           >
-            <img
-              alt="ARK Logo"
-              class="h-6 md:h-8 lg:h-10"
-              src="ark-logo.png"
-            />
+            <svg
+              width="40"
+            >
+              ark-logo.svg
+            </svg>
           </div>
-          <ul
-            class="flex h-20 md:h-24"
-          >
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                title="Portfolio"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                href="/test"
-                title="test"
-              >
-                test
-              </a>
-            </li>
-          </ul>
         </div>
+        <ul
+          class="flex mr-auto h-20 md:h-24"
+        >
+          <li
+            class="flex"
+          >
+            <a
+              class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+              href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+              title="Portfolio"
+            >
+              Portfolio
+            </a>
+          </li>
+          <li
+            class="flex"
+          >
+            <a
+              class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+              href="/test"
+              title="test"
+            >
+              test
+            </a>
+          </li>
+        </ul>
         <div
           class="flex items-center h-full mr-4"
         >

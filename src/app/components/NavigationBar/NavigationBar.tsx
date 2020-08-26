@@ -14,11 +14,12 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
+import { NavbarVariant } from "types";
 
 import { Amount } from "../Amount";
 import { defaultStyle } from "./NavigationBar.styles";
 
-const commonAssets = images.common;
+const { ARKLogo } = images.common;
 
 type MenuItem = {
 	title: string;
@@ -27,6 +28,7 @@ type MenuItem = {
 
 type NavigationBarProps = {
 	profile?: Profile;
+	variant?: NavbarVariant;
 	menu?: MenuItem[];
 	userActions?: Action[];
 	avatarImage?: string;
@@ -35,9 +37,10 @@ type NavigationBarProps = {
 	onNotificationAction?: any;
 };
 
-const NavWrapper = styled.nav`
+const NavWrapper = styled.nav<{ noShadow?: boolean }>`
 	${defaultStyle}
-	${tw`sticky inset-x-0 top-0 bg-white shadow-md`}
+	${tw`sticky inset-x-0 top-0 bg-white`}
+	${({ noShadow }) => !noShadow && tw`shadow-md`};
 `;
 
 const NotificationsDropdown = ({
@@ -118,8 +121,15 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userIn
 	/>
 );
 
+const LogoContainer = styled.div`
+	${tw`flex items-center justify-center bg-logo text-white rounded-lg mr-4`};
+	width: 50px;
+	height: 50px;
+`;
+
 export const NavigationBar = ({
 	profile,
+	variant,
 	menu,
 	userActions,
 	notifications,
@@ -176,78 +186,90 @@ export const NavigationBar = ({
 	};
 
 	return (
-		<NavWrapper aria-labelledby="main menu">
+		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
 			<div className="px-4 sm:px-6 lg:px-10">
 				<div className="relative flex justify-between h-20 md:h-24">
 					<div className="flex items-center flex-shrink-0">
-						<div className="flex p-2 mr-4 rounded-lg bg-logo">
-							<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
-						</div>
-						<ul className="flex h-20 md:h-24">{renderMenu()}</ul>
+						<LogoContainer>
+							<ARKLogo width={40} />
+						</LogoContainer>
 					</div>
 
-					<div className="flex items-center h-full mr-4">
-						<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
+					{variant === "full" && (
+						<>
+							<ul className="flex mr-auto h-20 md:h-24">{renderMenu()}</ul>
 
-						<div className="h-8 border-r border-theme-neutral-200" />
+							<div className="flex items-center h-full mr-4">
+								<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
 
-						<div className="flex items-center h-full text-theme-primary-300">
-							<NavLink
-								className="p-2 mx-6 my-auto"
-								to={`/profiles/${profile?.id()}/transactions/transfer`}
-								data-testid="navbar__buttons--send"
-							>
-								<Icon name="Sent" width={22} height={22} />
-							</NavLink>
-						</div>
+								<div className="h-8 border-r border-theme-neutral-200" />
 
-						<div className="h-8 border-r border-theme-neutral-200" />
+								<div className="flex items-center h-full text-theme-primary-300">
+									<NavLink
+										className="p-2 mx-6 my-auto"
+										to={`/profiles/${profile?.id()}/transactions/transfer`}
+										data-testid="navbar__buttons--send"
+									>
+										<Icon name="Sent" width={22} height={22} />
+									</NavLink>
+								</div>
 
-						<div className="flex items-center h-full text-theme-primary-300">
-							<button
-								className="p-2 mx-6 my-auto"
-								onClick={() => setIsSearchingWallet(true)}
-								data-testid="navbar__buttons--receive"
-							>
-								<Icon name="Receive" width={22} height={22} />
-							</button>
-						</div>
+								<div className="h-8 border-r border-theme-neutral-200" />
 
-						<div className="h-8 border-r border-theme-neutral-200" />
+								<div className="flex items-center h-full text-theme-primary-300">
+									<button
+										className="p-2 mx-6 my-auto"
+										onClick={() => setIsSearchingWallet(true)}
+										data-testid="navbar__buttons--receive"
+									>
+										<Icon name="Receive" width={22} height={22} />
+									</button>
+								</div>
 
-						<div className="ml-8 text-right">
-							<div className="text-xs font-medium text-theme-neutral">{t("COMMON.YOUR_BALANCE")}</div>
-							<div className="text-sm font-bold text-theme-neutral-dark">
-								<Amount
-									value={profile?.balance() || BigNumber.ZERO}
-									ticker={profile?.settings().get<string>(ProfileSetting.ExchangeCurrency) || ""}
-								/>
+								<div className="h-8 border-r border-theme-neutral-200" />
+
+								<div className="ml-8 text-right">
+									<div className="text-xs font-medium text-theme-neutral">
+										{t("COMMON.YOUR_BALANCE")}
+									</div>
+									<div className="text-sm font-bold text-theme-neutral-dark">
+										<Amount
+											value={profile?.balance() || BigNumber.ZERO}
+											ticker={
+												profile?.settings().get<string>(ProfileSetting.ExchangeCurrency) || ""
+											}
+										/>
+									</div>
+								</div>
+
+								<div className="flex cusror-pointer">
+									<UserInfo
+										userInitials={getUserInitials()}
+										currencyIcon={getCurrencyIcon()}
+										avatarImage={profile?.avatar()}
+										userActions={userActions}
+										onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
+									/>
+								</div>
 							</div>
-						</div>
-
-						<div className="flex cusror-pointer">
-							<UserInfo
-								userInitials={getUserInitials()}
-								currencyIcon={getCurrencyIcon()}
-								avatarImage={profile?.avatar()}
-								userActions={userActions}
-								onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
-							/>
-						</div>
-					</div>
+						</>
+					)}
 				</div>
 			</div>
+
 			<SearchWallet
 				isOpen={isSearchingWallet}
 				onSearch={handleSearchWallet}
 				onClose={() => setIsSearchingWallet(false)}
 			/>
+
 			<ReceiveFunds isOpen={receiveFundsIsOpen} handleClose={() => setReceiveFundsIsOpen(false)} />
 		</NavWrapper>
 	);
 };
 
 NavigationBar.defaultProps = {
+	variant: "full",
 	notifications: {
 		transactionsHeader: "Transactions",
 		transactions: [],
