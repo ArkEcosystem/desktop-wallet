@@ -20,7 +20,7 @@ describe("VoteDetail", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
+			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
 			.persist();
 	});
 
@@ -69,7 +69,7 @@ describe("VoteDetail", () => {
 					transaction={{
 						...TransactionFixture,
 						sender: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-						votes: () => ["03da05c1c1d4f9c6bda13695b2f29fbc65d9589edc070fc61fe97974be3e59c14e"],
+						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 						confirmations: () => BigNumber.make(52),
 					}}
 				/>

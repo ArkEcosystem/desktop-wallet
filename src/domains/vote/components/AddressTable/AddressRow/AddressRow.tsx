@@ -105,7 +105,7 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 
 			<td className="py-5">
 				{hasVotes && (
-					<div className="flex justify-center h-full">
+					<div className="flex justify-center h-full" data-testid="AddressRow__profile">
 						<Icon name="Msq" className="text-xl text-theme-primary" />
 					</div>
 				)}
@@ -113,11 +113,8 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 
 			<td className="py-5">
 				{hasVotes && (
-					<div className="flex justify-center h-full">
-						<Icon
-							name={votes[0].rank() ? "Ok" : "StatusClock"}
-							className={votes[0].rank() ? "text-theme-success" : "text-theme-neutral"}
-						/>
+					<div className="flex justify-center h-full" data-testid="AddressRow__status">
+						<Icon name="Ok" className="text-theme-success" />
 					</div>
 				)}
 			</td>

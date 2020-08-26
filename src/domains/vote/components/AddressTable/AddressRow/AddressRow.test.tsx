@@ -3,31 +3,32 @@ import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
+import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 
 import { AddressRow } from "./AddressRow";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
+let blankWallet: ReadWriteWallet;
+let unvotedWallet: ReadWriteWallet;
 
-const renderPage = async (wallet: ReadWriteWallet, onSelect?: any) => {
-	const rendered = render(
-		<table>
-			<tbody>
-				<AddressRow index={0} wallet={wallet} onSelect={onSelect} />
-			</tbody>
-		</table>,
-	);
+let emptyProfile: Profile;
+let wallet2: ReadWriteWallet;
 
-	await waitFor(() => expect(rendered.getByTestId("AddressRow__select-0")).toBeTruthy());
-	return rendered;
-};
+const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
 describe("AddressRow", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(WalletFlag.Starred, true);
 		wallet.data().set(WalletFlag.Ledger, true);
+
+		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
+		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
+
+		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
 
 		nock.disableNetConnect();
 
@@ -35,20 +36,75 @@ describe("AddressRow", () => {
 			.get("/api/delegates")
 			.query({ page: "1" })
 			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
+			.get(`/api/wallets/${unvotedWallet.address()}`)
+			.reply(200, walletMock)
+			.get(`/api/wallets/${blankWallet.address()}`)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
+			.get(`/api/wallets/${wallet2.address()}`)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
 			.persist();
 	});
 
 	it("should render", async () => {
-		const { container, asFragment } = await renderPage(wallet);
+		const { asFragment, container, getByTestId } = render(
+			<table>
+				<tbody>
+					<AddressRow index={0} wallet={wallet} />
+				</tbody>
+			</table>,
+		);
 
 		expect(container).toBeTruthy();
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render when wallet not found for votes", async () => {
+		const { asFragment, getByTestId } = render(
+			<table>
+				<tbody>
+					<AddressRow index={0} wallet={blankWallet} />
+				</tbody>
+			</table>,
+		);
+
+		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render when wallet hasn't voted", async () => {
+		const { asFragment, getByTestId } = render(
+			<table>
+				<tbody>
+					<AddressRow index={0} wallet={unvotedWallet} />
+				</tbody>
+			</table>,
+		);
+
+		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should emit action on select button", async () => {
 		const onSelect = jest.fn();
-		const { container, asFragment, getByTestId } = await renderPage(wallet, onSelect);
+		const { container, asFragment, getByTestId } = render(
+			<table>
+				<tbody>
+					<AddressRow index={0} wallet={wallet} onSelect={onSelect} />
+				</tbody>
+			</table>,
+		);
 		const selectButton = getByTestId("AddressRow__select-0");
+
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(selectButton);
