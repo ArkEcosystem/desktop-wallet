@@ -1,28 +1,21 @@
-import { ClientFunction, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
-import { buildTranslations as translations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { buildTranslations } from "../../../app/i18n/helpers";
+import { getPageURL, scrollTo } from "../../../utils/e2e-utils";
+import { goToWallet } from "./common";
 
-fixture`Sign Message`.page(getPageURL());
+const translations = buildTranslations();
 
-const scrollTop = ClientFunction(() => {
-	window.scrollTo({ top: 0 });
-});
+fixture`Sign Message`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
 
 test("Should open and close sign message modal", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
-
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollTo(0);
 
 	// Click sign message option in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			translations().WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE,
+			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE,
 		),
 	);
 
@@ -33,19 +26,13 @@ test("Should open and close sign message modal", async (t) => {
 });
 
 test("Should open and cancel sign message modal", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
-
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollTo(0);
 
 	// Click sign message option in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			translations().WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE,
+			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE,
 		),
 	);
 
@@ -56,25 +43,19 @@ test("Should open and cancel sign message modal", async (t) => {
 });
 
 test("Should successfully sign message", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollTo(0);
 
 	// Click sign message option in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			translations().WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE,
+			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE,
 		),
 	);
 
 	await t.typeText(Selector("input[name=message]"), "Hello World");
 	await t.typeText(Selector("input[name=mnemonic]"), "this is a top secret passphrase");
 	await t.click(Selector("[data-testid=SignMessage__submit-button]"));
-	await t.expect(Selector("h2").withText(translations().WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE).exists).ok();
+	await t.expect(Selector("h2").withText(translations.WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE).exists).ok();
 	await t.click(Selector("[data-testid=modal__close-btn]"));
 });
