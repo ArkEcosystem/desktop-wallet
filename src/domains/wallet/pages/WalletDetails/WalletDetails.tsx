@@ -64,21 +64,23 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 			const walletData = await activeWallet.client().wallet(activeWallet.address());
 
 			let votes: ReadOnlyWallet[] = [];
+
 			try {
 				await activeWallet.syncVotes();
 
 				votes = activeWallet.votes();
+
+				setData({
+					walletData,
+					transactions,
+					votes,
+				});
+
+				setIsLoading(false);
 			} catch {
 				votes = [];
+				setIsLoading(false);
 			}
-
-			setData({
-				walletData,
-				transactions,
-				votes,
-			});
-
-			setIsLoading(false);
 		};
 
 		fetchAllData();
