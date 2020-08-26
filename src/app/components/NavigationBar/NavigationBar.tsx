@@ -197,7 +197,7 @@ export const NavigationBar = ({
 
 					{variant === "full" && (
 						<>
-							<ul className="flex mr-auto h-20 md:h-24">{renderMenu()}</ul>
+							<ul className="flex h-20 mr-auto md:h-24">{renderMenu()}</ul>
 
 							<div className="flex items-center h-full mr-4">
 								<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
