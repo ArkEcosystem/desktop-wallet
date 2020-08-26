@@ -45,15 +45,15 @@ export const WalletCard = ({
 			<div data-testid="WalletCard__blank" className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="p-2">
-						<div>
+						<div className="flex">
 							<Circle size="lg" className="-mr-2 bg-white border-theme-primary-contrast" />
 							<Circle size="lg" className="bg-white border-theme-primary-contrast" />
 						</div>
 
-						<div className={`mt-6 text-md text-theme-primary-contrast ${blankTitleClass}`}>
+						<div className={`mt-6 text-md text-theme-primary-contrast font-medium ${blankTitleClass}`}>
 							{blankTitle}
 						</div>
-						<div className={`mt-1 text-md text-theme-primary-contrast my-px ${blankSubtitleClass}`}>
+						<div className={`text-md text-theme-primary-contrast font-bold ${blankSubtitleClass}`}>
 							{blankSubtitle}
 						</div>
 					</div>
@@ -102,7 +102,7 @@ export const WalletCard = ({
 						<Avatar size="lg" address={wallet?.address()} />
 					</div>
 
-					<div className="mt-6 truncate max-w-12">
+					<div className="flex mt-6 truncate max-w-12">
 						<Address walletName={wallet?.alias()} address={wallet?.address()} maxChars={13} />
 					</div>
 					<Amount value={wallet!.balance()} ticker={ticker} className="font-bold text-theme-neutral-900" />
@@ -114,7 +114,7 @@ export const WalletCard = ({
 
 WalletCard.defaultProps = {
 	isBlank: false,
-	blankTitle: "New wallet",
+	blankTitle: "New Wallet",
 	blankSubtitle: "Balance",
 	address: "",
 };
