@@ -279,6 +279,11 @@ NavigationBar.defaultProps = {
 			mountPath: (profileId: string) => `/profiles/${profileId}/contacts`,
 		},
 		{
+			label: "Registrations",
+			value: "registrations",
+			mountPath: (profileId: string) => `/profiles/${profileId}/registrations`,
+		},
+		{
 			label: "Settings",
 			value: "settings",
 			mountPath: (profileId: string) => `/profiles/${profileId}/settings`,
