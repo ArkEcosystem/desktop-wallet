@@ -279,6 +279,11 @@ NavigationBar.defaultProps = {
 			mountPath: (profileId: string) => `/profiles/${profileId}/contacts`,
 		},
 		{
+			label: "Votes",
+			value: "votes",
+			mountPath: (profileId: string) => `/profiles/${profileId}/votes`,
+		},
+		{
 			label: "Registrations",
 			value: "registrations",
 			mountPath: (profileId: string) => `/profiles/${profileId}/registrations`,
@@ -292,11 +297,6 @@ NavigationBar.defaultProps = {
 			label: "Support",
 			value: "support",
 			mountPath: (profileId: string) => `/profiles/${profileId}/support`,
-		},
-		{
-			label: "Votes",
-			value: "votes",
-			mountPath: (profileId: string) => `/profiles/${profileId}/votes`,
 		},
 		{
 			label: "Exit",
