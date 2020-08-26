@@ -8,6 +8,7 @@ const {
 } = require("customize-cra");
 const { BaseHrefWebpackPlugin } = require("base-href-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const { EnvironmentPlugin } = require("webpack");
 const { dependencies } = require("./package.json");
@@ -71,7 +72,7 @@ const injectTailwindCSS = () =>
 
 const addBaseHref = () => {
 	addWebpackPlugin(new HtmlWebpackPlugin());
-	addWebpackPlugin(new BaseHrefWebpackPlugin({ baseHref: './' }));
+	addWebpackPlugin(new BaseHrefWebpackPlugin({ baseHref: "./" }));
 };
 
 const copyFiles = () =>
