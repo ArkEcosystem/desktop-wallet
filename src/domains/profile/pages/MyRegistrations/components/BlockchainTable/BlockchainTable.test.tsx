@@ -27,14 +27,12 @@ describe("Welcome", () => {
 		const { getAllByTestId, asFragment } = render(<BlockchainTable data={registrations} />);
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(getAllByTestId("blockchain-table__row").length).toEqual(2);
+		expect(getAllByTestId("BlockchainRegistrationItem").length).toEqual(2);
 	});
 
 	it("should have a functional toggle", () => {
-		const handleDropdown = jest.fn();
-		const { getAllByTestId, getByTestId } = render(
-			<BlockchainTable data={registrations} handleDropdown={handleDropdown} />,
-		);
+		const onAction = jest.fn();
+		const { getAllByTestId, getByTestId } = render(<BlockchainTable data={registrations} onAction={onAction} />);
 
 		const toggle = getAllByTestId("dropdown__toggle");
 
@@ -49,6 +47,6 @@ describe("Welcome", () => {
 			fireEvent.click(secondOption);
 		});
 
-		expect(handleDropdown).toHaveBeenCalled();
+		expect(onAction).toHaveBeenCalled();
 	});
 });

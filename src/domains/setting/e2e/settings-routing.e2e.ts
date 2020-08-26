@@ -15,9 +15,9 @@ test("should navigate to settings page", async (t) => {
 
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
 	await t
-		.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations().COMMON.SETTINGS).exists)
+		.expect(Selector('[data-testid="dropdown__option--2"]').withText(translations().COMMON.SETTINGS).exists)
 		.ok();
-	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations().COMMON.SETTINGS));
+	await t.click(Selector('[data-testid="dropdown__option--2"]').withText(translations().COMMON.SETTINGS));
 
 	await t.expect(Selector("h1").withText(translations().SETTINGS.GENERAL.TITLE).exists).ok();
 });
@@ -28,9 +28,9 @@ test("should save settings", async (t) => {
 
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
 	await t
-		.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations().COMMON.SETTINGS).exists)
+		.expect(Selector('[data-testid="dropdown__option--2"]').withText(translations().COMMON.SETTINGS).exists)
 		.ok();
-	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations().COMMON.SETTINGS));
+	await t.click(Selector('[data-testid="dropdown__option--2"]').withText(translations().COMMON.SETTINGS));
 	await t.expect(Selector("h1").withText(translations().SETTINGS.GENERAL.TITLE).exists).ok();
 
 	const nameInput = Selector('input[data-testid="General-settings__input--name"]');

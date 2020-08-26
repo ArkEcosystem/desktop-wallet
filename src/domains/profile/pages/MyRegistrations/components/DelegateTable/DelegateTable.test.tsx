@@ -1,54 +1,74 @@
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import nock from "nock";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor, within } from "testing-library";
 
 import { DelegateTable } from "./DelegateTable";
 
-const registrations = [
-	{
-		agent: "OLEBank",
-		delegate: "ARK Ecosystem",
-		history: [],
-		website: "",
-		msq: true,
-		repository: [],
-	},
-	{
-		agent: "OLEBank",
-		delegate: "ARK Ecosystem",
-		history: [],
-		website: "",
-		msq: true,
-		repository: [],
-	},
-];
+let profile: Profile;
+let delegates: ReadWriteWallet[];
 
 describe("Welcome", () => {
-	it("should render empty state", () => {
-		const { getAllByTestId, asFragment } = render(<DelegateTable data={registrations} />);
+	beforeAll(() => {
+		nock("https://dwallets.ark.io")
+			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
+			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
 
-		expect(asFragment()).toMatchSnapshot();
-		expect(getAllByTestId("delegate-table__row").length).toEqual(2);
+		profile = env.profiles().findById(getDefaultProfileId());
+
+		const wallets = profile.wallets().values();
+		delegates = wallets.filter((wallet: ReadWriteWallet) => wallet.isDelegate());
 	});
 
-	it("should have a functional toggle", () => {
-		const handleDropdown = jest.fn();
-		const { getAllByTestId, getByTestId } = render(
-			<DelegateTable data={registrations} handleDropdown={handleDropdown} />,
-		);
+	it("should render empty state", () => {
+		const { asFragment } = render(<DelegateTable wallets={[]} />);
+		expect(asFragment()).toMatchSnapshot();
+	});
 
-		const toggle = getAllByTestId("dropdown__toggle");
+	it("should render delegates", async () => {
+		const { asFragment, getAllByTestId } = render(<DelegateTable wallets={delegates} />);
 
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should handle resign delegate dropdown action", async () => {
+		const onAction = jest.fn();
+		const { asFragment, getAllByTestId } = render(<DelegateTable wallets={delegates} onAction={onAction} />);
+		expect(asFragment()).toMatchSnapshot();
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
 		act(() => {
-			fireEvent.click(toggle[0]);
+			fireEvent.click(dropdownToggle);
 		});
 
-		const secondOption = getByTestId("dropdown__option--1");
-		expect(secondOption).toBeTruthy();
-
+		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--1");
 		act(() => {
-			fireEvent.click(secondOption);
+			fireEvent.click(resignOption);
 		});
 
-		expect(handleDropdown).toHaveBeenCalled();
+		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "resign" });
+	});
+
+	it("should handle update delegate dropdown action", async () => {
+		const onAction = jest.fn();
+		const { asFragment, getAllByTestId } = render(<DelegateTable wallets={delegates} onAction={onAction} />);
+		expect(asFragment()).toMatchSnapshot();
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		act(() => {
+			fireEvent.click(dropdownToggle);
+		});
+
+		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--0");
+		act(() => {
+			fireEvent.click(resignOption);
+		});
+
+		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "update" });
 	});
 });
