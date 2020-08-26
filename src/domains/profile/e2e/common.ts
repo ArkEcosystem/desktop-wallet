@@ -4,8 +4,7 @@ import { buildTranslations } from "../../../app/i18n/helpers";
 
 const translations = buildTranslations();
 
-export const goToNews = async (t: any) => {
+export const goToProfile = async (t: any) => {
 	await t.click(Selector("p").withText("John Doe"));
-	await t.click(Selector("a").withText(translations.NEWS.NEWS));
-	await t.expect(Selector("h1").withText(translations.NEWS.PAGE_NEWS.TITLE).exists).ok();
+	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 };
