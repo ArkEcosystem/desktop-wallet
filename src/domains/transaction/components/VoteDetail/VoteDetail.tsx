@@ -156,10 +156,8 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 	return (
 		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			{renderAccount()}
-      
-      <div data-testid="VoteDetails__delegates-container">
-  			{renderDelegates()}
-      </div>
+
+			<div data-testid="VoteDetails__delegates-container">{renderDelegates()}</div>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
 				{`${transaction!.fee().toHuman()} ${ticker?.toUpperCase()}`}
