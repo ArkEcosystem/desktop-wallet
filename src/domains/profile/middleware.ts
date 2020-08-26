@@ -1,7 +1,7 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { matchPath } from "react-router-dom";
 import { Middleware, MiddlewareParams } from "router/interfaces";
-import { isIdle } from "utils/electron-utils";
+import { isIdle, setScreenshotProtection } from "utils/electron-utils";
 
 type ActivityState = {
 	intervalId?: ReturnType<typeof setInterval>;
@@ -26,11 +26,14 @@ export class ProfileMiddleware implements Middleware {
 					this.clearActivityState();
 				}
 
+				setScreenshotProtection(true);
+
 				return true;
 			}
 
 			try {
 				const profile = env.profiles().findById(profileId);
+
 				const idleThreshold = (profile.settings().get(ProfileSetting.AutomaticSignOutPeriod) as number) * 60;
 
 				if (this.state.intervalId === undefined || this.state.threshold !== idleThreshold) {
@@ -44,6 +47,8 @@ export class ProfileMiddleware implements Middleware {
 						idleThreshold,
 					);
 				}
+
+				setScreenshotProtection(profile.settings().get(ProfileSetting.ScreenshotProtection) === true);
 			} catch {
 				return false;
 			}
