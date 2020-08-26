@@ -1,23 +1,49 @@
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, renderWithRouter, within } from "testing-library";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "testing-library";
 
-import { registrations } from "../../data";
+import { blockchainRegistrations, businessRegistrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
 const history = createMemoryHistory();
 
 const fixtureProfileId = getDefaultProfileId();
 const registrationsURL = `/profiles/${fixtureProfileId}/registrations`;
+const emptyRegistrationsURL = `/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/registrations`;
+const delegateWalletId = "d044a552-7a49-411c-ae16-8ff407acc430";
 
 describe("Welcome", () => {
+	beforeAll(() => {
+		nock("https://dwallets.ark.io")
+			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
+			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
+	});
+
 	beforeEach(() => {
 		history.push(registrationsURL);
 	});
 
-	it("should render empty state", () => {
+	it("should render empty state", async () => {
+		history.push(emptyRegistrationsURL);
+
 		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [emptyRegistrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("MyRegistrations__empty-state")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render delegate registrations", async () => {
+		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -27,14 +53,14 @@ describe("Welcome", () => {
 			},
 		);
 
-		expect(getByTestId("my-registrations__empty-state")).toBeTruthy();
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render properly", () => {
+	it("should render blockchain registrations", async () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
-				<MyRegistrations registrations={registrations} />
+				<MyRegistrations blockchainRegistrations={blockchainRegistrations} />
 			</Route>,
 			{
 				routes: [registrationsURL],
@@ -42,16 +68,15 @@ describe("Welcome", () => {
 			},
 		);
 
-		expect(getAllByTestId("business-table__row").length).toEqual(2);
-		expect(getAllByTestId("blockchain-table__row").length).toEqual(2);
-		expect(getAllByTestId("delegate-table__row").length).toEqual(2);
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("BlockchainRegistrationItem").length).toEqual(2));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render null for a not knwown type of table", () => {
-		const { asFragment } = renderWithRouter(
+	it("should render business registrations", async () => {
+		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
-				<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />
+				<MyRegistrations businessRegistrations={businessRegistrations} />
 			</Route>,
 			{
 				routes: [registrationsURL],
@@ -59,13 +84,15 @@ describe("Welcome", () => {
 			},
 		);
 
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("BusinessRegistrationItem").length).toEqual(2));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should redirect to registration page", () => {
-		const { asFragment, getByText } = renderWithRouter(
+	it("should redirect to registration page", async () => {
+		const { getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
-				<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />
+				<MyRegistrations />
 			</Route>,
 			{
 				routes: [registrationsURL],
@@ -73,21 +100,20 @@ describe("Welcome", () => {
 			},
 		);
 
-		const registerButton = getByText("Register");
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		const registerButton = getByTestId("MyRegistrations__cta-register");
 		act(() => {
 			fireEvent.click(registerButton);
 		});
 
-		expect(asFragment()).toMatchSnapshot();
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/transactions/registration`);
 	});
 
-	it.each(["business", "blockchain", "delegate"])("should handle %s dropdown", (type) => {
-		const handleDropdown = jest.fn();
-
-		const { getAllByTestId, getByTestId } = renderWithRouter(
+	it("should handle delegate resignation dropdown action", async () => {
+		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
-				<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />
+				<MyRegistrations />
 			</Route>,
 			{
 				routes: [registrationsURL],
@@ -95,19 +121,50 @@ describe("Welcome", () => {
 			},
 		);
 
-		const toggle = within(getAllByTestId(`${type}-table__row`)[0]).getAllByTestId("dropdown__toggle");
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
 
+		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
 		act(() => {
-			fireEvent.click(toggle[0]);
+			fireEvent.click(dropdownToggle);
 		});
 
-		const secondOption = getByTestId("dropdown__option--1");
-		expect(secondOption).toBeTruthy();
-
+		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--1");
 		act(() => {
-			fireEvent.click(secondOption);
+			fireEvent.click(resignOption);
 		});
 
-		expect(handleDropdown).toHaveBeenCalled();
+		expect(history.location.pathname).toEqual(
+			`/profiles/${fixtureProfileId}/transactions/${delegateWalletId}/resignation`,
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should handle delegate update dropdown action", async () => {
+		const { asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		act(() => {
+			fireEvent.click(dropdownToggle);
+		});
+
+		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--0");
+		act(() => {
+			fireEvent.click(resignOption);
+		});
+
+		expect(history.location.pathname).toEqual(
+			`/profiles/${fixtureProfileId}/transactions/${delegateWalletId}/update`,
+		);
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
