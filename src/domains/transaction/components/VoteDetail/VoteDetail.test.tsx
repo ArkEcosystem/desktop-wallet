@@ -108,22 +108,19 @@ describe("VoteDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with a unknown sender", async () => {
-		const { queryByTestId, getByTestId, asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<VoteDetail isOpen={true} transaction={{ ...TransactionFixture, sender: () => "" }} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(() =>
-			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
-		);
-
-		await waitFor(() => expect(queryByTestId("VoteDetail__delegate__address")).toBeNull());
-		expect(asFragment()).toMatchSnapshot();
+	it("should throw error with a unknown sender", () => {
+		jest.spyOn(console, "error").mockImplementation(() => null);
+		expect(() =>
+			renderWithRouter(
+				<Route path="/profiles/:profileId/dashboard">
+					<VoteDetail isOpen={true} transaction={{ ...TransactionFixture, sender: () => "" }} />
+				</Route>,
+				{
+					routes: [dashboardURL],
+					history,
+				},
+			),
+		).toThrowError();
+		console.error.mockRestore();
 	});
 });

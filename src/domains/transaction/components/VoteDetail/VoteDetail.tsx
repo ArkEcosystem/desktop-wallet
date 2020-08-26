@@ -53,6 +53,10 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 	const activeProfile = useActiveProfile();
 	const senderWallet = activeProfile.wallets().findByAddress(transaction!.sender());
 
+	if (!senderWallet) {
+		throw new Error("Sender wallet not found");
+	}
+
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(true);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
@@ -60,11 +64,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 		const syncDelegates = () => {
 			setIsLoadingDelegates(true);
 
-			if (senderWallet) {
-				setDelegates(DelegateMapper.execute(senderWallet, (transaction as Contracts.VoteData).votes()));
-			} else {
-				setDelegates([]);
-			}
+			setDelegates(DelegateMapper.execute(senderWallet, (transaction as Contracts.VoteData).votes()));
 
 			setIsLoadingDelegates(false);
 		};
