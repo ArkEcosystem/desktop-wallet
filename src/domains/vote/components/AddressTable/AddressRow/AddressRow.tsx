@@ -1,5 +1,5 @@
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { isEmptyObject } from "@arkecosystem/utils";
+import { hasProperty } from "@arkecosystem/utils";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -43,9 +43,9 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 
 	useEffect(() => {
 		const loadVotes = async () => {
-			if (!isEmptyObject(wallet)) {
+			if (!hasProperty(wallet, "isLoading")) {
 				// TODO: move this to profile initialising and run it every X period
-				await env.coins().syncDelegates(wallet.coinId()!, wallet.networkId()!);
+				await env.coins().syncDelegates(wallet?.coinId(), wallet?.networkId());
 
 				let votes: ReadOnlyWallet[] = [];
 				try {

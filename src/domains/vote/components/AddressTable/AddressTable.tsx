@@ -61,7 +61,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 	];
 
 	const showSkeleton = useMemo(() => wallets.length === 0, [wallets]);
-	const skeletonList = new Array(8).fill({});
+	const skeletonList = new Array(8).fill({ isLoading: true });
 	const data = showSkeleton ? skeletonList : wallets;
 
 	return (
