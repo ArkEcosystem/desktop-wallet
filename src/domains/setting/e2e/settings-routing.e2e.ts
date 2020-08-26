@@ -1,6 +1,4 @@
-import {Selector } from "testcafe";
-
-import { getPageURL, scrollToTop } from "../../../utils/e2e-utils";
+import { getPageURL } from "../../../utils/e2e-utils";
 import { goToSettings } from "./common";
 
 fixture`Settings routing`.page(getPageURL());

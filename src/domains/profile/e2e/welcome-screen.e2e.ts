@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getLocation, getPageURL } from "../../../utils/e2e-utils";
+import { getPageURL } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
