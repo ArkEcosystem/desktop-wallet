@@ -5,7 +5,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
 
-import { translations } from "../../i18n";
 import { Votes } from "./Votes";
 
 let profile: Profile;
@@ -85,17 +84,13 @@ describe("Votes", () => {
 			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
 
-		const selectDelegateButtons = [0, 1].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
+		const selectDelegateButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
-			fireEvent.click(selectDelegateButtons[0]);
+			fireEvent.click(selectDelegateButton);
 		});
 
-		act(() => {
-			fireEvent.click(selectDelegateButtons[1]);
-		});
-
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_TABLE.SHOW_LIST);
+		expect(getByTestId("DelegateTable__footer")).toHaveTextContent("Quantity1/1");
 		expect(asFragment()).toMatchSnapshot();
 	});
 

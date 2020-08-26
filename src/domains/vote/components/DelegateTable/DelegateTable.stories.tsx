@@ -15,4 +15,10 @@ export default {
 	],
 };
 
-export const Default = ({ delegates }: { delegates: ReadOnlyWallet[] }) => <DelegateTable delegates={delegates} />;
+export const Default = ({ delegates }: { delegates: ReadOnlyWallet[] }) => (
+	<DelegateTable coin="ARK" delegates={delegates} />
+);
+
+export const SelectMultiple = ({ delegates }: { delegates: ReadOnlyWallet[] }) => (
+	<DelegateTable coin="LSK" delegates={delegates} />
+);

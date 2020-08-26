@@ -11,6 +11,7 @@ import { DelegateRow } from "./DelegateRow";
 type Delegate = { address: string; username: string; rank: number };
 
 type DelegateTableProps = {
+	coin?: string;
 	delegates: ReadOnlyWallet[];
 	onContinue?: (delegateAddress: string) => void;
 };
@@ -59,7 +60,7 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: Delegate[]; limit
 	);
 };
 
-export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => {
+export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [selected, setSelected] = useState([] as any);
 	const [showSelectedList, setShowSelectedList] = useState(false);
@@ -119,7 +120,11 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 			return;
 		}
 
-		setSelected([...selected, delegate]);
+		if (coin === "ARK") {
+			setSelected([delegate]);
+		} else {
+			setSelected([...selected, delegate]);
+		}
 	};
 
 	const showSkeleton = useMemo(() => delegates.length === 0, [delegates]);
@@ -149,7 +154,11 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 					<div className="flex">
 						<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
 							<div className="text-sm text-theme-neutral">{t("COMMON.QUANTITY")}</div>
-							<div className="text-theme-neutral-dark">{selected.length}/50</div>
+							{coin === "ARK" ? (
+								<div className="text-theme-neutral-dark">{selected.length}/1</div>
+							) : (
+								<div className="text-theme-neutral-dark">{selected.length}/50</div>
+							)}
 						</div>
 
 						<div className="flex-1">
@@ -203,5 +212,6 @@ export const DelegateTable = ({ delegates, onContinue }: DelegateTableProps) => 
 };
 
 DelegateTable.defaultProps = {
+	coin: "ARK",
 	delegates: [],
 };
