@@ -1,6 +1,6 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { AddressRow } from "./AddressRow";
@@ -60,12 +60,16 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		},
 	];
 
+	const showSkeleton = useMemo(() => wallets.length === 0, [wallets]);
+	const skeletonList = new Array(8).fill({});
+	const data = showSkeleton ? skeletonList : wallets;
+
 	return (
 		<div data-testid="AddressTable">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.ADDRESS_TABLE.TITLE")}</h2>
-			<Table columns={columns} data={wallets}>
+			<Table columns={columns} data={data}>
 				{(wallet: ReadWriteWallet, index: number) => (
-					<AddressRow index={index} wallet={wallet} onSelect={onSelect} />
+					<AddressRow index={index} wallet={wallet} isLoading={showSkeleton} onSelect={onSelect} />
 				)}
 			</Table>
 		</div>

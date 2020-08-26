@@ -1,4 +1,5 @@
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { isEmptyObject } from "@arkecosystem/utils";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -10,13 +11,16 @@ import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { AddressRowSkeleton } from "./AddressRowSkeleton";
+
 type AddressRowProps = {
 	index: number;
 	wallet: ReadWriteWallet;
+	isLoading?: boolean;
 	onSelect?: (walletAddress: string) => void;
 };
 
-export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
+export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowProps) => {
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
 	const { t } = useTranslation();
@@ -39,25 +43,31 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 
 	useEffect(() => {
 		const loadVotes = async () => {
-			// TODO: move this to profile initialising and run it every X period
-			await env.coins().syncDelegates(wallet.coinId()!, wallet.networkId()!);
+			if (!isEmptyObject(wallet)) {
+				// TODO: move this to profile initialising and run it every X period
+				await env.coins().syncDelegates(wallet.coinId()!, wallet.networkId()!);
 
-			let votes: ReadOnlyWallet[] = [];
-			try {
-				await wallet.syncVotes();
+				let votes: ReadOnlyWallet[] = [];
+				try {
+					await wallet.syncVotes();
 
-				votes = wallet.votes();
-			} catch {
-				votes = [];
+					votes = wallet.votes();
+				} catch {
+					votes = [];
+				}
+
+				setVotes(votes);
 			}
-
-			setVotes(votes);
 		};
 
 		loadVotes();
 	}, [env, wallet]);
 
 	const hasVotes = votes && votes?.length > 0;
+
+	if (isLoading) {
+		return <AddressRowSkeleton />;
+	}
 
 	return (
 		<tr className="border-b border-dotted border-theme-neutral-300">
@@ -132,4 +142,8 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 			</td>
 		</tr>
 	);
+};
+
+AddressRow.defaultProps = {
+	isLoading: false,
 };
