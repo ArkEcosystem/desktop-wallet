@@ -14,4 +14,4 @@ export const goToSettings = async (t: any) => {
 		.ok();
 	await t.click(Selector('[data-testid="dropdown__option--2"]').withText(translations.COMMON.SETTINGS));
 	await t.expect(Selector("h1").withText(translations.SETTINGS.GENERAL.TITLE).exists).ok();
-});
+};
