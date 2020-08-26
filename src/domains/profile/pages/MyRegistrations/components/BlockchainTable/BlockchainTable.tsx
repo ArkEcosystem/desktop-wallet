@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 type Props = {
 	data: any;
-	handleDropdown: any;
+	onAction?: any;
 };
 
 const options = [
@@ -19,7 +19,7 @@ const options = [
 	{ label: "Resign", value: "resign" },
 ];
 
-export const BlockchainTable = ({ data, handleDropdown }: Props) => {
+export const BlockchainTable = ({ data, onAction }: Props) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -60,7 +60,7 @@ export const BlockchainTable = ({ data, handleDropdown }: Props) => {
 			<Table columns={columns} data={data}>
 				{(rowData: any) => (
 					<tr
-						data-testid="blockchain-table__row"
+						data-testid="BlockchainRegistrationItem"
 						className="border-b border-dashed border-theme-neutral-light"
 					>
 						<td className="w-24 py-6">
@@ -102,7 +102,7 @@ export const BlockchainTable = ({ data, handleDropdown }: Props) => {
 									<Dropdown
 										toggleIcon="Settings"
 										options={options}
-										onSelect={(option: any) => handleDropdown(option)}
+										onSelect={(option: any) => onAction?.(option)}
 									/>
 								</Button>
 							</span>
