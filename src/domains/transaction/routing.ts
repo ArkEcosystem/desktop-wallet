@@ -14,12 +14,12 @@ export const TransactionRoutes = [
 		component: Registration,
 	},
 	{
-		path: "/profiles/:profileId/transactions/resignation",
+		path: "/profiles/:profileId/transactions/:walletId/resignation",
 		exact: true,
 		component: ResignRegistration,
 	},
 	{
-		path: "/profiles/:profileId/transactions/update",
+		path: "/profiles/:profileId/transactions/:walletId/update",
 		exact: true,
 		component: UpdateRegistration,
 	},
