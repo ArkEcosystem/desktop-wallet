@@ -1,9 +1,9 @@
 import { RequestMock, Selector } from "testcafe";
 
-import { buildTranslations as translations } from "../../../app/i18n/helpers";
+import { buildTranslations } from "../../../app/i18n/helpers";
 import { getPageURL } from "../../../utils/e2e-utils";
 
-fixture`Delegate Registration action`.page(getPageURL());
+const translations = buildTranslations();
 
 const walletMock = RequestMock()
 	.onRequestTo("https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")
@@ -41,9 +41,11 @@ const sendMock = RequestMock()
 		},
 	);
 
+fixture`Delegate Registration action`.page(getPageURL());
+
 test.requestHooks(walletMock, sendMock)("should open wallet details page", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
+	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
 	// Navigate to import wallet page
 	await t.click(Selector("button").withText("Import"));
