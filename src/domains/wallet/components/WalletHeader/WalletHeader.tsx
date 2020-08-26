@@ -168,6 +168,7 @@ export const WalletHeader = ({
 							</span>
 							<Toggle
 								data-testid="WalletHeader__toggle"
+								baseColor="--theme-color-primary"
 								disabled={!publicKey}
 								onChange={() => setShowPublicKey(!showPublicKey)}
 							/>
