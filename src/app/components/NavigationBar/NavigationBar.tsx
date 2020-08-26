@@ -294,6 +294,11 @@ NavigationBar.defaultProps = {
 			mountPath: (profileId: string) => `/profiles/${profileId}/support`,
 		},
 		{
+			label: "Votes",
+			value: "votes",
+			mountPath: (profileId: string) => `/profiles/${profileId}/votes`,
+		},
+		{
 			label: "Exit",
 			value: "exit",
 			mountPath: () => `/`,

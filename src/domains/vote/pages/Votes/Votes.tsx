@@ -19,9 +19,9 @@ import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 const InputAddress = ({ address, profile }: { address: string; profile: Profile }) => {
 	const { t } = useTranslation();
@@ -54,13 +54,14 @@ const InputAddress = ({ address, profile }: { address: string; profile: Profile 
 
 export const Votes = () => {
 	const history = useHistory();
+	const { walletId: hasWalletId } = useParams();
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
 	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
-	const [address, setAddress] = useState("");
+	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
 	const { t } = useTranslation();
@@ -75,17 +76,19 @@ export const Votes = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	useEffect(() => {
-		for (const network of networks) {
-			if (
-				network.id() === activeWallet.network().id &&
-				network.coin() === activeWallet.manifest().get<string>("name")
-			) {
-				setNetwork(network);
+		if (hasWalletId) {
+			for (const network of networks) {
+				if (
+					network.id() === activeWallet.network().id &&
+					network.coin() === activeWallet.manifest().get<string>("name")
+				) {
+					setNetwork(network);
 
-				break;
+					break;
+				}
 			}
 		}
-	}, [activeWallet, networks]);
+	}, [activeWallet, hasWalletId, networks]);
 
 	useEffect(() => {
 		if (network) {
@@ -93,19 +96,36 @@ export const Votes = () => {
 		}
 	}, [activeProfile, network]);
 
+	const loadDelegates = useCallback(
+		async (wallet) => {
+			// TODO: move this to profile initialising and run it every X period
+			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+			await env.coins().syncDelegates(wallet?.coinId()!, wallet?.networkId()!);
+			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+			const delegates = env.coins().delegates(wallet?.coinId()!, wallet?.networkId()!);
+			const readOnlyDelegates = DelegateMapper.execute(
+				wallet,
+				delegates.map((delegate: ReadOnlyWallet) => delegate.publicKey),
+			);
+			setDelegates(readOnlyDelegates);
+		},
+		[env],
+	);
+
+	useEffect(() => {
+		if (hasWalletId) {
+			loadDelegates(activeWallet);
+		}
+	}, [activeWallet, loadDelegates, hasWalletId]);
+
+	const handleSelectNetwork = (network?: NetworkData | null) => {
+		setNetwork(network!);
+	};
+
 	const handleSelectAddress = async (address: string) => {
 		setAddress(address);
 		const wallet = activeProfile.wallets().findByAddress(address);
-		// TODO: move this to profile initialising and run it every X period
-		// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-		await env.coins().syncDelegates(wallet?.coinId()!, wallet?.networkId()!);
-		// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-		const delegates = env.coins().delegates(wallet?.coinId()!, wallet?.networkId()!);
-		const readOnlyDelegates = DelegateMapper.execute(
-			wallet!,
-			delegates.map((delegate: ReadOnlyWallet) => delegate.publicKey),
-		);
-		setDelegates(readOnlyDelegates);
+		await loadDelegates(wallet);
 	};
 
 	return (
@@ -119,14 +139,15 @@ export const Votes = () => {
 			</Section>
 
 			<div className="container mx-auto px-14">
-				<div className="-my-5 grid grid-flow-col grid-cols-2 gap-6">
+				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
 					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetwork
 							id="Votes__network"
 							networks={networks}
 							selected={network!}
 							placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.NETWORK") })}
-							disabled
+							onSelect={handleSelectNetwork}
+							disabled={hasWalletId}
 						/>
 					</TransactionDetail>
 					<TransactionDetail border={false} label={t("COMMON.ADDRESS")} className="mt-2">
@@ -140,11 +161,15 @@ export const Votes = () => {
 					<DelegateTable
 						coin={network?.coin()}
 						delegates={delegates}
-						onContinue={(delegateAddress) =>
+						onContinue={(delegateAddress) => {
+							const walletId = hasWalletId
+								? activeWallet.id()
+								: activeProfile.wallets().findByAddress(address)?.id();
+
 							history.push(
-								`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/transactions/vote/${delegateAddress}/sender/${address}`,
-							)
-						}
+								`/profiles/${activeProfile.id()}/wallets/${walletId}/transactions/vote/${delegateAddress}/sender/${address}`,
+							);
+						}}
 					/>
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
