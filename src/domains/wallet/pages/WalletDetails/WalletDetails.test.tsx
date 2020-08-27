@@ -114,39 +114,56 @@ describe("WalletDetails", () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
 		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
-		const dropdown = getAllByTestId("dropdown__toggle")[2];
-		expect(dropdown).toBeTruthy();
-
 		act(() => {
-			fireEvent.click(dropdown);
+			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
 		});
 
-		const updateWalletNameOption = getByTestId("dropdown__option--0");
-		expect(updateWalletNameOption).toBeTruthy();
-
 		act(() => {
-			fireEvent.click(updateWalletNameOption);
+			fireEvent.click(getByTestId("dropdown__option--0"));
 		});
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		const name = "Sample label name";
-		const updateNameInput = getByTestId("UpdateWalletName__input");
 
 		act(() => {
-			fireEvent.change(updateNameInput, { target: { value: name } });
+			fireEvent.change(getByTestId("UpdateWalletName__input"), { target: { value: name } });
 		});
 
-		expect(updateNameInput).toHaveValue(name);
+		act(() => {
+			fireEvent.click(getByTestId("UpdateWalletName__submit"));
+		});
+
+		await waitFor(() => expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should remove wallet name", async () => {
+		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--0"));
+		});
+
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("UpdateWalletName__input"), { target: { value: "" } });
+		});
 
 		const submitBtn = getByTestId("UpdateWalletName__submit");
 
 		act(() => {
-			fireEvent.click(submitBtn);
+			fireEvent.click(getByTestId("UpdateWalletName__submit"));
 		});
 
-		wallet.settings().set(WalletSetting.Alias, name);
-		await waitFor(() => expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name));
+		await waitFor(() => expect(wallet.settings().get(WalletSetting.Alias)).toBe(undefined));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
