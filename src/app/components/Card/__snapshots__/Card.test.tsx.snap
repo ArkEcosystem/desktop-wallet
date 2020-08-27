@@ -3,10 +3,13 @@
 exports[`Card should handle click 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxjAm eWJHeF"
-    data-testid="ProfileCard"
+    class="sc-AxiKw jUHuvL"
+    data-testid="Card"
   >
     Test
+    <div
+      class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -14,8 +17,12 @@ exports[`Card should handle click 1`] = `
 exports[`Card should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxjAm eWJHeF"
-    data-testid="ProfileCard"
-  />
+    class="sc-AxiKw cdYrnZ"
+    data-testid="Card"
+  >
+    <div
+      class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+    />
+  </div>
 </DocumentFragment>
 `;

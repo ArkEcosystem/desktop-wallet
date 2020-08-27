@@ -22,7 +22,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coin, 
 
 	return (
 		<Card className="bg-theme-background">
-			<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard">
+			<div className="flex flex-col p-4 space-y-8 bg-theme-background" data-testid="NewsCard">
 				<div className="flex justify-between w-full">
 					<div className="flex items-center space-x-4">
 						<NetworkIcon coin={asset?.coin} network={asset?.network} noShadow />

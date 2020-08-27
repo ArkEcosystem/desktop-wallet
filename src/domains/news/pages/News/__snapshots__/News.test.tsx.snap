@@ -314,11 +314,11 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="space-y-6"
               >
                 <div
-                  class="sc-fznWqX eYnudq bg-theme-background"
-                  data-testid="ProfileCard"
+                  class="sc-fznWqX oWWbZ bg-theme-background"
+                  data-testid="Card"
                 >
                   <div
-                    class="flex flex-col p-4 space-y-8"
+                    class="flex flex-col p-4 space-y-8 bg-theme-background"
                     data-testid="NewsCard"
                   >
                     <div
@@ -412,6 +412,9 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </a>
                     </p>
                   </div>
+                  <div
+                    class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+                  />
                 </div>
               </div>
               <div

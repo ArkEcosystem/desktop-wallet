@@ -1,9 +1,9 @@
 import { images } from "app/assets/images";
-import { Dropdown } from "app/components/Dropdown";
+import { Card } from "app/components/Card";
 import { Icon } from "app/components/Icon";
 import { ReviewRating } from "app/components/ReviewRating";
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 
 type PluginCardProps = {
 	isOwner: boolean;
@@ -12,48 +12,40 @@ type PluginCardProps = {
 	onDelete: any;
 };
 
-const PluginCardStyled = styled.div`
-	${tw`relative pt-8 pb-12 px-10 flex flex-col border-2 rounded-lg cursor-pointer select-none hover:shadow-xl`}
-	.PluginCard {
-		&--image {
+const PluginImageContainer = styled.div`
+	${tw`mb-4 mr-4`}
+	${css`
+		& {
 			width: 4.75rem;
 			height: 4.75rem;
 		}
-	}
+	`}
 `;
 
 const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
 export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardProps) => {
-	const options = [
+	const actions = [
 		{ label: "View", value: "view" },
 		{ label: "Delete", value: "delete" },
 	];
 
 	return (
-		<PluginCardStyled
+		<Card
 			data-testid={`PluginCard--${plugin.id}`}
 			className="border-theme-primary-contrast hover:border-theme-background"
 			onClick={onClick}
+			actions={plugin.isInstalled ? actions : undefined}
+			onSelect={(action: any) => {
+				if (action.value === "delete") {
+					onDelete();
+				}
+			}}
 		>
 			<div className="my-auto font-semibold">
-				{plugin.isInstalled && (
-					<div className="absolute top-4 right-2 text-theme-primary-light">
-						<Dropdown
-							toggleIcon="Settings"
-							options={options}
-							onSelect={(option: any) => {
-								if (option.value === "delete") {
-									onDelete();
-								}
-							}}
-						/>
-					</div>
-				)}
-
-				<div className="mb-4 mr-4">
-					<ChangeNowLogo className="PluginCard--image" />
-				</div>
+				<PluginImageContainer>
+					<ChangeNowLogo />
+				</PluginImageContainer>
 
 				<div className="flex items-center mb-2 text-lg space-x-2 text-theme-primary">
 					<div>{plugin.name}</div>
@@ -72,7 +64,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 					</div>
 				</div>
 			</div>
-		</PluginCardStyled>
+		</Card>
 	);
 };
 
