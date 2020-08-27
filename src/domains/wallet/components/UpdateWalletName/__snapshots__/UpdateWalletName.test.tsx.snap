@@ -75,7 +75,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
                   data-testid="FormLabel"
                   for="name"
                 >
-                  Enter a name
+                  Name
                   <div
                     class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -188,7 +188,7 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
                   data-testid="FormLabel"
                   for="name"
                 >
-                  Enter a name
+                  Name
                   <div
                     class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -301,7 +301,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                   data-testid="FormLabel"
                   for="name"
                 >
-                  Enter a name
+                  Name
                   <div
                     class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -316,7 +316,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                 <p
                   class="text-sm text-theme-danger"
                 >
-                  'Enter a name' should have at most 42 characters
+                  'Name' should have at most 42 characters
                 </p>
               </fieldset>
               <div
