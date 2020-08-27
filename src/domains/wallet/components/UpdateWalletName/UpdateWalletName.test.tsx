@@ -62,16 +62,31 @@ describe("UpdateWalletName", () => {
 		});
 	});
 
+	it("should show error message when name consists only of whitespace", async () => {
+		const onSave = jest.fn();
+
+		const { asFragment, findByTestId, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
+
+		await act(async () => {
+			fireEvent.input(getByTestId("UpdateWalletName__input"), { target: { value: "      " } });
+		});
+
+		// wait for formState.isValid to be updated
+		await findByTestId("UpdateWalletName__submit");
+
+		expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should show error message when name exceeds 42 characters", async () => {
 		const onSave = jest.fn();
 
 		const { asFragment, findByTestId, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
 
-		const input = getByTestId("UpdateWalletName__input");
-		const name = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit distinctio";
-
 		await act(async () => {
-			fireEvent.input(input, { target: { value: name } });
+			fireEvent.input(getByTestId("UpdateWalletName__input"), {
+				target: { value: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit distinctio" },
+			});
 		});
 
 		// wait for formState.isValid to be updated

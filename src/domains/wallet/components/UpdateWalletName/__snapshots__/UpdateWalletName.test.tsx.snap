@@ -76,10 +76,6 @@ exports[`UpdateWalletName should render a modal 1`] = `
                   for="name"
                 >
                   Name
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <input
                   class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -189,10 +185,6 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
                   for="name"
                 >
                   Name
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <input
                   class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -214,6 +206,122 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
                   class="sc-AxjAm ddQVWI"
                   color="primary"
                   data-testid="UpdateWalletName__submit"
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`UpdateWalletName should show error message when name consists only of whitespace 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-50 w-full h-full overflow-y-scroll"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="sc-fzpans hGJZle absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      data-testid="modal__inner"
+    >
+      <div
+        class="relative"
+      >
+        <div
+          class="absolute top-0 right-0 z-50 mt-5"
+        >
+          <button
+            class="sc-AxjAm gEldWW"
+            color="neutral"
+            data-testid="modal__close-btn"
+            type="button"
+          >
+            <div
+              class="p-1"
+            >
+              <div
+                class="sc-AxhCb koOqYD"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="py-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <svg
+              class="my-8"
+            >
+              name-wallet.svg
+            </svg>
+            <div
+              class="mt-1 text-theme-neutral-dark"
+            >
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="sc-AxirZ kMHTdH flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input
+                  aria-invalid="true"
+                  class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  Name is invalid
+                </p>
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="sc-AxjAm cyswVS"
+                  color="primary"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  data-testid="UpdateWalletName__submit"
+                  disabled=""
                   type="submit"
                 >
                   Save
@@ -302,10 +410,6 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                   for="name"
                 >
                   Name
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <input
                   aria-invalid="true"

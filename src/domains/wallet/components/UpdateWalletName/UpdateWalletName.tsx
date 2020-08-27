@@ -29,8 +29,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 	}, [name, isOpen, setValue]);
 
 	const handleSubmit = ({ name }: any) => {
-		const formattedName = name.trim().substring(0, nameMaxLength);
-		onSave?.({ name: formattedName });
+		onSave(name.trim().substring(0, nameMaxLength));
 	};
 
 	return (
@@ -43,7 +42,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 		>
 			<Form context={methods} onSubmit={handleSubmit} className="mt-8">
 				<FormField name="name">
-					<FormLabel>{t("COMMON.NAME")}</FormLabel>
+					<FormLabel required={false}>{t("COMMON.NAME")}</FormLabel>
 					<Input
 						data-testid="UpdateWalletName__input"
 						ref={register({
