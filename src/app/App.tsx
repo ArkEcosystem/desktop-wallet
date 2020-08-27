@@ -70,6 +70,11 @@ const Main = ({ syncInterval }: Props) => {
 			await persist();
 
 			setShowSplash(false);
+
+			if (process.env.ELECTRON_IS_E2E === "1") {
+				// Clear caches on each run to properly test loading states
+				httpClient.clearCache();
+			}
 		};
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
