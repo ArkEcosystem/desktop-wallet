@@ -32,8 +32,9 @@ describe("UpdateWalletName", () => {
 	});
 
 	it("should rename wallet", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} />);
+		const onSave = jest.fn();
+
+		const { getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.DESCRIPTION);
@@ -55,15 +56,16 @@ describe("UpdateWalletName", () => {
 		});
 
 		waitFor(() => {
-			expect(fn).toHaveBeenCalledWith({ name }, expect.anything());
+			expect(onSave).toHaveBeenCalledWith({ name }, expect.anything());
 			wallet.settings().set(WalletSetting.Alias, name);
 			expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
 		});
 	});
 
 	it("should show error message when name exceeds 42 characters", async () => {
-		const fn = jest.fn();
-		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} />);
+		const onSave = jest.fn();
+
+		const { asFragment, findByTestId, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
 
 		const input = getByTestId("UpdateWalletName__input");
 		const name = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit distinctio";
@@ -71,8 +73,6 @@ describe("UpdateWalletName", () => {
 		act(() => {
 			fireEvent.change(input, { target: { value: name } });
 		});
-
-		expect(input).toHaveValue(name);
 
 		// wait for formState.isValid to be updated
 		await findByTestId("UpdateWalletName__submit");
@@ -82,8 +82,9 @@ describe("UpdateWalletName", () => {
 	});
 
 	it("should render form input with existing name", async () => {
-		const fn = jest.fn();
-		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} name="test" />);
+		const onSave = jest.fn();
+
+		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} name="test" />);
 
 		const input = getByTestId("UpdateWalletName__input");
 		expect(input).toHaveValue("test");
