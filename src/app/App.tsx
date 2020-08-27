@@ -41,7 +41,6 @@ const Main = ({ syncInterval }: Props) => {
 	const { pathname } = useLocation();
 
 	const syncDelegates = (env: Environment) => {
-		console.log("Running delegates sync...");
 		const coinsData = env.usedCoinsWithNetworks();
 		const coinsInUse = Object.keys(coinsData);
 		const delegatesPromises: any = [];
@@ -53,9 +52,7 @@ const Main = ({ syncInterval }: Props) => {
 			}
 		}
 
-		Promise.allSettled(delegatesPromises).then(() => {
-			setShowSplash(false);
-		});
+		return Promise.allSettled(delegatesPromises);
 	};
 
 	useEffect(() => {
@@ -65,13 +62,14 @@ const Main = ({ syncInterval }: Props) => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			await env.verify(fixtureData);
-			syncDelegates(env);
+			await syncDelegates(env);
 
-			console.info("Scheduling next delegates synchronization...");
 			setInterval(() => syncDelegates(env), syncInterval);
 
 			await env.boot();
 			await persist();
+
+			setShowSplash(false);
 		};
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
