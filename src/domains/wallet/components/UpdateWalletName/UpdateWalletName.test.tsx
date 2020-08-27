@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
-// i18n
 import { translations } from "../../i18n";
 import { UpdateWalletName } from "./UpdateWalletName";
 
@@ -27,7 +27,7 @@ describe("UpdateWalletName", () => {
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.DESCRIPTION);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.FIELD_NAME);
+		expect(getByTestId("modal__inner")).toHaveTextContent(commonTranslations.NAME);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -38,7 +38,7 @@ describe("UpdateWalletName", () => {
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.DESCRIPTION);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.FIELD_NAME);
+		expect(getByTestId("modal__inner")).toHaveTextContent(commonTranslations.NAME);
 
 		const input = getByTestId("UpdateWalletName__input");
 		const name = "Sample label";
