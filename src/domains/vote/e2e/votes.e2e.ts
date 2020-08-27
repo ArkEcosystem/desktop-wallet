@@ -8,6 +8,16 @@ const translations = buildTranslations();
 
 fixture`Votes`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
 
+test("should navigate to votes page and show loading state", async (t) => {
+	await t
+		.expect(Selector("[data-testid=WalletRegistrations__skeleton]").exists)
+		.ok()
+		.expect(Selector("[data-testid=WalletVote__skeleton]").exists)
+		.ok()
+		.expect(Selector("[data-testid=TransactionRow__skeleton]").exists)
+		.ok();
+});
+
 test("should navigate to votes page from navigation bar", async (t) => {
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
 	await t.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES).exists).ok();
@@ -17,14 +27,6 @@ test("should navigate to votes page from navigation bar", async (t) => {
 });
 
 test("should navigate to votes page from wallet card", async (t) => {
-	await t
-		.expect(Selector("[data-testid=WalletRegistrations__skeleton]").exists)
-		.ok()
-		.expect(Selector("[data-testid=WalletVote__skeleton]").exists)
-		.ok()
-		.expect(Selector("[data-testid=TransactionRow__skeleton]").exists)
-		.ok();
-
 	await t.click(Selector('[data-testid="WalletVote__delegate__vote"]').withText(translations.COMMON.VOTE));
 
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
@@ -55,14 +57,6 @@ test("should select network, address and delegate", async (t) => {
 });
 
 test("should select a delegate", async (t) => {
-	await t
-		.expect(Selector("[data-testid=WalletRegistrations__skeleton]").exists)
-		.ok()
-		.expect(Selector("[data-testid=WalletVote__skeleton]").exists)
-		.ok()
-		.expect(Selector("[data-testid=TransactionRow__skeleton]").exists)
-		.ok();
-
 	await t.click(Selector('[data-testid="WalletVote__delegate__vote"]').withText(translations.COMMON.VOTE));
 
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
