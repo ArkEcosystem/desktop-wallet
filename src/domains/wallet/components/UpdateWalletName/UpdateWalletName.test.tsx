@@ -73,6 +73,10 @@ describe("UpdateWalletName", () => {
 		});
 
 		expect(input).toHaveValue(name);
+
+		// wait for formState.isValid to be updated
+		await findByTestId("UpdateWalletName__submit");
+
 		expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
 		expect(asFragment()).toMatchSnapshot();
 	});
