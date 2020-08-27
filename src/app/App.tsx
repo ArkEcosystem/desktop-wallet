@@ -35,33 +35,33 @@ type Props = {
 const Main = ({ syncInterval }: Props) => {
 	const [showSplash, setShowSplash] = useState(true);
 
-  const { pathname } = useLocation();
+	const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
-
-	const syncDelegates = () => {
-		console.log("Running delegates sync...");
-		const coinsData = env.usedCoinsWithNetworks();
-		const coinsInUse = Object.keys(coinsData);
-		const delegatesPromises: any = [];
-
-		for (const coin of coinsInUse) {
-			const coinNetworks = coinsData[coin];
-			for (const network of coinNetworks) {
-				delegatesPromises.push(Promise.resolve(env.coins().syncDelegates(coin, network)));
-			}
-		}
-
-		Promise.allSettled(delegatesPromises).then(() => {
-			setShowSplash(false);
-		});
-	};
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [pathname]);
 
 	useLayoutEffect(() => {
+		const syncDelegates = () => {
+			console.log("Running delegates sync...");
+			const coinsData = env.usedCoinsWithNetworks();
+			const coinsInUse = Object.keys(coinsData);
+			const delegatesPromises: any = [];
+
+			for (const coin of coinsInUse) {
+				const coinNetworks = coinsData[coin];
+				for (const network of coinNetworks) {
+					delegatesPromises.push(Promise.resolve(env.coins().syncDelegates(coin, network)));
+				}
+			}
+
+			Promise.allSettled(delegatesPromises).then(() => {
+				setShowSplash(false);
+			});
+		};
+
 		const boot = async () => {
 			await env.verify(fixtureData);
 			syncDelegates();
