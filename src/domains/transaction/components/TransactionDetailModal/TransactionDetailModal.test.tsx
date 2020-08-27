@@ -192,7 +192,7 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a delegate registartion modal", () => {
+	it("should render a delegate registration modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
@@ -212,7 +212,7 @@ describe("TransactionDetailModal", () => {
 			},
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
