@@ -35,7 +35,7 @@ type Props = {
 const Main = ({ syncInterval }: Props) => {
 	const [showSplash, setShowSplash] = useState(true);
 
-  const { pathname } = useLocation();
+	const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 
