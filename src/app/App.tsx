@@ -13,9 +13,10 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
@@ -34,11 +35,11 @@ type Props = {
 const Main = ({ syncInterval }: Props) => {
 	const [showSplash, setShowSplash] = useState(true);
 
+  const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
-
 	const isOnline = useNetworkStatus();
 
-	const syncDelegates = (env: Environment) => {
+	const syncDelegates = () => {
 		console.log("Running delegates sync...");
 		const coinsData = env.usedCoinsWithNetworks();
 		const coinsInUse = Object.keys(coinsData);
@@ -56,13 +57,17 @@ const Main = ({ syncInterval }: Props) => {
 		});
 	};
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
 	useLayoutEffect(() => {
 		const boot = async () => {
 			await env.verify(fixtureData);
-			syncDelegates(env);
+			syncDelegates();
 
 			console.info("Scheduling next delegates synchronization...");
-			setInterval(() => syncDelegates(env), syncInterval);
+			setInterval(() => syncDelegates(), syncInterval);
 
 			await env.boot();
 			await persist();

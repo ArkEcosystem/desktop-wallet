@@ -1,21 +1,19 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { availableNetworksMock } from "domains/network/data";
+/* eslint-disable @typescript-eslint/require-await */
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
 
-import { addressListData, delegateListData } from "../../data";
-import { translations } from "../../i18n";
 import { Votes } from "./Votes";
 
-const networks = availableNetworksMock;
 let profile: Profile;
-let route: string;
+let wallet: ReadWriteWallet;
 
-const renderPage = () =>
+const renderPage = (route: string, routePath = "/profiles/:profileId/wallets/:walletId/votes") =>
 	renderWithRouter(
-		<Route path="/profiles/:profileId/votes">
-			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />
+		<Route path={routePath}>
+			<Votes />
 		</Route>,
 		{
 			routes: [route],
@@ -23,89 +21,121 @@ const renderPage = () =>
 	);
 
 describe("Votes", () => {
+	beforeAll(() => {
+		nock.disableNetConnect();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/delegates")
+			.query({ page: "1" })
+			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
+			.persist();
+	});
+
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		route = `/profiles/${profile.id()}/votes`;
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 
-	it("should render", () => {
-		const { container, asFragment } = renderPage();
+	it("should render", async () => {
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, container, getByTestId } = renderPage(route);
 
 		expect(container).toBeTruthy();
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select a network", () => {
-		const { container, asFragment, getByTestId } = renderPage();
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+	it("should select network, address and delegate", async () => {
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
 
-		act(() => {
-			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
+		expect(getAllByTestId("AddressRowSkeleton")).toBeTruthy();
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		expect(selectNetworkInput).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		});
 
-		act(() => {
+		await act(async () => {
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(container).toBeTruthy();
-		expect(selectNetworkInput).toHaveValue("Bitcoin");
-		expect(getByTestId("AddressList")).toBeTruthy();
+		expect(selectNetworkInput).toHaveValue("Ark Devnet");
+
+		expect(getByTestId("AddressTable")).toBeTruthy();
+
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+
+		const selectAddressButton = getByTestId("AddressRow__select-0");
+
+		act(() => {
+			fireEvent.click(selectAddressButton);
+		});
+
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
+		});
+
+		const selectDelegateButton = getByTestId("DelegateRow__toggle-0");
+
+		act(() => {
+			fireEvent.click(selectDelegateButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("DelegateTable__continue-button"));
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select address", () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderPage();
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+	it("should select a delegate", async () => {
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, getByTestId } = renderPage(route);
 
-		act(() => {
-			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
 
-		act(() => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-		});
-
-		expect(getByTestId("AddressList")).toBeTruthy();
-
-		const selectAddressButtons = getAllByTestId("AddressListItem__button--select");
+		const selectDelegateButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
-			fireEvent.click(selectAddressButtons[0]);
+			fireEvent.click(selectDelegateButton);
 		});
 
-		expect(getByTestId("DelegateList")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer")).toHaveTextContent("Quantity1/1");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select a delegate", () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderPage();
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+	it("should emit action on continue button", async () => {
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, getByTestId } = renderPage(route);
 
-		act(() => {
-			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
 
-		act(() => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-		});
-
-		expect(getByTestId("AddressList")).toBeTruthy();
-
-		const selectAddressButtons = getAllByTestId("AddressListItem__button--select");
+		const selectDelegateButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
-			fireEvent.click(selectAddressButtons[0]);
+			fireEvent.click(selectDelegateButton);
 		});
 
-		expect(getByTestId("DelegateList")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 
-		const selectDelegateButtons = getAllByTestId("DelegateListItem__button--toggle");
+		act(() => {
+			fireEvent.click(getByTestId("DelegateTable__continue-button"));
+		});
 
-		fireEvent.click(selectDelegateButtons[0]);
-		fireEvent.click(selectDelegateButtons[1]);
-		fireEvent.click(selectDelegateButtons[2]);
-
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent(translations.DELEGATE_LIST.SHOW_LIST);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -64,7 +64,7 @@ export const CreateProfile = () => {
 	};
 
 	return (
-		<Page navbarStyle="logo-only">
+		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1">
 				<div className="max-w-lg mx-auto">
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
@@ -85,8 +85,8 @@ export const CreateProfile = () => {
 
 							<SelectProfileImage value={avatarImage} onSelect={setAvatarImage} />
 
-							<div className="relative space-y-8">
-								<FormField className="mt-8" name="name">
+							<div className="relative mt-8 space-y-8">
+								<FormField name="name">
 									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 									<Input
 										ref={register({
@@ -173,7 +173,7 @@ export const CreateProfile = () => {
 								<ListDivided items={otherItems} />
 							</div>
 
-							<Divider dashed />
+							<Divider />
 						</div>
 
 						<div className="flex justify-end mt-8 space-x-3">

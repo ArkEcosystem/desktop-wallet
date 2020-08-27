@@ -1,11 +1,9 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
-import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { MemoryRouter, Route } from "react-router-dom";
 import { WalletsDecorator } from "utils/storybook";
 
-import { addressListData, delegateListData } from "../../data";
 import { Votes } from "./Votes";
 
 export default {
@@ -13,19 +11,18 @@ export default {
 	decorators: [(storyFn: any) => <WalletsDecorator count={1}>{storyFn}</WalletsDecorator>],
 };
 
-export const Default = ({ env, profile }: { env: Environment; profile: Profile }) => (
+export const Default = ({
+	env,
+	profile,
+	wallets,
+}: {
+	env: Environment;
+	profile: Profile;
+	wallets: ReadWriteWallet[];
+}) => (
 	<EnvironmentProvider env={env}>
-		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/dashboard`]}>
-			<Route
-				path="/profiles/:profileId/dashboard"
-				component={() => (
-					<Votes
-						networks={availableNetworksMock}
-						addressList={addressListData}
-						delegateList={delegateListData}
-					/>
-				)}
-			/>
+		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/wallets/${wallets[0].id()}/votes`]}>
+			<Route path="/profiles/:profileId/wallets/:walletId/votes" component={() => <Votes />} />
 		</MemoryRouter>
 	</EnvironmentProvider>
 );

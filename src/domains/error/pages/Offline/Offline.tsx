@@ -9,7 +9,7 @@ export const Offline = () => {
 	const { t } = useTranslation();
 
 	return (
-		<Page navbarStyle="logo-only">
+		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
 				<div className="sm:mx-auto sm:w-full sm:max-w-md">
 					<CannotConnectBanner />
