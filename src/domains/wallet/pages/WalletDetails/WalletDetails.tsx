@@ -69,18 +69,17 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 				await activeWallet.syncVotes();
 
 				votes = activeWallet.votes();
-
-				setData({
-					walletData,
-					transactions,
-					votes,
-				});
-
-				setIsLoading(false);
 			} catch {
 				votes = [];
-				setIsLoading(false);
 			}
+
+			setData({
+				walletData,
+				transactions,
+				votes,
+			});
+
+			setIsLoading(false);
 		};
 
 		fetchAllData();
