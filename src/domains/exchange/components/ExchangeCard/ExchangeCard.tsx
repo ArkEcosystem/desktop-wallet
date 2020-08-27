@@ -16,7 +16,7 @@ export const AddExchangeCard = ({ onAddExchange }: { onAddExchange: any }) => {
 	const { t } = useTranslation();
 
 	return (
-		<Card data-testid="Exchange__add-exchange-card" className="flex col-span-2" onClick={onAddExchange}>
+		<Card className="flex col-span-2" onClick={onAddExchange}>
 			<div className="flex items-center p-2 font-semibold text-theme-primary">
 				<Icon name="Plus" className="p-4 mr-4 rounded-lg bg-theme-primary-contrast" />
 
@@ -26,11 +26,11 @@ export const AddExchangeCard = ({ onAddExchange }: { onAddExchange: any }) => {
 	);
 };
 
-export const BlankCard = () => {
+export const BlankExchangeCard = () => {
 	const { t } = useTranslation();
 
 	return (
-		<Card data-testid="Exchange__blank-card">
+		<Card>
 			<div className="flex items-center p-2 font-semibold text-theme-primary-contrast">
 				<div className="w-12 h-12 mr-4 border-2 rounded-lg border-theme-primary-contrast" />
 
@@ -44,13 +44,7 @@ export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProp
 	const options = [{ label: "Option 1", value: "1" }];
 
 	return (
-		<Card
-			data-testid={`Exchange__exchange-card-${exchange.id}`}
-			className="bg-theme-success-contrast"
-			isSelected={isSelected}
-			onClick={onClick}
-			actions={options}
-		>
+		<Card isSelected={isSelected} onClick={onClick} actions={options}>
 			<div className="flex items-center p-2 font-semibold text-theme-primary">
 				<div className="mr-4">
 					<ChangeNowLogo className="w-12 h-12" />

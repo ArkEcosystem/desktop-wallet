@@ -15,12 +15,15 @@ type CardProps = {
 };
 
 const Wrapper = styled.div<{ isSelected?: boolean; onClick?: any }>`
-	${tw`relative transition-all duration-200 p-6 border-2 rounded-lg`}
-	${({ onClick }) => typeof onClick === "function" && tw`cursor-pointer hover:shadow-xl`}
+	${tw`bg-theme-background relative transition-all duration-200 p-6 border-2 rounded-lg`}
+	${({ onClick }) =>
+		typeof onClick === "function"
+			? tw`cursor-pointer hover:border-theme-background hover:shadow-xl`
+			: tw`pointer-events-none`}
 	${({ isSelected }) =>
 		isSelected
-			? tw`border-theme-success-300 hover:border-theme-success-contrast`
-			: tw`border-theme-primary-contrast hover:border-theme-background`}
+			? tw`bg-theme-success-contrast border-theme-success-600 hover:border-theme-success-contrast`
+			: tw`bg-theme-background border-theme-primary-contrast`}
 `;
 
 export const Card = ({ children, addonIcons, actions, onClick, onSelect, isSelected, className }: CardProps) => (

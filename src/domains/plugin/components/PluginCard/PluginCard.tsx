@@ -3,6 +3,7 @@ import { Card } from "app/components/Card";
 import { Icon } from "app/components/Icon";
 import { ReviewRating } from "app/components/ReviewRating";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import tw, { css, styled } from "twin.macro";
 
 type PluginCardProps = {
@@ -25,18 +26,22 @@ const PluginImageContainer = styled.div`
 const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
 export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardProps) => {
+	const { t } = useTranslation();
+
 	const actions = [
-		{ label: "View", value: "view" },
-		{ label: "Delete", value: "delete" },
+		{ label: t("COMMON.VIEW"), value: "view" },
+		{ label: t("COMMON.DELETE"), value: "delete" },
 	];
 
 	return (
 		<Card
-			data-testid={`PluginCard--${plugin.id}`}
 			className="border-theme-primary-contrast hover:border-theme-background"
 			onClick={onClick}
 			actions={plugin.isInstalled ? actions : undefined}
 			onSelect={(action: any) => {
+				if (action.value === "view") {
+					onClick();
+				}
 				if (action.value === "delete") {
 					onDelete();
 				}

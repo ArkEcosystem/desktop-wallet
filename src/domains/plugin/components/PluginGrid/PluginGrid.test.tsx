@@ -29,61 +29,67 @@ const plugins = [
 ];
 
 describe("PluginGrid", () => {
-	it("should render", () => {
-		const { asFragment, getByTestId } = render(<PluginGrid plugins={plugins} />);
+	it("should render", async () => {
+		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={plugins} />);
 
-		expect(getByTestId("PluginCard--ark-explorer")).toHaveTextContent("ARK Explorer");
-		expect(getByTestId("PluginCard--ark-avatars")).toHaveTextContent("ARK Avatars");
+		for (const plugin of plugins) {
+			expect(await findByText(plugin.name)).toBeTruthy();
+		}
+
 		expect(getByTestId("Pagination")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render without pagination", () => {
-		const { asFragment, getByTestId } = render(<PluginGrid plugins={plugins} withPagination={false} />);
+	it("should render without pagination", async () => {
+		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={plugins} withPagination={false} />);
 
-		expect(getByTestId("PluginCard--ark-explorer")).toHaveTextContent("ARK Explorer");
-		expect(getByTestId("PluginCard--ark-avatars")).toHaveTextContent("ARK Avatars");
+		for (const plugin of plugins) {
+			expect(await findByText(plugin.name)).toBeTruthy();
+		}
+
 		expect(() => getByTestId("Pagination")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should split by page", () => {
-		const { asFragment, getByTestId } = render(<PluginGrid plugins={plugins} itemsPerPage={1} />);
+	it("should split by page", async () => {
+		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={plugins} itemsPerPage={1} />);
 
-		expect(getByTestId("PluginCard--ark-explorer")).toHaveTextContent("ARK Explorer");
-		expect(() => getByTestId("PluginCard--ark-avatars")).toThrow(/Unable to find an element by/);
+		expect(await findByText(plugins[0].name)).toBeTruthy();
+		await expect(findByText(plugins[1].name)).rejects.toThrow();
 
 		fireEvent.click(getByTestId("Pagination__next"));
 
-		expect(() => getByTestId("PluginCard--ark-explorer")).toThrow(/Unable to find an element by/);
-		expect(getByTestId("PluginCard--ark-avatars")).toHaveTextContent("ARK Avatars");
+		expect(await findByText(plugins[1].name)).toBeTruthy();
+		await expect(findByText(plugins[0].name)).rejects.toThrow();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should trigger select", () => {
+	it("should trigger select", async () => {
 		const onSelect = jest.fn();
 
-		const { asFragment, getByTestId } = render(<PluginGrid plugins={plugins} onSelect={onSelect} />);
+		const { asFragment, findByText } = render(<PluginGrid plugins={plugins} onSelect={onSelect} />);
 
-		fireEvent.click(getByTestId("PluginCard--ark-explorer"));
+		fireEvent.click(await findByText(plugins[0].name));
 
 		expect(onSelect).toHaveBeenCalledTimes(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should trigger delete", () => {
+	it("should trigger delete", async () => {
 		const onDelete = jest.fn();
-		const onSelect = jest.fn();
 
-		const { asFragment, getByTestId } = render(
-			<PluginGrid plugins={plugins} onSelect={onSelect} onDelete={onDelete} />,
+		const { asFragment, findByText } = render(
+			<PluginGrid plugins={plugins} onSelect={jest.fn()} onDelete={onDelete} />,
 		);
 
-		fireEvent.click(within(getByTestId("PluginCard--ark-avatars")).getByTestId("dropdown__toggle"));
-		fireEvent.click(within(getByTestId("PluginCard--ark-avatars")).getByTestId("dropdown__option--1"));
+		const card = (await findByText(plugins[1].name)).parentNode.parentNode.parentNode;
+
+		fireEvent.click(within(card).getByTestId("dropdown__toggle"));
+		fireEvent.click(within(card).getByTestId("dropdown__option--1"));
 
 		expect(onDelete).toHaveBeenCalledTimes(1);
-		expect(onSelect).not.toHaveBeenCalled();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

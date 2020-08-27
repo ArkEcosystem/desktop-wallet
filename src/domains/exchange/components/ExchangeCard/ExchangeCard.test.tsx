@@ -1,30 +1,34 @@
 import React from "react";
 import { render } from "testing-library";
 
-// i18n
-import { AddExchangeCard, BlankCard, ExchangeCard } from "./ExchangeCard";
+import { translations } from "../../i18n";
+import { AddExchangeCard, BlankExchangeCard, ExchangeCard } from "./ExchangeCard";
+
+const exchange = { id: "test-exchange", name: "Test Exchange" };
 
 describe("ExchangeCard", () => {
-	it("should render Exchange card", () => {
-		const { container, getByTestId } = render(
-			<ExchangeCard exchange={{ id: "test-exchange", name: "Test Exchange" }} />,
-		);
+	it("should render", async () => {
+		const { container, findByText } = render(<ExchangeCard exchange={exchange} />);
 
-		expect(getByTestId("Exchange__exchange-card-test-exchange")).toBeTruthy();
+		expect(await findByText(exchange.name)).toBeTruthy();
 		expect(container).toMatchSnapshot();
 	});
+});
 
-	it("should render Add Exchange card", () => {
-		const { container, getByTestId } = render(<AddExchangeCard />);
+describe("BlankExchangeCard", () => {
+	it("should render when blank", async () => {
+		const { container, findByText } = render(<BlankExchangeCard />);
 
-		expect(getByTestId("Exchange__add-exchange-card")).toBeTruthy();
+		expect(await findByText(translations.EXCHANGE_NAME)).toBeTruthy();
 		expect(container).toMatchSnapshot();
 	});
+});
 
-	it("should render Blank Exchange card", () => {
-		const { container, getByTestId } = render(<BlankCard />);
+describe("AddExchangeCard", () => {
+	it("should render", async () => {
+		const { container, findByText } = render(<AddExchangeCard />);
 
-		expect(getByTestId("Exchange__blank-card")).toBeTruthy();
+		expect(await findByText(translations.ADD_EXCHANGE)).toBeTruthy();
 		expect(container).toMatchSnapshot();
 	});
 });

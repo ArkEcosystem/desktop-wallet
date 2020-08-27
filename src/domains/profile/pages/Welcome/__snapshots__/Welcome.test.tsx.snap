@@ -63,8 +63,99 @@ exports[`Welcome should change route to create profile 1`] = `
             <p
               class="text-sm text-theme-neutral-dark md:text-base"
             >
-              Sign in via MarketSquare or create a new Profile to get started.
+              Choose from an existing Profile below, sign in via MarketSquare or create a new Profile to get started.
             </p>
+            <div
+              class="mt-8 space-y-3"
+            >
+              <div
+                class="sc-fzpjYC dyUAaG"
+                data-testid="Card"
+              >
+                <div
+                  class="relative p-2 sm:flex sm:items-center"
+                >
+                  <div
+                    class="flex flex-row justify-between w-full"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="profile-card__user--avatar"
+                      >
+                        <img
+                          alt="Jane Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="Jane Doe"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background"
+                        >
+                          JA
+                        </span>
+                      </div>
+                      <div
+                        class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
+                      >
+                        <p
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Name
+                        </p>
+                        <p
+                          class="font-semibold text-theme-text"
+                          data-testid="profile-card__user--name"
+                        >
+                          <span
+                            class="sc-fznxsB gYUFJI"
+                          >
+                            Jane Doe
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+                      >
+                        <p
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Total balance
+                        </p>
+                        <span
+                          class="font-semibold text-theme-neutral"
+                        >
+                          N/A
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+                >
+                  <div
+                    class="relative"
+                    data-testid="dropdown__toggle"
+                  >
+                    <div
+                      class="sc-AxirZ deQuuR p-2 text-theme-neutral-400 hover:text-theme-neutral-500 cursor-pointer"
+                      height="20"
+                      width="4"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
             >
@@ -173,34 +264,12 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
               class="mt-8 space-y-3"
             >
               <div
-                class="sc-fzpjYC bVVEWC"
-                data-testid="ProfileCard"
+                class="sc-fzpjYC dyUAaG"
+                data-testid="Card"
               >
                 <div
-                  class="relative px-6 py-4 sm:flex sm:items-center"
+                  class="relative p-2 sm:flex sm:items-center"
                 >
-                  <div
-                    class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4 text-theme-neutral-light"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <div
                     class="flex flex-row justify-between w-full"
                   >
@@ -231,7 +300,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                           Name
                         </p>
                         <p
-                          class="font-semibold text-theme-neutral-dark"
+                          class="font-semibold text-theme-text"
                           data-testid="profile-card__user--name"
                         >
                           <span
@@ -254,7 +323,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                           Total balance
                         </p>
                         <span
-                          class="font-semibold text-theme-neutral-dark"
+                          class="font-semibold text-theme-text"
                           data-testid="profile-card__user--balance"
                         >
                           91.43089801 BTC
@@ -263,36 +332,32 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="sc-fzpjYC bVVEWC"
-                data-testid="ProfileCard"
-              >
                 <div
-                  class="relative px-6 py-4 sm:flex sm:items-center"
+                  class="flex items-center space-x-2 absolute right-0 top-0 m-2"
                 >
                   <div
-                    class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4 text-theme-neutral-light"
+                    class="relative"
+                    data-testid="dropdown__toggle"
                   >
                     <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
+                      class="sc-AxirZ deQuuR p-2 text-theme-neutral-400 hover:text-theme-neutral-500 cursor-pointer"
+                      height="20"
+                      width="4"
                     >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </div>
+                      <svg>
+                        settings.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div
+                class="sc-fzpjYC dyUAaG"
+                data-testid="Card"
+              >
+                <div
+                  class="relative p-2 sm:flex sm:items-center"
+                >
                   <div
                     class="flex flex-row justify-between w-full"
                   >
@@ -323,7 +388,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                           Name
                         </p>
                         <p
-                          class="font-semibold text-theme-neutral-dark"
+                          class="font-semibold text-theme-text"
                           data-testid="profile-card__user--name"
                         >
                           <span
@@ -351,6 +416,24 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                           N/A
                         </span>
                       </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+                >
+                  <div
+                    class="relative"
+                    data-testid="dropdown__toggle"
+                  >
+                    <div
+                      class="sc-AxirZ deQuuR p-2 text-theme-neutral-400 hover:text-theme-neutral-500 cursor-pointer"
+                      height="20"
+                      width="4"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -464,34 +547,12 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
               class="mt-8 space-y-3"
             >
               <div
-                class="sc-fzpjYC bVVEWC"
-                data-testid="ProfileCard"
+                class="sc-fzpjYC dyUAaG"
+                data-testid="Card"
               >
                 <div
-                  class="relative px-6 py-4 sm:flex sm:items-center"
+                  class="relative p-2 sm:flex sm:items-center"
                 >
-                  <div
-                    class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4 text-theme-neutral-light"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <div
                     class="flex flex-row justify-between w-full"
                   >
@@ -522,7 +583,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                           Name
                         </p>
                         <p
-                          class="font-semibold text-theme-neutral-dark"
+                          class="font-semibold text-theme-text"
                           data-testid="profile-card__user--name"
                         >
                           <span
@@ -545,7 +606,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                           Total balance
                         </p>
                         <span
-                          class="font-semibold text-theme-neutral-dark"
+                          class="font-semibold text-theme-text"
                           data-testid="profile-card__user--balance"
                         >
                           91.43089801 BTC
@@ -554,36 +615,32 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="sc-fzpjYC bVVEWC"
-                data-testid="ProfileCard"
-              >
                 <div
-                  class="relative px-6 py-4 sm:flex sm:items-center"
+                  class="flex items-center space-x-2 absolute right-0 top-0 m-2"
                 >
                   <div
-                    class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4 text-theme-neutral-light"
+                    class="relative"
+                    data-testid="dropdown__toggle"
                   >
                     <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
+                      class="sc-AxirZ deQuuR p-2 text-theme-neutral-400 hover:text-theme-neutral-500 cursor-pointer"
+                      height="20"
+                      width="4"
                     >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </div>
+                      <svg>
+                        settings.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div
+                class="sc-fzpjYC dyUAaG"
+                data-testid="Card"
+              >
+                <div
+                  class="relative p-2 sm:flex sm:items-center"
+                >
                   <div
                     class="flex flex-row justify-between w-full"
                   >
@@ -614,7 +671,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                           Name
                         </p>
                         <p
-                          class="font-semibold text-theme-neutral-dark"
+                          class="font-semibold text-theme-text"
                           data-testid="profile-card__user--name"
                         >
                           <span
@@ -642,6 +699,24 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                           N/A
                         </span>
                       </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+                >
+                  <div
+                    class="relative"
+                    data-testid="dropdown__toggle"
+                  >
+                    <div
+                      class="sc-AxirZ deQuuR p-2 text-theme-neutral-400 hover:text-theme-neutral-500 cursor-pointer"
+                      height="20"
+                      width="4"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -770,7 +845,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                       Name
                     </p>
                     <p
-                      class="font-semibold text-theme-neutral-dark"
+                      class="font-semibold text-theme-text"
                       data-testid="profile-card__user--name"
                     >
                       <span
@@ -952,7 +1027,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
               class="mt-8 space-y-3"
             >
               <div
-                class="sc-fzpjYC dNGIEb"
+                class="sc-fzpjYC dyUAaG"
                 data-testid="Card"
               >
                 <div
@@ -1040,7 +1115,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                 </div>
               </div>
               <div
-                class="sc-fzpjYC dNGIEb"
+                class="sc-fzpjYC dyUAaG"
                 data-testid="Card"
               >
                 <div
@@ -1235,7 +1310,7 @@ exports[`Welcome should render with profiles 1`] = `
               class="mt-8 space-y-3"
             >
               <div
-                class="sc-fzpjYC dNGIEb"
+                class="sc-fzpjYC dyUAaG"
                 data-testid="Card"
               >
                 <div
@@ -1323,7 +1398,7 @@ exports[`Welcome should render with profiles 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzpjYC dNGIEb"
+                class="sc-fzpjYC dyUAaG"
                 data-testid="Card"
               >
                 <div
