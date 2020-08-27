@@ -35,22 +35,24 @@ test("Should open and cancel wallet update name modal", async (t) => {
 	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
 });
 
-test("Should succesfully update wallet name", async (t) => {
+test("Should successfully update wallet name", async (t) => {
 	const walletLabelNameInput = Selector('[data-testid="UpdateWalletName__input"]');
 	await t.typeText(walletLabelNameInput, "New Name", { replace: true });
+
+	await t.expect(Selector("[data-testid=UpdateWalletName__submit]").hasAttribute("disabled")).notOk();
 
 	await t.click(Selector('[data-testid="UpdateWalletName__submit"]'));
 	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
 });
 
-test("Should error when name is empty", async (t) => {
+test("Should successfully remove wallet name", async (t) => {
 	const walletLabelNameInput = Selector('[data-testid="UpdateWalletName__input"]');
 	await t.selectText(walletLabelNameInput).pressKey("delete");
 
-	await t.expect(Selector("[data-testid=UpdateWalletName__submit]").hasAttribute("disabled")).ok();
+	await t.expect(Selector("[data-testid=UpdateWalletName__submit]").hasAttribute("disabled")).notOk();
 
 	await t.click(Selector('[data-testid="UpdateWalletName__submit"]'));
-	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
+	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
 });
 
 test("Should error when name exceeds 42 characters", async (t) => {
