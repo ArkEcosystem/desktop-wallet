@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -50,9 +50,12 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 							validate: {
 								whitespaceOnly: (name) => {
 									if (name.length) {
-										return !!name.trim().length || t("COMMON.VALIDATION.FIELD_INVALID", {
-											field: t("COMMON.NAME"),
-										}).toString();
+										return (
+											!!name.trim().length ||
+											t("COMMON.VALIDATION.FIELD_INVALID", {
+												field: t("COMMON.NAME"),
+											}).toString()
+										);
 									}
 
 									return true;
