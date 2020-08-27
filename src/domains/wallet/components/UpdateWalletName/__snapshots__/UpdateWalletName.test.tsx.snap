@@ -101,7 +101,6 @@ exports[`UpdateWalletName should render a modal 1`] = `
                   class="sc-AxjAm ddQVWI"
                   color="primary"
                   data-testid="UpdateWalletName__submit"
-                  disabled=""
                   type="submit"
                 >
                   Save
@@ -295,7 +294,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               data-testid="Form"
             >
               <fieldset
-                class="sc-AxirZ izhStr flex flex-col space-y-2"
+                class="sc-AxirZ kMHTdH flex flex-col space-y-2"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -309,10 +308,16 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                   />
                 </label>
                 <input
+                  aria-invalid="true"
                   class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                   data-testid="UpdateWalletName__input"
                   name="name"
                 />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  'Enter a name' should have at most 42 characters
+                </p>
               </fieldset>
               <div
                 class="flex justify-end mt-8 space-x-3"
