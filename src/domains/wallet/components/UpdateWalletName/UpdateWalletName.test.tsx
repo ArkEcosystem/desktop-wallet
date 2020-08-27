@@ -70,8 +70,8 @@ describe("UpdateWalletName", () => {
 		const input = getByTestId("UpdateWalletName__input");
 		const name = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit distinctio";
 
-		act(() => {
-			fireEvent.change(input, { target: { value: name } });
+		await act(async () => {
+			fireEvent.input(input, { target: { value: name } });
 		});
 
 		// wait for formState.isValid to be updated
