@@ -14,15 +14,7 @@ export default {
 export const Default = ({ env, profile }: { env: Environment; profile: Profile }) => (
 	<EnvironmentProvider env={env}>
 		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/vote`]}>
-			<Route
-				path="/profiles/:profileId/transactions/vote"
-				component={() => (
-					<SendVoteTransaction
-						onCopy={() => console.log("onCopy")}
-						onSubmit={() => console.log("onSubmit")}
-					/>
-				)}
-			/>
+			<Route path="/profiles/:profileId/transactions/vote" component={() => <SendVoteTransaction />} />
 		</MemoryRouter>
 	</EnvironmentProvider>
 );

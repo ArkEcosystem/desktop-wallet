@@ -5,7 +5,6 @@ import { news } from "domains/news/images";
 import { plugin } from "domains/plugin/images";
 import { profile } from "domains/profile/images";
 import { transaction } from "domains/transaction/images";
-import { vote } from "domains/vote/images";
 import { wallet } from "domains/wallet/images";
 
 import { ReactComponent as ARKLogo } from "./ark-logo.svg";
@@ -33,6 +32,5 @@ export const images = {
 	plugin,
 	profile,
 	transaction,
-	vote,
 	wallet,
 };

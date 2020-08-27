@@ -15,6 +15,7 @@ describe("WalletVote", () => {
 		votes = [
 			new ReadOnlyWallet({
 				address: wallet.address(),
+				explorerLink: "",
 				publicKey: wallet.publicKey(),
 				username: "arkx",
 				rank: 1,
@@ -41,6 +42,7 @@ describe("WalletVote", () => {
 				votes={[
 					new ReadOnlyWallet({
 						address: wallet.address(),
+						explorerLink: "",
 						publicKey: wallet.publicKey(),
 						username: "arkx",
 						rank: undefined,
