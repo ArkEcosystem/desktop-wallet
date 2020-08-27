@@ -192,6 +192,30 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render a delegate registartion modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						username: () => "ARK Wallet",
+						type: () => "delegateRegistration",
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render as null if unknow type", () => {
 		// disable console to throw to avoid break the CI (this is added because we don't have error boundaries)
 		jest.spyOn(console, "error").mockImplementation();
