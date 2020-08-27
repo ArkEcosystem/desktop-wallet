@@ -13,9 +13,10 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
@@ -37,6 +38,7 @@ const Main = ({ syncInterval }: Props) => {
 	const { env, persist } = useEnvironmentContext();
 
 	const isOnline = useNetworkStatus();
+	const { pathname } = useLocation();
 
 	const syncDelegates = (env: Environment) => {
 		console.log("Running delegates sync...");
@@ -55,6 +57,10 @@ const Main = ({ syncInterval }: Props) => {
 			setShowSplash(false);
 		});
 	};
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
 
 	useLayoutEffect(() => {
 		const boot = async () => {

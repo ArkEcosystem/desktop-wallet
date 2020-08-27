@@ -1,9 +1,12 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
@@ -11,22 +14,63 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useActiveProfile } from "app/hooks/env";
+import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
-import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
-export const FirstStep = () => {
-	const { register } = useFormContext();
+export const FirstStep = ({
+	delegate,
+	profile,
+	wallet,
+}: {
+	delegate: Contracts.WalletData;
+	profile: Profile;
+	wallet: ReadWriteWallet;
+}) => {
 	const { t } = useTranslation();
+	const { getValues, setValue } = useFormContext();
+
+	const [feeOptions, setFeeOptions] = useState({
+		last: undefined,
+		min: (0 * 1e8).toFixed(0),
+		max: (100 * 1e8).toFixed(0),
+		average: (14 * 1e8).toFixed(0),
+	});
+
+	const senderAddress = getValues("senderAddress");
+	const fee = getValues("fee") || null;
+	const coinName = wallet.manifest().get<string>("name");
+	const network = `${coinName} ${wallet.network().name}`;
+	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
 
 	useEffect(() => {
-		register("fee", { required: true });
-	}, [register]);
+		const loadFees = async () => {
+			const senderWallet = profile.wallets().findByAddress(senderAddress);
+
+			try {
+				const transferFees = (await senderWallet!.fee().all(7))?.vote;
+
+				setFeeOptions({
+					last: undefined,
+					min: transferFees.min,
+					max: transferFees.max,
+					average: transferFees.avg,
+				});
+
+				setValue("fee", transferFees.avg, true);
+			} catch (error) {
+				return;
+			}
+		};
+
+		loadFees();
+	}, [setFeeOptions, setValue, profile, senderAddress]);
 
 	return (
 		<section data-testid="SendVoteTransaction__step--first">
@@ -40,39 +84,42 @@ export const FirstStep = () => {
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
+								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
 				>
-					ARK Ecosystem
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+						{network}
+					</div>
 				</TransactionDetail>
 
-				<TransactionDetail extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<TransactionDetail extra={<Avatar size="lg" address={senderAddress} />}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
 				<TransactionDetail
 					label={t("TRANSACTION.DELEGATE")}
-					extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+					extra={<Avatar size="lg" address={delegate?.address()} />}
 				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
+					<Address address={delegate ? delegate?.address() : ""} walletName={delegate?.username()} />
 				</TransactionDetail>
 
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="fee">
-						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
+						<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 						<InputFee
-							defaultValue={(25 * 1e8).toFixed(0)}
-							min={(1 * 1e8).toFixed(0)}
-							max={(100 * 1e8).toFixed(0)}
-							step={1}
+							{...feeOptions}
+							defaultValue={fee || 0}
+							value={fee || 0}
+							step={0.01}
+							onChange={(value: any) => setValue("fee", value, true)}
 						/>
 					</FormField>
 				</TransactionDetail>
@@ -81,8 +128,26 @@ export const FirstStep = () => {
 	);
 };
 
-export const SecondStep = () => {
+export const SecondStep = ({
+	delegate,
+	profile,
+	wallet,
+}: {
+	delegate: Contracts.WalletData;
+	profile: Profile;
+	wallet: ReadWriteWallet;
+}) => {
 	const { t } = useTranslation();
+	const { getValues, unregister } = useFormContext();
+
+	const { fee, senderAddress } = getValues();
+	const coinName = wallet.manifest().get<string>("name");
+	const network = `${coinName} ${wallet.network().name}`;
+	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
+
+	useEffect(() => {
+		unregister("mnemonic");
+	}, [unregister]);
 
 	return (
 		<section data-testid="SendVoteTransaction__step--second">
@@ -98,91 +163,79 @@ export const SecondStep = () => {
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
+								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
 				>
-					ARK Ecosystem
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+						{network}
+					</div>
 				</TransactionDetail>
 
-				<TransactionDetail extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<TransactionDetail extra={<Avatar size="lg" address={senderAddress} />}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
 				<TransactionDetail
 					label={t("TRANSACTION.DELEGATE")}
-					extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+					extra={<Avatar size="lg" address={delegate?.address()} />}
 				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
+					<Address address={delegate?.address()} walletName={delegate?.username()} />
 				</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
 				</div>
 			</div>
 		</section>
 	);
 };
 
-export const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
-	const { register } = form;
-
+export const ThirdStep = () => {
+	const { register } = useFormContext();
 	const { t } = useTranslation();
 
 	return (
-		<div data-testid="SendVoteTransaction__step--third">
-			{passwordType !== "ledger" && (
-				<div>
-					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
-					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
+		<section data-testid="SendVoteTransaction__step--third">
+			<div>
+				<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
+				<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 
-					<div className="mt-8">
-						<FormField name="name">
-							<FormLabel>
-								{passwordType === "mnemonic"
-									? t("TRANSACTION.MNEMONIC")
-									: t("TRANSACTION.ENCRYPTION_PASSWORD")}
-							</FormLabel>
-							<InputPassword name={passwordType} ref={register} />
-						</FormField>
-
-						{passwordType === "mnemonic" && (
-							<FormField name="name" className="mt-8">
-								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
-								<InputPassword name="secondMnemonic" ref={register} />
-							</FormField>
-						)}
-					</div>
+				<div className="grid grid-flow-row">
+					<FormField name="mnemonic" className="pt-8 pb-0">
+						<FormLabel label={t("TRANSACTION.MNEMONIC")} />
+						<InputPassword ref={register({ required: true })} />
+						<FormHelperText />
+					</FormField>
 				</div>
-			)}
-
-			{passwordType === "ledger" && (
-				<div>
-					<h1>{t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}</h1>
-					<LedgerConfirmation />
-				</div>
-			)}
-		</div>
+			</div>
+		</section>
 	);
 };
 
-export const FourthStep = () => {
+export const FourthStep = ({
+	delegate,
+	transaction,
+}: {
+	delegate: Contracts.WalletData;
+	transaction: Contracts.SignedTransactionData;
+}) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful>
+		<TransactionSuccessful transactionId={transaction.id()}>
 			<TransactionDetail
 				label={t("TRANSACTION.DELEGATE")}
-				extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+				extra={<Avatar size="lg" address={delegate?.address()} />}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
+				<Address address={delegate?.address()} walletName={delegate?.username()} />
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09660435 ARK</TransactionDetail>
@@ -204,21 +257,56 @@ export const FourthStep = () => {
 	);
 };
 
-type Props = {
-	onCopy: () => void;
-	onSubmit: () => void;
-};
+export const SendVoteTransaction = () => {
+	const { t } = useTranslation();
+	const { voteId, senderId } = useParams();
+	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
-	const [activeTab, setActiveTab] = React.useState(1);
+	const [activeTab, setActiveTab] = useState(1);
+	const [delegate, setDelegate] = useState<Contracts.WalletData>((null as unknown) as Contracts.WalletData);
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
-	// const { formState } = form;
-	// const { isValid } = formState;
+	const { clearError, formState, getValues, register, setError, setValue } = form;
 
-	const activeProfile = useActiveProfile();
+	useEffect(() => {
+		register("network", { required: true });
+		register("senderAddress", { required: true });
+		register("vote", { required: true });
+		register("fee", { required: true });
 
-	const { t } = useTranslation();
+		setValue("senderAddress", senderId, true);
+		setValue("vote", voteId, true);
+
+		for (const network of networks) {
+			if (
+				network.id() === activeWallet.network().id &&
+				network.coin() === activeWallet.manifest().get<string>("name")
+			) {
+				setValue("network", network, true);
+
+				break;
+			}
+		}
+	}, [activeWallet, networks, register, senderId, setValue, voteId]);
+
+	useEffect(() => {
+		const loadDelegate = async () => {
+			setDelegate(await activeWallet.client().delegate(voteId));
+		};
+
+		loadDelegate();
+	}, [activeWallet, voteId]);
+
+	const crumbs = [
+		{
+			route: `/profiles/${activeProfile.id()}/dashboard`,
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+		},
+	];
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -228,32 +316,57 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 		setActiveTab(activeTab + 1);
 	};
 
-	const crumbs = [
-		{
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
-		},
-	];
+	const submitForm = async () => {
+		clearError("mnemonic");
+		const { fee, mnemonic, senderAddress } = getValues();
+		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
+
+		try {
+			const transactionId = await senderWallet!.transaction().signVote({
+				fee,
+				from: senderAddress,
+				sign: {
+					mnemonic,
+				},
+				data: {
+					vote: `+${delegate.publicKey()}`,
+				},
+			});
+
+			await senderWallet!.transaction().broadcast([transactionId]);
+
+			await env.persist();
+
+			setTransaction(senderWallet!.transaction().transaction(transactionId));
+
+			handleNext();
+		} catch (error) {
+			console.error("Could not vote: ", error);
+
+			setValue("mnemonic", "");
+			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+		}
+	};
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep />
+								<FirstStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep />
+								<SecondStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep form={form} passwordType="mnemonic" />
+								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep />
+								<FourthStep delegate={delegate} transaction={transaction} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
@@ -261,35 +374,47 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 									<>
 										<Button
 											disabled={activeTab === 1}
-											data-testid="SendVoteTransaction__button--back"
 											variant="plain"
 											onClick={handleBack}
+											data-testid="SendVoteTransaction__button--back"
 										>
 											{t("COMMON.BACK")}
 										</Button>
-										<Button
-											data-testid="SendVoteTransaction__button--continue"
-											// disabled={!isValid}
-											onClick={handleNext}
-										>
-											{t("COMMON.CONTINUE")}
-										</Button>
+
+										{activeTab < 3 && (
+											<Button
+												disabled={!formState.isValid}
+												onClick={handleNext}
+												data-testid="SendVoteTransaction__button--continue"
+											>
+												{t("COMMON.CONTINUE")}
+											</Button>
+										)}
+
+										{activeTab === 3 && (
+											<Button
+												type="submit"
+												disabled={!formState.isValid}
+												data-testid="SendVoteTransaction__button--submit"
+											>
+												{t("COMMON.SEND")}
+											</Button>
+										)}
 									</>
 								)}
 
 								{activeTab === 4 && (
 									<>
 										<Button
-											data-testid="SendVoteTransaction__button--back-to-wallet"
 											variant="plain"
+											data-testid="SendVoteTransaction__button--back-to-wallet"
 										>
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 										<Button
-											onClick={onCopy}
-											data-testid="SendVoteTransaction__button--copy"
 											variant="plain"
 											className="space-x-2"
+											data-testid="SendVoteTransaction__button--copy"
 										>
 											<Icon name="Copy" />
 											<span>{t("COMMON.COPY")}</span>

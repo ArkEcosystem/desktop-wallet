@@ -1,5 +1,5 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 
 const Input = styled.input`
 	${tw`sr-only`}
@@ -10,11 +10,18 @@ const Handle = styled.div`
 	${tw`inline-flex rounded-full relative w-9 cursor-pointer bg-theme-neutral-light`}
 `;
 
-const HandleInner = styled.span`
+const HandleInner = styled.span<{ baseColor?: string; disabled?: boolean }>`
 	margin-top: 3px;
 	width: 18px;
 	height: 18px;
-    ${tw`bg-theme-neutral-light rounded-full absolute transform -translate-y-1/2 transition transition-colors transition-transform ease-in-out duration-200`}
+    ${tw`rounded-full absolute transform -translate-y-1/2 transition transition-colors transition-transform ease-in-out duration-200`}
+
+    ${({ baseColor, disabled }) =>
+		css`
+  			${Input} ~ ${Handle} & {
+  				background-color: var(${baseColor && !disabled ? baseColor : "--theme-color-neutral-light"});
+  			}
+  		`};
 
     ${Input}:checked ~ ${Handle} & {
         ${tw`translate-x-full bg-theme-primary text-2xl`}
@@ -25,15 +32,26 @@ const HandleInner = styled.span`
     }
 `;
 
-type ToggleProps = React.InputHTMLAttributes<any>;
+type ToggleProps = { baseColor?: string; disabled?: boolean } & React.InputHTMLAttributes<any>;
 
-export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>((props, ref) => (
-	<label className="flex">
-		<Input type="checkbox" ref={ref} {...props} />
-		<Handle>
-			<HandleInner />
-		</Handle>
-	</label>
-));
+export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>((props, ref) => {
+	const inputProps = { ...props };
+
+	const { baseColor, disabled } = inputProps;
+
+	for (const prop of ["baseColor", "disabled"]) {
+		// @ts-ignore
+		delete inputProps[prop];
+	}
+
+	return (
+		<label className="flex">
+			<Input type="checkbox" ref={ref} {...inputProps} />
+			<Handle>
+				<HandleInner baseColor={baseColor} disabled={disabled} />
+			</Handle>
+		</label>
+	);
+});
 
 Toggle.displayName = "Toggle";

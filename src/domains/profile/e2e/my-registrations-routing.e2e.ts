@@ -13,9 +13,9 @@ test("should navigate to my registrations from navigation bar", async (t) => {
 
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
 	await t
-		.expect(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.REGISTRATIONS).exists)
+		.expect(Selector('[data-testid="dropdown__option--2"]').withText(translations.COMMON.REGISTRATIONS).exists)
 		.ok();
-	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.REGISTRATIONS));
+	await t.click(Selector('[data-testid="dropdown__option--2"]').withText(translations.COMMON.REGISTRATIONS));
 
 	await t.expect(Selector("[data-testid=header__title]").exists).ok();
 	await t

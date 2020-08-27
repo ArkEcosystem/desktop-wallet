@@ -5,10 +5,17 @@ import { Divider } from "app/components/Divider";
 import { Page, Section } from "app/components/Layout";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import tw, { styled } from "twin.macro";
 
 import { version } from "../../../../../package.json";
 
 const { ARKLogo, WelcomeBanner } = images.common;
+
+const LogoContainer = styled.div`
+	${tw`flex items-center justify-center mr-2 text-theme-background bg-theme-neutral-500 rounded-sm`};
+	width: 18px;
+	height: 18px;
+`;
 
 export const Splash = ({ year }: any) => {
 	const { t } = useTranslation();
@@ -16,7 +23,7 @@ export const Splash = ({ year }: any) => {
 	const currentYear = year || DateTime.make().format("YYYY");
 
 	return (
-		<Page navbarStyle="logo-only">
+		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
 				<div className="w-64 mx-auto lg:w-128">
 					<WelcomeBanner />
@@ -47,11 +54,9 @@ export const Splash = ({ year }: any) => {
 					<Divider type="vertical" />
 					<div>{t("SPLASH.RIGHTS")}</div>
 					<Divider type="vertical" />
-					<img
-						src={ARKLogo}
-						className="w-4 h-4 p-px mr-2 rounded-sm bg-theme-neutral-500"
-						alt={t("SPLASH.BRAND")}
-					/>
+					<LogoContainer>
+						<ARKLogo width={14} />
+					</LogoContainer>
 					<div>{t("SPLASH.PRODUCT")}</div>
 					<Divider type="vertical" />
 					<div>
