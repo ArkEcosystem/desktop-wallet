@@ -7,7 +7,7 @@ import { profile } from "domains/profile/images";
 import { transaction } from "domains/transaction/images";
 import { wallet } from "domains/wallet/images";
 
-import ARKLogo from "./ark-logo.png";
+import { ReactComponent as ARKLogo } from "./ark-logo.svg";
 import { ReactComponent as ConfirmedBanner } from "./confirmed-banner.svg";
 import { ReactComponent as DeleteBanner } from "./delete-banner.svg";
 import { ReactComponent as MistakeBanner } from "./mistake-banner.svg";

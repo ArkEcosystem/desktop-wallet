@@ -5,28 +5,37 @@ exports[`Welcome should change route to create profile 1`] = `
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="px-4 sm:px-6 lg:px-8 bg-theme-background"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV irWbTw"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="relative flex justify-between h-20 md:h-24"
         >
-          <img
-            alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
-            src="ark-logo.png"
-          />
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="sc-fzoLag jtxrqn"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
     <div
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex flex-col justify-center flex-1 text-center"
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -100,28 +109,37 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="px-4 sm:px-6 lg:px-8 bg-theme-background"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV irWbTw"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="relative flex justify-between h-20 md:h-24"
         >
-          <img
-            alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
-            src="ark-logo.png"
-          />
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="sc-fzoLag jtxrqn"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
     <div
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex flex-col justify-center flex-1 text-center"
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -155,7 +173,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
               class="mt-8 space-y-3"
             >
               <div
-                class="sc-fzoXzr AzWth"
+                class="sc-fzpjYC bVVEWC"
                 data-testid="ProfileCard"
               >
                 <div
@@ -217,7 +235,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                           data-testid="profile-card__user--name"
                         >
                           <span
-                            class="sc-fzpjYC fVGxAr"
+                            class="sc-fznxsB gYUFJI"
                           >
                             John Doe
                           </span>
@@ -247,7 +265,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzoXzr AzWth"
+                class="sc-fzpjYC bVVEWC"
                 data-testid="ProfileCard"
               >
                 <div
@@ -309,7 +327,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                           data-testid="profile-card__user--name"
                         >
                           <span
-                            class="sc-fzpjYC fVGxAr"
+                            class="sc-fznxsB gYUFJI"
                           >
                             Jane Doe
                           </span>
@@ -382,28 +400,37 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="px-4 sm:px-6 lg:px-8 bg-theme-background"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV irWbTw"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="relative flex justify-between h-20 md:h-24"
         >
-          <img
-            alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
-            src="ark-logo.png"
-          />
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="sc-fzoLag jtxrqn"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
     <div
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex flex-col justify-center flex-1 text-center"
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -437,7 +464,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
               class="mt-8 space-y-3"
             >
               <div
-                class="sc-fzoXzr AzWth"
+                class="sc-fzpjYC bVVEWC"
                 data-testid="ProfileCard"
               >
                 <div
@@ -499,7 +526,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                           data-testid="profile-card__user--name"
                         >
                           <span
-                            class="sc-fzpjYC fVGxAr"
+                            class="sc-fznxsB gYUFJI"
                           >
                             John Doe
                           </span>
@@ -529,7 +556,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                 </div>
               </div>
               <div
-                class="sc-fzoXzr AzWth"
+                class="sc-fzpjYC bVVEWC"
                 data-testid="ProfileCard"
               >
                 <div
@@ -591,7 +618,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                           data-testid="profile-card__user--name"
                         >
                           <span
-                            class="sc-fzpjYC fVGxAr"
+                            class="sc-fznxsB gYUFJI"
                           >
                             Jane Doe
                           </span>
@@ -747,7 +774,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                       data-testid="profile-card__user--name"
                     >
                       <span
-                        class="sc-fzpjYC fVGxAr"
+                        class="sc-fznxsB gYUFJI"
                       >
                         Jane Doe
                       </span>
@@ -783,7 +810,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
               data-testid="Form"
             >
               <fieldset
-                class="sc-fznxsB bzZFHQ flex flex-col space-y-2"
+                class="sc-fznJRM fLviWY flex flex-col space-y-2"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -861,28 +888,37 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="px-4 sm:px-6 lg:px-8 bg-theme-background"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV irWbTw"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="relative flex justify-between h-20 md:h-24"
         >
-          <img
-            alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
-            src="ark-logo.png"
-          />
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="sc-fzoLag jtxrqn"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
     <div
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex flex-col justify-center flex-1 text-center"
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -916,7 +952,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
               class="mt-8 space-y-3"
             >
               <div
-                class="sc-fzoXzr AzWth"
+                class="sc-fzpjYC bVVEWC"
                 data-testid="ProfileCard"
               >
                 <div
@@ -978,7 +1014,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                           data-testid="profile-card__user--name"
                         >
                           <span
-                            class="sc-fzpjYC fVGxAr"
+                            class="sc-fznxsB gYUFJI"
                           >
                             John Doe
                           </span>
@@ -1008,7 +1044,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                 </div>
               </div>
               <div
-                class="sc-fzoXzr AzWth"
+                class="sc-fzpjYC bVVEWC"
                 data-testid="ProfileCard"
               >
                 <div
@@ -1070,7 +1106,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                           data-testid="profile-card__user--name"
                         >
                           <span
-                            class="sc-fzpjYC fVGxAr"
+                            class="sc-fznxsB gYUFJI"
                           >
                             Jane Doe
                           </span>
@@ -1143,28 +1179,37 @@ exports[`Welcome should render with profiles 1`] = `
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="px-4 sm:px-6 lg:px-8 bg-theme-background"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV irWbTw"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="relative flex justify-between h-20 md:h-24"
         >
-          <img
-            alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
-            src="ark-logo.png"
-          />
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="sc-fzoLag jtxrqn"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
     <div
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex flex-col justify-center flex-1 text-center"
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1198,7 +1243,7 @@ exports[`Welcome should render with profiles 1`] = `
               class="mt-8 space-y-3"
             >
               <div
-                class="sc-fzoXzr AzWth"
+                class="sc-fzpjYC bVVEWC"
                 data-testid="ProfileCard"
               >
                 <div
@@ -1260,7 +1305,7 @@ exports[`Welcome should render with profiles 1`] = `
                           data-testid="profile-card__user--name"
                         >
                           <span
-                            class="sc-fzpjYC fVGxAr"
+                            class="sc-fznxsB gYUFJI"
                           >
                             John Doe
                           </span>
@@ -1290,7 +1335,7 @@ exports[`Welcome should render with profiles 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzoXzr AzWth"
+                class="sc-fzpjYC bVVEWC"
                 data-testid="ProfileCard"
               >
                 <div
@@ -1352,7 +1397,7 @@ exports[`Welcome should render with profiles 1`] = `
                           data-testid="profile-card__user--name"
                         >
                           <span
-                            class="sc-fzpjYC fVGxAr"
+                            class="sc-fznxsB gYUFJI"
                           >
                             Jane Doe
                           </span>
@@ -1425,28 +1470,37 @@ exports[`Welcome should render without profiles 1`] = `
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="px-4 sm:px-6 lg:px-8 bg-theme-background"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV irWbTw"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="relative flex justify-between h-20 md:h-24"
         >
-          <img
-            alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
-            src="ark-logo.png"
-          />
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="sc-fzoLag jtxrqn"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
     <div
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex flex-col justify-center flex-1 text-center"
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
