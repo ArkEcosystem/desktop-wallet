@@ -19,8 +19,7 @@ const { NameWalletBanner } = images.wallet.components.updateWalletName;
 
 export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: UpdateWalletNameProps) => {
 	const methods = useForm({ mode: "onChange", defaultValues: { name } });
-	const { setValue, register, errors, watch } = methods;
-	const formValues = watch();
+	const { formState, register, setValue } = methods;
 
 	const { t } = useTranslation();
 	const nameMaxLength = 42;
@@ -29,10 +28,8 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 		if (isOpen) setValue("name", name as string);
 	}, [name, isOpen, setValue]);
 
-	const isNameValid = useMemo(() => !!formValues.name?.trim() && !errors?.name, [formValues, errors]);
-
 	const handleSubmit = ({ name }: any) => {
-		const formattedName = name.substring(0, nameMaxLength);
+		const formattedName = name.trim().substring(0, nameMaxLength);
 		onSave?.({ name: formattedName });
 	};
 
@@ -50,9 +47,17 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 					<Input
 						data-testid="UpdateWalletName__input"
 						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("COMMON.NAME"),
-							}).toString(),
+							validate: {
+								whitespaceOnly: (name) => {
+									if (name.length) {
+										return !!name.trim().length || t("COMMON.VALIDATION.FIELD_INVALID", {
+											field: t("COMMON.NAME"),
+										}).toString();
+									}
+
+									return true;
+								},
+							},
 							maxLength: {
 								value: nameMaxLength,
 								message: t("COMMON.VALIDATION.MAX_LENGTH", {
@@ -70,7 +75,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button type="submit" data-testid="UpdateWalletName__submit" disabled={!isNameValid}>
+					<Button type="submit" data-testid="UpdateWalletName__submit" disabled={!formState.isValid}>
 						{t("COMMON.SAVE")}
 					</Button>
 				</div>
