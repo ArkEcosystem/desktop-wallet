@@ -74,6 +74,8 @@ describe("WalletDetails", () => {
 				};
 			})
 			.persist();
+
+		await env.coins().syncDelegates(wallet.coinId()!, wallet.networkId()!);
 	});
 
 	beforeEach(() => {

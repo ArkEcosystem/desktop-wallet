@@ -60,8 +60,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	useEffect(() => {
 		const fetchAllData = async () => {
-			await env.coins().syncDelegates(activeWallet.coinId()!, activeWallet.networkId()!);
-
 			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
 			const walletData = await activeWallet.client().wallet(activeWallet.address());
 
