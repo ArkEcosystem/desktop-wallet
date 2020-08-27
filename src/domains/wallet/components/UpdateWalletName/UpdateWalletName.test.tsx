@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
-// i18n
 import { translations } from "../../i18n";
 import { UpdateWalletName } from "./UpdateWalletName";
 
@@ -27,17 +27,18 @@ describe("UpdateWalletName", () => {
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.DESCRIPTION);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.FIELD_NAME);
+		expect(getByTestId("modal__inner")).toHaveTextContent(commonTranslations.NAME);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should rename wallet", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} />);
+		const onSave = jest.fn();
+
+		const { getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.DESCRIPTION);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.FIELD_NAME);
+		expect(getByTestId("modal__inner")).toHaveTextContent(commonTranslations.NAME);
 
 		const input = getByTestId("UpdateWalletName__input");
 		const name = "Sample label";
@@ -55,31 +56,50 @@ describe("UpdateWalletName", () => {
 		});
 
 		waitFor(() => {
-			expect(fn).toHaveBeenCalledWith({ name }, expect.anything());
+			expect(onSave).toHaveBeenCalledWith({ name }, expect.anything());
 			wallet.settings().set(WalletSetting.Alias, name);
 			expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
 		});
 	});
 
-	it("should show error message when name exceeds 42 characters", async () => {
-		const fn = jest.fn();
-		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} />);
+	it("should show error message when name consists only of whitespace", async () => {
+		const onSave = jest.fn();
 
-		const input = getByTestId("UpdateWalletName__input");
-		const name = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit distinctio";
+		const { asFragment, findByTestId, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
 
-		act(() => {
-			fireEvent.change(input, { target: { value: name } });
+		await act(async () => {
+			fireEvent.input(getByTestId("UpdateWalletName__input"), { target: { value: "      " } });
 		});
 
-		expect(input).toHaveValue(name);
+		// wait for formState.isValid to be updated
+		await findByTestId("UpdateWalletName__submit");
+
+		expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show error message when name exceeds 42 characters", async () => {
+		const onSave = jest.fn();
+
+		const { asFragment, findByTestId, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
+
+		await act(async () => {
+			fireEvent.input(getByTestId("UpdateWalletName__input"), {
+				target: { value: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit distinctio" },
+			});
+		});
+
+		// wait for formState.isValid to be updated
+		await findByTestId("UpdateWalletName__submit");
+
 		expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render form input with existing name", async () => {
-		const fn = jest.fn();
-		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} name="test" />);
+		const onSave = jest.fn();
+
+		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} name="test" />);
 
 		const input = getByTestId("UpdateWalletName__input");
 		expect(input).toHaveValue("test");

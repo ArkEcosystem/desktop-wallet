@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -19,8 +19,7 @@ const { NameWalletBanner } = images.wallet.components.updateWalletName;
 
 export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: UpdateWalletNameProps) => {
 	const methods = useForm({ mode: "onChange", defaultValues: { name } });
-	const { setValue, register, errors, watch } = methods;
-	const formValues = watch();
+	const { formState, register, setValue } = methods;
 
 	const { t } = useTranslation();
 	const nameMaxLength = 42;
@@ -29,11 +28,8 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 		if (isOpen) setValue("name", name as string);
 	}, [name, isOpen, setValue]);
 
-	const isNameValid = useMemo(() => !!formValues.name?.trim() && !errors?.name, [formValues, errors]);
-
 	const handleSubmit = ({ name }: any) => {
-		const formattedName = name.substring(0, nameMaxLength);
-		onSave?.({ name: formattedName });
+		onSave(name.trim().substring(0, nameMaxLength));
 	};
 
 	return (
@@ -46,17 +42,28 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 		>
 			<Form context={methods} onSubmit={handleSubmit} className="mt-8">
 				<FormField name="name">
-					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
+					<FormLabel required={false}>{t("COMMON.NAME")}</FormLabel>
 					<Input
 						data-testid="UpdateWalletName__input"
 						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("COMMON.NAME"),
-							}).toString(),
+							validate: {
+								whitespaceOnly: (name) => {
+									if (name.length) {
+										return (
+											!!name.trim().length ||
+											t("COMMON.VALIDATION.FIELD_INVALID", {
+												field: t("COMMON.NAME"),
+											}).toString()
+										);
+									}
+
+									return true;
+								},
+							},
 							maxLength: {
 								value: nameMaxLength,
 								message: t("COMMON.VALIDATION.MAX_LENGTH", {
-									field: t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME"),
+									field: t("COMMON.NAME"),
 									maxLength: nameMaxLength,
 								}),
 							},
@@ -70,7 +77,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button type="submit" data-testid="UpdateWalletName__submit" disabled={!isNameValid}>
+					<Button type="submit" data-testid="UpdateWalletName__submit" disabled={!formState.isValid}>
 						{t("COMMON.SAVE")}
 					</Button>
 				</div>

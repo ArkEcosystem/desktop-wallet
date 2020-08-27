@@ -101,9 +101,15 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		history.push(dashboardRoute);
 	};
 
-	const handleUpdateName = async ({ name }: any) => {
-		activeWallet.settings().set(WalletSetting.Alias, name);
+	const handleUpdateName = async (name: string) => {
+		if (name) {
+			activeWallet.settings().set(WalletSetting.Alias, name);
+		} else {
+			activeWallet.settings().forget(WalletSetting.Alias);
+		}
+
 		await persist();
+
 		setIsUpdateWalletName(false);
 	};
 
