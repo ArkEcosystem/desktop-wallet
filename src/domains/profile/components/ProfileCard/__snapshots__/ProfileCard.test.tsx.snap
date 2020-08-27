@@ -70,7 +70,7 @@ exports[`ProfileCard should hide the balance if the profile uses a password 1`] 
         </div>
       </div>
       <div
-        class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
       />
     </div>
   </div>
@@ -147,7 +147,7 @@ exports[`ProfileCard should hide the settings icon 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
       />
     </div>
   </div>
@@ -229,7 +229,7 @@ exports[`ProfileCard should render 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
       />
     </div>
   </div>
@@ -307,7 +307,7 @@ exports[`ProfileCard should render the profile with avatar image 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
       />
     </div>
   </div>
@@ -384,14 +384,14 @@ exports[`ProfileCard should render the settings icon 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center space-x-2 absolute right-0 top-0 m-2"
+        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
       >
         <div
           class="relative"
           data-testid="dropdown__toggle"
         >
           <div
-            class="sc-AxjAm khqMzO p-2 text-theme-neutral-400 hover:text-theme-neutral-500 cursor-pointer"
+            class="sc-AxjAm khqMzO p-2 cursor-pointer text-theme-neutral-400 hover:text-theme-neutral-500"
             height="20"
             width="4"
           >
