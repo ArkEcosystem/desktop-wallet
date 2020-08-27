@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
-import { commonTranslations } from "app/i18n/common/i18n";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
