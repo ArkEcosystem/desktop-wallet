@@ -152,7 +152,7 @@ exports[`TransactionTable should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
             data-testid="TransactionRow"
           >
             <td
@@ -165,7 +165,7 @@ exports[`TransactionTable should render 1`] = `
                   class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                   data-testid="TransactionRow__ID"
                   rel="noopener noreferrer"
-                  to="[object Object]"
+                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
                   <div
                     class="sc-AxjAm cpczEI flex-shrink-0 "
@@ -288,12 +288,16 @@ exports[`TransactionTable should render 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000121
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
           </tr>
           <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
             data-testid="TransactionRow"
           >
             <td
@@ -306,7 +310,7 @@ exports[`TransactionTable should render 1`] = `
                   class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                   data-testid="TransactionRow__ID"
                   rel="noopener noreferrer"
-                  to="[object Object]"
+                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
                   <div
                     class="sc-AxjAm cpczEI flex-shrink-0 "
@@ -443,7 +447,11 @@ exports[`TransactionTable should render 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000052
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
           </tr>
@@ -594,7 +602,11 @@ exports[`TransactionTable should render compact 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000121
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
           </tr>
@@ -659,7 +671,11 @@ exports[`TransactionTable should render compact 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000052
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
           </tr>
@@ -2978,7 +2994,7 @@ exports[`TransactionTable should render with sign 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
             data-testid="TransactionRow"
           >
             <td
@@ -2991,7 +3007,7 @@ exports[`TransactionTable should render with sign 1`] = `
                   class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                   data-testid="TransactionRow__ID"
                   rel="noopener noreferrer"
-                  to="[object Object]"
+                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
                   <div
                     class="sc-AxjAm cpczEI flex-shrink-0 "
@@ -3114,14 +3130,18 @@ exports[`TransactionTable should render with sign 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000121
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
             <td
               class="text-right"
             >
               <button
-                class="sc-AxgMl fcsZQi"
+                class="sc-AxgMl gWzuBC"
                 color="primary"
                 data-testid="TransactionRow__sign"
                 type="button"
@@ -3142,7 +3162,7 @@ exports[`TransactionTable should render with sign 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
             data-testid="TransactionRow"
           >
             <td
@@ -3155,7 +3175,7 @@ exports[`TransactionTable should render with sign 1`] = `
                   class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                   data-testid="TransactionRow__ID"
                   rel="noopener noreferrer"
-                  to="[object Object]"
+                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
                   <div
                     class="sc-AxjAm cpczEI flex-shrink-0 "
@@ -3292,14 +3312,18 @@ exports[`TransactionTable should render with sign 1`] = `
                 color="danger"
                 data-testid="TransactionRowAmount"
               >
-                0.00000052
+                <span
+                  data-testid="Amount"
+                >
+                  121 
+                </span>
               </div>
             </td>
             <td
               class="text-right"
             >
               <button
-                class="sc-AxgMl fcsZQi"
+                class="sc-AxgMl gWzuBC"
                 color="primary"
                 data-testid="TransactionRow__sign"
                 type="button"

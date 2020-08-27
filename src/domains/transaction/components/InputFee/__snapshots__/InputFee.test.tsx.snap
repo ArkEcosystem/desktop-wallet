@@ -1,0 +1,613 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputFee should not show last if 0 1`] = `
+<DocumentFragment>
+  <div
+    class="flex space-x-2"
+    data-testid="InputFee"
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="sc-AxgMl cZbWSE"
+      >
+        <input
+          class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+          data-testid="InputCurrency"
+          type="text"
+          value="5"
+        />
+        <div
+          class="absolute bottom-0 w-full px-1"
+        >
+          <div
+            class="flex flex-wrap justify-center"
+            data-testid="Range"
+          >
+            <div
+              class="sc-AxheI fklffK"
+              data-testid="Range__track"
+              style="transform: scale(1); cursor: pointer;"
+            >
+              <div
+                class="sc-Axmtr cJmGw"
+                data-testid="Range__track__filled"
+              >
+                <div
+                  aria-valuemax="10"
+                  aria-valuemin="1"
+                  aria-valuenow="5"
+                  class="sc-AxmLO jJCZzX"
+                  data-testid="Range__thumb"
+                  draggable="false"
+                  role="slider"
+                  style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+        data-testid="SelectionBar"
+        role="radiogroup"
+      >
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Min
+        </button>
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Average
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`InputFee should not show last if undefined 1`] = `
+<DocumentFragment>
+  <div
+    class="flex space-x-2"
+    data-testid="InputFee"
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="sc-AxgMl cZbWSE"
+      >
+        <input
+          class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+          data-testid="InputCurrency"
+          type="text"
+          value="5"
+        />
+        <div
+          class="absolute bottom-0 w-full px-1"
+        >
+          <div
+            class="flex flex-wrap justify-center"
+            data-testid="Range"
+          >
+            <div
+              class="sc-AxheI fklffK"
+              data-testid="Range__track"
+              style="transform: scale(1); cursor: pointer;"
+            >
+              <div
+                class="sc-Axmtr cJmGw"
+                data-testid="Range__track__filled"
+              >
+                <div
+                  aria-valuemax="10"
+                  aria-valuemin="1"
+                  aria-valuenow="5"
+                  class="sc-AxmLO jJCZzX"
+                  data-testid="Range__thumb"
+                  draggable="false"
+                  role="slider"
+                  style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+        data-testid="SelectionBar"
+        role="radiogroup"
+      >
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Min
+        </button>
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Average
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`InputFee should render 1`] = `
+<DocumentFragment>
+  <div
+    class="flex space-x-2"
+    data-testid="InputFee"
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="sc-AxgMl cZbWSE"
+      >
+        <input
+          class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+          data-testid="InputCurrency"
+          type="text"
+          value="5"
+        />
+        <div
+          class="absolute bottom-0 w-full px-1"
+        >
+          <div
+            class="flex flex-wrap justify-center"
+            data-testid="Range"
+          >
+            <div
+              class="sc-AxheI fklffK"
+              data-testid="Range__track"
+              style="transform: scale(1); cursor: pointer;"
+            >
+              <div
+                class="sc-Axmtr cJmGw"
+                data-testid="Range__track__filled"
+              >
+                <div
+                  aria-valuemax="10"
+                  aria-valuemin="1"
+                  aria-valuenow="5"
+                  class="sc-AxmLO jJCZzX"
+                  data-testid="Range__thumb"
+                  draggable="false"
+                  role="slider"
+                  style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+        data-testid="SelectionBar"
+        role="radiogroup"
+      >
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Last
+        </button>
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Min
+        </button>
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Average
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`InputFee should update fee if value property changes 1`] = `
+<DocumentFragment>
+  <div
+    class="flex space-x-2"
+    data-testid="InputFee"
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="sc-AxgMl cZbWSE"
+      >
+        <input
+          class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+          data-testid="InputCurrency"
+          type="text"
+          value="1"
+        />
+        <div
+          class="absolute bottom-0 w-full px-1"
+        >
+          <div
+            class="flex flex-wrap justify-center"
+            data-testid="Range"
+          >
+            <div
+              class="sc-AxheI fklffK"
+              data-testid="Range__track"
+              style="transform: scale(1); cursor: pointer;"
+            >
+              <div
+                class="sc-Axmtr cJmGw"
+                data-testid="Range__track__filled"
+              >
+                <div
+                  aria-valuemax="10"
+                  aria-valuemin="1"
+                  aria-valuenow="1"
+                  class="sc-AxmLO jJCZzX"
+                  data-testid="Range__thumb"
+                  draggable="false"
+                  role="slider"
+                  style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+        data-testid="SelectionBar"
+        role="radiogroup"
+      >
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Last
+        </button>
+        <button
+          aria-checked="true"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Min
+        </button>
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Average
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`InputFee should update fee when clicking on average 1`] = `
+<DocumentFragment>
+  <div
+    class="flex space-x-2"
+    data-testid="InputFee"
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="sc-AxgMl cZbWSE"
+      >
+        <input
+          class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+          data-testid="InputCurrency"
+          type="text"
+          value="1.354"
+        />
+        <div
+          class="absolute bottom-0 w-full px-1"
+        >
+          <div
+            class="flex flex-wrap justify-center"
+            data-testid="Range"
+          >
+            <div
+              class="sc-AxheI fklffK"
+              data-testid="Range__track"
+              style="transform: scale(1); cursor: pointer;"
+            >
+              <div
+                class="sc-Axmtr cJmGw"
+                data-testid="Range__track__filled"
+              >
+                <div
+                  aria-valuemax="10"
+                  aria-valuemin="1"
+                  aria-valuenow="1.354"
+                  class="sc-AxmLO jJCZzX"
+                  data-testid="Range__thumb"
+                  draggable="false"
+                  role="slider"
+                  style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+        data-testid="SelectionBar"
+        role="radiogroup"
+      >
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Last
+        </button>
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Min
+        </button>
+        <button
+          aria-checked="true"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Average
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`InputFee should update fee when clicking on last 1`] = `
+<DocumentFragment>
+  <div
+    class="flex space-x-2"
+    data-testid="InputFee"
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="sc-AxgMl cZbWSE"
+      >
+        <input
+          class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+          data-testid="InputCurrency"
+          type="text"
+          value="2"
+        />
+        <div
+          class="absolute bottom-0 w-full px-1"
+        >
+          <div
+            class="flex flex-wrap justify-center"
+            data-testid="Range"
+          >
+            <div
+              class="sc-AxheI fklffK"
+              data-testid="Range__track"
+              style="transform: scale(1); cursor: pointer;"
+            >
+              <div
+                class="sc-Axmtr cJmGw"
+                data-testid="Range__track__filled"
+              >
+                <div
+                  aria-valuemax="10"
+                  aria-valuemin="1"
+                  aria-valuenow="2"
+                  class="sc-AxmLO jJCZzX"
+                  data-testid="Range__thumb"
+                  draggable="false"
+                  role="slider"
+                  style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+        data-testid="SelectionBar"
+        role="radiogroup"
+      >
+        <button
+          aria-checked="true"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Last
+        </button>
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Min
+        </button>
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Average
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`InputFee should update fee when clicking on min 1`] = `
+<DocumentFragment>
+  <div
+    class="flex space-x-2"
+    data-testid="InputFee"
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="sc-AxgMl cZbWSE"
+      >
+        <input
+          class="sc-AxjAm ikaeZA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+          data-testid="InputCurrency"
+          type="text"
+          value="1"
+        />
+        <div
+          class="absolute bottom-0 w-full px-1"
+        >
+          <div
+            class="flex flex-wrap justify-center"
+            data-testid="Range"
+          >
+            <div
+              class="sc-AxheI fklffK"
+              data-testid="Range__track"
+              style="transform: scale(1); cursor: pointer;"
+            >
+              <div
+                class="sc-Axmtr cJmGw"
+                data-testid="Range__track__filled"
+              >
+                <div
+                  aria-valuemax="10"
+                  aria-valuemin="1"
+                  aria-valuenow="1"
+                  class="sc-AxmLO jJCZzX"
+                  data-testid="Range__thumb"
+                  draggable="false"
+                  role="slider"
+                  style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+        data-testid="SelectionBar"
+        role="radiogroup"
+      >
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Last
+        </button>
+        <button
+          aria-checked="true"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Min
+        </button>
+        <button
+          aria-checked="false"
+          class="sc-fzozJi cqpCRb relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+          data-testid="SelectionBarOption"
+          role="radio"
+          type="button"
+        >
+          Average
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

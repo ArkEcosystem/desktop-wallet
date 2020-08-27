@@ -86,22 +86,25 @@ describe("NavigationBar", () => {
 
 		const { getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
 
-		expect(getByTestId("navbar__user--avatarImage")).toBeTruthy();
+		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
 	});
 
-	it.each(["Contacts", "Settings", "Support"])("should handle '%s' click on user actions dropdown", async (label) => {
-		const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
+	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support"])(
+		"should handle '%s' click on user actions dropdown",
+		async (label) => {
+			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
 
-		const toggle = getByTestId("navbar__useractions");
+			const toggle = getByTestId("navbar__useractions");
 
-		act(() => {
-			fireEvent.click(toggle);
-		});
+			act(() => {
+				fireEvent.click(toggle);
+			});
 
-		expect(await findByText(label)).toBeTruthy();
-		fireEvent.click(await findByText(label));
-		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
-	});
+			expect(await findByText(label)).toBeTruthy();
+			fireEvent.click(await findByText(label));
+			expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
+		},
+	);
 
 	it("should handle 'Exit' click on user actions dropdown", async () => {
 		const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);

@@ -10,7 +10,6 @@ export const Default = () => (
 	<WalletsDecorator count={1} withDelegate={true}>
 		{({ delegate }: { delegate: Contracts.WalletData }) => (
 			<WalletRegistrations
-				address="abc"
 				delegate={delegate}
 				business={{ name: "ROBank Eco" }}
 				hasSecondSignature
@@ -22,4 +21,6 @@ export const Default = () => (
 	</WalletsDecorator>
 );
 
-export const Empty = () => <WalletRegistrations address="abc" />;
+export const Empty = () => <WalletRegistrations />;
+
+export const Loading = () => <WalletRegistrations isLoading={true} />;

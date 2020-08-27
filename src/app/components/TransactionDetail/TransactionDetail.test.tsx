@@ -18,6 +18,15 @@ describe("TransactionDetail", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it.each(["top", "bottom"])("should render with %s border", (position) => {
+		const { container } = render(
+			<TransactionDetail label="Test" borderPosition={position}>
+				test
+			</TransactionDetail>,
+		);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render without padding", () => {
 		const { container } = render(
 			<TransactionDetail label="Test" padding={false}>

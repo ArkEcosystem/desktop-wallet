@@ -8,9 +8,10 @@ import { TransactionRowRecipientIcon } from "./TransactionRowRecipientIcon";
 
 type Props = {
 	transaction: ExtendedTransactionData;
+	circleShadowColor?: string;
 };
 
-export const TransactionRowMode = ({ transaction }: Props) => {
+export const TransactionRowMode = ({ transaction, circleShadowColor }: Props) => {
 	// TODO: i18n
 	const tooltipContent = transaction?.isSent() ? "Sent" : "Received";
 	const modeIconName = transaction?.isSent() ? "Sent" : "Received";
@@ -21,7 +22,7 @@ export const TransactionRowMode = ({ transaction }: Props) => {
 	return (
 		<div data-testid="TransactionRowMode" className="flex items-center -space-x-1">
 			<Tippy content={tooltipContent}>
-				<Circle className={modeCircleStyle}>
+				<Circle className={modeCircleStyle} shadowColor={circleShadowColor}>
 					<Icon data-testid={`TransactionRowMode__${modeIconName}`} name={modeIconName} />
 				</Circle>
 			</Tippy>
@@ -30,6 +31,7 @@ export const TransactionRowMode = ({ transaction }: Props) => {
 				recipient={transaction?.recipient()}
 				type={transaction?.type()}
 				className={`bg-theme-background font-semibold ${modeCircleStyle}`}
+				circleShadowColor={circleShadowColor}
 			/>
 		</div>
 	);

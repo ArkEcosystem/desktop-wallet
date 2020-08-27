@@ -9,7 +9,10 @@ describe("TransactionRow", () => {
 		const { getByTestId } = renderWithRouter(
 			<table>
 				<tbody>
-					<TransactionRow transaction={TransactionFixture} />
+					<TransactionRow
+						// @ts-ignore
+						transaction={{ ...TransactionFixture, wallet: () => ({ currency: () => "DARK" }) }}
+					/>
 				</tbody>
 			</table>,
 		);
@@ -26,7 +29,8 @@ describe("TransactionRow", () => {
 		const { getAllByTestId } = renderWithRouter(
 			<table>
 				<tbody>
-					<TransactionRow transaction={TransactionFixture} currencyRate="2" />
+					{/* @ts-ignore */}
+					<TransactionRow transaction={TransactionFixture} exchangeCurrency="BTC" />
 				</tbody>
 			</table>,
 		);
@@ -40,8 +44,9 @@ describe("TransactionRow", () => {
 			<table>
 				<tbody>
 					<TransactionRow
+						// @ts-ignore
 						transaction={TransactionFixture}
-						currencyRate="2"
+						exchangeCurrency="BTC"
 						onSign={onSign}
 						isSignaturePending
 					/>
@@ -50,5 +55,27 @@ describe("TransactionRow", () => {
 		);
 		fireEvent.click(getByTestId("TransactionRow__sign"));
 		expect(onSign).toHaveBeenCalled();
+	});
+
+	it("should set backgroundColor on mouse events", () => {
+		const setState = jest.fn();
+		const useStateSpy = jest.spyOn(React, "useState");
+
+		useStateSpy.mockImplementation((state) => [state, setState]);
+
+		const { getByTestId } = renderWithRouter(
+			<table>
+				<tbody>
+					{/* @ts-ignore */}
+					<TransactionRow transaction={TransactionFixture} exchangeCurrency="BTC" />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.mouseEnter(getByTestId("TransactionRow"));
+		fireEvent.mouseLeave(getByTestId("TransactionRow"));
+
+		expect(setState).toHaveBeenCalledWith("--theme-color-success-100");
+		expect(setState).toHaveBeenCalledWith("");
 	});
 });

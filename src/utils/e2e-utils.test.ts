@@ -4,7 +4,11 @@ jest.mock("testcafe", () => ({
 	ClientFunction: (fn) => fn(),
 }));
 
-it("should return e2e page url", () => {
-	const page = getPageURL();
-	expect(page).toContain("build/index.html");
+describe("e2e utils", () => {
+	describe("getPageURL", () => {
+		it("should return e2e page url", () => {
+			const page = getPageURL();
+			expect(page).toContain("build/index.html");
+		});
+	});
 });

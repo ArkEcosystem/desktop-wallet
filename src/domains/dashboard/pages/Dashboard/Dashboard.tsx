@@ -9,7 +9,6 @@ import { TransactionDetailModal } from "domains/transaction/components/Transacti
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
-import { setScreenshotProtection } from "utils/electron-utils";
 
 import { balances, portfolioPercentages } from "../../data";
 
@@ -26,6 +25,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 	const activeProfile = useActiveProfile();
+	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const history = useHistory();
@@ -49,7 +49,6 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 			return allTransactions && setAllTransactions(allTransactions);
 		};
 
-		setScreenshotProtection(activeProfile.settings().get(ProfileSetting.ScreenshotProtection) === true);
 		fetchProfileTransactions();
 	}, [activeProfile]);
 
@@ -109,6 +108,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 					<Section data-testid="dashboard__transactions-view">
 						<Transactions
 							transactions={allTransactions}
+							exchangeCurrency={exchangeCurrency}
 							fetchMoreAction={fetchMoreTransactions}
 							onRowClick={(row) => setTransactionModalItem(row)}
 							isLoading={isLoadingTransactions}

@@ -213,7 +213,11 @@ exports[`Notifications should render transactions 1`] = `
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
-                  0.00000121
+                  <span
+                    data-testid="Amount"
+                  >
+                    121 
+                  </span>
                 </div>
               </td>
             </tr>

@@ -16,11 +16,13 @@ let dashboardURL: string;
 
 describe("VoteDetail", () => {
 	beforeAll(() => {
+		nock.cleanAll();
 		nock.disableNetConnect();
+
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
-			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
+			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
 			.persist();
 	});
 
@@ -45,7 +47,7 @@ describe("VoteDetail", () => {
 	});
 
 	it("should render a modal", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail isOpen={true} transaction={TransactionFixture} />
 			</Route>,
@@ -58,18 +60,19 @@ describe("VoteDetail", () => {
 		await waitFor(() =>
 			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
 		);
+		await waitFor(() => expect(queryAllByTestId("VoteDetails__delegates-container")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render a modal as confirmed", async () => {
-		const { asFragment, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId, getByText, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail
 					isOpen={true}
 					transaction={{
 						...TransactionFixture,
 						sender: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-						votes: () => ["03da05c1c1d4f9c6bda13695b2f29fbc65d9589edc070fc61fe97974be3e59c14e"],
+						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 						confirmations: () => BigNumber.make(52),
 					}}
 				/>
@@ -84,12 +87,13 @@ describe("VoteDetail", () => {
 			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
 		);
 		await waitFor(() => expect(getByText("Well Confirmed")).toBeInTheDocument());
+		await waitFor(() => expect(queryAllByTestId("VoteDetail__delegates")).toHaveLength(1));
 		await waitFor(() => expect(getByText("arkx")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render a modal with wallet alias", async () => {
-		const { asFragment, getByTestId, getByText } = renderWithRouter(
+		const { asFragment, getByTestId, getByText, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail isOpen={true} transaction={TransactionFixture} walletAlias="Wallet Alias" />
 			</Route>,
@@ -102,6 +106,7 @@ describe("VoteDetail", () => {
 		await waitFor(() =>
 			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE),
 		);
+		await waitFor(() => expect(queryAllByTestId("VoteDetails__delegates-container")).toHaveLength(1));
 		await waitFor(() => expect(getByText("Wallet Alias")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});

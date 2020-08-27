@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Welcome should render empty state 1`] = `
+exports[`Welcome should handle resign delegate dropdown action 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzoLag fvqzEZ"
+    class="sc-fzoXzr imWwrn"
   >
     <div
       class="container py-16 mx-auto px-14"
@@ -14,7 +14,7 @@ exports[`Welcome should render empty state 1`] = `
         Delegate
       </h2>
       <div
-        class="sc-AxheI VtiAt"
+        class="sc-AxgMl grPENn"
         role="table"
       >
         <table
@@ -129,54 +129,45 @@ exports[`Welcome should render empty state 1`] = `
           >
             <tr
               class="border-b border-dashed border-theme-neutral-light"
-              data-testid="delegate-table__row"
+              data-testid="DelegateRowItemSkeleton"
             >
               <td
-                class="w-24 py-6"
+                class="w-24 py-6 pr-4"
               >
                 <div
                   class="flex items-center"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ border-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-AxiKw fFXzuz"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        business.svg
-                      </svg>
-                    </div>
-                  </div>
+                    class="sc-AxhCb bzWLYJ border-theme-neutral-300"
+                  />
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="APTz"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                        title="APTz"
-                      />
-                    </div>
-                  </div>
+                    class="sc-AxhCb bzWLYJ border-theme-neutral-300"
+                  />
                 </div>
               </td>
               <td
                 class="font-semibold"
               >
                 <span>
-                  ARK Ecosystem
+                  <span
+                    class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 60%; height: 6px;"
+                  >
+                    ‌
+                  </span>
                 </span>
               </td>
               <td
                 class="font-semibold text-theme-neutral-dark"
               >
-                <span />
+                <span>
+                  <span
+                    class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 80%; height: 6px;"
+                  >
+                    ‌
+                  </span>
+                </span>
               </td>
               <td
                 class="font-semibold text-center text-theme-primary"
@@ -184,15 +175,14 @@ exports[`Welcome should render empty state 1`] = `
                 <span
                   class="flex justify-center"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      msq.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 24px; height: 24px;"
+                    >
+                      ‌
+                    </span>
+                  </span>
                 </span>
               </td>
               <td
@@ -201,15 +191,14 @@ exports[`Welcome should render empty state 1`] = `
                 <span
                   class="flex justify-center"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj ml-2 text-theme-neutral"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      status-clock.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 24px; height: 24px;"
+                    >
+                      ‌
+                    </span>
+                  </span>
                 </span>
               </td>
               <td
@@ -218,10 +207,13 @@ exports[`Welcome should render empty state 1`] = `
                 <div
                   class="flex items-center justify-end"
                 >
-                  <span
-                    class="whitespace-no-wrap"
-                  >
-                    2,450.643 Ѧ
+                  <span>
+                    <span
+                      class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 100px; height: 6px;"
+                    >
+                      ‌
+                    </span>
                   </span>
                 </div>
               </td>
@@ -231,15 +223,21 @@ exports[`Welcome should render empty state 1`] = `
                 <div
                   class="flex items-center justify-end"
                 >
-                  <small
-                    class="text-theme-neutral"
-                  >
-                    2,43%
-                  </small>
-                  <span
-                    class="ml-1 whitespace-no-wrap"
-                  >
-                    2,450.643 Ѧ
+                  <span>
+                    <span
+                      class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 40px; height: 6px;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="react-loading-skeleton mt-4 ml-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 80px; height: 6px;"
+                    >
+                      ‌
+                    </span>
                   </span>
                 </div>
               </td>
@@ -249,48 +247,434 @@ exports[`Welcome should render empty state 1`] = `
                 <span
                   class="flex justify-end"
                 >
-                  <button
-                    class="sc-AxjAm kTAyCf ml-16"
-                    color="primary"
-                    type="button"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 24px; height: 24px;"
                     >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxiKw dklFyP"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </button>
+                      ‌
+                    </span>
+                  </span>
                 </span>
               </td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Welcome should handle update delegate dropdown action 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fzoXzr imWwrn"
+  >
+    <div
+      class="container py-16 mx-auto px-14"
+    >
+      <h2
+        class="mb-8 font-bold"
+      >
+        Delegate
+      </h2>
+      <div
+        class="sc-AxgMl grPENn"
+        role="table"
+      >
+        <table
+          class="table-auto"
+        >
+          <thead>
+            <tr
+              role="row"
+            >
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top invisible"
+                >
+                  <div>
+                    Avatar
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Delegate Name
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Rank
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    MSQ
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--4"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    Status
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--5"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-end"
+                >
+                  <div>
+                    Forged Amount
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--6"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-end"
+                >
+                  <div>
+                    Votes
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
             <tr
               class="border-b border-dashed border-theme-neutral-light"
-              data-testid="delegate-table__row"
+              data-testid="DelegateRowItemSkeleton"
             >
               <td
-                class="w-24 py-6"
+                class="w-24 py-6 pr-4"
               >
                 <div
                   class="flex items-center"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                    class="sc-AxhCb bzWLYJ border-theme-neutral-300"
+                  />
+                  <div
+                    class="sc-AxhCb bzWLYJ border-theme-neutral-300"
+                  />
+                </div>
+              </td>
+              <td
+                class="font-semibold"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 60%; height: 6px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </td>
+              <td
+                class="font-semibold text-theme-neutral-dark"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 80%; height: 6px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </td>
+              <td
+                class="font-semibold text-center text-theme-primary"
+              >
+                <span
+                  class="flex justify-center"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 24px; height: 24px;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                class="text-theme-neutral-light"
+              >
+                <span
+                  class="flex justify-center"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 24px; height: 24px;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                class="font-semibold text-theme-neutral-dark"
+              >
+                <div
+                  class="flex items-center justify-end"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 100px; height: 6px;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+              </td>
+              <td
+                class="font-semibold text-theme-neutral-dark"
+              >
+                <div
+                  class="flex items-center justify-end"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 40px; height: 6px;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="react-loading-skeleton mt-4 ml-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 80px; height: 6px;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+              </td>
+              <td
+                class="align-middle"
+              >
+                <span
+                  class="flex justify-end"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 24px; height: 24px;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Welcome should render delegates 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fzoXzr imWwrn"
+  >
+    <div
+      class="container py-16 mx-auto px-14"
+    >
+      <h2
+        class="mb-8 font-bold"
+      >
+        Delegate
+      </h2>
+      <div
+        class="sc-AxgMl grPENn"
+        role="table"
+      >
+        <table
+          class="table-auto"
+        >
+          <thead>
+            <tr
+              role="row"
+            >
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top invisible"
+                >
+                  <div>
+                    Avatar
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Delegate Name
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Rank
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    MSQ
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--4"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    Status
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--5"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-end"
+                >
+                  <div>
+                    Forged Amount
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--6"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-end"
+                >
+                  <div>
+                    Votes
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              class="border-b border-dashed border-theme-neutral-light"
+              data-testid="DelegateRowItem"
+            >
+              <td
+                class="w-24 py-6"
+                data-testid="DelegateRowItem__address"
+              >
+                <div
+                  class="flex items-center"
+                >
+                  <div
+                    class="sc-AxhCb bzWLYJ border-theme-neutral-800"
                   >
                     <div
-                      class="sc-AxiKw fFXzuz"
+                      class="sc-AxirZ hmuEJr"
                       height="22"
                       width="22"
                     >
@@ -307,9 +691,9 @@ exports[`Welcome should render empty state 1`] = `
                       class="w-full h-full"
                     >
                       <img
-                        alt="APTz"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                        title="APTz"
+                        alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                        title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                       />
                     </div>
                   </div>
@@ -317,24 +701,29 @@ exports[`Welcome should render empty state 1`] = `
               </td>
               <td
                 class="font-semibold"
+                data-testid="DelegateRowItem__username"
               >
                 <span>
-                  ARK Ecosystem
+                  arkx
                 </span>
               </td>
               <td
                 class="font-semibold text-theme-neutral-dark"
+                data-testid="DelegateRowItem__rank"
               >
-                <span />
+                <span>
+                  #
+                </span>
               </td>
               <td
                 class="font-semibold text-center text-theme-primary"
+                data-testid="DelegateRowItem__msq"
               >
                 <span
                   class="flex justify-center"
                 >
                   <div
-                    class="sc-AxiKw fFXzuz"
+                    class="sc-AxirZ hmuEJr"
                     height="22"
                     width="22"
                   >
@@ -346,12 +735,13 @@ exports[`Welcome should render empty state 1`] = `
               </td>
               <td
                 class="text-theme-neutral-light"
+                data-testid="DelegateRowItem__status"
               >
                 <span
                   class="flex justify-center"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj ml-2 text-theme-neutral"
+                    class="sc-AxirZ iQaTP ml-2 text-theme-neutral"
                     height="1em"
                     width="1em"
                   >
@@ -362,20 +752,22 @@ exports[`Welcome should render empty state 1`] = `
                 </span>
               </td>
               <td
-                class="font-semibold text-theme-neutral-dark"
+                class="text-theme-neutral-light"
+                data-testid="DelegateRowItem__forged"
               >
-                <div
-                  class="flex items-center justify-end"
+                <span
+                  class="flex justify-end"
                 >
                   <span
                     class="whitespace-no-wrap"
                   >
                     2,450.643 Ѧ
                   </span>
-                </div>
+                </span>
               </td>
               <td
                 class="font-semibold text-theme-neutral-dark"
+                data-testid="DelegateRowItem__votes"
               >
                 <div
                   class="flex items-center justify-end"
@@ -394,12 +786,13 @@ exports[`Welcome should render empty state 1`] = `
               </td>
               <td
                 class="align-middle"
+                data-testid="DelegateRowItem__actions"
               >
                 <span
                   class="flex justify-end"
                 >
                   <button
-                    class="sc-AxjAm kTAyCf ml-16"
+                    class="sc-AxmLO jcIRLX ml-16"
                     color="primary"
                     type="button"
                   >
@@ -411,7 +804,7 @@ exports[`Welcome should render empty state 1`] = `
                         class="float-right outline-none cursor-pointer focus:outline-none"
                       >
                         <div
-                          class="sc-AxiKw dklFyP"
+                          class="sc-AxirZ eEbZjj"
                           height="20"
                           width="20"
                         >
@@ -426,6 +819,140 @@ exports[`Welcome should render empty state 1`] = `
               </td>
             </tr>
           </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Welcome should render empty state 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fzoXzr imWwrn"
+  >
+    <div
+      class="container py-16 mx-auto px-14"
+    >
+      <h2
+        class="mb-8 font-bold"
+      >
+        Delegate
+      </h2>
+      <div
+        class="sc-AxgMl grPENn"
+        role="table"
+      >
+        <table
+          class="table-auto"
+        >
+          <thead>
+            <tr
+              role="row"
+            >
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top invisible"
+                >
+                  <div>
+                    Avatar
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Delegate Name
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Rank
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    MSQ
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--4"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    Status
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--5"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-end"
+                >
+                  <div>
+                    Forged Amount
+                  </div>
+                </div>
+              </th>
+              <th
+                class="text-sm text-left select-none text-theme-neutral"
+                colspan="1"
+                data-testid="table__th--6"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-end"
+                >
+                  <div>
+                    Votes
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          />
         </table>
       </div>
     </div>

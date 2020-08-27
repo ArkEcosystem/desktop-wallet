@@ -7,10 +7,10 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -19,72 +19,72 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -101,9 +101,10 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/transactions/transfer"
               >
@@ -122,13 +123,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -145,10 +144,10 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -163,21 +162,21 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -194,18 +193,21 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JA
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JA
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -339,7 +341,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm kwTlRm text-left"
+                    class="sc-AxjAm bBBiEi text-left"
                     color="primary"
                     type="button"
                   >
@@ -359,7 +361,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
           </div>
         </div>
         <div
-          class="sc-fzoLag fvqzEZ"
+          class="sc-fzoXzr imWwrn"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -382,15 +384,15 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     class="flex"
                   >
                     <input
-                      class="sc-fznJRM iRBZpo"
+                      class="Toggle__Input-qyyifx-0 bXkHfF"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznWqX KhVHO"
+                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
                     >
                       <span
-                        class="sc-fzoiQi jmuiQa"
+                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
                       />
                     </div>
                   </label>
@@ -437,7 +439,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   Balance
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__balance"
                 >
                   0 DARK
@@ -452,7 +454,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   Fiat Value
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__currency-balance"
                 >
                   0 BTC
@@ -463,7 +465,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         </div>
       </header>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -487,7 +489,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -510,65 +512,77 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
+                  class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center pr-8 space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc text-theme-neutral-light"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
-                  </div>
-                  <div
-                    class="flex flex-col"
-                  >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Address Delegate
-                    </span>
-                    <div
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      <span
-                        class="mr-2"
-                      >
-                        You haven't voted for more than one delegate yet.
-                      </span>
-                      <a
-                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                      >
-                        Learn more
                         <div
-                          class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                          data-testid="Link__external"
+                          class="sc-AxiKw dzBdqj"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            redirect.svg
+                            voted.svg
                           </svg>
                         </div>
-                      </a>
+                      </div>
+                      <div
+                        class="sc-AxhUy dSLmHc bg-theme-background"
+                      />
+                    </div>
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Address Delegate
+                      </span>
+                      <div
+                        class="font-semibold text-theme-neutral-900"
+                      >
+                        <span
+                          class="mr-2"
+                        >
+                          You haven't voted for more than one delegate yet.
+                        </span>
+                        <a
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                        >
+                          Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
+                  <button
+                    class="sc-AxjAm cyswVS"
+                    color="primary"
+                    data-testid="WalletVote__delegate__vote"
+                    type="button"
+                  >
+                    Vote
+                  </button>
                 </div>
               </div>
             </div>
@@ -576,7 +590,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -600,7 +614,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -673,7 +687,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm ddJBbC"
+                    class="sc-AxjAm cyswVS"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -687,7 +701,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -864,7 +878,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -877,7 +891,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -985,14 +999,18 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm ddJBbC"
+                          class="sc-AxjAm cyswVS"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -1017,7 +1035,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -1195,7 +1213,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -1208,7 +1226,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -1316,7 +1334,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -1327,7 +1349,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -1336,7 +1358,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -1358,10 +1380,10 @@ exports[`WalletDetails should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -1370,72 +1392,72 @@ exports[`WalletDetails should render 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -1452,9 +1474,10 @@ exports[`WalletDetails should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -1473,13 +1496,11 @@ exports[`WalletDetails should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -1496,10 +1517,10 @@ exports[`WalletDetails should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -1514,21 +1535,21 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -1545,18 +1566,21 @@ exports[`WalletDetails should render 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -1705,7 +1729,7 @@ exports[`WalletDetails should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm kwTlRm text-left"
+                    class="sc-AxjAm bBBiEi text-left"
                     color="primary"
                     type="button"
                   >
@@ -1725,7 +1749,7 @@ exports[`WalletDetails should render 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzoLag fvqzEZ"
+          class="sc-fzoXzr imWwrn"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -1748,15 +1772,15 @@ exports[`WalletDetails should render 1`] = `
                     class="flex"
                   >
                     <input
-                      class="sc-fznJRM iRBZpo"
+                      class="Toggle__Input-qyyifx-0 bXkHfF"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznWqX KhVHO"
+                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
                     >
                       <span
-                        class="sc-fzoiQi jmuiQa"
+                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
                       />
                     </div>
                   </label>
@@ -1803,7 +1827,7 @@ exports[`WalletDetails should render 1`] = `
                   Balance
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__balance"
                 >
                   33.75089801 DARK
@@ -1818,7 +1842,7 @@ exports[`WalletDetails should render 1`] = `
                   Fiat Value
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__currency-balance"
                 >
                   0 BTC
@@ -1829,7 +1853,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1853,7 +1877,7 @@ exports[`WalletDetails should render 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -1876,64 +1900,167 @@ exports[`WalletDetails should render 1`] = `
                 class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
-                  data-testid="WalletVote__empty"
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
-                  </div>
-                  <div
-                    class="flex flex-col"
-                  >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Address Delegate
-                    </span>
-                    <div
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      <span
-                        class="mr-2"
-                      >
-                        You haven't voted for more than one delegate yet.
-                      </span>
-                      <a
-                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                      >
-                        Learn more
                         <div
-                          class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                          data-testid="Link__external"
+                          class="sc-AxiKw dzBdqj"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            redirect.svg
+                            voted.svg
                           </svg>
                         </div>
-                      </a>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
                     </div>
+                    <div
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          arkx
+                        </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D61mfS…J3Dyib
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center"
+                  >
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
+                    >
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </span>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://dexplorer.ark.io/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          MarketSquare
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </span>
+                        <div
+                          class="sc-AxiKw dzBdqj text-theme-neutral"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            status-clock.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxjAm cyswVS"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1942,7 +2069,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1966,7 +2093,7 @@ exports[`WalletDetails should render 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -2045,7 +2172,7 @@ exports[`WalletDetails should render 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm ddJBbC"
+                    class="sc-AxjAm cyswVS"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -2059,7 +2186,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2236,7 +2363,7 @@ exports[`WalletDetails should render 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -2249,7 +2376,7 @@ exports[`WalletDetails should render 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -2357,14 +2484,18 @@ exports[`WalletDetails should render 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm ddJBbC"
+                          class="sc-AxjAm cyswVS"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -2389,7 +2520,7 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -2567,7 +2698,7 @@ exports[`WalletDetails should render 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -2580,7 +2711,7 @@ exports[`WalletDetails should render 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -2688,7 +2819,11 @@ exports[`WalletDetails should render 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -2699,7 +2834,7 @@ exports[`WalletDetails should render 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -2708,7 +2843,7 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -2755,7 +2890,7 @@ exports[`WalletDetails should render 1`] = `
               Show
             </span>
             <span
-              class="sc-fzqARJ hMpgBB"
+              class="sc-fznWqX ifllBJ"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -3291,10 +3426,10 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -3303,72 +3438,72 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -3385,9 +3520,10 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -3406,13 +3542,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -3429,10 +3563,10 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -3447,21 +3581,21 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -3478,18 +3612,21 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -3623,7 +3760,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm kwTlRm text-left"
+                    class="sc-AxjAm bBBiEi text-left"
                     color="primary"
                     type="button"
                   >
@@ -3643,7 +3780,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzoLag fvqzEZ"
+          class="sc-fzoXzr imWwrn"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -3666,15 +3803,15 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     class="flex"
                   >
                     <input
-                      class="sc-fznJRM iRBZpo"
+                      class="Toggle__Input-qyyifx-0 bXkHfF"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznWqX KhVHO"
+                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
                     >
                       <span
-                        class="sc-fzoiQi jmuiQa"
+                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
                       />
                     </div>
                   </label>
@@ -3721,7 +3858,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   Balance
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__balance"
                 >
                   0 DARK
@@ -3736,7 +3873,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   Fiat Value
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__currency-balance"
                 >
                   0 BTC
@@ -3747,7 +3884,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3771,7 +3908,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -3794,64 +3931,167 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
-                  data-testid="WalletVote__empty"
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
-                  </div>
-                  <div
-                    class="flex flex-col"
-                  >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Address Delegate
-                    </span>
-                    <div
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      <span
-                        class="mr-2"
-                      >
-                        You haven't voted for more than one delegate yet.
-                      </span>
-                      <a
-                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                      >
-                        Learn more
                         <div
-                          class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                          data-testid="Link__external"
+                          class="sc-AxiKw dzBdqj"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            redirect.svg
+                            voted.svg
                           </svg>
                         </div>
-                      </a>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
                     </div>
+                    <div
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          arkx
+                        </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D61mfS…J3Dyib
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center"
+                  >
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
+                    >
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </span>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://dexplorer.ark.io/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          MarketSquare
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </span>
+                        <div
+                          class="sc-AxiKw dzBdqj text-theme-neutral"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            status-clock.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxjAm cyswVS"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3860,7 +4100,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3884,7 +4124,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -3957,7 +4197,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm ddJBbC"
+                    class="sc-AxjAm cyswVS"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -3971,7 +4211,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4148,7 +4388,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -4161,7 +4401,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -4269,14 +4509,18 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm ddJBbC"
+                          class="sc-AxjAm cyswVS"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -4301,7 +4545,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -4479,7 +4723,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -4492,7 +4736,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -4600,7 +4844,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -4611,7 +4859,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -4620,7 +4868,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -4667,7 +4915,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               Show
             </span>
             <span
-              class="sc-fzqARJ hMpgBB"
+              class="sc-fznWqX ifllBJ"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -5203,10 +5451,10 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -5215,72 +5463,72 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -5297,9 +5545,10 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -5318,13 +5567,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -5341,10 +5588,10 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -5359,21 +5606,21 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -5390,18 +5637,21 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -5535,7 +5785,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm kwTlRm text-left"
+                    class="sc-AxjAm bBBiEi text-left"
                     color="primary"
                     type="button"
                   >
@@ -5555,7 +5805,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzoLag fvqzEZ"
+          class="sc-fzoXzr imWwrn"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -5578,15 +5828,15 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     class="flex"
                   >
                     <input
-                      class="sc-fznJRM iRBZpo"
+                      class="Toggle__Input-qyyifx-0 bXkHfF"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznWqX KhVHO"
+                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
                     >
                       <span
-                        class="sc-fzoiQi jmuiQa"
+                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
                       />
                     </div>
                   </label>
@@ -5633,7 +5883,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   Balance
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__balance"
                 >
                   0 DARK
@@ -5648,7 +5898,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   Fiat Value
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__currency-balance"
                 >
                   0 BTC
@@ -5659,7 +5909,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5683,7 +5933,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -5706,65 +5956,77 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
+                  class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center pr-8 space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc text-theme-neutral-light"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
-                  </div>
-                  <div
-                    class="flex flex-col"
-                  >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Address Delegate
-                    </span>
-                    <div
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      <span
-                        class="mr-2"
-                      >
-                        You haven't voted for more than one delegate yet.
-                      </span>
-                      <a
-                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                      >
-                        Learn more
                         <div
-                          class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                          data-testid="Link__external"
+                          class="sc-AxiKw dzBdqj"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            redirect.svg
+                            voted.svg
                           </svg>
                         </div>
-                      </a>
+                      </div>
+                      <div
+                        class="sc-AxhUy dSLmHc bg-theme-background"
+                      />
+                    </div>
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Address Delegate
+                      </span>
+                      <div
+                        class="font-semibold text-theme-neutral-900"
+                      >
+                        <span
+                          class="mr-2"
+                        >
+                          You haven't voted for more than one delegate yet.
+                        </span>
+                        <a
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                        >
+                          Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
+                  <button
+                    class="sc-AxjAm cyswVS"
+                    color="primary"
+                    data-testid="WalletVote__delegate__vote"
+                    type="button"
+                  >
+                    Vote
+                  </button>
                 </div>
               </div>
             </div>
@@ -5772,7 +6034,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5796,7 +6058,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -5869,7 +6131,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm ddJBbC"
+                    class="sc-AxjAm cyswVS"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -5883,7 +6145,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -6060,7 +6322,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -6073,7 +6335,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -6181,14 +6443,18 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm ddJBbC"
+                          class="sc-AxjAm cyswVS"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -6213,7 +6479,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -6391,7 +6657,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -6404,7 +6670,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -6512,7 +6778,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -6523,7 +6793,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -6532,7 +6802,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -6579,7 +6849,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               Show
             </span>
             <span
-              class="sc-fzqARJ hMpgBB"
+              class="sc-fznWqX ifllBJ"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -7115,10 +7385,10 @@ exports[`WalletDetails should render with timers 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -7127,72 +7397,72 @@ exports[`WalletDetails should render with timers 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -7209,9 +7479,10 @@ exports[`WalletDetails should render with timers 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -7230,13 +7501,11 @@ exports[`WalletDetails should render with timers 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -7253,10 +7522,10 @@ exports[`WalletDetails should render with timers 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -7271,21 +7540,21 @@ exports[`WalletDetails should render with timers 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -7302,18 +7571,21 @@ exports[`WalletDetails should render with timers 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -7462,7 +7734,7 @@ exports[`WalletDetails should render with timers 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm kwTlRm text-left"
+                    class="sc-AxjAm bBBiEi text-left"
                     color="primary"
                     type="button"
                   >
@@ -7482,7 +7754,7 @@ exports[`WalletDetails should render with timers 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzoLag fvqzEZ"
+          class="sc-fzoXzr imWwrn"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -7505,15 +7777,15 @@ exports[`WalletDetails should render with timers 1`] = `
                     class="flex"
                   >
                     <input
-                      class="sc-fznJRM iRBZpo"
+                      class="Toggle__Input-qyyifx-0 bXkHfF"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznWqX KhVHO"
+                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
                     >
                       <span
-                        class="sc-fzoiQi jmuiQa"
+                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
                       />
                     </div>
                   </label>
@@ -7560,7 +7832,7 @@ exports[`WalletDetails should render with timers 1`] = `
                   Balance
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__balance"
                 >
                   33.75089801 DARK
@@ -7575,7 +7847,7 @@ exports[`WalletDetails should render with timers 1`] = `
                   Fiat Value
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__currency-balance"
                 >
                   0 BTC
@@ -7586,7 +7858,7 @@ exports[`WalletDetails should render with timers 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7610,7 +7882,7 @@ exports[`WalletDetails should render with timers 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -7633,64 +7905,167 @@ exports[`WalletDetails should render with timers 1`] = `
                 class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
-                  data-testid="WalletVote__empty"
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
-                  </div>
-                  <div
-                    class="flex flex-col"
-                  >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Address Delegate
-                    </span>
-                    <div
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      <span
-                        class="mr-2"
-                      >
-                        You haven't voted for more than one delegate yet.
-                      </span>
-                      <a
-                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                      >
-                        Learn more
                         <div
-                          class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                          data-testid="Link__external"
+                          class="sc-AxiKw dzBdqj"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            redirect.svg
+                            voted.svg
                           </svg>
                         </div>
-                      </a>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
                     </div>
+                    <div
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          arkx
+                        </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D61mfS…J3Dyib
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center"
+                  >
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
+                    >
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </span>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://dexplorer.ark.io/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          MarketSquare
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </span>
+                        <div
+                          class="sc-AxiKw dzBdqj text-theme-neutral"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            status-clock.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxjAm cyswVS"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -7699,7 +8074,7 @@ exports[`WalletDetails should render with timers 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7723,7 +8098,7 @@ exports[`WalletDetails should render with timers 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -7802,7 +8177,7 @@ exports[`WalletDetails should render with timers 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm ddJBbC"
+                    class="sc-AxjAm cyswVS"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -7816,7 +8191,7 @@ exports[`WalletDetails should render with timers 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7993,7 +8368,7 @@ exports[`WalletDetails should render with timers 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -8006,7 +8381,7 @@ exports[`WalletDetails should render with timers 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -8114,14 +8489,18 @@ exports[`WalletDetails should render with timers 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm ddJBbC"
+                          class="sc-AxjAm cyswVS"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -8146,7 +8525,7 @@ exports[`WalletDetails should render with timers 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -8324,7 +8703,7 @@ exports[`WalletDetails should render with timers 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -8337,7 +8716,7 @@ exports[`WalletDetails should render with timers 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -8445,7 +8824,11 @@ exports[`WalletDetails should render with timers 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -8456,7 +8839,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -8465,7 +8848,7 @@ exports[`WalletDetails should render with timers 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -8512,7 +8895,7 @@ exports[`WalletDetails should render with timers 1`] = `
               Show
             </span>
             <span
-              class="sc-fzqARJ hMpgBB"
+              class="sc-fznWqX ifllBJ"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -9048,10 +9431,10 @@ exports[`WalletDetails should update wallet name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV crDFRs"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -9060,72 +9443,72 @@ exports[`WalletDetails should update wallet name 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag jtxrqn"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -9142,9 +9525,10 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -9163,13 +9547,11 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxiKw fFXzuz"
@@ -9186,10 +9568,10 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -9204,21 +9586,21 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -9235,18 +9617,21 @@ exports[`WalletDetails should update wallet name 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -9395,7 +9780,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm kwTlRm text-left"
+                    class="sc-AxjAm bBBiEi text-left"
                     color="primary"
                     type="button"
                   >
@@ -9415,7 +9800,7 @@ exports[`WalletDetails should update wallet name 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzoLag fvqzEZ"
+          class="sc-fzoXzr imWwrn"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -9438,15 +9823,15 @@ exports[`WalletDetails should update wallet name 1`] = `
                     class="flex"
                   >
                     <input
-                      class="sc-fznJRM iRBZpo"
+                      class="Toggle__Input-qyyifx-0 bXkHfF"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznWqX KhVHO"
+                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
                     >
                       <span
-                        class="sc-fzoiQi jmuiQa"
+                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
                       />
                     </div>
                   </label>
@@ -9493,7 +9878,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   Balance
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__balance"
                 >
                   33.75089801 DARK
@@ -9508,7 +9893,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   Fiat Value
                 </span>
                 <span
-                  class="text-lg font-medium"
+                  class="text-lg font-semibold"
                   data-testid="WalletHeader__currency-balance"
                 >
                   0 BTC
@@ -9519,7 +9904,7 @@ exports[`WalletDetails should update wallet name 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -9543,7 +9928,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -9566,64 +9951,167 @@ exports[`WalletDetails should update wallet name 1`] = `
                 class="py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
-                  data-testid="WalletVote__empty"
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
-                  </div>
-                  <div
-                    class="flex flex-col"
-                  >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Address Delegate
-                    </span>
-                    <div
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      <span
-                        class="mr-2"
-                      >
-                        You haven't voted for more than one delegate yet.
-                      </span>
-                      <a
-                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                      >
-                        Learn more
                         <div
-                          class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                          data-testid="Link__external"
+                          class="sc-AxiKw dzBdqj"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            redirect.svg
+                            voted.svg
                           </svg>
                         </div>
-                      </a>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
                     </div>
+                    <div
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          arkx
+                        </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D61mfS…J3Dyib
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center"
+                  >
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
+                    >
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </span>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://dexplorer.ark.io/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          MarketSquare
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </span>
+                        <div
+                          class="sc-AxiKw dzBdqj text-theme-neutral"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            status-clock.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxjAm cyswVS"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -9632,7 +10120,7 @@ exports[`WalletDetails should update wallet name 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -9656,7 +10144,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzqARJ dgVUub"
+                  class="sc-fznWqX bdLAqP"
                 >
                   <div
                     class="sc-AxiKw ksjdLL"
@@ -9735,7 +10223,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm ddJBbC"
+                    class="sc-AxjAm cyswVS"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -9749,7 +10237,7 @@ exports[`WalletDetails should update wallet name 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -9926,7 +10414,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -9939,7 +10427,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -10047,14 +10535,18 @@ exports[`WalletDetails should update wallet name 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm ddJBbC"
+                          class="sc-AxjAm cyswVS"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -10079,7 +10571,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -10257,7 +10749,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                       data-testid="TransactionRow"
                     >
                       <td
@@ -10270,7 +10762,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                             class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
-                            to="[object Object]"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
                               class="sc-AxiKw dzBdqj flex-shrink-0 "
@@ -10378,7 +10870,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
-                          400000.00000000
+                          <span
+                            data-testid="Amount"
+                          >
+                            400,000 DARK
+                          </span>
                         </div>
                       </td>
                       <td
@@ -10389,7 +10885,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           class="text-theme-neutral-dark"
                           data-testid="TransactionRowAmount"
                         >
-                          800000.00
+                          0 BTC
                         </span>
                       </td>
                     </tr>
@@ -10398,7 +10894,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -10445,7 +10941,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               Show
             </span>
             <span
-              class="sc-fzqARJ hMpgBB"
+              class="sc-fznWqX ifllBJ"
             >
               <div
                 class="sc-AxiKw ksjdLL"

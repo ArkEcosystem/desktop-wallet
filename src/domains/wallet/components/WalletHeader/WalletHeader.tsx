@@ -168,6 +168,7 @@ export const WalletHeader = ({
 							</span>
 							<Toggle
 								data-testid="WalletHeader__toggle"
+								baseColor="--theme-color-primary"
 								disabled={!publicKey}
 								onChange={() => setShowPublicKey(!showPublicKey)}
 							/>
@@ -201,7 +202,7 @@ export const WalletHeader = ({
 								value={balance}
 								ticker={ticker}
 								data-testid="WalletHeader__balance"
-								className="text-lg font-medium"
+								className="text-lg font-semibold"
 							/>
 						</li>
 					)}
@@ -215,7 +216,7 @@ export const WalletHeader = ({
 								value={currencyBalance}
 								ticker={exchangeCurrency!}
 								data-testid="WalletHeader__currency-balance"
-								className="text-lg font-medium"
+								className="text-lg font-semibold"
 							/>
 						</li>
 					)}

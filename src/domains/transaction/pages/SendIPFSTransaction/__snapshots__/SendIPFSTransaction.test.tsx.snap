@@ -7,10 +7,10 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag iezQBg"
+      class="sc-fzoLag diZZJo"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -19,72 +19,72 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoXzr fjtVHd"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -101,9 +101,10 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -122,13 +123,11 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxirZ dACfZY"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -145,10 +144,10 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -163,21 +162,21 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxiKw jQtkkF -mr-2 border-theme-neutral-300"
+                    class="sc-AxiKw jQtkkF -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxhUy cPXLjK"
@@ -194,18 +193,21 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxhUy gKrfcW"
@@ -256,7 +258,7 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex-1"
+        class="sc-fzpjYC deOkAw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -267,19 +269,19 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
           >
             <div>
               <ul
-                class="sc-fznxsB hPecIE"
+                class="sc-fznJRM kDmVaQ"
               >
                 <li
-                  class="sc-fzpjYC giIDaA"
+                  class="sc-fznxsB keKrAv"
                 />
                 <li
-                  class="sc-fzpjYC giIDaA"
+                  class="sc-fznxsB keKrAv"
                 />
                 <li
-                  class="sc-fzpjYC giIDaA"
+                  class="sc-fznxsB keKrAv"
                 />
                 <li
-                  class="sc-fzpjYC bTIQoF"
+                  class="sc-fznxsB exHzky"
                 />
               </ul>
               <div
@@ -364,7 +366,7 @@ exports[`SendIPFSTransaction should error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="sc-AxirZ fhzkRl"
+                    class="sc-AxirZ gzYIDB"
                     color="primary"
                     data-testid="SendIPFSTransaction__button--back"
                     type="button"
@@ -398,10 +400,10 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag iezQBg"
+      class="sc-fzoLag diZZJo"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -410,72 +412,72 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoXzr fjtVHd"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -492,9 +494,10 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -513,13 +516,11 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxirZ dACfZY"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -536,10 +537,10 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -554,21 +555,21 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxiKw jQtkkF -mr-2 border-theme-neutral-300"
+                    class="sc-AxiKw jQtkkF -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxhUy cPXLjK"
@@ -585,18 +586,21 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxhUy gKrfcW"
@@ -647,7 +651,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex-1"
+        class="sc-fzpjYC deOkAw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -658,19 +662,19 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
           >
             <div>
               <ul
-                class="sc-fznxsB hPecIE"
+                class="sc-fznJRM kDmVaQ"
               >
                 <li
-                  class="sc-fzpjYC giIDaA"
+                  class="sc-fznxsB keKrAv"
                 />
                 <li
-                  class="sc-fzpjYC giIDaA"
+                  class="sc-fznxsB keKrAv"
                 />
                 <li
-                  class="sc-fzpjYC giIDaA"
+                  class="sc-fznxsB keKrAv"
                 />
                 <li
-                  class="sc-fzpjYC giIDaA"
+                  class="sc-fznxsB keKrAv"
                 />
               </ul>
               <div
@@ -708,6 +712,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                         </p>
                         <div
                           class="flex items-center py-6 true "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -761,6 +766,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -814,6 +820,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -849,6 +856,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                         </div>
                         <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                          data-testid="TransactionDetail"
                         >
                           <div
                             class="flex-1 space-y-2"
@@ -916,7 +924,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="sc-AxirZ fhzkRl block"
+                    class="sc-AxirZ gzYIDB block"
                     color="primary"
                     data-testid="SendIPFSTransaction__button--back-to-wallet"
                     type="button"
@@ -924,7 +932,7 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxirZ fhzkRl space-x-2"
+                    class="sc-AxirZ gzYIDB space-x-2"
                     color="primary"
                     data-testid="SendIPFSTransaction__button--copy"
                     type="button"
@@ -952,6 +960,8 @@ exports[`SendIPFSTransaction should navigate between steps 1`] = `
   </div>
 </div>
 `;
+
+exports[`SendIPFSTransaction should navigate between steps 2`] = `<div />`;
 
 exports[`SendIPFSTransaction should render 1st step 1`] = `
 <DocumentFragment>
@@ -1061,7 +1071,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           >
             <div>
               <button
-                class="sc-fzoiQi nVbwe SelectAddress is-disabled "
+                class="sc-fzqARJ dKMWCk SelectAddress is-disabled "
                 data-testid="SelectAddress__wrapper"
                 disabled=""
                 type="button"
@@ -1197,16 +1207,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                  data-testid="SelectionBarOption"
-                  role="radio"
-                  type="button"
-                >
-                  Last
-                </button>
-                <button
-                  aria-checked="false"
-                  class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1215,7 +1216,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1252,6 +1253,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
     >
       <div
         class="flex items-center py-6 true "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -1291,6 +1293,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
       </div>
       <div
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -1352,6 +1355,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
       </div>
       <div
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6"
+        data-testid="TransactionDetail"
       >
         <div
           class="flex-1 space-y-2"
@@ -1565,6 +1569,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
         </p>
         <div
           class="flex items-center py-6 true "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1618,6 +1623,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1671,6 +1677,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1706,6 +1713,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+          data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
@@ -1778,10 +1786,10 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag iezQBg"
+      class="sc-fzoLag diZZJo"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
@@ -1790,72 +1798,72 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoXzr fjtVHd"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center h-full mr-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -1872,9 +1880,10 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <a
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--send"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
@@ -1893,13 +1902,11 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center h-full text-theme-primary-300"
             >
               <button
-                class="sc-AxirZ dACfZY"
-                color="primary"
+                class="p-2 mx-6 my-auto"
                 data-testid="navbar__buttons--receive"
-                type="button"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -1916,10 +1923,10 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 ml-4 text-right"
+              class="ml-8 text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -1934,21 +1941,21 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="flex cusror-pointer"
             >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="cursor-pointer"
+                  class="ml-4 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxiKw jQtkkF -mr-2 border-theme-neutral-300"
+                    class="sc-AxiKw jQtkkF -mr-2 border-theme-primary-contrast"
                   >
                     <span
-                      class="text-theme-neutral-600"
+                      class="text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxhUy cPXLjK"
@@ -1965,18 +1972,21 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
                     data-testid="navbar__user--avatar"
                   >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                     >
-                      JO
-                    </span>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background"
+                      >
+                        JO
+                      </span>
+                    </div>
                     <span
-                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxhUy gKrfcW"
@@ -2027,7 +2037,7 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex-1"
+        class="sc-fzpjYC deOkAw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2038,19 +2048,19 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
           >
             <div>
               <ul
-                class="sc-fznxsB hPecIE"
+                class="sc-fznJRM kDmVaQ"
               >
                 <li
-                  class="sc-fzpjYC giIDaA"
+                  class="sc-fznxsB keKrAv"
                 />
                 <li
-                  class="sc-fzpjYC bTIQoF"
+                  class="sc-fznxsB exHzky"
                 />
                 <li
-                  class="sc-fzpjYC bTIQoF"
+                  class="sc-fznxsB exHzky"
                 />
                 <li
-                  class="sc-fzpjYC bTIQoF"
+                  class="sc-fznxsB exHzky"
                 />
               </ul>
               <div
@@ -2234,7 +2244,7 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                           >
                             <div>
                               <button
-                                class="sc-fzoiQi nVbwe SelectAddress  "
+                                class="sc-fzqARJ dKMWCk SelectAddress  "
                                 data-testid="SelectAddress__wrapper"
                                 type="button"
                               >
@@ -2396,16 +2406,7 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                  data-testid="SelectionBarOption"
-                                  role="radio"
-                                  type="button"
-                                >
-                                  Last
-                                </button>
-                                <button
-                                  aria-checked="false"
-                                  class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -2414,7 +2415,7 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -2433,7 +2434,7 @@ exports[`SendIPFSTransaction should show an error if an invalid IPFS hash is ent
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="sc-AxirZ fhzkRl"
+                    class="sc-AxirZ gzYIDB"
                     color="primary"
                     data-testid="SendIPFSTransaction__button--back"
                     disabled=""

@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 type Props = {
 	data: any;
-	handleDropdown: any;
+	onAction?: any;
 };
 
 const options = [
@@ -19,7 +19,7 @@ const options = [
 	{ label: "Resign", value: "resign" },
 ];
 
-export const BusinessTable = ({ data, handleDropdown }: Props) => {
+export const BusinessTable = ({ data, onAction }: Props) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -55,7 +55,10 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => {
 
 			<Table columns={columns} data={data}>
 				{(rowData: any) => (
-					<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
+					<tr
+						data-testid="BusinessRegistrationItem"
+						className="border-b border-dashed border-theme-neutral-light"
+					>
 						<td className="w-24 py-6">
 							<div className="flex items-center">
 								<Circle className="border-theme-neutral-800" size="lg">
@@ -92,7 +95,7 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => {
 									<Dropdown
 										toggleIcon="Settings"
 										options={options}
-										onSelect={(option: any) => handleDropdown(option)}
+										onSelect={(option: any) => onAction?.(option)}
 									/>
 								</Button>
 							</span>

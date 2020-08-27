@@ -22,7 +22,7 @@ exports[`VoteDetail should render a modal 1`] = `
           class="absolute top-0 right-0 z-50 mt-5"
         >
           <button
-            class="sc-AxiKw ha-DbdM"
+            class="sc-AxiKw hOwCcl"
             color="neutral"
             data-testid="modal__close-btn"
             type="button"
@@ -55,6 +55,7 @@ exports[`VoteDetail should render a modal 1`] = `
           >
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -108,40 +109,11 @@ exports[`VoteDetail should render a modal 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-            >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Voter
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <span>
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 90%; height: 6px;"
-                    >
-                      ‌
-                    </span>
-                  </span>
-                </div>
-              </div>
-              <span>
-                <span
-                  class="react-loading-skeleton mt-3 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40px; height: 40px; border-radius: 50%;"
-                >
-                  ‌
-                </span>
-              </span>
-            </div>
+              data-testid="VoteDetails__delegates-container"
+            />
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -160,6 +132,7 @@ exports[`VoteDetail should render a modal 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -178,6 +151,7 @@ exports[`VoteDetail should render a modal 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -217,6 +191,7 @@ exports[`VoteDetail should render a modal 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -253,6 +228,7 @@ exports[`VoteDetail should render a modal 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -315,7 +291,7 @@ exports[`VoteDetail should render a modal as confirmed 1`] = `
           class="absolute top-0 right-0 z-50 mt-5"
         >
           <button
-            class="sc-AxiKw ha-DbdM"
+            class="sc-AxiKw hOwCcl"
             color="neutral"
             data-testid="modal__close-btn"
             type="button"
@@ -348,6 +324,7 @@ exports[`VoteDetail should render a modal as confirmed 1`] = `
           >
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -401,62 +378,72 @@ exports[`VoteDetail should render a modal as confirmed 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="VoteDetails__delegates-container"
             >
               <div
-                class="flex-1 space-y-2"
+                class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                data-testid="TransactionDetail"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Voter
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  arkx
-                  <span
-                    class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
-                    data-testid="TruncateMiddle"
-                  >
-                    AXzxJ8…EJb8HX
-                  </span>
-                </div>
-              </div>
-              <div
-                class="flex"
-              >
-                <div
-                  class="sc-AxjAm bLfakz -mr-2 border-black"
+                  class="flex-1 space-y-2"
                 >
                   <div
-                    class="sc-AxirZ eyApFr"
-                    height="13"
-                    width="13"
+                    class="text-sm font-semibold text-theme-neutral"
                   >
-                    <svg>
-                      voted.svg
-                    </svg>
+                    Voter
+                  </div>
+                  <div
+                    class="font-semibold"
+                  >
+                    <span
+                      data-testid="VoteDetail__delegates"
+                    >
+                      arkx
+                    </span>
+                    <span
+                      class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
+                      data-testid="TruncateMiddle"
+                    >
+                      D61mfS…J3Dyib
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
-                  data-testid="Avatar"
+                  class="flex"
                 >
                   <div
-                    class="w-full h-full"
+                    class="sc-AxjAm bLfakz -mr-2 border-black"
                   >
-                    <img
-                      alt="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                      title="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
-                    />
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        voted.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -475,6 +462,7 @@ exports[`VoteDetail should render a modal as confirmed 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -493,6 +481,7 @@ exports[`VoteDetail should render a modal as confirmed 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -532,6 +521,7 @@ exports[`VoteDetail should render a modal as confirmed 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -568,6 +558,7 @@ exports[`VoteDetail should render a modal as confirmed 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -630,7 +621,7 @@ exports[`VoteDetail should render a modal with wallet alias 1`] = `
           class="absolute top-0 right-0 z-50 mt-5"
         >
           <button
-            class="sc-AxiKw ha-DbdM"
+            class="sc-AxiKw hOwCcl"
             color="neutral"
             data-testid="modal__close-btn"
             type="button"
@@ -663,6 +654,7 @@ exports[`VoteDetail should render a modal with wallet alias 1`] = `
           >
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -717,7 +709,11 @@ exports[`VoteDetail should render a modal with wallet alias 1`] = `
               </div>
             </div>
             <div
+              data-testid="VoteDetails__delegates-container"
+            />
+            <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -736,6 +732,7 @@ exports[`VoteDetail should render a modal with wallet alias 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -754,6 +751,7 @@ exports[`VoteDetail should render a modal with wallet alias 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -793,6 +791,7 @@ exports[`VoteDetail should render a modal with wallet alias 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"
@@ -829,6 +828,7 @@ exports[`VoteDetail should render a modal with wallet alias 1`] = `
             </div>
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
                 class="flex-1 space-y-2"

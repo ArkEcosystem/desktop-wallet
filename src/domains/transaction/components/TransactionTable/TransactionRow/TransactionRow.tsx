@@ -13,7 +13,7 @@ import { TransactionRowSkeleton } from "./TransactionRowSkeleton";
 
 type Props = {
 	transaction: ExtendedTransactionData;
-	currencyRate?: string;
+	exchangeCurrency?: string;
 	isSignaturePending?: boolean;
 	onSign?: () => void;
 	onClick?: () => void;
@@ -23,7 +23,7 @@ type Props = {
 } & React.HTMLProps<any>;
 
 export const TransactionRow = ({
-	currencyRate,
+	exchangeCurrency,
 	transaction,
 	onSign,
 	onClick,
@@ -33,11 +33,13 @@ export const TransactionRow = ({
 	showSign,
 	...props
 }: Props) => {
+	const [backgroundColor, setBackgroundColor] = React.useState<string>("");
+
 	if (isLoading)
 		return (
 			<TransactionRowSkeleton
 				data-testid="TransactionRow__skeleton"
-				showCurrency={currencyRate && !isSignaturePending}
+				showCurrency={!!exchangeCurrency && !isSignaturePending}
 				showSign={showSign || isSignaturePending}
 			/>
 		);
@@ -45,15 +47,17 @@ export const TransactionRow = ({
 	return (
 		<tr
 			data-testid="TransactionRow"
-			className="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+			className="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
 			{...props}
 			onClick={onClick}
+			onMouseEnter={() => setBackgroundColor("--theme-color-success-100")}
+			onMouseLeave={() => setBackgroundColor("")}
 		>
 			<td className="w-16 py-6">
 				<div className="inline-block align-middle">
 					<Link
 						data-testid="TransactionRow__ID"
-						to={{ pathname: transaction.explorerLink() }}
+						to={transaction.explorerLink()}
 						tooltip={transaction.id()}
 						isExternal
 					/>
@@ -65,7 +69,7 @@ export const TransactionRow = ({
 				</span>
 			</td>
 			<td className="w-32 py-2">
-				<TransactionRowMode transaction={transaction} />
+				<TransactionRowMode transaction={transaction} circleShadowColor={backgroundColor} />
 			</td>
 			<td>
 				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
@@ -87,9 +91,9 @@ export const TransactionRow = ({
 					</Button>
 				</td>
 			)}
-			{currencyRate && !isSignaturePending && (
+			{!!exchangeCurrency && !isSignaturePending && (
 				<td data-testid="TransactionRow__currency" className="text-right">
-					<TransactionRowAmount transaction={transaction} currencyRate={currencyRate} />
+					<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
 				</td>
 			)}
 		</tr>

@@ -58,6 +58,8 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 
 	useEffect(() => {
 		const syncDelegates = async () => {
+			if (!isOpen) return;
+
 			setIsLoadingDelegates(true);
 
 			// TODO: make senderWallet non-nullable
@@ -66,7 +68,6 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			await env.coins().syncDelegates(senderWallet?.coinId()!, senderWallet?.networkId()!);
 
 			setDelegates(DelegateMapper.execute(senderWallet!, (transaction as Contracts.VoteData).votes()));
-
 			setIsLoadingDelegates(false);
 		};
 
@@ -76,7 +77,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			setIsLoadingDelegates(false);
 			setDelegates([]);
 		};
-	}, [env, senderWallet, transaction]);
+	}, [env, senderWallet, transaction, isOpen]);
 
 	const renderAccount = () => {
 		if (walletAlias) {
@@ -127,28 +128,31 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			);
 		}
 
-		return delegates?.map((delegate: any) => {
-			const username = delegate?.username();
-			const address = delegate?.address();
+		const availableDelegates = () =>
+			delegates?.map((delegate: any) => {
+				const username = delegate?.username();
+				const address = delegate?.address();
 
-			return (
-				<TransactionDetail
-					key={address}
-					label={t("TRANSACTION.VOTER")}
-					extra={
-						<div className="flex">
-							<Circle className="-mr-2 border-black">
-								<Icon name="Voted" width={13} height={13} />
-							</Circle>
-							<Avatar address={address} />
-						</div>
-					}
-				>
-					{username}
-					<TruncateMiddle text={address} className="ml-2 text-theme-neutral" />
-				</TransactionDetail>
-			);
-		});
+				return (
+					<TransactionDetail
+						key={address}
+						label={t("TRANSACTION.VOTER")}
+						extra={
+							<div className="flex">
+								<Circle className="-mr-2 border-black">
+									<Icon name="Voted" width={13} height={13} />
+								</Circle>
+								<Avatar address={address} />
+							</div>
+						}
+					>
+						<span data-testid="VoteDetail__delegates">{username}</span>
+						<TruncateMiddle text={address} className="ml-2 text-theme-neutral" />
+					</TransactionDetail>
+				);
+			});
+
+		return <div data-testid="VoteDetails__delegates-container">{availableDelegates()}</div>;
 	};
 
 	return (
