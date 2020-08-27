@@ -43,7 +43,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 		>
 			<Form context={methods} onSubmit={handleSubmit} className="mt-8">
 				<FormField name="name">
-					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
+					<FormLabel>{t("COMMON.NAME")}</FormLabel>
 					<Input
 						data-testid="UpdateWalletName__input"
 						ref={register({
@@ -64,7 +64,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 							maxLength: {
 								value: nameMaxLength,
 								message: t("COMMON.VALIDATION.MAX_LENGTH", {
-									field: t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME"),
+									field: t("COMMON.NAME"),
 									maxLength: nameMaxLength,
 								}),
 							},
