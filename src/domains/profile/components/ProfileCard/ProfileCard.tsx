@@ -78,11 +78,13 @@ export const ProfileCardContent = ({ profile }: { profile: Profile }) => {
 };
 
 export const ProfileCard = ({ profile, actions, onClick, onSelect, showSettings }: ProfileCardProps) => (
-	<Card onClick={onClick} actions={showSettings ? actions : undefined} onSelect={onSelect}>
-		<div className="relative p-2 sm:flex sm:items-center">
-			<ProfileCardContent profile={profile} />
-		</div>
-	</Card>
+	<div data-testid="ProfileCard">
+		<Card onClick={onClick} actions={showSettings ? actions : undefined} onSelect={onSelect}>
+			<div className="relative p-2 sm:flex sm:items-center">
+				<ProfileCardContent profile={profile} />
+			</div>
+		</Card>
+	</div>
 );
 
 ProfileCard.defaultProps = {
