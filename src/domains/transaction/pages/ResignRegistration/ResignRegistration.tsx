@@ -1,6 +1,9 @@
+import { ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
+import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -12,12 +15,12 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import React from "react";
+import React, { useEffect,useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -26,7 +29,21 @@ type ResignRegistrationProps = {
 	onDownload: any;
 };
 
-const FirstStep = () => {
+// TODO: Pull from sdk
+type TransactionFee = {
+	static: string;
+	max: string;
+	min: string;
+	avg: string;
+};
+
+type StepProps = {
+	wallet: ReadWriteWallet;
+	delegate: WalletData | any;
+	fee: TransactionFee;
+};
+
+const FirstStep = ({ wallet, delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -41,29 +58,28 @@ const FirstStep = () => {
 			</div>
 
 			<div>
-				<TransactionDetail
-					extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
-					border={false}
-				>
+				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />} border={false}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+					<Address address={wallet.address()} />
 				</TransactionDetail>
 
-				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>Delegate 3</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate.username()}</TransactionDetail>
 
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee
-							defaultValue={(25 * 1e8).toFixed(0)}
-							min={(1 * 1e8).toFixed(0)}
-							max={(100 * 1e8).toFixed(0)}
-							step={1}
+							value={fee.static}
+							defaultValue={fee.static}
+							average={fee.avg}
+							min={fee.min}
+							max={fee.max}
+							step={0.01}
 						/>
 					</FormField>
 				</TransactionDetail>
@@ -72,8 +88,9 @@ const FirstStep = () => {
 	);
 };
 
-const SecondStep = () => {
+const SecondStep = ({ wallet, delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
+	const coinName = wallet.manifest().get<string>("name");
 
 	return (
 		<div data-testid="ResignRegistration__second-step">
@@ -90,30 +107,30 @@ const SecondStep = () => {
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
+								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
 				>
-					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
-						ARK Ecosystem
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+						{coinName}
 					</div>
 				</TransactionDetail>
 
-				<TransactionDetail extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+					<Address address={wallet.address()} />
 				</TransactionDetail>
 
-				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>Delegate 3</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate.username()}</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee.static)} />
 				</div>
 			</div>
 		</div>
@@ -162,7 +179,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 	);
 };
 
-export const FourthStep = () => {
+export const FourthStep = ({ wallet, delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -171,13 +188,13 @@ export const FourthStep = () => {
 				label={t("TRANSACTION.TRANSACTION_TYPE")}
 				extra={
 					<Circle className="border-black" size="lg">
-						<Icon name="Business" width={20} height={20} />
+						<Icon name="Delegate" width={20} height={20} />
 					</Circle>
 				}
 			>
-				Delegate Resignation
+				{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FOURTH_STEP.TITLE")}
 			</TransactionDetail>
-			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>Delegate 3</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate.username()}</TransactionDetail>
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
@@ -188,22 +205,53 @@ export const FourthStep = () => {
 					</div>
 				}
 			>
-				1.09660435 ARK
+				<Amount ticker="ARK" value={BigNumber.make(fee.static)} />
 			</TransactionDetail>
 		</TransactionSuccessful>
 	);
 };
 
 export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegistrationProps) => {
-	const [activeTab, setActiveTab] = React.useState(1);
+	const [activeTab, setActiveTab] = useState(1);
+	const [delegate, setDelegate] = useState<WalletData | any>();
+	const [fee, setFee] = useState<TransactionFee>();
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const { formState } = form;
 	const { isValid } = formState;
 
 	const activeProfile = useActiveProfile();
-
+	const activeWallet = useActiveWallet();
 	const { t } = useTranslation();
+
+	const crumbs = [
+		{
+			route: `/profiles/${activeProfile.id()}/dashboard`,
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+		},
+	];
+
+	useEffect(() => {
+		const fetchDelegateInfo = async () => {
+			const delegate = await activeWallet.client().delegate(activeWallet.address());
+			setDelegate(delegate);
+		};
+
+		fetchDelegateInfo();
+	}, [activeWallet]);
+
+	useEffect(() => {
+		const loadFees = async () => {
+			try {
+				const { delegateResignation } = await activeWallet.fee().all(7);
+				setFee(delegateResignation);
+			} catch (error) {
+				// TODO: Set default or throw exception?
+			}
+		};
+
+		loadFees();
+	}, [setFee, activeProfile, activeWallet]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -212,13 +260,6 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 	const handleNext = () => {
 		setActiveTab(activeTab + 1);
 	};
-
-	const crumbs = [
-		{
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
-		},
-	];
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -229,10 +270,10 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep />
+								{delegate && fee && <FirstStep wallet={activeWallet} delegate={delegate} fee={fee} />}
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep />
+								{delegate && fee && <SecondStep wallet={activeWallet} delegate={delegate} fee={fee} />}
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<ThirdStep form={form} passwordType="mnemonic" />
@@ -244,7 +285,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 								<ThirdStep form={form} passwordType="ledger" />
 							</TabPanel>
 							<TabPanel tabId={6}>
-								<FourthStep />
+								{delegate && fee && <FourthStep wallet={activeWallet} delegate={delegate} fee={fee} />}
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
