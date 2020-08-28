@@ -60,13 +60,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	useEffect(() => {
 		const fetchAllData = async () => {
-			// TODO: move this to profile initialising and run it every X period
-			await env.coins().syncDelegates(activeWallet.coinId()!, activeWallet.networkId()!);
-
 			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
 			const walletData = await activeWallet.client().wallet(activeWallet.address());
 
 			let votes: ReadOnlyWallet[] = [];
+
 			try {
 				await activeWallet.syncVotes();
 

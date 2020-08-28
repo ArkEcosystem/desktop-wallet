@@ -17,13 +17,13 @@ test("should navigate to votes page from navigation bar", async (t) => {
 });
 
 test("should navigate to votes page from wallet card", async (t) => {
-	await t
-		.expect(Selector("[data-testid=WalletRegistrations__skeleton]").exists)
-		.ok()
-		.expect(Selector("[data-testid=WalletVote__skeleton]").exists)
-		.ok()
-		.expect(Selector("[data-testid=TransactionRow__skeleton]").exists)
-		.ok();
+	// await t
+	// 	.expect(Selector("[data-testid=WalletRegistrations__skeleton]").exists)
+	// 	.ok()
+	// 	.expect(Selector("[data-testid=WalletVote__skeleton]").exists)
+	// 	.ok()
+	// 	.expect(Selector("[data-testid=TransactionRow__skeleton]").exists)
+	// 	.ok();
 
 	await t.click(Selector('[data-testid="WalletVote__delegate__vote"]').withText(translations.COMMON.VOTE));
 
@@ -55,13 +55,13 @@ test("should select network, address and delegate", async (t) => {
 });
 
 test("should select a delegate", async (t) => {
-	await t
-		.expect(Selector("[data-testid=WalletRegistrations__skeleton]").exists)
-		.ok()
-		.expect(Selector("[data-testid=WalletVote__skeleton]").exists)
-		.ok()
-		.expect(Selector("[data-testid=TransactionRow__skeleton]").exists)
-		.ok();
+	// await t
+	// 	.expect(Selector("[data-testid=WalletRegistrations__skeleton]").exists)
+	// 	.ok()
+	// 	.expect(Selector("[data-testid=WalletVote__skeleton]").exists)
+	// 	.ok()
+	// 	.expect(Selector("[data-testid=TransactionRow__skeleton]").exists)
+	// 	.ok();
 
 	await t.click(Selector('[data-testid="WalletVote__delegate__vote"]').withText(translations.COMMON.VOTE));
 

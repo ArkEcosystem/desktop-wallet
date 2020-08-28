@@ -16,6 +16,7 @@ import {
 	render,
 	RenderResult,
 	renderWithRouter,
+	syncDelegates,
 	waitFor,
 	within,
 } from "utils/testing-library";
@@ -67,7 +68,7 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 
 describe("Registration", () => {
 	beforeAll(async () => {
-		await env.coins().syncDelegates("ARK", "devnet");
+		await syncDelegates();
 
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();

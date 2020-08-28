@@ -3,7 +3,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { getDefaultProfileId, renderWithRouter } from "utils/testing-library";
+import { getDefaultProfileId, renderWithRouter, syncDelegates } from "utils/testing-library";
 
 // i18n
 import { translations } from "../../i18n";
@@ -15,13 +15,15 @@ const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
 describe("TransactionDetailModal", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
 			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
 			.persist();
+
+		await syncDelegates();
 	});
 
 	beforeEach(() => {

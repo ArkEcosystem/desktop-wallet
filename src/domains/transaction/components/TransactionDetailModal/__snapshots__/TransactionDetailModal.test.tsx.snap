@@ -1964,39 +1964,8 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-              data-testid="TransactionDetail"
-            >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Voter
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <span>
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 90%; height: 6px;"
-                    >
-                      ‌
-                    </span>
-                  </span>
-                </div>
-              </div>
-              <span>
-                <span
-                  class="react-loading-skeleton mt-3 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40px; height: 40px; border-radius: 50%;"
-                >
-                  ‌
-                </span>
-              </span>
-            </div>
+              data-testid="VoteDetails__delegates-container"
+            />
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
               data-testid="TransactionDetail"
@@ -2266,39 +2235,8 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-              data-testid="TransactionDetail"
-            >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Voter
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <span>
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 90%; height: 6px;"
-                    >
-                      ‌
-                    </span>
-                  </span>
-                </div>
-              </div>
-              <span>
-                <span
-                  class="react-loading-skeleton mt-3 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40px; height: 40px; border-radius: 50%;"
-                >
-                  ‌
-                </span>
-              </span>
-            </div>
+              data-testid="VoteDetails__delegates-container"
+            />
             <div
               class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
               data-testid="TransactionDetail"
