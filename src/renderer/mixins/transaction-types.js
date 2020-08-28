@@ -101,7 +101,7 @@ export default {
 
     transaction_isBusinessEntityRegistration (type, typeGroup, asset) {
       return (
-        this.isEntityRegistration(type, typeGroup, asset) &&
+        this.transaction_isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.BUSINESS &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.NONE
       )
@@ -109,7 +109,7 @@ export default {
 
     transaction_isBusinessEntityResignation (type, typeGroup, asset) {
       return (
-        this.isEntityResignation(type, typeGroup, asset) &&
+        this.transaction_isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.BUSINESS &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.NONE
       )
@@ -117,7 +117,7 @@ export default {
 
     transaction_isBusinessEntityUpdate (type, typeGroup, asset) {
       return (
-        this.isEntityUpdate(type, typeGroup, asset) &&
+        this.transaction_isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.BUSINESS &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.NONE
       )
@@ -125,7 +125,7 @@ export default {
 
     transaction_isDeveloperEntityRegistration (type, typeGroup, asset) {
       return (
-        this.isEntityRegistration(type, typeGroup, asset) &&
+        this.transaction_isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DEVELOPER &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.NONE
       )
@@ -133,7 +133,7 @@ export default {
 
     transaction_isDeveloperEntityResignation (type, typeGroup, asset) {
       return (
-        this.isEntityResignation(type, typeGroup, asset) &&
+        this.transaction_isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DEVELOPER &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.NONE
       )
@@ -141,7 +141,7 @@ export default {
 
     transaction_isDeveloperEntityUpdate (type, typeGroup, asset) {
       return (
-        this.isEntityUpdate(type, typeGroup, asset) &&
+        this.transaction_isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DEVELOPER &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.NONE
       )
@@ -149,7 +149,7 @@ export default {
 
     transaction_isCorePluginEntityRegistration (type, typeGroup, asset) {
       return (
-        this.isEntityRegistration(type, typeGroup, asset) &&
+        this.transaction_isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.PLUGIN_CORE
       )
@@ -157,7 +157,7 @@ export default {
 
     transaction_isCorePluginEntityResignation (type, typeGroup, asset) {
       return (
-        this.isEntityResignation(type, typeGroup, asset) &&
+        this.transaction_isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.PLUGIN_CORE
       )
@@ -165,7 +165,7 @@ export default {
 
     transaction_isCorePluginEntityUpdate (type, typeGroup, asset) {
       return (
-        this.isEntityUpdate(type, typeGroup, asset) &&
+        this.transaction_isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.PLUGIN_CORE
       )
@@ -173,7 +173,7 @@ export default {
 
     transaction_isDesktopPluginEntityRegistration (type, typeGroup, asset) {
       return (
-        this.isEntityRegistration(type, typeGroup, asset) &&
+        this.transaction_isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.PLUGIN_DESKTOP
       )
@@ -181,7 +181,7 @@ export default {
 
     transaction_isDesktopPluginEntityResignation (type, typeGroup, asset) {
       return (
-        this.isEntityResignation(type, typeGroup, asset) &&
+        this.transaction_isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.PLUGIN_DESKTOP
       )
@@ -189,7 +189,7 @@ export default {
 
     transaction_isDesktopPluginEntityUpdate (type, typeGroup, asset) {
       return (
-        this.isEntityUpdate(type, typeGroup, asset) &&
+        this.transaction_isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.PLUGIN_DESKTOP
       )
@@ -197,7 +197,7 @@ export default {
 
     transaction_isDelegateEntityRegistration (type, typeGroup, asset) {
       return (
-        this.isEntityRegistration(type, typeGroup, asset) &&
+        this.transaction_isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DELEGATE &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.NONE
       )
@@ -205,7 +205,7 @@ export default {
 
     transaction_isDelegateEntityResignation (type, typeGroup, asset) {
       return (
-        this.isEntityResignation(type, typeGroup, asset) &&
+        this.transaction_isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DELEGATE &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.NONE
       )
@@ -213,7 +213,7 @@ export default {
 
     transaction_isDelegateEntityUpdate (type, typeGroup, asset) {
       return (
-        this.isEntityUpdate(type, typeGroup, asset) &&
+        this.transaction_isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DELEGATE &&
         asset.subType === TRANSACTION_ENTITY.SUBTYPE.NONE
       )

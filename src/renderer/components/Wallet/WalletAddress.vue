@@ -31,27 +31,74 @@
         </span>
       </a>
     </span>
-    <span v-else-if="group === 1 && type === 4">
+    <span v-else-if="transaction_isMultiSignature(type, group)">
       {{ $t("TRANSACTION.TYPE.MULTI_SIGNATURE") }}
     </span>
-    <span v-else-if="group === 1 && type === 5">
+    <span v-else-if="transaction_isIpfs(type, group)">
       {{ $t("TRANSACTION.TYPE.IPFS") }}
     </span>
-    <span v-else-if="group === 1 && type === 6">
+    <span v-else-if="transaction_isMultiPayment(type, group)">
       {{ $t("TRANSACTION.TYPE.MULTI_PAYMENT") }}
     </span>
-    <span v-else-if="group === 1 && type === 7">
+    <span v-else-if="transaction_isDelegateResignation(type, group)">
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
     </span>
-    <span v-else-if="group === 1 && type === 8">
+    <span v-else-if="transaction_isTimelock(type, group)">
       {{ $t("TRANSACTION.TYPE.HTLC_LOCK") }}
     </span>
-    <span v-else-if="group === 1 && type === 9">
+    <span v-else-if="transaction_isTimelockClaim(type, group)">
       {{ $t("TRANSACTION.TYPE.HTLC_CLAIM") }}
     </span>
-    <span v-else-if="group === 1 && type === 10">
+    <span v-else-if="transaction_isTimelockRefund(type, group)">
       {{ $t("TRANSACTION.TYPE.HTLC_REFUND") }}
     </span>
+    <!-- Magistrate 2.0 -->
+    <span v-else-if="transaction_isBusinessEntityRegistration(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.BUSINESS_ENTITY_REGISTRATION") }}
+    </span>
+    <span v-else-if="transaction_isBusinessEntityResignation(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.BUSINESS_ENTITY_RESIGNATION") }}
+    </span>
+    <span v-else-if="transaction_isBusinessEntityUpdate(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.BUSINESS_ENTITY_UPDATE") }}
+    </span>
+    <span v-else-if="transaction_isDeveloperEntityRegistration(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.DEVELOPER_ENTITY_REGISTRATION") }}
+    </span>
+    <span v-else-if="transaction_isDeveloperEntityResignation(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.DEVELOPER_ENTITY_RESIGNATION") }}
+    </span>
+    <span v-else-if="transaction_isDeveloperEntityUpdate(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.DEVELOPER_ENTITY_UPDATE") }}
+    </span>
+    <span v-else-if="transaction_isCorePluginEntityRegistration(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_REGISTRATION") }}
+    </span>
+    <span v-else-if="transaction_isCorePluginEntityResignation(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_RESIGNATION") }}
+    </span>
+    <span v-else-if="transaction_isCorePluginEntityUpdate(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_UPDATE") }}
+    </span>
+    <span v-else-if="transaction_isDesktopPluginEntityRegistration(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_REGISTRATION") }}
+    </span>
+    <span v-else-if="transaction_isDesktopPluginEntityResignation(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_RESIGNATION") }}
+    </span>
+    <span v-else-if="transaction_isDesktopPluginEntityUpdate(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_UPDATE") }}
+    </span>
+    <span v-else-if="transaction_isDelegateEntityRegistration(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.DELEGATE_ENTITY_REGISTRATION") }}
+    </span>
+    <span v-else-if="transaction_isDelegateEntityResignation(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.DELEGATE_ENTITY_RESIGNATION") }}
+    </span>
+    <span v-else-if="transaction_isDelegateEntityUpdate(type, group, asset)">
+      {{ $t("TRANSACTION.TYPE.DELEGATE_ENTITY_UPDATE") }}
+    </span>
+    <!-- Magistrate 1.0 -->
     <span v-else-if="transaction_isLegacyBusinessRegistration(type, group)">
       {{ $t("TRANSACTION.TYPE.LEGACY_BUSINESS_REGISTRATION") }}
     </span>
