@@ -2,7 +2,7 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 type FormProps = {
-	onSubmit: (data: Record<string, any>) => void;
+	onSubmit: (data: object) => void;
 	context: ReturnType<typeof useForm>;
 } & Omit<React.FormHTMLAttributes<any>, "onSubmit">;
 
