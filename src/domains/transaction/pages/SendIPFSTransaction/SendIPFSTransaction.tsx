@@ -168,7 +168,7 @@ export const SendIPFSTransaction = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -193,7 +193,7 @@ export const SendIPFSTransaction = () => {
 	}, [activeWallet, networks, register, setValue, t]);
 
 	const submitForm = async () => {
-		clearError("mnemonic");
+		clearErrors("mnemonic");
 		const { fee, mnemonic, senderAddress, hash } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 

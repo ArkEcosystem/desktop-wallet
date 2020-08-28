@@ -24,7 +24,7 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 
 	const minLength = 6;
 
-	const { formState, register, reset, triggerValidation, watch } = formConfig.context;
+	const { formState, register, reset, trigger, watch } = formConfig.context;
 
 	const handleSubmit = async ({ currentPassword, password_1 }: any) => {
 		try {
@@ -105,7 +105,7 @@ export const PasswordSettings = ({ env, formConfig, onSubmit }: SettingsProps) =
 							<InputPassword
 								onChange={() => {
 									if (watch(otherPassword).length) {
-										triggerValidation(otherPassword);
+										trigger(otherPassword);
 									}
 								}}
 								ref={register({

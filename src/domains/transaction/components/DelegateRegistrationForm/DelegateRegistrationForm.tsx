@@ -215,9 +215,9 @@ export const DelegateRegistrationForm: RegistrationForm = {
 	formFields: ["username"],
 
 	signTransaction: async ({ env, form, handleNext, profile, setTransaction, translations }: any) => {
-		const { clearError, getValues, setError, setValue } = form;
+		const { clearErrors, getValues, setError, setValue } = form;
 
-		clearError("mnemonic");
+		clearErrors("mnemonic");
 		const { fee, mnemonic, senderAddress, username } = getValues();
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 

@@ -199,7 +199,7 @@ describe("DelegateRegistrationForm", () => {
 
 	it("should sign transaction", async () => {
 		const form = {
-			clearError: jest.fn(),
+			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",
@@ -239,7 +239,7 @@ describe("DelegateRegistrationForm", () => {
 
 	it("should error if signing fails", async () => {
 		const form = {
-			clearError: jest.fn(),
+			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",

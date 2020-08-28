@@ -139,7 +139,7 @@ export const CreateProfile = () => {
 										options={PlatformSdkChoices.marketProviders}
 										onChange={() => {
 											if (form.errors.marketProvider) {
-												form.clearError("marketProvider");
+												form.clearErrors("marketProvider");
 											}
 										}}
 									/>
@@ -160,7 +160,7 @@ export const CreateProfile = () => {
 										options={PlatformSdkChoices.currencies}
 										onChange={() => {
 											if (form.errors.currency) {
-												form.clearError("currency");
+												form.clearErrors("currency");
 											}
 										}}
 									/>

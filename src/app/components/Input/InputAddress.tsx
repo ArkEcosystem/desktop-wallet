@@ -2,7 +2,7 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Icon } from "app/components/Icon";
 import { useEnvironmentContext } from "app/contexts";
 import React from "react";
-import { ValidationOptions } from "react-hook-form";
+import { ValidationRules } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { Input } from "./Input";
@@ -11,8 +11,8 @@ import { InputAddonEnd, InputGroup } from "./InputGroup";
 export type InputAddressProps = {
 	coin?: string;
 	network?: string;
-	registerRef?: (options: ValidationOptions) => (ref: HTMLInputElement | null) => void;
-	additionalRules?: ValidationOptions;
+	registerRef?: (options: ValidationRules) => (ref: HTMLInputElement | null) => void;
+	additionalRules?: ValidationRules;
 	onValidAddress?: (address: string) => void;
 	onQRCodeClick?: () => void;
 	onChange?: (address: string) => void;

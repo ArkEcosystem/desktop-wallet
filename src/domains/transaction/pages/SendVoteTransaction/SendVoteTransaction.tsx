@@ -271,7 +271,7 @@ export const SendVoteTransaction = () => {
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -315,7 +315,7 @@ export const SendVoteTransaction = () => {
 	};
 
 	const submitForm = async () => {
-		clearError("mnemonic");
+		clearErrors("mnemonic");
 		const { fee, mnemonic, senderAddress } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 

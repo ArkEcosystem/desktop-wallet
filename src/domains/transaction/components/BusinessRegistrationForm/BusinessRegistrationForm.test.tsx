@@ -214,7 +214,7 @@ describe("BusinessRegistrationForm", () => {
 
 		expect(handleNext).toHaveBeenCalled();
 		// 	const form = {
-		// 		clearError: jest.fn(),
+		// 		clearErrors: jest.fn(),
 		// 		getValues: () => ({
 		// 			fee: "1",
 		// 			mnemonic: "sample passphrase",
