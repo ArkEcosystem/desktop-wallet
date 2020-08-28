@@ -19,8 +19,8 @@ type MultiPaymentDetailProps = {
 	walletAlias?: string;
 };
 
-const renderConfirmationStatus = (confirmations: BigNumber) => {
-	if (confirmations?.toNumber() < 51) {
+const renderConfirmationStatus = (isConfirmed: boolean) => {
+	if (isConfirmed) {
 		return (
 			<div className="flex">
 				Not Confirmed
@@ -171,7 +171,7 @@ export const MultiPaymentDetail = (props: MultiPaymentDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
-				{renderConfirmationStatus(props.transaction.confirmations())}
+				{renderConfirmationStatus(props.transaction.isConfirmed())}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>

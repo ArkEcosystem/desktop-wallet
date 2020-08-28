@@ -39,7 +39,7 @@ describe("DelegateRegistrationDetail", () => {
 				transaction={{
 					...TransactionFixture,
 					username: () => "Ark Wallet",
-					confirmations: () => BigNumber.make(52),
+					isConfirmed: () => true,
 				}}
 			/>,
 		);

@@ -12,12 +12,12 @@ type Props = {
 };
 
 // TODO: Replace by sdk
-const getStatus = (confirmations: BigNumber, isSignaturePending?: boolean): TransactionStatus => {
+const getStatus = (isConfirmed: boolean, isSignaturePending?: boolean): TransactionStatus => {
 	if (isSignaturePending) {
 		return "actionRequired";
 	}
 
-	if (confirmations.isGreaterThan(51)) {
+	if (isConfirmed) {
 		return "confirmed";
 	}
 
@@ -25,7 +25,7 @@ const getStatus = (confirmations: BigNumber, isSignaturePending?: boolean): Tran
 };
 
 export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: Props) => {
-	const status = React.useMemo(() => getStatus(transaction?.confirmations(), isSignaturePending), [
+	const status = React.useMemo(() => getStatus(transaction?.isConfirmed(), isSignaturePending), [
 		transaction,
 		isSignaturePending,
 	]);
