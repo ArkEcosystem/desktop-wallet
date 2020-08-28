@@ -46,7 +46,7 @@ describe("IpfsDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					confirmations: () => BigNumber.make(52),
+					isConfirmed: () => true,
 				}}
 				{...extraProps}
 			/>,

@@ -77,7 +77,7 @@ describe("VoteDetail", () => {
 						...TransactionFixture,
 						sender: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
-						confirmations: () => BigNumber.make(52),
+						isConfirmed: () => true,
 					}}
 				/>
 			</Route>,
