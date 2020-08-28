@@ -334,9 +334,9 @@ exports[`ContactForm should select 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Betanet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-betanet"
+              aria-label="Lisk"
+              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
+              data-testid="NetworkIcon-LSK-mainnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -358,9 +358,9 @@ exports[`ContactForm should select 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk"
-              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
-              data-testid="NetworkIcon-LSK-mainnet"
+              aria-label="Lisk Testnet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-testnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -382,21 +382,9 @@ exports[`ContactForm should select 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Testnet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-testnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
           <li
             aria-selected="false"
@@ -499,18 +487,6 @@ exports[`ContactForm should select 1`] = `
             class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ContactForm__network-item-28"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-29"
             role="option"
           >
             <div
@@ -948,9 +924,9 @@ exports[`ContactForm should select with errors 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Betanet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-betanet"
+              aria-label="Lisk"
+              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
+              data-testid="NetworkIcon-LSK-mainnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -972,9 +948,9 @@ exports[`ContactForm should select with errors 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk"
-              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
-              data-testid="NetworkIcon-LSK-mainnet"
+              aria-label="Lisk Testnet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-testnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -996,21 +972,9 @@ exports[`ContactForm should select with errors 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Testnet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-testnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
           <li
             aria-selected="false"
@@ -1113,18 +1077,6 @@ exports[`ContactForm should select with errors 1`] = `
             class="inline-block cursor-pointer"
             data-testid="SelectNetwork__NetworkIcon--container"
             id="ContactForm__network-item-28"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-29"
             role="option"
           >
             <div
