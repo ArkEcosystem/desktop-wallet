@@ -30,7 +30,7 @@ test("should navigate and apply filters", async (t) => {
 	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.MY_PLUGINS).exists).ok();
 });
 
-test.only("should navigate to plugin details and back", async (t) => {
+test("should navigate to plugin details and back", async (t) => {
 	await t.click(Selector('[data-testid="PluginGrid"] > div > div').withText("ARK Explorer"));
 	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
 
