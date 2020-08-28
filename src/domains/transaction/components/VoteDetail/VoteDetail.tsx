@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { DelegateMapper, ExtendedTransactionData, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -21,8 +20,8 @@ type VoteDetailProps = {
 	onClose?: () => void;
 };
 
-const renderConfirmationStatus = (confirmations: BigNumber) => {
-	if (confirmations?.toNumber() < 51) {
+const renderConfirmationStatus = (isConfirmed: boolean) => {
+	if (!isConfirmed) {
 		return (
 			<div className="flex">
 				Not Confirmed
@@ -168,7 +167,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
-				{renderConfirmationStatus(transaction!.confirmations())}
+				{renderConfirmationStatus(transaction!.isConfirmed())}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
