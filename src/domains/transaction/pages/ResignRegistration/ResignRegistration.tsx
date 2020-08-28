@@ -82,7 +82,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 				},
 			});
 
-			await activeWallet.transaction().broadcast([transactionId]);
+			await activeWallet.transaction().broadcast(transactionId);
 			await env.persist();
 
 			setTransaction(activeWallet.transaction().transaction(transactionId));
