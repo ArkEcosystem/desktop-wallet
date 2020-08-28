@@ -125,7 +125,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -138,7 +138,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name}
+						{wallet.network().name()}
 					</div>
 				</TransactionDetail>
 

@@ -90,7 +90,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name}
+						{wallet.network().name()}
 					</div>
 				</TransactionDetail>
 
