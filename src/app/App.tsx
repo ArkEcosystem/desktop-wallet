@@ -24,7 +24,7 @@ import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
 import { useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
-import { httpClient } from "./services";
+import { httpClient, Scheduler } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
 
@@ -44,7 +44,7 @@ const Main = ({ syncInterval }: Props) => {
 	}, [pathname]);
 
 	useLayoutEffect(() => {
-		const syncDelegates = () => {
+		const syncDelegates = async () => {
 			console.log("Running delegates sync...");
 			const coinsData = env.usedCoinsWithNetworks();
 			const coinsInUse = Object.keys(coinsData);
@@ -57,20 +57,36 @@ const Main = ({ syncInterval }: Props) => {
 				}
 			}
 
-			Promise.allSettled(delegatesPromises).then(() => {
-				setShowSplash(false);
-			});
+			await Promise.allSettled(delegatesPromises);
+		};
+
+		const syncWallets = async () => {
+			console.log("Running wallet data sync...");
+			const profiles = env.profiles().values();
+
+			for (const profile of profiles) {
+				const [wallet] = profile.wallets().values();
+				try {
+					await wallet?.syncVotes();
+					await wallet?.syncIdentity();
+					await wallet?.syncExchangeRate();
+
+					setShowSplash(false);
+				} catch (error) {
+					console.error(`Error synchronizing wallet data ${error}`);
+					setShowSplash(false);
+				}
+			}
 		};
 
 		const boot = async () => {
 			await env.verify(fixtureData);
-			syncDelegates();
-
-			console.info("Scheduling next delegates synchronization...");
-			setInterval(() => syncDelegates(), syncInterval);
-
+			await syncDelegates();
 			await env.boot();
+			await syncWallets();
 			await persist();
+
+			Scheduler(syncInterval).schedule([syncDelegates, syncWallets], persist);
 		};
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
@@ -137,4 +153,8 @@ export const App = ({ syncInterval }: Props) => {
 			</I18nextProvider>
 		</ErrorBoundary>
 	);
+};
+
+App.defaultProps = {
+	syncInterval: 300000,
 };
