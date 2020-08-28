@@ -8,6 +8,11 @@ import { ProfileCard } from "./ProfileCard";
 
 let profile: Profile;
 
+const options = [
+	{ label: "Option 1", value: "1" },
+	{ label: "Option 2", value: "2" },
+];
+
 describe("ProfileCard", () => {
 	beforeAll(async () => {
 		await env.verify(fixtureData);
@@ -50,20 +55,20 @@ describe("ProfileCard", () => {
 	});
 
 	it("should render the settings icon", () => {
-		const { container, getByTestId } = render(<ProfileCard profile={profile} showSettings />);
+		const { container, getByTestId } = render(<ProfileCard profile={profile} actions={options} showSettings />);
 
 		expect(container).toMatchSnapshot();
 		expect(getByTestId("dropdown__toggle")).toBeTruthy();
 	});
 
 	it("should hide the settings icon", () => {
-		const { container } = render(<ProfileCard profile={profile} showSettings={false} />);
+		const { container } = render(<ProfileCard profile={profile} actions={options} showSettings={false} />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should open dropdown settings on icon click", () => {
-		const { getByTestId } = render(<ProfileCard profile={profile} />);
+		const { getByTestId } = render(<ProfileCard profile={profile} actions={options} />);
 		const toggle = getByTestId("dropdown__toggle");
 
 		act(() => {
@@ -74,7 +79,6 @@ describe("ProfileCard", () => {
 	});
 
 	it("should select an option in the settings", () => {
-		const options = [{ label: "Option 1", value: "1" }];
 		const onSelect = jest.fn();
 		const { getByTestId } = render(<ProfileCard profile={profile} actions={options} onSelect={onSelect} />);
 		const toggle = getByTestId("dropdown__toggle");
@@ -96,10 +100,6 @@ describe("ProfileCard", () => {
 	});
 
 	it("should ignore triggering onSelect callback if not exists", () => {
-		const options = [
-			{ label: "Option 1", value: "1" },
-			{ label: "Option 2", value: "2" },
-		];
 		const { container, getByTestId } = render(<ProfileCard profile={profile} actions={options} />);
 		const toggle = getByTestId("dropdown__toggle");
 

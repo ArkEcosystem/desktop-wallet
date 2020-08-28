@@ -10,6 +10,21 @@ const history = createMemoryHistory();
 
 const exchangeURL = `/profiles/${getDefaultProfileId()}/exchange`;
 
+const exchanges = [
+	{
+		id: "changenow-plugin",
+		name: "ChangeNOW Plugin",
+	},
+	{
+		id: "binance",
+		name: "Binance",
+	},
+	{
+		id: "atomars",
+		name: "Atomars",
+	},
+];
+
 describe("Exchange", () => {
 	beforeAll(() => {
 		history.push(exchangeURL);
@@ -32,25 +47,6 @@ describe("Exchange", () => {
 	});
 
 	it("should render with exchanges", () => {
-		const exchanges = [
-			{
-				id: "changenow-plugin",
-				name: "ChangeNOW Plugin",
-			},
-			{
-				id: "binance",
-				name: "Binance",
-			},
-			{
-				id: "atomars",
-				name: "Atomars",
-			},
-			{
-				id: "okex",
-				name: "OKEx",
-			},
-		];
-
 		const { container, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/exchange">
 				<Exchange exchanges={exchanges} />
@@ -66,22 +62,43 @@ describe("Exchange", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should not render filler exchange cards", () => {
-		const exchanges = [
+	it("should select exchange", () => {
+		const { container, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={exchanges} />
+			</Route>,
 			{
-				id: "changenow-plugin",
-				name: "ChangeNOW Plugin",
+				routes: [exchangeURL],
+				history,
 			},
-			{
-				id: "binance",
-				name: "Binance",
-			},
-			{
-				id: "atomars",
-				name: "Atomars",
-			},
-		];
+		);
 
+		fireEvent.click(getByText(exchanges[0].name));
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render filler exchange cards", () => {
+		const { container, getAllByText, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={[...exchanges, { id: "okex", name: "OKEx" }]} />
+			</Route>,
+			{
+				routes: [exchangeURL],
+				history,
+			},
+		);
+
+		expect(getByText("ChangeNOW Plugin")).toBeTruthy();
+		expect(getByText("Binance")).toBeTruthy();
+		expect(getByText("Atomars")).toBeTruthy();
+		expect(getByText("OKEx")).toBeTruthy();
+		expect(getByText(translations.ADD_EXCHANGE)).toBeTruthy();
+		expect(getAllByText(translations.EXCHANGE_NAME).length).toBe(3);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should not render filler exchange cards", () => {
 		const { container, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/exchange">
 				<Exchange exchanges={exchanges} />
@@ -100,23 +117,8 @@ describe("Exchange", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should select exchange", () => {
-		const exchanges = [
-			{
-				id: "changenow-plugin",
-				name: "ChangeNOW Plugin",
-			},
-			{
-				id: "binance",
-				name: "Binance",
-			},
-			{
-				id: "atomars",
-				name: "Atomars",
-			},
-		];
-
-		const { container, getByTestId } = renderWithRouter(
+	it("should open & close add exchange modal", async () => {
+		const { container, findByText, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/exchange">
 				<Exchange exchanges={exchanges} />
 			</Route>,
@@ -126,45 +128,7 @@ describe("Exchange", () => {
 			},
 		);
 
-		const changenowCard = getByTestId("Exchange__exchange-card-changenow-plugin");
-
-		expect(changenowCard).not.toHaveClass("bg-theme-success-contrast");
-		expect(changenowCard).toHaveClass("border-theme-primary-contrast");
-
-		fireEvent.click(changenowCard);
-
-		expect(changenowCard).toHaveClass("bg-theme-success-contrast");
-		expect(changenowCard).toHaveClass("border-theme-success-300");
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should open & close add exchange modal", () => {
-		const exchanges = [
-			{
-				id: "changenow-plugin",
-				name: "ChangeNOW Plugin",
-			},
-			{
-				id: "binance",
-				name: "Binance",
-			},
-			{
-				id: "atomars",
-				name: "Atomars",
-			},
-		];
-
-		const { container, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/exchange">
-				<Exchange exchanges={exchanges} />
-			</Route>,
-			{
-				routes: [exchangeURL],
-				history,
-			},
-		);
-
-		fireEvent.click(getByTestId("Exchange__add-exchange-card"));
+		fireEvent.click(await findByText(translations.ADD_EXCHANGE));
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.DESCRIPTION);
@@ -176,8 +140,8 @@ describe("Exchange", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should open & close add exchange modal when no existing exchanges", () => {
-		const { container, getByTestId } = renderWithRouter(
+	it("should open & close add exchange modal when no existing exchanges", async () => {
+		const { container, findByText, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/exchange">
 				<Exchange exchanges={[]} />
 			</Route>,
@@ -187,7 +151,7 @@ describe("Exchange", () => {
 			},
 		);
 
-		fireEvent.click(getByTestId("Exchange__add-exchange-card"));
+		fireEvent.click(await findByText(translations.ADD_EXCHANGE));
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.DESCRIPTION);

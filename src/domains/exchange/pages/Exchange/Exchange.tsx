@@ -4,7 +4,7 @@ import { Page, Section } from "app/components/Layout";
 import { Slider } from "app/components/Slider";
 import { useActiveProfile } from "app/hooks/env";
 import { AddExchange } from "domains/exchange/components/AddExchange";
-import { AddExchangeCard, BlankCard, ExchangeCard } from "domains/exchange/components/ExchangeCard";
+import { AddExchangeCard, BlankExchangeCard, ExchangeCard } from "domains/exchange/components/ExchangeCard";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -78,7 +78,7 @@ const ExchangesList = ({
 					}
 
 					if (exchange.isBlank) {
-						return <BlankCard />;
+						return <BlankExchangeCard />;
 					}
 
 					return (

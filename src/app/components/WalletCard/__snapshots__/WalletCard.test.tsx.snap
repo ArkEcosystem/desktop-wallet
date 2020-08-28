@@ -7,85 +7,20 @@ exports[`Wallet Card should render 1`] = `
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
-      class="sc-AxirZ PHAyy"
-      data-testid="ProfileCard"
+      class="sc-AxhCb eUhgNa"
+      data-testid="Card"
     >
       <div
         class="relative p-2"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
-        >
-          <div
-            class="relative"
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="float-right outline-none cursor-pointer focus:outline-none"
-            >
-              <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="absolute right-3 -top-1"
-        >
-          <div
-            class="inline-block mr-2 text text-theme-neutral-600"
-          >
-            <div
-              class="sc-AxiKw gETsj"
-              height="1em"
-              width="18"
-            >
-              <svg>
-                ledger.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block mr-2 text text-theme-neutral-600"
-          >
-            <div
-              class="sc-AxiKw gETsj"
-              height="1em"
-              width="18"
-            >
-              <svg>
-                multisig.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block mr-2 text text-theme-warning-400"
-          >
-            <div
-              class="sc-AxiKw gETsj"
-              height="1em"
-              width="18"
-            >
-              <svg>
-                star.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
           class="flex"
         >
           <div
-            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
+            class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 undefined"
           >
             <div
-              class="sc-AxiKw ccPfUV"
+              class="sc-AxirZ eViLYR"
               height="16"
               width="18"
             >
@@ -136,6 +71,49 @@ exports[`Wallet Card should render 1`] = `
           33.75089801 DARK
         </span>
       </div>
+      <div
+        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+      >
+        <div
+          class="inline-block text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ EmuJz"
+            height="1em"
+            width="18"
+          >
+            <svg>
+              ledger.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="inline-block text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ EmuJz"
+            height="1em"
+            width="18"
+          >
+            <svg>
+              multisig.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="inline-block text-theme-warning-400"
+        >
+          <div
+            class="sc-AxirZ EmuJz"
+            height="1em"
+            width="18"
+          >
+            <svg>
+              star.svg
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -148,8 +126,8 @@ exports[`Wallet Card should render blank 1`] = `
     data-testid="WalletCard__blank"
   >
     <div
-      class="sc-AxirZ PHAyy"
-      data-testid="ProfileCard"
+      class="sc-AxhCb bieasX"
+      data-testid="Card"
     >
       <div
         class="p-2"
@@ -158,10 +136,10 @@ exports[`Wallet Card should render blank 1`] = `
           class="flex"
         >
           <div
-            class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
+            class="sc-AxhUy dSLmHc -mr-2 bg-theme-background border-theme-primary-contrast"
           />
           <div
-            class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
+            class="sc-AxhUy dSLmHc bg-theme-background border-theme-primary-contrast"
           />
         </div>
         <div
@@ -175,6 +153,9 @@ exports[`Wallet Card should render blank 1`] = `
           Balance
         </div>
       </div>
+      <div
+        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+      />
     </div>
   </div>
 </div>
@@ -187,85 +168,20 @@ exports[`Wallet Card should render with wallet data 1`] = `
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
-      class="sc-AxirZ PHAyy"
-      data-testid="ProfileCard"
+      class="sc-AxhCb eUhgNa"
+      data-testid="Card"
     >
       <div
         class="relative p-2"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
-        >
-          <div
-            class="relative"
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="float-right outline-none cursor-pointer focus:outline-none"
-            >
-              <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="absolute right-3 -top-1"
-        >
-          <div
-            class="inline-block mr-2 text text-theme-neutral-600"
-          >
-            <div
-              class="sc-AxiKw gETsj"
-              height="1em"
-              width="18"
-            >
-              <svg>
-                ledger.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block mr-2 text text-theme-neutral-600"
-          >
-            <div
-              class="sc-AxiKw gETsj"
-              height="1em"
-              width="18"
-            >
-              <svg>
-                multisig.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block mr-2 text text-theme-warning-400"
-          >
-            <div
-              class="sc-AxiKw gETsj"
-              height="1em"
-              width="18"
-            >
-              <svg>
-                star.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
           class="flex"
         >
           <div
-            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 border-theme-warning-200"
+            class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 border-theme-warning-200"
           >
             <div
-              class="sc-AxiKw ccPfUV"
+              class="sc-AxirZ eViLYR"
               height="16"
               width="18"
             >
@@ -315,6 +231,49 @@ exports[`Wallet Card should render with wallet data 1`] = `
         >
           33.75089801 DARK
         </span>
+      </div>
+      <div
+        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+      >
+        <div
+          class="inline-block text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ EmuJz"
+            height="1em"
+            width="18"
+          >
+            <svg>
+              ledger.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="inline-block text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ EmuJz"
+            height="1em"
+            width="18"
+          >
+            <svg>
+              multisig.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="inline-block text-theme-warning-400"
+        >
+          <div
+            class="sc-AxirZ EmuJz"
+            height="1em"
+            width="18"
+          >
+            <svg>
+              star.svg
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -329,85 +288,20 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
-      class="sc-AxirZ PHAyy"
-      data-testid="ProfileCard"
+      class="sc-AxhCb eUhgNa"
+      data-testid="Card"
     >
       <div
         class="relative p-2"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
-        >
-          <div
-            class="relative"
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="float-right outline-none cursor-pointer focus:outline-none"
-            >
-              <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="absolute right-3 -top-1"
-        >
-          <div
-            class="inline-block mr-2 text text-theme-neutral-600"
-          >
-            <div
-              class="sc-AxiKw gETsj"
-              height="1em"
-              width="18"
-            >
-              <svg>
-                ledger.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block mr-2 text text-theme-neutral-600"
-          >
-            <div
-              class="sc-AxiKw gETsj"
-              height="1em"
-              width="18"
-            >
-              <svg>
-                multisig.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="inline-block mr-2 text text-theme-warning-400"
-          >
-            <div
-              class="sc-AxiKw gETsj"
-              height="1em"
-              width="18"
-            >
-              <svg>
-                star.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
           class="flex"
         >
           <div
-            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 border-theme-warning-200"
+            class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 border-theme-warning-200"
           >
             <div
-              class="sc-AxiKw ccPfUV"
+              class="sc-AxirZ eViLYR"
               height="16"
               width="18"
             >
@@ -457,6 +351,49 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
         >
           33.75089801 DARK
         </span>
+      </div>
+      <div
+        class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+      >
+        <div
+          class="inline-block text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ EmuJz"
+            height="1em"
+            width="18"
+          >
+            <svg>
+              ledger.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="inline-block text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ EmuJz"
+            height="1em"
+            width="18"
+          >
+            <svg>
+              multisig.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="inline-block text-theme-warning-400"
+        >
+          <div
+            class="sc-AxirZ EmuJz"
+            height="1em"
+            width="18"
+          >
+            <svg>
+              star.svg
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </div>
