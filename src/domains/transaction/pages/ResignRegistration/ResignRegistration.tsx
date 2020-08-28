@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import {  WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { WalletData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -13,8 +13,8 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep, FourthStep,SecondStep, ThirdStep } from "./";
-import {  ResignRegistrationProps } from "./ResignRegistration.models";
+import { FirstStep, FourthStep, SecondStep, ThirdStep } from "./";
+import { ResignRegistrationProps } from "./ResignRegistration.models";
 
 export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }: ResignRegistrationProps) => {
 	const [activeTab, setActiveTab] = useState(1);
@@ -172,7 +172,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 											data-testid="ResignRegistration__download-button"
 											variant="plain"
 											className="space-x-2"
-											onClick={() => onDownload(transaction)}
+											onClick={() => onDownload?.(transaction)}
 										>
 											<Icon name="Download" />
 											<span>{t("COMMON.DOWNLOAD")}</span>
