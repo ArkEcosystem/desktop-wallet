@@ -180,38 +180,6 @@ export default {
         })
       }
 
-      if (!WalletService.isBusiness(this.currentWallet)) {
-        types.push({
-          label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.REGISTER'),
-          group: 2,
-          type: TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION
-        })
-      } else if (WalletService.isBusiness(this.currentWallet, false)) {
-        types.push({
-          label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.UPDATE'),
-          group: 2,
-          type: TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE
-        })
-      }
-
-      if (WalletService.canResignBusiness(this.currentWallet)) {
-        const businessResignOption = {
-          label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.RESIGN'),
-          group: 2,
-          type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION
-        }
-
-        if (await WalletService.hasBridgechains(this.currentWallet, this)) {
-          businessResignOption.disabled = true
-          businessResignOption.tooltip = {
-            content: this.$root.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
-            placement: 'left'
-          }
-        }
-
-        types.push(businessResignOption)
-      }
-
       return types
     }
   }
