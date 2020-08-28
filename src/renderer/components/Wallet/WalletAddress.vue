@@ -1,13 +1,13 @@
 <template>
   <span class="WalletAddress flex items-center">
-    <span v-if="group === 1 && type === 1">
+    <span v-if="transaction_isSecondSignature(type, group)">
       {{ $t("TRANSACTION.TYPE.SECOND_SIGNATURE") }}
     </span>
-    <span v-else-if="group === 1 && type === 2">
+    <span v-else-if="transaction_isDelegateRegistration(type, group)">
       {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
     </span>
     <span
-      v-else-if="group === 1 && type === 3"
+      v-else-if="transaction_isVote(type, group)"
       v-tooltip="{
         content: votedDelegateAddress,
         container: tooltipContainer,
