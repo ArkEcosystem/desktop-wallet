@@ -4,6 +4,7 @@ import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
+import { Loader } from "app/components/Loader";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -99,85 +100,87 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={4} activeIndex={activeTab} />
-
+						{(!fee || !delegate) && <Loader />}
 						{fee && delegate && (
-							<div className="mt-8">
-								<TabPanel tabId={1}>
-									<FirstStep wallet={activeWallet} delegate={delegate} fee={fee} />
-								</TabPanel>
-								<TabPanel tabId={2}>
-									<SecondStep wallet={activeWallet} delegate={delegate} fee={fee} />
-								</TabPanel>
-								<TabPanel tabId={3}>
-									<ThirdStep form={form} passwordType={passwordType} />
-								</TabPanel>
-								<TabPanel tabId={4}>
-									<FourthStep
-										wallet={activeWallet}
-										delegate={delegate}
-										fee={fee}
-										transaction={transaction}
-									/>
-								</TabPanel>
+							<div>
+								<StepIndicator size={4} activeIndex={activeTab} />
+								<div className="mt-8">
+									<TabPanel tabId={1}>
+										<FirstStep wallet={activeWallet} delegate={delegate} fee={fee} />
+									</TabPanel>
+									<TabPanel tabId={2}>
+										<SecondStep wallet={activeWallet} delegate={delegate} fee={fee} />
+									</TabPanel>
+									<TabPanel tabId={3}>
+										<ThirdStep form={form} passwordType={passwordType} />
+									</TabPanel>
+									<TabPanel tabId={4}>
+										<FourthStep
+											wallet={activeWallet}
+											delegate={delegate}
+											fee={fee}
+											transaction={transaction}
+										/>
+									</TabPanel>
 
-								<div className="flex justify-end mt-8 space-x-3">
-									{activeTab < 4 && (
-										<Button
-											disabled={activeTab === 1}
-											data-testid="ResignRegistration__back-button"
-											variant="plain"
-											onClick={handleBack}
-										>
-											{t("COMMON.BACK")}
-										</Button>
-									)}
-
-									{activeTab < 3 && (
-										<Button
-											data-testid="ResignRegistration__continue-button"
-											disabled={!isValid}
-											onClick={handleNext}
-										>
-											{t("COMMON.CONTINUE")}
-										</Button>
-									)}
-
-									{activeTab === 3 && (
-										<Button
-											type="submit"
-											data-testid="ResignRegistration__send-button"
-											disabled={!isValid}
-											className="space-x-2"
-										>
-											<Icon name="Send" width={20} height={20} />
-											<span>{t("COMMON.SEND")}</span>
-										</Button>
-									)}
-
-									{activeTab === 4 && (
-										<div className="flex justify-end space-x-3">
+									<div className="flex justify-end mt-8 space-x-3">
+										{activeTab < 4 && (
 											<Button
-												data-testid="ResignRegistration__wallet-button"
+												disabled={activeTab === 1}
+												data-testid="ResignRegistration__back-button"
 												variant="plain"
-												onClick={() => {
-													history.push(`/profiles/${activeProfile.id()}/dashboard`);
-												}}
+												onClick={handleBack}
 											>
-												{t("COMMON.BACK_TO_WALLET")}
+												{t("COMMON.BACK")}
 											</Button>
+										)}
 
+										{activeTab < 3 && (
 											<Button
-												data-testid="ResignRegistration__download-button"
-												variant="plain"
+												data-testid="ResignRegistration__continue-button"
+												disabled={!isValid}
+												onClick={handleNext}
+											>
+												{t("COMMON.CONTINUE")}
+											</Button>
+										)}
+
+										{activeTab === 3 && (
+											<Button
+												type="submit"
+												data-testid="ResignRegistration__send-button"
+												disabled={!isValid}
 												className="space-x-2"
-												onClick={() => onDownload?.(transaction)}
 											>
-												<Icon name="Download" />
-												<span>{t("COMMON.DOWNLOAD")}</span>
+												<Icon name="Send" width={20} height={20} />
+												<span>{t("COMMON.SEND")}</span>
 											</Button>
-										</div>
-									)}
+										)}
+
+										{activeTab === 4 && (
+											<div className="flex justify-end space-x-3">
+												<Button
+													data-testid="ResignRegistration__wallet-button"
+													variant="plain"
+													onClick={() => {
+														history.push(`/profiles/${activeProfile.id()}/dashboard`);
+													}}
+												>
+													{t("COMMON.BACK_TO_WALLET")}
+												</Button>
+
+												<Button
+													data-testid="ResignRegistration__download-button"
+													variant="plain"
+													className="space-x-2"
+													onClick={() => onDownload?.(transaction)}
+												>
+													<Icon name="Download" />
+													<span>{t("COMMON.DOWNLOAD")}</span>
+												</Button>
+											</div>
+										)}
+									</div>
 								</div>
 							</div>
 						)}
