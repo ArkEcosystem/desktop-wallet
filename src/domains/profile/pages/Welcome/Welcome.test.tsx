@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { httpClient } from "app/services";
@@ -28,16 +28,15 @@ describe("Welcome", () => {
 	});
 
 	it("should navigate to profile dashboard", () => {
-		const { container, getByText, asFragment, history, getByTestId, getAllByTestId } = renderWithRouter(
-			<Welcome />,
-		);
+		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
+
 		const profile = env.profiles().findById(fixtureProfileId);
 
 		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		act(() => {
-			fireEvent.click(getAllByTestId("ProfileCard")[0]);
+			fireEvent.click(getByText(profile.settings().get(ProfileSetting.Name)));
 		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/dashboard`);
@@ -48,15 +47,18 @@ describe("Welcome", () => {
 		["close", "modal__close-btn"],
 		["cancel", "SignIn__cancel-button"],
 	])("should open & close sign in modal (%s)", (_, buttonId) => {
-		const { container, getByText, getByTestId, getAllByTestId } = renderWithRouter(<Welcome />);
+		const { container, getByText, getByTestId } = renderWithRouter(<Welcome />);
+
+		expect(container).toBeTruthy();
+
+		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
 		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
-		expect(container).toBeTruthy();
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getAllByTestId("ProfileCard")[1]);
+			fireEvent.click(getByText(profile.settings().get(ProfileSetting.Name)));
 		});
 
 		expect(getByTestId("modal__inner")).toBeInTheDocument();
@@ -71,24 +73,18 @@ describe("Welcome", () => {
 	});
 
 	it("should navigate to profile dashboard with correct password", async () => {
-		const {
-			container,
-			getByText,
-			asFragment,
-			history,
-			findByTestId,
-			getByTestId,
-			getAllByTestId,
-		} = renderWithRouter(<Welcome />);
-		const profileId = "cba050f1-880f-45f0-9af9-cfe48f406052";
+		const { asFragment, container, findByTestId, getByTestId, getByText, history } = renderWithRouter(<Welcome />);
+
+		expect(container).toBeTruthy();
+
+		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
 		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
-		expect(container).toBeTruthy();
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getAllByTestId("ProfileCard")[1]);
+			fireEvent.click(getByText(profile.settings().get(ProfileSetting.Name)));
 		});
 
 		expect(getByTestId("modal__inner")).toBeInTheDocument();
@@ -103,7 +99,7 @@ describe("Welcome", () => {
 			fireEvent.click(getByTestId("SignIn__submit-button"));
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${profileId}/dashboard`);
+		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/dashboard`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -111,18 +107,23 @@ describe("Welcome", () => {
 		const { container, getByText, asFragment, history, getByTestId, getAllByTestId } = renderWithRouter(
 			<Welcome />,
 		);
+
+		expect(container).toBeTruthy();
+
 		const profile = env.profiles().findById(fixtureProfileId);
 
 		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
-		expect(container).toBeTruthy();
 		const profileCardMenu = getAllByTestId("dropdown__toggle")[0];
+
 		act(() => {
 			fireEvent.click(profileCardMenu);
 		});
+
 		const settingsOption = getByTestId("dropdown__option--0");
 		expect(settingsOption).toBeTruthy();
 		expect(settingsOption).toHaveTextContent(commonTranslations.SETTINGS);
+
 		act(() => {
 			fireEvent.click(settingsOption);
 		});
@@ -154,31 +155,35 @@ describe("Welcome", () => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
-		await waitFor(() => expect(getAllByTestId("ProfileCard").length).toBe(1));
+		await waitFor(() => expect(getAllByTestId("Card").length).toBe(1));
+	});
+
+	it("should change route to create profile", () => {
+		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
+
+		expect(container).toBeTruthy();
+
+		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+
+		fireEvent.click(getByText(translations.CREATE_PROFILE));
+
+		expect(history.location.pathname).toEqual("/profiles/create");
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render without profiles", () => {
 		const emptyEnv = new Environment({ coins: {}, httpClient, storage: new StubStorage() });
+
 		const { container, asFragment, getByText } = renderWithRouter(
 			<EnvironmentProvider env={emptyEnv}>
 				<Welcome />
 			</EnvironmentProvider>,
 		);
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_NO_PROFILES)).toBeInTheDocument();
-
 		expect(container).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should change route to create profile", () => {
-		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
 
 		expect(getByText(translations.PAGE_WELCOME.HAS_NO_PROFILES)).toBeInTheDocument();
 
-		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
-		fireEvent.click(getByText("Create Profile"));
-		expect(history.location.pathname).toEqual("/profiles/create");
 	});
 });

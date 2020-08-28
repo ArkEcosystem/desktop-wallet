@@ -6,7 +6,7 @@ import { Size } from "types";
 
 import { defaultClasses, defaultStyles } from "./Dropdown.styles";
 
-export type Option = {
+export type DropdownOption = {
 	label: string;
 	value: string | number;
 };
@@ -31,9 +31,9 @@ export const Wrapper = styled.div`
 /*
  * Dropdown options list
  */
-const renderOptions = (options: any[], onSelect: any) => (
+const renderOptions = (options: DropdownOption[], onSelect: any) => (
 	<ul data-testid="dropdown__options">
-		{options.map((option: Option, key: number) => (
+		{options.map((option: DropdownOption, key: number) => (
 			<li
 				className="block px-8 py-4 text-sm font-semibold cursor-pointer text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary"
 				key={key}
@@ -99,7 +99,7 @@ export const Dropdown = ({
 	};
 	const hide = () => setIsOpen(false);
 
-	const select = (option: Option) => {
+	const select = (option: DropdownOption) => {
 		setIsOpen(false);
 		if (typeof onSelect === "function") onSelect(option);
 	};

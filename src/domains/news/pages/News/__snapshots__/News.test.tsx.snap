@@ -314,103 +314,109 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="space-y-6"
               >
                 <div
-                  class="sc-fznWqX eYnudq bg-theme-background"
-                  data-testid="ProfileCard"
+                  data-testid="NewsCard"
                 >
                   <div
-                    class="flex flex-col p-4 space-y-8"
-                    data-testid="NewsCard"
+                    class="sc-fznWqX pplWv bg-theme-background"
+                    data-testid="Card"
                   >
                     <div
-                      class="flex justify-between w-full"
+                      class="flex flex-col p-4 space-y-8 bg-theme-background"
                     >
                       <div
-                        class="flex items-center space-x-4"
+                        class="flex justify-between w-full"
                       >
                         <div
-                          aria-label="Ark"
-                          class="sc-AxhCb dtyYr border-theme-danger-light text-theme-danger-400"
-                          data-testid="NetworkIcon-ARK-mainnet"
+                          class="flex items-center space-x-4"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            data-testid="NetworkIcon__icon"
-                            height="1em"
-                            width="1em"
+                            aria-label="Ark"
+                            class="sc-AxhCb dtyYr border-theme-danger-light text-theme-danger-400"
+                            data-testid="NetworkIcon-ARK-mainnet"
                           >
-                            <svg>
-                              ark.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              data-testid="NetworkIcon__icon"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                ark.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div>
+                            <h4
+                              class="text-lg font-semibold"
+                              data-testid="NewsCard__asset-ARK Ecosystem"
+                            >
+                              ARK Ecosystem
+                            </h4>
+                            <div
+                              class="flex items-center space-x-4"
+                            >
+                              <p
+                                class="text-sm font-semibold text-theme-neutral"
+                                data-testid="NewsCard__author"
+                              >
+                                Travis Walker, Co-Founder
+                              </p>
+                              <div
+                                class="sc-AxjAm gHUxAL border-theme-neutral-300"
+                                type="vertical"
+                              />
+                              <p
+                                class="text-sm font-semibold text-theme-neutral"
+                                data-testid="NewsCard__date-created"
+                              >
+                                <span
+                                  data-testid="timeago"
+                                >
+                                  A few seconds ago
+                                </span>
+                              </p>
+                            </div>
                           </div>
                         </div>
-                        <div>
-                          <h4
-                            class="text-lg font-semibold"
-                            data-testid="NewsCard__asset-ARK Ecosystem"
-                          >
-                            ARK Ecosystem
-                          </h4>
+                        <div
+                          class="flex flex-col justify-end"
+                        >
                           <div
-                            class="flex items-center space-x-4"
+                            class="sc-AxheI jcILwK"
+                            color="warning"
                           >
-                            <p
-                              class="text-sm font-semibold text-theme-neutral"
-                              data-testid="NewsCard__author"
+                            <span
+                              class="text-sm"
+                              data-testid="NewsCard__category"
                             >
-                              Travis Walker, Co-Founder
-                            </p>
-                            <div
-                              class="sc-AxjAm gHUxAL border-theme-neutral-300"
-                              type="vertical"
-                            />
-                            <p
-                              class="text-sm font-semibold text-theme-neutral"
-                              data-testid="NewsCard__date-created"
-                            >
-                              <span
-                                data-testid="timeago"
-                              >
-                                A few seconds ago
-                              </span>
-                            </p>
+                              #Technical
+                            </span>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="flex flex-col justify-end"
+                        class="sc-AxjAm dnkyDE border-theme-neutral-300"
+                        type="horizontal"
+                      />
+                      <p
+                        class="whitespace-pre-line text-theme-neutral-dark"
+                        data-testid="NewsCard__content"
                       >
-                        <div
-                          class="sc-AxheI jcILwK"
-                          color="warning"
+                        Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
+
+                        <a
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="[object Object]"
                         >
-                          <span
-                            class="text-sm"
-                            data-testid="NewsCard__category"
-                          >
-                            #Technical
-                          </span>
-                        </div>
-                      </div>
+                          https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
+                        </a>
+                      </p>
                     </div>
                     <div
-                      class="sc-AxjAm dnkyDE border-theme-neutral-300"
-                      type="horizontal"
+                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
                     />
-                    <p
-                      class="whitespace-pre-line text-theme-neutral-dark"
-                      data-testid="NewsCard__content"
-                    >
-                      Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
-
-                      <a
-                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="[object Object]"
-                      >
-                        https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
-                      </a>
-                    </p>
                   </div>
                 </div>
               </div>
