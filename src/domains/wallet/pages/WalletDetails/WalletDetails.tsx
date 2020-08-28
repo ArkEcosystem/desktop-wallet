@@ -45,8 +45,8 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const activeWallet = useActiveWallet();
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
-	const coinName = activeWallet.manifest().get<string>("name");
-	const networkId = activeWallet.network().id;
+	const coinName = activeWallet.coinId();
+	const networkId = activeWallet.networkId();
 	const ticker = activeWallet.currency();
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 	const { transactions, walletData, votes } = data;
@@ -125,7 +125,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		<>
 			<Page profile={activeProfile} crumbs={crumbs}>
 				<WalletHeader
-					coin={coinName!}
+					coin={coinName}
 					network={networkId}
 					ticker={ticker}
 					address={activeWallet.address()}

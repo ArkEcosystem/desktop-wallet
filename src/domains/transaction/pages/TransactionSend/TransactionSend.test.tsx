@@ -99,7 +99,7 @@ describe("Transaction Send", () => {
 		);
 
 		expect(getByTestId("TransactionSend__step--second")).toBeTruthy();
-		expect(container).toHaveTextContent(wallet.network().name);
+		expect(container).toHaveTextContent(wallet.network().name());
 		expect(container).toHaveTextContent("D8rr7B…s6YUYD");
 		expect(container).toHaveTextContent("test smartbridge");
 

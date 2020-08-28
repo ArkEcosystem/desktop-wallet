@@ -393,9 +393,9 @@ exports[`CreateContact should render create contact modal 1`] = `
                         role="option"
                       >
                         <div
-                          aria-label="Lisk Betanet"
-                          class="sc-fznyAO hDlzVD border-theme-primary-100 text-theme-primary-400"
-                          data-testid="NetworkIcon-LSK-betanet"
+                          aria-label="Lisk"
+                          class="sc-fznyAO hDlzVD border-theme-primary-400 text-theme-primary"
+                          data-testid="NetworkIcon-LSK-mainnet"
                         >
                           <div
                             class="sc-AxirZ hyqZof"
@@ -417,9 +417,9 @@ exports[`CreateContact should render create contact modal 1`] = `
                         role="option"
                       >
                         <div
-                          aria-label="Lisk"
-                          class="sc-fznyAO hDlzVD border-theme-primary-400 text-theme-primary"
-                          data-testid="NetworkIcon-LSK-mainnet"
+                          aria-label="Lisk Testnet"
+                          class="sc-fznyAO hDlzVD border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-LSK-testnet"
                         >
                           <div
                             class="sc-AxirZ hyqZof"
@@ -441,21 +441,9 @@ exports[`CreateContact should render create contact modal 1`] = `
                         role="option"
                       >
                         <div
-                          aria-label="Lisk Testnet"
-                          class="sc-fznyAO hDlzVD border-theme-primary-100 text-theme-primary-400"
-                          data-testid="NetworkIcon-LSK-testnet"
-                        >
-                          <div
-                            class="sc-AxirZ hyqZof"
-                            data-testid="NetworkIcon__icon"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                        </div>
+                          class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
+                          data-testid="NetworkIcon__placeholder"
+                        />
                       </li>
                       <li
                         aria-selected="false"
@@ -558,18 +546,6 @@ exports[`CreateContact should render create contact modal 1`] = `
                         class="inline-block cursor-pointer"
                         data-testid="SelectNetwork__NetworkIcon--container"
                         id="ContactForm__network-item-28"
-                        role="option"
-                      >
-                        <div
-                          class="sc-fznyAO hDlzVD border-theme-neutral-light text-theme-neutral"
-                          data-testid="NetworkIcon__placeholder"
-                        />
-                      </li>
-                      <li
-                        aria-selected="false"
-                        class="inline-block cursor-pointer"
-                        data-testid="SelectNetwork__NetworkIcon--container"
-                        id="ContactForm__network-item-29"
                         role="option"
                       >
                         <div

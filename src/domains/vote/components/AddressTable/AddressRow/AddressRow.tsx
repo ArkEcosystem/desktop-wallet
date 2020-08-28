@@ -96,7 +96,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 			</td>
 
 			<td className="py-5 font-bold text-theme-neutral-dark">
-				<Amount value={wallet.balance()} ticker={wallet.network().currency.ticker} />
+				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</td>
 
 			<td className="py-5">

@@ -78,10 +78,7 @@ export const Votes = () => {
 	useEffect(() => {
 		if (hasWalletId) {
 			for (const network of networks) {
-				if (
-					network.id() === activeWallet.network().id &&
-					network.coin() === activeWallet.manifest().get<string>("name")
-				) {
+				if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 					setNetwork(network);
 
 					break;

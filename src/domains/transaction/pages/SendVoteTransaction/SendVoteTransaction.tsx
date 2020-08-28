@@ -45,8 +45,8 @@ export const FirstStep = ({
 
 	const senderAddress = getValues("senderAddress");
 	const fee = getValues("fee") || null;
-	const coinName = wallet.manifest().get<string>("name");
-	const network = `${coinName} ${wallet.network().name}`;
+	const coinName = wallet.coinId();
+	const network = `${coinName} ${wallet.network().name()}`;
 	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
 
 	useEffect(() => {
@@ -141,8 +141,8 @@ export const SecondStep = ({
 	const { getValues, unregister } = useFormContext();
 
 	const { fee, senderAddress } = getValues();
-	const coinName = wallet.manifest().get<string>("name");
-	const network = `${coinName} ${wallet.network().name}`;
+	const coinName = wallet.coinId();
+	const network = `${coinName} ${wallet.network().name()}`;
 	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
 
 	useEffect(() => {
@@ -282,10 +282,7 @@ export const SendVoteTransaction = () => {
 		setValue("vote", voteId, true);
 
 		for (const network of networks) {
-			if (
-				network.id() === activeWallet.network().id &&
-				network.coin() === activeWallet.manifest().get<string>("name")
-			) {
+			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 				setValue("network", network, true);
 
 				break;
@@ -333,7 +330,7 @@ export const SendVoteTransaction = () => {
 				},
 			});
 
-			await senderWallet!.transaction().broadcast([transactionId]);
+			await senderWallet!.transaction().broadcast(transactionId);
 
 			await env.persist();
 
