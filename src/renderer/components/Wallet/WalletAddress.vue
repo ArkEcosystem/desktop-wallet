@@ -52,23 +52,23 @@
     <span v-else-if="group === 1 && type === 10">
       {{ $t("TRANSACTION.TYPE.HTLC_REFUND") }}
     </span>
-    <span v-else-if="group === 2 && type === 0">
-      {{ $t("TRANSACTION.TYPE.BUSINESS_REGISTRATION") }}
+    <span v-else-if="transaction_isLegacyBusinessRegistration(type, group)">
+      {{ $t("TRANSACTION.TYPE.LEGACY_BUSINESS_REGISTRATION") }}
     </span>
-    <span v-else-if="group === 2 && type === 1">
-      {{ $t("TRANSACTION.TYPE.BUSINESS_RESIGNATION") }}
+    <span v-else-if="transaction_isLegacyBusinessResignation(type, group)">
+      {{ $t("TRANSACTION.TYPE.LEGACY_BUSINESS_RESIGNATION") }}
     </span>
-    <span v-else-if="group === 2 && type === 2">
-      {{ $t("TRANSACTION.TYPE.BUSINESS_UPDATE") }}
+    <span v-else-if="transaction_isLegacyBusinessUpdate(type, group)">
+      {{ $t("TRANSACTION.TYPE.LEGACY_BUSINESS_UPDATE") }}
     </span>
-    <span v-else-if="group === 2 && type === 3">
-      {{ $t("TRANSACTION.TYPE.BRIDGECHAIN_REGISTRATION") }}
+    <span v-else-if="transaction_isLegacyBridgechainRegistration(type, group)">
+      {{ $t("TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_REGISTRATION") }}
     </span>
-    <span v-else-if="group === 2 && type === 4">
-      {{ $t("TRANSACTION.TYPE.BRIDGECHAIN_RESIGNATION") }}
+    <span v-else-if="transaction_isLegacyBridgechainResignation(type, group)">
+      {{ $t("TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_RESIGNATION") }}
     </span>
-    <span v-else-if="group === 2 && type === 5">
-      {{ $t("TRANSACTION.TYPE.BRIDGECHAIN_UPDATE") }}
+    <span v-else-if="transaction_isLegacyBridgechainUpdate(type, group)">
+      {{ $t("TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_UPDATE") }}
     </span>
     <span
       v-else
