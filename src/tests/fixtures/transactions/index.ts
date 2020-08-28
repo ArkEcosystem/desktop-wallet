@@ -31,7 +31,6 @@ export const TransactionFixture = {
 	isHtlcLock: () => false,
 	isHtlcClaim: () => false,
 	isHtlcRefund: () => false,
-
 	isEntityRegistration: () => false,
 	isEntityResignation: () => false,
 	isEntityUpdate: () => false,

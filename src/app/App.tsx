@@ -28,24 +28,48 @@ import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
 
-const Main = () => {
+type Props = {
+	syncInterval?: number;
+};
+
+const Main = ({ syncInterval }: Props) => {
 	const [showSplash, setShowSplash] = useState(true);
 
-	const { env, persist } = useEnvironmentContext();
-
-	const isOnline = useNetworkStatus();
-
 	const { pathname } = useLocation();
+	const { env, persist } = useEnvironmentContext();
+	const isOnline = useNetworkStatus();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [pathname]);
 
 	useLayoutEffect(() => {
+		const syncDelegates = () => {
+			console.log("Running delegates sync...");
+			const coinsData = env.usedCoinsWithNetworks();
+			const coinsInUse = Object.keys(coinsData);
+			const delegatesPromises: any = [];
+
+			for (const coin of coinsInUse) {
+				const coinNetworks = coinsData[coin];
+				for (const network of coinNetworks) {
+					delegatesPromises.push(Promise.resolve(env.coins().syncDelegates(coin, network)));
+				}
+			}
+
+			Promise.allSettled(delegatesPromises).then(() => {
+				setShowSplash(false);
+			});
+		};
+
 		const boot = async () => {
 			await env.verify(fixtureData);
+			syncDelegates();
+
+			console.info("Scheduling next delegates synchronization...");
+			setInterval(() => syncDelegates(), syncInterval);
+
 			await env.boot();
-			setShowSplash(false);
 			await persist();
 		};
 
@@ -54,7 +78,7 @@ const Main = () => {
 		} else {
 			setShowSplash(false);
 		}
-	}, [env, persist]);
+	}, [env, persist, syncInterval]);
 
 	if (showSplash) {
 		return <Splash />;
@@ -70,7 +94,11 @@ const Main = () => {
 	);
 };
 
-export const App = () => {
+Main.defaultProps = {
+	syncInterval: 300000,
+};
+
+export const App = ({ syncInterval }: Props) => {
 	/**
 	 * Ensure that the Environment object will not be recreated when the state changes,
 	 * as the data is stored in memory by the `DataRepository`.
@@ -101,12 +129,12 @@ export const App = () => {
 	);
 
 	return (
-		<I18nextProvider i18n={i18n}>
-			<EnvironmentProvider env={env}>
-				<ErrorBoundary FallbackComponent={ApplicationError}>
-					<Main />
-				</ErrorBoundary>
-			</EnvironmentProvider>
-		</I18nextProvider>
+		<ErrorBoundary FallbackComponent={ApplicationError}>
+			<I18nextProvider i18n={i18n}>
+				<EnvironmentProvider env={env}>
+					<Main syncInterval={syncInterval} />
+				</EnvironmentProvider>
+			</I18nextProvider>
+		</ErrorBoundary>
 	);
 };

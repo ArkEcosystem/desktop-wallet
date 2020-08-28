@@ -395,14 +395,10 @@ exports[`VoteDetail should render a modal as confirmed 1`] = `
                   <div
                     class="font-semibold"
                   >
-                    <span
-                      data-testid="VoteDetail__delegates"
-                    >
-                      arkx
-                    </span>
+                    arkx
                     <span
                       class="sc-AxhUy kMyssT ml-2 text-theme-neutral"
-                      data-testid="TruncateMiddle"
+                      data-testid="VoteDetail__delegate__address"
                     >
                       D61mfS…J3Dyib
                     </span>
