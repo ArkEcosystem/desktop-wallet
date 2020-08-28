@@ -15,7 +15,7 @@ import { StepProps } from "./ResignRegistration.models";
 export const SecondStep = ({ wallet, delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
 	const coinName = wallet.manifest().get<string>("name");
-	const network = `${coinName} ${wallet.network().name}`;
+	const network = `${coinName} ${wallet.network().name()}`;
 
 	return (
 		<div data-testid="ResignRegistration__second-step">
