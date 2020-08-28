@@ -45,7 +45,7 @@ export const FirstStep = ({
 
 	const senderAddress = getValues("senderAddress");
 	const fee = getValues("fee") || null;
-	const coinName = wallet.manifest().get<string>("name");
+	const coinName = wallet.coinId();
 	const network = `${coinName} ${wallet.network().name}`;
 	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
 
@@ -141,7 +141,7 @@ export const SecondStep = ({
 	const { getValues, unregister } = useFormContext();
 
 	const { fee, senderAddress } = getValues();
-	const coinName = wallet.manifest().get<string>("name");
+	const coinName = wallet.coinId();
 	const network = `${coinName} ${wallet.network().name}`;
 	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
 

@@ -86,7 +86,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, recipients, smartbridge } = getValues();
-	const coinName = wallet.manifest().get<string>("name");
+	const coinName = wallet.coinId();
 
 	let amount = BigNumber.ZERO;
 	for (const recipient of recipients) {

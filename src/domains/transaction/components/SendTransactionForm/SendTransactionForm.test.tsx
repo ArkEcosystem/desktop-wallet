@@ -94,7 +94,7 @@ describe("SendTransactionForm", () => {
 		form.current.setValue("senderAddress", wallet.address());
 
 		for (const network of env.availableNetworks()) {
-			if (network.id() === wallet.network().id() && network.coin() === wallet.coinId()) {
+			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
 				form.current.setValue("network", network, true);
 
 				break;

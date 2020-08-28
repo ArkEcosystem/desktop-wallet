@@ -39,7 +39,7 @@ export const WalletListItem = ({
 		if (typeof onAction === "function") onAction(action);
 	};
 
-	const coinName = wallet.coin().manifest().get<string>("name");
+	const coinName = wallet.coinId();
 
 	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
 
