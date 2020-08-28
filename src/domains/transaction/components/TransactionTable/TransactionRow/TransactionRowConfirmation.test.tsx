@@ -8,18 +8,14 @@ import { TransactionRowConfirmation } from "./TransactionRowConfirmation";
 describe("TransactionRowConfirmation", () => {
 	it("should render confirmed", () => {
 		const { getByTestId } = render(
-			<TransactionRowConfirmation
-				transaction={{ ...TransactionFixture, confirmations: () => BigNumber.make(100) }}
-			/>,
+			<TransactionRowConfirmation transaction={{ ...TransactionFixture, isConfirmed: () => true }} />,
 		);
 		expect(getByTestId("TransactionRowConfirmation__confirmed")).toBeTruthy();
 	});
 
 	it("should render pending", () => {
 		const { getByTestId } = render(
-			<TransactionRowConfirmation
-				transaction={{ ...TransactionFixture, confirmations: () => BigNumber.make(1) }}
-			/>,
+			<TransactionRowConfirmation transaction={{ ...TransactionFixture, isConfirmed: () => false }} />,
 		);
 		expect(getByTestId("TransactionRowConfirmation__pending")).toBeTruthy();
 	});
