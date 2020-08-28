@@ -271,7 +271,10 @@ describe("DelegateRegistrationForm", () => {
 
 		expect(consoleSpy).toHaveBeenCalledTimes(1);
 		expect(form.setValue).toHaveBeenCalledWith("mnemonic", "");
-		expect(form.setError).toHaveBeenCalledWith("mnemonic", "manual", "TRANSACTION.INVALID_MNEMONIC");
+		expect(form.setError).toHaveBeenCalledWith("mnemonic", {
+			type: "manual",
+			message: "TRANSACTION.INVALID_MNEMONIC",
+		});
 
 		expect(broadcastMock).not.toHaveBeenCalled();
 		expect(transactionMock).not.toHaveBeenCalled();

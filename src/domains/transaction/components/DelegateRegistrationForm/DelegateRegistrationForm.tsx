@@ -242,7 +242,7 @@ export const DelegateRegistrationForm: RegistrationForm = {
 			console.error("Could not create transaction: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", translations("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: translations("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	},
 };

@@ -47,7 +47,10 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 
 	useEffect(() => {
 		if (remainingTime) {
-			setError("password", "maxAttempts", t("PROFILE.MODAL_SIGN_IN.MAX_ATTEMPTS_ERROR", { remainingTime }));
+			setError("password", {
+				type: "maxAttempts",
+				message: t("PROFILE.MODAL_SIGN_IN.MAX_ATTEMPTS_ERROR", { remainingTime }),
+			});
 
 			const timer = setInterval(() => {
 				setRemainingTime(remainingTime - 1);
@@ -55,13 +58,12 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 
 			return () => clearInterval(timer);
 		} else if (errors.password) {
-			setError(
-				"password",
-				"invalid",
-				t("COMMON.VALIDATION.SUBJECT_INVALID", {
+			setError("password", {
+				type: "invalid",
+				message: t("COMMON.VALIDATION.SUBJECT_INVALID", {
 					subject: t("COMMON.PASSWORD"),
 				}),
-			);
+			});
 		}
 	}, [errors, remainingTime, setError, t]);
 
@@ -71,13 +73,12 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 		} else {
 			setCount(count + 1);
 
-			setError(
-				"password",
-				"invalid",
-				t("COMMON.VALIDATION.SUBJECT_INVALID", {
+			setError("password", {
+				type: "invalid",
+				message: t("COMMON.VALIDATION.SUBJECT_INVALID", {
 					subject: t("COMMON.PASSWORD"),
 				}),
-			);
+			});
 		}
 	};
 

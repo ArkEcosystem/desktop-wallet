@@ -109,21 +109,24 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 
 	useEffect(() => {
 		for (const [field, message] of Object.entries(errors)) {
-			form.setError(field, message as string);
+			form.setError(field, { type: "manual", message: message as string });
 		}
 	}, [form, errors]);
 
 	const handleAddAddress = async () => {
 		const addressExists = addresses.some((addr) => addr.address === address);
 		if (addressExists) {
-			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_EXISTS", { address }));
+			return form.setError("address", {
+				type: "manual",
+				message: t("CONTACTS.VALIDATION.ADDRESS_EXISTS", { address }),
+			});
 		}
 
 		const instance: Coins.Coin = await env.coin(network.coin(), network.id());
 		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (!isValidAddress) {
-			return form.setError("address", "manual", t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID"));
+			return form.setError("address", { type: "manual", message: t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID") });
 		}
 
 		setAddresses(
@@ -146,7 +149,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 	};
 
 	const handleSelectNetwork = (network?: NetworkData | null) => {
-		form.setValue("network", network, true);
+		form.setValue("network", network, { shouldValidate: true });
 	};
 
 	const isNameValid = useMemo(() => !!name?.trim() && !form.errors?.name, [name, form.errors]);
