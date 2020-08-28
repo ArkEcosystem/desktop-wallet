@@ -6,7 +6,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	env,
@@ -57,9 +57,9 @@ describe("Vote For Delegate", () => {
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<FirstStep delegate={delegate} profile={profile} wallet={wallet} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendVoteTransaction__step--first")).toBeTruthy();
@@ -69,9 +69,9 @@ describe("Vote For Delegate", () => {
 	it("should render 2st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<SecondStep delegate={delegate} profile={profile} wallet={wallet} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendVoteTransaction__step--second")).toBeTruthy();
@@ -81,9 +81,9 @@ describe("Vote For Delegate", () => {
 	it("should render 3rd step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<ThirdStep />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy();
@@ -96,9 +96,9 @@ describe("Vote For Delegate", () => {
 			"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
 		);
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<FourthStep delegate={delegate} transaction={transaction!} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();

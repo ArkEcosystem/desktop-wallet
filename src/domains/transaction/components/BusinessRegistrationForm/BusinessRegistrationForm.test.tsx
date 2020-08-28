@@ -1,7 +1,7 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { act, env, getDefaultProfileId, render, RenderResult, waitFor } from "utils/testing-library";
 
 import { BusinessRegistrationForm } from "./BusinessRegistrationForm";
@@ -16,9 +16,9 @@ const renderComponent = async () => {
 
 	await act(async () => {
 		renderer = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<BusinessRegistrationForm.component activeTab={2} feeOptions={{}} wallet={wallet} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		await waitFor(() => expect(renderer.getByTestId("BusinessRegistrationForm__step--second")));
@@ -170,9 +170,9 @@ describe("BusinessRegistrationForm", () => {
 		const { asFragment, form, getByTestId, rerender } = await renderComponent();
 
 		rerender(
-			<FormContext {...form}>
+			<FormProvider {...form}>
 				<BusinessRegistrationForm.component activeTab={3} feeOptions={{}} wallet={wallet} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		await waitFor(() => expect(getByTestId("BusinessRegistrationForm__step--third")));

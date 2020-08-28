@@ -5,7 +5,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import delegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
 import {
@@ -96,7 +96,7 @@ describe("Registration", () => {
 
 		await act(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<FirstStep
 						networks={env.availableNetworks()}
 						profile={profile}
@@ -104,7 +104,7 @@ describe("Registration", () => {
 						setRegistrationForm={setRegistrationForm}
 						feeOptions={feeOptions}
 					/>
-				</FormContext>,
+				</FormProvider>,
 			);
 
 			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
@@ -138,7 +138,7 @@ describe("Registration", () => {
 
 		await act(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<FirstStep
 						networks={env.availableNetworks()}
 						profile={profile}
@@ -146,7 +146,7 @@ describe("Registration", () => {
 						setRegistrationForm={setRegistrationForm}
 						feeOptions={feeOptions}
 					/>
-				</FormContext>,
+				</FormProvider>,
 			);
 
 			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
@@ -174,9 +174,9 @@ describe("Registration", () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const { asFragment, container } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<SigningStep passwordType="password" wallet={secondWallet} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(container).toHaveTextContent(transactionTranslations.ENCRYPTION_PASSWORD);
@@ -188,9 +188,9 @@ describe("Registration", () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const { asFragment, container } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<SigningStep passwordType="ledger" wallet={secondWallet} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(container).toHaveTextContent(transactionTranslations.LEDGER_CONFIRMATION.TITLE);

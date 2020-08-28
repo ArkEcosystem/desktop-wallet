@@ -1,14 +1,14 @@
 import React from "react";
-import { FormContext, FormContextValues, OnSubmit } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 
 type FormProps = {
-	onSubmit: OnSubmit<Record<string, any>>;
-	context: FormContextValues<any>;
+	onSubmit: (data: Record<string, any>) => void;
+	context: ReturnType<typeof useForm>;
 } & Omit<React.FormHTMLAttributes<any>, "onSubmit">;
 
 export const Form = React.forwardRef<HTMLFormElement, FormProps>(
 	({ children, context, onSubmit, ...props }: FormProps, ref) => (
-		<FormContext {...context}>
+		<FormProvider {...context}>
 			<form
 				data-testid="Form"
 				ref={ref}
@@ -18,7 +18,7 @@ export const Form = React.forwardRef<HTMLFormElement, FormProps>(
 			>
 				{children}
 			</form>
-		</FormContext>
+		</FormProvider>
 	),
 );
 

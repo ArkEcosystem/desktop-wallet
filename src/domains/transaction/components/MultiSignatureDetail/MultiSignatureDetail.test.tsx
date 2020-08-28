@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { act, fireEvent, render } from "testing-library";
 
 // i18n
@@ -76,9 +76,9 @@ describe("MultiSignatureDetail", () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const { asFragment, getByTestId } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<SecondStep />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("MultiSignatureDetail__second-step")).toBeTruthy();
