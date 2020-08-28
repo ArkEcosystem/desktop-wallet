@@ -1,5 +1,5 @@
 export const Scheduler = (interval = 300000) => ({
-	schedule: (actions: function, done: function) => {
+	schedule: (actions: any, done: Function) => {
 		for (const action of actions) {
 			console.log(`Scheduling action ${action.name} for every ${interval / 60000} mins`);
 
