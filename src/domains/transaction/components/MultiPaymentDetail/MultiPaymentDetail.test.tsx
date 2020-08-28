@@ -60,7 +60,7 @@ describe("MultiPaymentDetail", () => {
 				onClose={() => console.log("onClose")}
 				transaction={{
 					...TransactionFixture,
-					confirmations: () => BigNumber.make(52),
+					isConfirmed: () => true,
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
 				}}
 				ticker="BTC"
@@ -79,7 +79,7 @@ describe("MultiPaymentDetail", () => {
 				onClose={() => console.log("onClose")}
 				transaction={{
 					...TransactionFixture,
-					confirmations: () => BigNumber.make(52),
+					isConfirmed: () => true,
 					recipients: () => [
 						{
 							address: "adsad12312xsd1w312e1s13203e12",

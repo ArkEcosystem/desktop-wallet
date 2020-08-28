@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { render } from "testing-library";
 import { TransactionFixture } from "tests/fixtures/transactions";
@@ -46,7 +45,7 @@ describe("IpfsDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					confirmations: () => BigNumber.make(52),
+					isConfirmed: () => true,
 				}}
 				{...extraProps}
 			/>,
