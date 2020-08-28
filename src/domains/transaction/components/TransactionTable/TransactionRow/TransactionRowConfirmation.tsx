@@ -1,5 +1,4 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
 import React from "react";

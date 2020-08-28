@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { DelegateMapper, ExtendedTransactionData, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
