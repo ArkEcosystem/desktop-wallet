@@ -77,21 +77,6 @@ describe("ResignRegistration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should should go back", async () => {
-		const { asFragment, getByTestId } = renderPage();
-
-		await act(async () => {
-			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
-		});
-		await act(async () => {
-			fireEvent.click(getByTestId("ResignRegistration__back-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("ResignRegistration__first-step")).toBeTruthy());
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should render 2nd step", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
