@@ -1263,20 +1263,7 @@ export default {
       DELETE_CONTACT: 'Delete Contact',
       DELETE_WALLET: 'Delete Wallet',
       SHOW_PUBLIC_KEY: 'Show Public Key',
-      SHOW_ADDRESS: 'Show Address',
-
-      BUSINESS: {
-        REGISTER: 'Register Business',
-        RESIGN: 'Resign Business',
-        UPDATE: 'Update Business',
-        CANNOT_RESIGN: 'You must resign all bridgechains first'
-      },
-
-      BRIDGECHAIN: {
-        REGISTER: 'Register Bridgechain',
-        RESIGN: 'Resign Bridgechain',
-        UPDATE: 'Update Bridgechain'
-      }
+      SHOW_ADDRESS: 'Show Address'
     },
     PENDING_BALANCE: '{amount} including 1 unconfirmed transaction | {amount} including {n} unconfirmed transactions',
     SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
