@@ -125,7 +125,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		<>
 			<Page profile={activeProfile} crumbs={crumbs}>
 				<WalletHeader
-					coin={coinName!}
+					coin={coinName}
 					network={networkId}
 					ticker={ticker}
 					address={activeWallet.address()}
