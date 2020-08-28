@@ -1,8 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import installI18n from '../../../__utils__/i18n'
 import TransactionConfirm, * as TransactionConfirmComponents from '@/components/Transaction/TransactionConfirm'
-import TransactionConfirmBusiness from '@/components/Transaction/TransactionConfirm/TransactionConfirmBusiness'
-import TransactionConfirmBridgechain from '@/components/Transaction/TransactionConfirm/TransactionConfirmBridgechain'
 import CurrencyMixin from '@/mixins/currency'
 
 const transactions = {
@@ -172,9 +170,7 @@ const createWrapper = (component, transaction) => {
     stubs: {
       Identicon: true,
       TransactionDetail: true,
-      ...TransactionConfirmComponents,
-      ...TransactionConfirmBusiness,
-      ...TransactionConfirmBridgechain
+      ...TransactionConfirmComponents
     }
   })
 }
@@ -251,54 +247,6 @@ describe('TransactionConfirm', () => {
       await wrapper.vm.$nextTick()
 
       expect(wrapper.contains('.TransactionConfirmDelegateResignation')).toBe(true)
-    })
-
-    it('should render business registration confirm component', async () => {
-      createWrapper(null, transactions.businessRegistration)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.contains('.TransactionConfirmBusinessRegistration')).toBe(true)
-    })
-
-    it('should render business resignation confirm component', async () => {
-      createWrapper(null, transactions.businessResignation)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.contains('.TransactionConfirmBusinessResignation')).toBe(true)
-    })
-
-    it('should render business update confirm component', async () => {
-      createWrapper(null, transactions.businessUpdate)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.contains('.TransactionConfirmBusinessUpdate')).toBe(true)
-    })
-
-    it('should render bridgechain registration confirm component', async () => {
-      createWrapper(null, transactions.bridgechainRegistration)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.contains('.TransactionConfirmBridgechainRegistration')).toBe(true)
-    })
-
-    it('should render bridgechain resignation confirm component', async () => {
-      createWrapper(null, transactions.bridgechainResignation)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.contains('.TransactionConfirmBridgechainResignation')).toBe(true)
-    })
-
-    it('should render bridgechain update confirm component', async () => {
-      createWrapper(null, transactions.bridgechainUpdate)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.contains('.TransactionConfirmBridgechainUpdate')).toBe(true)
     })
   })
 
@@ -476,56 +424,6 @@ describe('TransactionConfirm', () => {
       await wrapper.vm.$nextTick()
 
       expect(wrapper.vm.activeComponent).toBe('TransactionConfirmDelegateResignation')
-    })
-
-    it('should render business registration confirm component', async () => {
-      createWrapper(null, transactions.businessRegistration)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.vm.activeComponent).toBe('TransactionConfirmBusinessRegistration')
-    })
-
-    it('should render business resignation confirm component', async () => {
-      createWrapper(null, transactions.businessResignation)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.vm.activeComponent).toBe('TransactionConfirmBusinessResignation')
-    })
-
-    it('should render business update confirm component', async () => {
-      createWrapper(null, transactions.businessUpdate)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.vm.activeComponent).toBe('TransactionConfirmBusinessUpdate')
-    })
-
-    it('should render bridgechain registration confirm component', async () => {
-      createWrapper(null, transactions.bridgechainRegistration)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.vm.activeComponent).toBe('TransactionConfirmBridgechainRegistration')
-    })
-
-    it('should render bridgechain resignation confirm component', async () => {
-      createWrapper(null, transactions.bridgechainResignation)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.vm.transaction.type).toBe(4)
-      expect(wrapper.vm.transaction.typeGroup).toBe(2)
-      expect(wrapper.vm.activeComponent).toBe('TransactionConfirmBridgechainResignation')
-    })
-
-    it('should render bridgechain update confirm component', async () => {
-      createWrapper(null, transactions.bridgechainUpdate)
-
-      await wrapper.vm.$nextTick()
-
-      expect(wrapper.vm.activeComponent).toBe('TransactionConfirmBridgechainUpdate')
     })
 
     it('should error if no component based on transaction type', () => {
