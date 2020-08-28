@@ -74,7 +74,30 @@ exports.TRANSACTION_TYPES = {
     BUSINESS_UPDATE: 2,
     BRIDGECHAIN_REGISTRATION: 3,
     BRIDGECHAIN_RESIGNATION: 4,
-    BRIDGECHAIN_UPDATE: 5
+    BRIDGECHAIN_UPDATE: 5,
+    ENTITY: 6
+  }
+}
+
+exports.TRANSACTION_ENTITY = {
+  TYPE: {
+    BUSINESS: 0,
+    BRIDGECHAIN: 1, // not used anymore but type is kept
+    DEVELOPER: 2,
+    PLUGIN: 3,
+    DELEGATE: 4
+  },
+
+  SUBTYPE: {
+    NONE: 0,
+    PLUGIN_CORE: 1,
+    PLUGIN_DESKTOP: 2
+  },
+
+  ACTION: {
+    REGISTER: 0,
+    UPDATE: 1,
+    RESIGN: 2
   }
 }
 
