@@ -18,7 +18,7 @@ type IpfsDetailProps = {
 };
 
 const renderConfirmationStatus = (isConfirmed: boolean) => {
-	if (isConfirmed) {
+	if (!isConfirmed) {
 		return (
 			<div className="flex">
 				Not Confirmed
