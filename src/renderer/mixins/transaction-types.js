@@ -10,61 +10,61 @@ const isMagistrateTypeGroup = typeGroup => {
 
 export default {
   methods: {
-    isTransfer (type, typeGroup, asset) {
+    transaction_isTransfer (type, typeGroup) {
       return isStandardTypeGroup(typeGroup) && type === TRANSACTION_TYPES.GROUP_1.TRANSFER
     },
 
-    isSecondSignature (type, typeGroup, asset) {
+    transaction_isSecondSignature (type, typeGroup) {
       return (
         isStandardTypeGroup(typeGroup) && type === TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE
       )
     },
 
-    isDelegateRegistration (type, typeGroup, asset) {
+    transaction_isDelegateRegistration (type, typeGroup) {
       return (
         isStandardTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION
       )
     },
 
-    isVote (type, typeGroup, asset) {
+    transaction_isVote (type, typeGroup) {
       return isStandardTypeGroup(typeGroup) && type === TRANSACTION_TYPES.GROUP_1.VOTE
     },
 
-    isMultiSignature (type, typeGroup, asset) {
+    transaction_isMultiSignature (type, typeGroup) {
       return (
         isStandardTypeGroup(typeGroup) && type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE
       )
     },
 
-    isIpfs (type, typeGroup, asset) {
+    transaction_isIpfs (type, typeGroup) {
       return isStandardTypeGroup(typeGroup) && type === TRANSACTION_TYPES.GROUP_1.IPFS
     },
 
-    isMultiPayment (type, typeGroup, asset) {
+    transaction_isMultiPayment (type, typeGroup) {
       return (
         isStandardTypeGroup(typeGroup) && type === TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT
       )
     },
 
-    isDelegateResignation (type, typeGroup, asset) {
+    transaction_isDelegateResignation (type, typeGroup) {
       return (
         isStandardTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION
       )
     },
 
-    isTimelock (type, typeGroup, asset) {
+    transaction_isTimelock (type, typeGroup) {
       return isStandardTypeGroup(typeGroup) && type === TRANSACTION_TYPES.GROUP_1.HTLC_LOCK
     },
 
-    isTimelockClaim (type, typeGroup, asset) {
+    transaction_isTimelockClaim (type, typeGroup) {
       return (
         isStandardTypeGroup(typeGroup) && type === TRANSACTION_TYPES.GROUP_1.HTLC_CLAIM
       )
     },
 
-    isTimelockRefund (type, typeGroup, asset) {
+    transaction_isTimelockRefund (type, typeGroup) {
       return (
         isStandardTypeGroup(typeGroup) && type === TRANSACTION_TYPES.GROUP_1.HTLC_REFUND
       )
@@ -72,7 +72,7 @@ export default {
 
     // Magistrate 2.0
 
-    isEntityRegistration (type, typeGroup, asset) {
+    transaction_isEntityRegistration (type, typeGroup, asset) {
       return (
         isMagistrateTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_2.ENTITY &&
@@ -81,7 +81,7 @@ export default {
       )
     },
 
-    isEntityResignation (type, typeGroup, asset) {
+    transaction_isEntityResignation (type, typeGroup, asset) {
       return (
         isMagistrateTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_2.ENTITY &&
@@ -90,7 +90,7 @@ export default {
       )
     },
 
-    isEntityUpdate (type, typeGroup, asset) {
+    transaction_isEntityUpdate (type, typeGroup, asset) {
       return (
         isMagistrateTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_2.ENTITY &&
@@ -99,7 +99,7 @@ export default {
       )
     },
 
-    isBusinessEntityRegistration (type, typeGroup, asset) {
+    transaction_isBusinessEntityRegistration (type, typeGroup, asset) {
       return (
         this.isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.BUSINESS &&
@@ -107,7 +107,7 @@ export default {
       )
     },
 
-    isBusinessEntityResignation (type, typeGroup, asset) {
+    transaction_isBusinessEntityResignation (type, typeGroup, asset) {
       return (
         this.isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.BUSINESS &&
@@ -115,7 +115,7 @@ export default {
       )
     },
 
-    isBusinessEntityUpdate (type, typeGroup, asset) {
+    transaction_isBusinessEntityUpdate (type, typeGroup, asset) {
       return (
         this.isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.BUSINESS &&
@@ -123,7 +123,7 @@ export default {
       )
     },
 
-    isDeveloperEntityRegistration (type, typeGroup, asset) {
+    transaction_isDeveloperEntityRegistration (type, typeGroup, asset) {
       return (
         this.isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DEVELOPER &&
@@ -131,7 +131,7 @@ export default {
       )
     },
 
-    isDeveloperEntityResignation (type, typeGroup, asset) {
+    transaction_isDeveloperEntityResignation (type, typeGroup, asset) {
       return (
         this.isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DEVELOPER &&
@@ -139,7 +139,7 @@ export default {
       )
     },
 
-    isDeveloperEntityUpdate (type, typeGroup, asset) {
+    transaction_isDeveloperEntityUpdate (type, typeGroup, asset) {
       return (
         this.isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DEVELOPER &&
@@ -147,7 +147,7 @@ export default {
       )
     },
 
-    isCorePluginEntityRegistration (type, typeGroup, asset) {
+    transaction_isCorePluginEntityRegistration (type, typeGroup, asset) {
       return (
         this.isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
@@ -155,7 +155,7 @@ export default {
       )
     },
 
-    isCorePluginEntityResignation (type, typeGroup, asset) {
+    transaction_isCorePluginEntityResignation (type, typeGroup, asset) {
       return (
         this.isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
@@ -163,7 +163,7 @@ export default {
       )
     },
 
-    isCorePluginEntityUpdate (type, typeGroup, asset) {
+    transaction_isCorePluginEntityUpdate (type, typeGroup, asset) {
       return (
         this.isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
@@ -171,7 +171,7 @@ export default {
       )
     },
 
-    isDesktopPluginEntityRegistration (type, typeGroup, asset) {
+    transaction_isDesktopPluginEntityRegistration (type, typeGroup, asset) {
       return (
         this.isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
@@ -179,7 +179,7 @@ export default {
       )
     },
 
-    isDesktopPluginEntityResignation (type, typeGroup, asset) {
+    transaction_isDesktopPluginEntityResignation (type, typeGroup, asset) {
       return (
         this.isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
@@ -187,7 +187,7 @@ export default {
       )
     },
 
-    isDesktopPluginEntityUpdate (type, typeGroup, asset) {
+    transaction_isDesktopPluginEntityUpdate (type, typeGroup, asset) {
       return (
         this.isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.PLUGIN &&
@@ -195,7 +195,7 @@ export default {
       )
     },
 
-    isDelegateEntityRegistration (type, typeGroup, asset) {
+    transaction_isDelegateEntityRegistration (type, typeGroup, asset) {
       return (
         this.isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DELEGATE &&
@@ -203,7 +203,7 @@ export default {
       )
     },
 
-    isDelegateEntityResignation (type, typeGroup, asset) {
+    transaction_isDelegateEntityResignation (type, typeGroup, asset) {
       return (
         this.isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DELEGATE &&
@@ -211,7 +211,7 @@ export default {
       )
     },
 
-    isDelegateEntityUpdate (type, typeGroup, asset) {
+    transaction_isDelegateEntityUpdate (type, typeGroup, asset) {
       return (
         this.isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_ENTITY.TYPE.DELEGATE &&
@@ -221,41 +221,42 @@ export default {
 
     // Magistrate 1.0
 
-    isLegacyBusinessRegistration (type, typeGroup, asset) {
+    transaction_isLegacyBusinessRegistration (type, typeGroup) {
       return (
         isMagistrateTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION
       )
     },
 
-    isLegacyBusinessResignation (type, typeGroup, asset) {
+    transaction_isLegacyBusinessResignation (type, typeGroup) {
       return (
         isMagistrateTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION
       )
     },
 
-    isLegacyBusinessUpdate (type, typeGroup, asset) {
+    transaction_isLegacyBusinessUpdate (type, typeGroup) {
       return (
         isMagistrateTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE
       )
     },
-    isLegacyBridgechainRegistration (type, typeGroup, asset) {
+
+    transaction_isLegacyBridgechainRegistration (type, typeGroup) {
       return (
         isMagistrateTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION
       )
     },
 
-    isLegacyBridgechainResignation (type, typeGroup, asset) {
+    transaction_isLegacyBridgechainResignation (type, typeGroup) {
       return (
         isMagistrateTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_RESIGNATION
       )
     },
 
-    isLegacyBridgechainUpdate (type, typeGroup, asset) {
+    transaction_isLegacyBridgechainUpdate (type, typeGroup) {
       return (
         isMagistrateTypeGroup(typeGroup) &&
         type === TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_UPDATE
