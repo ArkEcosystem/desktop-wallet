@@ -992,7 +992,30 @@ export default {
       BUSINESS_UPDATE: 'Business Update',
       BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration',
       BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation',
-      BRIDGECHAIN_UPDATE: 'Bridgechain Update'
+      BRIDGECHAIN_UPDATE: 'Bridgechain Update',
+      // Magistrate 2.0
+      BUSINESS_ENTITY_REGISTRATION: 'Business Registration',
+      BUSINESS_ENTITY_RESIGNATION: 'Business Resignation',
+      BUSINESS_ENTITY_UPDATE: 'Business Update',
+      DEVELOPER_ENTITY_REGISTRATION: 'Developer Registration',
+      DEVELOPER_ENTITY_RESIGNATION: 'Developer Resignation',
+      DEVELOPER_ENTITY_UPDATE: 'Developer Update',
+      CORE_PLUGIN_ENTITY_REGISTRATION: 'Core Plugin Registration',
+      CORE_PLUGIN_ENTITY_RESIGNATION: 'Core Plugin Resignation',
+      CORE_PLUGIN_ENTITY_UPDATE: 'Core Plugin Update',
+      DESKTOP_PLUGIN_ENTITY_REGISTRATION: 'Desktop Plugin Registration',
+      DESKTOP_PLUGIN_ENTITY_RESIGNATION: 'Desktop Plugin Resignation',
+      DESKTOP_PLUGIN_ENTITY_UPDATE: 'Desktop Plugin Update',
+      DELEGATE_ENTITY_REGISTRATION: 'Delegate Registration (AIP36)',
+      DELEGATE_ENTITY_RESIGNATION: 'Delegate Resignation (AIP36)',
+      DELEGATE_ENTITY_UPDATE: 'Delegate Update',
+      // Magistrate 1.0
+      LEGACY_BUSINESS_REGISTRATION: 'Business Registration (Legacy)',
+      LEGACY_BUSINESS_RESIGNATION: 'Business Resignation (Legacy)',
+      LEGACY_BUSINESS_UPDATE: 'Business Update (Legacy)',
+      LEGACY_BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration (Legacy)',
+      LEGACY_BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation (Legacy)',
+      LEGACY_BRIDGECHAIN_UPDATE: 'Bridgechain Update (Legacy)'
     },
     ERROR: {
       VALIDATION: {
