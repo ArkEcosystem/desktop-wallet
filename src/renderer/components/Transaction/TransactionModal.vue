@@ -390,10 +390,6 @@ export default {
   max-height: 100%;
 }
 
-.TransactionModalBridgechainRegistration,
-.TransactionModalBridgechainUpdate,
-.TransactionModalBusinessRegistration,
-.TransactionModalBusinessUpdate,
 .TransactionModalIpfs,
 .TransactionModalMultiSignature {
   min-width: 35rem;
