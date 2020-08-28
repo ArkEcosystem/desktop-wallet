@@ -48,7 +48,7 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 					average: transferFees.avg,
 				});
 
-				setValue("fee", transferFees.avg, true);
+				setValue("fee", transferFees.avg, { shouldValidate: true });
 			} catch (error) {
 				onFail?.(error);
 			}
@@ -64,7 +64,7 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
-		setValue("senderAddress", address, true);
+		setValue("senderAddress", address, { shouldValidate: true });
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
 		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/transfer`);
@@ -103,7 +103,7 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}
-					onChange={(value: any) => setValue("fee", value, true)}
+					onChange={(value: any) => setValue("fee", value, { shouldValidate: true })}
 				/>
 			</FormField>
 		</div>

@@ -87,7 +87,9 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 							placeholder=" "
 							className="pr-20"
 							defaultValue={username}
-							onChange={(event: any) => setValue("username", event.target.value, true)}
+							onChange={(event: any) =>
+								setValue("username", event.target.value, { shouldValidate: true })
+							}
 						/>
 					</InputGroup>
 					<FormHelperText />
@@ -100,7 +102,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}
-						onChange={(value: any) => setValue("fee", value, true)}
+						onChange={(value: any) => setValue("fee", value, { shouldValidate: true })}
 					/>
 				</FormField>
 			</div>

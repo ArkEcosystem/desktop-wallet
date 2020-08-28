@@ -64,7 +64,7 @@ export const FirstStep = ({
 					average: transferFees.avg,
 				});
 
-				setValue("fee", transferFees.avg, true);
+				setValue("fee", transferFees.avg, { shouldValidate: true });
 			} catch (error) {
 				return;
 			}
@@ -120,7 +120,7 @@ export const FirstStep = ({
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}
-							onChange={(value: any) => setValue("fee", value, true)}
+							onChange={(value: any) => setValue("fee", value, { shouldValidate: true })}
 						/>
 					</FormField>
 				</TransactionDetail>
@@ -279,12 +279,12 @@ export const SendVoteTransaction = () => {
 		register("vote", { required: true });
 		register("fee", { required: true });
 
-		setValue("senderAddress", senderId, true);
-		setValue("vote", voteId, true);
+		setValue("senderAddress", senderId, { shouldValidate: true });
+		setValue("vote", voteId, { shouldValidate: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true });
 
 				break;
 			}

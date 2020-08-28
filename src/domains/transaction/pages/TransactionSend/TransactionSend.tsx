@@ -49,7 +49,9 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 							<AddRecipient
 								maxAvailableAmount={80}
 								profile={profile}
-								onChange={(recipients: RecipientListItem[]) => setValue("recipients", recipients, true)}
+								onChange={(recipients: RecipientListItem[]) =>
+									setValue("recipients", recipients, { shouldValidate: true })
+								}
 								recipients={recipients}
 							/>
 						</div>
@@ -66,7 +68,9 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 									className="pr-24"
 									maxLength={255}
 									defaultValue={smartbridge}
-									onChange={(event: any) => setValue("smartbridge", event.target.value, true)}
+									onChange={(event: any) =>
+										setValue("smartbridge", event.target.value, { shouldValidate: true })
+									}
 								/>
 								<InputAddonEnd>
 									<button type="button" className="px-4 text-theme-neutral-light focus:outline-none">
@@ -239,11 +243,11 @@ export const TransactionSend = () => {
 		register("fee", { required: true });
 		register("smartbridge");
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true });
 
 				break;
 			}

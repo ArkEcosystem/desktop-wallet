@@ -82,18 +82,18 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
-		setValue("senderAddress", address, true);
+		setValue("senderAddress", address, { shouldValidate: true });
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
 		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/registration`);
 	};
 
 	const onSelectType = (selectedItem: RegistrationType) => {
-		setValue("registrationType", selectedItem.value, true);
+		setValue("registrationType", selectedItem.value, { shouldValidate: true });
 		setRegistrationForm(registrationComponents[selectedItem.value]);
 
 		if (feeOptions[selectedItem.value]) {
-			setValue("fee", feeOptions[selectedItem.value].average, true);
+			setValue("fee", feeOptions[selectedItem.value].average, { shouldValidate: true });
 		}
 	};
 
@@ -223,11 +223,11 @@ export const Registration = () => {
 		register("network", { required: true });
 		register("registrationType", { required: true });
 		register("senderAddress", { required: true });
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true });
 
 				break;
 			}

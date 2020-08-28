@@ -50,7 +50,9 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 									placeholder=" "
 									className="pr-20"
 									defaultValue={hash}
-									onChange={(event: any) => setValue("hash", event.target.value, true)}
+									onChange={(event: any) =>
+										setValue("hash", event.target.value, { shouldValidate: true })
+									}
 								/>
 							</InputGroup>
 							<FormHelperText />
@@ -179,11 +181,11 @@ export const SendIPFSTransaction = () => {
 				t("TRANSACTION.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
 		});
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true });
 
 				break;
 			}
