@@ -127,23 +127,6 @@ export default class WalletService {
   }
 
   /**
-   * Check if a wallet business has bridgechains
-   * @param {Object} wallet
-   * @returns {Boolean}
-   */
-  static async hasBridgechains (wallet, vm) {
-    try {
-      const bridegchains = await vm.$client.fetchBusinessBridgechains(wallet.address)
-
-      return bridegchains.data.filter(bridgechain => !bridgechain.isResigned).length > 0
-    } catch (error) {
-      //
-    }
-
-    return false
-  }
-
-  /**
    * Signs a message by using the given passphrase.
    * @param {String} message
    * @param {String} passphrase

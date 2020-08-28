@@ -1353,39 +1353,6 @@ export default {
     BUTTON_SET_PEER: 'Set Peer'
   },
 
-  WALLET_BUSINESS: {
-    BUTTON_REGISTER_BRIDGECHAIN: 'Register Bridgechain',
-    HEADER: 'Bridgechains',
-    DESCRIPTION: 'All bridgechains registered for this business',
-    NAME: 'Name',
-    NAME_ERROR: 'No special characters or uppercase allowed',
-    WEBSITE: 'Website',
-    VAT: 'VAT',
-    REPOSITORY: 'Repository',
-    NO_TRANSACTIONS: 'This wallet has no bridgechains',
-    NOT_REGISTERED: 'This wallet is not registered as a business',
-    COLUMN: {
-      NAME: 'Name',
-      SEEDS: 'Seeds',
-      GENESIS_HASH: 'Genesis Hash',
-      REPOSITORY: 'Repository'
-    },
-    BRIDGECHAIN: {
-      NAME: 'Name',
-      SEED_NODES: 'Seed Nodes',
-      GENESIS_HASH: 'Genesis Hash',
-      BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
-      BRIDGECHAIN_ASSET_REPOSITORY: 'Bridgechain Asset Repository',
-      API_PORT: 'API Port',
-      NOT_REGISTERED: 'This bridgechain is not registered',
-      RESIGNED: 'Resigned',
-      BUTTON: {
-        RESIGN: 'Resign',
-        UPDATE: 'Update'
-      }
-    }
-  },
-
   WALLET_GRID: {
     LOADING_LEDGER: 'Loading Ledger wallets...'
   },

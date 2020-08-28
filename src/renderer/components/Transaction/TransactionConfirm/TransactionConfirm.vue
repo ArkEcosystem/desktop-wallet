@@ -62,8 +62,6 @@ import TransactionConfirmMultiSignature from './TransactionConfirmMultiSignature
 import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
-import TransactionConfirmBusiness from './TransactionConfirmBusiness'
-import TransactionConfirmBridgechain from './TransactionConfirmBridgechain'
 import TransactionDetail from '../TransactionDetail'
 import SvgIcon from '@/components/SvgIcon'
 import TransactionService from '@/services/transaction'
@@ -87,8 +85,6 @@ export default {
     TransactionConfirmSecondSignature,
     TransactionConfirmTransfer,
     TransactionConfirmVote,
-    ...TransactionConfirmBusiness,
-    ...TransactionConfirmBridgechain,
     TransactionDetail,
     SvgIcon
   },
