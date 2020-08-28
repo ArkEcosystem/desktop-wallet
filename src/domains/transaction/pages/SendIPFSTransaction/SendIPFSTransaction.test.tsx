@@ -80,7 +80,7 @@ describe("SendIPFSTransaction", () => {
 		);
 
 		expect(getByTestId("SendIPFSTransaction__step--second")).toBeTruthy();
-		expect(container).toHaveTextContent(wallet.network().name);
+		expect(container).toHaveTextContent(wallet.network().name());
 		expect(container).toHaveTextContent("D8rr7B…s6YUYD");
 		expect(container).toHaveTextContent("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
