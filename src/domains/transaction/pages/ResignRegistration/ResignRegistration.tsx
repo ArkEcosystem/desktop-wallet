@@ -27,9 +27,12 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
+type PasswordType = "mnemonic" | "password" | "ledger";
+
 type ResignRegistrationProps = {
 	formDefaultData?: any;
-	onDownload: any;
+	onDownload: (transaction: Contracts.SignedTransactionData) => void;
+	passwordType: PasswordType;
 };
 
 type StepProps = {
@@ -38,8 +41,6 @@ type StepProps = {
 	fee: Contracts.TransactionFee;
 	transaction?: Contracts.SignedTransactionData;
 };
-
-type PasswordType = "mnemonic" | "password" | "ledger";
 
 const FirstStep = ({ wallet, delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
@@ -208,9 +209,8 @@ export const FourthStep = ({ delegate, fee }: StepProps) => {
 	);
 };
 
-export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegistrationProps) => {
+export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }: ResignRegistrationProps) => {
 	const [activeTab, setActiveTab] = useState(1);
-	const [passwordType] = useState<PasswordType>("mnemonic");
 	const [delegate, setDelegate] = useState<WalletData | any>();
 	const [fee, setFee] = useState<Contracts.TransactionFee>();
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
@@ -265,6 +265,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 	const handleSubmit = async () => {
 		const mnemonic = getValues("mnemonic");
 		const from = activeWallet.address();
+		console.log("test");
 
 		try {
 			const transactionId = await activeWallet.transaction().signDelegateResignation({
@@ -282,7 +283,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 
 			handleNext();
 		} catch (error) {
-			// TODO: Handle/map various error messages
+			// TODO: Handle/Map various error messages
 			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
 		}
 	};
@@ -365,6 +366,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 											data-testid="ResignRegistration__download-button"
 											variant="plain"
 											className="space-x-2"
+											onClick={() => onDownload(transaction)}
 										>
 											<Icon name="Download" />
 											<span>{t("COMMON.DOWNLOAD")}</span>
@@ -382,4 +384,5 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 
 ResignRegistration.defaultProps = {
 	formDefaultData: {},
+	passwordType: "mnemonic",
 };
