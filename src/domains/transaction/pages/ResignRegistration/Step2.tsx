@@ -49,7 +49,7 @@ export const SecondStep = ({ wallet, delegate, fee }: StepProps) => {
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address={wallet.address()} />
+					<Address address={wallet.address()} walletName={wallet.alias()} />
 				</TransactionDetail>
 
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate.username()}</TransactionDetail>
