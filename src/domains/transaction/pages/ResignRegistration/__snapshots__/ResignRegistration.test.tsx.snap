@@ -839,7 +839,9 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                             <div
                               class="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24"
                             >
-                              ARK Devnet
+                              ARK name() {
+        return __classPrivateFieldGet(this, _network).name;
+    }
                             </div>
                           </div>
                         </div>
