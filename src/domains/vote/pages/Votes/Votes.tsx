@@ -78,10 +78,7 @@ export const Votes = () => {
 	useEffect(() => {
 		if (hasWalletId) {
 			for (const network of networks) {
-				if (
-					network.id() === activeWallet.network().id &&
-					network.coin() === activeWallet.manifest().get<string>("name")
-				) {
+				if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 					setNetwork(network);
 
 					break;
@@ -139,7 +136,7 @@ export const Votes = () => {
 			</Section>
 
 			<div className="container mx-auto px-14">
-				<div className="-my-5 grid grid-flow-col grid-cols-2 gap-6">
+				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
 					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetwork
 							id="Votes__network"

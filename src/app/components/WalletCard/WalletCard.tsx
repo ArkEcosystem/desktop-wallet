@@ -67,7 +67,7 @@ export const WalletCard = ({
 	}
 
 	const coinName = wallet?.manifest().get<string>("name");
-	const ticker = wallet!.network().currency.ticker;
+	const ticker = wallet!.network().ticker();
 
 	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
 

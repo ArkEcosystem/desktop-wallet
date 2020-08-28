@@ -77,7 +77,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -182,10 +182,7 @@ export const SendIPFSTransaction = () => {
 		setValue("senderAddress", activeWallet.address(), true);
 
 		for (const network of networks) {
-			if (
-				network.id() === activeWallet.network().id &&
-				network.coin() === activeWallet.manifest().get<string>("name")
-			) {
+			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 				setValue("network", network, true);
 
 				break;
@@ -210,7 +207,7 @@ export const SendIPFSTransaction = () => {
 				},
 			});
 
-			await senderWallet!.transaction().broadcast([transactionId]);
+			await senderWallet!.transaction().broadcast(transactionId);
 
 			await env.persist();
 

@@ -106,7 +106,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				</div>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -242,10 +242,7 @@ export const TransactionSend = () => {
 		setValue("senderAddress", activeWallet.address(), true);
 
 		for (const network of networks) {
-			if (
-				network.id() === activeWallet.network().id &&
-				network.coin() === activeWallet.manifest().get<string>("name")
-			) {
+			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 				setValue("network", network, true);
 
 				break;
@@ -292,7 +289,7 @@ export const TransactionSend = () => {
 				});
 			}
 
-			await senderWallet!.transaction().broadcast([transactionId]);
+			await senderWallet!.transaction().broadcast(transactionId);
 
 			await env.persist();
 

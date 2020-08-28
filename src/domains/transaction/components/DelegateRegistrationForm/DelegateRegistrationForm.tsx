@@ -231,7 +231,7 @@ export const DelegateRegistrationForm: RegistrationForm = {
 				},
 			});
 
-			await senderWallet.transaction().broadcast([transactionId]);
+			await senderWallet.transaction().broadcast(transactionId);
 
 			await env.persist();
 

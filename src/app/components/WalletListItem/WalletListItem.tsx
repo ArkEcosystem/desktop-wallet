@@ -89,7 +89,7 @@ export const WalletListItem = ({
 				</div>
 			</td>
 			<td className="font-semibold text-right">
-				<Amount value={wallet.balance()} ticker={wallet.network().currency.ticker} />
+				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</td>
 			<td className="text-right text-theme-neutral-light">
 				<Amount value={wallet.convertedBalance()} ticker={exchangeCurrency!} />
