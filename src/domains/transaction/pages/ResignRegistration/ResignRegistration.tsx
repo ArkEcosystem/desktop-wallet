@@ -157,6 +157,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: PasswordTy
 									: t("TRANSACTION.ENCRYPTION_PASSWORD")}
 							</FormLabel>
 							<InputPassword
+								data-testid={`ResignRegistration__${passwordType}`}
 								name={passwordType}
 								ref={register}
 								onChange={() => form.clearError(passwordType)}
@@ -265,7 +266,6 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 	const handleSubmit = async () => {
 		const mnemonic = getValues("mnemonic");
 		const from = activeWallet.address();
-		console.log("test");
 
 		try {
 			const transactionId = await activeWallet.transaction().signDelegateResignation({
