@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
@@ -7,7 +8,7 @@ import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText,FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
@@ -15,33 +16,30 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 type ResignRegistrationProps = {
 	formDefaultData?: any;
 	onDownload: any;
 };
 
-// TODO: Pull from sdk
-type TransactionFee = {
-	static: string;
-	max: string;
-	min: string;
-	avg: string;
-};
-
 type StepProps = {
 	wallet: ReadWriteWallet;
 	delegate: WalletData | any;
-	fee: TransactionFee;
+	fee: Contracts.TransactionFee;
+	transaction?: Contracts.SignedTransactionData;
 };
+
+type PasswordType = "mnemonic" | "password" | "ledger";
 
 const FirstStep = ({ wallet, delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
@@ -91,6 +89,7 @@ const FirstStep = ({ wallet, delegate, fee }: StepProps) => {
 const SecondStep = ({ wallet, delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
 	const coinName = wallet.manifest().get<string>("name");
+	const network = `${coinName} ${wallet.network().name}`;
 
 	return (
 		<div data-testid="ResignRegistration__second-step">
@@ -113,7 +112,7 @@ const SecondStep = ({ wallet, delegate, fee }: StepProps) => {
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{coinName}
+						{network}
 					</div>
 				</TransactionDetail>
 
@@ -137,7 +136,7 @@ const SecondStep = ({ wallet, delegate, fee }: StepProps) => {
 	);
 };
 
-const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
+const ThirdStep = ({ form, passwordType }: { form: any; passwordType: PasswordType }) => {
 	const { register } = form;
 
 	const { t } = useTranslation();
@@ -150,21 +149,19 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 
 					<div className="mt-8">
-						<FormField name="name">
+						<FormField name={passwordType}>
 							<FormLabel>
 								{passwordType === "mnemonic"
 									? t("TRANSACTION.MNEMONIC")
 									: t("TRANSACTION.ENCRYPTION_PASSWORD")}
 							</FormLabel>
-							<InputPassword name={passwordType} ref={register} />
+							<InputPassword
+								name={passwordType}
+								ref={register}
+								onChange={() => form.clearError(passwordType)}
+							/>
+							<FormHelperText />
 						</FormField>
-
-						{passwordType === "mnemonic" && (
-							<FormField name="name" className="mt-8">
-								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
-								<InputPassword name="secondMnemonic" ref={register} />
-							</FormField>
-						)}
 					</div>
 				</div>
 			)}
@@ -179,7 +176,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 	);
 };
 
-export const FourthStep = ({ wallet, delegate, fee }: StepProps) => {
+export const FourthStep = ({ delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -213,16 +210,20 @@ export const FourthStep = ({ wallet, delegate, fee }: StepProps) => {
 
 export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegistrationProps) => {
 	const [activeTab, setActiveTab] = useState(1);
+	const [passwordType] = useState<PasswordType>("mnemonic");
 	const [delegate, setDelegate] = useState<WalletData | any>();
-	const [fee, setFee] = useState<TransactionFee>();
+	const [fee, setFee] = useState<Contracts.TransactionFee>();
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const { formState } = form;
+	const { formState, getValues, setError } = form;
 	const { isValid } = formState;
 
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const { t } = useTranslation();
+	const history = useHistory();
 
 	const crumbs = [
 		{
@@ -261,12 +262,37 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 		setActiveTab(activeTab + 1);
 	};
 
+	const handleSubmit = async () => {
+		const mnemonic = getValues("mnemonic");
+		const from = activeWallet.address();
+
+		try {
+			const transactionId = await activeWallet.transaction().signDelegateResignation({
+				from,
+				fee: fee?.static,
+				sign: {
+					mnemonic,
+				},
+			});
+
+			await activeWallet.transaction().broadcast([transactionId]);
+			await env.persist();
+
+			setTransaction(activeWallet.transaction().transaction(transactionId));
+
+			handleNext();
+		} catch (error) {
+			// TODO: Handle/map various error messages
+			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+		}
+	};
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={6} activeIndex={activeTab} />
+						<StepIndicator size={4} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
@@ -276,20 +302,21 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 								{delegate && fee && <SecondStep wallet={activeWallet} delegate={delegate} fee={fee} />}
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep form={form} passwordType="mnemonic" />
+								<ThirdStep form={form} passwordType={passwordType} />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<ThirdStep form={form} passwordType="password" />
-							</TabPanel>
-							<TabPanel tabId={5}>
-								<ThirdStep form={form} passwordType="ledger" />
-							</TabPanel>
-							<TabPanel tabId={6}>
-								{delegate && fee && <FourthStep wallet={activeWallet} delegate={delegate} fee={fee} />}
+								{delegate && fee && (
+									<FourthStep
+										wallet={activeWallet}
+										delegate={delegate}
+										fee={fee}
+										transaction={transaction}
+									/>
+								)}
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
-								{activeTab < 6 && (
+								{activeTab < 4 && (
 									<Button
 										disabled={activeTab === 1}
 										data-testid="ResignRegistration__back-button"
@@ -310,11 +337,11 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 									</Button>
 								)}
 
-								{activeTab >= 3 && activeTab < 6 && (
+								{activeTab === 3 && (
 									<Button
+										type="submit"
 										data-testid="ResignRegistration__send-button"
 										disabled={!isValid}
-										onClick={handleNext}
 										className="space-x-2"
 									>
 										<Icon name="Send" width={20} height={20} />
@@ -322,14 +349,19 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 									</Button>
 								)}
 
-								{activeTab === 6 && (
+								{activeTab === 4 && (
 									<div className="flex justify-end space-x-3">
-										<Button data-testid="ResignRegistration__wallet-button" variant="plain">
+										<Button
+											data-testid="ResignRegistration__wallet-button"
+											variant="plain"
+											onClick={() => {
+												history.push(`/profiles/${activeProfile.id()}/dashboard`);
+											}}
+										>
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 
 										<Button
-											type="submit"
 											data-testid="ResignRegistration__download-button"
 											variant="plain"
 											className="space-x-2"
