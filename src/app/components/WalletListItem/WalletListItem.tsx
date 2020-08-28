@@ -39,7 +39,7 @@ export const WalletListItem = ({
 		if (typeof onAction === "function") onAction(action);
 	};
 
-	const coinName = wallet.coin().manifest().get<string>("name");
+	const coinName = wallet.coinId();
 
 	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
 
@@ -89,7 +89,7 @@ export const WalletListItem = ({
 				</div>
 			</td>
 			<td className="font-semibold text-right">
-				<Amount value={wallet.balance()} ticker={wallet.network().currency.ticker} />
+				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</td>
 			<td className="text-right text-theme-neutral-light">
 				<Amount value={wallet.convertedBalance()} ticker={exchangeCurrency!} />

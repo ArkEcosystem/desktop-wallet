@@ -112,7 +112,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, username } = getValues();
-	const coinName = wallet.manifest().get<string>("name");
+	const coinName = wallet.coinId();
 
 	useEffect(() => {
 		unregister("mnemonic");
@@ -138,7 +138,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name}
+						{wallet.network().name()}
 					</div>
 				</TransactionDetail>
 
@@ -231,7 +231,7 @@ export const DelegateRegistrationForm: RegistrationForm = {
 				},
 			});
 
-			await senderWallet.transaction().broadcast([transactionId]);
+			await senderWallet.transaction().broadcast(transactionId);
 
 			await env.persist();
 

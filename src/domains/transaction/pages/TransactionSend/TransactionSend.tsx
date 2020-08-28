@@ -86,7 +86,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, recipients, smartbridge } = getValues();
-	const coinName = wallet.manifest().get<string>("name");
+	const coinName = wallet.coinId();
 
 	let amount = BigNumber.ZERO;
 	for (const recipient of recipients) {
@@ -119,7 +119,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name}
+						{wallet.network().name()}
 					</div>
 				</TransactionDetail>
 
@@ -242,10 +242,7 @@ export const TransactionSend = () => {
 		setValue("senderAddress", activeWallet.address(), true);
 
 		for (const network of networks) {
-			if (
-				network.id() === activeWallet.network().id &&
-				network.coin() === activeWallet.manifest().get<string>("name")
-			) {
+			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 				setValue("network", network, true);
 
 				break;
@@ -292,7 +289,7 @@ export const TransactionSend = () => {
 				});
 			}
 
-			await senderWallet!.transaction().broadcast([transactionId]);
+			await senderWallet!.transaction().broadcast(transactionId);
 
 			await env.persist();
 
