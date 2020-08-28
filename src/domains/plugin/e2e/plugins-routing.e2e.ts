@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL, scrollToTop } from "../../../utils/e2e-utils";
+import { getLocation, getPageURL, scrollToTop } from "../../../utils/e2e-utils";
 import { goToPlugins } from "./common";
 
 const translations = buildTranslations();
@@ -30,16 +30,16 @@ test("should navigate and apply filters", async (t) => {
 	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.MY_PLUGINS).exists).ok();
 });
 
-test("should navigate to plugin details", async (t) => {
-	await t.click(Selector('[data-testid="PluginCard--ark-explorer-0"]'));
+test.only("should navigate to plugin details and back", async (t) => {
+	await t.click(Selector('[data-testid="PluginGrid"] > div > div').withText("ARK Explorer"));
 	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
-});
 
-test("should navigate back to plugin store from plugin details", async (t) => {
-	await t.click(Selector('[data-testid="PluginCard--ark-explorer-0"]'));
-	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
+	await t.expect(getLocation()).contains("/plugins/ark-explorer");
 
 	await scrollToTop();
 
 	await t.click(Selector("span").withExactText(translations.PLUGINS.GO_BACK_TO_PLUGIN_STORE));
+
+	await t.expect(getLocation()).contains("/plugins");
+	await t.expect(getLocation()).notContains("/plugins/ark-explorer");
 });

@@ -2,8 +2,9 @@
 	"browsers": "electron:",
 	"src": "./src/domains/**/e2e/*.e2e.ts",
 	"screenshots": {
-		"takeOnFails": true
+		"takeOnFails": true,
+		"path": "./screenshots"
 	},
-	"selectorTimeout": 15000,
+	"selectorTimeout": 20000,
 	"assertionTimeout": 15000
 }

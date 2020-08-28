@@ -237,9 +237,14 @@ describe("Dashboard", () => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
 		});
 
-		await waitFor(() => {
-			expect(getAllByTestId("TransactionRow")).toHaveLength(4);
-		});
+		await waitFor(
+			() => {
+				expect(getAllByTestId("TransactionRow")).toHaveLength(4);
+			},
+			{
+				timeout: 5000,
+			},
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

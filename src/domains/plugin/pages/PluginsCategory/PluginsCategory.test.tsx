@@ -162,24 +162,24 @@ describe("PluginsCategory", () => {
 	});
 
 	it("should select plugin on grid", () => {
-		const { asFragment, getByTestId } = rendered;
+		const { asFragment, getAllByText, getByTestId } = rendered;
 
 		const pluginsContainer = getByTestId("PluginsCategory__plugins");
 
 		act(() => {
-			fireEvent.click(within(pluginsContainer).getByTestId("PluginCard--ark-explorer-1"));
+			fireEvent.click(within(pluginsContainer).getAllByText("ARK Explorer")[0]);
 		});
 
 		expect(consoleSpy).toHaveBeenLastCalledWith("selected");
 
 		act(() => {
-			fireEvent.click(within(pluginsContainer).getByTestId("PluginCard--ark-explorer-1"));
+			fireEvent.click(within(pluginsContainer).getAllByText("ARK Explorer")[0]);
 		});
 
 		expect(consoleSpy).toHaveBeenLastCalledWith("selected");
 
 		act(() => {
-			fireEvent.click(within(pluginsContainer).getByTestId("PluginCard--ark-explorer-1"));
+			fireEvent.click(within(pluginsContainer).getAllByText("ARK Explorer")[0]);
 		});
 
 		expect(consoleSpy).toHaveBeenLastCalledWith("selected");

@@ -90,3 +90,18 @@ const envWithMocks = () => {
 };
 
 export const env = envWithMocks();
+
+export const syncDelegates = async () => {
+	const coinsData = env.usedCoinsWithNetworks();
+	const coinsInUse = Object.keys(coinsData);
+	const delegatesPromises: any = [];
+
+	for (const coin of coinsInUse) {
+		const coinNetworks = coinsData[coin];
+		for (const network of coinNetworks) {
+			delegatesPromises.push(Promise.resolve(env.coins().syncDelegates(coin, network)));
+		}
+	}
+
+	await Promise.allSettled(delegatesPromises);
+};
