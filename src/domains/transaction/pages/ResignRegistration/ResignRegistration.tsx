@@ -52,7 +52,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 	useEffect(() => {
 		const loadFees = async () => {
 			try {
-				const { delegateResignation } = await activeWallet.fee().all(7);
+				const { delegateResignation } = await activeWallet.coin().fee().all(7);
 				setFee(delegateResignation);
 			} catch (error) {
 				// TODO: Set default or throw exception?
