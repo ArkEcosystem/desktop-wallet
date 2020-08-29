@@ -54,7 +54,8 @@ export const FirstStep = ({
 			const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 			try {
-				const transferFees = (await senderWallet!.fee().all(7))?.vote;
+				// TODO: sync fees in the background, like delegates
+				const transferFees = (await senderWallet!.coin().fee().all(7))?.vote;
 
 				setFeeOptions({
 					last: undefined,
@@ -77,7 +78,7 @@ export const FirstStep = ({
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -156,7 +157,7 @@ export const SecondStep = ({
 				<p className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}</p>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}

@@ -28,7 +28,8 @@ describe("SendTransactionForm", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().values()[0];
-		defaultFee = (await wallet.fee().all(7)).transfer.avg;
+		// TODO: sync fees in the background, like delegates
+		defaultFee = (await wallet.coin().fee().all(7)).transfer.avg;
 	});
 
 	beforeEach(() => {
