@@ -2517,7 +2517,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </div>
                       </span>
                       <div
-                        class="sc-AxhUy HIeKl right-0 undefined"
+                        class="sc-AxhUy hdscrW mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 undefined"
                       >
                         <div
                           data-testid="dropdown__content"
@@ -2525,174 +2525,174 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           <ul
                             data-testid="dropdown__options"
                           />
-                        </div>
-                        <div>
-                          <div
-                            class="px-10 py-7 w-128"
-                          >
+                          <div>
                             <div
-                              class="flex flex-col text-left"
+                              class="px-10 py-7 w-128"
                             >
                               <div
-                                class="mb-8"
+                                class="flex flex-col text-left"
                               >
                                 <div
-                                  class="font-semibold text-theme-neutral-dark"
-                                >
-                                  Filter Network
-                                </div>
-                                <div
-                                  class="mt-1 text-sm text-theme-neutral"
-                                >
-                                  Select the types of networks
-                                </div>
-                              </div>
-                              <div>
-                                <ul
-                                  class="inline-block"
-                                  data-testid="network__option"
-                                />
-                                <div
-                                  class="sc-AxhCb bzWLYJ relative cursor-pointer border-theme-primary-contrast"
-                                  data-testid="network__viewall"
-                                >
-                                  <div
-                                    class="text-sm font-semibold text-theme-primary-500"
-                                  >
-                                    All
-                                  </div>
-                                  <span
-                                    class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
-                                  >
-                                    <div
-                                      class="sc-AxirZ fttODj"
-                                      height="10"
-                                      width="10"
-                                    >
-                                      <svg>
-                                        chevron-down.svg
-                                      </svg>
-                                    </div>
-                                    <span />
-                                  </span>
-                                </div>
-                              </div>
-                              <div
-                                class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
-                              />
-                              <div
-                                class="flex flex-col"
-                              >
-                                <div
-                                  class="flex items-center justify-between"
+                                  class="mb-8"
                                 >
                                   <div
                                     class="font-semibold text-theme-neutral-dark"
                                   >
-                                    Your Wallets
+                                    Filter Network
                                   </div>
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
+                                    class="mt-1 text-sm text-theme-neutral"
+                                  >
+                                    Select the types of networks
+                                  </div>
+                                </div>
+                                <div>
+                                  <ul
+                                    class="inline-block"
+                                    data-testid="network__option"
+                                  />
+                                  <div
+                                    class="sc-AxhCb bzWLYJ relative cursor-pointer border-theme-primary-contrast"
+                                    data-testid="network__viewall"
                                   >
                                     <div
-                                      class="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
-                                      data-testid="filter-wallets__wallets"
+                                      class="text-sm font-semibold text-theme-primary-500"
                                     >
-                                      <span
-                                        class="inline-block mr-2 font-semibold"
-                                      >
-                                        All
-                                      </span>
+                                      All
+                                    </div>
+                                    <span
+                                      class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
+                                    >
                                       <div
-                                        class="sc-AxirZ hDwaov"
-                                        height="12"
-                                        width="12"
+                                        class="sc-AxirZ fttODj"
+                                        height="10"
+                                        width="10"
                                       >
                                         <svg>
                                           chevron-down.svg
                                         </svg>
                                       </div>
-                                    </div>
+                                      <span />
+                                    </span>
                                   </div>
                                 </div>
                                 <div
-                                  class="pr-12 mt-1 text-sm text-theme-neutral"
-                                >
-                                  Select the display of your wallets
-                                </div>
-                              </div>
-                              <div
-                                class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
-                              />
-                              <div
-                                class="flex flex-col mb-6"
-                              >
+                                  class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
+                                />
                                 <div
-                                  class="flex items-center justify-between"
+                                  class="flex flex-col"
                                 >
                                   <div
-                                    class="font-semibold text-theme-neutral-dark"
+                                    class="flex items-center justify-between"
                                   >
-                                    Portfolio Chart
-                                  </div>
-                                  <label
-                                    class="flex"
-                                  >
-                                    <input
-                                      checked=""
-                                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                                      data-testid="filter-wallets_toggle--portfolio"
-                                      type="checkbox"
-                                    />
                                     <div
-                                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                      class="font-semibold text-theme-neutral-dark"
                                     >
-                                      <span
-                                        class="Toggle__HandleInner-qyyifx-2 chnbkf"
-                                      />
+                                      Your Wallets
                                     </div>
-                                  </label>
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
+                                        data-testid="filter-wallets__wallets"
+                                      >
+                                        <span
+                                          class="inline-block mr-2 font-semibold"
+                                        >
+                                          All
+                                        </span>
+                                        <div
+                                          class="sc-AxirZ hDwaov"
+                                          height="12"
+                                          width="12"
+                                        >
+                                          <svg>
+                                            chevron-down.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="pr-12 mt-1 text-sm text-theme-neutral"
+                                  >
+                                    Select the display of your wallets
+                                  </div>
                                 </div>
                                 <div
-                                  class="pr-12 mt-1 text-sm text-theme-neutral"
-                                >
-                                  You can hide this unit if you like
-                                </div>
-                              </div>
-                              <div
-                                class="flex flex-col"
-                              >
+                                  class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
+                                />
                                 <div
-                                  class="flex items-center justify-between"
+                                  class="flex flex-col mb-6"
                                 >
                                   <div
-                                    class="font-semibold text-theme-neutral-dark"
+                                    class="flex items-center justify-between"
                                   >
-                                    Transaction History
-                                  </div>
-                                  <label
-                                    class="flex"
-                                  >
-                                    <input
-                                      checked=""
-                                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                                      data-testid="filter-wallets_toggle--transactions"
-                                      type="checkbox"
-                                    />
                                     <div
-                                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                      class="font-semibold text-theme-neutral-dark"
                                     >
-                                      <span
-                                        class="Toggle__HandleInner-qyyifx-2 chnbkf"
-                                      />
+                                      Portfolio Chart
                                     </div>
-                                  </label>
+                                    <label
+                                      class="flex"
+                                    >
+                                      <input
+                                        checked=""
+                                        class="Toggle__Input-qyyifx-0 bXkHfF"
+                                        data-testid="filter-wallets_toggle--portfolio"
+                                        type="checkbox"
+                                      />
+                                      <div
+                                        class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                      >
+                                        <span
+                                          class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                        />
+                                      </div>
+                                    </label>
+                                  </div>
+                                  <div
+                                    class="pr-12 mt-1 text-sm text-theme-neutral"
+                                  >
+                                    You can hide this unit if you like
+                                  </div>
                                 </div>
                                 <div
-                                  class="pr-12 mt-1 text-sm text-theme-neutral"
+                                  class="flex flex-col"
                                 >
-                                  You can hide this unit if you like
+                                  <div
+                                    class="flex items-center justify-between"
+                                  >
+                                    <div
+                                      class="font-semibold text-theme-neutral-dark"
+                                    >
+                                      Transaction History
+                                    </div>
+                                    <label
+                                      class="flex"
+                                    >
+                                      <input
+                                        checked=""
+                                        class="Toggle__Input-qyyifx-0 bXkHfF"
+                                        data-testid="filter-wallets_toggle--transactions"
+                                        type="checkbox"
+                                      />
+                                      <div
+                                        class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                      >
+                                        <span
+                                          class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                        />
+                                      </div>
+                                    </label>
+                                  </div>
+                                  <div
+                                    class="pr-12 mt-1 text-sm text-theme-neutral"
+                                  >
+                                    You can hide this unit if you like
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -4332,7 +4332,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                         </div>
                       </span>
                       <div
-                        class="sc-AxhUy HIeKl right-0 undefined"
+                        class="sc-AxhUy hdscrW mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1 undefined"
                       >
                         <div
                           data-testid="dropdown__content"
@@ -4340,174 +4340,174 @@ exports[`Dashboard should hide transaction view 1`] = `
                           <ul
                             data-testid="dropdown__options"
                           />
-                        </div>
-                        <div>
-                          <div
-                            class="px-10 py-7 w-128"
-                          >
+                          <div>
                             <div
-                              class="flex flex-col text-left"
+                              class="px-10 py-7 w-128"
                             >
                               <div
-                                class="mb-8"
+                                class="flex flex-col text-left"
                               >
                                 <div
-                                  class="font-semibold text-theme-neutral-dark"
-                                >
-                                  Filter Network
-                                </div>
-                                <div
-                                  class="mt-1 text-sm text-theme-neutral"
-                                >
-                                  Select the types of networks
-                                </div>
-                              </div>
-                              <div>
-                                <ul
-                                  class="inline-block"
-                                  data-testid="network__option"
-                                />
-                                <div
-                                  class="sc-AxhCb bzWLYJ relative cursor-pointer border-theme-primary-contrast"
-                                  data-testid="network__viewall"
-                                >
-                                  <div
-                                    class="text-sm font-semibold text-theme-primary-500"
-                                  >
-                                    All
-                                  </div>
-                                  <span
-                                    class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
-                                  >
-                                    <div
-                                      class="sc-AxirZ fttODj"
-                                      height="10"
-                                      width="10"
-                                    >
-                                      <svg>
-                                        chevron-down.svg
-                                      </svg>
-                                    </div>
-                                    <span />
-                                  </span>
-                                </div>
-                              </div>
-                              <div
-                                class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
-                              />
-                              <div
-                                class="flex flex-col"
-                              >
-                                <div
-                                  class="flex items-center justify-between"
+                                  class="mb-8"
                                 >
                                   <div
                                     class="font-semibold text-theme-neutral-dark"
                                   >
-                                    Your Wallets
+                                    Filter Network
                                   </div>
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
+                                    class="mt-1 text-sm text-theme-neutral"
+                                  >
+                                    Select the types of networks
+                                  </div>
+                                </div>
+                                <div>
+                                  <ul
+                                    class="inline-block"
+                                    data-testid="network__option"
+                                  />
+                                  <div
+                                    class="sc-AxhCb bzWLYJ relative cursor-pointer border-theme-primary-contrast"
+                                    data-testid="network__viewall"
                                   >
                                     <div
-                                      class="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
-                                      data-testid="filter-wallets__wallets"
+                                      class="text-sm font-semibold text-theme-primary-500"
                                     >
-                                      <span
-                                        class="inline-block mr-2 font-semibold"
-                                      >
-                                        All
-                                      </span>
+                                      All
+                                    </div>
+                                    <span
+                                      class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
+                                    >
                                       <div
-                                        class="sc-AxirZ hDwaov"
-                                        height="12"
-                                        width="12"
+                                        class="sc-AxirZ fttODj"
+                                        height="10"
+                                        width="10"
                                       >
                                         <svg>
                                           chevron-down.svg
                                         </svg>
                                       </div>
-                                    </div>
+                                      <span />
+                                    </span>
                                   </div>
                                 </div>
                                 <div
-                                  class="pr-12 mt-1 text-sm text-theme-neutral"
-                                >
-                                  Select the display of your wallets
-                                </div>
-                              </div>
-                              <div
-                                class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
-                              />
-                              <div
-                                class="flex flex-col mb-6"
-                              >
+                                  class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
+                                />
                                 <div
-                                  class="flex items-center justify-between"
+                                  class="flex flex-col"
                                 >
                                   <div
-                                    class="font-semibold text-theme-neutral-dark"
+                                    class="flex items-center justify-between"
                                   >
-                                    Portfolio Chart
-                                  </div>
-                                  <label
-                                    class="flex"
-                                  >
-                                    <input
-                                      checked=""
-                                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                                      data-testid="filter-wallets_toggle--portfolio"
-                                      type="checkbox"
-                                    />
                                     <div
-                                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                      class="font-semibold text-theme-neutral-dark"
                                     >
-                                      <span
-                                        class="Toggle__HandleInner-qyyifx-2 chnbkf"
-                                      />
+                                      Your Wallets
                                     </div>
-                                  </label>
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
+                                        data-testid="filter-wallets__wallets"
+                                      >
+                                        <span
+                                          class="inline-block mr-2 font-semibold"
+                                        >
+                                          All
+                                        </span>
+                                        <div
+                                          class="sc-AxirZ hDwaov"
+                                          height="12"
+                                          width="12"
+                                        >
+                                          <svg>
+                                            chevron-down.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="pr-12 mt-1 text-sm text-theme-neutral"
+                                  >
+                                    Select the display of your wallets
+                                  </div>
                                 </div>
                                 <div
-                                  class="pr-12 mt-1 text-sm text-theme-neutral"
-                                >
-                                  You can hide this unit if you like
-                                </div>
-                              </div>
-                              <div
-                                class="flex flex-col"
-                              >
+                                  class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
+                                />
                                 <div
-                                  class="flex items-center justify-between"
+                                  class="flex flex-col mb-6"
                                 >
                                   <div
-                                    class="font-semibold text-theme-neutral-dark"
+                                    class="flex items-center justify-between"
                                   >
-                                    Transaction History
-                                  </div>
-                                  <label
-                                    class="flex"
-                                  >
-                                    <input
-                                      checked=""
-                                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                                      data-testid="filter-wallets_toggle--transactions"
-                                      type="checkbox"
-                                    />
                                     <div
-                                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                      class="font-semibold text-theme-neutral-dark"
                                     >
-                                      <span
-                                        class="Toggle__HandleInner-qyyifx-2 chnbkf"
-                                      />
+                                      Portfolio Chart
                                     </div>
-                                  </label>
+                                    <label
+                                      class="flex"
+                                    >
+                                      <input
+                                        checked=""
+                                        class="Toggle__Input-qyyifx-0 bXkHfF"
+                                        data-testid="filter-wallets_toggle--portfolio"
+                                        type="checkbox"
+                                      />
+                                      <div
+                                        class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                      >
+                                        <span
+                                          class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                        />
+                                      </div>
+                                    </label>
+                                  </div>
+                                  <div
+                                    class="pr-12 mt-1 text-sm text-theme-neutral"
+                                  >
+                                    You can hide this unit if you like
+                                  </div>
                                 </div>
                                 <div
-                                  class="pr-12 mt-1 text-sm text-theme-neutral"
+                                  class="flex flex-col"
                                 >
-                                  You can hide this unit if you like
+                                  <div
+                                    class="flex items-center justify-between"
+                                  >
+                                    <div
+                                      class="font-semibold text-theme-neutral-dark"
+                                    >
+                                      Transaction History
+                                    </div>
+                                    <label
+                                      class="flex"
+                                    >
+                                      <input
+                                        checked=""
+                                        class="Toggle__Input-qyyifx-0 bXkHfF"
+                                        data-testid="filter-wallets_toggle--transactions"
+                                        type="checkbox"
+                                      />
+                                      <div
+                                        class="Toggle__Handle-qyyifx-1 jXkMFJ"
+                                      >
+                                        <span
+                                          class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                                        />
+                                      </div>
+                                    </label>
+                                  </div>
+                                  <div
+                                    class="pr-12 mt-1 text-sm text-theme-neutral"
+                                  >
+                                    You can hide this unit if you like
+                                  </div>
                                 </div>
                               </div>
                             </div>
