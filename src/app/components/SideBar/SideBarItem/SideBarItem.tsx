@@ -15,13 +15,7 @@ const ActiveIndicator = styled.div({
 
 export const SideBarItem = withRouter(
 	({ label, icon, itemKey, route, isActive, history, handleActiveItem }: ItemProps & RouteComponentProps) => {
-		const getActiveClass = () =>
-			isActive
-				? `
-        text-theme-primary
-        bg-theme-primary-contrast
-    `
-				: "text-theme-medium";
+		const getActiveClass = () => (isActive ? "text-theme-primary bg-theme-primary-contrast" : "text-theme-medium");
 
 		const handleClick = () => {
 			handleActiveItem(itemKey);
@@ -34,7 +28,7 @@ export const SideBarItem = withRouter(
 				data-testid={`side-menu__item--${itemKey}`}
 			>
 				{isActive && <ActiveIndicator className="absolute top-0 left-0 rounded-lg bg-theme-primary" />}
-				<li className={`rounded-lg py-5 pl-10 pr-8 flex ${getActiveClass()} flex items-center`}>
+				<li className={`rounded-lg py-5 pl-10 pr-8 h-15 ${getActiveClass()} flex items-center`}>
 					{icon && (
 						<div className={`text-theme-${isActive ? "primary" : "primary-light"}`}>
 							<Icon name={icon} width={20} height={20} />
