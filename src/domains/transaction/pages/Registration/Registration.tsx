@@ -240,7 +240,8 @@ export const Registration = () => {
 			const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 			try {
-				const fees = Object.entries(await senderWallet!.fee().all(7)).reduce(
+				// TODO: sync fees in the background, like delegates
+				const fees = Object.entries(await senderWallet!.coin().fee().all(7)).reduce(
 					(mapping, [transactionType, fees]) => {
 						mapping[transactionType] = {
 							last: undefined,
