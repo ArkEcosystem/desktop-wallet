@@ -54,7 +54,8 @@ export const FirstStep = ({
 			const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 			try {
-				const transferFees = (await senderWallet!.fee().all(7))?.vote;
+				// TODO: sync fees in the background, like delegates
+				const transferFees = (await senderWallet!.coin().fee().all(7))?.vote;
 
 				setFeeOptions({
 					last: undefined,
