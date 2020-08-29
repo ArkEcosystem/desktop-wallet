@@ -1,9 +1,31 @@
 <template>
   <span class="WalletAddress flex items-center">
-    <span v-if="transaction_isSecondSignature(type, group)">
+    <span
+      v-if="transaction_isSecondSignature(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.SECOND_SIGNATURE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.SECOND_SIGNATURE") }}
     </span>
-    <span v-else-if="transaction_isDelegateRegistration(type, group)">
+    <span
+      v-else-if="transaction_isDelegateRegistration(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DELEGATE_REGISTRATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
     </span>
     <span
@@ -31,90 +53,398 @@
         </span>
       </a>
     </span>
-    <span v-else-if="transaction_isMultiSignature(type, group)">
+    <span
+      v-else-if="transaction_isMultiSignature(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.MULTI_SIGNATURE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.MULTI_SIGNATURE") }}
     </span>
-    <span v-else-if="transaction_isIpfs(type, group)">
+    <span
+      v-else-if="transaction_isIpfs(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.IPFS'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.IPFS") }}
     </span>
-    <span v-else-if="transaction_isMultiPayment(type, group)">
+    <span
+      v-else-if="transaction_isMultiPayment(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.MULTI_PAYMENT'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.MULTI_PAYMENT") }}
     </span>
-    <span v-else-if="transaction_isDelegateResignation(type, group)">
+    <span
+      v-else-if="transaction_isDelegateResignation(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DELEGATE_RESIGNATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
     </span>
-    <span v-else-if="transaction_isTimelock(type, group)">
+    <span
+      v-else-if="transaction_isTimelock(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.HTLC_LOCK'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.HTLC_LOCK") }}
     </span>
-    <span v-else-if="transaction_isTimelockClaim(type, group)">
+    <span
+      v-else-if="transaction_isTimelockClaim(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.HTLC_CLAIM'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.HTLC_CLAIM") }}
     </span>
-    <span v-else-if="transaction_isTimelockRefund(type, group)">
+    <span
+      v-else-if="transaction_isTimelockRefund(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.HTLC_REFUND'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.HTLC_REFUND") }}
     </span>
     <!-- Magistrate 2.0 -->
-    <span v-else-if="transaction_isBusinessEntityRegistration(type, group, asset)">
+    <span
+      v-else-if="transaction_isBusinessEntityRegistration(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.BUSINESS_ENTITY_REGISTRATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.BUSINESS_ENTITY_REGISTRATION") }}
     </span>
-    <span v-else-if="transaction_isBusinessEntityResignation(type, group, asset)">
+    <span
+      v-else-if="transaction_isBusinessEntityResignation(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.BUSINESS_ENTITY_RESIGNATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.BUSINESS_ENTITY_RESIGNATION") }}
     </span>
-    <span v-else-if="transaction_isBusinessEntityUpdate(type, group, asset)">
+    <span
+      v-else-if="transaction_isBusinessEntityUpdate(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.BUSINESS_ENTITY_UPDATE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.BUSINESS_ENTITY_UPDATE") }}
     </span>
-    <span v-else-if="transaction_isDeveloperEntityRegistration(type, group, asset)">
+    <span
+      v-else-if="transaction_isDeveloperEntityRegistration(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DEVELOPER_ENTITY_REGISTRATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DEVELOPER_ENTITY_REGISTRATION") }}
     </span>
-    <span v-else-if="transaction_isDeveloperEntityResignation(type, group, asset)">
+    <span
+      v-else-if="transaction_isDeveloperEntityResignation(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DEVELOPER_ENTITY_RESIGNATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DEVELOPER_ENTITY_RESIGNATION") }}
     </span>
-    <span v-else-if="transaction_isDeveloperEntityUpdate(type, group, asset)">
+    <span
+      v-else-if="transaction_isDeveloperEntityUpdate(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DEVELOPER_ENTITY_UPDATE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DEVELOPER_ENTITY_UPDATE") }}
     </span>
-    <span v-else-if="transaction_isCorePluginEntityRegistration(type, group, asset)">
+    <span
+      v-else-if="transaction_isCorePluginEntityRegistration(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_REGISTRATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_REGISTRATION") }}
     </span>
-    <span v-else-if="transaction_isCorePluginEntityResignation(type, group, asset)">
+    <span
+      v-else-if="transaction_isCorePluginEntityResignation(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_RESIGNATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_RESIGNATION") }}
     </span>
-    <span v-else-if="transaction_isCorePluginEntityUpdate(type, group, asset)">
+    <span
+      v-else-if="transaction_isCorePluginEntityUpdate(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_UPDATE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_UPDATE") }}
     </span>
-    <span v-else-if="transaction_isDesktopPluginEntityRegistration(type, group, asset)">
+    <span
+      v-else-if="transaction_isDesktopPluginEntityRegistration(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_REGISTRATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_REGISTRATION") }}
     </span>
-    <span v-else-if="transaction_isDesktopPluginEntityResignation(type, group, asset)">
+    <span
+      v-else-if="transaction_isDesktopPluginEntityResignation(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_RESIGNATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_RESIGNATION") }}
     </span>
-    <span v-else-if="transaction_isDesktopPluginEntityUpdate(type, group, asset)">
+    <span
+      v-else-if="transaction_isDesktopPluginEntityUpdate(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_UPDATE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_UPDATE") }}
     </span>
-    <span v-else-if="transaction_isDelegateEntityRegistration(type, group, asset)">
+    <span
+      v-else-if="transaction_isDelegateEntityRegistration(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DELEGATE_ENTITY_REGISTRATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DELEGATE_ENTITY_REGISTRATION") }}
     </span>
-    <span v-else-if="transaction_isDelegateEntityResignation(type, group, asset)">
+    <span
+      v-else-if="transaction_isDelegateEntityResignation(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DELEGATE_ENTITY_RESIGNATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DELEGATE_ENTITY_RESIGNATION") }}
     </span>
-    <span v-else-if="transaction_isDelegateEntityUpdate(type, group, asset)">
+    <span
+      v-else-if="transaction_isDelegateEntityUpdate(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.DELEGATE_ENTITY_UPDATE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.DELEGATE_ENTITY_UPDATE") }}
     </span>
     <!-- Magistrate 1.0 -->
-    <span v-else-if="transaction_isLegacyBusinessRegistration(type, group)">
+    <span
+      v-else-if="transaction_isLegacyBusinessRegistration(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.LEGACY_BUSINESS_REGISTRATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.LEGACY_BUSINESS_REGISTRATION") }}
     </span>
-    <span v-else-if="transaction_isLegacyBusinessResignation(type, group)">
+    <span
+      v-else-if="transaction_isLegacyBusinessResignation(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.LEGACY_BUSINESS_RESIGNATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.LEGACY_BUSINESS_RESIGNATION") }}
     </span>
-    <span v-else-if="transaction_isLegacyBusinessUpdate(type, group)">
+    <span
+      v-else-if="transaction_isLegacyBusinessUpdate(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.LEGACY_BUSINESS_UPDATE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.LEGACY_BUSINESS_UPDATE") }}
     </span>
-    <span v-else-if="transaction_isLegacyBridgechainRegistration(type, group)">
+    <span
+      v-else-if="transaction_isLegacyBridgechainRegistration(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_REGISTRATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_REGISTRATION") }}
     </span>
-    <span v-else-if="transaction_isLegacyBridgechainResignation(type, group)">
+    <span
+      v-else-if="transaction_isLegacyBridgechainResignation(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_RESIGNATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_RESIGNATION") }}
     </span>
-    <span v-else-if="transaction_isLegacyBridgechainUpdate(type, group)">
+    <span
+      v-else-if="transaction_isLegacyBridgechainUpdate(type, group)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_UPDATE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       {{ $t("TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_UPDATE") }}
     </span>
     <span
