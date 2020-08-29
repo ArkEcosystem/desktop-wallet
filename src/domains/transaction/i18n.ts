@@ -142,6 +142,9 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Transaction Review",
 			DESCRIPTION: "Check the information again before Resignation",
 		},
+		FOURTH_STEP: {
+			TITLE: "Delegate Resignation",
+		},
 	},
 
 	PAGE_UPDATE_REGISTRATION: {
