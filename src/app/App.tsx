@@ -44,22 +44,12 @@ const Main = ({ syncInterval }: Props) => {
 	}, [pathname]);
 
 	useLayoutEffect(() => {
-		const syncDelegates = () => {
+		const syncDelegates = async () => {
 			console.log("Running delegates sync...");
-			const coinsData = env.usedCoinsWithNetworks();
-			const coinsInUse = Object.keys(coinsData);
-			const delegatesPromises: any = [];
 
-			for (const coin of coinsInUse) {
-				const coinNetworks = coinsData[coin];
-				for (const network of coinNetworks) {
-					delegatesPromises.push(Promise.resolve(env.coins().syncDelegates(coin, network)));
-				}
-			}
+			await env.coins().syncAllDelegates(env.usedCoinsWithNetworks());
 
-			Promise.allSettled(delegatesPromises).then(() => {
-				setShowSplash(false);
-			});
+			setShowSplash(false);
 		};
 
 		const boot = async () => {
