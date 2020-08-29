@@ -120,10 +120,12 @@ describe("Registration", () => {
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
 			await waitFor(() =>
-				expect(setValueSpy).toHaveBeenNthCalledWith(1, "registrationType", "delegateRegistration", true),
+				expect(setValueSpy).toHaveBeenNthCalledWith(1, "registrationType", "delegateRegistration", {
+					shouldValidate: true,
+				}),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
-			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", true));
+			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", { shouldValidate: true }));
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});

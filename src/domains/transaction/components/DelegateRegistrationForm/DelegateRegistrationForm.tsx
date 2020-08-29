@@ -24,10 +24,13 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
-	const { getValues, register, setValue } = useFormContext();
+	const { getValues, register, setValue, watch } = useFormContext();
 	const username = getValues("username");
 	const [delegates, setDelegates] = useState([]);
-	const fee = getValues("fee") || null;
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultFee] = useState(() => watch("fee"));
+	const fee = getValues("fee") || defaultFee || null;
 
 	useEffect(() => {
 		setDelegates(env.coins().delegates(wallet.coinId(), wallet.networkId()));

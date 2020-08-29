@@ -26,6 +26,7 @@ let feeOptions: Record<string, string>;
 
 const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) => {
 	let renderer: RenderResult;
+
 	const { result: form } = renderHook(() =>
 		useForm({
 			defaultValues,
