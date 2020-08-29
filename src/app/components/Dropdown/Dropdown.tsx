@@ -2,30 +2,28 @@ import { Icon } from "app/components/Icon";
 import { clickOutsideHandler } from "app/hooks/click-outside";
 import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
-import { Size } from "types";
+import { Position, Size } from "types";
 
-import { defaultClasses } from "./Dropdown.styles";
+import { defaultClasses, getStyles } from "./Dropdown.styles";
 
 export type DropdownOption = {
 	label: string;
 	value: string | number;
 };
 
-type Props = {
+type DropdownProps = {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	onSelect?: any;
 	options?: any;
-	position?: string;
+	position?: Position;
 	dropdownClass?: string;
 	toggleIcon: string;
 	toggleSize?: Size;
 	toggleContent?: any;
 };
 
-export const Wrapper = styled.div`
-	${defaultClasses}
-`;
+export const Wrapper = styled.div<{ position?: string }>(getStyles);
 
 /*
  * Dropdown options list
@@ -88,7 +86,7 @@ export const Dropdown = ({
 	toggleIcon,
 	toggleSize,
 	toggleContent,
-}: Props) => {
+}: DropdownProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = (e: any) => {
@@ -118,9 +116,11 @@ export const Dropdown = ({
 		<div ref={ref} className="relative">
 			<span onClick={toggle}>{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}</span>
 
-			<Wrapper className={`${position}-0 ${dropdownClass}`}>
-				<div data-testid="dropdown__content">{renderOptions(options, select)}</div>
-				<div>{children}</div>
+			<Wrapper position={position} className={`${defaultClasses} ${dropdownClass}`}>
+				<div data-testid="dropdown__content">
+					{renderOptions(options, select)}
+					{children && <div>{children}</div>}
+				</div>
 			</Wrapper>
 		</div>
 	);
