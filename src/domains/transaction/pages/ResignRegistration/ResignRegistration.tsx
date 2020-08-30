@@ -4,7 +4,6 @@ import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
-import { Loader } from "app/components/Loader";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -14,7 +13,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep, FourthStep, SecondStep, ThirdStep } from "./";
+import { FirstStep, FirstStepSkeleton, FourthStep, SecondStep, ThirdStep } from "./";
 import { ResignRegistrationProps } from "./ResignRegistration.models";
 
 export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }: ResignRegistrationProps) => {
@@ -100,10 +99,16 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
-						{(!fee || !delegate) && <Loader />}
+						<StepIndicator size={4} activeIndex={activeTab} />
+
+						{(!fee || !delegate) && (
+							<div className="mt-8">
+								<FirstStepSkeleton wallet={activeWallet} />{" "}
+							</div>
+						)}
+
 						{fee && delegate && (
-							<div>
-								<StepIndicator size={4} activeIndex={activeTab} />
+							<div data-testid="ResignRegistration__steps-wrapper">
 								<div className="mt-8">
 									<TabPanel tabId={1}>
 										<FirstStep wallet={activeWallet} delegate={delegate} fee={fee} />
