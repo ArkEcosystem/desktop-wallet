@@ -3,6 +3,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
+import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
@@ -52,9 +53,14 @@ const NotificationsDropdown = ({
 }: NotificationsProps) => (
 	<Dropdown
 		toggleContent={
-			<div className="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300">
+			<Button
+				variant="transparent"
+				size="icon"
+				className="text-theme-primary-300 hover:text-theme-primary-400"
+				data-testid="navbar__buttons--notifications"
+			>
 				<Icon name="Notification" width={22} height={22} />
-			</div>
+			</Button>
 		}
 	>
 		<div className="p-8 py-3 mt-2 w-128">
@@ -153,7 +159,7 @@ export const NavigationBar = ({
 					<NavLink
 						to={menuItem.mountPath(profile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-bold text-md text-theme-neutral"
+						className="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -199,36 +205,42 @@ export const NavigationBar = ({
 						<>
 							<ul className="flex h-20 mr-auto md:h-24">{renderMenu()}</ul>
 
-							<div className="flex items-center h-full mr-4">
+							<div className="flex items-center h-full space-x-5">
 								<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
-								<div className="flex items-center h-full text-theme-primary-300">
-									<NavLink
-										className="p-2 mx-6 my-auto"
-										to={`/profiles/${profile?.id()}/transactions/transfer`}
+								<div className="flex items-center h-full">
+									<Button
+										variant="transparent"
+										size="icon"
+										className="text-theme-primary-300 hover:text-theme-primary-400"
+										onClick={() => history.push(`/profiles/${profile?.id()}/transactions/transfer`)}
 										data-testid="navbar__buttons--send"
 									>
 										<Icon name="Sent" width={22} height={22} />
-									</NavLink>
+									</Button>
 								</div>
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
-								<div className="flex items-center h-full text-theme-primary-300">
-									<button
-										className="p-2 mx-6 my-auto"
+								<div className="flex items-center h-full">
+									<Button
+										size="icon"
+										variant="transparent"
+										className="text-theme-primary-300 hover:text-theme-primary-400"
 										onClick={() => setIsSearchingWallet(true)}
 										data-testid="navbar__buttons--receive"
 									>
 										<Icon name="Receive" width={22} height={22} />
-									</button>
+									</Button>
 								</div>
 
 								<div className="h-8 border-r border-theme-neutral-200" />
+							</div>
 
-								<div className="ml-8 text-right">
+							<div className="flex items-center h-full ml-8 mr-4">
+								<div className="text-right">
 									<div className="text-xs font-medium text-theme-neutral">
 										{t("COMMON.YOUR_BALANCE")}
 									</div>
@@ -242,15 +254,13 @@ export const NavigationBar = ({
 									</div>
 								</div>
 
-								<div className="flex cusror-pointer">
-									<UserInfo
-										userInitials={getUserInitials()}
-										currencyIcon={getCurrencyIcon()}
-										avatarImage={profile?.avatar()}
-										userActions={userActions}
-										onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
-									/>
-								</div>
+								<UserInfo
+									userInitials={getUserInitials()}
+									currencyIcon={getCurrencyIcon()}
+									avatarImage={profile?.avatar()}
+									userActions={userActions}
+									onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
+								/>
 							</div>
 						</>
 					)}

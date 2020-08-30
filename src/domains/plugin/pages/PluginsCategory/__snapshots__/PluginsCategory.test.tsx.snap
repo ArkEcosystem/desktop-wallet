@@ -7,7 +7,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag diZZJo"
+      class="sc-fzoLag gnHGCp"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -35,7 +35,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -47,7 +47,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -58,7 +58,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -69,7 +69,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -78,14 +78,17 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center h-full space-x-5"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
+                data-testid="navbar__buttons--notifications"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -96,18 +99,19 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                     notification.svg
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -118,17 +122,19 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -144,8 +150,12 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center h-full ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -163,65 +173,61 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -315,7 +321,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
                 />
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="PluginsCategory_header--install"
                   type="button"
@@ -762,7 +768,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -889,7 +895,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -1020,7 +1026,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -1147,7 +1153,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -1278,7 +1284,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -1405,7 +1411,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -1536,7 +1542,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -1663,7 +1669,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -1691,7 +1697,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                     data-testid="Pagination"
                   >
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__first"
                       disabled=""
@@ -1708,7 +1714,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__previous"
                       disabled=""
@@ -1735,7 +1741,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__next"
                       disabled=""
@@ -1753,7 +1759,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__last"
                       disabled=""
@@ -1788,7 +1794,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag diZZJo"
+      class="sc-fzoLag gnHGCp"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1816,7 +1822,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1828,7 +1834,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1839,7 +1845,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1850,7 +1856,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1859,14 +1865,17 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center h-full space-x-5"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
+                data-testid="navbar__buttons--notifications"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -1877,18 +1886,19 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                     notification.svg
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -1899,17 +1909,19 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -1925,8 +1937,12 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center h-full ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -1944,65 +1960,61 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -2096,7 +2108,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
                 />
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="PluginsCategory_header--install"
                   type="button"
@@ -2543,7 +2555,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -2670,7 +2682,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -2801,7 +2813,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -2928,7 +2940,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -3059,7 +3071,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -3186,7 +3198,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -3317,7 +3329,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -3444,7 +3456,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -3472,7 +3484,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                     data-testid="Pagination"
                   >
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__first"
                       disabled=""
@@ -3489,7 +3501,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__previous"
                       disabled=""
@@ -3516,7 +3528,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__next"
                       disabled=""
@@ -3534,7 +3546,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__last"
                       disabled=""
@@ -3569,7 +3581,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag diZZJo"
+      class="sc-fzoLag gnHGCp"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3597,7 +3609,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -3609,7 +3621,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -3620,7 +3632,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -3631,7 +3643,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -3640,14 +3652,17 @@ exports[`PluginsCategory should delete plugin 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center h-full space-x-5"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
+                data-testid="navbar__buttons--notifications"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3658,18 +3673,19 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     notification.svg
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3680,17 +3696,19 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3706,8 +3724,12 @@ exports[`PluginsCategory should delete plugin 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center h-full ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -3725,65 +3747,61 @@ exports[`PluginsCategory should delete plugin 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -3877,7 +3895,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
                 />
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="PluginsCategory_header--install"
                   type="button"
@@ -4704,7 +4722,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag diZZJo"
+      class="sc-fzoLag gnHGCp"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4732,7 +4750,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -4744,7 +4762,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -4755,7 +4773,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -4766,7 +4784,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -4775,14 +4793,17 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center h-full space-x-5"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
+                data-testid="navbar__buttons--notifications"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4793,18 +4814,19 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                     notification.svg
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4815,17 +4837,19 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4841,8 +4865,12 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center h-full ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -4860,65 +4888,61 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -5012,7 +5036,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
                 />
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="PluginsCategory_header--install"
                   type="button"
@@ -5459,7 +5483,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -5586,7 +5610,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -5717,7 +5741,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -5844,7 +5868,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -5975,7 +5999,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -6102,7 +6126,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -6233,7 +6257,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -6360,7 +6384,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -6388,7 +6412,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                     data-testid="Pagination"
                   >
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__first"
                       disabled=""
@@ -6405,7 +6429,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__previous"
                       disabled=""
@@ -6432,7 +6456,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__next"
                       disabled=""
@@ -6450,7 +6474,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__last"
                       disabled=""
@@ -6493,7 +6517,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
           class="absolute top-0 right-0 z-50 mt-5"
         >
           <button
-            class="sc-AxjAm gEldWW"
+            class="sc-AxjAm evFEPN"
             color="neutral"
             data-testid="modal__close-btn"
             type="button"
@@ -6616,7 +6640,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                 class="flex justify-end mt-8 space-x-3"
               >
                 <button
-                  class="sc-AxjAm cyswVS"
+                  class="sc-AxjAm fPpool"
                   color="primary"
                   data-testid="InstallPlugin__cancel-button"
                   type="button"
@@ -6624,7 +6648,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   Cancel
                 </button>
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="InstallPlugin__install-button"
                   type="button"
@@ -6648,7 +6672,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag diZZJo"
+      class="sc-fzoLag gnHGCp"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6676,7 +6700,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -6688,7 +6712,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -6699,7 +6723,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -6710,7 +6734,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -6719,14 +6743,17 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center h-full space-x-5"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
+                data-testid="navbar__buttons--notifications"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -6737,18 +6764,19 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     notification.svg
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -6759,17 +6787,19 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -6785,8 +6815,12 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center h-full ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -6804,65 +6838,61 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -6956,7 +6986,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                   class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
                 />
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="PluginsCategory_header--install"
                   type="button"
@@ -7791,7 +7821,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
           class="absolute top-0 right-0 z-50 mt-5"
         >
           <button
-            class="sc-AxjAm gEldWW"
+            class="sc-AxjAm evFEPN"
             color="neutral"
             data-testid="modal__close-btn"
             type="button"
@@ -7914,7 +7944,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                 class="flex justify-end mt-8 space-x-3"
               >
                 <button
-                  class="sc-AxjAm cyswVS"
+                  class="sc-AxjAm fPpool"
                   color="primary"
                   data-testid="InstallPlugin__cancel-button"
                   type="button"
@@ -7922,7 +7952,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                   Cancel
                 </button>
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="InstallPlugin__install-button"
                   type="button"
@@ -7946,7 +7976,7 @@ exports[`PluginsCategory should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag diZZJo"
+      class="sc-fzoLag gnHGCp"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7974,7 +8004,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -7986,7 +8016,7 @@ exports[`PluginsCategory should render 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -7997,7 +8027,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -8008,7 +8038,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -8017,14 +8047,17 @@ exports[`PluginsCategory should render 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center h-full space-x-5"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
+                data-testid="navbar__buttons--notifications"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -8035,18 +8068,19 @@ exports[`PluginsCategory should render 1`] = `
                     notification.svg
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -8057,17 +8091,19 @@ exports[`PluginsCategory should render 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -8083,8 +8119,12 @@ exports[`PluginsCategory should render 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center h-full ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -8102,65 +8142,61 @@ exports[`PluginsCategory should render 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -8254,7 +8290,7 @@ exports[`PluginsCategory should render 1`] = `
                   class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
                 />
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="PluginsCategory_header--install"
                   type="button"
@@ -9081,7 +9117,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag diZZJo"
+      class="sc-fzoLag gnHGCp"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9109,7 +9145,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -9121,7 +9157,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -9132,7 +9168,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -9143,7 +9179,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -9152,14 +9188,17 @@ exports[`PluginsCategory should search for plugin 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center h-full space-x-5"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
+                data-testid="navbar__buttons--notifications"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -9170,18 +9209,19 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     notification.svg
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -9192,17 +9232,19 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -9218,8 +9260,12 @@ exports[`PluginsCategory should search for plugin 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center h-full ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -9237,65 +9283,61 @@ exports[`PluginsCategory should search for plugin 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -9439,7 +9481,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
                 />
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="PluginsCategory_header--install"
                   type="button"
@@ -10266,7 +10308,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag diZZJo"
+      class="sc-fzoLag gnHGCp"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -10294,7 +10336,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -10306,7 +10348,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -10317,7 +10359,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -10328,7 +10370,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -10337,14 +10379,17 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center h-full space-x-5"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
+                data-testid="navbar__buttons--notifications"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -10355,18 +10400,19 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     notification.svg
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -10377,17 +10423,19 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -10403,8 +10451,12 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center h-full ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -10422,65 +10474,61 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -10574,7 +10622,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
                 />
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="PluginsCategory_header--install"
                   type="button"
@@ -11401,7 +11449,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag diZZJo"
+      class="sc-fzoLag gnHGCp"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11429,7 +11477,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -11441,7 +11489,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -11452,7 +11500,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -11463,7 +11511,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -11472,14 +11520,17 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center h-full space-x-5"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
+                data-testid="navbar__buttons--notifications"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -11490,18 +11541,19 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                     notification.svg
                   </svg>
                 </div>
-              </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -11512,17 +11564,19 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center h-full"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -11538,8 +11592,12 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center h-full ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -11557,65 +11615,61 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -11709,7 +11763,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
                 />
                 <button
-                  class="sc-AxjAm ddQVWI"
+                  class="sc-AxjAm kbZyZT"
                   color="primary"
                   data-testid="PluginsCategory_header--install"
                   type="button"
@@ -12156,7 +12210,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -12283,7 +12337,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -12414,7 +12468,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -12541,7 +12595,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -12672,7 +12726,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -12799,7 +12853,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -12930,7 +12984,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16 text-right"
                         >
                           <button
-                            class="sc-AxjAm cyswVS"
+                            class="sc-AxjAm fPpool"
                             color="primary"
                             data-testid="PluginListItem__install"
                             type="button"
@@ -13057,7 +13111,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm bBBiEi text-left"
+                              class="sc-AxjAm gBWztV text-left"
                               color="primary"
                               type="button"
                             >
@@ -13085,7 +13139,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                     data-testid="Pagination"
                   >
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__first"
                       disabled=""
@@ -13102,7 +13156,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__previous"
                       disabled=""
@@ -13129,7 +13183,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__next"
                       disabled=""
@@ -13147,7 +13201,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm cyswVS"
+                      class="sc-AxjAm fPpool"
                       color="primary"
                       data-testid="Pagination__last"
                       disabled=""

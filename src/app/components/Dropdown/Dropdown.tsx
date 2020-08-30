@@ -32,7 +32,7 @@ const renderOptions = (options: DropdownOption[], onSelect: any) => (
 	<ul data-testid="dropdown__options">
 		{options.map((option: DropdownOption, key: number) => (
 			<li
-				className="block px-8 py-4 text-base font-semibold text-left cursor-pointer text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary"
+				className="block px-8 py-4 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary"
 				key={key}
 				data-testid={`dropdown__option--${key}`}
 				onClick={(e: any) => {
