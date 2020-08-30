@@ -168,6 +168,27 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should star and unstar a wallet", async () => {
+		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
+
+		expect(wallet.isStarred()).toBe(false);
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletHeader__star-button"));
+		});
+
+		await waitFor(() => expect(wallet.isStarred()).toBe(true));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletHeader__star-button"));
+		});
+
+		await waitFor(() => expect(wallet.isStarred()).toBe(false));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should fetch more transactions", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 
