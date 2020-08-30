@@ -129,6 +129,9 @@ export const translations: { [key: string]: any } = {
 		TRANSACTION_HISTORY: "Transaction History",
 		YOUR_WALLETS: "Your Wallets",
 
+		STAR_WALLET: "Add to favorites",
+		UNSTAR_WALLET: "Remove from favorites",
+
 		REGISTRATIONS: {
 			TITLE: "Registrations",
 			EMPTY: {
