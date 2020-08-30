@@ -15,3 +15,8 @@ export type StepProps = {
 	fee: Contracts.TransactionFee;
 	transaction?: Contracts.SignedTransactionData;
 };
+
+export type SkeletonProps = {
+	wallet: ReadWriteWallet;
+	transaction?: Contracts.SignedTransactionData;
+};
