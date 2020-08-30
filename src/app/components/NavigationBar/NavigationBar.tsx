@@ -53,7 +53,7 @@ const NotificationsDropdown = ({
 }: NotificationsProps) => (
 	<Dropdown
 		toggleContent={
-			<div className="rounded-lg overflow-hidden">
+			<div className="overflow-hidden rounded-lg">
 				<Button
 					variant="transparent"
 					size="icon"
@@ -212,7 +212,7 @@ export const NavigationBar = ({
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
-								<div className="flex items-center rounded-lg overflow-hidden">
+								<div className="flex items-center overflow-hidden rounded-lg">
 									<Button
 										variant="transparent"
 										size="icon"
@@ -226,7 +226,7 @@ export const NavigationBar = ({
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
-								<div className="flex items-center rounded-lg overflow-hidden">
+								<div className="flex items-center overflow-hidden rounded-lg">
 									<Button
 										size="icon"
 										variant="transparent"
