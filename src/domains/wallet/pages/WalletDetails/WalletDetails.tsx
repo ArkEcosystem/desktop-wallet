@@ -102,6 +102,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		setIsUpdateWalletName(false);
 	};
 
+	const handleStar = async () => {
+		activeWallet.toggleStarred();
+		await persist();
+	};
+
 	const fetchMoreTransactions = async (type?: string) => {
 		//TODO: Fetch more type based / ex: pending and confirmed txs
 		const nextPage = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
@@ -114,28 +119,29 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		<>
 			<Page profile={activeProfile} crumbs={crumbs}>
 				<WalletHeader
-					coin={coinName}
-					network={networkId}
-					ticker={ticker}
 					address={activeWallet.address()}
-					publicKey={activeWallet.publicKey()}
 					balance={activeWallet.balance()}
+					coin={coinName}
 					currencyBalance={activeWallet.convertedBalance()}
 					exchangeCurrency={exchangeCurrency}
-					name={activeWallet.alias()}
 					isLedger={activeWallet.isLedger()}
 					isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
-					hasStarred={activeWallet.isStarred()}
+					isStarred={activeWallet.isStarred()}
+					name={activeWallet.alias()}
+					network={networkId}
+					publicKey={activeWallet.publicKey()}
+					ticker={ticker}
+					onDeleteWallet={() => setIsDeleteWallet(true)}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/transfer`)
 					}
+					onSignMessage={() => setIsSigningMessage(true)}
+					onStar={handleStar}
 					onStoreHash={() =>
 						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/ipfs`)
 					}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
-					onSignMessage={() => setIsSigningMessage(true)}
-					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
 
 				<Section>
