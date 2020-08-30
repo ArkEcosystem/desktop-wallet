@@ -29,7 +29,7 @@ export const ThirdStep = ({ form, passwordType }: { form: any; passwordType: Pas
 								data-testid={`ResignRegistration__${passwordType}`}
 								name={passwordType}
 								ref={register}
-								onChange={() => form.clearError(passwordType)}
+								onChange={() => form.clearErrors(passwordType)}
 							/>
 							<FormHelperText />
 						</FormField>
