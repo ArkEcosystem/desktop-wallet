@@ -16,10 +16,10 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -77,43 +77,47 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhUy gwxBWy p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxhUy gwxBWy"
+                  class="sc-AxhUy gwxBWy p-1"
                   height="22"
                   width="22"
                 >
@@ -127,16 +131,16 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxhUy gwxBWy"
+                  class="sc-AxhUy gwxBWy p-1"
                   height="22"
                   width="22"
                 >
@@ -151,7 +155,7 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -1619,10 +1623,10 @@ exports[`Transaction Send should send a multi payment transfer 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -1680,43 +1684,47 @@ exports[`Transaction Send should send a multi payment transfer 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhUy gwxBWy p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxhUy gwxBWy"
+                  class="sc-AxhUy gwxBWy p-1"
                   height="22"
                   width="22"
                 >
@@ -1730,16 +1738,16 @@ exports[`Transaction Send should send a multi payment transfer 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxhUy gwxBWy"
+                  class="sc-AxhUy gwxBWy p-1"
                   height="22"
                   width="22"
                 >
@@ -1754,7 +1762,7 @@ exports[`Transaction Send should send a multi payment transfer 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -2232,10 +2240,10 @@ exports[`Transaction Send should send a single transfer 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -2293,43 +2301,47 @@ exports[`Transaction Send should send a single transfer 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhUy gwxBWy p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxhUy gwxBWy"
+                  class="sc-AxhUy gwxBWy p-1"
                   height="22"
                   width="22"
                 >
@@ -2343,16 +2355,16 @@ exports[`Transaction Send should send a single transfer 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxirZ eUzagL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxhUy gwxBWy"
+                  class="sc-AxhUy gwxBWy p-1"
                   height="22"
                   width="22"
                 >
@@ -2367,7 +2379,7 @@ exports[`Transaction Send should send a single transfer 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"

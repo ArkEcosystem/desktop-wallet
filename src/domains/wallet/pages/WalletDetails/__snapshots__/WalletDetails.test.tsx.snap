@@ -16,10 +16,10 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -77,43 +77,47 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -127,16 +131,16 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -151,7 +155,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -1403,10 +1407,10 @@ exports[`WalletDetails should remove wallet name 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -1464,43 +1468,47 @@ exports[`WalletDetails should remove wallet name 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -1514,16 +1522,16 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -1538,7 +1546,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -3364,10 +3372,10 @@ exports[`WalletDetails should render 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -3425,43 +3433,47 @@ exports[`WalletDetails should render 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -3475,16 +3487,16 @@ exports[`WalletDetails should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -3499,7 +3511,7 @@ exports[`WalletDetails should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -5333,10 +5345,10 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -5394,43 +5406,47 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -5444,16 +5460,16 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -5468,7 +5484,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -7281,10 +7297,10 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -7342,43 +7358,47 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -7392,16 +7412,16 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -7416,7 +7436,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -9229,10 +9249,10 @@ exports[`WalletDetails should render with timers 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -9290,43 +9310,47 @@ exports[`WalletDetails should render with timers 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -9340,16 +9364,16 @@ exports[`WalletDetails should render with timers 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -9364,7 +9388,7 @@ exports[`WalletDetails should render with timers 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -11190,10 +11214,10 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -11251,43 +11275,47 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -11301,16 +11329,16 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -11325,7 +11353,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -13151,10 +13179,10 @@ exports[`WalletDetails should update wallet name 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -13212,43 +13240,47 @@ exports[`WalletDetails should update wallet name 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -13262,16 +13294,16 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -13286,7 +13318,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"

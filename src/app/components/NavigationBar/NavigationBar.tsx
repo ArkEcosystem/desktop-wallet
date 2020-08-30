@@ -53,14 +53,16 @@ const NotificationsDropdown = ({
 }: NotificationsProps) => (
 	<Dropdown
 		toggleContent={
-			<Button
-				variant="transparent"
-				size="icon"
-				className="text-theme-primary-300 hover:text-theme-primary-400"
-				data-testid="navbar__buttons--notifications"
-			>
-				<Icon name="Notification" width={22} height={22} />
-			</Button>
+			<div className="rounded-lg overflow-hidden">
+				<Button
+					variant="transparent"
+					size="icon"
+					className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+					data-testid="navbar__buttons--notifications"
+				>
+					<Icon name="Notification" width={22} height={22} className="p-1" />
+				</Button>
+			</div>
 		}
 	>
 		<div className="p-8 py-3 mt-2 w-128">
@@ -128,7 +130,7 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userIn
 );
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center bg-logo text-white rounded-lg mr-4`};
+	${tw`flex items-center justify-center bg-logo text-white rounded-lg my-auto mr-4`};
 	width: 50px;
 	height: 50px;
 `;
@@ -195,7 +197,7 @@ export const NavigationBar = ({
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
 			<div className="px-4 sm:px-6 lg:px-10">
 				<div className="relative flex justify-between h-20 md:h-24">
-					<div className="flex items-center flex-shrink-0">
+					<div className="flex items-center my-auto">
 						<LogoContainer>
 							<ARKLogo width={40} />
 						</LogoContainer>
@@ -205,41 +207,41 @@ export const NavigationBar = ({
 						<>
 							<ul className="flex h-20 mr-auto md:h-24">{renderMenu()}</ul>
 
-							<div className="flex items-center h-full space-x-5">
+							<div className="flex items-center my-auto space-x-4">
 								<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
-								<div className="flex items-center h-full">
+								<div className="flex items-center rounded-lg overflow-hidden">
 									<Button
 										variant="transparent"
 										size="icon"
-										className="text-theme-primary-300 hover:text-theme-primary-400"
+										className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
 										onClick={() => history.push(`/profiles/${profile?.id()}/transactions/transfer`)}
 										data-testid="navbar__buttons--send"
 									>
-										<Icon name="Sent" width={22} height={22} />
+										<Icon name="Sent" width={22} height={22} className="p-1" />
 									</Button>
 								</div>
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 
-								<div className="flex items-center h-full">
+								<div className="flex items-center rounded-lg overflow-hidden">
 									<Button
 										size="icon"
 										variant="transparent"
-										className="text-theme-primary-300 hover:text-theme-primary-400"
+										className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
 										onClick={() => setIsSearchingWallet(true)}
 										data-testid="navbar__buttons--receive"
 									>
-										<Icon name="Receive" width={22} height={22} />
+										<Icon name="Receive" width={22} height={22} className="p-1" />
 									</Button>
 								</div>
 
 								<div className="h-8 border-r border-theme-neutral-200" />
 							</div>
 
-							<div className="flex items-center h-full ml-8 mr-4">
+							<div className="flex items-center my-auto ml-8 mr-4">
 								<div className="text-right">
 									<div className="text-xs font-medium text-theme-neutral">
 										{t("COMMON.YOUR_BALANCE")}

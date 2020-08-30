@@ -16,10 +16,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -78,43 +78,47 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -128,16 +132,16 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -152,7 +156,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -1803,10 +1807,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -1865,43 +1869,47 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -1915,16 +1923,16 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -1939,7 +1947,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -3590,10 +3598,10 @@ exports[`PluginsCategory should delete plugin 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -3652,43 +3660,47 @@ exports[`PluginsCategory should delete plugin 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -3702,16 +3714,16 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -3726,7 +3738,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -4731,10 +4743,10 @@ exports[`PluginsCategory should download & install plugin 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -4793,43 +4805,47 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -4843,16 +4859,16 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -4867,7 +4883,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -6681,10 +6697,10 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -6743,43 +6759,47 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -6793,16 +6813,16 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -6817,7 +6837,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -7985,10 +8005,10 @@ exports[`PluginsCategory should render 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -8047,43 +8067,47 @@ exports[`PluginsCategory should render 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -8097,16 +8121,16 @@ exports[`PluginsCategory should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -8121,7 +8145,7 @@ exports[`PluginsCategory should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -9126,10 +9150,10 @@ exports[`PluginsCategory should search for plugin 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -9188,43 +9212,47 @@ exports[`PluginsCategory should search for plugin 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -9238,16 +9266,16 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -9262,7 +9290,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -10317,10 +10345,10 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -10379,43 +10407,47 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -10429,16 +10461,16 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -10453,7 +10485,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -11458,10 +11490,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr fjtVHd"
+              class="sc-fzoXzr gulsOG"
             >
               <svg
                 width="40"
@@ -11520,43 +11552,47 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -11570,16 +11606,16 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -11594,7 +11630,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"

@@ -16,10 +16,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -78,43 +78,47 @@ exports[`Dashboard should fetch more transactions 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -128,16 +132,16 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -152,7 +156,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -2217,10 +2221,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -2279,43 +2283,47 @@ exports[`Dashboard should hide portfolio view 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -2329,16 +2337,16 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -2353,7 +2361,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -3833,10 +3841,10 @@ exports[`Dashboard should hide transaction view 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -3895,43 +3903,47 @@ exports[`Dashboard should hide transaction view 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -3945,16 +3957,16 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -3969,7 +3981,7 @@ exports[`Dashboard should hide transaction view 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -4898,10 +4910,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -4960,43 +4972,47 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -5010,16 +5026,16 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -5034,7 +5050,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -6535,10 +6551,10 @@ exports[`Dashboard should render 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -6597,43 +6613,47 @@ exports[`Dashboard should render 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -6647,16 +6667,16 @@ exports[`Dashboard should render 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -6671,7 +6691,7 @@ exports[`Dashboard should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -8172,10 +8192,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -8234,43 +8254,47 @@ exports[`Dashboard should render portfolio chart 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -8284,16 +8308,16 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -8308,7 +8332,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -9809,10 +9833,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -9871,43 +9895,47 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -9921,16 +9949,16 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -9945,7 +9973,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -11446,10 +11474,10 @@ exports[`Dashboard should render wallets 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -11508,43 +11536,47 @@ exports[`Dashboard should render wallets 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -11558,16 +11590,16 @@ exports[`Dashboard should render wallets 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -11582,7 +11614,7 @@ exports[`Dashboard should render wallets 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
@@ -13083,10 +13115,10 @@ exports[`Dashboard should render with no wallets 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag kybZZo"
             >
               <svg
                 width="40"
@@ -13145,43 +13177,47 @@ exports[`Dashboard should render with no wallets 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full space-x-5"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
-              <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
-                color="primary"
-                data-testid="navbar__buttons--notifications"
-                type="button"
+              <div
+                class="rounded-lg overflow-hidden"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -13195,16 +13231,16 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full"
+              class="flex items-center rounded-lg overflow-hidden"
             >
               <button
-                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-400"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -13219,7 +13255,7 @@ exports[`Dashboard should render with no wallets 1`] = `
             />
           </div>
           <div
-            class="flex items-center h-full ml-8 mr-4"
+            class="flex items-center my-auto ml-8 mr-4"
           >
             <div
               class="text-right"
