@@ -102,7 +102,7 @@ export const WalletHeader = ({
 							<div className="my-auto">
 								<button
 									data-testid="WalletHeader__star-button"
-									className="p-1 mx-2 text-theme-neutral-dark outline-none"
+									className="p-1 mx-2 outline-none text-theme-neutral-dark"
 									onClick={onStar}
 								>
 									<Icon name={isStarred ? "Star" : "StarOutline"} />
