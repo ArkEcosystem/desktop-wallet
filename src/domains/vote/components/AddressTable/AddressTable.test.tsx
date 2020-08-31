@@ -1,7 +1,7 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
-import { env, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
+import { env, getDefaultProfileId, render, syncDelegates, syncDelegates, waitFor } from "testing-library";
 
 import { AddressTable } from "./AddressTable";
 
@@ -22,6 +22,7 @@ describe("AddressTable", () => {
 			.persist();
 
 		await syncDelegates();
+		await wallet.syncVotes();
 	});
 
 	it("should render", async () => {
