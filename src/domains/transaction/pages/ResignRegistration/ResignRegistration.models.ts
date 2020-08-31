@@ -10,7 +10,7 @@ export type ResignRegistrationProps = {
 };
 
 export type StepProps = {
-	wallet: ReadWriteWallet;
+	senderWallet: ReadWriteWallet;
 	delegate: WalletData | any;
 	fee: Contracts.TransactionFee;
 	transaction?: Contracts.SignedTransactionData;

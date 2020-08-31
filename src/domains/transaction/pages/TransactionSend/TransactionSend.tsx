@@ -192,11 +192,17 @@ export const FourthStep = () => {
 	);
 };
 
-export const FifthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => {
+export const FifthStep = ({
+	transaction,
+	senderWallet,
+}: {
+	transaction: Contracts.SignedTransactionData;
+	senderWallet: ReadWriteWallet;
+}) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful transactionId={transaction.id()}>
+		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				className="pb-0"
@@ -344,7 +350,7 @@ export const TransactionSend = () => {
 							</TabPanel>
 
 							<TabPanel tabId={4}>
-								<FifthStep transaction={transaction} />
+								<FifthStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">

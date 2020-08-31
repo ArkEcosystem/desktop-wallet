@@ -224,14 +224,16 @@ export const ThirdStep = () => {
 export const FourthStep = ({
 	delegate,
 	transaction,
+	senderWallet,
 }: {
 	delegate: Contracts.WalletData;
 	transaction: Contracts.SignedTransactionData;
+	senderWallet: ReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful transactionId={transaction.id()}>
+		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			<TransactionDetail
 				label={t("TRANSACTION.DELEGATE")}
 				extra={<Avatar size="lg" address={delegate?.address()} />}
@@ -364,7 +366,7 @@ export const SendVoteTransaction = () => {
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep delegate={delegate} transaction={transaction} />
+								<FourthStep delegate={delegate} transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
