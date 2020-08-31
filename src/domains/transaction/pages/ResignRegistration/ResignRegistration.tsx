@@ -42,7 +42,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 
 	useEffect(() => {
 		setDelegate(
-			env.coins().findDelegateByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address()),
+			env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address()),
 		);
 	}, [env, activeWallet]);
 

@@ -15,6 +15,7 @@ import {
 	render,
 	RenderResult,
 	renderWithRouter,
+	syncDelegates,
 	waitFor,
 	within,
 } from "testing-library";
@@ -43,15 +44,17 @@ let delegate: Contracts.WalletData;
 
 describe("Vote For Delegate", () => {
 	beforeAll(async () => {
-		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		delegate = await wallet.client().delegate(delegateData[0].address);
-
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
 			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
 			.reply(200, transactionFixture);
+
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		delegate = await wallet.client().delegate(delegateData[0].address);
+
+		await syncDelegates();
 	});
 
 	it("should render 1st step", async () => {

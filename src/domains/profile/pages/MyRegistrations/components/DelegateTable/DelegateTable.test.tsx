@@ -1,7 +1,7 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, waitFor, within } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor, within } from "testing-library";
 
 import { DelegateTable } from "./DelegateTable";
 
@@ -9,10 +9,12 @@ let profile: Profile;
 let delegates: ReadWriteWallet[];
 
 describe("Welcome", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		nock("https://dwallets.ark.io")
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
+
+		await syncDelegates();
 
 		profile = env.profiles().findById(getDefaultProfileId());
 

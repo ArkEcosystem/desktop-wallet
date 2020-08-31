@@ -294,7 +294,7 @@ export const SendVoteTransaction = () => {
 	}, [activeWallet, networks, register, senderId, setValue, voteId]);
 
 	useEffect(() => {
-		setDelegate(env.coins().findDelegateByAddress(activeWallet.coinId(), activeWallet.networkId(), voteId));
+		setDelegate(env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), voteId));
 	}, [activeWallet, env, voteId]);
 
 	const crumbs = [

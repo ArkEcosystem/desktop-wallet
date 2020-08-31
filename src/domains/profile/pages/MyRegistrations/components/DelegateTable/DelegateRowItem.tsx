@@ -36,7 +36,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 	];
 
 	useEffect(() => {
-		setDelegateInfo(env.coins().findDelegateByAddress(wallet.coinId(), wallet.networkId(), wallet.address()));
+		setDelegateInfo(env.delegates().findByAddress(wallet.coinId(), wallet.networkId(), wallet.address()));
 	}, [env, wallet]);
 
 	if (!delegateInfo) return <DelegateRowItemSkeleton />;

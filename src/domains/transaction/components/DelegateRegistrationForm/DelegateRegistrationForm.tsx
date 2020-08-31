@@ -30,7 +30,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 	const fee = getValues("fee") || null;
 
 	useEffect(() => {
-		setDelegates(env.coins().delegates(wallet.coinId(), wallet.networkId()));
+		setDelegates(env.delegates().all(wallet.coinId(), wallet.networkId()));
 	}, [env, wallet]);
 
 	useEffect(() => {
@@ -46,7 +46,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 						return t<string>("TRANSACTION.DELEGATE_NAME_TOO_LONG");
 					}
 
-					if (env.coins().findDelegateByUsername(wallet.coinId(), wallet.networkId(), value)) {
+					if (env.delegates().findByUsername(wallet.coinId(), wallet.networkId(), value)) {
 						return t<string>("TRANSACTION.DELEGATE_NAME_EXISTS");
 					}
 
