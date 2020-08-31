@@ -1,4 +1,4 @@
-import { ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -26,7 +26,7 @@ const getStatusIcon = (confirmed: boolean) => {
 
 export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowItem) => {
 	const { env } = useEnvironmentContext();
-	const [delegateInfo, setDelegateInfo] = useState<WalletData | any>();
+	const [delegateInfo, setDelegateInfo] = useState<ReadOnlyWallet>();
 
 	const { t } = useTranslation();
 
