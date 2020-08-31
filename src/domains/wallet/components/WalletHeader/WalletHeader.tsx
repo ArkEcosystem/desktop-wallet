@@ -92,23 +92,27 @@ export const WalletHeader = ({
 						)}
 					</div>
 					<div className="flex items-stretch space-x-2">
-						<Tippy
-							content={
-								isStarred
-									? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
-									: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
-							}
-						>
-							<div className="my-auto">
-								<button
-									data-testid="WalletHeader__star-button"
-									className="p-1 mx-2 outline-none text-theme-neutral-dark"
-									onClick={onStar}
+						<div className="my-auto">
+							<Button
+								size="icon"
+								variant="transparent"
+								className="text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+								data-testid="WalletHeader__star-button"
+								onClick={onStar}
+							>
+								<Tippy
+									content={
+										isStarred
+											? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
+											: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
+									}
 								>
-									<Icon name={isStarred ? "Star" : "StarOutline"} />
-								</button>
-							</div>
-						</Tippy>
+									<span>
+										<Icon name={isStarred ? "Star" : "StarOutline"} />
+									</span>
+								</Tippy>
+							</Button>
+						</div>
 
 						<Button data-testid="WalletHeader__send-button" onClick={onSend}>
 							{t("COMMON.SEND")}

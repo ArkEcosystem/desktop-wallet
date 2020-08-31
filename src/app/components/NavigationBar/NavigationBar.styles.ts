@@ -2,10 +2,10 @@ export const defaultStyle = `
     z-index: 40;
 
     li a {
-        border-bottom: 2px solid transparent;
+        border-bottom: 3px solid transparent;
         &.active {
-            border-bottom: 2px solid var(--theme-color-primary-dark);
-            color: var(--theme-neutral-neutral-contrast);
+            border-bottom-color: var(--theme-color-primary-dark);
+            color: var(--theme-color-neutral-900);
         }
     }
 `;

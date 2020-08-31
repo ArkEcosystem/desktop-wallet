@@ -1,8 +1,9 @@
 import tw, { css } from "twin.macro";
 import { Size } from "types";
 
+// @TODO add focus-visible:shadow-outline
 const baseStyle = [
-	tw`focus:outline-none focus:shadow-outline inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear rounded justify-center`,
+	tw`focus:outline-none inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear rounded justify-center`,
 	css`
 		line-height: 1.25;
 		&:disabled {
