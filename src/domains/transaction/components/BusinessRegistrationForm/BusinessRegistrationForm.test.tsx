@@ -104,22 +104,26 @@ describe("BusinessRegistrationForm", () => {
 			addLink(1, "https://twitter.com/test");
 
 			await waitFor(() =>
-				expect(result.current.getValues()).toEqual({
-					"ipfsData.meta.displayName": "Test Entity Name",
-					"ipfsData.meta.description": "Test Entity Description",
-					"ipfsData.meta.website": "https://test.entity.com",
-					"ipfsData.sourceControl": [
-						{
-							type: "github",
-							value: "https://github.com/test",
+				expect(result.current.getValues({ nest: true })).toEqual({
+					ipfsData: {
+						meta: {
+							displayName: "Test Entity Name",
+							description: "Test Entity Description",
+							website: "https://test.entity.com",
 						},
-					],
-					"ipfsData.socialMedia": [
-						{
-							type: "twitter",
-							value: "https://twitter.com/test",
-						},
-					],
+						sourceControl: [
+							{
+								type: "github",
+								value: "https://github.com/test",
+							},
+						],
+						socialMedia: [
+							{
+								type: "twitter",
+								value: "https://twitter.com/test",
+							},
+						],
+					},
 				}),
 			);
 

@@ -1,16 +1,14 @@
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { Link } from "app/components/Link";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type Link = {
-	link: string;
-	type: string;
-};
+import { EntityLink } from "../LinkCollection/LinkCollection.models";
 
 type LinkListProps = {
 	description: string;
-	links: Link[];
+	links: EntityLink[];
 	title: string;
 };
 
@@ -27,7 +25,7 @@ const linkIcons: Record<string, string> = {
 	youtube: "YouTube",
 };
 
-const LinkItem = ({ link }: { link: Link }) => {
+const LinkItem = ({ link }: { link: EntityLink }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -38,9 +36,9 @@ const LinkItem = ({ link }: { link: Link }) => {
 						{t(`TRANSACTION.LINK_TYPES.${link.type.toUpperCase()}`)}
 					</div>
 
-					<a href={link.link} className="inline-block mt-2 font-semibold link">
-						{link.link}
-					</a>
+					<Link to={link.value} className="inline-block mt-2 font-semibold link">
+						{link.value}
+					</Link>
 				</div>
 
 				<Circle className="my-auto border-black bg-theme-background" size="lg">
@@ -56,7 +54,7 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 
 	const items = [];
 	for (const link of links) {
-		items.push(<LinkItem key={`${link.type}-${link.link}`} link={link} />);
+		items.push(<LinkItem key={`${link.type}-${link.value}`} link={link} />);
 	}
 
 	return (

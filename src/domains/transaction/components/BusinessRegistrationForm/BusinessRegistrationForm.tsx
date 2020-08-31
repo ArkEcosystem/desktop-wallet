@@ -139,7 +139,7 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues } = useFormContext();
-	const { ipfsData, fee } = getValues();
+	const { ipfsData, fee } = getValues({ nest: true });
 
 	return (
 		<div data-testid="BusinessRegistrationForm__step--third">
@@ -191,7 +191,9 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 				{ipfsData?.meta?.website && (
 					<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
-						<Link to={ipfsData.meta.website} isExternal />
+						<Link to={ipfsData.meta.website} isExternal>
+							{ipfsData.meta.website}
+						</Link>
 					</TransactionDetail>
 				)}
 
@@ -201,6 +203,26 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 							title={t("TRANSACTION.REPOSITORIES.TITLE")}
 							description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
 							links={ipfsData.sourceControl}
+						/>
+					</TransactionDetail>
+				)}
+
+				{ipfsData?.socialMedia && (
+					<TransactionDetail className="mb-2">
+						<LinkList
+							title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
+							description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
+							links={ipfsData.socialMedia}
+						/>
+					</TransactionDetail>
+				)}
+
+				{(ipfsData?.images || ipfsData?.videos) && (
+					<TransactionDetail className="mb-2">
+						<LinkList
+							title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
+							description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
+							links={[...(ipfsData.images || []), ...(ipfsData.videos || [])]}
 						/>
 					</TransactionDetail>
 				)}
