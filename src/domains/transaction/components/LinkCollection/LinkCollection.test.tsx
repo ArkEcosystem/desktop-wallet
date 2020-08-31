@@ -1,3 +1,4 @@
+import { waitFor } from "@testing-library/react";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
@@ -56,7 +57,7 @@ describe("LinkCollection", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should add and remove links", () => {
+	it("should add and remove links", async () => {
 		const onChange = jest.fn();
 		const { asFragment, getByTestId } = render(
 			<LinkCollection
@@ -99,7 +100,8 @@ describe("LinkCollection", () => {
 			fireEvent.click(getByTestId("LinkCollection__add-link"));
 		});
 
-		expect(onChange).toHaveBeenCalledWith([{ value: "testing link", type: "twitter" }]);
+		await waitFor(() => expect(onChange).toHaveBeenCalledWith([{ value: "testing link", type: "twitter" }]));
+
 		expect(getByTestId("LinkCollection")).toHaveTextContent("Twitter");
 		expect(getByTestId("LinkCollection")).toHaveTextContent("testing link");
 
@@ -112,7 +114,7 @@ describe("LinkCollection", () => {
 	});
 
 	it("should select a specific link type", () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(
+		const { asFragment, getAllByTestId, getByTestId, debug } = render(
 			<LinkCollection
 				title="Social Media"
 				description="Tell people more about yourself through social media"
