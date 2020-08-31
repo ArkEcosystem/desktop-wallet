@@ -99,7 +99,7 @@ describe("LinkCollection", () => {
 			fireEvent.click(getByTestId("LinkCollection__add-link"));
 		});
 
-		expect(onChange).toHaveBeenCalledWith([{ link: "testing link", type: "twitter" }]);
+		expect(onChange).toHaveBeenCalledWith([{ value: "testing link", type: "twitter" }]);
 		expect(getByTestId("LinkCollection")).toHaveTextContent("Twitter");
 		expect(getByTestId("LinkCollection")).toHaveTextContent("testing link");
 
@@ -118,8 +118,8 @@ describe("LinkCollection", () => {
 				description="Tell people more about yourself through social media"
 				types={types}
 				data={[
-					{ link: "testing link", type: "twitter" },
-					{ link: "testing link 2", type: "facebook" },
+					{ value: "testing link", type: "twitter" },
+					{ value: "testing link 2", type: "facebook" },
 				]}
 				typeName="media"
 				selectionTypes={["twitter"]}

@@ -9,10 +9,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-type Link = {
-	link: string;
-	type: string;
-};
+import { EntityLink } from "./LinkCollection.models";
 
 type Type = {
 	label: string;
@@ -20,14 +17,14 @@ type Type = {
 };
 
 type LinkCollectionProps = {
-	data?: Link[];
+	data?: EntityLink[];
 	description: string;
 	selectionTypes?: string[];
 	selectionTypeTitle?: string;
 	title: string;
 	typeName: string;
 	types: Type[];
-	onChange?: (links: Link[]) => void;
+	onChange?: (links: EntityLink[]) => void;
 };
 
 const Wrapper = styled.div`
@@ -50,18 +47,18 @@ export const LinkCollection = ({
 
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [links, setLinks] = useState(data || []);
-	const [selected, setSelected] = useState((null as unknown) as Link);
+	const [selected, setSelected] = useState((null as unknown) as EntityLink);
 	const [link, setLink] = useState("");
 	const [selectedType, setSelectedType] = useState((null as unknown) as Type);
 
-	const addLink = ({ link, type }: Link) => {
-		const result = [...links, { link, type }];
+	const addLink = ({ type, value }: EntityLink) => {
+		const result = [...links, { type, value }];
 		setLinks(result);
 		onChange?.(result);
 	};
 
-	const removeLink = ({ link, type }: Link) => {
-		const result = links.filter((thisLink) => thisLink.link !== link || thisLink.type !== type);
+	const removeLink = ({ type, value }: EntityLink) => {
+		const result = links.filter((thisLink) => thisLink.value !== value || thisLink.type !== type);
 		setLinks(result);
 		onChange?.(result);
 	};
@@ -154,7 +151,7 @@ export const LinkCollection = ({
 							data-testid="LinkCollection__add-link"
 							variant="plain"
 							className="w-full mt-2"
-							onClick={() => addLink({ link, type: selectedType?.value })}
+							onClick={() => addLink({ value: link, type: selectedType?.value })}
 						>
 							{t("TRANSACTION.ADD_LINK")}
 						</Button>
@@ -171,7 +168,7 @@ export const LinkCollection = ({
 											<RadioButton
 												data-testid="LinkCollection__selected"
 												checked={
-													selected?.type === rowData.type && selected?.link === rowData.link
+													selected?.type === rowData.type && selected?.value === rowData.value
 												}
 												onChange={() => setSelected(rowData)}
 											/>
@@ -183,14 +180,14 @@ export const LinkCollection = ({
 									{t(`TRANSACTION.LINK_TYPES.${rowData.type.toUpperCase()}`)}
 								</td>
 
-								<td className={rowIndex > 0 ? "py-6" : "pb-6 pt-2"}>{rowData.link}</td>
+								<td className={rowIndex > 0 ? "py-6" : "pb-6 pt-2"}>{rowData.value}</td>
 
 								<td className={`w-16 text-right ${rowIndex === 0 && "pb-4"}`}>
 									<Button
 										data-testid="LinkCollection__remove-link"
 										size="icon"
 										variant="plain"
-										onClick={() => removeLink({ link: rowData.link, type: rowData.type })}
+										onClick={() => removeLink({ value: rowData.value, type: rowData.type })}
 									>
 										<Icon name="Trash" />
 									</Button>
