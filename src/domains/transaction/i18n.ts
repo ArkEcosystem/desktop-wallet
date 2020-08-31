@@ -225,4 +225,9 @@ export const translations: { [key: string]: any } = {
 			NOT_VALID: "The IPFS hash is not valid",
 		},
 	},
+	SUCCESS: {
+		title: "Transaction Sent",
+		description:
+			"Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:",
+	},
 };

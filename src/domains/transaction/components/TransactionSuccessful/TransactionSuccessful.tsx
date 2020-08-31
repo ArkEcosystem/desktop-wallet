@@ -10,6 +10,7 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type TransactionSuccessfulProps = {
 	children?: React.ReactNode;
@@ -22,20 +23,18 @@ const { TransactionSuccessfulBanner } = images.transaction.common;
 export const TransactionSuccessful = ({ children, transaction, senderWallet }: TransactionSuccessfulProps) => {
 	const coinName = senderWallet?.manifest().get<string>("name");
 	const network = `${coinName} ${senderWallet?.network().name()}`;
+	const { t } = useTranslation();
 
 	return (
 		<section data-testid="TransactionSuccessful" className="space-y-8">
 			<div>
-				<h1 className="mb-0">Transaction Sent</h1>
+				<h1 className="mb-0">{t("TRANSACTION.SUCCESS.TITLE")}</h1>
 				<div className="grid grid-flow-row gap-2">
 					<div className="w-full my-10">
 						<TransactionSuccessfulBanner className="w-full" />
 					</div>
-					<p className="mb-4 text-theme-neutral-dark">
-						Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction
-						is confirmed and processed. The following is relevant information for your transaction:
-					</p>
-					<TransactionDetail label="ID" border={false}>
+					<p className="mb-4 text-theme-neutral-dark">{t("TRANSACTION.SUCCESS.DESCRIPTION")}</p>
+					<TransactionDetail label={t("TRANSACTION.ID")} border={false}>
 						<div className="flex items-center">
 							<Address addressClass="text-theme-primary" address={transaction?.id()} maxChars={32} />
 							<span className="ml-5">
@@ -49,7 +48,7 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 					</TransactionDetail>
 
 					<TransactionDetail
-						label="Network"
+						label={t("TRANSACTION.NETWORK")}
 						extra={
 							<div className="ml-1 text-theme-danger">
 								<Circle className="bg-theme-background border-theme-danger-light" size="lg">
@@ -65,9 +64,9 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 
 					<TransactionDetail extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 						<div className="mb-2 text-sm font-semibold text-theme-neutral">
-							<span className="mr-1">Sender</span>
+							<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 							<Label color="warning">
-								<span className="text-sm">Your address</span>
+								<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 							</Label>
 						</div>
 						<Address address={transaction?.sender()} walletName={senderWallet?.alias()} />
