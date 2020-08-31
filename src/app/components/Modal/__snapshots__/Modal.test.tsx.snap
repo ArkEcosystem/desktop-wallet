@@ -12,48 +12,40 @@ exports[`Modal should render a 3x large one 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw jRkhhQ absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw jRkhhQ absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
-          <div
-            class="flex-1"
-          />
-        </div>
+          class="flex-1"
+        />
       </div>
     </div>
   </div>
@@ -70,48 +62,40 @@ exports[`Modal should render a 4x large one 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
-          <div
-            class="flex-1"
-          />
-        </div>
+          class="flex-1"
+        />
       </div>
     </div>
   </div>
@@ -128,48 +112,40 @@ exports[`Modal should render a 5x large one 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw bHERBC absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw bHERBC absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
-          <div
-            class="flex-1"
-          />
-        </div>
+          class="flex-1"
+        />
       </div>
     </div>
   </div>
@@ -186,48 +162,40 @@ exports[`Modal should render a large one 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw jnoDfx absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw jnoDfx absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
-          <div
-            class="flex-1"
-          />
-        </div>
+          class="flex-1"
+        />
       </div>
     </div>
   </div>
@@ -244,48 +212,40 @@ exports[`Modal should render a medium one 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw fWjEmW absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw fWjEmW absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
-          <div
-            class="flex-1"
-          />
-        </div>
+          class="flex-1"
+        />
       </div>
     </div>
   </div>
@@ -302,49 +262,41 @@ exports[`Modal should render a modal with content 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
+          class="flex-1"
         >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
-          <div
-            class="flex-1"
-          >
-            This is the Modal content
-          </div>
+          This is the Modal content
         </div>
       </div>
     </div>
@@ -362,52 +314,44 @@ exports[`Modal should render a modal with description 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
+          class="flex-1"
         >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
           <div
-            class="flex-1"
+            class="mt-1 text-theme-neutral-dark"
           >
-            <div
-              class="mt-1 text-theme-neutral-dark"
-            >
-              This is the Modal description
-            </div>
+            This is the Modal description
           </div>
         </div>
       </div>
@@ -426,49 +370,41 @@ exports[`Modal should render a modal with overlay 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
+          class="flex-1"
         >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
-          <div
-            class="flex-1"
-          >
-            This is the Modal content
-          </div>
+          This is the Modal content
         </div>
       </div>
     </div>
@@ -486,48 +422,40 @@ exports[`Modal should render a small one 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw wLhVq absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw wLhVq absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
-          <div
-            class="flex-1"
-          />
-        </div>
+          class="flex-1"
+        />
       </div>
     </div>
   </div>
@@ -544,48 +472,40 @@ exports[`Modal should render a xlarge one 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw Zauxd absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw Zauxd absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          ark
+        </h2>
         <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            ark
-          </h2>
-          <div
-            class="flex-1"
-          />
-        </div>
+          class="flex-1"
+        />
       </div>
     </div>
   </div>

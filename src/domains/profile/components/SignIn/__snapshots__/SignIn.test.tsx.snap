@@ -12,192 +12,184 @@ exports[`SignIn should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxhUy gyuKyi"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxhUy iFvBPK"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          Sign In
+        </h2>
         <div
-          class="py-4"
+          class="flex-1"
         >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Sign In
-          </h2>
           <div
-            class="flex-1"
+            class="mt-1 text-theme-neutral-dark"
+          >
+            Sign in to access your profile.
+          </div>
+          <div
+            class="mt-8"
           >
             <div
-              class="mt-1 text-theme-neutral-dark"
-            >
-              Sign in to access your profile.
-            </div>
-            <div
-              class="mt-8"
+              class="flex flex-row justify-between w-full"
             >
               <div
-                class="flex flex-row justify-between w-full"
+                class="flex items-center"
               >
                 <div
-                  class="flex items-center"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  data-testid="profile-card__user--avatar"
                 >
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                    data-testid="profile-card__user--avatar"
+                  <img
+                    alt="Jane Doe"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                    title="Jane Doe"
+                  />
+                  <span
+                    class="absolute text-sm font-semibold text-theme-background"
                   >
-                    <img
-                      alt="Jane Doe"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                      title="Jane Doe"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
-                    >
-                      JA
-                    </span>
-                  </div>
-                  <div
-                    class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                  >
-                    <p
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Name
-                    </p>
-                    <p
-                      class="font-semibold text-theme-text"
-                      data-testid="profile-card__user--name"
-                    >
-                      <span
-                        class="sc-fznZeY kHiStL"
-                      >
-                        Jane Doe
-                      </span>
-                    </p>
-                  </div>
+                    JA
+                  </span>
                 </div>
                 <div
-                  class="flex items-center"
+                  class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
                 >
-                  <div
-                    class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+                  <p
+                    class="text-sm font-semibold text-theme-neutral"
                   >
-                    <p
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Total balance
-                    </p>
+                    Name
+                  </p>
+                  <p
+                    class="font-semibold text-theme-text"
+                    data-testid="profile-card__user--name"
+                  >
                     <span
-                      class="font-semibold text-theme-neutral"
+                      class="sc-fznZeY kHiStL"
                     >
-                      N/A
+                      Jane Doe
                     </span>
-                  </div>
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center"
+              >
+                <div
+                  class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+                >
+                  <p
+                    class="text-sm font-semibold text-theme-neutral"
+                  >
+                    Total balance
+                  </p>
+                  <span
+                    class="font-semibold text-theme-neutral"
+                  >
+                    N/A
+                  </span>
                 </div>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jJscrd border-theme-neutral-300"
-              type="horizontal"
-            />
-            <form
-              class="mt-8"
-              data-testid="Form"
-            >
-              <fieldset
-                class="sc-AxiKw iQzisX flex flex-col space-y-2"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="password"
-                >
-                  Password
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
-                </label>
-                <div
-                  class="sc-AxmLO kuiknc max-w-20"
-                  data-testid="InputPassword"
-                >
-                  <input
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                    data-testid="SignIn__input--password"
-                    name="password"
-                    type="password"
-                  />
-                  <div
-                    class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
-                  >
-                    <button
-                      class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                      data-testid="InputPassword__toggle"
-                      type="button"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </fieldset>
-              <div
-                class="flex justify-end mt-8 space-x-3"
-              >
-                <button
-                  class="sc-AxjAm fPpool"
-                  color="primary"
-                  data-testid="SignIn__cancel-button"
-                  type="button"
-                >
-                  Cancel
-                </button>
-                <button
-                  class="sc-AxjAm kbZyZT"
-                  color="primary"
-                  data-testid="SignIn__submit-button"
-                  disabled=""
-                  type="submit"
-                >
-                  Sign In
-                </button>
-              </div>
-            </form>
           </div>
+          <div
+            class="sc-AxirZ jJscrd border-theme-neutral-300"
+            type="horizontal"
+          />
+          <form
+            class="mt-8"
+            data-testid="Form"
+          >
+            <fieldset
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="password"
+              >
+                Password
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
+              </label>
+              <div
+                class="sc-AxmLO kuiknc max-w-20"
+                data-testid="InputPassword"
+              >
+                <input
+                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                  data-testid="SignIn__input--password"
+                  name="password"
+                  type="password"
+                />
+                <div
+                  class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
+                >
+                  <button
+                    class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                    data-testid="InputPassword__toggle"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxhUy cPXLjK"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        eye.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+            <div
+              class="flex justify-end mt-8 space-x-3"
+            >
+              <button
+                class="sc-AxjAm fPpool"
+                color="primary"
+                data-testid="SignIn__cancel-button"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-AxjAm kbZyZT"
+                color="primary"
+                data-testid="SignIn__submit-button"
+                disabled=""
+                type="submit"
+              >
+                Sign In
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

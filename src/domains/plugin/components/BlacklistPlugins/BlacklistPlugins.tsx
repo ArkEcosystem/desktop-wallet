@@ -39,13 +39,10 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 
 	return (
 		<Modal
-			title={
-				<div className="mb-5 text-5xl font-bold leading-tight text-white">
-					{t("PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE")}
-				</div>
-			}
+			title={t("PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE")}
+			titleClass="text-white"
 			description={t("PLUGINS.MODAL_BLACKLIST_PLUGINS.DESCRIPTION")}
-			banner={<BestPluginsBanner className="w-full" />}
+			banner={<BestPluginsBanner className="h-full" />}
 			size="4xl"
 			isOpen={isOpen}
 			onClose={onClose}

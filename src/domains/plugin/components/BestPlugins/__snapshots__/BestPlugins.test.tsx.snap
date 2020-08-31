@@ -12,585 +12,577 @@ exports[`BestPlugins should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
       data-testid="modal__inner"
     >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
       <div
         class="relative"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5"
+          class="relative h-56 mb-10 -mx-10 -mt-10"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
+          <svg
+            class="h-full"
           >
-            <div
-              class="p-1"
+            best-plugins-banner.svg
+          </svg>
+          <div
+            class="absolute bottom-0 left-0 mb-10 ml-10"
+          >
+            <h2
+              class="text-5xl font-extrabold leading-tight m-0 text-theme-text"
             >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
+              Best applications of the month
+            </h2>
+          </div>
         </div>
         <div
-          class="py-4"
+          class="flex-1"
         >
           <div
-            class="relative mb-10 -mx-10 -mt-10"
+            class="mt-1 text-theme-neutral-dark"
           >
-            <svg
-              class="w-full"
-            >
-              best-plugins-banner.svg
-            </svg>
-            <h1
-              class="absolute bottom-0 left-0 mb-8 ml-12"
-            >
-              <div
-                class="w-3/5 mb-5 text-5xl font-bold leading-tight text-white"
-              >
-                Best applications of the month
-              </div>
-            </h1>
+            ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.
           </div>
           <div
-            class="flex-1"
+            class="mt-8 -mb-6"
           >
             <div
-              class="mt-1 text-theme-neutral-dark"
+              class="sc-AxhCb tChBQ"
+              role="table"
             >
-              ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.
-            </div>
-            <div
-              class="mt-8 -mb-6"
-            >
-              <div
-                class="sc-AxhCb tChBQ"
-                role="table"
+              <table
+                class="table-auto"
               >
-                <table
-                  class="table-auto"
-                >
-                  <thead>
-                    <tr
-                      role="row"
-                    >
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--0"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                             
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--1"
-                        role="columnheader"
-                        style="cursor: pointer;"
-                        title="Toggle SortBy"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                            Name
-                          </div>
-                          <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
-                            data-testid="table__Sort"
-                          >
-                            <div
-                              class="sc-AxirZ jMwzyA"
-                              height="12"
-                              width="15"
-                            >
-                              <svg>
-                                sort.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--2"
-                        role="columnheader"
-                        style="cursor: pointer;"
-                        title="Toggle SortBy"
-                      >
-                        <div
-                          class="flex flex-inline align-top justify-center"
-                        >
-                          <div>
-                            Category
-                          </div>
-                          <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
-                            data-testid="table__Sort"
-                          >
-                            <div
-                              class="sc-AxirZ jMwzyA"
-                              height="12"
-                              width="15"
-                            >
-                              <svg>
-                                sort.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--3"
-                        role="columnheader"
-                        style="cursor: pointer;"
-                        title="Toggle SortBy"
-                      >
-                        <div
-                          class="flex flex-inline align-top justify-center"
-                        >
-                          <div>
-                            Rating
-                          </div>
-                          <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
-                            data-testid="table__Sort"
-                          >
-                            <div
-                              class="sc-AxirZ jMwzyA"
-                              height="12"
-                              width="15"
-                            >
-                              <svg>
-                                sort.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--4"
-                        role="columnheader"
-                        style="cursor: pointer;"
-                        title="Toggle SortBy"
-                      >
-                        <div
-                          class="flex flex-inline align-top justify-center"
-                        >
-                          <div>
-                            Version
-                          </div>
-                          <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
-                            data-testid="table__Sort"
-                          >
-                            <div
-                              class="sc-AxirZ jMwzyA"
-                              height="12"
-                              width="15"
-                            >
-                              <svg>
-                                sort.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--5"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                              
-                          </div>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    role="rowgroup"
+                <thead>
+                  <tr
+                    role="row"
                   >
-                    <tr
-                      class="border-b border-dashed border-theme-neutral-200"
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
                     >
-                      <td
-                        class="w-16"
+                      <div
+                        class="flex flex-inline align-top "
                       >
-                        <svg
-                          class="w-12 h-12"
-                        >
-                          changenow-logo.svg
-                        </svg>
-                      </td>
-                      <td>
-                        <div
-                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                        >
-                          ARK Explorer
+                        <div>
+                           
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          Name
                         </div>
                         <div
-                          class="inline-flex items-center space-x-2"
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
                         >
-                          <span
-                            class="text-theme-neutral-dark"
-                          >
-                            ARK Ecosystem
-                          </span>
                           <div
-                            class="sc-AxirZ fkjLBb"
-                            height="15"
+                            class="sc-AxirZ jMwzyA"
+                            height="12"
                             width="15"
                           >
                             <svg>
-                              official-ark-plugin.svg
+                              sort.svg
                             </svg>
                           </div>
                         </div>
-                      </td>
-                      <td
-                        class="py-10 text-center text-theme-neutral-dark"
-                      >
-                        Utility
-                      </td>
-                      <td
-                        class="flex justify-center py-10 text-theme-neutral-dark"
-                      >
-                        <div
-                          class="flex"
-                          data-testid="ReviewRating"
-                        >
-                          <div
-                            class="relative my-auto"
-                          >
-                            <div
-                              class="absolute overflow-hidden"
-                              style="width: 89.99999999999999%;"
-                            >
-                              <svg
-                                class="text-theme-warning-400 w-3"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <svg
-                              class="text-theme-neutral w-3"
-                            >
-                              star.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                          >
-                            4.6
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-10 text-center text-theme-neutral-dark"
-                      >
-                        v 1.3.8
-                      </td>
-                      <td
-                        class="w-16"
-                      >
-                        <button
-                          class="sc-AxjAm fPpool"
-                          color="primary"
-                          type="button"
-                        >
-                          Install
-                        </button>
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-dashed border-theme-neutral-200"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
                     >
-                      <td
-                        class="w-16"
+                      <div
+                        class="flex flex-inline align-top justify-center"
                       >
-                        <svg
-                          class="w-12 h-12"
-                        >
-                          changenow-logo.svg
-                        </svg>
-                      </td>
-                      <td>
-                        <div
-                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                        >
-                          Animal Avatars
+                        <div>
+                          Category
                         </div>
                         <div
-                          class="inline-flex items-center space-x-2"
-                        >
-                          <span
-                            class="text-theme-neutral-dark"
-                          >
-                            Breno Polanski
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-10 text-center text-theme-neutral-dark"
-                      >
-                        Utility
-                      </td>
-                      <td
-                        class="flex justify-center py-10 text-theme-neutral-dark"
-                      >
-                        <div
-                          class="flex"
-                          data-testid="ReviewRating"
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
                         >
                           <div
-                            class="relative my-auto"
-                          >
-                            <div
-                              class="absolute overflow-hidden"
-                              style="width: 89.99999999999999%;"
-                            >
-                              <svg
-                                class="text-theme-warning-400 w-3"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <svg
-                              class="text-theme-neutral w-3"
-                            >
-                              star.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                          >
-                            4.6
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-10 text-center text-theme-neutral-dark"
-                      >
-                        v 1.3.8
-                      </td>
-                      <td
-                        class="w-16"
-                      >
-                        <button
-                          class="sc-AxjAm fPpool"
-                          color="primary"
-                          type="button"
-                        >
-                          Install
-                        </button>
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-dashed border-theme-neutral-200"
-                    >
-                      <td
-                        class="w-16"
-                      >
-                        <svg
-                          class="w-12 h-12"
-                        >
-                          changenow-logo.svg
-                        </svg>
-                      </td>
-                      <td>
-                        <div
-                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                        >
-                          ChangeNOW Plugin
-                        </div>
-                        <div
-                          class="inline-flex items-center space-x-2"
-                        >
-                          <span
-                            class="text-theme-neutral-dark"
-                          >
-                            ChangeNOW
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-10 text-center text-theme-neutral-dark"
-                      >
-                        Other
-                      </td>
-                      <td
-                        class="flex justify-center py-10 text-theme-neutral-dark"
-                      >
-                        <div
-                          class="flex"
-                          data-testid="ReviewRating"
-                        >
-                          <div
-                            class="relative my-auto"
-                          >
-                            <div
-                              class="absolute overflow-hidden"
-                              style="width: 95%;"
-                            >
-                              <svg
-                                class="text-theme-warning-400 w-3"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <svg
-                              class="text-theme-neutral w-3"
-                            >
-                              star.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                          >
-                            4.8
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-10 text-center text-theme-neutral-dark"
-                      >
-                        v 1.3.8
-                      </td>
-                      <td
-                        class="w-16"
-                      >
-                        <button
-                          class="sc-AxjAm fPpool"
-                          color="primary"
-                          type="button"
-                        >
-                          Install
-                        </button>
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-dashed border-theme-neutral-200"
-                    >
-                      <td
-                        class="w-16"
-                      >
-                        <svg
-                          class="w-12 h-12"
-                        >
-                          changenow-logo.svg
-                        </svg>
-                      </td>
-                      <td>
-                        <div
-                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                        >
-                          Bold Ninja
-                        </div>
-                        <div
-                          class="inline-flex items-center space-x-2"
-                        >
-                          <span
-                            class="text-theme-neutral-dark"
-                          >
-                            Delegate Fun
-                          </span>
-                          <div
-                            class="sc-AxirZ hPsuTj"
-                            height="16"
-                            width="16"
+                            class="sc-AxirZ jMwzyA"
+                            height="12"
+                            width="15"
                           >
                             <svg>
-                              grant.svg
+                              sort.svg
                             </svg>
                           </div>
                         </div>
-                      </td>
-                      <td
-                        class="py-10 text-center text-theme-neutral-dark"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--3"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
                       >
-                        Game
-                      </td>
-                      <td
-                        class="flex justify-center py-10 text-theme-neutral-dark"
-                      >
+                        <div>
+                          Rating
+                        </div>
                         <div
-                          class="flex"
-                          data-testid="ReviewRating"
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
                         >
                           <div
-                            class="relative my-auto"
+                            class="sc-AxirZ jMwzyA"
+                            height="12"
+                            width="15"
                           >
-                            <div
-                              class="absolute overflow-hidden"
-                              style="width: 97.50000000000001%;"
-                            >
-                              <svg
-                                class="text-theme-warning-400 w-3"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Version
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxirZ jMwzyA"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--5"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                            
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td
+                      class="w-16"
+                    >
+                      <svg
+                        class="w-12 h-12"
+                      >
+                        changenow-logo.svg
+                      </svg>
+                    </td>
+                    <td>
+                      <div
+                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                      >
+                        ARK Explorer
+                      </div>
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                        >
+                          ARK Ecosystem
+                        </span>
+                        <div
+                          class="sc-AxirZ fkjLBb"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            official-ark-plugin.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-center text-theme-neutral-dark"
+                    >
+                      Utility
+                    </td>
+                    <td
+                      class="flex justify-center py-10 text-theme-neutral-dark"
+                    >
+                      <div
+                        class="flex"
+                        data-testid="ReviewRating"
+                      >
+                        <div
+                          class="relative my-auto"
+                        >
+                          <div
+                            class="absolute overflow-hidden"
+                            style="width: 89.99999999999999%;"
+                          >
                             <svg
-                              class="text-theme-neutral w-3"
+                              class="text-theme-warning-400 w-3"
                             >
                               star.svg
                             </svg>
                           </div>
-                          <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                          <svg
+                            class="text-theme-neutral w-3"
                           >
-                            4.9
-                          </span>
+                            star.svg
+                          </svg>
                         </div>
-                      </td>
-                      <td
-                        class="py-10 text-center text-theme-neutral-dark"
-                      >
-                        v 2.0.0
-                      </td>
-                      <td
-                        class="w-16"
-                      >
-                        <button
-                          class="sc-AxjAm fPpool"
-                          color="primary"
-                          type="button"
+                        <span
+                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                         >
-                          Install
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                          4.6
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-center text-theme-neutral-dark"
+                    >
+                      v 1.3.8
+                    </td>
+                    <td
+                      class="w-16"
+                    >
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
+                      >
+                        Install
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td
+                      class="w-16"
+                    >
+                      <svg
+                        class="w-12 h-12"
+                      >
+                        changenow-logo.svg
+                      </svg>
+                    </td>
+                    <td>
+                      <div
+                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                      >
+                        Animal Avatars
+                      </div>
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                        >
+                          Breno Polanski
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-center text-theme-neutral-dark"
+                    >
+                      Utility
+                    </td>
+                    <td
+                      class="flex justify-center py-10 text-theme-neutral-dark"
+                    >
+                      <div
+                        class="flex"
+                        data-testid="ReviewRating"
+                      >
+                        <div
+                          class="relative my-auto"
+                        >
+                          <div
+                            class="absolute overflow-hidden"
+                            style="width: 89.99999999999999%;"
+                          >
+                            <svg
+                              class="text-theme-warning-400 w-3"
+                            >
+                              star.svg
+                            </svg>
+                          </div>
+                          <svg
+                            class="text-theme-neutral w-3"
+                          >
+                            star.svg
+                          </svg>
+                        </div>
+                        <span
+                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                        >
+                          4.6
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-center text-theme-neutral-dark"
+                    >
+                      v 1.3.8
+                    </td>
+                    <td
+                      class="w-16"
+                    >
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
+                      >
+                        Install
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td
+                      class="w-16"
+                    >
+                      <svg
+                        class="w-12 h-12"
+                      >
+                        changenow-logo.svg
+                      </svg>
+                    </td>
+                    <td>
+                      <div
+                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                      >
+                        ChangeNOW Plugin
+                      </div>
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                        >
+                          ChangeNOW
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-center text-theme-neutral-dark"
+                    >
+                      Other
+                    </td>
+                    <td
+                      class="flex justify-center py-10 text-theme-neutral-dark"
+                    >
+                      <div
+                        class="flex"
+                        data-testid="ReviewRating"
+                      >
+                        <div
+                          class="relative my-auto"
+                        >
+                          <div
+                            class="absolute overflow-hidden"
+                            style="width: 95%;"
+                          >
+                            <svg
+                              class="text-theme-warning-400 w-3"
+                            >
+                              star.svg
+                            </svg>
+                          </div>
+                          <svg
+                            class="text-theme-neutral w-3"
+                          >
+                            star.svg
+                          </svg>
+                        </div>
+                        <span
+                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                        >
+                          4.8
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-center text-theme-neutral-dark"
+                    >
+                      v 1.3.8
+                    </td>
+                    <td
+                      class="w-16"
+                    >
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
+                      >
+                        Install
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td
+                      class="w-16"
+                    >
+                      <svg
+                        class="w-12 h-12"
+                      >
+                        changenow-logo.svg
+                      </svg>
+                    </td>
+                    <td>
+                      <div
+                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                      >
+                        Bold Ninja
+                      </div>
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                        >
+                          Delegate Fun
+                        </span>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            grant.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-center text-theme-neutral-dark"
+                    >
+                      Game
+                    </td>
+                    <td
+                      class="flex justify-center py-10 text-theme-neutral-dark"
+                    >
+                      <div
+                        class="flex"
+                        data-testid="ReviewRating"
+                      >
+                        <div
+                          class="relative my-auto"
+                        >
+                          <div
+                            class="absolute overflow-hidden"
+                            style="width: 97.50000000000001%;"
+                          >
+                            <svg
+                              class="text-theme-warning-400 w-3"
+                            >
+                              star.svg
+                            </svg>
+                          </div>
+                          <svg
+                            class="text-theme-neutral w-3"
+                          >
+                            star.svg
+                          </svg>
+                        </div>
+                        <span
+                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                        >
+                          4.9
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-center text-theme-neutral-dark"
+                    >
+                      v 2.0.0
+                    </td>
+                    <td
+                      class="w-16"
+                    >
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
+                      >
+                        Install
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

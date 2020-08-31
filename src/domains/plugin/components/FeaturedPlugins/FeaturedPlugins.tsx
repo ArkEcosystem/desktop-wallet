@@ -51,13 +51,9 @@ export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsPro
 
 	return (
 		<Modal
-			title={
-				<div className="mb-5 text-5xl font-bold leading-tight text-white">
-					{t("PLUGINS.MODAL_FEATURED_PLUGINS.TITLE")}
-				</div>
-			}
+			title={t("PLUGINS.MODAL_FEATURED_PLUGINS.TITLE")}
 			description={t("PLUGINS.MODAL_FEATURED_PLUGINS.DESCRIPTION")}
-			banner={<BestPluginsBanner className="w-full" />}
+			banner={<BestPluginsBanner className="h-full" />}
 			size="4xl"
 			isOpen={isOpen}
 			onClose={onClose}
