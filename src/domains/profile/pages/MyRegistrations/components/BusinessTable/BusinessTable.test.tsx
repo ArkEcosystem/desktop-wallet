@@ -1,4 +1,4 @@
-import { ExtendedTransactionData,Profile } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, Profile } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor, within } from "testing-library";
