@@ -59,7 +59,7 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 							</div>
 						}
 					>
-						{network}
+						{network && network}
 					</TransactionDetail>
 
 					<TransactionDetail extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
