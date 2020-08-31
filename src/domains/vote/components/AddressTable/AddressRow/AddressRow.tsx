@@ -45,7 +45,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 		const loadVotes = async () => {
 			if (!hasProperty(wallet, "isLoading")) {
 				// TODO: move this to profile initialising and run it every X period
-				await env.coins().syncDelegates(wallet?.coinId(), wallet?.networkId());
+				await env.delegates().sync(wallet?.coinId(), wallet?.networkId());
 
 				let votes: ReadOnlyWallet[] = [];
 				try {

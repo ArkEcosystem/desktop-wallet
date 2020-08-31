@@ -97,12 +97,12 @@ export const Votes = () => {
 		async (wallet) => {
 			// TODO: move this to profile initialising and run it every X period
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			await env.coins().syncDelegates(wallet?.coinId()!, wallet?.networkId()!);
+			await env.delegates().sync(wallet?.coinId()!, wallet?.networkId()!);
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			const delegates = env.coins().delegates(wallet?.coinId()!, wallet?.networkId()!);
+			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
 			const readOnlyDelegates = DelegateMapper.execute(
 				wallet,
-				delegates.map((delegate: ReadOnlyWallet) => delegate.publicKey),
+				delegates.map((delegate: ReadOnlyWallet) => delegate.publicKey()) as string[],
 			);
 			setDelegates(readOnlyDelegates);
 		},

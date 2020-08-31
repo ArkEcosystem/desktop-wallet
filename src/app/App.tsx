@@ -47,7 +47,7 @@ const Main = ({ syncInterval }: Props) => {
 		const syncDelegates = async () => {
 			console.log("Running delegates sync...");
 
-			await env.coins().syncAllDelegates(env.usedCoinsWithNetworks());
+			await env.delegates().syncAll(env.usedCoinsWithNetworks());
 
 			setShowSplash(false);
 		};
