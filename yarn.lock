@@ -56,86 +56,86 @@
   dependencies:
     "@arkecosystem/crypto" "^2.7.0-next.2"
 
-"@arkecosystem/platform-sdk-ada@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ada/-/platform-sdk-ada-0.9.319.tgz#68de2c8cc0f7ac44ca5853530677bdf062615d07"
-  integrity sha512-MhpFpPOp9jwoQzwutZynvEOub9FigD7BbnkbVvMYA98XewGoZRBuchpVKvzR/ZyyoTMkl1gQi81/F7xy6gHZVA==
+"@arkecosystem/platform-sdk-ada@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ada/-/platform-sdk-ada-0.9.325.tgz#d9e53cfb46c513414bb3d51ad62e8dd1b51a9f24"
+  integrity sha512-sRhA9zmuw42DwxJS6e+bV09vI12z7nrIPLmk5+Wz8HwJ0EQnJJUrsSJ9+7VYbI6DHMcsuO+G1lQiPfS7y6DEeQ==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     cardano-crypto.js "^5.3.5"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-ark@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ark/-/platform-sdk-ark-0.9.319.tgz#d17a7bb63ffdb5dcf19dcb6a82fa6a029e542f03"
-  integrity sha512-7hzK60C9tLMtDxHKV+WSziBpC/swsp04eGVCJCmOPQiM1dpGWTdUpGTxtT7wK/T3YCOrxU+ahgZJMdSXbC9ucw==
+"@arkecosystem/platform-sdk-ark@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ark/-/platform-sdk-ark-0.9.325.tgz#03dacaf00138da1addef0940feb587b9a583e976"
+  integrity sha512-IU4DdCd8rP2O30deejJxNL0yxbLqpNDUduaD4GsaT+XoPPg/4KqscsOE2XTRfuIF3FynmGyR0y4p/s9QhGM0eQ==
   dependencies:
     "@arkecosystem/core-magistrate-crypto" "^2.7.0-next.2"
     "@arkecosystem/crypto" "^2.7.0-next.2"
     "@arkecosystem/ledger-transport" "^1.1.3"
     "@arkecosystem/multi-signature" "^0.1.5"
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     is-url-superb "^4.0.0"
     lodash.orderby "^4.6.0"
     semver "^7.3.2"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-atom@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-atom/-/platform-sdk-atom-0.9.319.tgz#e6dcf7e47c9eb5c19012b9f7cad00485bbfc8e6d"
-  integrity sha512-CMxXJPJZC46l20t+x8diHMM2KZzCrV16/4YiQgL0P9rNUFqfGhx/GIYMHGITSSUBTsK08imBwWNsif0h9lOfZQ==
+"@arkecosystem/platform-sdk-atom@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-atom/-/platform-sdk-atom-0.9.325.tgz#1beed60caaff113b6a7be4f2fb048753426a0d5c"
+  integrity sha512-3MOPTbHTX0TZfdIQ3NBn0Ptm7ycNOoLnbb/cvdK46rd3Gn4dONqdIXB21R0Ac5GUAj/Qdi6qDG2wBUsFlYK6xA==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     bcrypto "^5.3.0"
     bech32 "^1.1.4"
     ledger-cosmos-js "^2.1.7"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-btc@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-btc/-/platform-sdk-btc-0.9.319.tgz#22bc5a408d830da9e5bb393ef0bec0d1562043b6"
-  integrity sha512-69VB033BnuBkhuLGzE2T+jchJ8+PrQECTv3grE0HU+TeOSR6iSTSO0z5h2nNoG87WDwSm6Wkzj3N3eEBqanGYA==
+"@arkecosystem/platform-sdk-btc@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-btc/-/platform-sdk-btc-0.9.325.tgz#3640ebeeaccd9f4a347932072174df0e0d433d01"
+  integrity sha512-mC6krCzfNP0HdatpAJhjxhE5HqUXNRuCJYbwHe5XOq1aUl8Z2a1GnqffM8GWSwgv9kcOeSce6kczlry7cFzY7Q==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     "@ledgerhq/hw-app-btc" "^5.22.0"
     bignumber.js "^9.0.0"
     bitcoinjs-lib "^5.1.10"
     bitcore-lib "^8.22.0"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-coincap@0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-coincap/-/platform-sdk-coincap-0.9.319.tgz#2b15344997efbdaee55882a6eab6ed661de879f2"
-  integrity sha512-vWA1E1kavHMzLhlk+VyIZ1STuwhHyQmqFyotCd701Yi1CymUUYMTsoQGDK5/Qt8B28BxfSQy/ZvzyWgjU6uYeA==
+"@arkecosystem/platform-sdk-coincap@0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-coincap/-/platform-sdk-coincap-0.9.325.tgz#0fbd9dfe6018fc5ce02188c2d87f35e9a404374f"
+  integrity sha512-kzN+Pwihs9FwyAhWs0kDyNmm8cUXkUqqzq/rgmAFm2i9FlfpIeYU1b+Z4Z6D0TWshzqBIhEfYDTAH/BNV9P1ng==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
 
-"@arkecosystem/platform-sdk-coingecko@0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-coingecko/-/platform-sdk-coingecko-0.9.319.tgz#1abf2ad5f4cb1f383ed2082774fadddd41d2e1a9"
-  integrity sha512-dRbsm/9l/XFKnbZKrHfiYf/his4rHIJ6qeTp+SixtNVEtBVn+ZPDS19AnapSOhDRMgyJYRHtS2tgQBo4gt+loA==
+"@arkecosystem/platform-sdk-coingecko@0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-coingecko/-/platform-sdk-coingecko-0.9.325.tgz#27726332560fd8aeafb14c39d25f2e7acdac4d95"
+  integrity sha512-I78H/ykgsmRDbC12osKxk9JL3yhVB0MqgzQUjk0H8/ZfVJah+MO7qqJ2K6zyskyi7xTjvMYvVrS9lwXCvXz+Uw==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
 
-"@arkecosystem/platform-sdk-crypto@0.9.319", "@arkecosystem/platform-sdk-crypto@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-crypto/-/platform-sdk-crypto-0.9.319.tgz#d309cffc951df1a98ab50099ba0ee67c6400cbba"
-  integrity sha512-0fGWPxm9+fHP7U56FWPW5XrtFRsCF8IfYdrTsNfFuT5KV5b2SYugbjgyPnPOr2CGGkexMblv3VeTnRxJOAjikA==
+"@arkecosystem/platform-sdk-crypto@0.9.325", "@arkecosystem/platform-sdk-crypto@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-crypto/-/platform-sdk-crypto-0.9.325.tgz#0709c40ea6ee60396dfe4010999f0fc07ebd0361"
+  integrity sha512-/Ewcojwr1yr0Cb8KKy8xEfYasWKrYNk4L+TThZzkOD7lMa5a7ouK6ZvFg2g3K5Wxp3tUCLYUwH+DaS+iu0G42A==
   dependencies:
     argon2-browser "^1.14.0"
     bcryptjs "^2.4.3"
@@ -147,39 +147,39 @@
     node-forge "^0.9.1"
     safe-buffer "^5.2.1"
 
-"@arkecosystem/platform-sdk-cryptocompare@0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-cryptocompare/-/platform-sdk-cryptocompare-0.9.319.tgz#67c1137329e0d729ce52c87719d08f898a97d741"
-  integrity sha512-f/004DkQwBi+p05hX1uXLI1Trm3xypndq7wiSZRYPSbjeL9TbpmcBl/Qi5E6sidgvBPCuXohdyG1OiIRFtpRxg==
+"@arkecosystem/platform-sdk-cryptocompare@0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-cryptocompare/-/platform-sdk-cryptocompare-0.9.325.tgz#9f5ef7bd2429c4f17872c2a6f5458543a126e31a"
+  integrity sha512-UGEDUwqvwbXmfdlJSYoyX8ygmLC+H+za8fhGilVb/EUagLXNcz7F3hVkM5NP7wq6tFQiQwzG9X9gji04Ti+iqg==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
 
-"@arkecosystem/platform-sdk-eos@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-eos/-/platform-sdk-eos-0.9.319.tgz#89d25ac5567b0c916a26e38ef23a4449e11f051a"
-  integrity sha512-XTEWnSqf+DNX2abf0TrMcSz3bbhJDL8HnWng4T1/l9Mw/5wSPQuSnDQ+kgDcTU5qB0uvKhQQHJEZbL9YZQYSlQ==
+"@arkecosystem/platform-sdk-eos@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-eos/-/platform-sdk-eos-0.9.325.tgz#3b3d6c0f70dbd6d5ba8e4a885bc4b2f6ad9e7b64"
+  integrity sha512-P37pw78YyZ+mQAgR5/d3pRGX3KUzAviIdqdcOxSOGFMcd+LQjCzqbh5YQcgpN7cA0hqvW/tPnOIuLz/sqCHDvA==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     bn.js "5.1.3"
     elliptic "^6.5.3"
     eosjs "^21.0.3"
     node-fetch "^2.6.0"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-eth@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-eth/-/platform-sdk-eth-0.9.319.tgz#f6eb17ff91e748add8788476caee7f7423863be5"
-  integrity sha512-g9fL5u/UMc5LEMHJnZ/67SJbQxVeMqye45a19JzhBcjtUD/atOCOazO6yfJkMiOn4HzeKg09A7Y4JjINjBhvTw==
+"@arkecosystem/platform-sdk-eth@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-eth/-/platform-sdk-eth-0.9.325.tgz#0771ffde6d5d7dc76919ae5b5ac63cb957d05c9a"
+  integrity sha512-GStamETCqVENL5IhKHzE9vTifKEVTz0yRFnhMvXttMuraywnfliTICpD0n2T+zHrBVyR0gnDaFtZ8XhAqC88nQ==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     "@ledgerhq/hw-app-eth" "^5.22.0"
     bip39 "^3.0.2"
     ethereumjs-tx "^2.1.2"
@@ -187,77 +187,77 @@
     web3 "^1.2.11"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-intl@0.9.319", "@arkecosystem/platform-sdk-intl@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-0.9.319.tgz#6491dc2ead59015398d37e994558e85011817176"
-  integrity sha512-idxAeo1zpXUY72bkzgxIUp0JBeaZ5q/tF+10pRqaqhwKopXh+V1MgCS3Khc7C3/MR8KFPD+TreWZja1BMd7S7Q==
+"@arkecosystem/platform-sdk-intl@0.9.325", "@arkecosystem/platform-sdk-intl@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-0.9.325.tgz#edcc705b6b6ce328f9575c7b438d800323b9d576"
+  integrity sha512-vzErqXEQJLqoXBHMF6WIrer17HhRaMBkSE2NLUCjQK40Zbidr1WqZWkwn7VGxgXhpTXt3BKxf3BCfdYgZOxArQ==
   dependencies:
     dayjs "^1.8.34"
     dinero.js "^1.8.1"
 
-"@arkecosystem/platform-sdk-lsk@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-lsk/-/platform-sdk-lsk-0.9.319.tgz#c249757637a0602f047b1cd07eed9deca3d4ca95"
-  integrity sha512-Qhr5q+RUQWUQOGa9/lFOS0lkQxJxlJj4sI2q7zZjTh3IeOhbx1W41F4NZmhyDO1sbWrGUsLEU4xuWX5+mXr6Hg==
+"@arkecosystem/platform-sdk-lsk@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-lsk/-/platform-sdk-lsk-0.9.325.tgz#49ad57b95a3dd9d5b077a84dc5398bcd3586d48e"
+  integrity sha512-uBGc8mty6jjJzKxuE2f0hHPo/ham1y7GHKlHsN0chbGttG8X5J0C+s64abnH5g5cMjDazfidWkw+fs7FF2mwiw==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     "@liskhq/lisk-client" "^2.0"
     "@liskhq/lisk-cryptography" "^2.4"
     "@liskhq/lisk-transactions" "^2.0"
     dpos-ledger-api "^3.0.1"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-markets@0.9.319", "@arkecosystem/platform-sdk-markets@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-markets/-/platform-sdk-markets-0.9.319.tgz#21922f120b8051412b51494986d8ffaf9391b122"
-  integrity sha512-2TsxvUKhjRCf67R8A1pmt0DAr/zDk0vtF5hl4zp4KJLx+Ry+SLJUgWcjstpnqss4FSGhRxgElG2cNC2vI/8RXQ==
+"@arkecosystem/platform-sdk-markets@0.9.325", "@arkecosystem/platform-sdk-markets@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-markets/-/platform-sdk-markets-0.9.325.tgz#acbe10e70c9b30908de2cfc9c85dcc31e8fb03c6"
+  integrity sha512-TwMOJ4CXDvd4Znq7GM/B1BFKpZZsUjns7flE6FCT2kpTcDR5PES5wuhNUpZO7ZYnELnrUlcANfGIhZ1SV+YjGA==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-coincap" "0.9.319"
-    "@arkecosystem/platform-sdk-coingecko" "0.9.319"
-    "@arkecosystem/platform-sdk-cryptocompare" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-coincap" "0.9.325"
+    "@arkecosystem/platform-sdk-coingecko" "0.9.325"
+    "@arkecosystem/platform-sdk-cryptocompare" "0.9.325"
 
-"@arkecosystem/platform-sdk-neo@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-neo/-/platform-sdk-neo-0.9.319.tgz#fffbc031ed7dccdaca87b7b319ef2de39f380a93"
-  integrity sha512-s6nJZYcL7POaSBqbr8s41C+hPDxpxGoheXbNLOIdzpWUNt3SpFp6q1oWiTx3KQcGg6VtvxAAUSB6SPlVjwZsRA==
+"@arkecosystem/platform-sdk-neo@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-neo/-/platform-sdk-neo-0.9.325.tgz#6ff07b56b4ea99e4f1473603af7a3c180edc6d47"
+  integrity sha512-6M75MMVJOJ9Nb2WsWBA61Xf67zRLd9HN5845cJuHB5BxUcfshzUHaaf9ENe0KSDwhbol9IxeA+a02s8wCe1wyQ==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     "@cityofzion/neon-js" "^4.8.0"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-news@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-news/-/platform-sdk-news-0.9.319.tgz#8b84ee944a13bb2578695f372589a3413d54f26e"
-  integrity sha512-NA2pz05D70bHAnNaFFULwLxWOlhHotgENads03Bt1fLlyOaa+iygxkhYFLFtsHBbQJaoUg/CUOf0/sAO6U2dLA==
+"@arkecosystem/platform-sdk-news@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-news/-/platform-sdk-news-0.9.325.tgz#a8ef7aea236c40964ec6958b3aec2787fb378fe5"
+  integrity sha512-EkXYre148h4gUgW9ir/qleyMh7hUU9Lb8Nuq4aqWEqsd8h+1PtX/0jpB/9qSa269O2FGY0vigmoGczbnKFff9A==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
     rss-parser "^3.9.0"
 
-"@arkecosystem/platform-sdk-plugins@0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-plugins/-/platform-sdk-plugins-0.9.319.tgz#bab3ad759bcf71f67bea46946d72a5a6a72d621c"
-  integrity sha512-jC/jPbyYhZ+E8gX/Ewqt+W9jYWCaGFvOv0W4KyEXd3ma8/Fb9hdgX4YnRas+T8cJY3LjD0v9QCPbBxpcWlWnqw==
+"@arkecosystem/platform-sdk-plugins@0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-plugins/-/platform-sdk-plugins-0.9.325.tgz#06350d45af85db875b6cf40828a1d198d13d3f95"
+  integrity sha512-ydJZPp3CG/ZDkthzXIMq45J/yq3IppPjqCyz8Rdo4W3EtWsVMqPCqPw1IcoCry+7u9DqKQBE80RodeChQlk0pA==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
 
-"@arkecosystem/platform-sdk-profiles@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-profiles/-/platform-sdk-profiles-0.9.319.tgz#389ae8944178340e36541e5ece617cf1ac7fef56"
-  integrity sha512-Yif10beJlF+kmQ5a6xUGw0vBpMCiJlcqQIJ1l+tnn12JKecq2XTDMeL+/n9Txzobn6EV5vPdRqqw9PdYlu8xLg==
+"@arkecosystem/platform-sdk-profiles@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-profiles/-/platform-sdk-profiles-0.9.325.tgz#17625c3e5f8f7161cc10674eba1899d41bc67177"
+  integrity sha512-9piebw1nYrDCnezY37fCmoqGlYOEbAVYl7f3EwUwuEM8XBvvYbeNGphzrV1ikW+o8yZxINSrKgvgtlXgQvWZDA==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-markets" "0.9.319"
-    "@arkecosystem/platform-sdk-plugins" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-markets" "0.9.325"
+    "@arkecosystem/platform-sdk-plugins" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     "@arkecosystem/utils" "^1.2.0"
     "@vechain/picasso" "^2.0.1"
     bcrypto "^5.3.0"
@@ -267,10 +267,10 @@
     type-fest "^0.16.0"
     uuid "^8.3.0"
 
-"@arkecosystem/platform-sdk-support@0.9.319", "@arkecosystem/platform-sdk-support@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-0.9.319.tgz#7bf79f8c9550b729924cdbc94352f87196439c70"
-  integrity sha512-utbBz7LOhN+7kh4hp6f2jz8vK1Ac9NBIf0d7rMM/5aLmM7dE7DVxOvvNxf4TGi9GNEgHcMukKQbl16kioe89qQ==
+"@arkecosystem/platform-sdk-support@0.9.325", "@arkecosystem/platform-sdk-support@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-0.9.325.tgz#af93fde4c62161bd5bdfc5c107b1e60f3a336762"
+  integrity sha512-meQPv04Wg+oPq26cFIYPA0YdXfFluByCmiB75yazuXNTGEjG5ShuHrS5ZKO7p53tVB18mz10Kne/PEM3NVdaqw==
   dependencies:
     bad-words "^3.0.3"
     bignumber.js "^9.0.0"
@@ -280,67 +280,67 @@
     remarkable "^2.0.1"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-trx@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-trx/-/platform-sdk-trx-0.9.319.tgz#48a4ada76b0958d45b9a171a43319b5632a0e688"
-  integrity sha512-1MEK3BBn9YwHNi04KVD16EI/pahnprEbq0vPCBC82SrccIMpIqTVUCcA3V0CAX+qkrmicBm6JNJeqV0tZmEqeQ==
+"@arkecosystem/platform-sdk-trx@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-trx/-/platform-sdk-trx-0.9.325.tgz#14578ba27ed2e20e3139a17442490eef0b8edb92"
+  integrity sha512-yiT1fv9xVUy6V4XpJj1DJRVU6Rl71jEjx9tnEPz6JJdiA6aamzs/n51MEo+PG1SGo1Favnx9E+xbo0D7Mk6x+g==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     "@ledgerhq/hw-app-trx" "^5.22.0"
     tronweb "^3.0.0"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-xlm@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xlm/-/platform-sdk-xlm-0.9.319.tgz#b07041abf855f711122d30d8b05e3a861ec68851"
-  integrity sha512-+esJ0wMm7Kzn69gJEnwr4k9qTXbTpDf5ElAqkpcb604tTwG4h3k7Eo0gS6t5tMXTCH5+KGkvw/ML3AxIEsWDyQ==
+"@arkecosystem/platform-sdk-xlm@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xlm/-/platform-sdk-xlm-0.9.325.tgz#e4619c5fe698c6db4aa483f46fd73030d6a85005"
+  integrity sha512-5oZpGKTZy8HpCWPgi0hhK+NnHmBE+bkeYMDyzrL1yCslTCU7x/jM7vfhEwYLLkzgJmlS6clVQmYk4sKvty1oEA==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     "@ledgerhq/hw-app-str" "^5.22.0"
     stellar-hd-wallet "^0.0.10"
     stellar-sdk "^5.0.4"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-xmr@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xmr/-/platform-sdk-xmr-0.9.319.tgz#d5578637dbd61805ade190cea7d951761c6b6915"
-  integrity sha512-JLqMVeJ5HNcU4pLgqyqR3YOfe2yAXXRhWHAnYsBsa4K+EIUJuv9SV+M2MkZWbyfmpgoWlIRf4p24+s24FWRxow==
+"@arkecosystem/platform-sdk-xmr@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xmr/-/platform-sdk-xmr-0.9.325.tgz#2a7bb2c257e92d12286cdb5fae2906ce1dc678fa"
+  integrity sha512-XNQ6UEIwkih/1Nd5p87zZ5kVYQKRyxecgJwc3L9qcSZKjra61rVFFjrEK0AJf7LR0FjeJb4CiukqYhNr25QpPQ==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     monero-javascript "^0.4.1"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk-xrp@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xrp/-/platform-sdk-xrp-0.9.319.tgz#f781722c77b44811bb3759985a941d2e0e0be9fa"
-  integrity sha512-V/1z9Yh4NbCLH3GaZgC+gGLyHCA9hvn/cgD2axDzIgiAemtH2z19dy7xaF9Rxnecml/du8ifUzSrivf7gJV7tg==
+"@arkecosystem/platform-sdk-xrp@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xrp/-/platform-sdk-xrp-0.9.325.tgz#67fe2cb2291b6756b98433236c059311b3006beb"
+  integrity sha512-wHBmgdIgSbMy3N5z63UsEP3+/AcgBMzer5Z8QUm3FgVe2asqayuTAgi+i+Z33klIzhDpNq61PhhmMpKJYO6N0Q==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.319"
-    "@arkecosystem/platform-sdk-crypto" "0.9.319"
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk" "0.9.325"
+    "@arkecosystem/platform-sdk-crypto" "0.9.325"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     "@ledgerhq/hw-app-xrp" "^5.22.0"
     bignumber.js "^9.0.0"
     ripple-keypairs "^1.0.1"
     ripple-lib "^1.8.0"
     yup "^0.29.3"
 
-"@arkecosystem/platform-sdk@0.9.319", "@arkecosystem/platform-sdk@^0.9.319":
-  version "0.9.319"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-0.9.319.tgz#58b20b2b8136dad876eddd9798c14e02763e47fd"
-  integrity sha512-aFl6pS4Zb2EHVdymmZMkoteJcwRHkeMOldAf6UbzVjpa9+HQVxio0VPT8yIXu1j+d7C8wgDtAWiJOoUnvTa2eA==
+"@arkecosystem/platform-sdk@0.9.325", "@arkecosystem/platform-sdk@^0.9.325":
+  version "0.9.325"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-0.9.325.tgz#d42af47548bc22c9d9c6a5066a5432f87645f53b"
+  integrity sha512-48x3zRbtR7BZzZH8Ub7hAcYbz1JMfevO80ZE4d+PHWCXa7GdE2ER4R7oGq2ft6Ir2ElHe3OF/fO4DqSTmN9XUQ==
   dependencies:
-    "@arkecosystem/platform-sdk-intl" "0.9.319"
-    "@arkecosystem/platform-sdk-support" "0.9.319"
+    "@arkecosystem/platform-sdk-intl" "0.9.325"
+    "@arkecosystem/platform-sdk-support" "0.9.325"
     bad-words "^3.0.3"
     bent "^7.3"
     bignumber.js "^9.0.0"

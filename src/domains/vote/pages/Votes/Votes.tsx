@@ -96,10 +96,10 @@ export const Votes = () => {
 	const loadDelegates = useCallback(
 		(wallet) => {
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			const delegates = env.coins().delegates(wallet?.coinId()!, wallet?.networkId()!);
+			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
 			const readOnlyDelegates = DelegateMapper.execute(
 				wallet,
-				delegates.map((delegate: ReadOnlyWallet) => delegate.publicKey),
+				delegates.map((delegate: ReadOnlyWallet) => delegate.publicKey()) as string[],
 			);
 			setDelegates(readOnlyDelegates);
 		},
@@ -133,7 +133,7 @@ export const Votes = () => {
 			</Section>
 
 			<div className="container mx-auto px-14">
-				<div className="-my-5 grid grid-flow-col grid-cols-2 gap-6">
+				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
 					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetwork
 							id="Votes__network"

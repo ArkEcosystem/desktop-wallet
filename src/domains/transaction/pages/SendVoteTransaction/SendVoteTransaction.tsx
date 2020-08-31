@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -29,7 +29,7 @@ export const FirstStep = ({
 	profile,
 	wallet,
 }: {
-	delegate: Contracts.WalletData;
+	delegate: ReadOnlyWallet;
 	profile: Profile;
 	wallet: ReadWriteWallet;
 }) => {
@@ -134,7 +134,7 @@ export const SecondStep = ({
 	profile,
 	wallet,
 }: {
-	delegate: Contracts.WalletData;
+	delegate: ReadOnlyWallet;
 	profile: Profile;
 	wallet: ReadWriteWallet;
 }) => {
@@ -226,7 +226,7 @@ export const FourthStep = ({
 	transaction,
 	senderWallet,
 }: {
-	delegate: Contracts.WalletData;
+	delegate: ReadOnlyWallet;
 	transaction: Contracts.SignedTransactionData;
 	senderWallet: ReadWriteWallet;
 }) => {
@@ -269,7 +269,7 @@ export const SendVoteTransaction = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [delegate, setDelegate] = useState<Contracts.WalletData>((null as unknown) as Contracts.WalletData);
+	const [delegate, setDelegate] = useState<ReadOnlyWallet>((null as unknown) as ReadOnlyWallet);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
@@ -294,12 +294,8 @@ export const SendVoteTransaction = () => {
 	}, [activeWallet, networks, register, senderId, setValue, voteId]);
 
 	useEffect(() => {
-		const loadDelegate = async () => {
-			setDelegate(await activeWallet.client().delegate(voteId));
-		};
-
-		loadDelegate();
-	}, [activeWallet, voteId]);
+		setDelegate(env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), voteId));
+	}, [activeWallet, env, voteId]);
 
 	const crumbs = [
 		{
