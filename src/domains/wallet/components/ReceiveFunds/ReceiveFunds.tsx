@@ -49,8 +49,7 @@ export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: Recei
 
 	React.useEffect(() => {
 		const fetchQrCode = async () => {
-			// @TODO call with options, { width: 250, margin: 0 }
-			const qr = address ? await QRCode.fromString(address).toDataURL() : undefined;
+			const qr = address ? await QRCode.fromString(address).toDataURL({ width: 250, margin: 0 }) : undefined;
 			setQrCode(qr);
 		};
 
@@ -62,7 +61,7 @@ export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: Recei
 			<div className="mt-2">
 				{name && (
 					<Wrapper label={t("COMMON.WALLET")} value={name}>
-						<Circle className="ml-4">
+						<Circle size="lg" className="ml-4">
 							<Icon name={icon} />
 						</Circle>
 					</Wrapper>
@@ -82,13 +81,13 @@ export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: Recei
 					</span>
 				}
 			>
-				<div className="flex items-center mb-2 ml-4">
+				<div className="flex items-center ml-4">
 					{!name && (
-						<Circle className="-mr-2">
-							<Icon name={icon} />
+						<Circle size="lg" className="-mr-2">
+							<Icon name={icon} width={20} height={20} />
 						</Circle>
 					)}
-					<Avatar address={address} />
+					<Avatar address={address} size="lg" />
 				</div>
 			</Wrapper>
 
