@@ -1340,7 +1340,7 @@ exports[`Transaction Send should render 5th step 1`] = `
       <h1
         class="mb-0"
       >
-        Transaction Sent
+        TRANSACTION.SUCCESS.TITLE
       </h1>
       <div
         class="grid grid-flow-row gap-2"
@@ -1357,7 +1357,7 @@ exports[`Transaction Send should render 5th step 1`] = `
         <p
           class="mb-4 text-theme-neutral-dark"
         >
-          Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+          TRANSACTION.SUCCESS.DESCRIPTION
         </p>
         <div
           class="flex items-center py-6 true "
@@ -1423,66 +1423,12 @@ exports[`Transaction Send should render 5th step 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral"
             >
-              Block ID
-            </div>
-            <div
-              class="font-semibold"
-            >
-              <div
-                class="flex items-center"
-              >
-                <div
-                  class="inline-block truncate align-middle"
-                >
-                  <span
-                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                  </span>
-                </div>
-                <span
-                  class="ml-5"
-                >
-                  <div
-                    class="inline-block cursor-pointer"
-                    data-testid="clipboard__wrapper"
-                  >
-                    <div
-                      class="text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-          data-testid="TransactionDetail"
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral"
-            >
               Network
             </div>
             <div
               class="font-semibold"
             >
-              ARK Ecosystem
+              undefined undefined
             </div>
           </div>
           <div
@@ -1490,17 +1436,7 @@ exports[`Transaction Send should render 5th step 1`] = `
           >
             <div
               class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
-            >
-              <div
-                class="sc-AxhUy hSYVGy"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
+            />
           </div>
         </div>
         <div
@@ -1536,16 +1472,10 @@ exports[`Transaction Send should render 5th step 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                  data-testid="address__wallet-name"
-                >
-                  ROBank
-                </span>
-                <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  AUexKj…EVTQWK
+                  D6Z26L…tHY4ax
                 </span>
               </div>
             </div>
@@ -1918,7 +1848,7 @@ exports[`Transaction Send should send a multi payment transfer 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Sent
+                        TRANSACTION.SUCCESS.TITLE
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"
@@ -1935,7 +1865,7 @@ exports[`Transaction Send should send a multi payment transfer 1`] = `
                         <p
                           class="mb-4 text-theme-neutral-dark"
                         >
-                          Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+                          TRANSACTION.SUCCESS.DESCRIPTION
                         </p>
                         <div
                           class="flex items-center py-6 true "
@@ -2001,66 +1931,12 @@ exports[`Transaction Send should send a multi payment transfer 1`] = `
                             <div
                               class="text-sm font-semibold text-theme-neutral"
                             >
-                              Block ID
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              <div
-                                class="flex items-center"
-                              >
-                                <div
-                                  class="inline-block truncate align-middle"
-                                >
-                                  <span
-                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                    data-testid="address__wallet-address"
-                                  >
-                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                  </span>
-                                </div>
-                                <span
-                                  class="ml-5"
-                                >
-                                  <div
-                                    class="inline-block cursor-pointer"
-                                    data-testid="clipboard__wrapper"
-                                  >
-                                    <div
-                                      class="text-theme-primary-300"
-                                    >
-                                      <div
-                                        class="sc-AxhUy cPXLjK"
-                                        height="1em"
-                                        width="1em"
-                                      >
-                                        <svg>
-                                          copy.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-                          data-testid="TransactionDetail"
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
                               Network
                             </div>
                             <div
                               class="font-semibold"
                             >
-                              ARK Ecosystem
+                              ARK Devnet
                             </div>
                           </div>
                           <div
@@ -2117,13 +1993,13 @@ exports[`Transaction Send should send a multi payment transfer 1`] = `
                                   class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
-                                  ROBank
+                                  ARK Wallet 1
                                 </span>
                                 <span
                                   class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  AUexKj…EVTQWK
+                                  D6Z26L…tHY4ax
                                 </span>
                               </div>
                             </div>
@@ -2535,7 +2411,7 @@ exports[`Transaction Send should send a single transfer 1`] = `
                       <h1
                         class="mb-0"
                       >
-                        Transaction Sent
+                        TRANSACTION.SUCCESS.TITLE
                       </h1>
                       <div
                         class="grid grid-flow-row gap-2"
@@ -2552,7 +2428,7 @@ exports[`Transaction Send should send a single transfer 1`] = `
                         <p
                           class="mb-4 text-theme-neutral-dark"
                         >
-                          Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+                          TRANSACTION.SUCCESS.DESCRIPTION
                         </p>
                         <div
                           class="flex items-center py-6 true "
@@ -2618,66 +2494,12 @@ exports[`Transaction Send should send a single transfer 1`] = `
                             <div
                               class="text-sm font-semibold text-theme-neutral"
                             >
-                              Block ID
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              <div
-                                class="flex items-center"
-                              >
-                                <div
-                                  class="inline-block truncate align-middle"
-                                >
-                                  <span
-                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                    data-testid="address__wallet-address"
-                                  >
-                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                  </span>
-                                </div>
-                                <span
-                                  class="ml-5"
-                                >
-                                  <div
-                                    class="inline-block cursor-pointer"
-                                    data-testid="clipboard__wrapper"
-                                  >
-                                    <div
-                                      class="text-theme-primary-300"
-                                    >
-                                      <div
-                                        class="sc-AxhUy cPXLjK"
-                                        height="1em"
-                                        width="1em"
-                                      >
-                                        <svg>
-                                          copy.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-                          data-testid="TransactionDetail"
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
                               Network
                             </div>
                             <div
                               class="font-semibold"
                             >
-                              ARK Ecosystem
+                              ARK Devnet
                             </div>
                           </div>
                           <div
@@ -2734,13 +2556,13 @@ exports[`Transaction Send should send a single transfer 1`] = `
                                   class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
-                                  ROBank
+                                  ARK Wallet 1
                                 </span>
                                 <span
                                   class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  AUexKj…EVTQWK
+                                  D6Z26L…tHY4ax
                                 </span>
                               </div>
                             </div>
