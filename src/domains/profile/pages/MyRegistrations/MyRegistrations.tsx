@@ -39,7 +39,7 @@ type Props = {
 export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations }: Props) => {
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
 	const [blockchain] = useState(blockchainRegistrations);
-	const [business] = useState(businessRegistrations);
+	const [business, setBusiness] = useState(businessRegistrations);
 
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -78,6 +78,14 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 		setDelegates(delegateRegistrations);
 	}, [activeProfile]);
 
+	useEffect(() => {
+		const fetchBusinesses = async () => {
+			const businessRegistrations = await activeProfile.entityRegistrationAggregate().businesses();
+			setBusiness(businessRegistrations.items());
+		};
+		fetchBusinesses();
+	}, [activeProfile]);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -100,7 +108,7 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 				/>
 			</Section>
 
-			{business.length > 0 && <BusinessTable data={business} />}
+			{business.length > 0 && <BusinessTable businesses={business} onAction={handleAction} />}
 			{blockchain.length > 0 && <BlockchainTable data={blockchain} />}
 			{delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
