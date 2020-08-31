@@ -327,7 +327,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                   data-testid="NewsCard"
                 >
                   <div
-                    class="sc-fznWqX pplWv bg-theme-background"
+                    class="sc-fzoiQi AaFUd bg-theme-background"
                     data-testid="Card"
                   >
                     <div
@@ -418,7 +418,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
-                          to="[object Object]"
+                          to="https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io"
                         >
                           https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
                         </a>
@@ -505,85 +505,21 @@ exports[`News should filter results based on category query and asset 1`] = `
                 </div>
               </div>
               <div
-                class="flex justify-center w-full pt-10"
+                class="flex justify-center w-full"
               >
                 <div
-                  class="sc-fzpjYC kTgzsb"
+                  class="sc-fznxsB gaCFZs"
                   data-testid="Pagination"
                 >
-                  <button
-                    class="sc-AxhCb hPLjLy"
-                    color="primary"
-                    data-testid="CompactPagination__first"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ hDwaov"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        pagination-first.svg
-                      </svg>
-                    </div>
-                  </button>
-                  <button
-                    class="sc-AxhCb hPLjLy"
-                    color="primary"
-                    data-testid="CompactPagination__previous"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ fttODj"
-                      height="10"
-                      width="10"
-                    >
-                      <svg>
-                        back.svg
-                      </svg>
-                    </div>
-                  </button>
                   <div
-                    class="flex items-center px-4 py-2 rounded bg-theme-primary-contrast text-theme-primary"
+                    class="flex px-2 rounded bg-theme-primary-contrast"
                   >
-                    Page 1 of 1
+                    <div
+                      class="sc-fznJRM cTsuuN current-page"
+                    >
+                      1
+                    </div>
                   </div>
-                  <button
-                    class="sc-AxhCb hPLjLy"
-                    color="primary"
-                    data-testid="CompactPagination__next"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ hDwaov"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        forward.svg
-                      </svg>
-                    </div>
-                  </button>
-                  <button
-                    class="sc-AxhCb hPLjLy"
-                    color="primary"
-                    data-testid="CompactPagination__last"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ hDwaov"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        pagination-last.svg
-                      </svg>
-                    </div>
-                  </button>
                 </div>
               </div>
             </div>

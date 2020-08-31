@@ -12,7 +12,7 @@ exports[`PluginGrid should render 1`] = `
         data-testid="PluginCard--ark-explorer"
       >
         <div
-          class="sc-AxheI gIqilL border-theme-primary-contrast hover:border-theme-background"
+          class="sc-Axmtr kPFils border-theme-primary-contrast hover:border-theme-background"
           data-testid="Card"
         >
           <div
@@ -93,7 +93,7 @@ exports[`PluginGrid should render 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="sc-AxheI gIqilL border-theme-primary-contrast hover:border-theme-background"
+          class="sc-Axmtr kPFils border-theme-primary-contrast hover:border-theme-background"
           data-testid="Card"
         >
           <div
@@ -193,85 +193,15 @@ exports[`PluginGrid should render 1`] = `
         class="sc-AxhCb gSLQTX mt-5"
         data-testid="Pagination"
       >
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__first"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-first.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__previous"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ fttODj mr-2"
-            height="10"
-            width="10"
-          >
-            <svg>
-              back.svg
-            </svg>
-          </div>
-          Previous
-        </button>
         <div
           class="flex px-2 rounded bg-theme-primary-contrast"
         >
           <div
-            class="sc-AxhUy bxYQX current-page"
+            class="sc-AxhUy beRbTz current-page"
           >
             1
           </div>
         </div>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__next"
-          disabled=""
-          type="button"
-        >
-          Next
-          <div
-            class="sc-AxirZ hDwaov ml-2"
-            height="12"
-            width="12"
-          >
-            <svg>
-              forward.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__last"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-last.svg
-            </svg>
-          </div>
-        </button>
       </div>
     </div>
   </div>
@@ -290,7 +220,7 @@ exports[`PluginGrid should render without pagination 1`] = `
         data-testid="PluginCard--ark-explorer"
       >
         <div
-          class="sc-AxheI gIqilL border-theme-primary-contrast hover:border-theme-background"
+          class="sc-Axmtr kPFils border-theme-primary-contrast hover:border-theme-background"
           data-testid="Card"
         >
           <div
@@ -371,7 +301,7 @@ exports[`PluginGrid should render without pagination 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="sc-AxheI gIqilL border-theme-primary-contrast hover:border-theme-background"
+          class="sc-Axmtr kPFils border-theme-primary-contrast hover:border-theme-background"
           data-testid="Card"
         >
           <div
@@ -483,7 +413,7 @@ exports[`PluginGrid should split by page 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="sc-AxheI gIqilL border-theme-primary-contrast hover:border-theme-background"
+          class="sc-Axmtr kPFils border-theme-primary-contrast hover:border-theme-background"
           data-testid="Card"
         >
           <div
@@ -586,22 +516,6 @@ exports[`PluginGrid should split by page 1`] = `
         <button
           class="sc-AxjAm fPpool"
           color="primary"
-          data-testid="Pagination__first"
-          type="button"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-first.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
           data-testid="Pagination__previous"
           type="button"
         >
@@ -620,51 +534,16 @@ exports[`PluginGrid should split by page 1`] = `
           class="flex px-2 rounded bg-theme-primary-contrast"
         >
           <div
-            class="sc-AxhUy bxYQX"
+            class="sc-AxhUy beRbTz"
           >
             1
           </div>
           <div
-            class="sc-AxhUy bxYQX current-page"
+            class="sc-AxhUy beRbTz current-page"
           >
             2
           </div>
         </div>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__next"
-          disabled=""
-          type="button"
-        >
-          Next
-          <div
-            class="sc-AxirZ hDwaov ml-2"
-            height="12"
-            width="12"
-          >
-            <svg>
-              forward.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__last"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-last.svg
-            </svg>
-          </div>
-        </button>
       </div>
     </div>
   </div>
@@ -683,7 +562,7 @@ exports[`PluginGrid should trigger delete 1`] = `
         data-testid="PluginCard--ark-explorer"
       >
         <div
-          class="sc-AxheI gIqilL border-theme-primary-contrast hover:border-theme-background"
+          class="sc-Axmtr kPFils border-theme-primary-contrast hover:border-theme-background"
           data-testid="Card"
         >
           <div
@@ -764,7 +643,7 @@ exports[`PluginGrid should trigger delete 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="sc-AxheI gIqilL border-theme-primary-contrast hover:border-theme-background"
+          class="sc-Axmtr kPFils border-theme-primary-contrast hover:border-theme-background"
           data-testid="Card"
         >
           <div
@@ -864,85 +743,15 @@ exports[`PluginGrid should trigger delete 1`] = `
         class="sc-AxhCb gSLQTX mt-5"
         data-testid="Pagination"
       >
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__first"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-first.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__previous"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ fttODj mr-2"
-            height="10"
-            width="10"
-          >
-            <svg>
-              back.svg
-            </svg>
-          </div>
-          Previous
-        </button>
         <div
           class="flex px-2 rounded bg-theme-primary-contrast"
         >
           <div
-            class="sc-AxhUy bxYQX current-page"
+            class="sc-AxhUy beRbTz current-page"
           >
             1
           </div>
         </div>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__next"
-          disabled=""
-          type="button"
-        >
-          Next
-          <div
-            class="sc-AxirZ hDwaov ml-2"
-            height="12"
-            width="12"
-          >
-            <svg>
-              forward.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__last"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-last.svg
-            </svg>
-          </div>
-        </button>
       </div>
     </div>
   </div>
@@ -961,7 +770,7 @@ exports[`PluginGrid should trigger select 1`] = `
         data-testid="PluginCard--ark-explorer"
       >
         <div
-          class="sc-AxheI gIqilL border-theme-primary-contrast hover:border-theme-background"
+          class="sc-Axmtr kPFils border-theme-primary-contrast hover:border-theme-background"
           data-testid="Card"
         >
           <div
@@ -1042,7 +851,7 @@ exports[`PluginGrid should trigger select 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="sc-AxheI gIqilL border-theme-primary-contrast hover:border-theme-background"
+          class="sc-Axmtr kPFils border-theme-primary-contrast hover:border-theme-background"
           data-testid="Card"
         >
           <div
@@ -1142,85 +951,15 @@ exports[`PluginGrid should trigger select 1`] = `
         class="sc-AxhCb gSLQTX mt-5"
         data-testid="Pagination"
       >
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__first"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-first.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__previous"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ fttODj mr-2"
-            height="10"
-            width="10"
-          >
-            <svg>
-              back.svg
-            </svg>
-          </div>
-          Previous
-        </button>
         <div
           class="flex px-2 rounded bg-theme-primary-contrast"
         >
           <div
-            class="sc-AxhUy bxYQX current-page"
+            class="sc-AxhUy beRbTz current-page"
           >
             1
           </div>
         </div>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__next"
-          disabled=""
-          type="button"
-        >
-          Next
-          <div
-            class="sc-AxirZ hDwaov ml-2"
-            height="12"
-            width="12"
-          >
-            <svg>
-              forward.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm fPpool"
-          color="primary"
-          data-testid="Pagination__last"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxirZ hDwaov"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-last.svg
-            </svg>
-          </div>
-        </button>
       </div>
     </div>
   </div>
