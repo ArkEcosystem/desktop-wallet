@@ -14,7 +14,7 @@ const registrationsURL = `/profiles/${fixtureProfileId}/registrations`;
 const emptyRegistrationsURL = `/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/registrations`;
 const delegateWalletId = "d044a552-7a49-411c-ae16-8ff407acc430";
 
-describe("Welcome", () => {
+describe("MyRegistrations", () => {
 	beforeAll(async () => {
 		nock("https://dwallets.ark.io")
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")

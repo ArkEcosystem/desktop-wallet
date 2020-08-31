@@ -67,7 +67,7 @@ describe("VoteDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.only("should render a modal as confirmed", async () => {
+	it("should render a modal as confirmed", async () => {
 		const { asFragment, getByTestId, getByText, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<VoteDetail
