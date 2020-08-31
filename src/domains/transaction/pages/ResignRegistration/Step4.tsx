@@ -9,12 +9,12 @@ import { useTranslation } from "react-i18next";
 
 import { StepProps } from "./ResignRegistration.models";
 
-export const FourthStep = ({ delegate, fee }: StepProps) => {
+export const FourthStep = ({ delegate, fee, transaction, senderWallet }: StepProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<div data-testid="ResignRegistration__fourth-step">
-			<TransactionSuccessful>
+			<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 				<TransactionDetail
 					label={t("TRANSACTION.TRANSACTION_TYPE")}
 					extra={

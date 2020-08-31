@@ -146,9 +146,13 @@ export const ThirdStep = () => {
 	);
 };
 
-export const FourthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => (
-	<TransactionSuccessful transactionId={transaction.id()} />
-);
+export const FourthStep = ({
+	transaction,
+	senderWallet,
+}: {
+	transaction: Contracts.SignedTransactionData;
+	senderWallet: ReadWriteWallet;
+}) => <TransactionSuccessful transaction={transaction} senderWallet={senderWallet} />;
 
 export const SendIPFSTransaction = () => {
 	const { t } = useTranslation();
@@ -259,7 +263,7 @@ export const SendIPFSTransaction = () => {
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep transaction={transaction} />
+								<FourthStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-2">
