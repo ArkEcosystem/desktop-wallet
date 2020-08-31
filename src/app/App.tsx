@@ -61,7 +61,9 @@ const Main = ({ syncInterval }: Props) => {
 				try {
 					await wallet?.syncVotes();
 					await wallet?.syncIdentity();
-					await wallet?.syncExchangeRate();
+
+					// TODO: sync this through `env.exchangeRates().syncAll()` instead of per wallet.
+					// await wallet?.syncExchangeRate();
 
 					setShowSplash(false);
 				} catch (error) {
