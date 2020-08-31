@@ -106,17 +106,17 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 								<StepIndicator size={4} activeIndex={activeTab} />
 								<div className="mt-8">
 									<TabPanel tabId={1}>
-										<FirstStep wallet={activeWallet} delegate={delegate} fee={fee} />
+										<FirstStep senderWallet={activeWallet} delegate={delegate} fee={fee} />
 									</TabPanel>
 									<TabPanel tabId={2}>
-										<SecondStep wallet={activeWallet} delegate={delegate} fee={fee} />
+										<SecondStep senderWallet={activeWallet} delegate={delegate} fee={fee} />
 									</TabPanel>
 									<TabPanel tabId={3}>
 										<ThirdStep form={form} passwordType={passwordType} />
 									</TabPanel>
 									<TabPanel tabId={4}>
 										<FourthStep
-											wallet={activeWallet}
+											senderWallet={activeWallet}
 											delegate={delegate}
 											fee={fee}
 											transaction={transaction}
