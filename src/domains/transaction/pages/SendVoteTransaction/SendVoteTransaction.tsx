@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -29,7 +29,7 @@ export const FirstStep = ({
 	profile,
 	wallet,
 }: {
-	delegate: Contracts.WalletData;
+	delegate: ReadOnlyWallet;
 	profile: Profile;
 	wallet: ReadWriteWallet;
 }) => {
@@ -78,7 +78,7 @@ export const FirstStep = ({
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -134,7 +134,7 @@ export const SecondStep = ({
 	profile,
 	wallet,
 }: {
-	delegate: Contracts.WalletData;
+	delegate: ReadOnlyWallet;
 	profile: Profile;
 	wallet: ReadWriteWallet;
 }) => {
@@ -157,7 +157,7 @@ export const SecondStep = ({
 				<p className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}</p>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -225,7 +225,7 @@ export const FourthStep = ({
 	delegate,
 	transaction,
 }: {
-	delegate: Contracts.WalletData;
+	delegate: ReadOnlyWallet;
 	transaction: Contracts.SignedTransactionData;
 }) => {
 	const { t } = useTranslation();
@@ -267,7 +267,7 @@ export const SendVoteTransaction = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [delegate, setDelegate] = useState<Contracts.WalletData>((null as unknown) as Contracts.WalletData);
+	const [delegate, setDelegate] = useState<ReadOnlyWallet>((null as unknown) as ReadOnlyWallet);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
@@ -292,12 +292,8 @@ export const SendVoteTransaction = () => {
 	}, [activeWallet, networks, register, senderId, setValue, voteId]);
 
 	useEffect(() => {
-		const loadDelegate = async () => {
-			setDelegate(await activeWallet.client().delegate(voteId));
-		};
-
-		loadDelegate();
-	}, [activeWallet, voteId]);
+		setDelegate(env.coins().findDelegateByAddress(activeWallet.coinId(), activeWallet.networkId(), voteId));
+	}, [activeWallet, env, voteId]);
 
 	const crumbs = [
 		{

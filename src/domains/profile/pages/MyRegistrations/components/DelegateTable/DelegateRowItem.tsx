@@ -4,6 +4,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -24,6 +25,7 @@ const getStatusIcon = (confirmed: boolean) => {
 };
 
 export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowItem) => {
+	const { env } = useEnvironmentContext();
 	const [delegateInfo, setDelegateInfo] = useState<WalletData | any>();
 
 	const { t } = useTranslation();
@@ -34,12 +36,8 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 	];
 
 	useEffect(() => {
-		const fetchDelegateInfo = async () => {
-			const delegate = await wallet.client().delegate(wallet.address());
-			setDelegateInfo(delegate);
-		};
-		fetchDelegateInfo();
-	}, [wallet]);
+		setDelegateInfo(env.coins().findDelegateByAddress(wallet.coinId(), wallet.networkId(), wallet.address()));
+	}, [env, wallet]);
 
 	if (!delegateInfo) return <DelegateRowItemSkeleton />;
 

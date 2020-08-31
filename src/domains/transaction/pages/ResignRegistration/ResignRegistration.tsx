@@ -41,13 +41,10 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 	];
 
 	useEffect(() => {
-		const fetchDelegateInfo = async () => {
-			const delegate = await activeWallet.client().delegate(activeWallet.address());
-			setDelegate(delegate);
-		};
-
-		fetchDelegateInfo();
-	}, [activeWallet]);
+		setDelegate(
+			env.coins().findDelegateByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address()),
+		);
+	}, [env, activeWallet]);
 
 	useEffect(() => {
 		const loadFees = async () => {
