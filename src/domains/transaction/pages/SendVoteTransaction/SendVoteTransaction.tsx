@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
