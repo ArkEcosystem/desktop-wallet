@@ -1,9 +1,10 @@
-import { ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -24,7 +25,8 @@ const getStatusIcon = (confirmed: boolean) => {
 };
 
 export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowItem) => {
-	const [delegateInfo, setDelegateInfo] = useState<WalletData | any>();
+	const { env } = useEnvironmentContext();
+	const [delegateInfo, setDelegateInfo] = useState<ReadOnlyWallet>();
 
 	const { t } = useTranslation();
 
@@ -34,14 +36,12 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 	];
 
 	useEffect(() => {
-		const fetchDelegateInfo = async () => {
-			const delegate = await wallet.client().delegate(wallet.address());
-			setDelegateInfo(delegate);
-		};
-		fetchDelegateInfo();
-	}, [wallet]);
+		setDelegateInfo(env.delegates().findByAddress(wallet.coinId(), wallet.networkId(), wallet.address()));
+	}, [env, wallet]);
 
-	if (!delegateInfo) return <DelegateRowItemSkeleton />;
+	if (!delegateInfo) {
+		return <DelegateRowItemSkeleton />;
+	}
 
 	return (
 		<tr data-testid="DelegateRowItem" className="border-b border-dashed border-theme-neutral-light">

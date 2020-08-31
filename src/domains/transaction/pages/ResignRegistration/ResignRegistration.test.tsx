@@ -58,7 +58,7 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 
 describe("ResignRegistration", () => {
 	beforeAll(async () => {
-		await env.coins().syncDelegates("ARK", "devnet");
+		await env.delegates().sync("ARK", "devnet");
 
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("d044a552-7a49-411c-ae16-8ff407acc430");
