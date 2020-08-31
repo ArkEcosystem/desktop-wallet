@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Welcome should handle delegate resignation dropdown action 1`] = `<DocumentFragment />`;
+exports[`MyRegistrations should handle delegate resignation dropdown action 1`] = `<DocumentFragment />`;
 
-exports[`Welcome should handle delegate update dropdown action 1`] = `<DocumentFragment />`;
+exports[`MyRegistrations should handle delegate update dropdown action 1`] = `<DocumentFragment />`;
 
-exports[`Welcome should render blockchain registrations 1`] = `
+exports[`MyRegistrations should render blockchain registrations 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -950,7 +950,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
                     data-testid="DelegateRowItem__username"
                   >
                     <span>
-                      arkx
+                      testwallet2
                     </span>
                   </td>
                   <td
@@ -1074,7 +1074,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Welcome should render business registrations 1`] = `
+exports[`MyRegistrations should render business registrations 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -1992,7 +1992,7 @@ exports[`Welcome should render business registrations 1`] = `
                     data-testid="DelegateRowItem__username"
                   >
                     <span>
-                      arkx
+                      testwallet2
                     </span>
                   </td>
                   <td
@@ -2116,7 +2116,7 @@ exports[`Welcome should render business registrations 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Welcome should render delegate registrations 1`] = `
+exports[`MyRegistrations should render delegate registrations 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -2622,7 +2622,7 @@ exports[`Welcome should render delegate registrations 1`] = `
                     data-testid="DelegateRowItem__username"
                   >
                     <span>
-                      arkx
+                      testwallet2
                     </span>
                   </td>
                   <td
@@ -2746,7 +2746,7 @@ exports[`Welcome should render delegate registrations 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Welcome should render empty state 1`] = `
+exports[`MyRegistrations should render empty state 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
