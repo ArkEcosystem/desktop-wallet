@@ -39,6 +39,7 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 
 	const handleMedia = useCallback(
 		(links: EntityLink[]) => {
+			// TODO: Filter image and video provider
 			const images = links.filter((item) => item);
 			const videos = links.filter((item) => item);
 
@@ -278,7 +279,28 @@ export const BusinessRegistrationForm: RegistrationForm = {
 	formFields: ["ipfsData"],
 
 	// eslint-disable-next-line @typescript-eslint/require-await
-	signTransaction: async ({ handleNext }) => {
-		handleNext();
+	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations }) => {
+		const { getValues, setValue, setError } = form;
+		const { fee, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
+
+		try {
+			const senderWallet = profile.wallets().findByAddress(senderAddress);
+			// TODO: Hash ipfs data
+			// const hash = ipfsData
+			const hash = "abc";
+			const transactionId = await senderWallet!
+				.transaction()
+				.signIpfs({ fee, from: senderAddress, sign: { mnemonic }, data: { hash } });
+
+			await senderWallet!.transaction().broadcast(transactionId);
+
+			await env.persist();
+			handleNext();
+		} catch (error) {
+			console.error("Could not create transaction: ", error);
+
+			setValue("mnemonic", "");
+			setError("mnemonic", "manual", translations("TRANSACTION.INVALID_MNEMONIC"));
+		}
 	},
 };

@@ -33,6 +33,7 @@ const Wrapper = styled.div`
 	}
 `;
 
+// TODO: Validate url from provider
 export const LinkCollection = ({
 	data,
 	title,
