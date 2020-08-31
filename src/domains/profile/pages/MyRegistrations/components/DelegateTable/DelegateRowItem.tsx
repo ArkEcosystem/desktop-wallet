@@ -39,7 +39,9 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 		setDelegateInfo(env.delegates().findByAddress(wallet.coinId(), wallet.networkId(), wallet.address()));
 	}, [env, wallet]);
 
-	if (!delegateInfo) return <DelegateRowItemSkeleton />;
+	if (!delegateInfo) {
+		return <DelegateRowItemSkeleton />;
+	}
 
 	return (
 		<tr data-testid="DelegateRowItem" className="border-b border-dashed border-theme-neutral-light">
