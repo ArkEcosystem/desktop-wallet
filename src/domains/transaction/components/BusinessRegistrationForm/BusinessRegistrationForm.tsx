@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -13,12 +14,16 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { RegistrationForm } from "domains/transaction/pages/Registration/Registration.models";
+import {
+	RegistrationComponent,
+	RegistrationForm,
+	RegistrationTransactionDetailsOptions,
+} from "domains/transaction/pages/Registration/Registration.models";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-const SecondStep = () => {
+const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 
@@ -102,7 +107,7 @@ const SecondStep = () => {
 	);
 };
 
-const ThirdStep = () => {
+const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 
 	const links = [
@@ -197,18 +202,18 @@ const ThirdStep = () => {
 	);
 };
 
-const component = ({ activeTab }: { activeTab: number }) => (
+const component = ({ activeTab, wallet, feeOptions }: RegistrationComponent) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={2}>
-			<SecondStep />
+			<SecondStep feeOptions={feeOptions} />
 		</TabPanel>
 		<TabPanel tabId={3}>
-			<ThirdStep />
+			<ThirdStep wallet={wallet} />
 		</TabPanel>
 	</Tabs>
 );
 
-const transactionDetails = ({ translations }: { translations: any }) => (
+const transactionDetails = ({ translations }: RegistrationTransactionDetailsOptions) => (
 	<>
 		<TransactionDetail
 			label={translations("TRANSACTION.TRANSACTION_TYPE")}
@@ -240,7 +245,7 @@ export const BusinessRegistrationForm: RegistrationForm = {
 	formFields: [],
 
 	// eslint-disable-next-line @typescript-eslint/require-await
-	signTransaction: async ({ handleNext }: any) => {
+	signTransaction: async ({ handleNext }) => {
 		handleNext();
 	},
 };
