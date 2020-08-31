@@ -19,13 +19,32 @@ import {
 	RegistrationForm,
 	RegistrationTransactionDetailsOptions,
 } from "domains/transaction/pages/Registration/Registration.models";
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
+import { EntityLink } from "../LinkCollection/LinkCollection.models";
+
 const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 	const { t } = useTranslation();
-	const { register } = useFormContext();
+	const { register, setValue, getValues } = useFormContext();
+	const { fee } = getValues();
+
+	useEffect(() => {
+		register("ipfsData.sourceControl");
+		register("ipfsData.socialMedia");
+	}, [register]);
+
+	const handleMedia = useCallback(
+		(links: EntityLink[]) => {
+			const images = links.filter((item) => item);
+			const videos = links.filter((item) => item);
+
+			setValue("ipfsData.images", images);
+			setValue("ipfsData.videos", videos);
+		},
+		[setValue],
+	);
 
 	return (
 		<div data-testid="BusinessRegistrationForm__step--second">
@@ -36,17 +55,21 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 				<div className="pb-8 mt-8">
 					<FormField name="ipfsData.meta.displayName" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input type="text" ref={register} />
+						<Input
+							data-testid="BusinessRegistrationForm__name"
+							type="text"
+							ref={register({ required: true })}
+						/>
 					</FormField>
 
 					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea ref={register} />
+						<TextArea data-testid="BusinessRegistrationForm__description" ref={register} />
 					</FormField>
 
 					<FormField name="ipfsData.meta.website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input type="text" ref={register} />
+						<Input data-testid="BusinessRegistrationForm__website" type="text" ref={register} />
 					</FormField>
 				</div>
 
@@ -60,6 +83,7 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 							{ label: "GitLab", value: "gitlab" },
 						]}
 						typeName="repository"
+						onChange={(links) => setValue("ipfsData.sourceControl", links, true)}
 					/>
 				</TransactionDetail>
 
@@ -73,6 +97,7 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 							{ label: "LinkedIn", value: "linkedin" },
 						]}
 						typeName="media"
+						onChange={(links) => setValue("ipfsData.socialMedia", links, true)}
 					/>
 				</TransactionDetail>
 
@@ -88,6 +113,7 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 						typeName="files"
 						selectionTypes={["flickr"]}
 						selectionTypeTitle="Avatar"
+						onChange={handleMedia}
 					/>
 				</TransactionDetail>
 
@@ -95,10 +121,11 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 					<FormField name="fee">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee
-							defaultValue={(25 * 1e8).toFixed(0)}
-							min={(1 * 1e8).toFixed(0)}
-							max={(100 * 1e8).toFixed(0)}
-							step={1}
+							{...(feeOptions as any)}
+							defaultValue={fee || 0}
+							value={fee || 0}
+							step={0.01}
+							onChange={(value) => setValue("fee", value, true)}
 						/>
 					</FormField>
 				</TransactionDetail>
@@ -242,7 +269,7 @@ export const BusinessRegistrationForm: RegistrationForm = {
 	tabSteps: 2,
 	component,
 	transactionDetails,
-	formFields: [],
+	formFields: ["ipfsData"],
 
 	// eslint-disable-next-line @typescript-eslint/require-await
 	signTransaction: async ({ handleNext }) => {

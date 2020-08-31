@@ -4,7 +4,7 @@ import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type InputFeeProps = {
+export type InputFeeProps = {
 	defaultValue: string;
 	value?: string;
 	average: string;
