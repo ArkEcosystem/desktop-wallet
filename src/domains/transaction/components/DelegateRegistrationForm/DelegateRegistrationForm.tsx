@@ -46,8 +46,12 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 						return t<string>("TRANSACTION.DELEGATE_NAME_TOO_LONG");
 					}
 
-					if (env.delegates().findByUsername(wallet.coinId(), wallet.networkId(), value)) {
+					try {
+						env.delegates().findByUsername(wallet.coinId(), wallet.networkId(), value);
+
 						return t<string>("TRANSACTION.DELEGATE_NAME_EXISTS");
+					} catch {
+						// No Delegate found.
 					}
 
 					return true;
