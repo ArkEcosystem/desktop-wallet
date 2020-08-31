@@ -57,12 +57,14 @@ describe("LinkCollection", () => {
 	});
 
 	it("should add and remove links", () => {
+		const onChange = jest.fn();
 		const { asFragment, getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
 				description="Tell people more about yourself through social media"
 				types={types}
 				typeName="media"
+				onChange={onChange}
 			/>,
 		);
 
@@ -97,11 +99,13 @@ describe("LinkCollection", () => {
 			fireEvent.click(getByTestId("LinkCollection__add-link"));
 		});
 
+		expect(onChange).toHaveBeenCalledWith([{ link: "testing link", type: "twitter" }]);
 		expect(getByTestId("LinkCollection")).toHaveTextContent("Twitter");
 		expect(getByTestId("LinkCollection")).toHaveTextContent("testing link");
 
 		fireEvent.click(getByTestId("LinkCollection__remove-link"));
 
+		expect(onChange).toHaveBeenCalledWith([]);
 		expect(getByTestId("LinkCollection")).not.toHaveTextContent("twitter");
 		expect(getByTestId("LinkCollection")).not.toHaveTextContent("testing link");
 		expect(asFragment()).toMatchSnapshot();

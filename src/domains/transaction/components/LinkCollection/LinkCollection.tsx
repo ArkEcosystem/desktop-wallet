@@ -27,6 +27,7 @@ type LinkCollectionProps = {
 	title: string;
 	typeName: string;
 	types: Type[];
+	onChange?: (links: Link[]) => void;
 };
 
 const Wrapper = styled.div`
@@ -43,6 +44,7 @@ export const LinkCollection = ({
 	typeName,
 	selectionTypes,
 	selectionTypeTitle,
+	onChange,
 }: LinkCollectionProps) => {
 	const { t } = useTranslation();
 
@@ -53,11 +55,15 @@ export const LinkCollection = ({
 	const [selectedType, setSelectedType] = useState((null as unknown) as Type);
 
 	const addLink = ({ link, type }: Link) => {
-		setLinks([...links, { link, type }]);
+		const result = [...links, { link, type }];
+		setLinks(result);
+		onChange?.(result);
 	};
 
 	const removeLink = ({ link, type }: Link) => {
-		setLinks(links.filter((thisLink) => thisLink.link !== link || thisLink.type !== type));
+		const result = links.filter((thisLink) => thisLink.link !== link || thisLink.type !== type);
+		setLinks(result);
+		onChange?.(result);
 	};
 
 	const columns = [];
