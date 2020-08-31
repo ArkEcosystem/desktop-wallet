@@ -186,11 +186,19 @@ export const SigningStep = ({
 	);
 };
 
-const FinalStep = ({ registrationForm, transaction }: { registrationForm: any; transaction: any }) => {
+const FinalStep = ({
+	registrationForm,
+	transaction,
+	senderWallet,
+}: {
+	registrationForm: any;
+	transaction: Contracts.SignedTransactionData;
+	senderWallet: ReadWriteWallet;
+}) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful transactionId={transaction.id()}>
+		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			{registrationForm.transactionDetails && (
 				<registrationForm.transactionDetails transaction={transaction} translations={t} />
 			)}
@@ -332,7 +340,11 @@ export const Registration = () => {
 										<SigningStep passwordType="mnemonic" wallet={activeWallet} />
 									</TabPanel>
 									<TabPanel tabId={stepCount}>
-										<FinalStep transaction={transaction} registrationForm={registrationForm} />
+										<FinalStep
+											transaction={transaction}
+											registrationForm={registrationForm}
+											senderWallet={activeWallet}
+										/>
 									</TabPanel>
 								</>
 							)}
