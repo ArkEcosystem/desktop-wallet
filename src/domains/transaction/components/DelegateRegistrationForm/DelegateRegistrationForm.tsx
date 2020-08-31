@@ -54,7 +54,7 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 				},
 			});
 		}
-	}, [delegates, register, username, t]);
+	}, [delegates, env, register, username, t, wallet]);
 
 	return (
 		<section data-testid="DelegateRegistrationForm__step--second">
