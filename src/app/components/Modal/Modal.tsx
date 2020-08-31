@@ -54,7 +54,7 @@ const ModalContainer = styled.div<{ size?: Size }>`
 const ModalContent = (props: ModalContentProps) => (
 	<ModalContainer
 		size={props.size}
-		className="absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 rounded-xl bg-theme-background overflow-hidden"
+		className="absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
 		data-testid="modal__inner"
 	>
 		<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900">
