@@ -1,5 +1,6 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { upperFirst } from "@arkecosystem/utils";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
@@ -11,7 +12,7 @@ import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
@@ -146,8 +147,17 @@ export const NavigationBar = ({
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const [isSearchingWallet, setIsSearchingWallet] = useState(false);
+	const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
 	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
+
+	const [selectedWallet, setSelectedWallet] = useState<ReadWriteWallet | undefined>();
+
+	useEffect(() => {
+		if (selectedWallet) {
+			setSearchWalletIsOpen(false);
+			setReceiveFundsIsOpen(true);
+		}
+	}, [selectedWallet]);
 
 	const renderMenu = () => {
 		if (!profile?.id()) {
@@ -185,12 +195,6 @@ export const NavigationBar = ({
 		const currency = profile?.settings().get(ProfileSetting.ExchangeCurrency);
 
 		return currency ? currencyIcons[(currency as string).toLowerCase()] : undefined;
-	};
-
-	const handleSearchWallet = () => {
-		setIsSearchingWallet(false);
-
-		return setReceiveFundsIsOpen(true);
 	};
 
 	return (
@@ -231,7 +235,7 @@ export const NavigationBar = ({
 										size="icon"
 										variant="transparent"
 										className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
-										onClick={() => setIsSearchingWallet(true)}
+										onClick={() => setSearchWalletIsOpen(true)}
 										data-testid="navbar__buttons--receive"
 									>
 										<Icon name="Receive" width={22} height={22} className="p-1" />
@@ -270,12 +274,21 @@ export const NavigationBar = ({
 			</div>
 
 			<SearchWallet
-				isOpen={isSearchingWallet}
-				onSearch={handleSearchWallet}
-				onClose={() => setIsSearchingWallet(false)}
+				isOpen={searchWalletIsOpen}
+				wallets={profile?.wallets().values()}
+				onSelectWallet={(wallet: ReadWriteWallet) => setSelectedWallet(wallet)}
+				onClose={() => setSearchWalletIsOpen(false)}
 			/>
 
-			<ReceiveFunds isOpen={receiveFundsIsOpen} handleClose={() => setReceiveFundsIsOpen(false)} />
+			{selectedWallet && (
+				<ReceiveFunds
+					isOpen={receiveFundsIsOpen}
+					address={selectedWallet.address()}
+					name={selectedWallet.alias()}
+					icon={upperFirst(selectedWallet.coinId().toLowerCase())}
+					handleClose={() => setSelectedWallet(undefined)}
+				/>
+			)}
 		</NavWrapper>
 	);
 };

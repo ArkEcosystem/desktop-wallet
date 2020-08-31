@@ -78,7 +78,7 @@ export const SingleAction = ({ wallets }: { wallets: ReadWriteWallet[] }) => {
 	return (
 		<div>
 			<Table columns={columns} data={data}>
-				{(rowData: any) => <WalletListItem {...rowData} variant="singleAction" />}
+				{(rowData: any) => <WalletListItem {...rowData} actions="Select" />}
 			</Table>
 		</div>
 	);
