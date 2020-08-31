@@ -34,19 +34,19 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 
 			<div>
 				<div className="pb-8 mt-8">
-					<FormField name="name" className="font-normal">
+					<FormField name="ipfsData.meta.displayName" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input type="text" ref={register} />
 					</FormField>
 
-					<FormField name="description" className="mt-8 font-normal">
+					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
 						<TextArea ref={register} />
 					</FormField>
 
-					<FormField name="website" className="mt-8 font-normal">
+					<FormField name="ipfsData.meta.website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input type="website" ref={register} />
+						<Input type="text" ref={register} />
 					</FormField>
 				</div>
 
