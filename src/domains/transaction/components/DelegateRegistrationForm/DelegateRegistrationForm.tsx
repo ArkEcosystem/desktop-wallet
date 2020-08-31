@@ -142,9 +142,9 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					</div>
 				</TransactionDetail>
 
-				<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />}>
 					<div className="mb-2 font-semibold text-theme-neutral">
-						<span className="mr-1 text-sm">Sender</span>
+						<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>

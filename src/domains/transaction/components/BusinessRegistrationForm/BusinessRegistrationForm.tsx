@@ -7,9 +7,11 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { Label } from "app/components/Label";
+import { Link } from "app/components/Link";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { LinkList } from "domains/transaction/components/LinkList";
@@ -136,25 +138,8 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 
 const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
-
-	const links = [
-		{
-			link: "http://github.com/robank",
-			type: "github",
-		},
-		{
-			link: "http://gitlab.com/robank",
-			type: "gitlab",
-		},
-		{
-			link: "http://bitbucket.com/robank",
-			type: "bitbucket",
-		},
-		{
-			link: "http://npmjs.com/robank",
-			type: "npm",
-		},
-	];
+	const { getValues } = useFormContext();
+	const { ipfsData, fee } = getValues();
 
 	return (
 		<div data-testid="BusinessRegistrationForm__step--third">
@@ -164,30 +149,21 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
-					extra={
-						<div className="ml-1 text-theme-danger">
-							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
-							</Circle>
-						</div>
-					}
+					extra={<NetworkIcon coin={wallet.coinId()} network={wallet.networkId()} />}
 				>
 					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
-						ARK Ecosystem
+						{wallet.network().name()}
 					</div>
 				</TransactionDetail>
 
-				<TransactionDetail
-					extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
-					className="pt-4"
-				>
+				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />} className="pt-4">
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+					<Address address={wallet.address()} walletName={wallet.alias()} />
 				</TransactionDetail>
 
 				<TransactionDetail
@@ -203,26 +179,34 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					Business Registration
 				</TransactionDetail>
 
-				<TransactionDetail label={t("TRANSACTION.NAME")}>ROBank Eco</TransactionDetail>
+				{ipfsData?.meta?.displayName && (
+					<TransactionDetail label={t("TRANSACTION.NAME")}>{ipfsData?.meta?.displayName}</TransactionDetail>
+				)}
 
-				<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>Not a trustworthy bank</TransactionDetail>
+				{ipfsData?.meta?.description && (
+					<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>
+						{ipfsData.meta.description}
+					</TransactionDetail>
+				)}
 
-				<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
-					<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
-						http://robank.com
-					</a>
-				</TransactionDetail>
+				{ipfsData?.meta?.website && (
+					<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
+						<Link to={ipfsData.meta.website} isExternal />
+					</TransactionDetail>
+				)}
 
-				<TransactionDetail className="mb-2">
-					<LinkList
-						title="Repository"
-						description="Show your projects through the repository"
-						links={links}
-					/>
-				</TransactionDetail>
+				{ipfsData?.sourceControl && (
+					<TransactionDetail className="mb-2">
+						<LinkList
+							title={t("TRANSACTION.REPOSITORIES.TITLE")}
+							description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
+							links={ipfsData.sourceControl}
+						/>
+					</TransactionDetail>
+				)}
 
 				<div>
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.ZERO} />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
 				</div>
 			</div>
 		</div>
