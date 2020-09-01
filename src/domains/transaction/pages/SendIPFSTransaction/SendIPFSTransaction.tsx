@@ -23,6 +23,7 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
 	const { t } = useTranslation();
@@ -65,7 +66,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, hash } = getValues();
-	const coinName = wallet.manifest().get<string>("name");
+	const coinName = wallet.coinId();
 
 	useEffect(() => {
 		unregister("mnemonic");
@@ -89,7 +90,7 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name}
+						{wallet.network().name()}
 					</div>
 				</TransactionDetail>
 
@@ -145,12 +146,17 @@ export const ThirdStep = () => {
 	);
 };
 
-export const FourthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => (
-	<TransactionSuccessful transactionId={transaction.id()} />
-);
+export const FourthStep = ({
+	transaction,
+	senderWallet,
+}: {
+	transaction: Contracts.SignedTransactionData;
+	senderWallet: ReadWriteWallet;
+}) => <TransactionSuccessful transaction={transaction} senderWallet={senderWallet} />;
 
 export const SendIPFSTransaction = () => {
 	const { t } = useTranslation();
+	const history = useHistory();
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
@@ -180,10 +186,7 @@ export const SendIPFSTransaction = () => {
 		setValue("senderAddress", activeWallet.address(), true);
 
 		for (const network of networks) {
-			if (
-				network.id() === activeWallet.network().id &&
-				network.coin() === activeWallet.manifest().get<string>("name")
-			) {
+			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 				setValue("network", network, true);
 
 				break;
@@ -208,7 +211,7 @@ export const SendIPFSTransaction = () => {
 				},
 			});
 
-			await senderWallet!.transaction().broadcast([transactionId]);
+			await senderWallet!.transaction().broadcast(transactionId);
 
 			await env.persist();
 
@@ -260,7 +263,7 @@ export const SendIPFSTransaction = () => {
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep transaction={transaction} />
+								<FourthStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-2">
@@ -302,10 +305,16 @@ export const SendIPFSTransaction = () => {
 										<Button
 											data-testid="SendIPFSTransaction__button--back-to-wallet"
 											variant="plain"
-											className={"block"}
+											className="block"
+											onClick={() =>
+												history.push(
+													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+												)
+											}
 										>
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
+
 										<Button
 											onClick={copyTransaction}
 											data-testid="SendIPFSTransaction__button--copy"

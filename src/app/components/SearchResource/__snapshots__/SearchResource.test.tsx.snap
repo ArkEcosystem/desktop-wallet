@@ -12,97 +12,89 @@ exports[`SearchResource should render with children 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw bHERBC absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm bThAoP"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          Title
+        </h2>
         <div
-          class="py-4"
+          class="flex-1"
         >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Title
-          </h2>
           <div
-            class="flex-1"
+            class="-mx-10"
           >
             <div
-              class="-mx-10"
+              class="bg-theme-neutral-contrast px-10 pt-8 pb-8 mt-8"
+              data-testid="SearchBar"
             >
               <div
-                class="bg-theme-neutral-contrast px-10 pt-8 pb-8 mt-8"
-                data-testid="SearchBar"
+                class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
               >
                 <div
-                  class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
+                  class="sc-AxirZ iQaTP w-4 mr-8 text-theme-neutral-300"
+                  height="1em"
+                  width="1em"
                 >
-                  <div
-                    class="sc-AxirZ iQaTP w-4 mr-8 text-theme-neutral-300"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      search.svg
-                    </svg>
-                  </div>
-                  <div
-                    class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
-                  >
-                    <input
-                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
-                      data-testid="Input"
-                      placeholder="What would you like to search for?"
-                    />
-                  </div>
-                  <button
-                    class="sc-AxjAm ddQVWI my-1"
-                    color="primary"
-                    data-testid="SearchBar__button"
-                    type="button"
-                  >
-                    <span
-                      class="px-2 text-md"
-                    >
-                      Find it
-                    </span>
-                  </button>
+                  <svg>
+                    search.svg
+                  </svg>
                 </div>
+                <div
+                  class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
+                >
+                  <input
+                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    data-testid="Input"
+                    placeholder="What would you like to search for?"
+                  />
+                </div>
+                <button
+                  class="sc-AxjAm kbZyZT my-1"
+                  color="primary"
+                  data-testid="SearchBar__button"
+                  type="button"
+                >
+                  <span
+                    class="px-2 text-md"
+                  >
+                    Find it
+                  </span>
+                </button>
               </div>
             </div>
-            <div
-              class="mt-8"
-            >
-              <span>
-                Hello!
-              </span>
-            </div>
+          </div>
+          <div
+            class="mt-8"
+          >
+            <span>
+              Hello!
+            </span>
           </div>
         </div>
       </div>

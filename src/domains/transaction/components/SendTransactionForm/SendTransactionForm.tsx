@@ -38,7 +38,8 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 			const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 			try {
-				const transferFees = (await senderWallet!.fee().all(7))?.transfer;
+				// TODO: sync fees in the background, like delegates
+				const transferFees = (await senderWallet!.coin().fee().all(7))?.transfer;
 
 				setFeeOptions({
 					last: undefined,

@@ -7,7 +7,7 @@ exports[`SideBarItem should render 1`] = `
     data-testid="side-menu__item--plugin"
   >
     <li
-      class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+      class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
     >
       <div
         class="text-theme-primary-light"
@@ -42,10 +42,7 @@ exports[`SideBarItem should render as active 1`] = `
       class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
     />
     <li
-      class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+      class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
     >
       <div
         class="text-theme-primary"

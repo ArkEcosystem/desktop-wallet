@@ -1,116 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Welcome should redirect to registration page 1`] = `<DocumentFragment />`;
+exports[`MyRegistrations should handle delegate resignation dropdown action 1`] = `<DocumentFragment />`;
 
-exports[`Welcome should render empty state 1`] = `
+exports[`MyRegistrations should handle delegate update dropdown action 1`] = `<DocumentFragment />`;
+
+exports[`MyRegistrations should render blockchain registrations 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag iezQBg"
+      class="sc-fzoLag gnHGCp"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoXzr cumsaa"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -118,22 +129,22 @@ exports[`Welcome should render empty state 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm JgGpT"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -146,11 +157,15 @@ exports[`Welcome should render empty state 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="p-2 ml-4 text-right"
+              class="text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -165,40 +180,39 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
                 >
                   <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                   >
                     <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
+                      alt="Profile Avatar"
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
@@ -206,21 +220,21 @@ exports[`Welcome should render empty state 1`] = `
                     >
                       JO
                     </span>
-                    <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -258,7 +272,7 @@ exports[`Welcome should render empty state 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoXzr imWwrn"
+        class="sc-fzpjYC deOkAw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -313,8 +327,9 @@ exports[`Welcome should render empty state 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ddQVWI"
+                    class="sc-AxjAm kbZyZT"
                     color="primary"
+                    data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
                     Register
@@ -326,1098 +341,7 @@ exports[`Welcome should render empty state 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoXzr imWwrn flex-1"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="text-center"
-            data-testid="my-registrations__empty-state"
-          >
-            <svg
-              class="mx-auto"
-            >
-              register-banner.svg
-            </svg>
-            <div
-              class="mt-8 text-theme-neutral-dark"
-            >
-              Register Business, Bridgechain and Delegate in the most convenient way.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Welcome should render null for a not knwown type of table 1`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzoLag iezQBg"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
-            >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <a
-                data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </a>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    receive.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-xs text-theme-neutral"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-dark"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  91.43089801 BTC
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex p-1 cusror-pointer"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
-                  >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
-                    >
-                      JO
-                    </span>
-                    <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
-      >
-        <svg>
-          arrow-back.svg
-        </svg>
-      </div>
-      <div
-        class="space-x-2"
-      >
-        <a
-          class="text-theme-neutral-dark"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Go back to Portfolio
-          </span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col flex-1 space-y-5 "
-    >
-      <div
-        class="sc-fzoXzr imWwrn"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="flex items-end justify-between bg-theme-background"
-          >
-            <div>
-              <h1
-                class="mb-0 md:text-4xl"
-                data-testid="header__title"
-              >
-                My Registrations
-              </h1>
-              <div
-                class="text-theme-neutral-dark"
-                data-testid="header__subtitle"
-              >
-                You can register a Delegate, Business and Bridgechain.
-              </div>
-            </div>
-            <div>
-              <div
-                class="flex justify-end space-x-10 divide-x divide-theme-neutral-300"
-              >
-                <div
-                  class="relative"
-                >
-                  <button
-                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
-                    data-testid="header-search-bar__button"
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <span>
-                        Search
-                      </span>
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          search.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </button>
-                </div>
-                <div
-                  class="pl-10"
-                >
-                  <button
-                    class="sc-AxjAm ddQVWI"
-                    color="primary"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Welcome should render properly 1`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzoLag iezQBg"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
-            >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <a
-                data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </a>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    receive.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-xs text-theme-neutral"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-dark"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  91.43089801 BTC
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex p-1 cusror-pointer"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-2 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
-                  >
-                    <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background"
-                    >
-                      JO
-                    </span>
-                    <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
-      >
-        <svg>
-          arrow-back.svg
-        </svg>
-      </div>
-      <div
-        class="space-x-2"
-      >
-        <a
-          class="text-theme-neutral-dark"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Go back to Portfolio
-          </span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col flex-1 space-y-5 "
-    >
-      <div
-        class="sc-fzoXzr imWwrn"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="flex items-end justify-between bg-theme-background"
-          >
-            <div>
-              <h1
-                class="mb-0 md:text-4xl"
-                data-testid="header__title"
-              >
-                My Registrations
-              </h1>
-              <div
-                class="text-theme-neutral-dark"
-                data-testid="header__subtitle"
-              >
-                You can register a Delegate, Business and Bridgechain.
-              </div>
-            </div>
-            <div>
-              <div
-                class="flex justify-end space-x-10 divide-x divide-theme-neutral-300"
-              >
-                <div
-                  class="relative"
-                >
-                  <button
-                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
-                    data-testid="header-search-bar__button"
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <span>
-                        Search
-                      </span>
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          search.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </button>
-                </div>
-                <div
-                  class="pl-10"
-                >
-                  <button
-                    class="sc-AxjAm ddQVWI"
-                    color="primary"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="sc-fzoXzr imWwrn"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <h2
-            class="mb-8 font-bold"
-          >
-            Business
-          </h2>
-          <div
-            class="sc-fznZeY gcZndM"
-            role="table"
-          >
-            <table
-              class="table-auto"
-            >
-              <thead>
-                <tr
-                  role="row"
-                >
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--0"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top invisible"
-                    >
-                      <div>
-                        Avatar
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top "
-                    >
-                      <div>
-                        Agent
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--2"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top "
-                    >
-                      <div>
-                        Business Name
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--3"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top justify-center"
-                    >
-                      <div>
-                        History
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--4"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top justify-center"
-                    >
-                      <div>
-                        Website
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--5"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top justify-center"
-                    >
-                      <div>
-                        MSQ
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--6"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top justify-center"
-                    >
-                      <div>
-                        Repository
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--7"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top invisible"
-                    >
-                      <div>
-                        Options
-                      </div>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                role="rowgroup"
-              >
-                <tr
-                  class="border-b border-dashed border-theme-neutral-light"
-                  data-testid="business-table__row"
-                >
-                  <td
-                    class="w-24 py-6"
-                  >
-                    <div
-                      class="flex items-center"
-                    >
-                      <div
-                        class="sc-fznyAO hUVUQM border-theme-neutral-800"
-                      >
-                        <div
-                          class="sc-AxirZ hmuEJr"
-                          height="22"
-                          width="22"
-                        >
-                          <svg>
-                            business.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="AaAy"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="AaAy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="font-semibold"
-                  >
-                    <span>
-                      OLEBank
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold"
-                  >
-                    <span>
-                      ARK Ecosystem
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold text-center text-theme-primary"
-                  >
-                    <span>
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="text-center text-theme-neutral-light"
-                  >
-                    <span
-                      class="flex justify-center"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP text-center"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold text-center text-theme-primary"
-                  >
-                    <span
-                      class="flex justify-center"
-                    >
-                      <div
-                        class="sc-AxirZ hmuEJr"
-                        height="22"
-                        width="22"
-                      >
-                        <svg>
-                          msq.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold text-center text-theme-primary"
-                  >
-                    <span>
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="align-middle"
-                  >
-                    <span
-                      class="flex justify-end"
-                    >
-                      <button
-                        class="sc-AxjAm kTAyCf ml-16"
-                        color="primary"
-                        type="button"
-                      >
-                        <div
-                          class="relative"
-                          data-testid="dropdown__toggle"
-                        >
-                          <div
-                            class="float-right outline-none cursor-pointer focus:outline-none"
-                          >
-                            <div
-                              class="sc-AxirZ eEbZjj"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                settings.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </button>
-                    </span>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b border-dashed border-theme-neutral-light"
-                  data-testid="business-table__row"
-                >
-                  <td
-                    class="w-24 py-6"
-                  >
-                    <div
-                      class="flex items-center"
-                    >
-                      <div
-                        class="sc-fznyAO hUVUQM border-theme-neutral-800"
-                      >
-                        <div
-                          class="sc-AxirZ hmuEJr"
-                          height="22"
-                          width="22"
-                        >
-                          <svg>
-                            business.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="AaAy"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="AaAy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="font-semibold"
-                  >
-                    <span>
-                      OLEBank
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold"
-                  >
-                    <span>
-                      ARK Ecosystem
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold text-center text-theme-primary"
-                  >
-                    <span>
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="text-center text-theme-neutral-light"
-                  >
-                    <span
-                      class="flex justify-center"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP text-center"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold text-center text-theme-primary"
-                  >
-                    <span
-                      class="flex justify-center"
-                    >
-                      <div
-                        class="sc-AxirZ hmuEJr"
-                        height="22"
-                        width="22"
-                      >
-                        <svg>
-                          msq.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold text-center text-theme-primary"
-                  >
-                    <span>
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="align-middle"
-                  >
-                    <span
-                      class="flex justify-end"
-                    >
-                      <button
-                        class="sc-AxjAm kTAyCf ml-16"
-                        color="primary"
-                        type="button"
-                      >
-                        <div
-                          class="relative"
-                          data-testid="dropdown__toggle"
-                        >
-                          <div
-                            class="float-right outline-none cursor-pointer focus:outline-none"
-                          >
-                            <div
-                              class="sc-AxirZ eEbZjj"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                settings.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </button>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div
-        class="sc-fzoXzr imWwrn"
+        class="sc-fzpjYC deOkAw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1571,7 +495,7 @@ exports[`Welcome should render properly 1`] = `
               >
                 <tr
                   class="border-b border-dashed border-theme-neutral-light"
-                  data-testid="blockchain-table__row"
+                  data-testid="BlockchainRegistrationItem"
                 >
                   <td
                     class="w-24 py-6"
@@ -1684,7 +608,7 @@ exports[`Welcome should render properly 1`] = `
                       class="flex justify-end"
                     >
                       <button
-                        class="sc-AxjAm kTAyCf ml-16"
+                        class="sc-AxjAm bXCWLY ml-16"
                         color="primary"
                         type="button"
                       >
@@ -1712,7 +636,7 @@ exports[`Welcome should render properly 1`] = `
                 </tr>
                 <tr
                   class="border-b border-dashed border-theme-neutral-light"
-                  data-testid="blockchain-table__row"
+                  data-testid="BlockchainRegistrationItem"
                 >
                   <td
                     class="w-24 py-6"
@@ -1825,7 +749,7 @@ exports[`Welcome should render properly 1`] = `
                       class="flex justify-end"
                     >
                       <button
-                        class="sc-AxjAm kTAyCf ml-16"
+                        class="sc-AxjAm bXCWLY ml-16"
                         color="primary"
                         type="button"
                       >
@@ -1857,7 +781,7 @@ exports[`Welcome should render properly 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoXzr imWwrn"
+        class="sc-fzpjYC deOkAw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1983,10 +907,11 @@ exports[`Welcome should render properly 1`] = `
               >
                 <tr
                   class="border-b border-dashed border-theme-neutral-light"
-                  data-testid="delegate-table__row"
+                  data-testid="DelegateRowItem"
                 >
                   <td
                     class="w-24 py-6"
+                    data-testid="DelegateRowItem__address"
                   >
                     <div
                       class="flex items-center"
@@ -2012,9 +937,9 @@ exports[`Welcome should render properly 1`] = `
                           class="w-full h-full"
                         >
                           <img
-                            alt="APTz"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                            title="APTz"
+                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                           />
                         </div>
                       </div>
@@ -2022,20 +947,23 @@ exports[`Welcome should render properly 1`] = `
                   </td>
                   <td
                     class="font-semibold"
+                    data-testid="DelegateRowItem__username"
                   >
                     <span>
-                      OLEBank
+                      testwallet2
                     </span>
                   </td>
                   <td
                     class="font-semibold text-theme-neutral-dark"
+                    data-testid="DelegateRowItem__rank"
                   >
                     <span>
-                      #2
+                      #
                     </span>
                   </td>
                   <td
                     class="font-semibold text-center text-theme-primary"
+                    data-testid="DelegateRowItem__msq"
                   >
                     <span
                       class="flex justify-center"
@@ -2053,157 +981,7 @@ exports[`Welcome should render properly 1`] = `
                   </td>
                   <td
                     class="text-theme-neutral-light"
-                  >
-                    <span
-                      class="flex justify-center"
-                    >
-                      <div
-                        class="sc-AxirZ bMjbpr ml-1 text-theme-success"
-                        height="30"
-                        width="30"
-                      >
-                        <svg>
-                          checkmark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold text-theme-neutral-dark"
-                  >
-                    <div
-                      class="flex items-center justify-end"
-                    >
-                      <span
-                        class="whitespace-no-wrap"
-                      >
-                        2,450.643 Ѧ
-                      </span>
-                    </div>
-                  </td>
-                  <td
-                    class="font-semibold text-theme-neutral-dark"
-                  >
-                    <div
-                      class="flex items-center justify-end"
-                    >
-                      <small
-                        class="text-theme-neutral"
-                      >
-                        2,43%
-                      </small>
-                      <span
-                        class="ml-1 whitespace-no-wrap"
-                      >
-                        2,450.643 Ѧ
-                      </span>
-                    </div>
-                  </td>
-                  <td
-                    class="align-middle"
-                  >
-                    <span
-                      class="flex justify-end"
-                    >
-                      <button
-                        class="sc-AxjAm kTAyCf ml-16"
-                        color="primary"
-                        type="button"
-                      >
-                        <div
-                          class="relative"
-                          data-testid="dropdown__toggle"
-                        >
-                          <div
-                            class="float-right outline-none cursor-pointer focus:outline-none"
-                          >
-                            <div
-                              class="sc-AxirZ eEbZjj"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                settings.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </button>
-                    </span>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b border-dashed border-theme-neutral-light"
-                  data-testid="delegate-table__row"
-                >
-                  <td
-                    class="w-24 py-6"
-                  >
-                    <div
-                      class="flex items-center"
-                    >
-                      <div
-                        class="sc-fznyAO hUVUQM border-theme-neutral-800"
-                      >
-                        <div
-                          class="sc-AxirZ hmuEJr"
-                          height="22"
-                          width="22"
-                        >
-                          <svg>
-                            business.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="APTz"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                            title="APTz"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="font-semibold"
-                  >
-                    <span>
-                      OLEBank
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold text-theme-neutral-dark"
-                  >
-                    <span>
-                      #352
-                    </span>
-                  </td>
-                  <td
-                    class="font-semibold text-center text-theme-primary"
-                  >
-                    <span
-                      class="flex justify-center"
-                    >
-                      <div
-                        class="sc-AxirZ hmuEJr"
-                        height="22"
-                        width="22"
-                      >
-                        <svg>
-                          msq.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </td>
-                  <td
-                    class="text-theme-neutral-light"
+                    data-testid="DelegateRowItem__status"
                   >
                     <span
                       class="flex justify-center"
@@ -2220,20 +998,22 @@ exports[`Welcome should render properly 1`] = `
                     </span>
                   </td>
                   <td
-                    class="font-semibold text-theme-neutral-dark"
+                    class="text-theme-neutral-light"
+                    data-testid="DelegateRowItem__forged"
                   >
-                    <div
-                      class="flex items-center justify-end"
+                    <span
+                      class="flex justify-end"
                     >
                       <span
                         class="whitespace-no-wrap"
                       >
                         2,450.643 Ѧ
                       </span>
-                    </div>
+                    </span>
                   </td>
                   <td
                     class="font-semibold text-theme-neutral-dark"
+                    data-testid="DelegateRowItem__votes"
                   >
                     <div
                       class="flex items-center justify-end"
@@ -2252,12 +1032,13 @@ exports[`Welcome should render properly 1`] = `
                   </td>
                   <td
                     class="align-middle"
+                    data-testid="DelegateRowItem__actions"
                   >
                     <span
                       class="flex justify-end"
                     >
                       <button
-                        class="sc-AxjAm kTAyCf ml-16"
+                        class="sc-AxjAm bXCWLY ml-16"
                         color="primary"
                         type="button"
                       >
@@ -2285,6 +1066,2042 @@ exports[`Welcome should render properly 1`] = `
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MyRegistrations should render business registrations 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoLag gnHGCp"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fzoXzr cumsaa"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="overflow-hidden rounded-lg"
+              >
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--send"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-medium text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzpjYC deOkAw"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex items-end justify-between bg-theme-background"
+          >
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                My Registrations
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                You can register a Delegate, Business and Bridgechain.
+              </div>
+            </div>
+            <div>
+              <div
+                class="flex justify-end space-x-10 divide-x divide-theme-neutral-300"
+              >
+                <div
+                  class="relative"
+                >
+                  <button
+                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    data-testid="header-search-bar__button"
+                  >
+                    <div
+                      class="flex items-center space-x-3"
+                    >
+                      <span>
+                        Search
+                      </span>
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          search.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class="pl-10"
+                >
+                  <button
+                    class="sc-AxjAm kbZyZT"
+                    color="primary"
+                    data-testid="MyRegistrations__cta-register"
+                    type="button"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzpjYC deOkAw"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <h2
+            class="mb-8 font-bold"
+          >
+            Business
+          </h2>
+          <div
+            class="sc-fznZeY gcZndM"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible"
+                    >
+                      <div>
+                        Avatar
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top "
+                    >
+                      <div>
+                        Agent
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top "
+                    >
+                      <div>
+                        Business Name
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        History
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--4"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        Website
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--5"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        MSQ
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        Repository
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--7"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible"
+                    >
+                      <div>
+                        Options
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-dashed border-theme-neutral-light"
+                  data-testid="BusinessRegistrationItem"
+                >
+                  <td
+                    class="w-24 py-6"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="sc-fznyAO hUVUQM border-theme-neutral-800"
+                      >
+                        <div
+                          class="sc-AxirZ hmuEJr"
+                          height="22"
+                          width="22"
+                        >
+                          <svg>
+                            business.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="AaAy"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="AaAy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="font-semibold"
+                  >
+                    <span>
+                      OLEBank
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold"
+                  >
+                    <span>
+                      ARK Ecosystem
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="text-center text-theme-neutral-light"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP text-center"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="align-middle"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <button
+                        class="sc-AxjAm bXCWLY ml-16"
+                        color="primary"
+                        type="button"
+                      >
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
+                        >
+                          <div
+                            class="float-right outline-none cursor-pointer focus:outline-none"
+                          >
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-light"
+                  data-testid="BusinessRegistrationItem"
+                >
+                  <td
+                    class="w-24 py-6"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="sc-fznyAO hUVUQM border-theme-neutral-800"
+                      >
+                        <div
+                          class="sc-AxirZ hmuEJr"
+                          height="22"
+                          width="22"
+                        >
+                          <svg>
+                            business.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="AaAy"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="AaAy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="font-semibold"
+                  >
+                    <span>
+                      OLEBank
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold"
+                  >
+                    <span>
+                      ARK Ecosystem
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="text-center text-theme-neutral-light"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP text-center"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="align-middle"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <button
+                        class="sc-AxjAm bXCWLY ml-16"
+                        color="primary"
+                        type="button"
+                      >
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
+                        >
+                          <div
+                            class="float-right outline-none cursor-pointer focus:outline-none"
+                          >
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzpjYC deOkAw"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <h2
+            class="mb-8 font-bold"
+          >
+            Delegate
+          </h2>
+          <div
+            class="sc-fznZeY gcZndM"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible"
+                    >
+                      <div>
+                        Avatar
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top "
+                    >
+                      <div>
+                        Delegate Name
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top "
+                    >
+                      <div>
+                        Rank
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        MSQ
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--4"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        Status
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--5"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-end"
+                    >
+                      <div>
+                        Forged Amount
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-end"
+                    >
+                      <div>
+                        Votes
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-dashed border-theme-neutral-light"
+                  data-testid="DelegateRowItem"
+                >
+                  <td
+                    class="w-24 py-6"
+                    data-testid="DelegateRowItem__address"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="sc-fznyAO hUVUQM border-theme-neutral-800"
+                      >
+                        <div
+                          class="sc-AxirZ hmuEJr"
+                          height="22"
+                          width="22"
+                        >
+                          <svg>
+                            business.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="font-semibold"
+                    data-testid="DelegateRowItem__username"
+                  >
+                    <span>
+                      testwallet2
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-theme-neutral-dark"
+                    data-testid="DelegateRowItem__rank"
+                  >
+                    <span>
+                      #
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                    data-testid="DelegateRowItem__msq"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="text-theme-neutral-light"
+                    data-testid="DelegateRowItem__status"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP ml-2 text-theme-neutral"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          status-clock.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="text-theme-neutral-light"
+                    data-testid="DelegateRowItem__forged"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <span
+                        class="whitespace-no-wrap"
+                      >
+                        2,450.643 Ѧ
+                      </span>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-theme-neutral-dark"
+                    data-testid="DelegateRowItem__votes"
+                  >
+                    <div
+                      class="flex items-center justify-end"
+                    >
+                      <small
+                        class="text-theme-neutral"
+                      >
+                        2,43%
+                      </small>
+                      <span
+                        class="ml-1 whitespace-no-wrap"
+                      >
+                        2,450.643 Ѧ
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="align-middle"
+                    data-testid="DelegateRowItem__actions"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <button
+                        class="sc-AxjAm bXCWLY ml-16"
+                        color="primary"
+                        type="button"
+                      >
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
+                        >
+                          <div
+                            class="float-right outline-none cursor-pointer focus:outline-none"
+                          >
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MyRegistrations should render delegate registrations 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoLag gnHGCp"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fzoXzr cumsaa"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="overflow-hidden rounded-lg"
+              >
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--send"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-medium text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzpjYC deOkAw"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex items-end justify-between bg-theme-background"
+          >
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                My Registrations
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                You can register a Delegate, Business and Bridgechain.
+              </div>
+            </div>
+            <div>
+              <div
+                class="flex justify-end space-x-10 divide-x divide-theme-neutral-300"
+              >
+                <div
+                  class="relative"
+                >
+                  <button
+                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    data-testid="header-search-bar__button"
+                  >
+                    <div
+                      class="flex items-center space-x-3"
+                    >
+                      <span>
+                        Search
+                      </span>
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          search.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class="pl-10"
+                >
+                  <button
+                    class="sc-AxjAm kbZyZT"
+                    color="primary"
+                    data-testid="MyRegistrations__cta-register"
+                    type="button"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzpjYC deOkAw"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <h2
+            class="mb-8 font-bold"
+          >
+            Delegate
+          </h2>
+          <div
+            class="sc-fznZeY gcZndM"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible"
+                    >
+                      <div>
+                        Avatar
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top "
+                    >
+                      <div>
+                        Delegate Name
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top "
+                    >
+                      <div>
+                        Rank
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        MSQ
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--4"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        Status
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--5"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-end"
+                    >
+                      <div>
+                        Forged Amount
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-end"
+                    >
+                      <div>
+                        Votes
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-dashed border-theme-neutral-light"
+                  data-testid="DelegateRowItem"
+                >
+                  <td
+                    class="w-24 py-6"
+                    data-testid="DelegateRowItem__address"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="sc-fznyAO hUVUQM border-theme-neutral-800"
+                      >
+                        <div
+                          class="sc-AxirZ hmuEJr"
+                          height="22"
+                          width="22"
+                        >
+                          <svg>
+                            business.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn mr-4"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="font-semibold"
+                    data-testid="DelegateRowItem__username"
+                  >
+                    <span>
+                      testwallet2
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-theme-neutral-dark"
+                    data-testid="DelegateRowItem__rank"
+                  >
+                    <span>
+                      #
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                    data-testid="DelegateRowItem__msq"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="text-theme-neutral-light"
+                    data-testid="DelegateRowItem__status"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP ml-2 text-theme-neutral"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          status-clock.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="text-theme-neutral-light"
+                    data-testid="DelegateRowItem__forged"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <span
+                        class="whitespace-no-wrap"
+                      >
+                        2,450.643 Ѧ
+                      </span>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-theme-neutral-dark"
+                    data-testid="DelegateRowItem__votes"
+                  >
+                    <div
+                      class="flex items-center justify-end"
+                    >
+                      <small
+                        class="text-theme-neutral"
+                      >
+                        2,43%
+                      </small>
+                      <span
+                        class="ml-1 whitespace-no-wrap"
+                      >
+                        2,450.643 Ѧ
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="align-middle"
+                    data-testid="DelegateRowItem__actions"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <button
+                        class="sc-AxjAm bXCWLY ml-16"
+                        color="primary"
+                        type="button"
+                      >
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
+                        >
+                          <div
+                            class="float-right outline-none cursor-pointer focus:outline-none"
+                          >
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MyRegistrations should render empty state 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoLag gnHGCp"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fzoXzr cumsaa"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="overflow-hidden rounded-lg"
+              >
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--send"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-medium text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      JA
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzpjYC deOkAw"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex items-end justify-between bg-theme-background"
+          >
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                My Registrations
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                You can register a Delegate, Business and Bridgechain.
+              </div>
+            </div>
+            <div>
+              <div
+                class="flex justify-end space-x-10 divide-x divide-theme-neutral-300"
+              >
+                <div
+                  class="relative"
+                >
+                  <button
+                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    data-testid="header-search-bar__button"
+                  >
+                    <div
+                      class="flex items-center space-x-3"
+                    >
+                      <span>
+                        Search
+                      </span>
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          search.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class="pl-10"
+                >
+                  <button
+                    class="sc-AxjAm kbZyZT"
+                    color="primary"
+                    data-testid="MyRegistrations__cta-register"
+                    type="button"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzpjYC deOkAw flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="text-center"
+            data-testid="MyRegistrations__empty-state"
+          >
+            <svg
+              class="mx-auto"
+            >
+              register-banner.svg
+            </svg>
+            <div
+              class="mt-8 text-theme-neutral-dark"
+            >
+              Register Business, Bridgechain and Delegate in the most convenient way.
+            </div>
           </div>
         </div>
       </div>

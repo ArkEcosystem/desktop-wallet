@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { DelegateMapper, ExtendedTransactionData, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -21,8 +20,8 @@ type VoteDetailProps = {
 	onClose?: () => void;
 };
 
-const renderConfirmationStatus = (confirmations: BigNumber) => {
-	if (confirmations?.toNumber() < 51) {
+const renderConfirmationStatus = (isConfirmed: boolean) => {
+	if (!isConfirmed) {
 		return (
 			<div className="flex">
 				Not Confirmed
@@ -53,19 +52,18 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 	const activeProfile = useActiveProfile();
 	const senderWallet = activeProfile.wallets().findByAddress(transaction!.sender());
 
+	if (!senderWallet) {
+		throw new Error("Sender wallet not found");
+	}
+
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(true);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
 	useEffect(() => {
-		const syncDelegates = async () => {
+		const syncDelegates = () => {
 			setIsLoadingDelegates(true);
 
-			// TODO: make senderWallet non-nullable
-			// TODO: move this to profile initialising and run it every X period
-			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			await env.coins().syncDelegates(senderWallet?.coinId()!, senderWallet?.networkId()!);
-
-			setDelegates(DelegateMapper.execute(senderWallet!, (transaction as Contracts.VoteData).votes()));
+			setDelegates(DelegateMapper.execute(senderWallet, (transaction as Contracts.VoteData).votes()));
 
 			setIsLoadingDelegates(false);
 		};
@@ -76,7 +74,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			setIsLoadingDelegates(false);
 			setDelegates([]);
 		};
-	}, [env, senderWallet, transaction]);
+	}, [env, senderWallet, transaction, isOpen]);
 
 	const renderAccount = () => {
 		if (walletAlias) {
@@ -127,9 +125,9 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			);
 		}
 
-		return delegates?.map((delegate: any) => {
-			const username = delegate?.username();
-			const address = delegate?.address();
+		return delegates?.map((delegate: ReadOnlyWallet) => {
+			const username = delegate.username();
+			const address = delegate.address();
 
 			return (
 				<TransactionDetail
@@ -145,7 +143,11 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 					}
 				>
 					{username}
-					<TruncateMiddle text={address} className="ml-2 text-theme-neutral" />
+					<TruncateMiddle
+						data-testid="VoteDetail__delegate__address"
+						text={address}
+						className="ml-2 text-theme-neutral"
+					/>
 				</TransactionDetail>
 			);
 		});
@@ -155,7 +157,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			{renderAccount()}
 
-			{renderDelegates()}
+			<div data-testid="VoteDetails__delegates-container">{renderDelegates()}</div>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
 				{`${transaction!.fee().toHuman()} ${ticker?.toUpperCase()}`}
@@ -166,7 +168,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
-				{renderConfirmationStatus(transaction!.confirmations())}
+				{renderConfirmationStatus(transaction!.isConfirmed())}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>

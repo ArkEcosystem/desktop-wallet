@@ -9,17 +9,17 @@ import {
 
 export const TransactionRoutes = [
 	{
-		path: "/profiles/:profileId/transactions/registration",
+		path: "/profiles/:profileId/transactions/:walletId/registration",
 		exact: true,
 		component: Registration,
 	},
 	{
-		path: "/profiles/:profileId/transactions/resignation",
+		path: "/profiles/:profileId/transactions/:walletId/resignation",
 		exact: true,
 		component: ResignRegistration,
 	},
 	{
-		path: "/profiles/:profileId/transactions/update",
+		path: "/profiles/:profileId/transactions/:walletId/update",
 		exact: true,
 		component: UpdateRegistration,
 	},
@@ -34,7 +34,7 @@ export const TransactionRoutes = [
 		component: SendIPFSTransaction,
 	},
 	{
-		path: "/profiles/:profileId/transactions/vote",
+		path: "/profiles/:profileId/wallets/:walletId/transactions/vote/:voteId/sender/:senderId",
 		exact: true,
 		component: SendVoteTransaction,
 	},

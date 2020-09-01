@@ -1,27 +1,19 @@
-import { ClientFunction, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { getLocation, getPageURL, scrollToTop } from "../../../utils/e2e-utils";
+import { goToWallet } from "./common";
 
-fixture`Delete Wallet action`.page(getPageURL());
+const translations = buildTranslations();
 
-const getLocation = ClientFunction(() => document.location.href);
+fixture`Delete Wallet action`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
 
-const scrollTop = ClientFunction(() => {
-	window.scrollTo({ top: 0 });
-});
 test("Should open and cancel deletion modal in wallet detail page", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollToTop();
 
 	// Click delete message in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
-	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').withText(buildTranslations().COMMON.DELETE));
+	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').withText(translations.COMMON.DELETE));
 
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
 	await t.expect(Selector("[data-testid=DeleteResource__cancel-button]").exists).ok();
@@ -30,17 +22,11 @@ test("Should open and cancel deletion modal in wallet detail page", async (t) =>
 });
 
 test("Should open and close deletion modal in wallet detail page", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollToTop();
 
 	// Click delete message in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
-	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').withText(buildTranslations().COMMON.DELETE));
+	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').withText(translations.COMMON.DELETE));
 
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
 	await t.expect(Selector('[data-testid="modal__close-btn"]').exists).ok();
@@ -49,17 +35,11 @@ test("Should open and close deletion modal in wallet detail page", async (t) => 
 });
 
 test("Should delete wallet from wallet details page", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollToTop();
 
 	// Click delete message in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
-	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').withText(buildTranslations().COMMON.DELETE));
+	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').withText(translations.COMMON.DELETE));
 
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
 	await t.expect(Selector("[data-testid=DeleteResource__submit-button]").exists).ok();

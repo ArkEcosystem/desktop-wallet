@@ -3,7 +3,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { getDefaultProfileId, renderWithRouter } from "utils/testing-library";
+import { getDefaultProfileId, renderWithRouter, syncDelegates } from "utils/testing-library";
 
 // i18n
 import { translations } from "../../i18n";
@@ -15,13 +15,15 @@ const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
 describe("TransactionDetailModal", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
 			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
 			.persist();
+
+		await syncDelegates();
 	});
 
 	beforeEach(() => {
@@ -189,6 +191,30 @@ describe("TransactionDetailModal", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_VOTE_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render a delegate registration modal", () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<TransactionDetailModal
+					isOpen={true}
+					transactionItem={{
+						...TransactionFixture,
+						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						username: () => "ARK Wallet",
+						type: () => "delegateRegistration",
+					}}
+				/>
+				,
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

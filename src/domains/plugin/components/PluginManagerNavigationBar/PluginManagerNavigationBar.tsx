@@ -36,13 +36,13 @@ export const PluginManagerNavigationBar = ({
 									data-testid={`PluginManagerNavigationBar__${menuItem.name}`}
 									onClick={() => onChange(menuItem.name)}
 									title={menuItem.title}
-									className={`PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-600 cursor-pointer ${
+									className={`PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer ${
 										selected === menuItem.name ? "active" : ""
 									}`}
 								>
 									<span>{menuItem.title}</span>
 									{menuItem.count && (
-										<span className="ml-1 text-theme-neutral-light">{menuItem.count}</span>
+										<span className="ml-1 text-theme-neutral">{menuItem.count}</span>
 									)}
 								</button>
 
@@ -59,12 +59,12 @@ export const PluginManagerNavigationBar = ({
 					data-testid={`PluginManagerNavigationBar__my-plugins`}
 					onClick={() => onChange("my-plugins")}
 					title="My Plugins"
-					className={`PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-600 cursor-pointer ${
+					className={`PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200 cursor-pointer ${
 						selected === "my-plugins" ? "active" : ""
 					}`}
 				>
 					<span>MyPlugin</span>
-					<span className="ml-1 text-theme-neutral-light">8</span>
+					<span className="ml-1 text-theme-neutral">8</span>
 				</button>
 
 				<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300" />

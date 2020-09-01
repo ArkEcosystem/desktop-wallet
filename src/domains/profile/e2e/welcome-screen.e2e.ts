@@ -1,4 +1,4 @@
-import { ClientFunction, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { getPageURL } from "../../../utils/e2e-utils";
@@ -6,8 +6,6 @@ import { getPageURL } from "../../../utils/e2e-utils";
 const translations = buildTranslations();
 
 fixture`Welcome Screen routing`.page(getPageURL());
-
-const getLocation = ClientFunction(() => document.location.href);
 
 test("should load profiles welcome page", async (t) => {
 	await t.click(Selector("h1").withExactText(translations.COMMON.WELCOME));

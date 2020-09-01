@@ -99,7 +99,7 @@ describe("Transaction Send", () => {
 		);
 
 		expect(getByTestId("TransactionSend__step--second")).toBeTruthy();
-		expect(container).toHaveTextContent(wallet.network().name);
+		expect(container).toHaveTextContent(wallet.network().name());
 		expect(container).toHaveTextContent("D8rr7B…s6YUYD");
 		expect(container).toHaveTextContent("test smartbridge");
 
@@ -197,7 +197,7 @@ describe("Transaction Send", () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[2]);
+			fireEvent.click(feeOptions[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			// Step 2
@@ -248,6 +248,14 @@ describe("Transaction Send", () => {
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+
+			// Go back to wallet
+			const historySpy = jest.spyOn(history, "push");
+			fireEvent.click(getByTestId("TransactionSend__button--back-to-wallet"));
+			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+			historySpy.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
@@ -316,7 +324,7 @@ describe("Transaction Send", () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[2]);
+			fireEvent.click(feeOptions[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			// Step 2
@@ -417,7 +425,7 @@ describe("Transaction Send", () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[2]);
+			fireEvent.click(feeOptions[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			// Step 2

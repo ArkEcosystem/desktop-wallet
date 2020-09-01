@@ -7,109 +7,118 @@ exports[`News should filter results based on category query and asset 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag gzuhWQ"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -117,22 +126,22 @@ exports[`News should filter results based on category query and asset 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb dVGCEE"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -145,11 +154,15 @@ exports[`News should filter results based on category query and asset 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="p-2 ml-4 text-right"
+              class="text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -164,40 +177,39 @@ exports[`News should filter results based on category query and asset 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                   >
                     <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
+                      alt="Profile Avatar"
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
@@ -205,21 +217,21 @@ exports[`News should filter results based on category query and asset 1`] = `
                     >
                       JO
                     </span>
-                    <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -257,7 +269,7 @@ exports[`News should filter results based on category query and asset 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -297,7 +309,7 @@ exports[`News should filter results based on category query and asset 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag jWToXo"
+        class="sc-fzoXzr kgVuHK"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -312,103 +324,109 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="space-y-6"
               >
                 <div
-                  class="sc-fznJRM bTIrrd bg-theme-background"
-                  data-testid="ProfileCard"
+                  data-testid="NewsCard"
                 >
                   <div
-                    class="flex flex-col p-4 space-y-8"
-                    data-testid="NewsCard"
+                    class="sc-fzoiQi AaFUd bg-theme-background"
+                    data-testid="Card"
                   >
                     <div
-                      class="flex justify-between w-full"
+                      class="flex flex-col p-4 space-y-8 bg-theme-background"
                     >
                       <div
-                        class="flex items-center space-x-4"
+                        class="flex justify-between w-full"
                       >
                         <div
-                          aria-label="Ark"
-                          class="sc-AxhUy bjgvrq border-theme-danger-light text-theme-danger-400"
-                          data-testid="NetworkIcon-ARK-mainnet"
+                          class="flex items-center space-x-4"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            data-testid="NetworkIcon__icon"
-                            height="1em"
-                            width="1em"
+                            aria-label="Ark"
+                            class="sc-AxhUy bjgvrq border-theme-danger-light text-theme-danger-400"
+                            data-testid="NetworkIcon-ARK-mainnet"
                           >
-                            <svg>
-                              ark.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              data-testid="NetworkIcon__icon"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                ark.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div>
+                            <h4
+                              class="text-lg font-semibold"
+                              data-testid="NewsCard__asset-ARK Ecosystem"
+                            >
+                              ARK Ecosystem
+                            </h4>
+                            <div
+                              class="flex items-center space-x-4"
+                            >
+                              <p
+                                class="text-sm font-semibold text-theme-neutral"
+                                data-testid="NewsCard__author"
+                              >
+                                Travis Walker, Co-Founder
+                              </p>
+                              <div
+                                class="sc-AxjAm gHUxAL border-theme-neutral-300"
+                                type="vertical"
+                              />
+                              <p
+                                class="text-sm font-semibold text-theme-neutral"
+                                data-testid="NewsCard__date-created"
+                              >
+                                <span
+                                  data-testid="timeago"
+                                >
+                                  A few seconds ago
+                                </span>
+                              </p>
+                            </div>
                           </div>
                         </div>
-                        <div>
-                          <h4
-                            class="text-lg font-semibold"
-                            data-testid="NewsCard__asset-ARK Ecosystem"
-                          >
-                            ARK Ecosystem
-                          </h4>
+                        <div
+                          class="flex flex-col justify-end"
+                        >
                           <div
-                            class="flex items-center space-x-4"
+                            class="sc-Axmtr fNmZph"
+                            color="warning"
                           >
-                            <p
-                              class="text-sm font-semibold text-theme-neutral"
-                              data-testid="NewsCard__author"
+                            <span
+                              class="text-sm"
+                              data-testid="NewsCard__category"
                             >
-                              Travis Walker, Co-Founder
-                            </p>
-                            <div
-                              class="sc-AxjAm gHUxAL border-theme-neutral-300"
-                              type="vertical"
-                            />
-                            <p
-                              class="text-sm font-semibold text-theme-neutral"
-                              data-testid="NewsCard__date-created"
-                            >
-                              <span
-                                data-testid="timeago"
-                              >
-                                A few seconds ago
-                              </span>
-                            </p>
+                              #Technical
+                            </span>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="flex flex-col justify-end"
+                        class="sc-AxjAm dnkyDE border-theme-neutral-300"
+                        type="horizontal"
+                      />
+                      <p
+                        class="whitespace-pre-line text-theme-neutral-dark"
+                        data-testid="NewsCard__content"
                       >
-                        <div
-                          class="sc-Axmtr fNmZph"
-                          color="warning"
+                        Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
+
+                        <a
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io"
                         >
-                          <span
-                            class="text-sm"
-                            data-testid="NewsCard__category"
-                          >
-                            #Technical
-                          </span>
-                        </div>
-                      </div>
+                          https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
+                        </a>
+                      </p>
                     </div>
                     <div
-                      class="sc-AxjAm dnkyDE border-theme-neutral-300"
-                      type="horizontal"
+                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
                     />
-                    <p
-                      class="whitespace-pre-line text-theme-neutral-dark"
-                      data-testid="NewsCard__content"
-                    >
-                      Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
-
-                      <a
-                        class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                        data-testid="Link"
-                        rel="noopener noreferrer"
-                        to="[object Object]"
-                      >
-                        https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
-                      </a>
-                    </p>
                   </div>
                 </div>
               </div>
@@ -487,85 +505,21 @@ exports[`News should filter results based on category query and asset 1`] = `
                 </div>
               </div>
               <div
-                class="flex justify-center w-full pt-10"
+                class="flex justify-center w-full"
               >
                 <div
-                  class="sc-fzoXzr dZMedQ"
+                  class="sc-fznxsB gaCFZs"
                   data-testid="Pagination"
                 >
-                  <button
-                    class="sc-AxhCb BegvR"
-                    color="primary"
-                    data-testid="CompactPagination__first"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ hDwaov"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        pagination-first.svg
-                      </svg>
-                    </div>
-                  </button>
-                  <button
-                    class="sc-AxhCb BegvR"
-                    color="primary"
-                    data-testid="CompactPagination__previous"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ fttODj"
-                      height="10"
-                      width="10"
-                    >
-                      <svg>
-                        back.svg
-                      </svg>
-                    </div>
-                  </button>
                   <div
-                    class="flex items-center px-4 py-2 rounded bg-theme-primary-contrast text-theme-primary"
+                    class="flex px-2 rounded bg-theme-primary-contrast"
                   >
-                    Page 1 of 1
+                    <div
+                      class="sc-fznJRM cTsuuN current-page"
+                    >
+                      1
+                    </div>
                   </div>
-                  <button
-                    class="sc-AxhCb BegvR"
-                    color="primary"
-                    data-testid="CompactPagination__next"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ hDwaov"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        forward.svg
-                      </svg>
-                    </div>
-                  </button>
-                  <button
-                    class="sc-AxhCb BegvR"
-                    color="primary"
-                    data-testid="CompactPagination__last"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ hDwaov"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        pagination-last.svg
-                      </svg>
-                    </div>
-                  </button>
                 </div>
               </div>
             </div>
@@ -831,7 +785,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxhCb BegvR w-full"
+                      class="sc-AxhCb hPLjLy w-full"
                       color="primary"
                       data-testid="NewsOptions__submit"
                       type="button"

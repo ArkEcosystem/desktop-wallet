@@ -9,9 +9,12 @@ export const translations: { [key: string]: any } = {
 	CONFIRMATIONS: "Confirmations",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
+	DELEGATE_NAME_TOO_LONG: "Delegate Name too long (max 20 characters)",
+	DELEGATE_NAME_EXISTS: "Delegate Name already exists",
 	DESCRIPTION: "Description",
 	ENCRYPTION_PASSWORD: "Encryption Password",
 	ID: "ID",
+	INVALID_DELEGATE_NAME: "Invalid Delegate Name",
 	INVALID_MNEMONIC: "Invalid Mnemonic",
 	IPFS_HASH: "IPFS Hash",
 	MNEMONIC: "Mnemonic",
@@ -117,6 +120,15 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
+	PAGE_DELEGATE_REGISTRATION: {
+		SECOND_STEP: {
+			TITLE: "Register Delegate",
+			DESCRIPTION: "Make up a name and register your delegate online.",
+			WARNING:
+				"Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.",
+		},
+	},
+
 	PAGE_RESIGN_REGISTRATION: {
 		FIRST_STEP: {
 			DELEGATE: {
@@ -129,6 +141,9 @@ export const translations: { [key: string]: any } = {
 		SECOND_STEP: {
 			TITLE: "Transaction Review",
 			DESCRIPTION: "Check the information again before Resignation",
+		},
+		FOURTH_STEP: {
+			TITLE: "Delegate Resignation",
 		},
 	},
 
@@ -209,5 +224,10 @@ export const translations: { [key: string]: any } = {
 		VALIDATION: {
 			NOT_VALID: "The IPFS hash is not valid",
 		},
+	},
+	SUCCESS: {
+		TITLE: "Transaction Sent 1",
+		DESCRIPTION:
+			"Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:",
 	},
 };

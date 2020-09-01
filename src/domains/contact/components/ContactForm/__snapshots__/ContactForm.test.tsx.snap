@@ -334,9 +334,9 @@ exports[`ContactForm should select 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Betanet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-betanet"
+              aria-label="Lisk"
+              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
+              data-testid="NetworkIcon-LSK-mainnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -358,9 +358,9 @@ exports[`ContactForm should select 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk"
-              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
-              data-testid="NetworkIcon-LSK-mainnet"
+              aria-label="Lisk Testnet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-testnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -382,21 +382,9 @@ exports[`ContactForm should select 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Testnet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-testnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
           <li
             aria-selected="false"
@@ -506,18 +494,6 @@ exports[`ContactForm should select 1`] = `
               data-testid="NetworkIcon__placeholder"
             />
           </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-29"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
         </ul>
       </fieldset>
       <fieldset
@@ -569,7 +545,7 @@ exports[`ContactForm should select 1`] = `
         class="mt-4"
       >
         <button
-          class="sc-AxirZ fhzkRl w-full"
+          class="sc-AxirZ dXpJau w-full"
           color="primary"
           data-testid="contact-form__add-address-btn"
           disabled=""
@@ -586,7 +562,7 @@ exports[`ContactForm should select 1`] = `
         class="space-x-3"
       >
         <button
-          class="sc-AxirZ fhzkRl"
+          class="sc-AxirZ dXpJau"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -594,7 +570,7 @@ exports[`ContactForm should select 1`] = `
           Cancel
         </button>
         <button
-          class="sc-AxirZ dPtiuf"
+          class="sc-AxirZ emecfQ"
           color="primary"
           data-testid="contact-form__save-btn"
           disabled=""
@@ -948,9 +924,9 @@ exports[`ContactForm should select with errors 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Betanet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-betanet"
+              aria-label="Lisk"
+              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
+              data-testid="NetworkIcon-LSK-mainnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -972,9 +948,9 @@ exports[`ContactForm should select with errors 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk"
-              class="sc-fzplWN bGwGlP border-theme-primary-400 text-theme-primary"
-              data-testid="NetworkIcon-LSK-mainnet"
+              aria-label="Lisk Testnet"
+              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-LSK-testnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -996,21 +972,9 @@ exports[`ContactForm should select with errors 1`] = `
             role="option"
           >
             <div
-              aria-label="Lisk Testnet"
-              class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-LSK-testnet"
-            >
-              <div
-                class="sc-AxhCb dCXdPH"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
           <li
             aria-selected="false"
@@ -1120,18 +1084,6 @@ exports[`ContactForm should select with errors 1`] = `
               data-testid="NetworkIcon__placeholder"
             />
           </li>
-          <li
-            aria-selected="false"
-            class="inline-block cursor-pointer"
-            data-testid="SelectNetwork__NetworkIcon--container"
-            id="ContactForm__network-item-29"
-            role="option"
-          >
-            <div
-              class="sc-fzplWN bGwGlP border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-          </li>
         </ul>
       </fieldset>
       <fieldset
@@ -1183,7 +1135,7 @@ exports[`ContactForm should select with errors 1`] = `
         class="mt-4"
       >
         <button
-          class="sc-AxirZ fhzkRl w-full"
+          class="sc-AxirZ dXpJau w-full"
           color="primary"
           data-testid="contact-form__add-address-btn"
           disabled=""
@@ -1200,7 +1152,7 @@ exports[`ContactForm should select with errors 1`] = `
         class="space-x-3"
       >
         <button
-          class="sc-AxirZ fhzkRl"
+          class="sc-AxirZ dXpJau"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -1208,7 +1160,7 @@ exports[`ContactForm should select with errors 1`] = `
           Cancel
         </button>
         <button
-          class="sc-AxirZ dPtiuf"
+          class="sc-AxirZ emecfQ"
           color="primary"
           data-testid="contact-form__save-btn"
           disabled=""
@@ -1358,7 +1310,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         class="mt-4"
       >
         <button
-          class="sc-AxirZ fhzkRl w-full"
+          class="sc-AxirZ dXpJau w-full"
           color="primary"
           data-testid="contact-form__add-address-btn"
           disabled=""
@@ -1375,7 +1327,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         class="space-x-3"
       >
         <button
-          class="sc-AxirZ fhzkRl"
+          class="sc-AxirZ dXpJau"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -1383,7 +1335,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           Cancel
         </button>
         <button
-          class="sc-AxirZ dPtiuf"
+          class="sc-AxirZ emecfQ"
           color="primary"
           data-testid="contact-form__save-btn"
           disabled=""
@@ -1533,7 +1485,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         class="mt-4"
       >
         <button
-          class="sc-AxirZ fhzkRl w-full"
+          class="sc-AxirZ dXpJau w-full"
           color="primary"
           data-testid="contact-form__add-address-btn"
           disabled=""
@@ -1611,7 +1563,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             </div>
           </span>
           <button
-            class="sc-AxirZ ggAYoh flex items-center ml-auto"
+            class="sc-AxirZ cjfLjy flex items-center ml-auto"
             color="primary"
             data-testid="contact-form__remove-address-btn"
             type="button"
@@ -1633,7 +1585,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="flex w-full justify-between"
     >
       <button
-        class="sc-AxirZ nDNwi"
+        class="sc-AxirZ gVZClM"
         color="danger"
         data-testid="contact-form__delete-btn"
         type="button"
@@ -1655,7 +1607,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         class="space-x-3"
       >
         <button
-          class="sc-AxirZ fhzkRl"
+          class="sc-AxirZ dXpJau"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -1663,7 +1615,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           Cancel
         </button>
         <button
-          class="sc-AxirZ dPtiuf"
+          class="sc-AxirZ emecfQ"
           color="primary"
           data-testid="contact-form__save-btn"
           disabled=""

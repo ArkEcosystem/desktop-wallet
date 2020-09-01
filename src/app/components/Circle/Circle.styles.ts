@@ -1,12 +1,12 @@
 import tw, { css } from "twin.macro";
 import { Size } from "types";
 
-const defaultStyle = (noShadow: boolean) => [
+const defaultStyle = (noShadow: boolean, shadowColor?: string) => [
 	tw`inline-flex items-center justify-center align-middle border-2 rounded-full`,
 	!noShadow &&
 		css`
 			& {
-				box-shadow: 0 0 0 6px var(--theme-background-color);
+				box-shadow: 0 0 0 6px var(${shadowColor ? shadowColor : "--theme-background-color"});
 			}
 		`,
 ];
@@ -41,8 +41,10 @@ export const getStyles = ({
 	size,
 	avatarId,
 	noShadow,
+	shadowColor,
 }: {
 	size?: Size;
 	avatarId?: string | null;
 	noShadow?: boolean;
-}) => [...defaultStyle(noShadow!), getSize(size), ...getAvatarCss(avatarId)];
+	shadowColor?: string;
+}) => [...defaultStyle(noShadow!, shadowColor), getSize(size), ...getAvatarCss(avatarId)];

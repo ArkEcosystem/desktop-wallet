@@ -6,7 +6,6 @@ export const translations: { [key: string]: any } = {
 	MODAL_NAME_WALLET: {
 		TITLE: "Name Wallet",
 		DESCRIPTION: "You can enter the name of your wallet for a quick search in your wallet.",
-		FIELD_NAME: "Enter a name",
 	},
 
 	MODAL_DELETE_WALLET: {
@@ -129,6 +128,9 @@ export const translations: { [key: string]: any } = {
 		PENDING_TRANSACTIONS: "Pending Transactions",
 		TRANSACTION_HISTORY: "Transaction History",
 		YOUR_WALLETS: "Your Wallets",
+
+		STAR_WALLET: "Add to favorites",
+		UNSTAR_WALLET: "Remove from favorites",
 
 		REGISTRATIONS: {
 			TITLE: "Registrations",

@@ -14,9 +14,10 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { LedgerListener } from "domains/transaction/components/LedgerListener";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
@@ -28,17 +29,38 @@ import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
 
-const Main = () => {
+type Props = {
+	syncInterval?: number;
+};
+
+const Main = ({ syncInterval }: Props) => {
 	const [showSplash, setShowSplash] = useState(true);
 
+	const { pathname } = useLocation();
 	const { env, persist } = useEnvironmentContext();
-
 	const isOnline = useNetworkStatus();
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
 	useLayoutEffect(() => {
-		const boot = async () => {
-			await env.bootFromObject(fixtureData);
+		const syncDelegates = async () => {
+			console.log("Running delegates sync...");
+
+			await env.delegates().syncAll();
+
 			setShowSplash(false);
+		};
+
+		const boot = async () => {
+			await env.verify(fixtureData);
+			syncDelegates();
+
+			console.info("Scheduling next delegates synchronization...");
+			setInterval(() => syncDelegates(), syncInterval);
+
+			await env.boot();
 			await persist();
 		};
 
@@ -47,7 +69,7 @@ const Main = () => {
 		} else {
 			setShowSplash(false);
 		}
-	}, [env, persist]);
+	}, [env, persist, syncInterval]);
 
 	if (showSplash) {
 		return <Splash />;
@@ -63,7 +85,11 @@ const Main = () => {
 	);
 };
 
-export const App = () => {
+Main.defaultProps = {
+	syncInterval: 300000,
+};
+
+export const App = ({ syncInterval }: Props) => {
 	/**
 	 * Ensure that the Environment object will not be recreated when the state changes,
 	 * as the data is stored in memory by the `DataRepository`.
@@ -94,14 +120,14 @@ export const App = () => {
 	);
 
 	return (
-		<I18nextProvider i18n={i18n}>
-			<EnvironmentProvider env={env}>
-				<ErrorBoundary FallbackComponent={ApplicationError}>
+		<ErrorBoundary FallbackComponent={ApplicationError}>
+			<I18nextProvider i18n={i18n}>
+				<EnvironmentProvider env={env}>
 					<LedgerListener />
 
-					<Main />
-				</ErrorBoundary>
-			</EnvironmentProvider>
-		</I18nextProvider>
+					<Main syncInterval={syncInterval} />
+				</EnvironmentProvider>
+			</I18nextProvider>
+		</ErrorBoundary>
 	);
 };

@@ -1,38 +1,44 @@
-import { ClientFunction, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
-import { buildTranslations as translations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { CustomSelector, CustomSnapshot } from "../../../utils/e2e-interfaces";
+import { getPageURL, scrollToBottom } from "../../../utils/e2e-utils";
+import { goToWallet } from "./common";
 
-fixture`Wallet Details`.page(getPageURL());
+fixture`Wallet Details`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
 
-const scroll = ClientFunction((x, y) => window.scrollBy(x, y));
-
-test("should open wallet details page", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
-
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-});
+// TODO: Investigate better and fix why loading is immediate in e2e
+// test("should show initial loading state", async (t) => {
+// 	await t
+// 		.expect(Selector("[data-testid=WalletRegistrations__skeleton]").exists)
+// 		.ok()
+// 		.expect(Selector("[data-testid=WalletVote__skeleton]").exists)
+// 		.ok()
+// 		.expect(Selector("[data-testid=TransactionRow__skeleton]").exists)
+// 		.ok();
+// });
 
 test("should load transactions with load more action", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
-
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-
 	// Check for transactions rows
 	await t.expect(Selector("[data-testid=TransactionRow]").exists).ok();
 	await t.expect(Selector("[data-testid=transactions__fetch-more-button]").exists).ok();
 
-	// Make sure the "View More" button is visible
-	await scroll(0, 2560);
+	const count = await Selector("[data-testid=TransactionRow]").count;
+
+	await scrollToBottom();
+
 	await t.click(Selector("[data-testid=transactions__fetch-more-button]"));
 
-	await t.expect(Selector("[data-testid=TransactionRow]").count).eql(48, {
-		timeout: 4000,
+	await t.expect(Selector("[data-testid=TransactionRow]").count).gt(count);
+});
+
+test("should star a wallet", async (t) => {
+	const starButton = <CustomSelector>Selector("[data-testid=WalletHeader__star-button]").addCustomDOMProperties({
+		innerHTML: (el) => el.innerHTML,
 	});
+
+	const starButtonContent = (<CustomSnapshot>await starButton()).innerHTML;
+
+	await t.click(starButton);
+
+	await t.expect(starButton.innerHTML).notEql(starButtonContent);
 });

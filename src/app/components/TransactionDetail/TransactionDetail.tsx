@@ -5,14 +5,24 @@ type TransactionDetailProps = {
 	label?: any;
 	extra?: React.ReactNode;
 	border?: boolean;
+	borderPosition: "top" | "bottom";
 	padding?: boolean;
 	className?: string;
 };
 
-export const TransactionDetail = ({ border, children, className, extra, label, padding }: TransactionDetailProps) => (
+export const TransactionDetail = ({
+	border,
+	borderPosition,
+	children,
+	className,
+	extra,
+	label,
+	padding,
+}: TransactionDetailProps) => (
 	<div
+		data-testid="TransactionDetail"
 		className={`flex items-center ${!padding || "py-6"} ${
-			!border || "border-t border-dashed border-theme-neutral-300"
+			!border || `${borderPosition === "top" ? "border-t" : "border-b"} border-dashed border-theme-neutral-300`
 		} ${className}`}
 	>
 		<div className="flex-1 space-y-2">
@@ -28,5 +38,6 @@ export const TransactionDetail = ({ border, children, className, extra, label, p
 TransactionDetail.defaultProps = {
 	className: "",
 	border: true,
+	borderPosition: "top",
 	padding: true,
 };

@@ -12,160 +12,122 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxhCb gcoSL w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxiKw kgmJgX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxhCb idLVlI"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
+          Receive Funds
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <div
+            class="mt-2"
+          />
+          <div>
             <div
-              class="p-1"
+              class="flex items-center mt-6 mb-6"
             >
               <div
-                class="sc-AxiKw bopxJn"
-                height="12"
-                width="12"
+                class="flex-1"
               >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Receive Funds
-          </h2>
-          <div
-            class="flex-1"
-          >
-            <div
-              class="mt-2"
-            >
-              <div>
                 <div
-                  class="flex items-center mt-6 mb-6"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
-                  <div
-                    class="flex-1"
-                  >
-                    <div
-                      class="text-sm font-semibold text-theme-neutral"
-                    >
-                      Wallet
-                    </div>
-                    <div
-                      class="flex items-center font-semibold"
-                    >
-                      My Wallet
-                    </div>
-                  </div>
-                  <div
-                    class="sc-AxjAm bLfakz ml-4"
-                  >
-                    <div
-                      class="sc-AxiKw dzBdqj"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        ark.svg
-                      </svg>
-                    </div>
-                  </div>
+                  Address
                 </div>
                 <div
-                  class="sc-AxirZ jJscrd border-theme-neutral-300"
-                  type="horizontal"
-                />
-              </div>
-            </div>
-            <div>
-              <div
-                class="flex items-center mt-6 mb-6"
-              >
-                <div
-                  class="flex-1"
+                  class="flex items-center font-semibold"
                 >
-                  <div
-                    class="text-sm font-semibold text-theme-neutral"
+                  <span
+                    class="ml-4"
                   >
-                    Address
-                  </div>
-                  <div
-                    class="flex items-center font-semibold"
-                  >
-                    ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
-                    <span
-                      class="ml-4"
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
                     >
                       <div
-                        class="inline-block cursor-pointer"
-                        data-testid="clipboard__wrapper"
+                        class="text-theme-primary-300"
                       >
                         <div
-                          class="text-theme-primary-300"
+                          class="sc-AxiKw dzBdqj"
+                          height="1em"
+                          width="1em"
                         >
-                          <div
-                            class="sc-AxiKw dzBdqj"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              copy.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            copy.svg
+                          </svg>
                         </div>
                       </div>
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center mb-2 ml-4"
-                >
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      />
                     </div>
-                  </div>
+                  </span>
                 </div>
               </div>
               <div
-                class="sc-AxirZ jJscrd border-theme-neutral-300"
-                type="horizontal"
-              />
+                class="flex items-center ml-4"
+              >
+                <div
+                  class="sc-AxjAm bDDbwS -mr-2"
+                >
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  />
+                </div>
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt=""
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title=""
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="mt-8"
-            >
-              <img
-                alt="QR Code"
-                class="w-64 h-64 mx-auto"
-              />
-            </div>
+              class="sc-AxirZ jJscrd border-theme-neutral-300"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="mt-8"
+          >
+            <img
+              alt="QR Code"
+              class="w-64 h-64 mx-auto"
+            />
           </div>
         </div>
       </div>
@@ -184,135 +146,122 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxhCb gcoSL w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxiKw kgmJgX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxhCb idLVlI"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
+          Receive Funds
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <div
+            class="mt-2"
+          />
+          <div>
             <div
-              class="p-1"
+              class="flex items-center mt-6 mb-6"
             >
               <div
-                class="sc-AxiKw bopxJn"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Receive Funds
-          </h2>
-          <div
-            class="flex-1"
-          >
-            <div
-              class="mt-2"
-            />
-            <div>
-              <div
-                class="flex items-center mt-6 mb-6"
+                class="flex-1"
               >
                 <div
-                  class="flex-1"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
-                  <div
-                    class="text-sm font-semibold text-theme-neutral"
+                  Address
+                </div>
+                <div
+                  class="flex items-center font-semibold"
+                >
+                  <span
+                    class="ml-4"
                   >
-                    Address
-                  </div>
-                  <div
-                    class="flex items-center font-semibold"
-                  >
-                    ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
-                    <span
-                      class="ml-4"
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
                     >
                       <div
-                        class="inline-block cursor-pointer"
-                        data-testid="clipboard__wrapper"
+                        class="text-theme-primary-300"
                       >
                         <div
-                          class="text-theme-primary-300"
+                          class="sc-AxiKw dzBdqj"
+                          height="1em"
+                          width="1em"
                         >
-                          <div
-                            class="sc-AxiKw dzBdqj"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              copy.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            copy.svg
+                          </svg>
                         </div>
                       </div>
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center mb-2 ml-4"
-                >
-                  <div
-                    class="sc-AxjAm bLfakz -mr-2"
-                  >
-                    <div
-                      class="sc-AxiKw dzBdqj"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        ark.svg
-                      </svg>
                     </div>
-                  </div>
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      />
-                    </div>
-                  </div>
+                  </span>
                 </div>
               </div>
               <div
-                class="sc-AxirZ jJscrd border-theme-neutral-300"
-                type="horizontal"
-              />
+                class="flex items-center ml-4"
+              >
+                <div
+                  class="sc-AxjAm bDDbwS -mr-2"
+                >
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  />
+                </div>
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt=""
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title=""
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="mt-8"
-            >
-              <img
-                alt="QR Code"
-                class="w-64 h-64 mx-auto"
-              />
-            </div>
+              class="sc-AxirZ jJscrd border-theme-neutral-300"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="mt-8"
+          >
+            <img
+              alt="QR Code"
+              class="w-64 h-64 mx-auto"
+            />
           </div>
         </div>
       </div>

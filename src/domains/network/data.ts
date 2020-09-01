@@ -191,12 +191,12 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			textClass: "text-theme-primary-400",
 			iconName: "Lisk",
 		},
-		betanet: {
-			displayName: "Lisk Betanet",
-			borderClass: "border-theme-primary-100",
-			textClass: "text-theme-primary-400",
-			iconName: "Lisk",
-		},
+		// betanet: {
+		// 	displayName: "Lisk Betanet",
+		// 	borderClass: "border-theme-primary-100",
+		// 	textClass: "text-theme-primary-400",
+		// 	iconName: "Lisk",
+		// },
 	},
 	// NEO: {
 	// 	mainnet: {

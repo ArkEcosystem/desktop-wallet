@@ -1,28 +1,21 @@
-import { ClientFunction, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { getPageURL, scrollToTop } from "../../../utils/e2e-utils";
+import { goToWallet } from "./common";
 
-fixture`Verify Message`.page(getPageURL());
+const translations = buildTranslations();
 
-const scrollTop = ClientFunction(() => {
-	window.scrollTo({ top: 0 });
-});
+fixture`Verify Message`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
 
 test("Should open and cancel verify message modal", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollToTop();
 
 	// Click verify message option in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			buildTranslations().WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
+			translations.WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
 		),
 	);
 
@@ -33,19 +26,13 @@ test("Should open and cancel verify message modal", async (t) => {
 });
 
 test("Should open and close verify message modal", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollToTop();
 
 	// Click verify message option in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			buildTranslations().WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
+			translations.WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
 		),
 	);
 
@@ -56,19 +43,13 @@ test("Should open and close verify message modal", async (t) => {
 });
 
 test("Should fail verification", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollToTop();
 
 	// Click verify message option in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			buildTranslations().WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
+			translations.WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
 		),
 	);
 
@@ -84,26 +65,20 @@ test("Should fail verification", async (t) => {
 	await t.click(Selector("[data-testid=VerifyMessage__submit]"));
 	await t
 		.expect(
-			Selector("[data-testid=modal__inner]").withText(buildTranslations().WALLETS.MODAL_VERIFY_MESSAGE.FAIL_TITLE)
+			Selector("[data-testid=modal__inner]").withText(translations.WALLETS.MODAL_VERIFY_MESSAGE.FAIL_TITLE)
 				.exists,
 		)
 		.ok();
 });
 
 test("Should successfully verify message", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to wallet detail page
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+	await scrollToTop();
 
 	// Click verify message option in dropdown menu
-	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			buildTranslations().WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
+			translations.WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
 		),
 	);
 
@@ -119,9 +94,8 @@ test("Should successfully verify message", async (t) => {
 	await t.click(Selector("[data-testid=VerifyMessage__submit]"));
 	await t
 		.expect(
-			Selector("[data-testid=modal__inner]").withText(
-				buildTranslations().WALLETS.MODAL_VERIFY_MESSAGE.SUCCESS_TITLE,
-			).exists,
+			Selector("[data-testid=modal__inner]").withText(translations.WALLETS.MODAL_VERIFY_MESSAGE.SUCCESS_TITLE)
+				.exists,
 		)
 		.ok();
 });

@@ -88,12 +88,12 @@ exports[`Wallets should render with empty wallets list 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxjAm fPpool"
               color="primary"
               type="button"
             >
               <div
-                class="flex items-center justify-center mr-2 text-sm align-middle"
+                class="flex items-center justify-center mr-2 align-middle"
               >
                 <div
                   class="sc-AxirZ igJAf"
@@ -112,12 +112,12 @@ exports[`Wallets should render with empty wallets list 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxjAm fPpool"
               color="primary"
               type="button"
             >
               <div
-                class="flex items-center justify-center mr-2 text-sm align-middle"
+                class="flex items-center justify-center mr-2 align-middle"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -165,31 +165,36 @@ exports[`Wallets should render with empty wallets list 1`] = `
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-AxhUy gnuRcL"
-                    data-testid="ProfileCard"
+                    class="sc-AxgMl cgBINQ"
+                    data-testid="Card"
                   >
                     <div
                       class="p-2"
                     >
-                      <div>
-                        <div
-                          class="sc-AxgMl daFHdi -mr-2 bg-white border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxgMl daFHdi bg-white border-theme-primary-contrast"
-                        />
-                      </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast undefined"
+                        class="flex"
                       >
-                        New wallet
+                        <div
+                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                        />
+                        <div
+                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                        />
                       </div>
                       <div
-                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                      >
+                        New Wallet
+                      </div>
+                      <div
+                        class="text-md text-theme-primary-contrast font-bold undefined"
                       >
                         Balance
                       </div>
                     </div>
+                    <div
+                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                    />
                   </div>
                 </div>
               </div>
@@ -202,31 +207,36 @@ exports[`Wallets should render with empty wallets list 1`] = `
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-AxhUy gnuRcL"
-                    data-testid="ProfileCard"
+                    class="sc-AxgMl cgBINQ"
+                    data-testid="Card"
                   >
                     <div
                       class="p-2"
                     >
-                      <div>
-                        <div
-                          class="sc-AxgMl daFHdi -mr-2 bg-white border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxgMl daFHdi bg-white border-theme-primary-contrast"
-                        />
-                      </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast undefined"
+                        class="flex"
                       >
-                        New wallet
+                        <div
+                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                        />
+                        <div
+                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                        />
                       </div>
                       <div
-                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                      >
+                        New Wallet
+                      </div>
+                      <div
+                        class="text-md text-theme-primary-contrast font-bold undefined"
                       >
                         Balance
                       </div>
                     </div>
+                    <div
+                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                    />
                   </div>
                 </div>
               </div>
@@ -239,31 +249,36 @@ exports[`Wallets should render with empty wallets list 1`] = `
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-AxhUy gnuRcL"
-                    data-testid="ProfileCard"
+                    class="sc-AxgMl cgBINQ"
+                    data-testid="Card"
                   >
                     <div
                       class="p-2"
                     >
-                      <div>
-                        <div
-                          class="sc-AxgMl daFHdi -mr-2 bg-white border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxgMl daFHdi bg-white border-theme-primary-contrast"
-                        />
-                      </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast undefined"
+                        class="flex"
                       >
-                        New wallet
+                        <div
+                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                        />
+                        <div
+                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                        />
                       </div>
                       <div
-                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                      >
+                        New Wallet
+                      </div>
+                      <div
+                        class="text-md text-theme-primary-contrast font-bold undefined"
                       >
                         Balance
                       </div>
                     </div>
+                    <div
+                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                    />
                   </div>
                 </div>
               </div>
@@ -276,31 +291,36 @@ exports[`Wallets should render with empty wallets list 1`] = `
                   data-testid="WalletCard__blank"
                 >
                   <div
-                    class="sc-AxhUy gnuRcL"
-                    data-testid="ProfileCard"
+                    class="sc-AxgMl cgBINQ"
+                    data-testid="Card"
                   >
                     <div
                       class="p-2"
                     >
-                      <div>
-                        <div
-                          class="sc-AxgMl daFHdi -mr-2 bg-white border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxgMl daFHdi bg-white border-theme-primary-contrast"
-                        />
-                      </div>
                       <div
-                        class="mt-6 text-md text-theme-primary-contrast undefined"
+                        class="flex"
                       >
-                        New wallet
+                        <div
+                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                        />
+                        <div
+                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                        />
                       </div>
                       <div
-                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
+                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                      >
+                        New Wallet
+                      </div>
+                      <div
+                        class="text-md text-theme-primary-contrast font-bold undefined"
                       >
                         Balance
                       </div>
                     </div>
+                    <div
+                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                    />
                   </div>
                 </div>
               </div>
@@ -404,12 +424,12 @@ exports[`Wallets should render with list view enabled as default 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxjAm fPpool"
               color="primary"
               type="button"
             >
               <div
-                class="flex items-center justify-center mr-2 text-sm align-middle"
+                class="flex items-center justify-center mr-2 align-middle"
               >
                 <div
                   class="sc-AxirZ igJAf"
@@ -428,12 +448,12 @@ exports[`Wallets should render with list view enabled as default 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxjAm fPpool"
               color="primary"
               type="button"
             >
               <div
-                class="flex items-center justify-center mr-2 text-sm align-middle"
+                class="flex items-center justify-center mr-2 align-middle"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -621,7 +641,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi"
+                        class="sc-AxheI gTkmUE"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -807,12 +827,12 @@ exports[`Wallets should render with list view enabled as default and empty walle
             class="space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxjAm fPpool"
               color="primary"
               type="button"
             >
               <div
-                class="flex items-center justify-center mr-2 text-sm align-middle"
+                class="flex items-center justify-center mr-2 align-middle"
               >
                 <div
                   class="sc-AxirZ igJAf"
@@ -831,12 +851,12 @@ exports[`Wallets should render with list view enabled as default and empty walle
               </div>
             </button>
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxjAm fPpool"
               color="primary"
               type="button"
             >
               <div
-                class="flex items-center justify-center mr-2 text-sm align-middle"
+                class="flex items-center justify-center mr-2 align-middle"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -1024,7 +1044,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi"
+                        class="sc-AxheI gTkmUE"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"

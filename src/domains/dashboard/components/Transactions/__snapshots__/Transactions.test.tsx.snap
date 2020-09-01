@@ -157,20 +157,6 @@ exports[`Transactions should render with 1`] = `
                     </div>
                   </div>
                 </th>
-                <th
-                  class="text-sm text-left select-none text-theme-neutral"
-                  colspan="1"
-                  data-testid="table__th--7"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top w-24 justify-end float-right"
-                  >
-                    <div>
-                      Currency
-                    </div>
-                  </div>
-                </th>
               </tr>
             </thead>
             <tbody
@@ -346,27 +332,13 @@ exports[`Transactions should render with with transactions 1`] = `
                     </div>
                   </div>
                 </th>
-                <th
-                  class="text-sm text-left select-none text-theme-neutral"
-                  colspan="1"
-                  data-testid="table__th--7"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top w-24 justify-end float-right"
-                  >
-                    <div>
-                      Currency
-                    </div>
-                  </div>
-                </th>
               </tr>
             </thead>
             <tbody
               role="rowgroup"
             >
               <tr
-                class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                 data-testid="TransactionRow"
               >
                 <td
@@ -379,7 +351,7 @@ exports[`Transactions should render with with transactions 1`] = `
                       class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
-                      to="[object Object]"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                     >
                       <div
                         class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -502,23 +474,16 @@ exports[`Transactions should render with with transactions 1`] = `
                     color="danger"
                     data-testid="TransactionRowAmount"
                   >
-                    121.00000000
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
                   </div>
-                </td>
-                <td
-                  class="text-right"
-                  data-testid="TransactionRow__currency"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                    data-testid="TransactionRowAmount"
-                  >
-                    242.00
-                  </span>
                 </td>
               </tr>
               <tr
-                class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                 data-testid="TransactionRow"
               >
                 <td
@@ -531,7 +496,7 @@ exports[`Transactions should render with with transactions 1`] = `
                       class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
-                      to="[object Object]"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                     >
                       <div
                         class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -654,23 +619,16 @@ exports[`Transactions should render with with transactions 1`] = `
                     color="danger"
                     data-testid="TransactionRowAmount"
                   >
-                    52.20000000
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
                   </div>
-                </td>
-                <td
-                  class="text-right"
-                  data-testid="TransactionRow__currency"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                    data-testid="TransactionRowAmount"
-                  >
-                    104.40
-                  </span>
                 </td>
               </tr>
               <tr
-                class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                 data-testid="TransactionRow"
               >
                 <td
@@ -683,7 +641,7 @@ exports[`Transactions should render with with transactions 1`] = `
                       class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
-                      to="[object Object]"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                     >
                       <div
                         class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -729,7 +687,7 @@ exports[`Transactions should render with with transactions 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                      class="sc-AxhUy fHeTTV border-theme-neutral-900 text-theme-neutral-900"
                       data-testid="TransactionRowRecipientIcon"
                     >
                       <div
@@ -802,23 +760,16 @@ exports[`Transactions should render with with transactions 1`] = `
                     color="danger"
                     data-testid="TransactionRowAmount"
                   >
-                    1.20000000
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
                   </div>
-                </td>
-                <td
-                  class="text-right"
-                  data-testid="TransactionRow__currency"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                    data-testid="TransactionRowAmount"
-                  >
-                    2.40
-                  </span>
                 </td>
               </tr>
               <tr
-                class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-neutral-100"
+                class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
                 data-testid="TransactionRow"
               >
                 <td
@@ -831,7 +782,7 @@ exports[`Transactions should render with with transactions 1`] = `
                       class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
-                      to="[object Object]"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                     >
                       <div
                         class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -877,7 +828,7 @@ exports[`Transactions should render with with transactions 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                      class="sc-AxhUy fHeTTV border-theme-neutral-900 text-theme-neutral-900"
                       data-testid="TransactionRowRecipientIcon"
                     >
                       <div
@@ -950,19 +901,12 @@ exports[`Transactions should render with with transactions 1`] = `
                     color="danger"
                     data-testid="TransactionRowAmount"
                   >
-                    1.20000000
+                    <span
+                      data-testid="Amount"
+                    >
+                      121 
+                    </span>
                   </div>
-                </td>
-                <td
-                  class="text-right"
-                  data-testid="TransactionRow__currency"
-                >
-                  <span
-                    class="text-theme-neutral-dark"
-                    data-testid="TransactionRowAmount"
-                  >
-                    2.40
-                  </span>
                 </td>
               </tr>
             </tbody>
@@ -970,7 +914,7 @@ exports[`Transactions should render with with transactions 1`] = `
         </div>
       </div>
       <button
-        class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+        class="sc-AxjAm fPpool w-full mt-10 mb-5"
         color="primary"
         data-testid="transactions__fetch-more-button"
         type="button"
