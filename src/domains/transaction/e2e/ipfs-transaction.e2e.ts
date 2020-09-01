@@ -81,22 +81,9 @@ test("should show an error if an invalid IPFS hash is entered", async (t) => {
 	await t.expect(Selector("[data-testid=Input__hash]").hasAttribute("aria-invalid")).ok();
 });
 
-test("should fail IPFS submission", async (t: any) => {
-	// Navigate to profile page
-	await goToProfile(t);
-
-	// Navigate to import wallet page
-	await t.click(Selector("button").withText("Import"));
-	await t.expect(Selector("[data-testid=header__title]").withText("Select a Network").exists).ok();
-	await t.click(Selector("#ImportWallet__network-item-1"));
-	await t.click(Selector("button").withText("Continue"));
-	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");
-	await t.click(Selector("button").withText("Go to Wallet"));
-	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), "Test Wallet");
-	await t.click(Selector("button").withText("Save & Finish"));
-
-	// Navigate to wallet details page
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+test("should show an error if wrong mnemonic", async (t: any) => {
+	// Navigate to wallet page
+	await goToWallet(t);
 
 	// Click store hash option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
