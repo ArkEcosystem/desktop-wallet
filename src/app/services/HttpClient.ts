@@ -18,6 +18,8 @@ export class HttpClient extends Http.Request {
 			Accept: "application/json",
 			"Content-Type": "application/json",
 		});
+
+		this.withOptions({ response_timeout: 5000 });
 	}
 
 	/* istanbul ignore next */
