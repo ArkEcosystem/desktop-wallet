@@ -12,281 +12,273 @@ exports[`ContactUs should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxhCb ipiIgT"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxhCb koOqYD"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          Contact Us
+        </h2>
         <div
-          class="py-4"
+          class="flex-1"
         >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Contact Us
-          </h2>
           <div
-            class="flex-1"
+            class="mt-1 text-theme-neutral-dark"
           >
-            <div
-              class="mt-1 text-theme-neutral-dark"
-            >
-              We'd be happy to answer your questions
-            </div>
-            <div
-              class="flex px-10 pb-8 mt-4 mb-8 -mx-10 text-black border-b border-gray-500"
-            >
-              <a
-                class="mr-2 rounded-full hover:bg-theme-neutral-300"
-                href="https://twitter.ark.io"
-              >
-                <div
-                  class="sc-AxirZ paroP border-black hover:bg-transparent"
-                >
-                  <div
-                    class="sc-AxhCb fxrKLH"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      twitter.svg
-                    </svg>
-                  </div>
-                </div>
-              </a>
-              <a
-                class="mr-2 rounded-full hover:bg-theme-neutral-300"
-                href="https://slack.ark.io"
-              >
-                <div
-                  class="sc-AxirZ paroP border-black hover:bg-transparent"
-                >
-                  <div
-                    class="sc-AxhCb fxrKLH"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      slack.svg
-                    </svg>
-                  </div>
-                </div>
-              </a>
-              <a
-                class="mr-2 rounded-full hover:bg-theme-neutral-300"
-                href="https://discord.ark.io/"
-              >
-                <div
-                  class="sc-AxirZ paroP border-black hover:bg-transparent"
-                >
-                  <div
-                    class="sc-AxhCb fxrKLH"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      discord.svg
-                    </svg>
-                  </div>
-                </div>
-              </a>
-              <a
-                class="rounded-full hover:bg-theme-neutral-300"
-                href="mailto:info@ark.io"
-              >
-                <div
-                  class="sc-AxirZ paroP border-black hover:bg-transparent"
-                >
-                  <div
-                    class="sc-AxhCb fxrKLH"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      send.svg
-                    </svg>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <form
-              class="space-y-8"
-              data-testid="Form"
-            >
-              <fieldset
-                class="sc-AxiKw iQzisX flex flex-col space-y-2"
-              >
-                <h2
-                  class="mb-0"
-                >
-                  Feedback
-                </h2>
-                <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="name"
-                >
-                  Name
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
-                </label>
-                <input
-                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="Input"
-                  name="name"
-                />
-              </fieldset>
-              <fieldset
-                class="sc-AxiKw iQzisX flex flex-col space-y-2"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="email"
-                >
-                  Email
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
-                </label>
-                <input
-                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="Input"
-                  name="email"
-                />
-              </fieldset>
-              <fieldset
-                class="sc-AxiKw iQzisX flex flex-col space-y-2"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="subject"
-                >
-                  Subject
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
-                </label>
-                <div
-                  class="relative w-full"
-                >
-                  <input
-                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                    data-testid="select-list__input"
-                    name="subject"
-                    readonly=""
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    class="relative w-full cursor-pointer"
-                  >
-                    <div>
-                      <button
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                        class="sc-fznyAO clcORT   "
-                        data-testid="select-list__toggle-button"
-                        id="downshift-0-toggle-button"
-                        type="button"
-                      >
-                        Select
-                      </button>
-                      <ul
-                        aria-labelledby="downshift-0-label"
-                        class="sc-fznKkj iVkfZr"
-                        id="downshift-0-menu"
-                        role="listbox"
-                        tabindex="-1"
-                      />
-                    </div>
-                    <div
-                      class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
-                    >
-                      <div
-                        class="sc-AxhCb dxfUlj"
-                        height="8"
-                        width="8"
-                      >
-                        <svg>
-                          arrowdown.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset
-                class="sc-AxiKw iQzisX flex flex-col space-y-2"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="message"
-                >
-                  Message
-                  <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
-                </label>
-                <textarea
-                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="TextArea"
-                  name="message"
-                />
-              </fieldset>
-              <div
-                class="flex justify-end mt-4 space-x-3"
-              >
-                <button
-                  class="sc-AxjAm fPpool"
-                  color="primary"
-                  type="button"
-                >
-                  Cancel
-                </button>
-                <button
-                  class="sc-AxjAm kbZyZT"
-                  color="primary"
-                  type="submit"
-                >
-                  Send
-                </button>
-              </div>
-            </form>
+            We'd be happy to answer your questions
           </div>
+          <div
+            class="flex px-10 pb-8 mt-4 mb-8 -mx-10 text-black border-b border-gray-500"
+          >
+            <a
+              class="mr-2 rounded-full hover:bg-theme-neutral-300"
+              href="https://twitter.ark.io"
+            >
+              <div
+                class="sc-AxirZ paroP border-black hover:bg-transparent"
+              >
+                <div
+                  class="sc-AxhCb fxrKLH"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    twitter.svg
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <a
+              class="mr-2 rounded-full hover:bg-theme-neutral-300"
+              href="https://slack.ark.io"
+            >
+              <div
+                class="sc-AxirZ paroP border-black hover:bg-transparent"
+              >
+                <div
+                  class="sc-AxhCb fxrKLH"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    slack.svg
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <a
+              class="mr-2 rounded-full hover:bg-theme-neutral-300"
+              href="https://discord.ark.io/"
+            >
+              <div
+                class="sc-AxirZ paroP border-black hover:bg-transparent"
+              >
+                <div
+                  class="sc-AxhCb fxrKLH"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    discord.svg
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <a
+              class="rounded-full hover:bg-theme-neutral-300"
+              href="mailto:info@ark.io"
+            >
+              <div
+                class="sc-AxirZ paroP border-black hover:bg-transparent"
+              >
+                <div
+                  class="sc-AxhCb fxrKLH"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    send.svg
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+          <form
+            class="space-y-8"
+            data-testid="Form"
+          >
+            <fieldset
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            >
+              <h2
+                class="mb-0"
+              >
+                Feedback
+              </h2>
+              <label
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="name"
+              >
+                Name
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
+              </label>
+              <input
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="Input"
+                name="name"
+              />
+            </fieldset>
+            <fieldset
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="email"
+              >
+                Email
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
+              </label>
+              <input
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="Input"
+                name="email"
+              />
+            </fieldset>
+            <fieldset
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="subject"
+              >
+                Subject
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
+              </label>
+              <div
+                class="relative w-full"
+              >
+                <input
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                  data-testid="select-list__input"
+                  name="subject"
+                  readonly=""
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="relative w-full cursor-pointer"
+                >
+                  <div>
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                      class="sc-fznyAO clcORT   "
+                      data-testid="select-list__toggle-button"
+                      id="downshift-0-toggle-button"
+                      type="button"
+                    >
+                      Select
+                    </button>
+                    <ul
+                      aria-labelledby="downshift-0-label"
+                      class="sc-fznKkj iVkfZr"
+                      id="downshift-0-menu"
+                      role="listbox"
+                      tabindex="-1"
+                    />
+                  </div>
+                  <div
+                    class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
+                  >
+                    <div
+                      class="sc-AxhCb dxfUlj"
+                      height="8"
+                      width="8"
+                    >
+                      <svg>
+                        arrowdown.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="message"
+              >
+                Message
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
+              </label>
+              <textarea
+                class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="TextArea"
+                name="message"
+              />
+            </fieldset>
+            <div
+              class="flex justify-end mt-4 space-x-3"
+            >
+              <button
+                class="sc-AxjAm fPpool"
+                color="primary"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-AxjAm kbZyZT"
+                color="primary"
+                type="submit"
+              >
+                Send
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -58,7 +58,7 @@ const NotificationsDropdown = ({
 				<Button
 					variant="transparent"
 					size="icon"
-					className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+					className="text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
 					data-testid="navbar__buttons--notifications"
 				>
 					<Icon name="Notification" width={22} height={22} className="p-1" />
@@ -131,7 +131,7 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userIn
 );
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center bg-logo text-white rounded-lg my-auto mr-4`};
+	${tw`flex items-center justify-center my-auto mr-4 text-white rounded-lg bg-logo`};
 	width: 50px;
 	height: 50px;
 `;
@@ -171,7 +171,7 @@ export const NavigationBar = ({
 					<NavLink
 						to={menuItem.mountPath(profile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+						className="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -220,7 +220,7 @@ export const NavigationBar = ({
 									<Button
 										variant="transparent"
 										size="icon"
-										className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+										className="text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
 										onClick={() => history.push(`/profiles/${profile?.id()}/transactions/transfer`)}
 										data-testid="navbar__buttons--send"
 									>
@@ -234,7 +234,7 @@ export const NavigationBar = ({
 									<Button
 										size="icon"
 										variant="transparent"
-										className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+										className="text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
 										onClick={() => setSearchWalletIsOpen(true)}
 										data-testid="navbar__buttons--receive"
 									>
