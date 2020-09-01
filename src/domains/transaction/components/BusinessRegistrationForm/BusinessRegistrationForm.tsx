@@ -283,6 +283,7 @@ export const BusinessRegistrationForm: RegistrationForm = {
 	// eslint-disable-next-line @typescript-eslint/require-await
 	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations }) => {
 		const { getValues, setValue, setError } = form;
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const { fee, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
 
 		try {
