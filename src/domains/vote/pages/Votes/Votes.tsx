@@ -94,10 +94,7 @@ export const Votes = () => {
 	}, [activeProfile, network]);
 
 	const loadDelegates = useCallback(
-		async (wallet) => {
-			// TODO: move this to profile initialising and run it every X period
-			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			await env.delegates().sync(wallet?.coinId()!, wallet?.networkId()!);
+		(wallet) => {
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
 			const readOnlyDelegates = DelegateMapper.execute(
@@ -119,10 +116,10 @@ export const Votes = () => {
 		setNetwork(network!);
 	};
 
-	const handleSelectAddress = async (address: string) => {
+	const handleSelectAddress = (address: string) => {
 		setAddress(address);
 		const wallet = activeProfile.wallets().findByAddress(address);
-		await loadDelegates(wallet);
+		loadDelegates(wallet);
 	};
 
 	return (
