@@ -7,6 +7,7 @@ import { Size } from "types";
 type ModalProps = {
 	children: React.ReactNode;
 	title: string | React.ReactNode;
+	titleClass?: string;
 	description?: string;
 	banner?: React.ReactNode;
 	image?: React.ReactNode;
@@ -19,6 +20,7 @@ type ModalProps = {
 type ModalContentProps = {
 	children: React.ReactNode;
 	title: string | React.ReactNode;
+	titleClass?: string;
 	description?: string;
 	banner?: React.ReactNode;
 	image?: React.ReactNode;
@@ -52,42 +54,46 @@ const ModalContainer = styled.div<{ size?: Size }>`
 const ModalContent = (props: ModalContentProps) => (
 	<ModalContainer
 		size={props.size}
-		className="absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+		className="absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
 		data-testid="modal__inner"
 	>
+		<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900">
+			<Button
+				data-testid="modal__close-btn"
+				variant="transparent"
+				size="icon"
+				onClick={props.onClose}
+				className="w-11 h-11"
+			>
+				<Icon name="CrossSlim" width={14} height={14} />
+			</Button>
+		</div>
+
 		<div className="relative">
-			<div className="absolute top-0 right-0 z-50 mt-5">
-				<Button
-					data-testid="modal__close-btn"
-					color="neutral"
-					variant="plain"
-					size="icon"
-					onClick={props.onClose}
-				>
-					<div className="p-1">
-						<Icon name="CrossSlim" width={12} height={12} />
+			{props.banner ? (
+				<div className="relative h-56 mb-10 -mx-10 -mt-10">
+					{props.banner}
+
+					<div className="absolute bottom-0 left-0 mb-10 ml-10">
+						<h2
+							className={`text-5xl font-extrabold leading-tight m-0 ${
+								props.titleClass || "text-theme-text"
+							}`}
+						>
+							{props.title}
+						</h2>
 					</div>
-				</Button>
-			</div>
-
-			<div className="py-4">
-				{props.banner ? (
-					<div className="relative mb-10 -mx-10 -mt-10">
-						{props.banner}
-
-						<h1 className="absolute bottom-0 left-0 mb-8 ml-12">{props.title}</h1>
-					</div>
-				) : (
-					<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
-				)}
-
-				<div className="flex-1">
-					{props.image}
-
-					{props.description && <div className="mt-1 text-theme-neutral-dark">{props.description}</div>}
-
-					{props.children}
 				</div>
+			) : (
+				<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
+			)}
+
+			<div className="flex-1">
+				{props.image}
+
+				{props.description && <div className="mt-1 text-theme-neutral-dark">{props.description}</div>}
+
+				{props.children}
 			</div>
 		</div>
 	</ModalContainer>
@@ -136,6 +142,7 @@ export const Modal = (props: ModalProps) => {
 			<ModalContent
 				aria-selected={props.isOpen}
 				title={props.title}
+				titleClass={props.titleClass}
 				description={props.description}
 				banner={props.banner}
 				image={props.image}

@@ -12,98 +12,90 @@ exports[`InstallPlugin should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb emMXex absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxhCb emMXex absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxiKw kgmJgX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm evFEPN"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
+          Attention
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <div>
             <div
-              class="p-1"
+              data-testid="tab-pabel__active-panel"
             >
-              <div
-                class="sc-AxiKw bopxJn"
-                height="12"
-                width="12"
+              <section
+                data-testid="InstallPlugin__step--first"
               >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
+                <p
+                  class="mt-4 text-lg font-semibold text-theme-neutral-dark"
+                >
+                  This plugin needs the following permissions:
+                </p>
+                <div
+                  class="max-w-sm"
+                >
+                  <ul
+                    class="mt-2 ml-5 list-outside leading-8 list-circle text-theme-neutral-dark"
+                  >
+                    <li>
+                      Allows access to the Desktop Wallet alerts
+                    </li>
+                    <li>
+                      Allows access to play audio from within the Desktop Wallet
+                    </li>
+                    <li>
+                      Allows access to the Desktop Wallet events
+                    </li>
+                  </ul>
+                </div>
+              </section>
             </div>
-          </button>
-        </div>
-        <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Attention
-          </h2>
-          <div
-            class="flex-1"
-          >
-            <div>
-              <div
-                data-testid="tab-pabel__active-panel"
+            <div
+              class="flex justify-end mt-8 space-x-3"
+            >
+              <button
+                class="sc-AxjAm fPpool"
+                color="primary"
+                data-testid="InstallPlugin__cancel-button"
+                type="button"
               >
-                <section
-                  data-testid="InstallPlugin__step--first"
-                >
-                  <p
-                    class="mt-4 text-lg font-semibold text-theme-neutral-dark"
-                  >
-                    This plugin needs the following permissions:
-                  </p>
-                  <div
-                    class="max-w-sm"
-                  >
-                    <ul
-                      class="mt-2 ml-5 list-outside leading-8 list-circle text-theme-neutral-dark"
-                    >
-                      <li>
-                        Allows access to the Desktop Wallet alerts
-                      </li>
-                      <li>
-                        Allows access to play audio from within the Desktop Wallet
-                      </li>
-                      <li>
-                        Allows access to the Desktop Wallet events
-                      </li>
-                    </ul>
-                  </div>
-                </section>
-              </div>
-              <div
-                class="flex justify-end mt-8 space-x-3"
+                Cancel
+              </button>
+              <button
+                class="sc-AxjAm kbZyZT"
+                color="primary"
+                data-testid="InstallPlugin__download-button"
+                type="button"
               >
-                <button
-                  class="sc-AxjAm fPpool"
-                  color="primary"
-                  data-testid="InstallPlugin__cancel-button"
-                  type="button"
-                >
-                  Cancel
-                </button>
-                <button
-                  class="sc-AxjAm kbZyZT"
-                  color="primary"
-                  data-testid="InstallPlugin__download-button"
-                  type="button"
-                >
-                  Download
-                </button>
-              </div>
+                Download
+              </button>
             </div>
           </div>
         </div>
