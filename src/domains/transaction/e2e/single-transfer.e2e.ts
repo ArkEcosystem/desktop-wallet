@@ -55,7 +55,7 @@ test("should navigate to transfer page", async (t) => {
 		.ok();
 });
 
-test("should fail transfer submission", async (t: any) => {
+test("should fail transfer submittion", async (t: any) => {
 	await goToWallet(t);
 
 	// Navigate to transfer page

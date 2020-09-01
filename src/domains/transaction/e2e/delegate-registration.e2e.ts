@@ -2,6 +2,8 @@ import { RequestMock, Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { getPageURL } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
+import { goToImportWalletPage, goToRegistrationPage } from "./common";
 
 const translations = buildTranslations();
 
@@ -43,44 +45,36 @@ const sendMock = RequestMock()
 
 fixture`Delegate Registration action`.page(getPageURL());
 
-test.requestHooks(walletMock, sendMock)("should open wallet details page", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
+test.requestHooks(walletMock, sendMock)("should successfully submit delegate registration", async (t) => {
+	// Navigate to profile page
+	await goToProfile(t);
 
 	// Navigate to import wallet page
-	await t.click(Selector("button").withText("Import"));
-	await t.expect(Selector("[data-testid=header__title]").withText("Select a Network").exists).ok();
-	await t.click(Selector("#ImportWallet__network-item-1"));
-	await t.click(Selector("button").withText("Continue"));
-	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");
-	await t.click(Selector("button").withText("Go to Wallet"));
-	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), "Test Wallet");
-	await t.click(Selector("button").withText("Save & Finish"));
+	await goToImportWalletPage(t);
 
 	// Navigate to wallet details page
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
-	// Navigate to Registrations page
-	await t.click(Selector("button").withText("Register"));
-	await t.expect(Selector("[data-testid=Registration__form]").exists).ok();
+	// Navigate to Registration page
+	await goToRegistrationPage(t);
 
 	// Choose registration type & go to step 2
 	await t.click(Selector("[data-testid=select-list__toggle-button]"));
-	await t.click(Selector("li").withText("Delegate"));
-	await t.click(Selector("button").withText("Continue"));
+	await t.click(Selector("li").withText(translations.COMMON.DELEGATE));
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Choose username
 	await t.expect(Selector("[data-testid=Registration__form]").exists).ok();
 	await t.typeText(Selector("[data-testid=Input__username]"), "test_delegate");
-	await t.click(Selector("button").withText("Continue"));
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Check details
 	await t.expect(Selector("[data-testid=TransactionDetail]").withText("test_delegate").exists).ok();
-	await t.click(Selector("button").withText("Continue"));
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Sign transaction
-	await t.expect(Selector("h1").withText("Authenticate").exists).ok();
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.AUTHENTICATION_STEP.TITLE).exists).ok();
 	await t.typeText(Selector("[data-testid=InputPassword] input"), "passphrase");
-	await t.click(Selector("button").withText("Send"));
-	await t.expect(Selector("h1").withText("Transaction Sent").exists).ok();
+	await t.click(Selector("button").withText(translations.COMMON.SEND));
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
 });

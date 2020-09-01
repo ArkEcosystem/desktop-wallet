@@ -1,19 +1,16 @@
 import { Selector } from "testcafe";
 
-import { buildTranslations } from "../../../app/i18n/helpers";
 import { getPageURL } from "../../../utils/e2e-utils";
 import { goToMyRegistrations } from "../../profile/e2e/common";
-import { gotoResignDelegatePage } from "./common";
+import { goToResignDelegatePage } from "./common";
 import { transactionsMock, walletMock } from "./mocks";
-
-const translations = buildTranslations();
 
 fixture`Delegate Registration action`.page(getPageURL()).beforeEach(async (t) => await goToMyRegistrations(t));
 
-test("should navigate to delegate resignation page", async (t: any) => await gotoResignDelegatePage(t));
+test("should navigate to delegate resignation page", async (t: any) => await goToResignDelegatePage(t));
 
 test("should fail delegate resignation submittion", async (t: any) => {
-	await gotoResignDelegatePage(t);
+	await goToResignDelegatePage(t);
 	const continueBtn = "[data-testid=ResignRegistration__continue-button]";
 
 	// Go to step 2
@@ -33,8 +30,8 @@ test("should fail delegate resignation submittion", async (t: any) => {
 	await t.expect(Selector("[data-testid=ResignRegistration__mnemonic]").hasAttribute("aria-invalid")).ok();
 });
 
-test("should succesfully submit delegate resignation", async (t) => {
-	await gotoResignDelegatePage(t);
+test("should successfully submit delegate resignation", async (t) => {
+	await goToResignDelegatePage(t);
 	const continueButton = "[data-testid=ResignRegistration__continue-button]";
 
 	// Go to step 2
