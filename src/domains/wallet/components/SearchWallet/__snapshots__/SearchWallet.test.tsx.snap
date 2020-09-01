@@ -10,7 +10,7 @@ exports[`SearchWallet should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxgMl cKlqiA absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxgMl fYnArh absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
@@ -185,20 +185,6 @@ exports[`SearchWallet should render 1`] = `
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Wallet Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
@@ -227,7 +213,7 @@ exports[`SearchWallet should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -319,27 +305,6 @@ exports[`SearchWallet should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="py-1 text-sm font-bold text-center align-middle"
-                    >
-                      <div
-                        class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxjAm vZRQY"
-                            height="16"
-                            width="16"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="font-semibold text-right"
                     >
                       <span
@@ -356,6 +321,20 @@ exports[`SearchWallet should render 1`] = `
                       >
                         0 
                       </span>
+                    </td>
+                    <td>
+                      <div
+                        class="text-right"
+                      >
+                        <button
+                          class="sc-AxhUy dIHDOr"
+                          color="primary"
+                          data-testid="button"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
