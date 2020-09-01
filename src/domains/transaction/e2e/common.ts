@@ -15,6 +15,13 @@ export const goToImportWalletPage = async (t: any) => {
 	await t.click(Selector("button").withText(translations.COMMON.SAVE_FINISH));
 };
 
+export const goToTransferPage = async (t: any) => {
+	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
+	await t
+		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
+		.ok();
+};
+
 export const goToRegistrationPage = async (t: any) => {
 	await t.click(Selector("button").withText(translations.COMMON.REGISTER));
 	await t.expect(Selector("[data-testid=Registration__form]").exists).ok();

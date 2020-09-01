@@ -45,16 +45,6 @@ const sendMock = RequestMock()
 
 fixture`Single Transfer action`.page(getPageURL());
 
-test("should navigate to transfer page", async (t) => {
-	await goToWallet(t);
-
-	// Navigate to transfer page
-	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
-	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
-		.ok();
-});
-
 test("should fail transfer submittion", async (t: any) => {
 	await goToWallet(t);
 

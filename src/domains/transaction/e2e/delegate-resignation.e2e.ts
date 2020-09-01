@@ -7,8 +7,6 @@ import { transactionsMock, walletMock } from "./mocks";
 
 fixture`Delegate Registration action`.page(getPageURL()).beforeEach(async (t) => await goToMyRegistrations(t));
 
-test("should navigate to delegate resignation page", async (t: any) => await goToResignDelegatePage(t));
-
 test("should fail delegate resignation submittion", async (t: any) => {
 	await goToResignDelegatePage(t);
 	const continueBtn = "[data-testid=ResignRegistration__continue-button]";
