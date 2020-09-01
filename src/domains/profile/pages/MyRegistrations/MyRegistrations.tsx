@@ -4,7 +4,6 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
-import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -42,7 +41,6 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 	const [blockchain] = useState(blockchainRegistrations);
 	const [business] = useState(businessRegistrations);
 
-	const { env } = useEnvironmentContext();
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
@@ -76,15 +74,9 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 	};
 
 	useEffect(() => {
-		const fetchDelegates = async () => {
-			await env.delegates().syncAll();
-
-			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
-			setDelegates(delegateRegistrations);
-		};
-
-		fetchDelegates();
-	}, [activeProfile, env]);
+		const delegateRegistrations = activeProfile.registrationAggregate().delegates();
+		setDelegates(delegateRegistrations);
+	}, [activeProfile]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
