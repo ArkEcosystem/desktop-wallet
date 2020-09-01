@@ -3,7 +3,7 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { Route } from "react-router-dom";
-import { env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
@@ -140,7 +140,14 @@ describe("NavigationBar", () => {
 	});
 
 	it("should handle receive funds", async () => {
-		const { findByTestId, findAllByText, getAllByText, getByTestId, getByText } = renderWithRouter(
+		const {
+			findByTestId,
+			findAllByText,
+			getAllByText,
+			getByTestId,
+			getByText,
+			queryAllByTestId,
+		} = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<NavigationBar profile={profile} />
 			</Route>,
@@ -160,11 +167,14 @@ describe("NavigationBar", () => {
 			fireEvent.click(getAllByText("Select")[0]);
 		});
 
-		expect(await findByTestId("modal__inner")).toHaveTextContent("Receive Funds");
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should close the search wallet modal", async () => {
