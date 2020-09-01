@@ -25,19 +25,57 @@ describe("Pagination", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render previous buttons as disabled on last page", () => {
-		const { asFragment, getByTestId } = render(
-			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
+	it.each([
+		["first", 1],
+		["second", 2],
+		["third", 3],
+	])("should not render first button if pagination buttons include 1 (%s page)", (count, currentPage) => {
+		const { asFragment, queryByTestId } = render(
+			<Pagination totalCount={10} itemsPerPage={1} onSelectPage={handleSelectPage} currentPage={currentPage} />,
 		);
 
-		expect(getByTestId("Pagination__previous")).toBeDisabled();
-		expect(getByTestId("Pagination__first")).toBeDisabled();
+		expect(queryByTestId("Pagination__first")).not.toBeInTheDocument();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not render previous buttons on first page", () => {
+		const { asFragment, queryByTestId } = render(
+			<Pagination totalCount={10} itemsPerPage={1} onSelectPage={handleSelectPage} currentPage={1} />,
+		);
+
+		expect(queryByTestId("Pagination__previous")).not.toBeInTheDocument();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not render next button on last page", () => {
+		const { asFragment, queryByTestId } = render(
+			<Pagination totalCount={10} itemsPerPage={1} onSelectPage={handleSelectPage} currentPage={10} />,
+		);
+
+		expect(queryByTestId("Pagination__next")).not.toBeInTheDocument();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it.each([
+		["last", 10],
+		["second-to-last", 9],
+		["third-to-last", 8],
+	])("should not render first button if pagination buttons include the last page (%s page)", (count, currentPage) => {
+		const { asFragment, queryByTestId } = render(
+			<Pagination totalCount={10} itemsPerPage={1} onSelectPage={handleSelectPage} currentPage={currentPage} />,
+		);
+
+		expect(queryByTestId("Pagination__last")).not.toBeInTheDocument();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should handle first page click properly", () => {
 		const { asFragment, getByTestId } = render(
-			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={3} />,
+			<Pagination totalCount={150} itemsPerPage={1} onSelectPage={handleSelectPage} currentPage={101} />,
 		);
 
 		fireEvent.click(getByTestId("Pagination__first"));
@@ -48,7 +86,7 @@ describe("Pagination", () => {
 
 	it("should handle previous page click properly", () => {
 		const { asFragment, getByTestId } = render(
-			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={2} />,
+			<Pagination totalCount={40} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={9} />,
 		);
 
 		fireEvent.click(getByTestId("Pagination__previous"));
@@ -70,22 +108,12 @@ describe("Pagination", () => {
 
 	it("should handle last page click properly", () => {
 		const { asFragment, getByTestId } = render(
-			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
+			<Pagination totalCount={30} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
 		);
 
 		fireEvent.click(getByTestId("Pagination__last"));
 
 		expect(handleSelectPage).toHaveBeenCalledWith(3);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render next buttons as disabled on last page", () => {
-		const { asFragment, getByTestId } = render(
-			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={3} />,
-		);
-
-		expect(getByTestId("Pagination__next")).toBeDisabled();
-		expect(getByTestId("Pagination__last")).toBeDisabled();
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

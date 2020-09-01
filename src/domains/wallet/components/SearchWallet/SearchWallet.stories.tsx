@@ -11,41 +11,14 @@ export default {
 	decorators: [withKnobs],
 };
 
-const networks = [
-	{
-		name: "Ark",
-		isSelected: true,
-	},
-	{
-		name: "Ethereum",
-		isSelected: false,
-	},
-	{
-		name: "Bitcoin",
-		isSelected: true,
-	},
-];
-
 export const Default = () => (
 	<WalletsDecorator count={3}>
 		{({ wallets }: { wallets: ReadWriteWallet[] }) => (
-			<SearchWallet
-				isOpen={boolean("isOpen", true)}
-				wallets={wallets}
-				networks={networks}
-				onClose={action("onClose")}
-				onSearch={action("onSearch")}
-			/>
+			<SearchWallet isOpen={boolean("isOpen", true)} onClose={action("onClose")} onSearch={action("onSearch")} />
 		)}
 	</WalletsDecorator>
 );
 
 export const Empty = () => (
-	<SearchWallet
-		isOpen={boolean("isOpen", true)}
-		wallets={undefined}
-		networks={networks}
-		onClose={action("onClose")}
-		onSearch={action("onSearch")}
-	/>
+	<SearchWallet isOpen={boolean("isOpen", true)} onClose={action("onClose")} onSearch={action("onSearch")} />
 );

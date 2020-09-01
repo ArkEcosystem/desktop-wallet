@@ -51,13 +51,9 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 
 	return (
 		<Modal
-			title={
-				<div className="w-3/5 mb-5 text-5xl font-bold leading-tight text-white">
-					{t("PLUGINS.MODAL_BEST_PLUGINS.TITLE")}
-				</div>
-			}
+			title={t("PLUGINS.MODAL_BEST_PLUGINS.TITLE")}
 			description={t("PLUGINS.MODAL_BEST_PLUGINS.DESCRIPTION")}
-			banner={<BestPluginsBanner className="w-full" />}
+			banner={<BestPluginsBanner className="h-full" />}
 			size="4xl"
 			isOpen={isOpen}
 			onClose={onClose}

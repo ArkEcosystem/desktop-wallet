@@ -151,13 +151,12 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 									<BlockfolioAd />
 								</div>
 
-								<div className="flex justify-center w-full pt-10">
+								<div className="flex justify-center w-full">
 									<Pagination
 										totalCount={totalCount}
 										itemsPerPage={itemsPerPage}
 										onSelectPage={handleSelectPage}
 										currentPage={currentPage}
-										size="sm"
 									/>
 								</div>
 							</>

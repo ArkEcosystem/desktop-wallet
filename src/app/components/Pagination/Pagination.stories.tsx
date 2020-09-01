@@ -14,7 +14,7 @@ export const Default = () => {
 			itemsPerPage={4}
 			onSelectPage={selectPage}
 			currentPage={currentPage}
-			size={select("Size", ["sm", "md", "lg"], "md")}
+			variant={select("Variant", ["condensed", undefined], undefined)}
 		/>
 	);
 };
