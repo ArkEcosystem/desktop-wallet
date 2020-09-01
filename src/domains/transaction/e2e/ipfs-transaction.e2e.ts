@@ -61,6 +61,26 @@ test("should navigate to IPFS page", async (t) => {
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE).exists).ok();
 });
 
+test("should show an error if an invalid IPFS hash is entered", async (t) => {
+	// Navigate to wallet page
+	await goToWallet(t);
+
+	// Click store hash option in dropdown menu
+	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
+	await t.click(
+		Selector('[data-testid="WalletHeader__more-button"] li').withText(
+			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH,
+		),
+	);
+
+	// Navigate to IPFS page
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE).exists).ok();
+
+	// Type an invalid IPFS hash
+	await t.typeText(Selector("[data-testid=Input__hash]"), "invalid-ipfs-hash");
+	await t.expect(Selector("[data-testid=Input__hash]").hasAttribute("aria-invalid")).ok();
+});
+
 test.requestHooks(walletMock, sendMock)("should send IPFS successfully", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
