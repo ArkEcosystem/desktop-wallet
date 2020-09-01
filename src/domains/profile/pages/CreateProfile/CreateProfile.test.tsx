@@ -39,7 +39,7 @@ const baseSettings = {
 	EXCHANGE_CURRENCY: "btc",
 	LEDGER_UPDATE_METHOD: false,
 	LOCALE: "en-US",
-	MARKET_PROVIDER: "cryptocompare",
+	MARKET_PROVIDER: "coincap",
 	NAME: "test profile",
 	SCREENSHOT_PROTECTION: true,
 	THEME: "light",
