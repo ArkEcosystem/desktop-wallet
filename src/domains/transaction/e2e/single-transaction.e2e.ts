@@ -44,29 +44,25 @@ const sendMock = RequestMock()
 		},
 	);
 
-fixture`Multiple Transfer action`.page(getPageURL());
+fixture`Single Transfer action`.page(getPageURL());
 
-test("should fail multiple transfer submittion", async (t: any) => {
+test("should show an error if wrong mnemonic", async (t: any) => {
 	// Navigate to wallet page
 	await goToWallet(t);
 
 	// Navigate to transfer page
 	await goToTransferPage(t);
 
-	// Select multiple button
-	await t.click(Selector("[data-testid=add-recipient-is-multiple-toggle]"));
+	// Select recipient
+	await t.click(Selector("[data-testid=SelectRecipient__select-contact]"));
+	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
+	await t.click(Selector("[data-testid=ContactListItem__one-option-button-0]"));
 
-	// Add recipient #1
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd");
-	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
-	await t.click(Selector("button").withText("Add Recipient"));
+	// Amount
+	await t.click(Selector("[data-testid=add-recipient__send-all]"));
 
-	// Add recipient #2
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP");
-	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
-	await t.click(Selector("button").withText("Add Recipient"));
-
-	// Go to step 2
+	// Type smartbridge & go to step 2
+	await t.typeText(Selector("[data-testid=Input__smartbridge]"), "test smartbridge");
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t
 		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE).exists)
@@ -79,7 +75,7 @@ test("should fail multiple transfer submittion", async (t: any) => {
 	await t.expect(Selector("[data-testid=Input]").hasAttribute("aria-invalid")).ok();
 });
 
-test.requestHooks(walletMock, sendMock)("should send multiple transfer successfully", async (t) => {
+test.requestHooks(walletMock, sendMock)("should send transfer successfully", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
 
@@ -92,20 +88,16 @@ test.requestHooks(walletMock, sendMock)("should send multiple transfer successfu
 	// Navigate to transfer page
 	await goToTransferPage(t);
 
-	// Select multiple button
-	await t.click(Selector("[data-testid=add-recipient-is-multiple-toggle]"));
+	// Select recipient
+	await t.click(Selector("[data-testid=SelectRecipient__select-contact]"));
+	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
+	await t.click(Selector("[data-testid=ContactListItem__one-option-button-0]"));
 
-	// Add recipient #1
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd");
-	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
-	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
+	// Amount
+	await t.click(Selector("[data-testid=add-recipient__send-all]"));
 
-	// Add recipient #2
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP");
-	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
-	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
-
-	// Go to step 2
+	// Type smartbridge & go to step 2
+	await t.typeText(Selector("[data-testid=Input__smartbridge]"), "test smartbridge");
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t
 		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE).exists)
