@@ -1,7 +1,6 @@
 import React from "react";
 import { fireEvent, render, waitFor } from "testing-library";
 
-// i18n
 import { ReceiveFunds } from "./ReceiveFunds";
 
 describe("ReceiveFunds", () => {
@@ -17,6 +16,16 @@ describe("ReceiveFunds", () => {
 
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not render qrcode without an address", async () => {
+		// @ts-ignore
+		const { asFragment, queryAllByTestId } = render(<ReceiveFunds isOpen={true} icon="Ark" />);
+
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(0));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
