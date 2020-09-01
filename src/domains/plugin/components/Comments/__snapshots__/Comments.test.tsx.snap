@@ -250,7 +250,7 @@ exports[`Comments should render properly 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxgMl fBXLvj mt-2 ml-10 text-theme-neutral-600"
+              class="sc-AxheI emNSdd mt-2 ml-10 text-theme-neutral-600"
             >
               <a
                 href="#"
@@ -430,56 +430,21 @@ exports[`Comments should render properly 1`] = `
         class="sc-AxhCb gSLQTX"
         data-testid="Pagination"
       >
-        <button
-          class="sc-AxirZ dXpJau"
-          color="primary"
-          data-testid="Pagination__first"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxjAm HWmvM"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-first.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxirZ dXpJau"
-          color="primary"
-          data-testid="Pagination__previous"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxjAm iepfoc mr-2"
-            height="10"
-            width="10"
-          >
-            <svg>
-              back.svg
-            </svg>
-          </div>
-          Previous
-        </button>
         <div
           class="flex px-2 rounded bg-theme-primary-contrast"
         >
           <div
-            class="sc-AxhUy bxYQX current-page"
+            class="sc-AxhUy beRbTz current-page"
           >
             1
           </div>
           <div
-            class="sc-AxhUy bxYQX"
+            class="sc-AxhUy beRbTz"
           >
             2
           </div>
           <div
-            class="sc-AxhUy bxYQX"
+            class="sc-AxhUy beRbTz"
           >
             3
           </div>
@@ -498,22 +463,6 @@ exports[`Comments should render properly 1`] = `
           >
             <svg>
               forward.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxirZ dXpJau"
-          color="primary"
-          data-testid="Pagination__last"
-          type="button"
-        >
-          <div
-            class="sc-AxjAm HWmvM"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-last.svg
             </svg>
           </div>
         </button>

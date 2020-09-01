@@ -23,7 +23,7 @@ export const SearchResource = ({
 	onClose,
 	onSearch,
 }: SearchResourceProps) => (
-	<Modal title={title} description={description} isOpen={isOpen} onClose={onClose} size="4xl">
+	<Modal title={title} description={description} isOpen={isOpen} onClose={onClose} size="5xl">
 		<div className="-mx-10">
 			<SearchBar placeholder={placeholder} className="mt-8" onSearch={onSearch}>
 				{searchBarExtra}

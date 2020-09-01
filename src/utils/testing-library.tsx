@@ -91,4 +91,4 @@ const envWithMocks = () => {
 
 export const env = envWithMocks();
 
-export const syncDelegates = async () => env.coins().syncAllDelegates(env.usedCoinsWithNetworks());
+export const syncDelegates = () => env.delegates().syncAll(env.usedCoinsWithNetworks());

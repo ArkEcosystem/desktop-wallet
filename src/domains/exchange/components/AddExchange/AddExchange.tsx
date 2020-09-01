@@ -78,8 +78,8 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 		<Modal
 			title={t("EXCHANGE.MODAL_ADD_EXCHANGE.TITLE")}
 			description={t("EXCHANGE.MODAL_ADD_EXCHANGE.DESCRIPTION")}
-			banner={<AddExchangeBanner className="w-full" />}
-			size="3xl"
+			banner={<AddExchangeBanner className="h-full" />}
+			size="4xl"
 			isOpen={isOpen}
 			onClose={onClose}
 		>

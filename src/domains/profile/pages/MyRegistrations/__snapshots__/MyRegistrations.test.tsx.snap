@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Welcome should handle delegate resignation dropdown action 1`] = `<DocumentFragment />`;
+exports[`MyRegistrations should handle delegate resignation dropdown action 1`] = `<DocumentFragment />`;
 
-exports[`Welcome should handle delegate update dropdown action 1`] = `<DocumentFragment />`;
+exports[`MyRegistrations should handle delegate update dropdown action 1`] = `<DocumentFragment />`;
 
-exports[`Welcome should render blockchain registrations 1`] = `
+exports[`MyRegistrations should render blockchain registrations 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -23,7 +23,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr gulsOG"
+              class="sc-fzoXzr cumsaa"
             >
               <svg
                 width="40"
@@ -39,7 +39,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -50,7 +50,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -61,7 +61,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -72,7 +72,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -91,7 +91,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                   color="primary"
                   data-testid="navbar__buttons--notifications"
                   type="button"
@@ -115,7 +115,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -138,7 +138,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -950,7 +950,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
                     data-testid="DelegateRowItem__username"
                   >
                     <span>
-                      arkx
+                      testwallet2
                     </span>
                   </td>
                   <td
@@ -1074,7 +1074,7 @@ exports[`Welcome should render blockchain registrations 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Welcome should render business registrations 1`] = `
+exports[`MyRegistrations should render business registrations 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -1093,7 +1093,7 @@ exports[`Welcome should render business registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr gulsOG"
+              class="sc-fzoXzr cumsaa"
             >
               <svg
                 width="40"
@@ -1109,7 +1109,7 @@ exports[`Welcome should render business registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1120,7 +1120,7 @@ exports[`Welcome should render business registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1131,7 +1131,7 @@ exports[`Welcome should render business registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1142,7 +1142,7 @@ exports[`Welcome should render business registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1161,7 +1161,7 @@ exports[`Welcome should render business registrations 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                   color="primary"
                   data-testid="navbar__buttons--notifications"
                   type="button"
@@ -1185,7 +1185,7 @@ exports[`Welcome should render business registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1208,7 +1208,7 @@ exports[`Welcome should render business registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1858,7 +1858,7 @@ exports[`Welcome should render business registrations 1`] = `
                     data-testid="DelegateRowItem__username"
                   >
                     <span>
-                      arkx
+                      testwallet2
                     </span>
                   </td>
                   <td
@@ -1982,7 +1982,7 @@ exports[`Welcome should render business registrations 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Welcome should render delegate registrations 1`] = `
+exports[`MyRegistrations should render delegate registrations 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -2001,7 +2001,7 @@ exports[`Welcome should render delegate registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr gulsOG"
+              class="sc-fzoXzr cumsaa"
             >
               <svg
                 width="40"
@@ -2017,7 +2017,7 @@ exports[`Welcome should render delegate registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -2028,7 +2028,7 @@ exports[`Welcome should render delegate registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -2039,7 +2039,7 @@ exports[`Welcome should render delegate registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -2050,7 +2050,7 @@ exports[`Welcome should render delegate registrations 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -2069,7 +2069,7 @@ exports[`Welcome should render delegate registrations 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                   color="primary"
                   data-testid="navbar__buttons--notifications"
                   type="button"
@@ -2093,7 +2093,7 @@ exports[`Welcome should render delegate registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2116,7 +2116,7 @@ exports[`Welcome should render delegate registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2488,7 +2488,7 @@ exports[`Welcome should render delegate registrations 1`] = `
                     data-testid="DelegateRowItem__username"
                   >
                     <span>
-                      arkx
+                      testwallet2
                     </span>
                   </td>
                   <td
@@ -2612,7 +2612,7 @@ exports[`Welcome should render delegate registrations 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Welcome should render empty state 1`] = `
+exports[`MyRegistrations should render empty state 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -2631,7 +2631,7 @@ exports[`Welcome should render empty state 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr gulsOG"
+              class="sc-fzoXzr cumsaa"
             >
               <svg
                 width="40"
@@ -2647,7 +2647,7 @@ exports[`Welcome should render empty state 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
                 title="Portfolio"
               >
@@ -2658,7 +2658,7 @@ exports[`Welcome should render empty state 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
                 title="Plugins"
               >
@@ -2669,7 +2669,7 @@ exports[`Welcome should render empty state 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
                 title="Exchange"
               >
@@ -2680,7 +2680,7 @@ exports[`Welcome should render empty state 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold text-md text-theme-neutral-dark hover:text-theme-neutral-900 transition-colors duration-200"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
                 title="News"
               >
@@ -2699,7 +2699,7 @@ exports[`Welcome should render empty state 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
                   color="primary"
                   data-testid="navbar__buttons--notifications"
                   type="button"
@@ -2723,7 +2723,7 @@ exports[`Welcome should render empty state 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -2746,7 +2746,7 @@ exports[`Welcome should render empty state 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"

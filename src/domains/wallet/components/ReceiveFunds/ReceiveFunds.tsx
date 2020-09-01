@@ -1,3 +1,4 @@
+import { QRCode } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
@@ -9,8 +10,9 @@ import { useTranslation } from "react-i18next";
 
 type ReceiveFundsProps = {
 	isOpen: boolean;
-	wallet: any;
-	qrCode?: string;
+	name?: string;
+	address: string;
+	icon: string;
 	handleClose?: any;
 };
 
@@ -40,16 +42,27 @@ const Wrapper = ({ label, value, className, children, copyButton }: WrapperProps
 	</div>
 );
 
-export const ReceiveFunds = ({ isOpen, wallet, qrCode, handleClose }: ReceiveFundsProps) => {
+export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: ReceiveFundsProps) => {
 	const { t } = useTranslation();
+
+	const [qrCode, setQrCode] = React.useState<string | undefined>();
+
+	React.useEffect(() => {
+		const fetchQrCode = async () => {
+			const qr = address ? await QRCode.fromString(address).toDataURL({ width: 250, margin: 0 }) : undefined;
+			setQrCode(qr);
+		};
+
+		fetchQrCode();
+	}, [address]);
 
 	return (
 		<Modal isOpen={isOpen} title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} onClose={() => handleClose()}>
 			<div className="mt-2">
-				{wallet.walletName && (
-					<Wrapper label={t("COMMON.WALLET")} value={wallet.walletName}>
-						<Circle className="ml-4">
-							<Icon name={wallet.coinIcon} />
+				{name && (
+					<Wrapper label={t("COMMON.WALLET")} value={name}>
+						<Circle size="lg" className="ml-4">
+							<Icon name={icon} />
 						</Circle>
 					</Wrapper>
 				)}
@@ -57,7 +70,7 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, handleClose }: ReceiveFun
 
 			<Wrapper
 				label={t("COMMON.ADDRESS")}
-				value={wallet.address}
+				value={address}
 				copyButton={
 					<span className="ml-4">
 						<Clipboard>
@@ -68,13 +81,13 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, handleClose }: ReceiveFun
 					</span>
 				}
 			>
-				<div className="flex items-center mb-2 ml-4">
-					{!wallet.walletName && (
-						<Circle className="-mr-2">
-							<Icon name={wallet.coinIcon} />
+				<div className="flex items-center ml-4">
+					{!name && (
+						<Circle size="lg" className="-mr-2">
+							<Icon name={icon} width={20} height={20} />
 						</Circle>
 					)}
-					<Avatar address={wallet.address} />
+					<Avatar address={address} size="lg" />
 				</div>
 			</Wrapper>
 
@@ -87,5 +100,4 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, handleClose }: ReceiveFun
 
 ReceiveFunds.defaultProps = {
 	isOpen: false,
-	wallet: {},
 };
