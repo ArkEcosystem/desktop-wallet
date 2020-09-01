@@ -140,14 +140,7 @@ describe("NavigationBar", () => {
 	});
 
 	it("should handle receive funds", async () => {
-		const {
-			findByTestId,
-			findAllByText,
-			getAllByText,
-			getByTestId,
-			getByText,
-			queryAllByTestId,
-		} = renderWithRouter(
+		const { findByTestId, getAllByText, getByTestId, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<NavigationBar profile={profile} />
 			</Route>,
@@ -178,7 +171,7 @@ describe("NavigationBar", () => {
 	});
 
 	it("should close the search wallet modal", async () => {
-		const { findByTestId, findByText, getByTestId } = renderWithRouter(
+		const { findByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<NavigationBar profile={profile} />
 			</Route>,
