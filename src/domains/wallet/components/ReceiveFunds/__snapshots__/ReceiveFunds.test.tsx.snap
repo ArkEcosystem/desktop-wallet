@@ -49,7 +49,9 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
           <div
             class="mt-2"
           />
-          <div>
+          <div
+            data-testid="ReceiveFunds__info"
+          >
             <div
               class="flex items-center mt-6 mb-6"
             >
@@ -123,12 +125,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
           </div>
           <div
             class="mt-8"
-          >
-            <img
-              alt="QR Code"
-              class="w-64 h-64 mx-auto"
-            />
-          </div>
+          />
         </div>
       </div>
     </div>
@@ -183,7 +180,9 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
           <div
             class="mt-2"
           />
-          <div>
+          <div
+            data-testid="ReceiveFunds__info"
+          >
             <div
               class="flex items-center mt-6 mb-6"
             >
@@ -257,12 +256,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
           </div>
           <div
             class="mt-8"
-          >
-            <img
-              alt="QR Code"
-              class="w-64 h-64 mx-auto"
-            />
-          </div>
+          />
         </div>
       </div>
     </div>
