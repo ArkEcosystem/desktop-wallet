@@ -57,7 +57,7 @@ const NotificationsDropdown = ({
 				<Button
 					variant="transparent"
 					size="icon"
-					className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+					className="text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
 					data-testid="navbar__buttons--notifications"
 				>
 					<Icon name="Notification" width={22} height={22} className="p-1" />
@@ -216,7 +216,7 @@ export const NavigationBar = ({
 									<Button
 										variant="transparent"
 										size="icon"
-										className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+										className="text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
 										onClick={() => history.push(`/profiles/${profile?.id()}/transactions/transfer`)}
 										data-testid="navbar__buttons--send"
 									>
@@ -230,7 +230,7 @@ export const NavigationBar = ({
 									<Button
 										size="icon"
 										variant="transparent"
-										className="text-theme-primary-300 hover:text-theme-primary hover:bg-theme-primary-100"
+										className="text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
 										onClick={() => setIsSearchingWallet(true)}
 										data-testid="navbar__buttons--receive"
 									>
