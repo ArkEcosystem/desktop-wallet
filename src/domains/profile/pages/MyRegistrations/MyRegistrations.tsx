@@ -84,7 +84,7 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 		};
 
 		fetchDelegates();
-	}, [activeProfile]);
+	}, [activeProfile, env]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
