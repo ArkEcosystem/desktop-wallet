@@ -8,14 +8,17 @@ const types = [
 	{
 		label: "Facebook",
 		value: "facebook",
+		validate: () => false,
 	},
 	{
 		label: "Twitter",
 		value: "twitter",
+		validate: () => true,
 	},
 	{
 		label: "Instagram",
 		value: "instagram",
+		validate: () => true,
 	},
 ];
 

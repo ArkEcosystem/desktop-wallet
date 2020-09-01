@@ -15,6 +15,7 @@ import { EntityLink } from "./LinkCollection.models";
 type Type = {
 	label: string;
 	value: string;
+	validate: (value: string) => boolean;
 };
 
 type LinkCollectionProps = {
@@ -34,7 +35,6 @@ const Wrapper = styled.div`
 	}
 `;
 
-// TODO: Validate url from provider
 export const LinkCollection = ({
 	data,
 	title,
@@ -51,19 +51,21 @@ export const LinkCollection = ({
 			links: data,
 		},
 	});
-	const { control, register, setValue } = form;
+	const { control, register, setValue, getValues } = form;
 	const { fields, append, remove } = useFieldArray({
 		control,
 		name: "links",
 		keyName: "value",
 	});
 
-	useEffect(() => {
-		onChange?.(fields as EntityLink[]);
-	}, [fields, onChange]);
-
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [selected, setSelected] = useState((null as unknown) as EntityLink);
+
+	const validateProviderURL = (url: string) => {
+		const currentTypeValue = getValues("type");
+		const type = types.find((item) => item.value === currentTypeValue);
+		return type!.validate(url);
+	};
 
 	const addLink = (link: EntityLink) => {
 		append(link);
@@ -74,7 +76,12 @@ export const LinkCollection = ({
 		remove(index);
 	};
 
+	useEffect(() => {
+		onChange?.(fields as EntityLink[]);
+	}, [fields, onChange]);
+
 	const columns = [];
+
 	if (selectionTypeTitle) {
 		columns.push({
 			Header: selectionTypeTitle,
@@ -144,7 +151,15 @@ export const LinkCollection = ({
 
 						<FormField name="value">
 							<FormLabel label={t("COMMON.LINK")} />
-							<Input data-testid="LinkCollection__input-link" ref={register({ required: true })} />
+							<Input
+								data-testid="LinkCollection__input-link"
+								ref={register({
+									required: true,
+									validate: {
+										validateProviderURL,
+									},
+								})}
+							/>
 						</FormField>
 
 						<Button

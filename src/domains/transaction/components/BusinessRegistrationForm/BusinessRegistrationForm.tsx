@@ -16,6 +16,7 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { EntityProvider } from "domains/transaction/entity/providers";
 import {
 	RegistrationComponent,
 	RegistrationForm,
@@ -26,6 +27,8 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { EntityLink } from "../LinkCollection/LinkCollection.models";
+
+const entityProvider = new EntityProvider();
 
 const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 	const { t } = useTranslation();
@@ -39,12 +42,23 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 
 	const handleMedia = useCallback(
 		(links: EntityLink[]) => {
-			// TODO: Filter image and video provider
-			const images = links.filter((item) => item);
-			const videos = links.filter((item) => item);
+			// Image and video are separates tags in ipfsData
+			// But in design they are handled together
+			// Also, the link `type` should be an image | video | logo instead of provider id
 
-			setValue("ipfsData.images", images);
-			setValue("ipfsData.videos", videos);
+			const imagesProviderIds = entityProvider.images().map((item) => item.id);
+
+			const images = links.filter((link) => imagesProviderIds.includes(link.type));
+			const videos = links.filter((link) => !imagesProviderIds.includes(link.type));
+
+			setValue(
+				"ipfsData.images",
+				images.map((item) => ({ ...item, type: "image" })),
+			);
+			setValue(
+				"ipfsData.videos",
+				videos.map((item) => ({ ...item, type: "video" })),
+			);
 		},
 		[setValue],
 	);
@@ -80,11 +94,9 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 					<LinkCollection
 						title={t("TRANSACTION.REPOSITORIES.TITLE")}
 						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
-						types={[
-							{ label: "BitBucket", value: "bitbucket" },
-							{ label: "GitHub", value: "github" },
-							{ label: "GitLab", value: "gitlab" },
-						]}
+						types={entityProvider
+							.sourceControl()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
 						onChange={(links) => setValue("ipfsData.sourceControl", links, true)}
 					/>
@@ -94,11 +106,9 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 					<LinkCollection
 						title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
 						description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
-						types={[
-							{ label: "Facebook", value: "facebook" },
-							{ label: "Twitter", value: "twitter" },
-							{ label: "LinkedIn", value: "linkedin" },
-						]}
+						types={entityProvider
+							.socialMedia()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
 						onChange={(links) => setValue("ipfsData.socialMedia", links, true)}
 					/>
@@ -108,13 +118,11 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 					<LinkCollection
 						title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
 						description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
-						types={[
-							{ label: "YouTube", value: "youtube" },
-							{ label: "Vimeo", value: "vimeo" },
-							{ label: "Flickr", value: "flickr" },
-						]}
+						types={entityProvider
+							.media()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="files"
-						selectionTypes={["flickr"]}
+						selectionTypes={entityProvider.images().map((item) => item.id)}
 						selectionTypeTitle="Avatar"
 						onChange={handleMedia}
 					/>
@@ -247,24 +255,18 @@ const component = ({ activeTab, wallet, feeOptions }: RegistrationComponent) => 
 	</Tabs>
 );
 
-const transactionDetails = ({ translations }: RegistrationTransactionDetailsOptions) => (
+const transactionDetails = ({ translations, transaction }: RegistrationTransactionDetailsOptions) => (
 	<>
-		<TransactionDetail
-			label={translations("TRANSACTION.TRANSACTION_TYPE")}
-			extra={
-				<Circle className="border-black" size="lg">
-					<Icon name="Business" width={20} height={20} />
-				</Circle>
-			}
-		>
-			Business Registration
+		<TransactionDetail label={translations("TRANSACTION.NAME")}>
+			{transaction?.data().asset.ipfsData.meta.displayName}
 		</TransactionDetail>
-		<TransactionDetail label={translations("TRANSACTION.NAME")}>ROBank Eco</TransactionDetail>
-		<TransactionDetail label={translations("TRANSACTION.DESCRIPTION")}>Not a trustworthy bank</TransactionDetail>
+		<TransactionDetail label={translations("TRANSACTION.DESCRIPTION")}>
+			{transaction?.data().asset.ipfsData.meta.description}
+		</TransactionDetail>
 		<TransactionDetail label={translations("TRANSACTION.WEBSITE")}>
-			<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
-				http://robank.com
-			</a>
+			<Link to={transaction?.data().asset.ipfsData.meta.website} isExternal>
+				{transaction?.data().asset.ipfsData.meta.website}
+			</Link>
 		</TransactionDetail>
 	</>
 );

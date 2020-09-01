@@ -8,14 +8,17 @@ const types = [
 	{
 		label: "Facebook",
 		value: "facebook",
+		validate: jest.fn(() => true),
 	},
 	{
 		label: "Twitter",
 		value: "twitter",
+		validate: jest.fn(() => true),
 	},
 	{
 		label: "Instagram",
 		value: "instagram",
+		validate: jest.fn(() => true),
 	},
 ];
 
@@ -111,6 +114,60 @@ describe("LinkCollection", () => {
 		expect(getByTestId("LinkCollection")).not.toHaveTextContent("twitter");
 		expect(getByTestId("LinkCollection")).not.toHaveTextContent("testing link");
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should trigger validation before adding the link", async () => {
+		const onChange = jest.fn();
+		const validate = jest.fn(() => false);
+		const { getByTestId } = render(
+			<LinkCollection
+				title="Social Media"
+				description="Tell people more about yourself through social media"
+				types={[
+					{
+						label: "TestEntity",
+						value: "test-entity",
+						validate,
+					},
+				]}
+				typeName="media"
+				onChange={onChange}
+			/>,
+		);
+
+		fireEvent.click(getByTestId("LinkCollection__header"));
+
+		const toggle = getByTestId("select-list__toggle-button");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+		const firstOption = getByTestId("select-list__toggle-option-0");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(firstOption);
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("test-entity");
+
+		const linkField = getByTestId("LinkCollection__input-link");
+		act(() => {
+			fireEvent.change(linkField, {
+				target: {
+					value: "testing link",
+				},
+			});
+		});
+
+		expect(linkField).toHaveValue("testing link");
+
+		act(() => {
+			fireEvent.click(getByTestId("LinkCollection__add-link"));
+		});
+
+		await waitFor(() => expect(validate).toHaveBeenCalledWith("testing link"));
+		expect(getByTestId("LinkCollection")).not.toHaveTextContent("testing link");
 	});
 
 	it("should select a specific link type", () => {
