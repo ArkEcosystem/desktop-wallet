@@ -12,385 +12,377 @@ exports[`SearchAddress should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb hthldP absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxhCb hthldP absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxirZ eUzagL w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxiKw kgmJgX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxirZ cdbxdW"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxiKw bopxJn"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          Select address
+        </h2>
         <div
-          class="py-4"
+          class="flex-1"
         >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Select address
-          </h2>
           <div
-            class="flex-1"
+            class="mt-1 text-theme-neutral-dark"
+          >
+            Find and select an address from your wallets
+          </div>
+          <div
+            class="-mx-10"
           >
             <div
-              class="mt-1 text-theme-neutral-dark"
-            >
-              Find and select an address from your wallets
-            </div>
-            <div
-              class="-mx-10"
+              class="bg-theme-neutral-contrast px-10 pt-8 pb-8 mt-8"
+              data-testid="SearchBar"
             >
               <div
-                class="bg-theme-neutral-contrast px-10 pt-8 pb-8 mt-8"
-                data-testid="SearchBar"
+                class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
               >
                 <div
-                  class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
+                  class="sc-AxiKw dzBdqj w-4 mr-8 text-theme-neutral-300"
+                  height="1em"
+                  width="1em"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj w-4 mr-8 text-theme-neutral-300"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      search.svg
-                    </svg>
-                  </div>
-                  <div
-                    class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
-                  >
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
-                      data-testid="Input"
-                      placeholder="Search..."
-                    />
-                  </div>
-                  <button
-                    class="sc-AxirZ emecfQ my-1"
-                    color="primary"
-                    data-testid="SearchBar__button"
-                    type="button"
-                  >
-                    <span
-                      class="px-2 text-md"
-                    >
-                      Find it
-                    </span>
-                  </button>
+                  <svg>
+                    search.svg
+                  </svg>
                 </div>
+                <div
+                  class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
+                >
+                  <input
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    data-testid="Input"
+                    placeholder="Search..."
+                  />
+                </div>
+                <button
+                  class="sc-AxirZ emecfQ my-1"
+                  color="primary"
+                  data-testid="SearchBar__button"
+                  type="button"
+                >
+                  <span
+                    class="px-2 text-md"
+                  >
+                    Find it
+                  </span>
+                </button>
               </div>
             </div>
+          </div>
+          <div
+            class="mt-8"
+          >
             <div
-              class="mt-8"
+              class="sc-fzplWN tcxiV"
+              role="table"
             >
-              <div
-                class="sc-fzplWN tcxiV"
-                role="table"
+              <table
+                class="table-auto"
               >
-                <table
-                  class="table-auto"
-                >
-                  <thead>
-                    <tr
-                      role="row"
-                    >
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--0"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top invisible"
-                        >
-                          <div>
-                            Avatar
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--1"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                            Name/Address
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--2"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                            Balance
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--3"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                            Fiat Value
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--4"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top invisible"
-                        >
-                          <div>
-                            Action
-                          </div>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    role="rowgroup"
+                <thead>
+                  <tr
+                    role="row"
                   >
-                    <tr
-                      class="border-b border-theme-neutral-200"
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
                     >
-                      <td
-                        class="py-6 mt-1"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-1"
-                      >
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            ARK Wallet 1
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B1d6…VBMs6YUYD
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="font-semibold"
+                      <div
+                        class="flex flex-inline align-top invisible"
                       >
                         <div>
-                          33.75089801
+                          Avatar
                         </div>
-                      </td>
-                      <td
-                        class="text-theme-neutral-light"
-                      >
-                        <div>
-                          0.00
-                        </div>
-                      </td>
-                      <td
-                        class="border-b border-dashed border-theme-neutral-200"
-                      >
-                        <button
-                          class="sc-AxirZ dXpJau float-right"
-                          color="primary"
-                          data-testid="AddressListItem__select-0"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-theme-neutral-200"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
                     >
-                      <td
-                        class="py-6 mt-1"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-1"
-                      >
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            ARK Wallet 2
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D5sRKWckH…yC3cvJtwb
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="font-semibold"
+                      <div
+                        class="flex flex-inline align-top "
                       >
                         <div>
-                          57.68000000
+                          Name/Address
                         </div>
-                      </td>
-                      <td
-                        class="text-theme-neutral-light"
-                      >
-                        <div>
-                          0.00
-                        </div>
-                      </td>
-                      <td
-                        class="border-b border-dashed border-theme-neutral-200"
-                      >
-                        <button
-                          class="sc-AxirZ dXpJau float-right"
-                          color="primary"
-                          data-testid="AddressListItem__select-1"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-theme-neutral-200"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
                     >
-                      <td
-                        class="py-6 mt-1"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="DKqLnhGLh6naMXvdCJ4SZYj8C1tFyDpkqE"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
-                              title="DKqLnhGLh6naMXvdCJ4SZYj8C1tFyDpkqE"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-1"
-                      >
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            DKqLnhGLh…1tFyDpkqE
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="font-semibold"
+                      <div
+                        class="flex flex-inline align-top "
                       >
                         <div>
-                          0.00000000
+                          Balance
                         </div>
-                      </td>
-                      <td
-                        class="text-theme-neutral-light"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--3"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
                       >
                         <div>
-                          0.00
+                          Fiat Value
                         </div>
-                      </td>
-                      <td
-                        class="border-b border-dashed border-theme-neutral-200"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top invisible"
                       >
-                        <button
-                          class="sc-AxirZ dXpJau float-right"
-                          color="primary"
-                          data-testid="AddressListItem__select-2"
-                          type="button"
+                        <div>
+                          Action
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-6 mt-1"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
                         >
-                          Select
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                          <img
+                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          ARK Wallet 1
+                        </span>
+                        <span
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D8rr7B1d6…VBMs6YUYD
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="font-semibold"
+                    >
+                      <div>
+                        33.75089801
+                      </div>
+                    </td>
+                    <td
+                      class="text-theme-neutral-light"
+                    >
+                      <div>
+                        0.00
+                      </div>
+                    </td>
+                    <td
+                      class="border-b border-dashed border-theme-neutral-200"
+                    >
+                      <button
+                        class="sc-AxirZ dXpJau float-right"
+                        color="primary"
+                        data-testid="AddressListItem__select-0"
+                        type="button"
+                      >
+                        Select
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-6 mt-1"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          ARK Wallet 2
+                        </span>
+                        <span
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D5sRKWckH…yC3cvJtwb
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="font-semibold"
+                    >
+                      <div>
+                        57.68000000
+                      </div>
+                    </td>
+                    <td
+                      class="text-theme-neutral-light"
+                    >
+                      <div>
+                        0.00
+                      </div>
+                    </td>
+                    <td
+                      class="border-b border-dashed border-theme-neutral-200"
+                    >
+                      <button
+                        class="sc-AxirZ dXpJau float-right"
+                        color="primary"
+                        data-testid="AddressListItem__select-1"
+                        type="button"
+                      >
+                        Select
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-6 mt-1"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="DKqLnhGLh6naMXvdCJ4SZYj8C1tFyDpkqE"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
+                            title="DKqLnhGLh6naMXvdCJ4SZYj8C1tFyDpkqE"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          DKqLnhGLh…1tFyDpkqE
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="font-semibold"
+                    >
+                      <div>
+                        0.00000000
+                      </div>
+                    </td>
+                    <td
+                      class="text-theme-neutral-light"
+                    >
+                      <div>
+                        0.00
+                      </div>
+                    </td>
+                    <td
+                      class="border-b border-dashed border-theme-neutral-200"
+                    >
+                      <button
+                        class="sc-AxirZ dXpJau float-right"
+                        color="primary"
+                        data-testid="AddressListItem__select-2"
+                        type="button"
+                      >
+                        Select
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -410,385 +402,377 @@ exports[`SearchAddress should render a modal with custom title and description 1
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb hthldP absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxhCb hthldP absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxirZ eUzagL w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxiKw kgmJgX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxirZ cdbxdW"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxiKw bopxJn"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          Modal title
+        </h2>
         <div
-          class="py-4"
+          class="flex-1"
         >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Modal title
-          </h2>
           <div
-            class="flex-1"
+            class="mt-1 text-theme-neutral-dark"
+          >
+            Modal description
+          </div>
+          <div
+            class="-mx-10"
           >
             <div
-              class="mt-1 text-theme-neutral-dark"
-            >
-              Modal description
-            </div>
-            <div
-              class="-mx-10"
+              class="bg-theme-neutral-contrast px-10 pt-8 pb-8 mt-8"
+              data-testid="SearchBar"
             >
               <div
-                class="bg-theme-neutral-contrast px-10 pt-8 pb-8 mt-8"
-                data-testid="SearchBar"
+                class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
               >
                 <div
-                  class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
+                  class="sc-AxiKw dzBdqj w-4 mr-8 text-theme-neutral-300"
+                  height="1em"
+                  width="1em"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj w-4 mr-8 text-theme-neutral-300"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      search.svg
-                    </svg>
-                  </div>
-                  <div
-                    class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
-                  >
-                    <input
-                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
-                      data-testid="Input"
-                      placeholder="Search..."
-                    />
-                  </div>
-                  <button
-                    class="sc-AxirZ emecfQ my-1"
-                    color="primary"
-                    data-testid="SearchBar__button"
-                    type="button"
-                  >
-                    <span
-                      class="px-2 text-md"
-                    >
-                      Find it
-                    </span>
-                  </button>
+                  <svg>
+                    search.svg
+                  </svg>
                 </div>
+                <div
+                  class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
+                >
+                  <input
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    data-testid="Input"
+                    placeholder="Search..."
+                  />
+                </div>
+                <button
+                  class="sc-AxirZ emecfQ my-1"
+                  color="primary"
+                  data-testid="SearchBar__button"
+                  type="button"
+                >
+                  <span
+                    class="px-2 text-md"
+                  >
+                    Find it
+                  </span>
+                </button>
               </div>
             </div>
+          </div>
+          <div
+            class="mt-8"
+          >
             <div
-              class="mt-8"
+              class="sc-fzplWN tcxiV"
+              role="table"
             >
-              <div
-                class="sc-fzplWN tcxiV"
-                role="table"
+              <table
+                class="table-auto"
               >
-                <table
-                  class="table-auto"
-                >
-                  <thead>
-                    <tr
-                      role="row"
-                    >
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--0"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top invisible"
-                        >
-                          <div>
-                            Avatar
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--1"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                            Name/Address
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--2"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                            Balance
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--3"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                            Fiat Value
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--4"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top invisible"
-                        >
-                          <div>
-                            Action
-                          </div>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    role="rowgroup"
+                <thead>
+                  <tr
+                    role="row"
                   >
-                    <tr
-                      class="border-b border-theme-neutral-200"
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
                     >
-                      <td
-                        class="py-6 mt-1"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-1"
-                      >
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            ARK Wallet 1
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B1d6…VBMs6YUYD
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="font-semibold"
+                      <div
+                        class="flex flex-inline align-top invisible"
                       >
                         <div>
-                          33.75089801
+                          Avatar
                         </div>
-                      </td>
-                      <td
-                        class="text-theme-neutral-light"
-                      >
-                        <div>
-                          0.00
-                        </div>
-                      </td>
-                      <td
-                        class="border-b border-dashed border-theme-neutral-200"
-                      >
-                        <button
-                          class="sc-AxirZ dXpJau float-right"
-                          color="primary"
-                          data-testid="AddressListItem__select-0"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-theme-neutral-200"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
                     >
-                      <td
-                        class="py-6 mt-1"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-1"
-                      >
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            ARK Wallet 2
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D5sRKWckH…yC3cvJtwb
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="font-semibold"
+                      <div
+                        class="flex flex-inline align-top "
                       >
                         <div>
-                          57.68000000
+                          Name/Address
                         </div>
-                      </td>
-                      <td
-                        class="text-theme-neutral-light"
-                      >
-                        <div>
-                          0.00
-                        </div>
-                      </td>
-                      <td
-                        class="border-b border-dashed border-theme-neutral-200"
-                      >
-                        <button
-                          class="sc-AxirZ dXpJau float-right"
-                          color="primary"
-                          data-testid="AddressListItem__select-1"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-theme-neutral-200"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
                     >
-                      <td
-                        class="py-6 mt-1"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="DKqLnhGLh6naMXvdCJ4SZYj8C1tFyDpkqE"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
-                              title="DKqLnhGLh6naMXvdCJ4SZYj8C1tFyDpkqE"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-1"
-                      >
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            DKqLnhGLh…1tFyDpkqE
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="font-semibold"
+                      <div
+                        class="flex flex-inline align-top "
                       >
                         <div>
-                          0.00000000
+                          Balance
                         </div>
-                      </td>
-                      <td
-                        class="text-theme-neutral-light"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--3"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
                       >
                         <div>
-                          0.00
+                          Fiat Value
                         </div>
-                      </td>
-                      <td
-                        class="border-b border-dashed border-theme-neutral-200"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top invisible"
                       >
-                        <button
-                          class="sc-AxirZ dXpJau float-right"
-                          color="primary"
-                          data-testid="AddressListItem__select-2"
-                          type="button"
+                        <div>
+                          Action
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-6 mt-1"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
                         >
-                          Select
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                          <img
+                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          ARK Wallet 1
+                        </span>
+                        <span
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D8rr7B1d6…VBMs6YUYD
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="font-semibold"
+                    >
+                      <div>
+                        33.75089801
+                      </div>
+                    </td>
+                    <td
+                      class="text-theme-neutral-light"
+                    >
+                      <div>
+                        0.00
+                      </div>
+                    </td>
+                    <td
+                      class="border-b border-dashed border-theme-neutral-200"
+                    >
+                      <button
+                        class="sc-AxirZ dXpJau float-right"
+                        color="primary"
+                        data-testid="AddressListItem__select-0"
+                        type="button"
+                      >
+                        Select
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-6 mt-1"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          ARK Wallet 2
+                        </span>
+                        <span
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D5sRKWckH…yC3cvJtwb
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="font-semibold"
+                    >
+                      <div>
+                        57.68000000
+                      </div>
+                    </td>
+                    <td
+                      class="text-theme-neutral-light"
+                    >
+                      <div>
+                        0.00
+                      </div>
+                    </td>
+                    <td
+                      class="border-b border-dashed border-theme-neutral-200"
+                    >
+                      <button
+                        class="sc-AxirZ dXpJau float-right"
+                        color="primary"
+                        data-testid="AddressListItem__select-1"
+                        type="button"
+                      >
+                        Select
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-6 mt-1"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="DKqLnhGLh6naMXvdCJ4SZYj8C1tFyDpkqE"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
+                            title="DKqLnhGLh6naMXvdCJ4SZYj8C1tFyDpkqE"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          DKqLnhGLh…1tFyDpkqE
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="font-semibold"
+                    >
+                      <div>
+                        0.00000000
+                      </div>
+                    </td>
+                    <td
+                      class="text-theme-neutral-light"
+                    >
+                      <div>
+                        0.00
+                      </div>
+                    </td>
+                    <td
+                      class="border-b border-dashed border-theme-neutral-200"
+                    >
+                      <button
+                        class="sc-AxirZ dXpJau float-right"
+                        color="primary"
+                        data-testid="AddressListItem__select-2"
+                        type="button"
+                      >
+                        Select
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
