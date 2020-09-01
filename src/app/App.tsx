@@ -47,14 +47,14 @@ const Main = ({ syncInterval }: Props) => {
 		const syncDelegates = async () => {
 			console.log("Running delegates sync...");
 
-			await env.delegates().syncAll();
+			await env.delegates().sync("ARK", "devnet");
 
 			setShowSplash(false);
 		};
 
 		const boot = async () => {
 			await env.verify(fixtureData);
-			syncDelegates();
+			await syncDelegates();
 
 			console.info("Scheduling next delegates synchronization...");
 			setInterval(() => syncDelegates(), syncInterval);
