@@ -5,7 +5,6 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -45,50 +44,21 @@ const Main = ({ syncInterval }: Props) => {
 	}, [pathname]);
 
 	useLayoutEffect(() => {
-		const syncDelegates = async () => {
-			console.log("Running delegates sync...");
-
-			await env.delegates().syncAll();
-
-			setShowSplash(false);
-		};
-
-		const syncWalletsData = async (profiles: Profile[]) => {
-			for (const profile of profiles) {
-				const profilePromises: any = [];
-				const wallets = profile.wallets().values();
-				for (const wallet of wallets) {
-					try {
-						profilePromises.push(wallet?.syncVotes());
-						profilePromises.push(wallet?.syncIdentity());
-					} catch (error) {
-						/* istanbul ignore next */
-						console.error(`Error pushing sync promise to promises array ${error}`);
-					}
-				}
-
-				await Promise.allSettled(profilePromises);
-			}
-		};
-
-		const syncWallets = async () => {
-			console.log("Running wallet data sync...");
-			const profiles = env.profiles().values();
-
-			env.exchangeRates().syncAll();
-			await syncWalletsData(profiles);
-
-			setShowSplash(false);
-		};
+		const syncDelegates = async () => env.delegates().syncAll();
+		const syncExchangeRates = async () => env.exchangeRates().syncAll();
+		const syncWallets = async () => env.wallets().syncAll();
 
 		const boot = async () => {
 			await env.verify(fixtureData);
-			await syncDelegates();
 			await env.boot();
+			await syncDelegates();
 			await syncWallets();
+			await syncExchangeRates();
 			await persist();
 
-			Scheduler(syncInterval).schedule([syncDelegates, syncWallets], persist);
+			Scheduler(syncInterval).schedule([syncDelegates, syncWallets, syncExchangeRates], persist);
+
+			setShowSplash(false);
 		};
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
