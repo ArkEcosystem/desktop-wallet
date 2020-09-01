@@ -157,12 +157,6 @@ export default {
       this.transaction = null
     },
 
-    emitWalletReload () {
-      if (TransactionService.isBridgechainRegistration(this.transaction) || TransactionService.isBridgechainUpdate(this.transaction) || TransactionService.isBridgechainResignation(this.transaction)) {
-        this.$eventBus.emit('wallet:reload:business-bridgechains')
-      }
-    },
-
     async pushMultiSignature (sendToNetwork) {
       const peer = this.$store.getters['session/multiSignaturePeer']
       if (!peer) {
@@ -249,8 +243,6 @@ export default {
               if (data && data.accept.length === 0 && data.broadcast.length > 0) {
                 this.$warn(messages.warningBroadcast)
               }
-
-              this.emitWalletReload()
 
               success = true
               this.$success(messages.success)
@@ -390,10 +382,6 @@ export default {
   max-height: 100%;
 }
 
-.TransactionModalBridgechainRegistration,
-.TransactionModalBridgechainUpdate,
-.TransactionModalBusinessRegistration,
-.TransactionModalBusinessUpdate,
 .TransactionModalIpfs,
 .TransactionModalMultiSignature {
   min-width: 35rem;
