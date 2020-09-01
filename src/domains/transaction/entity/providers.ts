@@ -7,37 +7,41 @@ interface Provider {
 export const bitbucketProvider = {
 	id: "bitbucket",
 	displayName: "BitBucket",
-	validate: (value: string) => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/\/(?:www\.)?(?:bitbucket\.org)\/([A-Za-z0-9-_.]+)(?:\/[A-z0-9_-]+)?\/?/.test(value),
 };
 
 export const facebookProvider = {
 	id: "facebook",
 	displayName: "Facebook",
-	validate: (value: string) => false,
+	validate: (value: string) => /(?:https?:)?\/\/(?:www\.)?(?:facebook\.com)\/([A-Za-z0-9-_.]+)/.test(value),
 };
 
 export const flickrProvider = {
 	id: "flickr",
 	displayName: "Flickr",
-	validate: (value: string) => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/\/(?:\w+\.)(?:staticflickr\.com)\/([A-z0-9-_]+)(?:\/[A-z0-9_-]+)(\.[A-z]{3,4})/.test(value),
 };
 
 export const githubProvider = {
 	id: "github",
 	displayName: "GitHub",
-	validate: (value: string) => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/\/(?:www\.)?(?:github\.com)\/([A-Za-z0-9-_.]+)(?:\/[A-z0-9_-]+)?\/?/.test(value),
 };
 
 export const gitlabProvider = {
 	id: "gitlab",
 	displayName: "GitLab",
-	validate: (value: string) => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/\/(?:www\.)?(?:gitlab\.com)\/([A-Za-z0-9-_.]+)(?:\/[A-z0-9_-]+)?\/?/.test(value),
 };
 
 export const imgurProvider = {
 	id: "imgur",
 	displayName: "Imgur",
-	validate: (value: string) => false,
+	validate: (value: string) => /(?:https?:)?\/\/(?:i\.)?(?:imgur\.com)\/([A-z0-9]*)(\.[A-z]{3,4})/.test(value),
 };
 
 export const instagramProvider = {
@@ -56,13 +60,16 @@ export const linkedinProvider = {
 export const vimeoProvider = {
 	id: "vimeo",
 	displayName: "Vimeo",
-	validate: (value: string) => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/\/(?:www\.)?(?:vimeo\.com|player\.vimeo\.com\/video)\/([0-9]+)/.test(value),
 };
 
+// TODO: Video validation
 export const youtubeProvider = {
 	id: "youtube",
 	displayName: "YouTube",
-	validate: (value: string) => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/\/(?:www\.)?(?:youtube\.com)\/(?:channel|user)\/([A-z0-9]+)\/?/.test(value),
 };
 
 export class EntityProvider {
