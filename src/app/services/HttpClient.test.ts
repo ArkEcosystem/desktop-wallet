@@ -4,8 +4,8 @@ import { HttpClient } from "./HttpClient";
 
 let subject: HttpClient;
 
-beforeEach(() => {
-	nock.enableNetConnect();
+beforeAll(() => {
+	nock.disableNetConnect();
 
 	subject = new HttpClient(0);
 });
@@ -97,7 +97,7 @@ describe("HttpClient", () => {
 	});
 
 	// @README: Run this locally with TOR running.
-	it.only("should connect with TOR", async () => {
+	it.skip("should connect with TOR", async () => {
 		const realAddress = await subject.get("https://ipinfo.io");
 		const newAddress = await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io");
 
