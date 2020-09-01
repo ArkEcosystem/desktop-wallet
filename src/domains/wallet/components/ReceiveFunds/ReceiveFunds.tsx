@@ -49,12 +49,13 @@ export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: Recei
 
 	useEffect(() => {
 		const fetchQrCode = async () => {
+			if (!isOpen) return;
 			const qr = address ? await QRCode.fromString(address).toDataURL({ width: 250, margin: 0 }) : undefined;
 			setQrCode(qr);
 		};
 
 		fetchQrCode();
-	}, [address]);
+	}, [address, isOpen]);
 
 	return (
 		<Modal isOpen={isOpen} title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} onClose={() => handleClose()}>
