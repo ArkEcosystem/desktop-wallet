@@ -67,6 +67,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 
 			setIsLoadingDelegates(false);
 		};
+
 		syncDelegates();
 
 		return () => {
@@ -124,9 +125,9 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			);
 		}
 
-		return delegates?.map((delegate: any) => {
-			const username = delegate?.username();
-			const address = delegate?.address();
+		return delegates?.map((delegate: ReadOnlyWallet) => {
+			const username = delegate.username();
+			const address = delegate.address();
 
 			return (
 				<TransactionDetail

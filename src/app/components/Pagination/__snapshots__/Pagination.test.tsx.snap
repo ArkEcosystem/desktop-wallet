@@ -43,26 +43,49 @@ exports[`Pagination should handle first page click properly 1`] = `
       class="flex px-2 rounded bg-theme-primary-contrast"
     >
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxgMl byPvkK"
       >
-        1
+        <span>
+          ...
+        </span>
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
-        2
+        99
       </div>
       <div
-        class="sc-AxhUy bxYQX current-page"
+        class="sc-AxhUy beRbTz"
       >
-        3
+        100
+      </div>
+      <div
+        class="sc-AxhUy beRbTz current-page"
+      >
+        101
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        102
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        103
+      </div>
+      <div
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
       </div>
     </div>
     <button
       class="sc-AxjAm fPpool"
       color="primary"
       data-testid="Pagination__next"
-      disabled=""
       type="button"
     >
       Next
@@ -80,7 +103,6 @@ exports[`Pagination should handle first page click properly 1`] = `
       class="sc-AxjAm fPpool"
       color="primary"
       data-testid="Pagination__last"
-      disabled=""
       type="button"
     >
       <div
@@ -103,58 +125,50 @@ exports[`Pagination should handle last page click properly 1`] = `
     class="sc-AxhCb gSLQTX"
     data-testid="Pagination"
   >
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__first"
-      disabled=""
-      type="button"
-    >
-      <div
-        class="sc-AxirZ hDwaov"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__previous"
-      disabled=""
-      type="button"
-    >
-      <div
-        class="sc-AxirZ fttODj mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
     <div
       class="flex px-2 rounded bg-theme-primary-contrast"
     >
       <div
-        class="sc-AxhUy bxYQX current-page"
+        class="sc-AxhUy beRbTz current-page"
       >
         1
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         2
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         3
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        4
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
       </div>
     </div>
     <button
@@ -203,22 +217,6 @@ exports[`Pagination should handle next page click properly 1`] = `
     <button
       class="sc-AxjAm fPpool"
       color="primary"
-      data-testid="Pagination__first"
-      type="button"
-    >
-      <div
-        class="sc-AxirZ hDwaov"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
       data-testid="Pagination__previous"
       type="button"
     >
@@ -237,17 +235,17 @@ exports[`Pagination should handle next page click properly 1`] = `
       class="flex px-2 rounded bg-theme-primary-contrast"
     >
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         1
       </div>
       <div
-        class="sc-AxhUy bxYQX current-page"
+        class="sc-AxhUy beRbTz current-page"
       >
         2
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         3
       </div>
@@ -266,22 +264,6 @@ exports[`Pagination should handle next page click properly 1`] = `
       >
         <svg>
           forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__last"
-      type="button"
-    >
-      <div
-        class="sc-AxirZ hDwaov"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
         </svg>
       </div>
     </button>
@@ -295,56 +277,21 @@ exports[`Pagination should handle page selection properly 1`] = `
     class="sc-AxhCb gSLQTX"
     data-testid="Pagination"
   >
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__first"
-      disabled=""
-      type="button"
-    >
-      <div
-        class="sc-AxirZ hDwaov"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__previous"
-      disabled=""
-      type="button"
-    >
-      <div
-        class="sc-AxirZ fttODj mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
     <div
       class="flex px-2 rounded bg-theme-primary-contrast"
     >
       <div
-        class="sc-AxhUy bxYQX current-page"
+        class="sc-AxhUy beRbTz current-page"
       >
         1
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         2
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         3
       </div>
@@ -363,22 +310,6 @@ exports[`Pagination should handle page selection properly 1`] = `
       >
         <svg>
           forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__last"
-      type="button"
-    >
-      <div
-        class="sc-AxirZ hDwaov"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
         </svg>
       </div>
     </button>
@@ -429,19 +360,119 @@ exports[`Pagination should handle previous page click properly 1`] = `
       class="flex px-2 rounded bg-theme-primary-contrast"
     >
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        4
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        8
+      </div>
+      <div
+        class="sc-AxhUy beRbTz current-page"
+      >
+        9
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        10
+      </div>
+    </div>
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      Next
+      <div
+        class="sc-AxirZ hDwaov ml-2"
+        height="12"
+        width="12"
+      >
+        <svg>
+          forward.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should not render first button if pagination buttons include 1 (first page) 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhCb gSLQTX"
+    data-testid="Pagination"
+  >
+    <div
+      class="flex px-2 rounded bg-theme-primary-contrast"
+    >
+      <div
+        class="sc-AxhUy beRbTz current-page"
       >
         1
       </div>
       <div
-        class="sc-AxhUy bxYQX current-page"
+        class="sc-AxhUy beRbTz"
       >
         2
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         3
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        4
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
       </div>
     </div>
     <button
@@ -481,7 +512,219 @@ exports[`Pagination should handle previous page click properly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Pagination should render next buttons as disabled on last page 1`] = `
+exports[`Pagination should not render first button if pagination buttons include 1 (second page) 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhCb gSLQTX"
+    data-testid="Pagination"
+  >
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__previous"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ fttODj mr-2"
+        height="10"
+        width="10"
+      >
+        <svg>
+          back.svg
+        </svg>
+      </div>
+      Previous
+    </button>
+    <div
+      class="flex px-2 rounded bg-theme-primary-contrast"
+    >
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        1
+      </div>
+      <div
+        class="sc-AxhUy beRbTz current-page"
+      >
+        2
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        3
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        4
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
+      </div>
+    </div>
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      Next
+      <div
+        class="sc-AxirZ hDwaov ml-2"
+        height="12"
+        width="12"
+      >
+        <svg>
+          forward.svg
+        </svg>
+      </div>
+    </button>
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__last"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ hDwaov"
+        height="12"
+        width="12"
+      >
+        <svg>
+          pagination-last.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should not render first button if pagination buttons include 1 (third page) 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhCb gSLQTX"
+    data-testid="Pagination"
+  >
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__previous"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ fttODj mr-2"
+        height="10"
+        width="10"
+      >
+        <svg>
+          back.svg
+        </svg>
+      </div>
+      Previous
+    </button>
+    <div
+      class="flex px-2 rounded bg-theme-primary-contrast"
+    >
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        1
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        2
+      </div>
+      <div
+        class="sc-AxhUy beRbTz current-page"
+      >
+        3
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        4
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
+      </div>
+    </div>
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      Next
+      <div
+        class="sc-AxirZ hDwaov ml-2"
+        height="12"
+        width="12"
+      >
+        <svg>
+          forward.svg
+        </svg>
+      </div>
+    </button>
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__last"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ hDwaov"
+        height="12"
+        width="12"
+      >
+        <svg>
+          pagination-last.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should not render first button if pagination buttons include the last page (last page) 1`] = `
 <DocumentFragment>
   <div
     class="sc-AxhCb gSLQTX"
@@ -524,61 +767,53 @@ exports[`Pagination should render next buttons as disabled on last page 1`] = `
       class="flex px-2 rounded bg-theme-primary-contrast"
     >
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxgMl byPvkK"
       >
-        1
+        <span>
+          ...
+        </span>
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
-        2
+        4
       </div>
       <div
-        class="sc-AxhUy bxYQX current-page"
+        class="sc-AxhUy beRbTz"
       >
-        3
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        8
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        9
+      </div>
+      <div
+        class="sc-AxhUy beRbTz current-page"
+      >
+        10
       </div>
     </div>
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__next"
-      disabled=""
-      type="button"
-    >
-      Next
-      <div
-        class="sc-AxirZ hDwaov ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__last"
-      disabled=""
-      type="button"
-    >
-      <div
-        class="sc-AxirZ hDwaov"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
-exports[`Pagination should render previous buttons as disabled on last page 1`] = `
+exports[`Pagination should not render first button if pagination buttons include the last page (second-to-last page) 1`] = `
 <DocumentFragment>
   <div
     class="sc-AxhCb gSLQTX"
@@ -588,7 +823,6 @@ exports[`Pagination should render previous buttons as disabled on last page 1`] 
       class="sc-AxjAm fPpool"
       color="primary"
       data-testid="Pagination__first"
-      disabled=""
       type="button"
     >
       <div
@@ -605,7 +839,6 @@ exports[`Pagination should render previous buttons as disabled on last page 1`] 
       class="sc-AxjAm fPpool"
       color="primary"
       data-testid="Pagination__previous"
-      disabled=""
       type="button"
     >
       <div
@@ -623,19 +856,314 @@ exports[`Pagination should render previous buttons as disabled on last page 1`] 
       class="flex px-2 rounded bg-theme-primary-contrast"
     >
       <div
-        class="sc-AxhUy bxYQX current-page"
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        4
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        8
+      </div>
+      <div
+        class="sc-AxhUy beRbTz current-page"
+      >
+        9
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        10
+      </div>
+    </div>
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      Next
+      <div
+        class="sc-AxirZ hDwaov ml-2"
+        height="12"
+        width="12"
+      >
+        <svg>
+          forward.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should not render first button if pagination buttons include the last page (third-to-last page) 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhCb gSLQTX"
+    data-testid="Pagination"
+  >
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__first"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ hDwaov"
+        height="12"
+        width="12"
+      >
+        <svg>
+          pagination-first.svg
+        </svg>
+      </div>
+    </button>
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__previous"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ fttODj mr-2"
+        height="10"
+        width="10"
+      >
+        <svg>
+          back.svg
+        </svg>
+      </div>
+      Previous
+    </button>
+    <div
+      class="flex px-2 rounded bg-theme-primary-contrast"
+    >
+      <div
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        4
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxhUy beRbTz current-page"
+      >
+        8
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        9
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        10
+      </div>
+    </div>
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      Next
+      <div
+        class="sc-AxirZ hDwaov ml-2"
+        height="12"
+        width="12"
+      >
+        <svg>
+          forward.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should not render next button on last page 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhCb gSLQTX"
+    data-testid="Pagination"
+  >
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__first"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ hDwaov"
+        height="12"
+        width="12"
+      >
+        <svg>
+          pagination-first.svg
+        </svg>
+      </div>
+    </button>
+    <button
+      class="sc-AxjAm fPpool"
+      color="primary"
+      data-testid="Pagination__previous"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ fttODj mr-2"
+        height="10"
+        width="10"
+      >
+        <svg>
+          back.svg
+        </svg>
+      </div>
+      Previous
+    </button>
+    <div
+      class="flex px-2 rounded bg-theme-primary-contrast"
+    >
+      <div
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        4
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        8
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        9
+      </div>
+      <div
+        class="sc-AxhUy beRbTz current-page"
+      >
+        10
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should not render previous buttons on first page 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhCb gSLQTX"
+    data-testid="Pagination"
+  >
+    <div
+      class="flex px-2 rounded bg-theme-primary-contrast"
+    >
+      <div
+        class="sc-AxhUy beRbTz current-page"
       >
         1
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         2
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         3
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        4
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        5
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        6
+      </div>
+      <div
+        class="sc-AxhUy beRbTz"
+      >
+        7
+      </div>
+      <div
+        class="sc-AxgMl byPvkK"
+      >
+        <span>
+          ...
+        </span>
       </div>
     </div>
     <button
@@ -681,56 +1209,21 @@ exports[`Pagination should render properly 1`] = `
     class="sc-AxhCb gSLQTX"
     data-testid="Pagination"
   >
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__first"
-      disabled=""
-      type="button"
-    >
-      <div
-        class="sc-AxirZ hDwaov"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__previous"
-      disabled=""
-      type="button"
-    >
-      <div
-        class="sc-AxirZ fttODj mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
     <div
       class="flex px-2 rounded bg-theme-primary-contrast"
     >
       <div
-        class="sc-AxhUy bxYQX current-page"
+        class="sc-AxhUy beRbTz current-page"
       >
         1
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         2
       </div>
       <div
-        class="sc-AxhUy bxYQX"
+        class="sc-AxhUy beRbTz"
       >
         3
       </div>
@@ -749,22 +1242,6 @@ exports[`Pagination should render properly 1`] = `
       >
         <svg>
           forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="sc-AxjAm fPpool"
-      color="primary"
-      data-testid="Pagination__last"
-      type="button"
-    >
-      <div
-        class="sc-AxirZ hDwaov"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
         </svg>
       </div>
     </button>

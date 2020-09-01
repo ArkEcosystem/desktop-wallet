@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
 import { SearchResource } from "app/components/SearchResource";
 import { Table } from "app/components/Table";
@@ -9,11 +9,12 @@ import { useTranslation } from "react-i18next";
 type SearchWalletProps = {
 	isOpen: boolean;
 	wallets?: ReadWriteWallet[];
-	networks?: any;
+	networks?: NetworkData[];
 	onNetworkChange?: any;
 	onViewAllNetworks?: any;
 	onClose?: any;
 	onSearch?: any;
+	onSelectWallet?: any;
 };
 
 export const SearchWallet = ({
@@ -24,6 +25,7 @@ export const SearchWallet = ({
 	onViewAllNetworks,
 	onClose,
 	onSearch,
+	onSelectWallet,
 }: SearchWalletProps) => {
 	const { t } = useTranslation();
 
@@ -35,10 +37,6 @@ export const SearchWallet = ({
 		{
 			Header: t("COMMON.ADDRESS"),
 			accessor: "address",
-		},
-		{
-			Header: t("COMMON.WALLET_TYPE"),
-			className: "justify-center",
 		},
 		{
 			Header: t("COMMON.BALANCE"),
@@ -67,8 +65,10 @@ export const SearchWallet = ({
 			onClose={onClose}
 			onSearch={onSearch}
 		>
-			<Table columns={listColumns} data={wallets?.map((wallet) => ({ wallet }))}>
-				{(rowData: any) => <WalletListItem variant="singleAction" wallet={rowData.wallet} />}
+			<Table columns={listColumns} data={wallets}>
+				{(wallet: ReadWriteWallet) => (
+					<WalletListItem wallet={wallet} variant="condensed" actions="Select" onAction={onSelectWallet} />
+				)}
 			</Table>
 		</SearchResource>
 	);
@@ -76,6 +76,4 @@ export const SearchWallet = ({
 
 SearchWallet.defaultProps = {
 	isOpen: false,
-	wallets: [],
-	networks: [],
 };

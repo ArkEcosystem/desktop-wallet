@@ -51,7 +51,13 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 					)}
 				</Table>
 				<div className="self-center mt-2">
-					<Pagination totalCount={12} itemsPerPage={4} onSelectPage={console.log} currentPage={1} size="sm" />
+					<Pagination
+						totalCount={12}
+						itemsPerPage={4}
+						onSelectPage={console.log}
+						currentPage={1}
+						variant="condensed"
+					/>
 				</div>
 			</div>
 		</Modal>
