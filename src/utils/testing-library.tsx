@@ -82,6 +82,11 @@ export const defaultNetMocks = () => {
 		.get("/api/transactions/fees")
 		.reply(200, require("../tests/fixtures/coins/ark/transaction-fees.json"))
 		.persist();
+
+	nock("https://min-api.cryptocompare.com")
+		.get("/data/dayAvg?fsym=DARK&tsym=btc&toTs=1593561600")
+		.reply(200, require("tests/fixtures/exchange/cryptocompare.json"))
+		.persist();
 };
 
 export const useDefaultNetMocks = defaultNetMocks;
@@ -93,4 +98,4 @@ const envWithMocks = () => {
 
 export const env = envWithMocks();
 
-export const syncDelegates = async () => env.delegates().syncAll();
+export const syncDelegates = async () => await env.delegates().syncAll();

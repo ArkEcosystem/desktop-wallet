@@ -2,7 +2,7 @@
 import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
 import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 
 import { AddressRow } from "./AddressRow";
@@ -30,8 +30,10 @@ describe("AddressRow", () => {
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
 
-		nock.disableNetConnect();
+		await syncDelegates();
+		await wallet.syncVotes();
 
+		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
