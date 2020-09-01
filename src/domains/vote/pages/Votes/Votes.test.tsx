@@ -3,7 +3,15 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	waitFor,
+} from "utils/testing-library";
 
 import { Votes } from "./Votes";
 
@@ -21,19 +29,18 @@ const renderPage = (route: string, routePath = "/profiles/:profileId/wallets/:wa
 	);
 
 describe("Votes", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		nock.disableNetConnect();
-
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
 			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
 			.persist();
-	});
 
-	beforeEach(() => {
-		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		await syncDelegates();
+		await wallet.syncVotes();
 	});
 
 	it("should render", async () => {

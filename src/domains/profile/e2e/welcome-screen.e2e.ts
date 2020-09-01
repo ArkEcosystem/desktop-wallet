@@ -18,6 +18,6 @@ test("should return to welcome page when application is idle", async (t) => {
 
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
-	await t.expect(Selector("h1").withExactText(translations.COMMON.WELCOME).exists).ok({ timeout: 60000 });
+	await t.expect(Selector("h1").withExactText(translations.COMMON.WELCOME).exists).ok({ timeout: 80000 });
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).notOk();
 });

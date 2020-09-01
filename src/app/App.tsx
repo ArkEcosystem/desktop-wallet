@@ -24,7 +24,7 @@ import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
 import { useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
-import { httpClient } from "./services";
+import { httpClient, Scheduler } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
 
@@ -44,23 +44,21 @@ const Main = ({ syncInterval }: Props) => {
 	}, [pathname]);
 
 	useLayoutEffect(() => {
-		const syncDelegates = async () => {
-			console.log("Running delegates sync...");
-
-			await env.delegates().syncAll();
-
-			setShowSplash(false);
-		};
+		const syncDelegates = async () => env.delegates().syncAll();
+		const syncExchangeRates = async () => env.exchangeRates().syncAll();
+		const syncWallets = async () => env.wallets().syncAll();
 
 		const boot = async () => {
 			await env.verify(fixtureData);
-			syncDelegates();
-
-			console.info("Scheduling next delegates synchronization...");
-			setInterval(() => syncDelegates(), syncInterval);
-
 			await env.boot();
+			await syncDelegates();
+			await syncWallets();
+			await syncExchangeRates();
 			await persist();
+
+			Scheduler(syncInterval).schedule([syncDelegates, syncWallets, syncExchangeRates], persist);
+
+			setShowSplash(false);
 		};
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
@@ -127,4 +125,8 @@ export const App = ({ syncInterval }: Props) => {
 			</I18nextProvider>
 		</ErrorBoundary>
 	);
+};
+
+App.defaultProps = {
+	syncInterval: 300000,
 };

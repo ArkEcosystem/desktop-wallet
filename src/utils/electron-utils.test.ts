@@ -15,7 +15,7 @@ jest.mock("electron", () => {
 				setContentProtection,
 			}),
 			powerMonitor: {
-				getSystemIdleState: jest.fn(),
+				getSystemIdleTime: jest.fn(),
 			},
 		},
 		shell: {
@@ -214,24 +214,24 @@ describe("Electron utils", () => {
 	});
 
 	describe("isIdle", () => {
-		let getSystemIdleStateMock: jest.SpyInstance;
+		let getSystemIdleTimeMock: jest.SpyInstance;
 
 		beforeEach(() => {
-			getSystemIdleStateMock = jest
-				.spyOn(electron.remote.powerMonitor, "getSystemIdleState")
-				.mockImplementation((threshold: number) => (threshold < 10 ? "idle" : "active"));
+			getSystemIdleTimeMock = jest
+				.spyOn(electron.remote.powerMonitor, "getSystemIdleTime")
+				.mockImplementation(() => 60);
 		});
 
 		afterEach(() => {
-			getSystemIdleStateMock.mockRestore();
+			getSystemIdleTimeMock.mockRestore();
 		});
 
 		it("should return false if threshold is greater than idle time", () => {
-			expect(isIdle(15)).toBe(false);
+			expect(isIdle(62)).toBe(false);
 		});
 
 		it("should return true if threshold is smaller than idle time", () => {
-			expect(isIdle(5)).toBe(true);
+			expect(isIdle(10)).toBe(true);
 		});
 	});
 });
