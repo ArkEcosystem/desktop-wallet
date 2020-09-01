@@ -12,7 +12,7 @@ jest.mock("electron", () => {
 	return {
 		remote: {
 			powerMonitor: {
-				getSystemIdleState: jest.fn(),
+				getSystemIdleTime: jest.fn(),
 			},
 			getCurrentWindow: () => ({
 				setContentProtection,
@@ -90,7 +90,7 @@ describe("ProfileMiddleware", () => {
 	});
 
 	it("should not redirect if not idle", () => {
-		jest.spyOn(electron.remote.powerMonitor, "getSystemIdleState").mockImplementation(() => "active");
+		jest.spyOn(electron.remote.powerMonitor, "getSystemIdleTime").mockImplementation(() => 30);
 
 		jest.useFakeTimers();
 
@@ -119,7 +119,7 @@ describe("ProfileMiddleware", () => {
 	});
 
 	it("should redirect if idle", () => {
-		jest.spyOn(electron.remote.powerMonitor, "getSystemIdleState").mockImplementation(() => "idle");
+		jest.spyOn(electron.remote.powerMonitor, "getSystemIdleTime").mockImplementation(() => 61);
 
 		jest.useFakeTimers();
 
