@@ -5,6 +5,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -52,23 +53,30 @@ const Main = ({ syncInterval }: Props) => {
 			setShowSplash(false);
 		};
 
-		const syncWallets = async () => {
-			console.log("Running wallet data sync...");
-			env.exchangeRates().syncAll();
-			const profiles = env.profiles().values();
-
+		const syncProfilesData = async (profiles: Profile[]) => {
 			for (const profile of profiles) {
+				const profilePromises: any = [];
 				const wallets = profile.wallets().values();
 				for (const wallet of wallets) {
 					try {
-						await wallet?.syncVotes();
-						await wallet?.syncIdentity();
+						profilePromises.push(wallet?.syncVotes());
+						profilePromises.push(wallet?.syncIdentity());
 					} catch (error) {
 						/* istanbul ignore next */
-						console.error(`Error synchronizing wallet data ${error}`);
+						console.error(`Error pushing sync promise to promises array ${error}`);
 					}
 				}
+
+				await Promise.allSettled(profilePromises);
 			}
+		};
+
+		const syncWallets = async () => {
+			console.log("Running wallet data sync...");
+			const profiles = env.profiles().values();
+
+			env.exchangeRates().syncAll();
+			await syncProfilesData(profiles);
 
 			setShowSplash(false);
 		};
