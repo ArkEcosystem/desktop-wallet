@@ -54,7 +54,7 @@ const Main = ({ syncInterval }: Props) => {
 
 		const syncWallets = async () => {
 			console.log("Running wallet data sync...");
-			// env.exchangeRates().syncAll();
+			env.exchangeRates().syncAll();
 			const profiles = env.profiles().values();
 
 			for (const profile of profiles) {
