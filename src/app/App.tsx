@@ -53,7 +53,7 @@ const Main = ({ syncInterval }: Props) => {
 			setShowSplash(false);
 		};
 
-		const syncProfilesData = async (profiles: Profile[]) => {
+		const syncWalletsData = async (profiles: Profile[]) => {
 			for (const profile of profiles) {
 				const profilePromises: any = [];
 				const wallets = profile.wallets().values();
@@ -76,7 +76,7 @@ const Main = ({ syncInterval }: Props) => {
 			const profiles = env.profiles().values();
 
 			env.exchangeRates().syncAll();
-			await syncProfilesData(profiles);
+			await syncWalletsData(profiles);
 
 			setShowSplash(false);
 		};
