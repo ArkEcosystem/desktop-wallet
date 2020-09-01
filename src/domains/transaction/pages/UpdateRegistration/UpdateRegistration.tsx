@@ -19,6 +19,7 @@ import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
+import { EntityProvider } from "domains/transaction/entity/providers";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -27,6 +28,8 @@ type UpdateRegistrationProps = {
 	formDefaultData?: any;
 	onDownload: any;
 };
+
+const entityProvider = new EntityProvider();
 
 const FirstStep = ({ form }: { form: any }) => {
 	const { register } = form;
@@ -61,11 +64,9 @@ const FirstStep = ({ form }: { form: any }) => {
 					<LinkCollection
 						title={t("TRANSACTION.REPOSITORIES.TITLE")}
 						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
-						types={[
-							{ label: "BitBucket", value: "bitbucket" },
-							{ label: "GitHub", value: "github" },
-							{ label: "GitLab", value: "gitlab" },
-						]}
+						types={entityProvider
+							.sourceControl()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
 					/>
 				</TransactionDetail>
@@ -74,11 +75,9 @@ const FirstStep = ({ form }: { form: any }) => {
 					<LinkCollection
 						title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
 						description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
-						types={[
-							{ label: "Facebook", value: "facebook" },
-							{ label: "Twitter", value: "twitter" },
-							{ label: "LinkedIn", value: "linkedin" },
-						]}
+						types={entityProvider
+							.socialMedia()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
 					/>
 				</TransactionDetail>
@@ -87,11 +86,9 @@ const FirstStep = ({ form }: { form: any }) => {
 					<LinkCollection
 						title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
 						description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
-						types={[
-							{ label: "YouTube", value: "youtube" },
-							{ label: "Vimeo", value: "vimeo" },
-							{ label: "Flickr", value: "flickr" },
-						]}
+						types={entityProvider
+							.media()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="files"
 						selectionTypes={["flickr"]}
 						selectionTypeTitle="Avatar"
@@ -119,19 +116,19 @@ const SecondStep = () => {
 
 	const links = [
 		{
-			link: "http://github.com/robank",
+			value: "http://github.com/robank",
 			type: "github",
 		},
 		{
-			link: "http://gitlab.com/robank",
+			value: "http://gitlab.com/robank",
 			type: "gitlab",
 		},
 		{
-			link: "http://bitbucket.com/robank",
+			value: "http://bitbucket.com/robank",
 			type: "bitbucket",
 		},
 		{
-			link: "http://npmjs.com/robank",
+			value: "http://npmjs.com/robank",
 			type: "npm",
 		},
 	];
