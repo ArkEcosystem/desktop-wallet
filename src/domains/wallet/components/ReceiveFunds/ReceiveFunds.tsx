@@ -5,7 +5,7 @@ import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type ReceiveFundsProps = {
@@ -25,7 +25,7 @@ type WrapperProps = {
 };
 
 const Wrapper = ({ label, value, className, children, copyButton }: WrapperProps) => (
-	<div className={className}>
+	<div className={className} data-testid="ReceiveFunds__info">
 		<div className="flex items-center mt-6 mb-6">
 			<div className="flex-1">
 				<div className="text-sm font-semibold text-theme-neutral">{label}</div>
@@ -45,16 +45,17 @@ const Wrapper = ({ label, value, className, children, copyButton }: WrapperProps
 export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: ReceiveFundsProps) => {
 	const { t } = useTranslation();
 
-	const [qrCode, setQrCode] = React.useState<string | undefined>();
+	const [qrCode, setQrCode] = useState<string | undefined>();
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const fetchQrCode = async () => {
+			if (!isOpen) return;
 			const qr = address ? await QRCode.fromString(address).toDataURL({ width: 250, margin: 0 }) : undefined;
 			setQrCode(qr);
 		};
 
 		fetchQrCode();
-	}, [address]);
+	}, [address, isOpen]);
 
 	return (
 		<Modal isOpen={isOpen} title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} onClose={() => handleClose()}>
@@ -92,7 +93,14 @@ export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: Recei
 			</Wrapper>
 
 			<div className="mt-8">
-				<img src={qrCode} className="w-64 h-64 mx-auto" alt={t("COMMON.QR_CODE")} />
+				{qrCode && (
+					<img
+						src={qrCode}
+						className="w-64 h-64 mx-auto"
+						alt={t("COMMON.QR_CODE")}
+						data-testid="ReceiveFunds__qrcode"
+					/>
+				)}
 			</div>
 		</Modal>
 	);

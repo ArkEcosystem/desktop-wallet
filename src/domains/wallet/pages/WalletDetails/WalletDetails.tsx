@@ -66,8 +66,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 			let votes: ReadOnlyWallet[] = [];
 
 			try {
-				await activeWallet.syncVotes();
-
 				votes = activeWallet.votes();
 			} catch {
 				votes = [];
@@ -84,15 +82,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 		fetchAllData();
 	}, [activeWallet, env]);
-
-	useEffect(() => {
-		const timer = setInterval(async () => {
-			await activeWallet.syncIdentity();
-			await persist();
-		}, 30000);
-
-		return () => clearInterval(timer);
-	}, [activeWallet, persist]);
 
 	const handleDeleteWallet = async () => {
 		activeProfile.wallets().forget(activeWallet.id());

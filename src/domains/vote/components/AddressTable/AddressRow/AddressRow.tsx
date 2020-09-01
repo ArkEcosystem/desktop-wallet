@@ -42,15 +42,10 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
 	useEffect(() => {
-		const loadVotes = async () => {
+		const loadVotes = () => {
 			if (!hasProperty(wallet, "isLoading")) {
-				// TODO: move this to profile initialising and run it every X period
-				await env.delegates().sync(wallet?.coinId(), wallet?.networkId());
-
 				let votes: ReadOnlyWallet[] = [];
 				try {
-					await wallet.syncVotes();
-
 					votes = wallet.votes();
 				} catch {
 					votes = [];
