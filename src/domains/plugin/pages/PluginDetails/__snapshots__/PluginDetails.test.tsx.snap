@@ -617,7 +617,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-fzqARJ inWZYr flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fzqNqU gyLgWA flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -630,7 +630,7 @@ exports[`PluginDetails should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzoiQi kMJtdZ flex-1 bg-theme-warning-100"
+                class="sc-fzqARJ kANAor flex-1 bg-theme-warning-100"
               >
                 <p
                   class="text-xl font-bold text-theme-warning"
@@ -925,7 +925,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fznWqX fTevlI mt-2 ml-10 text-theme-neutral-600"
+                            class="sc-fzoiQi hiOrhK mt-2 ml-10 text-theme-neutral-600"
                           >
                             <a
                               href="#"
@@ -1105,56 +1105,21 @@ exports[`PluginDetails should render properly 1`] = `
                       class="sc-fznxsB gaCFZs"
                       data-testid="Pagination"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        data-testid="Pagination__first"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw bopxJn"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            pagination-first.svg
-                          </svg>
-                        </div>
-                      </button>
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        data-testid="Pagination__previous"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw ksjdLL mr-2"
-                          height="10"
-                          width="10"
-                        >
-                          <svg>
-                            back.svg
-                          </svg>
-                        </div>
-                        Previous
-                      </button>
                       <div
                         class="flex px-2 rounded bg-theme-primary-contrast"
                       >
                         <div
-                          class="sc-fznJRM jsrfed current-page"
+                          class="sc-fznJRM cTsuuN current-page"
                         >
                           1
                         </div>
                         <div
-                          class="sc-fznJRM jsrfed"
+                          class="sc-fznJRM cTsuuN"
                         >
                           2
                         </div>
                         <div
-                          class="sc-fznJRM jsrfed"
+                          class="sc-fznJRM cTsuuN"
                         >
                           3
                         </div>
@@ -1173,22 +1138,6 @@ exports[`PluginDetails should render properly 1`] = `
                         >
                           <svg>
                             forward.svg
-                          </svg>
-                        </div>
-                      </button>
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        data-testid="Pagination__last"
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw bopxJn"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            pagination-last.svg
                           </svg>
                         </div>
                       </button>
@@ -1304,7 +1253,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU bAvbKR h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs hzwXzD h-2 rounded-lg bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -1367,7 +1316,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU eYHfjW h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs mTVYg h-2 rounded-lg bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -1421,7 +1370,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU uIkqe h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs evnpsw h-2 rounded-lg bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -1466,7 +1415,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU jiFniI h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs jForfe h-2 rounded-lg bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -1502,7 +1451,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU bocHpz h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs kAKELB h-2 rounded-lg bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />
@@ -2169,7 +2118,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-fzqARJ inWZYr flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fzqNqU gyLgWA flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -2182,7 +2131,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzoiQi kMJtdZ flex-1 bg-theme-warning-100"
+                class="sc-fzqARJ kANAor flex-1 bg-theme-warning-100"
               >
                 <p
                   class="text-xl font-bold text-theme-warning"
@@ -2477,7 +2426,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fznWqX fTevlI mt-2 ml-10 text-theme-neutral-600"
+                            class="sc-fzoiQi hiOrhK mt-2 ml-10 text-theme-neutral-600"
                           >
                             <a
                               href="#"
@@ -2657,56 +2606,21 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       class="sc-fznxsB gaCFZs"
                       data-testid="Pagination"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        data-testid="Pagination__first"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw bopxJn"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            pagination-first.svg
-                          </svg>
-                        </div>
-                      </button>
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        data-testid="Pagination__previous"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw ksjdLL mr-2"
-                          height="10"
-                          width="10"
-                        >
-                          <svg>
-                            back.svg
-                          </svg>
-                        </div>
-                        Previous
-                      </button>
                       <div
                         class="flex px-2 rounded bg-theme-primary-contrast"
                       >
                         <div
-                          class="sc-fznJRM jsrfed current-page"
+                          class="sc-fznJRM cTsuuN current-page"
                         >
                           1
                         </div>
                         <div
-                          class="sc-fznJRM jsrfed"
+                          class="sc-fznJRM cTsuuN"
                         >
                           2
                         </div>
                         <div
-                          class="sc-fznJRM jsrfed"
+                          class="sc-fznJRM cTsuuN"
                         >
                           3
                         </div>
@@ -2725,22 +2639,6 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         >
                           <svg>
                             forward.svg
-                          </svg>
-                        </div>
-                      </button>
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        data-testid="Pagination__last"
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw bopxJn"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            pagination-last.svg
                           </svg>
                         </div>
                       </button>
@@ -2856,7 +2754,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU bAvbKR h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs hzwXzD h-2 rounded-lg bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -2919,7 +2817,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU eYHfjW h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs mTVYg h-2 rounded-lg bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -2973,7 +2871,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU uIkqe h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs evnpsw h-2 rounded-lg bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -3018,7 +2916,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU jiFniI h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs jForfe h-2 rounded-lg bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -3054,7 +2952,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqNqU bocHpz h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs kAKELB h-2 rounded-lg bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />
