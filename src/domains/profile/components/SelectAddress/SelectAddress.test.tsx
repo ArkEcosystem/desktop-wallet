@@ -77,7 +77,7 @@ describe("SelectAddress", () => {
 	});
 
 	it("should select address from wallets modal", async () => {
-		const { getByTestId, getAllByTestId } = render(
+		const { getByTestId } = render(
 			<SelectAddress wallets={wallets} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
 		);
 
@@ -91,7 +91,7 @@ describe("SelectAddress", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("AddressListItem__select-0")[0];
+		const firstAddress = getByTestId("SearchWalletListItem__select-0");
 
 		act(() => {
 			fireEvent.click(firstAddress);
@@ -122,9 +122,10 @@ describe("SelectAddress", () => {
 	});
 
 	it("should call onChange prop if provided", async () => {
-		const fn = jest.fn();
+		const onChange = jest.fn();
+
 		const { getByTestId, getAllByTestId } = render(
-			<SelectAddress wallets={wallets} onChange={fn} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
+			<SelectAddress wallets={wallets} onChange={onChange} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -137,7 +138,7 @@ describe("SelectAddress", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("AddressListItem__select-0")[0];
+		const firstAddress = getByTestId("SearchWalletListItem__select-0");
 
 		act(() => {
 			fireEvent.click(firstAddress);
@@ -145,7 +146,7 @@ describe("SelectAddress", () => {
 
 		await waitFor(() => {
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-			expect(fn).toBeCalled();
+			expect(onChange).toBeCalled();
 		});
 	});
 });

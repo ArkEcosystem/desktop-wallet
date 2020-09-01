@@ -10,20 +10,20 @@ exports[`SearchWallet should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxgMl fYnArh absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhUy eVpHNC w-11 h-11"
+          class="sc-AxirZ eUzagL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxjAm hSsKJo"
+            class="sc-AxhCb ipiIgT"
             height="14"
             width="14"
           >
@@ -60,39 +60,25 @@ exports[`SearchWallet should render 1`] = `
                 class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
               >
                 <div
-                  class="relative flex items-center pr-8 text-theme-primary-400"
-                  data-testid="SearchBarFilters"
+                  class="sc-AxhCb fxrKLH w-4 mr-8 text-theme-neutral-300"
+                  height="1em"
+                  width="1em"
                 >
-                  <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
-                  >
-                    <div
-                      class="float-right outline-none cursor-pointer focus:outline-none"
-                    >
-                      <div
-                        class="sc-AxjAm buCJuk"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          filters.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
+                  <svg>
+                    search.svg
+                  </svg>
                 </div>
                 <div
                   class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
                 >
                   <input
-                    class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="What would you like to search for?"
                   />
                 </div>
                 <button
-                  class="sc-AxhUy kLxYkJ my-1"
+                  class="sc-AxirZ emecfQ my-1"
                   color="primary"
                   data-testid="SearchBar__button"
                   type="button"
@@ -110,7 +96,7 @@ exports[`SearchWallet should render 1`] = `
             class="mt-8"
           >
             <div
-              class="sc-fznKkj eHfoqE"
+              class="sc-fznyAO jSMvWt"
               role="table"
             >
               <table
@@ -125,28 +111,12 @@ exports[`SearchWallet should render 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
                         class="flex flex-inline align-top "
                       >
                         <div>
                           Asset Type
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxjAm hdgaLj"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -169,7 +139,7 @@ exports[`SearchWallet should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm hdgaLj"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -199,7 +169,7 @@ exports[`SearchWallet should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm hdgaLj"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -229,7 +199,7 @@ exports[`SearchWallet should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm hdgaLj"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -240,14 +210,27 @@ exports[`SearchWallet should render 1`] = `
                         </div>
                       </div>
                     </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top invisible w-0"
+                      >
+                        <div>
+                          Action
+                        </div>
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b cursor-pointer border-theme-neutral-200"
-                    data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    class="border-b border-theme-neutral-200"
                   >
                     <td
                       class="py-6 mt-1"
@@ -256,10 +239,10 @@ exports[`SearchWallet should render 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxhCb bzWLYJ"
+                          class="sc-AxiKw jQtkkF -mr-2"
                         >
                           <div
-                            class="sc-AxjAm buCJuk"
+                            class="sc-AxhCb VoPpj"
                             height="20"
                             width="20"
                           >
@@ -297,7 +280,7 @@ exports[`SearchWallet should render 1`] = `
                           Sample Wallet
                         </span>
                         <span
-                          class="sc-fznZeY fLrtke text-theme-neutral-light font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D8rr7B1d6…VBMs6YUYD
@@ -315,21 +298,15 @@ exports[`SearchWallet should render 1`] = `
                     </td>
                     <td
                       class="text-right text-theme-neutral-light"
-                    >
-                      <span
-                        data-testid="Amount"
-                      >
-                        0 
-                      </span>
-                    </td>
+                    />
                     <td>
                       <div
                         class="text-right"
                       >
                         <button
-                          class="sc-AxhUy dIHDOr"
+                          class="sc-AxirZ dXpJau"
                           color="primary"
-                          data-testid="button"
+                          data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
                           Select
