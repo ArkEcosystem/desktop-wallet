@@ -1,6 +1,6 @@
 import React from "react";
 
-import { AddExchangeCard, BlankCard, ExchangeCard } from "./ExchangeCard";
+import { AddExchangeCard, BlankExchangeCard, ExchangeCard } from "./ExchangeCard";
 
 export default { title: "Domains / Exchange / Components / ExchangeCards" };
 
@@ -10,4 +10,4 @@ export const Exchange = () => (
 
 export const AddExchange = () => <AddExchangeCard onAddExchange={() => alert("clicked add exchange")} />;
 
-export const BlankExchange = () => <BlankCard />;
+export const BlankExchange = () => <BlankExchangeCard />;

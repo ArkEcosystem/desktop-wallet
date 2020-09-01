@@ -7,7 +7,7 @@ exports[`Settings should change a password 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -16,10 +16,10 @@ exports[`Settings should change a password 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -35,7 +35,7 @@ exports[`Settings should change a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -46,7 +46,7 @@ exports[`Settings should change a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -57,7 +57,7 @@ exports[`Settings should change a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -68,7 +68,7 @@ exports[`Settings should change a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -77,39 +77,47 @@ exports[`Settings should change a password 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -117,20 +125,22 @@ exports[`Settings should change a password 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -143,8 +153,12 @@ exports[`Settings should change a password 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -162,65 +176,61 @@ exports[`Settings should change a password 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        TE
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      TE
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -275,7 +285,7 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -302,7 +312,7 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -329,7 +339,7 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -359,10 +369,7 @@ exports[`Settings should change a password 1`] = `
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -594,7 +601,7 @@ exports[`Settings should change a password 1`] = `
                       class="flex justify-end w-full mt-8"
                     >
                       <button
-                        class="sc-AxmLO hCnZlU"
+                        class="sc-AxhCb khNOPs"
                         color="primary"
                         data-testid="Password-settings__submit-button"
                         disabled=""
@@ -622,7 +629,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -631,10 +638,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -650,7 +657,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -661,7 +668,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -672,7 +679,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -683,7 +690,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -692,39 +699,47 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -732,20 +747,22 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -758,8 +775,12 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -777,65 +798,61 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        TE
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      TE
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -890,7 +907,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -917,7 +934,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -947,10 +964,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -977,7 +991,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -1092,7 +1106,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                           class="flex justify-end w-full pt-6 space-x-3"
                         >
                           <button
-                            class="sc-AxmLO kmtPzS"
+                            class="sc-AxhCb hPLjLy"
                             color="primary"
                             data-testid="plugins__open-list"
                             type="button"
@@ -1100,7 +1114,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                             Open List
                           </button>
                           <button
-                            class="sc-AxmLO kmtPzS"
+                            class="sc-AxhCb hPLjLy"
                             color="primary"
                             data-testid="plugins__add-plugin"
                             type="button"
@@ -1239,7 +1253,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     class="flex justify-end w-full pt-2"
                   >
                     <button
-                      class="sc-AxmLO hCnZlU"
+                      class="sc-AxhCb khNOPs"
                       color="primary"
                       type="button"
                     >
@@ -1264,7 +1278,7 @@ exports[`Settings should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1273,10 +1287,10 @@ exports[`Settings should render 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -1292,7 +1306,7 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1303,7 +1317,7 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1314,7 +1328,7 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1325,7 +1339,7 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1334,39 +1348,47 @@ exports[`Settings should render 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -1374,20 +1396,22 @@ exports[`Settings should render 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -1400,8 +1424,12 @@ exports[`Settings should render 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -1419,65 +1447,61 @@ exports[`Settings should render 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -1535,10 +1559,7 @@ exports[`Settings should render 1`] = `
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -1565,7 +1586,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -1592,7 +1613,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -1619,7 +1640,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -1699,7 +1720,7 @@ exports[`Settings should render 1`] = `
                             class="overflow-hidden rounded-full w-22 h-22"
                           >
                             <button
-                              class="sc-AxmLO kmtPzS w-22 h-22"
+                              class="sc-AxhCb hPLjLy w-22 h-22"
                               color="primary"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
@@ -2387,7 +2408,7 @@ exports[`Settings should render 1`] = `
                     class="flex justify-between w-full pt-2"
                   >
                     <button
-                      class="sc-AxmLO dnWJWM"
+                      class="sc-AxhCb cWbcYc"
                       color="danger"
                       type="button"
                     >
@@ -2408,14 +2429,14 @@ exports[`Settings should render 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxmLO kmtPzS"
+                        class="sc-AxhCb hPLjLy"
                         color="primary"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxmLO hCnZlU"
+                        class="sc-AxhCb khNOPs"
                         color="primary"
                         data-testid="General-settings__submit-button"
                         type="submit"
@@ -2442,7 +2463,7 @@ exports[`Settings should render password settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2451,10 +2472,10 @@ exports[`Settings should render password settings 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -2470,7 +2491,7 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -2481,7 +2502,7 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -2492,7 +2513,7 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -2503,7 +2524,7 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -2512,39 +2533,47 @@ exports[`Settings should render password settings 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -2552,20 +2581,22 @@ exports[`Settings should render password settings 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -2578,8 +2609,12 @@ exports[`Settings should render password settings 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -2597,65 +2632,61 @@ exports[`Settings should render password settings 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        TE
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      TE
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -2710,7 +2741,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -2737,7 +2768,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -2764,7 +2795,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -2794,10 +2825,7 @@ exports[`Settings should render password settings 1`] = `
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -2951,7 +2979,7 @@ exports[`Settings should render password settings 1`] = `
                       class="flex justify-end w-full mt-8"
                     >
                       <button
-                        class="sc-AxmLO hCnZlU"
+                        class="sc-AxhCb khNOPs"
                         color="primary"
                         data-testid="Password-settings__submit-button"
                         disabled=""
@@ -2979,7 +3007,7 @@ exports[`Settings should render peer settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2988,10 +3016,10 @@ exports[`Settings should render peer settings 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -3007,7 +3035,7 @@ exports[`Settings should render peer settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -3018,7 +3046,7 @@ exports[`Settings should render peer settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -3029,7 +3057,7 @@ exports[`Settings should render peer settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -3040,7 +3068,7 @@ exports[`Settings should render peer settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -3049,39 +3077,47 @@ exports[`Settings should render peer settings 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -3089,20 +3125,22 @@ exports[`Settings should render peer settings 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -3115,8 +3153,12 @@ exports[`Settings should render peer settings 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -3134,65 +3176,61 @@ exports[`Settings should render peer settings 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        TE
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      TE
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -3247,7 +3285,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -3277,10 +3315,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -3307,7 +3342,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -3334,7 +3369,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -3495,7 +3530,7 @@ exports[`Settings should render peer settings 1`] = `
                   >
                     <div>
                       <div
-                        class="sc-AxgMl grPENn"
+                        class="sc-AxheI VtiAt"
                         role="table"
                       >
                         <table
@@ -3573,7 +3608,7 @@ exports[`Settings should render peer settings 1`] = `
                                 class="inline-flex items-center py-4 mt-1"
                               >
                                 <div
-                                  class="sc-AxhCb fwVCao text-logo border-theme-danger-light"
+                                  class="sc-AxhUy fHeTTV text-logo border-theme-danger-light"
                                 >
                                   <div
                                     class="sc-AxirZ iQaTP"
@@ -3652,7 +3687,7 @@ exports[`Settings should render peer settings 1`] = `
                                 class="inline-flex items-center py-4 mt-1"
                               >
                                 <div
-                                  class="sc-AxhCb fwVCao border-theme-neutral-300"
+                                  class="sc-AxhUy fHeTTV border-theme-neutral-300"
                                 >
                                   <div
                                     class="sc-AxirZ iQaTP"
@@ -3731,7 +3766,7 @@ exports[`Settings should render peer settings 1`] = `
                                 class="inline-flex items-center py-4 mt-1"
                               >
                                 <div
-                                  class="sc-AxhCb fwVCao text-theme-warning-400 border-theme-warning-200"
+                                  class="sc-AxhUy fHeTTV text-theme-warning-400 border-theme-warning-200"
                                 >
                                   <div
                                     class="sc-AxirZ iQaTP"
@@ -3807,7 +3842,7 @@ exports[`Settings should render peer settings 1`] = `
                         </table>
                       </div>
                       <button
-                        class="sc-AxmLO kmtPzS w-full mt-8 mb-2"
+                        class="sc-AxhCb hPLjLy w-full mt-8 mb-2"
                         color="primary"
                         data-testid="peer-list__add-button"
                         type="button"
@@ -3828,7 +3863,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="flex justify-end w-full"
                   >
                     <button
-                      class="sc-AxmLO hCnZlU"
+                      class="sc-AxhCb khNOPs"
                       color="primary"
                       type="button"
                     >
@@ -3853,7 +3888,7 @@ exports[`Settings should render plugin settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3862,10 +3897,10 @@ exports[`Settings should render plugin settings 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -3881,7 +3916,7 @@ exports[`Settings should render plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -3892,7 +3927,7 @@ exports[`Settings should render plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -3903,7 +3938,7 @@ exports[`Settings should render plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -3914,7 +3949,7 @@ exports[`Settings should render plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -3923,39 +3958,47 @@ exports[`Settings should render plugin settings 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -3963,20 +4006,22 @@ exports[`Settings should render plugin settings 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -3989,8 +4034,12 @@ exports[`Settings should render plugin settings 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -4008,65 +4057,61 @@ exports[`Settings should render plugin settings 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        TE
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      TE
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -4121,7 +4166,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -4148,7 +4193,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -4178,10 +4223,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -4208,7 +4250,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -4323,7 +4365,7 @@ exports[`Settings should render plugin settings 1`] = `
                           class="flex justify-end w-full pt-6 space-x-3"
                         >
                           <button
-                            class="sc-AxmLO kmtPzS"
+                            class="sc-AxhCb hPLjLy"
                             color="primary"
                             data-testid="plugins__open-list"
                             type="button"
@@ -4331,7 +4373,7 @@ exports[`Settings should render plugin settings 1`] = `
                             Open List
                           </button>
                           <button
-                            class="sc-AxmLO kmtPzS"
+                            class="sc-AxhCb hPLjLy"
                             color="primary"
                             data-testid="plugins__add-plugin"
                             type="button"
@@ -4470,7 +4512,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="flex justify-end w-full pt-2"
                   >
                     <button
-                      class="sc-AxmLO hCnZlU"
+                      class="sc-AxhCb khNOPs"
                       color="primary"
                       type="button"
                     >
@@ -4495,7 +4537,7 @@ exports[`Settings should set a password 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4504,10 +4546,10 @@ exports[`Settings should set a password 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -4523,7 +4565,7 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -4534,7 +4576,7 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -4545,7 +4587,7 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -4556,7 +4598,7 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -4565,39 +4607,47 @@ exports[`Settings should set a password 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -4605,20 +4655,22 @@ exports[`Settings should set a password 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -4631,8 +4683,12 @@ exports[`Settings should set a password 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -4650,65 +4706,61 @@ exports[`Settings should set a password 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        TE
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      TE
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -4763,7 +4815,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -4790,7 +4842,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -4817,7 +4869,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -4847,10 +4899,7 @@ exports[`Settings should set a password 1`] = `
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -5082,7 +5131,7 @@ exports[`Settings should set a password 1`] = `
                       class="flex justify-end w-full mt-8"
                     >
                       <button
-                        class="sc-AxmLO hCnZlU"
+                        class="sc-AxhCb khNOPs"
                         color="primary"
                         data-testid="Password-settings__submit-button"
                         disabled=""
@@ -5110,7 +5159,7 @@ exports[`Settings should show an error alert if the current password does not ma
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5119,10 +5168,10 @@ exports[`Settings should show an error alert if the current password does not ma
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -5138,7 +5187,7 @@ exports[`Settings should show an error alert if the current password does not ma
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -5149,7 +5198,7 @@ exports[`Settings should show an error alert if the current password does not ma
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -5160,7 +5209,7 @@ exports[`Settings should show an error alert if the current password does not ma
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -5171,7 +5220,7 @@ exports[`Settings should show an error alert if the current password does not ma
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -5180,39 +5229,47 @@ exports[`Settings should show an error alert if the current password does not ma
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -5220,20 +5277,22 @@ exports[`Settings should show an error alert if the current password does not ma
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -5246,8 +5305,12 @@ exports[`Settings should show an error alert if the current password does not ma
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -5265,65 +5328,61 @@ exports[`Settings should show an error alert if the current password does not ma
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        TE
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      TE
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -5378,7 +5437,7 @@ exports[`Settings should show an error alert if the current password does not ma
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -5405,7 +5464,7 @@ exports[`Settings should show an error alert if the current password does not ma
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -5432,7 +5491,7 @@ exports[`Settings should show an error alert if the current password does not ma
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -5462,10 +5521,7 @@ exports[`Settings should show an error alert if the current password does not ma
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -5697,7 +5753,7 @@ exports[`Settings should show an error alert if the current password does not ma
                       class="flex justify-end w-full mt-8"
                     >
                       <button
-                        class="sc-AxmLO hCnZlU"
+                        class="sc-AxhCb khNOPs"
                         color="primary"
                         data-testid="Password-settings__submit-button"
                         type="submit"
@@ -5724,7 +5780,7 @@ exports[`Settings should submit using default props 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5733,10 +5789,10 @@ exports[`Settings should submit using default props 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -5752,7 +5808,7 @@ exports[`Settings should submit using default props 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -5763,7 +5819,7 @@ exports[`Settings should submit using default props 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -5774,7 +5830,7 @@ exports[`Settings should submit using default props 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -5785,7 +5841,7 @@ exports[`Settings should submit using default props 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -5794,39 +5850,47 @@ exports[`Settings should submit using default props 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -5834,20 +5898,22 @@ exports[`Settings should submit using default props 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -5860,8 +5926,12 @@ exports[`Settings should submit using default props 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -5879,65 +5949,61 @@ exports[`Settings should submit using default props 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        TE
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      TE
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -5995,10 +6061,7 @@ exports[`Settings should submit using default props 1`] = `
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -6025,7 +6088,7 @@ exports[`Settings should submit using default props 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -6052,7 +6115,7 @@ exports[`Settings should submit using default props 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -6079,7 +6142,7 @@ exports[`Settings should submit using default props 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -6159,7 +6222,7 @@ exports[`Settings should submit using default props 1`] = `
                             class="overflow-hidden rounded-full w-22 h-22"
                           >
                             <button
-                              class="sc-AxmLO kmtPzS w-22 h-22"
+                              class="sc-AxhCb hPLjLy w-22 h-22"
                               color="primary"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
@@ -6848,7 +6911,7 @@ exports[`Settings should submit using default props 1`] = `
                     class="flex justify-between w-full pt-2"
                   >
                     <button
-                      class="sc-AxmLO dnWJWM"
+                      class="sc-AxhCb cWbcYc"
                       color="danger"
                       type="button"
                     >
@@ -6869,14 +6932,14 @@ exports[`Settings should submit using default props 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxmLO kmtPzS"
+                        class="sc-AxhCb hPLjLy"
                         color="primary"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxmLO hCnZlU"
+                        class="sc-AxhCb khNOPs"
                         color="primary"
                         data-testid="General-settings__submit-button"
                         type="submit"
@@ -6894,72 +6957,64 @@ exports[`Settings should submit using default props 1`] = `
                     data-testid="modal__overlay"
                   />
                   <div
-                    class="sc-fzoLsD hImDCl absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+                    class="sc-fzoLsD hImDCl absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
                     data-testid="modal__inner"
                   >
                     <div
+                      class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+                    >
+                      <button
+                        class="sc-AxhCb gcoSL w-11 h-11"
+                        color="primary"
+                        data-testid="modal__close-btn"
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxirZ fFqjhX"
+                          height="14"
+                          width="14"
+                        >
+                          <svg>
+                            cross-slim.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                    <div
                       class="relative"
                     >
-                      <div
-                        class="absolute top-0 right-0 z-50 mt-5"
+                      <h2
+                        class="mb-0 text-3xl font-bold"
                       >
-                        <button
-                          class="sc-AxmLO cBUgai"
-                          color="neutral"
-                          data-testid="modal__close-btn"
-                          type="button"
-                        >
-                          <div
-                            class="p-1"
-                          >
-                            <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
-                            >
-                              <svg>
-                                cross-slim.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </button>
-                      </div>
+                        Advanced Mode Disclaimer
+                      </h2>
                       <div
-                        class="py-4"
+                        class="flex-1"
                       >
-                        <h2
-                          class="mb-0 text-3xl font-bold"
-                        >
-                          Advanced Mode Disclaimer
-                        </h2>
                         <div
-                          class="flex-1"
+                          class="mt-1 text-theme-neutral-dark"
                         >
-                          <div
-                            class="mt-1 text-theme-neutral-dark"
+                          By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
+                        </div>
+                        <div
+                          class="flex justify-end mt-8 space-x-3"
+                        >
+                          <button
+                            class="sc-AxhCb hPLjLy"
+                            color="primary"
+                            data-testid="AdvancedMode__decline-button"
+                            type="button"
                           >
-                            By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
-                          </div>
-                          <div
-                            class="flex justify-end mt-8 space-x-3"
+                            I Decline
+                          </button>
+                          <button
+                            class="sc-AxhCb khNOPs"
+                            color="primary"
+                            data-testid="AdvancedMode__accept-button"
+                            type="button"
                           >
-                            <button
-                              class="sc-AxmLO kmtPzS"
-                              color="primary"
-                              data-testid="AdvancedMode__decline-button"
-                              type="button"
-                            >
-                              I Decline
-                            </button>
-                            <button
-                              class="sc-AxmLO hCnZlU"
-                              color="primary"
-                              data-testid="AdvancedMode__accept-button"
-                              type="button"
-                            >
-                              I Accept
-                            </button>
-                          </div>
+                            I Accept
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -6982,7 +7037,7 @@ exports[`Settings should update profile 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6991,10 +7046,10 @@ exports[`Settings should update profile 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -7010,7 +7065,7 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -7021,7 +7076,7 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -7032,7 +7087,7 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -7043,7 +7098,7 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -7052,39 +7107,47 @@ exports[`Settings should update profile 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -7092,20 +7155,22 @@ exports[`Settings should update profile 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxhCb gcoSL text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr"
+                  class="sc-AxirZ hmuEJr p-1"
                   height="22"
                   width="22"
                 >
@@ -7118,8 +7183,12 @@ exports[`Settings should update profile 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -7137,65 +7206,61 @@ exports[`Settings should update profile 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        TE
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      TE
                     </span>
                   </div>
+                  <span
+                    class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -7253,10 +7318,7 @@ exports[`Settings should update profile 1`] = `
                     class="sc-fzpjYC bhqRQa absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
                   >
                     <div
                       class="text-theme-primary"
@@ -7283,7 +7345,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -7310,7 +7372,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -7337,7 +7399,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
                   >
                     <div
                       class="text-theme-primary-light"
@@ -7417,7 +7479,7 @@ exports[`Settings should update profile 1`] = `
                             class="overflow-hidden rounded-full w-22 h-22"
                           >
                             <button
-                              class="sc-AxmLO kmtPzS w-22 h-22"
+                              class="sc-AxhCb hPLjLy w-22 h-22"
                               color="primary"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
@@ -8108,7 +8170,7 @@ exports[`Settings should update profile 1`] = `
                     class="flex justify-between w-full pt-2"
                   >
                     <button
-                      class="sc-AxmLO dnWJWM"
+                      class="sc-AxhCb cWbcYc"
                       color="danger"
                       type="button"
                     >
@@ -8129,14 +8191,14 @@ exports[`Settings should update profile 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxmLO kmtPzS"
+                        class="sc-AxhCb hPLjLy"
                         color="primary"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxmLO hCnZlU"
+                        class="sc-AxhCb khNOPs"
                         color="primary"
                         data-testid="General-settings__submit-button"
                         type="submit"

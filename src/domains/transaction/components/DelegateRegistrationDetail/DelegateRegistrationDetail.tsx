@@ -5,16 +5,59 @@ import { Label } from "app/components/Label";
 // UI Elements
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { TruncateMiddle } from "app/components/TruncateMiddle";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type DelegateRegistrationDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
+	transaction: any;
+	ticker?: string;
+	walletAlias?: string;
+};
+
+const renderConfirmationStatus = (isConfirmed: boolean) => {
+	if (!isConfirmed) {
+		return (
+			<div className="flex">
+				Not Confirmed
+				<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500">
+					<div className="m-auto">
+						<Icon name="CrossSlim" width={12} height={12} />
+					</div>
+				</div>
+			</div>
+		);
+	}
+
+	return (
+		<div className="flex">
+			Well Confirmed
+			<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500">
+				<div className="m-auto">
+					<Icon name="Checkmark" width={15} height={15} />
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProps) => {
 	const { t } = useTranslation();
+
+	const renderAmount = () => (
+		<TransactionDetail
+			label={t("TRANSACTION.AMOUNT")}
+			extra={
+				<Circle className="border-theme-danger-200 text-theme-danger-dark">
+					<Icon name="Sent" width={25} height={25} />
+				</Circle>
+			}
+		>
+			<Label color="danger">{`${props.transaction.total().toHuman()} ${props.ticker?.toUpperCase()}`}</Label>
+		</TransactionDetail>
+	);
 
 	return (
 		<Modal
@@ -23,51 +66,37 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 			onClose={props.onClose}
 		>
 			<TransactionDetail
-				label={t("TRANSACTION.ACCOUNT_NICKNAME")}
+				label={t("TRANSACTION.ACCOUNT")}
 				extra={
 					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Avatar address="test" />
+						<Avatar address={props.transaction.recipient()} />
 					</div>
 				}
 				border={false}
 			>
-				ROBank
-				<span className="ml-2 text-theme-neutral">ADDR...ESSS</span>
+				{props.transaction.username()}
+				<TruncateMiddle text={props.transaction.recipient()} className="ml-2 text-theme-neutral" />
 			</TransactionDetail>
 
-			<TransactionDetail
-				label={t("TRANSACTION.AMOUNT")}
-				extra={
-					<Circle className="border-theme-danger-contrast text-theme-danger-400">
-						<Icon name="Sent" width={16} height={16} />
-					</Circle>
-				}
-			>
-				<Label color="danger">-5 ARK</Label>
+			{renderAmount()}
 
-				<span className="ml-2 text-theme-neutral">50.00 USD</span>
+			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
+				{`${props.transaction.fee().toHuman()} ${props.ticker?.toUpperCase()}`}
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
-
-			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>14.04.2020 21:42:40</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>
+				{props.transaction.timestamp()!.format("DD.MM.YYYY HH:mm:ss")}
+			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
-				<div className="flex">
-					Well Confirmed
-					<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500">
-						<div className="m-auto">
-							<Icon name="Checkmark" width={15} height={15} />
-						</div>
-					</div>
-				</div>
+				{renderConfirmationStatus(props.transaction.isConfirmed())}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<span className="text-theme-primary-dark">1234678...12312313</span>
+				<TruncateMiddle text={props.transaction.id()} className="text-theme-primary-dark" />
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
@@ -75,7 +104,7 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<span className="text-theme-primary-dark">1234678...12312313</span>
+				<TruncateMiddle text={props.transaction.blockId()} className="text-theme-primary-dark" />
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />

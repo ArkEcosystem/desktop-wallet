@@ -142,6 +142,9 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Transaction Review",
 			DESCRIPTION: "Check the information again before Resignation",
 		},
+		FOURTH_STEP: {
+			TITLE: "Delegate Resignation",
+		},
 	},
 
 	PAGE_UPDATE_REGISTRATION: {
@@ -221,5 +224,10 @@ export const translations: { [key: string]: any } = {
 		VALIDATION: {
 			NOT_VALID: "The IPFS hash is not valid",
 		},
+	},
+	SUCCESS: {
+		TITLE: "Transaction Sent 1",
+		DESCRIPTION:
+			"Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:",
 	},
 };

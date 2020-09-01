@@ -44,22 +44,30 @@ exports[`WalletHeader should render 1`] = `
         <div
           class="flex items-stretch space-x-2"
         >
-          <button
-            class="px-3 text-theme-neutral-dark"
-            data-testid="WalletHeader__star-button"
+          <div
+            class="my-auto"
           >
-            <div
-              class="sc-AxirZ iQaTP"
-              height="1em"
-              width="1em"
+            <button
+              class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+              color="primary"
+              data-testid="WalletHeader__star-button"
+              type="button"
             >
-              <svg>
-                star-outline.svg
-              </svg>
-            </div>
-          </button>
+              <span>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    star-outline.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </div>
           <button
-            class="sc-AxjAm ddQVWI"
+            class="sc-AxjAm kbZyZT"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -74,7 +82,7 @@ exports[`WalletHeader should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm bBBiEi text-left"
+                class="sc-AxjAm gBWztV text-left"
                 color="primary"
                 type="button"
               >
@@ -256,22 +264,30 @@ exports[`WalletHeader should show modifiers 1`] = `
         <div
           class="flex items-stretch space-x-2"
         >
-          <button
-            class="px-3 text-theme-neutral-dark"
-            data-testid="WalletHeader__star-button"
+          <div
+            class="my-auto"
           >
-            <div
-              class="sc-AxirZ iQaTP"
-              height="1em"
-              width="1em"
+            <button
+              class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+              color="primary"
+              data-testid="WalletHeader__star-button"
+              type="button"
             >
-              <svg>
-                star.svg
-              </svg>
-            </div>
-          </button>
+              <span>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </div>
           <button
-            class="sc-AxjAm ddQVWI"
+            class="sc-AxjAm kbZyZT"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -286,7 +302,7 @@ exports[`WalletHeader should show modifiers 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm bBBiEi text-left"
+                class="sc-AxjAm gBWztV text-left"
                 color="primary"
                 type="button"
               >
@@ -442,22 +458,30 @@ exports[`WalletHeader should show publicKey 1`] = `
         <div
           class="flex items-stretch space-x-2"
         >
-          <button
-            class="px-3 text-theme-neutral-dark"
-            data-testid="WalletHeader__star-button"
+          <div
+            class="my-auto"
           >
-            <div
-              class="sc-AxirZ iQaTP"
-              height="1em"
-              width="1em"
+            <button
+              class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+              color="primary"
+              data-testid="WalletHeader__star-button"
+              type="button"
             >
-              <svg>
-                star-outline.svg
-              </svg>
-            </div>
-          </button>
+              <span>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    star-outline.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </div>
           <button
-            class="sc-AxjAm ddQVWI"
+            class="sc-AxjAm kbZyZT"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -472,7 +496,7 @@ exports[`WalletHeader should show publicKey 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm bBBiEi text-left"
+                class="sc-AxjAm gBWztV text-left"
                 color="primary"
                 type="button"
               >

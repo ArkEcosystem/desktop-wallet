@@ -339,9 +339,9 @@ exports[`SelectNetwork should render with networks 1`] = `
       role="option"
     >
       <div
-        aria-label="Lisk Betanet"
-        class="sc-AxjAm gIAugl border-theme-primary-100 text-theme-primary-400"
-        data-testid="NetworkIcon-LSK-betanet"
+        aria-label="Lisk"
+        class="sc-AxjAm gIAugl border-theme-primary-400 text-theme-primary"
+        data-testid="NetworkIcon-LSK-mainnet"
       >
         <div
           class="sc-AxirZ hyqZof"
@@ -363,9 +363,9 @@ exports[`SelectNetwork should render with networks 1`] = `
       role="option"
     >
       <div
-        aria-label="Lisk"
-        class="sc-AxjAm gIAugl border-theme-primary-400 text-theme-primary"
-        data-testid="NetworkIcon-LSK-mainnet"
+        aria-label="Lisk Testnet"
+        class="sc-AxjAm gIAugl border-theme-primary-100 text-theme-primary-400"
+        data-testid="NetworkIcon-LSK-testnet"
       >
         <div
           class="sc-AxirZ hyqZof"
@@ -387,21 +387,9 @@ exports[`SelectNetwork should render with networks 1`] = `
       role="option"
     >
       <div
-        aria-label="Lisk Testnet"
-        class="sc-AxjAm gIAugl border-theme-primary-100 text-theme-primary-400"
-        data-testid="NetworkIcon-LSK-testnet"
-      >
-        <div
-          class="sc-AxirZ hyqZof"
-          data-testid="NetworkIcon__icon"
-          height="26"
-          width="26"
-        >
-          <svg>
-            lsk.svg
-          </svg>
-        </div>
-      </div>
+        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
+        data-testid="NetworkIcon__placeholder"
+      />
     </li>
     <li
       aria-selected="false"
@@ -504,18 +492,6 @@ exports[`SelectNetwork should render with networks 1`] = `
       class="inline-block cursor-pointer"
       data-testid="SelectNetwork__NetworkIcon--container"
       id="downshift-5-item-28"
-      role="option"
-    >
-      <div
-        class="sc-AxjAm gIAugl border-theme-neutral-light text-theme-neutral"
-        data-testid="NetworkIcon__placeholder"
-      />
-    </li>
-    <li
-      aria-selected="false"
-      class="inline-block cursor-pointer"
-      data-testid="SelectNetwork__NetworkIcon--container"
-      id="downshift-5-item-29"
       role="option"
     >
       <div

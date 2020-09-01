@@ -1,6 +1,6 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
@@ -32,49 +32,63 @@ export const CompactPagination = ({
 	className,
 }: CompactPaginationProps) => {
 	const { t } = useTranslation();
+
 	const totalPages = Math.ceil(totalCount / itemsPerPage);
+
+	const showFirst = useMemo(() => currentPage > 2, [currentPage]);
+	const showPrevious = useMemo(() => currentPage > 1, [currentPage]);
+	const showNext = useMemo(() => currentPage < totalPages, [currentPage, totalPages]);
+	const showLast = useMemo(() => totalPages !== currentPage, [currentPage, totalPages]);
 
 	return (
 		<Wrapper data-testid="Pagination" className={className}>
-			<Button
-				data-testid="CompactPagination__first"
-				variant="plain"
-				onClick={() => onSelectPage((currentPage = 1))}
-				disabled={currentPage === 1}
-			>
-				<Icon name="PaginationFirst" height={12} width={12} />
-			</Button>
+			{showFirst && (
+				<Button
+					data-testid="CompactPagination__first"
+					variant="plain"
+					className="w-8"
+					onClick={() => onSelectPage((currentPage = 1))}
+				>
+					<Icon name="PaginationFirst" height={12} width={12} />
+				</Button>
+			)}
 
-			<Button
-				data-testid="CompactPagination__previous"
-				variant="plain"
-				onClick={() => onSelectPage((currentPage -= 1))}
-				disabled={currentPage === 1}
-			>
-				<Icon name="Back" height={10} width={10} />
-			</Button>
+			{showPrevious && (
+				<Button
+					data-testid="CompactPagination__previous"
+					variant="plain"
+					className="w-8"
+					onClick={() => onSelectPage((currentPage -= 1))}
+				>
+					<Icon name="Back" height={10} width={10} />
+				</Button>
+			)}
 
-			<div className="flex items-center px-4 py-2 rounded bg-theme-primary-contrast text-theme-primary">
+			<div className="flex items-center px-5 py-3 rounded bg-theme-primary-contrast text-theme-primary">
 				{`${t("COMMON.PAGE")} ${currentPage} ${t("COMMON.OF")} ${totalPages}`}
 			</div>
 
-			<Button
-				data-testid="CompactPagination__next"
-				variant="plain"
-				onClick={() => onSelectPage((currentPage += 1))}
-				disabled={currentPage === totalPages}
-			>
-				<Icon name="Forward" height={12} width={12} />
-			</Button>
+			{showNext && (
+				<Button
+					data-testid="CompactPagination__next"
+					variant="plain"
+					className="w-8"
+					onClick={() => onSelectPage((currentPage += 1))}
+				>
+					<Icon name="Forward" height={12} width={12} />
+				</Button>
+			)}
 
-			<Button
-				data-testid="CompactPagination__last"
-				variant="plain"
-				onClick={() => onSelectPage((currentPage = totalPages))}
-				disabled={currentPage === totalPages}
-			>
-				<Icon name="PaginationLast" height={12} width={12} />
-			</Button>
+			{showLast && (
+				<Button
+					data-testid="CompactPagination__last"
+					variant="plain"
+					className="w-8"
+					onClick={() => onSelectPage((currentPage = totalPages))}
+				>
+					<Icon name="PaginationLast" height={12} width={12} />
+				</Button>
+			)}
 		</Wrapper>
 	);
 };

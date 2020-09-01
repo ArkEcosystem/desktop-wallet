@@ -2,19 +2,14 @@ import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Amount } from "app/components/Amount";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Card } from "app/components/Card";
-import { Dropdown } from "app/components/Dropdown";
+import { DropdownOption } from "app/components/Dropdown";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
-type SettingsOptions = {
-	label: string;
-	value: string | number;
-};
-
 type ProfileCardProps = {
 	profile: Profile;
-	actions?: SettingsOptions[];
+	actions?: DropdownOption[];
 	onSelect?: any;
 	onClick?: any;
 	showSettings?: boolean;
@@ -58,7 +53,7 @@ export const ProfileCardContent = ({ profile }: { profile: Profile }) => {
 
 				<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
 					<p className="text-sm font-semibold text-theme-neutral">{t("COMMON.NAME")}</p>
-					<p className="font-semibold text-theme-neutral-dark" data-testid="profile-card__user--name">
+					<p className="font-semibold text-theme-text" data-testid="profile-card__user--name">
 						<ProfileNameWrapper>{profile.name()}</ProfileNameWrapper>
 					</p>
 				</div>
@@ -70,7 +65,7 @@ export const ProfileCardContent = ({ profile }: { profile: Profile }) => {
 						<span className="font-semibold text-theme-neutral">{t("COMMON.NOT_AVAILABLE")}</span>
 					) : (
 						<Amount
-							className="font-semibold text-theme-neutral-dark"
+							className="font-semibold text-theme-text"
 							data-testid="profile-card__user--balance"
 							value={profile.balance()}
 							ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!}
@@ -83,17 +78,13 @@ export const ProfileCardContent = ({ profile }: { profile: Profile }) => {
 };
 
 export const ProfileCard = ({ profile, actions, onClick, onSelect, showSettings }: ProfileCardProps) => (
-	<Card onClick={onClick}>
-		<div className="relative px-6 py-4 sm:flex sm:items-center">
-			{showSettings && (
-				<div className="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4 text-theme-neutral-light">
-					<Dropdown toggleIcon="Settings" options={actions} onSelect={onSelect} />
-				</div>
-			)}
-
-			<ProfileCardContent profile={profile} />
-		</div>
-	</Card>
+	<div data-testid="ProfileCard">
+		<Card onClick={onClick} actions={showSettings ? actions : undefined} onSelect={onSelect}>
+			<div className="relative p-2 sm:flex sm:items-center">
+				<ProfileCardContent profile={profile} />
+			</div>
+		</Card>
+	</div>
 );
 
 ProfileCard.defaultProps = {

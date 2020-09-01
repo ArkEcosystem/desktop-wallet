@@ -45,8 +45,8 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const activeWallet = useActiveWallet();
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
-	const coinName = activeWallet.manifest().get<string>("name");
-	const networkId = activeWallet.network().id;
+	const coinName = activeWallet.coinId();
+	const networkId = activeWallet.networkId();
 	const ticker = activeWallet.currency();
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 	const { transactions, walletData, votes } = data;
@@ -60,13 +60,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	useEffect(() => {
 		const fetchAllData = async () => {
-			// TODO: move this to profile initialising and run it every X period
-			await env.coins().syncDelegates(activeWallet.coinId()!, activeWallet.networkId()!);
-
 			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
 			const walletData = await activeWallet.client().wallet(activeWallet.address());
 
 			let votes: ReadOnlyWallet[] = [];
+
 			try {
 				await activeWallet.syncVotes();
 
@@ -115,6 +113,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		setIsUpdateWalletName(false);
 	};
 
+	const handleStar = async () => {
+		activeWallet.toggleStarred();
+		await persist();
+	};
+
 	const fetchMoreTransactions = async (type?: string) => {
 		//TODO: Fetch more type based / ex: pending and confirmed txs
 		const nextPage = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
@@ -127,28 +130,29 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		<>
 			<Page profile={activeProfile} crumbs={crumbs}>
 				<WalletHeader
-					coin={coinName!}
-					network={networkId}
-					ticker={ticker}
 					address={activeWallet.address()}
-					publicKey={activeWallet.publicKey()}
 					balance={activeWallet.balance()}
+					coin={coinName}
 					currencyBalance={activeWallet.convertedBalance()}
 					exchangeCurrency={exchangeCurrency}
-					name={activeWallet.alias()}
 					isLedger={activeWallet.isLedger()}
 					isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
-					hasStarred={activeWallet.isStarred()}
+					isStarred={activeWallet.isStarred()}
+					name={activeWallet.alias()}
+					network={networkId}
+					publicKey={activeWallet.publicKey()}
+					ticker={ticker}
+					onDeleteWallet={() => setIsDeleteWallet(true)}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/transfer`)
 					}
+					onSignMessage={() => setIsSigningMessage(true)}
+					onStar={handleStar}
 					onStoreHash={() =>
 						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/ipfs`)
 					}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
-					onSignMessage={() => setIsSigningMessage(true)}
-					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
 
 				<Section>

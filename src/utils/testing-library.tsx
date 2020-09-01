@@ -92,3 +92,5 @@ const envWithMocks = () => {
 };
 
 export const env = envWithMocks();
+
+export const syncDelegates = async () => env.delegates().syncAll();

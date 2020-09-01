@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -26,11 +26,11 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 
 	const { getValues, register, setValue } = useFormContext();
 	const username = getValues("username");
-	const [delegates, setDelegates] = useState([]);
+	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 	const fee = getValues("fee") || null;
 
 	useEffect(() => {
-		setDelegates(env.coins().delegates(wallet.coinId(), wallet.networkId()));
+		setDelegates(env.delegates().all(wallet.coinId(), wallet.networkId()));
 	}, [env, wallet]);
 
 	useEffect(() => {
@@ -40,17 +40,25 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 				validate: (value) => {
 					if (!value.match(/^[a-z0-9!@$&_.]+$/)) {
 						return t<string>("TRANSACTION.INVALID_DELEGATE_NAME");
-					} else if (value.length > 20) {
+					}
+
+					if (value.length > 20) {
 						return t<string>("TRANSACTION.DELEGATE_NAME_TOO_LONG");
-					} else if (delegates.find((delegate: any) => delegate.username === value)) {
+					}
+
+					try {
+						env.delegates().findByUsername(wallet.coinId(), wallet.networkId(), value);
+
 						return t<string>("TRANSACTION.DELEGATE_NAME_EXISTS");
+					} catch {
+						// No Delegate found.
 					}
 
 					return true;
 				},
 			});
 		}
-	}, [delegates, register, username, t]);
+	}, [delegates, env, register, username, t, wallet]);
 
 	return (
 		<section data-testid="DelegateRegistrationForm__step--second">
@@ -112,7 +120,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, username } = getValues();
-	const coinName = wallet.manifest().get<string>("name");
+	const coinName = wallet.coinId();
 
 	useEffect(() => {
 		unregister("mnemonic");
@@ -138,7 +146,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name}
+						{wallet.network().name()}
 					</div>
 				</TransactionDetail>
 
@@ -231,7 +239,7 @@ export const DelegateRegistrationForm: RegistrationForm = {
 				},
 			});
 
-			await senderWallet.transaction().broadcast([transactionId]);
+			await senderWallet.transaction().broadcast(transactionId);
 
 			await env.persist();
 

@@ -27,7 +27,6 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const activeProfile = useActiveProfile();
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
-
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -50,7 +49,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 		};
 
 		fetchProfileTransactions();
-	}, [activeProfile]);
+	}, [activeProfile, wallets]);
 
 	// Wallet controls data
 	const filterProperties = {

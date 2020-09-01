@@ -186,11 +186,19 @@ export const SigningStep = ({
 	);
 };
 
-const FinalStep = ({ registrationForm, transaction }: { registrationForm: any; transaction: any }) => {
+const FinalStep = ({
+	registrationForm,
+	transaction,
+	senderWallet,
+}: {
+	registrationForm: any;
+	transaction: Contracts.SignedTransactionData;
+	senderWallet: ReadWriteWallet;
+}) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful transactionId={transaction.id()}>
+		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			{registrationForm.transactionDetails && (
 				<registrationForm.transactionDetails transaction={transaction} translations={t} />
 			)}
@@ -226,10 +234,7 @@ export const Registration = () => {
 		setValue("senderAddress", activeWallet.address(), true);
 
 		for (const network of networks) {
-			if (
-				network.id() === activeWallet.network().id &&
-				network.coin() === activeWallet.manifest().get<string>("name")
-			) {
+			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 				setValue("network", network, true);
 
 				break;
@@ -243,7 +248,8 @@ export const Registration = () => {
 			const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 			try {
-				const fees = Object.entries(await senderWallet!.fee().all(7)).reduce(
+				// TODO: sync fees in the background, like delegates
+				const fees = Object.entries(await senderWallet!.coin().fee().all(7)).reduce(
 					(mapping, [transactionType, fees]) => {
 						mapping[transactionType] = {
 							last: undefined,
@@ -334,7 +340,11 @@ export const Registration = () => {
 										<SigningStep passwordType="mnemonic" wallet={activeWallet} />
 									</TabPanel>
 									<TabPanel tabId={stepCount}>
-										<FinalStep transaction={transaction} registrationForm={registrationForm} />
+										<FinalStep
+											transaction={transaction}
+											registrationForm={registrationForm}
+											senderWallet={activeWallet}
+										/>
 									</TabPanel>
 								</>
 							)}

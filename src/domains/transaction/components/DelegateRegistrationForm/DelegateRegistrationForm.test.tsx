@@ -6,7 +6,16 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import delegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
-import { env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor, within } from "utils/testing-library";
+import {
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	RenderResult,
+	syncDelegates,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
@@ -52,10 +61,10 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 
 describe("DelegateRegistrationForm", () => {
 	beforeAll(async () => {
-		await env.coins().syncDelegates("ARK", "devnet");
-
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+
+		await syncDelegates();
 
 		feeOptions = {
 			last: (2 * 1e8).toFixed(0),
