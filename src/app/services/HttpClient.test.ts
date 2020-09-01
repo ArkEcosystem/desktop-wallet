@@ -25,20 +25,6 @@ describe("HttpClient", () => {
 		expect(response.json()).toEqual(responseBody);
 	});
 
-	it("should get with query params", async () => {
-		const responseBody = {
-			args: { key: "value" },
-			origin: "87.95.132.111,10.100.91.201",
-			url: "http://httpbin.org/get",
-		};
-
-		nock("http://httpbin.org/").get("/get").query(true).reply(200, responseBody);
-
-		const response = await subject.get("http://httpbin.org/get", { limit: 10 });
-
-		expect(response.json()).toEqual(responseBody);
-	});
-
 	it("should get without params", async () => {
 		const responseBody = {
 			args: {},
@@ -51,6 +37,14 @@ describe("HttpClient", () => {
 		const response = await subject.get("http://httpbin.org/get");
 
 		expect(response.json()).toEqual(responseBody);
+	});
+
+	it("should handle 404 status codes", async () => {
+		nock("http://httpbin.org/").get("/get").reply(404, {});
+
+		const response = await subject.get("http://httpbin.org/get");
+
+		expect(response.json()).toEqual({});
 	});
 
 	it("should post with body", async () => {

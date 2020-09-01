@@ -61,7 +61,14 @@ export class HttpClient extends Http.Request {
 					statusCode: response.statusCode,
 				});
 			} catch (error) {
-				return new Http.Response(error.response, error);
+				return new Http.Response(
+					{
+						body: "",
+						headers: {},
+						statusCode: 500,
+					},
+					error,
+				);
 			}
 		});
 	}
