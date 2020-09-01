@@ -210,9 +210,7 @@ export class PluginManager {
     const {
       body
     } = await reqwest(url, {
-      encoding: null,
-      timeout: 100,
-      retry: 0
+      encoding: null
     })
     return body.toString('base64')
   }
