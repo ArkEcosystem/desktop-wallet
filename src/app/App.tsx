@@ -54,23 +54,23 @@ const Main = ({ syncInterval }: Props) => {
 
 		const syncWallets = async () => {
 			console.log("Running wallet data sync...");
+			// env.exchangeRates().syncAll();
 			const profiles = env.profiles().values();
 
 			for (const profile of profiles) {
-				const [wallet] = profile.wallets().values();
-				try {
-					await wallet?.syncVotes();
-					await wallet?.syncIdentity();
-
-					// TODO: sync this through `env.exchangeRates().syncAll()` instead of per wallet.
-					// await wallet?.syncExchangeRate();
-
-					setShowSplash(false);
-				} catch (error) {
-					console.error(`Error synchronizing wallet data ${error}`);
-					setShowSplash(false);
+				const wallets = profile.wallets().values();
+				for (const wallet of wallets) {
+					try {
+						await wallet?.syncVotes();
+						await wallet?.syncIdentity();
+					} catch (error) {
+						/* istanbul ignore next */
+						console.error(`Error synchronizing wallet data ${error}`);
+					}
 				}
 			}
+
+			setShowSplash(false);
 		};
 
 		const boot = async () => {
