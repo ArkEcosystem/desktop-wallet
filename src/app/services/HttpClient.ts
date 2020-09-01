@@ -1,6 +1,7 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
-import got from "got";
 import { md5 } from "hash-wasm";
+// @ts-ignore
+import needle from "needle";
 import { SocksProxyAgent } from "socks-proxy-agent";
 
 import { Cache } from "./Cache";
@@ -19,11 +20,9 @@ export class HttpClient extends Http.Request {
 		});
 	}
 
+	/* istanbul ignore next */
 	public withSocksProxy(host: string): HttpClient {
-		this._options.agent = {
-			http: new SocksProxyAgent(host),
-			https: new SocksProxyAgent(host),
-		};
+		this._options.agent = new SocksProxyAgent(host);
 
 		return this;
 	}
@@ -36,51 +35,30 @@ export class HttpClient extends Http.Request {
 			data?: any;
 		},
 	): Promise<Contracts.HttpResponse> {
-		const options: Http.RequestOptions = {
-			...this._options,
-			retry: 0,
-		};
-
-		if (data && data.query) {
-			options.searchParams = data.query;
-		}
-
-		if (data && data.data) {
-			if (this._bodyFormat === "json") {
-				options.json = data.data;
-			}
-
-			// if (this._bodyFormat === "form_params") {
-			// 	options.body = new URLSearchParams();
-
-			// 	for (const [key, value] of Object.entries(data.data)) {
-			// 		options.body.set(key, value);
-			// 	}
-			// }
-
-			// if (this._bodyFormat === "multipart") {
-			// 	options.body = new FormData();
-
-			// 	for (const [key, value] of Object.entries(data.data)) {
-			// 		options.body.append(key, value);
-			// 	}
-			// }
-		}
-
 		const cacheKey: string = await md5(`${method}.${url}.${JSON.stringify(data)}`);
 
 		return this.cache.remember(cacheKey, async () => {
 			try {
-				// @ts-ignore
-				const response = await got[method.toLowerCase()](url, options);
+				const options: Http.RequestOptions = { ...this._options };
+
+				if (data?.query && Object.keys(data?.query).length > 0) {
+					url = `${url}?${new URLSearchParams(data.query as any)}`;
+				}
+
+				let response;
+
+				if (["POST", "PUT", "PATCH"].includes(method)) {
+					response = await needle(method.toLowerCase(), url, data?.data, { ...options, json: true });
+				} else {
+					response = await needle(method.toLowerCase(), url, options);
+				}
 
 				return new Http.Response({
-					body: response.body,
+					body: JSON.stringify(response.body),
 					headers: response.headers,
-					statusCode: response.status,
+					statusCode: response.statusCode,
 				});
 			} catch (error) {
-				console.log(error);
 				return new Http.Response(error.response, error);
 			}
 		});

@@ -96,7 +96,8 @@ describe("HttpClient", () => {
 		expect(response.json()).toEqual(responseBody);
 	});
 
-	it("should connect with TOR", async () => {
+	// @README: Run this locally with TOR running.
+	it.only("should connect with TOR", async () => {
 		const realAddress = await subject.get("https://ipinfo.io");
 		const newAddress = await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io");
 
