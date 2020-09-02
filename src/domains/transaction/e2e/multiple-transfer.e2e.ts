@@ -4,6 +4,7 @@ import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet } from "../../wallet/e2e/common";
+import { goToImportWalletPage, goToTransferPage } from "./common";
 
 const translations = buildTranslations();
 
@@ -43,41 +44,25 @@ const sendMock = RequestMock()
 		},
 	);
 
-createFixture(`Single Transfer action`);
+createFixture(`Multiple Transfer action`);
 
-test("should navigate to transfer page", async (t) => {
+test("should show an error if wrong mnemonic", async (t: any) => {
+	// Navigate to wallet page
 	await goToWallet(t);
 
 	// Navigate to transfer page
-	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
-	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
-		.ok();
-});
-
-test("should fail multiple transfer submission", async (t: any) => {
-	await goToWallet(t);
-
-	// Navigate to transfer page
-	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
-	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
-		.ok();
+	await goToTransferPage(t);
 
 	// Select multiple button
 	await t.click(Selector("[data-testid=add-recipient-is-multiple-toggle]"));
 
 	// Add recipient #1
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
-		replace: true,
-	});
+	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd");
 	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
 	await t.click(Selector("button").withText("Add Recipient"));
 
 	// Add recipient #2
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
-		replace: true,
-	});
+	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP");
 	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
 	await t.click(Selector("button").withText("Add Recipient"));
 
@@ -95,43 +80,30 @@ test("should fail multiple transfer submission", async (t: any) => {
 });
 
 test.requestHooks(walletMock, sendMock)("should send multiple transfer successfully", async (t) => {
+	// Navigate to profile page
 	await goToProfile(t);
 
 	// Navigate to import wallet page
-	await t.click(Selector("button").withText("Import"));
-	await t.expect(Selector("[data-testid=header__title]").withText("Select a Network").exists).ok();
-	await t.click(Selector("#ImportWallet__network-item-1"));
-	await t.click(Selector("button").withText("Continue"));
-	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");
-	await t.click(Selector("button").withText("Go to Wallet"));
-	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), "Test Wallet");
-	await t.click(Selector("button").withText("Save & Finish"));
+	await goToImportWalletPage(t);
 
 	// Navigate to wallet details page
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Navigate to transfer page
-	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
-	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
-		.ok();
+	await goToTransferPage(t);
 
 	// Select multiple button
 	await t.click(Selector("[data-testid=add-recipient-is-multiple-toggle]"));
 
 	// Add recipient #1
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
-		replace: true,
-	});
+	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd");
 	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
-	await t.click(Selector("button").withText("Add Recipient"));
+	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Add recipient #2
-	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
-		replace: true,
-	});
+	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP");
 	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
-	await t.click(Selector("button").withText("Add Recipient"));
+	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Go to step 2
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));

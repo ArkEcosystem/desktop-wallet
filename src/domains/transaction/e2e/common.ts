@@ -4,7 +4,30 @@ import { buildTranslations } from "../../../app/i18n/helpers";
 
 const translations = buildTranslations();
 
-export const gotoResignDelegatePage = async (t: any) => {
+export const goToImportWalletPage = async (t: any) => {
+	await t.click(Selector("button").withText(translations.COMMON.IMPORT));
+	await t.expect(Selector("[data-testid=header__title]").withText("Select a Network").exists).ok();
+	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
+	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");
+	await t.click(Selector("button").withText(translations.COMMON.GO_TO_WALLET));
+	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), "Test Wallet");
+	await t.click(Selector("button").withText(translations.COMMON.SAVE_FINISH));
+};
+
+export const goToTransferPage = async (t: any) => {
+	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
+	await t
+		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
+		.ok();
+};
+
+export const goToRegistrationPage = async (t: any) => {
+	await t.click(Selector("button").withText(translations.COMMON.REGISTER));
+	await t.expect(Selector("[data-testid=Registration__form]").exists).ok();
+};
+
+export const goToResignDelegatePage = async (t: any) => {
 	const delegateDropdown = Selector("[data-testid=DelegateRowItem__actions] [data-testid=dropdown__toggle]");
 	await t.expect(delegateDropdown.exists).ok();
 
