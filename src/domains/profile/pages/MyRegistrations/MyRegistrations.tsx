@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
@@ -33,13 +33,12 @@ const EmptyRegistrations = () => {
 
 type Props = {
 	blockchainRegistrations: any[];
-	businessRegistrations: any[];
 };
 
-export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations }: Props) => {
-	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
+export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 	const [blockchain] = useState(blockchainRegistrations);
-	const [business, setBusiness] = useState(businessRegistrations);
+	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
+	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -119,5 +118,4 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 
 MyRegistrations.defaultProps = {
 	blockchainRegistrations: [],
-	businessRegistrations: [],
 };
