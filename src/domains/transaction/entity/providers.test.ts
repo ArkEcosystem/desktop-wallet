@@ -45,35 +45,30 @@ describe("Validate URLs", () => {
 		["bitbucket", "https://bitbucket.org/ark.ecosystem", true],
 		["bitbucket", "https://bitbucket.org", false],
 		["bitbucket", "https://bitbucket.com/@ark.ecosystem", false],
-		["bitbucket", "https://ark.io", false],
 
 		["facebook", "https://facebook.com/arkecosystem", true],
 		["facebook", "https://facebook.com/ark.ecosystem", true],
 		["facebook", "http://facebook.com/ark", true],
 		["facebook", "http://facebook.in/ark", false],
 		["facebook", "http://facebook.com/@ark", false],
-		["facebook", "https://ark.io", false],
 
 		["github", "https://github.com/arkecosystem/core", true],
 		["github", "https://github.com/arkecosystem", true],
 		["github", "https://github.com/ark.ecosystem", true],
 		["github", "https://github.com", false],
 		["github", "https://github.com/@ark.ecosystem", false],
-		["github", "https://ark.io", false],
 
 		["gitlab", "https://gitlab.com/arkecosystem/core", true],
 		["gitlab", "https://gitlab.com/arkecosystem", true],
 		["gitlab", "https://gitlab.com/ark.ecosystem", true],
 		["gitlab", "https://gitlab.com", false],
 		["gitlab", "https://gitlab.com/@ark.ecosystem", false],
-		["gitlab", "https://ark.io", false],
 
 		["instagram", "https://instagram.com/arkecosystem", true],
 		["instagram", "https://instagram.com/ark.ecosystem", true],
 		["instagram", "http://instagram.com/ark", true],
 		["instagram", "http://instagran.com/ark", false],
 		["instagram", "http://instagram.com/@ark", false],
-		["instagram", "https://ark.io", false],
 
 		["linkedin", "https://linkedin.com/in/arkecosystem", true],
 		["linkedin", "https://linkedin.com/in/ark.ecosystem", true],
@@ -81,17 +76,36 @@ describe("Validate URLs", () => {
 		["linkedin", "http://linkedin.com/company/ark/", true],
 		["linkedin", "http://linkedin.com/ark", false],
 		["linkedin", "http://linkedin.org/in/@ark", false],
-		["linkedin", "http://ark.io", false],
 
 		["imgur", "https://i.imgur.com/123456.png", true],
 		["imgur", "https://i.imgur.com/123456.jpeg", true],
 		["imgur", "https://imgur.com/gallery/abc123", false],
-		["imgur", "https://ark.io", false],
 
 		["flickr", "https://live.staticflickr.com/12345/50287053112_b0f1d60cd2_1k.jpg", true],
 		["flickr", "https://farm1.staticflickr.com/0/1418878_1e92283336_m.jpg", true],
-		["imgur", "https://www.flickr.com/photos/1@N06/50287053112/in/explore-2020-08-31/", false],
-		["imgur", "https://ark.io", false],
+		["flickr", "https://www.flickr.com/photos/1@N06/50287053112/in/explore-2020-08-31/", false],
+		["flickr", "https://farm1.staticflickr.com", false],
+
+		["vimeo", "https://vimeo.com/123456", true],
+		["vimeo", "http://vimeo.com/54321", true],
+		["vimeo", "http://www.vimeo.com/54321", true],
+		["vimeo", "https://player.vimeo.com/video/45054101", true],
+		["vimeo", "http://www.vimeo.com", false],
+		["vimeo", "https://player.vimeo.com", false],
+
+		["youtube-video", "https://youtube.com/watch?v=123456", true],
+		["youtube-video", "https://www.youtube.com/watch?v=at5215", true],
+		["youtube-video", "https://youtu.be/dQ12W3r5", true],
+		["youtube-video", "https://youtu.be/w_1x521ui", true],
+		["youtube-video", "https://youtu.be", false],
+		["youtube-video", "https://youtube.com/watch", false],
+
+		["youtube", "https://www.youtube.com/channel/UCpc2k6zOOutGT9y56urDClg", true],
+		["youtube", "https://youtube.com/channel/UCpc2k6zOOutGT9y56urDClg", true],
+		["youtube", "http://youtube.com/channel/UCpc2k6zOOutGT9y56urDClg", true],
+		["youtube", "https://www.youtube.com/user/UCpc2k6zOOutGT9y56urDClg", true],
+		["youtube", "https://www.youtube.com", false],
+		["youtube", "http://youtube.com/channel", false],
 	])("should validate urls (%s, %s, %s)", (provider, url, expected) => {
 		expect(entityProvider.findById(provider)?.validate(url)).toBe(expected);
 	});

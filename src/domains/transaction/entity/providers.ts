@@ -64,12 +64,18 @@ export const vimeoProvider = {
 		/(?:https?:)?\/\/(?:www\.)?(?:vimeo\.com|player\.vimeo\.com\/video)\/([0-9]+)/.test(value),
 };
 
-// TODO: Video validation
 export const youtubeProvider = {
 	id: "youtube",
 	displayName: "YouTube",
 	validate: (value: string) =>
 		/(?:https?:)?\/\/(?:www\.)?(?:youtube\.com)\/(?:channel|user)\/([A-z0-9]+)\/?/.test(value),
+};
+
+export const youtubeVideoProvider = {
+	id: "youtube-video",
+	displayName: "YouTube",
+	validate: (value: string) =>
+		/(?:https?:)?\/\/(?:(?:www\.)?(?:youtube\.com)\/(?:watch\?v=|embed\/)|youtu\.be\/)([A-z0-9-_]+)\/?/.test(value),
 };
 
 export class EntityProvider {
@@ -89,7 +95,7 @@ export class EntityProvider {
 		return [flickrProvider, imgurProvider];
 	}
 	videos(): Provider[] {
-		return [youtubeProvider, vimeoProvider];
+		return [youtubeVideoProvider, vimeoProvider];
 	}
 	media(): Provider[] {
 		return [...this.images(), ...this.videos()];
