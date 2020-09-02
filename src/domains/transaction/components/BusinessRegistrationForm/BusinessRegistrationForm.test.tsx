@@ -75,6 +75,42 @@ describe("BusinessRegistrationForm", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render 3rd step without images", async () => {
+		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					ipfsData: {
+						...ipfsData,
+						images: undefined,
+					},
+				},
+			}),
+		);
+		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+
+		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--third")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render 3rd step without videos", async () => {
+		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					ipfsData: {
+						...ipfsData,
+						videos: undefined,
+					},
+				},
+			}),
+		);
+		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+
+		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--third")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should set fee", async () => {
 		const { result } = renderHook(() => useForm());
 		result.current.register("fee");
