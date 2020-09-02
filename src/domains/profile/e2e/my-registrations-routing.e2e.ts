@@ -6,7 +6,7 @@ import { goToMyRegistrations, goToProfile } from "./common";
 
 const translations = buildTranslations();
 
-createFixture(`My Registrations`)
+createFixture(`My Registrations`);
 
 test("should navigate to my registrations page", async (t) => {
 	await goToProfile(t);
