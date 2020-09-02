@@ -313,9 +313,9 @@ export const BusinessRegistrationForm: RegistrationForm = {
 		const { getValues, setValue, setError } = form;
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const { fee, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
+		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		try {
-			const senderWallet = profile.wallets().findByAddress(senderAddress);
 			// TODO: Hash ipfs data
 			// const hash = ipfsData
 			const hash = "abc";
@@ -326,6 +326,9 @@ export const BusinessRegistrationForm: RegistrationForm = {
 			await senderWallet!.transaction().broadcast(transactionId);
 
 			await env.persist();
+
+			setTransaction(senderWallet!.transaction().transaction(transactionId));
+
 			handleNext();
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
