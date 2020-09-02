@@ -1,11 +1,11 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
-fixture`Transactions routing`.page(getPageURL());
+createFixture(`Transactions routing`);
 
 test("should navigate to portfolio and access registrations", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));

@@ -1,12 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getLocation, getPageURL, scrollToTop } from "../../../utils/e2e-utils";
+import { createFixture, getLocation, scrollToTop } from "../../../utils/e2e-utils";
 import { goToWallet } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Delete Wallet action`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
+createFixture(`Delete Wallet action`).beforeEach(async (t) => await goToWallet(t));
 
 test("Should open and cancel deletion modal in wallet detail page", async (t) => {
 	await scrollToTop();

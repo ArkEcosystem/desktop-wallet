@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToWallet } from "./common";
 
 const translations = buildTranslations();
@@ -23,7 +23,7 @@ const prepareTest = async (t: any) => {
 	await openUpdateWalletName(t);
 };
 
-fixture`Wallet Labeling`.page(getPageURL()).beforeEach(async (t) => await prepareTest(t));
+createFixture(`Wallet Labeling`).beforeEach(async (t) => await prepareTest(t));
 
 test("Should open and close wallet update name modal", async (t) => {
 	await t.click(Selector('[data-testid="modal__close-btn"]'));
