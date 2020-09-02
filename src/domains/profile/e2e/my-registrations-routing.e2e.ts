@@ -1,12 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToProfile } from "./common";
 
 const translations = buildTranslations();
 
-fixture`My Registrations`.page(getPageURL()).beforeEach(async (t) => await goToProfile(t));
+createFixture(`My Registrations`).beforeEach(async (t) => await goToProfile(t));
 
 test("should navigate to my registrations from navigation bar", async (t) => {
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
