@@ -35,9 +35,8 @@ exports[`LinkCollection should add and remove links 1`] = `
     <div
       class="mt-4"
     >
-      <form
+      <div
         class="grid col-gap-2 row-gap-4"
-        data-testid="Form"
         style="grid-template-columns: 40% 60%;"
       >
         <fieldset
@@ -128,11 +127,11 @@ exports[`LinkCollection should add and remove links 1`] = `
           class="sc-AxjAm fPpool col-span-2"
           color="primary"
           data-testid="LinkCollection__add-link"
-          type="submit"
+          type="button"
         >
           Add Link
         </button>
-      </form>
+      </div>
       <div
         class="mt-8 mb-2 text-sm text-theme-neutral-dark"
       >
@@ -306,9 +305,8 @@ exports[`LinkCollection should select a specific link type 1`] = `
     <div
       class="mt-4"
     >
-      <form
+      <div
         class="grid col-gap-2 row-gap-4"
-        data-testid="Form"
         style="grid-template-columns: 40% 60%;"
       >
         <fieldset
@@ -397,11 +395,11 @@ exports[`LinkCollection should select a specific link type 1`] = `
           class="sc-AxjAm fPpool col-span-2"
           color="primary"
           data-testid="LinkCollection__add-link"
-          type="submit"
+          type="button"
         >
           Add Link
         </button>
-      </form>
+      </div>
       <div
         class="mt-8 mb-2 text-sm text-theme-neutral-dark"
       >

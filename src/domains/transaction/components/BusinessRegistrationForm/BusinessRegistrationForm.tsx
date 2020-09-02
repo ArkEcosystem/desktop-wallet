@@ -38,6 +38,8 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 	useEffect(() => {
 		register("ipfsData.sourceControl");
 		register("ipfsData.socialMedia");
+		register("ipfsData.images");
+		register("ipfsData.videos");
 	}, [register]);
 
 	const handleMedia = useCallback(
@@ -51,14 +53,19 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 			const images = links.filter((link) => imagesProviderIds.includes(link.type));
 			const videos = links.filter((link) => !imagesProviderIds.includes(link.type));
 
-			setValue(
-				"ipfsData.images",
-				images.map((item) => ({ ...item, type: "image" })),
-			);
-			setValue(
-				"ipfsData.videos",
-				videos.map((item) => ({ ...item, type: "video" })),
-			);
+			if (images.length) {
+				setValue(
+					"ipfsData.images",
+					images.map((item) => ({ ...item, type: "image" })),
+				);
+			}
+
+			if (videos.length) {
+				setValue(
+					"ipfsData.videos",
+					videos.map((item) => ({ ...item, type: "video" })),
+				);
+			}
 		},
 		[setValue],
 	);

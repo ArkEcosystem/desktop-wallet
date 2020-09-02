@@ -1,5 +1,5 @@
 import { Button } from "app/components/Button";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { RadioButton } from "app/components/RadioButton";
@@ -46,12 +46,12 @@ export const LinkCollection = ({
 	onChange,
 }: LinkCollectionProps) => {
 	const { t } = useTranslation();
-	const form = useForm({
+	const form = useForm<{ type: string; value: string; links: EntityLink[] }>({
 		defaultValues: {
 			links: data,
 		},
 	});
-	const { control, register, setValue, getValues } = form;
+	const { control, register, setValue, getValues, handleSubmit } = form;
 	const { fields, append, remove } = useFieldArray({
 		control,
 		name: "links",
@@ -136,9 +136,7 @@ export const LinkCollection = ({
 
 			{isExpanded && (
 				<div className="mt-4">
-					<Form
-						context={form}
-						onSubmit={({ type, value }) => addLink({ type, value })}
+					<div
 						className="grid col-gap-2 row-gap-4"
 						style={{
 							gridTemplateColumns: "40% 60%",
@@ -166,11 +164,12 @@ export const LinkCollection = ({
 							data-testid="LinkCollection__add-link"
 							className="col-span-2"
 							variant="plain"
-							type="submit"
+							type="button"
+							onClick={handleSubmit(({ type, value }) => addLink({ type, value }))}
 						>
 							{t("TRANSACTION.ADD_LINK")}
 						</Button>
-					</Form>
+					</div>
 
 					<div className="mt-8 mb-2 text-sm text-theme-neutral-dark">Your {typeName}</div>
 

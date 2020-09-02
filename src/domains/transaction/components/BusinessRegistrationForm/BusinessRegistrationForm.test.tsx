@@ -40,7 +40,7 @@ describe("BusinessRegistrationForm", () => {
 
 		it("should fill data", async () => {
 			const { result } = renderHook(() => useForm());
-			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} />);
+			const { asFragment, debug } = render(<Component form={result.current} onSubmit={() => void 0} />);
 
 			act(() => {
 				fireEvent.input(screen.getByTestId("BusinessRegistrationForm__name"), {
@@ -66,42 +66,51 @@ describe("BusinessRegistrationForm", () => {
 				});
 			});
 
-			const addLink = (index: number, value: string) => {
-				const linkCollectionHeaders = screen.getAllByTestId("LinkCollection__header");
+			const addLink = async (headerTitle: string, optionLabel: string, inputValue: string) => {
+				const headerElement = screen.getByText(headerTitle, {
+					selector: "[data-testid=LinkCollection__header] > span",
+				});
+				act(() => {
+					fireEvent.click(headerElement);
+				});
+
+				const selectButton = screen.getByTestId("select-list__toggle-button");
 
 				act(() => {
-					fireEvent.click(linkCollectionHeaders[index]);
+					fireEvent.click(selectButton);
 				});
 
 				act(() => {
-					fireEvent.click(screen.getAllByTestId("select-list__toggle-button")[0]);
+					fireEvent.click(screen.getByText(optionLabel), { selector: ["role=option"] });
 				});
 
-				act(() => {
-					fireEvent.click(screen.getAllByTestId("select-list__toggle-option-1")[0]);
-				});
+				await waitFor(() => expect(selectButton).toHaveTextContent(optionLabel));
 
 				act(() => {
-					fireEvent.change(screen.getAllByTestId("LinkCollection__input-link")[0], {
+					fireEvent.input(screen.getByTestId("LinkCollection__input-link"), {
 						target: {
-							value,
+							value: inputValue,
 						},
 					});
 				});
 
 				act(() => {
-					fireEvent.click(screen.getAllByTestId("LinkCollection__add-link")[0]);
+					fireEvent.click(screen.getByTestId("LinkCollection__add-link"));
 				});
 
 				act(() => {
-					fireEvent.click(linkCollectionHeaders[index]);
+					fireEvent.click(headerElement);
 				});
 			};
 
 			// Add source control link
-			addLink(0, "https://github.com/test");
+			await addLink("Repository", "GitHub", "https://github.com/test");
 			// Add source media link
-			addLink(1, "https://twitter.com/test");
+			await addLink("Social Media", "Facebook", "https://facebook.com/test");
+			await addLink("Social Media", "Instagram", "https://instagram.com/test");
+			// Add media link
+			await addLink("Photo and Video", "Imgur", "https://i.imgur.com/123456.png");
+			await addLink("Photo and Video", "YouTube", "https://youtube.com/watch?v=123456");
 
 			await waitFor(() =>
 				expect(result.current.getValues({ nest: true })).toEqual({
@@ -119,8 +128,24 @@ describe("BusinessRegistrationForm", () => {
 						],
 						socialMedia: [
 							{
-								type: "twitter",
-								value: "https://twitter.com/test",
+								type: "facebook",
+								value: "https://facebook.com/test",
+							},
+							{
+								type: "instagram",
+								value: "https://instagram.com/test",
+							},
+						],
+						images: [
+							{
+								type: "image",
+								value: "https://i.imgur.com/123456.png",
+							},
+						],
+						videos: [
+							{
+								type: "video",
+								value: "https://youtube.com/watch?v=123456",
 							},
 						],
 					},
