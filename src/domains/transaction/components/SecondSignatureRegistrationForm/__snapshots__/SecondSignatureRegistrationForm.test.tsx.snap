@@ -229,7 +229,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #10 word
+                  The #3 word
                 </span>
               </button>
               <button
@@ -238,7 +238,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #8 word
+                  The #1 word
                 </span>
               </button>
               <button
@@ -247,7 +247,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #6 word
+                  The #4 word
                 </span>
               </button>
             </ul>
@@ -262,7 +262,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                     class="mb-2 font-semibold text-theme-neutral-dark"
                     data-testid="MnemonicVerificationOptions__title"
                   >
-                    Select word #10
+                    Select word #3
                   </p>
                   <div
                     class="grid grid-cols-3 gap-2"
@@ -272,14 +272,14 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                       data-testid="MnemonicVerificationOptions__button"
                       type="button"
                     >
-                      test
+                      mnemonic
                     </button>
                     <button
                       class="sc-AxmLO cNAsSK"
                       data-testid="MnemonicVerificationOptions__button"
                       type="button"
                     >
-                      mnemonic
+                      test
                     </button>
                     <button
                       class="sc-AxmLO cNAsSK"
