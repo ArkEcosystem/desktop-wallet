@@ -52,6 +52,7 @@ const Main = ({ syncInterval }: Props) => {
 		const boot = async () => {
 			const scheduler = new Scheduler(syncInterval);
 
+			/* istanbul ignore next */
 			const shouldUseFixture: boolean =
 				process.env.REACT_APP_BUILD_MODE === "demo" ||
 				// TestCafe doesn't expose environment variables.
