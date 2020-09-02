@@ -1,9 +1,10 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
+import { Loader } from "app/components/Loader";
 import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -33,23 +34,22 @@ const EmptyRegistrations = () => {
 
 type Props = {
 	blockchainRegistrations: any[];
-	businessRegistrations: any[];
 };
 
-export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations }: Props) => {
-	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
+export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
+	const [isLoading, setIsLoading] = useState(false);
 	const [blockchain] = useState(blockchainRegistrations);
-	const [business] = useState(businessRegistrations);
+	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
+	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const isEmptyRegistrations = useMemo(() => !delegates.length && !blockchain.length && !business.length, [
-		business,
-		delegates,
-		blockchain,
-	]);
+	const isEmptyRegistrations = useMemo(
+		() => !isLoading && !delegates.length && !blockchain.length && !businesses.length,
+		[businesses, delegates, blockchain, isLoading],
+	);
 
 	const crumbs = [
 		{
@@ -74,8 +74,20 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 	};
 
 	useEffect(() => {
-		const delegateRegistrations = activeProfile.registrationAggregate().delegates();
-		setDelegates(delegateRegistrations);
+		const fetchRegistrations = async () => {
+			setIsLoading(true);
+
+			activeProfile.entityRegistrationAggregate().flush();
+
+			const businessRegistrations = await activeProfile.entityRegistrationAggregate().businesses();
+			setBusinesses(businessRegistrations.items());
+
+			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
+			setDelegates(delegateRegistrations);
+
+			setIsLoading(false);
+		};
+		fetchRegistrations();
 	}, [activeProfile]);
 
 	return (
@@ -100,9 +112,11 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 				/>
 			</Section>
 
-			{business.length > 0 && <BusinessTable data={business} />}
-			{blockchain.length > 0 && <BlockchainTable data={blockchain} />}
-			{delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
+			{isLoading && !isEmptyRegistrations && <Loader />}
+
+			{!isLoading && businesses.length > 0 && <BusinessTable businesses={businesses} onAction={handleAction} />}
+			{!isLoading && blockchain.length > 0 && <BlockchainTable data={blockchain} />}
+			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
@@ -111,5 +125,4 @@ export const MyRegistrations = ({ blockchainRegistrations, businessRegistrations
 
 MyRegistrations.defaultProps = {
 	blockchainRegistrations: [],
-	businessRegistrations: [],
 };
