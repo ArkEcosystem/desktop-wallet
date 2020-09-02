@@ -15,6 +15,7 @@ import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { BusinessRegistrationForm } from "domains/transaction/components/BusinessRegistrationForm/BusinessRegistrationForm";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
+import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
@@ -26,6 +27,7 @@ import { RegistrationForm, RegistrationType } from "./Registration.models";
 const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
 	businessRegistration: BusinessRegistrationForm,
+	secondSignatureRegistration: SecondSignatureRegistrationForm,
 };
 
 const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
@@ -68,6 +70,13 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 		registrationTypes.push({
 			value: "delegateRegistration",
 			label: "Delegate",
+		});
+	}
+
+	if (!wallet.isSecondSignature()) {
+		registrationTypes.push({
+			value: "secondSignatureRegistration",
+			label: "Second Signature",
 		});
 	}
 
