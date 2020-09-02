@@ -1,12 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToMyRegistrations, goToProfile } from "./common";
 
 const translations = buildTranslations();
 
-fixture`My Registrations`.page(getPageURL());
+createFixture(`My Registrations`)
 
 test("should navigate to my registrations page", async (t) => {
 	await goToProfile(t);
