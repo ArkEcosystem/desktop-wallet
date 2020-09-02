@@ -2,6 +2,7 @@ import { Contracts, Http } from "@arkecosystem/platform-sdk";
 import { md5 } from "hash-wasm";
 import fetch from "isomorphic-fetch";
 import { SocksProxyAgent } from "socks-proxy-agent";
+import { Primitive } from "type-fest";
 
 import { Cache } from "./Cache";
 
@@ -61,7 +62,7 @@ export class HttpClient extends Http.Request {
 
 			return new Http.Response({
 				body: await response.text(),
-				headers: response.headers,
+				headers: (response.headers as unknown) as Record<string, Primitive>',
 				statusCode: response.status,
 			});
 		});
