@@ -6,7 +6,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -19,37 +19,39 @@ type DashboardProps = {
 };
 
 export const Dashboard = ({ networks, portfolioPercentages, balances }: DashboardProps) => {
+	const activeProfile = useActiveProfile();
+	const history = useHistory();
+
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
-	const activeProfile = useActiveProfile();
-	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
-	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
-	const history = useHistory();
+
 	const { t } = useTranslation();
 
-	const fetchMoreTransactions = async () => {
+	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
+	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
+
+	const fetchTransactions = async (flush = false) => {
+		if (flush) {
+			activeProfile.transactionAggregate().flush();
+		}
+
 		setIsLoadingTransactions(true);
+
 		const response = await activeProfile.transactionAggregate().transactions({ limit: 10 });
 		const transactions = response.items();
 
 		setIsLoadingTransactions(false);
-		return transactions && setAllTransactions(allTransactions?.concat(transactions));
+
+		return transactions && setAllTransactions((allTransactions || []).concat(transactions));
 	};
 
 	useEffect(() => {
-		const fetchProfileTransactions = async () => {
-			const profileTransactions = await activeProfile.transactionAggregate().transactions({ limit: 10 });
-			const allTransactions: ExtendedTransactionData[] | undefined = profileTransactions?.items();
-
-			setIsLoadingTransactions(false);
-			return allTransactions && setAllTransactions(allTransactions);
-		};
-
-		fetchProfileTransactions();
-	}, [activeProfile, wallets]);
+		fetchTransactions(true);
+		// eslint-disable-next-line
+	}, []);
 
 	// Wallet controls data
 	const filterProperties = {
@@ -108,7 +110,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 						<Transactions
 							transactions={allTransactions}
 							exchangeCurrency={exchangeCurrency}
-							fetchMoreAction={fetchMoreTransactions}
+							fetchMoreAction={fetchTransactions}
 							onRowClick={(row) => setTransactionModalItem(row)}
 							isLoading={isLoadingTransactions}
 						/>
