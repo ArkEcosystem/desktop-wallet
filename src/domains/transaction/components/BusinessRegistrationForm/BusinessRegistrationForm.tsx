@@ -102,12 +102,19 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 
 					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea data-testid="BusinessRegistrationForm__description" ref={register} />
+						<TextArea
+							data-testid="BusinessRegistrationForm__description"
+							ref={register({ required: true })}
+						/>
 					</FormField>
 
 					<FormField name="ipfsData.meta.website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input data-testid="BusinessRegistrationForm__website" type="text" ref={register} />
+						<Input
+							data-testid="BusinessRegistrationForm__website"
+							type="text"
+							ref={register({ required: true })}
+						/>
 					</FormField>
 				</div>
 
@@ -279,14 +286,14 @@ const component = ({ activeTab, wallet, feeOptions }: RegistrationComponent) => 
 const transactionDetails = ({ translations, transaction }: RegistrationTransactionDetailsOptions) => (
 	<>
 		<TransactionDetail label={translations("TRANSACTION.NAME")}>
-			{transaction?.data().asset.ipfsData.meta.displayName}
+			{transaction?.data().asset.data.ipfsData.meta.displayName}
 		</TransactionDetail>
 		<TransactionDetail label={translations("TRANSACTION.DESCRIPTION")}>
-			{transaction?.data().asset.ipfsData.meta.description}
+			{transaction?.data().asset.data.ipfsData.meta.description}
 		</TransactionDetail>
 		<TransactionDetail label={translations("TRANSACTION.WEBSITE")}>
-			<Link to={transaction?.data().asset.ipfsData.meta.website} isExternal>
-				{transaction?.data().asset.ipfsData.meta.website}
+			<Link to={transaction?.data().asset.data.ipfsData.meta.website} isExternal>
+				{transaction?.data().asset.data.ipfsData.meta.website}
 			</Link>
 		</TransactionDetail>
 	</>

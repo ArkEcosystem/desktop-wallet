@@ -12,37 +12,43 @@
 		"recipient": "DR2FTWeYxZZK7GqnUrwCeRVkMv6uXhrGzQ",
 		"signature": "c572494c7fd4ce3fd010187f3573ee28faf80a9f1367e75ec0d444fbc7469a6b8829b5a71d5508f27e1a1cf48ba81739493a131c343ae78ed5315ad417be3ebb",
 		"asset": {
-			"ipfsData": {
-				"meta": {
-					"displayName": "Test Entity Name",
-					"description": "Test Entity Description",
-					"website": "https://test.business"
-				},
-				"sourceControl": [
-					{
-						"type": "github",
-						"value": "https://github.com/test/test"
-					}
-				],
-				"socialMedia": [
-					{
-						"type": "facebook",
-						"value": "https://facebook.com/test"
-					}
-				],
-				"images": [
-					{
-						"type": "image",
-						"value": "https://i.imgur.com/123456.png"
-					}
-				],
-				"videos": [
-					{
-						"type": "video",
-						"value": "https://youtube.com/watch?v=123456"
-					}
-				],
-				"hash": "QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68"
+			"type": 0,
+			"subType": 0,
+			"action": 0,
+			"data": {
+				"name": "Test Entity Name",
+				"ipfsData": {
+					"meta": {
+						"displayName": "Test Entity Name",
+						"description": "Test Entity Description",
+						"website": "https://test.business"
+					},
+					"sourceControl": [
+						{
+							"type": "github",
+							"value": "https://github.com/test/test"
+						}
+					],
+					"socialMedia": [
+						{
+							"type": "facebook",
+							"value": "https://facebook.com/test"
+						}
+					],
+					"images": [
+						{
+							"type": "image",
+							"value": "https://i.imgur.com/123456.png"
+						}
+					],
+					"videos": [
+						{
+							"type": "video",
+							"value": "https://youtube.com/watch?v=123456"
+						}
+					],
+					"hash": "QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68"
+				}
 			}
 		},
 		"confirmations": 13772,
