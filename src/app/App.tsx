@@ -45,18 +45,21 @@ const Main = ({ syncInterval }: Props) => {
 
 	useLayoutEffect(() => {
 		const syncDelegates = async () => env.delegates().syncAll();
+		const syncFees = async () => env.fees().syncAll();
 		const syncExchangeRates = async () => env.exchangeRates().syncAll();
-		const syncWallets = async () => env.wallets().syncAll();
+		const syncWallets = async () => await env.wallets().syncAll();
 
 		const boot = async () => {
+			const scheduler = new Scheduler(syncInterval);
 			await env.verify(fixtureData);
 			await env.boot();
 			await syncDelegates();
 			await syncWallets();
+			await syncFees();
 			await syncExchangeRates();
 			await persist();
 
-			Scheduler(syncInterval).schedule([syncDelegates, syncWallets, syncExchangeRates], persist);
+			scheduler.schedule([syncDelegates, syncFees, syncWallets, syncExchangeRates], persist);
 
 			setShowSplash(false);
 		};
