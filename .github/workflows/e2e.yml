@@ -100,7 +100,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: contacts-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     create-contact:
         needs: build-and-upload
@@ -151,7 +151,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: create-contact-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     create-profile-action:
         needs: build-and-upload
@@ -202,7 +202,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: delete-contact-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     create-profile-routing:
         needs: build-and-upload
@@ -253,7 +253,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: update-contact-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     create-wallet-action:
         needs: build-and-upload
@@ -304,7 +304,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: dashboard-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     dashboard-routing:
         needs: build-and-upload
@@ -355,7 +355,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: navbar-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     delegate-registration:
         needs: build-and-upload
@@ -406,7 +406,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: filtering-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     delegate-resignation:
         needs: build-and-upload
@@ -457,7 +457,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: news-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     delete-contact:
         needs: build-and-upload
@@ -508,7 +508,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: plugins-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     delete-profile-action:
         needs: build-and-upload
@@ -559,7 +559,8 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: create-profile-action-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
+
     delete-wallet-action:
         needs: build-and-upload
 
@@ -609,7 +610,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: create-profile-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     filtering:
         needs: build-and-upload
@@ -660,7 +661,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: delete-profile-action-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     import-wallet-action:
         needs: build-and-upload
@@ -711,7 +712,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: my-registrations-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     multiple-transfer:
         needs: build-and-upload
@@ -762,7 +763,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: navigate-profile-settings-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     my-registrations-routing:
         needs: build-and-upload
@@ -813,7 +814,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: welcome-screen-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     navbar-routing:
         needs: build-and-upload
@@ -864,7 +865,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: save-settings-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     navigate-profile-settings:
         needs: build-and-upload
@@ -915,7 +916,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: settings-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     news-routing:
         needs: build-and-upload
@@ -966,7 +967,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: splash-screen-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     plugins-routing:
         needs: build-and-upload
@@ -1017,7 +1018,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: delegate-registration-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     save-settings:
         needs: build-and-upload
@@ -1068,7 +1069,8 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: delegate-resignation-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
+
     settings-routing:
         needs: build-and-upload
 
@@ -1118,7 +1120,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: multiple-transfer-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     sign-message-action:
         needs: build-and-upload
@@ -1169,7 +1171,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: single-transfer-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     single-transfer:
         needs: build-and-upload
@@ -1220,7 +1222,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: transactions-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     splash-screen:
         needs: build-and-upload
@@ -1271,7 +1273,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: votes-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     transactions-routing:
         needs: build-and-upload
@@ -1322,7 +1324,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: create-wallet-action-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     update-contact:
         needs: build-and-upload
@@ -1373,7 +1375,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: delete-wallet-action-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     update-wallet-name-action:
         needs: build-and-upload
@@ -1424,7 +1426,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: import-wallet-action-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     verify-message-action:
         needs: build-and-upload
@@ -1475,7 +1477,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: sign-message-action-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     votes:
         needs: build-and-upload
@@ -1526,7 +1528,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: update-wallet-name-action-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     wallet-details:
         needs: build-and-upload
@@ -1577,7 +1579,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: verify-message-action-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     wallets-routing:
         needs: build-and-upload
@@ -1628,7 +1630,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: wallet-details-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
 
     welcome-screen:
         needs: build-and-upload
@@ -1679,4 +1681,4 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: wallets-routing-screenshots
-                  path: screenshots/**/*.png
+                  path: ${{ github.workspace }}/screenshots/**/*.png
