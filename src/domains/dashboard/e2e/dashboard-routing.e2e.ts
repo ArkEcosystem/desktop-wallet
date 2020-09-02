@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getLocation } from "../../../utils/e2e-utils";
+import { createFixture, getLocation } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
