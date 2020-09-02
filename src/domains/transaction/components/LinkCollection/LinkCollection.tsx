@@ -61,10 +61,11 @@ export const LinkCollection = ({
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [selected, setSelected] = useState((null as unknown) as EntityLink);
 
+	const getType = (value: string) => types.find((item) => item.value === value);
+
 	const validateProviderURL = (url: string) => {
 		const currentTypeValue = getValues("type");
-		const type = types.find((item) => item.value === currentTypeValue);
-		return type!.validate(url);
+		return getType(currentTypeValue)!.validate(url);
 	};
 
 	const addLink = (link: EntityLink) => {
@@ -197,7 +198,7 @@ export const LinkCollection = ({
 										ref={register()}
 										defaultValue={rowData.type}
 									/>
-									{t(`TRANSACTION.LINK_TYPES.${rowData.type.toUpperCase()}`)}
+									{getType(rowData.type)!.label}
 								</td>
 
 								<td className={rowIndex > 0 ? "py-6" : "pb-6 pt-2"}>

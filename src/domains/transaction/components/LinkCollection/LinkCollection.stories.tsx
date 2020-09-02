@@ -8,7 +8,7 @@ const types = [
 	{
 		label: "Facebook",
 		value: "facebook",
-		validate: () => false,
+		validate: () => true,
 	},
 	{
 		label: "Twitter",
