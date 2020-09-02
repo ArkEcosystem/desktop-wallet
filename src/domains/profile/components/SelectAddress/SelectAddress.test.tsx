@@ -9,6 +9,11 @@ let wallets: ReadWriteWallet[];
 beforeAll(async () => {
 	const profile = env.profiles().findById(getDefaultProfileId());
 	await profile.wallets().importByMnemonic("additional wallet", "ARK", "devnet");
+
+	// @TODO remove
+	await env.exchangeRates().syncAll();
+	await env.persist();
+
 	wallets = profile.wallets().values();
 });
 

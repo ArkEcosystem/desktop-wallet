@@ -58,7 +58,7 @@ const SearchWalletListItem = ({
 				<Amount value={balance} ticker={currency} />
 			</td>
 			<td className="text-right text-theme-neutral-light">
-				{exchangeCurrency && <Amount value={convertedBalance} ticker={exchangeCurrency} />}
+				<Amount value={convertedBalance} ticker={exchangeCurrency} />
 			</td>
 			<td>
 				<div className="text-right">
@@ -143,7 +143,7 @@ export const SearchWallet = ({
 						convertedBalance={wallet.convertedBalance()}
 						coinName={upperFirst(wallet.coinId().toLowerCase())}
 						currency={wallet.currency()}
-						exchangeCurrency={wallet.exchangeCurrency()}
+						exchangeCurrency={wallet.exchangeCurrency() || "BTC"} // @TODO get default from SDK
 						name={wallet.alias()}
 						showNetwork={showNetwork}
 						onAction={onSelectWallet}

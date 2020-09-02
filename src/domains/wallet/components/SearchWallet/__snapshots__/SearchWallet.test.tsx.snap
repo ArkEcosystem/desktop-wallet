@@ -298,7 +298,13 @@ exports[`SearchWallet should render 1`] = `
                     </td>
                     <td
                       class="text-right text-theme-neutral-light"
-                    />
+                    >
+                      <span
+                        data-testid="Amount"
+                      >
+                        0 BTC
+                      </span>
+                    </td>
                     <td>
                       <div
                         class="text-right"
