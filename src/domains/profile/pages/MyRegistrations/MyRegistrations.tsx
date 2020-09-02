@@ -74,7 +74,7 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 	};
 
 	useEffect(() => {
-		const fetchBusinesses = async () => {
+		const fetchRegistrations = async () => {
 			setIsLoading(true);
 
 			activeProfile.entityRegistrationAggregate().flush();
@@ -87,7 +87,7 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 
 			setIsLoading(false);
 		};
-		fetchBusinesses();
+		fetchRegistrations();
 	}, [activeProfile]);
 
 	return (
