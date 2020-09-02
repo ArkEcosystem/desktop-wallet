@@ -1,24 +1,26 @@
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { render } from "testing-library";
+import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
 
 import { VoteList } from "./VoteList";
 
-const votes = [
-	{
-		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-		delegateName: "Delegate 1",
-	},
-	{
-		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		delegateName: "Delegate 2",
-	},
-	{
-		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		delegateName: "Delegate 3",
-	},
-];
+let votes: ReadOnlyWallet[];
 
 describe("VoteList", () => {
+	beforeAll(() => {
+		votes = [0, 1, 2].map(
+			(index) =>
+				new ReadOnlyWallet({
+					address: data[index].address,
+					explorerLink: "",
+					publicKey: data[index].publicKey,
+					username: data[index].username,
+					rank: data[index].rank,
+				}),
+		);
+	});
+
 	it("should render", () => {
 		const { container, asFragment } = render(<VoteList votes={votes} />);
 
