@@ -15,6 +15,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
+import { useQueryParams } from "app/hooks";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -266,6 +267,7 @@ export const SendVoteTransaction = () => {
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+	const queryParams = useQueryParams();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -274,6 +276,8 @@ export const SendVoteTransaction = () => {
 
 	const form = useForm({ mode: "onChange" });
 	const { clearError, formState, getValues, register, setError, setValue } = form;
+
+	console.log("queryParams", queryParams.get("votes"));
 
 	useEffect(() => {
 		register("network", { required: true });
