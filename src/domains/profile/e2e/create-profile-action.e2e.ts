@@ -1,11 +1,11 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getLocation, getPageURL } from "../../../utils/e2e-utils";
+import { createFixture, getLocation } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
-fixture`Create Profile action`.page(getPageURL());
+createFixture(`Create Profile action`);
 
 const nameInput = Selector("input[name=name]");
 

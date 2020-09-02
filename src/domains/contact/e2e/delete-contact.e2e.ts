@@ -1,12 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToContacts } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Update contact`.page(getPageURL()).beforeEach(async (t) => await goToContacts(t));
+createFixture("Delete contact").beforeEach(async (t) => await goToContacts(t));
 
 test("should open and close contact deletion modal", async (t) => {
 	const contactName = await Selector(

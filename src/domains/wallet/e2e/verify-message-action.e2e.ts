@@ -1,12 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL, scrollToTop } from "../../../utils/e2e-utils";
+import { createFixture, scrollToTop } from "../../../utils/e2e-utils";
 import { goToWallet } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Verify Message`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
+createFixture(`Verify Message`).beforeEach(async (t) => await goToWallet(t));
 
 test("Should open and cancel verify message modal", async (t) => {
 	await scrollToTop();
