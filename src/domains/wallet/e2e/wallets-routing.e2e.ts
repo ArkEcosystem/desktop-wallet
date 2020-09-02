@@ -1,9 +1,9 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 
-fixture`Wallets routing`.page(getPageURL());
+createFixture(`Wallets routing`);
 
 test("should navigate to portfolio and access a wallet details", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));

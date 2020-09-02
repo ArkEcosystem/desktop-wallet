@@ -44,28 +44,34 @@ const Main = ({ syncInterval }: Props) => {
 	}, [pathname]);
 
 	useLayoutEffect(() => {
-		const syncDelegates = async () => env.delegates().syncAll();
-		const syncExchangeRates = async () => env.exchangeRates().syncAll();
-		const syncWallets = async () => env.wallets().syncAll();
+		const syncDelegates = async () => await env.delegates().syncAll();
+		const syncFees = async () => await env.fees().syncAll();
+		const syncExchangeRates = async () => await env.exchangeRates().syncAll();
+		const syncWallets = async () => await env.wallets().syncAll();
 
 		const boot = async () => {
-			await env.verify(fixtureData);
+			const scheduler = new Scheduler(syncInterval);
+
+			/* istanbul ignore next */
+			const shouldUseFixture: boolean =
+				process.env.REACT_APP_BUILD_MODE === "demo" ||
+				// TestCafe doesn't expose environment variables.
+				(process.env.NODE_ENV === "production" && process.env.PUBLIC_URL === ".");
+
+			await env.verify(shouldUseFixture ? fixtureData : undefined);
 			await env.boot();
 			await syncDelegates();
 			await syncWallets();
+			await syncFees();
 			await syncExchangeRates();
 			await persist();
 
-			Scheduler(syncInterval).schedule([syncDelegates, syncWallets, syncExchangeRates], persist);
+			scheduler.schedule([syncDelegates, syncFees, syncWallets, syncExchangeRates], persist);
 
 			setShowSplash(false);
 		};
 
-		if (process.env.REACT_APP_BUILD_MODE === "demo") {
-			boot();
-		} else {
-			setShowSplash(false);
-		}
+		boot();
 	}, [env, persist, syncInterval]);
 
 	if (showSplash) {

@@ -1,11 +1,11 @@
 import { Selector } from "testcafe";
 
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToNews } from "./common";
 
 const itemsPerPage = 15;
 
-fixture`News routing`.page(getPageURL());
+createFixture(`News routing`);
 
 test("should navigate to news page", async (t) => await goToNews(t));
 

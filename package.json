@@ -35,9 +35,7 @@
 		"storybook": "start-storybook -p 5000",
 		"test": "react-app-rewired --expose-gc test --logHeapUsage",
 		"test:coverage": "react-app-rewired --expose-gc test --logHeapUsage --coverage --watchAll=false",
-		"test:e2e": "testcafe",
-		"test:e2e:ci-build": "yarn build:ci; testcafe",
-		"test:e2e:ci": "cross-env ELECTRON_IS_E2E=1 ELECTRON_IS_DEV=0 NODE_ENV=production REACT_APP_BUILD_MODE=demo yarn test:e2e:ci-build",
+		"test:e2e": "cross-env ELECTRON_IS_E2E=1 ELECTRON_IS_DEV=0 NODE_ENV=production REACT_APP_BUILD_MODE=demo testcafe",
 		"preversion": "cross-env ./scripts/version-artifacts.sh"
 	},
 	"husky": {
@@ -84,6 +82,7 @@
 			"!src/electron/**/*",
 			"!src/i18n/**/*",
 			"!src/tailwind.config.js",
+			"!src/utils/e2e-utils.ts",
 			"!src/utils/storybook.tsx",
 			"!src/polyfill/**/*"
 		],

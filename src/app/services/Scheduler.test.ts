@@ -3,27 +3,30 @@ import { Scheduler } from "./Scheduler";
 describe("Scheduler test", () => {
 	jest.useFakeTimers();
 
-	it("should run an action after an determined interval", () => {
-		const action = jest.fn();
-		Scheduler(100).schedule([action]);
+	it("should run an job after an determined interval", () => {
+		const job = jest.fn();
+		const scheduler = new Scheduler(100);
+		scheduler.schedule([job]);
 		jest.advanceTimersByTime(100);
-		expect(action).toHaveBeenCalled();
+		expect(job).toHaveBeenCalled();
 	});
 
-	it("should run an action using the default interval", () => {
-		const action = jest.fn();
-		Scheduler().schedule([action]);
+	it("should run an job using the default interval", () => {
+		const job = jest.fn();
+		const scheduler = new Scheduler();
+		scheduler.schedule([job]);
 		jest.advanceTimersByTime(300000);
-		expect(action).toHaveBeenCalled();
+		expect(job).toHaveBeenCalled();
 	});
 
-	it("should run actions and the done callback", () => {
-		const action = jest.fn();
-		const done = jest.fn();
-		Scheduler().schedule([action], done);
+	it("should run jobs and the done callback", () => {
+		const job = jest.fn();
+		const doneCallback = jest.fn();
+		const scheduler = new Scheduler();
+		scheduler.schedule([job], doneCallback);
 
 		jest.advanceTimersByTime(300500);
-		expect(action).toHaveBeenCalled();
-		expect(done).toHaveBeenCalled();
+		expect(job).toHaveBeenCalled();
+		expect(doneCallback).toHaveBeenCalled();
 	});
 });
