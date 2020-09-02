@@ -1,6 +1,6 @@
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToContacts } from "./common";
 
-fixture`Contacts routing`.page(getPageURL());
+createFixture(`Contacts routing`);
 
 test("should navigate to contacts page", async (t) => await goToContacts(t));

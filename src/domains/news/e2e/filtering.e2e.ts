@@ -1,14 +1,14 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToNews } from "./common";
 
 const itemsPerPage = 15;
 
 const translations = buildTranslations();
 
-fixture`News filtering`.page(getPageURL()).beforeEach(async (t) => await goToNews(t));
+createFixture(`News filtering`).beforeEach(async (t) => await goToNews(t));
 
 test("should display news feed", async (t) => {
 	await t.expect(Selector('[data-testid="NewsCard"]').exists).ok();

@@ -1,11 +1,11 @@
 import { Selector } from "testcafe";
 
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToMyRegistrations } from "../../profile/e2e/common";
 import { goToResignDelegatePage } from "./common";
 import { transactionsMock, walletMock } from "./mocks";
 
-fixture`Delegate Registration action`.page(getPageURL()).beforeEach(async (t) => await goToMyRegistrations(t));
+createFixture(`Delegate Registration action`).beforeEach(async (t) => await goToMyRegistrations(t));
 
 test("should fail delegate resignation submittion", async (t: any) => {
 	await goToResignDelegatePage(t);

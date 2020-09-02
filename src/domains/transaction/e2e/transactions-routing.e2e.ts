@@ -1,14 +1,14 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToMyRegistrations } from "../../profile/e2e/common";
 import { goToWallet } from "../../wallet/e2e/common";
 import { goToRegistrationPage, goToResignDelegatePage, goToTransferPage } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Transactions routing`.page(getPageURL());
+createFixture(`Transactions routing`);
 
 test("should navigate to transfer page", async (t) => {
 	await goToWallet(t);

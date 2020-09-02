@@ -1,7 +1,7 @@
 import { RequestMock, Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet } from "../../wallet/e2e/common";
 import { goToImportWalletPage, goToTransferPage } from "./common";
@@ -44,7 +44,7 @@ const sendMock = RequestMock()
 		},
 	);
 
-fixture`Multiple Transfer action`.page(getPageURL());
+createFixture(`Multiple Transfer action`);
 
 test("should show an error if wrong mnemonic", async (t: any) => {
 	// Navigate to wallet page
