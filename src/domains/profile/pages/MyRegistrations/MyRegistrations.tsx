@@ -4,6 +4,7 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
+import { Loader } from "app/components/Loader";
 import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -36,6 +37,7 @@ type Props = {
 };
 
 export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
+	const [isLoading, setIsLoading] = useState(false);
 	const [blockchain] = useState(blockchainRegistrations);
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
 	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
@@ -44,11 +46,10 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const isEmptyRegistrations = useMemo(() => !delegates.length && !blockchain.length && !business.length, [
-		business,
-		delegates,
-		blockchain,
-	]);
+	const isEmptyRegistrations = useMemo(
+		() => !isLoading && !delegates.length && !blockchain.length && !businesses.length,
+		[businesses, delegates, blockchain],
+	);
 
 	const crumbs = [
 		{
@@ -73,14 +74,16 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 	};
 
 	useEffect(() => {
-		const delegateRegistrations = activeProfile.registrationAggregate().delegates();
-		setDelegates(delegateRegistrations);
-	}, [activeProfile]);
-
-	useEffect(() => {
 		const fetchBusinesses = async () => {
+			activeProfile.entityRegistrationAggregate().flush();
+
 			const businessRegistrations = await activeProfile.entityRegistrationAggregate().businesses();
-			setBusiness(businessRegistrations.items());
+			setBusinesses(businessRegistrations.items());
+
+			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
+			setDelegates(delegateRegistrations);
+
+			setIsLoading(false);
 		};
 		fetchBusinesses();
 	}, [activeProfile]);
@@ -107,9 +110,11 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 				/>
 			</Section>
 
-			{business.length > 0 && <BusinessTable businesses={business} onAction={handleAction} />}
-			{blockchain.length > 0 && <BlockchainTable data={blockchain} />}
-			{delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
+			{isLoading && !isEmptyRegistrations && <Loader />}
+
+			{!isLoading && businesses.length > 0 && <BusinessTable businesses={businesses} onAction={handleAction} />}
+			{!isLoading && blockchain.length > 0 && <BlockchainTable data={blockchain} />}
+			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
