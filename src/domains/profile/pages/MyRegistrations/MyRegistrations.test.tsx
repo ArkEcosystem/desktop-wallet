@@ -4,7 +4,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor, within } from "testing-library";
 
-import { blockchainRegistrations, businessRegistrations } from "../../data";
+import { blockchainRegistrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
 const history = createMemoryHistory();
@@ -16,6 +16,7 @@ const delegateWalletId = "d044a552-7a49-411c-ae16-8ff407acc430";
 
 describe("MyRegistrations", () => {
 	beforeAll(async () => {
+		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
@@ -76,9 +77,14 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should render business registrations", async () => {
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.query(true)
+			.reply(200, require("tests/fixtures/registrations/businesses.json"));
+
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
-				<MyRegistrations businessRegistrations={businessRegistrations} />
+				<MyRegistrations />
 			</Route>,
 			{
 				routes: [registrationsURL],
@@ -87,7 +93,7 @@ describe("MyRegistrations", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
-		await waitFor(() => expect(getAllByTestId("BusinessRegistrationItem").length).toEqual(2));
+		await waitFor(() => expect(getAllByTestId("BusinessRegistrationRowItem").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
