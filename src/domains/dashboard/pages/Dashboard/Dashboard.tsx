@@ -33,7 +33,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
-	const fetchTransactions = async (flush: boolean = false) => {
+	const fetchTransactions = async (flush = false) => {
 		if (flush) {
 			activeProfile.transactionAggregate().flush();
 		}
