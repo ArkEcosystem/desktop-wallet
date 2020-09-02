@@ -12,329 +12,321 @@ exports[`BlacklistPlugins should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxirZ eUzagL w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxjAm hSsKJo"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
       <div
         class="relative"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5"
+          class="relative h-56 mb-10 -mx-10 -mt-10"
         >
-          <button
-            class="sc-AxirZ iJKGpA"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
+          <svg
+            class="h-full"
           >
-            <div
-              class="p-1"
+            best-plugins-banner.svg
+          </svg>
+          <div
+            class="absolute bottom-0 left-0 mb-10 ml-10"
+          >
+            <h2
+              class="text-5xl font-extrabold leading-tight m-0 text-white"
             >
-              <div
-                class="sc-AxjAm HWmvM"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
+              Blacklist
+            </h2>
+          </div>
         </div>
         <div
-          class="py-4"
+          class="flex-1"
         >
           <div
-            class="relative mb-10 -mx-10 -mt-10"
+            class="mt-1 text-theme-neutral-dark"
           >
-            <svg
-              class="w-full"
-            >
-              best-plugins-banner.svg
-            </svg>
-            <h1
-              class="absolute bottom-0 left-0 mb-8 ml-12"
-            >
-              <div
-                class="mb-5 text-5xl font-bold leading-tight text-white"
-              >
-                Blacklist
-              </div>
-            </h1>
+            ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.
           </div>
           <div
-            class="flex-1"
+            class="mt-8 -mb-6"
           >
             <div
-              class="mt-1 text-theme-neutral-dark"
+              class="sc-AxhCb tChBQ"
+              role="table"
             >
-              ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.
-            </div>
-            <div
-              class="mt-8 -mb-6"
-            >
-              <div
-                class="sc-AxhCb tChBQ"
-                role="table"
+              <table
+                class="table-auto"
               >
-                <table
-                  class="table-auto"
-                >
-                  <thead>
-                    <tr
-                      role="row"
-                    >
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--0"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                             
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--1"
-                        role="columnheader"
-                        style="cursor: pointer;"
-                        title="Toggle SortBy"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                            Name
-                          </div>
-                          <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
-                            data-testid="table__Sort"
-                          >
-                            <div
-                              class="sc-AxjAm hdgaLj"
-                              height="12"
-                              width="15"
-                            >
-                              <svg>
-                                sort.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--2"
-                        role="columnheader"
-                        style="cursor: pointer;"
-                        title="Toggle SortBy"
-                      >
-                        <div
-                          class="flex flex-inline align-top justify-end"
-                        >
-                          <div>
-                            Category
-                          </div>
-                          <div
-                            class="flex items-center ml-2 text-theme-color-neutral"
-                            data-testid="table__Sort"
-                          >
-                            <div
-                              class="sc-AxjAm hdgaLj"
-                              height="12"
-                              width="15"
-                            >
-                              <svg>
-                                sort.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--3"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top "
-                        >
-                          <div>
-                              
-                          </div>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    role="rowgroup"
+                <thead>
+                  <tr
+                    role="row"
                   >
-                    <tr
-                      class="border-b border-dashed border-theme-neutral-200"
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
                     >
-                      <td
-                        class="w-16"
+                      <div
+                        class="flex flex-inline align-top "
                       >
-                        <svg
-                          class="w-12 h-12"
-                        >
-                          changenow-logo.svg
-                        </svg>
-                      </td>
-                      <td>
-                        <div
-                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                        >
-                          ARK Explorer
+                        <div>
+                           
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          Name
                         </div>
                         <div
-                          class="inline-flex items-center space-x-2"
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
                         >
-                          <span
-                            class="text-theme-neutral-dark"
-                          >
-                            ARK Ecosystem
-                          </span>
                           <div
-                            class="sc-AxjAm pXfjM"
-                            height="15"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
                             width="15"
                           >
                             <svg>
-                              official-ark-plugin.svg
+                              sort.svg
                             </svg>
                           </div>
                         </div>
-                      </td>
-                      <td
-                        class="py-10 text-right text-theme-neutral-dark"
-                      >
-                        Utility
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-dashed border-theme-neutral-200"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
                     >
-                      <td
-                        class="w-16"
+                      <div
+                        class="flex flex-inline align-top justify-end"
                       >
-                        <svg
-                          class="w-12 h-12"
-                        >
-                          changenow-logo.svg
-                        </svg>
-                      </td>
-                      <td>
-                        <div
-                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                        >
-                          Animal Avatars
+                        <div>
+                          Category
                         </div>
                         <div
-                          class="inline-flex items-center space-x-2"
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
                         >
-                          <span
-                            class="text-theme-neutral-dark"
-                          >
-                            Breno Polanski
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-10 text-right text-theme-neutral-dark"
-                      >
-                        Utility
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-dashed border-theme-neutral-200"
-                    >
-                      <td
-                        class="w-16"
-                      >
-                        <svg
-                          class="w-12 h-12"
-                        >
-                          changenow-logo.svg
-                        </svg>
-                      </td>
-                      <td>
-                        <div
-                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                        >
-                          ChangeNOW Plugin
-                        </div>
-                        <div
-                          class="inline-flex items-center space-x-2"
-                        >
-                          <span
-                            class="text-theme-neutral-dark"
-                          >
-                            ChangeNOW
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-10 text-right text-theme-neutral-dark"
-                      >
-                        Other
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-dashed border-theme-neutral-200"
-                    >
-                      <td
-                        class="w-16"
-                      >
-                        <svg
-                          class="w-12 h-12"
-                        >
-                          changenow-logo.svg
-                        </svg>
-                      </td>
-                      <td>
-                        <div
-                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                        >
-                          Bold Ninja
-                        </div>
-                        <div
-                          class="inline-flex items-center space-x-2"
-                        >
-                          <span
-                            class="text-theme-neutral-dark"
-                          >
-                            Delegate Fun
-                          </span>
                           <div
-                            class="sc-AxjAm vZRQY"
-                            height="16"
-                            width="16"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
+                            width="15"
                           >
                             <svg>
-                              grant.svg
+                              sort.svg
                             </svg>
                           </div>
                         </div>
-                      </td>
-                      <td
-                        class="py-10 text-right text-theme-neutral-dark"
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--3"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
                       >
-                        Game
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                        <div>
+                            
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td
+                      class="w-16"
+                    >
+                      <svg
+                        class="w-12 h-12"
+                      >
+                        changenow-logo.svg
+                      </svg>
+                    </td>
+                    <td>
+                      <div
+                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                      >
+                        ARK Explorer
+                      </div>
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                        >
+                          ARK Ecosystem
+                        </span>
+                        <div
+                          class="sc-AxjAm pXfjM"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            official-ark-plugin.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-right text-theme-neutral-dark"
+                    >
+                      Utility
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td
+                      class="w-16"
+                    >
+                      <svg
+                        class="w-12 h-12"
+                      >
+                        changenow-logo.svg
+                      </svg>
+                    </td>
+                    <td>
+                      <div
+                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                      >
+                        Animal Avatars
+                      </div>
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                        >
+                          Breno Polanski
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-right text-theme-neutral-dark"
+                    >
+                      Utility
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td
+                      class="w-16"
+                    >
+                      <svg
+                        class="w-12 h-12"
+                      >
+                        changenow-logo.svg
+                      </svg>
+                    </td>
+                    <td>
+                      <div
+                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                      >
+                        ChangeNOW Plugin
+                      </div>
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                        >
+                          ChangeNOW
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-right text-theme-neutral-dark"
+                    >
+                      Other
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td
+                      class="w-16"
+                    >
+                      <svg
+                        class="w-12 h-12"
+                      >
+                        changenow-logo.svg
+                      </svg>
+                    </td>
+                    <td>
+                      <div
+                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                      >
+                        Bold Ninja
+                      </div>
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                        >
+                          Delegate Fun
+                        </span>
+                        <div
+                          class="sc-AxjAm vZRQY"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            grant.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-10 text-right text-theme-neutral-dark"
+                    >
+                      Game
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

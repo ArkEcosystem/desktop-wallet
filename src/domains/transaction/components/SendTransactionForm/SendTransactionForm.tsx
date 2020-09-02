@@ -1,4 +1,4 @@
-import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
@@ -18,7 +18,7 @@ type SendTransactionFormProps = {
 export const SendTransactionForm = ({ children, networks, profile, onFail }: SendTransactionFormProps) => {
 	const history = useHistory();
 	const { t } = useTranslation();
-	const [wallets, setWallets] = useState<Wallet[]>([]);
+	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 
 	const form = useFormContext();
 	const { getValues, setValue } = form;
@@ -38,7 +38,8 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 			const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 			try {
-				const transferFees = (await senderWallet!.fee().all(7))?.transfer;
+				// TODO: sync fees in the background, like delegates
+				const transferFees = (await senderWallet!.coin().fee().all(7))?.transfer;
 
 				setFeeOptions({
 					last: undefined,
@@ -70,7 +71,7 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 	};
 
 	return (
-		<div className="SendTransactionForm space-y-8">
+		<div className="space-y-8 SendTransactionForm">
 			<FormField name="network" className="relative">
 				<div className="mb-2">
 					<FormLabel label="Network" />

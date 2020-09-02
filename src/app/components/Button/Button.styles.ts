@@ -1,8 +1,9 @@
 import tw, { css } from "twin.macro";
 import { Size } from "types";
 
+// @TODO add focus-visible:shadow-outline
 const baseStyle = [
-	tw`focus:outline-none focus:shadow-outline inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear rounded justify-center`,
+	tw`focus:outline-none inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear rounded justify-center`,
 	css`
 		line-height: 1.25;
 		&:disabled {
@@ -35,7 +36,8 @@ const getVariant = (name: string, colorName: string, color: ReturnType<typeof ge
 				color: ${color.base};
 				background-color: ${color.contrast};
 				&:not(:focus):hover:enabled {
-					background-color: ${color.light};
+					color: ${colorName === "danger" ? "var(--theme-white)" : color.base};
+					background-color: ${colorName === "danger" ? "var(--theme-color-danger-400)" : color.light};
 				}
 			`;
 		case "outline":

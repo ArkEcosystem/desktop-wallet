@@ -59,6 +59,8 @@ export const defaultNetMocks = () => {
 		.reply(200, require("../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 		.get("/api/node/syncing")
 		.reply(200, require("../tests/fixtures/coins/ark/syncing.json"))
+		.get("/api/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
+		.reply(200, require("../tests/fixtures/coins/ark/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"))
 		.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
 		.reply(200, delegate)
 		.get("/api/wallets/034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192")
@@ -68,7 +70,8 @@ export const defaultNetMocks = () => {
 		.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes")
 		.reply(200, require("../tests/fixtures/coins/ark/votes.json"))
 		.get("/api/delegates")
-		.reply(200, require("../tests/fixtures/coins/ark/delegates.json"))
+		.query(true)
+		.reply(200, require("../tests/fixtures/coins/ark/delegates-devnet.json"))
 		.get(/\/api\/delegates\/.+/)
 		.reply(200, delegate)
 		.get("/api/node/fees")
@@ -76,6 +79,11 @@ export const defaultNetMocks = () => {
 		.reply(200, require("../tests/fixtures/coins/ark/node-fees.json"))
 		.get("/api/transactions/fees")
 		.reply(200, require("../tests/fixtures/coins/ark/transaction-fees.json"))
+		.persist();
+
+	nock("https://min-api.cryptocompare.com")
+		.get("/data/dayAvg?fsym=DARK&tsym=btc&toTs=1593561600")
+		.reply(200, require("tests/fixtures/exchange/cryptocompare.json"))
 		.persist();
 };
 
@@ -87,3 +95,5 @@ const envWithMocks = () => {
 };
 
 export const env = envWithMocks();
+
+export const syncDelegates = async () => await env.delegates().syncAll();

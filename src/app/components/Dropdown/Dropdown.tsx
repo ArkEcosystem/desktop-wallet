@@ -2,40 +2,37 @@ import { Icon } from "app/components/Icon";
 import { clickOutsideHandler } from "app/hooks/click-outside";
 import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
-import { Size } from "types";
+import { Position, Size } from "types";
 
-import { defaultClasses, defaultStyles } from "./Dropdown.styles";
+import { defaultClasses, getStyles } from "./Dropdown.styles";
 
-export type Option = {
+export type DropdownOption = {
 	label: string;
 	value: string | number;
 };
 
-type Props = {
+type DropdownProps = {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	onSelect?: any;
 	options?: any;
-	position?: string;
+	position?: Position;
 	dropdownClass?: string;
 	toggleIcon: string;
 	toggleSize?: Size;
 	toggleContent?: any;
 };
 
-export const Wrapper = styled.div`
-	${defaultStyles}
-	${defaultClasses}
-`;
+export const Wrapper = styled.div<{ position?: string }>(getStyles);
 
 /*
  * Dropdown options list
  */
-const renderOptions = (options: any[], onSelect: any) => (
+const renderOptions = (options: DropdownOption[], onSelect: any) => (
 	<ul data-testid="dropdown__options">
-		{options.map((option: Option, key: number) => (
+		{options.map((option: DropdownOption, key: number) => (
 			<li
-				className="block px-8 py-4 text-sm font-semibold cursor-pointer text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary"
+				className="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary"
 				key={key}
 				data-testid={`dropdown__option--${key}`}
 				onClick={(e: any) => {
@@ -89,7 +86,7 @@ export const Dropdown = ({
 	toggleIcon,
 	toggleSize,
 	toggleContent,
-}: Props) => {
+}: DropdownProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = (e: any) => {
@@ -99,7 +96,7 @@ export const Dropdown = ({
 	};
 	const hide = () => setIsOpen(false);
 
-	const select = (option: Option) => {
+	const select = (option: DropdownOption) => {
 		setIsOpen(false);
 		if (typeof onSelect === "function") onSelect(option);
 	};
@@ -119,9 +116,11 @@ export const Dropdown = ({
 		<div ref={ref} className="relative">
 			<span onClick={toggle}>{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}</span>
 
-			<Wrapper className={`${position}-0 ${dropdownClass}`}>
-				<div data-testid="dropdown__content">{renderOptions(options, select)}</div>
-				<div>{children}</div>
+			<Wrapper position={position} className={`${defaultClasses} ${dropdownClass}`}>
+				<div data-testid="dropdown__content">
+					{renderOptions(options, select)}
+					{children && <div>{children}</div>}
+				</div>
 			</Wrapper>
 		</div>
 	);

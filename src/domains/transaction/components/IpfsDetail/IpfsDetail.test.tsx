@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { render } from "testing-library";
 import { TransactionFixture } from "tests/fixtures/transactions";
@@ -31,13 +30,22 @@ describe("IpfsDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render a modal without a wallet alias", () => {
+		const { asFragment, getByTestId } = render(
+			<IpfsDetail isOpen={true} transaction={TransactionFixture} ticker="BTC" />,
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_IPFS_DETAIL.TITLE);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render as confirmed", () => {
 		const { asFragment, getByText, getByTestId } = render(
 			<IpfsDetail
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					confirmations: () => BigNumber.make(52),
+					isConfirmed: () => true,
 				}}
 				{...extraProps}
 			/>,

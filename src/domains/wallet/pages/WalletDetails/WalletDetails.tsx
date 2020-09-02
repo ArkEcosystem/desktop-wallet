@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting, ReadOnlyWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
@@ -23,9 +24,9 @@ type WalletDetailsProps = {
 };
 
 type WalletInfo = {
-	transactions: Contracts.TransactionDataType[];
+	transactions: ExtendedTransactionData[];
 	walletData?: Contracts.WalletData;
-	votes?: Coins.WalletDataCollection;
+	votes?: ReadOnlyWallet[];
 };
 
 export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
@@ -34,19 +35,19 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
-	const [loadingTransactions] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const { t } = useTranslation();
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
-	const coinName = activeWallet.manifest().get<string>("name");
-	const networkId = activeWallet.network().id;
-	const ticker = activeWallet.network().currency.ticker;
+	const coinName = activeWallet.coinId();
+	const networkId = activeWallet.networkId();
+	const ticker = activeWallet.currency();
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 	const { transactions, walletData, votes } = data;
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
@@ -58,59 +59,30 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	];
 
 	useEffect(() => {
-		// TODO: Replace logic with sdk
-		const fetchVotes = async () => {
-			let response;
-			// catch 404 wallet not found until sdk logic
-			try {
-				response = await activeWallet.votes();
-			} catch (error) {
-				return;
-			}
-
-			const transaction = response.items()[0];
-			const result: Contracts.WalletData[] = [];
-
-			const votes = (transaction?.asset().votes as string[]) || [];
-			for (const vote of votes) {
-				const mode = vote[0];
-				const publicKey = vote.substr(1);
-				/* istanbul ignore next */
-				if (mode === "-") {
-					continue;
-				}
-
-				const voteData = await activeWallet.client().wallet(publicKey);
-
-				result.push(voteData);
-			}
-
-			return new Coins.WalletDataCollection(result, { prev: undefined, self: undefined, next: undefined });
-		};
-
 		const fetchAllData = async () => {
 			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
-			const walletData = await activeWallet.client().wallet(activeWallet.address());
-			const votes = await fetchVotes();
+
+			let walletData: Contracts.WalletData | undefined;
+			let votes: ReadOnlyWallet[] = [];
+
+			try {
+				walletData = await activeWallet.client().wallet(activeWallet.address());
+				votes = activeWallet.votes();
+			} catch {
+				votes = [];
+			}
 
 			setData({
 				walletData,
 				transactions,
 				votes,
 			});
+
+			setIsLoading(false);
 		};
 
 		fetchAllData();
-	}, [activeWallet]);
-
-	useEffect(() => {
-		const timer = setInterval(async () => {
-			await activeWallet.syncIdentity();
-			await persist();
-		}, 30000);
-
-		return () => clearInterval(timer);
-	}, [activeWallet, persist]);
+	}, [activeWallet, env]);
 
 	const handleDeleteWallet = async () => {
 		activeProfile.wallets().forget(activeWallet.id());
@@ -119,10 +91,21 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		history.push(dashboardRoute);
 	};
 
-	const handleUpdateName = async ({ name }: any) => {
-		activeWallet.settings().set(WalletSetting.Alias, name);
+	const handleUpdateName = async (name: string) => {
+		if (name) {
+			activeWallet.settings().set(WalletSetting.Alias, name);
+		} else {
+			activeWallet.settings().forget(WalletSetting.Alias);
+		}
+
 		await persist();
+
 		setIsUpdateWalletName(false);
+	};
+
+	const handleStar = async () => {
+		activeWallet.toggleStarred();
+		await persist();
 	};
 
 	const fetchMoreTransactions = async (type?: string) => {
@@ -137,50 +120,59 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		<>
 			<Page profile={activeProfile} crumbs={crumbs}>
 				<WalletHeader
-					coin={coinName!}
-					network={networkId}
-					ticker={ticker}
 					address={activeWallet.address()}
-					publicKey={activeWallet.publicKey()}
 					balance={activeWallet.balance()}
+					coin={coinName}
 					currencyBalance={activeWallet.convertedBalance()}
 					exchangeCurrency={exchangeCurrency}
-					name={activeWallet.alias()}
 					isLedger={activeWallet.isLedger()}
 					isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
-					hasStarred={activeWallet.isStarred()}
+					isStarred={activeWallet.isStarred()}
+					name={activeWallet.alias()}
+					network={networkId}
+					publicKey={activeWallet.publicKey()}
+					ticker={ticker}
+					onDeleteWallet={() => setIsDeleteWallet(true)}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/transfer`)
 					}
+					onSignMessage={() => setIsSigningMessage(true)}
+					onStar={handleStar}
 					onStoreHash={() =>
 						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/ipfs`)
 					}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
-					onSignMessage={() => setIsSigningMessage(true)}
-					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
 
-				<Section>{votes && <WalletVote votes={votes} />}</Section>
+				<Section>
+					<WalletVote
+						votes={votes}
+						isLoading={isLoading}
+						onVote={() =>
+							history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`)
+						}
+					/>
+				</Section>
 
 				<Section>
-					{walletData && (
-						<WalletRegistrations
-							address={activeWallet.address()}
-							delegate={
-								activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
-									? walletData
-									: undefined
-							}
-							business={undefined}
-							isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
-							hasBridgechains={true}
-							hasSecondSignature={activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()}
-							hasPlugins={true}
-							onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
-							onRegister={() => history.push(`/profiles/${activeProfile.id()}/transactions/registration`)}
-						/>
-					)}
+					<WalletRegistrations
+						isLoading={isLoading}
+						delegate={
+							activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate() ? walletData : undefined
+						}
+						business={undefined}
+						isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
+						hasBridgechains={true}
+						hasSecondSignature={activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()}
+						hasPlugins={true}
+						onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
+						onRegister={() =>
+							history.push(
+								`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/registration`,
+							)
+						}
+					/>
 				</Section>
 
 				<Section>
@@ -191,7 +183,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 							<TransactionTable
 								transactions={transactions}
 								showSignColumn
-								isLoading={loadingTransactions}
+								isLoading={isLoading}
 								skeletonRowsLimit={txSkeletonRowsLimit}
 							/>
 							{transactions.length > 0 && (
@@ -212,8 +204,8 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 						<>
 							<TransactionTable
 								transactions={transactions}
-								currencyRate="2"
-								isLoading={loadingTransactions}
+								exchangeCurrency={exchangeCurrency}
+								isLoading={isLoading}
 								skeletonRowsLimit={txSkeletonRowsLimit}
 							/>
 							{transactions.length > 0 && (

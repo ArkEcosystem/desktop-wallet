@@ -1,4 +1,4 @@
-import { Profile, Wallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -10,7 +10,7 @@ const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 
 describe("Wallet Card", () => {
 	beforeAll(() => {
@@ -85,7 +85,7 @@ describe("Wallet Card", () => {
 	});
 
 	it("should click a wallet and redirect to it", () => {
-		const { getByTestId } = renderWithRouter(
+		const { getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<WalletCard wallet={wallet} />
 			</Route>,
@@ -98,7 +98,7 @@ describe("Wallet Card", () => {
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/dashboard`);
 
 		act(() => {
-			fireEvent.click(getByTestId(`WalletCard__${wallet.address()}`));
+			fireEvent.click(getByText("D8rr…YUYD"));
 		});
 
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);

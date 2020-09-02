@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
@@ -12,8 +12,8 @@ import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 import { TransactionRowSkeleton } from "./TransactionRowSkeleton";
 
 type Props = {
-	transaction: Contracts.TransactionDataType;
-	currencyRate?: string;
+	transaction: ExtendedTransactionData;
+	exchangeCurrency?: string;
 	isSignaturePending?: boolean;
 	onSign?: () => void;
 	onClick?: () => void;
@@ -23,7 +23,7 @@ type Props = {
 } & React.HTMLProps<any>;
 
 export const TransactionRow = ({
-	currencyRate,
+	exchangeCurrency,
 	transaction,
 	onSign,
 	onClick,
@@ -33,11 +33,13 @@ export const TransactionRow = ({
 	showSign,
 	...props
 }: Props) => {
+	const [backgroundColor, setBackgroundColor] = React.useState<string>("");
+
 	if (isLoading)
 		return (
 			<TransactionRowSkeleton
 				data-testid="TransactionRow__skeleton"
-				showCurrency={currencyRate && !isSignaturePending}
+				showCurrency={!!exchangeCurrency && !isSignaturePending}
 				showSign={showSign || isSignaturePending}
 			/>
 		);
@@ -45,15 +47,17 @@ export const TransactionRow = ({
 	return (
 		<tr
 			data-testid="TransactionRow"
-			className="border-b border-dotted border-theme-neutral-300"
+			className="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
 			{...props}
 			onClick={onClick}
+			onMouseEnter={() => setBackgroundColor("--theme-color-success-100")}
+			onMouseLeave={() => setBackgroundColor("")}
 		>
 			<td className="w-16 py-6">
 				<div className="inline-block align-middle">
 					<Link
 						data-testid="TransactionRow__ID"
-						to={{ pathname: "" }}
+						to={transaction.explorerLink()}
 						tooltip={transaction.id()}
 						isExternal
 					/>
@@ -65,7 +69,7 @@ export const TransactionRow = ({
 				</span>
 			</td>
 			<td className="w-32 py-2">
-				<TransactionRowMode transaction={transaction} />
+				<TransactionRowMode transaction={transaction} circleShadowColor={backgroundColor} />
 			</td>
 			<td>
 				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
@@ -87,9 +91,9 @@ export const TransactionRow = ({
 					</Button>
 				</td>
 			)}
-			{currencyRate && !isSignaturePending && (
+			{!!exchangeCurrency && !isSignaturePending && (
 				<td data-testid="TransactionRow__currency" className="text-right">
-					<TransactionRowAmount transaction={transaction} currencyRate={currencyRate} />
+					<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
 				</td>
 			)}
 		</tr>

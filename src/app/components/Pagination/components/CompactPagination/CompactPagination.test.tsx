@@ -14,13 +14,14 @@ describe("CompactPagination", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render previous buttons as disabled on last page", () => {
-		const { asFragment, getByTestId } = render(
+	it("should not render first and previous buttons on first page", () => {
+		const { asFragment, queryByTestId } = render(
 			<CompactPagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
 		);
 
-		expect(getByTestId("CompactPagination__previous")).toBeDisabled();
-		expect(getByTestId("CompactPagination__first")).toBeDisabled();
+		expect(queryByTestId("CompactPagination__first")).not.toBeInTheDocument();
+		expect(queryByTestId("CompactPagination__previous")).not.toBeInTheDocument();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -68,13 +69,14 @@ describe("CompactPagination", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render next buttons as disabled on last page", () => {
-		const { asFragment, getByTestId } = render(
+	it("should not render next and last buttons on last page", () => {
+		const { asFragment, queryByTestId } = render(
 			<CompactPagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={3} />,
 		);
 
-		expect(getByTestId("CompactPagination__next")).toBeDisabled();
-		expect(getByTestId("CompactPagination__last")).toBeDisabled();
+		expect(queryByTestId("CompactPagination__next")).not.toBeInTheDocument();
+		expect(queryByTestId("CompactPagination__last")).not.toBeInTheDocument();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

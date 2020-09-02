@@ -4,6 +4,31 @@ exports[`TransactionDetail should render 1`] = `
 <div>
   <div
     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Test
+      </div>
+      <div
+        class="font-semibold"
+      >
+        test
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransactionDetail should render with bottom border 1`] = `
+<div>
+  <div
+    class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
@@ -27,6 +52,7 @@ exports[`TransactionDetail should render with extra children 1`] = `
 <div>
   <div
     class="flex items-center true border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
@@ -49,10 +75,35 @@ exports[`TransactionDetail should render with extra children 1`] = `
 </div>
 `;
 
+exports[`TransactionDetail should render with top border 1`] = `
+<div>
+  <div
+    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral"
+      >
+        Test
+      </div>
+      <div
+        class="font-semibold"
+      >
+        test
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`TransactionDetail should render without border 1`] = `
 <div>
   <div
     class="flex items-center py-6 true "
+    data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
@@ -76,6 +127,7 @@ exports[`TransactionDetail should render without padding 1`] = `
 <div>
   <div
     class="flex items-center true border-t border-dashed border-theme-neutral-300 "
+    data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"

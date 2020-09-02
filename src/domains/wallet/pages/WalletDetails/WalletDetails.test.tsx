@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -13,12 +13,12 @@ const history = createMemoryHistory();
 let walletUrl: string;
 
 let profile: Profile;
-let wallet: Wallet;
-let blankWallet: Wallet;
-let unvotedWallet: Wallet;
+let wallet: ReadWriteWallet;
+let blankWallet: ReadWriteWallet;
+let unvotedWallet: ReadWriteWallet;
 
 let emptyProfile: Profile;
-let wallet2: Wallet;
+let wallet2: ReadWriteWallet;
 
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
@@ -47,42 +47,18 @@ describe("WalletDetails", () => {
 		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
 
 		nock("https://dwallets.ark.io")
+			.get("/api/delegates")
+			.query({ page: "1" })
+			.reply(200, require("tests/fixtures/coins/ark/delegates.json"))
 			.get(`/api/wallets/${unvotedWallet.address()}`)
 			.reply(200, walletMock)
-			.get(`/api/wallets/${unvotedWallet.address()}/votes`)
-			.reply(200, {
-				meta: {
-					totalCountIsEstimate: false,
-					count: 0,
-					pageCount: 1,
-					totalCount: 0,
-					next: null,
-					previous: null,
-					self: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-					first: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-					last: null,
-				},
-				data: [],
-			})
 			.get(`/api/wallets/${blankWallet.address()}`)
 			.reply(404, {
 				statusCode: 404,
 				error: "Not Found",
 				message: "Wallet not found",
 			})
-			.get(`/api/wallets/${blankWallet.address()}/votes`)
-			.reply(404, {
-				statusCode: 404,
-				error: "Not Found",
-				message: "Wallet not found",
-			})
 			.get(`/api/wallets/${wallet2.address()}`)
-			.reply(404, {
-				statusCode: 404,
-				error: "Not Found",
-				message: "Wallet not found",
-			})
-			.get(`/api/wallets/${wallet2.address()}/votes`)
 			.reply(404, {
 				statusCode: 404,
 				error: "Not Found",
@@ -138,39 +114,77 @@ describe("WalletDetails", () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
 		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
-		const dropdown = getAllByTestId("dropdown__toggle")[2];
-		expect(dropdown).toBeTruthy();
-
 		act(() => {
-			fireEvent.click(dropdown);
+			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
 		});
 
-		const updateWalletNameOption = getByTestId("dropdown__option--0");
-		expect(updateWalletNameOption).toBeTruthy();
-
 		act(() => {
-			fireEvent.click(updateWalletNameOption);
+			fireEvent.click(getByTestId("dropdown__option--0"));
 		});
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		const name = "Sample label name";
-		const updateNameInput = getByTestId("UpdateWalletName__input");
 
 		act(() => {
-			fireEvent.change(updateNameInput, { target: { value: name } });
+			fireEvent.change(getByTestId("UpdateWalletName__input"), { target: { value: name } });
 		});
 
-		expect(updateNameInput).toHaveValue(name);
+		act(() => {
+			fireEvent.click(getByTestId("UpdateWalletName__submit"));
+		});
+
+		await waitFor(() => expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should remove wallet name", async () => {
+		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--0"));
+		});
+
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("UpdateWalletName__input"), { target: { value: "" } });
+		});
 
 		const submitBtn = getByTestId("UpdateWalletName__submit");
 
 		act(() => {
-			fireEvent.click(submitBtn);
+			fireEvent.click(getByTestId("UpdateWalletName__submit"));
 		});
 
-		wallet.settings().set(WalletSetting.Alias, name);
-		await waitFor(() => expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name));
+		await waitFor(() => expect(wallet.settings().get(WalletSetting.Alias)).toBe(undefined));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should star and unstar a wallet", async () => {
+		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
+
+		expect(wallet.isStarred()).toBe(false);
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletHeader__star-button"));
+		});
+
+		await waitFor(() => expect(wallet.isStarred()).toBe(true));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletHeader__star-button"));
+		});
+
+		await waitFor(() => expect(wallet.isStarred()).toBe(false));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -192,7 +206,7 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => {
-			expect(getAllByTestId("TransactionRow")).toHaveLength(4);
+			expect(getAllByTestId("TransactionRow")).toHaveLength(6);
 		});
 	});
 

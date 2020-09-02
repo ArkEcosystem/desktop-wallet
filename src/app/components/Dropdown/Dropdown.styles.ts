@@ -1,7 +1,26 @@
-import tw, { css } from "twin.macro";
+import tw from "twin.macro";
 
-export const defaultStyles = css`
-	min-width: 12rem;
-`;
+export const defaultClasses =
+	"mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1";
 
-export const defaultClasses = tw`mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-contrast border-1`;
+const getPosition = (position: string): any => {
+	switch (position) {
+		case "bottom":
+			return tw`bottom-0`;
+		case "bottom-left":
+			return tw`bottom-0 left-0`;
+		case "left":
+			return tw`left-0 `;
+		case "top-left":
+			return tw`top-0 left-0`;
+		case "top":
+			return tw`top-0`;
+		case "top-right":
+			return tw`top-0 right-0`;
+		case "right":
+		default:
+			return tw`right-0`;
+	}
+};
+
+export const getStyles = ({ position }: any) => [getPosition(position)];

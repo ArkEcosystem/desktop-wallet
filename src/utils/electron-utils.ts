@@ -72,6 +72,6 @@ const openFile = async (defaultPath?: string | null, options?: DialogOptions) =>
 
 const openExternal = (url: string) => electron.shell.openExternal(url);
 
-const isIdle = (idleTreshold: number) => electron.remote.powerMonitor.getSystemIdleState(idleTreshold) === "idle";
+const isIdle = (idleTreshold: number) => electron.remote.powerMonitor.getSystemIdleTime() >= idleTreshold;
 
 export { isIdle, openExternal, openFile, saveFile, setScreenshotProtection };

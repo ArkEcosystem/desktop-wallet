@@ -1,56 +1,45 @@
-import { ClientFunction, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
-import { buildTranslations as translations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { buildTranslations } from "../../../app/i18n/helpers";
+import { createFixture, getLocation, scrollToTop } from "../../../utils/e2e-utils";
+import { goToPlugins } from "./common";
 
-const scrollTop = ClientFunction(() => {
-	window.scrollTo({ top: 0 });
-});
+const translations = buildTranslations();
 
-fixture`Plugins screen routing`.page(getPageURL());
+createFixture(`Plugins routing`).beforeEach(async (t) => await goToPlugins(t));
 
 test("should navigate and apply filters", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.click(Selector("a").withText(translations().COMMON.PLUGINS));
-	await t.expect(Selector("h1").withText(translations().PLUGINS.PAGE_PLUGIN_MANAGER.TITLE).exists).ok();
-
 	// Filtering by game
-	await t.click(Selector("span").withExactText(translations().PLUGINS.CATEGORIES.GAME));
-	await t.expect(Selector("h2").withExactText(translations().PLUGINS.CATEGORIES.GAME).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.CATEGORIES.GAME));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.GAME).exists).ok();
 
 	// Filtering by utility
-	await t.click(Selector("span").withExactText(translations().PLUGINS.CATEGORIES.UTILITY));
-	await t.expect(Selector("h2").withExactText(translations().PLUGINS.CATEGORIES.UTILITY).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.CATEGORIES.UTILITY));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.UTILITY).exists).ok();
 
 	// Filtering by themes
-	await t.click(Selector("span").withExactText(translations().PLUGINS.CATEGORIES.THEMES));
-	await t.expect(Selector("h2").withExactText(translations().PLUGINS.CATEGORIES.THEMES).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.CATEGORIES.THEMES));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.THEMES).exists).ok();
 
 	// Filtering by other
-	await t.click(Selector("span").withExactText(translations().PLUGINS.CATEGORIES.OTHER));
-	await t.expect(Selector("h2").withExactText(translations().PLUGINS.CATEGORIES.OTHER).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.CATEGORIES.OTHER));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.OTHER).exists).ok();
 
 	// Filtering by user plugins
 	await t.click(Selector("span").withExactText("MyPlugin"));
-	await t.expect(Selector("h2").withExactText(translations().PLUGINS.CATEGORIES.MY_PLUGINS).exists).ok();
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.MY_PLUGINS).exists).ok();
 });
 
-test("should navigate to plugin details", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.click(Selector("a").withText(translations().COMMON.PLUGINS));
-	await t.expect(Selector("h1").withText(translations().PLUGINS.PAGE_PLUGIN_MANAGER.TITLE).exists).ok();
-
-	await t.click(Selector('[data-testid="PluginCard--ark-explorer-0"]'));
+test("should navigate to plugin details and back", async (t) => {
+	await t.click(Selector('[data-testid="PluginGrid"] > div > div').withText("ARK Explorer"));
 	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
-});
 
-test("should navigate back to plugin store from plugin details", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.click(Selector("a").withText(translations().COMMON.PLUGINS));
-	await t.expect(Selector("h1").withText(translations().PLUGINS.PAGE_PLUGIN_MANAGER.TITLE).exists).ok();
-	await t.click(Selector('[data-testid="PluginCard--ark-explorer-0"]'));
-	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
-	await scrollTop();
+	await t.expect(getLocation()).contains("/plugins/ark-explorer");
 
-	await t.click(Selector("span").withExactText(translations().PLUGINS.GO_BACK_TO_PLUGIN_STORE));
+	await scrollToTop();
+
+	await t.click(Selector("span").withExactText(translations.PLUGINS.GO_BACK_TO_PLUGIN_STORE));
+
+	await t.expect(getLocation()).contains("/plugins");
+	await t.expect(getLocation()).notContains("/plugins/ark-explorer");
 });

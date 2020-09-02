@@ -13,47 +13,47 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	coin: string;
-	network: string;
-	ticker: string;
 	address?: string;
 	balance: BigNumber;
+	coin: string;
 	currencyBalance?: BigNumber;
 	exchangeCurrency?: string;
-	hasStarred?: boolean;
 	isLedger?: boolean;
 	isMultisig?: boolean;
+	isStarred?: boolean;
 	name?: string;
+	network: string;
 	publicKey?: string;
-	onSignMessage: () => void;
-	onVerifyMessage: () => void;
+	ticker: string;
 	onDeleteWallet: () => void;
-	onUpdateWalletName: () => void;
 	onSend?: () => void;
-	onStar?: () => void;
+	onSignMessage: () => void;
+	onStar: () => void;
 	onStoreHash: () => void;
+	onUpdateWalletName: () => void;
+	onVerifyMessage: () => void;
 };
 
 export const WalletHeader = ({
-	coin,
-	network,
-	ticker,
-	hasStarred,
-	name,
 	address,
-	publicKey,
-	onSend,
-	onStar,
-	onStoreHash,
-	onSignMessage,
-	onVerifyMessage,
-	onDeleteWallet,
-	onUpdateWalletName,
 	balance,
+	coin,
 	currencyBalance,
 	exchangeCurrency,
 	isLedger,
 	isMultisig,
+	isStarred,
+	name,
+	network,
+	publicKey,
+	ticker,
+	onDeleteWallet,
+	onSend,
+	onSignMessage,
+	onStar,
+	onStoreHash,
+	onUpdateWalletName,
+	onVerifyMessage,
 }: Props) => {
 	const [showPublicKey, setShowPublicKey] = React.useState(false);
 
@@ -92,13 +92,27 @@ export const WalletHeader = ({
 						)}
 					</div>
 					<div className="flex items-stretch space-x-2">
-						<button
-							data-testid="WalletHeader__star-button"
-							className="px-3 text-theme-neutral-dark"
-							onClick={onStar}
-						>
-							<Icon name={hasStarred ? "Star" : "StarOutline"} />
-						</button>
+						<div className="my-auto">
+							<Button
+								size="icon"
+								variant="transparent"
+								className="text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+								data-testid="WalletHeader__star-button"
+								onClick={onStar}
+							>
+								<Tippy
+									content={
+										isStarred
+											? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
+											: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
+									}
+								>
+									<span>
+										<Icon name={isStarred ? "Star" : "StarOutline"} />
+									</span>
+								</Tippy>
+							</Button>
+						</div>
 
 						<Button data-testid="WalletHeader__send-button" onClick={onSend}>
 							{t("COMMON.SEND")}
@@ -168,6 +182,7 @@ export const WalletHeader = ({
 							</span>
 							<Toggle
 								data-testid="WalletHeader__toggle"
+								baseColor="--theme-color-primary"
 								disabled={!publicKey}
 								onChange={() => setShowPublicKey(!showPublicKey)}
 							/>
@@ -201,7 +216,7 @@ export const WalletHeader = ({
 								value={balance}
 								ticker={ticker}
 								data-testid="WalletHeader__balance"
-								className="text-lg font-medium"
+								className="text-lg font-semibold"
 							/>
 						</li>
 					)}
@@ -215,7 +230,7 @@ export const WalletHeader = ({
 								value={currencyBalance}
 								ticker={exchangeCurrency!}
 								data-testid="WalletHeader__currency-balance"
-								className="text-lg font-medium"
+								className="text-lg font-semibold"
 							/>
 						</li>
 					)}

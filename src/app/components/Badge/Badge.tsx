@@ -1,6 +1,7 @@
 import { Icon } from "app/components/Icon";
 import React from "react";
 import { styled } from "twin.macro";
+import { Position } from "types";
 
 import { defaultClasses, getStyles } from "./Badge.styles";
 
@@ -10,7 +11,7 @@ type BadgeProps = {
 	icon?: string;
 	iconWidth?: number;
 	iconHeight?: number;
-	position?: "top" | "top-right" | "right" | "bottom-right" | "bottom" | "bottom-left" | "left" | "top-left";
+	position?: Position;
 };
 
 export const Wrapper = styled.span<BadgeProps>(getStyles);

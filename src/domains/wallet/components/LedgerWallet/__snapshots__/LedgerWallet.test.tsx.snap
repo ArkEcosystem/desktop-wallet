@@ -12,73 +12,65 @@ exports[`LedgerWallet should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm bThAoP"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="p-1"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+          Ledger Wallet
+        </h2>
         <div
-          class="py-4"
+          class="flex-1"
         >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Ledger Wallet
-          </h2>
           <div
-            class="flex-1"
+            class="container"
           >
-            <div
-              class="container"
+            <p
+              class="mt-1 text-sm text-theme-neutral-dark md:text-base"
             >
-              <p
-                class="mt-1 text-sm text-theme-neutral-dark md:text-base"
-              >
-                Connect your Ledger to PC and confirm the input.
-              </p>
-              <svg
-                class="my-8"
-              >
-                waiting-ledger.svg
-              </svg>
+              Connect your Ledger to PC and confirm the input.
+            </p>
+            <svg
+              class="my-8"
+            >
+              waiting-ledger.svg
+            </svg>
+            <div
+              class="inline-flex items-center space-x-4"
+            >
               <div
-                class="inline-flex items-center space-x-4"
+                class="sc-AxhCb irNmep"
+                color="primary"
+              />
+              <span
+                class="font-semibold text-black"
               >
-                <div
-                  class="sc-AxhCb irNmep"
-                  color="primary"
-                />
-                <span
-                  class="font-semibold text-black"
-                >
-                  Waiting for Ledger...
-                </span>
-              </div>
+                Waiting for Ledger...
+              </span>
             </div>
           </div>
         </div>

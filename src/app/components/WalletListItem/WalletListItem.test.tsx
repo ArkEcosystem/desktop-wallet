@@ -1,4 +1,4 @@
-import { Profile, Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -10,7 +10,7 @@ const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 
 describe("WalletListItem", () => {
 	beforeAll(() => {
@@ -43,14 +43,14 @@ describe("WalletListItem", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render a button if variant is 'singleAction'", () => {
-		const actions = [{ label: "Option 1", value: "1" }];
+	it("should render a button if 'actions' is a string", () => {
+		const actions = "Action";
 
 		const { container, getByTestId } = renderWithRouter(
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
-						<WalletListItem wallet={wallet} actions={actions} variant="singleAction" />
+						<WalletListItem wallet={wallet} actions={actions} />
 					</Route>
 				</tbody>
 			</table>,
@@ -61,7 +61,7 @@ describe("WalletListItem", () => {
 		);
 
 		expect(() => getByTestId("dropdown__toggle")).toThrow(/Unable to find an element by/);
-		expect(getByTestId("button")).toHaveTextContent(actions[0].label);
+		expect(getByTestId("button")).toHaveTextContent(actions);
 		expect(container).toMatchSnapshot();
 	});
 

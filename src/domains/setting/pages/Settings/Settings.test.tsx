@@ -79,7 +79,7 @@ describe("Settings", () => {
 		}));
 
 		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__upload-button"));
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
@@ -127,7 +127,7 @@ describe("Settings", () => {
 			MARKET_PROVIDER: "coincap",
 			EXCHANGE_CURRENCY: "btc",
 			TIME_FORMAT: "h:mm A",
-			SCREENSHOT_PROTECTION: false,
+			SCREENSHOT_PROTECTION: true,
 			ADVANCED_MODE: true,
 			AUTOMATIC_SIGN_OUT_PERIOD: 1,
 			THEME: "light",
@@ -136,7 +136,7 @@ describe("Settings", () => {
 
 		// Upload and remove avatar image
 		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__remove-avatar"));
+			fireEvent.click(getByTestId("SelectProfileImage__remove-button"));
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
@@ -166,7 +166,7 @@ describe("Settings", () => {
 			MARKET_PROVIDER: "coincap",
 			EXCHANGE_CURRENCY: "btc",
 			TIME_FORMAT: "h:mm A",
-			SCREENSHOT_PROTECTION: false,
+			SCREENSHOT_PROTECTION: true,
 			ADVANCED_MODE: false,
 			AUTOMATIC_SIGN_OUT_PERIOD: 1,
 			THEME: "dark",
@@ -179,7 +179,7 @@ describe("Settings", () => {
 		}));
 
 		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__upload-button"));
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);

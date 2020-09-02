@@ -5,28 +5,37 @@ exports[`Splash should render 1`] = `
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="px-4 sm:px-6 lg:px-8 bg-theme-background"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV gFhcPB"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="relative flex justify-between h-20 md:h-24"
         >
-          <img
-            alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
-            src="ark-logo.png"
-          />
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fzoLag gzuhWQ"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
     <div
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex flex-col justify-center flex-1 text-center"
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -106,11 +115,15 @@ exports[`Splash should render 1`] = `
               class="sc-AxjAm gHUxAL border-theme-neutral-300"
               type="vertical"
             />
-            <img
-              alt="ARK Desktop Wallet"
-              class="w-4 h-4 p-px mr-2 rounded-sm bg-theme-neutral-500"
-              src="ark-logo.png"
-            />
+            <div
+              class="sc-fzpjYC bzdBmE"
+            >
+              <svg
+                width="14"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
             <div>
               An ARK.io Product
             </div>

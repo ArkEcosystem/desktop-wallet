@@ -1,26 +1,18 @@
+import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
+import { Loader } from "app/components/Loader";
 import { useActiveProfile } from "app/hooks/env";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { BlockchainTable } from "./components/BlockchainTable";
 import { BusinessTable } from "./components/BusinessTable";
 import { DelegateTable } from "./components/DelegateTable";
-
-type Props = {
-	registrations?: any;
-	handleDropdown?: any;
-};
-
-type RegistrationProps = {
-	type: string;
-	registrations: any;
-};
 
 const { RegisterBanner } = images.common;
 
@@ -29,7 +21,7 @@ const EmptyRegistrations = () => {
 
 	return (
 		<Section className="flex-1">
-			<div data-testid="my-registrations__empty-state" className="text-center">
+			<div data-testid="MyRegistrations__empty-state" className="text-center">
 				<RegisterBanner className="mx-auto" />
 
 				<div className="mt-8 text-theme-neutral-dark">
@@ -40,46 +32,24 @@ const EmptyRegistrations = () => {
 	);
 };
 
-const renderRegistration = ({ type, registrations }: RegistrationProps, handleDropdown: any) => {
-	switch (type) {
-		case "business":
-			return (
-				<BusinessTable
-					key={type}
-					data={registrations}
-					handleDropdown={(option: any) => handleDropdown(type, option)}
-				/>
-			);
-		case "blockchain":
-			return (
-				<BlockchainTable
-					key={type}
-					data={registrations}
-					handleDropdown={(option: any) => handleDropdown(type, option)}
-				/>
-			);
-		case "delegate":
-			return (
-				<DelegateTable
-					key={type}
-					data={registrations}
-					handleDropdown={(option: any) => handleDropdown(type, option)}
-				/>
-			);
-
-		default:
-			return null;
-	}
+type Props = {
+	blockchainRegistrations: any[];
 };
 
-export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
-	const activeProfile = useActiveProfile();
+export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
+	const [isLoading, setIsLoading] = useState(false);
+	const [blockchain] = useState(blockchainRegistrations);
+	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
+	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
+	const activeProfile = useActiveProfile();
 
-	const mountRegistrations = () =>
-		registrations.map((registrationsBlock: any) => renderRegistration(registrationsBlock, handleDropdown));
+	const isEmptyRegistrations = useMemo(
+		() => !isLoading && !delegates.length && !blockchain.length && !businesses.length,
+		[businesses, delegates, blockchain, isLoading],
+	);
 
 	const crumbs = [
 		{
@@ -87,6 +57,38 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
+
+	const handleAction = ({ action, walletId }: any) => {
+		switch (action) {
+			case "register":
+				//TODO: Determine wallet selection. Which wallet should be registered?
+				history.push(`/profiles/${activeProfile.id()}/transactions/registration`);
+				break;
+			case "resign":
+				history.push(`/profiles/${activeProfile.id()}/transactions/${walletId}/resignation`);
+				break;
+			case "update":
+				history.push(`/profiles/${activeProfile.id()}/transactions/${walletId}/update`);
+				break;
+		}
+	};
+
+	useEffect(() => {
+		const fetchRegistrations = async () => {
+			setIsLoading(true);
+
+			activeProfile.entityRegistrationAggregate().flush();
+
+			const businessRegistrations = await activeProfile.entityRegistrationAggregate().businesses();
+			setBusinesses(businessRegistrations.items());
+
+			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
+			setDelegates(delegateRegistrations);
+
+			setIsLoading(false);
+		};
+		fetchRegistrations();
+	}, [activeProfile]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -99,9 +101,8 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 							<HeaderSearchBar onSearch={console.log} />
 							<div className="pl-10">
 								<Button
-									onClick={() =>
-										history.push(`/profiles/${activeProfile.id()}/transactions/registration`)
-									}
+									data-testid="MyRegistrations__cta-register"
+									onClick={() => handleAction({ action: "register" })}
 								>
 									{t("COMMON.REGISTER")}
 								</Button>
@@ -111,11 +112,17 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 				/>
 			</Section>
 
-			{!registrations.length ? <EmptyRegistrations /> : mountRegistrations()}
+			{isLoading && !isEmptyRegistrations && <Loader />}
+
+			{!isLoading && businesses.length > 0 && <BusinessTable businesses={businesses} onAction={handleAction} />}
+			{!isLoading && blockchain.length > 0 && <BlockchainTable data={blockchain} />}
+			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
+
+			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
 	);
 };
 
 MyRegistrations.defaultProps = {
-	registrations: [],
+	blockchainRegistrations: [],
 };

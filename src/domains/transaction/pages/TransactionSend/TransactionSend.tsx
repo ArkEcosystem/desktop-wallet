@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { NetworkData, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -27,6 +27,7 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; profile: Profile }) => {
 	const { t } = useTranslation();
@@ -81,11 +82,11 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 	);
 };
 
-export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
+export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
 	const { fee, recipients, smartbridge } = getValues();
-	const coinName = wallet.manifest().get<string>("name");
+	const coinName = wallet.coinId();
 
 	let amount = BigNumber.ZERO;
 	for (const recipient of recipients) {
@@ -118,7 +119,7 @@ export const SecondStep = ({ wallet }: { wallet: Wallet }) => {
 					}
 				>
 					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-						{wallet.network().name}
+						{wallet.network().name()}
 					</div>
 				</TransactionDetail>
 
@@ -191,11 +192,17 @@ export const FourthStep = () => {
 	);
 };
 
-export const FifthStep = ({ transaction }: { transaction: Contracts.SignedTransactionData }) => {
+export const FifthStep = ({
+	transaction,
+	senderWallet,
+}: {
+	transaction: Contracts.SignedTransactionData;
+	senderWallet: ReadWriteWallet;
+}) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful transactionId={transaction.id()}>
+		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				className="pb-0"
@@ -215,6 +222,7 @@ export const FifthStep = ({ transaction }: { transaction: Contracts.SignedTransa
 
 export const TransactionSend = () => {
 	const { t } = useTranslation();
+	const history = useHistory();
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
@@ -240,10 +248,7 @@ export const TransactionSend = () => {
 		setValue("senderAddress", activeWallet.address(), true);
 
 		for (const network of networks) {
-			if (
-				network.id() === activeWallet.network().id &&
-				network.coin() === activeWallet.manifest().get<string>("name")
-			) {
+			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 				setValue("network", network, true);
 
 				break;
@@ -290,7 +295,7 @@ export const TransactionSend = () => {
 				});
 			}
 
-			await senderWallet!.transaction().broadcast([transactionId]);
+			await senderWallet!.transaction().broadcast(transactionId);
 
 			await env.persist();
 
@@ -345,7 +350,7 @@ export const TransactionSend = () => {
 							</TabPanel>
 
 							<TabPanel tabId={4}>
-								<FifthStep transaction={transaction} />
+								<FifthStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -387,10 +392,16 @@ export const TransactionSend = () => {
 										<Button
 											data-testid="TransactionSend__button--back-to-wallet"
 											variant="plain"
-											className={"block"}
+											className="block"
+											onClick={() =>
+												history.push(
+													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+												)
+											}
 										>
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
+
 										<Button
 											onClick={copyTransaction}
 											data-testid="TransactionSend__button--copy"

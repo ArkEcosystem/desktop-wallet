@@ -1,17 +1,16 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
-export const TransactionFixture: Contracts.TransactionDataType = {
+export const TransactionFixture = {
 	id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 	blockId: () => "71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9",
 	type: () => "transfer",
 	timestamp: () => DateTime.fromUnix(1596213281),
 	confirmations: () => BigNumber.make(10),
-	votes: () => ["10"],
-	unvotes: () => ["10"],
-	sender: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-	recipient: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+	votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+	unvotes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+	sender: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+	recipient: () => "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 	recipients: () => [],
 	amount: () => BigNumber.make(100).times(1e8),
 	fee: () => BigNumber.make(21).times(1e8),
@@ -32,7 +31,6 @@ export const TransactionFixture: Contracts.TransactionDataType = {
 	isHtlcLock: () => false,
 	isHtlcClaim: () => false,
 	isHtlcRefund: () => false,
-
 	isEntityRegistration: () => false,
 	isEntityResignation: () => false,
 	isEntityUpdate: () => false,
@@ -64,4 +62,12 @@ export const TransactionFixture: Contracts.TransactionDataType = {
 	setMeta: () => "",
 	// IPFS Type
 	hash: () => "QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68",
+	// @ts-ignore
+	explorerLink: () =>
+		"https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+	total: () => BigNumber.make(121).times(1e8),
+	convertedTotal: () => BigNumber.ZERO,
+	wallet: () => undefined,
+	coin: () => undefined,
+	data: () => undefined,
 };

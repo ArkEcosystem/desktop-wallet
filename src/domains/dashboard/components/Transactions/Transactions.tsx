@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import React from "react";
@@ -6,15 +6,17 @@ import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
 	title: string;
-	transactions: Contracts.TransactionDataType[];
+	transactions: ExtendedTransactionData[];
+	exchangeCurrency?: string;
 	fetchMoreAction?: Function;
-	onRowClick?: (row: Contracts.TransactionDataType) => void;
+	onRowClick?: (row: ExtendedTransactionData) => void;
 	emptyText?: string;
 	isLoading?: boolean;
 };
 
 export const Transactions = ({
 	transactions,
+	exchangeCurrency,
 	title,
 	emptyText,
 	fetchMoreAction,
@@ -29,7 +31,7 @@ export const Transactions = ({
 			<div className="pt-8">
 				<TransactionTable
 					transactions={transactions}
-					currencyRate="2"
+					exchangeCurrency={exchangeCurrency}
 					isLoading={isLoading}
 					onRowClick={onRowClick}
 				/>
@@ -39,9 +41,10 @@ export const Transactions = ({
 						data-testid="transactions__fetch-more-button"
 						variant="plain"
 						className="w-full mt-10 mb-5"
+						disabled={isLoading}
 						onClick={() => fetchMoreAction && fetchMoreAction()}
 					>
-						{t("COMMON.VIEW_MORE")}
+						{isLoading ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
 					</Button>
 				)}
 			</div>

@@ -134,7 +134,7 @@ exports[`WalletListItem should render 1`] = `
 </div>
 `;
 
-exports[`WalletListItem should render a button if variant is 'singleAction' 1`] = `
+exports[`WalletListItem should render a button if 'actions' is a string 1`] = `
 <div>
   <table>
     <tbody>
@@ -267,12 +267,12 @@ exports[`WalletListItem should render a button if variant is 'singleAction' 1`] 
             class="text-right"
           >
             <button
-              class="sc-AxirZ fhzkRl"
+              class="sc-AxirZ dXpJau"
               color="primary"
               data-testid="button"
               type="button"
             >
-              Option 1
+              Action
             </button>
           </div>
         </td>

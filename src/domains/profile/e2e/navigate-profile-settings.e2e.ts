@@ -1,16 +1,18 @@
 import { Selector } from "testcafe";
 
-import { buildTranslations as translations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { buildTranslations } from "../../../app/i18n/helpers";
+import { createFixture } from "../../../utils/e2e-utils";
 
-fixture`Welcome Page Profile Card`.page(getPageURL());
+const translations = buildTranslations();
+
+createFixture(`Welcome Page Profile Card`);
 
 test("should navigate to profile setting from profile card menu", async (t) => {
 	await t.click(Selector('[data-testid="ProfileCard"] [data-testid="dropdown__toggle"]'));
 	await t.click(
 		Selector('[data-testid="ProfileCard"] [data-testid="dropdown__option--0"]').withText(
-			translations().COMMON.SETTINGS,
+			translations.COMMON.SETTINGS,
 		),
 	);
-	await t.expect(Selector("h1").withText(translations().SETTINGS.GENERAL.TITLE).exists).ok();
+	await t.expect(Selector("h1").withText(translations.SETTINGS.GENERAL.TITLE).exists).ok();
 });

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
@@ -24,7 +24,7 @@ import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } fro
 
 const fixtureProfileId = getDefaultProfileId();
 
-const createTransactionMock = (wallet: Wallet) =>
+const createTransactionMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => ipfsFixture.data.id,
@@ -36,7 +36,7 @@ const createTransactionMock = (wallet: Wallet) =>
 	});
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 
 describe("SendIPFSTransaction", () => {
 	beforeAll(async () => {
@@ -80,7 +80,7 @@ describe("SendIPFSTransaction", () => {
 		);
 
 		expect(getByTestId("SendIPFSTransaction__step--second")).toBeTruthy();
-		expect(container).toHaveTextContent(wallet.network().name);
+		expect(container).toHaveTextContent(wallet.network().name());
 		expect(container).toHaveTextContent("D8rr7B…s6YUYD");
 		expect(container).toHaveTextContent("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
@@ -154,7 +154,7 @@ describe("SendIPFSTransaction", () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[2]);
+			fireEvent.click(feeOptions[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			// Step 2
@@ -207,6 +207,14 @@ describe("SendIPFSTransaction", () => {
 			transactionMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+
+			// Go back to wallet
+			const historySpy = jest.spyOn(history, "push");
+			fireEvent.click(getByTestId("SendIPFSTransaction__button--back-to-wallet"));
+			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+			historySpy.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
 	});
 
@@ -244,7 +252,7 @@ describe("SendIPFSTransaction", () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[2]);
+			fireEvent.click(feeOptions[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			// Step 2

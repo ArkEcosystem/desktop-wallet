@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -7,19 +7,19 @@ import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
 import { TransactionRow } from "./TransactionRow/TransactionRow";
 
 type Props = {
-	transactions: Contracts.TransactionDataType[];
-	currencyRate?: string;
+	transactions: ExtendedTransactionData[];
+	exchangeCurrency?: string;
 	showSignColumn?: boolean;
 	hideHeader?: boolean;
 	isCompact?: boolean;
-	onRowClick?: (row: Contracts.TransactionDataType) => void;
+	onRowClick?: (row: ExtendedTransactionData) => void;
 	isLoading?: boolean;
 	skeletonRowsLimit?: number;
 };
 
 export const TransactionTable = ({
 	transactions,
-	currencyRate,
+	exchangeCurrency,
 	showSignColumn,
 	hideHeader,
 	isCompact,
@@ -77,7 +77,7 @@ export const TransactionTable = ({
 			];
 		}
 
-		if (currencyRate) {
+		if (exchangeCurrency) {
 			return [...commonColumns, { Header: t("COMMON.CURRENCY"), className: "w-24 justify-end float-right" }];
 		}
 
@@ -86,7 +86,7 @@ export const TransactionTable = ({
 		}
 
 		return commonColumns;
-	}, [commonColumns, currencyRate, showSignColumn, isCompact, t]);
+	}, [commonColumns, exchangeCurrency, showSignColumn, isCompact, t]);
 
 	const showSkeleton = useMemo(() => isLoading && transactions.length === 0, [transactions, isLoading]);
 
@@ -96,7 +96,7 @@ export const TransactionTable = ({
 	return (
 		<div className="relative">
 			<Table hideHeader={hideHeader} columns={columns} data={data}>
-				{(row: Contracts.TransactionDataType) =>
+				{(row: ExtendedTransactionData) =>
 					isCompact ? (
 						<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
 					) : (
@@ -104,7 +104,7 @@ export const TransactionTable = ({
 							isLoading={showSkeleton}
 							onClick={() => onRowClick?.(row)}
 							transaction={row}
-							currencyRate={currencyRate}
+							exchangeCurrency={exchangeCurrency}
 							showSign={showSignColumn}
 							isSignaturePending={row.isMultiSignature && showSignColumn}
 						/>

@@ -20,7 +20,9 @@ let subject: Blockfolio;
 describe("News", () => {
 	beforeAll(async () => {
 		history.push(newsURL);
+
 		nock.disableNetConnect();
+
 		nock("https://platform.ark.io/api")
 			.get("/coins/ark/signals")
 			.reply(200, () => {
@@ -100,7 +102,7 @@ describe("News", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getByTestId("CompactPagination__next"));
+			fireEvent.click(getByTestId("Pagination__next"));
 		});
 
 		await waitFor(() => {
@@ -108,7 +110,7 @@ describe("News", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getByTestId("CompactPagination__previous"));
+			fireEvent.click(getByTestId("Pagination__previous"));
 		});
 
 		await waitFor(() => {

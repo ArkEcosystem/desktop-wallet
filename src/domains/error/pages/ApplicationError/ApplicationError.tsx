@@ -10,7 +10,7 @@ export const ApplicationError = ({ resetErrorBoundary }: any) => {
 	const { t } = useTranslation();
 
 	return (
-		<Page navbarStyle="logo-only">
+		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
 				<div className="w-64 mx-auto lg:w-128">
 					<ErrorBanner />

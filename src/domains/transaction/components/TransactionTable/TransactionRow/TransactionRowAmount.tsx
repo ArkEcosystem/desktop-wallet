@@ -1,33 +1,23 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { Amount } from "app/components/Amount";
 import { Label } from "app/components/Label";
 import React from "react";
 
 type Props = {
 	transaction: Contracts.TransactionDataType;
-	currencyRate?: string;
+	exchangeCurrency?: string;
 };
 
-export const TransactionRowAmount = ({ transaction, currencyRate }: Props) => {
-	// Decouple logic to sdk or a specific component/hook
-	const total = React.useMemo(() => {
-		let value = transaction.amount();
-
-		if (transaction.isSent()) {
-			value = value.plus(transaction.fee());
-		}
-
-		if (currencyRate) {
-			return value.times(currencyRate).toHuman(2);
-		}
-
-		return value.toHuman(8);
-	}, [transaction, currencyRate]);
-
-	if (currencyRate) {
+export const TransactionRowAmount = ({ transaction, exchangeCurrency }: Props) => {
+	if (exchangeCurrency) {
 		return (
-			<span className="text-theme-neutral-dark" data-testid="TransactionRowAmount">
-				{total}
-			</span>
+			<Amount
+				/* @ts-ignore waiting interface update */
+				value={transaction.convertedTotal()}
+				ticker={exchangeCurrency}
+				className="text-theme-neutral-dark"
+				data-testid="TransactionRowAmount"
+			/>
 		);
 	}
 
@@ -35,7 +25,8 @@ export const TransactionRowAmount = ({ transaction, currencyRate }: Props) => {
 
 	return (
 		<Label data-testid="TransactionRowAmount" color={color}>
-			{total}
+			{/* @ts-ignore */}
+			<Amount ticker={transaction.wallet()?.currency() || ""} value={transaction.total()} />
 		</Label>
 	);
 };

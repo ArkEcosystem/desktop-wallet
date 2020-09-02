@@ -191,12 +191,12 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			textClass: "text-theme-primary-400",
 			iconName: "Lisk",
 		},
-		betanet: {
-			displayName: "Lisk Betanet",
-			borderClass: "border-theme-primary-100",
-			textClass: "text-theme-primary-400",
-			iconName: "Lisk",
-		},
+		// betanet: {
+		// 	displayName: "Lisk Betanet",
+		// 	borderClass: "border-theme-primary-100",
+		// 	textClass: "text-theme-primary-400",
+		// 	iconName: "Lisk",
+		// },
 	},
 	// NEO: {
 	// 	mainnet: {
@@ -294,7 +294,7 @@ export const availableNetworksMock: NetworkData[] = [
 	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.mainnet),
 	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.rinkeby),
 	// new NetworkData(ETH.manifest.name, ETH.manifest.networks.ropsten),
-	new NetworkData(LSK.manifest.name, LSK.manifest.networks.betanet),
+	// new NetworkData(LSK.manifest.name, LSK.manifest.networks.betanet),
 	new NetworkData(LSK.manifest.name, LSK.manifest.networks.mainnet),
 	new NetworkData(LSK.manifest.name, LSK.manifest.networks.testnet),
 	new NetworkData(NEO.manifest.name, NEO.manifest.networks.mainnet),

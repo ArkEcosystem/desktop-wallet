@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
@@ -7,10 +6,9 @@ import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
-import { setScreenshotProtection } from "utils/electron-utils";
 
 import { balances, portfolioPercentages } from "../../data";
 
@@ -21,39 +19,39 @@ type DashboardProps = {
 };
 
 export const Dashboard = ({ networks, portfolioPercentages, balances }: DashboardProps) => {
+	const activeProfile = useActiveProfile();
+	const history = useHistory();
+
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
-	const [transactionModalItem, setTransactionModalItem] = useState<Contracts.TransactionDataType | undefined>(
-		undefined,
-	);
-	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
+	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
+	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
-	const activeProfile = useActiveProfile();
-	const wallets = React.useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
-	const history = useHistory();
 	const { t } = useTranslation();
 
-	const fetchMoreTransactions = async () => {
+	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
+	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
+
+	const fetchTransactions = async (flush = false) => {
+		if (flush) {
+			activeProfile.transactionAggregate().flush();
+		}
+
 		setIsLoadingTransactions(true);
-		const transactions = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
+
+		const response = await activeProfile.transactionAggregate().transactions({ limit: 10 });
+		const transactions = response.items();
 
 		setIsLoadingTransactions(false);
-		return transactions && setAllTransactions(allTransactions?.concat(transactions));
+
+		return transactions && setAllTransactions((allTransactions || []).concat(transactions));
 	};
 
 	useEffect(() => {
-		const fetchProfileTransactions = async () => {
-			const profileTransactions = await activeProfile.transactionAggregate().transactions({ limit: 10 });
-			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.items();
-
-			setIsLoadingTransactions(false);
-			return allTransactions && setAllTransactions(allTransactions);
-		};
-
-		setScreenshotProtection(activeProfile.settings().get(ProfileSetting.ScreenshotProtection) === true);
-		fetchProfileTransactions();
-	}, [activeProfile]);
+		fetchTransactions(true);
+		// eslint-disable-next-line
+	}, []);
 
 	// Wallet controls data
 	const filterProperties = {
@@ -111,7 +109,8 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 					<Section data-testid="dashboard__transactions-view">
 						<Transactions
 							transactions={allTransactions}
-							fetchMoreAction={fetchMoreTransactions}
+							exchangeCurrency={exchangeCurrency}
+							fetchMoreAction={fetchTransactions}
 							onRowClick={(row) => setTransactionModalItem(row)}
 							isLoading={isLoadingTransactions}
 						/>

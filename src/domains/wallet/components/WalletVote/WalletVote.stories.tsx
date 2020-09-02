@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { action } from "@storybook/addon-actions";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
@@ -16,8 +16,10 @@ export default {
 	],
 };
 
-export const Default = ({ delegates }: { delegates: Coins.WalletDataCollection }) => (
+export const Default = ({ delegates }: { delegates: ReadOnlyWallet[] }) => (
 	<WalletVote votes={delegates} onUnvote={action("onUnvote")} />
 );
 
 export const Empty = () => <WalletVote onUnvote={action("onUnvote")} />;
+
+export const Loading = () => <WalletVote isLoading={true} />;

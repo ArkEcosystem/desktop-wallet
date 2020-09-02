@@ -1,45 +1,23 @@
-import { ClientFunction, Selector } from "testcafe";
+import { Selector } from "testcafe";
 
-import { buildTranslations as translations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { buildTranslations } from "../../../app/i18n/helpers";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToNews } from "./common";
 
-const scrollTop = ClientFunction(() => {
-	window.scrollTo({ top: 0 });
-});
-
-fixture`News screen routing`.page(getPageURL()).beforeEach(goToNews);
 const itemsPerPage = 15;
 
+const translations = buildTranslations();
+
+createFixture(`News filtering`).beforeEach(async (t) => await goToNews(t));
+
 test("should display news feed", async (t) => {
-	await scrollTop();
-
-	await t.expect(Selector('[data-testid="NewsCard"]').exists).ok();
-	await t.expect(Selector('[data-testid="NewsCard"]').count).eql(itemsPerPage);
-});
-
-test("should navigate between pages", async (t) => {
-	await t.expect(Selector('[data-testid="NewsCard"]').count).eql(itemsPerPage);
-
-	await t.hover(Selector('[data-testid="CompactPagination__next"]'));
-
-	await t.expect(Selector('[data-testid="CompactPagination__previous"]').hasAttribute("disabled")).ok();
-
-	await t.click(Selector('[data-testid="CompactPagination__next"]'));
-	await t.expect(Selector('[data-testid="NewsCard"]').exists).ok();
-	await t.expect(Selector('[data-testid="NewsCard"]').count).eql(itemsPerPage);
-
-	await t.expect(Selector('[data-testid="CompactPagination__previous"]').hasAttribute("disabled")).notOk();
-	await t.hover(Selector('[data-testid="CompactPagination__previous"]'));
-	await t.click(Selector('[data-testid="CompactPagination__previous"]'));
-
 	await t.expect(Selector('[data-testid="NewsCard"]').exists).ok();
 	await t.expect(Selector('[data-testid="NewsCard"]').count).eql(itemsPerPage);
 });
 
 test("should filter news results", async (t) => {
 	// Filter technical category
-	const technical = translations().NEWS.CATEGORIES.TECHNICAL;
+	const technical = translations.NEWS.CATEGORIES.TECHNICAL;
 	const eth = "network__option--1";
 	const query = "the block";
 

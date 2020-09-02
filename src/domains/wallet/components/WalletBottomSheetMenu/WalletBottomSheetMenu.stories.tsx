@@ -1,4 +1,4 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
 
@@ -11,7 +11,7 @@ export default {
 
 const data = [
 	{
-		wallet: (null as unknown) as Wallet,
+		wallet: (null as unknown) as ReadWriteWallet,
 		coinClassName: "text-theme-danger-400 border-theme-danger-light",
 		avatarId: "test1",
 		actions: [
@@ -30,7 +30,7 @@ const data = [
 		],
 	},
 	{
-		wallet: (null as unknown) as Wallet,
+		wallet: (null as unknown) as ReadWriteWallet,
 		coinClassName: "text-theme-danger-400 border-theme-danger-light",
 		avatarId: "test2",
 		actions: [
@@ -49,7 +49,7 @@ const data = [
 		],
 	},
 	{
-		wallet: (null as unknown) as Wallet,
+		wallet: (null as unknown) as ReadWriteWallet,
 		coinClassName: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test3",
 		actions: [
@@ -69,7 +69,7 @@ const data = [
 	},
 ];
 
-export const Default = ({ wallets }: { wallets: Wallet[] }) => {
+export const Default = ({ wallets }: { wallets: ReadWriteWallet[] }) => {
 	for (const walletIndex of Object.keys(data)) {
 		data[walletIndex as any].wallet = wallets[walletIndex as any];
 	}

@@ -7,6 +7,7 @@ import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
+import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { PlatformSdkChoices } from "data";
@@ -14,7 +15,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
-import { openFile } from "utils/electron-utils";
 
 export const CreateProfile = () => {
 	const { env, persist } = useEnvironmentContext();
@@ -28,75 +28,13 @@ export const CreateProfile = () => {
 
 	const [avatarImage, setAvatarImage] = useState("");
 
-	const handleChangeAvatar = async () => {
-		const raw = await openFile(null, {
-			filters: { name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] },
-			encoding: "base64",
-		});
-
-		if (raw) {
-			setAvatarImage(`data:image/png;base64,${raw}`);
-		}
-	};
-
-	const personalDetails = [
-		{
-			isFloatingLabel: true,
-			label: t("SETTINGS.GENERAL.PERSONAL.TITLE"),
-			labelClass: "text-xl font-semibold",
-			labelDescription: t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE"),
-			labelDescriptionClass: "mt-1 font-medium text-theme-neutral-dark",
-			content: (
-				<div className="flex flex-row mt-2 mb-8">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300">
-						<div className="w-20 h-20 overflow-hidden rounded-full">
-							<Button
-								className="w-20 h-20"
-								variant="plain"
-								onClick={handleChangeAvatar}
-								data-testid="CreateProfile__upload-button"
-							>
-								<Icon name="Upload" />
-							</Button>
-						</div>
-					</div>
-					{avatarImage && (
-						<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
-							<img
-								src={avatarImage}
-								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-								alt="Profile avatar"
-							/>
-							<button
-								type="button"
-								className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
-								onClick={() => setAvatarImage("")}
-								data-testid="CreateProfile__remove-avatar"
-							>
-								<Icon name="Close" width={13} height={16} />
-							</button>
-						</div>
-					)}
-				</div>
-			),
-		},
-	];
-
 	const otherItems = [
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
-			content: (
-				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm font-medium text-theme-neutral">
-						{t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION")}
-					</span>
-					<div className="-mt-4">
-						<Toggle ref={register()} name="isDarkMode" />
-					</div>
-				</div>
-			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
+			labelAddon: <Toggle ref={register()} name="isDarkMode" />,
 		},
 	];
 
@@ -126,7 +64,7 @@ export const CreateProfile = () => {
 	};
 
 	return (
-		<Page navbarStyle="logo-only">
+		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1">
 				<div className="max-w-lg mx-auto">
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
@@ -141,11 +79,13 @@ export const CreateProfile = () => {
 
 					<Divider />
 
-					<Form className="mt-8" context={form} onSubmit={submitForm} data-testid="CreateProfile__form">
-						<div className="">
-							<ListDivided items={personalDetails} />
+					<Form context={form} onSubmit={submitForm} data-testid="CreateProfile__form">
+						<div className="mt-8">
+							<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
-							<div className="relative space-y-8">
+							<SelectProfileImage value={avatarImage} onSelect={setAvatarImage} />
+
+							<div className="relative mt-8 space-y-8">
 								<FormField name="name">
 									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 									<Input
@@ -229,10 +169,11 @@ export const CreateProfile = () => {
 							</div>
 
 							<div className="mt-8">
+								<h2>{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
 								<ListDivided items={otherItems} />
 							</div>
 
-							<Divider dashed />
+							<Divider />
 						</div>
 
 						<div className="flex justify-end mt-8 space-x-3">

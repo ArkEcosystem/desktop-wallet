@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
@@ -6,7 +6,7 @@ import { TransactionRowMode } from "./TransactionRowMode";
 import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 
 type Props = {
-	transaction: Contracts.TransactionDataType;
+	transaction: ExtendedTransactionData;
 	walletName?: string;
 } & React.HTMLProps<any>;
 

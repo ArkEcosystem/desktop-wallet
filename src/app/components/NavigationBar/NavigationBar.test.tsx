@@ -1,15 +1,22 @@
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { env, fireEvent, renderWithRouter } from "testing-library";
+import { Route } from "react-router-dom";
+import { env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
 let profile: Profile;
 
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
+const history = createMemoryHistory();
+
 describe("NavigationBar", () => {
 	beforeAll(() => {
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		profile = env.profiles().findById(getDefaultProfileId());
+
+		history.push(dashboardURL);
 	});
 
 	it("should render", () => {
@@ -86,22 +93,25 @@ describe("NavigationBar", () => {
 
 		const { getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
 
-		expect(getByTestId("navbar__user--avatarImage")).toBeTruthy();
+		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
 	});
 
-	it.each(["Contacts", "Settings", "Support"])("should handle '%s' click on user actions dropdown", async (label) => {
-		const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
+	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support"])(
+		"should handle '%s' click on user actions dropdown",
+		async (label) => {
+			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
 
-		const toggle = getByTestId("navbar__useractions");
+			const toggle = getByTestId("navbar__useractions");
 
-		act(() => {
-			fireEvent.click(toggle);
-		});
+			act(() => {
+				fireEvent.click(toggle);
+			});
 
-		expect(await findByText(label)).toBeTruthy();
-		fireEvent.click(await findByText(label));
-		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
-	});
+			expect(await findByText(label)).toBeTruthy();
+			fireEvent.click(await findByText(label));
+			expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
+		},
+	);
 
 	it("should handle 'Exit' click on user actions dropdown", async () => {
 		const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
@@ -130,50 +140,60 @@ describe("NavigationBar", () => {
 	});
 
 	it("should handle receive funds", async () => {
-		const { getByTestId, findByText, getByText } = renderWithRouter(<NavigationBar profile={profile} />);
-
-		const sendButton = getByTestId("navbar__buttons--receive");
-
-		act(() => {
-			fireEvent.click(sendButton);
-		});
-
-		expect(await findByText("Select Account")).toBeTruthy();
-
-		const findItButton = getByText("Find it");
-		expect(findItButton).toBeTruthy();
+		const { findByTestId, getAllByText, getByTestId, queryAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar profile={profile} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
 
 		act(() => {
-			fireEvent.click(findItButton);
+			fireEvent.click(getByTestId("navbar__buttons--receive"));
 		});
 
-		expect(await findByText("Receive Funds")).toBeTruthy();
-
-		const modalCloseBtn = getByTestId("modal__close-btn");
-		expect(modalCloseBtn).toBeTruthy();
+		expect(await findByTestId("modal__inner")).toHaveTextContent("Select Account");
 
 		act(() => {
-			fireEvent.click(modalCloseBtn);
+			fireEvent.click(getAllByText("Select")[0]);
 		});
+
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should close the search wallet modal", async () => {
-		const { getByTestId, findByText } = renderWithRouter(<NavigationBar profile={profile} />);
+		const { findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar profile={profile} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
 
-		const sendButton = getByTestId("navbar__buttons--receive");
+		const receiveFundsButton = getByTestId("navbar__buttons--receive");
 
 		act(() => {
-			fireEvent.click(sendButton);
+			fireEvent.click(receiveFundsButton);
 		});
 
-		expect(await findByText("Select Account")).toBeTruthy();
-
-		const modalCloseBtn = getByTestId("modal__close-btn");
-		expect(modalCloseBtn).toBeTruthy();
+		expect(await findByTestId("modal__inner")).toHaveTextContent("Select Account");
 
 		act(() => {
-			fireEvent.click(modalCloseBtn);
+			fireEvent.click(getByTestId("modal__close-btn"));
 		});
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should not render if no active profile", () => {

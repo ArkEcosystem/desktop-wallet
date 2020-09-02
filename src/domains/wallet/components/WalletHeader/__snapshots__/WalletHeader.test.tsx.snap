@@ -44,22 +44,30 @@ exports[`WalletHeader should render 1`] = `
         <div
           class="flex items-stretch space-x-2"
         >
-          <button
-            class="px-3 text-theme-neutral-dark"
-            data-testid="WalletHeader__star-button"
+          <div
+            class="my-auto"
           >
-            <div
-              class="sc-AxirZ iQaTP"
-              height="1em"
-              width="1em"
+            <button
+              class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+              color="primary"
+              data-testid="WalletHeader__star-button"
+              type="button"
             >
-              <svg>
-                star-outline.svg
-              </svg>
-            </div>
-          </button>
+              <span>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    star-outline.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </div>
           <button
-            class="sc-AxjAm ddQVWI"
+            class="sc-AxjAm kbZyZT"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -74,7 +82,7 @@ exports[`WalletHeader should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm kwTlRm text-left"
+                class="sc-AxjAm gBWztV text-left"
                 color="primary"
                 type="button"
               >
@@ -94,7 +102,7 @@ exports[`WalletHeader should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-fzoLag fvqzEZ"
+      class="sc-fzoXzr imWwrn"
     >
       <div
         class="container py-16 mx-auto px-14"
@@ -117,16 +125,16 @@ exports[`WalletHeader should render 1`] = `
                 class="flex"
               >
                 <input
-                  class="sc-fzoXzr hKGpbk"
+                  class="Toggle__Input-qyyifx-0 bXkHfF"
                   data-testid="WalletHeader__toggle"
-                  disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="sc-fzpjYC homzFa"
+                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
                 >
                   <span
-                    class="sc-fznxsB cYsqyX"
+                    class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                    disabled=""
                   />
                 </div>
               </label>
@@ -173,7 +181,7 @@ exports[`WalletHeader should render 1`] = `
               Balance
             </span>
             <span
-              class="text-lg font-medium"
+              class="text-lg font-semibold"
               data-testid="WalletHeader__balance"
             >
               0 ARK
@@ -256,22 +264,30 @@ exports[`WalletHeader should show modifiers 1`] = `
         <div
           class="flex items-stretch space-x-2"
         >
-          <button
-            class="px-3 text-theme-neutral-dark"
-            data-testid="WalletHeader__star-button"
+          <div
+            class="my-auto"
           >
-            <div
-              class="sc-AxirZ iQaTP"
-              height="1em"
-              width="1em"
+            <button
+              class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+              color="primary"
+              data-testid="WalletHeader__star-button"
+              type="button"
             >
-              <svg>
-                star.svg
-              </svg>
-            </div>
-          </button>
+              <span>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </div>
           <button
-            class="sc-AxjAm ddQVWI"
+            class="sc-AxjAm kbZyZT"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -286,7 +302,7 @@ exports[`WalletHeader should show modifiers 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm kwTlRm text-left"
+                class="sc-AxjAm gBWztV text-left"
                 color="primary"
                 type="button"
               >
@@ -306,7 +322,7 @@ exports[`WalletHeader should show modifiers 1`] = `
       </div>
     </div>
     <div
-      class="sc-fzoLag fvqzEZ"
+      class="sc-fzoXzr imWwrn"
     >
       <div
         class="container py-16 mx-auto px-14"
@@ -329,16 +345,16 @@ exports[`WalletHeader should show modifiers 1`] = `
                 class="flex"
               >
                 <input
-                  class="sc-fzoXzr hKGpbk"
+                  class="Toggle__Input-qyyifx-0 bXkHfF"
                   data-testid="WalletHeader__toggle"
-                  disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="sc-fzpjYC homzFa"
+                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
                 >
                   <span
-                    class="sc-fznxsB cYsqyX"
+                    class="Toggle__HandleInner-qyyifx-2 chnbkf"
+                    disabled=""
                   />
                 </div>
               </label>
@@ -385,7 +401,7 @@ exports[`WalletHeader should show modifiers 1`] = `
               Balance
             </span>
             <span
-              class="text-lg font-medium"
+              class="text-lg font-semibold"
               data-testid="WalletHeader__balance"
             >
               0 ARK
@@ -442,22 +458,30 @@ exports[`WalletHeader should show publicKey 1`] = `
         <div
           class="flex items-stretch space-x-2"
         >
-          <button
-            class="px-3 text-theme-neutral-dark"
-            data-testid="WalletHeader__star-button"
+          <div
+            class="my-auto"
           >
-            <div
-              class="sc-AxirZ iQaTP"
-              height="1em"
-              width="1em"
+            <button
+              class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+              color="primary"
+              data-testid="WalletHeader__star-button"
+              type="button"
             >
-              <svg>
-                star-outline.svg
-              </svg>
-            </div>
-          </button>
+              <span>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    star-outline.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </div>
           <button
-            class="sc-AxjAm ddQVWI"
+            class="sc-AxjAm kbZyZT"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -472,7 +496,7 @@ exports[`WalletHeader should show publicKey 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm kwTlRm text-left"
+                class="sc-AxjAm gBWztV text-left"
                 color="primary"
                 type="button"
               >
@@ -492,7 +516,7 @@ exports[`WalletHeader should show publicKey 1`] = `
       </div>
     </div>
     <div
-      class="sc-fzoLag fvqzEZ"
+      class="sc-fzoXzr imWwrn"
     >
       <div
         class="container py-16 mx-auto px-14"
@@ -515,15 +539,15 @@ exports[`WalletHeader should show publicKey 1`] = `
                 class="flex"
               >
                 <input
-                  class="sc-fzoXzr hKGpbk"
+                  class="Toggle__Input-qyyifx-0 bXkHfF"
                   data-testid="WalletHeader__toggle"
                   type="checkbox"
                 />
                 <div
-                  class="sc-fzpjYC homzFa"
+                  class="Toggle__Handle-qyyifx-1 jXkMFJ"
                 >
                   <span
-                    class="sc-fznxsB cYsqyX"
+                    class="Toggle__HandleInner-qyyifx-2 fnvabd"
                   />
                 </div>
               </label>

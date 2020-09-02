@@ -7,109 +7,118 @@ exports[`PluginDetails should render properly 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag gzuhWQ"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -117,22 +126,22 @@ exports[`PluginDetails should render properly 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm JgGpT"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -145,11 +154,15 @@ exports[`PluginDetails should render properly 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="p-2 ml-4 text-right"
+              class="text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -164,40 +177,39 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                   >
                     <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
+                      alt="Profile Avatar"
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
@@ -205,21 +217,21 @@ exports[`PluginDetails should render properly 1`] = `
                     >
                       JO
                     </span>
-                    <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -258,7 +270,7 @@ exports[`PluginDetails should render properly 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -299,7 +311,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="flex"
                   >
                     <button
-                      class="sc-AxjAm ddQVWI"
+                      class="sc-AxjAm kbZyZT"
                       color="primary"
                       data-testid="PluginHeader__button--install"
                       type="button"
@@ -307,7 +319,7 @@ exports[`PluginDetails should render properly 1`] = `
                       Install
                     </button>
                     <button
-                      class="sc-AxjAm ddJBbC ml-3"
+                      class="sc-AxjAm fPpool ml-3"
                       color="primary"
                       data-testid="PluginHeader__button--warning"
                       type="button"
@@ -472,7 +484,7 @@ exports[`PluginDetails should render properly 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -605,7 +617,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-fzoiQi fcOAEN flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fzqNqU gyLgWA flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -618,7 +630,7 @@ exports[`PluginDetails should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fznWqX beJiyr flex-1 bg-theme-warning-100"
+                class="sc-fzqARJ kANAor flex-1 bg-theme-warning-100"
               >
                 <p
                   class="text-xl font-bold text-theme-warning"
@@ -633,7 +645,7 @@ exports[`PluginDetails should render properly 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -653,7 +665,7 @@ exports[`PluginDetails should render properly 1`] = `
                   Reviews ARK Explorer
                 </h2>
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxjAm fPpool"
                   color="primary"
                   data-testid="ReviewBox__button--comment"
                   type="button"
@@ -913,7 +925,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fznJRM fIRMfb mt-2 ml-10 text-theme-neutral-600"
+                            class="sc-fzoiQi hiOrhK mt-2 ml-10 text-theme-neutral-600"
                           >
                             <a
                               href="#"
@@ -1090,65 +1102,30 @@ exports[`PluginDetails should render properly 1`] = `
                     class="mt-7"
                   >
                     <div
-                      class="sc-fzpjYC eZZpsH"
+                      class="sc-fznxsB gaCFZs"
                       data-testid="Pagination"
                     >
-                      <button
-                        class="sc-AxjAm ddJBbC"
-                        color="primary"
-                        data-testid="Pagination__first"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw bopxJn"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            pagination-first.svg
-                          </svg>
-                        </div>
-                      </button>
-                      <button
-                        class="sc-AxjAm ddJBbC"
-                        color="primary"
-                        data-testid="Pagination__previous"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw ksjdLL mr-2"
-                          height="10"
-                          width="10"
-                        >
-                          <svg>
-                            back.svg
-                          </svg>
-                        </div>
-                        Previous
-                      </button>
                       <div
                         class="flex px-2 rounded bg-theme-primary-contrast"
                       >
                         <div
-                          class="sc-fznxsB PIgKV current-page"
+                          class="sc-fznJRM cTsuuN current-page"
                         >
                           1
                         </div>
                         <div
-                          class="sc-fznxsB PIgKV"
+                          class="sc-fznJRM cTsuuN"
                         >
                           2
                         </div>
                         <div
-                          class="sc-fznxsB PIgKV"
+                          class="sc-fznJRM cTsuuN"
                         >
                           3
                         </div>
                       </div>
                       <button
-                        class="sc-AxjAm ddJBbC"
+                        class="sc-AxjAm fPpool"
                         color="primary"
                         data-testid="Pagination__next"
                         type="button"
@@ -1161,22 +1138,6 @@ exports[`PluginDetails should render properly 1`] = `
                         >
                           <svg>
                             forward.svg
-                          </svg>
-                        </div>
-                      </button>
-                      <button
-                        class="sc-AxjAm ddJBbC"
-                        color="primary"
-                        data-testid="Pagination__last"
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw bopxJn"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            pagination-last.svg
                           </svg>
                         </div>
                       </button>
@@ -1292,7 +1253,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ dKCbey h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs hzwXzD h-2 rounded-lg bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -1355,7 +1316,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ cpqBVl h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs mTVYg h-2 rounded-lg bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -1409,7 +1370,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ eeWWCN h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs evnpsw h-2 rounded-lg bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -1454,7 +1415,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ ktUVQj h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs jForfe h-2 rounded-lg bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -1490,7 +1451,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ da-dslk h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs kAKELB h-2 rounded-lg bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />
@@ -1515,109 +1476,118 @@ exports[`PluginDetails should render properly as installed 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
-        class="px-4 sm:px-6 lg:px-"
+        class="px-4 sm:px-6 lg:px-10"
       >
         <div
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="sc-fzoLag gzuhWQ"
             >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
             </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
           </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900 active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
           <div
-            class="flex items-center"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -1625,22 +1595,22 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm JgGpT"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -1653,11 +1623,15 @@ exports[`PluginDetails should render properly as installed 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="p-2 ml-4 text-right"
+              class="text-right"
             >
               <div
-                class="text-xs text-theme-neutral"
+                class="text-xs font-medium text-theme-neutral"
               >
                 Your balance
               </div>
@@ -1672,40 +1646,39 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
                   >
                     <img
-                      alt="Profile avatar"
-                      class="rounded-full w-11 h-11"
+                      alt="Profile Avatar"
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
@@ -1713,21 +1686,21 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     >
                       JO
                     </span>
-                    <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -1766,7 +1739,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1807,7 +1780,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="flex"
                   >
                     <button
-                      class="sc-AxjAm ddQVWI"
+                      class="sc-AxjAm kbZyZT"
                       color="primary"
                       data-testid="PluginHeader__button--open"
                       type="button"
@@ -1815,7 +1788,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       Open
                     </button>
                     <button
-                      class="sc-AxjAm ddQVWI ml-3"
+                      class="sc-AxjAm kbZyZT ml-3"
                       color="primary"
                       data-testid="PluginHeader__button--update"
                       type="button"
@@ -1831,7 +1804,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm ddJBbC ml-3"
+                      class="sc-AxjAm fPpool ml-3"
                       color="primary"
                       data-testid="PluginHeader__button--warning"
                       type="button"
@@ -1847,7 +1820,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       </div>
                     </button>
                     <button
-                      class="sc-AxjAm ddJBbC ml-3"
+                      class="sc-AxjAm fPpool ml-3"
                       color="primary"
                       data-testid="PluginHeader__button--uninstall"
                       type="button"
@@ -2012,7 +1985,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2145,7 +2118,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="sc-fzoiQi fcOAEN flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="sc-fzqNqU gyLgWA flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxiKw iRsrJT"
@@ -2158,7 +2131,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fznWqX beJiyr flex-1 bg-theme-warning-100"
+                class="sc-fzqARJ kANAor flex-1 bg-theme-warning-100"
               >
                 <p
                   class="text-xl font-bold text-theme-warning"
@@ -2173,7 +2146,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2193,7 +2166,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   Reviews ARK Explorer
                 </h2>
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxjAm fPpool"
                   color="primary"
                   data-testid="ReviewBox__button--comment"
                   type="button"
@@ -2453,7 +2426,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fznJRM fIRMfb mt-2 ml-10 text-theme-neutral-600"
+                            class="sc-fzoiQi hiOrhK mt-2 ml-10 text-theme-neutral-600"
                           >
                             <a
                               href="#"
@@ -2630,65 +2603,30 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="mt-7"
                   >
                     <div
-                      class="sc-fzpjYC eZZpsH"
+                      class="sc-fznxsB gaCFZs"
                       data-testid="Pagination"
                     >
-                      <button
-                        class="sc-AxjAm ddJBbC"
-                        color="primary"
-                        data-testid="Pagination__first"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw bopxJn"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            pagination-first.svg
-                          </svg>
-                        </div>
-                      </button>
-                      <button
-                        class="sc-AxjAm ddJBbC"
-                        color="primary"
-                        data-testid="Pagination__previous"
-                        disabled=""
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw ksjdLL mr-2"
-                          height="10"
-                          width="10"
-                        >
-                          <svg>
-                            back.svg
-                          </svg>
-                        </div>
-                        Previous
-                      </button>
                       <div
                         class="flex px-2 rounded bg-theme-primary-contrast"
                       >
                         <div
-                          class="sc-fznxsB PIgKV current-page"
+                          class="sc-fznJRM cTsuuN current-page"
                         >
                           1
                         </div>
                         <div
-                          class="sc-fznxsB PIgKV"
+                          class="sc-fznJRM cTsuuN"
                         >
                           2
                         </div>
                         <div
-                          class="sc-fznxsB PIgKV"
+                          class="sc-fznJRM cTsuuN"
                         >
                           3
                         </div>
                       </div>
                       <button
-                        class="sc-AxjAm ddJBbC"
+                        class="sc-AxjAm fPpool"
                         color="primary"
                         data-testid="Pagination__next"
                         type="button"
@@ -2701,22 +2639,6 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         >
                           <svg>
                             forward.svg
-                          </svg>
-                        </div>
-                      </button>
-                      <button
-                        class="sc-AxjAm ddJBbC"
-                        color="primary"
-                        data-testid="Pagination__last"
-                        type="button"
-                      >
-                        <div
-                          class="sc-AxiKw bopxJn"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            pagination-last.svg
                           </svg>
                         </div>
                       </button>
@@ -2832,7 +2754,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ dKCbey h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs hzwXzD h-2 rounded-lg bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -2895,7 +2817,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ cpqBVl h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs mTVYg h-2 rounded-lg bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -2949,7 +2871,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ eeWWCN h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs evnpsw h-2 rounded-lg bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -2994,7 +2916,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ ktUVQj h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs jForfe h-2 rounded-lg bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -3030,7 +2952,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzqARJ da-dslk h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fzoyTs kAKELB h-2 rounded-lg bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />

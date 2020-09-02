@@ -1,3 +1,6 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { upperFirst } from "@arkecosystem/utils";
 import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -7,86 +10,71 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type TransactionSuccessfulProps = {
 	children?: React.ReactNode;
-	transactionId: string;
+	transaction?: Contracts.SignedTransactionData;
+	senderWallet?: ReadWriteWallet;
 };
 
 const { TransactionSuccessfulBanner } = images.transaction.common;
 
-// TODO: require transaction object to fill out details
-export const TransactionSuccessful = ({ children, transactionId }: TransactionSuccessfulProps) => (
-	<section data-testid="TransactionSuccessful" className="space-y-8">
-		<div>
-			<h1 className="mb-0">Transaction Sent</h1>
-			<div className="grid grid-flow-row gap-2">
-				<div className="w-full my-10">
-					<TransactionSuccessfulBanner className="w-full" />
-				</div>
-				<p className="mb-4 text-theme-neutral-dark">
-					Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is
-					confirmed and processed. The following is relevant information for your transaction:
-				</p>
-				<TransactionDetail label="ID" border={false}>
-					<div className="flex items-center">
-						<Address addressClass="text-theme-primary" address={transactionId} maxChars={32} />
-						<span className="ml-5">
-							<Clipboard>
-								<div className="text-theme-primary-300">
-									<Icon name="Copy" />
-								</div>
-							</Clipboard>
-						</span>
-					</div>
-				</TransactionDetail>
+export const TransactionSuccessful = ({ children, transaction, senderWallet }: TransactionSuccessfulProps) => {
+	const coinName = senderWallet?.manifest().get<string>("name");
+	const network = `${coinName} ${senderWallet?.network().name()}`;
+	const { t } = useTranslation();
 
-				<TransactionDetail label="Block ID">
-					<div className="flex items-center">
-						<Address
-							addressClass="text-theme-primary"
-							address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-							maxChars={32}
-						/>
-						<span className="ml-5">
-							<Clipboard>
-								<div className="text-theme-primary-300">
-									<Icon name="Copy" />
-								</div>
-							</Clipboard>
-						</span>
+	return (
+		<section data-testid="TransactionSuccessful" className="space-y-8">
+			<div>
+				<h1 className="mb-0">{t("TRANSACTION.SUCCESS.TITLE")}</h1>
+				<div className="grid grid-flow-row gap-2">
+					<div className="w-full my-10">
+						<TransactionSuccessfulBanner className="w-full" />
 					</div>
-				</TransactionDetail>
-
-				<TransactionDetail
-					label="Network"
-					extra={
-						<div className="ml-1 text-theme-danger">
-							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
-							</Circle>
+					<p className="mb-4 text-theme-neutral-dark">{t("TRANSACTION.SUCCESS.DESCRIPTION")}</p>
+					<TransactionDetail label={t("TRANSACTION.ID")} border={false}>
+						<div className="flex items-center">
+							<Address addressClass="text-theme-primary" address={transaction?.id()} maxChars={32} />
+							<span className="ml-5">
+								<Clipboard data={transaction?.id()}>
+									<div className="text-theme-primary-300">
+										<Icon name="Copy" />
+									</div>
+								</Clipboard>
+							</span>
 						</div>
-					}
-				>
-					ARK Ecosystem
-				</TransactionDetail>
+					</TransactionDetail>
 
-				<TransactionDetail extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral">
-						<span className="mr-1">Sender</span>
-						<Label color="warning">
-							<span className="text-sm">Your address</span>
-						</Label>
-					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
-				</TransactionDetail>
+					<TransactionDetail
+						label={t("TRANSACTION.NETWORK")}
+						extra={
+							<div className="ml-1 text-theme-danger">
+								<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+									{coinName && (
+										<Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />
+									)}
+								</Circle>
+							</div>
+						}
+					>
+						{network && network}
+					</TransactionDetail>
 
-				{children}
+					<TransactionDetail extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+						<div className="mb-2 text-sm font-semibold text-theme-neutral">
+							<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
+							<Label color="warning">
+								<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
+							</Label>
+						</div>
+						<Address address={transaction?.sender()} walletName={senderWallet?.alias()} />
+					</TransactionDetail>
+
+					{children}
+				</div>
 			</div>
-		</div>
-	</section>
-);
-
-TransactionSuccessful.defaultProps = {
-	transactionId: "AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK",
+		</section>
+	);
 };

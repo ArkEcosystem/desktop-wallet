@@ -1,12 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { DelegateMapper, ExtendedTransactionData, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,14 +14,14 @@ import Skeleton from "react-loading-skeleton";
 
 type VoteDetailProps = {
 	isOpen: boolean;
-	transaction?: Contracts.TransactionDataType;
+	transaction?: ExtendedTransactionData;
 	ticker?: string;
 	walletAlias?: string;
 	onClose?: () => void;
 };
 
-const renderConfirmationStatus = (confirmations: BigNumber) => {
-	if (confirmations?.toNumber() < 51) {
+const renderConfirmationStatus = (isConfirmed: boolean) => {
+	if (!isConfirmed) {
 		return (
 			<div className="flex">
 				Not Confirmed
@@ -48,24 +48,23 @@ const renderConfirmationStatus = (confirmations: BigNumber) => {
 
 export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }: VoteDetailProps) => {
 	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const senderWallet = activeProfile.wallets().findByAddress(transaction!.sender());
+
+	if (!senderWallet) {
+		throw new Error("Sender wallet not found");
+	}
 
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(true);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
-	const getDelegates = React.useCallback(
-		() => senderWallet?.mapDelegates((transaction as Contracts.VoteData).votes()),
-		[senderWallet, transaction],
-	);
-
 	useEffect(() => {
-		const syncDelegates = async () => {
+		const syncDelegates = () => {
 			setIsLoadingDelegates(true);
-			await senderWallet?.syncDelegates();
-			const delegates = getDelegates();
 
-			setDelegates(delegates || []);
+			setDelegates(DelegateMapper.execute(senderWallet, (transaction as Contracts.VoteData).votes()));
+
 			setIsLoadingDelegates(false);
 		};
 
@@ -75,7 +74,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			setIsLoadingDelegates(false);
 			setDelegates([]);
 		};
-	}, [senderWallet, getDelegates]);
+	}, [env, senderWallet, transaction, isOpen]);
 
 	const renderAccount = () => {
 		if (walletAlias) {
@@ -126,9 +125,9 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			);
 		}
 
-		return delegates?.map((delegate: any) => {
-			const username = delegate?.username();
-			const address = delegate?.address();
+		return delegates?.map((delegate: ReadOnlyWallet) => {
+			const username = delegate.username();
+			const address = delegate.address();
 
 			return (
 				<TransactionDetail
@@ -144,7 +143,11 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 					}
 				>
 					{username}
-					<TruncateMiddle text={address} className="ml-2 text-theme-neutral" />
+					<TruncateMiddle
+						data-testid="VoteDetail__delegate__address"
+						text={address}
+						className="ml-2 text-theme-neutral"
+					/>
 				</TransactionDetail>
 			);
 		});
@@ -154,7 +157,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
 			{renderAccount()}
 
-			{renderDelegates()}
+			<div data-testid="VoteDetails__delegates-container">{renderDelegates()}</div>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>
 				{`${transaction!.fee().toHuman()} ${ticker?.toUpperCase()}`}
@@ -165,7 +168,7 @@ export const VoteDetail = ({ transaction, walletAlias, ticker, isOpen, onClose }
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
-				{renderConfirmationStatus(transaction!.confirmations())}
+				{renderConfirmationStatus(transaction!.isConfirmed())}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>

@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -6,21 +6,24 @@ import { Circle } from "app/components/Circle";
 import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
+
 type Props = {
-	votes?: Coins.WalletDataCollection;
+	votes?: ReadOnlyWallet[];
+	onVote?: () => void;
 	onUnvote?: (address: string) => void;
 	defaultIsOpen?: boolean;
+	isLoading?: boolean;
 };
 
-// TODO: Delegate Explorer URL
-export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
+export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen, isLoading }: Props) => {
 	const { t } = useTranslation();
-	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
+	const [isOpen, setIsOpen] = useState(defaultIsOpen!);
 
-	const hasNoVotes = !votes || votes.items().length === 0;
+	const hasNoVotes = !votes || votes.length === 0;
 
 	return (
 		<section data-testid="WalletVote">
@@ -36,30 +39,37 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 
 			<Collapse isOpen={isOpen}>
 				<div className="py-4 grid grid-flow-row row-gap-6">
-					{hasNoVotes ? (
-						<div data-testid="WalletVote__empty" className="flex items-center pr-8 space-x-4">
-							<div className="flex items-center -space-x-2">
-								<Circle size="lg" className="text-theme-neutral-light">
-									<Icon name="Voted" />
-								</Circle>
-								<Circle size="lg" className="bg-theme-background" />
-							</div>
-							<div className="flex flex-col">
-								<span className="text-sm font-semibold text-theme-neutral">
-									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.LABEL")}
-								</span>
-								<div className="font-semibold text-theme-neutral-900">
-									<span className="mr-2">
-										{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.DESCRIPTION")}
+					{isLoading && <WalletVoteSkeleton />}
+					{!isLoading && hasNoVotes ? (
+						<div data-testid="WalletVote__empty" className="flex items-center justify-between">
+							<div className="flex items-center pr-8 space-x-4">
+								<div className="flex items-center -space-x-2">
+									<Circle size="lg" className="text-theme-neutral-light">
+										<Icon name="Voted" />
+									</Circle>
+									<Circle size="lg" className="bg-theme-background" />
+								</div>
+								<div className="flex flex-col">
+									<span className="text-sm font-semibold text-theme-neutral">
+										{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.LABEL")}
 									</span>
-									<Link to="https://guides.ark.dev/usage-guides/desktop-wallet-voting" isExternal>
-										{t("COMMON.LEARN_MORE")}
-									</Link>
+									<div className="font-semibold text-theme-neutral-900">
+										<span className="mr-2">
+											{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.DESCRIPTION")}
+										</span>
+										<Link to="https://guides.ark.dev/usage-guides/desktop-wallet-voting" isExternal>
+											{t("COMMON.LEARN_MORE")}
+										</Link>
+									</div>
 								</div>
 							</div>
+
+							<Button variant="plain" onClick={onVote} data-testid="WalletVote__delegate__vote">
+								{t("COMMON.VOTE")}
+							</Button>
 						</div>
 					) : (
-						votes?.items().map((delegate) => (
+						votes?.map((delegate: ReadOnlyWallet) => (
 							<div
 								data-testid="WalletVote__delegate"
 								className="flex items-center justify-between"
@@ -100,7 +110,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 											</span>
 											<a
 												data-testid="WalletVote__delegate__explorer"
-												href="https://explorer.ark.io"
+												href={delegate.explorerLink()}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
@@ -136,9 +146,9 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 									</ul>
 
 									<Button
-										data-testid="WalletVote__delegate__unvote"
 										variant="plain"
 										onClick={() => onUnvote?.(delegate.address())}
+										data-testid="WalletVote__delegate__unvote"
 									>
 										{t("COMMON.UNVOTE")}
 									</Button>

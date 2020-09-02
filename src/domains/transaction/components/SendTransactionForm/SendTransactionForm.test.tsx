@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
@@ -21,14 +21,15 @@ import {
 import { SendTransactionForm } from "./";
 
 let profile: Profile;
-let wallet: Wallet;
+let wallet: ReadWriteWallet;
 let defaultFee: string;
 
 describe("SendTransactionForm", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().values()[0];
-		defaultFee = (await wallet.fee().all(7)).transfer.avg;
+		// TODO: sync fees in the background, like delegates
+		defaultFee = (await wallet.coin().fee().all(7)).transfer.avg;
 	});
 
 	beforeEach(() => {
@@ -78,7 +79,7 @@ describe("SendTransactionForm", () => {
 			// Fee
 			expect(getByTestId("InputCurrency")).toHaveValue("0");
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[2]);
+			fireEvent.click(feeOptions[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			expect(rendered.container).toMatchSnapshot();
@@ -94,7 +95,7 @@ describe("SendTransactionForm", () => {
 		form.current.setValue("senderAddress", wallet.address());
 
 		for (const network of env.availableNetworks()) {
-			if (network.id() === wallet.network().id && network.coin() === wallet.manifest().get<string>("name")) {
+			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
 				form.current.setValue("network", network, true);
 
 				break;
