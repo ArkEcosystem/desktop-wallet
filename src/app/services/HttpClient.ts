@@ -1,7 +1,6 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
 import { md5 } from "hash-wasm";
-// @ts-ignore
-import needle from "needle";
+import fetch from "isomorphic-fetch";
 import { SocksProxyAgent } from "socks-proxy-agent";
 
 import { Cache } from "./Cache";
@@ -13,7 +12,6 @@ export class HttpClient extends Http.Request {
 		super();
 
 		this.cache = new Cache(ttl);
-
 		this.withHeaders({
 			Accept: "application/json",
 			"Content-Type": "application/json",
@@ -35,27 +33,35 @@ export class HttpClient extends Http.Request {
 			data?: any;
 		},
 	): Promise<Contracts.HttpResponse> {
+		if (data?.query && Object.keys(data?.query).length > 0) {
+			url = `${url}?${new URLSearchParams(data.query as any)}`;
+		}
+
 		const cacheKey: string = await md5(`${method}.${url}.${JSON.stringify(data)}`);
 
 		return this.cache.remember(cacheKey, async () => {
-			const options: Http.RequestOptions = { ...this._options };
-
-			if (data?.query && Object.keys(data?.query).length > 0) {
-				url = `${url}?${new URLSearchParams(data.query as any)}`;
-			}
-
 			let response;
 
-			if (["POST", "PUT", "PATCH"].includes(method)) {
-				response = await needle(method.toLowerCase(), url, data?.data, { ...options, json: true });
-			} else {
-				response = await needle(method.toLowerCase(), url, options);
+			if (method === "GET") {
+				response = await fetch(url, this._options);
+			}
+
+			if (method === "POST") {
+				response = await fetch(url, {
+					...this._options,
+					method: "POST",
+					body: JSON.stringify(data?.data),
+				});
+			}
+
+			if (!response) {
+				throw new Error("Received no response. This looks like a bug.");
 			}
 
 			return new Http.Response({
-				body: JSON.stringify(response.body),
+				body: await response.text(),
 				headers: response.headers,
-				statusCode: response.statusCode,
+				statusCode: response.status,
 			});
 		});
 	}

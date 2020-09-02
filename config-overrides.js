@@ -38,7 +38,6 @@ const whiteListedModules = [
 	"framer-motion",
 	"hash-wasm",
 	"i18next",
-	"needle",
 	"react-dom",
 	"react-error-boundary",
 	"react-hook-form",
