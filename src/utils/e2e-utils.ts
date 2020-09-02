@@ -59,8 +59,8 @@ export const requestMocks = {
 	],
 };
 
-export const createFixture = (name: string, requestHooks?: RequestMock[]) => {
-	return fixture(name)
+export const createFixture = (name: string, requestHooks?: RequestMock[]) =>
+	fixture(name)
 		.page(getPageURL())
 		.requestHooks(
 			// TODO: look for other URLs that are not mocked
@@ -71,4 +71,3 @@ export const createFixture = (name: string, requestHooks?: RequestMock[]) => {
 				...requestMocks.wallets,
 			]),
 		);
-};
