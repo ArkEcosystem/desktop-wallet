@@ -2,27 +2,33 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture } from "../../../utils/e2e-utils";
+import { goToMyRegistrations } from "../../profile/e2e/common";
+import { goToWallet } from "../../wallet/e2e/common";
+import { goToRegistrationPage, goToResignDelegatePage, goToTransferPage } from "./common";
 
 const translations = buildTranslations();
 
 createFixture(`Transactions routing`);
 
-test("should navigate to portfolio and access registrations", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
+test("should navigate to transfer page", async (t) => {
+	await goToWallet(t);
+	await goToTransferPage(t);
+});
 
-	// Go to registrations
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
+test("should navigate to my registrations page", async (t) => {
+	await goToWallet(t);
+
+	// Go to my registrations page
 	await t.click(Selector("[data-testid=WalletRegistrations__show-all]"));
 	await t.expect(Selector("h1").withText(translations.PROFILE.PAGE_MY_REGISTRATIONS.TITLE).exists).ok();
 });
 
-test("should navigate to portfolio and registration page", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
+test("should navigate to registration page", async (t) => {
+	await goToWallet(t);
+	await goToRegistrationPage(t);
+});
 
-	// Go to registrations
-	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.click(Selector("[data-testid=WalletRegistrations__register]"));
-	await t.expect(Selector("h1").withText("Registration").exists).ok();
+test("should navigate to delegate resignation page", async (t: any) => {
+	await goToMyRegistrations(t);
+	await goToResignDelegatePage(t);
 });
