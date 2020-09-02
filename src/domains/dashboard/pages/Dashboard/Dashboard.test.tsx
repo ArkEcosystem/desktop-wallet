@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -230,21 +231,21 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
-		await waitFor(() => expect(getByTestId("transactions__fetch-more-button")).toBeInTheDocument());
+		await waitFor(() => {
+			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
+			expect(getAllByTestId("TransactionRow")).toHaveLength(4);
+		});
 
 		act(() => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
 		});
 
-		await waitFor(
-			() => {
-				expect(getAllByTestId("TransactionRow")).toHaveLength(4);
-			},
-			{
-				timeout: 5000,
-			},
-		);
+		expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.LOADING);
+
+		await waitFor(() => {
+			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
+			expect(getAllByTestId("TransactionRow")).toHaveLength(8);
+		});
 
 		expect(asFragment()).toMatchSnapshot();
 	});

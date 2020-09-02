@@ -38,6 +38,8 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 			activeProfile.transactionAggregate().flush();
 		}
 
+		setIsLoadingTransactions(true);
+
 		const response = await activeProfile.transactionAggregate().transactions({ limit: 10 });
 		const transactions = response.items();
 
@@ -48,6 +50,7 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 	useEffect(() => {
 		fetchTransactions(true);
+		// eslint-disable-next-line
 	}, []);
 
 	// Wallet controls data
