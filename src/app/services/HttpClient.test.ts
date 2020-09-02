@@ -42,9 +42,7 @@ describe("HttpClient", () => {
 	it("should handle 404 status codes", async () => {
 		nock("http://httpbin.org/").get("/get").reply(404, {});
 
-		const response = await subject.get("http://httpbin.org/get");
-
-		expect(response.json()).toEqual({});
+		await expect(subject.get("http://httpbin.org/get")).rejects.toThrow();
 	});
 
 	it("should post with body", async () => {
