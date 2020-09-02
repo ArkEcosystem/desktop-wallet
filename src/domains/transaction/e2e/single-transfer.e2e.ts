@@ -1,9 +1,10 @@
 import { RequestMock, Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet } from "../../wallet/e2e/common";
+import { goToImportWalletPage, goToTransferPage } from "./common";
 
 const translations = buildTranslations();
 
@@ -43,26 +44,14 @@ const sendMock = RequestMock()
 		},
 	);
 
-fixture`Single Transfer action`.page(getPageURL());
+createFixture(`Single Transfer action`);
 
-test("should navigate to transfer page", async (t) => {
+test("should show an error if wrong mnemonic", async (t: any) => {
+	// Navigate to wallet page
 	await goToWallet(t);
 
 	// Navigate to transfer page
-	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
-	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
-		.ok();
-});
-
-test("should fail transfer submission", async (t: any) => {
-	await goToWallet(t);
-
-	// Navigate to transfer page
-	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
-	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
-		.ok();
+	await goToTransferPage(t);
 
 	// Select recipient
 	await t.click(Selector("[data-testid=SelectRecipient__select-contact]"));
@@ -87,26 +76,17 @@ test("should fail transfer submission", async (t: any) => {
 });
 
 test.requestHooks(walletMock, sendMock)("should send transfer successfully", async (t) => {
+	// Navigate to profile page
 	await goToProfile(t);
 
 	// Navigate to import wallet page
-	await t.click(Selector("button").withText("Import"));
-	await t.expect(Selector("[data-testid=header__title]").withText("Select a Network").exists).ok();
-	await t.click(Selector("#ImportWallet__network-item-1"));
-	await t.click(Selector("button").withText("Continue"));
-	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), "passphrase");
-	await t.click(Selector("button").withText("Go to Wallet"));
-	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), "Test Wallet");
-	await t.click(Selector("button").withText("Save & Finish"));
+	await goToImportWalletPage(t);
 
 	// Navigate to wallet details page
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Navigate to transfer page
-	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
-	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
-		.ok();
+	await goToTransferPage(t);
 
 	// Select recipient
 	await t.click(Selector("[data-testid=SelectRecipient__select-contact]"));

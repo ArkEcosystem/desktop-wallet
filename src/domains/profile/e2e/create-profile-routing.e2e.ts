@@ -1,11 +1,11 @@
 import { ClientFunction, Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
-fixture`Welcome -> Create Profile routing`.page(getPageURL());
+createFixture(`Welcome -> Create Profile routing`);
 
 const getLocation = ClientFunction(() => document.location.href);
 

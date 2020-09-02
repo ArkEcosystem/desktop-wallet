@@ -1,12 +1,38 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture, mockRequest, requestMocks } from "../../../utils/e2e-utils";
 import { goToWallet } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Votes`.page(getPageURL()).beforeEach(async (t) => await goToWallet(t));
+const requestMocksCopy = { ...requestMocks };
+
+requestMocksCopy.wallets[3] = mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", {
+	data: {
+		address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+		publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+		nonce: "245",
+		balance: "3375089801",
+		attributes: {
+			htlc: {
+				locks: {},
+				lockedBalance: "0",
+			},
+		},
+		multiSignature: {},
+		lockedBalance: "0",
+		isDelegate: false,
+		isResigned: false,
+	},
+});
+
+createFixture(`Votes`, [
+	...requestMocksCopy.configuration,
+	...requestMocksCopy.delegates,
+	...requestMocksCopy.transactions,
+	...requestMocksCopy.wallets,
+]).beforeEach(async (t) => await goToWallet(t));
 
 test("should navigate to votes page from navigation bar", async (t) => {
 	await t.click(Selector('[data-testid="navbar__useractions"]'));

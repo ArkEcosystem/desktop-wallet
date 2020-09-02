@@ -2,7 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { getPageURL } from "../../../utils/e2e-utils";
-import { goToMyRegistrations,goToProfile } from "./common";
+import { goToMyRegistrations, goToProfile } from "./common";
 
 const translations = buildTranslations();
 

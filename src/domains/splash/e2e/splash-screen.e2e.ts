@@ -1,13 +1,13 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 
 const mockWindowNavigator = "window.navigator = { onLine: true };";
 
 const translations = buildTranslations();
 
-fixture`Splash screen`.page(getPageURL());
+createFixture(`Splash screen`);
 
 test("should show splash screen", async (t) => {
 	await t.expect(Selector('[data-testid="Splash__text"]').exists).ok();
