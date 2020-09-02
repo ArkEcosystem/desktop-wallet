@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 import { StepProps } from "./ResignRegistration.models";
 
-export const FirstStep = ({ wallet, delegate, fee }: StepProps) => {
+export const FirstStep = ({ senderWallet, delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -25,14 +25,14 @@ export const FirstStep = ({ wallet, delegate, fee }: StepProps) => {
 			</div>
 
 			<div>
-				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />} border={false}>
+				<TransactionDetail extra={<Avatar size="lg" address={senderWallet.address()} />} border={false}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address={wallet.address()} walletName={wallet.alias()} />
+					<Address address={senderWallet.address()} walletName={senderWallet.alias()} />
 				</TransactionDetail>
 
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate.username()}</TransactionDetail>

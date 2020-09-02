@@ -62,10 +62,10 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 
 describe("DelegateRegistrationForm", () => {
 	beforeAll(async () => {
-		await syncDelegates();
-
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+
+		await syncDelegates();
 
 		feeOptions = {
 			last: (2 * 1e8).toFixed(0),

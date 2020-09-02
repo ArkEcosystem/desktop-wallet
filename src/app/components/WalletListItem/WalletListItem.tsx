@@ -18,8 +18,8 @@ export type WalletListItemProps = {
 	wallet: ReadWriteWallet;
 	exchangeCurrency?: string;
 	coinClass?: string;
-	actions?: any[];
-	variant?: "singleAction";
+	actions?: string | any[];
+	variant?: "condensed";
 	onAction?: any;
 };
 
@@ -32,10 +32,14 @@ export const WalletListItem = ({
 	exchangeCurrency,
 }: WalletListItemProps) => {
 	const activeProfile = useActiveProfile();
+
 	const history = useHistory();
+
 	const { t } = useTranslation();
 
-	const onDropdownAction = (action: any) => {
+	const isCondensed = () => variant === "condensed";
+
+	const handleAction = (action: any) => {
 		if (typeof onAction === "function") onAction(action);
 	};
 
@@ -73,21 +77,23 @@ export const WalletListItem = ({
 			<td className="py-1">
 				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 			</td>
-			<td className="py-1 text-sm font-bold text-center align-middle">
-				<div className="inline-flex items-center space-x-2">
-					{wallet.hasSyncedWithNetwork() &&
-						walletTypes.map((type: string) =>
-							// @ts-ignore
-							wallet[`is${type}`]() ? (
-								<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-									<span className={getIconColor(type)}>
-										<Icon name={getIconName(type)} width={16} height={16} />
-									</span>
-								</Tippy>
-							) : null,
-						)}
-				</div>
-			</td>
+			{!isCondensed() && (
+				<td className="py-1 text-sm font-bold text-center align-middle">
+					<div className="inline-flex items-center space-x-2">
+						{wallet.hasSyncedWithNetwork() &&
+							walletTypes.map((type: string) =>
+								// @ts-ignore
+								wallet[`is${type}`]() ? (
+									<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+										<span className={getIconColor(type)}>
+											<Icon name={getIconName(type)} width={16} height={16} />
+										</span>
+									</Tippy>
+								) : null,
+							)}
+					</div>
+				</td>
+			)}
 			<td className="font-semibold text-right">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</td>
@@ -98,11 +104,19 @@ export const WalletListItem = ({
 				<td>
 					{actions.length > 0 &&
 						(() => {
-							if (variant === "singleAction") {
+							if (typeof actions === "string") {
 								return (
 									<div className="text-right">
-										<Button data-testid="button" variant="plain" onClick={onDropdownAction}>
-											{actions[0].label}
+										<Button
+											data-testid="button"
+											variant="plain"
+											onClick={(e: any) => {
+												handleAction(wallet);
+												e.preventDefault();
+												e.stopPropagation();
+											}}
+										>
+											{actions}
 										</Button>
 									</div>
 								);
@@ -110,7 +124,7 @@ export const WalletListItem = ({
 
 							return (
 								<div className="text-theme-neutral-light hover:text-theme-neutral">
-									<Dropdown options={actions} onSelect={onDropdownAction} />
+									<Dropdown options={actions} onSelect={handleAction} />
 								</div>
 							);
 						})()}

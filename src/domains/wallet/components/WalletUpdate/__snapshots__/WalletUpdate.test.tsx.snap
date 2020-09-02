@@ -12,90 +12,82 @@ exports[`WalletUpdate should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 mx-auto mt-24 mb-24 rounded-xl bg-theme-background"
+      class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm goVygI w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
         class="relative"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <button
-            class="sc-AxjAm gEldWW"
-            color="neutral"
-            data-testid="modal__close-btn"
-            type="button"
+          Wallet Update 3.0.7
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <svg
+            class="my-8"
           >
+            wallet-update.svg
+          </svg>
+          <div>
             <div
-              class="p-1"
+              data-testid="tab-pabel__active-panel"
             >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
+              <section
+                data-testid="WalletUpdate__first-step"
               >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div
-          class="py-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Wallet Update 3.0.7
-          </h2>
-          <div
-            class="flex-1"
-          >
-            <svg
-              class="my-8"
-            >
-              wallet-update.svg
-            </svg>
-            <div>
-              <div
-                data-testid="tab-pabel__active-panel"
-              >
-                <section
-                  data-testid="WalletUpdate__first-step"
+                <div
+                  class="mb-8 text-center"
                 >
-                  <div
-                    class="mb-8 text-center"
+                  <p
+                    class="text-sm text-theme-neutral-dark md:text-base"
                   >
-                    <p
-                      class="text-sm text-theme-neutral-dark md:text-base"
-                    >
-                      We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
-                    </p>
-                  </div>
-                </section>
-              </div>
-              <div
-                class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
+                    We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
+                  </p>
+                </div>
+              </section>
+            </div>
+            <div
+              class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
+            >
+              <button
+                class="sc-AxjAm fPpool mt-2 sm:mt-0"
+                color="primary"
+                data-testid="WalletUpdate__cancel-button"
+                type="button"
               >
-                <button
-                  class="sc-AxjAm cyswVS mt-2 sm:mt-0"
-                  color="primary"
-                  data-testid="WalletUpdate__cancel-button"
-                  type="button"
-                >
-                  Update Later
-                </button>
-                <button
-                  class="sc-AxjAm ddQVWI"
-                  color="primary"
-                  data-testid="WalletUpdate__update-button"
-                  type="button"
-                >
-                  Update Now
-                </button>
-              </div>
+                Update Later
+              </button>
+              <button
+                class="sc-AxjAm kbZyZT"
+                color="primary"
+                data-testid="WalletUpdate__update-button"
+                type="button"
+              >
+                Update Now
+              </button>
             </div>
           </div>
         </div>

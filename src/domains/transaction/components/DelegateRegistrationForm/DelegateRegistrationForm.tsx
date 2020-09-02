@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -26,14 +26,14 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 
 	const { getValues, register, setValue, watch } = useFormContext();
 	const username = getValues("username");
-	const [delegates, setDelegates] = useState([]);
+	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee || null;
 
 	useEffect(() => {
-		setDelegates(env.coins().delegates(wallet.coinId(), wallet.networkId()));
+		setDelegates(env.delegates().all(wallet.coinId(), wallet.networkId()));
 	}, [env, wallet]);
 
 	useEffect(() => {
@@ -43,17 +43,25 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 				validate: (value) => {
 					if (!value.match(/^[a-z0-9!@$&_.]+$/)) {
 						return t<string>("TRANSACTION.INVALID_DELEGATE_NAME");
-					} else if (value.length > 20) {
+					}
+
+					if (value.length > 20) {
 						return t<string>("TRANSACTION.DELEGATE_NAME_TOO_LONG");
-					} else if (delegates.find((delegate: any) => delegate.username === value)) {
+					}
+
+					try {
+						env.delegates().findByUsername(wallet.coinId(), wallet.networkId(), value);
+
 						return t<string>("TRANSACTION.DELEGATE_NAME_EXISTS");
+					} catch {
+						// No Delegate found.
 					}
 
 					return true;
 				},
 			});
 		}
-	}, [delegates, register, username, t]);
+	}, [delegates, env, register, username, t, wallet]);
 
 	return (
 		<section data-testid="DelegateRegistrationForm__step--second">
@@ -130,7 +138,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}

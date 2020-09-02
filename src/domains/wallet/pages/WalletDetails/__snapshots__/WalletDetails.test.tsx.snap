@@ -9,7 +9,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -18,10 +18,10 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -37,7 +37,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
                 title="Portfolio"
               >
@@ -48,7 +48,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
                 title="Plugins"
               >
@@ -59,7 +59,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
                 title="Exchange"
               >
@@ -70,7 +70,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
                 title="News"
               >
@@ -79,39 +79,47 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -119,20 +127,22 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -145,8 +155,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -164,65 +178,61 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JA
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JA
                     </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -317,22 +327,26 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 class="my-auto"
               >
                 <button
-                  class="p-1 mx-2 outline-none text-theme-neutral-dark"
+                  class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+                  color="primary"
                   data-testid="WalletHeader__star-button"
+                  type="button"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      star-outline.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star-outline.svg
+                      </svg>
+                    </div>
+                  </span>
                 </button>
               </div>
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxjAm kbZyZT"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -347,7 +361,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bBBiEi text-left"
+                    class="sc-AxjAm gBWztV text-left"
                     color="primary"
                     type="button"
                   >
@@ -582,7 +596,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletVote__delegate__vote"
                     type="button"
@@ -693,7 +707,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -1016,7 +1030,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm cyswVS"
+                          class="sc-AxjAm fPpool"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -1041,7 +1055,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -1364,7 +1378,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -1386,7 +1400,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1395,10 +1409,10 @@ exports[`WalletDetails should remove wallet name 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -1414,7 +1428,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -1425,7 +1439,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -1436,7 +1450,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -1447,7 +1461,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -1456,39 +1470,47 @@ exports[`WalletDetails should remove wallet name 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -1496,20 +1518,22 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -1522,8 +1546,12 @@ exports[`WalletDetails should remove wallet name 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -1541,65 +1569,61 @@ exports[`WalletDetails should remove wallet name 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -1707,22 +1731,26 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="p-1 mx-2 outline-none text-theme-neutral-dark"
+                  class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+                  color="primary"
                   data-testid="WalletHeader__star-button"
+                  type="button"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      star-outline.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star-outline.svg
+                      </svg>
+                    </div>
+                  </span>
                 </button>
               </div>
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxjAm kbZyZT"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -1737,7 +1765,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bBBiEi text-left"
+                    class="sc-AxjAm gBWztV text-left"
                     color="primary"
                     type="button"
                   >
@@ -1972,7 +2000,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletVote__delegate__vote"
                     type="button"
@@ -2089,7 +2117,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -2412,7 +2440,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm cyswVS"
+                          class="sc-AxjAm fPpool"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -2437,7 +2465,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -2760,7 +2788,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -3337,7 +3365,7 @@ exports[`WalletDetails should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3346,10 +3374,10 @@ exports[`WalletDetails should render 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -3365,7 +3393,7 @@ exports[`WalletDetails should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -3376,7 +3404,7 @@ exports[`WalletDetails should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -3387,7 +3415,7 @@ exports[`WalletDetails should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -3398,7 +3426,7 @@ exports[`WalletDetails should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -3407,39 +3435,47 @@ exports[`WalletDetails should render 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -3447,20 +3483,22 @@ exports[`WalletDetails should render 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -3473,8 +3511,12 @@ exports[`WalletDetails should render 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -3492,65 +3534,61 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -3660,22 +3698,26 @@ exports[`WalletDetails should render 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="p-1 mx-2 outline-none text-theme-neutral-dark"
+                  class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+                  color="primary"
                   data-testid="WalletHeader__star-button"
+                  type="button"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      star-outline.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star-outline.svg
+                      </svg>
+                    </div>
+                  </span>
                 </button>
               </div>
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxjAm kbZyZT"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -3690,7 +3732,7 @@ exports[`WalletDetails should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bBBiEi text-left"
+                    class="sc-AxjAm gBWztV text-left"
                     color="primary"
                     type="button"
                   >
@@ -3925,7 +3967,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletVote__delegate__vote"
                     type="button"
@@ -4042,7 +4084,7 @@ exports[`WalletDetails should render 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -4365,7 +4407,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm cyswVS"
+                          class="sc-AxjAm fPpool"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -4390,7 +4432,7 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -4713,7 +4755,7 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -5296,7 +5338,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5305,10 +5347,10 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -5324,7 +5366,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -5335,7 +5377,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -5346,7 +5388,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -5357,7 +5399,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -5366,39 +5408,47 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -5406,20 +5456,22 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -5432,8 +5484,12 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -5451,65 +5507,61 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -5604,22 +5656,26 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="p-1 mx-2 outline-none text-theme-neutral-dark"
+                  class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+                  color="primary"
                   data-testid="WalletHeader__star-button"
+                  type="button"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      star-outline.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star-outline.svg
+                      </svg>
+                    </div>
+                  </span>
                 </button>
               </div>
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxjAm kbZyZT"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -5634,7 +5690,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bBBiEi text-left"
+                    class="sc-AxjAm gBWztV text-left"
                     color="primary"
                     type="button"
                   >
@@ -5869,7 +5925,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletVote__delegate__vote"
                     type="button"
@@ -5980,7 +6036,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -6303,7 +6359,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm cyswVS"
+                          class="sc-AxjAm fPpool"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -6328,7 +6384,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -6651,7 +6707,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -7234,7 +7290,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7243,10 +7299,10 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -7262,7 +7318,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -7273,7 +7329,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -7284,7 +7340,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -7295,7 +7351,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -7304,39 +7360,47 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -7344,20 +7408,22 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -7370,8 +7436,12 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -7389,65 +7459,61 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -7542,22 +7608,26 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="p-1 mx-2 outline-none text-theme-neutral-dark"
+                  class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+                  color="primary"
                   data-testid="WalletHeader__star-button"
+                  type="button"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      star-outline.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star-outline.svg
+                      </svg>
+                    </div>
+                  </span>
                 </button>
               </div>
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxjAm kbZyZT"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -7572,7 +7642,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bBBiEi text-left"
+                    class="sc-AxjAm gBWztV text-left"
                     color="primary"
                     type="button"
                   >
@@ -7807,7 +7877,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletVote__delegate__vote"
                     type="button"
@@ -7918,7 +7988,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -8241,7 +8311,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm cyswVS"
+                          class="sc-AxjAm fPpool"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -8266,7 +8336,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -8589,7 +8659,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -9172,7 +9242,7 @@ exports[`WalletDetails should render with timers 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9181,10 +9251,10 @@ exports[`WalletDetails should render with timers 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -9200,7 +9270,7 @@ exports[`WalletDetails should render with timers 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -9211,7 +9281,7 @@ exports[`WalletDetails should render with timers 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -9222,7 +9292,7 @@ exports[`WalletDetails should render with timers 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -9233,7 +9303,7 @@ exports[`WalletDetails should render with timers 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -9242,39 +9312,47 @@ exports[`WalletDetails should render with timers 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -9282,20 +9360,22 @@ exports[`WalletDetails should render with timers 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -9308,8 +9388,12 @@ exports[`WalletDetails should render with timers 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -9327,65 +9411,61 @@ exports[`WalletDetails should render with timers 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -9493,22 +9573,26 @@ exports[`WalletDetails should render with timers 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="p-1 mx-2 outline-none text-theme-neutral-dark"
+                  class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+                  color="primary"
                   data-testid="WalletHeader__star-button"
+                  type="button"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      star-outline.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star-outline.svg
+                      </svg>
+                    </div>
+                  </span>
                 </button>
               </div>
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxjAm kbZyZT"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -9523,7 +9607,7 @@ exports[`WalletDetails should render with timers 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bBBiEi text-left"
+                    class="sc-AxjAm gBWztV text-left"
                     color="primary"
                     type="button"
                   >
@@ -9758,7 +9842,7 @@ exports[`WalletDetails should render with timers 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletVote__delegate__vote"
                     type="button"
@@ -9875,7 +9959,7 @@ exports[`WalletDetails should render with timers 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -10198,7 +10282,7 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm cyswVS"
+                          class="sc-AxjAm fPpool"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -10223,7 +10307,7 @@ exports[`WalletDetails should render with timers 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -10546,7 +10630,7 @@ exports[`WalletDetails should render with timers 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -11123,7 +11207,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11132,10 +11216,10 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -11151,7 +11235,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -11162,7 +11246,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -11173,7 +11257,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -11184,7 +11268,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -11193,39 +11277,47 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -11233,20 +11325,22 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -11259,8 +11353,12 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -11278,65 +11376,61 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -11444,22 +11538,26 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="p-1 mx-2 outline-none text-theme-neutral-dark"
+                  class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+                  color="primary"
                   data-testid="WalletHeader__star-button"
+                  type="button"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      star-outline.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star-outline.svg
+                      </svg>
+                    </div>
+                  </span>
                 </button>
               </div>
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxjAm kbZyZT"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -11474,7 +11572,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bBBiEi text-left"
+                    class="sc-AxjAm gBWztV text-left"
                     color="primary"
                     type="button"
                   >
@@ -11709,7 +11807,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletVote__delegate__vote"
                     type="button"
@@ -11826,7 +11924,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -12149,7 +12247,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm cyswVS"
+                          class="sc-AxjAm fPpool"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -12174,7 +12272,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -12497,7 +12595,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -13074,7 +13172,7 @@ exports[`WalletDetails should update wallet name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV crDFRs"
+      class="sc-fzoyAV eMTYJ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -13083,10 +13181,10 @@ exports[`WalletDetails should update wallet name 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoLag jtxrqn"
+              class="sc-fzoLag gzuhWQ"
             >
               <svg
                 width="40"
@@ -13102,7 +13200,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -13113,7 +13211,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -13124,7 +13222,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -13135,7 +13233,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -13144,39 +13242,47 @@ exports[`WalletDetails should update wallet name 1`] = `
             </li>
           </ul>
           <div
-            class="flex items-center h-full mr-4"
+            class="flex items-center my-auto space-x-4"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full p-2 mx-6 my-auto cursor-pointer text-theme-primary-300"
+                class="overflow-hidden rounded-lg"
               >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
                 >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
-              <a
-                class="p-2 mx-6 my-auto"
+              <button
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--send"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -13184,20 +13290,22 @@ exports[`WalletDetails should update wallet name 1`] = `
                     sent.svg
                   </svg>
                 </div>
-              </a>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex items-center h-full text-theme-primary-300"
+              class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="p-2 mx-6 my-auto"
+                class="sc-AxjAm goVygI text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
                 data-testid="navbar__buttons--receive"
+                type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxiKw fFXzuz p-1"
                   height="22"
                   width="22"
                 >
@@ -13210,8 +13318,12 @@ exports[`WalletDetails should update wallet name 1`] = `
             <div
               class="h-8 border-r border-theme-neutral-200"
             />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
             <div
-              class="ml-8 text-right"
+              class="text-right"
             >
               <div
                 class="text-xs font-medium text-theme-neutral"
@@ -13229,65 +13341,61 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <div
-              class="flex cusror-pointer"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
               >
                 <div
-                  class="ml-4 cursor-pointer"
-                  data-testid="navbar__useractions"
+                  class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
                 >
-                  <div
-                    class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast"
-                  >
-                    <span
-                      class="text-theme-neutral-dark"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="relative inline-flex items-center justify-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                  <span
+                    class="text-theme-neutral-dark"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background"
-                      >
-                        JO
-                      </span>
+                      <svg>
+                        btc.svg
+                      </svg>
                     </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
                     <span
-                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="absolute text-sm font-semibold text-theme-background"
                     >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
+                      JO
                     </span>
                   </div>
+                  <span
+                    class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxiKw ksjdLL"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
                 </div>
               </div>
             </div>
@@ -13397,22 +13505,26 @@ exports[`WalletDetails should update wallet name 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="p-1 mx-2 outline-none text-theme-neutral-dark"
+                  class="sc-AxjAm goVygI text-theme-neutral-dark hover:text-theme-neutral h-11 w-11"
+                  color="primary"
                   data-testid="WalletHeader__star-button"
+                  type="button"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      star-outline.svg
-                    </svg>
-                  </div>
+                  <span>
+                    <div
+                      class="sc-AxiKw dzBdqj"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star-outline.svg
+                      </svg>
+                    </div>
+                  </span>
                 </button>
               </div>
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxjAm kbZyZT"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -13427,7 +13539,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm bBBiEi text-left"
+                    class="sc-AxjAm gBWztV text-left"
                     color="primary"
                     type="button"
                   >
@@ -13662,7 +13774,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletVote__delegate__vote"
                     type="button"
@@ -13779,7 +13891,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     Show All
                   </button>
                   <button
-                    class="sc-AxjAm cyswVS"
+                    class="sc-AxjAm fPpool"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -14102,7 +14214,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-AxjAm cyswVS"
+                          class="sc-AxjAm fPpool"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -14127,7 +14239,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="pending-transactions__fetch-more-button"
               type="button"
@@ -14450,7 +14562,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm cyswVS w-full mt-10 mb-5"
+              class="sc-AxjAm fPpool w-full mt-10 mb-5"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"

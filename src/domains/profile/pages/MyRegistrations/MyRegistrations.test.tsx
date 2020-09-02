@@ -2,9 +2,9 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "testing-library";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor, within } from "testing-library";
 
-import { blockchainRegistrations, businessRegistrations } from "../../data";
+import { blockchainRegistrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
 const history = createMemoryHistory();
@@ -14,11 +14,14 @@ const registrationsURL = `/profiles/${fixtureProfileId}/registrations`;
 const emptyRegistrationsURL = `/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/registrations`;
 const delegateWalletId = "d044a552-7a49-411c-ae16-8ff407acc430";
 
-describe("Welcome", () => {
-	beforeAll(() => {
+describe("MyRegistrations", () => {
+	beforeAll(async () => {
+		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
 			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
+
+		await syncDelegates();
 	});
 
 	beforeEach(() => {
@@ -74,9 +77,14 @@ describe("Welcome", () => {
 	});
 
 	it("should render business registrations", async () => {
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.query(true)
+			.reply(200, require("tests/fixtures/registrations/businesses.json"));
+
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
-				<MyRegistrations businessRegistrations={businessRegistrations} />
+				<MyRegistrations />
 			</Route>,
 			{
 				routes: [registrationsURL],
@@ -85,7 +93,7 @@ describe("Welcome", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
-		await waitFor(() => expect(getAllByTestId("BusinessRegistrationItem").length).toEqual(2));
+		await waitFor(() => expect(getAllByTestId("BusinessRegistrationRowItem").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 

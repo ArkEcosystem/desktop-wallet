@@ -61,13 +61,12 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	useEffect(() => {
 		const fetchAllData = async () => {
 			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
-			const walletData = await activeWallet.client().wallet(activeWallet.address());
 
+			let walletData: Contracts.WalletData | undefined;
 			let votes: ReadOnlyWallet[] = [];
 
 			try {
-				await activeWallet.syncVotes();
-
+				walletData = await activeWallet.client().wallet(activeWallet.address());
 				votes = activeWallet.votes();
 			} catch {
 				votes = [];
@@ -84,15 +83,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 		fetchAllData();
 	}, [activeWallet, env]);
-
-	useEffect(() => {
-		const timer = setInterval(async () => {
-			await activeWallet.syncIdentity();
-			await persist();
-		}, 30000);
-
-		return () => clearInterval(timer);
-	}, [activeWallet, persist]);
 
 	const handleDeleteWallet = async () => {
 		activeProfile.wallets().forget(activeWallet.id());

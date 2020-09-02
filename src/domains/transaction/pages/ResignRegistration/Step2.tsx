@@ -12,10 +12,10 @@ import { useTranslation } from "react-i18next";
 
 import { StepProps } from "./ResignRegistration.models";
 
-export const SecondStep = ({ wallet, delegate, fee }: StepProps) => {
+export const SecondStep = ({ senderWallet, delegate, fee }: StepProps) => {
 	const { t } = useTranslation();
-	const coinName = wallet.manifest().get<string>("name");
-	const network = `${coinName} ${wallet.network().name()}`;
+	const coinName = senderWallet.manifest().get<string>("name");
+	const network = `${coinName} ${senderWallet.network().name()}`;
 
 	return (
 		<div data-testid="ResignRegistration__second-step">
@@ -42,14 +42,14 @@ export const SecondStep = ({ wallet, delegate, fee }: StepProps) => {
 					</div>
 				</TransactionDetail>
 
-				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />}>
+				<TransactionDetail extra={<Avatar size="lg" address={senderWallet.address()} />}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address={wallet.address()} walletName={wallet.alias()} />
+					<Address address={senderWallet.address()} walletName={senderWallet.alias()} />
 				</TransactionDetail>
 
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate.username()}</TransactionDetail>

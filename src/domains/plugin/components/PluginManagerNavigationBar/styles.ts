@@ -2,10 +2,10 @@ export const defaultStyle = `
     z-index: 10;
 
 	.PluginManagerNavigationBar__item {
-        border-bottom: 0.25rem solid transparent;
+        border-bottom: 3px solid transparent;
         &.active {
-            border-bottom: 0.25rem solid var(--theme-color-primary-500);
-            color: var(--theme-neutral-contrast);
+            border-bottom-color: var(--theme-color-primary-dark);
+            color: var(--theme-color-neutral-900);
         }
 
 	}

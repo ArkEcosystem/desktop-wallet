@@ -25,20 +25,6 @@ describe("HttpClient", () => {
 		expect(response.json()).toEqual(responseBody);
 	});
 
-	it("should get with query params", async () => {
-		const responseBody = {
-			args: { key: "value" },
-			origin: "87.95.132.111,10.100.91.201",
-			url: "http://httpbin.org/get",
-		};
-
-		nock("http://httpbin.org/").get("/get").query(true).reply(200, responseBody);
-
-		const response = await subject.get("http://httpbin.org/get", { data: { query: { limit: 10 } } });
-
-		expect(response.json()).toEqual(responseBody);
-	});
-
 	it("should get without params", async () => {
 		const responseBody = {
 			args: {},
@@ -51,6 +37,12 @@ describe("HttpClient", () => {
 		const response = await subject.get("http://httpbin.org/get");
 
 		expect(response.json()).toEqual(responseBody);
+	});
+
+	it("should handle 404 status codes", async () => {
+		nock("http://httpbin.org/").get("/get").reply(404, {});
+
+		await expect(subject.get("http://httpbin.org/get")).rejects.toThrow();
 	});
 
 	it("should post with body", async () => {
@@ -94,5 +86,21 @@ describe("HttpClient", () => {
 			.post("http://httpbin.org/post", { key: "value" });
 
 		expect(response.json()).toEqual(responseBody);
+	});
+
+	it("should throw if an unsupported method is used", async () => {
+		await expect(subject.delete("http://httpbin.org/delete")).rejects.toThrow(
+			"Received no response. This looks like a bug.",
+		);
+	});
+
+	// @README: Run this locally with TOR running.
+	it.skip("should connect with TOR", async () => {
+		nock.enableNetConnect();
+
+		const realAddress = await subject.get("https://ipinfo.io");
+		const newAddress = await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io");
+
+		expect(newAddress.json().ip).not.toBe(realAddress);
 	});
 });

@@ -1,12 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL, scrollToTop } from "../../../utils/e2e-utils";
+import { createFixture, scrollToTop } from "../../../utils/e2e-utils";
 import { goToSettings } from "./common";
 
 const translations = buildTranslations();
 
-fixture`Save settings`.page(getPageURL()).beforeEach(async (t) => await goToSettings(t));
+createFixture(`Save settings`).beforeEach(async (t) => await goToSettings(t));
 
 test("should save settings", async (t) => {
 	const nameInput = Selector('input[data-testid="General-settings__input--name"]');

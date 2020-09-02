@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -19,7 +19,7 @@ import { ResignRegistrationProps } from "./ResignRegistration.models";
 
 export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }: ResignRegistrationProps) => {
 	const [activeTab, setActiveTab] = useState(1);
-	const [delegate, setDelegate] = useState<WalletData | any>();
+	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
 	const [fee, setFee] = useState<Contracts.TransactionFee>();
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
@@ -41,13 +41,10 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 	];
 
 	useEffect(() => {
-		const fetchDelegateInfo = async () => {
-			const delegate = await activeWallet.client().delegate(activeWallet.address());
-			setDelegate(delegate);
-		};
-
-		fetchDelegateInfo();
-	}, [activeWallet]);
+		setDelegate(
+			env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address()),
+		);
+	}, [env, activeWallet]);
 
 	useEffect(() => {
 		const loadFees = async () => {
@@ -106,17 +103,17 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 								<StepIndicator size={4} activeIndex={activeTab} />
 								<div className="mt-8">
 									<TabPanel tabId={1}>
-										<FirstStep wallet={activeWallet} delegate={delegate} fee={fee} />
+										<FirstStep senderWallet={activeWallet} delegate={delegate} fee={fee} />
 									</TabPanel>
 									<TabPanel tabId={2}>
-										<SecondStep wallet={activeWallet} delegate={delegate} fee={fee} />
+										<SecondStep senderWallet={activeWallet} delegate={delegate} fee={fee} />
 									</TabPanel>
 									<TabPanel tabId={3}>
 										<ThirdStep form={form} passwordType={passwordType} />
 									</TabPanel>
 									<TabPanel tabId={4}>
 										<FourthStep
-											wallet={activeWallet}
+											senderWallet={activeWallet}
 											delegate={delegate}
 											fee={fee}
 											transaction={transaction}
