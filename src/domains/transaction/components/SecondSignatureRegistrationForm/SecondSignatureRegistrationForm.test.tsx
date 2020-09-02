@@ -1,7 +1,11 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { renderHook } from "@testing-library/react-hooks";
+import { Form } from "app/components/Form";
+import React from "react";
+import { useForm } from "react-hook-form";
 import businessRegistrationFixture from "tests/fixtures/coins/ark/transactions/second-signature-registration.json";
-import { env, getDefaultProfileId } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationForm";
 
@@ -31,6 +35,48 @@ describe("SecondSignatureRegistrationForm", () => {
 			fee: () => BigNumber.make(businessRegistrationFixture.data.fee),
 			data: () => businessRegistrationFixture.data,
 		});
+
+	const Component = ({
+		form,
+		onSubmit,
+		activeTab = 2,
+	}: {
+		form: ReturnType<typeof useForm>;
+		onSubmit: () => void;
+		activeTab?: number;
+	}) => (
+		<Form context={form} onSubmit={onSubmit}>
+			<SecondSignatureRegistrationForm.component activeTab={activeTab} feeOptions={feeOptions} wallet={wallet} />
+		</Form>
+	);
+
+	it("should render backup step", async () => {
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					secondMnemonic: "test mnemonic",
+				},
+			}),
+		);
+		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+
+		await waitFor(() => expect(screen.getByTestId("SecondSignature__backup-step")).toBeTruthy());
+
+		const writeTextMock = jest.fn();
+		const clipboardOriginal = navigator.clipboard;
+		// @ts-ignore
+		navigator.clipboard = { writeText: writeTextMock };
+
+		act(() => {
+			fireEvent.click(screen.getByTestId(`SecondSignature__copy`));
+		});
+
+		await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
+
+		// @ts-ignore
+		navigator.clipboard = clipboardOriginal;
+		expect(asFragment()).toMatchSnapshot();
+	});
 
 	it("should sign transaction", async () => {
 		const form = {
