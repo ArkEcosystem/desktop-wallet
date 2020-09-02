@@ -1,4 +1,4 @@
-name: End-to-End
+name: E2E
 
 on:
     push:
@@ -49,7 +49,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: contacts-routing-screenshots
                   path: screenshots/**/*.png
 
     create-contact:
@@ -92,7 +92,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: create-contact-screenshots
                   path: screenshots/**/*.png
 
     create-profile-action:
@@ -135,7 +135,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: delete-contact-screenshots
                   path: screenshots/**/*.png
 
     create-profile-routing:
@@ -178,7 +178,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: update-contact-screenshots
                   path: screenshots/**/*.png
 
     create-wallet-action:
@@ -221,7 +221,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: dashboard-routing-screenshots
                   path: screenshots/**/*.png
 
     dashboard-routing:
@@ -264,7 +264,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: navbar-routing-screenshots
                   path: screenshots/**/*.png
 
     delegate-registration:
@@ -307,7 +307,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: filtering-screenshots
                   path: screenshots/**/*.png
 
     delegate-resignation:
@@ -350,7 +350,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: news-routing-screenshots
                   path: screenshots/**/*.png
 
     delete-contact:
@@ -393,7 +393,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: plugins-routing-screenshots
                   path: screenshots/**/*.png
 
     delete-profile-action:
@@ -436,7 +436,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: create-profile-action-screenshots
                   path: screenshots/**/*.png
     delete-wallet-action:
         runs-on: ubuntu-latest
@@ -478,7 +478,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: create-profile-routing-screenshots
                   path: screenshots/**/*.png
 
     filtering:
@@ -521,7 +521,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: delete-profile-action-screenshots
                   path: screenshots/**/*.png
 
     import-wallet-action:
@@ -564,7 +564,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: my-registrations-routing-screenshots
                   path: screenshots/**/*.png
 
     multiple-transfer:
@@ -607,7 +607,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: navigate-profile-settings-screenshots
                   path: screenshots/**/*.png
 
     my-registrations-routing:
@@ -650,7 +650,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: welcome-screen-screenshots
                   path: screenshots/**/*.png
 
     navbar-routing:
@@ -693,7 +693,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: save-settings-screenshots
                   path: screenshots/**/*.png
 
     navigate-profile-settings:
@@ -736,7 +736,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: settings-routing-screenshots
                   path: screenshots/**/*.png
 
     news-routing:
@@ -779,7 +779,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: splash-screen-screenshots
                   path: screenshots/**/*.png
 
     plugins-routing:
@@ -822,7 +822,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: delegate-registration-screenshots
                   path: screenshots/**/*.png
 
     save-settings:
@@ -865,7 +865,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: delegate-resignation-screenshots
                   path: screenshots/**/*.png
     settings-routing:
         runs-on: ubuntu-latest
@@ -907,7 +907,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: multiple-transfer-screenshots
                   path: screenshots/**/*.png
 
     sign-message-action:
@@ -950,7 +950,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: single-transfer-screenshots
                   path: screenshots/**/*.png
 
     single-transfer:
@@ -993,7 +993,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: transactions-routing-screenshots
                   path: screenshots/**/*.png
 
     splash-screen:
@@ -1036,7 +1036,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: votes-screenshots
                   path: screenshots/**/*.png
 
     transactions-routing:
@@ -1079,7 +1079,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: create-wallet-action-screenshots
                   path: screenshots/**/*.png
 
     update-contact:
@@ -1122,7 +1122,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: delete-wallet-action-screenshots
                   path: screenshots/**/*.png
 
     update-wallet-name-action:
@@ -1165,7 +1165,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: import-wallet-action-screenshots
                   path: screenshots/**/*.png
 
     verify-message-action:
@@ -1208,7 +1208,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: sign-message-action-screenshots
                   path: screenshots/**/*.png
 
     votes:
@@ -1251,7 +1251,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: update-wallet-name-action-screenshots
                   path: screenshots/**/*.png
 
     wallet-details:
@@ -1294,7 +1294,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: verify-message-action-screenshots
                   path: screenshots/**/*.png
 
     wallets-routing:
@@ -1337,7 +1337,7 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: wallet-details-screenshots
                   path: screenshots/**/*.png
 
     welcome-screen:
@@ -1380,5 +1380,5 @@ jobs:
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
-                  name: screenshots
+                  name: wallets-routing-screenshots
                   path: screenshots/**/*.png
