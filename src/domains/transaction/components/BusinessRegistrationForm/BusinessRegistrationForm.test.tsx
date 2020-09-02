@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import businessRegistrationFixture from "tests/fixtures/coins/ark/transactions/business-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
+import { translations as transactionTranslations } from "../../i18n";
 import { BusinessRegistrationForm } from "./BusinessRegistrationForm";
 
 describe("BusinessRegistrationForm", () => {
@@ -37,18 +38,54 @@ describe("BusinessRegistrationForm", () => {
 			data: () => businessRegistrationFixture.data,
 		});
 
-	const Component = ({ form, onSubmit }: { form: ReturnType<typeof useForm>; onSubmit: () => void }) => (
+	const Component = ({
+		form,
+		onSubmit,
+		activeTab = 2,
+	}: {
+		form: ReturnType<typeof useForm>;
+		onSubmit: () => void;
+		activeTab?: number;
+	}) => (
 		<Form context={form} onSubmit={onSubmit}>
-			<BusinessRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+			<BusinessRegistrationForm.component activeTab={activeTab} feeOptions={feeOptions} wallet={wallet} />
 		</Form>
 	);
 
 	it("should render 2nd step", async () => {
 		const { result } = renderHook(() => useForm());
-		const { asFragment, getByTestId } = render(<Component form={result.current} onSubmit={() => void 0} />);
+		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} />);
 
-		await waitFor(() => expect(getByTestId("BusinessRegistrationForm__step--second")).toBeTruthy());
+		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--second")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render 3rd step", async () => {
+		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					ipfsData,
+				},
+			}),
+		);
+		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+
+		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--third")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should set fee", async () => {
+		const { result } = renderHook(() => useForm());
+		result.current.register("fee");
+
+		render(<Component form={result.current} onSubmit={() => void 0} />);
+
+		act(() => {
+			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
+		});
+
+		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
 	});
 
 	it("should fill data", async () => {
