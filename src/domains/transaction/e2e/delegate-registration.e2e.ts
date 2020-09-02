@@ -1,7 +1,7 @@
 import { RequestMock, Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
@@ -41,7 +41,7 @@ const sendMock = RequestMock()
 		},
 	);
 
-fixture`Delegate Registration action`.page(getPageURL());
+createFixture(`Delegate Registration action`);
 
 test.requestHooks(walletMock, sendMock)("should open wallet details page", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
