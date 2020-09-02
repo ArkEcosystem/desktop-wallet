@@ -1,11 +1,11 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getLocation, getPageURL } from "../../../utils/e2e-utils";
+import { createFixture, getLocation } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
-fixture`NavBar routing`.page(getPageURL());
+createFixture(`NavBar routing`);
 
 test("should navigate to profile dashboard", async (t) => {
 	await t.click(Selector("p").withExactText("John Doe"));

@@ -226,7 +226,7 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 	SUCCESS: {
-		TITLE: "Transaction Sent 1",
+		TITLE: "Transaction Sent",
 		DESCRIPTION:
 			"Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:",
 	},
