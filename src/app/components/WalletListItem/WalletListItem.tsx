@@ -7,34 +7,21 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
 
 import { Dropdown } from "../Dropdown";
 
 export type WalletListItemProps = {
 	wallet: ReadWriteWallet;
-	exchangeCurrency?: string;
 	coinClass?: string;
 	actions?: string | any[];
 	variant?: "condensed";
 	onAction?: any;
+	onRowClick?: any;
 };
 
-export const WalletListItem = ({
-	wallet,
-	coinClass,
-	actions,
-	variant,
-	onAction,
-	exchangeCurrency,
-}: WalletListItemProps) => {
-	const activeProfile = useActiveProfile();
-
-	const history = useHistory();
-
+export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction, onRowClick }: WalletListItemProps) => {
 	const { t } = useTranslation();
 
 	const isCondensed = () => variant === "condensed";
@@ -60,10 +47,14 @@ export const WalletListItem = ({
 
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
+	const handleRowClick = (walletId: string) => {
+		if (typeof onRowClick === "function") onRowClick(walletId);
+	};
+
 	return (
 		<tr
 			className="border-b cursor-pointer border-theme-neutral-200"
-			onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}
+			onClick={() => handleRowClick(wallet.id())}
 			data-testid={`WalletListItem__${wallet.address()}`}
 		>
 			<td className="py-6 mt-1">
@@ -98,7 +89,7 @@ export const WalletListItem = ({
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</td>
 			<td className="text-right text-theme-neutral-light">
-				<Amount value={wallet.convertedBalance()} ticker={exchangeCurrency!} />
+				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
 			</td>
 			{actions && (
 				<td>
@@ -132,9 +123,4 @@ export const WalletListItem = ({
 			)}
 		</tr>
 	);
-};
-
-WalletListItem.defaultProps = {
-	address: "",
-	exchangeCurrency: "",
 };

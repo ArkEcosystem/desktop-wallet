@@ -144,7 +144,10 @@ describe("WalletListItem", () => {
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
-						<WalletListItem wallet={wallet} />
+						<WalletListItem
+							wallet={wallet}
+							onRowClick={() => history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}`)}
+						/>
 					</Route>
 				</tbody>
 			</table>,

@@ -4,9 +4,11 @@ import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
+import { useActiveProfile } from "app/hooks/env";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 type WalletsProps = {
 	wallets: ReadWriteWallet[];
@@ -32,6 +34,10 @@ export const Wallets = ({
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 	const [allWallets, setAllWallets] = useState<any>(undefined);
 	const [hasMoreWallets, setHasMoreWallets] = useState<any>(wallets.length > 10);
+
+	const activeProfile = useActiveProfile();
+
+	const history = useHistory();
 
 	const { t } = useTranslation();
 
@@ -93,6 +99,10 @@ export const Wallets = ({
 		setHasMoreWallets(false);
 	};
 
+	const handleRowClick = (walletId: string) => {
+		history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}`);
+	};
+
 	return (
 		<div>
 			<div className="flex items-center justify-between pb-8">
@@ -123,7 +133,7 @@ export const Wallets = ({
 						{wallets.length > 0 && (
 							<div>
 								<Table columns={listColumns} data={loadListWallets()}>
-									{(rowData: any) => <WalletListItem {...rowData} />}
+									{(rowData: any) => <WalletListItem {...rowData} onRowClick={handleRowClick} />}
 								</Table>
 
 								{hasMoreWallets && (
