@@ -59,7 +59,7 @@ export class HttpClient extends Http.Request {
 					statusCode: response.statusCode,
 				});
 			} catch (error) {
-				console.log(error)
+				console.log(error);
 				return new Http.Response(
 					{
 						body: "{}",
