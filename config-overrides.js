@@ -52,6 +52,7 @@ const whiteListedModules = [
 	"react-range",
 	"react-router-dom",
 	"react-table",
+	"react-toastify",
 	"styled-components",
 	"swiper",
 	"react-loading-skeleton",
