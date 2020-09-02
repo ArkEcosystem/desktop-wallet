@@ -54,7 +54,7 @@ export const createFixture = (name: string, requestHooks: RequestMock[] = []) =>
 				mockRequest("https://dwallets.ark.io/api/delegates?page=4", "coins/ark/delegates-devnet"),
 				mockRequest("https://dwallets.ark.io/api/node/fees?days=7", "coins/ark/node-fees"),
 				mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/transaction-fees"),
-				// TODO: mock /api/transactions/search?limit=10
+				mockRequest("https://dwallets.ark.io/api/transactions/search?limit=10", "coins/ark/transactions"),
 				// TODO: look for other URLs that are not mocked
 				...requestHooks,
 			],
