@@ -6,7 +6,9 @@ import { goToWallet } from "./common";
 
 const translations = buildTranslations();
 
-requestMocks.wallets[3] = mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", {
+const requestMocksCopy = { ...requestMocks };
+
+requestMocksCopy.wallets[3] = mockRequest("https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", {
 	data: {
 		address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 		publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
@@ -26,10 +28,10 @@ requestMocks.wallets[3] = mockRequest("https://dwallets.ark.io/api/wallets/D8rr7
 });
 
 createFixture(`Votes`, [
-	...requestMocks.configuration,
-	...requestMocks.delegates,
-	...requestMocks.transactions,
-	...requestMocks.wallets,
+	...requestMocksCopy.configuration,
+	...requestMocksCopy.delegates,
+	...requestMocksCopy.transactions,
+	...requestMocksCopy.wallets,
 ]).beforeEach(async (t) => await goToWallet(t));
 
 test("should navigate to votes page from navigation bar", async (t) => {
