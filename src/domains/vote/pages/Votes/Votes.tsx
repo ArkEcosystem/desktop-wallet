@@ -161,13 +161,13 @@ export const Votes = () => {
 								: activeProfile.wallets().findByAddress(address)?.id();
 
 							const params = new URLSearchParams({
+								sender: address,
 								votes: votes.join(),
+								// unvotes: ,
 							});
 
 							history.push({
-								pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/transactions/vote/${
-									votes[0]
-								}/sender/${address}`,
+								pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/transactions/vote`,
 								search: `?${params}`,
 							});
 						}}

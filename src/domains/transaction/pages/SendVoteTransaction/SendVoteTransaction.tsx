@@ -23,7 +23,6 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
 
 export const FirstStep = ({
 	delegate,
@@ -263,11 +262,11 @@ export const FourthStep = ({
 
 export const SendVoteTransaction = () => {
 	const { t } = useTranslation();
-	const { voteId, senderId } = useParams();
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const queryParams = useQueryParams();
+	const senderAddress = queryParams.get("sender");
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -282,11 +281,9 @@ export const SendVoteTransaction = () => {
 	useEffect(() => {
 		register("network", { required: true });
 		register("senderAddress", { required: true });
-		register("vote", { required: true });
 		register("fee", { required: true });
 
-		setValue("senderAddress", senderId, true);
-		setValue("vote", voteId, true);
+		setValue("senderAddress", senderAddress, true);
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
@@ -295,11 +292,12 @@ export const SendVoteTransaction = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, senderId, setValue, voteId]);
+	}, [activeWallet, networks, register, senderAddress, setValue]);
 
 	useEffect(() => {
-		setDelegate(env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), voteId));
-	}, [activeWallet, env, voteId]);
+		// setDelegate(env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), voteId));
+		setDelegate(env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId()));
+	}, [activeWallet, env]);
 
 	const crumbs = [
 		{
