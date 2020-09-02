@@ -38,7 +38,6 @@ const whiteListedModules = [
 	"@tippyjs/react",
 	"downshift",
 	"framer-motion",
-	"got",
 	"hash-wasm",
 	"i18next",
 	"isomorphic-fetch",
@@ -58,6 +57,7 @@ const whiteListedModules = [
 	"react",
 	"recharts",
 	"rxjs",
+	"socks-proxy-agent",
 	"styled-components",
 	"swiper",
 ];

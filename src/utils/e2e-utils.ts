@@ -40,6 +40,10 @@ export const requestMocks = {
 	],
 	wallets: [
 		mockRequest(
+			"https://dwallets.ark.io/api/wallets/D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+			"coins/ark/wallets/D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+		),
+		mockRequest(
 			"https://dwallets.ark.io/api/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			"coins/ark/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 		),
