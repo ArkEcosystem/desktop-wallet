@@ -229,15 +229,6 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #11 word
-                </span>
-              </button>
-              <button
-                class="sc-AxmLO sc-fzozJi eIqJVJ"
-                data-testid="MnemonicVerificationProgress__Tab"
-                disabled=""
-              >
-                <span>
                   The #5 word
                 </span>
               </button>
@@ -247,7 +238,16 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #1 word
+                  The #10 word
+                </span>
+              </button>
+              <button
+                class="sc-AxmLO sc-fzozJi eIqJVJ"
+                data-testid="MnemonicVerificationProgress__Tab"
+                disabled=""
+              >
+                <span>
+                  The #4 word
                 </span>
               </button>
             </ul>
@@ -262,11 +262,18 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                     class="mb-2 font-semibold text-theme-neutral-dark"
                     data-testid="MnemonicVerificationOptions__title"
                   >
-                    Select word #11
+                    Select word #5
                   </p>
                   <div
                     class="grid grid-cols-3 gap-2"
                   >
+                    <button
+                      class="sc-AxmLO cNAsSK"
+                      data-testid="MnemonicVerificationOptions__button"
+                      type="button"
+                    >
+                      mnemonic
+                    </button>
                     <button
                       class="sc-AxmLO cNAsSK"
                       data-testid="MnemonicVerificationOptions__button"
@@ -279,13 +286,6 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                       data-testid="MnemonicVerificationOptions__button"
                       type="button"
                     />
-                    <button
-                      class="sc-AxmLO cNAsSK"
-                      data-testid="MnemonicVerificationOptions__button"
-                      type="button"
-                    >
-                      mnemonic
-                    </button>
                   </div>
                 </div>
               </div>
