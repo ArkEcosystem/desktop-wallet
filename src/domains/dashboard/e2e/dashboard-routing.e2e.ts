@@ -1,11 +1,11 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getLocation, getPageURL } from "../../../utils/e2e-utils";
+import { createFixture, getLocation } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
-fixture`Dashboard routing`.page(getPageURL());
+createFixture(`Dashboard routing`);
 
 test("should navigate to dashboard", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
