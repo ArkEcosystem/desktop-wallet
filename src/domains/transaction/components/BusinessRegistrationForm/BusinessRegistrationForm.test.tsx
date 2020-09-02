@@ -1,8 +1,11 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
+import businessRegistrationFixture from "tests/fixtures/coins/ark/transactions/business-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { BusinessRegistrationForm } from "./BusinessRegistrationForm";
@@ -154,5 +157,23 @@ describe("BusinessRegistrationForm", () => {
 
 			expect(asFragment()).toMatchSnapshot();
 		});
+	});
+
+	it("should output transaction details", () => {
+		const translations = jest.fn((translation) => translation);
+		const transaction = {
+			id: () => businessRegistrationFixture.data.id,
+			sender: () => businessRegistrationFixture.data.sender,
+			recipient: () => businessRegistrationFixture.data.recipient,
+			amount: () => BigNumber.make(businessRegistrationFixture.data.amount),
+			fee: () => BigNumber.make(businessRegistrationFixture.data.fee),
+			data: () => businessRegistrationFixture.data,
+		} as Contracts.SignedTransactionData;
+
+		render(<BusinessRegistrationForm.transactionDetails transaction={transaction} translations={translations} />);
+
+		expect(screen.getByText("Test Entity Name")).toBeInTheDocument();
+		expect(screen.getByText("Test Entity Description")).toBeInTheDocument();
+		expect(screen.getByText("https://test.business")).toBeInTheDocument();
 	});
 });
