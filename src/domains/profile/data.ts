@@ -16,22 +16,3 @@ export const blockchainRegistrations = [
 		repository: [],
 	},
 ];
-
-export const businessRegistrations = [
-	{
-		agent: "OLEBank",
-		businessName: "ARK Ecosystem",
-		history: [],
-		website: "",
-		msq: true,
-		repository: [],
-	},
-	{
-		agent: "OLEBank",
-		businessName: "ARK Ecosystem",
-		history: [],
-		website: "",
-		msq: true,
-		repository: [],
-	},
-];

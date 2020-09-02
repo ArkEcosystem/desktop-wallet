@@ -1,7 +1,7 @@
 import { RequestMock, Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { getPageURL } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet } from "../../wallet/e2e/common";
 
@@ -43,7 +43,7 @@ const sendMock = RequestMock()
 		},
 	);
 
-fixture`IPFS Transaction action`.page(getPageURL());
+createFixture(`IPFS Transaction action`);
 
 test("should navigate to IPFS page", async (t) => {
 	// Navigate to wallet page
