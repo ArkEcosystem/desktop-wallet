@@ -9,7 +9,7 @@ on:
         types: [ready_for_review, synchronize, opened]
 
 jobs:
-    contacts-routing:
+    build-and-upload:
         runs-on: ubuntu-latest
 
         strategy:
@@ -41,6 +41,55 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Build
+              run: yarn build:ci
+
+            - name: Upload Build Artifacts
+              uses: actions/upload-artifact@v2
+              with:
+                  name: build
+                  path: ./build
+
+    contacts-routing:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/contact/e2e/contacts-routing.e2e.ts
@@ -53,6 +102,8 @@ jobs:
                   path: screenshots/**/*.png
 
     create-contact:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -84,6 +135,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/contact/e2e/create-contact.e2e.ts
@@ -96,6 +152,8 @@ jobs:
                   path: screenshots/**/*.png
 
     create-profile-action:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -127,6 +185,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/contact/e2e/delete-contact.e2e.ts
@@ -139,6 +202,8 @@ jobs:
                   path: screenshots/**/*.png
 
     create-profile-routing:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -170,6 +235,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/contact/e2e/update-contact.e2e.ts
@@ -182,6 +252,8 @@ jobs:
                   path: screenshots/**/*.png
 
     create-wallet-action:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -213,6 +285,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/dashboard/e2e/dashboard-routing.e2e.ts
@@ -225,6 +302,8 @@ jobs:
                   path: screenshots/**/*.png
 
     dashboard-routing:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -256,6 +335,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/dashboard/e2e/navbar-routing.e2e.ts
@@ -268,6 +352,8 @@ jobs:
                   path: screenshots/**/*.png
 
     delegate-registration:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -299,6 +385,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/news/e2e/filtering.e2e.ts
@@ -311,6 +402,8 @@ jobs:
                   path: screenshots/**/*.png
 
     delegate-resignation:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -342,6 +435,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/news/e2e/news-routing.e2e.ts
@@ -354,6 +452,8 @@ jobs:
                   path: screenshots/**/*.png
 
     delete-contact:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -385,6 +485,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/plugin/e2e/plugins-routing.e2e.ts
@@ -397,6 +502,8 @@ jobs:
                   path: screenshots/**/*.png
 
     delete-profile-action:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -428,6 +535,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/create-profile-action.e2e.ts
@@ -439,6 +551,8 @@ jobs:
                   name: create-profile-action-screenshots
                   path: screenshots/**/*.png
     delete-wallet-action:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -470,6 +584,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/create-profile-routing.e2e.ts
@@ -482,6 +601,8 @@ jobs:
                   path: screenshots/**/*.png
 
     filtering:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -513,6 +634,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/delete-profile-action.e2e.ts
@@ -525,6 +651,8 @@ jobs:
                   path: screenshots/**/*.png
 
     import-wallet-action:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -556,6 +684,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/my-registrations-routing.e2e.ts
@@ -568,6 +701,8 @@ jobs:
                   path: screenshots/**/*.png
 
     multiple-transfer:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -599,6 +734,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/navigate-profile-settings.e2e.ts
@@ -611,6 +751,8 @@ jobs:
                   path: screenshots/**/*.png
 
     my-registrations-routing:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -642,6 +784,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/welcome-screen.e2e.ts
@@ -654,6 +801,8 @@ jobs:
                   path: screenshots/**/*.png
 
     navbar-routing:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -685,6 +834,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/setting/e2e/save-settings.e2e.ts
@@ -697,6 +851,8 @@ jobs:
                   path: screenshots/**/*.png
 
     navigate-profile-settings:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -728,6 +884,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/setting/e2e/settings-routing.e2e.ts
@@ -740,6 +901,8 @@ jobs:
                   path: screenshots/**/*.png
 
     news-routing:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -771,6 +934,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/splash/e2e/splash-screen.e2e.ts
@@ -783,6 +951,8 @@ jobs:
                   path: screenshots/**/*.png
 
     plugins-routing:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -814,6 +984,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/delegate-registration.e2e.ts
@@ -826,6 +1001,8 @@ jobs:
                   path: screenshots/**/*.png
 
     save-settings:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -857,6 +1034,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/delegate-resignation.e2e.ts
@@ -868,6 +1050,8 @@ jobs:
                   name: delegate-resignation-screenshots
                   path: screenshots/**/*.png
     settings-routing:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -899,6 +1083,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/multiple-transfer.e2e.ts
@@ -911,6 +1100,8 @@ jobs:
                   path: screenshots/**/*.png
 
     sign-message-action:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -942,6 +1133,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/single-transfer.e2e.ts
@@ -954,6 +1150,8 @@ jobs:
                   path: screenshots/**/*.png
 
     single-transfer:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -985,6 +1183,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/transactions-routing.e2e.ts
@@ -997,6 +1200,8 @@ jobs:
                   path: screenshots/**/*.png
 
     splash-screen:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -1028,6 +1233,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/vote/e2e/votes.e2e.ts
@@ -1040,6 +1250,8 @@ jobs:
                   path: screenshots/**/*.png
 
     transactions-routing:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -1071,6 +1283,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/create-wallet-action.e2e.ts
@@ -1083,6 +1300,8 @@ jobs:
                   path: screenshots/**/*.png
 
     update-contact:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -1114,6 +1333,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/delete-wallet-action.e2e.ts
@@ -1126,6 +1350,8 @@ jobs:
                   path: screenshots/**/*.png
 
     update-wallet-name-action:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -1157,6 +1383,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/import-wallet-action.e2e.ts
@@ -1169,6 +1400,8 @@ jobs:
                   path: screenshots/**/*.png
 
     verify-message-action:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -1200,6 +1433,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/sign-message-action.e2e.ts
@@ -1212,6 +1450,8 @@ jobs:
                   path: screenshots/**/*.png
 
     votes:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -1243,6 +1483,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/update-wallet-name-action.e2e.ts
@@ -1255,6 +1500,8 @@ jobs:
                   path: screenshots/**/*.png
 
     wallet-details:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -1286,6 +1533,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/verify-message-action.e2e.ts
@@ -1298,6 +1550,8 @@ jobs:
                   path: screenshots/**/*.png
 
     wallets-routing:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -1329,6 +1583,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/wallet-details.e2e.ts
@@ -1341,6 +1600,8 @@ jobs:
                   path: screenshots/**/*.png
 
     welcome-screen:
+        needs: build-and-upload
+
         runs-on: ubuntu-latest
 
         strategy:
@@ -1372,6 +1633,11 @@ jobs:
 
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download code coverage
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/wallets-routing.e2e.ts
