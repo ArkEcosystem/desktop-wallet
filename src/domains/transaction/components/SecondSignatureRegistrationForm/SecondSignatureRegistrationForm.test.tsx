@@ -78,6 +78,21 @@ describe("SecondSignatureRegistrationForm", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render confirmation step", async () => {
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					secondMnemonic: "test mnemonic",
+				},
+			}),
+		);
+		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={4} />);
+
+		await waitFor(() => expect(screen.getByTestId("SecondSignature__confirmation-step")).toBeTruthy());
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should sign transaction", async () => {
 		const form = {
 			clearError: jest.fn(),

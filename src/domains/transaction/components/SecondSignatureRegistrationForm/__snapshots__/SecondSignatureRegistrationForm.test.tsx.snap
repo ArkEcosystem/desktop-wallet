@@ -183,3 +183,121 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
   </form>
 </DocumentFragment>
 `;
+
+exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="Form"
+  >
+    <div>
+      <div
+        data-testid="tab-pabel__active-panel"
+      >
+        <section
+          data-testid="SecondSignature__confirmation-step"
+        >
+          <div
+            class="my-8"
+          >
+            <div
+              class="flex items-end justify-between bg-theme-background"
+            >
+              <div>
+                <h1
+                  class="mb-0 md:text-4xl"
+                  data-testid="header__title"
+                >
+                  Confirm your passphrase
+                </h1>
+                <div
+                  class="text-theme-neutral-dark"
+                  data-testid="header__subtitle"
+                >
+                  Confirm your password to continue
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <ul
+              class="flex space-x-2"
+            >
+              <button
+                class="sc-AxmLO sc-fzozJi hUvGlA"
+                data-testid="MnemonicVerificationProgress__Tab"
+                disabled=""
+              >
+                <span>
+                  The #11 word
+                </span>
+              </button>
+              <button
+                class="sc-AxmLO sc-fzozJi eIqJVJ"
+                data-testid="MnemonicVerificationProgress__Tab"
+                disabled=""
+              >
+                <span>
+                  The #5 word
+                </span>
+              </button>
+              <button
+                class="sc-AxmLO sc-fzozJi eIqJVJ"
+                data-testid="MnemonicVerificationProgress__Tab"
+                disabled=""
+              >
+                <span>
+                  The #1 word
+                </span>
+              </button>
+            </ul>
+            <div
+              class="mt-10"
+            >
+              <div
+                data-testid="tab-pabel__active-panel"
+              >
+                <div>
+                  <p
+                    class="mb-2 font-semibold text-theme-neutral-dark"
+                    data-testid="MnemonicVerificationOptions__title"
+                  >
+                    Select word #11
+                  </p>
+                  <div
+                    class="grid grid-cols-3 gap-2"
+                  >
+                    <button
+                      class="sc-AxmLO cNAsSK"
+                      data-testid="MnemonicVerificationOptions__button"
+                      type="button"
+                    >
+                      test
+                    </button>
+                    <button
+                      class="sc-AxmLO cNAsSK"
+                      data-testid="MnemonicVerificationOptions__button"
+                      type="button"
+                    />
+                    <button
+                      class="sc-AxmLO cNAsSK"
+                      data-testid="MnemonicVerificationOptions__button"
+                      type="button"
+                    >
+                      mnemonic
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-AxgMl fHSugy border-theme-neutral-300"
+            type="horizontal"
+          />
+        </section>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
