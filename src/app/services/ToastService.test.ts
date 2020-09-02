@@ -12,17 +12,17 @@ beforeAll(() => {
 
 describe("ToastService", () => {
 	it.each(["info", "success", "warning", "error"])("should call toast %s method", (method) => {
-		const mock = jest.spyOn(toast, method).mockImplementation();
+		const mock = jest.spyOn(toast, method);
 
-		subject[method](method);
+		expect(subject[method](method)).toBeTruthy();
 
 		expect(mock).toHaveBeenCalledWith(method, options);
 	});
 
 	it.each(["info", "success", "warning", "error"])("should call toast %s method with options", (method) => {
-		const mock = jest.spyOn(toast, method).mockImplementation();
+		const mock = jest.spyOn(toast, method);
 
-		subject[method](method, { position: "top-right" });
+		expect(subject[method](method, { position: "top-right" })).toBeTruthy();
 
 		expect(mock).toHaveBeenCalledWith(method, { ...options, position: "top-right" });
 	});

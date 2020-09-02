@@ -1,4 +1,4 @@
-import { toast, ToastContent, ToastOptions, TypeOptions } from "react-toastify";
+import { Id as ToastId, toast, ToastContent, ToastOptions, TypeOptions } from "react-toastify";
 
 const { TYPE } = toast;
 
@@ -14,28 +14,28 @@ export class ToastService {
 		return this.defaultOptions;
 	}
 
-	private toast(type: TypeOptions, content: ToastContent, options?: ToastOptions) {
+	private toast(type: TypeOptions, content: ToastContent, options?: ToastOptions): ToastId {
 		// @ts-ignore
-		toast[type](content, { ...this.options(), ...(options || {}) });
+		return toast[type](content, { ...this.options(), ...(options || {}) });
 	}
 
-	public info(content: ToastContent, options?: ToastOptions) {
-		this.toast(TYPE.INFO, content, options);
+	public info(content: ToastContent, options?: ToastOptions): ToastId {
+		return this.toast(TYPE.INFO, content, options);
 	}
 
-	public success(content: ToastContent, options?: ToastOptions) {
-		this.toast(TYPE.SUCCESS, content, options);
+	public success(content: ToastContent, options?: ToastOptions): ToastId {
+		return this.toast(TYPE.SUCCESS, content, options);
 	}
 
-	public warning(content: ToastContent, options?: ToastOptions) {
-		this.toast(TYPE.WARNING, content, options);
+	public warning(content: ToastContent, options?: ToastOptions): ToastId {
+		return this.toast(TYPE.WARNING, content, options);
 	}
 
-	public error(content: ToastContent, options?: ToastOptions) {
-		this.toast(TYPE.ERROR, content, options);
+	public error(content: ToastContent, options?: ToastOptions): ToastId {
+		return this.toast(TYPE.ERROR, content, options);
 	}
 
-	public dismiss(id?: number | string) {
+	public dismiss(id?: ToastId) {
 		toast.dismiss(id);
 	}
 }
