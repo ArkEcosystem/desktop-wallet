@@ -48,7 +48,7 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 
 	const isEmptyRegistrations = useMemo(
 		() => !isLoading && !delegates.length && !blockchain.length && !businesses.length,
-		[businesses, delegates, blockchain],
+		[businesses, delegates, blockchain, isLoading],
 	);
 
 	const crumbs = [
