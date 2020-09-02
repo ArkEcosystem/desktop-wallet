@@ -44,14 +44,20 @@ const Main = ({ syncInterval }: Props) => {
 	}, [pathname]);
 
 	useLayoutEffect(() => {
-		const syncDelegates = async () => env.delegates().syncAll();
-		const syncFees = async () => env.fees().syncAll();
-		const syncExchangeRates = async () => env.exchangeRates().syncAll();
+		const syncDelegates = async () => await env.delegates().syncAll();
+		const syncFees = async () => await env.fees().syncAll();
+		const syncExchangeRates = async () => await env.exchangeRates().syncAll();
 		const syncWallets = async () => await env.wallets().syncAll();
 
 		const boot = async () => {
 			const scheduler = new Scheduler(syncInterval);
-			await env.verify(fixtureData);
+
+			const shouldUseFixture: boolean =
+				process.env.REACT_APP_BUILD_MODE === "demo" ||
+				// TestCafe doesn't expose environment variables.
+				(process.env.NODE_ENV === "production" && process.env.PUBLIC_URL === ".");
+
+			await env.verify(shouldUseFixture ? fixtureData : undefined);
 			await env.boot();
 			await syncDelegates();
 			await syncWallets();
@@ -64,11 +70,7 @@ const Main = ({ syncInterval }: Props) => {
 			setShowSplash(false);
 		};
 
-		if (process.env.REACT_APP_BUILD_MODE === "demo") {
-			boot();
-		} else {
-			setShowSplash(false);
-		}
+		boot();
 	}, [env, persist, syncInterval]);
 
 	if (showSplash) {
