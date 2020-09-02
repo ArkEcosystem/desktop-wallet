@@ -88,6 +88,12 @@ describe("HttpClient", () => {
 		expect(response.json()).toEqual(responseBody);
 	});
 
+	it("should throw if an unsupported method is used", async () => {
+		await expect(subject.delete("http://httpbin.org/delete")).rejects.toThrow(
+			"Received no response. This looks like a bug.",
+		);
+	});
+
 	// @README: Run this locally with TOR running.
 	it.skip("should connect with TOR", async () => {
 		nock.enableNetConnect();
