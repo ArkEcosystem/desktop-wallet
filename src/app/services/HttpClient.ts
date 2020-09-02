@@ -62,7 +62,7 @@ export class HttpClient extends Http.Request {
 
 			return new Http.Response({
 				body: await response.text(),
-				headers: (response.headers as unknown) as Record<string, Primitive>',
+				headers: (response.headers as unknown) as Record<string, Primitive>,
 				statusCode: response.status,
 			});
 		});
