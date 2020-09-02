@@ -86,10 +86,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/contact/e2e/contacts-routing.e2e.ts
@@ -136,10 +137,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/contact/e2e/create-contact.e2e.ts
@@ -186,10 +188,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/contact/e2e/delete-contact.e2e.ts
@@ -236,10 +239,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/contact/e2e/update-contact.e2e.ts
@@ -286,10 +290,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/dashboard/e2e/dashboard-routing.e2e.ts
@@ -336,10 +341,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/dashboard/e2e/navbar-routing.e2e.ts
@@ -386,10 +392,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/news/e2e/filtering.e2e.ts
@@ -436,10 +443,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/news/e2e/news-routing.e2e.ts
@@ -486,10 +494,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/plugin/e2e/plugins-routing.e2e.ts
@@ -536,10 +545,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/create-profile-action.e2e.ts
@@ -585,10 +595,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/create-profile-routing.e2e.ts
@@ -635,10 +646,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/delete-profile-action.e2e.ts
@@ -685,10 +697,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/my-registrations-routing.e2e.ts
@@ -735,10 +748,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/navigate-profile-settings.e2e.ts
@@ -785,10 +799,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/profile/e2e/welcome-screen.e2e.ts
@@ -835,10 +850,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/setting/e2e/save-settings.e2e.ts
@@ -885,10 +901,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/setting/e2e/settings-routing.e2e.ts
@@ -935,10 +952,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/splash/e2e/splash-screen.e2e.ts
@@ -985,10 +1003,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/delegate-registration.e2e.ts
@@ -1035,10 +1054,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/delegate-resignation.e2e.ts
@@ -1084,10 +1104,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/multiple-transfer.e2e.ts
@@ -1134,10 +1155,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/single-transfer.e2e.ts
@@ -1184,10 +1206,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/transaction/e2e/transactions-routing.e2e.ts
@@ -1234,10 +1257,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/vote/e2e/votes.e2e.ts
@@ -1284,10 +1308,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/create-wallet-action.e2e.ts
@@ -1334,10 +1359,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/delete-wallet-action.e2e.ts
@@ -1384,10 +1410,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/import-wallet-action.e2e.ts
@@ -1434,10 +1461,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/sign-message-action.e2e.ts
@@ -1484,10 +1512,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/update-wallet-name-action.e2e.ts
@@ -1534,10 +1563,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/verify-message-action.e2e.ts
@@ -1584,10 +1614,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/wallet-details.e2e.ts
@@ -1634,10 +1665,11 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Download code coverage
+            - name: Download Build Artifact
               uses: actions/download-artifact@v2
               with:
                   name: build
+                  path: build
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e:ci src/domains/wallet/e2e/wallets-routing.e2e.ts
