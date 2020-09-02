@@ -12,6 +12,7 @@ export class HttpClient extends Http.Request {
 		super();
 
 		this.cache = new Cache(ttl);
+
 		this.withHeaders({
 			Accept: "application/json",
 			"Content-Type": "application/json",
