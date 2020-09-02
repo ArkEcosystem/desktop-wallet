@@ -42,6 +42,20 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 		register("ipfsData.videos");
 	}, [register]);
 
+	const handleSourceControl = useCallback(
+		(links: EntityLink[]) => {
+			setValue("ipfsData.sourceControl", links, true);
+		},
+		[setValue],
+	);
+
+	const handleSocialMedia = useCallback(
+		(links: EntityLink[]) => {
+			setValue("ipfsData.socialMedia", links, true);
+		},
+		[setValue],
+	);
+
 	const handleMedia = useCallback(
 		(links: EntityLink[]) => {
 			// Image and video are separates tags in ipfsData
@@ -105,7 +119,7 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 							.sourceControl()
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
-						onChange={(links) => setValue("ipfsData.sourceControl", links, true)}
+						onChange={handleSourceControl}
 					/>
 				</TransactionDetail>
 
@@ -117,7 +131,7 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 							.socialMedia()
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
-						onChange={(links) => setValue("ipfsData.socialMedia", links, true)}
+						onChange={handleSocialMedia}
 					/>
 				</TransactionDetail>
 

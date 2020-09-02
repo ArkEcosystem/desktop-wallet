@@ -40,7 +40,7 @@ describe("BusinessRegistrationForm", () => {
 
 		it("should fill data", async () => {
 			const { result } = renderHook(() => useForm());
-			const { asFragment, debug } = render(<Component form={result.current} onSubmit={() => void 0} />);
+			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} />);
 
 			act(() => {
 				fireEvent.input(screen.getByTestId("BusinessRegistrationForm__name"), {
