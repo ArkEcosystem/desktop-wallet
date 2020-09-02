@@ -39,6 +39,12 @@ describe("HttpClient", () => {
 		expect(response.json()).toEqual(responseBody);
 	});
 
+	it("should handle 404 status codes", async () => {
+		nock("http://httpbin.org/").get("/get").reply(404, {});
+
+		await expect(subject.get("http://httpbin.org/get")).rejects.toThrow();
+	});
+
 	it("should post with body", async () => {
 		const responseBody = {
 			args: {},
@@ -86,5 +92,15 @@ describe("HttpClient", () => {
 		await expect(subject.delete("http://httpbin.org/delete")).rejects.toThrow(
 			"Received no response. This looks like a bug.",
 		);
+	});
+
+	// @README: Run this locally with TOR running.
+	it.skip("should connect with TOR", async () => {
+		nock.enableNetConnect();
+
+		const realAddress = await subject.get("https://ipinfo.io");
+		const newAddress = await subject.withSocksProxy("socks5://127.0.0.1:9050").get("https://ipinfo.io");
+
+		expect(newAddress.json().ip).not.toBe(realAddress);
 	});
 });
