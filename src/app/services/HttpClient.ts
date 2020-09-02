@@ -1,6 +1,7 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
 import { md5 } from "hash-wasm";
 import fetch from "isomorphic-fetch";
+import { Primitive } from "type-fest";
 
 import { Cache } from "./Cache";
 
@@ -47,10 +48,14 @@ export class HttpClient extends Http.Request {
 				});
 			}
 
+			if (!response) {
+				throw new Error("Received no response. This looks like a bug.");
+			}
+
 			return new Http.Response({
-				body: await response?.text(),
-				headers: response?.headers,
-				statusCode: response?.status,
+				body: await response.text(),
+				headers: (response.headers as unknown) as Record<string, Primitive>,
+				statusCode: response.status,
 			});
 		});
 	}

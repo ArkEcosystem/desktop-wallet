@@ -61,11 +61,12 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	useEffect(() => {
 		const fetchAllData = async () => {
 			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
-			const walletData = await activeWallet.client().wallet(activeWallet.address());
 
+			let walletData: Contracts.WalletData | undefined;
 			let votes: ReadOnlyWallet[] = [];
 
 			try {
+				walletData = await activeWallet.client().wallet(activeWallet.address());
 				votes = activeWallet.votes();
 			} catch {
 				votes = [];
