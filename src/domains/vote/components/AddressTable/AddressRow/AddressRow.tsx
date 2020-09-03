@@ -42,10 +42,12 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
 	useEffect(() => {
-		const loadVotes = () => {
+		const loadVotes = async () => {
 			if (!hasProperty(wallet, "isLoading")) {
 				let votes: ReadOnlyWallet[] = [];
 				try {
+					await wallet.syncVotes();
+
 					votes = wallet.votes();
 				} catch {
 					votes = [];
