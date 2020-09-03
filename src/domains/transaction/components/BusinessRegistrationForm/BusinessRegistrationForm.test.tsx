@@ -86,11 +86,11 @@ describe("BusinessRegistrationForm", () => {
 
 	const Component = ({
 		form,
-		onSubmit,
+		onSubmit = () => void 0,
 		activeTab = 2,
 	}: {
 		form: ReturnType<typeof useForm>;
-		onSubmit: () => void;
+		onSubmit?: () => void;
 		activeTab?: number;
 	}) => (
 		<Form context={form} onSubmit={onSubmit}>
@@ -100,7 +100,7 @@ describe("BusinessRegistrationForm", () => {
 
 	it("should render 2nd step", async () => {
 		const { result } = renderHook(() => useForm());
-		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} />);
+		const { asFragment } = render(<Component form={result.current} />);
 
 		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--second")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
@@ -283,6 +283,42 @@ describe("BusinessRegistrationForm", () => {
 				},
 			}),
 		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should go to next step with form data", () => {
+		const { result } = renderHook(() => useForm());
+
+		const { rerender, asFragment } = render(<Component form={result.current} activeTab={2} />);
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__name"), {
+				target: {
+					value: "Test Entity Name",
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		rerender(<Component form={result.current} activeTab={3} />);
+
+		expect(screen.getByText("https://test-step.entity.com")).toBeInTheDocument();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
