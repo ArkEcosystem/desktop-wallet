@@ -18,6 +18,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
@@ -84,6 +85,8 @@ const Main = ({ syncInterval }: Props) => {
 
 	return (
 		<main className={className}>
+			<ToastContainer />
+
 			{isOnline ? <RouterView routes={routes} middlewares={middlewares} /> : <Offline />}
 		</main>
 	);

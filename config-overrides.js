@@ -54,6 +54,7 @@ const whiteListedModules = [
 	"react-router-dom",
 	"react-scripts",
 	"react-table",
+	"react-toastify",
 	"react",
 	"recharts",
 	"rxjs",

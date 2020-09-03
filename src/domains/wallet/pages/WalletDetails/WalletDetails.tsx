@@ -223,9 +223,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 				</Section>
 			</Page>
 
-			{wallets && wallets.length > 1 && (
-				<WalletBottomSheetMenu walletsData={wallets.map((wallet) => ({ wallet }))} />
-			)}
+			{wallets && wallets.length > 1 && <WalletBottomSheetMenu wallets={wallets} />}
 
 			<UpdateWalletName
 				name={activeWallet?.alias()}
