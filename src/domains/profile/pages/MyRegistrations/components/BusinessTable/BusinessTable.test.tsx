@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ExtendedTransactionData, Profile } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor, within } from "testing-library";
@@ -19,7 +19,7 @@ describe("BusinessRegistrationsTable", () => {
 
 		profile = env.profiles().findById(getDefaultProfileId());
 
-		const businesses = await profile.entityRegistrationAggregate().businesses();
+		const businesses = await profile.entityAggregate().registrations(Enums.EntityType.Business);
 		businessRegistrations = businesses.items();
 	});
 

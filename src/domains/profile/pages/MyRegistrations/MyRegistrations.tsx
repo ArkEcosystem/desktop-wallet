@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
@@ -72,9 +72,11 @@ export const MyRegistrations = () => {
 		const fetchRegistrations = async () => {
 			setIsLoading(true);
 
-			activeProfile.entityRegistrationAggregate().flush();
+			activeProfile.entityAggregate().flush();
 
-			const businessRegistrations = await activeProfile.entityRegistrationAggregate().businesses();
+			const businessRegistrations = await activeProfile
+				.entityAggregate()
+				.registrations(Enums.EntityType.Business);
 			setBusinesses(businessRegistrations.items());
 
 			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
