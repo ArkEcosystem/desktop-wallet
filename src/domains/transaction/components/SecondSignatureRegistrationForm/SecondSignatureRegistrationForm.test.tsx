@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
@@ -5,7 +6,7 @@ import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
-import businessRegistrationFixture from "tests/fixtures/coins/ark/transactions/second-signature-registration.json";
+import secondSignatureFixture from "tests/fixtures/coins/ark/transactions/second-signature-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
@@ -31,12 +32,12 @@ describe("SecondSignatureRegistrationForm", () => {
 	const createTransactionMock = (wallet: ReadWriteWallet) =>
 		// @ts-ignore
 		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-			id: () => businessRegistrationFixture.data.id,
-			sender: () => businessRegistrationFixture.data.sender,
-			recipient: () => businessRegistrationFixture.data.recipient,
-			amount: () => BigNumber.make(businessRegistrationFixture.data.amount),
-			fee: () => BigNumber.make(businessRegistrationFixture.data.fee),
-			data: () => businessRegistrationFixture.data,
+			id: () => secondSignatureFixture.data.id,
+			sender: () => secondSignatureFixture.data.sender,
+			recipient: () => secondSignatureFixture.data.recipient,
+			amount: () => BigNumber.make(secondSignatureFixture.data.amount),
+			fee: () => BigNumber.make(secondSignatureFixture.data.fee),
+			data: () => secondSignatureFixture.data,
 		});
 
 	const Component = ({
@@ -154,6 +155,27 @@ describe("SecondSignatureRegistrationForm", () => {
 		await waitFor(() => expect(screen.getByTestId("SecondSignature__review-step")).toBeTruthy());
 	});
 
+	it("should render transaction details", async () => {
+		const translations = jest.fn((translation) => translation);
+		const transaction = {
+			id: () => secondSignatureFixture.data.id,
+			sender: () => secondSignatureFixture.data.sender,
+			recipient: () => secondSignatureFixture.data.recipient,
+			amount: () => BigNumber.make(secondSignatureFixture.data.amount),
+			fee: () => BigNumber.make(secondSignatureFixture.data.fee),
+			data: () => secondSignatureFixture.data,
+		} as Contracts.SignedTransactionData;
+		const { asFragment } = render(
+			<SecondSignatureRegistrationForm.transactionDetails
+				translations={translations}
+				transaction={transaction}
+			/>,
+		);
+
+		await waitFor(() => expect(screen.getByTestId("TransactionDetail")).toBeInTheDocument());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should sign transaction", async () => {
 		const form = {
 			clearError: jest.fn(),
@@ -171,7 +193,7 @@ describe("SecondSignatureRegistrationForm", () => {
 
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signSecondSignature")
-			.mockReturnValue(Promise.resolve(businessRegistrationFixture.data.id));
+			.mockReturnValue(Promise.resolve(secondSignatureFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 

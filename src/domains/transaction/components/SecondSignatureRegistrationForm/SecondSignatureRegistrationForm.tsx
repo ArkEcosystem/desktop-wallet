@@ -263,13 +263,20 @@ const component = ({
 	</Tabs>
 );
 
-const transactionDetails = ({
-	transaction,
-	translations,
-}: {
-	transaction: Contracts.SignedTransactionData;
-	translations: any;
-}) => <div />;
+const transactionDetails = ({ translations }: { transaction: Contracts.SignedTransactionData; translations: any }) => (
+	<TransactionDetail
+		label={translations("TRANSACTION.TYPE")}
+		extra={
+			<div>
+				<Circle className="border-black bg-theme-background" size="lg">
+					<Icon name="Key" width={20} height={20} />
+				</Circle>
+			</div>
+		}
+	>
+		{translations("TRANSACTION.PAGE_SECOND_SIGNATURE.REVIEW_STEP.TYPE")}
+	</TransactionDetail>
+);
 
 component.displayName = "SecondSignatureRegistrationForm";
 transactionDetails.displayName = "SecondSignatureRegistrationFormTransactionDetails";
