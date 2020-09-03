@@ -151,6 +151,12 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Confirm your passphrase",
 			SUBTITLE: "Confirm your password to continue",
 		},
+
+		REVIEW_STEP: {
+			TITLE: "Register Second Signature",
+			DESCRIPTION: "Check your information",
+			TYPE: "Second Signature",
+		},
 	},
 
 	PAGE_RESIGN_REGISTRATION: {

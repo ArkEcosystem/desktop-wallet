@@ -140,6 +140,20 @@ describe("SecondSignatureRegistrationForm", () => {
 		await waitFor(() => expect(result.current.getValues("verification")).toBe(true));
 	});
 
+	it("should render review step", async () => {
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					fee: 0,
+				},
+			}),
+		);
+
+		render(<Component form={result.current} onSubmit={() => void 0} activeTab={5} />);
+
+		await waitFor(() => expect(screen.getByTestId("SecondSignature__review-step")).toBeTruthy());
+	});
+
 	it("should sign transaction", async () => {
 		const form = {
 			clearError: jest.fn(),

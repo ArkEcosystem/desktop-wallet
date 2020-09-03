@@ -1,10 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
+import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
 import { FormField, FormLabel } from "app/components/Form";
@@ -13,6 +15,7 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { RegistrationForm } from "domains/transaction/pages/Registration/Registration.models";
 import { MnemonicList } from "domains/wallet/components/MnemonicList";
@@ -20,6 +23,8 @@ import { MnemonicVerification } from "domains/wallet/components/MnemonicVerifica
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+
+import { TotalAmountBox } from "../TotalAmountBox";
 
 const GenerationStep = ({ feeOptions, wallet }: any) => {
 	const { t } = useTranslation();
@@ -54,7 +59,7 @@ const GenerationStep = ({ feeOptions, wallet }: any) => {
 					borderPosition="bottom"
 				>
 					<div className="mb-2 font-semibold text-theme-neutral">
-						<span className="mr-1 text-sm">Sender</span>
+						<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
@@ -175,6 +180,64 @@ const VerificationStep = () => {
 	);
 };
 
+const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
+	const { t } = useTranslation();
+	const { getValues, unregister } = useFormContext();
+	const { fee } = getValues();
+
+	useEffect(() => {
+		unregister("mnemonic");
+	}, [unregister]);
+
+	return (
+		<section data-testid="SecondSignature__review-step">
+			<h1 className="mb-0">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.REVIEW_STEP.TITLE")}</h1>
+			<div className="text-theme-neutral-dark">
+				{t("TRANSACTION.PAGE_SECOND_SIGNATURE.REVIEW_STEP.DESCRIPTION")}
+			</div>
+
+			<div className="mt-4 grid grid-flow-row gap-2">
+				<TransactionDetail
+					border={false}
+					label={t("TRANSACTION.NETWORK")}
+					extra={<NetworkIcon coin={wallet.coinId()} network={wallet.networkId()} />}
+				>
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+						{wallet.network().name()}
+					</div>
+				</TransactionDetail>
+
+				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />}>
+					<div className="mb-2 font-semibold text-theme-neutral">
+						<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
+						<Label color="warning">
+							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
+						</Label>
+					</div>
+					<Address address={wallet.address()} walletName={wallet.alias()} />
+				</TransactionDetail>
+
+				<TransactionDetail
+					label={t("TRANSACTION.TYPE")}
+					extra={
+						<div>
+							<Circle className="border-black bg-theme-background" size="lg">
+								<Icon name="Key" width={20} height={20} />
+							</Circle>
+						</div>
+					}
+				>
+					{t("TRANSACTION.PAGE_SECOND_SIGNATURE.REVIEW_STEP.TYPE")}
+				</TransactionDetail>
+
+				<div className="mt-2">
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
+				</div>
+			</div>
+		</section>
+	);
+};
+
 const component = ({
 	activeTab,
 	feeOptions,
@@ -194,6 +257,9 @@ const component = ({
 		<TabPanel tabId={4}>
 			<VerificationStep />
 		</TabPanel>
+		<TabPanel tabId={5}>
+			<ReviewStep wallet={wallet} />
+		</TabPanel>
 	</Tabs>
 );
 
@@ -209,7 +275,7 @@ component.displayName = "SecondSignatureRegistrationForm";
 transactionDetails.displayName = "SecondSignatureRegistrationFormTransactionDetails";
 
 export const SecondSignatureRegistrationForm: RegistrationForm = {
-	tabSteps: 3,
+	tabSteps: 4,
 	component,
 	transactionDetails,
 	formFields: ["secondMnemonic", "verification"],
