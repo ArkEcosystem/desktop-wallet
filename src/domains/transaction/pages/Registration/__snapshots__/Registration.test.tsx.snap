@@ -970,16 +970,16 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 <button
                                   aria-expanded="true"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-24-label downshift-24-toggle-button"
+                                  aria-labelledby="downshift-25-label downshift-25-toggle-button"
                                   class="sc-fznxsB hwZFkF is-open  "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-24-toggle-button"
+                                  id="downshift-25-toggle-button"
                                   type="button"
                                 />
                                 <ul
-                                  aria-labelledby="downshift-24-label"
+                                  aria-labelledby="downshift-25-label"
                                   class="sc-fznJRM KaIHo is-open"
-                                  id="downshift-24-menu"
+                                  id="downshift-25-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 >
@@ -987,7 +987,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                     aria-selected="false"
                                     class="select-list-option "
                                     data-testid="select-list__toggle-option-0"
-                                    id="downshift-24-item-0"
+                                    id="downshift-25-item-0"
                                     role="option"
                                   >
                                     <div
@@ -1020,26 +1020,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                 </div>
                 <div
                   class="flex justify-end mt-8 space-x-3"
-                >
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="Registration__back-button"
-                    disabled=""
-                    type="button"
-                  >
-                    Back
-                  </button>
-                  <button
-                    class="sc-AxjAm kbZyZT"
-                    color="primary"
-                    data-testid="Registration__continue-button"
-                    disabled=""
-                    type="button"
-                  >
-                    Continue
-                  </button>
-                </div>
+                />
               </div>
             </div>
           </form>
@@ -2388,14 +2369,6 @@ exports[`Registration should register delegate 1`] = `
                 <div
                   class="flex justify-end mt-8 space-x-3"
                 >
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="Registration__back-button"
-                    type="button"
-                  >
-                    Back
-                  </button>
                   <div
                     class="flex justify-end space-x-3"
                   >
