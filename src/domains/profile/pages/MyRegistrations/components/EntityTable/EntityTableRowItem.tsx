@@ -8,11 +8,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type EntityTableRowItemProps = {
-	business: ExtendedTransactionData;
+	entity: ExtendedTransactionData;
 	onAction?: any;
 };
 
-export const EntityTableRowItem = ({ onAction, business }: EntityTableRowItemProps) => {
+export const EntityTableRowItem = ({ onAction, entity }: EntityTableRowItemProps) => {
 	const { t } = useTranslation();
 
 	const options = [
@@ -20,7 +20,7 @@ export const EntityTableRowItem = ({ onAction, business }: EntityTableRowItemPro
 		{ label: t("COMMON.RESIGN"), value: "resign" },
 	];
 
-	const { data }: any = business.asset();
+	const { data }: any = entity.asset();
 
 	return (
 		<tr data-testid="EntityTableRowItem" className="border-b border-dashed border-theme-neutral-light">
@@ -29,11 +29,11 @@ export const EntityTableRowItem = ({ onAction, business }: EntityTableRowItemPro
 					<Circle className="border-theme-neutral-800" size="lg">
 						<Icon name="Business" width={22} height={22} />
 					</Circle>
-					<Avatar address={business.sender()} size="lg" className="mr-4" />
+					<Avatar address={entity.sender()} size="lg" className="mr-4" />
 				</div>
 			</td>
 			<td className="font-semibold">
-				<span>{business.wallet().alias()}</span>
+				<span>{entity.wallet().alias()}</span>
 			</td>
 			<td className="font-semibold">
 				<span>{data?.name}</span>
@@ -61,7 +61,7 @@ export const EntityTableRowItem = ({ onAction, business }: EntityTableRowItemPro
 							toggleIcon="Settings"
 							options={options}
 							onSelect={({ value }: any) =>
-								onAction?.({ walletId: business.wallet().id(), txId: business.id(), action: value })
+								onAction?.({ walletId: entity.wallet().id(), txId: entity.id(), action: value })
 							}
 						/>
 					</Button>

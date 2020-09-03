@@ -34,7 +34,7 @@ const EmptyRegistrations = () => {
 export const MyRegistrations = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
-	const [developers, setDevelopers] = useState<ReadWriteWallet[]>([]);
+	const [developers, setDevelopers] = useState<ExtendedTransactionData[]>([]);
 	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
 
 	const history = useHistory();
@@ -79,7 +79,9 @@ export const MyRegistrations = () => {
 				.registrations(Enums.EntityType.Business);
 			setBusinesses(businessRegistrations.items());
 
-			const developerRegistrations = await activeProfile.entityRegistrationAggregate().developers();
+			const developerRegistrations = await activeProfile
+				.entityAggregate()
+				.registrations(Enums.EntityType.Developer);
 			setDevelopers(developerRegistrations.items());
 
 			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
