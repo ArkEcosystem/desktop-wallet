@@ -113,12 +113,24 @@ export const MyRegistrations = () => {
 					}
 				/>
 			</Section>
-
 			{isLoading && !isEmptyRegistrations && <Loader />}
 
-			{!isLoading && businesses.length > 0 && <EntityTable entities={businesses} onAction={handleAction} />}
-			{!isLoading && developers.length > 0 && <EntityTable entities={developers} onAction={handleAction} />}
-			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
+			{!isLoading && businesses.length > 0 && (
+				<div data-testid="BusinessTable">
+					<EntityTable entities={businesses} onAction={handleAction} />
+				</div>
+			)}
+			{!isLoading && developers.length > 0 && (
+				<div data-testid="DeveloperTable">
+					<EntityTable entities={developers} onAction={handleAction} />
+				</div>
+			)}
+
+			{!isLoading && delegates.length > 0 && (
+				<div data-testid="DelegateTable">
+					<DelegateTable wallets={delegates} onAction={handleAction} />
+				</div>
+			)}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
