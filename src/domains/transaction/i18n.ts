@@ -130,6 +130,13 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_SECOND_SIGNATURE: {
+		GENERATION_STEP: {
+			TITLE: "Register Second Signature",
+			DESCRIPTION: "Registration of your second signature.",
+			WARNING:
+				"Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.",
+		},
+
 		PASSPHRASE_STEP: {
 			TITLE: "Your Second Signature",
 			WARNING:

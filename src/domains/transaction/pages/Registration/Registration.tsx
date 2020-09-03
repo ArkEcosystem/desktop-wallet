@@ -27,7 +27,7 @@ import { RegistrationForm, RegistrationType } from "./Registration.models";
 const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
 	businessRegistration: BusinessRegistrationForm,
-	secondSignatureRegistration: SecondSignatureRegistrationForm,
+	secondSignature: SecondSignatureRegistrationForm,
 };
 
 const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
@@ -75,7 +75,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 
 	if (!wallet.isSecondSignature()) {
 		registrationTypes.push({
-			value: "secondSignatureRegistration",
+			value: "secondSignature",
 			label: "Second Signature",
 		});
 	}
@@ -271,7 +271,6 @@ export const Registration = () => {
 					},
 					{} as Record<string, any>,
 				);
-
 				setFeeOptions(fees);
 			} catch (error) {
 				//

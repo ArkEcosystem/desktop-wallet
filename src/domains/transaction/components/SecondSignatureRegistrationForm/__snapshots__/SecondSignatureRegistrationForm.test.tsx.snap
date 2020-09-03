@@ -33,13 +33,13 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
             class="space-y-8"
           >
             <div
-              class="flex overflow-hidden rounded-lg bg-theme-warning"
+              class="flex rounded-lg overflow-hidden bg-theme-warning"
             >
               <div
-                class="flex items-center justify-center sc-AxhCb emmdwf text-theme-warning bg-theme-warning-200"
+                class="sc-AxhUy bmnjKG flex items-center justify-center text-theme-warning bg-theme-warning-200"
               >
                 <div
-                  class="sc-AxirZ bMjbpr"
+                  class="sc-AxiKw iRsrJT"
                   height="30"
                   width="30"
                 >
@@ -49,7 +49,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
                 </div>
               </div>
               <div
-                class="flex-1 sc-AxiKw ffnSzD bg-theme-warning-100"
+                class="sc-AxhCb ehdPxX flex-1 bg-theme-warning-100"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
               </div>
@@ -96,13 +96,13 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
                 data-testid="clipboard__wrapper"
               >
                 <button
-                  class="sc-AxhUy dIHDOr"
+                  class="sc-AxgMl jTfhed"
                   color="primary"
                   data-testid="SecondSignature__copy"
                   type="button"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
+                    class="sc-AxiKw dzBdqj"
                     height="1em"
                     width="1em"
                   >
@@ -118,7 +118,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl fHSugy border-theme-neutral-300"
+            class="sc-AxheI kuSTUQ border-theme-neutral-300"
             type="horizontal"
           />
           <div
@@ -140,7 +140,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
                 </p>
               </div>
               <div
-                class="sc-AxirZ RbXVX"
+                class="sc-AxiKw jXNNYH"
                 height="40"
                 width="40"
               >
@@ -153,13 +153,13 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
               class="flex justify-end w-full"
             >
               <button
-                class="flex items-center mt-4 sc-AxhUy dIHDOr space-x-2"
+                class="sc-AxgMl jTfhed flex items-center mt-4 space-x-2"
                 color="primary"
                 data-testid="SecondSignature__download"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ iQaTP"
+                  class="sc-AxiKw dzBdqj"
                   height="1em"
                   width="1em"
                 >
@@ -174,7 +174,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxgMl fHSugy border-theme-neutral-300"
+            class="sc-AxheI kuSTUQ border-theme-neutral-300"
             type="horizontal"
           />
         </section>
@@ -184,7 +184,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
+exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
 <DocumentFragment>
   <form
     class="space-y-8"
@@ -195,7 +195,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
         data-testid="tab-pabel__active-panel"
       >
         <section
-          data-testid="SecondSignature__confirmation-step"
+          data-testid="SecondSignatureRegistrationForm__generation-step"
         >
           <div
             class="my-8"
@@ -208,93 +208,206 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                   class="mb-0 md:text-4xl"
                   data-testid="header__title"
                 >
-                  Confirm your passphrase
+                  Register Second Signature
                 </h1>
                 <div
                   class="text-theme-neutral-dark"
                   data-testid="header__subtitle"
                 >
-                  Confirm your password to continue
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <ul
-              class="flex space-x-2"
-            >
-              <button
-                class="sc-AxmLO sc-fzozJi hUvGlA"
-                data-testid="MnemonicVerificationProgress__Tab"
-                disabled=""
-              >
-                <span>
-                  The #9 word
-                </span>
-              </button>
-              <button
-                class="sc-AxmLO sc-fzozJi eIqJVJ"
-                data-testid="MnemonicVerificationProgress__Tab"
-                disabled=""
-              >
-                <span>
-                  The #10 word
-                </span>
-              </button>
-              <button
-                class="sc-AxmLO sc-fzozJi eIqJVJ"
-                data-testid="MnemonicVerificationProgress__Tab"
-                disabled=""
-              >
-                <span>
-                  The #5 word
-                </span>
-              </button>
-            </ul>
-            <div
-              class="mt-10"
-            >
-              <div
-                data-testid="tab-pabel__active-panel"
-              >
-                <div>
-                  <p
-                    class="mb-2 font-semibold text-theme-neutral-dark"
-                    data-testid="MnemonicVerificationOptions__title"
-                  >
-                    Select word #9
-                  </p>
-                  <div
-                    class="grid grid-cols-3 gap-2"
-                  >
-                    <button
-                      class="sc-AxmLO cNAsSK"
-                      data-testid="MnemonicVerificationOptions__button"
-                      type="button"
-                    >
-                      mnemonic
-                    </button>
-                    <button
-                      class="sc-AxmLO cNAsSK"
-                      data-testid="MnemonicVerificationOptions__button"
-                      type="button"
-                    >
-                      test
-                    </button>
-                    <button
-                      class="sc-AxmLO cNAsSK"
-                      data-testid="MnemonicVerificationOptions__button"
-                      type="button"
-                    />
-                  </div>
+                  Registration of your second signature.
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="sc-AxgMl fHSugy border-theme-neutral-300"
-            type="horizontal"
-          />
+            class="mt-4"
+          >
+            <div
+              class="flex rounded-lg overflow-hidden bg-theme-warning"
+            >
+              <div
+                class="sc-AxhUy HoKya flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              >
+                <div
+                  class="sc-AxiKw iRsrJT"
+                  height="30"
+                  width="30"
+                >
+                  <svg>
+                    alert-default.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="sc-AxhCb emmdwf flex-1 bg-theme-warning-100"
+              >
+                Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 mt-2"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="mb-2 font-semibold text-theme-neutral"
+                  >
+                    <span
+                      class="mr-1 text-sm"
+                    >
+                      Sender
+                    </span>
+                    <div
+                      class="sc-Axmtr fNmZph"
+                      color="warning"
+                    >
+                      <span
+                        class="text-sm"
+                      >
+                        Your address
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="inline-block truncate align-middle"
+                  >
+                    <span
+                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      data-testid="address__wallet-name"
+                    >
+                      ARK Wallet 1
+                    </span>
+                    <span
+                      class="sc-AxirZ ktnnZK text-theme-neutral-light font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B…s6YUYD
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
+              </div>
+            </div>
+            <fieldset
+              class="sc-AxjAm fmGClo mt-8"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="fee"
+              >
+                Transaction Fee
+                <div
+                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
+              </label>
+              <div
+                class="flex space-x-2"
+                data-testid="InputFee"
+              >
+                <div
+                  class="flex-1"
+                >
+                  <div
+                    class="sc-fznKkj iTjSaj"
+                  >
+                    <input
+                      class="sc-fzoLsD bZnJKH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="0"
+                    />
+                    <div
+                      class="absolute bottom-0 w-full px-1"
+                    >
+                      <div
+                        class="flex flex-wrap justify-center"
+                        data-testid="Range"
+                      >
+                        <div
+                          class="sc-fznZeY gypBDD"
+                          data-testid="Range__track"
+                          style="transform: scale(1); cursor: pointer;"
+                        >
+                          <div
+                            class="sc-fzokOt hGufmh"
+                            data-testid="Range__track__filled"
+                          >
+                            <div
+                              aria-valuemax="10"
+                              aria-valuemin="0"
+                              aria-valuenow="0"
+                              class="sc-fzqBZW YYeWG"
+                              data-testid="Range__thumb"
+                              draggable="false"
+                              role="slider"
+                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                              tabindex="0"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                    data-testid="SelectionBar"
+                    role="radiogroup"
+                  >
+                    <button
+                      aria-checked="false"
+                      class="sc-fzqNJr dLZgRW relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                      data-testid="SelectionBarOption"
+                      role="radio"
+                      type="button"
+                    >
+                      Last
+                    </button>
+                    <button
+                      aria-checked="false"
+                      class="sc-fzqNJr dLZgRW relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                      data-testid="SelectionBarOption"
+                      role="radio"
+                      type="button"
+                    >
+                      Min
+                    </button>
+                    <button
+                      aria-checked="false"
+                      class="sc-fzqNJr dLZgRW relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                      data-testid="SelectionBarOption"
+                      role="radio"
+                      type="button"
+                    >
+                      Average
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         </section>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
@@ -7,9 +8,10 @@ import { useForm } from "react-hook-form";
 import businessRegistrationFixture from "tests/fixtures/coins/ark/transactions/second-signature-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
+import { translations as transactionTranslations } from "../../i18n";
 import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationForm";
 
-describe.skip("SecondSignatureRegistrationForm", () => {
+describe("SecondSignatureRegistrationForm", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
 	let feeOptions: Record<string, string>;
@@ -50,6 +52,33 @@ describe.skip("SecondSignatureRegistrationForm", () => {
 		</Form>
 	);
 
+	it("should render generation step", async () => {
+		const { result } = renderHook(() => useForm());
+		const passphrase = "mock bip39 passphrase";
+		const bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
+
+		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
+
+		await waitFor(() => expect(result.current.getValues("secondMnemonic")).toEqual(passphrase));
+		await waitFor(() => expect(screen.getByTestId("SecondSignatureRegistrationForm__generation-step")));
+
+		expect(asFragment()).toMatchSnapshot();
+		bip39GenerateMock.mockRestore();
+	});
+
+	it("should set fee", async () => {
+		const { result } = renderHook(() => useForm());
+		result.current.register("fee");
+
+		render(<Component form={result.current} onSubmit={() => void 0} />);
+
+		act(() => {
+			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
+		});
+
+		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
+	});
+
 	it("should render backup step", async () => {
 		const { result } = renderHook(() =>
 			useForm({
@@ -86,11 +115,10 @@ describe.skip("SecondSignatureRegistrationForm", () => {
 				},
 			}),
 		);
-		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={4} />);
+		render(<Component form={result.current} onSubmit={() => void 0} activeTab={4} />);
 
 		await waitFor(() => expect(screen.getByTestId("SecondSignature__confirmation-step")).toBeTruthy());
-
-		expect(asFragment()).toMatchSnapshot();
+		expect(result.current.getValues("verification")).toBeUndefined();
 	});
 
 	it("should sign transaction", async () => {

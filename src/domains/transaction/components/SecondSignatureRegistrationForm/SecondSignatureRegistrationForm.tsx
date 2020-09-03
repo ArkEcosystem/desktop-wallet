@@ -1,12 +1,19 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
+import { Label } from "app/components/Label";
 import { TabPanel, Tabs } from "app/components/Tabs";
+import { TransactionDetail } from "app/components/TransactionDetail";
+import { InputFee } from "domains/transaction/components/InputFee";
 import { RegistrationForm } from "domains/transaction/pages/Registration/Registration.models";
 import { MnemonicList } from "domains/wallet/components/MnemonicList";
 import { MnemonicVerification } from "domains/wallet/components/MnemonicVerification";
@@ -14,7 +21,61 @@ import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-const GenerationStep = () => <div />;
+const GenerationStep = ({ feeOptions, wallet }: any) => {
+	const { t } = useTranslation();
+	const { getValues, setValue, register } = useFormContext();
+
+	const fee = getValues("fee") || null;
+
+	useEffect(() => {
+		register("secondMnemonic");
+	}, [register]);
+
+	useEffect(() => {
+		const newMnemonic = BIP39.generate();
+		setValue("secondMnemonic", newMnemonic);
+	}, [setValue]);
+
+	return (
+		<section data-testid="SecondSignatureRegistrationForm__generation-step">
+			<div className="my-8">
+				<Header
+					title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.TITLE")}
+					subtitle={t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.DESCRIPTION")}
+				/>
+			</div>
+
+			<div className="mt-4">
+				<Alert>{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
+
+				<TransactionDetail
+					className="mt-2"
+					extra={<Avatar size="lg" address={wallet.address()} />}
+					borderPosition="bottom"
+				>
+					<div className="mb-2 font-semibold text-theme-neutral">
+						<span className="mr-1 text-sm">Sender</span>
+						<Label color="warning">
+							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
+						</Label>
+					</div>
+					<Address address={wallet.address()} walletName={wallet.alias()} />
+				</TransactionDetail>
+
+				<FormField name="fee" className="mt-8">
+					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+					<InputFee
+						{...feeOptions}
+						defaultValue={fee || 0}
+						value={fee || 0}
+						step={0.01}
+						onChange={(value: any) => setValue("fee", value, true)}
+					/>
+				</FormField>
+			</div>
+		</section>
+	);
+};
 
 const BackupStep = () => {
 	const { getValues, unregister } = useFormContext();
@@ -76,7 +137,7 @@ const BackupStep = () => {
 	);
 };
 
-const ConfirmationStep = () => {
+const VerificationStep = () => {
 	const { getValues, register, setValue } = useFormContext();
 	const mnemonic = getValues("secondMnemonic");
 	const isVerified: boolean = getValues("verification");
@@ -125,13 +186,13 @@ const component = ({
 }) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={2}>
-			<GenerationStep />
+			<GenerationStep wallet={wallet} feeOptions={feeOptions} />
 		</TabPanel>
 		<TabPanel tabId={3}>
 			<BackupStep />
 		</TabPanel>
 		<TabPanel tabId={4}>
-			<ConfirmationStep />
+			<VerificationStep />
 		</TabPanel>
 	</Tabs>
 );
