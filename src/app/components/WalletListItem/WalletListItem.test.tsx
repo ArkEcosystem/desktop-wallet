@@ -43,28 +43,6 @@ describe("WalletListItem", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render a button if 'actions' is a string", () => {
-		const actions = "Action";
-
-		const { container, getByTestId } = renderWithRouter(
-			<table>
-				<tbody>
-					<Route path="/profiles/:profileId/dashboard">
-						<WalletListItem wallet={wallet} actions={actions} />
-					</Route>
-				</tbody>
-			</table>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(() => getByTestId("dropdown__toggle")).toThrow(/Unable to find an element by/);
-		expect(getByTestId("button")).toHaveTextContent(actions);
-		expect(container).toMatchSnapshot();
-	});
-
 	it("should trigger onAction callback if provided", () => {
 		const fn = jest.fn();
 		const options = [
