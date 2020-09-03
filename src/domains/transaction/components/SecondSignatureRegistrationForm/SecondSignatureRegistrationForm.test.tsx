@@ -12,6 +12,7 @@ import { translations as transactionTranslations } from "../../i18n";
 import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationForm";
 
 describe("SecondSignatureRegistrationForm", () => {
+	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
 	let feeOptions: Record<string, string>;
@@ -107,18 +108,36 @@ describe("SecondSignatureRegistrationForm", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render confirmation step", async () => {
-		const { result } = renderHook(() =>
+	it("should render verification step", async () => {
+		const { result, waitForNextUpdate } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					secondMnemonic: "test mnemonic",
+					secondMnemonic: passphrase,
 				},
 			}),
 		);
+
 		render(<Component form={result.current} onSubmit={() => void 0} activeTab={4} />);
 
 		await waitFor(() => expect(screen.getByTestId("SecondSignature__confirmation-step")).toBeTruthy());
 		expect(result.current.getValues("verification")).toBeUndefined();
+
+		const walletMnemonic = passphrase.split(" ");
+
+		for (let i = 0; i < 3; i++) {
+			const wordNumber = parseInt(screen.getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+
+			act(() => {
+				fireEvent.click(screen.getByText(walletMnemonic[wordNumber - 1]));
+			});
+
+			if (i < 2) {
+				await waitFor(() => expect(screen.queryAllByText(/The #([0-9]+) word/).length === 2 - i));
+			}
+		}
+
+		await waitForNextUpdate();
+		await waitFor(() => expect(result.current.getValues("verification")).toBe(true));
 	});
 
 	it("should sign transaction", async () => {
