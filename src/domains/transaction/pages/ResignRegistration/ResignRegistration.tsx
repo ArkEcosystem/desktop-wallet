@@ -88,7 +88,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 			handleNext();
 		} catch (error) {
 			// TODO: Handle/Map various error messages
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	};
 
