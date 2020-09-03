@@ -4,7 +4,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor, within } from "testing-library";
 
-import { blockchainRegistrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
 const history = createMemoryHistory();
@@ -57,22 +56,6 @@ describe("MyRegistrations", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render blockchain registrations", async () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/registrations">
-				<MyRegistrations blockchainRegistrations={blockchainRegistrations} />
-			</Route>,
-			{
-				routes: [registrationsURL],
-				history,
-			},
-		);
-
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
-		await waitFor(() => expect(getAllByTestId("BlockchainRegistrationItem").length).toEqual(2));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
