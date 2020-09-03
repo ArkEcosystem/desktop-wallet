@@ -29,10 +29,12 @@ import { useTranslation } from "react-i18next";
 export const FirstStep = ({
 	profile,
 	wallet,
+	unvotes,
 	votes,
 }: {
 	profile: Profile;
 	wallet: ReadWriteWallet;
+	unvotes: ReadOnlyWallet[];
 	votes: ReadOnlyWallet[];
 }) => {
 	const { t } = useTranslation();
@@ -80,7 +82,7 @@ export const FirstStep = ({
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -106,6 +108,12 @@ export const FirstStep = ({
 					</div>
 					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
+
+				{unvotes && (
+					<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
+						<VoteList votes={unvotes} />
+					</TransactionDetail>
+				)}
 
 				{votes && (
 					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
@@ -133,10 +141,12 @@ export const FirstStep = ({
 export const SecondStep = ({
 	profile,
 	wallet,
+	unvotes,
 	votes,
 }: {
 	profile: Profile;
 	wallet: ReadWriteWallet;
+	unvotes: ReadOnlyWallet[];
 	votes: ReadOnlyWallet[];
 }) => {
 	const { t } = useTranslation();
@@ -158,7 +168,7 @@ export const SecondStep = ({
 				<p className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}</p>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -184,6 +194,12 @@ export const SecondStep = ({
 					</div>
 					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
+
+				{unvotes && (
+					<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
+						<VoteList votes={unvotes} />
+					</TransactionDetail>
+				)}
 
 				{votes && (
 					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
@@ -224,10 +240,12 @@ export const ThirdStep = () => {
 export const FourthStep = ({
 	transaction,
 	senderWallet,
+	unvotes,
 	votes,
 }: {
 	transaction: Contracts.SignedTransactionData;
 	senderWallet: ReadWriteWallet;
+	unvotes: ReadOnlyWallet[];
 	votes: ReadOnlyWallet[];
 }) => {
 	const { t } = useTranslation();
@@ -235,6 +253,12 @@ export const FourthStep = ({
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09660435 ARK</TransactionDetail>
+
+			{unvotes && (
+				<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
+					<VoteList votes={unvotes} />
+				</TransactionDetail>
+			)}
 
 			<TransactionDetail
 				label={t("TRANSACTION.TRANSACTION_TYPE")}
@@ -265,10 +289,12 @@ export const SendVoteTransaction = () => {
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const queryParams = useQueryParams();
+	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
 	const voteAddresses = queryParams.get("votes")?.split(",");
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const [activeTab, setActiveTab] = useState(1);
+	const [unvotes, setUnvotes] = useState<ReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
@@ -292,12 +318,22 @@ export const SendVoteTransaction = () => {
 	}, [activeWallet, networks, register, setValue]);
 
 	useEffect(() => {
-		if (isEmptyArray(votes)) {
+		if (unvoteAddresses && isEmptyArray(unvotes)) {
+			const unvoteDelegates = unvoteAddresses?.map((address) =>
+				env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), address),
+			);
+
+			setUnvotes(unvoteDelegates);
+		}
+	}, [activeWallet, env, unvoteAddresses, unvotes]);
+
+	useEffect(() => {
+		if (voteAddresses && isEmptyArray(votes)) {
 			const voteDelegates = voteAddresses?.map((address) =>
 				env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), address),
 			);
 
-			setVotes(voteDelegates as ReadOnlyWallet[]);
+			setVotes(voteDelegates);
 		}
 	}, [activeWallet, env, voteAddresses, votes]);
 
@@ -322,22 +358,52 @@ export const SendVoteTransaction = () => {
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		try {
-			const transactionId = await senderWallet!.transaction().signVote({
+			const voteTransactionInput = {
 				fee,
 				from: senderAddress,
 				sign: {
 					mnemonic,
 				},
-				data: {
-					vote: `+${votes[0].publicKey()}`,
-				},
-			});
+			};
 
-			await senderWallet!.transaction().broadcast(transactionId);
+			if (!isEmptyArray(unvotes) && !isEmptyArray(votes)) {
+				const unvoteTransactionId = await senderWallet!.transaction().signVote({
+					...voteTransactionInput,
+					data: {
+						vote: `-${unvotes[0].publicKey()}`,
+					},
+				});
 
-			await env.persist();
+				await senderWallet!.transaction().broadcast(unvoteTransactionId);
 
-			setTransaction(senderWallet!.transaction().transaction(transactionId));
+				await env.persist();
+
+				const voteTransactionId = await senderWallet!.transaction().signVote({
+					...voteTransactionInput,
+					data: {
+						vote: `+${votes[0].publicKey()}`,
+					},
+				});
+
+				await senderWallet!.transaction().broadcast(voteTransactionId);
+
+				await env.persist();
+
+				setTransaction(senderWallet!.transaction().transaction(voteTransactionId));
+			} else {
+				const transactionId = await senderWallet!.transaction().signVote({
+					...voteTransactionInput,
+					data: {
+						vote: !isEmptyArray(unvotes) ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
+					},
+				});
+
+				await senderWallet!.transaction().broadcast(transactionId);
+
+				await env.persist();
+
+				setTransaction(senderWallet!.transaction().transaction(transactionId));
+			}
 
 			handleNext();
 		} catch (error) {
@@ -357,16 +423,31 @@ export const SendVoteTransaction = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep profile={activeProfile} wallet={activeWallet} votes={votes} />
+								<FirstStep
+									profile={activeProfile}
+									wallet={activeWallet}
+									unvotes={unvotes}
+									votes={votes}
+								/>
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep profile={activeProfile} wallet={activeWallet} votes={votes} />
+								<SecondStep
+									profile={activeProfile}
+									wallet={activeWallet}
+									unvotes={unvotes}
+									votes={votes}
+								/>
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep transaction={transaction} senderWallet={activeWallet} votes={votes} />
+								<FourthStep
+									transaction={transaction}
+									senderWallet={activeWallet}
+									unvotes={unvotes}
+									votes={votes}
+								/>
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
