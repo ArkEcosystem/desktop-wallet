@@ -10,7 +10,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { BlockchainTable } from "./components/BlockchainTable";
 import { BusinessTable } from "./components/BusinessTable";
 import { DelegateTable } from "./components/DelegateTable";
 
@@ -32,13 +31,8 @@ const EmptyRegistrations = () => {
 	);
 };
 
-type Props = {
-	blockchainRegistrations: any[];
-};
-
-export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
+export const MyRegistrations = () => {
 	const [isLoading, setIsLoading] = useState(false);
-	const [blockchain] = useState(blockchainRegistrations);
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
 	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
 
@@ -46,10 +40,11 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const isEmptyRegistrations = useMemo(
-		() => !isLoading && !delegates.length && !blockchain.length && !businesses.length,
-		[businesses, delegates, blockchain, isLoading],
-	);
+	const isEmptyRegistrations = useMemo(() => !isLoading && !delegates.length && !businesses.length, [
+		businesses,
+		delegates,
+		isLoading,
+	]);
 
 	const crumbs = [
 		{
@@ -115,14 +110,9 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 			{isLoading && !isEmptyRegistrations && <Loader />}
 
 			{!isLoading && businesses.length > 0 && <BusinessTable businesses={businesses} onAction={handleAction} />}
-			{!isLoading && blockchain.length > 0 && <BlockchainTable data={blockchain} />}
 			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
 		</Page>
 	);
-};
-
-MyRegistrations.defaultProps = {
-	blockchainRegistrations: [],
 };
