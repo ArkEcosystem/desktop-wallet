@@ -321,7 +321,7 @@ export const BusinessRegistrationForm: RegistrationForm = {
 					// @TODO: let the user choose what sub-type they wish to use.
 					subType: Enums.EntitySubType.None,
 					// @TODO: use the name that the user entered. Has to be valid like a delegate username.
-					name: undefined,
+					name: ipfsData.meta.displayName,
 					// @TODO: ensure that no empty keys are sent. Currently empty keys are sent with a value of "undefined".
 					ipfs: await new File(httpClient).upload(ipfsData),
 				},
