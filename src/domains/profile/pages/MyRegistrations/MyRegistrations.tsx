@@ -10,8 +10,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { BusinessTable } from "./components/BusinessTable";
 import { DelegateTable } from "./components/DelegateTable";
+import { EntityTable } from "./components/EntityTable";
 
 const { RegisterBanner } = images.common;
 
@@ -111,7 +111,7 @@ export const MyRegistrations = () => {
 
 			{isLoading && !isEmptyRegistrations && <Loader />}
 
-			{!isLoading && businesses.length > 0 && <BusinessTable businesses={businesses} onAction={handleAction} />}
+			{!isLoading && businesses.length > 0 && <EntityTable entities={businesses} onAction={handleAction} />}
 			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}

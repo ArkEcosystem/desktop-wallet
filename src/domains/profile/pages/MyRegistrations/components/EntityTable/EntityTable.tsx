@@ -4,14 +4,14 @@ import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { BusinessRowItem } from "./BusinessRowItem";
+import { EntityTableRowItem } from "./EntityTableRowItem";
 
 type Props = {
 	onAction?: any;
-	businesses: ExtendedTransactionData[];
+	entities: ExtendedTransactionData[];
 };
 
-export const BusinessTable = ({ businesses, onAction }: Props) => {
+export const EntityTable = ({ entities, onAction }: Props) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -45,8 +45,8 @@ export const BusinessTable = ({ businesses, onAction }: Props) => {
 		<Section>
 			<h2 className="mb-8 font-bold">{t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}</h2>
 
-			<Table columns={columns} data={businesses}>
-				{(business: any) => <BusinessRowItem business={business} onAction={onAction} />}
+			<Table columns={columns} data={entities}>
+				{(entity: any) => <EntityTableRowItem entity={entity} onAction={onAction} />}
 			</Table>
 		</Section>
 	);
