@@ -1,17 +1,20 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
-import { WalletListItem, WalletListItemProps } from "app/components/WalletListItem";
+import { WalletListItem } from "app/components/WalletListItem";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 const Backdrop = ({ isVisible }: { isVisible: boolean }) => (
 	<AnimatePresence>
 		{isVisible && (
 			<motion.div
 				data-testid="Backdrop"
-				className="fixed inset-0 z-10 bg-theme-neutral-900"
+				className="fixed inset-0 z-50 bg-theme-neutral-900"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 0.5 }}
 				exit={{ opacity: 0 }}
@@ -20,7 +23,7 @@ const Backdrop = ({ isVisible }: { isVisible: boolean }) => (
 	</AnimatePresence>
 );
 
-const WalletTable = ({ data }: { data: WalletListItemProps[] }) => {
+const WalletTable = ({ wallets, onRowClick }: { wallets: ReadWriteWallet[]; onRowClick: any }) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -49,21 +52,34 @@ const WalletTable = ({ data }: { data: WalletListItemProps[] }) => {
 	];
 
 	return (
-		<Table columns={columns} data={data}>
-			{(rowData: any) => <WalletListItem {...rowData} />}
+		<Table columns={columns} data={wallets}>
+			{(wallet: ReadWriteWallet) => <WalletListItem wallet={wallet} onRowClick={onRowClick} />}
 		</Table>
 	);
 };
 
-type Props = {
-	walletsData: WalletListItemProps[];
+type WalletBottomSheetMenuProps = {
+	wallets: ReadWriteWallet[];
 	defaultIsOpen?: boolean;
 };
 
-export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => {
+export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSheetMenuProps) => {
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
+	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+
+	const history = useHistory();
+
 	const { t } = useTranslation();
+
+	const handleRowClick = (walletId: string) => {
+		if (walletId !== activeWallet.id()) {
+			history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}`);
+
+			setIsOpen(false);
+		}
+	};
 
 	return (
 		<>
@@ -80,7 +96,7 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 								data-testid="WalletBottomSheetMenu__counter"
 								className="ml-1 font-bold text-theme-neutral-dark"
 							>
-								{walletsData.length}
+								{wallets.length}
 							</span>
 						</div>
 						<div className="inline-flex items-center -mr-4 space-x-1">
@@ -105,7 +121,7 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 				<Collapse isOpen={isOpen} maxHeight="20rem">
 					<div className="py-8 bg-theme-background">
 						<div className="container mx-auto px-14">
-							<WalletTable data={walletsData} />
+							<WalletTable wallets={wallets} onRowClick={handleRowClick} />
 						</div>
 					</div>
 				</Collapse>
