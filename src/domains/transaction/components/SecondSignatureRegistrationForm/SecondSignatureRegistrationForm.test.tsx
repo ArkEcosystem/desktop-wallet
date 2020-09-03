@@ -9,7 +9,7 @@ import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } fro
 
 import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationForm";
 
-describe("SecondSignatureRegistrationForm", () => {
+describe.skip("SecondSignatureRegistrationForm", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
 	let feeOptions: Record<string, string>;
