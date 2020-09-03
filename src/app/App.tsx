@@ -76,7 +76,6 @@ const Main = ({ syncInterval }: Props) => {
 			setShowSplash(false);
 		};
 
-
 		boot();
 	}, [env, persist, syncInterval]);
 
