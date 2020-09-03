@@ -80,6 +80,28 @@ describe("MyRegistrations", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render developer registrations", async () => {
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.query(true)
+			// @README: Business fixture can be re-used because all entities share the same structure.
+			.reply(200, require("tests/fixtures/registrations/businesses.json"));
+
+		const { asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should redirect to registration page", async () => {
 		const { getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
