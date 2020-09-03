@@ -15,10 +15,10 @@ exports[`WalletListItem should render 1`] = `
             class="flex"
           >
             <div
-              class="sc-AxiKw jQtkkF"
+              class="sc-AxirZ cZokSJ"
             >
               <div
-                class="sc-AxhCb VoPpj"
+                class="sc-AxiKw dklFyP"
                 height="20"
                 width="20"
               >
@@ -73,7 +73,7 @@ exports[`WalletListItem should render 1`] = `
               class="text-theme-neutral-600"
             >
               <div
-                class="sc-AxhCb kAKLDr"
+                class="sc-AxiKw bctdez"
                 height="16"
                 width="16"
               >
@@ -86,7 +86,7 @@ exports[`WalletListItem should render 1`] = `
               class="text-theme-neutral-600"
             >
               <div
-                class="sc-AxhCb kAKLDr"
+                class="sc-AxiKw bctdez"
                 height="16"
                 width="16"
               >
@@ -99,7 +99,7 @@ exports[`WalletListItem should render 1`] = `
               class="text-theme-warning-400"
             >
               <div
-                class="sc-AxhCb kAKLDr"
+                class="sc-AxiKw bctdez"
                 height="16"
                 width="16"
               >
@@ -127,154 +127,6 @@ exports[`WalletListItem should render 1`] = `
           >
             0 
           </span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`WalletListItem should render a button if 'actions' is a string 1`] = `
-<div>
-  <table>
-    <tbody>
-      <tr
-        class="border-b cursor-pointer border-theme-neutral-200"
-        data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-      >
-        <td
-          class="py-6 mt-1"
-        >
-          <div
-            class="flex"
-          >
-            <div
-              class="sc-AxiKw jQtkkF"
-            >
-              <div
-                class="sc-AxhCb VoPpj"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                />
-              </div>
-            </div>
-          </div>
-        </td>
-        <td
-          class="py-1"
-        >
-          <div
-            class="inline-block truncate align-middle"
-          >
-            <span
-              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-              data-testid="address__wallet-name"
-            >
-              ARK Wallet 1
-            </span>
-            <span
-              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-              data-testid="address__wallet-address"
-            >
-              D8rr7B1d6…VBMs6YUYD
-            </span>
-          </div>
-        </td>
-        <td
-          class="py-1 text-sm font-bold text-center align-middle"
-        >
-          <div
-            class="inline-flex items-center space-x-2"
-          >
-            <span
-              class="text-theme-neutral-600"
-            >
-              <div
-                class="sc-AxhCb kAKLDr"
-                height="16"
-                width="16"
-              >
-                <svg>
-                  ledger.svg
-                </svg>
-              </div>
-            </span>
-            <span
-              class="text-theme-neutral-600"
-            >
-              <div
-                class="sc-AxhCb kAKLDr"
-                height="16"
-                width="16"
-              >
-                <svg>
-                  multisig.svg
-                </svg>
-              </div>
-            </span>
-            <span
-              class="text-theme-warning-400"
-            >
-              <div
-                class="sc-AxhCb kAKLDr"
-                height="16"
-                width="16"
-              >
-                <svg>
-                  star.svg
-                </svg>
-              </div>
-            </span>
-          </div>
-        </td>
-        <td
-          class="font-semibold text-right"
-        >
-          <span
-            data-testid="Amount"
-          >
-            33.75089801 DARK
-          </span>
-        </td>
-        <td
-          class="text-right text-theme-neutral-light"
-        >
-          <span
-            data-testid="Amount"
-          >
-            0 
-          </span>
-        </td>
-        <td>
-          <div
-            class="text-right"
-          >
-            <button
-              class="sc-AxirZ dXpJau"
-              color="primary"
-              data-testid="button"
-              type="button"
-            >
-              Action
-            </button>
-          </div>
         </td>
       </tr>
     </tbody>
