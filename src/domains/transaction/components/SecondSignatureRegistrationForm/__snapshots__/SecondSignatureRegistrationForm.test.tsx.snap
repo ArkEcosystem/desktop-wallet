@@ -229,25 +229,25 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
+                  The #11 word
+                </span>
+              </button>
+              <button
+                class="sc-AxmLO sc-fzozJi eIqJVJ"
+                data-testid="MnemonicVerificationProgress__Tab"
+                disabled=""
+              >
+                <span>
+                  The #3 word
+                </span>
+              </button>
+              <button
+                class="sc-AxmLO sc-fzozJi eIqJVJ"
+                data-testid="MnemonicVerificationProgress__Tab"
+                disabled=""
+              >
+                <span>
                   The #10 word
-                </span>
-              </button>
-              <button
-                class="sc-AxmLO sc-fzozJi eIqJVJ"
-                data-testid="MnemonicVerificationProgress__Tab"
-                disabled=""
-              >
-                <span>
-                  The #1 word
-                </span>
-              </button>
-              <button
-                class="sc-AxmLO sc-fzozJi eIqJVJ"
-                data-testid="MnemonicVerificationProgress__Tab"
-                disabled=""
-              >
-                <span>
-                  The #4 word
                 </span>
               </button>
             </ul>
@@ -262,7 +262,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                     class="mb-2 font-semibold text-theme-neutral-dark"
                     data-testid="MnemonicVerificationOptions__title"
                   >
-                    Select word #10
+                    Select word #11
                   </p>
                   <div
                     class="grid grid-cols-3 gap-2"
@@ -272,7 +272,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                       data-testid="MnemonicVerificationOptions__button"
                       type="button"
                     >
-                      mnemonic
+                      test
                     </button>
                     <button
                       class="sc-AxmLO cNAsSK"
@@ -284,7 +284,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                       data-testid="MnemonicVerificationOptions__button"
                       type="button"
                     >
-                      test
+                      mnemonic
                     </button>
                   </div>
                 </div>
