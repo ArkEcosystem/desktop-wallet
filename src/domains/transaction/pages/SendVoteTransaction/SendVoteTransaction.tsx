@@ -2,6 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
+import { isEmptyArray } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -20,18 +21,19 @@ import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
+import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const FirstStep = ({
-	delegate,
 	profile,
 	wallet,
+	votes,
 }: {
-	delegate: ReadOnlyWallet;
 	profile: Profile;
 	wallet: ReadWriteWallet;
+	votes: ReadOnlyWallet[];
 }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
@@ -105,12 +107,11 @@ export const FirstStep = ({
 					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
-				<TransactionDetail
-					label={t("TRANSACTION.DELEGATE")}
-					extra={<Avatar size="lg" address={delegate?.address()} />}
-				>
-					<Address address={delegate ? delegate?.address() : ""} walletName={delegate?.username()} />
-				</TransactionDetail>
+				{votes && (
+					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
+						<VoteList votes={votes} />
+					</TransactionDetail>
+				)}
 
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="fee">
@@ -130,13 +131,13 @@ export const FirstStep = ({
 };
 
 export const SecondStep = ({
-	delegate,
 	profile,
 	wallet,
+	votes,
 }: {
-	delegate: ReadOnlyWallet;
 	profile: Profile;
 	wallet: ReadWriteWallet;
+	votes: ReadOnlyWallet[];
 }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
@@ -184,12 +185,11 @@ export const SecondStep = ({
 					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
-				<TransactionDetail
-					label={t("TRANSACTION.DELEGATE")}
-					extra={<Avatar size="lg" address={delegate?.address()} />}
-				>
-					<Address address={delegate?.address()} walletName={delegate?.username()} />
-				</TransactionDetail>
+				{votes && (
+					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
+						<VoteList votes={votes} />
+					</TransactionDetail>
+				)}
 
 				<div className="my-4">
 					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
@@ -222,25 +222,18 @@ export const ThirdStep = () => {
 };
 
 export const FourthStep = ({
-	delegate,
 	transaction,
 	senderWallet,
+	votes,
 }: {
-	delegate: ReadOnlyWallet;
 	transaction: Contracts.SignedTransactionData;
 	senderWallet: ReadWriteWallet;
+	votes: ReadOnlyWallet[];
 }) => {
 	const { t } = useTranslation();
 
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
-			<TransactionDetail
-				label={t("TRANSACTION.DELEGATE")}
-				extra={<Avatar size="lg" address={delegate?.address()} />}
-			>
-				<Address address={delegate?.address()} walletName={delegate?.username()} />
-			</TransactionDetail>
-
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09660435 ARK</TransactionDetail>
 
 			<TransactionDetail
@@ -256,6 +249,12 @@ export const FourthStep = ({
 			>
 				{t("TRANSACTION.TRANSACTION_TYPES.VOTE")}
 			</TransactionDetail>
+
+			{votes && (
+				<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
+					<VoteList votes={votes} />
+				</TransactionDetail>
+			)}
 		</TransactionSuccessful>
 	);
 };
@@ -266,24 +265,22 @@ export const SendVoteTransaction = () => {
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const queryParams = useQueryParams();
-	const senderAddress = queryParams.get("sender");
+	const voteAddresses = queryParams.get("votes")?.split(",");
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [delegate, setDelegate] = useState<ReadOnlyWallet>((null as unknown) as ReadOnlyWallet);
+	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
 	const { clearError, formState, getValues, register, setError, setValue } = form;
-
-	console.log("queryParams", queryParams.get("votes"));
 
 	useEffect(() => {
 		register("network", { required: true });
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 
-		setValue("senderAddress", senderAddress, true);
+		setValue("senderAddress", activeWallet.address(), true);
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
@@ -292,12 +289,17 @@ export const SendVoteTransaction = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, senderAddress, setValue]);
+	}, [activeWallet, networks, register, setValue]);
 
 	useEffect(() => {
-		// setDelegate(env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), voteId));
-		setDelegate(env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId()));
-	}, [activeWallet, env]);
+		if (isEmptyArray(votes)) {
+			const voteDelegates = voteAddresses?.map((address) =>
+				env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), address),
+			);
+
+			setVotes(voteDelegates as ReadOnlyWallet[]);
+		}
+	}, [activeWallet, env, voteAddresses, votes]);
 
 	const crumbs = [
 		{
@@ -327,7 +329,7 @@ export const SendVoteTransaction = () => {
 					mnemonic,
 				},
 				data: {
-					vote: `+${delegate.publicKey()}`,
+					vote: `+${votes[0].publicKey()}`,
 				},
 			});
 
@@ -355,16 +357,16 @@ export const SendVoteTransaction = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
+								<FirstStep profile={activeProfile} wallet={activeWallet} votes={votes} />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
+								<SecondStep profile={activeProfile} wallet={activeWallet} votes={votes} />
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep delegate={delegate} transaction={transaction} senderWallet={activeWallet} />
+								<FourthStep transaction={transaction} senderWallet={activeWallet} votes={votes} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">

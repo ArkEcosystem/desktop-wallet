@@ -161,9 +161,8 @@ export const Votes = () => {
 								: activeProfile.wallets().findByAddress(address)?.id();
 
 							const params = new URLSearchParams({
-								sender: address,
 								votes: votes.join(),
-								// unvotes: ,
+								// unvotes: unvotes.join(),
 							});
 
 							history.push({
