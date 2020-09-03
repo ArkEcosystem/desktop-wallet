@@ -34,8 +34,8 @@ export const FirstStep = ({
 }: {
 	profile: Profile;
 	wallet: ReadWriteWallet;
-	unvotes?: ReadOnlyWallet[];
-	votes?: ReadOnlyWallet[];
+	unvotes: ReadOnlyWallet[];
+	votes: ReadOnlyWallet[];
 }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
@@ -82,7 +82,7 @@ export const FirstStep = ({
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -109,13 +109,13 @@ export const FirstStep = ({
 					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
-				{unvotes && (
+				{!isEmptyArray(unvotes) && (
 					<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
 						<VoteList votes={unvotes} />
 					</TransactionDetail>
 				)}
 
-				{votes && (
+				{!isEmptyArray(votes) && (
 					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
 						<VoteList votes={votes} />
 					</TransactionDetail>
@@ -146,8 +146,8 @@ export const SecondStep = ({
 }: {
 	profile: Profile;
 	wallet: ReadWriteWallet;
-	unvotes?: ReadOnlyWallet[];
-	votes?: ReadOnlyWallet[];
+	unvotes: ReadOnlyWallet[];
+	votes: ReadOnlyWallet[];
 }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
@@ -168,7 +168,7 @@ export const SecondStep = ({
 				<p className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}</p>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -195,13 +195,13 @@ export const SecondStep = ({
 					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
-				{unvotes && (
+				{!isEmptyArray(unvotes) && (
 					<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
 						<VoteList votes={unvotes} />
 					</TransactionDetail>
 				)}
 
-				{votes && (
+				{!isEmptyArray(votes) && (
 					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
 						<VoteList votes={votes} />
 					</TransactionDetail>
@@ -245,8 +245,8 @@ export const FourthStep = ({
 }: {
 	transaction: Contracts.SignedTransactionData;
 	senderWallet: ReadWriteWallet;
-	unvotes?: ReadOnlyWallet[];
-	votes?: ReadOnlyWallet[];
+	unvotes: ReadOnlyWallet[];
+	votes: ReadOnlyWallet[];
 }) => {
 	const { t } = useTranslation();
 
@@ -254,7 +254,7 @@ export const FourthStep = ({
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09660435 ARK</TransactionDetail>
 
-			{unvotes && (
+			{!isEmptyArray(unvotes) && (
 				<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
 					<VoteList votes={unvotes} />
 				</TransactionDetail>
@@ -274,7 +274,7 @@ export const FourthStep = ({
 				{t("TRANSACTION.TRANSACTION_TYPES.VOTE")}
 			</TransactionDetail>
 
-			{votes && (
+			{!isEmptyArray(votes) && (
 				<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
 					<VoteList votes={votes} />
 				</TransactionDetail>

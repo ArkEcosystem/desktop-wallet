@@ -419,7 +419,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
       Select a fee to continue
     </div>
     <div
-      class="mt-4 grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-6 true "
@@ -751,7 +751,7 @@ exports[`Vote For Delegate should render 2st step 1`] = `
       </p>
     </div>
     <div
-      class="mt-4 grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-6 true "
@@ -2770,27 +2770,6 @@ exports[`Vote For Delegate should send a unvote transaction 1`] = `
                             </div>
                           </div>
                         </div>
-                        <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-                          data-testid="TransactionDetail"
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Votes (0)
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              <div
-                                class="-my-5"
-                              />
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </section>
@@ -3331,27 +3310,6 @@ exports[`Vote For Delegate should send a vote transaction 1`] = `
                               class="font-semibold"
                             >
                               0.09660435 ARK
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-                          data-testid="TransactionDetail"
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Unvotes (0)
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              <div
-                                class="-my-5"
-                              />
                             </div>
                           </div>
                         </div>

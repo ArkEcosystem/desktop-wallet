@@ -62,7 +62,7 @@ describe("Vote For Delegate", () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FirstStep votes={votes} profile={profile} wallet={wallet} />
+				<FirstStep profile={profile} wallet={wallet} unvotes={[]} votes={votes} />
 			</FormContext>,
 		);
 
@@ -74,7 +74,7 @@ describe("Vote For Delegate", () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<SecondStep votes={votes} profile={profile} wallet={wallet} />
+				<SecondStep profile={profile} wallet={wallet} unvotes={[]} votes={votes} />
 			</FormContext>,
 		);
 
@@ -101,7 +101,7 @@ describe("Vote For Delegate", () => {
 		);
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FourthStep votes={votes} transaction={transaction!} />
+				<FourthStep transaction={transaction!} unvotes={[]} votes={votes} />
 			</FormContext>,
 		);
 
