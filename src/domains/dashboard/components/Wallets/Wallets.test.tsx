@@ -90,6 +90,24 @@ describe("Wallets", () => {
 		expect(container).toBeTruthy();
 	});
 
+	it("should redirect when clicking on row", () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets wallets={[wallet]} viewType="list" filterProperties={filterProperties} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId(`WalletListItem__${wallet.address()}`));
+		});
+
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+	});
+
 	it("should render with empty wallets list", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">

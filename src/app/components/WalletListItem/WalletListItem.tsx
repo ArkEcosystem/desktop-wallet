@@ -18,7 +18,7 @@ export type WalletListItemProps = {
 	actions?: string | any[];
 	variant?: "condensed";
 	onAction?: any;
-	onRowClick?: any;
+	onRowClick?: (walletId: string) => void;
 };
 
 export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction, onRowClick }: WalletListItemProps) => {
@@ -47,14 +47,10 @@ export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction, 
 
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
-	const handleRowClick = (walletId: string) => {
-		if (typeof onRowClick === "function") onRowClick(walletId);
-	};
-
 	return (
 		<tr
 			className="border-b cursor-pointer border-theme-neutral-200"
-			onClick={() => handleRowClick(wallet.id())}
+			onClick={() => onRowClick?.(wallet.id())}
 			data-testid={`WalletListItem__${wallet.address()}`}
 		>
 			<td className="py-6 mt-1">
