@@ -81,8 +81,7 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 
 			const businessRegistrations = await activeProfile
 				.entityAggregate()
-				// @TODO: make sub-type optional in the SDK
-				.registrations(Enums.EntityType.Business, Enums.EntitySubType.None);
+				.registrations(Enums.EntityType.Business);
 			setBusinesses(businessRegistrations.items());
 
 			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
