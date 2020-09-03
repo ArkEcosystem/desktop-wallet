@@ -33,10 +33,10 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
             class="space-y-8"
           >
             <div
-              class="flex rounded-lg overflow-hidden bg-theme-warning"
+              class="flex overflow-hidden rounded-lg bg-theme-warning"
             >
               <div
-                class="sc-AxhCb emmdwf flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="flex items-center justify-center sc-AxhCb emmdwf text-theme-warning bg-theme-warning-200"
               >
                 <div
                   class="sc-AxirZ bMjbpr"
@@ -49,7 +49,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxiKw ffnSzD flex-1 bg-theme-warning-100"
+                class="flex-1 sc-AxiKw ffnSzD bg-theme-warning-100"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
               </div>
@@ -153,7 +153,7 @@ exports[`SecondSignatureRegistrationForm should render backup step 1`] = `
               class="flex justify-end w-full"
             >
               <button
-                class="sc-AxhUy dIHDOr flex items-center mt-4 space-x-2"
+                class="flex items-center mt-4 sc-AxhUy dIHDOr space-x-2"
                 color="primary"
                 data-testid="SecondSignature__download"
                 type="button"
