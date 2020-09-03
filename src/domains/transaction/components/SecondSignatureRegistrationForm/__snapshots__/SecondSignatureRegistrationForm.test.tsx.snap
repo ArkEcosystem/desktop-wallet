@@ -229,16 +229,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #12 word
-                </span>
-              </button>
-              <button
-                class="sc-AxmLO sc-fzozJi eIqJVJ"
-                data-testid="MnemonicVerificationProgress__Tab"
-                disabled=""
-              >
-                <span>
-                  The #6 word
+                  The #10 word
                 </span>
               </button>
               <button
@@ -248,6 +239,15 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
               >
                 <span>
                   The #1 word
+                </span>
+              </button>
+              <button
+                class="sc-AxmLO sc-fzozJi eIqJVJ"
+                data-testid="MnemonicVerificationProgress__Tab"
+                disabled=""
+              >
+                <span>
+                  The #4 word
                 </span>
               </button>
             </ul>
@@ -262,7 +262,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                     class="mb-2 font-semibold text-theme-neutral-dark"
                     data-testid="MnemonicVerificationOptions__title"
                   >
-                    Select word #12
+                    Select word #10
                   </p>
                   <div
                     class="grid grid-cols-3 gap-2"
@@ -271,14 +271,14 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                       class="sc-AxmLO cNAsSK"
                       data-testid="MnemonicVerificationOptions__button"
                       type="button"
-                    />
+                    >
+                      mnemonic
+                    </button>
                     <button
                       class="sc-AxmLO cNAsSK"
                       data-testid="MnemonicVerificationOptions__button"
                       type="button"
-                    >
-                      mnemonic
-                    </button>
+                    />
                     <button
                       class="sc-AxmLO cNAsSK"
                       data-testid="MnemonicVerificationOptions__button"
