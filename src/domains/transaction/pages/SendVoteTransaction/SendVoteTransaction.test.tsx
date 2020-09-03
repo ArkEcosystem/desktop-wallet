@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
@@ -40,28 +39,30 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
-let delegate: Contracts.WalletData;
+let votes: ReadOnlyWallet[];
 
 describe("Vote For Delegate", () => {
 	beforeAll(async () => {
+		await syncDelegates();
+
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		votes = [0, 1].map((index) =>
+			env.delegates().findByAddress(wallet.coinId(), wallet.networkId(), delegateData[index].address),
+		);
+
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
 			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
 			.reply(200, transactionFixture);
-
-		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		delegate = await wallet.client().delegate(delegateData[0].address);
-
-		await syncDelegates();
 	});
 
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FirstStep delegate={delegate} profile={profile} wallet={wallet} />
+				<FirstStep votes={votes} profile={profile} wallet={wallet} />
 			</FormContext>,
 		);
 
@@ -73,7 +74,7 @@ describe("Vote For Delegate", () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<SecondStep delegate={delegate} profile={profile} wallet={wallet} />
+				<SecondStep votes={votes} profile={profile} wallet={wallet} />
 			</FormContext>,
 		);
 
@@ -100,7 +101,7 @@ describe("Vote For Delegate", () => {
 		);
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FourthStep delegate={delegate} transaction={transaction!} />
+				<FourthStep votes={votes} transaction={transaction!} />
 			</FormContext>,
 		);
 
@@ -110,21 +111,26 @@ describe("Vote For Delegate", () => {
 
 	it("should send a vote transaction", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote/${
-			delegateData[0].address
-		}/sender/${wallet.address()}`;
+		const voteTransactionURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote/`;
 
-		history.push(transferURL);
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteTransactionURL,
+			search: `?${params}`,
+		});
 
 		let rendered: RenderResult;
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/transactions/vote/:voteId/sender/:senderId">
+				<Route path="/profiles/:profileId/wallets/:walletId/transactions/vote">
 					<SendVoteTransaction />
 				</Route>,
 				{
-					routes: [transferURL],
+					routes: [voteTransactionURL],
 					history,
 				},
 			);
@@ -185,21 +191,26 @@ describe("Vote For Delegate", () => {
 
 	it("should error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote/${
-			delegateData[0].address
-		}/sender/${wallet.address()}`;
+		const voteTransactionURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote`;
 
-		history.push(transferURL);
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteTransactionURL,
+			search: `?${params}`,
+		});
 
 		let rendered: RenderResult;
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/transactions/vote/:voteId/sender/:senderId">
+				<Route path="/profiles/:profileId/wallets/:walletId/transactions/vote">
 					<SendVoteTransaction />
 				</Route>,
 				{
-					routes: [transferURL],
+					routes: [voteTransactionURL],
 					history,
 				},
 			);
