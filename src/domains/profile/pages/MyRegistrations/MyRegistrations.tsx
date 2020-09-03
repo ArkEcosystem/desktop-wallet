@@ -34,17 +34,17 @@ const EmptyRegistrations = () => {
 export const MyRegistrations = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
-	const [developers, setDevelopers] = useState<ExtendedTransactionData[]>([]);
 	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const isEmptyRegistrations = useMemo(
-		() => !isLoading && !delegates.length && !developers.length && !businesses.length,
-		[businesses, developers, delegates, isLoading],
-	);
+	const isEmptyRegistrations = useMemo(() => !isLoading && !delegates.length && !businesses.length, [
+		businesses,
+		delegates,
+		isLoading,
+	]);
 
 	const crumbs = [
 		{
@@ -78,11 +78,6 @@ export const MyRegistrations = () => {
 				.entityAggregate()
 				.registrations(Enums.EntityType.Business);
 			setBusinesses(businessRegistrations.items());
-
-			const developerRegistrations = await activeProfile
-				.entityAggregate()
-				.registrations(Enums.EntityType.Developer);
-			setDevelopers(developerRegistrations.items());
 
 			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
 			setDelegates(delegateRegistrations);
@@ -118,11 +113,6 @@ export const MyRegistrations = () => {
 			{!isLoading && businesses.length > 0 && (
 				<div data-testid="BusinessTable">
 					<EntityTable entities={businesses} onAction={handleAction} />
-				</div>
-			)}
-			{!isLoading && developers.length > 0 && (
-				<div data-testid="DeveloperTable">
-					<EntityTable entities={developers} onAction={handleAction} />
 				</div>
 			)}
 
