@@ -1,8 +1,17 @@
+
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor, within } from "testing-library";
+import {
+	act,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { MyRegistrations } from "./MyRegistrations";
 
@@ -55,7 +64,7 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("DelegateTable").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -65,7 +74,7 @@ describe("MyRegistrations", () => {
 			.query(true)
 			.reply(200, require("tests/fixtures/registrations/businesses.json"));
 
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -75,8 +84,11 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
-		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("DelegateTable").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("BusinessTable").length).toEqual(1));
+
+		const businessTable = getByTestId("BusinessTable");
+		await waitFor(() => expect(within(businessTable).getAllByTestId("EntityTableRowItem").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -87,7 +99,7 @@ describe("MyRegistrations", () => {
 			// @README: Business fixture can be re-used because all entities share the same structure.
 			.reply(200, require("tests/fixtures/registrations/businesses.json"));
 
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -97,8 +109,11 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
-		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(2));
+		await waitFor(() => expect(getAllByTestId("DelegateTable").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("DeveloperTable").length).toEqual(1));
+
+		const developerTable = getByTestId("DeveloperTable");
+		await waitFor(() => expect(within(developerTable).getAllByTestId("EntityTableRowItem").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -113,7 +128,7 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("DelegateTable").length).toEqual(1));
 
 		const registerButton = getByTestId("MyRegistrations__cta-register");
 		act(() => {
@@ -134,7 +149,7 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("DelegateTable").length).toEqual(1));
 
 		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
 		act(() => {
@@ -163,7 +178,7 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("DelegateTable").length).toEqual(1));
 
 		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
 		act(() => {
