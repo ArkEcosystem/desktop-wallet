@@ -76,7 +76,7 @@ describe("MyRegistrations", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
-		await waitFor(() => expect(getAllByTestId("BusinessRegistrationRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 

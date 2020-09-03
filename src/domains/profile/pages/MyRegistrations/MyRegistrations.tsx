@@ -10,8 +10,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { BusinessTable } from "./components/BusinessTable";
 import { DelegateTable } from "./components/DelegateTable";
+import { EntityTable } from "./components/EntityTable";
 
 const { RegisterBanner } = images.common;
 
@@ -34,17 +34,17 @@ const EmptyRegistrations = () => {
 export const MyRegistrations = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
+	const [developers, setDevelopers] = useState<ReadWriteWallet[]>([]);
 	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const isEmptyRegistrations = useMemo(() => !isLoading && !delegates.length && !businesses.length, [
-		businesses,
-		delegates,
-		isLoading,
-	]);
+	const isEmptyRegistrations = useMemo(
+		() => !isLoading && !delegates.length && !developers.length && !businesses.length,
+		[businesses, developers, delegates, isLoading],
+	);
 
 	const crumbs = [
 		{
@@ -76,6 +76,9 @@ export const MyRegistrations = () => {
 
 			const businessRegistrations = await activeProfile.entityRegistrationAggregate().businesses();
 			setBusinesses(businessRegistrations.items());
+
+			const developerRegistrations = await activeProfile.entityRegistrationAggregate().developers();
+			setDevelopers(developerRegistrations.items());
 
 			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
 			setDelegates(delegateRegistrations);
@@ -109,7 +112,8 @@ export const MyRegistrations = () => {
 
 			{isLoading && !isEmptyRegistrations && <Loader />}
 
-			{!isLoading && businesses.length > 0 && <BusinessTable businesses={businesses} onAction={handleAction} />}
+			{!isLoading && businesses.length > 0 && <EntityTable entities={businesses} onAction={handleAction} />}
+			{!isLoading && developers.length > 0 && <EntityTable entities={developers} onAction={handleAction} />}
 			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}

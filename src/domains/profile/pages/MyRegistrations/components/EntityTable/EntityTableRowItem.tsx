@@ -7,12 +7,12 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type BusinessRowItemProps = {
+type EntityTableRowItemProps = {
 	business: ExtendedTransactionData;
 	onAction?: any;
 };
 
-export const BusinessRowItem = ({ onAction, business }: BusinessRowItemProps) => {
+export const EntityTableRowItem = ({ onAction, business }: EntityTableRowItemProps) => {
 	const { t } = useTranslation();
 
 	const options = [
@@ -23,7 +23,7 @@ export const BusinessRowItem = ({ onAction, business }: BusinessRowItemProps) =>
 	const { data }: any = business.asset();
 
 	return (
-		<tr data-testid="BusinessRegistrationRowItem" className="border-b border-dashed border-theme-neutral-light">
+		<tr data-testid="EntityTableRowItem" className="border-b border-dashed border-theme-neutral-light">
 			<td className="w-24 py-6">
 				<div className="flex items-center">
 					<Circle className="border-theme-neutral-800" size="lg">

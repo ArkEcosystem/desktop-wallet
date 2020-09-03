@@ -3,9 +3,9 @@ import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor, within } from "testing-library";
 
-import { BusinessTable } from "./BusinessTable";
+import { EntityTable } from "./EntityTable";
 
-let businessRegistrations: ExtendedTransactionData[];
+let entityRegistrations: ExtendedTransactionData[];
 let profile: Profile;
 
 describe("BusinessRegistrationsTable", () => {
@@ -20,47 +20,45 @@ describe("BusinessRegistrationsTable", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
 		const businesses = await profile.entityRegistrationAggregate().businesses();
-		businessRegistrations = businesses.items();
+		entityRegistrations = businesses.items();
 	});
 
 	it("should render empty state", () => {
-		const { getAllByTestId, asFragment } = render(<BusinessTable businesses={[]} />);
+		const { getAllByTestId, asFragment } = render(<EntityTable entities={[]} />);
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(() => getAllByTestId("BusinessRegistrationRowItem")).toThrow(/Unable to find an element by/);
+		expect(() => getAllByTestId("EntityTableRowItem")).toThrow(/Unable to find an element by/);
 	});
 
-	it("should render business registrations", async () => {
-		const { getAllByTestId, asFragment } = render(<BusinessTable businesses={businessRegistrations} />);
+	it("should render registrations", async () => {
+		const { getAllByTestId, asFragment } = render(<EntityTable entities={entityRegistrations} />);
 
-		await waitFor(() => expect(getAllByTestId("BusinessRegistrationRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should handle resign dropdown action", async () => {
 		const onAction = jest.fn();
 		const { asFragment, getAllByTestId } = render(
-			<BusinessTable businesses={businessRegistrations} onAction={onAction} />,
+			<EntityTable entities={entityRegistrations} onAction={onAction} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 
-		await waitFor(() => expect(getAllByTestId("BusinessRegistrationRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("BusinessRegistrationRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("BusinessRegistrationRowItem")[0]).getByTestId(
-			"dropdown__option--1",
-		);
+		const resignOption = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__option--1");
 		act(() => {
 			fireEvent.click(resignOption);
 		});
 
 		expect(onAction).toBeCalledWith({
-			walletId: businessRegistrations[0].wallet().id(),
-			txId: businessRegistrations[0].id(),
+			walletId: entityRegistrations[0].wallet().id(),
+			txId: entityRegistrations[0].id(),
 			action: "resign",
 		});
 	});
@@ -68,27 +66,25 @@ describe("BusinessRegistrationsTable", () => {
 	it("should handle resign dropdown action", async () => {
 		const onAction = jest.fn();
 		const { asFragment, getAllByTestId } = render(
-			<BusinessTable businesses={businessRegistrations} onAction={onAction} />,
+			<EntityTable entities={entityRegistrations} onAction={onAction} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 
-		await waitFor(() => expect(getAllByTestId("BusinessRegistrationRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("BusinessRegistrationRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("BusinessRegistrationRowItem")[0]).getByTestId(
-			"dropdown__option--0",
-		);
+		const resignOption = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__option--0");
 		act(() => {
 			fireEvent.click(resignOption);
 		});
 
 		expect(onAction).toBeCalledWith({
-			walletId: businessRegistrations[0].wallet().id(),
-			txId: businessRegistrations[0].id(),
+			walletId: entityRegistrations[0].wallet().id(),
+			txId: entityRegistrations[0].id(),
 			action: "update",
 		});
 	});
