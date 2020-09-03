@@ -1,5 +1,5 @@
 import { File } from "@arkecosystem/platform-sdk-ipfs";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -296,6 +296,8 @@ const transactionDetails = ({ translations, transaction }: RegistrationTransacti
 component.displayName = "BusinessRegistrationForm";
 transactionDetails.displayName = "BusinessRegistrationFormTransactionDetails";
 
+// @TODO: There can be one generic AIP36 EntityRegistrationForm.
+// There is no need for multiple components because, as stated in the AIP36 specifications, they all share the same structure.
 export const BusinessRegistrationForm: RegistrationForm = {
 	tabSteps: 2,
 	component,
@@ -305,14 +307,25 @@ export const BusinessRegistrationForm: RegistrationForm = {
 	// eslint-disable-next-line @typescript-eslint/require-await
 	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations }) => {
 		const { getValues, setValue, setError } = form;
-		const { fee, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
+		const { fee, ipfsData, mnemonic, meta, senderAddress } = getValues({ nest: true });
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		try {
-			const hash = await new File(httpClient).upload(ipfsData);
-			const transactionId = await senderWallet!
-				.transaction()
-				.signIpfs({ fee, from: senderAddress, sign: { mnemonic }, data: { hash } });
+			const transactionId = await senderWallet!.transaction().signEntityRegistration({
+				fee,
+				from: senderAddress,
+				sign: { mnemonic },
+				data: {
+					// @TODO: use this based on the user-selection of what they want to register.
+					type: Enums.EntityType.Business,
+					// @TODO: let the user choose what sub-type they wish to use.
+					subType: Enums.EntitySubType.None,
+					// @TODO: use the name that the user entered. Has to be valid like a delegate username.
+					name: undefined,
+					// @TODO: ensure that no empty keys are sent. Currently empty keys are sent with a value of "undefined".
+					ipfs: await new File(httpClient).upload(ipfsData),
+				},
+			});
 
 			await senderWallet!.transaction().broadcast(transactionId);
 
