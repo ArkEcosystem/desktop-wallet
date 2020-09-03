@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
@@ -77,9 +77,12 @@ export const MyRegistrations = ({ blockchainRegistrations }: Props) => {
 		const fetchRegistrations = async () => {
 			setIsLoading(true);
 
-			activeProfile.entityRegistrationAggregate().flush();
+			activeProfile.entityAggregate().flush();
 
-			const businessRegistrations = await activeProfile.entityRegistrationAggregate().businesses();
+			const businessRegistrations = await activeProfile
+				.entityAggregate()
+				// @TODO: make sub-type optional in the SDK
+				.registrations(Enums.EntityType.Business, Enums.EntitySubType.None);
 			setBusinesses(businessRegistrations.items());
 
 			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
