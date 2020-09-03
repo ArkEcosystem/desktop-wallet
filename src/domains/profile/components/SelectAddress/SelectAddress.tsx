@@ -5,20 +5,19 @@ import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SearchAddress } from "domains/profile/components/SearchAddress";
+import { SearchWallet } from "domains/wallet/components/SearchWallet";
+import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { SelectAddressWrapper } from "./SelectAddress.styles";
 
 type SelectAddressProps = {
 	address?: string;
-	isVerified?: boolean;
 	wallets: ReadWriteWallet[];
 	disabled?: boolean;
 	isInvalid?: boolean;
-	contactSearchTitle?: string;
-	contactSearchDescription?: string;
-	selectActionLabel?: string;
+	isVerified?: boolean;
 	onChange?: (address: string) => void;
 } & React.InputHTMLAttributes<any>;
 
@@ -28,29 +27,20 @@ const ProfileAvatar = ({ address }: any) => {
 };
 
 export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressProps>(
-	(
-		{
-			contactSearchTitle,
-			contactSearchDescription,
-			address,
-			wallets,
-			disabled,
-			isInvalid,
-			onChange,
-			isVerified,
-		}: SelectAddressProps,
-		ref,
-	) => {
-		const [isContactSearchOpen, setIsContactSearchOpen] = useState(false);
+	({ address, wallets, disabled, isInvalid, isVerified, onChange }: SelectAddressProps, ref) => {
+		const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState(address);
+
 		useEffect(() => setSelectedAddress(address), [address]);
 
 		const fieldContext = useFormField();
 		const isInvalidField = fieldContext?.isInvalid || isInvalid;
 
-		const onSelectProfile = (address: any) => {
+		const { t } = useTranslation();
+
+		const handleSelectWallet = ({ address }: SelectedWallet) => {
 			setSelectedAddress(address);
-			setIsContactSearchOpen(false);
+			setSearchWalletIsOpen(false);
 			onChange?.(address);
 		};
 
@@ -60,7 +50,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 					data-testid="SelectAddress__wrapper"
 					className={`SelectAddress ${disabled ? "is-disabled" : ""} ${isInvalidField ? "is-invalid" : ""}`}
 					type="button"
-					onClick={() => setIsContactSearchOpen(true)}
+					onClick={() => setSearchWalletIsOpen(true)}
 					disabled={disabled}
 				>
 					<ProfileAvatar address={selectedAddress} />
@@ -85,22 +75,18 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 					isInvalid={isInvalidField}
 				/>
 
-				<SearchAddress
-					title={contactSearchTitle}
-					description={contactSearchDescription}
-					isOpen={isContactSearchOpen}
+				<SearchWallet
+					isOpen={searchWalletIsOpen}
+					showNetwork={false}
+					title={t("PROFILE.MODAL_SELECT_SENDER.TITLE")}
+					description={t("PROFILE.MODAL_SELECT_SENDER.DESCRIPTION")}
 					wallets={wallets}
-					onAction={(_, address: any) => onSelectProfile(address)}
-					onClose={() => setIsContactSearchOpen(false)}
+					onSelectWallet={handleSelectWallet}
+					onClose={() => setSearchWalletIsOpen(false)}
 				/>
 			</div>
 		);
 	},
 );
-
-SelectAddress.defaultProps = {
-	contactSearchTitle: "Select sender",
-	contactSearchDescription: "Find and select the sender from your wallets",
-};
 
 SelectAddress.displayName = "SelectAddress";

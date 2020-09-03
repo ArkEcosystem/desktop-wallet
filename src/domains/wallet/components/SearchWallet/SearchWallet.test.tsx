@@ -26,7 +26,12 @@ describe("SearchWallet", () => {
 	it("should render", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<SearchWallet isOpen={true} wallets={wallets} />
+				<SearchWallet
+					isOpen={true}
+					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
+					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
+					wallets={wallets}
+				/>
 			</Route>,
 			{
 				routes: [dashboardURL],
