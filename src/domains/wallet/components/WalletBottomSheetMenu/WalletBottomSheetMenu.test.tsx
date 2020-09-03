@@ -1,4 +1,5 @@
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -7,16 +8,17 @@ import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "test
 import { WalletBottomSheetMenu } from "./WalletBottomSheetMenu";
 
 const history = createMemoryHistory();
-const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
-let data: any;
+let profile: Profile;
+let wallets: ReadWriteWallet[];
+
+let walletURL: string;
+
 let bip39GenerateMock: any;
 
 const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
 
 beforeAll(() => {
-	history.push(dashboardURL);
-
 	bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
 });
 
@@ -26,24 +28,20 @@ afterAll(() => {
 
 describe("WalletBottomSheetMenu", () => {
 	beforeEach(() => {
-		const profile = env.profiles().findById(getDefaultProfileId());
-		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallets = profile.wallets().values();
 
-		data = [
-			{
-				coinClassName: "text-theme-danger-400 border-theme-danger-light",
-				wallet,
-			},
-		];
+		walletURL = `/profiles/${profile.id()}/wallets/${wallets[0].id()}`;
+		history.push(walletURL);
 	});
 
 	it("should render", () => {
 		const { getByTestId, asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<WalletBottomSheetMenu walletsData={data} />
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletBottomSheetMenu wallets={wallets} />
 			</Route>,
 			{
-				routes: [dashboardURL],
+				routes: [walletURL],
 				history,
 			},
 		);
@@ -54,25 +52,25 @@ describe("WalletBottomSheetMenu", () => {
 
 	it("should show counter", () => {
 		const { getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<WalletBottomSheetMenu walletsData={data} />
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletBottomSheetMenu wallets={wallets} />
 			</Route>,
 			{
-				routes: [dashboardURL],
+				routes: [walletURL],
 				history,
 			},
 		);
 
-		expect(getByTestId("WalletBottomSheetMenu__counter")).toHaveTextContent(data.length.toString());
+		expect(getByTestId("WalletBottomSheetMenu__counter")).toHaveTextContent(wallets.length.toString());
 	});
 
 	it("should be open", () => {
 		const { getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<WalletBottomSheetMenu walletsData={data} defaultIsOpen={true} />
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletBottomSheetMenu wallets={wallets} defaultIsOpen={true} />
 			</Route>,
 			{
-				routes: [dashboardURL],
+				routes: [walletURL],
 				history,
 			},
 		);
@@ -82,11 +80,11 @@ describe("WalletBottomSheetMenu", () => {
 
 	it("should toggle", () => {
 		const { getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<WalletBottomSheetMenu walletsData={data} defaultIsOpen={true} />
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletBottomSheetMenu wallets={wallets} defaultIsOpen={true} />
 			</Route>,
 			{
-				routes: [dashboardURL],
+				routes: [walletURL],
 				history,
 			},
 		);
@@ -96,5 +94,41 @@ describe("WalletBottomSheetMenu", () => {
 		});
 
 		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "true");
+	});
+
+	it("should not close when clicking on active wallet", () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletBottomSheetMenu wallets={wallets} defaultIsOpen={true} />
+			</Route>,
+			{
+				routes: [walletURL],
+				history,
+			},
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId(`WalletListItem__${wallets[0].address()}`));
+		});
+
+		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "false");
+	});
+
+	it("should redirect when clicking on other wallet", () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletBottomSheetMenu wallets={wallets} defaultIsOpen={true} />
+			</Route>,
+			{
+				routes: [walletURL],
+				history,
+			},
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId(`WalletListItem__${wallets[1].address()}`));
+		});
+
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[1].id()}`);
 	});
 });
