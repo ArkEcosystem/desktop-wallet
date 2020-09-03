@@ -109,6 +109,167 @@ describe("Vote For Delegate", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should send a unvote & vote transaction", async () => {
+		const history = createMemoryHistory();
+		const voteTransactionURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote/`;
+
+		const params = new URLSearchParams({
+			unvotes: delegateData[1].address,
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteTransactionURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/transactions/vote">
+					<SendVoteTransaction />
+				</Route>,
+				{
+					routes: [voteTransactionURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVoteTransaction__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVoteTransaction__step--first")).toHaveTextContent(
+					delegateData[0].username,
+				),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendVoteTransaction__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVoteTransaction__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("SendVoteTransaction__button--back"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVoteTransaction__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy());
+			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
+			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signVote")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
+
+			fireEvent.click(getByTestId("SendVoteTransaction__button--submit"));
+
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should send a unvote transaction", async () => {
+		const history = createMemoryHistory();
+		const voteTransactionURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote/`;
+
+		const params = new URLSearchParams({
+			unvotes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteTransactionURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/transactions/vote">
+					<SendVoteTransaction />
+				</Route>,
+				{
+					routes: [voteTransactionURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVoteTransaction__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVoteTransaction__step--first")).toHaveTextContent(
+					delegateData[0].username,
+				),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendVoteTransaction__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVoteTransaction__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("SendVoteTransaction__button--back"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVoteTransaction__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy());
+			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
+			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signVote")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
+
+			fireEvent.click(getByTestId("SendVoteTransaction__button--submit"));
+
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
 	it("should send a vote transaction", async () => {
 		const history = createMemoryHistory();
 		const voteTransactionURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote/`;
