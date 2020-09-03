@@ -11,7 +11,7 @@ const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 let profile: Profile;
-let wallet: ReadWriteWallet;
+let wallets: ReadWriteWallet[];
 
 // Wallet filter properties
 const filterProperties = {
@@ -37,19 +37,17 @@ const filterProperties = {
 };
 
 describe("Wallets", () => {
-	beforeAll(() => {
-		history.push(dashboardURL);
-	});
-
 	beforeEach(() => {
+		history.push(dashboardURL);
+
 		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		wallets = profile.wallets().values();
 	});
 
 	it("should render grid", () => {
-		const { container, getAllByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={[wallet]} filterProperties={filterProperties} />
+				<Wallets wallets={wallets} filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -58,13 +56,13 @@ describe("Wallets", () => {
 		);
 
 		expect(getAllByTestId("WalletCard__blank")).toBeTruthy();
-		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render many wallets on grid", () => {
-		const { container, getAllByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={new Array(10).fill(wallet)} filterProperties={filterProperties} />
+				<Wallets wallets={new Array(10).fill(wallets[0])} filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -73,13 +71,13 @@ describe("Wallets", () => {
 		);
 
 		expect(() => getAllByTestId("WalletCard__blank")).toThrow(/^Unable to find an element by/);
-		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render list", () => {
-		const { container } = renderWithRouter(
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={[wallet]} viewType="list" filterProperties={filterProperties} />
+				<Wallets wallets={wallets} viewType="list" filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -87,11 +85,29 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should redirect when clicking on row", () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets wallets={wallets} viewType="list" filterProperties={filterProperties} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId(`WalletListItem__${wallets[0].address()}`));
+		});
+
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[0].id()}`);
 	});
 
 	it("should render with empty wallets list", () => {
-		const { container } = renderWithRouter(
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets wallets={[]} filterProperties={filterProperties} />
 			</Route>,
@@ -101,13 +117,13 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(container).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with list view enabled as default", () => {
-		const { container } = renderWithRouter(
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets viewType="list" wallets={[wallet]} filterProperties={filterProperties} />
+				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -115,13 +131,13 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(container).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with list view enabled as default and empty wallet list", () => {
-		const { container } = renderWithRouter(
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets viewType="list" wallets={[wallet]} filterProperties={filterProperties} />
+				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -129,19 +145,20 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(container).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should change wallet view type from list to grid", () => {
-		const { getByTestId } = renderWithRouter(
+		const { asFragment, findByTestId, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets viewType="list" wallets={[]} filterProperties={filterProperties} />
+				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
 			},
 		);
+
 		const toggle = getByTestId("LayoutControls__grid--icon");
 
 		act(() => {
@@ -149,6 +166,7 @@ describe("Wallets", () => {
 		});
 
 		expect(toggle).toHaveClass("text-theme-danger-300");
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should change wallet view type from grid to list", () => {
@@ -171,13 +189,9 @@ describe("Wallets", () => {
 	});
 
 	it("should hide the view more button if there are less than 10 wallets", () => {
-		const { queryByTestId } = renderWithRouter(
+		const { asFragment, queryByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets
-					wallets={[wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet]}
-					viewType="list"
-					filterProperties={filterProperties}
-				/>
+				<Wallets wallets={new Array(9).fill(wallets[0])} viewType="list" filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -186,16 +200,13 @@ describe("Wallets", () => {
 		);
 
 		expect(queryByTestId("Wallets__ViewMore")).toBeFalsy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should show the view more button if there are more than 10 wallets", () => {
-		const { queryByTestId } = renderWithRouter(
+		const { asFragment, queryByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets
-					wallets={[wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet, wallet]}
-					viewType="list"
-					filterProperties={filterProperties}
-				/>
+				<Wallets wallets={new Array(11).fill(wallets[0])} viewType="list" filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -204,27 +215,16 @@ describe("Wallets", () => {
 		);
 
 		expect(queryByTestId("WalletsList__ViewMore")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should click view", () => {
+	it("should load more wallets", () => {
 		const lastWallet = profile.wallets().findById("d044a552-7a49-411c-ae16-8ff407acc430");
 
 		const { container, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets
-					wallets={[
-						wallet,
-						wallet,
-						wallet,
-						wallet,
-						wallet,
-						wallet,
-						wallet,
-						wallet,
-						wallet,
-						wallet,
-						lastWallet,
-					]}
+					wallets={[...new Array(10).fill(wallets[0]), lastWallet]}
 					viewType="list"
 					filterProperties={filterProperties}
 				/>
