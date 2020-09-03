@@ -4,37 +4,23 @@ import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
-import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
 
 import { Dropdown } from "../Dropdown";
 
 export type WalletListItemProps = {
 	wallet: ReadWriteWallet;
-	exchangeCurrency?: string;
 	coinClass?: string;
 	actions?: string | any[];
 	variant?: "condensed";
 	onAction?: any;
+	onRowClick?: (walletId: string) => void;
 };
 
-export const WalletListItem = ({
-	wallet,
-	coinClass,
-	actions,
-	variant,
-	onAction,
-	exchangeCurrency,
-}: WalletListItemProps) => {
-	const activeProfile = useActiveProfile();
-
-	const history = useHistory();
-
+export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction, onRowClick }: WalletListItemProps) => {
 	const { t } = useTranslation();
 
 	const isCondensed = () => variant === "condensed";
@@ -63,7 +49,7 @@ export const WalletListItem = ({
 	return (
 		<tr
 			className="border-b cursor-pointer border-theme-neutral-200"
-			onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}
+			onClick={() => onRowClick?.(wallet.id())}
 			data-testid={`WalletListItem__${wallet.address()}`}
 		>
 			<td className="py-6 mt-1">
@@ -98,43 +84,17 @@ export const WalletListItem = ({
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</td>
 			<td className="text-right text-theme-neutral-light">
-				<Amount value={wallet.convertedBalance()} ticker={exchangeCurrency!} />
+				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
 			</td>
 			{actions && (
 				<td>
-					{actions.length > 0 &&
-						(() => {
-							if (typeof actions === "string") {
-								return (
-									<div className="text-right">
-										<Button
-											data-testid="button"
-											variant="plain"
-											onClick={(e: any) => {
-												handleAction(wallet);
-												e.preventDefault();
-												e.stopPropagation();
-											}}
-										>
-											{actions}
-										</Button>
-									</div>
-								);
-							}
-
-							return (
-								<div className="text-theme-neutral-light hover:text-theme-neutral">
-									<Dropdown options={actions} onSelect={handleAction} />
-								</div>
-							);
-						})()}
+					{actions.length > 0 && (
+						<div className="text-theme-neutral-light hover:text-theme-neutral">
+							<Dropdown options={actions} onSelect={handleAction} />
+						</div>
+					)}
 				</td>
 			)}
 		</tr>
 	);
-};
-
-WalletListItem.defaultProps = {
-	address: "",
-	exchangeCurrency: "",
 };
