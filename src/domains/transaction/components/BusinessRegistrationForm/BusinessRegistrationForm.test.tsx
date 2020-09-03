@@ -5,7 +5,7 @@ import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
-import businessRegistrationFixture from "tests/fixtures/coins/ark/transactions/business-registration.json";
+import businessRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
