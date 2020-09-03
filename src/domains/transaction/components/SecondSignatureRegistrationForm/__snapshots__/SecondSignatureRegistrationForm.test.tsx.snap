@@ -229,7 +229,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #3 word
+                  The #9 word
                 </span>
               </button>
               <button
@@ -238,7 +238,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #1 word
+                  The #2 word
                 </span>
               </button>
               <button
@@ -247,7 +247,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #4 word
+                  The #11 word
                 </span>
               </button>
             </ul>
@@ -262,11 +262,16 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                     class="mb-2 font-semibold text-theme-neutral-dark"
                     data-testid="MnemonicVerificationOptions__title"
                   >
-                    Select word #3
+                    Select word #9
                   </p>
                   <div
                     class="grid grid-cols-3 gap-2"
                   >
+                    <button
+                      class="sc-AxmLO cNAsSK"
+                      data-testid="MnemonicVerificationOptions__button"
+                      type="button"
+                    />
                     <button
                       class="sc-AxmLO cNAsSK"
                       data-testid="MnemonicVerificationOptions__button"
@@ -281,11 +286,6 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                     >
                       test
                     </button>
-                    <button
-                      class="sc-AxmLO cNAsSK"
-                      data-testid="MnemonicVerificationOptions__button"
-                      type="button"
-                    />
                   </div>
                 </div>
               </div>
