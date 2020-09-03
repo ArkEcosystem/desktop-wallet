@@ -8,7 +8,7 @@ import { EntityTable } from "./EntityTable";
 let entityRegistrations: ExtendedTransactionData[];
 let profile: Profile;
 
-describe("BusinessRegistrationsTable", () => {
+describe("EntityRegistrationsTable", () => {
 	beforeAll(async () => {
 		nock("https://dwallets.ark.io")
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
