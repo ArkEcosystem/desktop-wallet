@@ -1,6 +1,5 @@
-import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { upperFirst } from "@arkecosystem/utils";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
@@ -10,8 +9,11 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
+import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
+import { useEnvironmentContext } from "app/contexts";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
+import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
@@ -150,7 +152,9 @@ export const NavigationBar = ({
 	const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
 	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
 
-	const [selectedWallet, setSelectedWallet] = useState<ReadWriteWallet | undefined>();
+	const [selectedWallet, setSelectedWallet] = useState<SelectedWallet | undefined>();
+
+	const { env } = useEnvironmentContext();
 
 	useEffect(() => {
 		if (selectedWallet) {
@@ -158,6 +162,10 @@ export const NavigationBar = ({
 			setReceiveFundsIsOpen(true);
 		}
 	}, [selectedWallet]);
+
+	const handleSelectWallet = (wallet: SelectedWallet) => {
+		setSelectedWallet(wallet);
+	};
 
 	const renderMenu = () => {
 		if (!profile?.id()) {
@@ -273,21 +281,29 @@ export const NavigationBar = ({
 				</div>
 			</div>
 
-			<SearchWallet
-				isOpen={searchWalletIsOpen}
-				wallets={profile?.wallets().values()}
-				onSelectWallet={(wallet: ReadWriteWallet) => setSelectedWallet(wallet)}
-				onClose={() => setSearchWalletIsOpen(false)}
-			/>
+			{profile && (
+				<>
+					<SearchWallet
+						isOpen={searchWalletIsOpen}
+						showNetwork={false}
+						title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
+						description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}
+						searchBarExtra={<SearchBarFilters networks={env.availableNetworks()} />}
+						wallets={profile.wallets().values()}
+						onSelectWallet={handleSelectWallet}
+						onClose={() => setSearchWalletIsOpen(false)}
+					/>
 
-			{selectedWallet && (
-				<ReceiveFunds
-					isOpen={receiveFundsIsOpen}
-					address={selectedWallet.address()}
-					name={selectedWallet.alias()}
-					icon={upperFirst(selectedWallet.coinId().toLowerCase())}
-					handleClose={() => setSelectedWallet(undefined)}
-				/>
+					{selectedWallet && (
+						<ReceiveFunds
+							isOpen={receiveFundsIsOpen}
+							address={selectedWallet.address}
+							name={selectedWallet.name}
+							icon={selectedWallet.coinName}
+							handleClose={() => setSelectedWallet(undefined)}
+						/>
+					)}
+				</>
 			)}
 		</NavWrapper>
 	);

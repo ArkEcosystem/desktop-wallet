@@ -81,7 +81,7 @@ export const Default = ({ wallets }: { wallets: ReadWriteWallet[] }) => {
 				velit autem, error quam magnam adipisci laboriosam sapiente ratione illo possimus dignissimos quo
 				accusantium laborum.
 			</p>
-			<WalletBottomSheetMenu walletsData={data} />
+			<WalletBottomSheetMenu wallets={[]} />
 		</div>
 	);
 };

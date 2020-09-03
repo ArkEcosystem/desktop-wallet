@@ -135,7 +135,7 @@ describe("SendTransactionForm", () => {
 
 			const historySpy = jest.spyOn(history, "push");
 
-			const firstAddress = getByTestId("AddressListItem__select-1");
+			const firstAddress = getByTestId("SearchWalletListItem__select-1");
 			fireEvent.click(firstAddress);
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 

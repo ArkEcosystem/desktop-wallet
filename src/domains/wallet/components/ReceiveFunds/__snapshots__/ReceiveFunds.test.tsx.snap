@@ -12,20 +12,20 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxiKw kgmJgX"
+            class="sc-AxirZ fFqjhX"
             height="14"
             width="14"
           >
@@ -47,16 +47,14 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-2"
-          />
-          <div
             data-testid="ReceiveFunds__info"
           >
             <div
-              class="flex items-center mt-6 mb-6"
+              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
-                class="flex-1"
+                class="flex-1 space-y-2"
               >
                 <div
                   class="text-sm font-semibold text-theme-neutral"
@@ -64,7 +62,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                   Address
                 </div>
                 <div
-                  class="flex items-center font-semibold"
+                  class="font-semibold"
                 >
                   <span
                     class="ml-4"
@@ -77,7 +75,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                         class="text-theme-primary-300"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
+                          class="sc-AxirZ iQaTP"
                           height="1em"
                           width="1em"
                         >
@@ -91,41 +89,33 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                 </div>
               </div>
               <div
-                class="flex items-center ml-4"
+                class="sc-AxjAm bDDbwS -mr-2"
               >
                 <div
-                  class="sc-AxjAm bDDbwS -mr-2"
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
                 >
-                  <div
-                    class="sc-AxiKw dklFyP"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      ark.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    ark.svg
+                  </svg>
                 </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                data-testid="Avatar"
+              >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                  data-testid="Avatar"
+                  class="w-full h-full"
                 >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt=""
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      title=""
-                    />
-                  </div>
+                  <img
+                    alt=""
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title=""
+                  />
                 </div>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jJscrd border-theme-neutral-300"
-              type="horizontal"
-            />
           </div>
           <div
             class="mt-8"
@@ -147,20 +137,20 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxiKw kgmJgX"
+            class="sc-AxirZ fFqjhX"
             height="14"
             width="14"
           >
@@ -182,56 +172,50 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-2"
+            data-testid="ReceiveFunds__info"
           >
             <div
-              data-testid="ReceiveFunds__info"
+              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
-                class="flex items-center mt-6 mb-6"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="flex-1"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
-                  <div
-                    class="text-sm font-semibold text-theme-neutral"
-                  >
-                    Wallet
-                  </div>
-                  <div
-                    class="flex items-center font-semibold"
-                  >
-                    My Wallet
-                  </div>
+                  Wallet
                 </div>
                 <div
-                  class="sc-AxjAm bDDbwS ml-4"
+                  class="font-semibold"
                 >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      ark.svg
-                    </svg>
-                  </div>
+                  My Wallet
                 </div>
               </div>
               <div
-                class="sc-AxirZ jJscrd border-theme-neutral-300"
-                type="horizontal"
-              />
+                class="sc-AxjAm bDDbwS ml-4"
+              >
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
           <div
             data-testid="ReceiveFunds__info"
           >
             <div
-              class="flex items-center mt-6 mb-6"
+              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
-                class="flex-1"
+                class="flex-1 space-y-2"
               >
                 <div
                   class="text-sm font-semibold text-theme-neutral"
@@ -239,7 +223,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                   Address
                 </div>
                 <div
-                  class="flex items-center font-semibold"
+                  class="font-semibold"
                 >
                   abc
                   <span
@@ -253,7 +237,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                         class="text-theme-primary-300"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
+                          class="sc-AxirZ iQaTP"
                           height="1em"
                           width="1em"
                         >
@@ -267,28 +251,20 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="flex items-center ml-4"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                data-testid="Avatar"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                  data-testid="Avatar"
+                  class="w-full h-full"
                 >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt="abc"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      title="abc"
-                    />
-                  </div>
+                  <img
+                    alt="abc"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    title="abc"
+                  />
                 </div>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jJscrd border-theme-neutral-300"
-              type="horizontal"
-            />
           </div>
           <div
             class="mt-8"
@@ -317,20 +293,20 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxhCb pcYUy absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxiKw eWLnbL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxiKw kgmJgX"
+            class="sc-AxirZ fFqjhX"
             height="14"
             width="14"
           >
@@ -352,16 +328,14 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-2"
-          />
-          <div
             data-testid="ReceiveFunds__info"
           >
             <div
-              class="flex items-center mt-6 mb-6"
+              class="flex items-center py-6 border-b border-dashed border-theme-neutral-300 "
+              data-testid="TransactionDetail"
             >
               <div
-                class="flex-1"
+                class="flex-1 space-y-2"
               >
                 <div
                   class="text-sm font-semibold text-theme-neutral"
@@ -369,7 +343,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                   Address
                 </div>
                 <div
-                  class="flex items-center font-semibold"
+                  class="font-semibold"
                 >
                   abc
                   <span
@@ -383,7 +357,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                         class="text-theme-primary-300"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
+                          class="sc-AxirZ iQaTP"
                           height="1em"
                           width="1em"
                         >
@@ -397,41 +371,33 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="flex items-center ml-4"
+                class="sc-AxjAm bDDbwS -mr-2"
               >
                 <div
-                  class="sc-AxjAm bDDbwS -mr-2"
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
                 >
-                  <div
-                    class="sc-AxiKw dklFyP"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      ark.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    ark.svg
+                  </svg>
                 </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                data-testid="Avatar"
+              >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                  data-testid="Avatar"
+                  class="w-full h-full"
                 >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt="abc"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                      title="abc"
-                    />
-                  </div>
+                  <img
+                    alt="abc"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                    title="abc"
+                  />
                 </div>
               </div>
             </div>
-            <div
-              class="sc-AxirZ jJscrd border-theme-neutral-300"
-              type="horizontal"
-            />
           </div>
           <div
             class="mt-8"
