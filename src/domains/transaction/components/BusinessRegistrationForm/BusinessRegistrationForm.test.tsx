@@ -3,6 +3,7 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
+import nock from "nock";
 import React from "react";
 import { useForm } from "react-hook-form";
 import businessRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-registration.json";
@@ -15,6 +16,51 @@ describe("BusinessRegistrationForm", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
 	let feeOptions: Record<string, string>;
+
+	const ipfsForm = {
+		meta: {
+			displayName: "Test Entity Name",
+			description: "Test Entity Description",
+			website: "https://test.entity.com",
+		},
+		sourceControl: [
+			{
+				type: "github",
+				value: "https://github.com/test",
+			},
+		],
+		socialMedia: [
+			{
+				type: "facebook",
+				value: "https://facebook.com/test",
+			},
+			{
+				type: "instagram",
+				value: "https://instagram.com/test",
+			},
+		],
+		images: [
+			{
+				type: "image",
+				value: "https://i.imgur.com/123456.png",
+			},
+		],
+		videos: [
+			{
+				type: "video",
+				value: "https://youtube.com/watch?v=123456",
+			},
+		],
+	};
+
+	beforeAll(() => {
+		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
+		nock("https://platform.ark.io/api")
+			.post("/ipfs")
+			.reply(200, { data: { hash: ipfsData } })
+			.get("/ipfs")
+			.reply(200, { data: ipfsForm });
+	});
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -61,11 +107,10 @@ describe("BusinessRegistrationForm", () => {
 	});
 
 	it("should render 3rd step", async () => {
-		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
 		const { result } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					ipfsData,
+					ipfsData: ipfsForm,
 				},
 			}),
 		);
@@ -76,12 +121,11 @@ describe("BusinessRegistrationForm", () => {
 	});
 
 	it("should render 3rd step without images", async () => {
-		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
 		const { result } = renderHook(() =>
 			useForm({
 				defaultValues: {
 					ipfsData: {
-						...ipfsData,
+						...ipfsForm,
 						images: undefined,
 					},
 				},
@@ -90,16 +134,18 @@ describe("BusinessRegistrationForm", () => {
 		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
 
 		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--third")).toBeTruthy());
+		expect(screen.getByText(ipfsForm.meta.displayName)).toBeInTheDocument();
+		expect(screen.getByText(ipfsForm.meta.description)).toBeInTheDocument();
+		expect(screen.getByText(ipfsForm.meta.website)).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 3rd step without videos", async () => {
-		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
 		const { result } = renderHook(() =>
 			useForm({
 				defaultValues: {
 					ipfsData: {
-						...ipfsData,
+						...ipfsForm,
 						videos: undefined,
 					},
 				},
@@ -254,20 +300,17 @@ describe("BusinessRegistrationForm", () => {
 
 		render(<BusinessRegistrationForm.transactionDetails transaction={transaction} translations={translations} />);
 
-		expect(screen.getByText("Test Entity Name")).toBeInTheDocument();
-		expect(screen.getByText("Test Entity Description")).toBeInTheDocument();
-		expect(screen.getByText("https://test.business")).toBeInTheDocument();
+		expect(screen.getByText(businessRegistrationFixture.data.asset.data.ipfsData)).toBeInTheDocument();
 	});
 
 	it("should sign transaction", async () => {
-		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
 		const form = {
 			clearError: jest.fn(),
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",
 				senderAddress: wallet.address(),
-				ipfsData,
+				ipfsData: ipfsForm,
 			}),
 			setError: jest.fn(),
 			setValue: jest.fn(),

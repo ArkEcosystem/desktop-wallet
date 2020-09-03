@@ -25,7 +25,7 @@ import { RegistrationForm, RegistrationType } from "./Registration.models";
 
 const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
-	businessRegistration: BusinessRegistrationForm,
+	entityRegistration: BusinessRegistrationForm,
 };
 
 const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
@@ -59,7 +59,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 
 	const registrationTypes: RegistrationType[] = [
 		{
-			value: "businessRegistration",
+			value: "entityRegistration",
 			label: "Business",
 		},
 	];

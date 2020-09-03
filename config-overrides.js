@@ -22,6 +22,7 @@ const whiteListedModules = [
 	"@arkecosystem/platform-sdk-eos",
 	"@arkecosystem/platform-sdk-eth",
 	"@arkecosystem/platform-sdk-intl",
+	"@arkecosystem/platform-sdk-ipfs",
 	"@arkecosystem/platform-sdk-lsk",
 	"@arkecosystem/platform-sdk-markets",
 	"@arkecosystem/platform-sdk-neo",

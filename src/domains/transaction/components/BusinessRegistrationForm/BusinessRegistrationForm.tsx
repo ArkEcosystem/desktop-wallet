@@ -1,3 +1,4 @@
+import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
@@ -11,6 +12,7 @@ import { Link } from "app/components/Link";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { httpClient } from "app/services";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
@@ -285,16 +287,8 @@ const component = ({ activeTab, wallet, feeOptions }: RegistrationComponent) => 
 
 const transactionDetails = ({ translations, transaction }: RegistrationTransactionDetailsOptions) => (
 	<>
-		<TransactionDetail label={translations("TRANSACTION.NAME")}>
-			{transaction?.data().asset.data.ipfsData.meta.displayName}
-		</TransactionDetail>
-		<TransactionDetail label={translations("TRANSACTION.DESCRIPTION")}>
-			{transaction?.data().asset.data.ipfsData.meta.description}
-		</TransactionDetail>
-		<TransactionDetail label={translations("TRANSACTION.WEBSITE")}>
-			<Link to={transaction?.data().asset.data.ipfsData.meta.website} isExternal>
-				{transaction?.data().asset.data.ipfsData.meta.website}
-			</Link>
+		<TransactionDetail label={translations("TRANSACTION.IPFS_HASH")}>
+			{transaction?.data().asset.data.ipfsData}
 		</TransactionDetail>
 	</>
 );
@@ -311,14 +305,11 @@ export const BusinessRegistrationForm: RegistrationForm = {
 	// eslint-disable-next-line @typescript-eslint/require-await
 	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations }) => {
 		const { getValues, setValue, setError } = form;
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const { fee, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		try {
-			// TODO: Hash ipfs data
-			// const hash = ipfsData
-			const hash = "abc";
+			const hash = await new File(httpClient).upload(ipfsData);
 			const transactionId = await senderWallet!
 				.transaction()
 				.signIpfs({ fee, from: senderAddress, sign: { mnemonic }, data: { hash } });
