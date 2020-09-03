@@ -229,7 +229,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #7 word
+                  The #12 word
                 </span>
               </button>
               <button
@@ -238,7 +238,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #9 word
+                  The #6 word
                 </span>
               </button>
               <button
@@ -247,7 +247,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                 disabled=""
               >
                 <span>
-                  The #10 word
+                  The #1 word
                 </span>
               </button>
             </ul>
@@ -262,7 +262,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                     class="mb-2 font-semibold text-theme-neutral-dark"
                     data-testid="MnemonicVerificationOptions__title"
                   >
-                    Select word #7
+                    Select word #12
                   </p>
                   <div
                     class="grid grid-cols-3 gap-2"
@@ -271,9 +271,7 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                       class="sc-AxmLO cNAsSK"
                       data-testid="MnemonicVerificationOptions__button"
                       type="button"
-                    >
-                      test
-                    </button>
+                    />
                     <button
                       class="sc-AxmLO cNAsSK"
                       data-testid="MnemonicVerificationOptions__button"
@@ -285,7 +283,9 @@ exports[`SecondSignatureRegistrationForm should render confirmation step 1`] = `
                       class="sc-AxmLO cNAsSK"
                       data-testid="MnemonicVerificationOptions__button"
                       type="button"
-                    />
+                    >
+                      test
+                    </button>
                   </div>
                 </div>
               </div>
