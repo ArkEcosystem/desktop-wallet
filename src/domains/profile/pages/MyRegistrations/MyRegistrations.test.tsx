@@ -1,4 +1,3 @@
-
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
