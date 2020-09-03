@@ -133,7 +133,7 @@ export const Votes = () => {
 			</Section>
 
 			<div className="container mx-auto px-14">
-				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
+				<div className="-my-5 grid grid-flow-col grid-cols-2 gap-6">
 					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetwork
 							id="Votes__network"
