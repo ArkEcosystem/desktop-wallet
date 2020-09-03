@@ -75,19 +75,19 @@ test("should handle delegate resign action", async (t: any) => {
 test("should render business registrations list", async (t: any) => {
 	await goToMyRegistrations(t);
 
-	await t.expect(Selector("[data-testid=BusinessRegistrationRowItem]").exists).ok();
+	await t.expect(Selector("[data-testid=EntityTableRowItem]").exists).ok();
 });
 
 test("should handle busines registration update action", async (t: any) => {
 	await goToMyRegistrations(t);
 
-	await t.expect(Selector("[data-testid=BusinessRegistrationRowItem]").exists).ok();
-	await t.expect(Selector("[data-testid=BusinessRegistrationRowItem] [data-testid=dropdown__toggle]").exists).ok();
+	await t.expect(Selector("[data-testid=EntityTableRowItem]").exists).ok();
+	await t.expect(Selector("[data-testid=EntityTableRowItem] [data-testid=dropdown__toggle]").exists).ok();
 
-	await t.hover(Selector("[data-testid=BusinessRegistrationRowItem] [data-testid=dropdown__toggle]"));
-	await t.click(Selector("[data-testid=BusinessRegistrationRowItem] [data-testid=dropdown__toggle]"));
+	await t.hover(Selector("[data-testid=EntityTableRowItem] [data-testid=dropdown__toggle]"));
+	await t.click(Selector("[data-testid=EntityTableRowItem] [data-testid=dropdown__toggle]"));
 	// Update option
-	await t.click(Selector("[data-testid=BusinessRegistrationRowItem] [data-testid=dropdown__option--0]"));
+	await t.click(Selector("[data-testid=EntityTableRowItem] [data-testid=dropdown__option--0]"));
 
 	await t
 		.expect(
@@ -100,13 +100,13 @@ test("should handle busines registration update action", async (t: any) => {
 test("should handle business registration resign action", async (t: any) => {
 	await goToMyRegistrations(t);
 
-	await t.expect(Selector("[data-testid=BusinessRegistrationRowItem]").exists).ok();
-	await t.expect(Selector("[data-testid=BusinessRegistrationRowItem] [data-testid=dropdown__toggle]").exists).ok();
+	await t.expect(Selector("[data-testid=EntityTableRowItem]").exists).ok();
+	await t.expect(Selector("[data-testid=EntityTableRowItem] [data-testid=dropdown__toggle]").exists).ok();
 
-	await t.hover(Selector("[data-testid=BusinessRegistrationRowItem] [data-testid=dropdown__toggle]"));
-	await t.click(Selector("[data-testid=BusinessRegistrationRowItem] [data-testid=dropdown__toggle]"));
+	await t.hover(Selector("[data-testid=EntityTableRowItem] [data-testid=dropdown__toggle]"));
+	await t.click(Selector("[data-testid=EntityTableRowItem] [data-testid=dropdown__toggle]"));
 	// Update option
-	await t.click(Selector("[data-testid=BusinessRegistrationRowItem] [data-testid=dropdown__option--1]"));
+	await t.click(Selector("[data-testid=EntityTableRowItem] [data-testid=dropdown__option--1]"));
 
 	await t
 		.expect(
