@@ -154,10 +154,8 @@ const VerificationStep = () => {
 	};
 
 	useEffect(() => {
-		if (!isVerified) {
-			register("verification", { required: true });
-		}
-	}, [isVerified, register]);
+		register("verification", { required: true });
+	}, [register]);
 
 	return (
 		<section data-testid="SecondSignature__confirmation-step">
