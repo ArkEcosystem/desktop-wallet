@@ -15,19 +15,19 @@ export const SecondStep = () => {
 
 	const links = [
 		{
-			link: "http://github.com/robank",
+			value: "http://github.com/robank",
 			type: "github",
 		},
 		{
-			link: "http://gitlab.com/robank",
+			value: "http://gitlab.com/robank",
 			type: "gitlab",
 		},
 		{
-			link: "http://bitbucket.com/robank",
+			value: "http://bitbucket.com/robank",
 			type: "bitbucket",
 		},
 		{
-			link: "http://npmjs.com/robank",
+			value: "http://npmjs.com/robank",
 			type: "npm",
 		},
 	];
