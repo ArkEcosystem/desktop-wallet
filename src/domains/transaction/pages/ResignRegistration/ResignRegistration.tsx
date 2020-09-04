@@ -4,7 +4,6 @@ import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
-import { Loader } from "app/components/Loader";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -18,14 +17,16 @@ import { FirstStep, FourthStep, SecondStep, ThirdStep } from "./";
 import { ResignRegistrationProps } from "./ResignRegistration.models";
 
 export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }: ResignRegistrationProps) => {
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+	const { formState, getValues, setError, setValue } = form;
+	const { isValid } = formState;
+
 	const [activeTab, setActiveTab] = useState(1);
 	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
-	const [fee, setFee] = useState<Contracts.TransactionFee>();
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+	const [fees, setFees] = useState<Contracts.TransactionFee>();
 
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const { formState, getValues, setError } = form;
-	const { isValid } = formState;
+	const fee = getValues("fee") || null;
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -47,8 +48,14 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 	}, [env, activeWallet]);
 
 	useEffect(() => {
-		setFee(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
-	}, [env, setFee, activeProfile, activeWallet]);
+		const transactionFees = env
+			.fees()
+			.findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation");
+
+		setFees(transactionFees);
+
+		setValue("fee", transactionFees.avg, true);
+	}, [env, setFees, setValue, activeProfile, activeWallet]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -65,7 +72,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 		try {
 			const transactionId = await activeWallet.transaction().signDelegateResignation({
 				from,
-				fee: fee?.static,
+				fee,
 				sign: {
 					mnemonic,
 				},
@@ -88,7 +95,6 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
-						{(!fee || !delegate) && <Loader />}
 						{fee && delegate && (
 							<div>
 								<StepIndicator size={4} activeIndex={activeTab} />

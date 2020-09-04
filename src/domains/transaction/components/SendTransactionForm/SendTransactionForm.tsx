@@ -25,7 +25,7 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 	const form = useFormContext();
 	const { getValues, setValue } = form;
 	const { network, senderAddress } = form.watch();
-	const [feeOptions, setFeeOptions] = useState<Contracts.TransactionFee>({
+	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "0",
 		min: "0",
 		max: "0",
@@ -41,11 +41,11 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 		if (senderWallet) {
 			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "transfer");
 
-			setFeeOptions(transactionFees);
+			setFees(transactionFees);
 
 			setValue("fee", transactionFees.avg, true);
 		}
-	}, [env, setFeeOptions, setValue, profile, senderAddress]);
+	}, [env, setFees, setValue, profile, senderAddress]);
 
 	useEffect(() => {
 		if (network) {
@@ -89,7 +89,9 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 			<FormField name="fee">
 				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 				<InputFee
-					{...feeOptions}
+					min={fees.min}
+					max={fees.max}
+					avg={fees.avg}
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}
