@@ -37,11 +37,11 @@ export const FirstStep = ({
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
 
-	const [fees, setFees] = useState<Contracts.TransactionFee>({
-		static: "0",
-		min: "0",
-		max: "0",
-		avg: "0",
+	const [feeOptions, setFeeOptions] = useState({
+		static: "5",
+		min: "1",
+		average: "2",
+		max: "3",
 	});
 
 	const senderAddress = getValues("senderAddress");
