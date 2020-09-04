@@ -223,7 +223,17 @@ export const Registration = () => {
 	const { formState, getValues, register, setValue, unregister } = form;
 	const { registrationType, senderAddress } = getValues();
 
-	const [feeOptions, setFeeOptions] = useState<Record<string, any>>({});
+	const [feeOptions, setFeeOptions] = useState<
+		Record<
+			string,
+			{
+				last: string;
+				min: string;
+				max: string;
+				average: string;
+			}
+		>
+	>({});
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
 
 	useEffect(() => {

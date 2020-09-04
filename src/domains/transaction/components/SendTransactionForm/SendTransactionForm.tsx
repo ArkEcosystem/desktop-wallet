@@ -26,9 +26,9 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 	const { network, senderAddress } = form.watch();
 	const [feeOptions, setFeeOptions] = useState({
 		last: undefined,
-		min: (0 * 1e8).toFixed(0),
-		max: (100 * 1e8).toFixed(0),
-		average: (14 * 1e8).toFixed(0),
+		min: "0",
+		max: "0",
+		average: "0",
 	});
 
 	const fee = getValues("fee") || null;
