@@ -6,6 +6,10 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
+import { ThirdStep } from "./Step3";
+
 type WalletUpdateProps = {
 	isOpen: boolean;
 	onClose?: any;
@@ -13,55 +17,6 @@ type WalletUpdateProps = {
 };
 
 const { WalletUpdateBanner, WalletUpdateReadyBanner } = images.wallet.components.walletUpdate;
-
-export const FirstStep = () => {
-	const { t } = useTranslation();
-
-	return (
-		<section data-testid="WalletUpdate__first-step">
-			<div className="mb-8 text-center">
-				<p className="text-sm text-theme-neutral-dark md:text-base">
-					{t("WALLETS.MODAL_WALLET_UPDATE.DESCRIPTION_1")}
-				</p>
-			</div>
-		</section>
-	);
-};
-
-export const SecondStep = () => {
-	const { t } = useTranslation();
-
-	return (
-		<section data-testid="WalletUpdate__second-step">
-			{/* TODO: Remove the class name `mb-8` in the functional code */}
-			<div className="flex w-2/5 mx-auto mb-8">
-				<div className="flex-1">
-					<p className="text-sm font-semibold text-theme-neutral-light">{t("COMMON.DOWNLOADED")}</p>
-					<p className="text-sm font-bold text-theme-neutral-dark">154 KB / 154 KB</p>
-				</div>
-				<div className="flex-1">
-					<div className="flex justify-center">
-						<CircularProgressBar value={78} size={50} strokeWidth={5} fontSize={0.8} />
-					</div>
-				</div>
-			</div>
-		</section>
-	);
-};
-
-export const ThirdStep = () => {
-	const { t } = useTranslation();
-
-	return (
-		<section data-testid="WalletUpdate__third-step">
-			<div className="mb-6 text-center">
-				<p className="text-sm text-theme-neutral-dark md:text-base">
-					{t("WALLETS.MODAL_WALLET_UPDATE.DESCRIPTION_2")}
-				</p>
-			</div>
-		</section>
-	);
-};
 
 export const WalletUpdate = ({ isOpen, onClose, onCancel }: WalletUpdateProps) => {
 	const { t } = useTranslation();

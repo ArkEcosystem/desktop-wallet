@@ -1,212 +1,21 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
-import { Select } from "app/components/SelectDropdown";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
-import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import { SelectAddress } from "domains/profile/components/SelectAddress";
-import { BusinessRegistrationForm } from "domains/transaction/components/BusinessRegistrationForm/BusinessRegistrationForm";
-import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
-import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
-import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect, useMemo, useState } from "react";
-import { useForm, useFormContext } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { SendEntityRegistrationForm, SendEntityRegistrationType } from "./SendEntityRegistration.models";
-
-const registrationComponents: any = {
-	delegateRegistration: DelegateRegistrationForm,
-	businessRegistration: BusinessRegistrationForm,
-};
-
-const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
-	const { t } = useTranslation();
-
-	return (
-		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
-			<div className="mb-2">
-				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
-			</div>
-			<div>
-				<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
-			</div>
-		</FormField>
-	);
-};
-
-type FirstStepProps = {
-	networks: NetworkData[];
-	profile: Profile;
-	wallet: ReadWriteWallet;
-	setRegistrationForm: any;
-	feeOptions: Record<string, any>;
-};
-
-export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeOptions }: FirstStepProps) => {
-	const { t } = useTranslation();
-	const history = useHistory();
-
-	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
-
-	const registrationTypes: SendEntityRegistrationType[] = [
-		{
-			value: "businessRegistration",
-			label: "Business",
-		},
-	];
-
-	if (!wallet.isDelegate()) {
-		registrationTypes.push({
-			value: "delegateRegistration",
-			label: "Delegate",
-		});
-	}
-
-	const form = useFormContext();
-	const { setValue } = form;
-	const { network, senderAddress, registrationType } = form.watch();
-
-	useEffect(() => {
-		if (network) {
-			setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
-		}
-	}, [network, profile]);
-
-	const onSelectSender = (address: any) => {
-		setValue("senderAddress", address, true);
-
-		const wallet = wallets.find((wallet) => wallet.address() === address);
-		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-entity-registration`);
-	};
-
-	const onSelectType = (selectedItem: SendEntityRegistrationType) => {
-		setValue("registrationType", selectedItem.value, true);
-		setRegistrationForm(registrationComponents[selectedItem.value]);
-
-		if (feeOptions[selectedItem.value]) {
-			setValue("fee", feeOptions[selectedItem.value].average, true);
-		}
-	};
-
-	return (
-		<div data-testid="Registration__first-step">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.DESCRIPTION")}</div>
-
-			<div className="mt-8 space-y-8">
-				<FormField name="network" className="relative">
-					<div className="mb-2">
-						<FormLabel label="Network" />
-					</div>
-					<SelectNetwork id="SendTransactionForm__network" networks={networks} selected={network} disabled />
-				</FormField>
-
-				<FormField name="senderAddress" className="relative">
-					<div className="mb-2">
-						<FormLabel label="Sender" />
-					</div>
-
-					<div data-testid="sender-address">
-						<SelectAddress
-							address={senderAddress}
-							wallets={wallets}
-							disabled={wallets.length === 0}
-							onChange={onSelectSender}
-						/>
-					</div>
-				</FormField>
-
-				<RegistrationTypeDropdown
-					selectedType={registrationTypes.find(
-						(type: SendEntityRegistrationType) => type.value === registrationType,
-					)}
-					registrationTypes={registrationTypes}
-					onChange={onSelectType}
-					className="mt-8"
-				/>
-			</div>
-		</div>
-	);
-};
-
-// TODO: Move to own component
-export const SigningStep = ({
-	passwordType,
-	wallet,
-}: {
-	passwordType: "mnemonic" | "password" | "ledger";
-	wallet: ReadWriteWallet;
-}) => {
-	const { t } = useTranslation();
-	const { register } = useFormContext();
-
-	return (
-		<div data-testid="Registration__signing-step">
-			{passwordType !== "ledger" && (
-				<div>
-					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
-					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
-
-					<div className="mt-8">
-						<FormField name={passwordType}>
-							<FormLabel>
-								{passwordType === "mnemonic"
-									? t("TRANSACTION.MNEMONIC")
-									: t("TRANSACTION.ENCRYPTION_PASSWORD")}
-							</FormLabel>
-							<InputPassword ref={register} />
-							<FormHelperText />
-						</FormField>
-
-						{wallet.isSecondSignature() && (
-							<FormField name="secondMnemonic" className="mt-8">
-								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
-								<InputPassword ref={register} />
-								<FormHelperText />
-							</FormField>
-						)}
-					</div>
-				</div>
-			)}
-
-			{passwordType === "ledger" && (
-				<div>
-					<h1>{t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}</h1>
-					<LedgerConfirmation />
-				</div>
-			)}
-		</div>
-	);
-};
-
-const FinalStep = ({
-	registrationForm,
-	transaction,
-	senderWallet,
-}: {
-	registrationForm: any;
-	transaction: Contracts.SignedTransactionData;
-	senderWallet: ReadWriteWallet;
-}) => {
-	const { t } = useTranslation();
-
-	return (
-		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
-			{registrationForm.transactionDetails && (
-				<registrationForm.transactionDetails transaction={transaction} translations={t} />
-			)}
-		</TransactionSuccessful>
-	);
-};
+import { SendEntityRegistrationForm } from "./SendEntityRegistration.models";
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
+import { ThirdStep } from "./Step3";
 
 export const SendEntityRegistration = () => {
 	const { t } = useTranslation();
@@ -333,10 +142,10 @@ export const SendEntityRegistration = () => {
 							{registrationForm && feeOptions[registrationType] && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
-										<SigningStep passwordType="mnemonic" wallet={activeWallet} />
+										<SecondStep passwordType="mnemonic" wallet={activeWallet} />
 									</TabPanel>
 									<TabPanel tabId={stepCount}>
-										<FinalStep
+										<ThirdStep
 											transaction={transaction}
 											registrationForm={registrationForm}
 											senderWallet={activeWallet}
