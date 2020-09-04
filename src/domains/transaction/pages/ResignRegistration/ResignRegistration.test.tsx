@@ -12,6 +12,8 @@ import {
 	getDefaultProfileId,
 	RenderResult,
 	renderWithRouter,
+	syncDelegates,
+	syncFees,
 	waitFor,
 } from "utils/testing-library";
 
@@ -58,10 +60,11 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 
 describe("ResignRegistration", () => {
 	beforeAll(async () => {
-		await env.delegates().sync("ARK", "devnet");
-
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("d044a552-7a49-411c-ae16-8ff407acc430");
+
+		await syncDelegates();
+		await syncFees();
 	});
 
 	beforeEach(() => {

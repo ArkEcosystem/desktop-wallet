@@ -97,3 +97,5 @@ const envWithMocks = () => {
 export const env = envWithMocks();
 
 export const syncDelegates = async () => await env.delegates().syncAll();
+
+export const syncFees = async () => await env.fees().syncAll();
