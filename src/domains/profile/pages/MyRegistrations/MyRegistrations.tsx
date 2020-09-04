@@ -53,13 +53,16 @@ export const MyRegistrations = () => {
 		},
 	];
 
-	const handleAction = ({ action, walletId }: any) => {
+	const handleAction = ({ action, walletId, entity, type }: any) => {
 		switch (action) {
 			case "register":
 				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
 				break;
 			case "resign":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`, {
+					entity,
+					type,
+				});
 				break;
 			case "update":
 				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
@@ -118,6 +121,7 @@ export const MyRegistrations = () => {
 					<EntityTable
 						title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
 						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
+						type="business"
 						entities={businesses}
 						onAction={handleAction}
 					/>
