@@ -12,11 +12,10 @@ import { useHistory } from "react-router-dom";
 type SendTransactionFormProps = {
 	networks: NetworkData[];
 	profile: Profile;
-	onFail?: any;
 	children?: React.ReactNode;
 };
 
-export const SendTransactionForm = ({ children, networks, profile, onFail }: SendTransactionFormProps) => {
+export const SendTransactionForm = ({ children, networks, profile }: SendTransactionFormProps) => {
 	const history = useHistory();
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
@@ -37,24 +36,17 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 	useEffect(() => {
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
+		const transactionFees = env.fees().findByType(senderWallet!.coinId(), senderWallet!.networkId(), "transfer");
 
-		try {
-			const transactionFees = env
-				.fees()
-				.findByType(senderWallet!.coinId(), senderWallet!.networkId(), "transfer");
+		setFeeOptions({
+			last: undefined,
+			min: transactionFees.min,
+			max: transactionFees.max,
+			average: transactionFees.avg,
+		});
 
-			setFeeOptions({
-				last: undefined,
-				min: transactionFees.min,
-				max: transactionFees.max,
-				average: transactionFees.avg,
-			});
-
-			setValue("fee", transactionFees.avg, true);
-		} catch (error) {
-			onFail?.(error);
-		}
-	}, [env, setFeeOptions, setValue, onFail, profile, senderAddress]);
+		setValue("fee", transactionFees.avg, true);
+	}, [env, setFeeOptions, setValue, profile, senderAddress]);
 
 	useEffect(() => {
 		if (network) {
