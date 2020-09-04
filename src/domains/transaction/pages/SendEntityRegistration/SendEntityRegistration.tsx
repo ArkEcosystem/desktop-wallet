@@ -34,7 +34,12 @@ export const SendEntityRegistration = () => {
 	const { formState, getValues, register, setValue, unregister } = form;
 	const { registrationType, senderAddress } = getValues();
 
-	const [fees, setFees] = useState<any>({});
+	const [fees, setFees] = useState<any>({
+		static: "5",
+		min: "0",
+		avg: "1",
+		max: "2",
+	});
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
 
 	useEffect(() => {
