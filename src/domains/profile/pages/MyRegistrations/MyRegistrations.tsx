@@ -42,8 +42,8 @@ export const MyRegistrations = () => {
 	const activeProfile = useActiveProfile();
 
 	const isEmptyRegistrations = useMemo(
-		() => !isLoading && !delegates.length && !businesses.length && !businesses.length,
-		[businesses, plugins, delegates, isLoading, plugins],
+		() => !isLoading && !delegates.length && !businesses.length && !plugins.length,
+		[isLoading, delegates, businesses, plugins],
 	);
 
 	const crumbs = [
