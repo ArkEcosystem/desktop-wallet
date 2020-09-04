@@ -15,7 +15,7 @@ export type SendEntityRegistrationDetailsOptions = {
 
 export type SendEntityRegistrationComponent = {
 	activeTab: number;
-	fees: Record<string, any>;
+	fees: Contracts.TransactionFee;
 	wallet: ReadWriteWallet;
 };
 
