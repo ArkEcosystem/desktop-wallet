@@ -1,5 +1,6 @@
 import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
+import { useEnvironmentContext } from "app/contexts";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -17,6 +18,7 @@ type SendTransactionFormProps = {
 
 export const SendTransactionForm = ({ children, networks, profile, onFail }: SendTransactionFormProps) => {
 	const history = useHistory();
+	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 
@@ -33,29 +35,26 @@ export const SendTransactionForm = ({ children, networks, profile, onFail }: Sen
 	const fee = getValues("fee") || null;
 
 	useEffect(() => {
-		const loadFees = async () => {
-			// TODO: shouldn't be necessary once SelectAddress returns wallets instead
-			const senderWallet = profile.wallets().findByAddress(senderAddress);
+		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
+		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
-			try {
-				// TODO: sync fees in the background, like delegates
-				const transferFees = (await senderWallet!.coin().fee().all(7))?.transfer;
+		try {
+			const transactionFees = env
+				.fees()
+				.findByType(senderWallet!.coinId(), senderWallet!.networkId(), "transfer");
 
-				setFeeOptions({
-					last: undefined,
-					min: transferFees.min,
-					max: transferFees.max,
-					average: transferFees.avg,
-				});
+			setFeeOptions({
+				last: undefined,
+				min: transactionFees.min,
+				max: transactionFees.max,
+				average: transactionFees.avg,
+			});
 
-				setValue("fee", transferFees.avg, true);
-			} catch (error) {
-				onFail?.(error);
-			}
-		};
-
-		loadFees();
-	}, [setFeeOptions, setValue, onFail, profile, senderAddress]);
+			setValue("fee", transactionFees.avg, true);
+		} catch (error) {
+			onFail?.(error);
+		}
+	}, [env, setFeeOptions, setValue, onFail, profile, senderAddress]);
 
 	useEffect(() => {
 		if (network) {

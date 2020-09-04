@@ -61,10 +61,7 @@ const Main = ({ syncInterval }: Props) => {
 
 			await env.verify(shouldUseFixture ? fixtureData : undefined);
 			await env.boot();
-			await syncDelegates();
-			await syncWallets();
-			await syncFees();
-			await syncExchangeRates();
+			await Promise.allSettled([syncDelegates(), syncWallets(), syncFees(), syncExchangeRates()]);
 			await persist();
 
 			scheduler.schedule([syncDelegates, syncFees, syncWallets, syncExchangeRates], persist);

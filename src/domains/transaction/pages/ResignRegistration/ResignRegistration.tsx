@@ -47,17 +47,12 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 	}, [env, activeWallet]);
 
 	useEffect(() => {
-		const loadFees = async () => {
-			try {
-				const { delegateResignation } = await activeWallet.coin().fee().all(7);
-				setFee(delegateResignation);
-			} catch (error) {
-				// TODO: Set default or throw exception?
-			}
-		};
-
-		loadFees();
-	}, [setFee, activeProfile, activeWallet]);
+		try {
+			setFee(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
+		} catch (error) {
+			// TODO: Set default or throw exception?
+		}
+	}, [env, setFee, activeProfile, activeWallet]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);

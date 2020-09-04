@@ -33,6 +33,7 @@ export const FirstStep = ({
 	profile: Profile;
 	wallet: ReadWriteWallet;
 }) => {
+	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
 
@@ -50,35 +51,30 @@ export const FirstStep = ({
 	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
 
 	useEffect(() => {
-		const loadFees = async () => {
-			const senderWallet = profile.wallets().findByAddress(senderAddress);
+		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
-			try {
-				// TODO: sync fees in the background, like delegates
-				const transferFees = (await senderWallet!.coin().fee().all(7))?.vote;
+		try {
+			const transactionFees = env.fees().findByType(senderWallet!.coinId(), senderWallet!.networkId(), "vote");
 
-				setFeeOptions({
-					last: undefined,
-					min: transferFees.min,
-					max: transferFees.max,
-					average: transferFees.avg,
-				});
+			setFeeOptions({
+				last: undefined,
+				min: transactionFees.min,
+				max: transactionFees.max,
+				average: transactionFees.avg,
+			});
 
-				setValue("fee", transferFees.avg, true);
-			} catch (error) {
-				return;
-			}
-		};
-
-		loadFees();
-	}, [setFeeOptions, setValue, profile, senderAddress]);
+			setValue("fee", transactionFees.avg, true);
+		} catch (error) {
+			//
+		}
+	}, [env, setFeeOptions, setValue, profile, senderAddress]);
 
 	return (
 		<section data-testid="SendVoteTransaction__step--first">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -157,7 +153,7 @@ export const SecondStep = ({
 				<p className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}</p>
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}

@@ -17,6 +17,7 @@ import {
 	RenderResult,
 	renderWithRouter,
 	syncDelegates,
+	syncFees,
 	waitFor,
 	within,
 } from "utils/testing-library";
@@ -75,6 +76,7 @@ describe("Registration", () => {
 		await profile.wallets().importByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", "ARK", "devnet");
 
 		await syncDelegates();
+		await syncFees();
 	});
 
 	beforeEach(() => {
