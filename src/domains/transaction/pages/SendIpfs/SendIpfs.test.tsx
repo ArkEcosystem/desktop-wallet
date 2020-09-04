@@ -21,7 +21,11 @@ import {
 import ipfsFixture from "tests/fixtures/coins/ark/transactions/ipfs.json";
 
 import { translations as transactionTranslations } from "../../i18n";
-import { FirstStep, FourthStep, SecondStep, SendIpfs, ThirdStep } from "./SendIpfs";
+import { SendIpfs } from "./SendIpfs";
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
+import { ThirdStep } from "./Step3";
+import { FourthStep } from "./Step4";
 
 const fixtureProfileId = getDefaultProfileId();
 
