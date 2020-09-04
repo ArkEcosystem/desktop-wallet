@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useEnvironmentContext } from "app/contexts";
@@ -24,11 +25,11 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 	const form = useFormContext();
 	const { getValues, setValue } = form;
 	const { network, senderAddress } = form.watch();
-	const [feeOptions, setFeeOptions] = useState({
-		last: undefined,
-		min: (0 * 1e8).toFixed(0),
-		max: (100 * 1e8).toFixed(0),
-		average: (14 * 1e8).toFixed(0),
+	const [fees, setFees] = useState<Contracts.TransactionFee>({
+		static: "5",
+		min: "0",
+		avg: "1",
+		max: "2",
 	});
 
 	const fee = getValues("fee") || null;
@@ -40,16 +41,11 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 		if (senderWallet) {
 			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "transfer");
 
-			setFeeOptions({
-				last: undefined,
-				min: transactionFees.min,
-				max: transactionFees.max,
-				average: transactionFees.avg,
-			});
+			setFees(transactionFees);
 
 			setValue("fee", transactionFees.avg, true);
 		}
-	}, [env, setFeeOptions, setValue, profile, senderAddress]);
+	}, [env, setFees, setValue, profile, senderAddress]);
 
 	useEffect(() => {
 		if (network) {
@@ -93,7 +89,9 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 			<FormField name="fee">
 				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 				<InputFee
-					{...feeOptions}
+					min={fees.min}
+					avg={fees.avg}
+					max={fees.max}
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}

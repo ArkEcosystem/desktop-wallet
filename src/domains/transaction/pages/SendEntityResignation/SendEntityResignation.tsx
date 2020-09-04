@@ -4,7 +4,6 @@ import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
-import { Loader } from "app/components/Loader";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -18,20 +17,25 @@ import { FirstStep, FourthStep, SecondStep, ThirdStep } from "./";
 import { SendEntityResignationProps } from "./SendEntityResignation.models";
 
 export const SendEntityResignation = ({ formDefaultData, onDownload, passwordType }: SendEntityResignationProps) => {
-	const [activeTab, setActiveTab] = useState(1);
-	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
-	const [fee, setFee] = useState<Contracts.TransactionFee>();
-	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
-
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const { formState, getValues, setError } = form;
-	const { isValid } = formState;
-
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const { t } = useTranslation();
 	const history = useHistory();
+
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+	const { formState, getValues, setError, setValue } = form;
+	const { isValid } = formState;
+
+	const [activeTab, setActiveTab] = useState(1);
+	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
+	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+	const [fees, setFees] = useState<Contracts.TransactionFee>({
+		static: "5",
+		min: "0",
+		avg: "1",
+		max: "2",
+	});
 
 	const crumbs = [
 		{
@@ -47,8 +51,9 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	}, [env, activeWallet]);
 
 	useEffect(() => {
-		setFee(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
-	}, [env, setFee, activeProfile, activeWallet]);
+		// @TODO: use min/avg/max like for all other transaction types
+		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
+	}, [env, setFees, setValue, activeProfile, activeWallet]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -65,7 +70,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 		try {
 			const transactionId = await activeWallet.transaction().signDelegateResignation({
 				from,
-				fee: fee?.static,
+				fee: fees.static,
 				sign: {
 					mnemonic,
 				},
@@ -88,16 +93,15 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
-						{(!fee || !delegate) && <Loader />}
-						{fee && delegate && (
+						{fees && delegate && (
 							<div>
 								<StepIndicator size={4} activeIndex={activeTab} />
 								<div className="mt-8">
 									<TabPanel tabId={1}>
-										<FirstStep senderWallet={activeWallet} delegate={delegate} fee={fee} />
+										<FirstStep senderWallet={activeWallet} delegate={delegate} fees={fees} />
 									</TabPanel>
 									<TabPanel tabId={2}>
-										<SecondStep senderWallet={activeWallet} delegate={delegate} fee={fee} />
+										<SecondStep senderWallet={activeWallet} delegate={delegate} fees={fees} />
 									</TabPanel>
 									<TabPanel tabId={3}>
 										<ThirdStep form={form} passwordType={passwordType} />
@@ -106,7 +110,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 										<FourthStep
 											senderWallet={activeWallet}
 											delegate={delegate}
-											fee={fee}
+											fees={fees}
 											transaction={transaction}
 										/>
 									</TabPanel>
