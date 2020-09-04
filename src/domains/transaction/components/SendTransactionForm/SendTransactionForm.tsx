@@ -29,7 +29,7 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 		static: "0",
 		min: "0",
 		max: "0",
-		average: "0",
+		avg: "0",
 	});
 
 	const fee = getValues("fee") || null;

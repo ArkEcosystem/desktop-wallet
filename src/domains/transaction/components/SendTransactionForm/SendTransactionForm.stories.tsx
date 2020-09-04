@@ -22,7 +22,7 @@ const defaultFormValues = {
 	feeRange: {
 		min: 1,
 		max: 20,
-		average: 14,
+		avg: 14,
 	},
 	defaultFee: 0,
 	formDefaultData: {

@@ -41,7 +41,7 @@ export const FirstStep = ({
 		static: "0",
 		min: "0",
 		max: "0",
-		average: "0",
+		avg: "0",
 	});
 
 	const senderAddress = getValues("senderAddress");

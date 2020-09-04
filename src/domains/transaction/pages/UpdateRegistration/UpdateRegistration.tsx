@@ -105,6 +105,7 @@ const FirstStep = ({ form }: { form: any }) => {
 							defaultValue={(25 * 1e8).toFixed(0)}
 							min={(1 * 1e8).toFixed(0)}
 							max={(100 * 1e8).toFixed(0)}
+							avg={(50 * 1e8).toFixed(0)}
 							step={1}
 						/>
 					</FormField>
@@ -144,7 +145,7 @@ const SecondStep = () => {
 					{t("TRANSACTION.PAGE_UPDATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 				</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row">
+			<div className="grid grid-flow-row mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}

@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 type InputFeeProps = {
 	defaultValue: string;
 	value?: string;
-	average: string;
+	avg: string;
 	min: string;
 	max: string;
 	step: number;
@@ -15,7 +15,7 @@ type InputFeeProps = {
 };
 
 // TODO: Remove defaultValue?
-export const InputFee = ({ defaultValue, value, average, min, max, onChange, step }: InputFeeProps) => {
+export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
 
 	const minHuman = BigNumber.make(min).divide(1e8).toNumber();
@@ -58,8 +58,8 @@ export const InputFee = ({ defaultValue, value, average, min, max, onChange, ste
 					</SelectionBarOption>
 
 					<SelectionBarOption
-						value={average}
-						isValueChecked={() => fee === average}
+						value={avg}
+						isValueChecked={() => fee === avg}
 						setCheckedValue={handleFeeChange}
 					>
 						{t("TRANSACTION.FEES.AVERAGE")}

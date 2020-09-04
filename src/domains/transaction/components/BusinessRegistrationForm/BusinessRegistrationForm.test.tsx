@@ -153,10 +153,9 @@ describe("BusinessRegistrationForm", () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		// feeOptions = {
-		// 	last: (2 * 1e8).toFixed(0),
 		// 	min: "0",
 		// 	max: (10 * 1e8).toFixed(0),
-		// 	average: (1.354 * 1e8).toFixed(0),
+		// 	avg: (1.354 * 1e8).toFixed(0),
 		// };
 	});
 

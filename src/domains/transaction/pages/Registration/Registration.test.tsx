@@ -88,7 +88,7 @@ describe("Registration", () => {
 		const setRegistrationForm = jest.fn();
 		const feeOptions = {
 			delegateRegistration: {
-				average: "1",
+				avg: "1",
 			},
 		};
 

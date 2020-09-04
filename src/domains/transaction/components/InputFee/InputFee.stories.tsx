@@ -9,7 +9,7 @@ export const Default = () => {
 	const feeOptions = {
 		min: (1 * 1e8).toFixed(0),
 		max: (10 * 1e8).toFixed(0),
-		average: (1.354 * 1e8).toFixed(0),
+		avg: (1.354 * 1e8).toFixed(0),
 	};
 
 	return (

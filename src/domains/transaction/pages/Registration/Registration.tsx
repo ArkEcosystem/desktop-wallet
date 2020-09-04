@@ -93,7 +93,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 		setRegistrationForm(registrationComponents[selectedItem.value]);
 
 		if (feeOptions[selectedItem.value]) {
-			setValue("fee", feeOptions[selectedItem.value].average, true);
+			setValue("fee", feeOptions[selectedItem.value].avg, true);
 		}
 	};
 

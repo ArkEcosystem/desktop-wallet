@@ -43,7 +43,7 @@ export const FirstStep = ({ senderWallet, delegate, fee }: StepProps) => {
 						<InputFee
 							value={fee.static}
 							defaultValue={fee.static}
-							average={fee.avg}
+							avg={fee.avg}
 							min={fee.min}
 							max={fee.max}
 							step={0.01}
