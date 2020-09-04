@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 
 import { StepProps } from "./ResignRegistration.models";
 
-export const SecondStep = ({ senderWallet, delegate, fee }: StepProps) => {
+export const SecondStep = ({ senderWallet, delegate, fees }: StepProps) => {
 	const { t } = useTranslation();
 	const coinName = senderWallet.manifest().get<string>("name");
 	const network = `${coinName} ${senderWallet.network().name()}`;
@@ -25,7 +25,7 @@ export const SecondStep = ({ senderWallet, delegate, fee }: StepProps) => {
 					{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 				</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -55,7 +55,7 @@ export const SecondStep = ({ senderWallet, delegate, fee }: StepProps) => {
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate.username()}</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee.static)} />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fees.static)} />
 				</div>
 			</div>
 		</div>

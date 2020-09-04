@@ -20,7 +20,7 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-const SecondStep = ({ feeOptions, wallet }: any) => {
+const SecondStep = ({ fees, wallet }: any) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
@@ -105,8 +105,8 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
 						min={fees.min}
-						max={fees.max}
 						avg={fees.avg}
+						max={fees.max}
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}
@@ -135,7 +135,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -182,18 +182,10 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	);
 };
 
-const component = ({
-	activeTab,
-	feeOptions,
-	wallet,
-}: {
-	activeTab: number;
-	feeOptions: any;
-	wallet: ReadWriteWallet;
-}) => (
+const component = ({ activeTab, fees, wallet }: { activeTab: number; fees: any; wallet: ReadWriteWallet }) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={2}>
-			<SecondStep feeOptions={feeOptions} wallet={wallet} />
+			<SecondStep fees={fees} wallet={wallet} />
 		</TabPanel>
 		<TabPanel tabId={3}>
 			<ThirdStep wallet={wallet} />

@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 import { StepProps } from "./ResignRegistration.models";
 
-export const FirstStep = ({ senderWallet, delegate, fee }: StepProps) => {
+export const FirstStep = ({ senderWallet, delegate, fees }: StepProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -41,11 +41,11 @@ export const FirstStep = ({ senderWallet, delegate, fee }: StepProps) => {
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee
-							value={fee.static}
-							defaultValue={fee.static}
-							avg={fee.avg}
-							min={fee.min}
-							max={fee.max}
+							value={fees.static}
+							defaultValue={fees.static}
+							min={fees.min}
+							avg={fees.avg}
+							max={fees.max}
 							step={0.01}
 						/>
 					</FormField>

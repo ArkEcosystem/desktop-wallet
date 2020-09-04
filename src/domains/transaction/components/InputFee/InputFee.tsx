@@ -64,6 +64,14 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 					>
 						{t("TRANSACTION.FEES.AVERAGE")}
 					</SelectionBarOption>
+
+					<SelectionBarOption
+						value={max}
+						isValueChecked={() => fee === max}
+						setCheckedValue={handleFeeChange}
+					>
+						{t("TRANSACTION.FEES.MAX")}
+					</SelectionBarOption>
 				</SelectionBar>
 			</div>
 		</div>

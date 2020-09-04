@@ -22,7 +22,7 @@ import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
-let feeOptions: Record<string, string>;
+let fees: Record<string, string>;
 
 const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) => {
 	let renderer: RenderResult;
@@ -35,7 +35,7 @@ const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) =>
 	await act(async () => {
 		renderer = render(
 			<FormContext {...form.current}>
-				<DelegateRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+				<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
 			</FormContext>,
 		);
 
@@ -66,7 +66,7 @@ describe("DelegateRegistrationForm", () => {
 
 		await syncDelegates();
 
-		feeOptions = {
+		fees = {
 			min: "0",
 			max: (10 * 1e8).toFixed(0),
 			avg: (1.354 * 1e8).toFixed(0),
@@ -84,7 +84,7 @@ describe("DelegateRegistrationForm", () => {
 
 		rerender(
 			<FormContext {...form}>
-				<DelegateRegistrationForm.component activeTab={3} feeOptions={feeOptions} wallet={wallet} />
+				<DelegateRegistrationForm.component activeTab={3} fees={fees} wallet={wallet} />
 			</FormContext>,
 		);
 
@@ -103,7 +103,7 @@ describe("DelegateRegistrationForm", () => {
 		await act(async () => {
 			rerender(
 				<FormContext {...form}>
-					<DelegateRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
 				</FormContext>,
 			);
 
@@ -125,7 +125,7 @@ describe("DelegateRegistrationForm", () => {
 		await act(async () => {
 			rerender(
 				<FormContext {...form}>
-					<DelegateRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
 				</FormContext>,
 			);
 
@@ -149,7 +149,7 @@ describe("DelegateRegistrationForm", () => {
 		await act(async () => {
 			rerender(
 				<FormContext {...form}>
-					<DelegateRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
 				</FormContext>,
 			);
 
@@ -171,7 +171,7 @@ describe("DelegateRegistrationForm", () => {
 		await act(async () => {
 			rerender(
 				<FormContext {...form}>
-					<DelegateRegistrationForm.component activeTab={2} feeOptions={feeOptions} wallet={wallet} />
+					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
 				</FormContext>,
 			);
 
@@ -188,8 +188,8 @@ describe("DelegateRegistrationForm", () => {
 
 		await act(async () => {
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[2]);
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[2]);
 
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());

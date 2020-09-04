@@ -26,10 +26,10 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 	const { getValues, setValue } = form;
 	const { network, senderAddress } = form.watch();
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
-		static: "0",
+		static: "5",
 		min: "0",
-		max: "0",
-		avg: "0",
+		avg: "1",
+		max: "2",
 	});
 
 	const fee = getValues("fee") || null;
@@ -90,8 +90,8 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 				<InputFee
 					min={fees.min}
-					max={fees.max}
 					avg={fees.avg}
+					max={fees.max}
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}

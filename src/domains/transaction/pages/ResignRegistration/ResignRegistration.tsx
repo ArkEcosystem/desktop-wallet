@@ -24,7 +24,12 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 	const [activeTab, setActiveTab] = useState(1);
 	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
-	const [fees, setFees] = useState<Contracts.TransactionFee>();
+	const [fees, setFees] = useState<Contracts.TransactionFee>({
+		static: "5",
+		min: "0",
+		avg: "1",
+		max: "2",
+	});
 
 	const fee = getValues("fee") || null;
 
@@ -100,10 +105,10 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 								<StepIndicator size={4} activeIndex={activeTab} />
 								<div className="mt-8">
 									<TabPanel tabId={1}>
-										<FirstStep senderWallet={activeWallet} delegate={delegate} fee={fee} />
+										<FirstStep senderWallet={activeWallet} delegate={delegate} fees={fees} />
 									</TabPanel>
 									<TabPanel tabId={2}>
-										<SecondStep senderWallet={activeWallet} delegate={delegate} fee={fee} />
+										<SecondStep senderWallet={activeWallet} delegate={delegate} fees={fees} />
 									</TabPanel>
 									<TabPanel tabId={3}>
 										<ThirdStep form={form} passwordType={passwordType} />
@@ -112,7 +117,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 										<FourthStep
 											senderWallet={activeWallet}
 											delegate={delegate}
-											fee={fee}
+											fees={fees}
 											transaction={transaction}
 										/>
 									</TabPanel>

@@ -86,7 +86,7 @@ describe("Registration", () => {
 
 	it("should render 1st step", async () => {
 		const setRegistrationForm = jest.fn();
-		const feeOptions = {
+		const fees = {
 			delegateRegistration: {
 				avg: "1",
 			},
@@ -104,7 +104,7 @@ describe("Registration", () => {
 						profile={profile}
 						wallet={wallet}
 						setRegistrationForm={setRegistrationForm}
-						feeOptions={feeOptions}
+						fees={fees}
 					/>
 				</FormContext>,
 			);
@@ -132,7 +132,7 @@ describe("Registration", () => {
 
 	it("should not set fee if no fee options", async () => {
 		const setRegistrationForm = jest.fn();
-		const feeOptions = {};
+		const fees = {};
 
 		const { result: form } = renderHook(() => useForm());
 		const setValueSpy = jest.spyOn(form.current, "setValue");
@@ -146,7 +146,7 @@ describe("Registration", () => {
 						profile={profile}
 						wallet={wallet}
 						setRegistrationForm={setRegistrationForm}
-						feeOptions={feeOptions}
+						fees={fees}
 					/>
 				</FormContext>,
 			);
@@ -295,8 +295,8 @@ describe("Registration", () => {
 				fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
 			});
 
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[1]);
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
@@ -327,8 +327,8 @@ describe("Registration", () => {
 				fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
 			});
 
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[1]);
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -374,8 +374,8 @@ describe("Registration", () => {
 			});
 
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[1]);
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
 
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
@@ -448,8 +448,8 @@ describe("Registration", () => {
 			});
 
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[1]);
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
 
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));

@@ -48,10 +48,10 @@ type FirstStepProps = {
 	profile: Profile;
 	wallet: ReadWriteWallet;
 	setRegistrationForm: any;
-	feeOptions: Record<string, any>;
+	fees: Record<string, any>;
 };
 
-export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeOptions }: FirstStepProps) => {
+export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees }: FirstStepProps) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
@@ -92,8 +92,8 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 		setValue("registrationType", selectedItem.value, true);
 		setRegistrationForm(registrationComponents[selectedItem.value]);
 
-		if (feeOptions[selectedItem.value]) {
-			setValue("fee", feeOptions[selectedItem.value].avg, true);
+		if (fees[selectedItem.value]) {
+			setValue("fee", fees[selectedItem.value].avg, true);
 		}
 	};
 
@@ -223,7 +223,7 @@ export const Registration = () => {
 	const { formState, getValues, register, setValue, unregister } = form;
 	const { registrationType, senderAddress } = getValues();
 
-	const [feeOptions, setFeeOptions] = useState<Record<string, Contracts.TransactionFee>>({});
+	const [fees, setFeeOptions] = useState<Record<string, Contracts.TransactionFee>>({});
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
 
 	useEffect(() => {
@@ -309,19 +309,19 @@ export const Registration = () => {
 									profile={activeProfile}
 									wallet={activeWallet}
 									setRegistrationForm={setRegistrationForm}
-									feeOptions={feeOptions}
+									fees={fees}
 								/>
 							</TabPanel>
 
 							{activeTab > 1 && registrationForm && (
 								<registrationForm.component
 									activeTab={activeTab}
-									feeOptions={feeOptions[registrationType]}
+									fees={fees[registrationType]}
 									wallet={activeWallet}
 								/>
 							)}
 
-							{registrationForm && feeOptions[registrationType] && (
+							{registrationForm && fees[registrationType] && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
 										<SigningStep passwordType="mnemonic" wallet={activeWallet} />
