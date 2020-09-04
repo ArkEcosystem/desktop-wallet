@@ -35,7 +35,7 @@ const renderPage = (props: SendEntityResignationProps = defaultProps) => {
 	const allProps = { ...defaultProps, ...props };
 
 	const rendered: RenderResult = renderWithRouter(
-		<Route path="/profiles/:profileId/transactions/:walletId/resignation">
+		<Route path="/profiles/:profileId/wallets/:walletId/sign-entity-resignation">
 			<SendEntityResignation {...allProps} />
 		</Route>,
 		{
@@ -68,7 +68,7 @@ describe("SendEntityResignation", () => {
 	});
 
 	beforeEach(() => {
-		resignRegistrationURL = `/profiles/${getDefaultProfileId()}/transactions/${wallet.id()}/resignation`;
+		resignRegistrationURL = `/profiles/${getDefaultProfileId()}/wallets/${wallet.id()}/sign-entity-resignation`;
 		history.push(resignRegistrationURL);
 	});
 

@@ -125,7 +125,7 @@ describe("MyRegistrations", () => {
 		});
 
 		expect(history.location.pathname).toEqual(
-			`/profiles/${fixtureProfileId}/transactions/${delegateWalletId}/resignation`,
+			`/profiles/${fixtureProfileId}/wallets/${delegateWalletId}/sign-entity-resignation`,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
