@@ -970,16 +970,16 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 <button
                                   aria-expanded="true"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-24-label downshift-24-toggle-button"
+                                  aria-labelledby="downshift-23-label downshift-23-toggle-button"
                                   class="sc-fznxsB hwZFkF is-open  "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-24-toggle-button"
+                                  id="downshift-23-toggle-button"
                                   type="button"
                                 />
                                 <ul
-                                  aria-labelledby="downshift-24-label"
+                                  aria-labelledby="downshift-23-label"
                                   class="sc-fznJRM KaIHo is-open"
-                                  id="downshift-24-menu"
+                                  id="downshift-23-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 >
@@ -987,7 +987,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                     aria-selected="false"
                                     class="select-list-option "
                                     data-testid="select-list__toggle-option-0"
-                                    id="downshift-24-item-0"
+                                    id="downshift-23-item-0"
                                     role="option"
                                   >
                                     <div
@@ -3167,7 +3167,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="0"
+                                  value="25"
                                 />
                               </div>
                             </div>
@@ -3178,7 +3178,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 role="radiogroup"
                               >
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
@@ -3187,7 +3187,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                   Min
                                 </button>
                                 <button
-                                  aria-checked="false"
+                                  aria-checked="true"
                                   class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
