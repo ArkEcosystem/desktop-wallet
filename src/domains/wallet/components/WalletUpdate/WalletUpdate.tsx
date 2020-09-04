@@ -1,6 +1,5 @@
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
-import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import React, { useState } from "react";
