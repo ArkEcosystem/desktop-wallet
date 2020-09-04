@@ -15,7 +15,7 @@ export type SendEntityRegistrationDetailsOptions = {
 
 export type SendEntityRegistrationComponent = {
 	activeTab: number;
-	feeOptions: Record<string, any>;
+	fees: Record<string, any>;
 	wallet: ReadWriteWallet;
 };
 
@@ -35,5 +35,5 @@ export type SendEntityRegistrationForm = {
 
 	formFields: string[];
 
-	component: ({ activeTab, feeOptions, wallet }: SendEntityRegistrationComponent) => JSX.Element;
+	component: ({ activeTab, fees, wallet }: SendEntityRegistrationComponent) => JSX.Element;
 };

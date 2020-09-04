@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { Enums, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
@@ -34,7 +35,7 @@ import * as yup from "yup";
 
 const entityProvider = new EntityProvider();
 
-const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
+const SecondStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 	const { t } = useTranslation();
 	const { register, setValue, getValues } = useFormContext();
 	const { fee } = getValues();
@@ -175,11 +176,13 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 					<FormField name="fee">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee
-							{...(feeOptions as any)}
+							min={fees.min}
+							avg={fees.avg}
+							max={fees.max}
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}
-							onChange={(value) => setValue("fee", value, true)}
+							onChange={(value: any) => setValue("fee", value, true)}
 						/>
 					</FormField>
 				</TransactionDetail>
@@ -287,10 +290,10 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	);
 };
 
-const component = ({ activeTab, wallet, feeOptions }: SendEntityRegistrationComponent) => (
+const component = ({ activeTab, wallet, fees }: SendEntityRegistrationComponent) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={2}>
-			<SecondStep feeOptions={feeOptions} />
+			<SecondStep fees={fees} />
 		</TabPanel>
 		<TabPanel tabId={3}>
 			<ThirdStep wallet={wallet} />

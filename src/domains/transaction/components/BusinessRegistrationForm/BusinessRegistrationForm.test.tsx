@@ -16,7 +16,7 @@ import { BusinessRegistrationForm } from "./BusinessRegistrationForm";
 describe("BusinessRegistrationForm", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
-	let feeOptions: Record<string, string>;
+	let fees: Contracts.TransactionFee;
 
 	const ipfsForm = {
 		meta: {
@@ -66,11 +66,11 @@ describe("BusinessRegistrationForm", () => {
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
-		feeOptions = {
-			last: (2 * 1e8).toFixed(0),
+		fees = {
+			static: "5",
 			min: "0",
 			max: (10 * 1e8).toFixed(0),
-			average: (1.354 * 1e8).toFixed(0),
+			avg: (1.354 * 1e8).toFixed(0),
 		};
 	});
 
@@ -95,7 +95,7 @@ describe("BusinessRegistrationForm", () => {
 		activeTab?: number;
 	}) => (
 		<Form context={form} onSubmit={onSubmit}>
-			<BusinessRegistrationForm.component activeTab={activeTab} feeOptions={feeOptions} wallet={wallet} />
+			<BusinessRegistrationForm.component activeTab={activeTab} fees={fees} wallet={wallet} />
 		</Form>
 	);
 

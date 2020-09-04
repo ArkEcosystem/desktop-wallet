@@ -12,6 +12,6 @@ export type SendEntityResignationProps = {
 export type StepProps = {
 	senderWallet: ReadWriteWallet;
 	delegate: ReadOnlyWallet | any;
-	fee: Contracts.TransactionFee;
+	fees: Contracts.TransactionFee;
 	transaction?: Contracts.SignedTransactionData;
 };

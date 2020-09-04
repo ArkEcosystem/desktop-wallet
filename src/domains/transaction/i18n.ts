@@ -45,9 +45,9 @@ export const translations: { [key: string]: any } = {
 	YOUR_ADDRESS: "Your address",
 
 	FEES: {
-		LAST: "Last",
 		MIN: "Min",
 		AVERAGE: "Average",
+		MAX: "Max",
 	},
 
 	TRANSACTION_TYPES: {

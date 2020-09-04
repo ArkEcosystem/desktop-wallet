@@ -7,16 +7,15 @@ import { useTranslation } from "react-i18next";
 export type InputFeeProps = {
 	defaultValue: string;
 	value?: string;
-	average: string;
-	last: string;
 	min: string;
+	avg: string;
 	max: string;
 	step: number;
 	onChange?: (value: string) => void;
 };
 
 // TODO: Remove defaultValue?
-export const InputFee = ({ defaultValue, value, average, last, min, max, onChange, step }: InputFeeProps) => {
+export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
 
 	const minHuman = BigNumber.make(min).divide(1e8).toNumber();
@@ -50,16 +49,6 @@ export const InputFee = ({ defaultValue, value, average, last, min, max, onChang
 			</div>
 			<div>
 				<SelectionBar>
-					{last && last !== "0" && (
-						<SelectionBarOption
-							value={last}
-							isValueChecked={() => fee === last}
-							setCheckedValue={handleFeeChange}
-						>
-							{t("TRANSACTION.FEES.LAST")}
-						</SelectionBarOption>
-					)}
-
 					<SelectionBarOption
 						value={min}
 						isValueChecked={() => fee === min}
@@ -69,19 +58,22 @@ export const InputFee = ({ defaultValue, value, average, last, min, max, onChang
 					</SelectionBarOption>
 
 					<SelectionBarOption
-						value={average}
-						isValueChecked={() => fee === average}
+						value={avg}
+						isValueChecked={() => fee === avg}
 						setCheckedValue={handleFeeChange}
 					>
 						{t("TRANSACTION.FEES.AVERAGE")}
+					</SelectionBarOption>
+
+					<SelectionBarOption
+						value={max}
+						isValueChecked={() => fee === max}
+						setCheckedValue={handleFeeChange}
+					>
+						{t("TRANSACTION.FEES.MAX")}
 					</SelectionBarOption>
 				</SelectionBar>
 			</div>
 		</div>
 	);
-};
-
-InputFee.defaultProps = {
-	last: "0",
-	average: "0",
 };
