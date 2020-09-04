@@ -4,7 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { RegistrationForm } from "domains/transaction/pages/Registration/Registration.models";
+import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React from "react";
 
 import { GenerationStep } from "./Step1";
@@ -55,7 +55,7 @@ const transactionDetails = ({ translations }: { transaction: Contracts.SignedTra
 component.displayName = "SecondSignatureRegistrationForm";
 transactionDetails.displayName = "SecondSignatureRegistrationFormTransactionDetails";
 
-export const SecondSignatureRegistrationForm: RegistrationForm = {
+export const SecondSignatureRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 4,
 	component,
 	transactionDetails,

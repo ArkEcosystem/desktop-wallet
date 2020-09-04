@@ -18,7 +18,10 @@ import {
 	waitFor,
 } from "testing-library";
 
-import { FirstStep, ImportWallet, SecondStep, ThirdStep } from "./ImportWallet";
+import { ImportWallet } from "./ImportWallet";
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
+import { ThirdStep } from "./Step3";
 
 let profile: Profile;
 const fixtureProfileId = getDefaultProfileId();

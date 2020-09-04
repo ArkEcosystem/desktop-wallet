@@ -3,7 +3,6 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
-import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
@@ -13,6 +12,7 @@ import {
 	getDefaultProfileId,
 	render,
 	renderWithRouter,
+	syncFees,
 	useDefaultNetMocks,
 	waitFor,
 	within,
@@ -22,14 +22,14 @@ import { SendTransactionForm } from "./";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
-let defaultFee: string;
+const defaultFee = "71538139";
 
 describe("SendTransactionForm", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().values()[0];
-		// TODO: sync fees in the background, like delegates
-		defaultFee = (await wallet.coin().fee().all(7)).transfer.avg;
+
+		await syncFees();
 	});
 
 	beforeEach(() => {
@@ -77,7 +77,7 @@ describe("SendTransactionForm", () => {
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
 
 			// Fee
-			expect(getByTestId("InputCurrency")).toHaveValue("0");
+			expect(getByTestId("InputCurrency")).toHaveValue("0.71538139");
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(feeOptions[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
@@ -103,14 +103,14 @@ describe("SendTransactionForm", () => {
 		}
 
 		const history = createMemoryHistory();
-		const sendUrl = `/profiles/${profile.id()}/transactions/${wallet.id()}/transfer`;
+		const sendUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}/sign-transfer`;
 		history.push(sendUrl);
 
 		let rendered: any;
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+				<Route path="/profiles/:profileId/wallets/:walletId/sign-transfer">
 					<FormContext {...form.current}>
 						<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
 					</FormContext>
@@ -149,41 +149,6 @@ describe("SendTransactionForm", () => {
 			historySpy.mockRestore();
 
 			expect(rendered.container).toMatchSnapshot();
-		});
-	});
-
-	it("should only update fees if provided", async () => {
-		let rendered: any;
-		const onFail = jest.fn();
-		const { result: form } = renderHook(() => useForm());
-
-		form.current.register("fees");
-		form.current.register("senderAddress");
-		form.current.setValue("senderAddress", wallet.address());
-
-		nock.cleanAll();
-		nock("https://dwallets.ark.io")
-			.get("/api/node/fees")
-			.query(true)
-			.reply(500, {})
-			.get("/api/transactions/fees")
-			.reply(500, {})
-			.persist();
-
-		await act(async () => {
-			rendered = render(
-				<FormContext {...form.current}>
-					<SendTransactionForm profile={profile} networks={env.availableNetworks()} onFail={onFail} />
-				</FormContext>,
-			);
-		});
-
-		const { getByTestId, getAllByTestId } = rendered;
-
-		await act(async () => {
-			await waitFor(() => expect(onFail).toHaveBeenCalledTimes(1));
-			await waitFor(() => expect(form.current.getValues("fee")).toBeFalsy());
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
 	});
 });

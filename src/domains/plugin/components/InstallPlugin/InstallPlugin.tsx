@@ -1,115 +1,17 @@
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
-import { CircularProgressBar } from "app/components/CircularProgressBar";
-import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import Placeholder from "domains/plugin/images/placeholder.png";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
+import { ThirdStep } from "./Step3";
 
 type InstallPluginProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
-};
-
-export const FirstStep = () => {
-	const { t } = useTranslation();
-
-	return (
-		<section data-testid="InstallPlugin__step--first">
-			<p className="mt-4 text-lg font-semibold text-theme-neutral-dark">
-				{t("PLUGINS.MODAL_INSTALL_PLUGIN.DESCRIPTION")}
-			</p>
-			<div className="max-w-sm">
-				<ul className="mt-2 ml-5 list-outside leading-8 list-circle text-theme-neutral-dark">
-					<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_1")}</li>
-					<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_2")}</li>
-					<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_3")}</li>
-				</ul>
-			</div>
-		</section>
-	);
-};
-
-export const SecondStep = () => {
-	const { t } = useTranslation();
-
-	return (
-		<section data-testid="InstallPlugin__step--second">
-			<div className="flex mt-4">
-				<div className="flex-shrink-0 mr-6">
-					<img className="w-32 h-32 rounded-xl" src={Placeholder} alt="Plugin Logo" />
-				</div>
-				<div className="flex-1">
-					<div className="flex flex-col justify-around h-full">
-						<div>
-							<p className="text-sm font-semibold text-theme-neutral-light">{t("COMMON.PLUGIN")}</p>
-							<p className="text-lg font-semibold text-theme-black">ARK Explorer</p>
-						</div>
-						<div className="flex justify-between">
-							<span>
-								<p className="text-sm font-semibold text-theme-neutral-light">
-									{t("COMMON.DOWNLOADED")}
-								</p>
-								<p className="font-bold text-theme-neutral-dark">154 KB / 154 KB</p>
-							</span>
-							<div className="mr-2">
-								<CircularProgressBar value={78} size={50} strokeWidth={4} fontSize={0.8} />
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
-};
-
-export const ThirdStep = () => {
-	const { t } = useTranslation();
-
-	return (
-		<section data-testid="InstallPlugin__step--third">
-			<div className="flex mt-4">
-				<div className="flex-shrink-0 mr-6">
-					<img className="w-32 h-32 rounded-xl" src={Placeholder} alt="Plugin Logo" />
-				</div>
-				<div className="flex-1">
-					<div className="flex flex-col justify-around h-full">
-						<div>
-							<p className="text-sm font-semibold text-theme-neutral-light">{t("COMMON.PLUGIN")}</p>
-							<p className="text-lg font-semibold text-theme-black">ARK Explorer</p>
-						</div>
-						<div className="flex justify-between">
-							<span>
-								<p className="text-sm font-semibold text-theme-neutral-light">
-									{t("COMMON.DOWNLOADED")}
-								</p>
-								<p className="font-bold text-theme-neutral-dark">{t("COMMON.COMPLETED")}</p>
-							</span>
-							<div className="">
-								<Circle
-									size="lg"
-									className="relative z-10 bg-theme-background border-theme-neutral-300"
-								>
-									<span className="text-theme-success">
-										<Icon name="Checkmark" width={28} height={28} />
-									</span>
-								</Circle>
-								<Circle
-									size="lg"
-									className="relative z-0 -ml-1 bg-theme-background border-theme-success"
-								>
-									<span className="text-xs font-semibold text-theme-success">100%</span>
-								</Circle>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
 };
 
 export const InstallPlugin = ({ isOpen, onClose, onCancel }: InstallPluginProps) => {
