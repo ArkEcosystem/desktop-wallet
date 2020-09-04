@@ -43,7 +43,7 @@ export const MyRegistrations = () => {
 
 	const isEmptyRegistrations = useMemo(
 		() => !isLoading && !delegates.length && !businesses.length && !businesses.length,
-		[businesses, plugins, delegates, isLoading],
+		[businesses, plugins, delegates, isLoading, plugins],
 	);
 
 	const crumbs = [
