@@ -59,12 +59,16 @@ describe("Validate URLs", () => {
 		["gitlab", "https://gitlab.com/@ark.ecosystem", false],
 
 		["npm", "https://npmjs.com/package/arkecosystem/core", true],
+		["npm", "https://npmjs.com/package/@arkecosystem/platform-sdk", true],
 		["npm", "https://npmjs.com/package/arkecosystem", true],
 		["npm", "https://npmjs.com/ark.ecosystem", false],
 		["npm", "https://npmjs.com", false],
 		["npm", "https://npmjs.com/@ark.ecosystem", false],
 
 		["discord", "https://discord.com/invite/VNRfxwQ", true],
+		["discord", "https://discord.gg/invite/VNRfxwQ", true],
+		["discord", "https://discord.gg/ps1h6QT", true],
+		["discord", "https://discord.com/ps1h6QT", false],
 		["discord", "https://discord.com", false],
 
 		["facebook", "https://facebook.com/arkecosystem", true],

@@ -30,7 +30,7 @@ export const gitlabProvider = {
 export const npmProvider = {
 	id: "npm",
 	displayName: "NPM",
-	validate: () => false,
+	validate: (value: string) => /(?:https?:)?\/\/(?:www\.)?(?:npmjs\.com)\/package\/([A-Za-z0-9-_.@]+)/.test(value),
 };
 
 // Social media
@@ -38,7 +38,8 @@ export const npmProvider = {
 export const discordProvider = {
 	id: "discord",
 	displayName: "Discord",
-	validate: () => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/\/(?:www\.)?(?:discord\.com\/invite|discord.gg(\/invite)?)\/([A-z0-9]+)/.test(value),
 };
 
 export const facebookProvider = {
