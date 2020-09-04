@@ -7,8 +7,8 @@ import { useTranslation } from "react-i18next";
 type InputFeeProps = {
 	defaultValue: string;
 	value?: string;
-	avg: string;
 	min: string;
+	avg: string;
 	max: string;
 	step: number;
 	onChange?: (value: string) => void;

@@ -37,10 +37,10 @@ type FirstStepProps = {
 	profile: Profile;
 	wallet: ReadWriteWallet;
 	setRegistrationForm: any;
-	feeOptions: Record<string, any>;
+	fees: Record<string, any>;
 };
 
-export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeOptions }: FirstStepProps) => {
+export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees }: FirstStepProps) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
@@ -81,8 +81,8 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 		setValue("registrationType", selectedItem.value, true);
 		setRegistrationForm(registrationComponents[selectedItem.value]);
 
-		if (feeOptions[selectedItem.value]) {
-			setValue("fee", feeOptions[selectedItem.value].average, true);
+		if (fees[selectedItem.value]) {
+			setValue("fee", fees[selectedItem.value].average, true);
 		}
 	};
 

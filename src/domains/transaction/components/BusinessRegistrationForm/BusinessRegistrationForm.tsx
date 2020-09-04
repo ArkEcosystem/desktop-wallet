@@ -92,8 +92,8 @@ const SecondStep = () => {
 						<InputFee
 							defaultValue={(25 * 1e8).toFixed(0)}
 							min={(1 * 1e8).toFixed(0)}
-							max={(100 * 1e8).toFixed(0)}
 							avg={(50 * 1e8).toFixed(0)}
+							max={(100 * 1e8).toFixed(0)}
 							step={1}
 						/>
 					</FormField>

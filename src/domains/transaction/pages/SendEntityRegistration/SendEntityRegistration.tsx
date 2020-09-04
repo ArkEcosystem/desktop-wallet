@@ -34,7 +34,7 @@ export const SendEntityRegistration = () => {
 	const { formState, getValues, register, setValue, unregister } = form;
 	const { registrationType, senderAddress } = getValues();
 
-	const [feeOptions, setFeeOptions] = useState<Record<string, any>>({});
+	const [fees, setFees] = useState<any>({});
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
 
 	useEffect(() => {
@@ -57,25 +57,18 @@ export const SendEntityRegistration = () => {
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
-		try {
-			const transactionFees = env.fees().all(senderWallet!.coinId(), senderWallet!.networkId());
+		if (senderWallet) {
+			const transactionFees = env.fees().all(senderWallet.coinId(), senderWallet.networkId());
 
 			const fees = Object.entries(transactionFees).reduce((mapping, [transactionType, fees]) => {
-				mapping[transactionType] = {
-					last: undefined,
-					min: fees.min,
-					max: fees.max,
-					average: fees.avg,
-				};
+				mapping[transactionType] = fees;
 
 				return mapping;
 			}, {} as Record<string, any>);
 
-			setFeeOptions(fees);
-		} catch (error) {
-			//
+			setFees(fees);
 		}
-	}, [env, setFeeOptions, setValue, activeProfile, senderAddress]);
+	}, [env, setFees, setValue, activeProfile, senderAddress]);
 
 	const submitForm = () =>
 		registrationForm!.signTransaction({
@@ -127,19 +120,19 @@ export const SendEntityRegistration = () => {
 									profile={activeProfile}
 									wallet={activeWallet}
 									setRegistrationForm={setRegistrationForm}
-									feeOptions={feeOptions}
+									fees={fees}
 								/>
 							</TabPanel>
 
 							{activeTab > 1 && registrationForm && (
 								<registrationForm.component
 									activeTab={activeTab}
-									feeOptions={feeOptions[registrationType]}
+									fees={fees[registrationType]}
 									wallet={activeWallet}
 								/>
 							)}
 
-							{registrationForm && feeOptions[registrationType] && (
+							{registrationForm && fees[registrationType] && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
 										<SecondStep passwordType="mnemonic" wallet={activeWallet} />
