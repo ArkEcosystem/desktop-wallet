@@ -71,7 +71,7 @@ test("should show an error if wrong mnemonic", async (t: any) => {
 
 	// Type wrong mnemonic
 	await t.typeText(Selector("[data-testid=Input]"), "wrong mnemonic", { replace: true });
-	await t.click(Selector("[data-testid=TransactionSend__button--submit]"));
+	await t.click(Selector("[data-testid=SendTransfer__button--submit]"));
 	await t.expect(Selector("[data-testid=Input]").hasAttribute("aria-invalid")).ok();
 });
 
@@ -106,7 +106,7 @@ test.requestHooks(walletMock, sendMock)("should send transfer successfully", asy
 
 	// Type mnemonic
 	await t.typeText(Selector("[data-testid=Input]"), "passphrase", { replace: true });
-	await t.click(Selector("[data-testid=TransactionSend__button--submit]"));
+	await t.click(Selector("[data-testid=SendTransfer__button--submit]"));
 
 	// Transaction successful
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
