@@ -37,8 +37,8 @@ export const FirstStep = ({
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
 
-	const [feeOptions, setFeeOptions] = useState({
-		last: undefined,
+	const [feeOptions, setFeeOptions] = useState<Contracts.TransactionFee>({
+		static: "0",
 		min: "0",
 		max: "0",
 		average: "0",
@@ -54,14 +54,7 @@ export const FirstStep = ({
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		if (senderWallet) {
-			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "vote");
-
-			setFeeOptions({
-				last: undefined,
-				min: transactionFees.min,
-				max: transactionFees.max,
-				average: transactionFees.avg,
-			});
+			setFeeOptions(env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "vote"));
 
 			setValue("fee", transactionFees.avg, true);
 		}

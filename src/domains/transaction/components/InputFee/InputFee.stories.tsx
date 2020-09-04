@@ -7,7 +7,6 @@ export default { title: "App / Components / InputFee" };
 export const Default = () => {
 	const [value, setValue] = useState((5 * 1e8).toFixed(0));
 	const feeOptions = {
-		last: (2 * 1e8).toFixed(0),
 		min: (1 * 1e8).toFixed(0),
 		max: (10 * 1e8).toFixed(0),
 		average: (1.354 * 1e8).toFixed(0),

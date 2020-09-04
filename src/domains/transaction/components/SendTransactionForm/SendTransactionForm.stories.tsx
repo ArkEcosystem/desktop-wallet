@@ -20,8 +20,8 @@ const defaultFormValues = {
 	maxAvailableAmount: 80,
 	assetSymbol: "ARK",
 	feeRange: {
-		last: 10,
 		min: 1,
+		max: 20,
 		average: 14,
 	},
 	defaultFee: 0,

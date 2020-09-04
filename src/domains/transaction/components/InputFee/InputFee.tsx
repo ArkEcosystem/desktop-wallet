@@ -8,7 +8,6 @@ type InputFeeProps = {
 	defaultValue: string;
 	value?: string;
 	average: string;
-	last: string;
 	min: string;
 	max: string;
 	step: number;
@@ -16,7 +15,7 @@ type InputFeeProps = {
 };
 
 // TODO: Remove defaultValue?
-export const InputFee = ({ defaultValue, value, average, last, min, max, onChange, step }: InputFeeProps) => {
+export const InputFee = ({ defaultValue, value, average, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
 
 	const minHuman = BigNumber.make(min).divide(1e8).toNumber();
@@ -50,16 +49,6 @@ export const InputFee = ({ defaultValue, value, average, last, min, max, onChang
 			</div>
 			<div>
 				<SelectionBar>
-					{last && last !== "0" && (
-						<SelectionBarOption
-							value={last}
-							isValueChecked={() => fee === last}
-							setCheckedValue={handleFeeChange}
-						>
-							{t("TRANSACTION.FEES.LAST")}
-						</SelectionBarOption>
-					)}
-
 					<SelectionBarOption
 						value={min}
 						isValueChecked={() => fee === min}
@@ -79,9 +68,4 @@ export const InputFee = ({ defaultValue, value, average, last, min, max, onChang
 			</div>
 		</div>
 	);
-};
-
-InputFee.defaultProps = {
-	last: "0",
-	average: "0",
 };

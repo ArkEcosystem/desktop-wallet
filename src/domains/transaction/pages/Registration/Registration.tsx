@@ -223,17 +223,7 @@ export const Registration = () => {
 	const { formState, getValues, register, setValue, unregister } = form;
 	const { registrationType, senderAddress } = getValues();
 
-	const [feeOptions, setFeeOptions] = useState<
-		Record<
-			string,
-			{
-				last: string;
-				min: string;
-				max: string;
-				average: string;
-			}
-		>
-	>({});
+	const [feeOptions, setFeeOptions] = useState<Record<string, Contracts.TransactionFee>>({});
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
 
 	useEffect(() => {
@@ -260,12 +250,7 @@ export const Registration = () => {
 			const transactionFees = env.fees().all(senderWallet!.coinId(), senderWallet!.networkId());
 
 			const fees = Object.entries(transactionFees).reduce((mapping, [transactionType, fees]) => {
-				mapping[transactionType] = {
-					last: undefined,
-					min: fees.min,
-					max: fees.max,
-					average: fees.avg,
-				};
+				mapping[transactionType] = fees;
 
 				return mapping;
 			}, {} as Record<string, any>);
