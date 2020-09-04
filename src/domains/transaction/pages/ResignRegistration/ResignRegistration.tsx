@@ -17,6 +17,12 @@ import { FirstStep, FourthStep, SecondStep, ThirdStep } from "./";
 import { ResignRegistrationProps } from "./ResignRegistration.models";
 
 export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }: ResignRegistrationProps) => {
+	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+	const { t } = useTranslation();
+	const history = useHistory();
+
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const { formState, getValues, setError, setValue } = form;
 	const { isValid } = formState;
@@ -30,14 +36,6 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 		avg: "1",
 		max: "2",
 	});
-
-	const fee = getValues("fee") || null;
-
-	const { env } = useEnvironmentContext();
-	const activeProfile = useActiveProfile();
-	const activeWallet = useActiveWallet();
-	const { t } = useTranslation();
-	const history = useHistory();
 
 	const crumbs = [
 		{
@@ -53,13 +51,8 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 	}, [env, activeWallet]);
 
 	useEffect(() => {
-		const transactionFees = env
-			.fees()
-			.findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation");
-
-		setFees(transactionFees);
-
-		setValue("fee", transactionFees.avg, true);
+		// @TODO: use min/avg/max like for all other transaction types
+		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
 	}, [env, setFees, setValue, activeProfile, activeWallet]);
 
 	const handleBack = () => {
@@ -77,7 +70,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 		try {
 			const transactionId = await activeWallet.transaction().signDelegateResignation({
 				from,
-				fee,
+				fee: fees.static,
 				sign: {
 					mnemonic,
 				},
@@ -100,7 +93,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload, passwordType }
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
-						{fee && delegate && (
+						{fees && delegate && (
 							<div>
 								<StepIndicator size={4} activeIndex={activeTab} />
 								<div className="mt-8">

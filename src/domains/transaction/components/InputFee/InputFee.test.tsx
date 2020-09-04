@@ -69,7 +69,7 @@ describe("InputFee", () => {
 			<InputFee min={min} max={max} avg={avg} defaultValue={value} step={0.01} onChange={onChange} />,
 		);
 
-		fireEvent.click(getByText(transactionTranslations.FEES.MIN));
+		fireEvent.click(getByText(transactionTranslations.FEES.MAX));
 
 		expect(onChange).toHaveBeenCalledWith(max);
 		expect(asFragment()).toMatchSnapshot();
