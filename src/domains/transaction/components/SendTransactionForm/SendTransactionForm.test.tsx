@@ -78,8 +78,8 @@ describe("SendTransactionForm", () => {
 
 			// Fee
 			expect(getByTestId("InputCurrency")).toHaveValue("0.71538139");
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[1]);
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			expect(rendered.container).toMatchSnapshot();

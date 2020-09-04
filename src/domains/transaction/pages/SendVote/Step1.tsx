@@ -29,11 +29,11 @@ export const FirstStep = ({
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
 
-	const [feeOptions, setFeeOptions] = useState({
-		last: undefined,
-		min: (0 * 1e8).toFixed(0),
-		max: (100 * 1e8).toFixed(0),
-		average: (14 * 1e8).toFixed(0),
+	const [fees, setFees] = useState({
+		static: "5",
+		min: "0",
+		avg: "1",
+		max: "2",
 	});
 
 	const senderAddress = getValues("senderAddress");
@@ -48,16 +48,11 @@ export const FirstStep = ({
 		if (senderWallet) {
 			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "vote");
 
-			setFeeOptions({
-				last: undefined,
-				min: transactionFees.min,
-				max: transactionFees.max,
-				average: transactionFees.avg,
-			});
+			setFees(transactionFees);
 
 			setValue("fee", transactionFees.avg, true);
 		}
-	}, [env, setFeeOptions, setValue, profile, senderAddress]);
+	}, [env, setFees, setValue, profile, senderAddress]);
 
 	return (
 		<section data-testid="SendVote__step--first">
@@ -107,7 +102,9 @@ export const FirstStep = ({
 					<FormField name="fee">
 						<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 						<InputFee
-							{...feeOptions}
+							min={fees.min}
+							avg={fees.avg}
+							max={fees.max}
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}

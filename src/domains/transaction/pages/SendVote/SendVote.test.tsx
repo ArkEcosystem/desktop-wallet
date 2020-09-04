@@ -310,8 +310,8 @@ describe("SendVote", () => {
 		await act(async () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[1]);
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			// Step 2
@@ -388,8 +388,8 @@ describe("SendVote", () => {
 		await act(async () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[1]);
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			// Step 2

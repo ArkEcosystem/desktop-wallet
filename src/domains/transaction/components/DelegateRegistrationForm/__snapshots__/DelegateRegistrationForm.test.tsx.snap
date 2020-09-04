@@ -214,15 +214,6 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                   role="radiogroup"
                 >
                   <button
-                    aria-checked="true"
-                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Last
-                  </button>
-                  <button
                     aria-checked="false"
                     class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
@@ -239,6 +230,15 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                     type="button"
                   >
                     Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
                   </button>
                 </div>
               </div>
@@ -465,15 +465,6 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                   role="radiogroup"
                 >
                   <button
-                    aria-checked="true"
-                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Last
-                  </button>
-                  <button
                     aria-checked="false"
                     class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
@@ -490,6 +481,15 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                     type="button"
                   >
                     Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
                   </button>
                 </div>
               </div>
@@ -716,15 +716,6 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                   role="radiogroup"
                 >
                   <button
-                    aria-checked="true"
-                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Last
-                  </button>
-                  <button
                     aria-checked="false"
                     class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
@@ -741,6 +732,15 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                     type="button"
                   >
                     Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
                   </button>
                 </div>
               </div>
@@ -961,15 +961,6 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                   role="radiogroup"
                 >
                   <button
-                    aria-checked="true"
-                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Last
-                  </button>
-                  <button
                     aria-checked="false"
                     class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
@@ -986,6 +977,15 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                     type="button"
                   >
                     Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
                   </button>
                 </div>
               </div>
@@ -1403,7 +1403,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
-                    value="1.354"
+                    value="10"
                   />
                   <div
                     class="absolute bottom-0 w-full px-1"
@@ -1424,7 +1424,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                           <div
                             aria-valuemax="10"
                             aria-valuemin="0"
-                            aria-valuenow="1.354"
+                            aria-valuenow="10"
                             class="sc-fznyAO caSzTt"
                             data-testid="Range__thumb"
                             draggable="false"
@@ -1451,7 +1451,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                     role="radio"
                     type="button"
                   >
-                    Last
+                    Min
                   </button>
                   <button
                     aria-checked="false"
@@ -1460,7 +1460,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                     role="radio"
                     type="button"
                   >
-                    Min
+                    Average
                   </button>
                   <button
                     aria-checked="true"
@@ -1469,7 +1469,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                     role="radio"
                     type="button"
                   >
-                    Average
+                    Max
                   </button>
                 </div>
               </div>
@@ -1690,15 +1690,6 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   role="radiogroup"
                 >
                   <button
-                    aria-checked="true"
-                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Last
-                  </button>
-                  <button
                     aria-checked="false"
                     class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
@@ -1715,6 +1706,15 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                     type="button"
                   >
                     Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fzqBZW dJUDOf relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
                   </button>
                 </div>
               </div>
