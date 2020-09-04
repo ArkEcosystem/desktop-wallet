@@ -10,12 +10,7 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type SendEntityUpdateProps = {
-	formDefaultData?: any;
-	onDownload: any;
-};
-
-const SecondStep = () => {
+export const SecondStep = () => {
 	const { t } = useTranslation();
 
 	const links = [
