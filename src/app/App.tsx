@@ -61,10 +61,26 @@ const Main = ({ syncInterval }: Props) => {
 
 			await env.verify(shouldUseFixture ? fixtureData : undefined);
 			await env.boot();
-			await Promise.allSettled([syncDelegates(), syncWallets(), syncFees(), syncExchangeRates()]);
+
+			const profiles = env.profiles().values();
+			const wallets = profiles.map((profile) => profile.wallets().values()).flat();
+
+			const syncWalletsVotes = async () => {
+				for (const wallet of wallets) {
+					await wallet.syncVotes();
+				}
+			};
+
+			await Promise.allSettled([
+				syncDelegates(),
+				syncWallets(),
+				syncWalletsVotes(),
+				syncFees(),
+				syncExchangeRates(),
+			]);
 			await persist();
 
-			scheduler.schedule([syncDelegates, syncFees, syncWallets, syncExchangeRates], persist);
+			scheduler.schedule([syncDelegates, syncFees, syncWallets, syncWalletsVotes, syncExchangeRates], persist);
 
 			setShowSplash(false);
 		};
