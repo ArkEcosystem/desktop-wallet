@@ -22,10 +22,10 @@ export const Default = ({
 }) => (
 	<EnvironmentProvider env={env}>
 		<MemoryRouter
-			initialEntries={[`/profiles/${profile.id()}/wallets/${wallets[0].id()}/sign-entity-registration`]}
+			initialEntries={[`/profiles/${profile.id()}/wallets/${wallets[0].id()}/send-entity-registration`]}
 		>
 			<Route
-				path="/profiles/:profileId/wallets/:walletId/sign-entity-registration"
+				path="/profiles/:profileId/wallets/:walletId/send-entity-registration"
 				component={() => <SendEntityRegistration />}
 			/>
 		</MemoryRouter>

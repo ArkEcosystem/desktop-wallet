@@ -2,7 +2,15 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import {
+	act,
+	fireEvent,
+	getDefaultProfileId,
+	getDefaultWalletId,
+	RenderResult,
+	renderWithRouter,
+	waitFor,
+} from "testing-library";
 
 import { SendEntityUpdate } from "../SendEntityUpdate";
 
@@ -14,12 +22,12 @@ const defaultFormValues = {
 describe("SendEntityUpdate", () => {
 	beforeEach(() => {
 		const history = createMemoryHistory();
-		const updateRegistrationURL = `/profiles/${getDefaultProfileId()}/transactions/update`;
+		const updateRegistrationURL = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}/send-entity-update`;
 
 		history.push(updateRegistrationURL);
 
 		rendered = renderWithRouter(
-			<Route path="/profiles/:profileId/transactions/update">
+			<Route path="/profiles/:profileId/wallets/:walletId/send-entity-update">
 				<SendEntityUpdate {...defaultFormValues} />
 			</Route>,
 			{

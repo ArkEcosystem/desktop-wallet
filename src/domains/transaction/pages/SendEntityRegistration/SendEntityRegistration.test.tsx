@@ -33,13 +33,13 @@ const renderPage = async (walletOverride?: ReadWriteWallet) => {
 	const history = createMemoryHistory();
 	const registrationURL = `/profiles/${profile.id()}/wallets/${(
 		walletOverride || wallet
-	).id()}/sign-entity-registration`;
+	).id()}/send-entity-registration`;
 	history.push(registrationURL);
 
 	let rendered: RenderResult;
 	await act(async () => {
 		rendered = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId/sign-entity-registration">
+			<Route path="/profiles/:profileId/wallets/:walletId/send-entity-registration">
 				<SendEntityRegistration />
 			</Route>,
 			{
@@ -240,7 +240,7 @@ describe("Registration", () => {
 			const secondWallet = profile.wallets().values()[1];
 			await waitFor(() =>
 				expect(historySpy).toHaveBeenCalledWith(
-					`/profiles/${profile?.id()}/wallets/${secondWallet.id()}/sign-entity-registration`,
+					`/profiles/${profile?.id()}/wallets/${secondWallet.id()}/send-entity-registration`,
 				),
 			);
 

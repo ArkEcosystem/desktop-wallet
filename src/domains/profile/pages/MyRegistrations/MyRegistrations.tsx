@@ -57,13 +57,13 @@ export const MyRegistrations = () => {
 		switch (action) {
 			case "register":
 				//TODO: Determine wallet selection. Which wallet should be registered?
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/sign-entity-registration`);
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-registration`);
 				break;
 			case "resign":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/sign-entity-resignation`);
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
 				break;
 			case "update":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/sign-entity-update`);
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
 				break;
 		}
 	};
