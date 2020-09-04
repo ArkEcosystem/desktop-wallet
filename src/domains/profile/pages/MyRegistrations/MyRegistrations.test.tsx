@@ -18,7 +18,19 @@ describe("MyRegistrations", () => {
 		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
 			.get("/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
-			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
+			.reply(200, require("tests/fixtures/delegates/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"))
+			.post("/api/transactions/search")
+			.query(true)
+			.reply(200, (_, { asset }: any) => {
+				if (asset.type === 0) {
+					return require("tests/fixtures/registrations/businesses.json");
+				}
+				if (asset.type === 3) {
+					return require("tests/fixtures/registrations/plugins.json");
+				}
+				return { meta: {}, data: [] };
+			})
+			.persist();
 
 		await syncDelegates();
 	});
@@ -60,11 +72,6 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should render business registrations", async () => {
-		nock("https://dwallets.ark.io")
-			.post("/api/transactions/search")
-			.query(true)
-			.reply(200, require("tests/fixtures/registrations/businesses.json"));
-
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
@@ -79,8 +86,26 @@ describe("MyRegistrations", () => {
 
 		const businessRegistrations = getByTestId("BusinessRegistrations");
 		await waitFor(() =>
-			expect(within(businessRegistrations).getAllByTestId("EntityTableRowItem").length).toEqual(1),
+			expect(within(businessRegistrations).getAllByTestId("EntityTableRowItem").length).toEqual(2),
 		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render plugin registrations", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		const plugins = getByTestId("PluginRegistrations");
+		await waitFor(() => expect(within(plugins).getAllByTestId("EntityTableRowItem").length).toEqual(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
