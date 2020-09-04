@@ -64,7 +64,7 @@ export const linkedinProvider = {
 export const mediumProvider = {
 	id: "medium",
 	displayName: "Medium",
-	validate: () => false,
+	validate: (value: string) => /(?:https?:)?\/\/(?:www\.)?(?:medium\.com)\/([A-Za-z0-9-_.@]+)/.test(value),
 };
 
 export const redditProvider = {
@@ -82,13 +82,13 @@ export const slackProvider = {
 export const telegramProvider = {
 	id: "telegram",
 	displayName: "Telegram",
-	validate: () => false,
+	validate: (value: string) => /(?:https?:)?\/\/(?:t(?:elegram)?\.me|telegram\.org)\/([a-z0-9_]{5,32})/.test(value),
 };
 
 export const twitterProvider = {
 	id: "twitter",
 	displayName: "Twitter",
-	validate: () => false,
+	validate: (value: string) => /(?:https?:)?\/\/(?:www\.)?(?:twitter\.com)\/@?([A-z0-9_]+)/.test(value),
 };
 
 export const wechatProvider = {

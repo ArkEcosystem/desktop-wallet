@@ -103,9 +103,15 @@ describe("Validate URLs", () => {
 		["slack", "https://slack.com", false],
 
 		["telegram", "https://t.me/arkannouncements", true],
+		["telegram", "https://telegram.me/arkannouncements", true],
+		["telegram", "https://telegram.org/ark123", true],
+		["telegram", "https://t.org/ark123", false],
+		["telegram", "https://telegram.org", false],
 		["telegram", "https://t.me", false],
 
 		["twitter", "https://twitter.com/arkecosystem", true],
+		["twitter", "https://twitter.com/@arkecosystem", true],
+		["twitter", "https://twitter.com/@ark_ecosystem", true],
 		["twitter", "https://twitter.com", false],
 
 		["wechat", "https://www.wechat.com", false],
