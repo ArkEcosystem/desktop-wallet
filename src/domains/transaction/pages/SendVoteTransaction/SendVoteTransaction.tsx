@@ -39,9 +39,9 @@ export const FirstStep = ({
 
 	const [feeOptions, setFeeOptions] = useState({
 		last: undefined,
-		min: "0",
-		max: "0",
-		average: "0",
+		min: "1",
+		average: "2",
+		max: "3",
 	});
 
 	const senderAddress = getValues("senderAddress");
