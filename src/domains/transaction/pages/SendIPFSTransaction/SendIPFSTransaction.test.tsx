@@ -14,6 +14,7 @@ import {
 	render,
 	RenderResult,
 	renderWithRouter,
+	syncFees,
 	waitFor,
 	within,
 } from "testing-library";
@@ -48,6 +49,8 @@ describe("SendIPFSTransaction", () => {
 			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e")
 			.reply(200, ipfsFixture);
+
+		await syncFees();
 	});
 
 	it("should render 1st step", async () => {

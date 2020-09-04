@@ -243,34 +243,28 @@ export const Registration = () => {
 	}, [activeWallet, networks, register, setValue]);
 
 	useEffect(() => {
-		const loadFees = async () => {
-			// TODO: shouldn't be necessary once SelectAddress returns wallets instead
-			const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
+		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
+		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
-			try {
-				// TODO: sync fees in the background, like delegates
-				const fees = Object.entries(await senderWallet!.coin().fee().all(7)).reduce(
-					(mapping, [transactionType, fees]) => {
-						mapping[transactionType] = {
-							last: undefined,
-							min: fees.min,
-							max: fees.max,
-							average: fees.avg,
-						};
+		try {
+			const transactionFees = env.fees().all(senderWallet!.coinId(), senderWallet!.networkId());
 
-						return mapping;
-					},
-					{} as Record<string, any>,
-				);
+			const fees = Object.entries(transactionFees).reduce((mapping, [transactionType, fees]) => {
+				mapping[transactionType] = {
+					last: undefined,
+					min: fees.min,
+					max: fees.max,
+					average: fees.avg,
+				};
 
-				setFeeOptions(fees);
-			} catch (error) {
-				//
-			}
-		};
+				return mapping;
+			}, {} as Record<string, any>);
 
-		loadFees();
-	}, [setFeeOptions, setValue, activeProfile, senderAddress]);
+			setFeeOptions(fees);
+		} catch (error) {
+			//
+		}
+	}, [env, setFeeOptions, setValue, activeProfile, senderAddress]);
 
 	const submitForm = () =>
 		registrationForm!.signTransaction({
