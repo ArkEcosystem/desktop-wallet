@@ -85,7 +85,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, feeO
 		setValue("senderAddress", address, true);
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
-		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/registration`);
+		history.push(`/profiles/${profile.id()}/walelts/${wallet!.id()}/sign-entity-registration`);
 	};
 
 	const onSelectType = (selectedItem: SendEntityRegistrationType) => {

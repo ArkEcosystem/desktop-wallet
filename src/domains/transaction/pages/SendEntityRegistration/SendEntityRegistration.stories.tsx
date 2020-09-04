@@ -21,9 +21,11 @@ export const Default = ({
 	wallets: ReadWriteWallet[];
 }) => (
 	<EnvironmentProvider env={env}>
-		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/transactions/${wallets[0].id()}/registration`]}>
+		<MemoryRouter
+			initialEntries={[`/profiles/${profile.id()}/wallets/${wallets[0].id()}/sign-entity-registration`]}
+		>
 			<Route
-				path="/profiles/:profileId/transactions/:walletId/registration"
+				path="/profiles/:profileId/wallets/:walletId/sign-entity-registration"
 				component={() => <SendEntityRegistration />}
 			/>
 		</MemoryRouter>
