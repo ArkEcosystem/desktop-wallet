@@ -389,7 +389,7 @@ describe("BusinessRegistrationForm", () => {
 				senderAddress: wallet.address(),
 				ipfsData: {
 					meta: {
-						displayName: "name",
+						displayName: "Test Entity Name",
 					},
 					sourceControl: undefined,
 					images: [],
@@ -420,10 +420,22 @@ describe("BusinessRegistrationForm", () => {
 
 		expect(fileUploadSpy).toHaveBeenCalledWith({
 			meta: {
-				displayName: "name",
+				displayName: "Test Entity Name",
 			},
 		});
-		expect(signMock).toHaveBeenCalled();
+		expect(signMock).toHaveBeenCalledWith({
+			fee: "1",
+			data: {
+				ipfs: "QmV1n5F9PuBE2ovW9jVfFpxyvWZxYHjSdfLrYL2nDcb1gW",
+				name: "Test-Entity-Name",
+				subType: 0,
+				type: 0,
+			},
+			from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			sign: {
+				mnemonic: "sample passphrase",
+			},
+		});
 		expect(broadcastMock).toHaveBeenCalled();
 		expect(transactionMock).toHaveBeenCalled();
 		expect(setTransaction).toHaveBeenCalled();

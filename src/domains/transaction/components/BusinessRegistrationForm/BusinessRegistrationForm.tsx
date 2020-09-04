@@ -29,7 +29,7 @@ import {
 import React, { useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-
+import slugify from "slugify";
 const entityProvider = new EntityProvider();
 
 const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
@@ -307,7 +307,7 @@ export const BusinessRegistrationForm: SendEntityRegistrationForm = {
 	// eslint-disable-next-line @typescript-eslint/require-await
 	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations }) => {
 		const { getValues, setValue, setError } = form;
-		const { fee, ipfsData, mnemonic, meta, senderAddress } = getValues({ nest: true });
+		const { fee, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		const sanitizedData = filter(ipfsData, (item) => !isEmpty(item));
@@ -322,8 +322,7 @@ export const BusinessRegistrationForm: SendEntityRegistrationForm = {
 					type: Enums.EntityType.Business,
 					// @TODO: let the user choose what sub-type they wish to use.
 					subType: Enums.EntitySubType.None,
-					// @TODO: use the name that the user entered. Has to be valid like a delegate username.
-					name: ipfsData.meta.displayName,
+					name: slugify(ipfsData.meta.displayName),
 					ipfs: await new File(httpClient).upload(sanitizedData),
 				},
 			});
