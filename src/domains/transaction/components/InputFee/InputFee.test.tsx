@@ -61,4 +61,17 @@ describe("InputFee", () => {
 		expect(onChange).toHaveBeenCalledWith(avg);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should update fee when clicking on max", () => {
+		const onChange = jest.fn();
+
+		const { asFragment, getByText } = render(
+			<InputFee min={min} max={max} avg={avg} defaultValue={value} step={0.01} onChange={onChange} />,
+		);
+
+		fireEvent.click(getByText(transactionTranslations.FEES.MIN));
+
+		expect(onChange).toHaveBeenCalledWith(max);
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
