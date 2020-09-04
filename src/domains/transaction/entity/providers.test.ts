@@ -95,11 +95,12 @@ describe("Validate URLs", () => {
 
 		["reddit", "https://reddit.com/r/arkecosystem", true],
 		["reddit", "https://reddit.com/r/ArkEcosystem/", true],
+		["reddit", "https://reddit.com/user/ark1", true],
+		["reddit", "https://reddit.com/u/", false],
 		["reddit", "https://reddit.com/r/", false],
-		["reddit", "https://reddit.com/user/", false],
 		["reddit", "https://reddit.com", false],
 
-		["slack", "https://arkecosystem.slack.com/", true],
+		["slack", "https://arkecosystem.slack.com", true],
 		["slack", "https://slack.com", false],
 
 		["telegram", "https://t.me/arkannouncements", true],

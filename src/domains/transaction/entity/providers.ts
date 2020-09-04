@@ -70,13 +70,14 @@ export const mediumProvider = {
 export const redditProvider = {
 	id: "reddit",
 	displayName: "Reddit",
-	validate: () => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/\/(?:www\.)?(?:reddit\.com)\/(?:u(?:ser)?|r)\/([A-z0-9-_]+)\/?/.test(value),
 };
 
 export const slackProvider = {
 	id: "slack",
 	displayName: "Slack",
-	validate: () => false,
+	validate: (value: string) => /(?:https?:)?\/\/(?:[a-z]+)\.(?:slack\.com)/.test(value),
 };
 
 export const telegramProvider = {
