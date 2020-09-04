@@ -65,7 +65,7 @@ describe("MyRegistrations", () => {
 			.query(true)
 			.reply(200, require("tests/fixtures/registrations/businesses.json"));
 
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -76,7 +76,11 @@ describe("MyRegistrations", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
-		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
+
+		const businessRegistrations = getByTestId("BusinessRegistrations");
+		await waitFor(() =>
+			expect(within(businessRegistrations).getAllByTestId("EntityTableRowItem").length).toEqual(1),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

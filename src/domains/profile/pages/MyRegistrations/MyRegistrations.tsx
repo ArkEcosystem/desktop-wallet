@@ -111,7 +111,11 @@ export const MyRegistrations = () => {
 
 			{isLoading && !isEmptyRegistrations && <Loader />}
 
-			{!isLoading && businesses.length > 0 && <EntityTable entities={businesses} onAction={handleAction} />}
+			{!isLoading && businesses.length > 0 && (
+				<div data-testid="BusinessRegistrations">
+					<EntityTable entities={businesses} onAction={handleAction} />
+				</div>
+			)}
 			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
