@@ -15,7 +15,7 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { RegistrationForm } from "domains/transaction/pages/Registration/Registration.models";
+import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -133,7 +133,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -214,7 +214,7 @@ const transactionDetails = ({
 component.displayName = "DelegateRegistrationForm";
 transactionDetails.displayName = "DelegateRegistrationFormTransactionDetails";
 
-export const DelegateRegistrationForm: RegistrationForm = {
+export const DelegateRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 2,
 	component,
 	transactionDetails,
