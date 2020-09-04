@@ -162,12 +162,19 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_RESIGN_REGISTRATION: {
+		BUSINESS_NAME: "Business Name",
 		FIRST_STEP: {
 			DELEGATE: {
 				TITLE: "Delegate Resignation",
 				DESCRIPTION: "Resign your delegate for always.",
 				WARNING:
 					"Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.",
+			},
+			BUSINESS: {
+				TITLE: "Business Resignation",
+				DESCRIPTION: "Resign your business for always.",
+				WARNING:
+					"Keep in mind that you cannot restore your business after the resignation has been registered on the blockchain.",
 			},
 		},
 		SECOND_STEP: {
