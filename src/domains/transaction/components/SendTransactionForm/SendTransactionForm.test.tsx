@@ -103,14 +103,14 @@ describe("SendTransactionForm", () => {
 		}
 
 		const history = createMemoryHistory();
-		const sendUrl = `/profiles/${profile.id()}/transactions/${wallet.id()}/transfer`;
+		const sendUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}/sign-transfer`;
 		history.push(sendUrl);
 
 		let rendered: any;
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+				<Route path="/profiles/:profileId/wallets/:walletId/sign-transfer">
 					<FormContext {...form.current}>
 						<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
 					</FormContext>

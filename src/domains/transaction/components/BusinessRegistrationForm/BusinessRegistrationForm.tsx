@@ -16,19 +16,18 @@ import { httpClient } from "app/services";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
+import { EntityLink } from "domains/transaction/components/LinkCollection/LinkCollection.models";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { EntityProvider } from "domains/transaction/entity/providers";
 import {
-	RegistrationComponent,
-	RegistrationForm,
-	RegistrationTransactionDetailsOptions,
-} from "domains/transaction/pages/Registration/Registration.models";
+	SendEntityRegistrationComponent,
+	SendEntityRegistrationDetailsOptions,
+	SendEntityRegistrationForm,
+} from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React, { useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-
-import { EntityLink } from "../LinkCollection/LinkCollection.models";
 
 const entityProvider = new EntityProvider();
 
@@ -274,7 +273,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	);
 };
 
-const component = ({ activeTab, wallet, feeOptions }: RegistrationComponent) => (
+const component = ({ activeTab, wallet, feeOptions }: SendEntityRegistrationComponent) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={2}>
 			<SecondStep feeOptions={feeOptions} />
@@ -285,7 +284,7 @@ const component = ({ activeTab, wallet, feeOptions }: RegistrationComponent) => 
 	</Tabs>
 );
 
-const transactionDetails = ({ translations, transaction }: RegistrationTransactionDetailsOptions) => (
+const transactionDetails = ({ translations, transaction }: SendEntityRegistrationDetailsOptions) => (
 	<>
 		<TransactionDetail label={translations("TRANSACTION.IPFS_HASH")}>
 			{transaction?.data().asset.data.ipfsData}
@@ -298,7 +297,7 @@ transactionDetails.displayName = "BusinessRegistrationFormTransactionDetails";
 
 // @TODO: There can be one generic AIP36 EntityRegistrationForm.
 // There is no need for multiple components because, as stated in the AIP36 specifications, they all share the same structure.
-export const BusinessRegistrationForm: RegistrationForm = {
+export const BusinessRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 2,
 	component,
 	transactionDetails,
