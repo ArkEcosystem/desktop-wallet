@@ -137,12 +137,12 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					ticker={ticker}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 					onSend={() =>
-						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/transfer`)
+						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
 					}
 					onSignMessage={() => setIsSigningMessage(true)}
 					onStar={handleStar}
 					onStoreHash={() =>
-						history.push(`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/ipfs`)
+						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-ipfs`)
 					}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
@@ -157,7 +157,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 						}
 						onUnvote={(delegateAddress) =>
 							history.push({
-								pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/transactions/vote`,
+								pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
 								search: `?unvotes=${delegateAddress}`,
 							})
 						}
@@ -178,7 +178,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 						onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
 						onRegister={() =>
 							history.push(
-								`/profiles/${activeProfile.id()}/transactions/${activeWallet.id()}/registration`,
+								`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-entity-registration`,
 							)
 						}
 					/>

@@ -1,41 +1,41 @@
 import {
-	Registration,
-	ResignRegistration,
-	SendIPFSTransaction,
-	SendVoteTransaction,
-	TransactionSend,
-	UpdateRegistration,
+	SendEntityRegistration,
+	SendEntityResignation,
+	SendEntityUpdate,
+	SendIpfs,
+	SendTransfer,
+	SendVote,
 } from "./pages";
 
 export const TransactionRoutes = [
 	{
-		path: "/profiles/:profileId/transactions/:walletId/registration",
+		path: "/profiles/:profileId/wallets/:walletId/send-entity-registration",
 		exact: true,
-		component: Registration,
+		component: SendEntityRegistration,
 	},
 	{
-		path: "/profiles/:profileId/transactions/:walletId/resignation",
+		path: "/profiles/:profileId/wallets/:walletId/send-entity-resignation",
 		exact: true,
-		component: ResignRegistration,
+		component: SendEntityResignation,
 	},
 	{
-		path: "/profiles/:profileId/transactions/:walletId/update",
+		path: "/profiles/:profileId/wallets/:walletId/send-entity-update",
 		exact: true,
-		component: UpdateRegistration,
+		component: SendEntityUpdate,
 	},
 	{
-		path: "/profiles/:profileId/transactions/:walletId/transfer",
+		path: "/profiles/:profileId/wallets/:walletId/send-transfer",
 		exact: true,
-		component: TransactionSend,
+		component: SendTransfer,
 	},
 	{
-		path: "/profiles/:profileId/transactions/:walletId/ipfs",
+		path: "/profiles/:profileId/wallets/:walletId/send-ipfs",
 		exact: true,
-		component: SendIPFSTransaction,
+		component: SendIpfs,
 	},
 	{
-		path: "/profiles/:profileId/wallets/:walletId/transactions/vote",
+		path: "/profiles/:profileId/wallets/:walletId/send-vote",
 		exact: true,
-		component: SendVoteTransaction,
+		component: SendVote,
 	},
 ];

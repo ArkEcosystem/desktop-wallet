@@ -5,7 +5,10 @@ import { act, fireEvent, render } from "testing-library";
 
 // i18n
 import { translations } from "../../i18n";
-import { FirstStep, MultiSignatureDetail, SecondStep, ThirdStep } from "./MultiSignatureDetail";
+import { MultiSignatureDetail } from "./MultiSignatureDetail";
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
+import { ThirdStep } from "./Step3";
 
 describe("MultiSignatureDetail", () => {
 	it("should not render if not open", () => {

@@ -9,7 +9,7 @@ createFixture(`Delegate Registration action`).beforeEach(async (t) => await goTo
 
 test("should fail delegate resignation submittion", async (t: any) => {
 	await goToResignDelegatePage(t);
-	const continueBtn = "[data-testid=ResignRegistration__continue-button]";
+	const continueBtn = "[data-testid=SendEntityResignation__continue-button]";
 
 	// Go to step 2
 	await t.hover(Selector(continueBtn));
@@ -20,17 +20,17 @@ test("should fail delegate resignation submittion", async (t: any) => {
 	await t.click(Selector(continueBtn));
 
 	// Type wrong mnemonic
-	await t.typeText(Selector("[data-testid=ResignRegistration__mnemonic]"), "wrong mnemonic", { replace: true });
+	await t.typeText(Selector("[data-testid=SendEntityResignation__mnemonic]"), "wrong mnemonic", { replace: true });
 
-	const sendButton = "[data-testid=ResignRegistration__send-button]";
+	const sendButton = "[data-testid=SendEntityResignation__send-button]";
 	await t.click(Selector(sendButton));
 
-	await t.expect(Selector("[data-testid=ResignRegistration__mnemonic]").hasAttribute("aria-invalid")).ok();
+	await t.expect(Selector("[data-testid=SendEntityResignation__mnemonic]").hasAttribute("aria-invalid")).ok();
 });
 
 test("should successfully submit delegate resignation", async (t) => {
 	await goToResignDelegatePage(t);
-	const continueButton = "[data-testid=ResignRegistration__continue-button]";
+	const continueButton = "[data-testid=SendEntityResignation__continue-button]";
 
 	// Go to step 2
 	await t.hover(Selector(continueButton));
@@ -40,13 +40,13 @@ test("should successfully submit delegate resignation", async (t) => {
 	await t.hover(Selector(continueButton));
 	await t.click(Selector(continueButton));
 
-	await t.typeText(Selector("[data-testid=ResignRegistration__mnemonic]"), "v3wallet2", { replace: true });
+	await t.typeText(Selector("[data-testid=SendEntityResignation__mnemonic]"), "v3wallet2", { replace: true });
 
 	transactionsMock();
 	walletMock("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
 
-	const sendButton = "[data-testid=ResignRegistration__send-button]";
+	const sendButton = "[data-testid=SendEntityResignation__send-button]";
 	await t.click(Selector(sendButton));
 
-	await t.expect(Selector("[data-testid=ResignRegistration__fourth-step]").exists).ok();
+	await t.expect(Selector("[data-testid=SendEntityResignation__fourth-step]").exists).ok();
 });

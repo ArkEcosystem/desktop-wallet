@@ -46,6 +46,7 @@ export * from "@testing-library/react";
 export { customRender as render, renderWithRouter };
 
 export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
+export const getDefaultWalletId = () => Object.keys(Object.values(fixtureData.profiles)[0].wallets)[0];
 
 export const defaultNetMocks = () => {
 	nock.disableNetConnect();
@@ -97,3 +98,5 @@ const envWithMocks = () => {
 export const env = envWithMocks();
 
 export const syncDelegates = async () => await env.delegates().syncAll();
+
+export const syncFees = async () => await env.fees().syncAll();

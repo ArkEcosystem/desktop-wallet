@@ -133,7 +133,7 @@ export const Votes = () => {
 			</Section>
 
 			<div className="container mx-auto px-14">
-				<div className="-my-5 grid grid-flow-col grid-cols-2 gap-6">
+				<div className="grid grid-flow-col grid-cols-2 gap-6 -my-5">
 					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetwork
 							id="Votes__network"
@@ -166,7 +166,7 @@ export const Votes = () => {
 							});
 
 							history.push({
-								pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/transactions/vote`,
+								pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
 								search: `?${params}`,
 							});
 						}}
