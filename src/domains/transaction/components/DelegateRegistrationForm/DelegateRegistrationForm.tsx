@@ -15,7 +15,7 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { RegistrationForm } from "domains/transaction/pages/Registration/Registration.models";
+import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -208,7 +208,7 @@ const transactionDetails = ({
 component.displayName = "DelegateRegistrationForm";
 transactionDetails.displayName = "DelegateRegistrationFormTransactionDetails";
 
-export const DelegateRegistrationForm: RegistrationForm = {
+export const DelegateRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 2,
 	component,
 	transactionDetails,

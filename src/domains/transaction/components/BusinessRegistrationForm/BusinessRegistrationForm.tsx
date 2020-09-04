@@ -13,7 +13,7 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { RegistrationForm } from "domains/transaction/pages/Registration/Registration.models";
+import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -234,7 +234,7 @@ const transactionDetails = ({ translations }: { translations: any }) => (
 component.displayName = "BusinessRegistrationForm";
 transactionDetails.displayName = "BusinessRegistrationFormTransactionDetails";
 
-export const BusinessRegistrationForm: RegistrationForm = {
+export const BusinessRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 2,
 	component,
 	transactionDetails,
