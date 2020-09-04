@@ -6,6 +6,7 @@ import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import secondSignatureFixture from "tests/fixtures/coins/ark/transactions/second-signature-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
@@ -156,7 +157,10 @@ describe("SecondSignatureRegistrationForm", () => {
 	});
 
 	it("should render transaction details", async () => {
-		const translations = jest.fn((translation) => translation);
+		const DetailsComponent = () => {
+			const { t } = useTranslation();
+			return <SecondSignatureRegistrationForm.transactionDetails translations={t} transaction={transaction} />;
+		};
 		const transaction = {
 			id: () => secondSignatureFixture.data.id,
 			sender: () => secondSignatureFixture.data.sender,
@@ -165,12 +169,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			fee: () => BigNumber.make(secondSignatureFixture.data.fee),
 			data: () => secondSignatureFixture.data,
 		} as Contracts.SignedTransactionData;
-		const { asFragment } = render(
-			<SecondSignatureRegistrationForm.transactionDetails
-				translations={translations}
-				transaction={transaction}
-			/>,
-		);
+		const { asFragment } = render(<DetailsComponent />);
 
 		await waitFor(() => expect(screen.getByTestId("TransactionDetail")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
