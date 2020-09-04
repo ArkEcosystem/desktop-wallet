@@ -21,13 +21,5 @@ export type SendEntityRegistrationForm = {
 
 	formFields: string[];
 
-	component: ({
-		activeTab,
-		feeOptions,
-		wallet,
-	}: {
-		activeTab: number;
-		feeOptions: any;
-		wallet: ReadWriteWallet;
-	}) => JSX.Element;
+	component: ({ activeTab, fees, wallet }: { activeTab: number; fees: any; wallet: ReadWriteWallet }) => JSX.Element;
 };
