@@ -14,6 +14,7 @@ import {
 	render,
 	RenderResult,
 	renderWithRouter,
+	syncFees,
 	waitFor,
 	within,
 } from "testing-library";
@@ -59,6 +60,8 @@ beforeAll(async () => {
 		.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 		.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
 		.reply(200, transactionFixture);
+
+	await syncFees();
 });
 
 describe("Transaction Send", () => {
@@ -261,7 +264,7 @@ describe("Transaction Send", () => {
 		});
 	});
 
-	it("should send a multi payment transfer", async () => {
+	it("should send a multi payment", async () => {
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
 			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))

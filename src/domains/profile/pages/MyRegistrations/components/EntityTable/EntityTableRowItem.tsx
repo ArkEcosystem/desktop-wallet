@@ -7,12 +7,12 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type BusinessRowItemProps = {
-	business: ExtendedTransactionData;
+type EntityTableRowItemProps = {
+	entity: ExtendedTransactionData;
 	onAction?: any;
 };
 
-export const BusinessRowItem = ({ onAction, business }: BusinessRowItemProps) => {
+export const EntityTableRowItem = ({ onAction, entity }: EntityTableRowItemProps) => {
 	const { t } = useTranslation();
 
 	const options = [
@@ -20,20 +20,20 @@ export const BusinessRowItem = ({ onAction, business }: BusinessRowItemProps) =>
 		{ label: t("COMMON.RESIGN"), value: "resign" },
 	];
 
-	const { data }: any = business.asset();
+	const { data }: any = entity.asset();
 
 	return (
-		<tr data-testid="BusinessRegistrationRowItem" className="border-b border-dashed border-theme-neutral-light">
+		<tr data-testid="EntityTableRowItem" className="border-b border-dashed border-theme-neutral-light">
 			<td className="w-24 py-6">
 				<div className="flex items-center">
 					<Circle className="border-theme-neutral-800" size="lg">
 						<Icon name="Business" width={22} height={22} />
 					</Circle>
-					<Avatar address={business.sender()} size="lg" className="mr-4" />
+					<Avatar address={entity.sender()} size="lg" className="mr-4" />
 				</div>
 			</td>
 			<td className="font-semibold">
-				<span>{business.wallet().alias()}</span>
+				<span>{entity.wallet().alias()}</span>
 			</td>
 			<td className="font-semibold">
 				<span>{data?.name}</span>
@@ -61,7 +61,7 @@ export const BusinessRowItem = ({ onAction, business }: BusinessRowItemProps) =>
 							toggleIcon="Settings"
 							options={options}
 							onSelect={({ value }: any) =>
-								onAction?.({ walletId: business.wallet().id(), txId: business.id(), action: value })
+								onAction?.({ walletId: entity.wallet().id(), txId: entity.id(), action: value })
 							}
 						/>
 					</Button>

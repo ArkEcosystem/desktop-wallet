@@ -16,6 +16,7 @@ import {
 	RenderResult,
 	renderWithRouter,
 	syncDelegates,
+	syncFees,
 	waitFor,
 	within,
 } from "testing-library";
@@ -55,6 +56,7 @@ describe("Vote For Delegate", () => {
 		delegate = await wallet.client().delegate(delegateData[0].address);
 
 		await syncDelegates();
+		await syncFees();
 	});
 
 	it("should render 1st step", async () => {
