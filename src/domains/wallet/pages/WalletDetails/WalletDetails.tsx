@@ -67,9 +67,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 			try {
 				walletData = await activeWallet.client().wallet(activeWallet.address());
-
-				await activeWallet.syncVotes();
-
 				votes = activeWallet.votes();
 			} catch {
 				votes = [];
