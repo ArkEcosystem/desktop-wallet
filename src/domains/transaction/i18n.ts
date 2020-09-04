@@ -16,6 +16,7 @@ export const translations: { [key: string]: any } = {
 	ID: "ID",
 	INVALID_DELEGATE_NAME: "Invalid Delegate Name",
 	INVALID_MNEMONIC: "Invalid Mnemonic",
+	INVALID_URL: "Invalid URL",
 	IPFS_HASH: "IPFS Hash",
 	MNEMONIC: "Mnemonic",
 	MULTIPLE: "Multiple",
@@ -103,6 +104,11 @@ export const translations: { [key: string]: any } = {
 		TWITTER: "Twitter",
 		VIMEO: "Vimeo",
 		YOUTUBE: "YouTube",
+	},
+
+	ENTITY: {
+		INVALID_NAME: "Invalid Entity Name",
+		INVALID_DESCRIPTION: "Invalid Entity Description",
 	},
 
 	PAGE_REGISTRATION: {

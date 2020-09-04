@@ -2359,3 +2359,1053 @@ exports[`BusinessRegistrationForm should render 3rd step without videos 1`] = `
   </form>
 </DocumentFragment>
 `;
+
+exports[`BusinessRegistrationForm should validate description 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="Form"
+  >
+    <div>
+      <div
+        data-testid="tab-pabel__active-panel"
+      >
+        <div
+          data-testid="BusinessRegistrationForm__step--second"
+        >
+          <h1
+            class="mb-0"
+          >
+            Register Business
+          </h1>
+          <div
+            class="text-theme-neutral-dark"
+          >
+            Select the type of registration and the address you want to register with.
+          </div>
+          <div>
+            <div
+              class="pb-8 mt-8"
+            >
+              <fieldset
+                class="sc-AxjAm fmGClo font-normal"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="ipfsData.meta.displayName"
+                >
+                  Name
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="BusinessRegistrationForm__name"
+                  name="ipfsData.meta.displayName"
+                  type="text"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxjAm fqdvek mt-8 font-normal"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="ipfsData.meta.description"
+                >
+                  Description
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <textarea
+                  aria-invalid="true"
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="BusinessRegistrationForm__description"
+                  name="ipfsData.meta.description"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  Invalid Entity Description
+                </p>
+              </fieldset>
+              <fieldset
+                class="sc-AxjAm fmGClo mt-8 font-normal"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="ipfsData.meta.website"
+                >
+                  Website
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="BusinessRegistrationForm__website"
+                  name="ipfsData.meta.website"
+                  type="text"
+                />
+              </fieldset>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="sc-fzpjYC iEuhrU flex flex-col font-normal"
+                    data-testid="LinkCollection"
+                  >
+                    <div
+                      class="flex items-center justify-between cursor-pointer"
+                      data-testid="LinkCollection__header"
+                    >
+                      <span
+                        class="text-lg font-semibold"
+                      >
+                        Repository
+                      </span>
+                      <div>
+                        <div
+                          class="sc-AxhCb idmnCf flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-2 text-theme-neutral-dark"
+                    >
+                      Show your projects through your repository
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="sc-fzpjYC iEuhrU flex flex-col font-normal"
+                    data-testid="LinkCollection"
+                  >
+                    <div
+                      class="flex items-center justify-between cursor-pointer"
+                      data-testid="LinkCollection__header"
+                    >
+                      <span
+                        class="text-lg font-semibold"
+                      >
+                        Social Media
+                      </span>
+                      <div>
+                        <div
+                          class="sc-AxhCb idmnCf flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-2 text-theme-neutral-dark"
+                    >
+                      Tell people more about yourself through social media
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="sc-fzpjYC iEuhrU flex flex-col font-normal"
+                    data-testid="LinkCollection"
+                  >
+                    <div
+                      class="flex items-center justify-between cursor-pointer"
+                      data-testid="LinkCollection__header"
+                    >
+                      <span
+                        class="text-lg font-semibold"
+                      >
+                        Photo and Video
+                      </span>
+                      <div>
+                        <div
+                          class="sc-AxhCb idmnCf flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-2 text-theme-neutral-dark"
+                    >
+                      Get more users and add more information about yourself
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <fieldset
+                    class="sc-AxjAm fmGClo flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="fee"
+                    >
+                      Transaction Fee
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="flex space-x-2"
+                      data-testid="InputFee"
+                    >
+                      <div
+                        class="flex-1"
+                      >
+                        <div
+                          class="sc-AxmLO kuiknc"
+                        >
+                          <input
+                            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            data-testid="InputCurrency"
+                            name="fee"
+                            type="text"
+                            value="0"
+                          />
+                          <div
+                            class="absolute bottom-0 w-full px-1"
+                          >
+                            <div
+                              class="flex flex-wrap justify-center"
+                              data-testid="Range"
+                            >
+                              <div
+                                class="sc-fzozJi cRbOfl"
+                                data-testid="Range__track"
+                                style="transform: scale(1); cursor: pointer;"
+                              >
+                                <div
+                                  class="sc-fzoLsD ckpTMK"
+                                  data-testid="Range__track__filled"
+                                >
+                                  <div
+                                    aria-valuemax="10"
+                                    aria-valuemin="0"
+                                    aria-valuenow="0"
+                                    class="sc-fzpans dtzHyc"
+                                    data-testid="Range__thumb"
+                                    draggable="false"
+                                    role="slider"
+                                    style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                    tabindex="0"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                          data-testid="SelectionBar"
+                          role="radiogroup"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                            data-testid="SelectionBarOption"
+                            role="radio"
+                            type="button"
+                          >
+                            Last
+                          </button>
+                          <button
+                            aria-checked="false"
+                            class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                            data-testid="SelectionBarOption"
+                            role="radio"
+                            type="button"
+                          >
+                            Min
+                          </button>
+                          <button
+                            aria-checked="false"
+                            class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                            data-testid="SelectionBarOption"
+                            role="radio"
+                            type="button"
+                          >
+                            Average
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`BusinessRegistrationForm should validate name 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="Form"
+  >
+    <div>
+      <div
+        data-testid="tab-pabel__active-panel"
+      >
+        <div
+          data-testid="BusinessRegistrationForm__step--second"
+        >
+          <h1
+            class="mb-0"
+          >
+            Register Business
+          </h1>
+          <div
+            class="text-theme-neutral-dark"
+          >
+            Select the type of registration and the address you want to register with.
+          </div>
+          <div>
+            <div
+              class="pb-8 mt-8"
+            >
+              <fieldset
+                class="sc-AxjAm fqdvek font-normal"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="ipfsData.meta.displayName"
+                >
+                  Name
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  aria-invalid="true"
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="BusinessRegistrationForm__name"
+                  name="ipfsData.meta.displayName"
+                  type="text"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  Invalid Entity Name
+                </p>
+              </fieldset>
+              <fieldset
+                class="sc-AxjAm fmGClo mt-8 font-normal"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="ipfsData.meta.description"
+                >
+                  Description
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <textarea
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="BusinessRegistrationForm__description"
+                  name="ipfsData.meta.description"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxjAm fmGClo mt-8 font-normal"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="ipfsData.meta.website"
+                >
+                  Website
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="BusinessRegistrationForm__website"
+                  name="ipfsData.meta.website"
+                  type="text"
+                />
+              </fieldset>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="sc-fzpjYC iEuhrU flex flex-col font-normal"
+                    data-testid="LinkCollection"
+                  >
+                    <div
+                      class="flex items-center justify-between cursor-pointer"
+                      data-testid="LinkCollection__header"
+                    >
+                      <span
+                        class="text-lg font-semibold"
+                      >
+                        Repository
+                      </span>
+                      <div>
+                        <div
+                          class="sc-AxhCb idmnCf flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-2 text-theme-neutral-dark"
+                    >
+                      Show your projects through your repository
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="sc-fzpjYC iEuhrU flex flex-col font-normal"
+                    data-testid="LinkCollection"
+                  >
+                    <div
+                      class="flex items-center justify-between cursor-pointer"
+                      data-testid="LinkCollection__header"
+                    >
+                      <span
+                        class="text-lg font-semibold"
+                      >
+                        Social Media
+                      </span>
+                      <div>
+                        <div
+                          class="sc-AxhCb idmnCf flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-2 text-theme-neutral-dark"
+                    >
+                      Tell people more about yourself through social media
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="sc-fzpjYC iEuhrU flex flex-col font-normal"
+                    data-testid="LinkCollection"
+                  >
+                    <div
+                      class="flex items-center justify-between cursor-pointer"
+                      data-testid="LinkCollection__header"
+                    >
+                      <span
+                        class="text-lg font-semibold"
+                      >
+                        Photo and Video
+                      </span>
+                      <div>
+                        <div
+                          class="sc-AxhCb idmnCf flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-2 text-theme-neutral-dark"
+                    >
+                      Get more users and add more information about yourself
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <fieldset
+                    class="sc-AxjAm fmGClo flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="fee"
+                    >
+                      Transaction Fee
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="flex space-x-2"
+                      data-testid="InputFee"
+                    >
+                      <div
+                        class="flex-1"
+                      >
+                        <div
+                          class="sc-AxmLO kuiknc"
+                        >
+                          <input
+                            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            data-testid="InputCurrency"
+                            name="fee"
+                            type="text"
+                            value="0"
+                          />
+                          <div
+                            class="absolute bottom-0 w-full px-1"
+                          >
+                            <div
+                              class="flex flex-wrap justify-center"
+                              data-testid="Range"
+                            >
+                              <div
+                                class="sc-fzozJi cRbOfl"
+                                data-testid="Range__track"
+                                style="transform: scale(1); cursor: pointer;"
+                              >
+                                <div
+                                  class="sc-fzoLsD ckpTMK"
+                                  data-testid="Range__track__filled"
+                                >
+                                  <div
+                                    aria-valuemax="10"
+                                    aria-valuemin="0"
+                                    aria-valuenow="0"
+                                    class="sc-fzpans dtzHyc"
+                                    data-testid="Range__thumb"
+                                    draggable="false"
+                                    role="slider"
+                                    style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                    tabindex="0"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                          data-testid="SelectionBar"
+                          role="radiogroup"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                            data-testid="SelectionBarOption"
+                            role="radio"
+                            type="button"
+                          >
+                            Last
+                          </button>
+                          <button
+                            aria-checked="false"
+                            class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                            data-testid="SelectionBarOption"
+                            role="radio"
+                            type="button"
+                          >
+                            Min
+                          </button>
+                          <button
+                            aria-checked="false"
+                            class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                            data-testid="SelectionBarOption"
+                            role="radio"
+                            type="button"
+                          >
+                            Average
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`BusinessRegistrationForm should validate url 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="Form"
+  >
+    <div>
+      <div
+        data-testid="tab-pabel__active-panel"
+      >
+        <div
+          data-testid="BusinessRegistrationForm__step--second"
+        >
+          <h1
+            class="mb-0"
+          >
+            Register Business
+          </h1>
+          <div
+            class="text-theme-neutral-dark"
+          >
+            Select the type of registration and the address you want to register with.
+          </div>
+          <div>
+            <div
+              class="pb-8 mt-8"
+            >
+              <fieldset
+                class="sc-AxjAm fmGClo font-normal"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="ipfsData.meta.displayName"
+                >
+                  Name
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="BusinessRegistrationForm__name"
+                  name="ipfsData.meta.displayName"
+                  type="text"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxjAm fmGClo mt-8 font-normal"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="ipfsData.meta.description"
+                >
+                  Description
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <textarea
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="BusinessRegistrationForm__description"
+                  name="ipfsData.meta.description"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxjAm fqdvek mt-8 font-normal"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="ipfsData.meta.website"
+                >
+                  Website
+                  <div
+                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  aria-invalid="true"
+                  class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="BusinessRegistrationForm__website"
+                  name="ipfsData.meta.website"
+                  type="text"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  Invalid URL
+                </p>
+              </fieldset>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="sc-fzpjYC iEuhrU flex flex-col font-normal"
+                    data-testid="LinkCollection"
+                  >
+                    <div
+                      class="flex items-center justify-between cursor-pointer"
+                      data-testid="LinkCollection__header"
+                    >
+                      <span
+                        class="text-lg font-semibold"
+                      >
+                        Repository
+                      </span>
+                      <div>
+                        <div
+                          class="sc-AxhCb idmnCf flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-2 text-theme-neutral-dark"
+                    >
+                      Show your projects through your repository
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="sc-fzpjYC iEuhrU flex flex-col font-normal"
+                    data-testid="LinkCollection"
+                  >
+                    <div
+                      class="flex items-center justify-between cursor-pointer"
+                      data-testid="LinkCollection__header"
+                    >
+                      <span
+                        class="text-lg font-semibold"
+                      >
+                        Social Media
+                      </span>
+                      <div>
+                        <div
+                          class="sc-AxhCb idmnCf flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-2 text-theme-neutral-dark"
+                    >
+                      Tell people more about yourself through social media
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="sc-fzpjYC iEuhrU flex flex-col font-normal"
+                    data-testid="LinkCollection"
+                  >
+                    <div
+                      class="flex items-center justify-between cursor-pointer"
+                      data-testid="LinkCollection__header"
+                    >
+                      <span
+                        class="text-lg font-semibold"
+                      >
+                        Photo and Video
+                      </span>
+                      <div>
+                        <div
+                          class="sc-AxhCb idmnCf flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-2 text-theme-neutral-dark"
+                    >
+                      Get more users and add more information about yourself
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="font-semibold"
+                >
+                  <fieldset
+                    class="sc-AxjAm fmGClo flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="fee"
+                    >
+                      Transaction Fee
+                      <div
+                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="flex space-x-2"
+                      data-testid="InputFee"
+                    >
+                      <div
+                        class="flex-1"
+                      >
+                        <div
+                          class="sc-AxmLO kuiknc"
+                        >
+                          <input
+                            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            data-testid="InputCurrency"
+                            name="fee"
+                            type="text"
+                            value="0"
+                          />
+                          <div
+                            class="absolute bottom-0 w-full px-1"
+                          >
+                            <div
+                              class="flex flex-wrap justify-center"
+                              data-testid="Range"
+                            >
+                              <div
+                                class="sc-fzozJi cRbOfl"
+                                data-testid="Range__track"
+                                style="transform: scale(1); cursor: pointer;"
+                              >
+                                <div
+                                  class="sc-fzoLsD ckpTMK"
+                                  data-testid="Range__track__filled"
+                                >
+                                  <div
+                                    aria-valuemax="10"
+                                    aria-valuemin="0"
+                                    aria-valuenow="0"
+                                    class="sc-fzpans dtzHyc"
+                                    data-testid="Range__thumb"
+                                    draggable="false"
+                                    role="slider"
+                                    style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                    tabindex="0"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                          data-testid="SelectionBar"
+                          role="radiogroup"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                            data-testid="SelectionBarOption"
+                            role="radio"
+                            type="button"
+                          >
+                            Last
+                          </button>
+                          <button
+                            aria-checked="false"
+                            class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                            data-testid="SelectionBarOption"
+                            role="radio"
+                            type="button"
+                          >
+                            Min
+                          </button>
+                          <button
+                            aria-checked="false"
+                            class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                            data-testid="SelectionBarOption"
+                            role="radio"
+                            type="button"
+                          >
+                            Average
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;

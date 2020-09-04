@@ -5,7 +5,7 @@ import { filter, isEmpty } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { Label } from "app/components/Label";
@@ -26,10 +26,12 @@ import {
 	SendEntityRegistrationDetailsOptions,
 	SendEntityRegistrationForm,
 } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
-import React, { useCallback, useEffect } from "react";
+import React, { ChangeEvent, useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import slugify from "slugify";
+import * as yup from "yup";
+
 const entityProvider = new EntityProvider();
 
 const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
@@ -38,11 +40,30 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 	const { fee } = getValues();
 
 	useEffect(() => {
+		register("ipfsData.meta.displayName", { required: true, minLength: 3, maxLength: 40 });
+		register("ipfsData.meta.website", {
+			validate: {
+				valid: (value) => {
+					if (!yup.string().url().isValidSync(value)) {
+						return t<string>("TRANSACTION.INVALID_URL");
+					}
+					return true;
+				},
+			},
+		});
+		register("ipfsData.meta.description", { minLength: 3, maxLength: 128 });
 		register("ipfsData.sourceControl");
 		register("ipfsData.socialMedia");
 		register("ipfsData.images");
 		register("ipfsData.videos");
-	}, [register]);
+	}, [register, t]);
+
+	const handleInput = useCallback(
+		(event: ChangeEvent<HTMLInputElement>) => {
+			setValue(event.target.name, event.target.value, true);
+		},
+		[setValue],
+	);
 
 	const handleSourceControl = useCallback(
 		(links: EntityLink[]) => {
@@ -95,28 +116,20 @@ const SecondStep = ({ feeOptions }: { feeOptions: Record<string, any> }) => {
 				<div className="pb-8 mt-8">
 					<FormField name="ipfsData.meta.displayName" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input
-							data-testid="BusinessRegistrationForm__name"
-							type="text"
-							ref={register({ required: true })}
-						/>
+						<Input data-testid="BusinessRegistrationForm__name" type="text" onChange={handleInput} />
+						<FormHelperText errorMessage={t("TRANSACTION.ENTITY.INVALID_NAME")} />
 					</FormField>
 
 					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea
-							data-testid="BusinessRegistrationForm__description"
-							ref={register({ required: true })}
-						/>
+						<TextArea data-testid="BusinessRegistrationForm__description" onChange={handleInput} />
+						<FormHelperText errorMessage={t("TRANSACTION.ENTITY.INVALID_DESCRIPTION")} />
 					</FormField>
 
 					<FormField name="ipfsData.meta.website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input
-							data-testid="BusinessRegistrationForm__website"
-							type="text"
-							ref={register({ required: true })}
-						/>
+						<Input data-testid="BusinessRegistrationForm__website" type="text" onChange={handleInput} />
+						<FormHelperText />
 					</FormField>
 				</div>
 

@@ -58,6 +58,7 @@ const whiteListedModules = [
 	"socks-proxy-agent",
 	"styled-components",
 	"swiper",
+	"slugify",
 ];
 
 const addNodeExternals = () =>

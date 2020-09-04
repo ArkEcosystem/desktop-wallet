@@ -159,7 +159,11 @@ describe("BusinessRegistrationForm", () => {
 	});
 
 	it("should set fee", async () => {
-		const { result } = renderHook(() => useForm());
+		const { result } = renderHook(() =>
+			useForm({
+				mode: "onChange",
+			}),
+		);
 		result.current.register("fee");
 
 		render(<Component form={result.current} onSubmit={() => void 0} />);
@@ -171,8 +175,73 @@ describe("BusinessRegistrationForm", () => {
 		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
 	});
 
+	it("should validate url", async () => {
+		const { result, waitForNextUpdate } = renderHook(() => useForm());
+
+		const { asFragment, rerender } = render(<Component form={result.current} />);
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__website"), {
+				target: {
+					value: "wrong url",
+				},
+			});
+		});
+
+		await waitForNextUpdate();
+		rerender(<Component form={result.current} />);
+
+		await waitFor(() => expect(screen.getByText(transactionTranslations.INVALID_URL)).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should validate name", async () => {
+		const { result, waitForNextUpdate } = renderHook(() => useForm());
+
+		const { asFragment, rerender } = render(<Component form={result.current} />);
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__name"), {
+				target: {
+					value: "ab",
+				},
+			});
+		});
+
+		await waitForNextUpdate();
+		rerender(<Component form={result.current} />);
+
+		await waitFor(() => expect(screen.getByText(transactionTranslations.ENTITY.INVALID_NAME)).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should validate description", async () => {
+		const { result, waitForNextUpdate } = renderHook(() => useForm());
+
+		const { asFragment, rerender } = render(<Component form={result.current} />);
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__description"), {
+				target: {
+					value: "ab",
+				},
+			});
+		});
+
+		await waitForNextUpdate();
+		rerender(<Component form={result.current} />);
+
+		await waitFor(() =>
+			expect(screen.getByText(transactionTranslations.ENTITY.INVALID_DESCRIPTION)).toBeInTheDocument(),
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should fill data", async () => {
-		const { result } = renderHook(() => useForm());
+		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} />);
 
 		act(() => {
@@ -198,6 +267,8 @@ describe("BusinessRegistrationForm", () => {
 				},
 			});
 		});
+
+		await waitForNextUpdate();
 
 		const addLink = async (headerTitle: string, optionLabel: string, inputValue: string) => {
 			const headerElement = screen.getByText(headerTitle, {
@@ -288,8 +359,8 @@ describe("BusinessRegistrationForm", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should go to next step with form data", () => {
-		const { result } = renderHook(() => useForm());
+	it("should go to next step with form data", async () => {
+		const { result, waitForNextUpdate } = renderHook(() => useForm());
 
 		const { rerender, asFragment } = render(<Component form={result.current} activeTab={2} />);
 
@@ -316,6 +387,8 @@ describe("BusinessRegistrationForm", () => {
 				},
 			});
 		});
+
+		await waitForNextUpdate();
 
 		rerender(<Component form={result.current} activeTab={3} />);
 
