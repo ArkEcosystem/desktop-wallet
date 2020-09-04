@@ -53,6 +53,8 @@ export const translations: { [key: string]: any } = {
 		BLOCKCHAIN_NAME: "Blockchain Name",
 		BUSINESS: "Business",
 		BUSINESS_NAME: "Business Name",
+		PLUGINS: "Plugins",
+		PLUGIN_NAME: "Plugin Name",
 		DELEGATE: "Delegate",
 		DELEGATE_NAME: "Delegate Name",
 		FORGED_AMOUNT: "Forged Amount",
