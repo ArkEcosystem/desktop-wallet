@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 import { StepProps } from "./SendEntityResignation.models";
 
-export const FourthStep = ({ delegate, fee, transaction, senderWallet }: StepProps) => {
+export const FourthStep = ({ delegate, fees, transaction, senderWallet }: StepProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -36,7 +36,7 @@ export const FourthStep = ({ delegate, fee, transaction, senderWallet }: StepPro
 						</div>
 					}
 				>
-					<Amount ticker="ARK" value={BigNumber.make(fee.static)} />
+					<Amount ticker="ARK" value={BigNumber.make(fees.static)} />
 				</TransactionDetail>
 			</TransactionSuccessful>
 		</div>

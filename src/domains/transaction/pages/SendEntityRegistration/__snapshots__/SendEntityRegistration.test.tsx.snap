@@ -3195,6 +3195,15 @@ exports[`Registration should select registration type & show form 1`] = `
                                 >
                                   Average
                                 </button>
+                                <button
+                                  aria-checked="true"
+                                  class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  data-testid="SelectionBarOption"
+                                  role="radio"
+                                  type="button"
+                                >
+                                  Max
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -3725,6 +3734,15 @@ exports[`Registration should should go back and forth & correctly register field
                                   type="button"
                                 >
                                   Average
+                                </button>
+                                <button
+                                  aria-checked="true"
+                                  class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  data-testid="SelectionBarOption"
+                                  role="radio"
+                                  type="button"
+                                >
+                                  Max
                                 </button>
                               </div>
                             </div>
