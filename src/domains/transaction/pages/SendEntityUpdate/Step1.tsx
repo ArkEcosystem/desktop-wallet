@@ -1,26 +1,10 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
-import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
-import { Form, FormField, FormLabel } from "app/components/Form";
-import { Icon } from "app/components/Icon";
-import { Input, InputPassword } from "app/components/Input";
-import { Label } from "app/components/Label";
-import { Page, Section } from "app/components/Layout";
-import { StepIndicator } from "app/components/StepIndicator";
-import { TabPanel, Tabs } from "app/components/Tabs";
+import { FormField, FormLabel } from "app/components/Form";
+import { Input } from "app/components/Input";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useActiveProfile } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
-import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
-import { LinkList } from "domains/transaction/components/LinkList";
-import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
-import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const FirstStep = ({ form }: { form: any }) => {

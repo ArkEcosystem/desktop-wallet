@@ -1,28 +1,14 @@
-import { Environment, NetworkData, Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
-import { Alert } from "app/components/Alert";
+import { NetworkData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
-import { Button } from "app/components/Button";
-import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { Page, Section } from "app/components/Layout";
-import { StepIndicator } from "app/components/StepIndicator";
-import { TabPanel, Tabs } from "app/components/Tabs";
-import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { getNetworkExtendedData } from "domains/network/helpers";
-import React, { useEffect, useMemo, useState } from "react";
-import { useForm, useFormContext } from "react-hook-form";
+import React from "react";
+import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
-
-import { MnemonicList } from "../../components/MnemonicList";
-import { MnemonicVerification } from "../../components/MnemonicVerification";
 
 export const FourthStep = ({ nameMaxLength }: { nameMaxLength: number }) => {
 	const { getValues, register } = useFormContext();
