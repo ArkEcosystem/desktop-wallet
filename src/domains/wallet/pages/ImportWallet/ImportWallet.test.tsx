@@ -37,15 +37,17 @@ describe("ImportWallet", () => {
 
 		nock("https://dwallets.ark.io")
 			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
+			.reply(200, require("tests/fixtures/coins/ark/configuration-devnet.json"))
 			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
+			.reply(200, require("tests/fixtures/coins/ark/peers.json"))
 			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+			.reply(200, require("tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.reply(200, require("tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq")
+			.reply(200, require("tests/fixtures/coins/ark/wallets/DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq.json"))
 			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
+			.reply(200, require("tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
 			.persist();
 	});
 
@@ -288,7 +290,7 @@ describe("ImportWallet", () => {
 
 		let rendered: RenderResult;
 
-		const randomAddress = "D8vwEEvKgMPVvvK2Zwzyb5uHzRadurCcKq";
+		const randomAddress = "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib";
 
 		history.push(route);
 
