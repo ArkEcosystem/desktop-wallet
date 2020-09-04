@@ -1,4 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
@@ -53,7 +54,7 @@ describe("BusinessRegistrationForm", () => {
 		],
 	};
 
-	beforeAll(() => {
+	beforeEach(() => {
 		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
 		nock("https://platform.ark.io/api")
 			.post("/ipfs")
@@ -355,7 +356,7 @@ describe("BusinessRegistrationForm", () => {
 		const setTransaction = jest.fn();
 
 		const signMock = jest
-			.spyOn(wallet.transaction(), "signIpfs")
+			.spyOn(wallet.transaction(), "signEntityRegistration")
 			.mockReturnValue(Promise.resolve(businessRegistrationFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
@@ -379,6 +380,61 @@ describe("BusinessRegistrationForm", () => {
 		transactionMock.mockRestore();
 	});
 
+	it("should sanitize data before sign", async () => {
+		const form = {
+			clearError: jest.fn(),
+			getValues: () => ({
+				fee: "1",
+				mnemonic: "sample passphrase",
+				senderAddress: wallet.address(),
+				ipfsData: {
+					meta: {
+						displayName: "name",
+					},
+					sourceControl: undefined,
+					images: [],
+					videos: {},
+				},
+			}),
+			setError: jest.fn(),
+			setValue: jest.fn(),
+		};
+		const handleNext = jest.fn();
+		const setTransaction = jest.fn();
+
+		const fileUploadSpy = jest.spyOn(File.prototype, "upload");
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityRegistration")
+			.mockReturnValue(Promise.resolve(businessRegistrationFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		await BusinessRegistrationForm.signTransaction({
+			env,
+			form,
+			handleNext,
+			profile,
+			setTransaction,
+		});
+
+		expect(fileUploadSpy).toHaveBeenCalledWith({
+			meta: {
+				displayName: "name",
+			},
+		});
+		expect(signMock).toHaveBeenCalled();
+		expect(broadcastMock).toHaveBeenCalled();
+		expect(transactionMock).toHaveBeenCalled();
+		expect(setTransaction).toHaveBeenCalled();
+		expect(handleNext).toHaveBeenCalled();
+
+		fileUploadSpy.mockRestore();
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+	});
+
 	it("should error if signing fails", async () => {
 		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
 		const form = {
@@ -397,7 +453,7 @@ describe("BusinessRegistrationForm", () => {
 		const translations = jest.fn((translation) => translation);
 
 		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => void 0);
-		const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
+		const signMock = jest.spyOn(wallet.transaction(), "signEntityRegistration").mockImplementation(() => {
 			throw new Error("Signing failed");
 		});
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();

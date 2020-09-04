@@ -1,6 +1,7 @@
 import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { Enums, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { filter, isEmpty } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -309,6 +310,8 @@ export const BusinessRegistrationForm: SendEntityRegistrationForm = {
 		const { fee, ipfsData, mnemonic, meta, senderAddress } = getValues({ nest: true });
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
+		const sanitizedData = filter(ipfsData, (item) => !isEmpty(item));
+
 		try {
 			const transactionId = await senderWallet!.transaction().signEntityRegistration({
 				fee,
@@ -321,8 +324,7 @@ export const BusinessRegistrationForm: SendEntityRegistrationForm = {
 					subType: Enums.EntitySubType.None,
 					// @TODO: use the name that the user entered. Has to be valid like a delegate username.
 					name: ipfsData.meta.displayName,
-					// @TODO: ensure that no empty keys are sent. Currently empty keys are sent with a value of "undefined".
-					ipfs: await new File(httpClient).upload(ipfsData),
+					ipfs: await new File(httpClient).upload(sanitizedData),
 				},
 			});
 
