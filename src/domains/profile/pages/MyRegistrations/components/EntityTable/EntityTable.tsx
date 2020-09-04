@@ -7,11 +7,13 @@ import { useTranslation } from "react-i18next";
 import { EntityTableRowItem } from "./EntityTableRowItem";
 
 type Props = {
+	title: string;
+	nameColumnHeader: string;
 	onAction?: any;
 	entities: ExtendedTransactionData[];
 };
 
-export const EntityTable = ({ entities, onAction }: Props) => {
+export const EntityTable = ({ entities, onAction, title, nameColumnHeader }: Props) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -20,7 +22,7 @@ export const EntityTable = ({ entities, onAction }: Props) => {
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.AGENT"),
 		},
 		{
-			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME"),
+			Header: nameColumnHeader,
 		},
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.HISTORY"),
@@ -43,7 +45,7 @@ export const EntityTable = ({ entities, onAction }: Props) => {
 
 	return (
 		<Section>
-			<h2 className="mb-8 font-bold">{t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}</h2>
+			<h2 className="mb-8 font-bold">{title}</h2>
 
 			<Table columns={columns} data={entities}>
 				{(entity: any) => <EntityTableRowItem entity={entity} onAction={onAction} />}
