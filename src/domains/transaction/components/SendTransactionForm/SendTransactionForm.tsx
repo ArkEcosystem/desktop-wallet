@@ -36,16 +36,19 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 	useEffect(() => {
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
-		const transactionFees = env.fees().findByType(senderWallet!.coinId(), senderWallet!.networkId(), "transfer");
 
-		setFeeOptions({
-			last: undefined,
-			min: transactionFees.min,
-			max: transactionFees.max,
-			average: transactionFees.avg,
-		});
+		if (senderWallet) {
+			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "transfer");
 
-		setValue("fee", transactionFees.avg, true);
+			setFeeOptions({
+				last: undefined,
+				min: transactionFees.min,
+				max: transactionFees.max,
+				average: transactionFees.avg,
+			});
+
+			setValue("fee", transactionFees.avg, true);
+		}
 	}, [env, setFeeOptions, setValue, profile, senderAddress]);
 
 	useEffect(() => {

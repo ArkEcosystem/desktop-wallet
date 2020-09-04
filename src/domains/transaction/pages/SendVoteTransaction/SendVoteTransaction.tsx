@@ -52,16 +52,19 @@ export const FirstStep = ({
 
 	useEffect(() => {
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
-		const transactionFees = env.fees().findByType(senderWallet!.coinId(), senderWallet!.networkId(), "vote");
 
-		setFeeOptions({
-			last: undefined,
-			min: transactionFees.min,
-			max: transactionFees.max,
-			average: transactionFees.avg,
-		});
+		if (senderWallet) {
+			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "vote");
 
-		setValue("fee", transactionFees.avg, true);
+			setFeeOptions({
+				last: undefined,
+				min: transactionFees.min,
+				max: transactionFees.max,
+				average: transactionFees.avg,
+			});
+
+			setValue("fee", transactionFees.avg, true);
+		}
 	}, [env, setFeeOptions, setValue, profile, senderAddress]);
 
 	return (
