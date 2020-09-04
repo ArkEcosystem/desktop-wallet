@@ -17,16 +17,15 @@ describe("SecondSignatureRegistrationForm", () => {
 	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
-	let feeOptions: Record<string, string>;
+	let fees: Contracts.TransactionFee;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
-		feeOptions = {
-			last: (2 * 1e8).toFixed(0),
+		fees = {
 			min: "0",
 			max: (10 * 1e8).toFixed(0),
-			average: (1.354 * 1e8).toFixed(0),
+			avg: (1.354 * 1e8).toFixed(0),
 		};
 	});
 
@@ -51,7 +50,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		activeTab?: number;
 	}) => (
 		<Form context={form} onSubmit={onSubmit}>
-			<SecondSignatureRegistrationForm.component activeTab={activeTab} feeOptions={feeOptions} wallet={wallet} />
+			<SecondSignatureRegistrationForm.component activeTab={activeTab} fees={fees} wallet={wallet} />
 		</Form>
 	);
 

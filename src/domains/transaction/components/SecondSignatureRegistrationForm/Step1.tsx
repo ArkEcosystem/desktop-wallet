@@ -1,4 +1,6 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
@@ -13,7 +15,7 @@ import { useTranslation } from "react-i18next";
 
 import { InputFee } from "../InputFee";
 
-export const GenerationStep = ({ feeOptions, wallet }: any) => {
+export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFee; wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue, register } = useFormContext();
 
@@ -57,7 +59,9 @@ export const GenerationStep = ({ feeOptions, wallet }: any) => {
 				<FormField name="fee" className="mt-8">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
-						{...feeOptions}
+						min={fees.min}
+						avg={fees.avg}
+						max={fees.max}
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}

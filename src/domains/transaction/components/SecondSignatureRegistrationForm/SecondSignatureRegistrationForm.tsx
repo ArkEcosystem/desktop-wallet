@@ -14,16 +14,16 @@ import { ReviewStep } from "./Step4";
 
 const component = ({
 	activeTab,
-	feeOptions,
+	fees,
 	wallet,
 }: {
 	activeTab: number;
-	feeOptions: any;
+	fees: Contracts.TransactionFee;
 	wallet: ReadWriteWallet;
 }) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={2}>
-			<GenerationStep wallet={wallet} feeOptions={feeOptions} />
+			<GenerationStep wallet={wallet} fees={fees} />
 		</TabPanel>
 		<TabPanel tabId={3}>
 			<BackupStep />
