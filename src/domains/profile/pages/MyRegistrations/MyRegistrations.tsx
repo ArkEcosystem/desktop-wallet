@@ -35,16 +35,16 @@ export const MyRegistrations = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
 	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
+	const [plugins, setPlugins] = useState<ExtendedTransactionData[]>([]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const isEmptyRegistrations = useMemo(() => !isLoading && !delegates.length && !businesses.length, [
-		businesses,
-		delegates,
-		isLoading,
-	]);
+	const isEmptyRegistrations = useMemo(
+		() => !isLoading && !delegates.length && !businesses.length && !businesses.length,
+		[businesses, plugins, delegates, isLoading],
+	);
 
 	const crumbs = [
 		{
@@ -73,6 +73,9 @@ export const MyRegistrations = () => {
 			setIsLoading(true);
 
 			activeProfile.entityAggregate().flush();
+
+			const pluginRegistrations = await activeProfile.entityAggregate().registrations(Enums.EntityType.Plugin);
+			setPlugins(pluginRegistrations.items());
 
 			const businessRegistrations = await activeProfile
 				.entityAggregate()
@@ -113,9 +116,26 @@ export const MyRegistrations = () => {
 
 			{!isLoading && businesses.length > 0 && (
 				<div data-testid="BusinessRegistrations">
-					<EntityTable entities={businesses} onAction={handleAction} />
+					<EntityTable
+						title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
+						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
+						entities={businesses}
+						onAction={handleAction}
+					/>
 				</div>
 			)}
+
+			{!isLoading && plugins.length > 0 && (
+				<div data-testid="PluginRegistrations">
+					<EntityTable
+						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
+						title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
+						entities={plugins}
+						onAction={handleAction}
+					/>
+				</div>
+			)}
+
 			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
