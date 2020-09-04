@@ -54,7 +54,9 @@ export const FirstStep = ({
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		if (senderWallet) {
-			setFeeOptions(env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "vote"));
+			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "vote");
+
+			setFeeOptions(transactionFees);
 
 			setValue("fee", transactionFees.avg, true);
 		}

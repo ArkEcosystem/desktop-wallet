@@ -39,7 +39,9 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		if (senderWallet) {
-			setFeeOptions(env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "transfer"));
+			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "transfer");
+
+			setFeeOptions(transactionFees);
 
 			setValue("fee", transactionFees.avg, true);
 		}
