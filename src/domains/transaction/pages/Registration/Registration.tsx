@@ -246,8 +246,8 @@ export const Registration = () => {
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
-		try {
-			const transactionFees = env.fees().all(senderWallet!.coinId(), senderWallet!.networkId());
+		if (senderWallet) {
+			const transactionFees = env.fees().all(senderWallet.coinId(), senderWallet.networkId());
 
 			const fees = Object.entries(transactionFees).reduce((mapping, [transactionType, fees]) => {
 				mapping[transactionType] = fees;
@@ -256,8 +256,6 @@ export const Registration = () => {
 			}, {} as Record<string, any>);
 
 			setFeeOptions(fees);
-		} catch (error) {
-			//
 		}
 	}, [env, setFeeOptions, setValue, activeProfile, senderAddress]);
 
