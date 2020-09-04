@@ -104,7 +104,9 @@ const SecondStep = ({ feeOptions, wallet }: any) => {
 				<FormField name="fee" className="mt-8">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
-						{...feeOptions}
+						min={fees.min}
+						max={fees.max}
+						avg={fees.avg}
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}

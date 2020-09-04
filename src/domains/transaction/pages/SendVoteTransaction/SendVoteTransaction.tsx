@@ -105,7 +105,9 @@ export const FirstStep = ({
 					<FormField name="fee">
 						<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 						<InputFee
-							{...fees}
+							min={fees.min}
+							max={fees.max}
+							avg={fees.avg}
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}
