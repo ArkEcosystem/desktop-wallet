@@ -172,7 +172,7 @@ export class EntityProvider {
 		];
 	}
 	images(): Provider[] {
-		return [imgurProvider, gitlabImageProvider, gitlabImageProvider, flickrProvider];
+		return [imgurProvider, githubImageProvider, gitlabImageProvider, flickrProvider];
 	}
 	videos(): Provider[] {
 		return [youtubeVideoProvider, vimeoProvider];
