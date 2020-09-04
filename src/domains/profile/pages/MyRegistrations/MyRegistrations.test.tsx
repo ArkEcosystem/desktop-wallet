@@ -127,7 +127,9 @@ describe("MyRegistrations", () => {
 			fireEvent.click(registerButton);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/transactions/registration`);
+		expect(history.location.pathname).toEqual(
+			`/profiles/${fixtureProfileId}/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129/send-entity-registration`,
+		);
 	});
 
 	it("should handle delegate resignation dropdown action", async () => {
@@ -154,7 +156,7 @@ describe("MyRegistrations", () => {
 		});
 
 		expect(history.location.pathname).toEqual(
-			`/profiles/${fixtureProfileId}/transactions/${delegateWalletId}/resignation`,
+			`/profiles/${fixtureProfileId}/wallets/${delegateWalletId}/send-entity-resignation`,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -183,7 +185,7 @@ describe("MyRegistrations", () => {
 		});
 
 		expect(history.location.pathname).toEqual(
-			`/profiles/${fixtureProfileId}/transactions/${delegateWalletId}/update`,
+			`/profiles/${fixtureProfileId}/wallets/${delegateWalletId}/send-entity-update`,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
