@@ -613,7 +613,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                             data-testid="Range__track__filled"
                           >
                             <div
-                              aria-valuemax="100"
+                              aria-valuemax="2e-8"
                               aria-valuemin="0"
                               aria-valuenow="0"
                               class="sc-fzplWN eSQZBV"
@@ -652,6 +652,15 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                       type="button"
                     >
                       Average
+                    </button>
+                    <button
+                      aria-checked="false"
+                      class="sc-fzqARJ fRqGEl relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                      data-testid="SelectionBarOption"
+                      role="radio"
+                      type="button"
+                    >
+                      Max
                     </button>
                   </div>
                 </div>
