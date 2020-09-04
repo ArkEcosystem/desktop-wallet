@@ -16,7 +16,11 @@ import {
 	waitFor,
 } from "utils/testing-library";
 
-import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
+import { CreateWallet } from "./CreateWallet";
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
+import { ThirdStep } from "./Step3";
+import { FourthStep } from "./Step4";
 
 jest.setTimeout(8000);
 

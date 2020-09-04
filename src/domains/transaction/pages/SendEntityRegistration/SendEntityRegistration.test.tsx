@@ -23,7 +23,9 @@ import {
 } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
-import { FirstStep, SendEntityRegistration, SigningStep } from "./SendEntityRegistration";
+import { SendEntityRegistration } from "./SendEntityRegistration";
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
@@ -179,7 +181,7 @@ describe("Registration", () => {
 
 		const { asFragment, container } = render(
 			<FormContext {...form.current}>
-				<SigningStep passwordType="password" wallet={secondWallet} />
+				<SecondStep passwordType="password" wallet={secondWallet} />
 			</FormContext>,
 		);
 
@@ -193,7 +195,7 @@ describe("Registration", () => {
 
 		const { asFragment, container } = render(
 			<FormContext {...form.current}>
-				<SigningStep passwordType="ledger" wallet={secondWallet} />
+				<SecondStep passwordType="ledger" wallet={secondWallet} />
 			</FormContext>,
 		);
 
