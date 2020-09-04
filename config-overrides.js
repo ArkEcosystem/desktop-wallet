@@ -59,6 +59,7 @@ const whiteListedModules = [
 	"styled-components",
 	"swiper",
 	"slugify",
+	"yup",
 ];
 
 const addNodeExternals = () =>
