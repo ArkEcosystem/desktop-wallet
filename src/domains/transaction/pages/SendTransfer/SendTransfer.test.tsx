@@ -22,7 +22,7 @@ import transactionMultipleFixture from "tests/fixtures/coins/ark/transactions/tr
 import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
 
 import { translations as transactionTranslations } from "../../i18n";
-import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, SendTransfer } from "../SendTransfer";
+import { FifthStep, FirstStep, FourthStep, SecondStep, SendTransfer, ThirdStep } from "../SendTransfer";
 
 const fixtureProfileId = getDefaultProfileId();
 
