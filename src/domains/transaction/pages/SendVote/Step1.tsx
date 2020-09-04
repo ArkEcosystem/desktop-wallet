@@ -27,8 +27,10 @@ export const FirstStep = ({
 }) => {
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
-	const { getValues, setValue } = useFormContext();
+	const form = useFormContext();
 
+	const { getValues, setValue } = form;
+	const { senderAddress } = form.watch();
 	const [fees, setFees] = useState({
 		static: "5",
 		min: "0",
@@ -36,7 +38,6 @@ export const FirstStep = ({
 		max: "2",
 	});
 
-	const senderAddress = getValues("senderAddress");
 	const fee = getValues("fee") || null;
 	const coinName = wallet.coinId();
 	const network = `${coinName} ${wallet.network().name()}`;
@@ -59,7 +60,7 @@ export const FirstStep = ({
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
