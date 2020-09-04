@@ -40,7 +40,7 @@ export const SecondStep = () => {
 					{t("TRANSACTION.PAGE_UPDATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 				</p>
 			</div>
-			<div className="grid grid-flow-row mt-4">
+			<div className="mt-4 grid grid-flow-row">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
