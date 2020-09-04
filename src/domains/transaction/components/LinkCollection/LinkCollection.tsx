@@ -51,7 +51,7 @@ export const LinkCollection = ({
 			links: data,
 		},
 	});
-	const { control, register, setValue, getValues, handleSubmit } = form;
+	const { control, register, setValue, getValues, handleSubmit, errors, clearError } = form;
 	const { fields, append, remove } = useFieldArray({
 		control,
 		name: "links",
@@ -71,6 +71,7 @@ export const LinkCollection = ({
 	const addLink = (link: EntityLink) => {
 		append(link);
 		setValue("value", "");
+		clearError("value");
 	};
 
 	const removeLink = (index: number) => {
@@ -158,6 +159,7 @@ export const LinkCollection = ({
 										validateProviderURL,
 									},
 								})}
+								isInvalid={!!errors?.value}
 							/>
 						</FormField>
 
