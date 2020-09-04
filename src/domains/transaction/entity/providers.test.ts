@@ -46,12 +46,6 @@ describe("Validate URLs", () => {
 		["bitbucket", "https://bitbucket.org", false],
 		["bitbucket", "https://bitbucket.com/@ark.ecosystem", false],
 
-		["facebook", "https://facebook.com/arkecosystem", true],
-		["facebook", "https://facebook.com/ark.ecosystem", true],
-		["facebook", "http://facebook.com/ark", true],
-		["facebook", "http://facebook.in/ark", false],
-		["facebook", "http://facebook.com/@ark", false],
-
 		["github", "https://github.com/arkecosystem/core", true],
 		["github", "https://github.com/arkecosystem", true],
 		["github", "https://github.com/ark.ecosystem", true],
@@ -63,6 +57,21 @@ describe("Validate URLs", () => {
 		["gitlab", "https://gitlab.com/ark.ecosystem", true],
 		["gitlab", "https://gitlab.com", false],
 		["gitlab", "https://gitlab.com/@ark.ecosystem", false],
+
+		["npm", "https://npmjs.com/package/arkecosystem/core", true],
+		["npm", "https://npmjs.com/package/arkecosystem", true],
+		["npm", "https://npmjs.com/ark.ecosystem", false],
+		["npm", "https://npmjs.com", false],
+		["npm", "https://npmjs.com/@ark.ecosystem", false],
+
+		["discord", "https://discord.com/invite/VNRfxwQ", true],
+		["discord", "https://discord.com", false],
+
+		["facebook", "https://facebook.com/arkecosystem", true],
+		["facebook", "https://facebook.com/ark.ecosystem", true],
+		["facebook", "http://facebook.com/ark", true],
+		["facebook", "http://facebook.in/ark", false],
+		["facebook", "http://facebook.com/@ark", false],
 
 		["instagram", "https://instagram.com/arkecosystem", true],
 		["instagram", "https://instagram.com/ark.ecosystem", true],
@@ -77,9 +86,45 @@ describe("Validate URLs", () => {
 		["linkedin", "http://linkedin.com/ark", false],
 		["linkedin", "http://linkedin.org/in/@ark", false],
 
+		["medium", "https://medium.com/@arkecosystem", true],
+		["medium", "https://medium.com", false],
+
+		["reddit", "https://reddit.com/r/arkecosystem", true],
+		["reddit", "https://reddit.com/r/ArkEcosystem/", true],
+		["reddit", "https://reddit.com/r/", false],
+		["reddit", "https://reddit.com/user/", false],
+		["reddit", "https://reddit.com", false],
+
+		["slack", "https://arkecosystem.slack.com/", true],
+		["slack", "https://slack.com", false],
+
+		["telegram", "https://t.me/arkannouncements", true],
+		["telegram", "https://t.me", false],
+
+		["twitter", "https://twitter.com/arkecosystem", true],
+		["twitter", "https://twitter.com", false],
+
+		["wechat", "https://www.wechat.com", false],
+
+		["youtube", "https://www.youtube.com/channel/UCpc2k6zOOutGT9y56urDClg", true],
+		["youtube", "https://youtube.com/channel/UCpc2k6zOOutGT9y56urDClg", true],
+		["youtube", "http://youtube.com/channel/UCpc2k6zOOutGT9y56urDClg", true],
+		["youtube", "https://www.youtube.com/user/UCpc2k6zOOutGT9y56urDClg", true],
+		["youtube", "https://www.youtube.com", false],
+		["youtube", "http://youtube.com/channel", false],
+
 		["imgur", "https://i.imgur.com/123456.png", true],
 		["imgur", "https://i.imgur.com/123456.jpeg", true],
 		["imgur", "https://imgur.com/gallery/abc123", false],
+
+		["github-image", "https://raw.githubusercontent.com/ArkEcosystem/peers/master/logo.png", true],
+		["github-image", "https://raw.githubusercontent.com/ArkEcosystem/peers/master/image-1.jpeg", true],
+		["github-image", "https://raw.githubusercontent.com/", false],
+		["github-image", "https://github.com/arkecosystem", false],
+
+		["gitlab-image", "https://gitlab.com/pages/arkecosystem/-/raw/master/static/logo.png", true],
+		["gitlab-image", "https://gitlab.com/pages/arkecosystem/-/raw/master/static/image-1.jpeg", true],
+		["gitlab-image", "https://gitlab.com", false],
 
 		["flickr", "https://live.staticflickr.com/12345/50287053112_b0f1d60cd2_1k.jpg", true],
 		["flickr", "https://farm1.staticflickr.com/0/1418878_1e92283336_m.jpg", true],
@@ -99,13 +144,6 @@ describe("Validate URLs", () => {
 		["youtube-video", "https://youtu.be/w_1x521ui", true],
 		["youtube-video", "https://youtu.be", false],
 		["youtube-video", "https://youtube.com/watch", false],
-
-		["youtube", "https://www.youtube.com/channel/UCpc2k6zOOutGT9y56urDClg", true],
-		["youtube", "https://youtube.com/channel/UCpc2k6zOOutGT9y56urDClg", true],
-		["youtube", "http://youtube.com/channel/UCpc2k6zOOutGT9y56urDClg", true],
-		["youtube", "https://www.youtube.com/user/UCpc2k6zOOutGT9y56urDClg", true],
-		["youtube", "https://www.youtube.com", false],
-		["youtube", "http://youtube.com/channel", false],
 	])("should validate urls (%s, %s, %s)", (provider, url, expected) => {
 		expect(entityProvider.findById(provider)?.validate(url)).toBe(expected);
 	});
