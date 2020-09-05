@@ -130,11 +130,17 @@ describe("Validate URLs", () => {
 
 		["github-image", "https://raw.githubusercontent.com/ArkEcosystem/peers/master/logo.png", true],
 		["github-image", "https://raw.githubusercontent.com/ArkEcosystem/peers/master/image-1.jpeg", true],
+		["github-image", "https://raw.githubusercontent.com/ArkEcosystem/peers/master/image-2.jpg", true],
+		["github-image", "https://raw.githubusercontent.com/ArkEcosystem/peers/master/image-3", false],
+		["github-image", "https://raw.githubusercontent.com/ArkEcosystem/peers/master/src/index.php", false],
+		["github-image", "https://raw.githubusercontent.com/image.png", false],
 		["github-image", "https://raw.githubusercontent.com/", false],
 		["github-image", "https://github.com/arkecosystem", false],
 
 		["gitlab-image", "https://gitlab.com/pages/arkecosystem/-/raw/master/static/logo.png", true],
 		["gitlab-image", "https://gitlab.com/pages/arkecosystem/-/raw/master/static/image-1.jpeg", true],
+		["gitlab-image", "https://gitlab.com/pages/arkecosystem/-/raw/master/static/index.php", false],
+		["gitlab-image", "https://gitlab.com/pages/arkecosystem/master/static/image-2.jpeg", false],
 		["gitlab-image", "https://gitlab.com", false],
 
 		["flickr", "https://live.staticflickr.com/12345/50287053112_b0f1d60cd2_1k.jpg", true],

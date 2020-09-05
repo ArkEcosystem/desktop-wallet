@@ -116,13 +116,19 @@ export const imgurProvider = {
 export const githubImageProvider = {
 	id: "github-image",
 	displayName: "GitHub",
-	validate: () => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/(?:raw\.githubusercontent\.com)\/([A-Za-z0-9-_.]+)(?:\/[A-z0-9_-].*)(\.(jpe?g|png|gif))$/.test(
+			value,
+		),
 };
 
 export const gitlabImageProvider = {
 	id: "gitlab-image",
 	displayName: "GitLab",
-	validate: () => false,
+	validate: (value: string) =>
+		/(?:https?:)?\/(?:gitlab\.com)\/([A-Za-z0-9-_.].*)(?:\/-\/raw)(?:\/[A-z0-9_-].*)(\.(jpe?g|png|gif))$/.test(
+			value,
+		),
 };
 
 export const flickrProvider = {
