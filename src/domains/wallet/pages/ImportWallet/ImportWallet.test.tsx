@@ -26,8 +26,8 @@ import { ThirdStep } from "./Step3";
 let profile: Profile;
 const fixtureProfileId = getDefaultProfileId();
 
-const identityAddress = "DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq";
-const mnemonic = "quantum sketch safe large poet space fortune wide vapor jealous dwarf step";
+const identityAddress = "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P";
+const mnemonic = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
 
 const route = `/profiles/${fixtureProfileId}/wallets/import`;
 
@@ -44,10 +44,8 @@ describe("ImportWallet", () => {
 			.reply(200, require("tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
 			.reply(200, require("tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq")
-			.reply(200, require("tests/fixtures/coins/ark/wallets/DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
+			.get("/api/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P")
+			.reply(200, require("tests/fixtures/coins/ark/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P.json"))
 			.persist();
 	});
 
