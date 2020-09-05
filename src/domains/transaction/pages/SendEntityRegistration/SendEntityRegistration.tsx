@@ -153,7 +153,7 @@ export const SendEntityRegistration = () => {
 							)}
 
 							<div className="flex justify-end mt-8 space-x-3">
-								{activeTab < 7 && (
+								{activeTab < stepCount && (
 									<Button
 										disabled={activeTab === 1}
 										data-testid="Registration__back-button"
@@ -164,7 +164,7 @@ export const SendEntityRegistration = () => {
 									</Button>
 								)}
 
-								{activeTab < 4 && (
+								{activeTab < stepCount - 1 && (
 									<Button
 										data-testid="Registration__continue-button"
 										disabled={!formState.isValid}
@@ -174,7 +174,7 @@ export const SendEntityRegistration = () => {
 									</Button>
 								)}
 
-								{registrationForm && activeTab >= 4 && activeTab < stepCount && (
+								{registrationForm && activeTab === stepCount - 1 && (
 									<Button
 										type="submit"
 										data-testid="Registration__send-button"

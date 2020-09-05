@@ -1020,26 +1020,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                 </div>
                 <div
                   class="flex justify-end mt-8 space-x-3"
-                >
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="Registration__back-button"
-                    disabled=""
-                    type="button"
-                  >
-                    Back
-                  </button>
-                  <button
-                    class="sc-AxjAm kbZyZT"
-                    color="primary"
-                    data-testid="Registration__continue-button"
-                    disabled=""
-                    type="button"
-                  >
-                    Continue
-                  </button>
-                </div>
+                />
               </div>
             </div>
           </form>
@@ -2388,14 +2369,6 @@ exports[`Registration should register delegate 1`] = `
                 <div
                   class="flex justify-end mt-8 space-x-3"
                 >
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="Registration__back-button"
-                    type="button"
-                  >
-                    Back
-                  </button>
                   <div
                     class="flex justify-end space-x-3"
                   >
@@ -3921,7 +3894,7 @@ exports[`Registration should show ledger confirmation & not show second mnemonic
         class="inline-flex items-center justify-center w-full mt-8 space-x-3"
       >
         <div
-          class="sc-fznWOq erHNdO"
+          class="sc-fzqBkg bRDlG"
           color="primary"
         />
         <span
