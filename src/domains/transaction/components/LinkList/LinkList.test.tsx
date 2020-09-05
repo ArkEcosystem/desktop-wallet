@@ -6,18 +6,22 @@ import { LinkList } from "./LinkList";
 
 const links = [
 	{
+		displayName: "GitHub",
 		value: "http://github.com/robank",
 		type: "github",
 	},
 	{
+		displayName: "GitLab",
 		value: "http://gitlab.com/robank",
 		type: "gitlab",
 	},
 	{
+		displayName: "BitBucket",
 		value: "http://bitbucket.com/robank",
 		type: "bitbucket",
 	},
 	{
+		displayName: "NPM",
 		value: "http://npmjs.com/robank",
 		type: "npm",
 	},

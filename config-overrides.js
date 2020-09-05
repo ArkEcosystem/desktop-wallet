@@ -60,6 +60,7 @@ const whiteListedModules = [
 	"swiper",
 	"slugify",
 	"yup",
+	"extract-domain",
 ];
 
 const addNodeExternals = () =>

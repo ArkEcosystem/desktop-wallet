@@ -10,14 +10,35 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import React from "react";
+import { EntityProvider } from "domains/transaction/entity/providers";
+import React, { useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+
+import { EntityLink } from "../LinkCollection/LinkCollection.models";
+
+const entityProvider = new EntityProvider();
 
 export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues } = useFormContext();
 	const { ipfsData, fee } = getValues({ nest: true });
+
+	const formatLinks = (links: EntityLink[]) =>
+		links.map((link) => {
+			const provider = entityProvider.findById(link.type);
+			return { displayName: provider!.displayName, ...link };
+		});
+
+	const mediaLinks = useMemo(() => {
+		const images = ipfsData.images || [];
+		const videos = ipfsData.videos || [];
+
+		return [...images, ...videos].map((link: EntityLink) => {
+			const provider = entityProvider.findByDomain(link.value);
+			return { displayName: provider!.displayName, ...link };
+		});
+	}, [ipfsData]);
 
 	return (
 		<div data-testid="BusinessRegistrationForm__step--third">
@@ -54,7 +75,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 						</div>
 					}
 				>
-					Business Registration
+					{t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION")}
 				</TransactionDetail>
 
 				{ipfsData?.meta?.displayName && (
@@ -80,7 +101,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 						<LinkList
 							title={t("TRANSACTION.REPOSITORIES.TITLE")}
 							description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
-							links={ipfsData.sourceControl}
+							links={formatLinks(ipfsData.sourceControl)}
 						/>
 					</TransactionDetail>
 				)}
@@ -90,17 +111,17 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 						<LinkList
 							title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
 							description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
-							links={ipfsData.socialMedia}
+							links={formatLinks(ipfsData.socialMedia)}
 						/>
 					</TransactionDetail>
 				)}
 
-				{(ipfsData?.images || ipfsData?.videos) && (
+				{mediaLinks.length && (
 					<TransactionDetail className="mb-2">
 						<LinkList
 							title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
 							description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
-							links={[...(ipfsData.images || []), ...(ipfsData.videos || [])]}
+							links={mediaLinks}
 						/>
 					</TransactionDetail>
 				)}

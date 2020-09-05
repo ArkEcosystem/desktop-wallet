@@ -1,6 +1,8 @@
 import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { Enums } from "@arkecosystem/platform-sdk-profiles";
 import { filter, isEmpty } from "@arkecosystem/utils";
+import { Circle } from "app/components/Circle";
+import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { httpClient } from "app/services";
@@ -28,6 +30,23 @@ const component = ({ activeTab, wallet, fees }: SendEntityRegistrationComponent)
 
 const transactionDetails = ({ translations, transaction }: SendEntityRegistrationDetailsOptions) => (
 	<>
+		<TransactionDetail
+			label={translations("TRANSACTION.TYPE")}
+			extra={
+				<div>
+					<Circle className="border-black bg-theme-background" size="lg">
+						<Icon name="Business" width={20} height={20} />
+					</Circle>
+				</div>
+			}
+		>
+			{translations("TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION")}
+		</TransactionDetail>
+
+		<TransactionDetail label={translations("TRANSACTION.NAME")}>
+			{transaction?.data().asset.data.name}
+		</TransactionDetail>
+
 		<TransactionDetail label={translations("TRANSACTION.IPFS_HASH")}>
 			{transaction?.data().asset.data.ipfsData}
 		</TransactionDetail>

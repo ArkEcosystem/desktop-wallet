@@ -1,3 +1,4 @@
+// @ts-ignore
 import extractDomain from "extract-domain";
 
 interface Provider {
