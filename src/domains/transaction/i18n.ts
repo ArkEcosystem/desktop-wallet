@@ -129,6 +129,36 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
+	PAGE_SECOND_SIGNATURE: {
+		GENERATION_STEP: {
+			TITLE: "Register Second Signature",
+			DESCRIPTION: "Registration of your second signature.",
+			WARNING:
+				"Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.",
+		},
+
+		PASSPHRASE_STEP: {
+			TITLE: "Your Second Signature",
+			WARNING:
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.",
+			DOWNLOAD: {
+				TITLE: "Your password in the file",
+				DESCRIPTION: "You can also download and store safely your passphrase.",
+			},
+		},
+
+		PASSPHRASE_CONFIRMATION_STEP: {
+			TITLE: "Confirm your passphrase",
+			SUBTITLE: "Confirm your password to continue",
+		},
+
+		REVIEW_STEP: {
+			TITLE: "Register Second Signature",
+			DESCRIPTION: "Check your information",
+			TYPE: "Second Signature",
+		},
+	},
+
 	PAGE_RESIGN_REGISTRATION: {
 		FIRST_STEP: {
 			DELEGATE: {

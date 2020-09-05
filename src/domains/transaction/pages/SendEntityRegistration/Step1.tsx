@@ -5,6 +5,7 @@ import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { BusinessRegistrationForm } from "domains/transaction/components/BusinessRegistrationForm/BusinessRegistrationForm";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
+import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -15,6 +16,7 @@ import { SendEntityRegistrationType } from "./SendEntityRegistration.models";
 const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
 	businessRegistration: BusinessRegistrationForm,
+	secondSignature: SecondSignatureRegistrationForm,
 };
 
 const RegistrationTypeDropdown = ({ className, defaultValue, onChange, registrationTypes }: any) => {
@@ -57,6 +59,13 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		registrationTypes.push({
 			value: "delegateRegistration",
 			label: "Delegate",
+		});
+	}
+
+	if (!wallet.isSecondSignature()) {
+		registrationTypes.push({
+			value: "secondSignature",
+			label: "Second Signature",
 		});
 	}
 
