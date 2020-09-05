@@ -1,10 +1,10 @@
-import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Select } from "app/components/SelectDropdown";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
-import { BusinessRegistrationForm } from "domains/transaction/components/BusinessRegistrationForm/BusinessRegistrationForm";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
+import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -15,7 +15,7 @@ import { SendEntityRegistrationType } from "./SendEntityRegistration.models";
 
 const registrationComponents: any = {
 	delegateRegistration: DelegateRegistrationForm,
-	entityRegistration: BusinessRegistrationForm,
+	entityRegistration: EntityRegistrationForm,
 	secondSignature: SecondSignatureRegistrationForm,
 };
 
@@ -51,6 +51,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 	const registrationTypes: SendEntityRegistrationType[] = [
 		{
 			value: "entityRegistration",
+			type: Enums.EntityType.Business,
 			label: "Business",
 		},
 	];
@@ -87,7 +88,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 	};
 
 	const onSelectType = (selectedItem: SendEntityRegistrationType) => {
-		setValue("registrationType", selectedItem.value, true);
+		setValue("registrationType", selectedItem, true);
 		setRegistrationForm(registrationComponents[selectedItem.value]);
 
 		if (fees[selectedItem.value]) {
@@ -125,7 +126,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 
 				<RegistrationTypeDropdown
 					selectedType={registrationTypes.find(
-						(type: SendEntityRegistrationType) => type.value === registrationType,
+						(type: SendEntityRegistrationType) => type.value === registrationType?.value,
 					)}
 					registrationTypes={registrationTypes}
 					onChange={onSelectType}

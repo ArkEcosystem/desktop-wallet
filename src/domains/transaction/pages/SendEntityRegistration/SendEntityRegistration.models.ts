@@ -1,11 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { TFunction } from "i18next";
 import { useForm } from "react-hook-form";
 
 export type SendEntityRegistrationType = {
 	label: string;
 	value: string;
+	type?: Enums.EntityType;
 };
 
 export type SendEntityRegistrationDetailsOptions = {
@@ -29,6 +30,7 @@ export type SendEntityRegistrationForm = {
 		profile: Profile;
 		setTransaction: (transaction: Contracts.SignedTransactionData) => void;
 		translations: TFunction;
+		type?: Enums.EntityType;
 	}) => Promise<void>;
 
 	tabSteps: number;

@@ -1,19 +1,19 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { File } from "@arkecosystem/platform-sdk-ipfs";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import nock from "nock";
 import React from "react";
 import { useForm } from "react-hook-form";
-import businessRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-registration.json";
+import entityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-registration.json";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
-import { BusinessRegistrationForm } from "./BusinessRegistrationForm";
+import { EntityRegistrationForm } from "./EntityRegistrationForm";
 
-describe("BusinessRegistrationForm", () => {
+describe("EntityRegistrationForm", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
 	let fees: Contracts.TransactionFee;
@@ -55,7 +55,7 @@ describe("BusinessRegistrationForm", () => {
 	};
 
 	beforeEach(() => {
-		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
+		const ipfsData = entityRegistrationFixture.data.asset.data.ipfsData;
 		nock("https://platform.ark.io/api")
 			.post("/ipfs")
 			.reply(200, { data: { hash: ipfsData } })
@@ -77,12 +77,12 @@ describe("BusinessRegistrationForm", () => {
 	const createTransactionMock = (wallet: ReadWriteWallet) =>
 		// @ts-ignore
 		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-			id: () => businessRegistrationFixture.data.id,
-			sender: () => businessRegistrationFixture.data.sender,
-			recipient: () => businessRegistrationFixture.data.recipient,
-			amount: () => BigNumber.make(businessRegistrationFixture.data.amount),
-			fee: () => BigNumber.make(businessRegistrationFixture.data.fee),
-			data: () => businessRegistrationFixture.data,
+			id: () => entityRegistrationFixture.data.id,
+			sender: () => entityRegistrationFixture.data.sender,
+			recipient: () => entityRegistrationFixture.data.recipient,
+			amount: () => BigNumber.make(entityRegistrationFixture.data.amount),
+			fee: () => BigNumber.make(entityRegistrationFixture.data.fee),
+			data: () => entityRegistrationFixture.data,
 		});
 
 	const Component = ({
@@ -95,7 +95,7 @@ describe("BusinessRegistrationForm", () => {
 		activeTab?: number;
 	}) => (
 		<Form context={form} onSubmit={onSubmit}>
-			<BusinessRegistrationForm.component activeTab={activeTab} fees={fees} wallet={wallet} />
+			<EntityRegistrationForm.component activeTab={activeTab} fees={fees} wallet={wallet} />
 		</Form>
 	);
 
@@ -400,17 +400,17 @@ describe("BusinessRegistrationForm", () => {
 	it("should output transaction details", () => {
 		const translations = jest.fn((translation) => translation);
 		const transaction = {
-			id: () => businessRegistrationFixture.data.id,
-			sender: () => businessRegistrationFixture.data.sender,
-			recipient: () => businessRegistrationFixture.data.recipient,
-			amount: () => BigNumber.make(businessRegistrationFixture.data.amount),
-			fee: () => BigNumber.make(businessRegistrationFixture.data.fee),
-			data: () => businessRegistrationFixture.data,
+			id: () => entityRegistrationFixture.data.id,
+			sender: () => entityRegistrationFixture.data.sender,
+			recipient: () => entityRegistrationFixture.data.recipient,
+			amount: () => BigNumber.make(entityRegistrationFixture.data.amount),
+			fee: () => BigNumber.make(entityRegistrationFixture.data.fee),
+			data: () => entityRegistrationFixture.data,
 		} as Contracts.SignedTransactionData;
 
-		render(<BusinessRegistrationForm.transactionDetails transaction={transaction} translations={translations} />);
+		render(<EntityRegistrationForm.transactionDetails transaction={transaction} translations={translations} />);
 
-		expect(screen.getByText(businessRegistrationFixture.data.asset.data.ipfsData)).toBeInTheDocument();
+		expect(screen.getByText(entityRegistrationFixture.data.asset.data.ipfsData)).toBeInTheDocument();
 	});
 
 	it("should sign transaction", async () => {
@@ -430,11 +430,11 @@ describe("BusinessRegistrationForm", () => {
 
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signEntityRegistration")
-			.mockReturnValue(Promise.resolve(businessRegistrationFixture.data.id));
+			.mockReturnValue(Promise.resolve(entityRegistrationFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 
-		await BusinessRegistrationForm.signTransaction({
+		await EntityRegistrationForm.signTransaction({
 			env,
 			form,
 			handleNext,
@@ -443,6 +443,59 @@ describe("BusinessRegistrationForm", () => {
 		});
 
 		expect(signMock).toHaveBeenCalled();
+		expect(broadcastMock).toHaveBeenCalled();
+		expect(transactionMock).toHaveBeenCalled();
+		expect(setTransaction).toHaveBeenCalled();
+		expect(handleNext).toHaveBeenCalled();
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+	});
+
+	it("should sign transaction with a custom entity type", async () => {
+		const form = {
+			clearError: jest.fn(),
+			getValues: () => ({
+				fee: "1",
+				mnemonic: "sample passphrase",
+				senderAddress: wallet.address(),
+				ipfsData: ipfsForm,
+			}),
+			setError: jest.fn(),
+			setValue: jest.fn(),
+		};
+		const handleNext = jest.fn();
+		const setTransaction = jest.fn();
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityRegistration")
+			.mockReturnValue(Promise.resolve(entityRegistrationFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		await EntityRegistrationForm.signTransaction({
+			env,
+			form,
+			handleNext,
+			profile,
+			setTransaction,
+			type: Enums.EntityType.Developer,
+		});
+
+		expect(signMock).toHaveBeenCalledWith({
+			fee: "1",
+			data: {
+				ipfs: "QmV1n5F9PuBE2ovW9jVfFpxyvWZxYHjSdfLrYL2nDcb1gW",
+				name: "Test-Entity-Name",
+				subType: 0,
+				type: 2,
+			},
+			from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			sign: {
+				mnemonic: "sample passphrase",
+			},
+		});
 		expect(broadcastMock).toHaveBeenCalled();
 		expect(transactionMock).toHaveBeenCalled();
 		expect(setTransaction).toHaveBeenCalled();
@@ -479,11 +532,11 @@ describe("BusinessRegistrationForm", () => {
 
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signEntityRegistration")
-			.mockReturnValue(Promise.resolve(businessRegistrationFixture.data.id));
+			.mockReturnValue(Promise.resolve(entityRegistrationFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 
-		await BusinessRegistrationForm.signTransaction({
+		await EntityRegistrationForm.signTransaction({
 			env,
 			form,
 			handleNext,
@@ -521,7 +574,7 @@ describe("BusinessRegistrationForm", () => {
 	});
 
 	it("should error if signing fails", async () => {
-		const ipfsData = businessRegistrationFixture.data.asset.data.ipfsData;
+		const ipfsData = entityRegistrationFixture.data.asset.data.ipfsData;
 		const form = {
 			clearError: jest.fn(),
 			getValues: () => ({
@@ -544,7 +597,7 @@ describe("BusinessRegistrationForm", () => {
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 
-		await BusinessRegistrationForm.signTransaction({
+		await EntityRegistrationForm.signTransaction({
 			env,
 			form,
 			handleNext,

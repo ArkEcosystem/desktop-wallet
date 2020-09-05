@@ -34,24 +34,22 @@ const transactionDetails = ({ translations, transaction }: SendEntityRegistratio
 	</>
 );
 
-component.displayName = "BusinessRegistrationForm";
-transactionDetails.displayName = "BusinessRegistrationFormTransactionDetails";
+component.displayName = "EntityRegistrationForm";
+transactionDetails.displayName = "EntityRegistrationFormTransactionDetails";
 
-// @TODO: There can be one generic AIP36 EntityRegistrationForm.
-// There is no need for multiple components because, as stated in the AIP36 specifications, they all share the same structure.
-export const BusinessRegistrationForm: SendEntityRegistrationForm = {
+export const EntityRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 2,
 	component,
 	transactionDetails,
 	formFields: ["ipfsData"],
 
-	// eslint-disable-next-line @typescript-eslint/require-await
-	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations }) => {
+	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations, type }) => {
 		const { getValues, setValue, setError } = form;
 		const { fee, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		const sanitizedData = filter(ipfsData, (item) => !isEmpty(item));
+		const entityType = type ?? Enums.EntityType.Business;
 
 		try {
 			const transactionId = await senderWallet!.transaction().signEntityRegistration({
@@ -59,8 +57,7 @@ export const BusinessRegistrationForm: SendEntityRegistrationForm = {
 				from: senderAddress,
 				sign: { mnemonic },
 				data: {
-					// @TODO: use this based on the user-selection of what they want to register.
-					type: Enums.EntityType.Business,
+					type: entityType,
 					// @TODO: let the user choose what sub-type they wish to use.
 					subType: Enums.EntitySubType.None,
 					name: slugify(ipfsData.meta.displayName),

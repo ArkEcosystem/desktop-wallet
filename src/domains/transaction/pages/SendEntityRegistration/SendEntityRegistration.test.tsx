@@ -126,7 +126,12 @@ describe("Registration", () => {
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
 			await waitFor(() =>
-				expect(setValueSpy).toHaveBeenNthCalledWith(1, "registrationType", "delegateRegistration", true),
+				expect(setValueSpy).toHaveBeenNthCalledWith(
+					1,
+					"registrationType",
+					{ label: "Delegate", value: "delegateRegistration" },
+					true,
+				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", true));
@@ -168,7 +173,12 @@ describe("Registration", () => {
 			fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
 			await waitFor(() =>
-				expect(setValueSpy).toHaveBeenNthCalledWith(1, "registrationType", "delegateRegistration", true),
+				expect(setValueSpy).toHaveBeenNthCalledWith(
+					1,
+					"registrationType",
+					{ label: "Delegate", value: "delegateRegistration" },
+					true,
+				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(setValueSpy).not.toHaveBeenNthCalledWith(2, "fee", "1", true));
