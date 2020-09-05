@@ -11,6 +11,14 @@ describe("EntityProvider", () => {
 		expect(subject.all().length).toBeGreaterThan(1);
 	});
 
+	it("#findByDomain", () => {
+		expect(subject.findByDomain("https://arkecosystem.slack.com")?.displayName).toEqual("Slack");
+		expect(subject.findByDomain("https://instagram.com")?.displayName).toEqual("Instagram");
+		expect(
+			subject.findByDomain("https://raw.githubusercontent.com/ArkEcosystem/peers/master/logo.png")?.displayName,
+		).toEqual("GitHub");
+	});
+
 	it("#findById", () => {
 		expect(subject.findById("instagram")?.displayName).toEqual("Instagram");
 	});
