@@ -55,7 +55,6 @@ exports[`SendTransactionForm should render 1`] = `
             autocomplete="off"
             class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
             data-testid="SelectNetworkInput__input"
-            disabled=""
             id="SendTransactionForm__network-input"
             placeholder="Enter a network name"
             value=""
@@ -72,7 +71,6 @@ exports[`SendTransactionForm should render 1`] = `
           aria-selected="false"
           class="inline-block cursor-pointer"
           data-testid="SelectNetwork__NetworkIcon--container"
-          disabled=""
           id="SendTransactionForm__network-item-0"
           role="option"
         >
@@ -97,7 +95,6 @@ exports[`SendTransactionForm should render 1`] = `
           aria-selected="false"
           class="inline-block cursor-pointer"
           data-testid="SelectNetwork__NetworkIcon--container"
-          disabled=""
           id="SendTransactionForm__network-item-1"
           role="option"
         >
@@ -143,9 +140,8 @@ exports[`SendTransactionForm should render 1`] = `
       >
         <div>
           <button
-            class="sc-fznZeY jUYMgc SelectAddress is-disabled "
+            class="sc-fznZeY jUYMgc SelectAddress  "
             data-testid="SelectAddress__wrapper"
-            disabled=""
             type="button"
           >
             <div
@@ -422,9 +418,8 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       >
         <div>
           <button
-            class="sc-fznZeY jUYMgc SelectAddress is-disabled "
+            class="sc-fznZeY jUYMgc SelectAddress  "
             data-testid="SelectAddress__wrapper"
-            disabled=""
             type="button"
           >
             <div

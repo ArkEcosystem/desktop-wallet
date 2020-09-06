@@ -155,6 +155,90 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render registration form without selected wallet", async () => {
+		const history = createMemoryHistory();
+		let rendered: RenderResult;
+
+		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
+		history.push(transferURL);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+		});
+
+		expect(rendered.asFragment()).toMatchSnapshot();
+	});
+
+	it("should select network first and see select address input clickable", async () => {
+		const history = createMemoryHistory();
+		let rendered: RenderResult;
+
+		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
+		history.push(transferURL);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+		});
+
+		act(() => {
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-devnet"));
+		});
+
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark Devnet");
+		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
+		expect(rendered.asFragment()).toMatchSnapshot();
+	});
+
+	it("should display disabled address selection input if selected network has not available wallets", async () => {
+		const history = createMemoryHistory();
+		let rendered: RenderResult;
+
+		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
+		history.push(transferURL);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+		});
+
+		act(() => {
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-mainnet"));
+		});
+
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
+		expect(rendered.getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
+		expect(rendered.asFragment()).toMatchSnapshot();
+	});
+
 	it("should send a single transfer", async () => {
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;

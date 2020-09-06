@@ -49,15 +49,16 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 
 	useEffect(() => {
 		if (network) {
-			setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
+			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
+		setWallets(profile.wallets().values());
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
 		setValue("senderAddress", address, true);
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
-		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/transfer`);
+		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-transfer`);
 	};
 
 	return (
@@ -66,7 +67,13 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 				<div className="mb-2">
 					<FormLabel label="Network" />
 				</div>
-				<SelectNetwork id="SendTransactionForm__network" networks={networks} selected={network} disabled />
+				<SelectNetwork
+					id="SendTransactionForm__network"
+					networks={networks}
+					selected={network}
+					disabled={!!senderAddress}
+					onSelect={(selectedNetwork: NetworkData | null | undefined) => setValue("network", selectedNetwork)}
+				/>
 			</FormField>
 
 			<FormField name="senderAddress" className="relative">
