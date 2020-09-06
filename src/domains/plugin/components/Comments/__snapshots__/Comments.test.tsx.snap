@@ -14,13 +14,13 @@ exports[`Comments should render properly 1`] = `
         Sort by:
       </span>
       <div
-        class="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3"
+        class="flex items-center ml-2 space-x-3 divide-x divide-theme-neutral-light"
       >
         <span
           class="cursor-pointer null"
         >
           <span
-            class="flex items-center text-theme-neutral-900 space-x-1"
+            class="flex items-center space-x-1 text-theme-neutral-900"
           >
             <span>
               Best
@@ -96,7 +96,7 @@ exports[`Comments should render properly 1`] = `
             </span>
           </div>
           <div
-            class="flex items-center font-semibold space-x-2"
+            class="flex items-center space-x-2 font-semibold"
           >
             <span
               class="text-theme-neutral-light"
@@ -176,7 +176,7 @@ exports[`Comments should render properly 1`] = `
             </span>
           </div>
           <div
-            class="flex items-center font-semibold space-x-2"
+            class="flex items-center space-x-2 font-semibold"
           >
             <span
               class="text-theme-success"
@@ -231,7 +231,7 @@ exports[`Comments should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="flex items-center divide-x divide-theme-neutral-light space-x-3"
+                class="flex items-center space-x-3 divide-x divide-theme-neutral-light"
               >
                 <span
                   class="text-lg font-semibold text-theme-neutral-900"
@@ -305,7 +305,7 @@ exports[`Comments should render properly 1`] = `
             </span>
           </div>
           <div
-            class="flex items-center font-semibold space-x-2"
+            class="flex items-center space-x-2 font-semibold"
           >
             <span
               class="text-theme-neutral-light"
@@ -385,7 +385,7 @@ exports[`Comments should render properly 1`] = `
             </span>
           </div>
           <div
-            class="flex items-center font-semibold space-x-2"
+            class="flex items-center space-x-2 font-semibold"
           >
             <span
               class="text-theme-danger-dark"

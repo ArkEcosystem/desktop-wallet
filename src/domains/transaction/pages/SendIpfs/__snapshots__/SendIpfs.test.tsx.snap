@@ -1000,7 +1000,6 @@ exports[`SendIpfs should render 1st step 1`] = `
                 autocomplete="off"
                 class="sc-fzplWN hjcjbm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
-                disabled=""
                 id="SendTransactionForm__network-input"
                 placeholder="Enter a network name"
                 value=""
@@ -1009,7 +1008,7 @@ exports[`SendIpfs should render 1st step 1`] = `
           </div>
           <ul
             aria-labelledby="SendTransactionForm__network-label"
-            class="mt-6 grid grid-cols-6 gap-6"
+            class="grid grid-cols-6 gap-6 mt-6"
             id="SendTransactionForm__network-menu"
             role="listbox"
           />
@@ -1037,9 +1036,8 @@ exports[`SendIpfs should render 1st step 1`] = `
           >
             <div>
               <button
-                class="sc-fzqARJ dKMWCk SelectAddress is-disabled "
+                class="sc-fzqARJ dKMWCk SelectAddress  "
                 data-testid="SelectAddress__wrapper"
-                disabled=""
                 type="button"
               >
                 <div
@@ -1173,7 +1171,7 @@ exports[`SendIpfs should render 1st step 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1182,7 +1180,7 @@ exports[`SendIpfs should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1191,7 +1189,7 @@ exports[`SendIpfs should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1224,7 +1222,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
       Check the information again before voting
     </div>
     <div
-      class="mt-4 grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-6 true "
@@ -2080,7 +2078,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           </div>
                           <ul
                             aria-labelledby="SendTransactionForm__network-label"
-                            class="mt-6 grid grid-cols-6 gap-6"
+                            class="grid grid-cols-6 gap-6 mt-6"
                             id="SendTransactionForm__network-menu"
                             role="listbox"
                           >
@@ -2321,7 +2319,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -2330,7 +2328,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -2339,7 +2337,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzqNqU lfdFBe relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
