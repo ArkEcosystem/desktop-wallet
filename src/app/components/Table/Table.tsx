@@ -5,6 +5,18 @@ import { styled } from "twin.macro";
 import { Icon } from "../Icon";
 import { defaultTableStyle } from "./Table.styles";
 
+export const wrapColumns = (columns: object[]) => [
+	{
+		Header: "spacerStart",
+		className: "invisible w-0 text-0",
+	},
+	...columns,
+	{
+		Header: "spacerEnd",
+		className: "invisible w-0 text-0",
+	},
+];
+
 type TableProps = {
 	children?: any;
 	className?: string;

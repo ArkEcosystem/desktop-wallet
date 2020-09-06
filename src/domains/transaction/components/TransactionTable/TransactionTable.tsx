@@ -1,5 +1,5 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
-import { Table } from "app/components/Table";
+import { Table, wrapColumns } from "app/components/Table";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -78,14 +78,17 @@ export const TransactionTable = ({
 		}
 
 		if (exchangeCurrency) {
-			return [...commonColumns, { Header: t("COMMON.CURRENCY"), className: "w-24 justify-end float-right" }];
+			return wrapColumns([
+				...commonColumns,
+				{ Header: t("COMMON.CURRENCY"), className: "w-24 justify-end float-right" },
+			]);
 		}
 
 		if (showSignColumn) {
-			return [...commonColumns, { Header: t("COMMON.SIGN"), className: "invisible w-24" }];
+			return wrapColumns([...commonColumns, { Header: t("COMMON.SIGN"), className: "invisible w-24" }]);
 		}
 
-		return commonColumns;
+		return wrapColumns(commonColumns);
 	}, [commonColumns, exchangeCurrency, showSignColumn, isCompact, t]);
 
 	const showSkeleton = useMemo(() => isLoading && transactions.length === 0, [transactions, isLoading]);

@@ -98,7 +98,7 @@ exports[`SearchContact should render a modal 1`] = `
             class="mt-8"
           >
             <div
-              class="sc-fzpans dvOscU"
+              class="sc-fzpans QBUML"
               role="table"
             >
               <table
@@ -113,11 +113,25 @@ exports[`SearchContact should render a modal 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top invisible w-0 text-0"
+                      >
+                        <div>
+                          spacerStart
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top pl-13"
+                        class="flex flex-inline align-top pl-14"
                       >
                         <div>
                           Name
@@ -141,7 +155,7 @@ exports[`SearchContact should render a modal 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -155,14 +169,28 @@ exports[`SearchContact should render a modal 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top pl-13"
+                        class="flex flex-inline align-top pl-14"
                       >
                         <div>
                           Address
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top invisible w-0 text-0"
+                      >
+                        <div>
+                          spacerEnd
                         </div>
                       </div>
                     </th>
@@ -171,15 +199,18 @@ exports[`SearchContact should render a modal 1`] = `
                 <tbody
                   role="rowgroup"
                 >
-                  <tr>
-                    <td
-                      class="text-center border-b border-dashed border-theme-neutral-200"
-                    >
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td>
+                      <div />
+                    </td>
+                    <td>
                       <div
                         class="flex items-center space-x-3"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="ContactListItem__user--avatar"
                         >
                           <img
@@ -202,18 +233,18 @@ exports[`SearchContact should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-center border-b border-dashed border-theme-neutral-200"
+                      class="py-6 text-center"
                     >
                       <div
                         aria-label="Ark Devnet"
-                        class="sc-fznyAO gQONjx border-theme-primary-100 text-theme-primary-400"
+                        class="sc-fznyAO fWpdTY border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-devnet"
                       >
                         <div
-                          class="sc-AxirZ iQaTP"
+                          class="sc-AxirZ eEbZjj"
                           data-testid="NetworkIcon__icon"
-                          height="1em"
-                          width="1em"
+                          height="20"
+                          width="20"
                         >
                           <svg>
                             ark.svg
@@ -222,13 +253,13 @@ exports[`SearchContact should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="py-6 border-b border-dashed border-theme-neutral-200"
+                      class=""
                     >
                       <div
                         class="flex items-center space-x-3"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -254,7 +285,7 @@ exports[`SearchContact should render a modal 1`] = `
                       </div>
                     </td>
                     <td
-                      class="border-b border-dashed border-theme-neutral-200"
+                      class=""
                     >
                       <div
                         class="flex justify-end"
@@ -284,6 +315,9 @@ exports[`SearchContact should render a modal 1`] = `
                           </div>
                         </div>
                       </div>
+                    </td>
+                    <td>
+                      <div />
                     </td>
                   </tr>
                 </tbody>
@@ -393,7 +427,7 @@ exports[`SearchContact should render a modal with custom title and description 1
             class="mt-8"
           >
             <div
-              class="sc-fzpans dvOscU"
+              class="sc-fzpans QBUML"
               role="table"
             >
               <table
@@ -408,11 +442,25 @@ exports[`SearchContact should render a modal with custom title and description 1
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top invisible w-0 text-0"
+                      >
+                        <div>
+                          spacerStart
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top pl-13"
+                        class="flex flex-inline align-top pl-14"
                       >
                         <div>
                           Name
@@ -436,7 +484,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -450,14 +498,28 @@ exports[`SearchContact should render a modal with custom title and description 1
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top pl-13"
+                        class="flex flex-inline align-top pl-14"
                       >
                         <div>
                           Address
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top invisible w-0 text-0"
+                      >
+                        <div>
+                          spacerEnd
                         </div>
                       </div>
                     </th>
@@ -466,15 +528,18 @@ exports[`SearchContact should render a modal with custom title and description 1
                 <tbody
                   role="rowgroup"
                 >
-                  <tr>
-                    <td
-                      class="text-center border-b border-dashed border-theme-neutral-200"
-                    >
+                  <tr
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <td>
+                      <div />
+                    </td>
+                    <td>
                       <div
                         class="flex items-center space-x-3"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="ContactListItem__user--avatar"
                         >
                           <img
@@ -497,18 +562,18 @@ exports[`SearchContact should render a modal with custom title and description 1
                       </div>
                     </td>
                     <td
-                      class="text-center border-b border-dashed border-theme-neutral-200"
+                      class="py-6 text-center"
                     >
                       <div
                         aria-label="Ark Devnet"
-                        class="sc-fznyAO gQONjx border-theme-primary-100 text-theme-primary-400"
+                        class="sc-fznyAO fWpdTY border-theme-primary-100 text-theme-primary-400"
                         data-testid="NetworkIcon-ARK-devnet"
                       >
                         <div
-                          class="sc-AxirZ iQaTP"
+                          class="sc-AxirZ eEbZjj"
                           data-testid="NetworkIcon__icon"
-                          height="1em"
-                          width="1em"
+                          height="20"
+                          width="20"
                         >
                           <svg>
                             ark.svg
@@ -517,13 +582,13 @@ exports[`SearchContact should render a modal with custom title and description 1
                       </div>
                     </td>
                     <td
-                      class="py-6 border-b border-dashed border-theme-neutral-200"
+                      class=""
                     >
                       <div
                         class="flex items-center space-x-3"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -549,7 +614,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                       </div>
                     </td>
                     <td
-                      class="border-b border-dashed border-theme-neutral-200"
+                      class=""
                     >
                       <div
                         class="flex justify-end"
@@ -579,6 +644,9 @@ exports[`SearchContact should render a modal with custom title and description 1
                           </div>
                         </div>
                       </div>
+                    </td>
+                    <td>
+                      <div />
                     </td>
                   </tr>
                 </tbody>

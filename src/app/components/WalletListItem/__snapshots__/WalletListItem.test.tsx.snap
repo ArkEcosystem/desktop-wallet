@@ -5,9 +5,14 @@ exports[`WalletListItem should render 1`] = `
   <table>
     <tbody>
       <tr
-        class="border-b cursor-pointer border-theme-neutral-200"
+        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
         data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
       >
+        <td>
+          <div
+            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+          />
+        </td>
         <td
           class="py-6 mt-1"
         >
@@ -15,7 +20,7 @@ exports[`WalletListItem should render 1`] = `
             class="flex"
           >
             <div
-              class="sc-AxirZ cZokSJ"
+              class="sc-AxirZ ghpcVV -mr-2 undefined"
             >
               <div
                 class="sc-AxiKw dklFyP"
@@ -28,7 +33,7 @@ exports[`WalletListItem should render 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
               data-testid="Avatar"
             >
               <div
@@ -127,6 +132,11 @@ exports[`WalletListItem should render 1`] = `
           >
             0 BTC
           </span>
+        </td>
+        <td>
+          <div
+            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+          />
         </td>
       </tr>
     </tbody>

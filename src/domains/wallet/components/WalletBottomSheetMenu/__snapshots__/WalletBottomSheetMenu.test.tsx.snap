@@ -30,7 +30,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral-dark"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-dark"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -65,7 +65,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
           class="container mx-auto px-14"
         >
           <div
-            class="sc-AxiKw eDwAKA"
+            class="sc-AxiKw fkKMgP"
             role="table"
           >
             <table
@@ -79,6 +79,20 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerStart
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -108,7 +122,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--1"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -138,7 +152,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--3"
                     role="columnheader"
                   >
                     <div
@@ -152,7 +166,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--4"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -182,7 +196,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--5"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -209,15 +223,34 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                       </div>
                     </div>
                   </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerEnd
+                      </div>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody
                 role="rowgroup"
               >
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 bg-theme-success-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -225,7 +258,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxhUy dSLmHc"
+                        class="sc-AxhUy jCvlzR -mr-2 undefined"
                       >
                         <div
                           class="sc-AxjAm buCJuk"
@@ -238,7 +271,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jcZASj"
                         data-testid="Avatar"
                       >
                         <div
@@ -312,11 +345,21 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                       0 BTC
                     </span>
                   </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 bg-theme-success-100"
+                    />
+                  </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -324,7 +367,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxhUy dSLmHc"
+                        class="sc-AxhUy bPHDRY -mr-2 undefined"
                       >
                         <div
                           class="sc-AxjAm buCJuk"
@@ -337,7 +380,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -396,6 +439,11 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
               </tbody>

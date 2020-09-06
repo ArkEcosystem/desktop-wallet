@@ -27,7 +27,7 @@ export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: 
 	}
 
 	return (
-		<tr className={`border-b border-dotted border-theme-neutral-300 ${isSelected && "bg-theme-success-contrast"}`}>
+		<tr className={`border-b border-dotted border-theme-neutral-300 ${isSelected && "bg-theme-success-100"}`}>
 			<td className="py-5">
 				<Avatar address={delegate.address()} noShadow />
 			</td>

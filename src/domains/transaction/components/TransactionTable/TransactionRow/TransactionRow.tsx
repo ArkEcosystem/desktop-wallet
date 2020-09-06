@@ -33,7 +33,7 @@ export const TransactionRow = ({
 	showSign,
 	...props
 }: Props) => {
-	const [backgroundColor, setBackgroundColor] = React.useState<string>("");
+	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
 	if (isLoading)
 		return (
@@ -47,12 +47,15 @@ export const TransactionRow = ({
 	return (
 		<tr
 			data-testid="TransactionRow"
-			className="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
+			className="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
 			{...props}
 			onClick={onClick}
-			onMouseEnter={() => setBackgroundColor("--theme-color-success-100")}
-			onMouseLeave={() => setBackgroundColor("")}
+			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
+			onMouseLeave={() => setShadowColor("")}
 		>
+			<td>
+				<div className="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100" />
+			</td>
 			<td className="w-16 py-6">
 				<div className="inline-block align-middle">
 					<Link
@@ -69,7 +72,7 @@ export const TransactionRow = ({
 				</span>
 			</td>
 			<td className="w-32 py-2">
-				<TransactionRowMode transaction={transaction} circleShadowColor={backgroundColor} />
+				<TransactionRowMode transaction={transaction} circleShadowColor={shadowColor} />
 			</td>
 			<td>
 				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
@@ -96,6 +99,9 @@ export const TransactionRow = ({
 					<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
 				</td>
 			)}
+			<td>
+				<div className="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100" />
+			</td>
 		</tr>
 	);
 };

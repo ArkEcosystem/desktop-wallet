@@ -175,7 +175,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -188,7 +188,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -268,7 +268,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -281,7 +281,7 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -347,10 +347,10 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE -mr-2 bg-theme-background border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE bg-theme-background border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -389,10 +389,10 @@ exports[`Wallets should change wallet view type from list to grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE -mr-2 bg-theme-background border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE bg-theme-background border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -569,7 +569,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
       <div>
         <div>
           <div
-            class="sc-AxiKw eDwAKA"
+            class="sc-AxiKw fkKMgP"
             role="table"
           >
             <table
@@ -583,6 +583,20 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerStart
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -612,7 +626,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--1"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -642,7 +656,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--3"
                     role="columnheader"
                   >
                     <div
@@ -656,7 +670,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--4"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -686,7 +700,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--5"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -713,15 +727,34 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       </div>
                     </div>
                   </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerEnd
+                      </div>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody
                 role="rowgroup"
               >
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -729,7 +762,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -742,7 +775,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -815,12 +848,22 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -828,7 +871,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -841,7 +884,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -914,12 +957,22 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -927,7 +980,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -940,7 +993,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -1013,12 +1066,22 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -1026,7 +1089,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -1039,7 +1102,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -1112,12 +1175,22 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -1125,7 +1198,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -1138,7 +1211,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -1211,12 +1284,22 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -1224,7 +1307,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -1237,7 +1320,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -1310,12 +1393,22 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -1323,7 +1416,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -1336,7 +1429,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -1409,12 +1502,22 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -1422,7 +1525,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -1435,7 +1538,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -1508,12 +1611,22 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -1521,7 +1634,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -1534,7 +1647,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -1607,6 +1720,11 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
               </tbody>
@@ -1794,7 +1912,7 @@ exports[`Wallets should render grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -1807,7 +1925,7 @@ exports[`Wallets should render grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -1887,7 +2005,7 @@ exports[`Wallets should render grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -1900,7 +2018,7 @@ exports[`Wallets should render grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -1966,10 +2084,10 @@ exports[`Wallets should render grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE -mr-2 bg-theme-background border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE bg-theme-background border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -2008,10 +2126,10 @@ exports[`Wallets should render grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE -mr-2 bg-theme-background border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE bg-theme-background border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -2188,7 +2306,7 @@ exports[`Wallets should render list 1`] = `
       <div>
         <div>
           <div
-            class="sc-AxiKw eDwAKA"
+            class="sc-AxiKw fkKMgP"
             role="table"
           >
             <table
@@ -2202,6 +2320,20 @@ exports[`Wallets should render list 1`] = `
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerStart
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -2231,7 +2363,7 @@ exports[`Wallets should render list 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--1"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -2261,7 +2393,7 @@ exports[`Wallets should render list 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--3"
                     role="columnheader"
                   >
                     <div
@@ -2275,7 +2407,7 @@ exports[`Wallets should render list 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--4"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -2305,7 +2437,7 @@ exports[`Wallets should render list 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--5"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -2332,15 +2464,34 @@ exports[`Wallets should render list 1`] = `
                       </div>
                     </div>
                   </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerEnd
+                      </div>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody
                 role="rowgroup"
               >
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -2348,7 +2499,7 @@ exports[`Wallets should render list 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -2361,7 +2512,7 @@ exports[`Wallets should render list 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -2435,11 +2586,21 @@ exports[`Wallets should render list 1`] = `
                       0 BTC
                     </span>
                   </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -2447,7 +2608,7 @@ exports[`Wallets should render list 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -2460,7 +2621,7 @@ exports[`Wallets should render list 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -2519,6 +2680,11 @@ exports[`Wallets should render list 1`] = `
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
               </tbody>
@@ -2706,7 +2872,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -2719,7 +2885,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -2799,7 +2965,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -2812,7 +2978,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -2892,7 +3058,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -2905,7 +3071,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -2985,7 +3151,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -2998,7 +3164,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -3078,7 +3244,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -3091,7 +3257,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -3171,7 +3337,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -3184,7 +3350,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -3264,7 +3430,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -3277,7 +3443,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -3357,7 +3523,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -3370,7 +3536,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -3450,7 +3616,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -3463,7 +3629,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -3543,7 +3709,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE border-theme-primary-contrast -mr-2 undefined"
+                          class="sc-AxheI tareE border-theme-primary-contrast -mr-2 undefined"
                         >
                           <div
                             class="sc-AxirZ eViLYR"
@@ -3556,7 +3722,7 @@ exports[`Wallets should render many wallets on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                           data-testid="Avatar"
                         >
                           <div
@@ -3804,52 +3970,10 @@ exports[`Wallets should render with empty wallets list 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE -mr-2 bg-theme-background border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
-                        />
-                      </div>
-                      <div
-                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
-                      >
-                        New Wallet
-                      </div>
-                      <div
-                        class="text-md text-theme-primary-contrast font-bold undefined"
-                      >
-                        Balance
-                      </div>
-                    </div>
-                    <div
-                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="height: 185px;"
-              >
-                <div
-                  class="w-64 inline-block w-full"
-                  data-testid="WalletCard__blank"
-                >
-                  <div
-                    class="sc-AxgMl cgBINQ"
-                    data-testid="Card"
-                  >
-                    <div
-                      class="p-2"
-                    >
-                      <div
-                        class="flex"
-                      >
-                        <div
-                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE bg-theme-background border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -3888,10 +4012,10 @@ exports[`Wallets should render with empty wallets list 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE -mr-2 bg-theme-background border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE bg-theme-background border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -3930,10 +4054,52 @@ exports[`Wallets should render with empty wallets list 1`] = `
                         class="flex"
                       >
                         <div
-                          class="sc-AxheI gTkmUE -mr-2 bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE -mr-2 bg-theme-background border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxheI gTkmUE bg-theme-background border-theme-primary-contrast"
+                          class="sc-AxheI tareE bg-theme-background border-theme-primary-contrast"
+                        />
+                      </div>
+                      <div
+                        class="mt-6 text-md text-theme-primary-contrast font-medium undefined"
+                      >
+                        New Wallet
+                      </div>
+                      <div
+                        class="text-md text-theme-primary-contrast font-bold undefined"
+                      >
+                        Balance
+                      </div>
+                    </div>
+                    <div
+                      class="absolute top-0 right-0 flex items-center m-2 space-x-2"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide"
+                style="height: 185px;"
+              >
+                <div
+                  class="w-64 inline-block w-full"
+                  data-testid="WalletCard__blank"
+                >
+                  <div
+                    class="sc-AxgMl cgBINQ"
+                    data-testid="Card"
+                  >
+                    <div
+                      class="p-2"
+                    >
+                      <div
+                        class="flex"
+                      >
+                        <div
+                          class="sc-AxheI tareE -mr-2 bg-theme-background border-theme-primary-contrast"
+                        />
+                        <div
+                          class="sc-AxheI tareE bg-theme-background border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -4110,7 +4276,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
       <div>
         <div>
           <div
-            class="sc-AxiKw eDwAKA"
+            class="sc-AxiKw fkKMgP"
             role="table"
           >
             <table
@@ -4124,6 +4290,20 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerStart
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4153,7 +4333,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--1"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4183,7 +4363,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--3"
                     role="columnheader"
                   >
                     <div
@@ -4197,7 +4377,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--4"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4227,7 +4407,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--5"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4254,15 +4434,34 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       </div>
                     </div>
                   </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerEnd
+                      </div>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody
                 role="rowgroup"
               >
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -4270,7 +4469,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -4283,7 +4482,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -4357,11 +4556,21 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       0 BTC
                     </span>
                   </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -4369,7 +4578,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -4382,7 +4591,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -4441,6 +4650,11 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
               </tbody>
@@ -4598,7 +4812,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
       <div>
         <div>
           <div
-            class="sc-AxiKw eDwAKA"
+            class="sc-AxiKw fkKMgP"
             role="table"
           >
             <table
@@ -4612,6 +4826,20 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerStart
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4641,7 +4869,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--1"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4671,7 +4899,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--3"
                     role="columnheader"
                   >
                     <div
@@ -4685,7 +4913,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--4"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4715,7 +4943,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--5"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -4742,15 +4970,34 @@ exports[`Wallets should render with list view enabled as default and empty walle
                       </div>
                     </div>
                   </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerEnd
+                      </div>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody
                 role="rowgroup"
               >
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -4758,7 +5005,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -4771,7 +5018,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -4845,11 +5092,21 @@ exports[`Wallets should render with list view enabled as default and empty walle
                       0 BTC
                     </span>
                   </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -4857,7 +5114,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -4870,7 +5127,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -4929,6 +5186,11 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
               </tbody>
@@ -5086,7 +5348,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
       <div>
         <div>
           <div
-            class="sc-AxiKw eDwAKA"
+            class="sc-AxiKw fkKMgP"
             role="table"
           >
             <table
@@ -5100,6 +5362,20 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerStart
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -5129,7 +5405,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--1"
+                    data-testid="table__th--2"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -5159,7 +5435,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--2"
+                    data-testid="table__th--3"
                     role="columnheader"
                   >
                     <div
@@ -5173,7 +5449,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--4"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -5203,7 +5479,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--4"
+                    data-testid="table__th--5"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
@@ -5230,15 +5506,34 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       </div>
                     </div>
                   </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible w-0 text-0"
+                    >
+                      <div>
+                        spacerEnd
+                      </div>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody
                 role="rowgroup"
               >
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -5246,7 +5541,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -5259,7 +5554,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -5332,12 +5627,22 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -5345,7 +5650,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -5358,7 +5663,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -5431,12 +5736,22 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -5444,7 +5759,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -5457,7 +5772,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -5530,12 +5845,22 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -5543,7 +5868,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -5556,7 +5881,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -5629,12 +5954,22 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -5642,7 +5977,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -5655,7 +5990,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -5728,12 +6063,22 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -5741,7 +6086,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -5754,7 +6099,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -5827,12 +6172,22 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -5840,7 +6195,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -5853,7 +6208,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -5926,12 +6281,22 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -5939,7 +6304,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -5952,7 +6317,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -6025,12 +6390,22 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -6038,7 +6413,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -6051,7 +6426,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -6124,12 +6499,22 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b cursor-pointer border-theme-neutral-200"
+                  class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
+                  </td>
                   <td
                     class="py-6 mt-1"
                   >
@@ -6137,7 +6522,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                       class="flex"
                     >
                       <div
-                        class="sc-AxheI gTkmUE"
+                        class="sc-AxheI tareE -mr-2 undefined"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -6150,7 +6535,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
                         data-testid="Avatar"
                       >
                         <div
@@ -6223,6 +6608,11 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                     >
                       0 BTC
                     </span>
+                  </td>
+                  <td>
+                    <div
+                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    />
                   </td>
                 </tr>
               </tbody>

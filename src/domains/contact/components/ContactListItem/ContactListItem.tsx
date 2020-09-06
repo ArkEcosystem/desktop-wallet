@@ -27,14 +27,18 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 				.addresses()
 				.values()
 				.map((address: ContactAddress, index: number) => (
-					<tr key={index}>
-						<td
-							className={`text-center ${
-								index === contact.addresses().count() - 1
-									? "border-b border-dashed border-theme-neutral-200"
-									: ""
-							}`}
-						>
+					<tr
+						key={index}
+						className={
+							index === 0 || index === contact.addresses().count() - 1
+								? "border-b border-dashed border-theme-neutral-200"
+								: ""
+						}
+					>
+						<td>
+							<div />
+						</td>
+						<td>
 							{index === 0 && (
 								<div className="flex items-center space-x-3">
 									<AvatarWrapper size="lg" data-testid="ContactListItem__user--avatar">
@@ -53,23 +57,29 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 								</div>
 							)}
 						</td>
+						<td className="py-6 text-center">
+							<NetworkIcon coin={address.coin()} network={address.network()} size="lg" iconSize={20} />
+						</td>
 						<td
-							className={`text-center ${
-								index === contact.addresses().count() - 1
+							className={
+								index !== 0 && index !== contact.addresses().count() - 1
 									? "border-b border-dashed border-theme-neutral-200"
 									: ""
-							}`}
+							}
 						>
-							<NetworkIcon coin={address.coin()} network={address.network()} />
-						</td>
-						<td className="py-6 border-b border-dashed border-theme-neutral-200">
 							<div className="flex items-center space-x-3">
-								<Avatar address={address.address()} />
+								<Avatar address={address.address()} size="lg" />
 								<Address address={address.address()} maxChars={isCondensed() ? 24 : undefined} />
 							</div>
 						</td>
 						{!isCondensed() && (
-							<td className="space-x-2 text-sm font-bold text-center border-b border-dashed border-theme-neutral-200">
+							<td
+								className={`space-x-2 text-sm font-bold text-center ${
+									index !== 0 && index !== contact.addresses().count() - 1
+										? "border-b border-dashed border-theme-neutral-200"
+										: ""
+								}`}
+							>
 								{address.hasSyncedWithNetwork() &&
 									walletTypes.map((type: string) =>
 										// @ts-ignore
@@ -83,7 +93,13 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 									)}
 							</td>
 						)}
-						<td className="border-b border-dashed border-theme-neutral-200">
+						<td
+							className={
+								index !== 0 && index !== contact.addresses().count() - 1
+									? "border-b border-dashed border-theme-neutral-200"
+									: ""
+							}
+						>
 							{index === 0 && options && options.length > 1 && (
 								<div className="flex justify-end">
 									<Dropdown
@@ -110,6 +126,9 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 									{options[0]?.label}
 								</Button>
 							)}
+						</td>
+						<td>
+							<div />
 						</td>
 					</tr>
 				))}

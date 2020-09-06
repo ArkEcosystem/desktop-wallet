@@ -6,7 +6,7 @@ exports[`TransactionTable should render 1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ kYeMxY"
+      class="sc-AxirZ fDrMqv"
       role="table"
     >
       <table
@@ -23,6 +23,20 @@ exports[`TransactionTable should render 1`] = `
               role="columnheader"
             >
               <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerStart
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
                 class="flex flex-inline align-top "
               >
                 <div>
@@ -33,7 +47,7 @@ exports[`TransactionTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -63,7 +77,7 @@ exports[`TransactionTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -77,7 +91,7 @@ exports[`TransactionTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -91,7 +105,7 @@ exports[`TransactionTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -105,7 +119,7 @@ exports[`TransactionTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
             >
               <div
@@ -119,7 +133,7 @@ exports[`TransactionTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -146,15 +160,34 @@ exports[`TransactionTable should render 1`] = `
                 </div>
               </div>
             </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerEnd
+                </div>
+              </div>
+            </th>
           </tr>
         </thead>
         <tbody
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
+            class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
+            <td>
+              <div
+                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+              />
+            </td>
             <td
               class="w-16 py-6"
             >
@@ -197,7 +230,7 @@ exports[`TransactionTable should render 1`] = `
                 data-testid="TransactionRowMode"
               >
                 <div
-                  class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                  class="sc-AxhCb EEdFk border-theme-danger-contrast text-theme-danger"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -211,7 +244,7 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cqhNlC"
                   data-testid="Avatar"
                 >
                   <div
@@ -295,11 +328,21 @@ exports[`TransactionTable should render 1`] = `
                 </span>
               </div>
             </td>
+            <td>
+              <div
+                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+              />
+            </td>
           </tr>
           <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
+            class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
+            <td>
+              <div
+                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+              />
+            </td>
             <td
               class="w-16 py-6"
             >
@@ -342,7 +385,7 @@ exports[`TransactionTable should render 1`] = `
                 data-testid="TransactionRowMode"
               >
                 <div
-                  class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                  class="sc-AxhCb EEdFk border-theme-danger-contrast text-theme-danger"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -356,7 +399,7 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cqhNlC"
                   data-testid="Avatar"
                 >
                   <div
@@ -454,6 +497,11 @@ exports[`TransactionTable should render 1`] = `
                 </span>
               </div>
             </td>
+            <td>
+              <div
+                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+              />
+            </td>
           </tr>
         </tbody>
       </table>
@@ -468,7 +516,7 @@ exports[`TransactionTable should render compact 1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ kYeMxY"
+      class="sc-AxirZ fDrMqv"
       role="table"
     >
       <table
@@ -553,7 +601,7 @@ exports[`TransactionTable should render compact 1`] = `
                 data-testid="TransactionRowMode"
               >
                 <div
-                  class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                  class="sc-AxhCb EEdFk border-theme-danger-contrast text-theme-danger"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -567,7 +615,7 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cqhNlC"
                   data-testid="Avatar"
                 >
                   <div
@@ -622,7 +670,7 @@ exports[`TransactionTable should render compact 1`] = `
                 data-testid="TransactionRowMode"
               >
                 <div
-                  class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                  class="sc-AxhCb EEdFk border-theme-danger-contrast text-theme-danger"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -636,7 +684,7 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cqhNlC"
                   data-testid="Avatar"
                 >
                   <div
@@ -692,7 +740,7 @@ exports[`TransactionTable should render loading state  1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ kYeMxY"
+      class="sc-AxirZ fDrMqv"
       role="table"
     >
       <table
@@ -709,6 +757,20 @@ exports[`TransactionTable should render loading state  1`] = `
               role="columnheader"
             >
               <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerStart
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
                 class="flex flex-inline align-top "
               >
                 <div>
@@ -719,7 +781,7 @@ exports[`TransactionTable should render loading state  1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -749,7 +811,7 @@ exports[`TransactionTable should render loading state  1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -763,7 +825,7 @@ exports[`TransactionTable should render loading state  1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -777,7 +839,7 @@ exports[`TransactionTable should render loading state  1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -791,7 +853,7 @@ exports[`TransactionTable should render loading state  1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
             >
               <div
@@ -805,7 +867,7 @@ exports[`TransactionTable should render loading state  1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -829,6 +891,20 @@ exports[`TransactionTable should render loading state  1`] = `
                       sort.svg
                     </svg>
                   </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerEnd
                 </div>
               </div>
             </th>
@@ -1355,7 +1431,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
     class="relative"
   >
     <div
-      class="sc-AxirZ kYeMxY"
+      class="sc-AxirZ fDrMqv"
       role="table"
     >
       <table
@@ -1372,6 +1448,20 @@ exports[`TransactionTable should render loading state with currency column 1`] =
               role="columnheader"
             >
               <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerStart
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
                 class="flex flex-inline align-top "
               >
                 <div>
@@ -1382,7 +1472,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1412,7 +1502,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -1426,7 +1516,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -1440,7 +1530,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -1454,7 +1544,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
             >
               <div
@@ -1468,7 +1558,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1498,7 +1588,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
             >
               <div
@@ -1506,6 +1596,20 @@ exports[`TransactionTable should render loading state with currency column 1`] =
               >
                 <div>
                   Currency
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--9"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerEnd
                 </div>
               </div>
             </th>
@@ -2097,7 +2201,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ kYeMxY"
+      class="sc-AxirZ fDrMqv"
       role="table"
     >
       <table
@@ -2114,6 +2218,20 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
               role="columnheader"
             >
               <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerStart
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
                 class="flex flex-inline align-top "
               >
                 <div>
@@ -2124,7 +2242,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2154,7 +2272,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -2168,7 +2286,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -2182,7 +2300,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -2196,7 +2314,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
             >
               <div
@@ -2210,7 +2328,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2240,7 +2358,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
             >
               <div
@@ -2248,6 +2366,20 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
               >
                 <div>
                   Sign
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--9"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerEnd
                 </div>
               </div>
             </th>
@@ -2834,7 +2966,7 @@ exports[`TransactionTable should render with sign 1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ kYeMxY"
+      class="sc-AxirZ fDrMqv"
       role="table"
     >
       <table
@@ -2851,6 +2983,20 @@ exports[`TransactionTable should render with sign 1`] = `
               role="columnheader"
             >
               <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerStart
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
                 class="flex flex-inline align-top "
               >
                 <div>
@@ -2861,7 +3007,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2891,7 +3037,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
             >
               <div
@@ -2905,7 +3051,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
@@ -2919,7 +3065,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -2933,7 +3079,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
             >
               <div
@@ -2947,7 +3093,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2977,7 +3123,7 @@ exports[`TransactionTable should render with sign 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
             >
               <div
@@ -2988,15 +3134,34 @@ exports[`TransactionTable should render with sign 1`] = `
                 </div>
               </div>
             </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--9"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top invisible w-0 text-0"
+              >
+                <div>
+                  spacerEnd
+                </div>
+              </div>
+            </th>
           </tr>
         </thead>
         <tbody
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
+            class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
+            <td>
+              <div
+                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+              />
+            </td>
             <td
               class="w-16 py-6"
             >
@@ -3039,7 +3204,7 @@ exports[`TransactionTable should render with sign 1`] = `
                 data-testid="TransactionRowMode"
               >
                 <div
-                  class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                  class="sc-AxhCb EEdFk border-theme-danger-contrast text-theme-danger"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -3053,7 +3218,7 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cqhNlC"
                   data-testid="Avatar"
                 >
                   <div
@@ -3160,11 +3325,21 @@ exports[`TransactionTable should render with sign 1`] = `
                 </span>
               </button>
             </td>
+            <td>
+              <div
+                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+              />
+            </td>
           </tr>
           <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
+            class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
+            <td>
+              <div
+                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+              />
+            </td>
             <td
               class="w-16 py-6"
             >
@@ -3207,7 +3382,7 @@ exports[`TransactionTable should render with sign 1`] = `
                 data-testid="TransactionRowMode"
               >
                 <div
-                  class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                  class="sc-AxhCb EEdFk border-theme-danger-contrast text-theme-danger"
                 >
                   <div
                     class="sc-AxjAm cpczEI"
@@ -3221,7 +3396,7 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cqhNlC"
                   data-testid="Avatar"
                 >
                   <div
@@ -3341,6 +3516,11 @@ exports[`TransactionTable should render with sign 1`] = `
                   Sign
                 </span>
               </button>
+            </td>
+            <td>
+              <div
+                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+              />
             </td>
           </tr>
         </tbody>
