@@ -57,7 +57,7 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 		setValue("senderAddress", address, true);
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
-		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/transfer`);
+		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-transfer`);
 	};
 
 	return (
