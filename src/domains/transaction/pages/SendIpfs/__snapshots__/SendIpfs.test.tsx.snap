@@ -1000,7 +1000,6 @@ exports[`SendIpfs should render 1st step 1`] = `
                 autocomplete="off"
                 class="sc-fzplWN hjcjbm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
-                disabled=""
                 id="SendTransactionForm__network-input"
                 placeholder="Enter a network name"
                 value=""
@@ -1037,9 +1036,8 @@ exports[`SendIpfs should render 1st step 1`] = `
           >
             <div>
               <button
-                class="sc-fzqARJ dKMWCk SelectAddress is-disabled "
+                class="sc-fzqARJ dKMWCk SelectAddress  "
                 data-testid="SelectAddress__wrapper"
-                disabled=""
                 type="button"
               >
                 <div
