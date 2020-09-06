@@ -38,7 +38,7 @@ export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen, isLoading }
 			</div>
 
 			<Collapse isOpen={isOpen}>
-				<div className="py-4 grid grid-flow-row row-gap-6">
+				<div className="grid grid-flow-row row-gap-6 py-4">
 					{isLoading && <WalletVoteSkeleton />}
 					{!isLoading && hasNoVotes ? (
 						<div data-testid="WalletVote__empty" className="flex items-center justify-between">

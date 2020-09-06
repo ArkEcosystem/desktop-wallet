@@ -71,7 +71,7 @@ describe("SendTransactionForm", () => {
 			);
 		});
 
-		const { getByTestId, getAllByTestId } = rendered;
+		const { getByTestId } = rendered;
 
 		await act(async () => {
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
@@ -124,7 +124,7 @@ describe("SendTransactionForm", () => {
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__wrapper")).toBeTruthy());
 		});
 
-		const { getByTestId, getAllByTestId } = rendered;
+		const { getByTestId } = rendered;
 
 		await act(async () => {
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
@@ -142,7 +142,7 @@ describe("SendTransactionForm", () => {
 			const secondWallet = profile.wallets().values()[1];
 			await waitFor(() =>
 				expect(historySpy).toHaveBeenCalledWith(
-					`/profiles/${profile?.id()}/transactions/${secondWallet.id()}/transfer`,
+					`/profiles/${profile?.id()}/wallets/${secondWallet.id()}/send-transfer`,
 				),
 			);
 

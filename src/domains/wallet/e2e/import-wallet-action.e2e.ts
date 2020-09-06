@@ -28,7 +28,7 @@ test("should import a wallet by mnemonic", async (t) => {
 	// Fill a passphrase and advance to third step
 	const passphraseInput = Selector("input[name=passphrase]");
 
-	await t.typeText(passphraseInput, "this is a top secret passphrase oleg");
+	await t.typeText(passphraseInput, "buddy year cost vendor honey tonight viable nut female alarm duck symptom");
 	await t.click(Selector("button").withExactText(translations().COMMON.GO_TO_WALLET));
 
 	// Fill a wallet name

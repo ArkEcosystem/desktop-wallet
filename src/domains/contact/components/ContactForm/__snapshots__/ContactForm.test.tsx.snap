@@ -82,7 +82,7 @@ exports[`ContactForm should select 1`] = `
         </div>
         <ul
           aria-labelledby="ContactForm__network-label"
-          class="mt-6 grid grid-cols-6 gap-6"
+          class="grid grid-cols-6 gap-6 mt-6"
           id="ContactForm__network-menu"
           role="listbox"
         >
@@ -672,7 +672,7 @@ exports[`ContactForm should select with errors 1`] = `
         </div>
         <ul
           aria-labelledby="ContactForm__network-label"
-          class="mt-6 grid grid-cols-6 gap-6"
+          class="grid grid-cols-6 gap-6 mt-6"
           id="ContactForm__network-menu"
           role="listbox"
         >
@@ -1256,7 +1256,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         </div>
         <ul
           aria-labelledby="ContactForm__network-label"
-          class="mt-6 grid grid-cols-6 gap-6"
+          class="grid grid-cols-6 gap-6 mt-6"
           id="ContactForm__network-menu"
           role="listbox"
         />
@@ -1431,7 +1431,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         </div>
         <ul
           aria-labelledby="ContactForm__network-label"
-          class="mt-6 grid grid-cols-6 gap-6"
+          class="grid grid-cols-6 gap-6 mt-6"
           id="ContactForm__network-menu"
           role="listbox"
         />
