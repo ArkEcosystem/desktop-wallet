@@ -48,7 +48,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
                   class="flex flex-inline align-top "
                 >
                   <div>
-                    Agent
+                    Address
                   </div>
                 </div>
               </th>
@@ -180,12 +180,23 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
                   </div>
                 </div>
               </td>
-              <td
-                class="font-semibold"
-              >
-                <span>
-                  ARK Wallet 1
-                </span>
+              <td>
+                <div
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    ARK Wallet 1
+                  </span>
+                  <span
+                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr…YUYD
+                  </span>
+                </div>
               </td>
               <td
                 class="font-semibold"
@@ -331,7 +342,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 2`] = `
                   class="flex flex-inline align-top "
                 >
                   <div>
-                    Agent
+                    Address
                   </div>
                 </div>
               </th>
@@ -463,12 +474,23 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 2`] = `
                   </div>
                 </div>
               </td>
-              <td
-                class="font-semibold"
-              >
-                <span>
-                  ARK Wallet 1
-                </span>
+              <td>
+                <div
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    ARK Wallet 1
+                  </span>
+                  <span
+                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr…YUYD
+                  </span>
+                </div>
               </td>
               <td
                 class="font-semibold"
@@ -614,7 +636,7 @@ exports[`BusinessRegistrationsTable should render empty state 1`] = `
                   class="flex flex-inline align-top "
                 >
                   <div>
-                    Agent
+                    Address
                   </div>
                 </div>
               </th>
@@ -762,7 +784,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
                   class="flex flex-inline align-top "
                 >
                   <div>
-                    Agent
+                    Address
                   </div>
                 </div>
               </th>
@@ -894,12 +916,23 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
                   </div>
                 </div>
               </td>
-              <td
-                class="font-semibold"
-              >
-                <span>
-                  ARK Wallet 1
-                </span>
+              <td>
+                <div
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    ARK Wallet 1
+                  </span>
+                  <span
+                    class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr…YUYD
+                  </span>
+                </div>
               </td>
               <td
                 class="font-semibold"
