@@ -55,14 +55,14 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 		},
 	];
 
-	if (!wallet.isDelegate()) {
+	if (!wallet.isDelegate?.()) {
 		registrationTypes.push({
 			value: "delegateRegistration",
 			label: "Delegate",
 		});
 	}
 
-	if (!wallet.isSecondSignature()) {
+	if (!wallet.isSecondSignature?.()) {
 		registrationTypes.push({
 			value: "secondSignature",
 			label: "Second Signature",
@@ -75,8 +75,9 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 
 	useEffect(() => {
 		if (network) {
-			setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
+			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
+		setWallets(profile.wallets().values());
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
