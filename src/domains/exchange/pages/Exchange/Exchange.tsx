@@ -19,8 +19,8 @@ const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="mt-8 grid grid-cols-8">
-			<div className="flex flex-col h-32 mr-5 border-2 rounded-lg border-theme-primary-contrast col-span-6">
+		<div className="grid grid-cols-8 mt-8">
+			<div className="flex flex-col h-32 col-span-6 mr-5 border-2 rounded-lg border-theme-primary-contrast">
 				<div className="flex flex-col m-auto text-center">
 					<span className="font-semibold">{t("EXCHANGE.YOUR_EXCHANGE_LIST")}</span>
 

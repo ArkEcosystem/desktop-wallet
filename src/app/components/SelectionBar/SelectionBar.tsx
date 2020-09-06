@@ -46,7 +46,7 @@ export const SelectionBarOption = ({ value, isValueChecked, setCheckedValue, chi
 			role="radio"
 			aria-checked={isChecked}
 			onClick={() => setCheckedValue(value)}
-			className="relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+			className="relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
 		>
 			{children}
 		</SelectionBarOptionStyled>

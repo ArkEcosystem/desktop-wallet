@@ -800,7 +800,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                         </div>
                         <ul
                           aria-labelledby="SendTransactionForm__network-label"
-                          class="mt-6 grid grid-cols-6 gap-6"
+                          class="grid grid-cols-6 gap-6 mt-6"
                           id="SendTransactionForm__network-menu"
                           role="listbox"
                         >
@@ -1105,7 +1105,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
         </div>
         <ul
           aria-labelledby="SendTransactionForm__network-label"
-          class="mt-6 grid grid-cols-6 gap-6"
+          class="grid grid-cols-6 gap-6 mt-6"
           id="SendTransactionForm__network-menu"
           role="listbox"
         >
@@ -1608,7 +1608,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                         Make up a name and register your delegate online.
                       </div>
                       <div
-                        class="mt-4 grid grid-flow-row gap-2"
+                        class="grid grid-flow-row gap-2 mt-4"
                       >
                         <div
                           class="flex items-center py-6 true "
@@ -2483,7 +2483,7 @@ exports[`Registration should render 1st step 1`] = `
         </div>
         <ul
           aria-labelledby="SendTransactionForm__network-label"
-          class="mt-6 grid grid-cols-6 gap-6"
+          class="grid grid-cols-6 gap-6 mt-6"
           id="SendTransactionForm__network-menu"
           role="listbox"
         >
@@ -3031,7 +3031,7 @@ exports[`Registration should render registration form without selected wallet 1`
                         </div>
                         <ul
                           aria-labelledby="SendTransactionForm__network-label"
-                          class="mt-6 grid grid-cols-6 gap-6"
+                          class="grid grid-cols-6 gap-6 mt-6"
                           id="SendTransactionForm__network-menu"
                           role="listbox"
                         >
@@ -3606,7 +3606,7 @@ exports[`Registration should select network first and see select address input c
                         </div>
                         <ul
                           aria-labelledby="SendTransactionForm__network-label"
-                          class="mt-6 grid grid-cols-6 gap-6"
+                          class="grid grid-cols-6 gap-6 mt-6"
                           id="SendTransactionForm__network-menu"
                           role="listbox"
                         >
@@ -4175,7 +4175,7 @@ exports[`Registration should select network with unavailable wallets and see sel
                         </div>
                         <ul
                           aria-labelledby="SendTransactionForm__network-label"
-                          class="mt-6 grid grid-cols-6 gap-6"
+                          class="grid grid-cols-6 gap-6 mt-6"
                           id="SendTransactionForm__network-menu"
                           role="listbox"
                         >
@@ -4846,7 +4846,7 @@ exports[`Registration should select registration type & show form 1`] = `
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4855,7 +4855,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4864,7 +4864,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5386,7 +5386,7 @@ exports[`Registration should should go back and forth & correctly register field
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5395,7 +5395,7 @@ exports[`Registration should should go back and forth & correctly register field
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5404,7 +5404,7 @@ exports[`Registration should should go back and forth & correctly register field
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
