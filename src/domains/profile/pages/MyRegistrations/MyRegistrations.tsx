@@ -56,12 +56,7 @@ export const MyRegistrations = () => {
 	const handleAction = ({ action, walletId }: any) => {
 		switch (action) {
 			case "register":
-				//TODO: Determine wallet selection. Which wallet should be registered?
-				history.push(
-					`/profiles/${activeProfile.id()}/wallets/${
-						activeProfile.wallets().keys()[0]
-					}/send-entity-registration`,
-				);
+				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
 				break;
 			case "resign":
 				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);

@@ -98,9 +98,7 @@ describe("MyRegistrations", () => {
 			fireEvent.click(registerButton);
 		});
 
-		expect(history.location.pathname).toEqual(
-			`/profiles/${fixtureProfileId}/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129/send-entity-registration`,
-		);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/send-entity-registration`);
 	});
 
 	it("should handle delegate resignation dropdown action", async () => {
