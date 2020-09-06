@@ -32,7 +32,7 @@ const Votes = ({ votes }: any) => {
 	}
 
 	return (
-		<div className="flex items-center font-semibold space-x-2">
+		<div className="flex items-center space-x-2 font-semibold">
 			<span className={voteDiffColor}>{voteDiff > 0 ? `+${voteDiff}` : voteDiff}</span>
 			<Icon className="text-theme-primary-light" name="ChevronUp" width={15} height={15} />
 			<Icon className="text-theme-primary-light" name="ChevronDown" width={15} height={15} />
@@ -51,11 +51,11 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 		<div className="w-full">
 			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral">
 				<span className="text-theme-neutral-900">{t("COMMON.SORT_BY")}:</span>
-				<div className="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3">
+				<div className="flex items-center ml-2 space-x-3 divide-x divide-theme-neutral-light">
 					{["Best", "Date", "Most Popular"].map((sortType: string, index: number) => (
 						<span className={`cursor-pointer ${index > 0 ? "pl-3" : null}`} key={index}>
 							{sortBy.type === sortType ? (
-								<span className="flex items-center text-theme-neutral-900 space-x-1">
+								<span className="flex items-center space-x-1 text-theme-neutral-900">
 									<span>{t(`COMMON.${transformType(sortType)}`)}</span>
 									<Icon
 										name={sortBy.direction === "asc" ? "ArrowUp" : "ArrowDown"}

@@ -29,6 +29,11 @@ export const TransactionRoutes = [
 		component: SendTransfer,
 	},
 	{
+		path: "/profiles/:profileId/send-transfer",
+		exact: true,
+		component: SendTransfer,
+	},
+	{
 		path: "/profiles/:profileId/wallets/:walletId/send-ipfs",
 		exact: true,
 		component: SendIpfs,
