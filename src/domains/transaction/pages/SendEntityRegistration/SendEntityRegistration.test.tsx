@@ -31,17 +31,23 @@ let profile: Profile;
 let wallet: ReadWriteWallet;
 let secondWallet: ReadWriteWallet;
 
-const renderPage = async (walletOverride?: ReadWriteWallet) => {
+const renderPage = async (wallet?: ReadWriteWallet) => {
 	const history = createMemoryHistory();
-	const registrationURL = `/profiles/${profile.id()}/wallets/${(
-		walletOverride || wallet
-	).id()}/send-entity-registration`;
+
+	const path = wallet
+		? "/profiles/:profileId/wallets/:walletId/send-entity-registration"
+		: "/profiles/:profileId/send-entity-registration";
+
+	const registrationURL = wallet
+		? `/profiles/${profile.id()}/wallets/${wallet?.id()}/send-entity-registration`
+		: `/profiles/${profile.id()}/send-entity-registration`;
+
 	history.push(registrationURL);
 
 	let rendered: RenderResult;
 	await act(async () => {
 		rendered = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId/send-entity-registration">
+			<Route path={path}>
 				<SendEntityRegistration />
 			</Route>,
 			{
@@ -86,6 +92,39 @@ describe("Registration", () => {
 	beforeEach(() => {
 		nock.cleanAll();
 		defaultNetMocks();
+	});
+
+	it("should render registration form without selected wallet", async () => {
+		const { getByTestId, asFragment } = await renderPage();
+
+		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select network first and see select address input clickable", async () => {
+		const { getByTestId, asFragment } = await renderPage();
+
+		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("NetworkIcon-ARK-devnet"));
+		});
+
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark Devnet");
+		expect(getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select network with unavailable wallets and see select address input disabled", async () => {
+		const { getByTestId, asFragment } = await renderPage();
+
+		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("NetworkIcon-ARK-mainnet"));
+		});
+
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
+		expect(getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 1st step", async () => {
@@ -204,7 +243,7 @@ describe("Registration", () => {
 	});
 
 	it("should select registration type & show form", async () => {
-		const { asFragment, getByTestId } = await renderPage();
+		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
@@ -227,7 +266,7 @@ describe("Registration", () => {
 	});
 
 	it("should change sender & route", async () => {
-		const { asFragment, getAllByTestId, getByTestId, history } = await renderPage();
+		const { getByTestId, history } = await renderPage(wallet);
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
@@ -251,7 +290,7 @@ describe("Registration", () => {
 	});
 
 	it("should not have delegate option if wallet is a delegate", async () => {
-		const { asFragment, getAllByTestId, getByTestId, history } = await renderPage(secondWallet);
+		const { asFragment, getByTestId } = await renderPage(secondWallet);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("select-list__toggle-button"));
@@ -265,7 +304,7 @@ describe("Registration", () => {
 	});
 
 	it("should should go back and forth & correctly register fields", async () => {
-		const { asFragment, getByTestId } = await renderPage();
+		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
@@ -308,7 +347,7 @@ describe("Registration", () => {
 	});
 
 	it("should not unregister fields when going back to step 2 onwards", async () => {
-		const { asFragment, container, getByTestId } = await renderPage();
+		const { asFragment, container, getByTestId } = await renderPage(wallet);
 
 		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
@@ -355,7 +394,7 @@ describe("Registration", () => {
 	});
 
 	it("should register delegate", async () => {
-		const { asFragment, getByTestId, history } = await renderPage();
+		const { asFragment, getByTestId, history } = await renderPage(wallet);
 
 		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
@@ -429,7 +468,7 @@ describe("Registration", () => {
 	});
 
 	it("should error for invalid mnemonic", async () => {
-		const { asFragment, getByTestId, history } = await renderPage();
+		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
 		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
