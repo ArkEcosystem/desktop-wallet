@@ -48,7 +48,7 @@ export const translations: { [key: string]: any } = {
 		TITLE: "My Registrations",
 		SUBTITLE: "You can register a Delegate, Business and Bridgechain.",
 		NO_REGISTRATIONS_MESSAGE: "Register Business, Bridgechain and Delegate in the most convenient way.",
-		AGENT: "Agent",
+		ADDRESS: "Address",
 		BLOCKCHAIN: "Blockchain",
 		BLOCKCHAIN_NAME: "Blockchain Name",
 		BUSINESS: "Business",

@@ -1,4 +1,5 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -32,8 +33,8 @@ export const EntityTableRowItem = ({ onAction, entity }: EntityTableRowItemProps
 					<Avatar address={entity.sender()} size="lg" className="mr-4" />
 				</div>
 			</td>
-			<td className="font-semibold">
-				<span>{entity.wallet().alias()}</span>
+			<td>
+				<Address walletName={entity.wallet().alias()} address={entity.wallet().address()} maxChars={12} />
 			</td>
 			<td className="font-semibold">
 				<span>{data?.name}</span>

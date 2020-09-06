@@ -19,7 +19,7 @@ export const EntityTable = ({ entities, onAction, title, nameColumnHeader }: Pro
 	const columns = [
 		{ Header: "Avatar", className: "invisible" },
 		{
-			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.AGENT"),
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.ADDRESS"),
 		},
 		{
 			Header: nameColumnHeader,
