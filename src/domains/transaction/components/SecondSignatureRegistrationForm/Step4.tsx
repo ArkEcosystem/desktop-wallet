@@ -28,7 +28,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				{t("TRANSACTION.PAGE_SECOND_SIGNATURE.REVIEW_STEP.DESCRIPTION")}
 			</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}

@@ -43,7 +43,7 @@ export const Default = () => (
 );
 
 export const Colored = () => (
-	<div className="mt-3 mb-10 text-base space-x-5">
+	<div className="mt-3 mb-10 space-x-5 text-base">
 		<Circle className="relative text-white border-theme-success-500">
 			<Badge className="bg-theme-success-500" position="top" />
 		</Circle>

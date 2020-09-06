@@ -50,7 +50,7 @@ export const PluginSpecs = ({ author, category, url, rating, version, size }: Pr
 	const { t } = useTranslation();
 
 	return (
-		<div className="pt-8 mt-8 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300">
+		<div className="grid grid-flow-col grid-cols-5 pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300">
 			<GridCol>
 				<div className="flex flex-col">
 					<span className="font-bold text-theme-neutral-light">{t("COMMON.AUTHOR")}</span>

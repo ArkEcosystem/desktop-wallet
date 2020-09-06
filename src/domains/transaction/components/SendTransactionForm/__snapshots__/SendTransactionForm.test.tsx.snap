@@ -63,7 +63,7 @@ exports[`SendTransactionForm should render 1`] = `
       </div>
       <ul
         aria-labelledby="SendTransactionForm__network-label"
-        class="mt-6 grid grid-cols-6 gap-6"
+        class="grid grid-cols-6 gap-6 mt-6"
         id="SendTransactionForm__network-menu"
         role="listbox"
       >
@@ -244,7 +244,7 @@ exports[`SendTransactionForm should render 1`] = `
           >
             <button
               aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -253,7 +253,7 @@ exports[`SendTransactionForm should render 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -262,7 +262,7 @@ exports[`SendTransactionForm should render 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -339,7 +339,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       </div>
       <ul
         aria-labelledby="SendTransactionForm__network-label"
-        class="mt-6 grid grid-cols-6 gap-6"
+        class="grid grid-cols-6 gap-6 mt-6"
         id="SendTransactionForm__network-menu"
         role="listbox"
       >
@@ -543,7 +543,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           >
             <button
               aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -552,7 +552,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             </button>
             <button
               aria-checked="true"
-              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
@@ -561,7 +561,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="sc-fzokOt bHylAC relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzokOt bHylAC relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
               data-testid="SelectionBarOption"
               role="radio"
               type="button"
