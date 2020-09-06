@@ -106,7 +106,15 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 					<div className="mb-2">
 						<FormLabel label="Network" />
 					</div>
-					<SelectNetwork id="SendTransactionForm__network" networks={networks} selected={network} disabled />
+					<SelectNetwork
+						id="SendTransactionForm__network"
+						networks={networks}
+						selected={network}
+						disabled={!!senderAddress}
+						onSelect={(selectedNetwork: NetworkData | null | undefined) =>
+							setValue("network", selectedNetwork)
+						}
+					/>
 				</FormField>
 
 				<FormField name="senderAddress" className="relative">
