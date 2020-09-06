@@ -1,6 +1,6 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { SearchResource } from "app/components/SearchResource";
-import { Table, wrapColumns } from "app/components/Table";
+import { Table } from "app/components/Table";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import { Option } from "domains/contact/components/ContactListItem/ContactListItem.models";
 import React from "react";
@@ -29,11 +29,11 @@ export const SearchContact = ({
 }: SearchContactProps) => {
 	const { t } = useTranslation();
 
-	const columns = wrapColumns([
+	const columns = [
 		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
-			className: "pl-14"
+			className: "pl-14",
 		},
 		{
 			Header: t("COMMON.NETWORK"),
@@ -43,7 +43,7 @@ export const SearchContact = ({
 			Header: t("COMMON.ADDRESS"),
 			className: "pl-14",
 		},
-	]);
+	];
 
 	return (
 		<SearchResource

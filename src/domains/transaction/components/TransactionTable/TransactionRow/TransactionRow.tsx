@@ -47,14 +47,14 @@ export const TransactionRow = ({
 	return (
 		<tr
 			data-testid="TransactionRow"
-			className="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+			className="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
 			{...props}
 			onClick={onClick}
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
-			<td>
-				<div className="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100" />
+			<td className="h-px p-0">
+				<div className="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100" />
 			</td>
 			<td className="w-16 py-6">
 				<div className="inline-block align-middle">
@@ -99,8 +99,9 @@ export const TransactionRow = ({
 					<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
 				</td>
 			)}
-			<td>
-				<div className="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100" />
+
+			<td className="h-px p-0">
+				<div className="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100" />
 			</td>
 		</tr>
 	);

@@ -897,7 +897,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI fYgUyq"
+                  class="sc-AxheI bxSWsu"
                   role="table"
                 >
                   <table
@@ -1085,12 +1085,14 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -1229,19 +1231,23 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -1380,19 +1386,23 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -1531,19 +1541,23 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -1682,19 +1696,23 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -1833,19 +1851,23 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -1984,19 +2006,23 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -2135,19 +2161,23 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -2286,9 +2316,11 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
@@ -3189,7 +3221,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI fYgUyq"
+                  class="sc-AxheI bxSWsu"
                   role="table"
                 >
                   <table
@@ -3377,12 +3409,14 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -3521,19 +3555,23 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -3672,19 +3710,23 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -3823,19 +3865,23 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -3974,9 +4020,11 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
@@ -5967,7 +6015,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI fYgUyq"
+                  class="sc-AxheI bxSWsu"
                   role="table"
                 >
                   <table
@@ -6155,12 +6203,14 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -6299,19 +6349,23 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -6450,19 +6504,23 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -6601,19 +6659,23 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -6752,9 +6814,11 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
@@ -7676,7 +7740,7 @@ exports[`Dashboard should render 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI fYgUyq"
+                  class="sc-AxheI bxSWsu"
                   role="table"
                 >
                   <table
@@ -7864,12 +7928,14 @@ exports[`Dashboard should render 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -8008,19 +8074,23 @@ exports[`Dashboard should render 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -8159,19 +8229,23 @@ exports[`Dashboard should render 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -8310,19 +8384,23 @@ exports[`Dashboard should render 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -8461,9 +8539,11 @@ exports[`Dashboard should render 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
@@ -9385,7 +9465,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI fYgUyq"
+                  class="sc-AxheI bxSWsu"
                   role="table"
                 >
                   <table
@@ -9573,12 +9653,14 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -9717,19 +9799,23 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -9868,19 +9954,23 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -10019,19 +10109,23 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -10170,9 +10264,11 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
@@ -11094,7 +11190,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI fYgUyq"
+                  class="sc-AxheI bxSWsu"
                   role="table"
                 >
                   <table
@@ -11282,12 +11378,14 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -11426,19 +11524,23 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -11577,19 +11679,23 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -11728,19 +11834,23 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -11879,9 +11989,11 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
@@ -12803,7 +12915,7 @@ exports[`Dashboard should render wallets 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI fYgUyq"
+                  class="sc-AxheI bxSWsu"
                   role="table"
                 >
                   <table
@@ -12991,12 +13103,14 @@ exports[`Dashboard should render wallets 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -13135,19 +13249,23 @@ exports[`Dashboard should render wallets 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -13286,19 +13404,23 @@ exports[`Dashboard should render wallets 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -13437,19 +13559,23 @@ exports[`Dashboard should render wallets 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
                       <tr
-                        class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                         data-testid="TransactionRow"
                       >
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                         <td
@@ -13588,9 +13714,11 @@ exports[`Dashboard should render wallets 1`] = `
                             0 BTC
                           </span>
                         </td>
-                        <td>
+                        <td
+                          class="h-px p-0"
+                        >
                           <div
-                            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                           />
                         </td>
                       </tr>
@@ -14424,7 +14552,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                 class="relative"
               >
                 <div
-                  class="sc-AxheI fYgUyq"
+                  class="sc-AxheI bxSWsu"
                   role="table"
                 >
                   <table

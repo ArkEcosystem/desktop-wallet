@@ -346,7 +346,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
             data-testid="ContactList"
           >
             <div
-              class="sc-fznZeY dRwJAH"
+              class="sc-fznZeY ikuIjH"
               role="table"
             >
               <table
@@ -360,20 +360,6 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--0"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top invisible w-0 text-0"
-                      >
-                        <div>
-                          spacerStart
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--1"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -403,7 +389,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
@@ -417,7 +403,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--3"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -431,7 +417,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -439,20 +425,6 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       >
                         <div>
                           Account Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top invisible w-0 text-0"
-                      >
-                        <div>
-                          spacerEnd
                         </div>
                       </div>
                     </th>
@@ -464,9 +436,6 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   <tr
                     class="border-b border-dashed border-theme-neutral-200"
                   >
-                    <td>
-                      <div />
-                    </td>
                     <td>
                       <div
                         class="flex items-center space-x-3"
@@ -595,16 +564,10 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
-                      <div />
-                    </td>
                   </tr>
                   <tr
                     class="border-b border-dashed border-theme-neutral-200"
                   >
-                    <td>
-                      <div />
-                    </td>
                     <td>
                       <div
                         class="flex items-center space-x-3"
@@ -718,9 +681,6 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           </div>
                         </div>
                       </div>
-                    </td>
-                    <td>
-                      <div />
                     </td>
                   </tr>
                 </tbody>

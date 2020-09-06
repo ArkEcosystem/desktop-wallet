@@ -97,7 +97,7 @@ exports[`SearchWallet should render 1`] = `
           >
             <div>
               <div
-                class="sc-fznyAO ekAPRC"
+                class="sc-fznyAO igVtSK"
                 role="table"
               >
                 <table
@@ -114,20 +114,6 @@ exports[`SearchWallet should render 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top invisible w-0 text-0"
-                        >
-                          <div>
-                            spacerStart
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--1"
-                        role="columnheader"
-                      >
-                        <div
                           class="flex flex-inline align-top "
                         >
                           <div>
@@ -138,7 +124,7 @@ exports[`SearchWallet should render 1`] = `
                       <th
                         class="text-sm text-left select-none text-theme-neutral"
                         colspan="1"
-                        data-testid="table__th--2"
+                        data-testid="table__th--1"
                         role="columnheader"
                         style="cursor: pointer;"
                         title="Toggle SortBy"
@@ -168,7 +154,7 @@ exports[`SearchWallet should render 1`] = `
                       <th
                         class="text-sm text-left select-none text-theme-neutral"
                         colspan="1"
-                        data-testid="table__th--3"
+                        data-testid="table__th--2"
                         role="columnheader"
                         style="cursor: pointer;"
                         title="Toggle SortBy"
@@ -198,7 +184,7 @@ exports[`SearchWallet should render 1`] = `
                       <th
                         class="text-sm text-left select-none text-theme-neutral"
                         colspan="1"
-                        data-testid="table__th--4"
+                        data-testid="table__th--3"
                         role="columnheader"
                         style="cursor: pointer;"
                         title="Toggle SortBy"
@@ -228,7 +214,7 @@ exports[`SearchWallet should render 1`] = `
                       <th
                         class="text-sm text-left select-none text-theme-neutral"
                         colspan="1"
-                        data-testid="table__th--5"
+                        data-testid="table__th--4"
                         role="columnheader"
                       >
                         <div
@@ -236,20 +222,6 @@ exports[`SearchWallet should render 1`] = `
                         >
                           <div>
                             Action
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="text-sm text-left select-none text-theme-neutral"
-                        colspan="1"
-                        data-testid="table__th--6"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top invisible w-0 text-0"
-                        >
-                          <div>
-                            spacerEnd
                           </div>
                         </div>
                       </th>
@@ -261,9 +233,6 @@ exports[`SearchWallet should render 1`] = `
                     <tr
                       class="border-b border-dashed border-theme-neutral-200"
                     >
-                      <td>
-                        <div />
-                      </td>
                       <td
                         class="py-6 mt-1"
                       >
@@ -350,9 +319,6 @@ exports[`SearchWallet should render 1`] = `
                             Select
                           </button>
                         </div>
-                      </td>
-                      <td>
-                        <div />
                       </td>
                     </tr>
                   </tbody>

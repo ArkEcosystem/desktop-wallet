@@ -2,7 +2,7 @@ import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Table } from "app/components/Table";
+import { Table, wrapColumns } from "app/components/Table";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -65,14 +65,11 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 	const [selected, setSelected] = useState([] as any);
 	const [showSelectedList, setShowSelectedList] = useState(false);
 
-	const columns = [
-		{
-			accessor: "delegateAddressAvatar",
-			disableSortBy: true,
-		},
+	const columns = wrapColumns([
 		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
 			accessor: "delegateName",
+			className: "pl-14",
 		},
 		{
 			Header: t("COMMON.RANK"),
@@ -109,7 +106,7 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 			accessor: "onSelect",
 			className: "justify-end",
 		},
-	];
+	]);
 
 	const toggleSelected = (delegate: Delegate) => {
 		if (selected.find((selectedDelegate: Delegate) => selectedDelegate.username === delegate.username)) {

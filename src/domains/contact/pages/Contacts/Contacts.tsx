@@ -4,7 +4,7 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
-import { Table, wrapColumns } from "app/components/Table";
+import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { CreateContact, DeleteContact, UpdateContact } from "domains/contact/components";
@@ -82,7 +82,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		},
 	];
 
-	const listColumns = wrapColumns([
+	const listColumns = [
 		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
@@ -100,7 +100,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 			Header: t("COMMON.ACCOUNT_TYPE"),
 			className: "justify-center",
 		},
-	]);
+	];
 
 	const handleContactAction = (action: string, contact: Contact) => {
 		setContactAction(action);

@@ -27,12 +27,25 @@ export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: 
 	}
 
 	return (
-		<tr className={`border-b border-dotted border-theme-neutral-300 ${isSelected && "bg-theme-success-100"}`}>
-			<td className="py-5">
-				<Avatar address={delegate.address()} noShadow />
+		<tr
+			className={`transition-colors duration-100 border-b border-dashed border-theme-neutral-200 ${
+				isSelected && "bg-theme-success-100"
+			}`}
+		>
+			<td className="h-px p-0">
+				<div
+					className={`rounded-l-lg h-full -ml-8 transition-colors duration-100 ${
+						isSelected && "bg-theme-success-100"
+					}`}
+				/>
 			</td>
 
-			<td className="py-5 font-bold">{delegate.username()}</td>
+			<td className="py-5 font-bold">
+				<div className="flex items-center space-x-3">
+					<Avatar address={delegate.address()} size="lg" noShadow />
+					<span>{delegate.username()}</span>
+				</div>
+			</td>
 
 			<td className="py-5 font-bold text-theme-neutral-dark">#{delegate.rank()}</td>
 
@@ -69,6 +82,14 @@ export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: 
 						{isSelected ? t("COMMON.UNSELECT") : t("COMMON.SELECT")}
 					</Button>
 				</div>
+			</td>
+
+			<td className="h-px p-0">
+				<div
+					className={`rounded-r-lg h-full -mr-8 transition-colors duration-100 ${
+						isSelected && "bg-theme-success-100"
+					}`}
+				/>
 			</td>
 		</tr>
 	);

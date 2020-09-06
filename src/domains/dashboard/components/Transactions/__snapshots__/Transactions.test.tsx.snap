@@ -17,7 +17,7 @@ exports[`Transactions should render with 1`] = `
         class="relative"
       >
         <div
-          class="sc-AxiKw fkKMgP"
+          class="sc-AxiKw cmfgJr"
           role="table"
         >
           <table
@@ -220,7 +220,7 @@ exports[`Transactions should render with with transactions 1`] = `
         class="relative"
       >
         <div
-          class="sc-AxiKw fkKMgP"
+          class="sc-AxiKw cmfgJr"
           role="table"
         >
           <table
@@ -394,12 +394,14 @@ exports[`Transactions should render with with transactions 1`] = `
               role="rowgroup"
             >
               <tr
-                class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                 data-testid="TransactionRow"
               >
-                <td>
+                <td
+                  class="h-px p-0"
+                >
                   <div
-                    class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                   />
                 </td>
                 <td
@@ -542,19 +544,23 @@ exports[`Transactions should render with with transactions 1`] = `
                     </span>
                   </div>
                 </td>
-                <td>
+                <td
+                  class="h-px p-0"
+                >
                   <div
-                    class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                   />
                 </td>
               </tr>
               <tr
-                class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                 data-testid="TransactionRow"
               >
-                <td>
+                <td
+                  class="h-px p-0"
+                >
                   <div
-                    class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                   />
                 </td>
                 <td
@@ -697,19 +703,23 @@ exports[`Transactions should render with with transactions 1`] = `
                     </span>
                   </div>
                 </td>
-                <td>
+                <td
+                  class="h-px p-0"
+                >
                   <div
-                    class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                   />
                 </td>
               </tr>
               <tr
-                class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                 data-testid="TransactionRow"
               >
-                <td>
+                <td
+                  class="h-px p-0"
+                >
                   <div
-                    class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                   />
                 </td>
                 <td
@@ -848,19 +858,23 @@ exports[`Transactions should render with with transactions 1`] = `
                     </span>
                   </div>
                 </td>
-                <td>
+                <td
+                  class="h-px p-0"
+                >
                   <div
-                    class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                   />
                 </td>
               </tr>
               <tr
-                class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                 data-testid="TransactionRow"
               >
-                <td>
+                <td
+                  class="h-px p-0"
+                >
                   <div
-                    class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                   />
                 </td>
                 <td
@@ -999,9 +1013,11 @@ exports[`Transactions should render with with transactions 1`] = `
                     </span>
                   </div>
                 </td>
-                <td>
+                <td
+                  class="h-px p-0"
+                >
                   <div
-                    class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                    class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                   />
                 </td>
               </tr>

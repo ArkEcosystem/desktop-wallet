@@ -736,7 +736,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -924,12 +924,14 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -1080,9 +1082,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           </span>
                         </button>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -1109,7 +1113,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -1297,12 +1301,14 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -1441,9 +1447,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           0 BTC
                         </span>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -2222,7 +2230,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -2410,12 +2418,14 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -2566,9 +2576,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           </span>
                         </button>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -2595,7 +2607,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -2783,12 +2795,14 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -2927,9 +2941,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           0 BTC
                         </span>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -3013,7 +3029,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
           class="container mx-auto px-14"
         >
           <div
-            class="sc-AxheI fYgUyq"
+            class="sc-AxheI bxSWsu"
             role="table"
           >
             <table
@@ -3194,9 +3210,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                   <td
@@ -3287,9 +3305,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                 </tr>
@@ -3297,9 +3317,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -3382,9 +3404,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -3392,9 +3416,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -3471,9 +3497,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -3481,9 +3509,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -3560,9 +3590,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -4333,7 +4365,7 @@ exports[`WalletDetails should render 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -4521,12 +4553,14 @@ exports[`WalletDetails should render 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -4677,9 +4711,11 @@ exports[`WalletDetails should render 1`] = `
                           </span>
                         </button>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -4706,7 +4742,7 @@ exports[`WalletDetails should render 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -4894,12 +4930,14 @@ exports[`WalletDetails should render 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -5038,9 +5076,11 @@ exports[`WalletDetails should render 1`] = `
                           0 BTC
                         </span>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -5124,7 +5164,7 @@ exports[`WalletDetails should render 1`] = `
           class="container mx-auto px-14"
         >
           <div
-            class="sc-AxheI fYgUyq"
+            class="sc-AxheI bxSWsu"
             role="table"
           >
             <table
@@ -5305,9 +5345,11 @@ exports[`WalletDetails should render 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                   <td
@@ -5404,9 +5446,11 @@ exports[`WalletDetails should render 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                 </tr>
@@ -5414,9 +5458,11 @@ exports[`WalletDetails should render 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -5499,9 +5545,11 @@ exports[`WalletDetails should render 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -5509,9 +5557,11 @@ exports[`WalletDetails should render 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -5588,9 +5638,11 @@ exports[`WalletDetails should render 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -5598,9 +5650,11 @@ exports[`WalletDetails should render 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -5677,9 +5731,11 @@ exports[`WalletDetails should render 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -6429,7 +6485,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -6617,12 +6673,14 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -6773,9 +6831,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           </span>
                         </button>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -6802,7 +6862,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -6990,12 +7050,14 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -7134,9 +7196,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           0 BTC
                         </span>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -7220,7 +7284,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           class="container mx-auto px-14"
         >
           <div
-            class="sc-AxheI fYgUyq"
+            class="sc-AxheI bxSWsu"
             role="table"
           >
             <table
@@ -7401,9 +7465,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -7500,9 +7566,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -7510,9 +7578,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -7595,9 +7665,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -7605,9 +7677,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -7684,9 +7758,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -7694,9 +7770,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                   data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                   <td
@@ -7773,9 +7851,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                 </tr>
@@ -8525,7 +8605,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -8713,12 +8793,14 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -8869,9 +8951,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           </span>
                         </button>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -8898,7 +8982,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -9086,12 +9170,14 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -9230,9 +9316,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           0 BTC
                         </span>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -9316,7 +9404,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           class="container mx-auto px-14"
         >
           <div
-            class="sc-AxheI fYgUyq"
+            class="sc-AxheI bxSWsu"
             role="table"
           >
             <table
@@ -9497,9 +9585,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -9596,9 +9686,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -9606,9 +9698,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -9691,9 +9785,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -9701,9 +9797,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                   data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                   <td
@@ -9780,9 +9878,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                 </tr>
@@ -9790,9 +9890,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -9869,9 +9971,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -10640,7 +10744,7 @@ exports[`WalletDetails should render with timers 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -10828,12 +10932,14 @@ exports[`WalletDetails should render with timers 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -10984,9 +11090,11 @@ exports[`WalletDetails should render with timers 1`] = `
                           </span>
                         </button>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -11013,7 +11121,7 @@ exports[`WalletDetails should render with timers 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -11201,12 +11309,14 @@ exports[`WalletDetails should render with timers 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -11345,9 +11455,11 @@ exports[`WalletDetails should render with timers 1`] = `
                           0 BTC
                         </span>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -11431,7 +11543,7 @@ exports[`WalletDetails should render with timers 1`] = `
           class="container mx-auto px-14"
         >
           <div
-            class="sc-AxheI fYgUyq"
+            class="sc-AxheI bxSWsu"
             role="table"
           >
             <table
@@ -11612,9 +11724,11 @@ exports[`WalletDetails should render with timers 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                   <td
@@ -11705,9 +11819,11 @@ exports[`WalletDetails should render with timers 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                 </tr>
@@ -11715,9 +11831,11 @@ exports[`WalletDetails should render with timers 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -11800,9 +11918,11 @@ exports[`WalletDetails should render with timers 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -11810,9 +11930,11 @@ exports[`WalletDetails should render with timers 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -11889,9 +12011,11 @@ exports[`WalletDetails should render with timers 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -11899,9 +12023,11 @@ exports[`WalletDetails should render with timers 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -11978,9 +12104,11 @@ exports[`WalletDetails should render with timers 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -12749,7 +12877,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -12937,12 +13065,14 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -13093,9 +13223,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           </span>
                         </button>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -13122,7 +13254,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -13310,12 +13442,14 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -13454,9 +13588,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           0 BTC
                         </span>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -13540,7 +13676,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
           class="container mx-auto px-14"
         >
           <div
-            class="sc-AxheI fYgUyq"
+            class="sc-AxheI bxSWsu"
             role="table"
           >
             <table
@@ -13721,9 +13857,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                   <td
@@ -13814,9 +13952,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                 </tr>
@@ -13824,9 +13964,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -13909,9 +14051,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -13919,9 +14063,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -13998,9 +14144,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -14008,9 +14156,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -14087,9 +14237,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -14860,7 +15012,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -15048,12 +15200,14 @@ exports[`WalletDetails should update wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -15204,9 +15358,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                           </span>
                         </button>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -15233,7 +15389,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="relative"
             >
               <div
-                class="sc-AxheI fYgUyq"
+                class="sc-AxheI bxSWsu"
                 role="table"
               >
                 <table
@@ -15421,12 +15577,14 @@ exports[`WalletDetails should update wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+                      class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                       data-testid="TransactionRow"
                     >
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                       <td
@@ -15565,9 +15723,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                           0 BTC
                         </span>
                       </td>
-                      <td>
+                      <td
+                        class="h-px p-0"
+                      >
                         <div
-                          class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                          class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                         />
                       </td>
                     </tr>
@@ -15651,7 +15811,7 @@ exports[`WalletDetails should update wallet name 1`] = `
           class="container mx-auto px-14"
         >
           <div
-            class="sc-AxheI fYgUyq"
+            class="sc-AxheI bxSWsu"
             role="table"
           >
             <table
@@ -15832,9 +15992,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                   data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                   <td
@@ -15931,9 +16093,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 bg-theme-success-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 bg-theme-success-100"
                     />
                   </td>
                 </tr>
@@ -15941,9 +16105,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -16026,9 +16192,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -16036,9 +16204,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -16115,9 +16285,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>
@@ -16125,9 +16297,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
                   data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
                 >
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                   <td
@@ -16204,9 +16378,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                       0 BTC
                     </span>
                   </td>
-                  <td>
+                  <td
+                    class="h-px p-0"
+                  >
                     <div
-                      class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                      class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
                     />
                   </td>
                 </tr>

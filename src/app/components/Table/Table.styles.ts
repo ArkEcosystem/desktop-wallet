@@ -12,32 +12,8 @@ export const defaultTableStyle = `
 		}
 
 		th:first-child,
-		td:first-child {
+		th:last-child {
 			padding: 0;
-		}
-
-		th:last-child,
-		td:last-child {
-			padding: 0;
-		}
-
-		td:first-child,
-		td:last-child {
-			height: 1px;
-		}
-
-		td:first-child > div {
-			border-top-left-radius: 0.5rem;
-    		border-bottom-left-radius: 0.5rem;
-    		margin-left: -2rem;
-    		height: 100%;
-		}
-
-		td:last-child > div {
-			border-top-right-radius: 0.5rem;
-    		border-bottom-right-radius: 0.5rem;
-    		margin-right: -2rem;
-    		height: 100%;
 		}
 
 		tbody {

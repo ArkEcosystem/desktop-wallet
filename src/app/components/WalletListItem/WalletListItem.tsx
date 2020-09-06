@@ -69,16 +69,17 @@ export const WalletListItem = ({
 				isSelected ? "bg-theme-success-100" : "cursor-pointer hover:bg-theme-neutral-100"
 			}`}
 			onClick={() => onRowClick?.(wallet.id())}
-			onMouseEnter={() => !isSelected && setShadowColor("--theme-color-neutral-100")}
-			onMouseLeave={() => !isSelected && setShadowColor(defaultShadowColor)}
+			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
+			onMouseLeave={() => setShadowColor(defaultShadowColor)}
 		>
-			<td>
+			<td className="h-px p-0">
 				<div
-					className={`transition-colors duration-100 ${
+					className={`rounded-l-lg h-full -ml-8 transition-colors duration-100 ${
 						isSelected ? "bg-theme-success-100" : "cursor-pointer group-hover:bg-theme-neutral-100"
 					}`}
 				/>
 			</td>
+
 			<td className="py-6 mt-1">
 				<div className="flex">
 					<Circle className={`-mr-2 ${coinClass}`} size="lg" shadowColor={shadowColor}>
@@ -87,9 +88,11 @@ export const WalletListItem = ({
 					<Avatar size="lg" address={wallet.address()} shadowColor={shadowColor} />
 				</div>
 			</td>
+
 			<td className="py-1">
 				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 			</td>
+
 			<td className="py-1 text-sm font-bold text-center align-middle">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
@@ -105,12 +108,15 @@ export const WalletListItem = ({
 						)}
 				</div>
 			</td>
+
 			<td className="font-semibold text-right">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</td>
+
 			<td className="text-right text-theme-neutral-light">
 				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
 			</td>
+
 			{actions && (
 				<td>
 					{actions.length > 0 && (
@@ -120,9 +126,10 @@ export const WalletListItem = ({
 					)}
 				</td>
 			)}
-			<td>
+
+			<td className="h-px p-0">
 				<div
-					className={`transition-colors duration-100 ${
+					className={`rounded-r-lg h-full -mr-8 transition-colors duration-100 ${
 						isSelected ? "bg-theme-success-100" : "cursor-pointer group-hover:bg-theme-neutral-100"
 					}`}
 				/>

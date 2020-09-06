@@ -8,9 +8,11 @@ exports[`WalletListItem should render 1`] = `
         class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
         data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
       >
-        <td>
+        <td
+          class="h-px p-0"
+        >
           <div
-            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
           />
         </td>
         <td
@@ -133,9 +135,11 @@ exports[`WalletListItem should render 1`] = `
             0 BTC
           </span>
         </td>
-        <td>
+        <td
+          class="h-px p-0"
+        >
           <div
-            class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
           />
         </td>
       </tr>

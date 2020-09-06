@@ -36,9 +36,6 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 						}
 					>
 						<td>
-							<div />
-						</td>
-						<td>
 							{index === 0 && (
 								<div className="flex items-center space-x-3">
 									<AvatarWrapper size="lg" data-testid="ContactListItem__user--avatar">
@@ -126,9 +123,6 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 									{options[0]?.label}
 								</Button>
 							)}
-						</td>
-						<td>
-							<div />
 						</td>
 					</tr>
 				))}

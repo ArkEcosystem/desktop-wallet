@@ -8,7 +8,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { SearchResource } from "app/components/SearchResource";
-import { Table, wrapColumns } from "app/components/Table";
+import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -41,9 +41,6 @@ const SearchWalletListItem = ({
 
 	return (
 		<tr className="border-b border-dashed border-theme-neutral-200">
-			<td>
-				<div />
-			</td>
 			<td className="py-6 mt-1">
 				<div className="flex">
 					{showNetwork && (
@@ -74,9 +71,6 @@ const SearchWalletListItem = ({
 					</Button>
 				</div>
 			</td>
-			<td>
-				<div />
-			</td>
 		</tr>
 	);
 };
@@ -106,7 +100,7 @@ export const SearchWallet = ({
 }: SearchWalletProps) => {
 	const { t } = useTranslation();
 
-	const listColumns = wrapColumns([
+	const listColumns = [
 		{
 			Header: t("COMMON.ASSET_TYPE"),
 			className: !showNetwork ? "invisible w-0 text-0" : "",
@@ -129,7 +123,7 @@ export const SearchWallet = ({
 			Header: t("COMMON.ACTION"),
 			className: "invisible w-0 text-0",
 		},
-	]);
+	];
 
 	return (
 		<SearchResource

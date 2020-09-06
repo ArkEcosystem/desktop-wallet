@@ -6,7 +6,7 @@ exports[`TransactionTable should render 1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ fDrMqv"
+      class="sc-AxirZ beTbqP"
       role="table"
     >
       <table
@@ -180,12 +180,14 @@ exports[`TransactionTable should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+            class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
-            <td>
+            <td
+              class="h-px p-0"
+            >
               <div
-                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
               />
             </td>
             <td
@@ -328,19 +330,23 @@ exports[`TransactionTable should render 1`] = `
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="h-px p-0"
+            >
               <div
-                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
               />
             </td>
           </tr>
           <tr
-            class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+            class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
-            <td>
+            <td
+              class="h-px p-0"
+            >
               <div
-                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
               />
             </td>
             <td
@@ -497,9 +503,11 @@ exports[`TransactionTable should render 1`] = `
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="h-px p-0"
+            >
               <div
-                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
               />
             </td>
           </tr>
@@ -516,7 +524,7 @@ exports[`TransactionTable should render compact 1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ fDrMqv"
+      class="sc-AxirZ beTbqP"
       role="table"
     >
       <table
@@ -740,7 +748,7 @@ exports[`TransactionTable should render loading state  1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ fDrMqv"
+      class="sc-AxirZ beTbqP"
       role="table"
     >
       <table
@@ -1431,7 +1439,7 @@ exports[`TransactionTable should render loading state with currency column 1`] =
     class="relative"
   >
     <div
-      class="sc-AxirZ fDrMqv"
+      class="sc-AxirZ beTbqP"
       role="table"
     >
       <table
@@ -2201,7 +2209,7 @@ exports[`TransactionTable should render loading state with sign column 1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ fDrMqv"
+      class="sc-AxirZ beTbqP"
       role="table"
     >
       <table
@@ -2966,7 +2974,7 @@ exports[`TransactionTable should render with sign 1`] = `
     class="relative"
   >
     <div
-      class="sc-AxirZ fDrMqv"
+      class="sc-AxirZ beTbqP"
       role="table"
     >
       <table
@@ -3154,12 +3162,14 @@ exports[`TransactionTable should render with sign 1`] = `
           role="rowgroup"
         >
           <tr
-            class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+            class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
-            <td>
+            <td
+              class="h-px p-0"
+            >
               <div
-                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
               />
             </td>
             <td
@@ -3325,19 +3335,23 @@ exports[`TransactionTable should render with sign 1`] = `
                 </span>
               </button>
             </td>
-            <td>
+            <td
+              class="h-px p-0"
+            >
               <div
-                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
               />
             </td>
           </tr>
           <tr
-            class="group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+            class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
             data-testid="TransactionRow"
           >
-            <td>
+            <td
+              class="h-px p-0"
+            >
               <div
-                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
               />
             </td>
             <td
@@ -3517,9 +3531,11 @@ exports[`TransactionTable should render with sign 1`] = `
                 </span>
               </button>
             </td>
-            <td>
+            <td
+              class="h-px p-0"
+            >
               <div
-                class="transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
+                class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
               />
             </td>
           </tr>
