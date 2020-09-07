@@ -7,6 +7,7 @@ const defaultStyle = (noShadow: boolean, shadowColor?: string) => [
 		css`
 			& {
 				box-shadow: 0 0 0 6px var(${shadowColor ? shadowColor : "--theme-background-color"});
+				background-color: var(${shadowColor ? shadowColor : "--theme-background-color"});
 			}
 		`,
 ];
