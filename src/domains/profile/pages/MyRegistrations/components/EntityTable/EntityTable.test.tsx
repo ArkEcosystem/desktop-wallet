@@ -24,14 +24,18 @@ describe("BusinessRegistrationsTable", () => {
 	});
 
 	it("should render empty state", () => {
-		const { getAllByTestId, asFragment } = render(<EntityTable entities={[]} />);
+		const { getAllByTestId, asFragment } = render(
+			<EntityTable entities={[]} title="Entity table" nameColumnHeader="Entity name" />,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 		expect(() => getAllByTestId("EntityTableRowItem")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should render registrations", async () => {
-		const { getAllByTestId, asFragment } = render(<EntityTable entities={entityRegistrations} />);
+		const { getAllByTestId, asFragment } = render(
+			<EntityTable entities={entityRegistrations} title="Entity table" nameColumnHeader="Entity name" />,
+		);
 
 		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
@@ -40,7 +44,12 @@ describe("BusinessRegistrationsTable", () => {
 	it("should handle resign dropdown action", async () => {
 		const onAction = jest.fn();
 		const { asFragment, getAllByTestId } = render(
-			<EntityTable entities={entityRegistrations} onAction={onAction} />,
+			<EntityTable
+				entities={entityRegistrations}
+				title="Entity table"
+				nameColumnHeader="Entity name"
+				onAction={onAction}
+			/>,
 		);
 		expect(asFragment()).toMatchSnapshot();
 
@@ -66,7 +75,12 @@ describe("BusinessRegistrationsTable", () => {
 	it("should handle resign dropdown action", async () => {
 		const onAction = jest.fn();
 		const { asFragment, getAllByTestId } = render(
-			<EntityTable entities={entityRegistrations} onAction={onAction} />,
+			<EntityTable
+				entities={entityRegistrations}
+				title="Entity table"
+				nameColumnHeader="Entity name"
+				onAction={onAction}
+			/>,
 		);
 		expect(asFragment()).toMatchSnapshot();
 

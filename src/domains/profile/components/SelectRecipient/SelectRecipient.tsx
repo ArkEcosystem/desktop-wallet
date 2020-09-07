@@ -84,7 +84,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 
 					<div
 						data-testid="SelectRecipient__select-contact"
-						className="absolute flex items-center cursor-pointer right-4 space-x-3"
+						className="absolute flex items-center space-x-3 cursor-pointer right-4"
 						onClick={openContacts}
 					>
 						<Icon name="User" width={20} height={20} />

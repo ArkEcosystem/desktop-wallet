@@ -69,7 +69,7 @@ export const NewsOptions = ({
 			data-testid="NewsOptions"
 		>
 			<div className="flex flex-col space-y-8">
-				<div className="flex items-center justify-between px-2 py-4 shadow-xl rounded-md">
+				<div className="flex items-center justify-between px-2 py-4 rounded-md shadow-xl">
 					<Input
 						data-testid="NewsOptions__search"
 						maxLength={32}

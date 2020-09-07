@@ -3,7 +3,10 @@ import { act } from "@testing-library/react-hooks";
 import React from "react";
 import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
-import { FirstStep, SecondStep, ThirdStep, WalletUpdate } from "./WalletUpdate";
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
+import { ThirdStep } from "./Step3";
+import { WalletUpdate } from "./WalletUpdate";
 
 describe("WalletUpdate", () => {
 	it("should not render if not open", () => {

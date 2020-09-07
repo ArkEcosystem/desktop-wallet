@@ -4,7 +4,10 @@ import { act } from "@testing-library/react-hooks";
 import React from "react";
 import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
-import { FirstStep, InstallPlugin, SecondStep, ThirdStep } from "./InstallPlugin";
+import { InstallPlugin } from "./InstallPlugin";
+import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
+import { ThirdStep } from "./Step3";
 
 describe("InstallPlugin", () => {
 	it("should not render if not open", () => {

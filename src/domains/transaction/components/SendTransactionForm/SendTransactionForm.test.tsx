@@ -71,15 +71,15 @@ describe("SendTransactionForm", () => {
 			);
 		});
 
-		const { getByTestId, getAllByTestId } = rendered;
+		const { getByTestId } = rendered;
 
 		await act(async () => {
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
 
 			// Fee
 			expect(getByTestId("InputCurrency")).toHaveValue("0.71538139");
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(feeOptions[1]);
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 
 			expect(rendered.container).toMatchSnapshot();
@@ -103,14 +103,14 @@ describe("SendTransactionForm", () => {
 		}
 
 		const history = createMemoryHistory();
-		const sendUrl = `/profiles/${profile.id()}/transactions/${wallet.id()}/transfer`;
+		const sendUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}/sign-transfer`;
 		history.push(sendUrl);
 
 		let rendered: any;
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/:walletId/transfer">
+				<Route path="/profiles/:profileId/wallets/:walletId/sign-transfer">
 					<FormContext {...form.current}>
 						<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
 					</FormContext>
@@ -124,7 +124,7 @@ describe("SendTransactionForm", () => {
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__wrapper")).toBeTruthy());
 		});
 
-		const { getByTestId, getAllByTestId } = rendered;
+		const { getByTestId } = rendered;
 
 		await act(async () => {
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual(defaultFee));
@@ -142,7 +142,7 @@ describe("SendTransactionForm", () => {
 			const secondWallet = profile.wallets().values()[1];
 			await waitFor(() =>
 				expect(historySpy).toHaveBeenCalledWith(
-					`/profiles/${profile?.id()}/transactions/${secondWallet.id()}/transfer`,
+					`/profiles/${profile?.id()}/wallets/${secondWallet.id()}/send-transfer`,
 				),
 			);
 

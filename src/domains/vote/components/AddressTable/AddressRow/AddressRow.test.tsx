@@ -34,6 +34,7 @@ describe("AddressRow", () => {
 		await wallet.syncVotes();
 
 		nock.disableNetConnect();
+
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })

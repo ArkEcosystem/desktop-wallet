@@ -25,7 +25,7 @@ const MultiSignature = () => (
 );
 
 export const TransactionRowInfo = ({ transaction }: Props) => (
-	<div data-testid="TransactionRowInfo" className="inline-flex align-middle space-x-1">
+	<div data-testid="TransactionRowInfo" className="inline-flex space-x-1 align-middle">
 		{transaction?.isMultiSignature() && <MultiSignature />}
 		{transaction?.memo() && <VendorField vendorField={transaction?.memo()} />}
 	</div>

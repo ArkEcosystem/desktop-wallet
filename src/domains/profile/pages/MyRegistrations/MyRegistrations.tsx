@@ -35,16 +35,16 @@ export const MyRegistrations = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
 	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
+	const [plugins, setPlugins] = useState<ExtendedTransactionData[]>([]);
 
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const isEmptyRegistrations = useMemo(() => !isLoading && !delegates.length && !businesses.length, [
-		businesses,
-		delegates,
-		isLoading,
-	]);
+	const isEmptyRegistrations = useMemo(
+		() => !isLoading && !delegates.length && !businesses.length && !plugins.length,
+		[isLoading, delegates, businesses, plugins],
+	);
 
 	const crumbs = [
 		{
@@ -56,14 +56,13 @@ export const MyRegistrations = () => {
 	const handleAction = ({ action, walletId }: any) => {
 		switch (action) {
 			case "register":
-				//TODO: Determine wallet selection. Which wallet should be registered?
-				history.push(`/profiles/${activeProfile.id()}/transactions/registration`);
+				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
 				break;
 			case "resign":
-				history.push(`/profiles/${activeProfile.id()}/transactions/${walletId}/resignation`);
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
 				break;
 			case "update":
-				history.push(`/profiles/${activeProfile.id()}/transactions/${walletId}/update`);
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
 				break;
 		}
 	};
@@ -73,6 +72,9 @@ export const MyRegistrations = () => {
 			setIsLoading(true);
 
 			activeProfile.entityAggregate().flush();
+
+			const pluginRegistrations = await activeProfile.entityAggregate().registrations(Enums.EntityType.Plugin);
+			setPlugins(pluginRegistrations.items());
 
 			const businessRegistrations = await activeProfile
 				.entityAggregate()
@@ -111,7 +113,28 @@ export const MyRegistrations = () => {
 
 			{isLoading && !isEmptyRegistrations && <Loader />}
 
-			{!isLoading && businesses.length > 0 && <EntityTable entities={businesses} onAction={handleAction} />}
+			{!isLoading && businesses.length > 0 && (
+				<div data-testid="BusinessRegistrations">
+					<EntityTable
+						title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
+						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
+						entities={businesses}
+						onAction={handleAction}
+					/>
+				</div>
+			)}
+
+			{!isLoading && plugins.length > 0 && (
+				<div data-testid="PluginRegistrations">
+					<EntityTable
+						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
+						title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
+						entities={plugins}
+						onAction={handleAction}
+					/>
+				</div>
+			)}
+
 			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
 
 			{isEmptyRegistrations && <EmptyRegistrations />}
