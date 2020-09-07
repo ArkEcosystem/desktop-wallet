@@ -4,7 +4,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { BTC } from "@arkecosystem/platform-sdk-btc";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
-// import { LSK } from "@arkecosystem/platform-sdk-lsk";
+import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -111,7 +111,7 @@ export const App = ({ syncInterval }: Props) => {
 					// BTC,
 					// EOS,
 					// ETH,
-					// LSK,
+					LSK,
 					// NEO,
 					// TRX,
 					// XLM,
