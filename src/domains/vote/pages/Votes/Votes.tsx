@@ -39,12 +39,13 @@ const Menu = ({ selected, onClick }: MenuProps) => {
 			: "text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent";
 
 	return (
-		<ul className="flex h-20 mr-auto -mb-5">
+		<ul className="flex h-20 mr-auto -mb-5" data-testid="Menu">
 			<li
 				className={`flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getMenuItemClass(
 					"delegate",
 				)}`}
 				onClick={() => onClick?.("delegate")}
+				data-testid="Menu__item--delegate"
 			>
 				{t("VOTE.VOTES_PAGE.MENU.SELECT_DELEGATE")}
 			</li>
@@ -56,6 +57,7 @@ const Menu = ({ selected, onClick }: MenuProps) => {
 					"vote",
 				)}`}
 				onClick={() => onClick?.("vote")}
+				data-testid="Menu__item--vote"
 			>
 				{t("VOTE.VOTES_PAGE.MENU.MY_VOTE")}
 			</li>

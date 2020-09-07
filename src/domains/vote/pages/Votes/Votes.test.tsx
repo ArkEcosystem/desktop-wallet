@@ -33,9 +33,6 @@ describe("Votes", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
-		await syncDelegates();
-		await wallet.syncVotes();
-
 		nock.disableNetConnect();
 
 		nock("https://dwallets.ark.io")
@@ -43,6 +40,9 @@ describe("Votes", () => {
 			.query({ page: "1" })
 			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
 			.persist();
+
+		await syncDelegates();
+		await wallet.syncVotes();
 	});
 
 	it("should render", async () => {
@@ -144,6 +144,27 @@ describe("Votes", () => {
 		act(() => {
 			fireEvent.click(getByTestId("DelegateTable__continue-button"));
 		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should navigate between delegate and vote table", async () => {
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, getByTestId } = renderPage(route);
+
+		expect(getByTestId("Menu")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("Menu__item--vote"));
+		});
+
+		expect(getByTestId("MyVoteTable")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("Menu__item--delegate"));
+		});
+
+		expect(getByTestId("DelegateTable")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
