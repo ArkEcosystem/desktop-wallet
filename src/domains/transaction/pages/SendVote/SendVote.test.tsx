@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
@@ -45,29 +44,32 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
-let delegate: Contracts.WalletData;
+let votes: ReadOnlyWallet[];
 
-describe("Vote For Delegate", () => {
+describe("SendVote", () => {
 	beforeAll(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+
+		await syncDelegates();
+		await syncFees();
+
+		votes = [0, 1].map((index) =>
+			env.delegates().findByAddress(wallet.coinId(), wallet.networkId(), delegateData[index].address),
+		);
+
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
 			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
 			.reply(200, transactionFixture);
-
-		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		delegate = await wallet.client().delegate(delegateData[0].address);
-
-		await syncDelegates();
-		await syncFees();
 	});
 
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FirstStep delegate={delegate} profile={profile} wallet={wallet} />
+				<FirstStep profile={profile} unvotes={[]} votes={votes} wallet={wallet} />
 			</FormContext>,
 		);
 
@@ -79,7 +81,7 @@ describe("Vote For Delegate", () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<SecondStep delegate={delegate} profile={profile} wallet={wallet} />
+				<SecondStep profile={profile} unvotes={[]} votes={votes} wallet={wallet} />
 			</FormContext>,
 		);
 
@@ -106,7 +108,7 @@ describe("Vote For Delegate", () => {
 		);
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FourthStep delegate={delegate} transaction={transaction!} />
+				<FourthStep senderWallet={wallet} transaction={transaction!} unvotes={[]} votes={votes} />
 			</FormContext>,
 		);
 
@@ -114,23 +116,185 @@ describe("Vote For Delegate", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should send a vote transaction", async () => {
+	it("should send a unvote & vote transaction", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote/${
-			delegateData[0].address
-		}/sender/${wallet.address()}`;
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		history.push(transferURL);
+		const params = new URLSearchParams({
+			unvotes: delegateData[1].address,
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
 
 		let rendered: RenderResult;
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/transactions/vote/:voteId/sender/:senderId">
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
 				</Route>,
 				{
-					routes: [transferURL],
+					routes: [voteURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVote__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[0].username),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVote__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("SendVote__button--back"));
+			await waitFor(() => expect(getByTestId("SendVote__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
+			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
+			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signVote")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
+
+			fireEvent.click(getByTestId("SendVote__button--submit"));
+
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should send a vote transaction", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+					<SendVote />
+				</Route>,
+				{
+					routes: [voteURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVote__step--first")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[0].username),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVote__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("SendVote__button--back"));
+			await waitFor(() => expect(getByTestId("SendVote__step--second")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
+			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
+			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
+
+			const signMock = jest
+				.spyOn(wallet.transaction(), "signVote")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(wallet);
+
+			fireEvent.click(getByTestId("SendVote__button--submit"));
+
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should send a unvote transaction", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			unvotes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+					<SendVote />
+				</Route>,
+				{
+					routes: [voteURL],
 					history,
 				},
 			);
@@ -189,21 +353,26 @@ describe("Vote For Delegate", () => {
 
 	it("should error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/transactions/vote/${
-			delegateData[0].address
-		}/sender/${wallet.address()}`;
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		history.push(transferURL);
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
 
 		let rendered: RenderResult;
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/transactions/vote/:voteId/sender/:senderId">
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
 				</Route>,
 				{
-					routes: [transferURL],
+					routes: [voteURL],
 					history,
 				},
 			);

@@ -13,7 +13,7 @@ type Delegate = { address: string; username: string; rank: number };
 type DelegateTableProps = {
 	coin?: string;
 	delegates: ReadOnlyWallet[];
-	onContinue?: (delegateAddress: string) => void;
+	onContinue?: (votes: string[]) => void;
 };
 
 const SelectedDelegateList = ({ delegates, className }: { delegates: Delegate[]; className: string }) => {
@@ -62,7 +62,7 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: Delegate[]; limit
 
 export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
-	const [selected, setSelected] = useState([] as any);
+	const [selected, setSelected] = useState([] as Delegate[]);
 	const [showSelectedList, setShowSelectedList] = useState(false);
 
 	const columns = wrapColumns([
@@ -192,7 +192,7 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 								</div>
 
 								<Button
-									onClick={() => onContinue?.(selected[0].address)}
+									onClick={() => onContinue?.(selected.map((select) => select.address))}
 									data-testid="DelegateTable__continue-button"
 								>
 									{t("COMMON.CONTINUE")}

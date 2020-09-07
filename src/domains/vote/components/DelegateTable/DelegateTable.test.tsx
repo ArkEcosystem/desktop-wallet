@@ -118,7 +118,7 @@ describe("DelegateTable", () => {
 		});
 
 		expect(container).toBeTruthy();
-		expect(onContinue).toHaveBeenCalledWith(delegateAddress);
+		expect(onContinue).toHaveBeenCalledWith([delegateAddress]);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
