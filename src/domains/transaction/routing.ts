@@ -39,8 +39,7 @@ export const TransactionRoutes = [
 		component: SendIpfs,
 	},
 	{
-		// @TODO: adjust this to match other routes. contains too much information
-		path: "/profiles/:profileId/wallets/:walletId/transactions/vote/:voteId/sender/:senderId",
+		path: "/profiles/:profileId/wallets/:walletId/send-vote",
 		exact: true,
 		component: SendVote,
 	},

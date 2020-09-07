@@ -8,17 +8,20 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const SecondStep = ({
-	delegate,
 	profile,
+	unvotes,
+	votes,
 	wallet,
 }: {
-	delegate: ReadOnlyWallet;
 	profile: Profile;
+	unvotes: ReadOnlyWallet[];
+	votes: ReadOnlyWallet[];
 	wallet: ReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
@@ -67,12 +70,17 @@ export const SecondStep = ({
 					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
-				<TransactionDetail
-					label={t("TRANSACTION.DELEGATE")}
-					extra={<Avatar size="lg" address={delegate?.address()} />}
-				>
-					<Address address={delegate?.address()} walletName={delegate?.username()} />
-				</TransactionDetail>
+				{unvotes.length > 0 && (
+					<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
+						<VoteList votes={unvotes} />
+					</TransactionDetail>
+				)}
+
+				{votes.length > 0 && (
+					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
+						<VoteList votes={votes} />
+					</TransactionDetail>
+				)}
 
 				<div className="my-4">
 					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} />
