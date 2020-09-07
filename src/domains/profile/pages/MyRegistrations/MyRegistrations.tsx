@@ -14,7 +14,7 @@ import { useHistory } from "react-router-dom";
 
 import { DelegateTable } from "./components/DelegateTable";
 import { EntityTable } from "./components/EntityTable";
-import { filterDelegates,filterEntities } from "./utils";
+import { filterDelegates, filterEntities } from "./utils";
 
 const { RegisterBanner } = images.common;
 
@@ -75,11 +75,14 @@ export const MyRegistrations = () => {
 		fetchRegistrations();
 	}, [activeProfile]);
 
-	const { pluginEntities, businessEntities, delegateWallets } = useMemo(() => ({
+	const { pluginEntities, businessEntities, delegateWallets } = useMemo(
+		() => ({
 			pluginEntities: filterEntities(plugins, query),
 			businessEntities: filterEntities(businesses, query),
 			delegateWallets: filterDelegates(delegates, env.delegates(), query),
-		}), [query, plugins, businesses, delegates]);
+		}),
+		[query, plugins, businesses, delegates],
+	);
 
 	const showEmptySearchResults = useMemo(
 		() => query.trim().length > 0 && !pluginEntities.length && !businessEntities.length && !delegateWallets.length,

@@ -1,4 +1,4 @@
-import { DelegateService,ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateService, ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 
 export const filterEntities = (entities: ExtendedTransactionData[], query: string) => {
 	if (!query || query === "") return entities;
@@ -8,9 +8,11 @@ export const filterEntities = (entities: ExtendedTransactionData[], query: strin
 		return data.name.toLowerCase().includes(query.toLowerCase());
 	};
 
-	const matchesAddress = (entity: ExtendedTransactionData, query: string) => entity.wallet().address().toLowerCase().includes(query.toLowerCase());
+	const matchesAddress = (entity: ExtendedTransactionData, query: string) =>
+		entity.wallet().address().toLowerCase().includes(query.toLowerCase());
 
-	const matchesWalletName = (entity: ExtendedTransactionData, query: string) => entity.wallet().alias()?.toLowerCase().includes(query.toLowerCase());
+	const matchesWalletName = (entity: ExtendedTransactionData, query: string) =>
+		entity.wallet().alias()?.toLowerCase().includes(query.toLowerCase());
 
 	return entities.filter(
 		(e) => matchesAssetName(e, query) || matchesWalletName(e, query) || matchesAddress(e, query),
