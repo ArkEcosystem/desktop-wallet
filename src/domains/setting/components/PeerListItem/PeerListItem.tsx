@@ -1,6 +1,7 @@
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { TableCell } from "app/components/Table";
 import React from "react";
 
 type PeerListItemProps = {
@@ -14,27 +15,29 @@ type PeerListItemProps = {
 };
 
 export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onAction }: PeerListItemProps) => (
-	<tr className="border-b border-theme-neutral-200">
-		<td className="inline-flex items-center py-4 mt-1">
-			<Circle className={coinClass}>
+	<tr className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100">
+		<TableCell variant="start" innerClassName="space-x-2">
+			<Circle className={coinClass} noShadow>
 				<Icon name={coin!} />
 			</Circle>
-			<span className="ml-2">{coin?.toLocaleUpperCase()}</span>
-		</td>
-		<td className="py-1">
+			<span>{coin?.toLocaleUpperCase()}</span>
+		</TableCell>
+
+		<TableCell>
 			<span>{name}</span>
-		</td>
-		<td className="py-1">
+		</TableCell>
+
+		<TableCell>
 			<span>{peerIp}</span>
-		</td>
-		<td className="py-1 text-theme-neutral">
-			<div className="flex justify-center h-full">
-				<Icon name={type!} />
-			</div>
-		</td>
-		<td className="text-theme-neutral-300">
+		</TableCell>
+
+		<TableCell innerClassName="text-theme-neutral justify-center">
+			<Icon name={type!} />
+		</TableCell>
+
+		<TableCell variant="end" innerClassName="text-theme-neutral-300">
 			{actions?.length && (() => <Dropdown options={actions} onSelect={onAction} />)()}
-		</td>
+		</TableCell>
 	</tr>
 );
 
