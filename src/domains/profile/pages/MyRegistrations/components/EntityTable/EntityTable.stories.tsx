@@ -6,4 +6,6 @@ export default {
 	title: "Domains / Profile / Pages / MyRegistrations / Components / EntityTable",
 };
 
-export const Default = () => <EntityTable entities={[]} onAction={console.log} />;
+export const Default = () => (
+	<EntityTable title="Entities" nameColumnHeader="Entity name" entities={[]} onAction={console.log} />
+);
