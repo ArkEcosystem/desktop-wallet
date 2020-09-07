@@ -6,6 +6,7 @@ export const translations: { [key: string]: any } = {
 
 		MENU: {
 			MY_VOTE: "My Vote",
+			SELECT_DELEGATE: "Select a Delegate",
 		},
 	},
 
