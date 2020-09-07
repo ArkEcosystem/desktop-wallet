@@ -3,6 +3,10 @@ export const translations: { [key: string]: any } = {
 		TITLE: "My Votes",
 		SUBTITLE: "Manage your cryptoasset staking",
 		SEARCH_PLACEHOLDER: "Enter the delegate’s name or address for a quick search",
+
+		MENU: {
+			MY_VOTE: "My Vote",
+		},
 	},
 
 	ADDRESS_TABLE: {

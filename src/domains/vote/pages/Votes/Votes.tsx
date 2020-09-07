@@ -8,6 +8,7 @@ import {
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
+import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
@@ -22,6 +23,31 @@ import { DelegateTable } from "domains/vote/components/DelegateTable";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
+
+type MenuProps = {
+	onClickMenu?: (menu: string) => void;
+};
+
+const Menu = ({ onClickMenu }: MenuProps) => {
+	const { t } = useTranslation();
+
+	return (
+		<ul className="flex h-20 mr-auto md:h-24">
+			<li
+				className="flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+				onClick={() => onClickMenu?.("delegate")}
+			>
+				{t("VOTE.DELEGATE_TABLE.TITLE")}
+			</li>
+			<li
+				className="flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+				onClick={() => onClickMenu?.("vote")}
+			>
+				{t("VOTE.VOTES_PAGE.MENU.MY_VOTE")}
+			</li>
+		</ul>
+	);
+};
 
 const InputAddress = ({ address, profile }: { address: string; profile: Profile }) => {
 	const { t } = useTranslation();
@@ -148,6 +174,10 @@ export const Votes = () => {
 						<InputAddress address={address} profile={activeProfile} />
 					</TransactionDetail>
 				</div>
+
+				<Divider />
+
+				<Menu />
 			</div>
 
 			<Section className="flex-1">
