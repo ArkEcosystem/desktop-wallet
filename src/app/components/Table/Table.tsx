@@ -5,18 +5,6 @@ import { styled } from "twin.macro";
 import { Icon } from "../Icon";
 import { defaultTableStyle } from "./Table.styles";
 
-export const wrapColumns = (columns: object[]) => [
-	{
-		Header: "spacerStart",
-		className: "invisible w-0 text-0",
-	},
-	...columns,
-	{
-		Header: "spacerEnd",
-		className: "invisible w-0 text-0",
-	},
-];
-
 type TableProps = {
 	children?: any;
 	className?: string;
@@ -60,7 +48,7 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 
 	return (
 		<TableWrapper {...getTableProps({ className })}>
-			<table className="table-auto">
+			<table cellPadding={0} className="table-auto">
 				{!hideHeader && (
 					<thead>
 						{headerGroups.map((headerGroup: any, index: number) => (

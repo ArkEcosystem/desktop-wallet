@@ -1,7 +1,7 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
-import { Table, wrapColumns } from "app/components/Table";
+import { Table } from "app/components/Table";
 import { WalletListItem } from "app/components/WalletListItem";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { AnimatePresence, motion } from "framer-motion";
@@ -34,7 +34,7 @@ const WalletTable = ({
 }) => {
 	const { t } = useTranslation();
 
-	const columns = wrapColumns([
+	const columns = [
 		{
 			Header: t("COMMON.ASSET_TYPE"),
 			accessor: "avatarId",
@@ -57,7 +57,7 @@ const WalletTable = ({
 			accessor: "fiat",
 			className: "justify-end",
 		},
-	]);
+	];
 
 	return (
 		<Table columns={columns} data={wallets}>

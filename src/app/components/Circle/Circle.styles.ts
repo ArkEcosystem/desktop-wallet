@@ -2,7 +2,7 @@ import tw, { css } from "twin.macro";
 import { Size } from "types";
 
 const defaultStyle = (noShadow: boolean, shadowColor?: string) => [
-	tw`transition-shadow duration-100 inline-flex items-center justify-center align-middle border-2 rounded-full`,
+	tw`transition-all duration-100 inline-flex items-center justify-center align-middle border-2 rounded-full`,
 	!noShadow &&
 		css`
 			& {

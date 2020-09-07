@@ -32,6 +32,7 @@ export const Transactions = ({
 				<TransactionTable
 					transactions={transactions}
 					exchangeCurrency={exchangeCurrency}
+					showExplorerLinkColumn={false}
 					isLoading={isLoading}
 					onRowClick={onRowClick}
 				/>

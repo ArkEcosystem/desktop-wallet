@@ -5,24 +5,15 @@ exports[`WalletListItem should render 1`] = `
   <table>
     <tbody>
       <tr
-        class="transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 cursor-pointer hover:bg-theme-neutral-100"
+        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
         data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
       >
-        <td
-          class="h-px p-0"
-        >
+        <td>
           <div
-            class="rounded-l-lg h-full -ml-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
-          />
-        </td>
-        <td
-          class="py-6 mt-1"
-        >
-          <div
-            class="flex"
+            class="sc-AxhUy eOIVZR"
           >
             <div
-              class="sc-AxirZ cLJCtM -mr-2 undefined"
+              class="sc-AxirZ fFfSST -mr-2 undefined"
             >
               <div
                 class="sc-AxiKw dklFyP"
@@ -35,7 +26,7 @@ exports[`WalletListItem should render 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fZeaoq"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
             >
               <div
@@ -50,97 +41,98 @@ exports[`WalletListItem should render 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="py-1"
-        >
+        <td>
           <div
-            class="inline-block truncate align-middle"
+            class="sc-AxhUy kYzFgj"
+          >
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                data-testid="address__wallet-name"
+              >
+                ARK Wallet 1
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D8rr7B1d6…VBMs6YUYD
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhUy kYzFgj text-sm font-bold text-center align-middle"
+          >
+            <div
+              class="inline-flex items-center space-x-2"
+            >
+              <span
+                class="text-theme-neutral-600"
+              >
+                <div
+                  class="sc-AxiKw bctdez"
+                  height="16"
+                  width="16"
+                >
+                  <svg>
+                    ledger.svg
+                  </svg>
+                </div>
+              </span>
+              <span
+                class="text-theme-neutral-600"
+              >
+                <div
+                  class="sc-AxiKw bctdez"
+                  height="16"
+                  width="16"
+                >
+                  <svg>
+                    multisig.svg
+                  </svg>
+                </div>
+              </span>
+              <span
+                class="text-theme-warning-400"
+              >
+                <div
+                  class="sc-AxiKw bctdez"
+                  height="16"
+                  width="16"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhUy kYzFgj font-semibold justify-end"
           >
             <span
-              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-              data-testid="address__wallet-name"
+              data-testid="Amount"
             >
-              ARK Wallet 1
-            </span>
-            <span
-              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-              data-testid="address__wallet-address"
-            >
-              D8rr7B1d6…VBMs6YUYD
+              33.75089801 DARK
             </span>
           </div>
         </td>
-        <td
-          class="py-1 text-sm font-bold text-center align-middle"
-        >
+        <td>
           <div
-            class="inline-flex items-center space-x-2"
+            class="sc-AxhUy hGVNjt justify-end text-theme-neutral-light"
           >
             <span
-              class="text-theme-neutral-600"
+              data-testid="Amount"
             >
-              <div
-                class="sc-AxiKw bctdez"
-                height="16"
-                width="16"
-              >
-                <svg>
-                  ledger.svg
-                </svg>
-              </div>
-            </span>
-            <span
-              class="text-theme-neutral-600"
-            >
-              <div
-                class="sc-AxiKw bctdez"
-                height="16"
-                width="16"
-              >
-                <svg>
-                  multisig.svg
-                </svg>
-              </div>
-            </span>
-            <span
-              class="text-theme-warning-400"
-            >
-              <div
-                class="sc-AxiKw bctdez"
-                height="16"
-                width="16"
-              >
-                <svg>
-                  star.svg
-                </svg>
-              </div>
+              0 BTC
             </span>
           </div>
-        </td>
-        <td
-          class="font-semibold text-right"
-        >
-          <span
-            data-testid="Amount"
-          >
-            33.75089801 DARK
-          </span>
-        </td>
-        <td
-          class="text-right text-theme-neutral-light"
-        >
-          <span
-            data-testid="Amount"
-          >
-            0 BTC
-          </span>
-        </td>
-        <td
-          class="h-px p-0"
-        >
-          <div
-            class="rounded-r-lg h-full -mr-8 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100"
-          />
         </td>
       </tr>
     </tbody>

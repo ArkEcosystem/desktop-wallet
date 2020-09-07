@@ -6,6 +6,7 @@ import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { TableCell } from "app/components/Table";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -30,10 +31,12 @@ export const WalletListItem = ({
 	onAction,
 	onRowClick,
 }: WalletListItemProps) => {
-	const defaultShadowColor = useMemo(
-		() => (activeWalletId === wallet.id() ? "--theme-color-success-100" : "--theme-background-color"),
-		[activeWalletId, wallet],
-	);
+	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
+	const hasActions = useMemo(() => actions && actions.length > 0, [actions]);
+
+	const defaultShadowColor = useMemo(() => (isSelected ? "--theme-color-success-100" : "--theme-background-color"), [
+		isSelected,
+	]);
 
 	const [shadowColor, setShadowColor] = useState<string>(defaultShadowColor);
 
@@ -58,42 +61,28 @@ export const WalletListItem = ({
 		}
 	};
 
-	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
-
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
 	return (
 		<tr
 			data-testid={`WalletListItem__${wallet.address()}`}
-			className={`transition-colors duration-100 group border-b border-dashed border-theme-neutral-200 ${
-				isSelected ? "bg-theme-success-100" : "cursor-pointer hover:bg-theme-neutral-100"
-			}`}
+			className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
 			onClick={() => onRowClick?.(wallet.id())}
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor(defaultShadowColor)}
 		>
-			<td className="h-px p-0">
-				<div
-					className={`rounded-l-lg h-full -ml-8 transition-colors duration-100 ${
-						isSelected ? "bg-theme-success-100" : "cursor-pointer group-hover:bg-theme-neutral-100"
-					}`}
-				/>
-			</td>
+			<TableCell variant="start" isSelected={isSelected}>
+				<Circle className={`-mr-2 ${coinClass}`} size="lg" shadowColor={shadowColor}>
+					{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
+				</Circle>
+				<Avatar size="lg" address={wallet.address()} shadowColor={shadowColor} />
+			</TableCell>
 
-			<td className="py-6 mt-1">
-				<div className="flex">
-					<Circle className={`-mr-2 ${coinClass}`} size="lg" shadowColor={shadowColor}>
-						{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
-					</Circle>
-					<Avatar size="lg" address={wallet.address()} shadowColor={shadowColor} />
-				</div>
-			</td>
-
-			<td className="py-1">
+			<TableCell isSelected={isSelected}>
 				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
-			</td>
+			</TableCell>
 
-			<td className="py-1 text-sm font-bold text-center align-middle">
+			<TableCell isSelected={isSelected} className="text-sm font-bold text-center align-middle">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
@@ -107,33 +96,27 @@ export const WalletListItem = ({
 							) : null,
 						)}
 				</div>
-			</td>
+			</TableCell>
 
-			<td className="font-semibold text-right">
+			<TableCell isSelected={isSelected} className="font-semibold justify-end">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
-			</td>
+			</TableCell>
 
-			<td className="text-right text-theme-neutral-light">
+			<TableCell
+				variant={hasActions ? "middle" : "end"}
+				isSelected={isSelected}
+				className="justify-end text-theme-neutral-light"
+			>
 				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
-			</td>
+			</TableCell>
 
-			{actions && (
-				<td>
-					{actions.length > 0 && (
-						<div className="text-theme-neutral-light hover:text-theme-neutral">
-							<Dropdown options={actions} onSelect={handleAction} />
-						</div>
-					)}
-				</td>
+			{hasActions && (
+				<TableCell variant="end" isSelected={isSelected}>
+					<div className="text-theme-neutral-light hover:text-theme-neutral">
+						<Dropdown options={actions} onSelect={handleAction} />
+					</div>
+				</TableCell>
 			)}
-
-			<td className="h-px p-0">
-				<div
-					className={`rounded-r-lg h-full -mr-8 transition-colors duration-100 ${
-						isSelected ? "bg-theme-success-100" : "cursor-pointer group-hover:bg-theme-neutral-100"
-					}`}
-				/>
-			</td>
 		</tr>
 	);
 };

@@ -11,11 +11,6 @@ export const defaultTableStyle = `
 			font-weight: 600;
 		}
 
-		th:first-child,
-		th:last-child {
-			padding: 0;
-		}
-
 		tbody {
 			tr {
 

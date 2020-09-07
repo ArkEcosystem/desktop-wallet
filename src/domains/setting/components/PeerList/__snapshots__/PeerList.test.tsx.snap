@@ -11,7 +11,7 @@ exports[`PeerList should add peer 1`] = `
         data-testid="modal__overlay"
       />
       <div
-        class="sc-fznyAO dWLwOg absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+        class="sc-fznKkj bcsIVV absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
@@ -50,7 +50,7 @@ exports[`PeerList should add peer 1`] = `
               data-testid="Form"
             >
               <fieldset
-                class="sc-AxhUy dJlYTe my-8"
+                class="sc-AxgMl cwpxCQ my-8"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -75,14 +75,14 @@ exports[`PeerList should add peer 1`] = `
                     id="CustomPeers__network-label"
                   />
                   <div
-                    class="sc-fzozJi OgXfh"
+                    class="sc-fzoLsD rzdyj"
                     data-testid="SelectNetworkInput"
                   >
                     <div
-                      class="sc-AxheI sc-Axmtr kSmZlB px-4"
+                      class="sc-Axmtr sc-AxmLO VVqBg px-4"
                     >
                       <div
-                        class="sc-fznKkj facZri border-theme-neutral-light text-theme-neutral"
+                        class="sc-fznZeY jbcsjR border-theme-neutral-light text-theme-neutral"
                         data-testid="SelectNetworkInput__network"
                       />
                     </div>
@@ -91,7 +91,7 @@ exports[`PeerList should add peer 1`] = `
                       aria-controls="CustomPeers__network-menu"
                       aria-labelledby="CustomPeers__network-label"
                       autocomplete="off"
-                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                       data-testid="SelectNetworkInput__input"
                       id="CustomPeers__network-input"
                       placeholder="Enter a network name"
@@ -107,7 +107,7 @@ exports[`PeerList should add peer 1`] = `
                 />
               </fieldset>
               <fieldset
-                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+                class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -121,13 +121,13 @@ exports[`PeerList should add peer 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                   data-testid="Input"
                   name="name"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+                class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -141,13 +141,13 @@ exports[`PeerList should add peer 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                   data-testid="Input"
                   name="peer-ip"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+                class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -165,7 +165,7 @@ exports[`PeerList should add peer 1`] = `
                   for="multisig"
                 >
                   <input
-                    class="sc-AxhCb bzaJcd"
+                    class="sc-AxhUy hUirZQ"
                     color="success"
                     type="checkbox"
                   />
@@ -194,10 +194,11 @@ exports[`PeerList should add peer 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw cmfgJr"
+      class="sc-AxiKw ksSMAm"
       role="table"
     >
       <table
+        cellpadding="0"
         class="table-auto"
       >
         <thead>
@@ -272,7 +273,7 @@ exports[`PeerList should add peer 1`] = `
               class="inline-flex items-center py-4 mt-1"
             >
               <div
-                class="sc-fznKkj foUKeh text-logo border-theme-danger-light"
+                class="sc-fznZeY iKszCe text-logo border-theme-danger-light"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -351,7 +352,7 @@ exports[`PeerList should add peer 1`] = `
               class="inline-flex items-center py-4 mt-1"
             >
               <div
-                class="sc-fznKkj foUKeh border-theme-neutral-300"
+                class="sc-fznZeY iKszCe border-theme-neutral-300"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -430,7 +431,7 @@ exports[`PeerList should add peer 1`] = `
               class="inline-flex items-center py-4 mt-1"
             >
               <div
-                class="sc-fznKkj foUKeh text-theme-warning-400 border-theme-warning-200"
+                class="sc-fznZeY iKszCe text-theme-warning-400 border-theme-warning-200"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -521,10 +522,11 @@ exports[`PeerList should render 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw cmfgJr"
+      class="sc-AxiKw ksSMAm"
       role="table"
     >
       <table
+        cellpadding="0"
         class="table-auto"
       >
         <thead>
@@ -599,7 +601,7 @@ exports[`PeerList should render 1`] = `
               class="inline-flex items-center py-4 mt-1"
             >
               <div
-                class="sc-fznKkj foUKeh text-logo border-theme-danger-light"
+                class="sc-fznZeY iKszCe text-logo border-theme-danger-light"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -678,7 +680,7 @@ exports[`PeerList should render 1`] = `
               class="inline-flex items-center py-4 mt-1"
             >
               <div
-                class="sc-fznKkj foUKeh border-theme-neutral-300"
+                class="sc-fznZeY iKszCe border-theme-neutral-300"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -757,7 +759,7 @@ exports[`PeerList should render 1`] = `
               class="inline-flex items-center py-4 mt-1"
             >
               <div
-                class="sc-fznKkj foUKeh text-theme-warning-400 border-theme-warning-200"
+                class="sc-fznZeY iKszCe text-theme-warning-400 border-theme-warning-200"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -848,10 +850,11 @@ exports[`PeerList should render with empty peer list 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw cmfgJr"
+      class="sc-AxiKw ksSMAm"
       role="table"
     >
       <table
+        cellpadding="0"
         class="table-auto"
       >
         <thead>

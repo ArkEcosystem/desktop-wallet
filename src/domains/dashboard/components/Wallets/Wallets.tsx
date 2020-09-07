@@ -1,7 +1,7 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Slider } from "app/components/Slider";
-import { Table, wrapColumns } from "app/components/Table";
+import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
 import { useActiveProfile } from "app/hooks/env";
@@ -41,7 +41,7 @@ export const Wallets = ({
 
 	const { t } = useTranslation();
 
-	const listColumns = wrapColumns([
+	const listColumns = [
 		{
 			Header: t("COMMON.ASSET_TYPE"),
 			accessor: "avatarId",
@@ -64,7 +64,7 @@ export const Wallets = ({
 			accessor: "fiat",
 			className: "justify-end",
 		},
-	]);
+	];
 
 	const walletSliderOptions = {
 		slideHeight: 185,
