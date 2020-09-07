@@ -4,6 +4,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { TableCell } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -26,7 +27,9 @@ const getStatusIcon = (confirmed: boolean) => {
 
 export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowItem) => {
 	const { env } = useEnvironmentContext();
+
 	const [delegateInfo, setDelegateInfo] = useState<ReadOnlyWallet>();
+	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
 	const { t } = useTranslation();
 
@@ -44,42 +47,54 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 	}
 
 	return (
-		<tr data-testid="DelegateRowItem" className="border-b border-dashed border-theme-neutral-light">
-			<td className="w-24 py-6" data-testid="DelegateRowItem__address">
-				<div className="flex items-center">
-					<Circle className="border-theme-neutral-800" size="lg">
+		<tr
+			data-testid="DelegateRowItem"
+			className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
+			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
+			onMouseLeave={() => setShadowColor("")}
+		>
+			<TableCell variant="start" className="w-24">
+				<span data-testid="DelegateRowItem__address" className="flex items-center">
+					<Circle className="border-theme-neutral-800" size="lg" shadowColor={shadowColor}>
 						<Icon name="Business" width={22} height={22} />
 					</Circle>
-					<Avatar address={wallet.address()} size="lg" className="mr-4" />
-				</div>
-			</td>
-			<td className="font-semibold" data-testid="DelegateRowItem__username">
-				<span>{delegateInfo.username()}</span>
-			</td>
-			<td className="font-semibold text-theme-neutral-dark" data-testid="DelegateRowItem__rank">
-				<span>#{delegateInfo.rank()}</span>
-			</td>
-			<td className="font-semibold text-center text-theme-primary" data-testid="DelegateRowItem__msq">
-				<span className="flex justify-center">
+					<Avatar address={wallet.address()} size="lg" className="mr-4" shadowColor={shadowColor} />
+				</span>
+			</TableCell>
+
+			<TableCell innerClassName="font-semibold">
+				<span data-testid="DelegateRowItem__username">{delegateInfo.username()}</span>
+			</TableCell>
+
+			<TableCell innerClassName="font-semibold text-theme-neutral-dark">
+				<span data-testid="DelegateRowItem__rank">#{delegateInfo.rank()}</span>
+			</TableCell>
+
+			<TableCell innerClassName="font-semibold justify-center text-theme-primary">
+				<span data-testid="DelegateRowItem__msq">
 					<Icon name="Msq" width={22} height={22} />
 				</span>
-			</td>
-			<td className="text-theme-neutral-light" data-testid="DelegateRowItem__status">
-				<span className="flex justify-center">{getStatusIcon(isConfirmed)}</span>
-			</td>
-			<td className="text-theme-neutral-light" data-testid="DelegateRowItem__forged">
-				<span className="flex justify-end">
-					<span className="whitespace-no-wrap">2,450.643 Ѧ</span>
+			</TableCell>
+
+			<TableCell innerClassName="text-theme-neutral-light justify-center">
+				<span data-testid="DelegateRowItem__status">{getStatusIcon(isConfirmed)}</span>
+			</TableCell>
+
+			<TableCell innerClassName="text-theme-neutral-light justify-end">
+				<span data-testid="DelegateRowItem__forged" className="whitespace-no-wrap">
+					2,450.643 Ѧ
 				</span>
-			</td>
-			<td className="font-semibold text-theme-neutral-dark" data-testid="DelegateRowItem__votes">
-				<div className="flex items-center justify-end">
+			</TableCell>
+
+			<TableCell innerClassName="font-semibold text-theme-neutral-dark justify-end">
+				<span data-testid="DelegateRowItem__votes">
 					<small className="text-theme-neutral">2,43%</small>
 					<span className="ml-1 whitespace-no-wrap">2,450.643 Ѧ</span>
-				</div>
-			</td>
-			<td className="align-middle" data-testid="DelegateRowItem__actions">
-				<span className="flex justify-end">
+				</span>
+			</TableCell>
+
+			<TableCell variant="end" innerClassName="justify-end">
+				<span data-testid="DelegateRowItem__actions">
 					<Button variant="plain" size="sm" className="ml-16">
 						<Dropdown
 							toggleIcon="Settings"
@@ -88,7 +103,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 						/>
 					</Button>
 				</span>
-			</td>
+			</TableCell>
 		</tr>
 	);
 };

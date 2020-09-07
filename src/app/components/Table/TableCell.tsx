@@ -6,16 +6,16 @@ import { getStyles } from "./TableCell.styles";
 type TableCellProps = {
 	variant?: "start" | "middle" | "end";
 	isSelected?: boolean;
-	cellWidth?: string;
 	className?: string;
+	innerClassName?: string;
 	children: React.ReactNode;
 };
 
 const TableCellInnerWrapper = styled.div<TableCellProps>(getStyles);
 
-export const TableCell = ({ variant, isSelected, cellWidth, className, children }: TableCellProps) => (
-	<td className={cellWidth}>
-		<TableCellInnerWrapper variant={variant} isSelected={isSelected} className={className}>
+export const TableCell = ({ variant, isSelected, className, innerClassName, children }: TableCellProps) => (
+	<td className={className}>
+		<TableCellInnerWrapper variant={variant} isSelected={isSelected} className={innerClassName}>
 			{children}
 		</TableCellInnerWrapper>
 	</td>

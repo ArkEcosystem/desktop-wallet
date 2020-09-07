@@ -1,8 +1,6 @@
 import tw from "twin.macro";
 
-const baseStyle = [
-	tw`flex items-center my-1 h-20 transition-colors duration-100 cursor-pointer group-hover:bg-theme-neutral-100`,
-];
+const baseStyle = [tw`flex items-center my-1 h-20 transition-colors duration-100 group-hover:bg-theme-neutral-100`];
 
 const getHoverStyles = (isSelected?: boolean): any => (isSelected ? tw`bg-theme-success-100` : "");
 

@@ -50,7 +50,9 @@ export const TransactionRow = ({
 	return (
 		<tr
 			data-testid="TransactionRow"
-			className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
+			className={`border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 ${
+				typeof onClick === "function" ? "cursor-pointer" : ""
+			}`}
 			{...props}
 			onClick={onClick}
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
@@ -69,15 +71,15 @@ export const TransactionRow = ({
 
 			<TableCell
 				variant={showExplorerLink ? "middle" : "start"}
-				cellWidth="w-48"
-				className="text-sm text-theme-neutral-600"
+				className="w-48"
+				innerClassName="text-sm text-theme-neutral-600"
 			>
 				<span data-testid="TransactionRow__timestamp">
 					{transaction.timestamp()!.format("DD MMM YYYY HH:mm:ss")}
 				</span>
 			</TableCell>
 
-			<TableCell cellWidth="w-32">
+			<TableCell className="w-32">
 				<TransactionRowMode transaction={transaction} circleShadowColor={shadowColor} />
 			</TableCell>
 
@@ -85,20 +87,20 @@ export const TransactionRow = ({
 				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
 			</TableCell>
 
-			<TableCell className="justify-center">
+			<TableCell innerClassName="justify-center">
 				<TransactionRowInfo transaction={transaction} />
 			</TableCell>
 
-			<TableCell cellWidth="w-16" className="justify-center">
+			<TableCell className="w-16" innerClassName="justify-center">
 				<TransactionRowConfirmation transaction={transaction} />
 			</TableCell>
 
-			<TableCell className="justify-end">
+			<TableCell innerClassName="justify-end">
 				<TransactionRowAmount transaction={transaction} />
 			</TableCell>
 
 			{isSignaturePending && (
-				<TableCell className="justify-end">
+				<TableCell innerClassName="justify-end">
 					<Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
 						<Icon name="Edit" />
 						<span>Sign</span>
@@ -107,7 +109,7 @@ export const TransactionRow = ({
 			)}
 
 			{!!exchangeCurrency && !isSignaturePending && (
-				<TableCell variant="end" className="justify-end">
+				<TableCell variant="end" innerClassName="justify-end">
 					<span data-testid="TransactionRow__currency">
 						<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
 					</span>

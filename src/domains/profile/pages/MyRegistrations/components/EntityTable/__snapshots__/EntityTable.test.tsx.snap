@@ -143,81 +143,91 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
             role="rowgroup"
           >
             <tr
-              class="border-b border-dashed border-theme-neutral-light"
+              class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
               data-testid="EntityTableRowItem"
             >
               <td
-                class="w-24 py-6"
+                class="w-24"
               >
                 <div
-                  class="flex items-center"
+                  class="sc-Axmtr kQCkEW"
                 >
                   <div
-                    class="sc-AxhUy dHClEW border-theme-neutral-800"
+                    class="flex items-center"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr"
-                      height="22"
-                      width="22"
+                      class="sc-AxhUy dHClEW border-theme-neutral-800"
                     >
-                      <svg>
-                        business.svg
-                      </svg>
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          business.svg
+                        </svg>
+                      </div>
                     </div>
-                  </div>
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
-                    data-testid="Avatar"
-                  >
                     <div
-                      class="w-full h-full"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                        title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                      />
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                          title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </td>
               <td>
                 <div
-                  class="inline-block truncate align-middle"
+                  class="sc-Axmtr jJjPRc"
                 >
-                  <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                    data-testid="address__wallet-name"
+                  <div
+                    class="inline-block truncate align-middle"
                   >
-                    ARK Wallet 1
-                  </span>
-                  <span
-                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr…YUYD
+                    <span
+                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      data-testid="address__wallet-name"
+                    >
+                      ARK Wallet 1
+                    </span>
+                    <span
+                      class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr…YUYD
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold"
+                >
+                  <span>
+                    business2reg
                   </span>
                 </div>
               </td>
-              <td
-                class="font-semibold"
-              >
-                <span>
-                  business2reg
-                </span>
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold justify-center text-theme-primary"
+                >
+                  <span>
+                    View
+                  </span>
+                </div>
               </td>
-              <td
-                class="font-semibold text-center text-theme-primary"
-              >
-                <span>
-                  View
-                </span>
-              </td>
-              <td
-                class="text-center text-theme-neutral-light"
-              >
-                <span
-                  class="flex justify-center"
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc justify-center text-theme-neutral-light"
                 >
                   <div
                     class="sc-AxirZ iQaTP text-center"
@@ -228,13 +238,11 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
                       redirect.svg
                     </svg>
                   </div>
-                </span>
+                </div>
               </td>
-              <td
-                class="font-semibold text-center text-theme-primary"
-              >
-                <span
-                  class="flex justify-center"
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold justify-center text-theme-primary"
                 >
                   <div
                     class="sc-AxirZ hmuEJr"
@@ -245,20 +253,20 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
                       msq.svg
                     </svg>
                   </div>
-                </span>
+                </div>
               </td>
-              <td
-                class="font-semibold text-center text-theme-primary"
-              >
-                <span>
-                  View
-                </span>
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold justify-center text-theme-primary"
+                >
+                  <span>
+                    View
+                  </span>
+                </div>
               </td>
-              <td
-                class="align-middle"
-              >
-                <span
-                  class="flex justify-end"
+              <td>
+                <div
+                  class="sc-Axmtr edVuJS justify-end"
                 >
                   <button
                     class="sc-AxhCb biicxn ml-16"
@@ -284,7 +292,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 1`] = `
                       </div>
                     </div>
                   </button>
-                </span>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -438,81 +446,91 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 2`] = `
             role="rowgroup"
           >
             <tr
-              class="border-b border-dashed border-theme-neutral-light"
+              class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
               data-testid="EntityTableRowItem"
             >
               <td
-                class="w-24 py-6"
+                class="w-24"
               >
                 <div
-                  class="flex items-center"
+                  class="sc-Axmtr kQCkEW"
                 >
                   <div
-                    class="sc-AxhUy dHClEW border-theme-neutral-800"
+                    class="flex items-center"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr"
-                      height="22"
-                      width="22"
+                      class="sc-AxhUy dHClEW border-theme-neutral-800"
                     >
-                      <svg>
-                        business.svg
-                      </svg>
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          business.svg
+                        </svg>
+                      </div>
                     </div>
-                  </div>
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
-                    data-testid="Avatar"
-                  >
                     <div
-                      class="w-full h-full"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                        title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                      />
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                          title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </td>
               <td>
                 <div
-                  class="inline-block truncate align-middle"
+                  class="sc-Axmtr jJjPRc"
                 >
-                  <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                    data-testid="address__wallet-name"
+                  <div
+                    class="inline-block truncate align-middle"
                   >
-                    ARK Wallet 1
-                  </span>
-                  <span
-                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr…YUYD
+                    <span
+                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      data-testid="address__wallet-name"
+                    >
+                      ARK Wallet 1
+                    </span>
+                    <span
+                      class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr…YUYD
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold"
+                >
+                  <span>
+                    business2reg
                   </span>
                 </div>
               </td>
-              <td
-                class="font-semibold"
-              >
-                <span>
-                  business2reg
-                </span>
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold justify-center text-theme-primary"
+                >
+                  <span>
+                    View
+                  </span>
+                </div>
               </td>
-              <td
-                class="font-semibold text-center text-theme-primary"
-              >
-                <span>
-                  View
-                </span>
-              </td>
-              <td
-                class="text-center text-theme-neutral-light"
-              >
-                <span
-                  class="flex justify-center"
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc justify-center text-theme-neutral-light"
                 >
                   <div
                     class="sc-AxirZ iQaTP text-center"
@@ -523,13 +541,11 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 2`] = `
                       redirect.svg
                     </svg>
                   </div>
-                </span>
+                </div>
               </td>
-              <td
-                class="font-semibold text-center text-theme-primary"
-              >
-                <span
-                  class="flex justify-center"
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold justify-center text-theme-primary"
                 >
                   <div
                     class="sc-AxirZ hmuEJr"
@@ -540,20 +556,20 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 2`] = `
                       msq.svg
                     </svg>
                   </div>
-                </span>
+                </div>
               </td>
-              <td
-                class="font-semibold text-center text-theme-primary"
-              >
-                <span>
-                  View
-                </span>
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold justify-center text-theme-primary"
+                >
+                  <span>
+                    View
+                  </span>
+                </div>
               </td>
-              <td
-                class="align-middle"
-              >
-                <span
-                  class="flex justify-end"
+              <td>
+                <div
+                  class="sc-Axmtr edVuJS justify-end"
                 >
                   <button
                     class="sc-AxhCb biicxn ml-16"
@@ -579,7 +595,7 @@ exports[`BusinessRegistrationsTable should handle resign dropdown action 2`] = `
                       </div>
                     </div>
                   </button>
-                </span>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -882,81 +898,91 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
             role="rowgroup"
           >
             <tr
-              class="border-b border-dashed border-theme-neutral-light"
+              class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
               data-testid="EntityTableRowItem"
             >
               <td
-                class="w-24 py-6"
+                class="w-24"
               >
                 <div
-                  class="flex items-center"
+                  class="sc-Axmtr kQCkEW"
                 >
                   <div
-                    class="sc-AxhUy dHClEW border-theme-neutral-800"
+                    class="flex items-center"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr"
-                      height="22"
-                      width="22"
+                      class="sc-AxhUy dHClEW border-theme-neutral-800"
                     >
-                      <svg>
-                        business.svg
-                      </svg>
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          business.svg
+                        </svg>
+                      </div>
                     </div>
-                  </div>
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
-                    data-testid="Avatar"
-                  >
                     <div
-                      class="w-full h-full"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ mr-4"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                        title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                      />
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                          title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </td>
               <td>
                 <div
-                  class="inline-block truncate align-middle"
+                  class="sc-Axmtr jJjPRc"
                 >
-                  <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                    data-testid="address__wallet-name"
+                  <div
+                    class="inline-block truncate align-middle"
                   >
-                    ARK Wallet 1
-                  </span>
-                  <span
-                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr…YUYD
+                    <span
+                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      data-testid="address__wallet-name"
+                    >
+                      ARK Wallet 1
+                    </span>
+                    <span
+                      class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr…YUYD
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold"
+                >
+                  <span>
+                    business2reg
                   </span>
                 </div>
               </td>
-              <td
-                class="font-semibold"
-              >
-                <span>
-                  business2reg
-                </span>
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold justify-center text-theme-primary"
+                >
+                  <span>
+                    View
+                  </span>
+                </div>
               </td>
-              <td
-                class="font-semibold text-center text-theme-primary"
-              >
-                <span>
-                  View
-                </span>
-              </td>
-              <td
-                class="text-center text-theme-neutral-light"
-              >
-                <span
-                  class="flex justify-center"
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc justify-center text-theme-neutral-light"
                 >
                   <div
                     class="sc-AxirZ iQaTP text-center"
@@ -967,13 +993,11 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
                       redirect.svg
                     </svg>
                   </div>
-                </span>
+                </div>
               </td>
-              <td
-                class="font-semibold text-center text-theme-primary"
-              >
-                <span
-                  class="flex justify-center"
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold justify-center text-theme-primary"
                 >
                   <div
                     class="sc-AxirZ hmuEJr"
@@ -984,20 +1008,20 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
                       msq.svg
                     </svg>
                   </div>
-                </span>
+                </div>
               </td>
-              <td
-                class="font-semibold text-center text-theme-primary"
-              >
-                <span>
-                  View
-                </span>
+              <td>
+                <div
+                  class="sc-Axmtr jJjPRc font-semibold justify-center text-theme-primary"
+                >
+                  <span>
+                    View
+                  </span>
+                </div>
               </td>
-              <td
-                class="align-middle"
-              >
-                <span
-                  class="flex justify-end"
+              <td>
+                <div
+                  class="sc-Axmtr edVuJS justify-end"
                 >
                   <button
                     class="sc-AxhCb biicxn ml-16"
@@ -1023,7 +1047,7 @@ exports[`BusinessRegistrationsTable should render registrations 1`] = `
                       </div>
                     </div>
                   </button>
-                </span>
+                </div>
               </td>
             </tr>
           </tbody>

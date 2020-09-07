@@ -66,7 +66,9 @@ export const WalletListItem = ({
 	return (
 		<tr
 			data-testid={`WalletListItem__${wallet.address()}`}
-			className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
+			className={`border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 ${
+				typeof onRowClick === "function" ? "cursor-pointer" : ""
+			}`}
 			onClick={() => onRowClick?.(wallet.id())}
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor(defaultShadowColor)}
@@ -82,7 +84,7 @@ export const WalletListItem = ({
 				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 			</TableCell>
 
-			<TableCell isSelected={isSelected} className="text-sm font-bold text-center align-middle">
+			<TableCell isSelected={isSelected} innerClassName="text-sm font-bold text-center align-middle">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
@@ -98,14 +100,14 @@ export const WalletListItem = ({
 				</div>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} className="font-semibold justify-end">
+			<TableCell isSelected={isSelected} innerClassName="font-semibold justify-end">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
 			<TableCell
 				variant={hasActions ? "middle" : "end"}
 				isSelected={isSelected}
-				className="justify-end text-theme-neutral-light"
+				innerClassName="justify-end text-theme-neutral-light"
 			>
 				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
 			</TableCell>

@@ -34,42 +34,42 @@ export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: 
 
 	return (
 		<tr className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100">
-			<TableCell variant="start" isSelected={isSelected} className="font-bold">
+			<TableCell variant="start" isSelected={isSelected} innerClassName="font-bold">
 				<div className="flex items-center space-x-3">
 					<Avatar address={delegate.address()} size="lg" noShadow />
 					<span>{delegate.username()}</span>
 				</div>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} className="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>#{delegate.rank()}</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} className="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>%</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} className="justify-center">
+			<TableCell isSelected={isSelected} innerClassName="justify-center">
 				<Icon name="Msq" className="text-xl text-theme-primary" />
 			</TableCell>
 
-			<TableCell isSelected={isSelected} className="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} className="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} className="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} className="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} variant="end" className="justify-end">
+			<TableCell isSelected={isSelected} variant="end" innerClassName="justify-end">
 				<Button
 					variant="plain"
 					color={isSelected ? "danger" : "primary"}

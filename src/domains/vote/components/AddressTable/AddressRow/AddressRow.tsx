@@ -71,11 +71,11 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				<Avatar size="lg" address={wallet.address()} noShadow />
 			</TableCell>
 
-			<TableCell cellWidth="w-20">
+			<TableCell className="w-20">
 				<Address address={wallet.address()} walletName={wallet.alias()} maxChars={22} />
 			</TableCell>
 
-			<TableCell cellWidth="w-20" className="text-sm font-bold justify-center">
+			<TableCell className="w-20" innerClassName="text-sm font-bold justify-center">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
@@ -91,7 +91,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				</div>
 			</TableCell>
 
-			<TableCell className="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName="font-bold text-theme-neutral-dark">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
@@ -103,7 +103,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				)}
 			</TableCell>
 
-			<TableCell className="font-bold">
+			<TableCell innerClassName="font-bold">
 				{hasVotes ? (
 					<span>{votes[0].username()}</span>
 				) : (
@@ -111,7 +111,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				)}
 			</TableCell>
 
-			<TableCell className="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName="font-bold text-theme-neutral-dark">
 				{hasVotes && <span>#{votes[0].rank()}</span>}
 			</TableCell>
 
@@ -131,7 +131,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				)}
 			</TableCell>
 
-			<TableCell variant="end" className="justify-end">
+			<TableCell variant="end" innerClassName="justify-end">
 				<Button
 					variant="plain"
 					onClick={() => onSelect?.(wallet.address())}

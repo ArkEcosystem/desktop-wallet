@@ -232,13 +232,11 @@ exports[`SearchWallet should render 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200"
+                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
                     >
-                      <td
-                        class="py-6 mt-1"
-                      >
+                      <td>
                         <div
-                          class="flex"
+                          class="sc-fznKkj eQxsvE"
                         >
                           <div
                             class="sc-AxiKw kDcqaP -mr-2"
@@ -269,47 +267,53 @@ exports[`SearchWallet should render 1`] = `
                           </div>
                         </div>
                       </td>
-                      <td
-                        class="py-1"
-                      >
+                      <td>
                         <div
-                          class="inline-block truncate align-middle"
+                          class="sc-fznKkj bOfUgm"
                         >
-                          <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
+                          <div
+                            class="inline-block truncate align-middle"
                           >
-                            Sample Wallet
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B1d6…VBMs6YUYD
-                          </span>
+                            <span
+                              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                              data-testid="address__wallet-name"
+                            >
+                              Sample Wallet
+                            </span>
+                            <span
+                              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D8rr7B1d6…VBMs6YUYD
+                            </span>
+                          </div>
                         </div>
-                      </td>
-                      <td
-                        class="font-semibold text-right"
-                      >
-                        <span
-                          data-testid="Amount"
-                        >
-                          33.75089801 DARK
-                        </span>
-                      </td>
-                      <td
-                        class="text-right text-theme-neutral-light"
-                      >
-                        <span
-                          data-testid="Amount"
-                        >
-                          0 BTC
-                        </span>
                       </td>
                       <td>
                         <div
-                          class="text-right"
+                          class="sc-fznKkj bOfUgm font-semibold justify-end"
+                        >
+                          <span
+                            data-testid="Amount"
+                          >
+                            33.75089801 DARK
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="sc-fznKkj bOfUgm text-theme-neutral-light justify-end"
+                        >
+                          <span
+                            data-testid="Amount"
+                          >
+                            0 BTC
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="sc-fznKkj haYoWc justify-end"
                         >
                           <button
                             class="sc-AxirZ dXpJau"
