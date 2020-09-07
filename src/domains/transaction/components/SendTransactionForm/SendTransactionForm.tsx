@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useEnvironmentContext } from "app/contexts";
@@ -24,11 +25,11 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 	const form = useFormContext();
 	const { getValues, setValue } = form;
 	const { network, senderAddress } = form.watch();
-	const [feeOptions, setFeeOptions] = useState({
-		last: undefined,
-		min: (0 * 1e8).toFixed(0),
-		max: (100 * 1e8).toFixed(0),
-		average: (14 * 1e8).toFixed(0),
+	const [fees, setFees] = useState<Contracts.TransactionFee>({
+		static: "5",
+		min: "0",
+		avg: "1",
+		max: "2",
 	});
 
 	const fee = getValues("fee") || null;
@@ -40,28 +41,24 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 		if (senderWallet) {
 			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "transfer");
 
-			setFeeOptions({
-				last: undefined,
-				min: transactionFees.min,
-				max: transactionFees.max,
-				average: transactionFees.avg,
-			});
+			setFees(transactionFees);
 
 			setValue("fee", transactionFees.avg, true);
 		}
-	}, [env, setFeeOptions, setValue, profile, senderAddress]);
+	}, [env, setFees, setValue, profile, senderAddress]);
 
 	useEffect(() => {
 		if (network) {
-			setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
+			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
+		setWallets(profile.wallets().values());
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
 		setValue("senderAddress", address, true);
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
-		history.push(`/profiles/${profile.id()}/transactions/${wallet!.id()}/transfer`);
+		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-transfer`);
 	};
 
 	return (
@@ -70,7 +67,13 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 				<div className="mb-2">
 					<FormLabel label="Network" />
 				</div>
-				<SelectNetwork id="SendTransactionForm__network" networks={networks} selected={network} disabled />
+				<SelectNetwork
+					id="SendTransactionForm__network"
+					networks={networks}
+					selected={network}
+					disabled={!!senderAddress}
+					onSelect={(selectedNetwork: NetworkData | null | undefined) => setValue("network", selectedNetwork)}
+				/>
 			</FormField>
 
 			<FormField name="senderAddress" className="relative">
@@ -93,7 +96,9 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 			<FormField name="fee">
 				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 				<InputFee
-					{...feeOptions}
+					min={fees.min}
+					avg={fees.avg}
+					max={fees.max}
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}

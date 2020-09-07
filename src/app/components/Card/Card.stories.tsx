@@ -8,7 +8,7 @@ export default { title: "App / Components / Card" };
 export const Default = () => <Card className="inline-flex">ARK Ecosystem</Card>;
 
 export const Control = () => (
-	<div className="max-w-lg grid grid-cols-3 gap-4">
+	<div className="grid max-w-lg grid-cols-3 gap-4">
 		<CardControl defaultChecked={true} className="grid">
 			<div className="flex flex-col items-center justify-between h-full space-y-3">
 				<span className="text-center">ARK Ecosystem</span>

@@ -25,7 +25,7 @@ export const Reply = ({ date, content }: ReplyProps) => {
 					<Icon className="mx-auto -mt-2" name="ReplyArrow" width={15} height={18} />
 				</div>
 
-				<div className="flex items-center divide-x divide-theme-neutral-light space-x-3">
+				<div className="flex items-center space-x-3 divide-x divide-theme-neutral-light">
 					<span className="text-lg font-semibold text-theme-neutral-900">
 						{t("PLUGINS.DEVELOPER_RESPONSE")}
 					</span>

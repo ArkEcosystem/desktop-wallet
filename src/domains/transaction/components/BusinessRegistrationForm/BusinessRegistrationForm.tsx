@@ -13,7 +13,7 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { RegistrationForm } from "domains/transaction/pages/Registration/Registration.models";
+import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -92,6 +92,7 @@ const SecondStep = () => {
 						<InputFee
 							defaultValue={(25 * 1e8).toFixed(0)}
 							min={(1 * 1e8).toFixed(0)}
+							avg={(50 * 1e8).toFixed(0)}
 							max={(100 * 1e8).toFixed(0)}
 							step={1}
 						/>
@@ -233,7 +234,7 @@ const transactionDetails = ({ translations }: { translations: any }) => (
 component.displayName = "BusinessRegistrationForm";
 transactionDetails.displayName = "BusinessRegistrationFormTransactionDetails";
 
-export const BusinessRegistrationForm: RegistrationForm = {
+export const BusinessRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 2,
 	component,
 	transactionDetails,
