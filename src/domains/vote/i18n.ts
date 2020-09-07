@@ -26,4 +26,10 @@ export const translations: { [key: string]: any } = {
 		HIDE_LIST: "Hide List",
 		SHOW_LIST: "Show List",
 	},
+
+	MY_VOTE_TABLE: {
+		TITLE: "My Vote",
+		NO_VOTE:
+			"You have not yet voted for more than one delegate. To vote, go to the Select a Delegate tab and cast your vote.",
+	},
 };

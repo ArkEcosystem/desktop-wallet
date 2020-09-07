@@ -20,6 +20,7 @@ import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
+import { MyVoteTable } from "domains/vote/components/MyVoteTable";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -217,7 +218,7 @@ export const Votes = () => {
 							}}
 						/>
 					) : (
-						""
+						<MyVoteTable />
 					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
