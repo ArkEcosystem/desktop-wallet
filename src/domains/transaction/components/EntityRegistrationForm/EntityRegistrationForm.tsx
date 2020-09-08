@@ -1,5 +1,5 @@
 import { File } from "@arkecosystem/platform-sdk-ipfs";
-import { Enums } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { filter, isEmpty } from "@arkecosystem/utils";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -12,7 +12,6 @@ import {
 	SendEntityRegistrationForm,
 } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React from "react";
-import slugify from "slugify";
 
 import { FormStep } from "./Step2";
 import { ReviewStep } from "./Step3";
@@ -64,8 +63,8 @@ export const EntityRegistrationForm: SendEntityRegistrationForm = {
 
 	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations, type }) => {
 		const { getValues, setValue, setError } = form;
-		const { fee, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
-		const senderWallet = profile.wallets().findByAddress(senderAddress);
+		const { fee, entityName, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
+		const senderWallet: ReadWriteWallet | undefined = profile.wallets().findByAddress(senderAddress);
 
 		const sanitizedData = filter(ipfsData, (item) => !isEmpty(item));
 		const entityType = type ?? Enums.EntityType.Business;
@@ -79,7 +78,7 @@ export const EntityRegistrationForm: SendEntityRegistrationForm = {
 					type: entityType,
 					// @TODO: let the user choose what sub-type they wish to use.
 					subType: Enums.EntitySubType.None,
-					name: slugify(ipfsData.meta.displayName),
+					name: entityName,
 					ipfs: await new File(httpClient).upload(sanitizedData),
 				},
 			});

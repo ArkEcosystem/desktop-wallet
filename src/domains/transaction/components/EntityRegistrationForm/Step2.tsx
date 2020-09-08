@@ -21,7 +21,8 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 	const [selectedAvatar, setSelectedAvatar] = useState<EntityLink | undefined>();
 
 	useEffect(() => {
-		register("ipfsData.meta.displayName", { required: true, minLength: 3, maxLength: 40 });
+		register("entityName", { required: true, minLength: 3, maxLength: 40, pattern: /^[a-zA-Z0-9_-]+$/ });
+		register("ipfsData.meta.displayName", { required: true, minLength: 3, maxLength: 128 });
 		register("ipfsData.meta.website", {
 			validate: {
 				valid: (value) => {
@@ -111,10 +112,20 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 
 			<div>
 				<div className="pb-8 mt-8">
-					<FormField name="ipfsData.meta.displayName" className="font-normal">
+					<FormField name="entityName" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input data-testid="BusinessRegistrationForm__name" type="text" onChange={handleInput} />
 						<FormHelperText errorMessage={t("TRANSACTION.ENTITY.INVALID_NAME")} />
+					</FormField>
+
+					<FormField name="ipfsData.meta.displayName" className="mt-8 font-normal">
+						<FormLabel>{t("TRANSACTION.ENTITY.DISPLAY_NAME")}</FormLabel>
+						<Input
+							data-testid="BusinessRegistrationForm__display-name"
+							type="text"
+							onChange={handleInput}
+						/>
+						<FormHelperText />
 					</FormField>
 
 					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">

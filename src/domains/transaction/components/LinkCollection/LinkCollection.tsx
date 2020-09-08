@@ -186,7 +186,11 @@ export const LinkCollection = ({
 						{(rowData: any, rowIndex: any) => (
 							<tr key={rowData.value} className="font-semibold border-b border-theme-neutral-200">
 								{selectionTypeTitle && (
-									<td className="w-16 text-center">
+									<td
+										className={`w-16 text-center align-middle ${
+											rowIndex > 0 ? "py-6" : "pb-6 pt-2"
+										}`}
+									>
 										{selectionTypes && selectionTypes.includes(rowData.type) && (
 											<RadioButton
 												data-testid="LinkCollection__selected"
@@ -199,7 +203,7 @@ export const LinkCollection = ({
 									</td>
 								)}
 
-								<td className={`w-40 ${rowIndex > 0 ? "py-6" : "pb-6 pt-2"}`}>
+								<td className={`w-40 ${rowIndex > 0 ? "py-6" : "pb-6 pt-2 align-middle"}`}>
 									<input
 										type="hidden"
 										name={`links[${rowIndex}].type`}
@@ -209,7 +213,7 @@ export const LinkCollection = ({
 									{getType(rowData.type)!.label}
 								</td>
 
-								<td className={rowIndex > 0 ? "py-6" : "pb-6 pt-2"}>
+								<td className={`break-all align-middle ${rowIndex > 0 ? "py-6" : "pb-6 pt-2"}`}>
 									<input
 										type="hidden"
 										name={`links[${rowIndex}].value`}
@@ -219,7 +223,7 @@ export const LinkCollection = ({
 									{rowData.value}
 								</td>
 
-								<td className={`w-16 text-right ${rowIndex === 0 && "pb-4"}`}>
+								<td className={`w-16 text-right align-middle ${rowIndex === 0 && "pb-4"}`}>
 									<Button
 										data-testid="LinkCollection__remove-link"
 										size="icon"

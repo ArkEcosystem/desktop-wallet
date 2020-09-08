@@ -20,7 +20,7 @@ describe("EntityRegistrationForm", () => {
 
 	const ipfsForm = {
 		meta: {
-			displayName: "Test Entity Name",
+			displayName: "Test Entity Display Name",
 			description: "Test Entity Description",
 			website: "https://test.entity.com",
 		},
@@ -240,14 +240,22 @@ describe("EntityRegistrationForm", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.only("should fill data", async () => {
+	it("should fill data", async () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} />);
 
 		act(() => {
 			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__name"), {
 				target: {
-					value: "Test Entity Name",
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
 				},
 			});
 		});
@@ -335,9 +343,10 @@ describe("EntityRegistrationForm", () => {
 
 		await waitFor(() =>
 			expect(result.current.getValues({ nest: true })).toEqual({
+				entityName: "Test-Entity-Name",
 				ipfsData: {
 					meta: {
-						displayName: "Test Entity Name",
+						displayName: "Test Entity Display Name",
 						description: "Test Entity Description",
 						website: "https://test.entity.com",
 					},
@@ -388,7 +397,15 @@ describe("EntityRegistrationForm", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__name"), {
 				target: {
-					value: "Test Entity Name",
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("BusinessRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
 				},
 			});
 		});
@@ -482,6 +499,7 @@ describe("EntityRegistrationForm", () => {
 				mnemonic: "sample passphrase",
 				senderAddress: wallet.address(),
 				ipfsData: ipfsForm,
+				entityName: "Test-Entity-Name",
 			}),
 			setError: jest.fn(),
 			setValue: jest.fn(),
@@ -534,9 +552,10 @@ describe("EntityRegistrationForm", () => {
 				fee: "1",
 				mnemonic: "sample passphrase",
 				senderAddress: wallet.address(),
+				entityName: "Test-Entity-Name",
 				ipfsData: {
 					meta: {
-						displayName: "Test Entity Name",
+						displayName: "Test Entity Display Name",
 					},
 					sourceControl: undefined,
 					images: [],
@@ -567,7 +586,7 @@ describe("EntityRegistrationForm", () => {
 
 		expect(fileUploadSpy).toHaveBeenCalledWith({
 			meta: {
-				displayName: "Test Entity Name",
+				displayName: "Test Entity Display Name",
 			},
 		});
 		expect(signMock).toHaveBeenCalledWith({
