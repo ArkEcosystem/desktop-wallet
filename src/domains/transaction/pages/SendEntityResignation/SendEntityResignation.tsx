@@ -8,15 +8,16 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep, FourthStep, SecondStep, ThirdStep } from "./";
+import { FirstStep, FourthStep, SecondStep } from "./";
 import { SendEntityResignationProps } from "./SendEntityResignation.models";
 
-export const SendEntityResignation = ({ formDefaultData, onDownload, passwordType }: SendEntityResignationProps) => {
+export const SendEntityResignation = ({ formDefaultData, onDownload }: SendEntityResignationProps) => {
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
@@ -65,6 +66,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 
 	const handleSubmit = async () => {
 		const mnemonic = getValues("mnemonic");
+		const secondMnemonic = getValues("secondMnemonic");
 		const from = activeWallet.address();
 
 		try {
@@ -73,6 +75,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 				fee: fees.static,
 				sign: {
 					mnemonic,
+					secondMnemonic,
 				},
 			});
 
@@ -104,7 +107,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 										<SecondStep senderWallet={activeWallet} delegate={delegate} fees={fees} />
 									</TabPanel>
 									<TabPanel tabId={3}>
-										<ThirdStep form={form} passwordType={passwordType} />
+										<AuthenticationStep wallet={activeWallet} profile={activeProfile} />
 									</TabPanel>
 									<TabPanel tabId={4}>
 										<FourthStep
@@ -185,5 +188,4 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 
 SendEntityResignation.defaultProps = {
 	formDefaultData: {},
-	passwordType: "mnemonic",
 };
