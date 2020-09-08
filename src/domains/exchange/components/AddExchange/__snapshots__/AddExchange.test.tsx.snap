@@ -233,311 +233,415 @@ exports[`AddExchange should render a modal 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
                   >
                     <td
-                      class="text-center w-18"
+                      class="w-18"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-AxhUy ietzKN"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                      >
-                        ChangeNOW Plugin
-                      </div>
-                      <div>
-                        ChangeNOW
-                      </div>
-                    </td>
-                    <td
-                      class="py-10"
-                    >
-                      Other
-                    </td>
-                    <td
-                      class="py-10"
-                    >
-                      <div
-                        class="flex"
-                        data-testid="ReviewRating"
+                        class="sc-AxhUy ekyfZv"
                       >
                         <div
-                          class="relative my-auto"
+                          class="flex flex-col"
                         >
                           <div
-                            class="absolute overflow-hidden"
-                            style="width: 89.99999999999999%;"
+                            class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                           >
+                            ChangeNOW Plugin
+                          </div>
+                          <div>
+                            ChangeNOW
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <span>
+                          Other
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <div
+                          class="flex"
+                          data-testid="ReviewRating"
+                        >
+                          <div
+                            class="relative my-auto"
+                          >
+                            <div
+                              class="absolute overflow-hidden"
+                              style="width: 89.99999999999999%;"
+                            >
+                              <svg
+                                class="text-theme-warning-400 w-5"
+                              >
+                                star.svg
+                              </svg>
+                            </div>
                             <svg
-                              class="text-theme-warning-400 w-5"
+                              class="text-theme-neutral w-5"
                             >
                               star.svg
                             </svg>
                           </div>
-                          <svg
-                            class="text-theme-neutral w-5"
+                          <span
+                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                           >
-                            star.svg
-                          </svg>
+                            4.6
+                          </span>
                         </div>
-                        <span
-                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                        >
-                          4.6
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <span>
+                          v 1.3.8
                         </span>
                       </div>
                     </td>
                     <td
-                      class="py-10"
-                    >
-                      v 1.3.8
-                    </td>
-                    <td
                       class="w-16"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        type="button"
+                      <div
+                        class="sc-AxhUy gaxSDd justify-end"
                       >
-                        Install
-                      </button>
+                        <button
+                          class="sc-AxjAm fPpool"
+                          color="primary"
+                          type="button"
+                        >
+                          Install
+                        </button>
+                      </div>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
                   >
                     <td
-                      class="text-center w-18"
+                      class="w-18"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-AxhUy ietzKN"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                      >
-                        Binance
-                      </div>
-                      <div>
-                        Binance
-                      </div>
-                    </td>
-                    <td
-                      class="py-10"
-                    >
-                      Other
-                    </td>
-                    <td
-                      class="py-10"
-                    >
-                      <div
-                        class="flex"
-                        data-testid="ReviewRating"
+                        class="sc-AxhUy ekyfZv"
                       >
                         <div
-                          class="relative my-auto"
+                          class="flex flex-col"
                         >
                           <div
-                            class="absolute overflow-hidden"
-                            style="width: 89.99999999999999%;"
+                            class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                           >
+                            Binance
+                          </div>
+                          <div>
+                            Binance
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <span>
+                          Other
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <div
+                          class="flex"
+                          data-testid="ReviewRating"
+                        >
+                          <div
+                            class="relative my-auto"
+                          >
+                            <div
+                              class="absolute overflow-hidden"
+                              style="width: 89.99999999999999%;"
+                            >
+                              <svg
+                                class="text-theme-warning-400 w-5"
+                              >
+                                star.svg
+                              </svg>
+                            </div>
                             <svg
-                              class="text-theme-warning-400 w-5"
+                              class="text-theme-neutral w-5"
                             >
                               star.svg
                             </svg>
                           </div>
-                          <svg
-                            class="text-theme-neutral w-5"
+                          <span
+                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                           >
-                            star.svg
-                          </svg>
+                            4.6
+                          </span>
                         </div>
-                        <span
-                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                        >
-                          4.6
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <span>
+                          v 1.3.8
                         </span>
                       </div>
                     </td>
                     <td
-                      class="py-10"
-                    >
-                      v 1.3.8
-                    </td>
-                    <td
                       class="w-16"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        type="button"
+                      <div
+                        class="sc-AxhUy gaxSDd justify-end"
                       >
-                        Install
-                      </button>
+                        <button
+                          class="sc-AxjAm fPpool"
+                          color="primary"
+                          type="button"
+                        >
+                          Install
+                        </button>
+                      </div>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
                   >
                     <td
-                      class="text-center w-18"
+                      class="w-18"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-AxhUy ietzKN"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                      >
-                        Atomars
-                      </div>
-                      <div>
-                        Atomars
-                      </div>
-                    </td>
-                    <td
-                      class="py-10"
-                    >
-                      Other
-                    </td>
-                    <td
-                      class="py-10"
-                    >
-                      <div
-                        class="flex"
-                        data-testid="ReviewRating"
+                        class="sc-AxhUy ekyfZv"
                       >
                         <div
-                          class="relative my-auto"
+                          class="flex flex-col"
                         >
                           <div
-                            class="absolute overflow-hidden"
-                            style="width: 95%;"
+                            class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                           >
+                            Atomars
+                          </div>
+                          <div>
+                            Atomars
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <span>
+                          Other
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <div
+                          class="flex"
+                          data-testid="ReviewRating"
+                        >
+                          <div
+                            class="relative my-auto"
+                          >
+                            <div
+                              class="absolute overflow-hidden"
+                              style="width: 95%;"
+                            >
+                              <svg
+                                class="text-theme-warning-400 w-5"
+                              >
+                                star.svg
+                              </svg>
+                            </div>
                             <svg
-                              class="text-theme-warning-400 w-5"
+                              class="text-theme-neutral w-5"
                             >
                               star.svg
                             </svg>
                           </div>
-                          <svg
-                            class="text-theme-neutral w-5"
+                          <span
+                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                           >
-                            star.svg
-                          </svg>
+                            4.8
+                          </span>
                         </div>
-                        <span
-                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                        >
-                          4.8
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <span>
+                          v 1.3.8
                         </span>
                       </div>
                     </td>
                     <td
-                      class="py-10"
-                    >
-                      v 1.3.8
-                    </td>
-                    <td
                       class="w-16"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        type="button"
+                      <div
+                        class="sc-AxhUy gaxSDd justify-end"
                       >
-                        Install
-                      </button>
+                        <button
+                          class="sc-AxjAm fPpool"
+                          color="primary"
+                          type="button"
+                        >
+                          Install
+                        </button>
+                      </div>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
                   >
                     <td
-                      class="text-center w-18"
+                      class="w-18"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-AxhUy ietzKN"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                      >
-                        OKEx
-                      </div>
-                      <div>
-                        ARK Ecosystem
-                      </div>
-                    </td>
-                    <td
-                      class="py-10"
-                    >
-                      Other
-                    </td>
-                    <td
-                      class="py-10"
-                    >
-                      <div
-                        class="flex"
-                        data-testid="ReviewRating"
+                        class="sc-AxhUy ekyfZv"
                       >
                         <div
-                          class="relative my-auto"
+                          class="flex flex-col"
                         >
                           <div
-                            class="absolute overflow-hidden"
-                            style="width: 40%;"
+                            class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                           >
+                            OKEx
+                          </div>
+                          <div>
+                            ARK Ecosystem
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <span>
+                          Other
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <div
+                          class="flex"
+                          data-testid="ReviewRating"
+                        >
+                          <div
+                            class="relative my-auto"
+                          >
+                            <div
+                              class="absolute overflow-hidden"
+                              style="width: 40%;"
+                            >
+                              <svg
+                                class="text-theme-warning-400 w-5"
+                              >
+                                star.svg
+                              </svg>
+                            </div>
                             <svg
-                              class="text-theme-warning-400 w-5"
+                              class="text-theme-neutral w-5"
                             >
                               star.svg
                             </svg>
                           </div>
-                          <svg
-                            class="text-theme-neutral w-5"
+                          <span
+                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                           >
-                            star.svg
-                          </svg>
+                            2.6
+                          </span>
                         </div>
-                        <span
-                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                        >
-                          2.6
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <span>
+                          v 1.3.8
                         </span>
                       </div>
                     </td>
                     <td
-                      class="py-10"
-                    >
-                      v 1.3.8
-                    </td>
-                    <td
                       class="w-16"
                     >
-                      <button
-                        class="sc-AxjAm fPpool"
-                        color="primary"
-                        type="button"
+                      <div
+                        class="sc-AxhUy gaxSDd justify-end"
                       >
-                        Install
-                      </button>
+                        <button
+                          class="sc-AxjAm fPpool"
+                          color="primary"
+                          type="button"
+                        >
+                          Install
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 </tbody>

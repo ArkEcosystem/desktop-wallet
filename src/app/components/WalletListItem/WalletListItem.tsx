@@ -7,7 +7,7 @@ import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TableCell } from "app/components/Table";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Dropdown } from "../Dropdown";
@@ -38,7 +38,7 @@ export const WalletListItem = ({
 		isSelected,
 	]);
 
-	const [shadowColor, setShadowColor] = useState<string>(defaultShadowColor);
+	const [shadowColor, setShadowColor] = React.useState<string>(defaultShadowColor);
 
 	const { t } = useTranslation();
 

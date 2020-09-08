@@ -23,7 +23,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 			data-testid={`PluginListItem--${plugin.id}`}
 			className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
 		>
-			<TableCell variant="start" className="w-20" innerClassName="justify-center">
+			<TableCell variant="start" className="w-20">
 				<ChangeNowLogo className="w-15 h-15" />
 			</TableCell>
 
