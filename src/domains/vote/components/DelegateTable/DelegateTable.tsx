@@ -132,7 +132,7 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 								<div className="px-8 border-r border-theme-neutral-300">
 									<div className="inline-flex">
 										<Circle
-											className="mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
+											className="mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
 											size="lg"
 										>
 											<Icon name="Unvote" className="text-xl" />
@@ -140,7 +140,7 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
 											<div
-												className="text-theme-neutral"
+												className="text-theme-neutral-900"
 												data-testid="DelegateTable__footer--unvotes"
 											>
 												0
