@@ -1,5 +1,5 @@
-import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import React, { useState } from "react";
+import { act, fireEvent, render, screen } from "testing-library";
 
 import { InputCurrency } from "./InputCurrency";
 
@@ -63,5 +63,28 @@ describe("InputCurrency", () => {
 		const input = getByTestId("InputCurrency");
 
 		expect(input).toHaveValue("0.01");
+	});
+
+	it("should work with a controlled value", () => {
+		const Component = () => {
+			const [value, setValue] = useState("0.04");
+			return <InputCurrency value={value} onChange={setValue} />;
+		};
+		render(<Component />);
+		const input = screen.getByRole("textbox");
+
+		expect(input).toHaveValue("0.04");
+
+		act(() => {
+			fireEvent.input(input, {
+				target: {
+					value: "abc1.2",
+				},
+			});
+		});
+
+		// TODO: Should not fail
+		// As the output should match the input for a controlled case
+		expect(input).toHaveValue("1.2");
 	});
 });
