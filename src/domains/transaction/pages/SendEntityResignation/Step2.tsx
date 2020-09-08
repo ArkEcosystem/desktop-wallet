@@ -10,11 +10,9 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { StepProps } from "./SendEntityResignation.models";
-
 export const SecondStep = ({ senderWallet, delegate, fees }: StepProps) => {
 	const { t } = useTranslation();
-	const coinName = senderWallet.manifest().get<string>("name");
+	const coinName = senderWallet.manifest().get("name");
 	const network = `${coinName} ${senderWallet.network().name()}`;
 
 	return (

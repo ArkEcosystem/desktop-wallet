@@ -14,10 +14,10 @@ import { useTranslation } from "react-i18next";
 import { useHistory, useLocation } from "react-router-dom";
 
 import {
-	BusinessFirstStep,
-	BusinessFourthStep,
-	BusinessSecondStep,
 	DelegateFirstStep,
+	EntityFirstStep,
+	EntityFourthStep,
+	EntitySecondStep,
 } from "../../components/EntityResignationSteps";
 import { FourthStep, ThirdStep } from "./";
 
@@ -43,15 +43,6 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
-	console.log({ walletFees });
-
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const { formState, getValues, setError, setValue } = form;
-	const { isValid } = formState;
-
-	const [activeTab, setActiveTab] = useState(1);
-	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
-	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
 		min: "0",
@@ -112,10 +103,10 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 
 	const getStepComponent = () => {
 		switch (type) {
-			case "business":
-				if (activeTab === 1) return <BusinessFirstStep entity={entity} fee={fees} />;
-				if (activeTab === 2) return <BusinessSecondStep entity={entity} fee={fees} />;
-				if (activeTab === 4) return <BusinessFourthStep entity={entity} fee={fees} />;
+			case "Entity":
+				if (activeTab === 1) return <EntityFirstStep entity={entity} fee={fee} />;
+				if (activeTab === 2) return <EntitySecondStep entity={entity} fee={fee} />;
+				if (activeTab === 4) return <EntityFourthStep entity={entity} fee={fee} />;
 				break;
 			case "delegate":
 				if (activeTab === 1) return <DelegateFirstStep />;

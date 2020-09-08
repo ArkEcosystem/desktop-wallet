@@ -1,1 +1,1 @@
-export * from "./BusinessFourthStep";
+export * from "./EntityFourthStep";

@@ -7,8 +7,6 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { StepProps } from "./SendEntityResignation.models";
-
 export const FourthStep = ({ delegate, fees, transaction, senderWallet }: StepProps) => {
 	const { t } = useTranslation();
 
