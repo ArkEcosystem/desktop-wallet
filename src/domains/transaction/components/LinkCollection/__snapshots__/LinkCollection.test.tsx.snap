@@ -531,7 +531,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="font-semibold border-b border-theme-neutral-200"
             >
               <td
-                class="w-16 text-center"
+                class="w-16 text-center align-middle pb-6 pt-2"
               >
                 <input
                   class="sc-fzpans ioBrsH"
@@ -541,7 +541,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 />
               </td>
               <td
-                class="w-40 pb-6 pt-2"
+                class="w-40 pb-6 pt-2 align-middle"
               >
                 <input
                   name="links[0].type"
@@ -551,7 +551,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 Twitter
               </td>
               <td
-                class="pb-6 pt-2"
+                class="break-all align-middle pb-6 pt-2"
               >
                 <input
                   name="links[0].value"
@@ -561,7 +561,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 testing link
               </td>
               <td
-                class="w-16 text-right pb-4"
+                class="w-16 text-right align-middle pb-4"
               >
                 <button
                   class="sc-AxjAm gBWztV"
@@ -585,7 +585,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="font-semibold border-b border-theme-neutral-200"
             >
               <td
-                class="w-16 text-center"
+                class="w-16 text-center align-middle py-6"
               />
               <td
                 class="w-40 py-6"
@@ -598,7 +598,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 Facebook
               </td>
               <td
-                class="py-6"
+                class="break-all align-middle py-6"
               >
                 <input
                   name="links[1].value"
@@ -608,7 +608,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 testing link 2
               </td>
               <td
-                class="w-16 text-right false"
+                class="w-16 text-right align-middle false"
               >
                 <button
                   class="sc-AxjAm gBWztV"
