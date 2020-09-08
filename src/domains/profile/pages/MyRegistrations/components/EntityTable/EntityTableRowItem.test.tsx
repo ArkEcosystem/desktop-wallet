@@ -1,7 +1,7 @@
 import { Enums, ExtendedTransactionData, Profile } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
-import {  env, fireEvent, getDefaultProfileId, render,  waitFor } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { EntityTableRowItem } from "./EntityTableRowItem";
 
