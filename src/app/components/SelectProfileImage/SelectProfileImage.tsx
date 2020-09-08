@@ -1,18 +1,19 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 import { openFile } from "utils/electron-utils";
 
 type SelectProfileImageProps = {
 	value?: string;
+	name?: string;
 	onSelect: (raw: string) => void;
 };
 
 const ProfileImageStyled = styled.div`
 	& {
-		${tw`relative overflow-hidden rounded`};
+		${tw`relative inline-flex items-center justify-center overflow-hidden rounded`};
 	}
 	&:after {
 		content: "";
@@ -21,7 +22,7 @@ const ProfileImageStyled = styled.div`
 	}
 `;
 
-export const SelectProfileImage = ({ value, onSelect }: SelectProfileImageProps) => {
+export const SelectProfileImage = ({ value, name, onSelect }: SelectProfileImageProps) => {
 	const { t } = useTranslation();
 
 	const handleUploadImage = async () => {
@@ -35,6 +36,8 @@ export const SelectProfileImage = ({ value, onSelect }: SelectProfileImageProps)
 		}
 	};
 
+	const isSvg = useMemo(() => value && value.endsWith("</svg>"), [value]);
+
 	return (
 		<div className="group">
 			<span className="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark">
@@ -42,6 +45,7 @@ export const SelectProfileImage = ({ value, onSelect }: SelectProfileImageProps)
 			</span>
 
 			<div className="flex flex-row mt-2">
+				{value}
 				<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast">
 					<div className="overflow-hidden rounded-full w-22 h-22">
 						<Button
@@ -58,18 +62,24 @@ export const SelectProfileImage = ({ value, onSelect }: SelectProfileImageProps)
 					<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
 						<ProfileImageStyled>
 							<img
-								src={value}
+								src={isSvg ? `data:image/svg+xml;utf8,${value}` : value}
 								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
 								alt="Profile avatar"
 							/>
+							{isSvg && (
+								<span className="absolute text-2xl font-semibold text-theme-background">
+									{name?.slice(0, 2).toUpperCase()}
+								</span>
+							)}
 						</ProfileImageStyled>
 						<Button
+							data-testid="SelectProfileImage__remove-button"
 							size="icon"
 							color="danger"
 							variant="plain"
 							className="absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
 							onClick={() => onSelect("")}
-							data-testid="SelectProfileImage__remove-button"
+							disabled={!!isSvg}
 						>
 							<Icon name="Close" width={12} height={12} />
 						</Button>
