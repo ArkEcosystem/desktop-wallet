@@ -139,7 +139,7 @@ export const LinkCollection = ({
 			{isExpanded && (
 				<div className="mt-4">
 					<div
-						className="grid col-gap-2 row-gap-4"
+						className="grid row-gap-4 col-gap-2"
 						style={{
 							gridTemplateColumns: "40% 60%",
 						}}
