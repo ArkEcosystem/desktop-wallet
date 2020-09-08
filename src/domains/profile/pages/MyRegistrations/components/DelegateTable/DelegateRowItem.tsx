@@ -49,7 +49,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 	return (
 		<tr
 			data-testid="DelegateRowItem"
-			className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
+			className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>

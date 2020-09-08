@@ -33,7 +33,7 @@ export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: 
 	}
 
 	return (
-		<tr className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100">
+		<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
 			<TableCell variant="start" isSelected={isSelected} innerClassName="font-bold">
 				<div className="flex items-center space-x-3">
 					<Avatar address={delegate.address()} size="lg" noShadow />

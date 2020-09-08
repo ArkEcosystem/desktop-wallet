@@ -29,7 +29,7 @@ export const EntityTableRowItem = ({ onAction, entity }: EntityTableRowItemProps
 	return (
 		<tr
 			data-testid="EntityTableRowItem"
-			className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100"
+			className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>

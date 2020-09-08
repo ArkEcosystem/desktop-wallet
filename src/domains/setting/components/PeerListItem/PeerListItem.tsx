@@ -15,7 +15,7 @@ type PeerListItemProps = {
 };
 
 export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onAction }: PeerListItemProps) => (
-	<tr className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100">
+	<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
 		<TableCell variant="start" innerClassName="space-x-2">
 			<Circle className={coinClass} noShadow>
 				<Icon name={coin!} />

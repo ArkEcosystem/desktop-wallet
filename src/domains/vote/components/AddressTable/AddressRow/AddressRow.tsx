@@ -66,7 +66,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 	}
 
 	return (
-		<tr className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100">
+		<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
 			<TableCell variant="start">
 				<Avatar size="lg" address={wallet.address()} noShadow />
 			</TableCell>

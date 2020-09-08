@@ -60,7 +60,7 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={plugins}>
 					{(rowData: any) => (
-						<tr className="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100">
+						<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
 							<TableCell className="w-16">
 								<ChangeNowLogo className="w-12 h-12" />
 							</TableCell>
