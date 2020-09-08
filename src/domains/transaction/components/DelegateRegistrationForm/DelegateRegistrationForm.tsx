@@ -218,7 +218,7 @@ export const DelegateRegistrationForm: SendEntityRegistrationForm = {
 		const { clearError, getValues, setError, setValue } = form;
 
 		clearError("mnemonic");
-		const { fee, mnemonic, senderAddress, username } = getValues();
+		const { fee, mnemonic, secondMnemonic, senderAddress, username } = getValues();
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		try {
@@ -227,6 +227,7 @@ export const DelegateRegistrationForm: SendEntityRegistrationForm = {
 				from: senderAddress,
 				sign: {
 					mnemonic,
+					secondMnemonic,
 				},
 				data: {
 					username,

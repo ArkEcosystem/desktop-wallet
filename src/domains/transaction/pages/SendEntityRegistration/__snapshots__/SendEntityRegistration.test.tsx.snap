@@ -305,7 +305,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
-                    data-testid="Registration__signing-step"
+                    data-testid="AuthenticationStep"
                   >
                     <div>
                       <h1
@@ -342,7 +342,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
                             <input
                               aria-invalid="true"
                               class="sc-fzplWN hjcjbm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="Input"
+                              data-testid="AuthenticationStep__mnemonic"
                               name="mnemonic"
                               type="password"
                             />
@@ -879,7 +879,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress  "
+                              class="sc-fzoNJl cdbVKv SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -971,14 +971,14 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                   aria-expanded="true"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-37-label downshift-37-toggle-button"
-                                  class="sc-fzqARJ jnMeHK is-open  "
+                                  class="sc-fzqNqU kEaYVF is-open  "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-37-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-37-label"
-                                  class="sc-fzqNqU izoylg is-open"
+                                  class="sc-fzoyTs gvzMzu is-open"
                                   id="downshift-37-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -1182,7 +1182,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
         >
           <div>
             <button
-              class="sc-fzoyTs bPtMIB SelectAddress  "
+              class="sc-fzoNJl cdbVKv SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
@@ -1253,7 +1253,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-labelledby="downshift-15-label downshift-15-toggle-button"
-                  class="sc-fzqARJ jnMeHK  is-selected "
+                  class="sc-fzqNqU kEaYVF  is-selected "
                   data-testid="select-list__toggle-button"
                   id="downshift-15-toggle-button"
                   type="button"
@@ -1262,7 +1262,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 </button>
                 <ul
                   aria-labelledby="downshift-15-label"
-                  class="sc-fzqNqU izoylg"
+                  class="sc-fzoyTs gvzMzu"
                   id="downshift-15-menu"
                   role="listbox"
                   tabindex="-1"
@@ -2560,7 +2560,7 @@ exports[`Registration should render 1st step 1`] = `
         >
           <div>
             <button
-              class="sc-fzoyTs bPtMIB SelectAddress  "
+              class="sc-fzoNJl cdbVKv SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
@@ -2631,7 +2631,7 @@ exports[`Registration should render 1st step 1`] = `
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-labelledby="downshift-10-label downshift-10-toggle-button"
-                  class="sc-fzqARJ jnMeHK  is-selected "
+                  class="sc-fzqNqU kEaYVF  is-selected "
                   data-testid="select-list__toggle-button"
                   id="downshift-10-toggle-button"
                   type="button"
@@ -2640,7 +2640,7 @@ exports[`Registration should render 1st step 1`] = `
                 </button>
                 <ul
                   aria-labelledby="downshift-10-label"
-                  class="sc-fzqNqU izoylg"
+                  class="sc-fzoyTs gvzMzu"
                   id="downshift-10-menu"
                   role="listbox"
                   tabindex="-1"
@@ -3108,7 +3108,7 @@ exports[`Registration should render registration form without selected wallet 1`
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress  "
+                              class="sc-fzoNJl cdbVKv SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -3179,14 +3179,14 @@ exports[`Registration should render registration form without selected wallet 1`
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                                  class="sc-fzqARJ jnMeHK   "
+                                  class="sc-fzqNqU kEaYVF   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-0-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-0-label"
-                                  class="sc-fzqNqU izoylg"
+                                  class="sc-fzoyTs gvzMzu"
                                   id="downshift-0-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -3683,7 +3683,7 @@ exports[`Registration should select network first and see select address input c
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress  "
+                              class="sc-fzoNJl cdbVKv SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -3754,14 +3754,14 @@ exports[`Registration should select network first and see select address input c
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                                  class="sc-fzqARJ jnMeHK   "
+                                  class="sc-fzqNqU kEaYVF   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-2-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-2-label"
-                                  class="sc-fzqNqU izoylg"
+                                  class="sc-fzoyTs gvzMzu"
                                   id="downshift-2-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -4252,7 +4252,7 @@ exports[`Registration should select network with unavailable wallets and see sel
                         >
                           <div>
                             <button
-                              class="sc-fzoyTs bPtMIB SelectAddress is-disabled "
+                              class="sc-fzoNJl cdbVKv SelectAddress is-disabled "
                               data-testid="SelectAddress__wrapper"
                               disabled=""
                               type="button"
@@ -4324,14 +4324,14 @@ exports[`Registration should select network with unavailable wallets and see sel
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                                  class="sc-fzqARJ jnMeHK   "
+                                  class="sc-fzqNqU kEaYVF   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-6-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-6-label"
-                                  class="sc-fzqNqU izoylg"
+                                  class="sc-fzoyTs gvzMzu"
                                   id="downshift-6-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -4694,7 +4694,7 @@ exports[`Registration should select registration type & show form 1`] = `
                           class="flex rounded-lg overflow-hidden bg-theme-warning"
                         >
                           <div
-                            class="sc-fznMAR bUWrer flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                            class="sc-fznWOq IEXFQ flex items-center justify-center text-theme-warning bg-theme-warning-200"
                           >
                             <div
                               class="sc-AxiKw iRsrJT"
@@ -4707,7 +4707,7 @@ exports[`Registration should select registration type & show form 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fznxKY iCykvb flex-1 bg-theme-warning-100"
+                            class="sc-fznMAR gsyxtf flex-1 bg-theme-warning-100"
                           >
                             Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
                           </div>
@@ -4846,7 +4846,7 @@ exports[`Registration should select registration type & show form 1`] = `
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4855,7 +4855,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4864,7 +4864,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5234,7 +5234,7 @@ exports[`Registration should should go back and forth & correctly register field
                           class="flex rounded-lg overflow-hidden bg-theme-warning"
                         >
                           <div
-                            class="sc-fznMAR bUWrer flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                            class="sc-fznWOq IEXFQ flex items-center justify-center text-theme-warning bg-theme-warning-200"
                           >
                             <div
                               class="sc-AxiKw iRsrJT"
@@ -5247,7 +5247,7 @@ exports[`Registration should should go back and forth & correctly register field
                             </div>
                           </div>
                           <div
-                            class="sc-fznxKY iCykvb flex-1 bg-theme-warning-100"
+                            class="sc-fznMAR gsyxtf flex-1 bg-theme-warning-100"
                           >
                             Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
                           </div>
@@ -5386,7 +5386,7 @@ exports[`Registration should should go back and forth & correctly register field
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5395,7 +5395,7 @@ exports[`Registration should should go back and forth & correctly register field
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5404,7 +5404,7 @@ exports[`Registration should should go back and forth & correctly register field
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fzoNJl gCmvhq relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5443,160 +5443,6 @@ exports[`Registration should should go back and forth & correctly register field
             </div>
           </form>
         </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Registration should show encryption password & second mnemonic for signing 1`] = `
-<DocumentFragment>
-  <div
-    data-testid="Registration__signing-step"
-  >
-    <div>
-      <h1
-        class="mb-0"
-      >
-        Authenticate
-      </h1>
-      <div
-        class="text-theme-neutral-dark"
-      >
-        Enter your twelve word mnemonic to authenticate the transaction.
-      </div>
-      <div
-        class="mt-8"
-      >
-        <fieldset
-          class="sc-AxirZ izhStr flex flex-col space-y-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="password"
-          >
-            Encryption Password
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-          <div
-            class="sc-fzokOt feJGYk max-w-20"
-            data-testid="InputPassword"
-          >
-            <input
-              class="sc-fzplWN hjcjbm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="Input"
-              name="password"
-              type="password"
-            />
-            <div
-              class="sc-fznyAO sc-fznZeY dZgvBo my-px mr-4"
-            >
-              <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                data-testid="InputPassword__toggle"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw dzBdqj"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    eye.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset
-          class="sc-AxirZ izhStr mt-8"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="secondMnemonic"
-          >
-            2nd Mnemonic
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-          <div
-            class="sc-fzokOt feJGYk max-w-20"
-            data-testid="InputPassword"
-          >
-            <input
-              class="sc-fzplWN hjcjbm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="Input"
-              name="secondMnemonic"
-              type="password"
-            />
-            <div
-              class="sc-fznyAO sc-fznZeY dZgvBo my-px mr-4"
-            >
-              <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                data-testid="InputPassword__toggle"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw dzBdqj"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    eye.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Registration should show ledger confirmation & not show second mnemonic for signing 1`] = `
-<DocumentFragment>
-  <div
-    data-testid="Registration__signing-step"
-  >
-    <div>
-      <h1>
-        Confirm Your Transaction
-      </h1>
-      <svg
-        class="my-8"
-      >
-        confirm-transaction-ledger-banner.svg
-      </svg>
-      <div
-        class="mt-8 text-center text-theme-neutral-dark"
-        data-testid="LedgerConfirmation-description"
-      >
-        Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
-      </div>
-      <div
-        class="inline-flex items-center justify-center w-full mt-8 space-x-3"
-      >
-        <div
-          class="sc-fzqBkg bRDlG"
-          color="primary"
-        />
-        <span
-          class="font-semibold text-black"
-          data-testid="LedgerConfirmation-loading_message"
-        >
-          Waiting for confirmation ...
-        </span>
       </div>
     </div>
   </div>

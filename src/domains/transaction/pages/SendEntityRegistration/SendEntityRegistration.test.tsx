@@ -25,7 +25,6 @@ import {
 import { translations as transactionTranslations } from "../../i18n";
 import { SendEntityRegistration } from "./SendEntityRegistration";
 import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
@@ -215,33 +214,6 @@ describe("Registration", () => {
 		});
 	});
 
-	it("should show encryption password & second mnemonic for signing", async () => {
-		const { result: form } = renderHook(() => useForm());
-
-		const { asFragment, container } = render(
-			<FormContext {...form.current}>
-				<SecondStep passwordType="password" wallet={secondWallet} />
-			</FormContext>,
-		);
-
-		expect(container).toHaveTextContent(transactionTranslations.ENCRYPTION_PASSWORD);
-		expect(container).toHaveTextContent(transactionTranslations.SECOND_MNEMONIC);
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	});
-
-	it("should show ledger confirmation & not show second mnemonic for signing", async () => {
-		const { result: form } = renderHook(() => useForm());
-
-		const { asFragment, container } = render(
-			<FormContext {...form.current}>
-				<SecondStep passwordType="ledger" wallet={secondWallet} />
-			</FormContext>,
-		);
-
-		expect(container).toHaveTextContent(transactionTranslations.LEDGER_CONFIRMATION.TITLE);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should select registration type & show form", async () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
@@ -429,9 +401,9 @@ describe("Registration", () => {
 
 			// Step 4 - signing
 			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("Registration__signing-step")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -503,9 +475,9 @@ describe("Registration", () => {
 
 			// Step 4 - signing
 			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("Registration__signing-step")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -520,9 +492,7 @@ describe("Registration", () => {
 			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() =>
-				expect(getByTestId("Registration__signing-step")).toHaveTextContent(
-					transactionTranslations.INVALID_MNEMONIC,
-				),
+				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
 			);
 
 			signMock.mockRestore();

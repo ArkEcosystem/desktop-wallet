@@ -7,6 +7,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -14,7 +15,6 @@ import { useHistory } from "react-router-dom";
 
 import { SendEntityRegistrationForm } from "./SendEntityRegistration.models";
 import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
 export const SendEntityRegistration = () => {
@@ -145,7 +145,7 @@ export const SendEntityRegistration = () => {
 							{registrationForm && fees[registrationType] && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
-										<SecondStep passwordType="mnemonic" wallet={activeWallet} />
+										<AuthenticationStep wallet={activeWallet} profile={activeProfile} />
 									</TabPanel>
 									<TabPanel tabId={stepCount}>
 										<ThirdStep
