@@ -66,7 +66,10 @@ export const ImportWallet = () => {
 			}
 
 			setWalletData(wallet);
+
+			await wallet.syncVotes();
 			await persist();
+
 			setActiveTab(activeTab + 1);
 		} else {
 			if (name) {

@@ -7,11 +7,11 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
+import { useQueryParams } from "app/hooks";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
 
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
@@ -20,14 +20,17 @@ import { FourthStep } from "./Step4";
 
 export const SendVote = () => {
 	const { t } = useTranslation();
-	const { voteId, senderId } = useParams();
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
+	const queryParams = useQueryParams();
+	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
+	const voteAddresses = queryParams.get("votes")?.split(",");
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [delegate, setDelegate] = useState<ReadOnlyWallet>((null as unknown) as ReadOnlyWallet);
+	const [unvotes, setUnvotes] = useState<ReadOnlyWallet[]>([]);
+	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
@@ -36,11 +39,9 @@ export const SendVote = () => {
 	useEffect(() => {
 		register("network", { required: true });
 		register("senderAddress", { required: true });
-		register("vote", { required: true });
 		register("fee", { required: true });
 
-		setValue("senderAddress", senderId, true);
-		setValue("vote", voteId, true);
+		setValue("senderAddress", activeWallet.address(), true);
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
@@ -49,11 +50,27 @@ export const SendVote = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, senderId, setValue, voteId]);
+	}, [activeWallet, networks, register, setValue]);
 
 	useEffect(() => {
-		setDelegate(env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), voteId));
-	}, [activeWallet, env, voteId]);
+		if (unvoteAddresses && unvotes.length === 0) {
+			const unvoteDelegates = unvoteAddresses?.map((address) =>
+				env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), address),
+			);
+
+			setUnvotes(unvoteDelegates);
+		}
+	}, [activeWallet, env, unvoteAddresses, unvotes]);
+
+	useEffect(() => {
+		if (voteAddresses && votes.length === 0) {
+			const voteDelegates = voteAddresses?.map((address) =>
+				env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), address),
+			);
+
+			setVotes(voteDelegates);
+		}
+	}, [activeWallet, env, voteAddresses, votes]);
 
 	const crumbs = [
 		{
@@ -76,22 +93,52 @@ export const SendVote = () => {
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		try {
-			const transactionId = await senderWallet!.transaction().signVote({
+			const voteTransactionInput = {
 				fee,
 				from: senderAddress,
 				sign: {
 					mnemonic,
 				},
-				data: {
-					vote: `+${delegate.publicKey()}`,
-				},
-			});
+			};
 
-			await senderWallet!.transaction().broadcast(transactionId);
+			if (unvotes.length > 0 && votes.length > 0) {
+				const unvoteTransactionId = await senderWallet!.transaction().signVote({
+					...voteTransactionInput,
+					data: {
+						vote: `-${unvotes[0].publicKey()}`,
+					},
+				});
 
-			await env.persist();
+				await senderWallet!.transaction().broadcast(unvoteTransactionId);
 
-			setTransaction(senderWallet!.transaction().transaction(transactionId));
+				await env.persist();
+
+				const voteTransactionId = await senderWallet!.transaction().signVote({
+					...voteTransactionInput,
+					data: {
+						vote: `+${votes[0].publicKey()}`,
+					},
+				});
+
+				await senderWallet!.transaction().broadcast(voteTransactionId);
+
+				await env.persist();
+
+				setTransaction(senderWallet!.transaction().transaction(voteTransactionId));
+			} else {
+				const transactionId = await senderWallet!.transaction().signVote({
+					...voteTransactionInput,
+					data: {
+						vote: unvotes.length > 0 ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
+					},
+				});
+
+				await senderWallet!.transaction().broadcast(transactionId);
+
+				await env.persist();
+
+				setTransaction(senderWallet!.transaction().transaction(transactionId));
+			}
 
 			handleNext();
 		} catch (error) {
@@ -111,16 +158,31 @@ export const SendVote = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
+								<FirstStep
+									profile={activeProfile}
+									unvotes={unvotes}
+									votes={votes}
+									wallet={activeWallet}
+								/>
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep delegate={delegate} profile={activeProfile} wallet={activeWallet} />
+								<SecondStep
+									profile={activeProfile}
+									unvotes={unvotes}
+									votes={votes}
+									wallet={activeWallet}
+								/>
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep delegate={delegate} transaction={transaction} senderWallet={activeWallet} />
+								<FourthStep
+									senderWallet={activeWallet}
+									transaction={transaction}
+									unvotes={unvotes}
+									votes={votes}
+								/>
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">

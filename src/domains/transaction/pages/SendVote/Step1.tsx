@@ -9,23 +9,28 @@ import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useEnvironmentContext } from "app/contexts";
 import { InputFee } from "domains/transaction/components/InputFee";
+import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const FirstStep = ({
-	delegate,
 	profile,
+	unvotes,
+	votes,
 	wallet,
 }: {
-	delegate: ReadOnlyWallet;
 	profile: Profile;
+	unvotes: ReadOnlyWallet[];
+	votes: ReadOnlyWallet[];
 	wallet: ReadWriteWallet;
 }) => {
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
-	const { getValues, setValue } = useFormContext();
+	const form = useFormContext();
 
+	const { getValues, setValue } = form;
+	const { senderAddress } = form.watch();
 	const [fees, setFees] = useState({
 		static: "5",
 		min: "0",
@@ -33,7 +38,6 @@ export const FirstStep = ({
 		max: "2",
 	});
 
-	const senderAddress = getValues("senderAddress");
 	const fee = getValues("fee") || null;
 	const coinName = wallet.coinId();
 	const network = `${coinName} ${wallet.network().name()}`;
@@ -56,7 +60,7 @@ export const FirstStep = ({
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -83,12 +87,17 @@ export const FirstStep = ({
 					<Address address={senderAddress} walletName={walletName} />
 				</TransactionDetail>
 
-				<TransactionDetail
-					label={t("TRANSACTION.DELEGATE")}
-					extra={<Avatar size="lg" address={delegate?.address()} />}
-				>
-					<Address address={delegate ? delegate?.address() : ""} walletName={delegate?.username()} />
-				</TransactionDetail>
+				{unvotes.length > 0 && (
+					<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
+						<VoteList votes={unvotes} />
+					</TransactionDetail>
+				)}
+
+				{votes.length > 0 && (
+					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
+						<VoteList votes={votes} />
+					</TransactionDetail>
+				)}
 
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="fee">

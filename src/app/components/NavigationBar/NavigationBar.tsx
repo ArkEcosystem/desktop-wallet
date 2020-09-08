@@ -229,7 +229,7 @@ export const NavigationBar = ({
 										variant="transparent"
 										size="icon"
 										className="text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
-										onClick={() => history.push(`/profiles/${profile?.id()}/transactions/transfer`)}
+										onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
 										data-testid="navbar__buttons--send"
 									>
 										<Icon name="Sent" width={22} height={22} className="p-1" />
