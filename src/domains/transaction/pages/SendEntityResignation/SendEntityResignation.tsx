@@ -66,7 +66,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	useEffect(() => {
 		// @TODO: use min/avg/max like for all other transaction types
 		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
-	}, [env, setFees, setValue, activeProfile, activeWallet]);
+	}, [env, setFees, activeProfile, activeWallet]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -81,13 +81,19 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 		const from = activeWallet.address();
 
 		try {
-			const transactionId = await activeWallet.transaction().signDelegateResignation({
-				from,
-				fee: fees.static,
-				sign: {
-					mnemonic,
-				},
-			});
+			let transactionId;
+
+			if (type === "entity") {
+				// TODO: Add entity resigation method
+			} else {
+				transactionId = await activeWallet.transaction().signDelegateResignation({
+					from,
+					fee: fee?.static,
+					sign: {
+						mnemonic,
+					},
+				});
+			}
 
 			await activeWallet.transaction().broadcast(transactionId);
 			await env.persist();
@@ -102,8 +108,10 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	};
 
 	const getStepComponent = () => {
+		console.log({ type });
+
 		switch (type) {
-			case "Entity":
+			case "entity":
 				if (activeTab === 1) return <EntityFirstStep entity={entity} fee={fee} />;
 				if (activeTab === 2) return <EntitySecondStep entity={entity} fee={fee} />;
 				if (activeTab === 4) return <EntityFourthStep entity={entity} fee={fee} />;
