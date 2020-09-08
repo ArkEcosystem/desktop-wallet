@@ -8,25 +8,25 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type BusinessFirstStepProps = {
+type EntityFirstStepProps = {
 	entity: any;
 	fee: any;
 };
 
-export const BusinessFirstStep = ({ entity, fee }: BusinessFirstStepProps) => {
+export const EntityFirstStep = ({ entity, fee }: EntityFirstStepProps) => {
 	const { t } = useTranslation();
 	const { data }: any = entity?.asset();
 	console.log({ entity });
 
 	return (
 		<div data-testid="SendEntityResignation__first-step">
-			<h1 className="mb-0">{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.BUSINESS.TITLE`)}</h1>
+			<h1 className="mb-0">{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.TITLE`)}</h1>
 			<div className="text-theme-neutral-dark">
-				{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.BUSINESS.DESCRIPTION`)}
+				{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.DESCRIPTION`)}
 			</div>
 
 			<div className="mt-6">
-				<Alert size="lg">{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.BUSINESS.WARNING`)}</Alert>
+				<Alert size="lg">{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.WARNING`)}</Alert>
 			</div>
 
 			<div>
@@ -40,7 +40,7 @@ export const BusinessFirstStep = ({ entity, fee }: BusinessFirstStepProps) => {
 					<Address address={entity.sender()} walletName={entity.wallet().alias()} />
 				</TransactionDetail>
 
-				<TransactionDetail label={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.BUSINESS_NAME")}>
+				<TransactionDetail label={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.ENTITY_NAME")}>
 					{data?.name}
 				</TransactionDetail>
 

@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 
 // import { StepProps } from "./SendEntityResignation.models";
 
-export const BusinessSecondStep = ({ entity, fee }: any) => {
+export const EntitySecondStep = ({ entity, fee }: any) => {
 	const { t } = useTranslation();
 	const coinName = entity.wallet().manifest().get("name");
 	const network = `${coinName} ${entity.wallet().network().name()}`;
@@ -53,7 +53,7 @@ export const BusinessSecondStep = ({ entity, fee }: any) => {
 					<Address address={entity.sender()} walletName={entity.wallet().alias()} />
 				</TransactionDetail>
 
-				<TransactionDetail label={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.BUSINESS_NAME")}>
+				<TransactionDetail label={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.ENTITY_NAME")}>
 					{data?.name}
 				</TransactionDetail>
 

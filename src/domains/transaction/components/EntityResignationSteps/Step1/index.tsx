@@ -1,2 +1,2 @@
-export * from "./BusinessFirstStep";
+export * from "./EntityFirstStep";
 export * from "./DelegateFirstStep";

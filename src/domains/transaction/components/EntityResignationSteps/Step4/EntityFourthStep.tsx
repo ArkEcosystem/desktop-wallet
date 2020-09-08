@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 // import { StepProps } from "./SendEntityResignation.models";
 
-export const BusinessFourthStep = ({ entity, transaction, fee }: any) => {
+export const EntityFourthStep = ({ entity, transaction, fee }: any) => {
 	const { t } = useTranslation();
 	const { data } = entity;
 
