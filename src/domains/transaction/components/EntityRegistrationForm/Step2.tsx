@@ -32,7 +32,7 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 				},
 			},
 		});
-		register("ipfsData.meta.description", { minLength: 3, maxLength: 128 });
+		register("ipfsData.meta.description", { minLength: 3, maxLength: 512 });
 		register("ipfsData.sourceControl");
 		register("ipfsData.socialMedia");
 		register("ipfsData.images");
