@@ -120,7 +120,8 @@ describe("Votes", () => {
 			fireEvent.click(selectDelegateButton);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent("Quantity1/1");
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--total")).toHaveTextContent("1/1");
 		expect(asFragment()).toMatchSnapshot();
 	});
 

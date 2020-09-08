@@ -119,7 +119,12 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 										</Circle>
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
-											<div className="text-theme-neutral-900">{selected.length}</div>
+											<div
+												className="text-theme-neutral-900"
+												data-testid="DelegateTable__footer--votes"
+											>
+												{selected.length}
+											</div>
 										</div>
 									</div>
 								</div>
@@ -134,7 +139,12 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 										</Circle>
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
-											<div className="text-theme-neutral">0</div>
+											<div
+												className="text-theme-neutral"
+												data-testid="DelegateTable__footer--unvotes"
+											>
+												0
+											</div>
 										</div>
 									</div>
 								</div>
@@ -149,7 +159,12 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 										</Circle>
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
-											<div className="text-theme-neutral-900">{selected.length}/1</div>
+											<div
+												className="text-theme-neutral-900"
+												data-testid="DelegateTable__footer--total"
+											>
+												{selected.length}/1
+											</div>
 										</div>
 									</div>
 								</div>

@@ -3,7 +3,6 @@ import React from "react";
 import { act, fireEvent, render } from "testing-library";
 import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
 
-import { translations } from "../../i18n";
 import { DelegateTable } from "./DelegateTable";
 
 let delegates: ReadOnlyWallet[];
@@ -37,7 +36,6 @@ describe("DelegateTable", () => {
 	});
 
 	it("should select a delegate", () => {
-		const delegateName = delegates[0].username()!;
 		const { asFragment, getByTestId } = render(<DelegateTable coin="ARK" delegates={delegates} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
@@ -45,12 +43,12 @@ describe("DelegateTable", () => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegateName);
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should unselect a delegate", () => {
-		const delegateName = delegates[0].username()!;
 		const { asFragment, getByTestId } = render(<DelegateTable coin="ARK" delegates={delegates} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
@@ -58,13 +56,14 @@ describe("DelegateTable", () => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegateName);
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
 
 		act(() => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(selectButton).toHaveTextContent("Select");
+		expect(selectButton).toHaveTextContent("Selected");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -84,21 +83,12 @@ describe("DelegateTable", () => {
 			fireEvent.click(selectButtons[2]);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_TABLE.SHOW_LIST);
-
-		act(() => {
-			fireEvent.click(getByTestId("DelegateTable__toggle-show-selected"));
-		});
-
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(translations.DELEGATE_TABLE.HIDE_LIST);
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[0].username()!);
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[1].username()!);
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegates[2].username()!);
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("3");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should emit action on continue button", () => {
-		const delegateName = delegates[0].username()!;
 		const delegateAddress = delegates[0].address()!;
 
 		const onContinue = jest.fn();
@@ -111,7 +101,7 @@ describe("DelegateTable", () => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(getByTestId("DelegateTable__footer")).toHaveTextContent(delegateName);
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("DelegateTable__continue-button"));

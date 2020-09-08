@@ -73,7 +73,7 @@ describe("DelegateRow", () => {
 		);
 
 		expect(container).toBeTruthy();
-		expect(getByTestId("DelegateRow__toggle-1")).toHaveTextContent(translations.UNSELECT);
+		expect(getByTestId("DelegateRow__toggle-1")).toHaveTextContent(translations.SELECTED);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
