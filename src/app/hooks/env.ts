@@ -3,10 +3,10 @@ import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 
 export const useActiveProfile = () => {
-	const { env, state } = useEnvironmentContext();
+	const context = useEnvironmentContext();
 	const { profileId } = useParams();
 
-	return useMemo(() => env.profiles().findById(profileId), [env, state, profileId]);
+	return useMemo(() => context.env.profiles().findById(profileId), [context, profileId]);
 };
 
 export const useActiveWallet = () => {
