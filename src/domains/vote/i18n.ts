@@ -16,9 +16,9 @@ export const translations: { [key: string]: any } = {
 		MIN: "Min.",
 		NAME: "Delegate Name",
 		PAYOUT_INTERVAL: "Payout",
+		UNVOTES: "Unvotes",
+		TOTAL: "Total",
 		VOTE: "Vote",
 		VOTES: "Votes",
-		HIDE_LIST: "Hide List",
-		SHOW_LIST: "Show List",
 	},
 };

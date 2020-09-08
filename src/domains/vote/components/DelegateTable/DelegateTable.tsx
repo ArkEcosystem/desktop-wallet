@@ -1,5 +1,4 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
-import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -17,54 +16,9 @@ type DelegateTableProps = {
 	onContinue?: (votes: string[]) => void;
 };
 
-const SelectedDelegateList = ({ delegates, className }: { delegates: Delegate[]; className: string }) => {
-	const output = [];
-
-	for (const delegate of delegates) {
-		output.push(
-			<div
-				key={delegate.username}
-				className="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
-			>
-				<div className="flex flex-1">
-					<Avatar address={delegate.address} className="mr-8" />
-					<div className="mr-2">{delegate.username}</div>
-					<div className="text-theme-neutral">{delegate.address}</div>
-				</div>
-				#{delegate.rank}
-			</div>,
-		);
-	}
-
-	return <div className={className}>{output}</div>;
-};
-
-const DelegateAvatarList = ({ delegates, limit }: { delegates: Delegate[]; limit: number }) => {
-	const items = delegates.slice(0, limit);
-	const rest = Math.max(0, delegates.length - limit);
-
-	return (
-		<div className="flex items-center -space-x-2" data-testid="DelegateAvatarList__avatar-list">
-			{items.map((item, index) => (
-				<Avatar key={index} address={item.address} data-testid="DelegateAvatarList__avatar-list__avatar" />
-			))}
-			{rest > 0 && (
-				<Circle
-					size="lg"
-					className="text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-dark"
-					data-testid="DelegateAvatarList__avatar-list__rest"
-				>
-					+{rest}
-				</Circle>
-			)}
-		</div>
-	);
-};
-
 export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [selected, setSelected] = useState([] as Delegate[]);
-	const [showSelectedList, setShowSelectedList] = useState(false);
 
 	const columns = [
 		{
@@ -152,53 +106,61 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 					className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
 					data-testid="DelegateTable__footer"
 				>
-					<div className="flex">
-						<div className="flex-1">
-							<div className="flex justify-between">
-								<div className="flex font-semibold">
-									<div className="px-8 border-r border-theme-neutral-300">
-										<div className="inline-flex">
-											<Circle
-												className="bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-												size="lg"
-											>
-												<Icon name="Vote" className="text-xl" />
-											</Circle>
-										</div>
-									</div>
-
-									<div className="px-8 border-r border-theme-neutral-300">
-										<div className="inline-flex">
-											<Circle
-												className="bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-												size="lg"
-											>
-												<Icon name="Unvote" className="text-xl" />
-											</Circle>
-										</div>
-									</div>
-
-									<div className="px-8">
-										<div className="inline-flex">
-											<Circle
-												className="bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-												size="lg"
-											>
-												<Icon name="VoteUnvote" className="text-xl" />
-											</Circle>
+					<div className="flex-1">
+						<div className="flex justify-between">
+							<div className="flex font-semibold">
+								<div className="px-8 border-r border-theme-neutral-300">
+									<div className="inline-flex">
+										<Circle
+											className="mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+											size="lg"
+										>
+											<Icon name="Vote" className="text-xl" />
+										</Circle>
+										<div className="flex flex-col">
+											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
+											<div className="text-theme-neutral-900">{selected.length}</div>
 										</div>
 									</div>
 								</div>
 
-								<Button
-									onClick={() => onContinue?.(selected.map((select) => select.address))}
-									data-testid="DelegateTable__continue-button"
-								>
-									{t("COMMON.CONTINUE")}
-								</Button>
+								<div className="px-8 border-r border-theme-neutral-300">
+									<div className="inline-flex">
+										<Circle
+											className="mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
+											size="lg"
+										>
+											<Icon name="Unvote" className="text-xl" />
+										</Circle>
+										<div className="flex flex-col">
+											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
+											<div className="text-theme-neutral">0</div>
+										</div>
+									</div>
+								</div>
+
+								<div className="px-8">
+									<div className="inline-flex">
+										<Circle
+											className="mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+											size="lg"
+										>
+											<Icon name="VoteUnvote" className="text-xl" />
+										</Circle>
+										<div className="flex flex-col">
+											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
+											<div className="text-theme-neutral-900">{selected.length}/1</div>
+										</div>
+									</div>
+								</div>
 							</div>
 
-							{showSelectedList && <SelectedDelegateList delegates={selected} className="mt-2" />}
+							<Button
+								onClick={() => onContinue?.(selected.map((select) => select.address))}
+								data-testid="DelegateTable__continue-button"
+							>
+								{t("COMMON.CONTINUE")}
+							</Button>
 						</div>
 					</div>
 				</div>
