@@ -26,10 +26,6 @@ type GeneralProps = {
 export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const activeProfile = useActiveProfile();
 
-	// React.useEffect(() => {
-	// 	console.log("hello from activeProfile");
-	// }, [activeProfile]);
-
 	const { t } = useTranslation();
 
 	const { context, register } = formConfig;
