@@ -27,6 +27,7 @@ type LinkCollectionProps = {
 	typeName: string;
 	types: Type[];
 	onChange?: (links: EntityLink[]) => void;
+	onChoose?: (link: EntityLink) => void;
 };
 
 const Wrapper = styled.div`
@@ -44,6 +45,7 @@ export const LinkCollection = ({
 	selectionTypes,
 	selectionTypeTitle,
 	onChange,
+	onChoose,
 }: LinkCollectionProps) => {
 	const { t } = useTranslation();
 	const form = useForm<{ type: string; value: string; links: EntityLink[] }>({
@@ -81,6 +83,10 @@ export const LinkCollection = ({
 	useEffect(() => {
 		onChange?.(fields as EntityLink[]);
 	}, [fields, onChange]);
+
+	useEffect(() => {
+		onChoose?.(selected);
+	}, [selected, onChoose]);
 
 	const columns = [];
 

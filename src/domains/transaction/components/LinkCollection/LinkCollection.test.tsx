@@ -171,7 +171,8 @@ describe("LinkCollection", () => {
 	});
 
 	it("should select a specific link type", () => {
-		const { asFragment, getAllByTestId, getByTestId, debug } = render(
+		const onChoose = jest.fn();
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<LinkCollection
 				title="Social Media"
 				description="Tell people more about yourself through social media"
@@ -183,6 +184,7 @@ describe("LinkCollection", () => {
 				typeName="media"
 				selectionTypes={["twitter"]}
 				selectionTypeTitle="Primary"
+				onChoose={onChoose}
 			/>,
 		);
 
@@ -190,6 +192,7 @@ describe("LinkCollection", () => {
 		fireEvent.click(getAllByTestId("LinkCollection__selected")[0]);
 
 		expect(getByTestId("LinkCollection")).toBeTruthy();
+		expect(onChoose).toHaveBeenCalledWith({ type: "twitter", value: "testing link" });
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

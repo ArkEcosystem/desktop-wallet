@@ -7,7 +7,7 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityLink } from "domains/transaction/components/LinkCollection/LinkCollection.models";
 import { EntityProvider } from "domains/transaction/entity/providers";
-import React, { ChangeEvent, useCallback, useEffect } from "react";
+import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import * as yup from "yup";
@@ -18,6 +18,7 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 	const { t } = useTranslation();
 	const { register, setValue, getValues } = useFormContext();
 	const { fee } = getValues();
+	const [selectedAvatar, setSelectedAvatar] = useState<EntityLink | undefined>();
 
 	useEffect(() => {
 		register("ipfsData.meta.displayName", { required: true, minLength: 3, maxLength: 40 });
@@ -73,7 +74,10 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 			if (images.length) {
 				setValue(
 					"ipfsData.images",
-					images.map((item) => ({ ...item, type: "image" })),
+					images.map((item) => ({
+						...item,
+						type: selectedAvatar?.value === item.value ? "logo" : "image",
+					})),
 				);
 			}
 
@@ -84,7 +88,20 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 				);
 			}
 		},
-		[setValue],
+		[setValue, selectedAvatar],
+	);
+
+	const handleAvatar = useCallback(
+		(link: EntityLink) => {
+			const images = getValues("ipfsData.images");
+			const newImages = (images || []).map((item: EntityLink) => ({
+				...item,
+				type: item.value === link.value ? "logo" : "image",
+			}));
+			setValue("ipfsData.images", newImages);
+			setSelectedAvatar(link);
+		},
+		[getValues, setValue, setSelectedAvatar],
 	);
 
 	return (
@@ -148,6 +165,7 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 						selectionTypes={entityProvider.images().map((item) => item.id)}
 						selectionTypeTitle="Avatar"
 						onChange={handleMedia}
+						onChoose={handleAvatar}
 					/>
 				</TransactionDetail>
 

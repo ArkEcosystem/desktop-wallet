@@ -240,7 +240,7 @@ describe("EntityRegistrationForm", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should fill data", async () => {
+	it.only("should fill data", async () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} />);
 
@@ -270,13 +270,18 @@ describe("EntityRegistrationForm", () => {
 
 		await waitForNextUpdate();
 
-		const addLink = async (headerTitle: string, optionLabel: string, inputValue: string) => {
+		const toggleLinkCollectionHeader = (headerTitle: string) => {
 			const headerElement = screen.getByText(headerTitle, {
 				selector: "[data-testid=LinkCollection__header] > span",
 			});
+
 			act(() => {
 				fireEvent.click(headerElement);
 			});
+		};
+
+		const addLink = async (headerTitle: string, optionLabel: string, inputValue: string) => {
+			toggleLinkCollectionHeader(headerTitle);
 
 			const selectButton = screen.getByTestId("select-list__toggle-button");
 
@@ -302,9 +307,7 @@ describe("EntityRegistrationForm", () => {
 				fireEvent.click(screen.getByTestId("LinkCollection__add-link"));
 			});
 
-			act(() => {
-				fireEvent.click(headerElement);
-			});
+			toggleLinkCollectionHeader(headerTitle);
 		};
 
 		// Add source control link
@@ -314,7 +317,21 @@ describe("EntityRegistrationForm", () => {
 		await addLink("Social Media", "Instagram", "https://instagram.com/test");
 		// Add media link
 		await addLink("Photo and Video", "Imgur", "https://i.imgur.com/123456.png");
+		await addLink(
+			"Photo and Video",
+			"GitHub",
+			"https://raw.githubusercontent.com/arkecosystem/plugins/master/images/preview-1.jpg",
+		);
 		await addLink("Photo and Video", "YouTube", "https://youtube.com/watch?v=123456");
+
+		// Select avatar
+		toggleLinkCollectionHeader("Photo and Video");
+
+		act(() => {
+			fireEvent.click(screen.getAllByTestId("LinkCollection__selected")[0]);
+		});
+
+		toggleLinkCollectionHeader("Photo and Video");
 
 		await waitFor(() =>
 			expect(result.current.getValues({ nest: true })).toEqual({
@@ -342,8 +359,12 @@ describe("EntityRegistrationForm", () => {
 					],
 					images: [
 						{
-							type: "image",
+							type: "logo",
 							value: "https://i.imgur.com/123456.png",
+						},
+						{
+							type: "image",
+							value: "https://raw.githubusercontent.com/arkecosystem/plugins/master/images/preview-1.jpg",
 						},
 					],
 					videos: [
