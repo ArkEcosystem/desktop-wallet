@@ -43,6 +43,10 @@ export const SendTransfer = () => {
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 		register("smartbridge");
+	}, [register]);
+
+	useEffect(() => {
+		if (!activeWallet?.address?.()) return;
 
 		setValue("senderAddress", activeWallet.address(), true);
 
@@ -53,7 +57,7 @@ export const SendTransfer = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, setValue]);
+	}, [activeWallet, networks, setValue]);
 
 	const submitForm = async () => {
 		clearError("mnemonic");

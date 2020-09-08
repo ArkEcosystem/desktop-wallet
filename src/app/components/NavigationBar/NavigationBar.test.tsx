@@ -136,7 +136,7 @@ describe("NavigationBar", () => {
 			fireEvent.click(sendButton);
 		});
 
-		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/transactions/transfer`);
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/send-transfer`);
 	});
 
 	it("should handle receive funds", async () => {

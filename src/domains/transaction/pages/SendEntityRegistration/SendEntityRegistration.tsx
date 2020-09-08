@@ -47,6 +47,11 @@ export const SendEntityRegistration = () => {
 		register("network", { required: true });
 		register("registrationType", { required: true });
 		register("senderAddress", { required: true });
+	}, [register]);
+
+	useEffect(() => {
+		if (!activeWallet?.address?.()) return;
+
 		setValue("senderAddress", activeWallet.address(), true);
 
 		for (const network of networks) {
@@ -56,7 +61,7 @@ export const SendEntityRegistration = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, setValue]);
+	}, [activeWallet, networks, setValue]);
 
 	useEffect(() => {
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead

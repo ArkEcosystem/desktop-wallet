@@ -152,6 +152,12 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 						onVote={() =>
 							history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`)
 						}
+						onUnvote={(delegateAddress) =>
+							history.push({
+								pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
+								search: `?unvotes=${delegateAddress}`,
+							})
+						}
 					/>
 				</Section>
 

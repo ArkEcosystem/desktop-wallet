@@ -527,7 +527,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -573,7 +573,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           You haven't voted for more than one delegate yet.
                         </span>
                         <a
-                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -906,7 +906,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -986,7 +986,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -1241,7 +1241,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -1321,7 +1321,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -1931,7 +1931,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -1977,7 +1977,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           You haven't voted for more than one delegate yet.
                         </span>
                         <a
-                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -2316,7 +2316,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -2396,7 +2396,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -2651,7 +2651,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -2731,7 +2731,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -3898,7 +3898,7 @@ exports[`WalletDetails should render 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -3944,7 +3944,7 @@ exports[`WalletDetails should render 1`] = `
                           You haven't voted for more than one delegate yet.
                         </span>
                         <a
-                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -4283,7 +4283,7 @@ exports[`WalletDetails should render 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -4363,7 +4363,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -4618,7 +4618,7 @@ exports[`WalletDetails should render 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -4698,7 +4698,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -5856,7 +5856,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -5902,7 +5902,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           You haven't voted for more than one delegate yet.
                         </span>
                         <a
-                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -6235,7 +6235,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -6315,7 +6315,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -6570,7 +6570,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -6650,7 +6650,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -7808,7 +7808,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -7854,7 +7854,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           You haven't voted for more than one delegate yet.
                         </span>
                         <a
-                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -8187,7 +8187,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -8267,7 +8267,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -8522,7 +8522,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -8602,7 +8602,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -9773,7 +9773,7 @@ exports[`WalletDetails should render with timers 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -9819,7 +9819,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           You haven't voted for more than one delegate yet.
                         </span>
                         <a
-                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -10158,7 +10158,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -10238,7 +10238,7 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -10493,7 +10493,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -10573,7 +10573,7 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -11738,7 +11738,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -11784,7 +11784,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           You haven't voted for more than one delegate yet.
                         </span>
                         <a
-                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -12123,7 +12123,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -12203,7 +12203,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -12458,7 +12458,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -12538,7 +12538,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -13705,7 +13705,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
             >
               <div
-                class="py-4 grid grid-flow-row row-gap-6"
+                class="grid grid-flow-row row-gap-6 py-4"
               >
                 <div
                   class="flex items-center justify-between"
@@ -13751,7 +13751,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           You haven't voted for more than one delegate yet.
                         </span>
                         <a
-                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -14090,7 +14090,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -14170,7 +14170,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
@@ -14425,7 +14425,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           class="inline-block align-middle"
                         >
                           <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -14505,7 +14505,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="text-center"
                       >
                         <div
-                          class="inline-flex align-middle space-x-1"
+                          class="inline-flex space-x-1 align-middle"
                           data-testid="TransactionRowInfo"
                         />
                       </td>
