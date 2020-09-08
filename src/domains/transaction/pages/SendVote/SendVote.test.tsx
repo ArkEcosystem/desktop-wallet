@@ -26,7 +26,6 @@ import { translations as transactionTranslations } from "../../i18n";
 import { SendVote } from "../SendVote";
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
 import { FourthStep } from "./Step4";
 
 const fixtureProfileId = getDefaultProfileId();
@@ -86,18 +85,6 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__step--second")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render 3rd step", async () => {
-		const { result: form } = renderHook(() => useForm());
-		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
-				<ThirdStep />
-			</FormContext>,
-		);
-
-		expect(getByTestId("SendVote__step--third")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -164,7 +151,7 @@ describe("SendVote", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendVote__button--back"));
@@ -172,8 +159,8 @@ describe("SendVote", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -242,7 +229,7 @@ describe("SendVote", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendVote__button--back"));
@@ -250,8 +237,8 @@ describe("SendVote", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -320,7 +307,7 @@ describe("SendVote", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendVote__button--back"));
@@ -328,8 +315,8 @@ describe("SendVote", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -398,7 +385,7 @@ describe("SendVote", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendVote__button--back"));
@@ -406,8 +393,8 @@ describe("SendVote", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__step--third")).toBeTruthy());
-			const passwordInput = within(getByTestId("InputPassword")).getByTestId("Input");
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: "passphrase" } });
 			await waitFor(() => expect(passwordInput).toHaveValue("passphrase"));
 
@@ -422,9 +409,7 @@ describe("SendVote", () => {
 			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() =>
-				expect(getByTestId("SendVote__step--third")).toHaveTextContent(
-					transactionTranslations.INVALID_MNEMONIC,
-				),
+				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
 			);
 
 			signMock.mockRestore();
