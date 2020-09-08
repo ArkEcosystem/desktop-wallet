@@ -66,7 +66,7 @@ export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: 
 						}
 						data-testid={`DelegateRow__toggle-${index}`}
 					>
-						{isSelected ? t("COMMON.UNSELECT") : t("COMMON.SELECT")}
+						{isSelected ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
 					</Button>
 				</div>
 			</td>
