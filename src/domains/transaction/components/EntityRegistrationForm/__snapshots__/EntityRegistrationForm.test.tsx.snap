@@ -410,7 +410,7 @@ exports[`EntityRegistrationForm should go to next step with form data 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-4"
+              class="flex items-center py-6 pt-4 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -442,13 +442,13 @@ exports[`EntityRegistrationForm should go to next step with form data 1`] = `
                     class="inline-block truncate align-middle"
                   >
                     <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                       data-testid="address__wallet-name"
                     >
                       ARK Wallet 1
                     </span>
                     <span
-                      class="sc-fzoLag gqDFwP text-theme-neutral-light font-semibold text-base"
+                      class="text-base font-semibold sc-fzoLag gqDFwP text-theme-neutral-light"
                       data-testid="address__wallet-address"
                     >
                       D8rr7B…s6YUYD
@@ -491,7 +491,7 @@ exports[`EntityRegistrationForm should go to next step with form data 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-AxirZ cZokSJ border-black bg-theme-background"
+                  class="border-black sc-AxirZ cZokSJ bg-theme-background"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -559,14 +559,14 @@ exports[`EntityRegistrationForm should go to next step with form data 1`] = `
                   class="font-semibold"
                 >
                   <a
-                    class="sc-fzpjYC dArMUl inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer sc-fzpjYC dArMUl text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://test-step.entity.com"
                   >
                     https://test-step.entity.com
                     <div
-                      class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-AxiKw dzBdqj"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -692,7 +692,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
               class="pb-8 mt-8"
             >
               <fieldset
-                class="sc-AxjAm fmGClo font-normal"
+                class="font-normal sc-AxjAm fmGClo"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -706,14 +706,14 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__name"
                   name="ipfsData.meta.displayName"
                   type="text"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxjAm fmGClo mt-8 font-normal"
+                class="mt-8 font-normal sc-AxjAm fmGClo"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -727,13 +727,13 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                   />
                 </label>
                 <textarea
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__description"
                   name="ipfsData.meta.description"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxjAm fmGClo mt-8 font-normal"
+                class="mt-8 font-normal sc-AxjAm fmGClo"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -747,7 +747,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__website"
                   name="ipfsData.meta.website"
                   type="text"
@@ -755,7 +755,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
               </fieldset>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -765,7 +765,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -779,7 +779,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -799,7 +799,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -809,7 +809,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -823,7 +823,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -843,7 +843,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -853,7 +853,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -867,7 +867,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -887,7 +887,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+              class="flex items-center py-6 pt-6 pb-0 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -897,7 +897,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                   class="font-semibold"
                 >
                   <fieldset
-                    class="sc-AxjAm fmGClo flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 sc-AxjAm fmGClo"
                   >
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -921,7 +921,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                           class="sc-fzozJi OgXfh"
                         >
                           <input
-                            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                             data-testid="InputCurrency"
                             name="fee"
                             type="text"
@@ -968,7 +968,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -977,7 +977,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -986,7 +986,7 @@ exports[`EntityRegistrationForm should render 2nd step 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -1074,7 +1074,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-4"
+              class="flex items-center py-6 pt-4 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -1106,13 +1106,13 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                     class="inline-block truncate align-middle"
                   >
                     <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                       data-testid="address__wallet-name"
                     >
                       ARK Wallet 1
                     </span>
                     <span
-                      class="sc-fzoLag gqDFwP text-theme-neutral-light font-semibold text-base"
+                      class="text-base font-semibold sc-fzoLag gqDFwP text-theme-neutral-light"
                       data-testid="address__wallet-address"
                     >
                       D8rr7B…s6YUYD
@@ -1155,7 +1155,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-AxirZ cZokSJ border-black bg-theme-background"
+                  class="border-black sc-AxirZ cZokSJ bg-theme-background"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -1223,14 +1223,14 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                   class="font-semibold"
                 >
                   <a
-                    class="sc-fzpjYC dArMUl inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer sc-fzpjYC dArMUl text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://test.entity.com"
                   >
                     https://test.entity.com
                     <div
-                      class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-AxiKw dzBdqj"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -1244,7 +1244,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+              class="flex items-center py-6 mb-2 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -1268,7 +1268,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL bg-theme-primary-contrast text-theme-primary"
                           height="10"
                           width="10"
                         >
@@ -1288,7 +1288,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+              class="flex items-center py-6 mb-2 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -1312,7 +1312,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL bg-theme-primary-contrast text-theme-primary"
                           height="10"
                           width="10"
                         >
@@ -1332,7 +1332,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+              class="flex items-center py-6 mb-2 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -1356,7 +1356,7 @@ exports[`EntityRegistrationForm should render 3rd step 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL bg-theme-primary-contrast text-theme-primary"
                           height="10"
                           width="10"
                         >
@@ -1525,7 +1525,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-4"
+              class="flex items-center py-6 pt-4 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -1557,13 +1557,13 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                     class="inline-block truncate align-middle"
                   >
                     <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                       data-testid="address__wallet-name"
                     >
                       ARK Wallet 1
                     </span>
                     <span
-                      class="sc-fzoLag gqDFwP text-theme-neutral-light font-semibold text-base"
+                      class="text-base font-semibold sc-fzoLag gqDFwP text-theme-neutral-light"
                       data-testid="address__wallet-address"
                     >
                       D8rr7B…s6YUYD
@@ -1606,7 +1606,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-AxirZ cZokSJ border-black bg-theme-background"
+                  class="border-black sc-AxirZ cZokSJ bg-theme-background"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -1674,14 +1674,14 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                   class="font-semibold"
                 >
                   <a
-                    class="sc-fzpjYC dArMUl inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer sc-fzpjYC dArMUl text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://test.entity.com"
                   >
                     https://test.entity.com
                     <div
-                      class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-AxiKw dzBdqj"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -1695,7 +1695,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+              class="flex items-center py-6 mb-2 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -1719,7 +1719,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL bg-theme-primary-contrast text-theme-primary"
                           height="10"
                           width="10"
                         >
@@ -1739,7 +1739,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+              class="flex items-center py-6 mb-2 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -1763,7 +1763,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL bg-theme-primary-contrast text-theme-primary"
                           height="10"
                           width="10"
                         >
@@ -1783,7 +1783,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+              class="flex items-center py-6 mb-2 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -1807,7 +1807,7 @@ exports[`EntityRegistrationForm should render 3rd step without images 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL bg-theme-primary-contrast text-theme-primary"
                           height="10"
                           width="10"
                         >
@@ -1976,7 +1976,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-4"
+              class="flex items-center py-6 pt-4 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2008,13 +2008,13 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                     class="inline-block truncate align-middle"
                   >
                     <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                      class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-text max-w-24"
                       data-testid="address__wallet-name"
                     >
                       ARK Wallet 1
                     </span>
                     <span
-                      class="sc-fzoLag gqDFwP text-theme-neutral-light font-semibold text-base"
+                      class="text-base font-semibold sc-fzoLag gqDFwP text-theme-neutral-light"
                       data-testid="address__wallet-address"
                     >
                       D8rr7B…s6YUYD
@@ -2057,7 +2057,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-AxirZ cZokSJ border-black bg-theme-background"
+                  class="border-black sc-AxirZ cZokSJ bg-theme-background"
                 >
                   <div
                     class="sc-AxiKw dklFyP"
@@ -2125,14 +2125,14 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                   class="font-semibold"
                 >
                   <a
-                    class="sc-fzpjYC dArMUl inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer sc-fzpjYC dArMUl text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://test.entity.com"
                   >
                     https://test.entity.com
                     <div
-                      class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-AxiKw dzBdqj"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -2146,7 +2146,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+              class="flex items-center py-6 mb-2 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2170,7 +2170,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL bg-theme-primary-contrast text-theme-primary"
                           height="10"
                           width="10"
                         >
@@ -2190,7 +2190,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+              class="flex items-center py-6 mb-2 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2214,7 +2214,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL bg-theme-primary-contrast text-theme-primary"
                           height="10"
                           width="10"
                         >
@@ -2234,7 +2234,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+              class="flex items-center py-6 mb-2 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2258,7 +2258,7 @@ exports[`EntityRegistrationForm should render 3rd step without videos 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL bg-theme-primary-contrast text-theme-primary"
                           height="10"
                           width="10"
                         >
@@ -2389,7 +2389,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
               class="pb-8 mt-8"
             >
               <fieldset
-                class="sc-AxjAm fmGClo font-normal"
+                class="font-normal sc-AxjAm fmGClo"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -2403,14 +2403,14 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__name"
                   name="ipfsData.meta.displayName"
                   type="text"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxjAm fqdvek mt-8 font-normal"
+                class="mt-8 font-normal sc-AxjAm fqdvek"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -2425,7 +2425,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                 </label>
                 <textarea
                   aria-invalid="true"
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__description"
                   name="ipfsData.meta.description"
                 />
@@ -2436,7 +2436,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                 </p>
               </fieldset>
               <fieldset
-                class="sc-AxjAm fmGClo mt-8 font-normal"
+                class="mt-8 font-normal sc-AxjAm fmGClo"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -2450,7 +2450,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__website"
                   name="ipfsData.meta.website"
                   type="text"
@@ -2458,7 +2458,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
               </fieldset>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2468,7 +2468,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -2482,7 +2482,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -2502,7 +2502,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2512,7 +2512,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -2526,7 +2526,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -2546,7 +2546,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2556,7 +2556,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -2570,7 +2570,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -2590,7 +2590,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+              class="flex items-center py-6 pt-6 pb-0 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2600,7 +2600,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                   class="font-semibold"
                 >
                   <fieldset
-                    class="sc-AxjAm fmGClo flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 sc-AxjAm fmGClo"
                   >
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -2624,7 +2624,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                           class="sc-fzozJi OgXfh"
                         >
                           <input
-                            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                             data-testid="InputCurrency"
                             name="fee"
                             type="text"
@@ -2671,7 +2671,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -2680,7 +2680,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -2689,7 +2689,7 @@ exports[`EntityRegistrationForm should validate description 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -2739,7 +2739,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
               class="pb-8 mt-8"
             >
               <fieldset
-                class="sc-AxjAm fqdvek font-normal"
+                class="font-normal sc-AxjAm fqdvek"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -2754,7 +2754,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                 </label>
                 <input
                   aria-invalid="true"
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__name"
                   name="ipfsData.meta.displayName"
                   type="text"
@@ -2766,7 +2766,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                 </p>
               </fieldset>
               <fieldset
-                class="sc-AxjAm fmGClo mt-8 font-normal"
+                class="mt-8 font-normal sc-AxjAm fmGClo"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -2780,13 +2780,13 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                   />
                 </label>
                 <textarea
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__description"
                   name="ipfsData.meta.description"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxjAm fmGClo mt-8 font-normal"
+                class="mt-8 font-normal sc-AxjAm fmGClo"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -2800,7 +2800,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__website"
                   name="ipfsData.meta.website"
                   type="text"
@@ -2808,7 +2808,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
               </fieldset>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2818,7 +2818,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -2832,7 +2832,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -2852,7 +2852,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2862,7 +2862,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -2876,7 +2876,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -2896,7 +2896,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2906,7 +2906,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -2920,7 +2920,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -2940,7 +2940,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+              class="flex items-center py-6 pt-6 pb-0 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -2950,7 +2950,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                   class="font-semibold"
                 >
                   <fieldset
-                    class="sc-AxjAm fmGClo flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 sc-AxjAm fmGClo"
                   >
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -2974,7 +2974,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                           class="sc-fzozJi OgXfh"
                         >
                           <input
-                            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                             data-testid="InputCurrency"
                             name="fee"
                             type="text"
@@ -3021,7 +3021,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -3030,7 +3030,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -3039,7 +3039,7 @@ exports[`EntityRegistrationForm should validate name 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -3089,7 +3089,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
               class="pb-8 mt-8"
             >
               <fieldset
-                class="sc-AxjAm fmGClo font-normal"
+                class="font-normal sc-AxjAm fmGClo"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -3103,14 +3103,14 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__name"
                   name="ipfsData.meta.displayName"
                   type="text"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxjAm fmGClo mt-8 font-normal"
+                class="mt-8 font-normal sc-AxjAm fmGClo"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -3124,13 +3124,13 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                   />
                 </label>
                 <textarea
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__description"
                   name="ipfsData.meta.description"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxjAm fqdvek mt-8 font-normal"
+                class="mt-8 font-normal sc-AxjAm fqdvek"
               >
                 <label
                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -3145,7 +3145,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                 </label>
                 <input
                   aria-invalid="true"
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                   data-testid="BusinessRegistrationForm__website"
                   name="ipfsData.meta.website"
                   type="text"
@@ -3158,7 +3158,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
               </fieldset>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -3168,7 +3168,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -3182,7 +3182,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -3202,7 +3202,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -3212,7 +3212,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -3226,7 +3226,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -3246,7 +3246,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+              class="flex items-center py-6 pb-8 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -3256,7 +3256,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="sc-fzoyAV dqJOaZ flex flex-col font-normal"
+                    class="flex flex-col font-normal sc-fzoyAV dqJOaZ"
                     data-testid="LinkCollection"
                   >
                     <div
@@ -3270,7 +3270,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                       </span>
                       <div>
                         <div
-                          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                          class="flex items-center justify-center w-5 h-5 rounded-full sc-AxiKw ksjdLL text-theme-primary bg-theme-primary-contrast"
                           height="10"
                           width="10"
                         >
@@ -3290,7 +3290,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
+              class="flex items-center py-6 pt-6 pb-0 border-t border-dashed border-theme-neutral-300"
               data-testid="TransactionDetail"
             >
               <div
@@ -3300,7 +3300,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                   class="font-semibold"
                 >
                   <fieldset
-                    class="sc-AxjAm fmGClo flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 sc-AxjAm fmGClo"
                   >
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -3324,7 +3324,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                           class="sc-fzozJi OgXfh"
                         >
                           <input
-                            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            class="w-full px-4 py-3 overflow-hidden transition-colors duration-200 border rounded appearance-none sc-AxgMl jRvGoE bg-theme-background border-theme-neutral-300 text-theme-neutral-900 "
                             data-testid="InputCurrency"
                             name="fee"
                             type="text"
@@ -3371,7 +3371,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -3380,7 +3380,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
@@ -3389,7 +3389,7 @@ exports[`EntityRegistrationForm should validate url 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="sc-fznyAO btIRlM relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                            class="relative px-5 transition-colors duration-300 border-transparent sc-fznyAO btIRlM focus:outline-none border-b-3"
                             data-testid="SelectionBarOption"
                             role="radio"
                             type="button"
