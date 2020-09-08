@@ -2,6 +2,7 @@ import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -152,46 +153,41 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 					data-testid="DelegateTable__footer"
 				>
 					<div className="flex">
-						<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
-							<div className="text-sm text-theme-neutral">{t("COMMON.QUANTITY")}</div>
-							{coin === "ARK" ? (
-								<div className="text-theme-neutral-dark">{selected.length}/1</div>
-							) : (
-								<div className="text-theme-neutral-dark">{selected.length}/50</div>
-							)}
-						</div>
-
 						<div className="flex-1">
 							<div className="flex justify-between">
-								<div className="font-semibold">
-									{selected.length === 1 ? (
-										<>
-											<div className="inline-flex">
-												<Avatar address={selected[0].address} className="mr-4" />
-												<div className="flex flex-col">
-													<div className="text-sm text-theme-neutral-dark">
-														{t("COMMON.DELEGATE")}
-													</div>
-													<div className="text-theme-neutral">
-														{selected[0].username} - {selected[0].address}
-													</div>
-												</div>
-											</div>
-										</>
-									) : (
-										<div className="inline-flex items-center">
-											<DelegateAvatarList delegates={selected} limit={2} />
-											<div
-												className="ml-4 cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
-												onClick={() => setShowSelectedList(!showSelectedList)}
-												data-testid="DelegateTable__toggle-show-selected"
+								<div className="flex font-semibold">
+									<div className="px-8 border-r border-theme-neutral-300">
+										<div className="inline-flex">
+											<Circle
+												className="bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+												size="lg"
 											>
-												{showSelectedList
-													? t("VOTE.DELEGATE_TABLE.HIDE_LIST")
-													: t("VOTE.DELEGATE_TABLE.SHOW_LIST")}
-											</div>
+												<Icon name="Vote" className="text-xl" />
+											</Circle>
 										</div>
-									)}
+									</div>
+
+									<div className="px-8 border-r border-theme-neutral-300">
+										<div className="inline-flex">
+											<Circle
+												className="bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+												size="lg"
+											>
+												<Icon name="Unvote" className="text-xl" />
+											</Circle>
+										</div>
+									</div>
+
+									<div className="px-8">
+										<div className="inline-flex">
+											<Circle
+												className="bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+												size="lg"
+											>
+												<Icon name="VoteUnvote" className="text-xl" />
+											</Circle>
+										</div>
+									</div>
 								</div>
 
 								<Button
