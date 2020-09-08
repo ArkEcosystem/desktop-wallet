@@ -12,6 +12,11 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Delete Profile",
 		DESCRIPTION: "Do you really want to delete this profile? Once deleted, you will not be able to restore it.",
 	},
+	MODAL_RESET_PROFILE: {
+		TITLE: "Reset Profile Data",
+		DESCRIPTION: "Do you really want to reset this profile? Once reset, you will not be able to restore it.",
+		SUCCESS: "Your profile was reset succesfully",
+	},
 	MODAL_REPOSITORIES: {
 		TITLE: "Repository",
 		BitBucket: "Bitbucket",

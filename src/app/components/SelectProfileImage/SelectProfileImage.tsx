@@ -12,7 +12,7 @@ type SelectProfileImageProps = {
 
 const ProfileImageStyled = styled.div`
 	& {
-		${tw`relative overflow-hidden rounded`};
+		${tw`relative overflow-hidden inline-flex items-center justify-center rounded`};
 	}
 	&:after {
 		content: "";
@@ -23,6 +23,8 @@ const ProfileImageStyled = styled.div`
 
 export const SelectProfileImage = ({ value, onSelect }: SelectProfileImageProps) => {
 	const { t } = useTranslation();
+
+	const isSvg = React.useMemo(() => value?.endsWith("</svg>"), [value]);
 
 	const handleUploadImage = async () => {
 		const raw = await openFile(null, {
@@ -54,7 +56,7 @@ export const SelectProfileImage = ({ value, onSelect }: SelectProfileImageProps)
 						</Button>
 					</div>
 				</div>
-				{value && (
+				{value && !isSvg && (
 					<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
 						<ProfileImageStyled>
 							<img
