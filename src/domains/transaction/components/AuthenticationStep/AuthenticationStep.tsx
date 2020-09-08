@@ -1,17 +1,16 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputPassword } from "app/components/Input";
-import { useActiveProfile } from "app/hooks";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const AuthenticationStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const AuthenticationStep = ({ wallet, profile }: { wallet: ReadWriteWallet; profile: Profile }) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
-	const activeProfile = useActiveProfile();
 	const isLedger = wallet.isLedger();
+	const activeProfile = profile;
 
 	return (
 		<div data-testid="AuthenticationStep">

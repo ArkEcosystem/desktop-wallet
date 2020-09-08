@@ -8,6 +8,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useClipboard } from "app/hooks";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -15,8 +16,6 @@ import { useHistory } from "react-router-dom";
 
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
-// import { FourthStep } from "./Step4";
 import { FifthStep } from "./Step5";
 
 export const SendTransfer = () => {
@@ -62,7 +61,7 @@ export const SendTransfer = () => {
 	const submitForm = async () => {
 		clearError("mnemonic");
 
-		const { fee, mnemonic, recipients, senderAddress, smartbridge } = getValues();
+		const { fee, mnemonic, secondMnemonic, recipients, senderAddress, smartbridge } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		const isMultiPayment = recipients.length > 1;
@@ -71,6 +70,7 @@ export const SendTransfer = () => {
 			from: senderAddress,
 			sign: {
 				mnemonic,
+				secondMnemonic,
 			},
 		};
 
@@ -149,7 +149,7 @@ export const SendTransfer = () => {
 							</TabPanel>
 
 							<TabPanel tabId={3}>
-								<ThirdStep />
+								<AuthenticationStep wallet={activeWallet} profile={activeProfile} />
 							</TabPanel>
 
 							<TabPanel tabId={4}>
