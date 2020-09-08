@@ -58,7 +58,6 @@ const whiteListedModules = [
 	"socks-proxy-agent",
 	"styled-components",
 	"swiper",
-	"slugify",
 	"yup",
 	"extract-domain",
 ];
