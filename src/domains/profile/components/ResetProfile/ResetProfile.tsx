@@ -1,4 +1,4 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
@@ -25,9 +25,6 @@ export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: Re
 
 	const handleReset = async () => {
 		profile.flush();
-
-		// TODO: remove with SDK v.0.9.348
-		profile.settings().forget(ProfileSetting.Avatar);
 
 		await persist();
 
