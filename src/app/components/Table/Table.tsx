@@ -48,7 +48,7 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 
 	return (
 		<TableWrapper {...getTableProps({ className })}>
-			<table className="table-auto">
+			<table cellPadding={0} className="table-auto">
 				{!hideHeader && (
 					<thead>
 						{headerGroups.map((headerGroup: any, index: number) => (

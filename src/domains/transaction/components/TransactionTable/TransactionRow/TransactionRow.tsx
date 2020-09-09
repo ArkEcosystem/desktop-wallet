@@ -2,6 +2,7 @@ import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
+import { TableCell } from "app/components/Table";
 import React from "react";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
@@ -19,6 +20,7 @@ type Props = {
 	onClick?: () => void;
 	walletName?: string;
 	isLoading?: boolean;
+	showExplorerLink?: boolean;
 	showSign?: boolean;
 } & React.HTMLProps<any>;
 
@@ -30,10 +32,11 @@ export const TransactionRow = ({
 	walletName,
 	isSignaturePending,
 	isLoading,
+	showExplorerLink,
 	showSign,
 	...props
 }: Props) => {
-	const [backgroundColor, setBackgroundColor] = React.useState<string>("");
+	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
 	if (isLoading)
 		return (
@@ -47,54 +50,70 @@ export const TransactionRow = ({
 	return (
 		<tr
 			data-testid="TransactionRow"
-			className="border-b border-dotted cursor-pointer border-theme-neutral-300 hover:bg-theme-success-100"
+			className={`border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 ${
+				typeof onClick === "function" ? "cursor-pointer" : ""
+			}`}
 			{...props}
 			onClick={onClick}
-			onMouseEnter={() => setBackgroundColor("--theme-color-success-100")}
-			onMouseLeave={() => setBackgroundColor("")}
+			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
+			onMouseLeave={() => setShadowColor("")}
 		>
-			<td className="w-16 py-6">
-				<div className="inline-block align-middle">
+			{showExplorerLink && (
+				<TableCell variant="start">
 					<Link
 						data-testid="TransactionRow__ID"
 						to={transaction.explorerLink()}
 						tooltip={transaction.id()}
 						isExternal
 					/>
-				</div>
-			</td>
-			<td className="w-48 py-1 text-sm text-theme-neutral-600">
+				</TableCell>
+			)}
+
+			<TableCell
+				variant={showExplorerLink ? "middle" : "start"}
+				className="w-48"
+				innerClassName="text-sm text-theme-neutral-600"
+			>
 				<span data-testid="TransactionRow__timestamp">
 					{transaction.timestamp()!.format("DD MMM YYYY HH:mm:ss")}
 				</span>
-			</td>
-			<td className="w-32 py-2">
-				<TransactionRowMode transaction={transaction} circleShadowColor={backgroundColor} />
-			</td>
-			<td>
+			</TableCell>
+
+			<TableCell className="w-32">
+				<TransactionRowMode transaction={transaction} circleShadowColor={shadowColor} />
+			</TableCell>
+
+			<TableCell>
 				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
-			</td>
-			<td className="text-center">
+			</TableCell>
+
+			<TableCell innerClassName="justify-center">
 				<TransactionRowInfo transaction={transaction} />
-			</td>
-			<td className="w-16 text-center">
+			</TableCell>
+
+			<TableCell className="w-16" innerClassName="justify-center">
 				<TransactionRowConfirmation transaction={transaction} />
-			</td>
-			<td className="text-right">
+			</TableCell>
+
+			<TableCell innerClassName="justify-end">
 				<TransactionRowAmount transaction={transaction} />
-			</td>
+			</TableCell>
+
 			{isSignaturePending && (
-				<td className="text-right">
+				<TableCell innerClassName="justify-end">
 					<Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
 						<Icon name="Edit" />
 						<span>Sign</span>
 					</Button>
-				</td>
+				</TableCell>
 			)}
+
 			{!!exchangeCurrency && !isSignaturePending && (
-				<td data-testid="TransactionRow__currency" className="text-right">
-					<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
-				</td>
+				<TableCell variant="end" innerClassName="justify-end">
+					<span data-testid="TransactionRow__currency">
+						<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
+					</span>
+				</TableCell>
 			)}
 		</tr>
 	);
@@ -104,4 +123,5 @@ TransactionRow.defaultProps = {
 	isSignaturePending: false,
 	isLoading: false,
 	showSign: false,
+	showExplorerLink: true,
 };
