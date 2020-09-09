@@ -25,41 +25,41 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-type MenuProps = {
+type TabsProps = {
 	selected: string;
 	onClick?: (item: string) => void;
 };
 
-const Menu = ({ selected, onClick }: MenuProps) => {
+const Tabs = ({ selected, onClick }: TabsProps) => {
 	const { t } = useTranslation();
 
-	const getMenuItemClass = (item: string) =>
+	const getTabItemClass = (item: string) =>
 		selected === item
 			? "theme-neutral-900 border-theme-primary-dark"
 			: "text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent";
 
 	return (
-		<ul className="flex h-20 mr-auto -mb-5" data-testid="Menu">
+		<ul className="flex h-20 mr-auto -mt-5 -mb-5" data-testid="Tabs">
 			<li
-				className={`flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getMenuItemClass(
+				className={`flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getTabItemClass(
 					"delegate",
 				)}`}
 				onClick={() => onClick?.("delegate")}
-				data-testid="Menu__item--delegate"
+				data-testid="Tab__item--delegate"
 			>
-				{t("VOTE.VOTES_PAGE.MENU.SELECT_DELEGATE")}
+				{t("VOTE.VOTES_PAGE.TABS.SELECT_DELEGATE")}
 			</li>
-			<li className="flex items-center">
+			<li className="flex items-center mr-4">
 				<Divider type="vertical" />
 			</li>
 			<li
-				className={`flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getMenuItemClass(
+				className={`flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getTabItemClass(
 					"vote",
 				)}`}
 				onClick={() => onClick?.("vote")}
-				data-testid="Menu__item--vote"
+				data-testid="Tab__item--vote"
 			>
-				{t("VOTE.VOTES_PAGE.MENU.MY_VOTE")}
+				{t("VOTE.VOTES_PAGE.TABS.MY_VOTE")}
 			</li>
 		</ul>
 	);
@@ -101,7 +101,7 @@ export const Votes = () => {
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
-	const [menuItem, setMenuItem] = useState("delegate");
+	const [tabItem, setTabItem] = useState("delegate");
 	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
@@ -192,14 +192,17 @@ export const Votes = () => {
 					</TransactionDetail>
 				</div>
 
-				<Divider />
-
-				<Menu selected={menuItem} onClick={(item) => setMenuItem(item)} />
+				{address && (
+					<>
+						<Divider />
+						<Tabs selected={tabItem} onClick={(tabItem) => setTabItem(tabItem)} />
+					</>
+				)}
 			</div>
 
 			<Section className="flex-1">
 				{address ? (
-					menuItem === "delegate" ? (
+					tabItem === "delegate" ? (
 						<DelegateTable
 							coin={network?.coin()}
 							delegates={delegates}

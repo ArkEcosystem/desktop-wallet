@@ -539,17 +539,17 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
           type="horizontal"
         />
         <ul
-          class="flex h-20 mr-auto -mb-5"
-          data-testid="Menu"
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
         >
           <li
-            class="flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
-            data-testid="Menu__item--delegate"
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
           >
             Select a Delegate
           </li>
           <li
-            class="flex items-center"
+            class="flex items-center mr-4"
           >
             <div
               class="sc-AxiKw hpWYLk border-theme-neutral-300"
@@ -557,8 +557,8 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
             />
           </li>
           <li
-            class="flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
-            data-testid="Menu__item--vote"
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
           >
             My Vote
           </li>
@@ -1853,17 +1853,17 @@ exports[`Votes should render 1`] = `
           type="horizontal"
         />
         <ul
-          class="flex h-20 mr-auto -mb-5"
-          data-testid="Menu"
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
         >
           <li
-            class="flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
-            data-testid="Menu__item--delegate"
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
           >
             Select a Delegate
           </li>
           <li
-            class="flex items-center"
+            class="flex items-center mr-4"
           >
             <div
               class="sc-AxiKw hpWYLk border-theme-neutral-300"
@@ -1871,8 +1871,8 @@ exports[`Votes should render 1`] = `
             />
           </li>
           <li
-            class="flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
-            data-testid="Menu__item--vote"
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
           >
             My Vote
           </li>
@@ -3167,17 +3167,17 @@ exports[`Votes should select a delegate 1`] = `
           type="horizontal"
         />
         <ul
-          class="flex h-20 mr-auto -mb-5"
-          data-testid="Menu"
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
         >
           <li
-            class="flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
-            data-testid="Menu__item--delegate"
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
           >
             Select a Delegate
           </li>
           <li
-            class="flex items-center"
+            class="flex items-center mr-4"
           >
             <div
               class="sc-AxiKw hpWYLk border-theme-neutral-300"
@@ -3185,8 +3185,8 @@ exports[`Votes should select a delegate 1`] = `
             />
           </li>
           <li
-            class="flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
-            data-testid="Menu__item--vote"
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
           >
             My Vote
           </li>

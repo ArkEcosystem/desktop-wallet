@@ -153,16 +153,16 @@ describe("Votes", () => {
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 		const { asFragment, getByTestId } = renderPage(route);
 
-		expect(getByTestId("Menu")).toBeTruthy();
+		expect(getByTestId("Tabs")).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(getByTestId("Menu__item--vote"));
+			fireEvent.click(getByTestId("Tab__item--vote"));
 		});
 
 		expect(getByTestId("MyVoteTable")).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(getByTestId("Menu__item--delegate"));
+			fireEvent.click(getByTestId("Tab__item--delegate"));
 		});
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
