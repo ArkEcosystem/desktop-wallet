@@ -5,11 +5,11 @@ import React from "react";
 
 import { EntityLink } from "../LinkCollection/LinkCollection.models";
 
-type LinkType = { displayName: string } & EntityLink;
+export type ProviderEntityLink = { displayName: string } & EntityLink;
 
 type LinkListProps = {
 	description: string;
-	links: LinkType[];
+	links: ProviderEntityLink[];
 	title: string;
 };
 
@@ -35,7 +35,7 @@ const linkIcons: Record<string, string> = {
 	vimeo: "Vimeo",
 };
 
-const LinkItem = ({ link }: { link: LinkType }) => (
+const LinkItem = ({ link }: { link: ProviderEntityLink }) => (
 	<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 first:border-0">
 		<div className="flex justify-between flex-1">
 			<div>

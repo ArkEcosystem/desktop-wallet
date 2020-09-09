@@ -8,7 +8,7 @@ import { Label } from "app/components/Label";
 import { Link } from "app/components/Link";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { LinkList } from "domains/transaction/components/LinkList";
+import { LinkList, ProviderEntityLink } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { EntityProvider } from "domains/transaction/entity/providers";
 import React, { useMemo } from "react";
@@ -34,10 +34,15 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 		const images = ipfsData.images || [];
 		const videos = ipfsData.videos || [];
 
-		return [...images, ...videos].map((link: EntityLink) => {
-			const provider = entityProvider.findByDomain(link.value);
-			return { displayName: provider!.displayName, ...link };
-		});
+		return [...images, ...videos]
+			.map((link: EntityLink) => {
+				const provider = entityProvider.findByDomain(link.value);
+				if (!provider) {
+					return undefined;
+				}
+				return { displayName: provider.displayName, ...link };
+			})
+			.filter(Boolean);
 	}, [ipfsData]);
 
 	return (
@@ -121,7 +126,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 						<LinkList
 							title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
 							description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
-							links={mediaLinks}
+							links={mediaLinks as ProviderEntityLink[]}
 						/>
 					</TransactionDetail>
 				)}

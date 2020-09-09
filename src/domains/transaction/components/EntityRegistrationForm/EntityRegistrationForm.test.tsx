@@ -121,6 +121,32 @@ describe("EntityRegistrationForm", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render 3rd step without unknown providers", async () => {
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					ipfsData: {
+						...ipfsForm,
+						images: [
+							{
+								type: "image",
+								value: "https://test.com",
+							},
+						],
+					},
+				},
+			}),
+		);
+
+		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+
+		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--third")).toBeTruthy());
+		expect(screen.getByText(ipfsForm.meta.displayName)).toBeInTheDocument();
+		expect(screen.getByText(ipfsForm.meta.description)).toBeInTheDocument();
+		expect(screen.getByText(ipfsForm.meta.website)).toBeInTheDocument();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render 3rd step without images", async () => {
 		const { result } = renderHook(() =>
 			useForm({

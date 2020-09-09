@@ -166,7 +166,7 @@ export const flickrProvider = {
 export const vimeoProvider = {
 	id: "vimeo",
 	displayName: "Vimeo",
-	domains: ["vimeo.com"],
+	domains: ["vimeo.com", "player.vimeo.com"],
 	validate: (value: string) =>
 		/(?:https?:)?\/\/(?:www\.)?(?:vimeo\.com|player\.vimeo\.com\/video)\/([0-9]+)/.test(value),
 };
@@ -174,7 +174,7 @@ export const vimeoProvider = {
 export const youtubeVideoProvider = {
 	id: "youtube-video",
 	displayName: "YouTube",
-	domains: ["youtube.com"],
+	domains: ["youtube.com", "youtu.be"],
 	validate: (value: string) =>
 		/(?:https?:)?\/\/(?:(?:www\.)?(?:youtube\.com)\/(?:watch\?v=|embed\/)|youtu\.be\/)([A-z0-9-_]+)\/?/.test(value),
 };
