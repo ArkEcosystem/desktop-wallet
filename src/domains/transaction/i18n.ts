@@ -105,6 +105,13 @@ export const translations: { [key: string]: any } = {
 		TWITTER: "Twitter",
 		VIMEO: "Vimeo",
 		YOUTUBE: "YouTube",
+		DISCORD: "Discord",
+		INSTAGRAM: "Instagram",
+		MEDIUM: "Medium",
+		REDDIT: "Reddit",
+		SLACK: "Slack",
+		TELEGRAM: "Telegram",
+		WECHAT: "Wechat",
 	},
 
 	PAGE_REGISTRATION: {
