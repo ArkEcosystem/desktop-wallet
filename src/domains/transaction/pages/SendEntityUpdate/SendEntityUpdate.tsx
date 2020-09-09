@@ -1,4 +1,4 @@
-import { File } from "@arkecosystem/platform-sdk-ipfs";
+import { TransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -6,8 +6,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
-import { httpClient } from "app/services";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
@@ -16,6 +15,7 @@ import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 import { FourthStep } from "./Step4";
+import { fetchTxIpfsData } from "./utils";
 
 type SendEntityUpdateProps = {
 	formDefaultData?: any;
@@ -23,7 +23,8 @@ type SendEntityUpdateProps = {
 };
 
 export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpdateProps) => {
-	const [activeTab, setActiveTab] = React.useState(1);
+	const [activeTab, setActiveTab] = useState(1);
+	const [activeTransaction, setActiveTransaction] = useState<TransactionData>();
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const { formState } = form;
@@ -50,17 +51,38 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	];
 
 	const { transactionId } = useParams();
+
 	useEffect(() => {
 		const fetchTransaction = async () => {
-			const tx = await activeWallet.client().transaction(transactionId);
-			// const ipfs = new File(httpClient);
-			const data = tx.asset().data as { ipfsData: string };
-
-			const ipfsData = new File(httpClient).get(data.ipfsData);
-			console.log(ipfsData);
+			try {
+				const tx = await activeWallet.client().transaction(transactionId);
+				setActiveTransaction(tx as TransactionData);
+			} catch (e) {
+				throw new Error(`Unable to find transaction for [${transactionId}]`);
+			}
 		};
+
 		fetchTransaction();
 	}, [transactionId, activeWallet]);
+
+	useEffect(() => {
+		const fetchIpfs = async () => {
+			if (!activeTransaction) return;
+
+			try {
+				const ipfsData = await fetchTxIpfsData(activeTransaction);
+
+				form.setValue("name", ipfsData.displayName);
+				form.setValue("description", ipfsData.description);
+				form.setValue("socialMediaLinks", ipfsData.socialMediaLinks);
+				form.setValue("repositoryLinks", ipfsData.repositoryLinks);
+			} catch (e) {
+				throw new Error(`Unable to find ipfs data for transaction [${transactionId}]`);
+			}
+		};
+
+		fetchIpfs();
+	}, [activeTransaction]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
