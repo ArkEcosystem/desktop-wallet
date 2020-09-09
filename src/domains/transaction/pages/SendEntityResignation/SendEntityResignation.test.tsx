@@ -57,8 +57,8 @@ const transactionResponse = {
 };
 
 const entity = {
-	asset: () => entityFixture.data.asset,
-	sender: () => entityFixture.data.sender,
+	asset: () => entityFixture.data[0].asset,
+	sender: () => entityFixture.data[0].sender,
 	wallet: () => ({
 		alias: () => "test",
 	}),
