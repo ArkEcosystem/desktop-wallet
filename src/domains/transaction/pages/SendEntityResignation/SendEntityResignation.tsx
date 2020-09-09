@@ -20,10 +20,6 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	const history = useHistory();
 	const location = useLocation();
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	// Define entity
-	const { state } = location;
-	const { entity, type } = state;
-	// Define form
 	const { formState, getValues, setError } = form;
 	const { isValid } = formState;
 
@@ -34,6 +30,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+	const { state } = location;
 
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
@@ -64,11 +61,14 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	const handleSubmit = async () => {
 		const mnemonic = getValues("mnemonic");
 		const from = activeWallet.address();
+		const { type = "delegate" } = state || {};
 
 		try {
 			let transactionId;
 
 			if (type === "entity") {
+				// Define entity
+				const { entity } = state;
 				transactionId = await activeWallet.transaction().signEntityResignation({
 					from,
 					data: entity.data,
@@ -100,20 +100,23 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	};
 
 	const getStepComponent = () => {
+		const { type = "delegate" } = state || {};
+
 		switch (type) {
-			case "entity":
+			case "entity": {
+				const { entity } = state;
+
 				if (activeTab === 1) return <EntityFirstStep entity={entity} fee={fee} />;
 				if (activeTab === 2) return <EntitySecondStep entity={entity} fee={fee} />;
 				if (activeTab === 4) return <EntityFourthStep entity={entity} fee={fee} transaction={transaction} />;
 				break;
+			}
 
 			default:
-				if (activeTab === 1) return <FirstStep entity={entity} fee={fee} />;
-				if (activeTab === 2) return <SecondStep entity={entity} fee={fee} senderWallet={activeWallet} />;
+				if (activeTab === 1) return <FirstStep fee={fee} />;
+				if (activeTab === 2) return <SecondStep fee={fee} senderWallet={activeWallet} />;
 				if (activeTab === 4)
-					return (
-						<FourthStep entity={entity} fee={fee} senderWallet={activeWallet} transaction={transaction} />
-					);
+					return <FourthStep fee={fee} senderWallet={activeWallet} transaction={transaction} />;
 		}
 	};
 

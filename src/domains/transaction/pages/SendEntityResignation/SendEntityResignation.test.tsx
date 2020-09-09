@@ -5,6 +5,7 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import transactionFixture from "tests/fixtures/coins/ark/transactions/transfer.json";
+import entityFixture from "tests/fixtures/registrations/businesses.json";
 import {
 	act,
 	env,
@@ -54,6 +55,15 @@ const transactionResponse = {
 	fee: () => BigNumber.make(transactionFixture.data.fee),
 	data: () => transactionFixture.data,
 };
+
+const entity = {
+	asset: () => entityFixture.data.asset,
+	sender: () => entityFixture.data.sender,
+	wallet: () => ({
+		alias: () => "test",
+	}),
+};
+
 const createTransactionMock = (wallet: ReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue(transactionResponse);
@@ -73,6 +83,15 @@ describe("SendEntityResignation", () => {
 	});
 
 	it("should render 1st step", async () => {
+		const { asFragment, getByTestId } = renderPage();
+
+		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
+		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render 1st step as entity", async () => {
+		history.push(resignRegistrationURL, { type: "entity", entity });
 		const { asFragment, getByTestId } = renderPage();
 
 		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
