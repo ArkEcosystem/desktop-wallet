@@ -1,3 +1,4 @@
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
@@ -6,14 +7,23 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useEnvironmentContext } from "app/contexts";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export const SecondStep = ({ senderWallet, delegate, fees }: StepProps) => {
 	const { t } = useTranslation();
 	const coinName = senderWallet.manifest().get("name");
 	const network = `${coinName} ${senderWallet.network().name()}`;
+	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
+	const { env } = useEnvironmentContext();
+
+	useEffect(() => {
+		setDelegate(
+			env.delegates().findByAddress(senderWallet.coinId(), senderWallet.networkId(), senderWallet.address()),
+		);
+	}, [env, senderWallet]);
 
 	return (
 		<div data-testid="SendEntityResignation__second-step">
@@ -50,7 +60,7 @@ export const SecondStep = ({ senderWallet, delegate, fees }: StepProps) => {
 					<Address address={senderWallet.address()} walletName={senderWallet.alias()} />
 				</TransactionDetail>
 
-				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate.username()}</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate?.username()}</TransactionDetail>
 
 				<div className="my-4">
 					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fees.static)} />

@@ -15,8 +15,7 @@ type EntityFirstStepProps = {
 
 export const EntityFirstStep = ({ entity, fee }: EntityFirstStepProps) => {
 	const { t } = useTranslation();
-	const { data }: any = entity?.asset();
-	console.log({ entity });
+	const { data }: any = entity.asset();
 
 	return (
 		<div data-testid="SendEntityResignation__first-step">
@@ -41,7 +40,7 @@ export const EntityFirstStep = ({ entity, fee }: EntityFirstStepProps) => {
 				</TransactionDetail>
 
 				<TransactionDetail label={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.ENTITY_NAME")}>
-					{data?.name}
+					{data.name}
 				</TransactionDetail>
 
 				<TransactionDetail className="pt-6 pb-0">
