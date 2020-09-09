@@ -52,9 +52,6 @@ export const CreateProfile = () => {
 		const formattedName = name.substring(0, nameMaxLength);
 		const profile = env.profiles().create(formattedName);
 
-		// TODO: remove with SDK v.0.9.348
-		profile.settings().forget(ProfileSetting.Avatar);
-
 		profile.settings().set(ProfileSetting.AdvancedMode, false);
 		profile.settings().set(ProfileSetting.AutomaticSignOutPeriod, 15);
 		profile.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);

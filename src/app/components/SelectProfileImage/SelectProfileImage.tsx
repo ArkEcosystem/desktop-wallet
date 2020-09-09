@@ -45,7 +45,6 @@ export const SelectProfileImage = ({ value, name, onSelect }: SelectProfileImage
 			</span>
 
 			<div className="flex flex-row mt-2">
-				{value}
 				<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-primary-contrast">
 					<div className="overflow-hidden rounded-full w-22 h-22">
 						<Button
