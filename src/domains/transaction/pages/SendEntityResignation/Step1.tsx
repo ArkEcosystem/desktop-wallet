@@ -12,7 +12,9 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ senderWallet, delegate, fees }: StepProps) => {
+import { StepProps } from "./SendEntityResignation.models";
+
+export const FirstStep = ({ senderWallet, fees }: StepProps) => {
 	const { t } = useTranslation();
 	const activeWallet = useActiveWallet();
 	const { env } = useEnvironmentContext();

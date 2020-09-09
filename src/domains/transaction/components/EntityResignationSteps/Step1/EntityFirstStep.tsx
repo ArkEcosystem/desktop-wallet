@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
@@ -10,10 +11,10 @@ import { useTranslation } from "react-i18next";
 
 type EntityFirstStepProps = {
 	entity: any;
-	fee: any;
+	fees: Contracts.TransactionFee;
 };
 
-export const EntityFirstStep = ({ entity, fee }: EntityFirstStepProps) => {
+export const EntityFirstStep = ({ entity, fees }: EntityFirstStepProps) => {
 	const { t } = useTranslation();
 	const { data }: any = entity.asset();
 
@@ -47,11 +48,11 @@ export const EntityFirstStep = ({ entity, fee }: EntityFirstStepProps) => {
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee
-							value={fee.static}
-							defaultValue={fee.static}
-							average={fee.avg}
-							min={fee.min}
-							max={fee.max}
+							value={fees.static}
+							defaultValue={fees.static}
+							min={fees.min}
+							avg={fees.avg}
+							max={fees.max}
 							step={0.01}
 						/>
 					</FormField>

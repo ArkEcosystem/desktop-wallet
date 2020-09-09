@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 
 export type PasswordType = "mnemonic" | "password" | "ledger";
 
@@ -9,19 +9,9 @@ export type SendEntityResignationProps = {
 	passwordType: PasswordType;
 };
 
-// export type StepProps = {
-// 	senderWallet?: ReadWriteWallet;
-// 	delegate?: ReadOnlyWallet | any;
-// 	transaction?: Contracts.SignedTransactionData;
-// 	entity?: any;
-// 	fee: Contracts.TransactionFee;
-// 	type?: string | undefined;
-// };
-
 export type StepProps = {
 	senderWallet: ReadWriteWallet;
-	delegate: ReadOnlyWallet | any;
+	delegate?: ReadOnlyWallet | any;
 	fees: Contracts.TransactionFee;
 	transaction?: Contracts.SignedTransactionData;
-	senderWallet?: ReadWriteWallet;
 };

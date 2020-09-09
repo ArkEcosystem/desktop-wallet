@@ -9,7 +9,9 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export const FourthStep = ({ delegate, fees, transaction, senderWallet }: StepProps) => {
+import { StepProps } from "./SendEntityResignation.models";
+
+export const FourthStep = ({ fees, transaction, senderWallet }: StepProps) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 	const [delegate, setDelegate] = useState<ReadOnlyWallet>();

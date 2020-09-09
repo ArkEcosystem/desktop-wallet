@@ -24,7 +24,6 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	const { isValid } = formState;
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [fee, setFee] = useState<Contracts.TransactionFee>();
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const { env } = useEnvironmentContext();
@@ -47,8 +46,8 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	];
 
 	useEffect(() => {
-		setFee(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
-	}, [env, setFee, activeProfile, activeWallet]);
+		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
+	}, [env, setFees, activeProfile, activeWallet]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -72,7 +71,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 				transactionId = await activeWallet.transaction().signEntityResignation({
 					from,
 					data: entity.data,
-					fee: fee?.static,
+					fee: fees.static,
 					sign: {
 						mnemonic,
 					},
@@ -80,7 +79,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 			} else {
 				transactionId = await activeWallet.transaction().signDelegateResignation({
 					from,
-					fee: fee?.static,
+					fee: fees.static,
 					sign: {
 						mnemonic,
 					},
@@ -106,17 +105,17 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 			case "entity": {
 				const { entity } = state;
 
-				if (activeTab === 1) return <EntityFirstStep entity={entity} fee={fee} />;
-				if (activeTab === 2) return <EntitySecondStep entity={entity} fee={fee} />;
-				if (activeTab === 4) return <EntityFourthStep entity={entity} fee={fee} transaction={transaction} />;
+				if (activeTab === 1) return <EntityFirstStep entity={entity} fees={fees} />;
+				if (activeTab === 2) return <EntitySecondStep entity={entity} fees={fees} />;
+				if (activeTab === 4) return <EntityFourthStep entity={entity} fees={fees} transaction={transaction} />;
 				break;
 			}
 
 			default:
-				if (activeTab === 1) return <FirstStep fee={fee} />;
-				if (activeTab === 2) return <SecondStep fee={fee} senderWallet={activeWallet} />;
+				if (activeTab === 1) return <FirstStep fees={fees} senderWallet={activeWallet} />;
+				if (activeTab === 2) return <SecondStep fees={fees} senderWallet={activeWallet} />;
 				if (activeTab === 4)
-					return <FourthStep fee={fee} senderWallet={activeWallet} transaction={transaction} />;
+					return <FourthStep fees={fees} senderWallet={activeWallet} transaction={transaction} />;
 		}
 	};
 
@@ -134,9 +133,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 									<TabPanel tabId={3}>
 										<ThirdStep form={form} passwordType={passwordType} />
 									</TabPanel>
-									<TabPanel tabId={4}>
-										<FourthStep senderWallet={activeWallet} transaction={transaction} />
-									</TabPanel>
+									<TabPanel tabId={4}>{getStepComponent()}</TabPanel>
 
 									<div className="flex justify-end mt-8 space-x-3">
 										{activeTab < 4 && (

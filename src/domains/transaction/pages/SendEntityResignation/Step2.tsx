@@ -12,12 +12,15 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export const SecondStep = ({ senderWallet, delegate, fees }: StepProps) => {
+import { StepProps } from "./SendEntityResignation.models";
+
+export const SecondStep = ({ senderWallet, fees }: StepProps) => {
 	const { t } = useTranslation();
-	const coinName = senderWallet.manifest().get("name");
+	const { env } = useEnvironmentContext();
+
+	const coinName = senderWallet.manifest().get<string>("name");
 	const network = `${coinName} ${senderWallet.network().name()}`;
 	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
-	const { env } = useEnvironmentContext();
 
 	useEffect(() => {
 		setDelegate(
