@@ -7,7 +7,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -184,7 +184,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO dLHlnS -mr-2 border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -205,7 +205,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   data-testid="navbar__user--avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   >
                     <img
                       alt="Profile Avatar"
@@ -268,7 +268,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -336,7 +336,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -346,10 +346,11 @@ exports[`Contacts with contacts should render with contacts 1`] = `
             data-testid="ContactList"
           >
             <div
-              class="sc-fznZeY gcZndM"
+              class="sc-fznZeY haREby"
               role="table"
             >
               <table
+                cellpadding="0"
                 class="table-auto"
               >
                 <thead>
@@ -365,7 +366,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top pl-13"
+                        class="flex flex-inline align-top pl-14"
                       >
                         <div>
                           Name
@@ -407,7 +408,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top pl-13"
+                        class="flex flex-inline align-top pl-14"
                       >
                         <div>
                           Address
@@ -433,110 +434,121 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                 <tbody
                   role="rowgroup"
                 >
-                  <tr>
-                    <td
-                      class="text-center border-b border-dashed border-theme-neutral-200"
-                    >
+                  <tr
+                    class="group transition-colors duration-100 border-b border-dashed border-theme-neutral-200
+						"
+                  >
+                    <td>
                       <div
-                        class="flex items-center space-x-3"
+                        class="sc-fzokOt fTiFoX"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                          data-testid="ContactListItem__user--avatar"
-                        >
-                          <img
-                            alt="Brian"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
-                            title="Brian"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            BR
-                          </span>
-                        </div>
-                        <span
-                          class="font-semibold"
-                          data-testid="ContactListItem__name"
-                        >
-                          Brian
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="text-center border-b border-dashed border-theme-neutral-200"
-                    >
-                      <div
-                        aria-label="Ark Devnet"
-                        class="sc-fznyAO gQONjx border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-devnet"
-                      >
-                        <div
-                          class="sc-AxirZ iQaTP"
-                          data-testid="NetworkIcon__icon"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="py-6 border-b border-dashed border-theme-neutral-200"
-                    >
-                      <div
-                        class="flex items-center space-x-3"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
-                          data-testid="Avatar"
+                          class="flex items-center space-x-3"
                         >
                           <div
-                            class="w-full h-full"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="ContactListItem__user--avatar"
                           >
                             <img
-                              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              alt="Brian"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                              title="Brian"
                             />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              BR
+                            </span>
                           </div>
-                        </div>
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="font-semibold"
+                            data-testid="ContactListItem__name"
                           >
-                            D61mfS…J3Dyib
+                            Brian
                           </span>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="space-x-2 text-sm font-bold text-center border-b border-dashed border-theme-neutral-200"
-                    >
+                    <td>
                       <div
-                        class="sc-fznyAO gQONjx border-black"
+                        class="sc-fzokOt jjiozl justify-center"
                       >
                         <div
-                          class="sc-AxirZ dCVESD"
-                          height="25"
-                          width="25"
+                          aria-label="Ark Devnet"
+                          class="sc-fznyAO tqWio border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-devnet"
                         >
-                          <svg>
-                            delegate.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </td>
                     <td
-                      class="border-b border-dashed border-theme-neutral-200"
+                      class=""
                     >
                       <div
-                        class="flex justify-end"
+                        class="sc-fzokOt jjiozl"
+                      >
+                        <div
+                          class="flex items-center space-x-3"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                                title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="inline-block truncate align-middle"
+                          >
+                            <span
+                              class="sc-fzqNJr cPhlSZ text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D61mfS…J3Dyib
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt jjiozl space-x-2 text-sm font-bold text-center "
+                      >
+                        <div
+                          class="sc-fznyAO fPLRkd border-black"
+                        >
+                          <div
+                            class="sc-AxirZ dCVESD"
+                            height="25"
+                            width="25"
+                          >
+                            <svg>
+                              delegate.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt EICUb justify-end "
                       >
                         <div
                           class="relative"
@@ -565,96 +577,392 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td
-                      class="text-center border-b border-dashed border-theme-neutral-200"
-                    >
+                  <tr
+                    class="group transition-colors duration-100 border-b border-dashed border-theme-neutral-200
+						"
+                  >
+                    <td>
                       <div
-                        class="flex items-center space-x-3"
+                        class="sc-fzokOt fTiFoX"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
-                          data-testid="ContactListItem__user--avatar"
-                        >
-                          <img
-                            alt="name"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                            title="name"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            NA
-                          </span>
-                        </div>
-                        <span
-                          class="font-semibold"
-                          data-testid="ContactListItem__name"
-                        >
-                          name
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="text-center border-b border-dashed border-theme-neutral-200"
-                    >
-                      <div
-                        aria-label="Ark Devnet"
-                        class="sc-fznyAO gQONjx border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-devnet"
-                      >
-                        <div
-                          class="sc-AxirZ iQaTP"
-                          data-testid="NetworkIcon__icon"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="py-6 border-b border-dashed border-theme-neutral-200"
-                    >
-                      <div
-                        class="flex items-center space-x-3"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 izXmpv"
-                          data-testid="Avatar"
+                          class="flex items-center space-x-3"
                         >
                           <div
-                            class="w-full h-full"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="ContactListItem__user--avatar"
                           >
                             <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                              title="Rok"
                             />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
                           </div>
-                        </div>
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
                           <span
-                            class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="font-semibold"
+                            data-testid="ContactListItem__name"
                           >
-                            D8rr7B…s6YUYD
+                            Rok
                           </span>
                         </div>
                       </div>
                     </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt jjiozl justify-center"
+                      >
+                        <div
+                          aria-label="Ark Devnet"
+                          class="sc-fznyAO tqWio border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-devnet"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                     <td
-                      class="space-x-2 text-sm font-bold text-center border-b border-dashed border-theme-neutral-200"
-                    />
+                      class=""
+                    >
+                      <div
+                        class="sc-fzokOt jjiozl"
+                      >
+                        <div
+                          class="flex items-center space-x-3"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                title="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="inline-block truncate align-middle"
+                          >
+                            <span
+                              class="sc-fzqNJr cPhlSZ text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DFJ5Z5…LZkc6T
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt jjiozl space-x-2 text-sm font-bold text-center "
+                      />
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt EICUb justify-end "
+                      >
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
+                        >
+                          <div
+                            class="float-right"
+                          >
+                            <button
+                              class="sc-AxjAm gBWztV"
+                              color="primary"
+                              type="button"
+                            >
+                              <div
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="group transition-colors duration-100 
+						"
+                  >
+                    <td>
+                      <div
+                        class="sc-fzokOt fTiFoX"
+                      />
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt jjiozl justify-center"
+                      >
+                        <div
+                          aria-label="Ark Devnet"
+                          class="sc-fznyAO tqWio border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-devnet"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                     <td
                       class="border-b border-dashed border-theme-neutral-200"
                     >
                       <div
-                        class="flex justify-end"
+                        class="sc-fzokOt jjiozl"
+                      >
+                        <div
+                          class="flex items-center space-x-3"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                                title="D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="inline-block truncate align-middle"
+                          >
+                            <span
+                              class="sc-fzqNJr cPhlSZ text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D9YiyR…gJLM7f
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt jjiozl space-x-2 text-sm font-bold text-center border-b border-dashed border-theme-neutral-200"
+                      />
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt EICUb justify-end border-b border-dashed border-theme-neutral-200"
+                      />
+                    </td>
+                  </tr>
+                  <tr
+                    class="group transition-colors duration-100 border-b border-dashed border-theme-neutral-200
+						"
+                  >
+                    <td>
+                      <div
+                        class="sc-fzokOt fTiFoX"
+                      />
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt jjiozl justify-center"
+                      >
+                        <div
+                          aria-label="Ark Devnet"
+                          class="sc-fznyAO tqWio border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-devnet"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class=""
+                    >
+                      <div
+                        class="sc-fzokOt jjiozl"
+                      >
+                        <div
+                          class="flex items-center space-x-3"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                                title="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="inline-block truncate align-middle"
+                          >
+                            <span
+                              class="sc-fzqNJr cPhlSZ text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKrACQ…jfXYqu
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt jjiozl space-x-2 text-sm font-bold text-center "
+                      />
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt EICUb justify-end "
+                      />
+                    </td>
+                  </tr>
+                  <tr
+                    class="group transition-colors duration-100 border-b border-dashed border-theme-neutral-200
+						"
+                  >
+                    <td>
+                      <div
+                        class="sc-fzokOt fTiFoX"
+                      >
+                        <div
+                          class="flex items-center space-x-3"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="ContactListItem__user--avatar"
+                          >
+                            <img
+                              alt="name"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                              title="name"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              NA
+                            </span>
+                          </div>
+                          <span
+                            class="font-semibold"
+                            data-testid="ContactListItem__name"
+                          >
+                            name
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt jjiozl justify-center"
+                      >
+                        <div
+                          aria-label="Ark Devnet"
+                          class="sc-fznyAO tqWio border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-devnet"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class=""
+                    >
+                      <div
+                        class="sc-fzokOt jjiozl"
+                      >
+                        <div
+                          class="flex items-center space-x-3"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="inline-block truncate align-middle"
+                          >
+                            <span
+                              class="sc-fzqNJr cPhlSZ text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D8rr7B…s6YUYD
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt jjiozl space-x-2 text-sm font-bold text-center "
+                      />
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzokOt EICUb justify-end "
                       >
                         <div
                           class="relative"
@@ -701,7 +1009,7 @@ exports[`Contacts without contacts should render empty 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -713,7 +1021,7 @@ exports[`Contacts without contacts should render empty 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -878,7 +1186,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-fznyAO hUVUQM -mr-2 border-theme-primary-contrast"
+                  class="sc-fznyAO dLHlnS -mr-2 border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -899,7 +1207,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                   data-testid="navbar__user--avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   >
                     <img
                       alt="Profile Avatar"
@@ -962,7 +1270,7 @@ exports[`Contacts without contacts should render empty 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1002,7 +1310,7 @@ exports[`Contacts without contacts should render empty 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
