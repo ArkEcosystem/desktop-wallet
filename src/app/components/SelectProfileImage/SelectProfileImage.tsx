@@ -57,7 +57,7 @@ export const SelectProfileImage = ({ value, name, onSelect }: SelectProfileImage
 						</Button>
 					</div>
 				</div>
-				{value && !isSvg && (
+				{value && (
 					<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
 						<ProfileImageStyled>
 							<img
