@@ -1,13 +1,16 @@
+import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { useActiveProfile } from "app/hooks/env";
-import React from "react";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { httpClient } from "app/services";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
@@ -27,6 +30,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	const { isValid } = formState;
 
 	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
 
 	const { t } = useTranslation();
 
@@ -44,6 +48,19 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
+
+	const { transactionId } = useParams();
+	useEffect(() => {
+		const fetchTransaction = async () => {
+			const tx = await activeWallet.client().transaction(transactionId);
+			// const ipfs = new File(httpClient);
+			const data = tx.asset().data as { ipfsData: string };
+
+			const ipfsData = new File(httpClient).get(data.ipfsData);
+			console.log(ipfsData);
+		};
+		fetchTransaction();
+	}, [transactionId, activeWallet]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
