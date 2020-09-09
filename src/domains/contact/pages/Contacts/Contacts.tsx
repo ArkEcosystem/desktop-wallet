@@ -86,7 +86,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
-			className: "pl-13",
+			className: "pl-14",
 		},
 		{
 			Header: t("COMMON.NETWORK"),
@@ -94,7 +94,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		},
 		{
 			Header: t("COMMON.ADDRESS"),
-			className: "pl-13",
+			className: "pl-14",
 		},
 		{
 			Header: t("COMMON.ACCOUNT_TYPE"),

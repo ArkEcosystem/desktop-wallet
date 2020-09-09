@@ -33,7 +33,7 @@ export const SearchContact = ({
 		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
-			className: "pl-13",
+			className: "pl-14",
 		},
 		{
 			Header: t("COMMON.NETWORK"),
@@ -41,7 +41,7 @@ export const SearchContact = ({
 		},
 		{
 			Header: t("COMMON.ADDRESS"),
-			className: "pl-13",
+			className: "pl-14",
 		},
 	];
 
