@@ -4,12 +4,18 @@ import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 export const FirstStep = ({ form }: { form: any }) => {
-	const { register } = form;
 	const { t } = useTranslation();
+
+	const { register } = form;
+	const { socialMediaLinks, repositoryLinks } = form.watch();
+
+	useEffect(() => {
+		["socialMediaLinks", "repositoryLinks"].map(register);
+	}, []);
 
 	return (
 		<div data-testid="SendEntityUpdate__first-step">
@@ -22,17 +28,17 @@ export const FirstStep = ({ form }: { form: any }) => {
 				<TransactionDetail border={false} className="pb-8">
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input type="text" ref={register} defaultValue="ROBank Ecosystem" />
+						<Input type="text" ref={register} />
 					</FormField>
 
 					<FormField name="description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea ref={register} defaultValue="Not a trustworthy bank" />
+						<TextArea ref={register} />
 					</FormField>
 
 					<FormField name="website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input type="website" ref={register} defaultValue="http://robank.com" />
+						<Input type="website" ref={register} />
 					</FormField>
 				</TransactionDetail>
 
@@ -46,6 +52,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 							{ label: "GitLab", value: "gitlab" },
 						]}
 						typeName="repository"
+						data={repositoryLinks}
 					/>
 				</TransactionDetail>
 
@@ -59,6 +66,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 							{ label: "LinkedIn", value: "linkedin" },
 						]}
 						typeName="media"
+						data={socialMediaLinks}
 					/>
 				</TransactionDetail>
 
