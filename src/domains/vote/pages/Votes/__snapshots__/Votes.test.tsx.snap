@@ -958,7 +958,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -1072,7 +1072,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -1186,7 +1186,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -1300,7 +1300,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                           data-testid="DelegateRow__toggle-3"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -2272,7 +2272,7 @@ exports[`Votes should render 1`] = `
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -2386,7 +2386,7 @@ exports[`Votes should render 1`] = `
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -2500,7 +2500,7 @@ exports[`Votes should render 1`] = `
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -2614,7 +2614,7 @@ exports[`Votes should render 1`] = `
                           data-testid="DelegateRow__toggle-3"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -3586,7 +3586,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
-                          Unselect
+                          Selected
                         </button>
                       </div>
                     </td>
@@ -3700,7 +3700,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -3814,7 +3814,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -3928,7 +3928,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="DelegateRow__toggle-3"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -3941,73 +3941,131 @@ exports[`Votes should select a delegate 1`] = `
               data-testid="DelegateTable__footer"
             >
               <div
-                class="flex"
+                class="flex-1"
               >
                 <div
-                  class="px-8 mr-8 font-semibold border-r border-theme-neutral-300"
+                  class="flex justify-between"
                 >
                   <div
-                    class="text-sm text-theme-neutral"
-                  >
-                    Quantity
-                  </div>
-                  <div
-                    class="text-theme-neutral-dark"
-                  >
-                    1/1
-                  </div>
-                </div>
-                <div
-                  class="flex-1"
-                >
-                  <div
-                    class="flex justify-between"
+                    class="flex font-semibold"
                   >
                     <div
-                      class="font-semibold"
+                      class="px-8 border-r border-theme-neutral-300"
                     >
                       <div
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl mr-4"
-                          data-testid="Avatar"
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         >
                           <div
-                            class="w-full h-full"
+                            class="sc-AxhCb fxrKLH text-xl"
+                            height="1em"
+                            width="1em"
                           >
-                            <img
-                              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                            />
+                            <svg>
+                              vote.svg
+                            </svg>
                           </div>
                         </div>
                         <div
                           class="flex flex-col"
                         >
                           <div
-                            class="text-sm text-theme-neutral-dark"
-                          >
-                            Delegate
-                          </div>
-                          <div
                             class="text-theme-neutral"
                           >
-                            arkx - D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
+                            Votes
+                          </div>
+                          <div
+                            class="text-theme-neutral-900"
+                            data-testid="DelegateTable__footer--votes"
+                          >
+                            1
                           </div>
                         </div>
                       </div>
                     </div>
-                    <button
-                      class="sc-fznKkj kfwfRc"
-                      color="primary"
-                      data-testid="DelegateTable__continue-button"
-                      type="button"
+                    <div
+                      class="px-8 border-r border-theme-neutral-300"
                     >
-                      Continue
-                    </button>
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              unvote.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Unvotes
+                          </div>
+                          <div
+                            class="text-theme-neutral-900"
+                            data-testid="DelegateTable__footer--unvotes"
+                          >
+                            0
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="px-8"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              vote-unvote.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Total
+                          </div>
+                          <div
+                            class="text-theme-neutral-900"
+                            data-testid="DelegateTable__footer--total"
+                          >
+                            1/1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <button
+                    class="sc-fznKkj kfwfRc"
+                    color="primary"
+                    data-testid="DelegateTable__continue-button"
+                    type="button"
+                  >
+                    Continue
+                  </button>
                 </div>
               </div>
             </div>
