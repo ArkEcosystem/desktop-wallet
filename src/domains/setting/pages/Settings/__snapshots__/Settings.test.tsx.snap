@@ -1209,18 +1209,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-206-label downshift-206-toggle-button"
+                                    aria-labelledby="downshift-230-label downshift-230-toggle-button"
                                     class="sc-fzqARJ jnMeHK   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-206-toggle-button"
+                                    id="downshift-230-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-206-label"
+                                    aria-labelledby="downshift-230-label"
                                     class="sc-fzqNqU izoylg"
-                                    id="downshift-206-menu"
+                                    id="downshift-230-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -1736,6 +1736,41 @@ exports[`Settings should render 1`] = `
                               </div>
                             </button>
                           </div>
+                        </div>
+                        <div
+                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                        >
+                          <div
+                            class="sc-fzoyTs cudiZK"
+                          >
+                            <img
+                              alt="Profile avatar"
+                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                            />
+                            <span
+                              class="absolute text-2xl font-semibold text-theme-background"
+                            >
+                              JO
+                            </span>
+                          </div>
+                          <button
+                            class="sc-AxhCb gmYZoQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
+                            color="danger"
+                            data-testid="SelectProfileImage__remove-button"
+                            disabled=""
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ hDwaov"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                close.svg
+                              </svg>
+                            </div>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -4481,18 +4516,18 @@ exports[`Settings should render plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-193-label downshift-193-toggle-button"
+                                    aria-labelledby="downshift-217-label downshift-217-toggle-button"
                                     class="sc-fzqARJ jnMeHK   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-193-toggle-button"
+                                    id="downshift-217-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-193-label"
+                                    aria-labelledby="downshift-217-label"
                                     class="sc-fzqNqU izoylg"
-                                    id="downshift-193-menu"
+                                    id="downshift-217-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -6252,6 +6287,41 @@ exports[`Settings should submit using default props 1`] = `
                             </button>
                           </div>
                         </div>
+                        <div
+                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                        >
+                          <div
+                            class="sc-fzoyTs cudiZK"
+                          >
+                            <img
+                              alt="Profile avatar"
+                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                            />
+                            <span
+                              class="absolute text-2xl font-semibold text-theme-background"
+                            >
+                              TE
+                            </span>
+                          </div>
+                          <button
+                            class="sc-AxhCb gmYZoQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
+                            color="danger"
+                            data-testid="SelectProfileImage__remove-button"
+                            disabled=""
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ hDwaov"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                close.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -6314,18 +6384,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-123-label downshift-123-toggle-button"
+                                  aria-labelledby="downshift-141-label downshift-141-toggle-button"
                                   class="sc-fzqARJ jnMeHK  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-123-toggle-button"
+                                  id="downshift-141-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-123-label"
+                                  aria-labelledby="downshift-141-label"
                                   class="sc-fzqNqU izoylg"
-                                  id="downshift-123-menu"
+                                  id="downshift-141-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6378,18 +6448,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-124-label downshift-124-toggle-button"
+                                  aria-labelledby="downshift-142-label downshift-142-toggle-button"
                                   class="sc-fzqARJ jnMeHK  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-124-toggle-button"
+                                  id="downshift-142-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-124-label"
+                                  aria-labelledby="downshift-142-label"
                                   class="sc-fzqNqU izoylg"
-                                  id="downshift-124-menu"
+                                  id="downshift-142-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6446,18 +6516,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-125-label downshift-125-toggle-button"
+                                  aria-labelledby="downshift-143-label downshift-143-toggle-button"
                                   class="sc-fzqARJ jnMeHK  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-125-toggle-button"
+                                  id="downshift-143-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-125-label"
+                                  aria-labelledby="downshift-143-label"
                                   class="sc-fzqNqU izoylg"
-                                  id="downshift-125-menu"
+                                  id="downshift-143-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6510,18 +6580,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-126-label downshift-126-toggle-button"
+                                  aria-labelledby="downshift-144-label downshift-144-toggle-button"
                                   class="sc-fzqARJ jnMeHK  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-126-toggle-button"
+                                  id="downshift-144-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-126-label"
+                                  aria-labelledby="downshift-144-label"
                                   class="sc-fzqNqU izoylg"
-                                  id="downshift-126-menu"
+                                  id="downshift-144-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6574,18 +6644,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-127-label downshift-127-toggle-button"
+                                  aria-labelledby="downshift-145-label downshift-145-toggle-button"
                                   class="sc-fzqARJ jnMeHK  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-127-toggle-button"
+                                  id="downshift-145-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-127-label"
+                                  aria-labelledby="downshift-145-label"
                                   class="sc-fzqNqU izoylg"
-                                  id="downshift-127-menu"
+                                  id="downshift-145-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -6773,18 +6843,18 @@ exports[`Settings should submit using default props 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-128-label downshift-128-toggle-button"
+                                    aria-labelledby="downshift-146-label downshift-146-toggle-button"
                                     class="sc-fzqARJ jnMeHK  is-selected "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-128-toggle-button"
+                                    id="downshift-146-toggle-button"
                                     type="button"
                                   >
                                     1 minute
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-128-label"
+                                    aria-labelledby="downshift-146-label"
                                     class="sc-fzqNqU izoylg"
-                                    id="downshift-128-menu"
+                                    id="downshift-146-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -7508,6 +7578,41 @@ exports[`Settings should update profile 1`] = `
                               </div>
                             </button>
                           </div>
+                        </div>
+                        <div
+                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                        >
+                          <div
+                            class="sc-fzoyTs cudiZK"
+                          >
+                            <img
+                              alt="Profile avatar"
+                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                            />
+                            <span
+                              class="absolute text-2xl font-semibold text-theme-background"
+                            >
+                              TE
+                            </span>
+                          </div>
+                          <button
+                            class="sc-AxhCb gmYZoQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
+                            color="danger"
+                            data-testid="SelectProfileImage__remove-button"
+                            disabled=""
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ hDwaov"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                close.svg
+                              </svg>
+                            </div>
+                          </button>
                         </div>
                       </div>
                     </div>

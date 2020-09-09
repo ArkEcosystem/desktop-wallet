@@ -159,7 +159,6 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile 2");
 		expect(savedProfile.settings().all()).toEqual({
-			AVATAR: "",
 			NAME: "test profile 2",
 			LOCALE: "en-US",
 			BIP39_LOCALE: "chinese_simplified",
