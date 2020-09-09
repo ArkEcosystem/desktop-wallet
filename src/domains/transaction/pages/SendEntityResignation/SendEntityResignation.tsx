@@ -107,7 +107,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload }: SendEntit
 										<SecondStep senderWallet={activeWallet} delegate={delegate} fees={fees} />
 									</TabPanel>
 									<TabPanel tabId={3}>
-										<AuthenticationStep wallet={activeWallet} profile={activeProfile} />
+										<AuthenticationStep wallet={activeWallet} />
 									</TabPanel>
 									<TabPanel tabId={4}>
 										<FourthStep

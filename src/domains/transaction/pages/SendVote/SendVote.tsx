@@ -175,7 +175,7 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={activeWallet} profile={activeProfile} />
+								<AuthenticationStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<FourthStep

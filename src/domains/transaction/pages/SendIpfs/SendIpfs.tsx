@@ -125,7 +125,7 @@ export const SendIpfs = () => {
 								<SecondStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={activeWallet} profile={activeProfile} />
+								<AuthenticationStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<FourthStep transaction={transaction} senderWallet={activeWallet} />

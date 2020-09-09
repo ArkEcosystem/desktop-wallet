@@ -145,7 +145,7 @@ export const SendEntityRegistration = () => {
 							{registrationForm && fees[registrationType] && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
-										<AuthenticationStep wallet={activeWallet} profile={activeProfile} />
+										<AuthenticationStep wallet={activeWallet} />
 									</TabPanel>
 									<TabPanel tabId={stepCount}>
 										<ThirdStep
