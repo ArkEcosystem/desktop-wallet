@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -13,13 +12,8 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useLocation } from "react-router-dom";
 
-import {
-	DelegateFirstStep,
-	EntityFirstStep,
-	EntityFourthStep,
-	EntitySecondStep,
-} from "../../components/EntityResignationSteps";
-import { FourthStep, ThirdStep } from "./";
+import { EntityFirstStep, EntityFourthStep, EntitySecondStep } from "../../components/EntityResignationSteps";
+import { FirstStep, FourthStep, SecondStep, ThirdStep } from "./";
 
 export const SendEntityResignation = ({ formDefaultData, onDownload, passwordType }: any) => {
 	const { t } = useTranslation();
@@ -34,8 +28,6 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	const { isValid } = formState;
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [resignationType, setResignationType] = useState<string | undefined>(undefined);
-	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
 	const [fee, setFee] = useState<Contracts.TransactionFee>();
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
@@ -58,15 +50,8 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	];
 
 	useEffect(() => {
-		setDelegate(
-			env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address()),
-		);
-	}, [env, activeWallet]);
-
-	useEffect(() => {
-		// @TODO: use min/avg/max like for all other transaction types
-		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
-	}, [env, setFees, activeProfile, activeWallet]);
+		setFee(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
+	}, [env, setFee, activeProfile, activeWallet]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -84,7 +69,14 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 			let transactionId;
 
 			if (type === "entity") {
-				// TODO: Add entity resigation method
+				transactionId = await activeWallet.transaction().signEntityResignation({
+					from,
+					data: entity.data,
+					fee: fee?.static,
+					sign: {
+						mnemonic,
+					},
+				});
 			} else {
 				transactionId = await activeWallet.transaction().signDelegateResignation({
 					from,
@@ -108,20 +100,20 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	};
 
 	const getStepComponent = () => {
-		console.log({ type });
-
 		switch (type) {
 			case "entity":
 				if (activeTab === 1) return <EntityFirstStep entity={entity} fee={fee} />;
 				if (activeTab === 2) return <EntitySecondStep entity={entity} fee={fee} />;
-				if (activeTab === 4) return <EntityFourthStep entity={entity} fee={fee} />;
-				break;
-			case "delegate":
-				if (activeTab === 1) return <DelegateFirstStep />;
+				if (activeTab === 4) return <EntityFourthStep entity={entity} fee={fee} transaction={transaction} />;
 				break;
 
 			default:
-				break;
+				if (activeTab === 1) return <FirstStep entity={entity} fee={fee} />;
+				if (activeTab === 2) return <SecondStep entity={entity} fee={fee} senderWallet={activeWallet} />;
+				if (activeTab === 4)
+					return (
+						<FourthStep entity={entity} fee={fee} senderWallet={activeWallet} transaction={transaction} />
+					);
 		}
 	};
 
@@ -130,7 +122,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
-						{fees && delegate && (
+						{fees && (
 							<div>
 								<StepIndicator size={4} activeIndex={activeTab} />
 								<div className="mt-8">
