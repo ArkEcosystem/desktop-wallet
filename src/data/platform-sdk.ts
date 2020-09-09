@@ -25,7 +25,7 @@ export const PlatformSdkChoices = {
 		{ label: "BTC (Ƀ)", value: "BTC" },
 		{ label: "ETH (Ξ)", value: "ETH" },
 		{ label: "LTC (Ł)", value: "LTC" },
-		{ label: "AUD (A$)", value: "AUF" },
+		{ label: "AUD (A$)", value: "AUD" },
 		{ label: "BRL (R$)", value: "BRL" },
 		{ label: "CAD (C$)", value: "CAD" },
 		{ label: "CHF (CHF)", value: "CHF" },
