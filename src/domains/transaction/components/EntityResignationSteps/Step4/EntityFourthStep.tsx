@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 // import { StepProps } from "./SendEntityResignation.models";
 
-export const EntityFourthStep = ({ entity, transaction, fee }: any) => {
+export const EntityFourthStep = ({ entity, transaction, fees }: any) => {
 	const { t } = useTranslation();
 	const { data } = entity;
 
@@ -37,7 +37,7 @@ export const EntityFourthStep = ({ entity, transaction, fee }: any) => {
 						</div>
 					}
 				>
-					<Amount ticker="ARK" value={BigNumber.make(fee.static)} />
+					<Amount ticker="ARK" value={BigNumber.make(fees.static)} />
 				</TransactionDetail>
 			</TransactionSuccessful>
 		</div>

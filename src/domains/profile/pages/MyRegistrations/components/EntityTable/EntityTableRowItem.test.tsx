@@ -24,7 +24,6 @@ describe("EntityTableRowItem", () => {
 	});
 
 	it("should render", async () => {
-		console.log({ entity: entityRegistrations[0] });
 		const { asFragment, queryAllByTestId } = render(
 			<table>
 				<tbody>

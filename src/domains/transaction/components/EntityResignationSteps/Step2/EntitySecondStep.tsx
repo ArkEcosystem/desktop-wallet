@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 
 // import { StepProps } from "./SendEntityResignation.models";
 
-export const EntitySecondStep = ({ entity, fee }: any) => {
+export const EntitySecondStep = ({ entity, fees }: any) => {
 	const { t } = useTranslation();
 	const coinName = entity.wallet().manifest().get("name");
 	const network = `${coinName} ${entity.wallet().network().name()}`;
@@ -58,7 +58,7 @@ export const EntitySecondStep = ({ entity, fee }: any) => {
 				</TransactionDetail>
 
 				<div className="my-4">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee.static)} />
+					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fees.static)} />
 				</div>
 			</div>
 		</div>
