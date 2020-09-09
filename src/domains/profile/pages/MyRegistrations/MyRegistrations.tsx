@@ -121,7 +121,7 @@ export const MyRegistrations = () => {
 					<EntityTable
 						title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
 						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
-						type="business"
+						type="entity"
 						entities={businesses}
 						onAction={handleAction}
 					/>
@@ -133,6 +133,7 @@ export const MyRegistrations = () => {
 					<EntityTable
 						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
 						title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
+						type="entity"
 						entities={plugins}
 						onAction={handleAction}
 					/>
