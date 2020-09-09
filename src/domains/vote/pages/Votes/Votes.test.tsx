@@ -3,20 +3,15 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	syncDelegates,
-	waitFor,
-} from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor } from "testing-library";
 
 import { Votes } from "./Votes";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
+let blankWallet: ReadWriteWallet;
+
+const blankWalletPassphrase = "power return attend drink piece found tragic fire liar page disease combine";
 
 const renderPage = (route: string, routePath = "/profiles/:profileId/wallets/:walletId/votes") =>
 	renderWithRouter(
@@ -32,6 +27,7 @@ describe("Votes", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		blankWallet = await profile.wallets().importByMnemonic(blankWalletPassphrase, "ARK", "devnet");
 
 		nock.disableNetConnect();
 
@@ -39,6 +35,12 @@ describe("Votes", () => {
 			.get("/api/delegates")
 			.query({ page: "1" })
 			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
+			.get(`/api/wallets/${blankWallet.address()}`)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
 			.persist();
 
 		await syncDelegates();
@@ -102,6 +104,40 @@ describe("Votes", () => {
 			fireEvent.click(getByTestId("DelegateTable__continue-button"));
 		});
 
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select address without vote", async () => {
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
+
+		expect(getAllByTestId("AddressRowSkeleton")).toBeTruthy();
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		expect(selectNetworkInput).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		expect(selectNetworkInput).toHaveValue("Ark Devnet");
+
+		expect(getByTestId("AddressTable")).toBeTruthy();
+
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+
+		const selectAddressButton = getByTestId("AddressRow__select-2");
+
+		act(() => {
+			fireEvent.click(selectAddressButton);
+		});
+
+		expect(getByTestId("DelegateTable")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
