@@ -12,12 +12,11 @@ import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
-import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
-import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
-import { WalletVote } from "domains/wallet/components/WalletVote";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+
+import { WalletHeader, WalletRegistrations, WalletVote } from "./components";
 
 type WalletDetailsProps = {
 	txSkeletonRowsLimit?: number;
@@ -146,39 +145,47 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 				/>
 
 				<Section>
-					<WalletVote
-						votes={votes}
-						isLoading={isLoading}
-						onVote={() =>
-							history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`)
-						}
-						onUnvote={(delegateAddress) =>
-							history.push({
-								pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
-								search: `?unvotes=${delegateAddress}`,
-							})
-						}
-					/>
-				</Section>
+					<div className="flex">
+						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
+							<WalletVote
+								votes={votes}
+								isLoading={isLoading}
+								onVote={() =>
+									history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`)
+								}
+								onUnvote={(delegateAddress) =>
+									history.push({
+										pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
+										search: `?unvotes=${delegateAddress}`,
+									})
+								}
+							/>
+						</div>
 
-				<Section>
-					<WalletRegistrations
-						isLoading={isLoading}
-						delegate={
-							activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate() ? walletData : undefined
-						}
-						business={undefined}
-						isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
-						hasBridgechains={true}
-						hasSecondSignature={activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()}
-						hasPlugins={true}
-						onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
-						onRegister={() =>
-							history.push(
-								`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-entity-registration`,
-							)
-						}
-					/>
+						<div className="w-1/2 pl-12">
+							<WalletRegistrations
+								isLoading={isLoading}
+								delegate={
+									activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
+										? walletData
+										: undefined
+								}
+								business={undefined}
+								isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
+								hasBridgechains={true}
+								hasSecondSignature={
+									activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()
+								}
+								hasPlugins={true}
+								onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
+								onRegister={() =>
+									history.push(
+										`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-entity-registration`,
+									)
+								}
+							/>
+						</div>
+					</div>
 				</Section>
 
 				<Section>

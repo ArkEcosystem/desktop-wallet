@@ -15,6 +15,8 @@ import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as ChevronUp } from "./chevron-up.svg";
 import { ReactComponent as Close } from "./close.svg";
+import { ReactComponent as CopyAddress } from "./copy-address.svg";
+import { ReactComponent as CopyKey } from "./copy-key.svg";
 import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { Currencies } from "./currencies";
@@ -91,6 +93,7 @@ import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Update } from "./update.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 import { ReactComponent as User } from "./user.svg";
+import { ReactComponent as Vote } from "./vote.svg";
 import { ReactComponent as Voted } from "./voted.svg";
 
 export const SvgCollection: any = {
@@ -110,6 +113,8 @@ export const SvgCollection: any = {
 	ChevronUp,
 	Close,
 	Copy,
+	CopyAddress,
+	CopyKey,
 	CrossSlim,
 	Dash,
 	Delegate,
@@ -173,6 +178,7 @@ export const SvgCollection: any = {
 	Twitter,
 	Update,
 	Upload,
+	Vote,
 	Voted,
 	Notification,
 	User,
