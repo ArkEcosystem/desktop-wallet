@@ -155,4 +155,25 @@ describe("DelegateRowItem", () => {
 
 		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "update" });
 	});
+
+	it("should set shadow color on mouse events", () => {
+		const setState = jest.fn();
+		const useStateSpy = jest.spyOn(React, "useState");
+
+		useStateSpy.mockImplementation((state) => [state, setState]);
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<DelegateRowItem wallet={delegates[0]} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.mouseEnter(getByTestId("DelegateRowItem"));
+		fireEvent.mouseLeave(getByTestId("DelegateRowItem"));
+
+		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+		expect(setState).toHaveBeenCalledWith("");
+	});
 });
