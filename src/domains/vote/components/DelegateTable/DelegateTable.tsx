@@ -22,12 +22,9 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 
 	const columns = [
 		{
-			accessor: "delegateAddressAvatar",
-			disableSortBy: true,
-		},
-		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
 			accessor: "delegateName",
+			className: "pl-14",
 		},
 		{
 			Header: t("COMMON.RANK"),

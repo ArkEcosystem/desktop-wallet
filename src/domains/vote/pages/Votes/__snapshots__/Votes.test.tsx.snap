@@ -9,7 +9,7 @@ exports[`Votes should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -21,7 +21,7 @@ exports[`Votes should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -186,7 +186,7 @@ exports[`Votes should render 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxirZ cZokSJ -mr-2 border-theme-primary-contrast"
+                  class="sc-AxirZ fFfSST -mr-2 border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -207,7 +207,7 @@ exports[`Votes should render 1`] = `
                   data-testid="navbar__user--avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   >
                     <img
                       alt="Profile Avatar"
@@ -270,7 +270,7 @@ exports[`Votes should render 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -363,7 +363,7 @@ exports[`Votes should render 1`] = `
                     >
                       <div
                         aria-label="Ark Devnet"
-                        class="sc-AxirZ HSPq border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
                         data-testid="SelectNetworkInput__network"
                       >
                         <div
@@ -414,7 +414,7 @@ exports[`Votes should render 1`] = `
                   >
                     <div
                       aria-label="Ark"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
                       data-testid="NetworkIcon-ARK-mainnet"
                     >
                       <div
@@ -439,7 +439,7 @@ exports[`Votes should render 1`] = `
                   >
                     <div
                       aria-label="Ark Devnet"
-                      class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
+                      class="sc-AxirZ bjGJqJ text-theme-success-500 border-theme-success-200"
                       data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
@@ -489,7 +489,7 @@ exports[`Votes should render 1`] = `
                       class="flex items-center"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mr-3"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
                         data-testid="Avatar"
                       >
                         <div
@@ -536,7 +536,7 @@ exports[`Votes should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -550,10 +550,11 @@ exports[`Votes should render 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt dDPIyL"
+              class="sc-fzokOt cgkaSl"
               role="table"
             >
               <table
+                cellpadding="0"
                 class="table-auto"
               >
                 <thead>
@@ -565,25 +566,11 @@ exports[`Votes should render 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                           
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top pl-14"
                       >
                         <div>
                           Delegate Name
@@ -607,7 +594,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--1"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -637,7 +624,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--3"
+                      data-testid="table__th--2"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -667,7 +654,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -681,7 +668,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -711,7 +698,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -741,7 +728,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -771,7 +758,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--8"
+                      data-testid="table__th--7"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -801,7 +788,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--9"
+                      data-testid="table__th--8"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -834,46 +821,56 @@ exports[`Votes should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300 false"
+                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
                   >
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gkiqPI"
-                        data-testid="Avatar"
+                        class="sc-fzqBZW jvkNTe font-bold"
                       >
                         <div
-                          class="w-full h-full"
+                          class="flex items-center space-x-3"
                         >
-                          <img
-                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                          />
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                                title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              />
+                            </div>
+                          </div>
+                          <span>
+                            arkx
+                          </span>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      arkx
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      #
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      %
-                    </td>
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="flex justify-center h-full"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg justify-center"
                       >
                         <div
                           class="sc-AxiKw dzBdqj text-xl text-theme-primary"
@@ -886,23 +883,45 @@ exports[`Votes should render 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="text-right"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW cULgYW justify-end"
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -916,46 +935,56 @@ exports[`Votes should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300 false"
+                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
                   >
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gkiqPI"
-                        data-testid="Avatar"
+                        class="sc-fzqBZW jvkNTe font-bold"
                       >
                         <div
-                          class="w-full h-full"
+                          class="flex items-center space-x-3"
                         >
-                          <img
-                            alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                            title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                          />
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                                title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                              />
+                            </div>
+                          </div>
+                          <span>
+                            genesis_42
+                          </span>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      genesis_42
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      #2
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      %
-                    </td>
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="flex justify-center h-full"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          #2
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg justify-center"
                       >
                         <div
                           class="sc-AxiKw dzBdqj text-xl text-theme-primary"
@@ -968,23 +997,45 @@ exports[`Votes should render 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="text-right"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW cULgYW justify-end"
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -998,46 +1049,56 @@ exports[`Votes should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300 false"
+                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
                   >
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gkiqPI"
-                        data-testid="Avatar"
+                        class="sc-fzqBZW jvkNTe font-bold"
                       >
                         <div
-                          class="w-full h-full"
+                          class="flex items-center space-x-3"
                         >
-                          <img
-                            alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                            title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                          />
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                                title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                              />
+                            </div>
+                          </div>
+                          <span>
+                            genesis_17
+                          </span>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      genesis_17
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      #3
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      %
-                    </td>
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="flex justify-center h-full"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          #3
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg justify-center"
                       >
                         <div
                           class="sc-AxiKw dzBdqj text-xl text-theme-primary"
@@ -1050,23 +1111,45 @@ exports[`Votes should render 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="text-right"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW cULgYW justify-end"
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -1080,46 +1163,56 @@ exports[`Votes should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300 false"
+                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
                   >
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gkiqPI"
-                        data-testid="Avatar"
+                        class="sc-fzqBZW jvkNTe font-bold"
                       >
                         <div
-                          class="w-full h-full"
+                          class="flex items-center space-x-3"
                         >
-                          <img
-                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                          />
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              />
+                            </div>
+                          </div>
+                          <span>
+                            testwallet2
+                          </span>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      testwallet2
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      #
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      %
-                    </td>
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="flex justify-center h-full"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg justify-center"
                       >
                         <div
                           class="sc-AxiKw dzBdqj text-xl text-theme-primary"
@@ -1132,23 +1225,45 @@ exports[`Votes should render 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="text-right"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW cULgYW justify-end"
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -1179,7 +1294,7 @@ exports[`Votes should select a delegate 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1191,7 +1306,7 @@ exports[`Votes should select a delegate 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -1356,7 +1471,7 @@ exports[`Votes should select a delegate 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxirZ cZokSJ -mr-2 border-theme-primary-contrast"
+                  class="sc-AxirZ fFfSST -mr-2 border-theme-primary-contrast"
                 >
                   <span
                     class="text-theme-neutral-dark"
@@ -1377,7 +1492,7 @@ exports[`Votes should select a delegate 1`] = `
                   data-testid="navbar__user--avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fGjnTn"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                   >
                     <img
                       alt="Profile Avatar"
@@ -1440,7 +1555,7 @@ exports[`Votes should select a delegate 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1533,7 +1648,7 @@ exports[`Votes should select a delegate 1`] = `
                     >
                       <div
                         aria-label="Ark Devnet"
-                        class="sc-AxirZ HSPq border-theme-primary-100 text-theme-primary-400"
+                        class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
                         data-testid="SelectNetworkInput__network"
                       >
                         <div
@@ -1584,7 +1699,7 @@ exports[`Votes should select a delegate 1`] = `
                   >
                     <div
                       aria-label="Ark"
-                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
                       data-testid="NetworkIcon-ARK-mainnet"
                     >
                       <div
@@ -1609,7 +1724,7 @@ exports[`Votes should select a delegate 1`] = `
                   >
                     <div
                       aria-label="Ark Devnet"
-                      class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
+                      class="sc-AxirZ bjGJqJ text-theme-success-500 border-theme-success-200"
                       data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
@@ -1659,7 +1774,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="flex items-center"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCgvCw mr-3"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
                         data-testid="Avatar"
                       >
                         <div
@@ -1706,7 +1821,7 @@ exports[`Votes should select a delegate 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1720,10 +1835,11 @@ exports[`Votes should select a delegate 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt dDPIyL"
+              class="sc-fzokOt cgkaSl"
               role="table"
             >
               <table
+                cellpadding="0"
                 class="table-auto"
               >
                 <thead>
@@ -1735,25 +1851,11 @@ exports[`Votes should select a delegate 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                           
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top pl-14"
                       >
                         <div>
                           Delegate Name
@@ -1777,7 +1879,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--1"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -1807,7 +1909,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--3"
+                      data-testid="table__th--2"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -1837,7 +1939,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
@@ -1851,7 +1953,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--4"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -1881,7 +1983,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -1911,7 +2013,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -1941,7 +2043,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--8"
+                      data-testid="table__th--7"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -1971,7 +2073,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--9"
+                      data-testid="table__th--8"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -2004,46 +2106,56 @@ exports[`Votes should select a delegate 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300 bg-theme-success-contrast"
+                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
                   >
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gkiqPI"
-                        data-testid="Avatar"
+                        class="sc-fzqBZW cKughK font-bold"
                       >
                         <div
-                          class="w-full h-full"
+                          class="flex items-center space-x-3"
                         >
-                          <img
-                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                          />
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                                title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              />
+                            </div>
+                          </div>
+                          <span>
+                            arkx
+                          </span>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      arkx
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      #
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      %
-                    </td>
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="flex justify-center h-full"
+                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW dDHFQE justify-center"
                       >
                         <div
                           class="sc-AxiKw dzBdqj text-xl text-theme-primary"
@@ -2056,23 +2168,45 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="text-right"
+                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW gfBeGq justify-end"
                       >
                         <button
                           class="sc-fznKkj dMzuSY"
@@ -2086,46 +2220,56 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300 false"
+                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
                   >
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gkiqPI"
-                        data-testid="Avatar"
+                        class="sc-fzqBZW jvkNTe font-bold"
                       >
                         <div
-                          class="w-full h-full"
+                          class="flex items-center space-x-3"
                         >
-                          <img
-                            alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                            title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                          />
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                                title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                              />
+                            </div>
+                          </div>
+                          <span>
+                            genesis_42
+                          </span>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      genesis_42
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      #2
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      %
-                    </td>
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="flex justify-center h-full"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          #2
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg justify-center"
                       >
                         <div
                           class="sc-AxiKw dzBdqj text-xl text-theme-primary"
@@ -2138,23 +2282,45 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="text-right"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW cULgYW justify-end"
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -2168,46 +2334,56 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300 false"
+                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
                   >
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gkiqPI"
-                        data-testid="Avatar"
+                        class="sc-fzqBZW jvkNTe font-bold"
                       >
                         <div
-                          class="w-full h-full"
+                          class="flex items-center space-x-3"
                         >
-                          <img
-                            alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                            title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                          />
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                                title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                              />
+                            </div>
+                          </div>
+                          <span>
+                            genesis_17
+                          </span>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      genesis_17
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      #3
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      %
-                    </td>
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="flex justify-center h-full"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          #3
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg justify-center"
                       >
                         <div
                           class="sc-AxiKw dzBdqj text-xl text-theme-primary"
@@ -2220,23 +2396,45 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="text-right"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW cULgYW justify-end"
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -2250,46 +2448,56 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300 false"
+                    class="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
                   >
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gkiqPI"
-                        data-testid="Avatar"
+                        class="sc-fzqBZW jvkNTe font-bold"
                       >
                         <div
-                          class="w-full h-full"
+                          class="flex items-center space-x-3"
                         >
-                          <img
-                            alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                          />
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              />
+                            </div>
+                          </div>
+                          <span>
+                            testwallet2
+                          </span>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      testwallet2
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      #
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      %
-                    </td>
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="flex justify-center h-full"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg justify-center"
                       >
                         <div
                           class="sc-AxiKw dzBdqj text-xl text-theme-primary"
@@ -2302,23 +2510,45 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    >
+                    <td>
                       <div
-                        class="text-right"
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW cULgYW justify-end"
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -2354,7 +2584,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="sc-AxirZ cZokSJ mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         >
                           <div
                             class="sc-AxiKw dzBdqj text-xl"
@@ -2390,7 +2620,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="sc-AxirZ cZokSJ mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         >
                           <div
                             class="sc-AxiKw dzBdqj text-xl"
@@ -2426,7 +2656,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="sc-AxirZ cZokSJ mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         >
                           <div
                             class="sc-AxiKw dzBdqj text-xl"

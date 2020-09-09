@@ -11,8 +11,17 @@ export const defaultTableStyle = `
 			font-weight: 600;
 		}
 
-        tr:last-child, tr:last-child > td {
-            border-bottom: none;
-        }
+		tbody {
+			tr {
+
+				td:first-child, td:last-child {
+					border-bottom: none;
+				}
+
+				&:last-child, &:last-child > td {
+		            border-bottom: none;
+		        }
+			}
+		}
 	}
 `;
