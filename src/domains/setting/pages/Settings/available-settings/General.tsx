@@ -1,4 +1,4 @@
-import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Avatar as AvatarSDK, Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -12,7 +12,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { setScreenshotProtection } from "utils/electron-utils";
 
@@ -29,6 +29,8 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const { t } = useTranslation();
 
 	const { context, register } = formConfig;
+	const name = context.watch("name", activeProfile.settings().get(ProfileSetting.Name));
+
 	const nameMaxLength = 42;
 
 	const [avatarImage, setAvatarImage] = useState(activeProfile.settings().get(ProfileSetting.Avatar) || "");
@@ -39,6 +41,14 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
 		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
 	);
+
+	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
+
+	useEffect(() => {
+		if ((!avatarImage || isSvg) && name) {
+			setAvatarImage(AvatarSDK.make(name));
+		}
+	}, [name, avatarImage, isSvg, setAvatarImage]);
 
 	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
@@ -153,7 +163,6 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	}: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
 
-		activeProfile.settings().set(ProfileSetting.Avatar, avatarImage);
 		activeProfile.settings().set(ProfileSetting.Name, formattedName);
 		activeProfile.settings().set(ProfileSetting.Locale, language);
 		activeProfile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
@@ -165,6 +174,12 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 		activeProfile.settings().set(ProfileSetting.AutomaticSignOutPeriod, +automaticSignOutPeriod);
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
+
+		if (!avatarImage || isSvg) {
+			activeProfile.settings().forget(ProfileSetting.Avatar);
+		} else {
+			activeProfile.settings().set(ProfileSetting.Avatar, avatarImage);
+		}
 
 		setScreenshotProtection(isScreenshotProtection);
 
@@ -181,7 +196,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 				<div className="relative mt-8">
 					<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
-					<SelectProfileImage value={avatarImage} onSelect={setAvatarImage} />
+					<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
 
 					<div className="flex justify-between w-full mt-8">
 						<div className="flex flex-col w-2/4">

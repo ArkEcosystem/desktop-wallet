@@ -32,7 +32,6 @@ const showOpenDialogParams = {
 };
 
 const baseSettings = {
-	AVATAR: "",
 	ADVANCED_MODE: false,
 	AUTOMATIC_SIGN_OUT_PERIOD: 15,
 	BIP39_LOCALE: "english",
