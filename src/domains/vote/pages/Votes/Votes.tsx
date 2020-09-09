@@ -106,6 +106,7 @@ export const Votes = () => {
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
+	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
 	const { t } = useTranslation();
 
@@ -135,6 +136,28 @@ export const Votes = () => {
 			setWallets(activeProfile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
 	}, [activeProfile, network]);
+
+	const loadVotes = useCallback(
+		(address) => {
+			const wallet = activeProfile.wallets().findByAddress(address);
+			let votes: ReadOnlyWallet[] = [];
+
+			try {
+				votes = wallet!.votes();
+			} catch {
+				votes = [];
+			}
+
+			setVotes(votes);
+		},
+		[activeProfile],
+	);
+
+	useEffect(() => {
+		if (address) {
+			loadVotes(address);
+		}
+	}, [address, loadVotes]);
 
 	const loadDelegates = useCallback(
 		(wallet) => {
@@ -223,7 +246,7 @@ export const Votes = () => {
 							}}
 						/>
 					) : (
-						<MyVoteTable />
+						<MyVoteTable votes={votes} />
 					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />

@@ -11,12 +11,13 @@ import { DelegateRow } from "./DelegateRow";
 type Delegate = { address: string; username: string; rank: number };
 
 type DelegateTableProps = {
+	title?: string;
 	coin?: string;
 	delegates: ReadOnlyWallet[];
 	onContinue?: (votes: string[]) => void;
 };
 
-export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProps) => {
+export const DelegateTable = ({ title, coin, delegates, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [selected, setSelected] = useState([] as Delegate[]);
 
@@ -85,7 +86,7 @@ export const DelegateTable = ({ coin, delegates, onContinue }: DelegateTableProp
 
 	return (
 		<div data-testid="DelegateTable">
-			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
+			<h2 className="py-5 text-2xl font-bold">{title ? title : t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={data}>
 				{(delegate: ReadOnlyWallet, index: number) => (
 					<DelegateRow

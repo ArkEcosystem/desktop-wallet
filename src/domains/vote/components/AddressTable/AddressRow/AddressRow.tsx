@@ -115,20 +115,14 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				{hasVotes && <span>#{votes[0].rank()}</span>}
 			</TableCell>
 
-			<TableCell>
+			<TableCell innerClassName="justify-center">
 				{hasVotes && (
-					<div className="flex justify-center h-full" data-testid="AddressRow__profile">
-						<Icon name="Msq" className="text-xl text-theme-primary" />
-					</div>
+					<Icon name="Msq" className="text-xl text-theme-primary" data-testid="AddressRow__profile" />
 				)}
 			</TableCell>
 
-			<TableCell>
-				{hasVotes && (
-					<div className="flex justify-center h-full" data-testid="AddressRow__status">
-						<Icon name="Ok" className="text-theme-success" />
-					</div>
-				)}
+			<TableCell innerClassName="justify-center">
+				{hasVotes && <Icon name="Ok" className="text-theme-success" data-testid="AddressRow__status" />}
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end">
