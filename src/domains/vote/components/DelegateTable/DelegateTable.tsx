@@ -66,10 +66,8 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 	];
 
 	const toggleSelected = (delegate: Delegate) => {
-		if (selected.find((selectedDelegate: Delegate) => selectedDelegate.username === delegate.username)) {
-			setSelected(
-				selected.filter((selectedDelegate: Delegate) => selectedDelegate.username !== delegate.username),
-			);
+		if (selected.find((selectedDelegate) => selectedDelegate.username === delegate.username)) {
+			setSelected(selected.filter((selectedDelegate) => selectedDelegate.username !== delegate.username));
 
 			return;
 		}

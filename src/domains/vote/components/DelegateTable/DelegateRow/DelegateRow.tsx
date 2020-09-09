@@ -23,10 +23,8 @@ export const DelegateRow = ({ index, delegate, selected, isVoted, isLoading, onS
 	const { t } = useTranslation();
 
 	const isSelected = useMemo(
-		() =>
-			!!selected?.find((selectedDelegate: Delegate) => selectedDelegate.username === delegate.username()) ||
-			false,
-		[selected, delegate],
+		() => isVoted || !!selected?.find((selectedDelegate) => selectedDelegate.username === delegate.username()),
+		[delegate, isVoted, selected],
 	);
 
 	if (isLoading) {
