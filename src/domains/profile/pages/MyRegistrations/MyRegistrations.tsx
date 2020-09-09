@@ -53,7 +53,7 @@ export const MyRegistrations = () => {
 		},
 	];
 
-	const handleAction = ({ action, walletId }: any) => {
+	const handleAction = ({ action, walletId, txId }: any) => {
 		switch (action) {
 			case "register":
 				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
@@ -62,6 +62,11 @@ export const MyRegistrations = () => {
 				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
 				break;
 			case "update":
+				history.push(
+					`/profiles/${activeProfile.id()}/wallets/${walletId}/transactions/${txId}/send-entity-update`,
+				);
+				break;
+			case "updateDelegate":
 				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
 				break;
 		}
