@@ -8,6 +8,7 @@ import {
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
+import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
@@ -19,9 +20,50 @@ import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
+import { MyVoteTable } from "domains/vote/components/MyVoteTable";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
+
+type MenuProps = {
+	selected: string;
+	onClick?: (item: string) => void;
+};
+
+const Menu = ({ selected, onClick }: MenuProps) => {
+	const { t } = useTranslation();
+
+	const getMenuItemClass = (item: string) =>
+		selected === item
+			? "theme-neutral-900 border-theme-primary-dark"
+			: "text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent";
+
+	return (
+		<ul className="flex h-20 mr-auto -mb-5" data-testid="Menu">
+			<li
+				className={`flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getMenuItemClass(
+					"delegate",
+				)}`}
+				onClick={() => onClick?.("delegate")}
+				data-testid="Menu__item--delegate"
+			>
+				{t("VOTE.VOTES_PAGE.MENU.SELECT_DELEGATE")}
+			</li>
+			<li className="flex items-center">
+				<Divider type="vertical" />
+			</li>
+			<li
+				className={`flex items-center mx-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getMenuItemClass(
+					"vote",
+				)}`}
+				onClick={() => onClick?.("vote")}
+				data-testid="Menu__item--vote"
+			>
+				{t("VOTE.VOTES_PAGE.MENU.MY_VOTE")}
+			</li>
+		</ul>
+	);
+};
 
 const InputAddress = ({ address, profile }: { address: string; profile: Profile }) => {
 	const { t } = useTranslation();
@@ -59,6 +101,7 @@ export const Votes = () => {
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
+	const [menuItem, setMenuItem] = useState("delegate");
 	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
@@ -148,29 +191,37 @@ export const Votes = () => {
 						<InputAddress address={address} profile={activeProfile} />
 					</TransactionDetail>
 				</div>
+
+				<Divider />
+
+				<Menu selected={menuItem} onClick={(item) => setMenuItem(item)} />
 			</div>
 
 			<Section className="flex-1">
 				{address ? (
-					<DelegateTable
-						coin={network?.coin()}
-						delegates={delegates}
-						onContinue={(votes) => {
-							const walletId = hasWalletId
-								? activeWallet.id()
-								: activeProfile.wallets().findByAddress(address)?.id();
+					menuItem === "delegate" ? (
+						<DelegateTable
+							coin={network?.coin()}
+							delegates={delegates}
+							onContinue={(votes) => {
+								const walletId = hasWalletId
+									? activeWallet.id()
+									: activeProfile.wallets().findByAddress(address)?.id();
 
-							const params = new URLSearchParams({
-								// unvotes: unvotes.join(),
-								votes: votes.join(),
-							});
+								const params = new URLSearchParams({
+									// unvotes: unvotes.join(),
+									votes: votes.join(),
+								});
 
-							history.push({
-								pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
-								search: `?${params}`,
-							});
-						}}
-					/>
+								history.push({
+									pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
+									search: `?${params}`,
+								});
+							}}
+						/>
+					) : (
+						<MyVoteTable />
+					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
 				)}
