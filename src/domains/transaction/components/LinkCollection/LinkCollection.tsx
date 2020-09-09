@@ -5,7 +5,7 @@ import { Input, InputGroup } from "app/components/Input";
 import { RadioButton } from "app/components/RadioButton";
 import { Select } from "app/components/SelectDropdown";
 import { Table } from "app/components/Table";
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
@@ -36,7 +36,7 @@ const Wrapper = styled.div`
 `;
 
 export const LinkCollection = ({
-	data,
+	data = [],
 	title,
 	description,
 	types,
@@ -47,7 +47,7 @@ export const LinkCollection = ({
 	const { t } = useTranslation();
 
 	const [isExpanded, setIsExpanded] = useState(false);
-	const [links, setLinks] = useState(data || []);
+	const [links, setLinks] = useState(data);
 	const [selected, setSelected] = useState((null as unknown) as Link);
 	const [link, setLink] = useState("");
 	const [selectedType, setSelectedType] = useState((null as unknown) as Type);
@@ -55,6 +55,10 @@ export const LinkCollection = ({
 	const addLink = ({ link, type }: Link) => {
 		setLinks([...links, { link, type }]);
 	};
+
+	useEffect(() => {
+		if (data.length > links.length) setLinks(data);
+	}, [data]);
 
 	const removeLink = ({ link, type }: Link) => {
 		setLinks(links.filter((thisLink) => thisLink.link !== link || thisLink.type !== type));
