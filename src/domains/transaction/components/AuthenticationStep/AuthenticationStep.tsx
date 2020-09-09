@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputPassword } from "app/components/Input";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
@@ -6,11 +6,10 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const AuthenticationStep = ({ wallet, profile }: { wallet: ReadWriteWallet; profile: Profile }) => {
+export const AuthenticationStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 	const isLedger = wallet.isLedger();
-	const activeProfile = profile;
 
 	return (
 		<div data-testid="AuthenticationStep">
@@ -19,19 +18,11 @@ export const AuthenticationStep = ({ wallet, profile }: { wallet: ReadWriteWalle
 					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
 					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 					<div className="mt-8">
-						{activeProfile.usesPassword() ? (
-							<FormField name="password">
-								<FormLabel>{t("TRANSACTION.ENCRYPTION_PASSWORD")}</FormLabel>
-								<InputPassword data-testid="AuthenticationStep__password" ref={register} />
-								<FormHelperText />
-							</FormField>
-						) : (
-							<FormField name="mnemonic">
-								<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
-								<InputPassword data-testid="AuthenticationStep__mnemonic" ref={register} />
-								<FormHelperText />
-							</FormField>
-						)}
+						<FormField name="mnemonic">
+							<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
+							<InputPassword data-testid="AuthenticationStep__mnemonic" ref={register} />
+							<FormHelperText />
+						</FormField>
 
 						{wallet.isSecondSignature() && (
 							<FormField name="secondMnemonic" className="mt-8">

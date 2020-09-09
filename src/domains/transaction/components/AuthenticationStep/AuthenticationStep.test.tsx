@@ -18,7 +18,7 @@ describe("AuthenticationStep", () => {
 
 	const Component = ({ form }: any) => (
 		<Form context={form} onSubmit={() => void 0}>
-			<AuthenticationStep wallet={wallet} profile={profile} />
+			<AuthenticationStep wallet={wallet} />
 		</Form>
 	);
 
@@ -26,7 +26,6 @@ describe("AuthenticationStep", () => {
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
 		const { asFragment } = renderWithRouter(<Component form={result.current} />);
 
-		expect(screen.queryByTestId("AuthenticationStep__password")).toBeNull();
 		expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeNull();
 		expect(screen.queryByTestId("AuthenticationStep__mnemonic")).toBeInTheDocument();
 
@@ -48,7 +47,6 @@ describe("AuthenticationStep", () => {
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
 		const { asFragment } = renderWithRouter(<Component form={result.current} />);
 
-		expect(screen.queryByTestId("AuthenticationStep__password")).toBeNull();
 		expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeInTheDocument();
 		expect(screen.queryByTestId("AuthenticationStep__mnemonic")).toBeInTheDocument();
 
@@ -72,28 +70,6 @@ describe("AuthenticationStep", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should request profile password", () => {
-		jest.spyOn(profile, "usesPassword").mockReturnValue(true);
-
-		const { result } = renderHook(() => useForm({ mode: "onChange" }));
-		const { asFragment } = renderWithRouter(<Component form={result.current} />);
-
-		expect(screen.queryByTestId("AuthenticationStep__password")).toBeInTheDocument();
-		expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeNull();
-		expect(screen.queryByTestId("AuthenticationStep__mnemonic")).toBeNull();
-
-		act(() => {
-			fireEvent.input(screen.getByTestId("AuthenticationStep__password"), {
-				target: {
-					value: "my password",
-				},
-			});
-		});
-
-		expect(result.current.getValues()).toEqual({ password: "my password" });
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should show only ledger confirmation", () => {
 		jest.spyOn(wallet, "isLedger").mockReturnValueOnce(true);
 
@@ -101,7 +77,6 @@ describe("AuthenticationStep", () => {
 		const { asFragment } = renderWithRouter(<Component form={result.current} />);
 
 		expect(screen.queryByTestId("LedgerConfirmation-description")).toBeInTheDocument();
-		expect(screen.queryByTestId("AuthenticationStep__password")).toBeNull();
 		expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeNull();
 		expect(screen.queryByTestId("AuthenticationStep__mnemonic")).toBeNull();
 
