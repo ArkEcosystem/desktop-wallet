@@ -195,6 +195,21 @@
     dayjs "^1.8.34"
     dinero.js "^1.8.1"
 
+"@arkecosystem/platform-sdk-intl@0.9.349":
+  version "0.9.349"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-0.9.349.tgz#baa8293500a4a84bba8d86c43013f9869a384173"
+  integrity sha512-FwLcmJOGEy2yzxWi2GTCF4FtHV4TuRjuaUQJd2QGgNVvzrnjl7AlRr3xXysIIDRJDtRbm13H8M8URbAceaomCQ==
+  dependencies:
+    dayjs "^1.8.34"
+    dinero.js "^1.8.1"
+
+"@arkecosystem/platform-sdk-ipfs@^0.9.349":
+  version "0.9.349"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ipfs/-/platform-sdk-ipfs-0.9.349.tgz#1c606326f7533779e9205b0f4e3f8bf49771c2c6"
+  integrity sha512-riZTtsUldZyDngx2fUA5ktO1AwVq6mnG8yhyBqjSa/CL2pZsAB7AqIZBSWMw/G+HmKs4wvlIacl9Hp5E+zAbjA==
+  dependencies:
+    "@arkecosystem/platform-sdk" "0.9.349"
+
 "@arkecosystem/platform-sdk-lsk@^0.9.346":
   version "0.9.346"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-lsk/-/platform-sdk-lsk-0.9.346.tgz#86eb56932a788948a8ade7961ffc2c0a9951f62a"
@@ -280,6 +295,19 @@
     remarkable "^2.0.1"
     yup "^0.29.3"
 
+"@arkecosystem/platform-sdk-support@0.9.349":
+  version "0.9.349"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-0.9.349.tgz#cdf1a657da8fc66ff1a1725192255badbc09cfc6"
+  integrity sha512-8noUAUPt/gZid3TY/6ABE/ZIfox/HiAbV7A5bbHgiMGuSuh3RdHQV/GJ1XqCQ6Zzhd9DYpdy2fFFaOvf4TyKWA==
+  dependencies:
+    bad-words "^3.0.3"
+    bignumber.js "^9.0.0"
+    censorify-it "^3.0.2"
+    front-matter "^4.0.2"
+    qrcode "^1.4.4"
+    remarkable "^2.0.1"
+    yup "^0.29.3"
+
 "@arkecosystem/platform-sdk-trx@^0.9.346":
   version "0.9.346"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-trx/-/platform-sdk-trx-0.9.346.tgz#d9efc440ba372fcf9bc4107e2d51ec5845522e02"
@@ -341,6 +369,25 @@
   dependencies:
     "@arkecosystem/platform-sdk-intl" "0.9.346"
     "@arkecosystem/platform-sdk-support" "0.9.346"
+    bad-words "^3.0.3"
+    bent "^7.3"
+    bignumber.js "^9.0.0"
+    bip32 "^2.0.5"
+    bip39 "^3.0.2"
+    censorify-it "^3.0.2"
+    dayjs "^1.8"
+    dot-prop "^5.2.0"
+    node-emoji "^1.10.0"
+    type-fest "^0.16.0"
+    yup "^0.29.3"
+
+"@arkecosystem/platform-sdk@0.9.349":
+  version "0.9.349"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-0.9.349.tgz#1d9cd0f9da430cf88467a6fe85ffa8e8c1686ff7"
+  integrity sha512-j6VsQiA7f/pSqjZFjzTugw7OUZGySmwzP731fOHTZoFCXQOswEMGnuuiaeRPzsUab3l7SkWz5oDX2JLv3q+k1Q==
+  dependencies:
+    "@arkecosystem/platform-sdk-intl" "0.9.349"
+    "@arkecosystem/platform-sdk-support" "0.9.349"
     bad-words "^3.0.3"
     bent "^7.3"
     bignumber.js "^9.0.0"
