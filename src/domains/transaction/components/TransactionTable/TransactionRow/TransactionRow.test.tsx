@@ -57,7 +57,7 @@ describe("TransactionRow", () => {
 		expect(onSign).toHaveBeenCalled();
 	});
 
-	it("should set backgroundColor on mouse events", () => {
+	it("should set shadow color on mouse events", () => {
 		const setState = jest.fn();
 		const useStateSpy = jest.spyOn(React, "useState");
 
@@ -75,7 +75,7 @@ describe("TransactionRow", () => {
 		fireEvent.mouseEnter(getByTestId("TransactionRow"));
 		fireEvent.mouseLeave(getByTestId("TransactionRow"));
 
-		expect(setState).toHaveBeenCalledWith("--theme-color-success-100");
+		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
 		expect(setState).toHaveBeenCalledWith("");
 	});
 });

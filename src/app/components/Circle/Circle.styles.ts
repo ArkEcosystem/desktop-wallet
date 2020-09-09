@@ -2,11 +2,12 @@ import tw, { css } from "twin.macro";
 import { Size } from "types";
 
 const defaultStyle = (noShadow: boolean, shadowColor?: string) => [
-	tw`inline-flex items-center justify-center align-middle border-2 rounded-full`,
+	tw`transition-all duration-100 inline-flex items-center justify-center align-middle border-2 rounded-full`,
 	!noShadow &&
 		css`
 			& {
 				box-shadow: 0 0 0 6px var(${shadowColor ? shadowColor : "--theme-background-color"});
+				background-color: var(${shadowColor ? shadowColor : "--theme-background-color"});
 			}
 		`,
 ];
