@@ -36,7 +36,7 @@ const baseSettings = {
 	ADVANCED_MODE: false,
 	AUTOMATIC_SIGN_OUT_PERIOD: 15,
 	BIP39_LOCALE: "english",
-	EXCHANGE_CURRENCY: "btc",
+	EXCHANGE_CURRENCY: "BTC",
 	LEDGER_UPDATE_METHOD: false,
 	LOCALE: "en-US",
 	MARKET_PROVIDER: "coincap",

@@ -1,5 +1,5 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import React from "react";
@@ -11,7 +11,6 @@ export default { title: "App / Components / NavigationBar" };
 
 const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 const profile = env.profiles().create("Test profile");
-profile.settings().set(ProfileSetting.ExchangeCurrency, "btc");
 
 export const Default = () => {
 	const notifications = {
