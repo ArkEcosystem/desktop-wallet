@@ -74,6 +74,8 @@ export const SendTransfer = () => {
 			},
 		};
 
+		console.log(transferInput);
+
 		try {
 			let transactionId: string;
 
