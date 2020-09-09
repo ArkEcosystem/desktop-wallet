@@ -14,10 +14,11 @@ type DelegateTableProps = {
 	title?: string;
 	coin?: string;
 	delegates: ReadOnlyWallet[];
+	votes?: ReadOnlyWallet[];
 	onContinue?: (votes: string[]) => void;
 };
 
-export const DelegateTable = ({ title, coin, delegates, onContinue }: DelegateTableProps) => {
+export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [selected, setSelected] = useState([] as Delegate[]);
 
@@ -88,15 +89,25 @@ export const DelegateTable = ({ title, coin, delegates, onContinue }: DelegateTa
 		<div data-testid="DelegateTable">
 			<h2 className="py-5 text-2xl font-bold">{title ? title : t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={data}>
-				{(delegate: ReadOnlyWallet, index: number) => (
-					<DelegateRow
-						index={index}
-						delegate={delegate}
-						selected={selected}
-						isLoading={showSkeleton}
-						onSelect={toggleSelected}
-					/>
-				)}
+				{(delegate: ReadOnlyWallet, index: number) => {
+					const hasVotes = votes && votes.length > 0;
+					let isVoted = false;
+
+					if (hasVotes) {
+						isVoted = !!votes?.find((vote) => vote.address() === delegate.address());
+					}
+
+					return (
+						<DelegateRow
+							index={index}
+							delegate={delegate}
+							selected={selected}
+							isVoted={isVoted}
+							isLoading={showSkeleton}
+							onSelect={toggleSelected}
+						/>
+					);
+				}}
 			</Table>
 
 			{selected.length > 0 && (
@@ -185,4 +196,5 @@ export const DelegateTable = ({ title, coin, delegates, onContinue }: DelegateTa
 DelegateTable.defaultProps = {
 	coin: "ARK",
 	delegates: [],
+	votes: [],
 };

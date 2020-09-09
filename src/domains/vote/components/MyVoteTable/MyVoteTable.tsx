@@ -10,12 +10,12 @@ type MyVoteTableProps = {
 export const MyVoteTable = ({ votes }: MyVoteTableProps) => {
 	const { t } = useTranslation();
 
-	const hasVotes = votes && votes?.length > 0;
+	const hasVotes = votes && votes.length > 0;
 
 	return (
 		<div data-testid="MyVoteTable">
 			{hasVotes ? (
-				<DelegateTable title={t("VOTE.MY_VOTE_TABLE.TITLE")} delegates={votes} />
+				<DelegateTable title={t("VOTE.MY_VOTE_TABLE.TITLE")} delegates={votes} votes={votes} />
 			) : (
 				<>
 					<h2 className="pt-5 text-2xl font-bold">{t("VOTE.MY_VOTE_TABLE.TITLE")}</h2>
@@ -24,4 +24,8 @@ export const MyVoteTable = ({ votes }: MyVoteTableProps) => {
 			)}
 		</div>
 	);
+};
+
+MyVoteTable.defaultProps = {
+	votes: [],
 };

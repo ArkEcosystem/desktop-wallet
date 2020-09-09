@@ -107,7 +107,7 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select address without vote", async () => {
+	it("should select an address without vote", async () => {
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);

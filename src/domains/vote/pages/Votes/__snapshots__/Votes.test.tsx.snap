@@ -953,12 +953,12 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                         class="sc-fzqBZW cULgYW justify-end"
                       >
                         <button
-                          class="sc-fznKkj eqyWCu"
-                          color="primary"
+                          class="sc-fznKkj dMzuSY"
+                          color="danger"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
-                          Not Selected
+                          Unselected
                         </button>
                       </div>
                     </td>
@@ -2267,12 +2267,12 @@ exports[`Votes should render 1`] = `
                         class="sc-fzqBZW cULgYW justify-end"
                       >
                         <button
-                          class="sc-fznKkj eqyWCu"
-                          color="primary"
+                          class="sc-fznKkj dMzuSY"
+                          color="danger"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
-                          Not Selected
+                          Unselected
                         </button>
                       </div>
                     </td>
@@ -3581,12 +3581,12 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzqBZW gfBeGq justify-end"
                       >
                         <button
-                          class="sc-fznKkj dMzuSY"
-                          color="danger"
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
-                          Selected
+                          Current
                         </button>
                       </div>
                     </td>
@@ -4077,7 +4077,7 @@ exports[`Votes should select a delegate 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Votes should select address without vote 1`] = `
+exports[`Votes should select an address without vote 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"

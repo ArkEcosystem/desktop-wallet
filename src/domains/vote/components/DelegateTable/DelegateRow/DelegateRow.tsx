@@ -14,19 +14,20 @@ type DelegateRowProps = {
 	index: number;
 	delegate: ReadOnlyWallet;
 	selected?: Delegate[];
+	isVoted?: boolean;
 	isLoading?: boolean;
 	onSelect?: ({ address, username, rank }: Delegate) => void;
 };
 
-export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: DelegateRowProps) => {
+export const DelegateRow = ({ index, delegate, selected, isVoted, isLoading, onSelect }: DelegateRowProps) => {
+	const { t } = useTranslation();
+
 	const isSelected = useMemo(
 		() =>
 			!!selected?.find((selectedDelegate: Delegate) => selectedDelegate.username === delegate.username()) ||
 			false,
 		[selected, delegate],
 	);
-
-	const { t } = useTranslation();
 
 	if (isLoading) {
 		return <DelegateRowSkeleton />;
@@ -70,20 +71,37 @@ export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: 
 			</TableCell>
 
 			<TableCell isSelected={isSelected} variant="end" innerClassName="justify-end">
-				<Button
-					variant="plain"
-					color={isSelected ? "danger" : "primary"}
-					onClick={() =>
-						onSelect?.({
-							address: delegate.address(),
-							username: delegate.username()!,
-							rank: delegate.rank()!,
-						})
-					}
-					data-testid={`DelegateRow__toggle-${index}`}
-				>
-					{isSelected ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
-				</Button>
+				{isVoted ? (
+					<Button
+						variant="plain"
+						color={isSelected ? "primary" : "danger"}
+						onClick={() =>
+							onSelect?.({
+								address: delegate.address(),
+								username: delegate.username()!,
+								rank: delegate.rank()!,
+							})
+						}
+						data-testid={`DelegateRow__toggle-${index}`}
+					>
+						{isSelected ? t("COMMON.CURRENT") : t("COMMON.UNSELECTED")}
+					</Button>
+				) : (
+					<Button
+						variant="plain"
+						color={isSelected ? "danger" : "primary"}
+						onClick={() =>
+							onSelect?.({
+								address: delegate.address(),
+								username: delegate.username()!,
+								rank: delegate.rank()!,
+							})
+						}
+						data-testid={`DelegateRow__toggle-${index}`}
+					>
+						{isSelected ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
+					</Button>
+				)}
 			</TableCell>
 		</tr>
 	);
@@ -91,5 +109,6 @@ export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: 
 
 DelegateRow.defaultProps = {
 	selected: [],
+	isVoted: false,
 	isLoading: false,
 };

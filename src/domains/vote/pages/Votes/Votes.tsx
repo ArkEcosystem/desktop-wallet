@@ -229,6 +229,7 @@ export const Votes = () => {
 						<DelegateTable
 							coin={network?.coin()}
 							delegates={delegates}
+							votes={votes}
 							onContinue={(votes) => {
 								const walletId = hasWalletId
 									? activeWallet.id()
