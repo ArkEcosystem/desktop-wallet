@@ -76,6 +76,8 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 				form.setValue("description", ipfsData.description);
 				form.setValue("socialMediaLinks", ipfsData.socialMediaLinks);
 				form.setValue("repositoryLinks", ipfsData.repositoryLinks);
+				form.setValue("imageLinks", ipfsData.imageLinks);
+				form.setValue("videoLinks", ipfsData.videoLinks);
 			} catch (e) {
 				throw new Error(`Unable to find ipfs data for transaction [${transactionId}]`);
 			}
@@ -172,5 +174,10 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 };
 
 SendEntityUpdate.defaultProps = {
-	formDefaultData: {},
+	formDefaultData: {
+		imageLinks: [],
+		videoLinks: [],
+		repositoryLinks: [],
+		socialMediaLinks: [],
+	},
 };

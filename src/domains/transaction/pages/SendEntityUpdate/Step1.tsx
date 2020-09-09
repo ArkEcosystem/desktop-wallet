@@ -11,10 +11,10 @@ export const FirstStep = ({ form }: { form: any }) => {
 	const { t } = useTranslation();
 
 	const { register } = form;
-	const { socialMediaLinks, repositoryLinks } = form.watch();
+	const { socialMediaLinks, repositoryLinks, imageLinks, videoLinks } = form.watch();
 
 	useEffect(() => {
-		["socialMediaLinks", "repositoryLinks"].map(register);
+		["socialMediaLinks", "repositoryLinks", "imageLinks", "videoLinks"].map(register);
 	}, []);
 
 	return (
@@ -82,6 +82,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 						typeName="files"
 						selectionTypes={["flickr"]}
 						selectionTypeTitle="Avatar"
+						data={[...videoLinks, ...imageLinks]}
 					/>
 				</TransactionDetail>
 
