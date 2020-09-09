@@ -104,8 +104,7 @@ test("should handle business registration resign action", async (t: any) => {
 
 	await t
 		.expect(
-			Selector("div").withText(translations.TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.TITLE)
-				.exists,
+			Selector("div").withText(translations.TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.TITLE).exists,
 		)
 		.ok();
 });
@@ -137,8 +136,7 @@ test("should handle plugin registration resign action", async (t: any) => {
 
 	await t
 		.expect(
-			Selector("div").withText(translations.TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.TITLE)
-				.exists,
+			Selector("div").withText(translations.TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.TITLE).exists,
 		)
 		.ok();
 });
