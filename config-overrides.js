@@ -22,6 +22,7 @@ const whiteListedModules = [
 	"@arkecosystem/platform-sdk-eos",
 	"@arkecosystem/platform-sdk-eth",
 	"@arkecosystem/platform-sdk-intl",
+	"@arkecosystem/platform-sdk-ipfs",
 	"@arkecosystem/platform-sdk-lsk",
 	"@arkecosystem/platform-sdk-markets",
 	"@arkecosystem/platform-sdk-neo",
@@ -57,6 +58,8 @@ const whiteListedModules = [
 	"socks-proxy-agent",
 	"styled-components",
 	"swiper",
+	"yup",
+	"extract-domain",
 ];
 
 const addNodeExternals = () =>

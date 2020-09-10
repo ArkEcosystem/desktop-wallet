@@ -171,7 +171,7 @@ exports[`Settings should change a password 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -793,7 +793,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -1209,18 +1209,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-230-label downshift-230-toggle-button"
+                                    aria-labelledby="downshift-308-label downshift-308-toggle-button"
                                     class="sc-fzqARJ jnMeHK   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-230-toggle-button"
+                                    id="downshift-308-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-230-label"
+                                    aria-labelledby="downshift-308-label"
                                     class="sc-fzqNqU izoylg"
-                                    id="downshift-230-menu"
+                                    id="downshift-308-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -1889,7 +1889,7 @@ exports[`Settings should render 1`] = `
                               name="currency"
                               readonly=""
                               type="text"
-                              value="btc"
+                              value="BTC"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -2662,7 +2662,7 @@ exports[`Settings should render password settings 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -3206,7 +3206,7 @@ exports[`Settings should render peer settings 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -4100,7 +4100,7 @@ exports[`Settings should render plugin settings 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -4516,18 +4516,18 @@ exports[`Settings should render plugin settings 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-217-label downshift-217-toggle-button"
+                                    aria-labelledby="downshift-295-label downshift-295-toggle-button"
                                     class="sc-fzqARJ jnMeHK   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-217-toggle-button"
+                                    id="downshift-295-toggle-button"
                                     type="button"
                                   >
                                     Select Plugin Source
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-217-label"
+                                    aria-labelledby="downshift-295-label"
                                     class="sc-fzqNqU izoylg"
-                                    id="downshift-217-menu"
+                                    id="downshift-295-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4749,7 +4749,7 @@ exports[`Settings should set a password 1`] = `
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -5371,7 +5371,7 @@ exports[`Settings should show an error alert if the current password does not ma
                 <span
                   data-testid="Amount"
                 >
-                  91.43089801 BTC
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -6439,7 +6439,7 @@ exports[`Settings should submit using default props 1`] = `
                               name="currency"
                               readonly=""
                               type="text"
-                              value="btc"
+                              value="BTC"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -7731,7 +7731,7 @@ exports[`Settings should update profile 1`] = `
                               name="currency"
                               readonly=""
                               type="text"
-                              value="btc"
+                              value="BTC"
                             />
                             <div
                               class="relative w-full cursor-pointer"

@@ -149,7 +149,7 @@ describe("News", () => {
 
 		await waitFor(() => {
 			expect(queryAllByTestId("NewsCard")).toHaveLength(0);
-			expect(queryAllByTestId("News__empty-results")).toHaveLength(1);
+			expect(queryAllByTestId("EmptyResults")).toHaveLength(1);
 		});
 	});
 

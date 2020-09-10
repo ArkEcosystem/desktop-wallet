@@ -11,6 +11,7 @@ import { ReactComponent as ARKLogo } from "./ark-logo.svg";
 import { ReactComponent as ConfirmedBanner } from "./confirmed-banner.svg";
 import { ReactComponent as DeleteBanner } from "./delete-banner.svg";
 import { ReactComponent as MistakeBanner } from "./mistake-banner.svg";
+import { ReactComponent as NoResultsBanner } from "./no-results.svg";
 import { ReactComponent as RegisterBanner } from "./register-banner.svg";
 import { ReactComponent as SuccessBanner } from "./success-banner.svg";
 import { ReactComponent as WelcomeBanner } from "./welcome-banner.svg";
@@ -24,6 +25,7 @@ export const images = {
 		RegisterBanner,
 		SuccessBanner,
 		WelcomeBanner,
+		NoResultsBanner,
 	},
 	contacts,
 	exchange,

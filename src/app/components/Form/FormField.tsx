@@ -1,3 +1,4 @@
+import { get } from "@arkecosystem/utils";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import tw, { styled } from "twin.macro";
@@ -23,7 +24,8 @@ export const FormFieldStyled = styled.fieldset<{ isInvalid: boolean }>`
 export function FormField({ name, ...props }: FormFieldProps) {
 	const formContext = useFormContext();
 	const { isInvalid, errorMessage } = React.useMemo(() => {
-		const error = formContext?.errors[name];
+		const error: { message: string } | undefined = get(formContext?.errors, name);
+
 		return {
 			isInvalid: !!error,
 			errorMessage: error?.message,

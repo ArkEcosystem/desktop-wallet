@@ -300,8 +300,8 @@ exports[`SendVote should error if wrong mnemonic 1`] = `
                 <div
                   data-testid="tab-pabel__active-panel"
                 >
-                  <section
-                    data-testid="SendVote__step--third"
+                  <div
+                    data-testid="AuthenticationStep"
                   >
                     <div>
                       <h1
@@ -315,10 +315,10 @@ exports[`SendVote should error if wrong mnemonic 1`] = `
                         Enter your twelve word mnemonic to authenticate the transaction.
                       </div>
                       <div
-                        class="grid grid-flow-row"
+                        class="mt-8"
                       >
                         <fieldset
-                          class="sc-AxirZ kMHTdH pt-8 pb-0"
+                          class="sc-AxirZ kMHTdH flex flex-col space-y-2"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -338,7 +338,7 @@ exports[`SendVote should error if wrong mnemonic 1`] = `
                             <input
                               aria-invalid="true"
                               class="sc-fznyAO gDCGFa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="Input"
+                              data-testid="AuthenticationStep__mnemonic"
                               name="mnemonic"
                               type="password"
                             />
@@ -370,7 +370,7 @@ exports[`SendVote should error if wrong mnemonic 1`] = `
                         </fieldset>
                       </div>
                     </div>
-                  </section>
+                  </div>
                 </div>
                 <div
                   class="flex justify-end mt-8 space-x-3"
@@ -705,7 +705,7 @@ exports[`SendVote should render 1st step 1`] = `
                   >
                     <button
                       aria-checked="false"
-                      class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -714,7 +714,7 @@ exports[`SendVote should render 1st step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -723,7 +723,7 @@ exports[`SendVote should render 1st step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fzoyTs chLCDw relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -1041,76 +1041,6 @@ exports[`SendVote should render 2st step 1`] = `
             </span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`SendVote should render 3rd step 1`] = `
-<DocumentFragment>
-  <section
-    data-testid="SendVote__step--third"
-  >
-    <div>
-      <h1
-        class="mb-0"
-      >
-        Authenticate
-      </h1>
-      <div
-        class="text-theme-neutral-dark"
-      >
-        Enter your twelve word mnemonic to authenticate the transaction.
-      </div>
-      <div
-        class="grid grid-flow-row"
-      >
-        <fieldset
-          class="sc-AxirZ izhStr pt-8 pb-0"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="mnemonic"
-          >
-            Mnemonic
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-          <div
-            class="sc-fzqBZW kFWsuJ max-w-20"
-            data-testid="InputPassword"
-          >
-            <input
-              class="sc-fznyAO gDCGFa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="Input"
-              name="mnemonic"
-              type="password"
-            />
-            <div
-              class="sc-fznKkj sc-fzokOt kPKyZX my-px mr-4"
-            >
-              <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                data-testid="InputPassword__toggle"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw dzBdqj"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    eye.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </div>
-        </fieldset>
       </div>
     </div>
   </section>
