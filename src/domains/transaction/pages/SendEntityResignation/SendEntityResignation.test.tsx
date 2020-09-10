@@ -119,6 +119,21 @@ describe("SendEntityResignation", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render 2nd step as entity", async () => {
+		history.push(resignRegistrationURL, { type: "entity", entity });
+		const { asFragment, getByTestId } = renderPage();
+
+		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+		});
+
+		expect(getByTestId("SendEntityResignation__second-step")).toBeTruthy();
+		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should navigate  between 1st and 2nd steps", async () => {
 		const { getByTestId } = renderPage();
 
@@ -195,6 +210,46 @@ describe("SendEntityResignation", () => {
 	it("should succesfully sign and submit resignation transaction", async () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signDelegateResignation")
+			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		const { asFragment, getByTestId } = renderPage();
+
+		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+		});
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+		});
+
+		act(() => {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "test",
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("SendEntityResignation__fourth-step")).toBeTruthy());
+		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+		expect(asFragment()).toMatchSnapshot();
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+	});
+
+	it("should succesfully sign and submit an entity resignation transaction", async () => {
+		history.push(resignRegistrationURL, { type: "entity", entity });
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityResignation")
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
