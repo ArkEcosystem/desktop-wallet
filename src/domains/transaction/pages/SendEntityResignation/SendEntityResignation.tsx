@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 import { useHistory, useLocation } from "react-router-dom";
 
 import { EntityFirstStep, EntityFourthStep, EntitySecondStep } from "../../components/EntityResignationSteps";
-import { FirstStep, FourthStep, SecondStep, ThirdStep } from "./";
+import { FirstStep, FourthStep, SecondStep } from "./";
 
 export const SendEntityResignation = ({ formDefaultData, onDownload, passwordType }: any) => {
 	const { t } = useTranslation();
@@ -74,7 +74,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 				const asset = entityData.asset();
 
 				transactionId = await activeWallet.transaction().signEntityResignation({
-					from,
+					from: entity.sender(),
 					data: {
 						type: asset.type,
 						subType: asset.subType,
