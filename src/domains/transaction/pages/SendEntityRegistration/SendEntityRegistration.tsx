@@ -88,6 +88,7 @@ export const SendEntityRegistration = () => {
 			profile: activeProfile,
 			setTransaction,
 			translations: t,
+			type: registrationType.type,
 		});
 
 	const handleBack = () => {
@@ -137,12 +138,12 @@ export const SendEntityRegistration = () => {
 							{activeTab > 1 && registrationForm && (
 								<registrationForm.component
 									activeTab={activeTab}
-									fees={fees[registrationType]}
+									fees={fees[registrationType.value]}
 									wallet={activeWallet}
 								/>
 							)}
 
-							{registrationForm && fees[registrationType] && (
+							{registrationForm && fees[registrationType.value] && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
 										<SecondStep passwordType="mnemonic" wallet={activeWallet} />
