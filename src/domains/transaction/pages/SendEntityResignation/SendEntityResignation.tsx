@@ -83,6 +83,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 					fee: fees.static,
 					sign: {
 						mnemonic,
+						secondMnemonic,
 					},
 				});
 			} else {
@@ -91,6 +92,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 					fee: fees.static,
 					sign: {
 						mnemonic,
+						secondMnemonic,
 					},
 				});
 			}
