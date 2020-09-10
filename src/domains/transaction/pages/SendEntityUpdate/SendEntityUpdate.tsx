@@ -78,14 +78,14 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 			if (!activeTransaction) return;
 
 			try {
-				const ipfsData = await fetchTxIpfsData(activeTransaction);
+				const ipfsData: any = await fetchTxIpfsData(activeTransaction);
 
-				form.setValue("name", ipfsData.displayName);
-				form.setValue("description", ipfsData.description);
-				form.setValue("socialMediaLinks", ipfsData.socialMediaLinks);
-				form.setValue("repositoryLinks", ipfsData.repositoryLinks);
-				form.setValue("imageLinks", ipfsData.imageLinks);
-				form.setValue("videoLinks", ipfsData.videoLinks);
+				form.setValue("name", ipfsData.meta.displayName);
+				form.setValue("description", ipfsData.meta.description);
+				form.setValue("socialMedia", ipfsData.socialMedia || []);
+				form.setValue("sourceControl", ipfsData.sourceControl || []);
+				form.setValue("images", ipfsData.images || []);
+				form.setValue("videos", ipfsData.videos || []);
 			} catch (e) {
 				throw new Error(`Unable to find ipfs data for transaction [${transactionId}]`);
 			}

@@ -37,7 +37,7 @@ const Wrapper = styled.div`
 `;
 
 export const LinkCollection = ({
-	data,
+	data = [],
 	title,
 	description,
 	types,
@@ -59,6 +59,8 @@ export const LinkCollection = ({
 		name: "links",
 		keyName: "value",
 	});
+
+	useEffect(() => append(data), [data]);
 
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [selected, setSelected] = useState((null as unknown) as EntityLink);
