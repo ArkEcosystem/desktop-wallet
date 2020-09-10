@@ -81,12 +81,12 @@ export const MyRegistrations = () => {
 			businessEntities: filterEntities(businesses, query),
 			delegateWallets: filterDelegates(delegates, env.delegates(), query),
 		}),
-		[query, plugins, businesses, delegates],
+		[query, plugins, businesses, delegates, env],
 	);
 
 	const showEmptySearchResults = useMemo(
 		() => query.trim().length > 0 && !pluginEntities.length && !businessEntities.length && !delegateWallets.length,
-		[isLoading, pluginEntities, businessEntities, delegateWallets],
+		[pluginEntities, businessEntities, delegateWallets, query],
 	);
 
 	const hasNoRegistrations = useMemo(() => !isLoading && !delegates.length && !businesses.length && !plugins.length, [
