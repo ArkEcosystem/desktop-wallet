@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
+import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
 import os from "os";
 import React from "react";
@@ -125,7 +127,7 @@ describe("Settings", () => {
 			LOCALE: "en-US",
 			BIP39_LOCALE: "chinese_simplified",
 			MARKET_PROVIDER: "coincap",
-			EXCHANGE_CURRENCY: "btc",
+			EXCHANGE_CURRENCY: "BTC",
 			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: true,
 			ADVANCED_MODE: true,
@@ -163,7 +165,7 @@ describe("Settings", () => {
 			LOCALE: "en-US",
 			BIP39_LOCALE: "chinese_simplified",
 			MARKET_PROVIDER: "coincap",
-			EXCHANGE_CURRENCY: "btc",
+			EXCHANGE_CURRENCY: "BTC",
 			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: true,
 			ADVANCED_MODE: false,
@@ -231,6 +233,39 @@ describe("Settings", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it.each([
+		["close", "modal__close-btn"],
+		["cancel", "ResetProfile__cancel-button"],
+		["reset", "ResetProfile__submit-button"],
+	])("should open & close reset profile modal (%s)", async (_, buttonId) => {
+		const { container, getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		act(() => {
+			fireEvent.click(getByText(commonTranslations.RESET_DATA));
+		});
+
+		expect(getByTestId("modal__inner")).toBeInTheDocument();
+		expect(getByTestId("modal__inner")).toHaveTextContent(profileTranslations.MODAL_RESET_PROFILE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(profileTranslations.MODAL_RESET_PROFILE.DESCRIPTION);
+
+		await act(async () => {
+			fireEvent.click(getByTestId(buttonId));
+		});
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should render peer settings", async () => {

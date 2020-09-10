@@ -20,12 +20,12 @@ test("should fail delegate resignation submittion", async (t: any) => {
 	await t.click(Selector(continueBtn));
 
 	// Type wrong mnemonic
-	await t.typeText(Selector("[data-testid=SendEntityResignation__mnemonic]"), "wrong mnemonic", { replace: true });
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
 
 	const sendButton = "[data-testid=SendEntityResignation__send-button]";
 	await t.click(Selector(sendButton));
 
-	await t.expect(Selector("[data-testid=SendEntityResignation__mnemonic]").hasAttribute("aria-invalid")).ok();
+	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
 });
 
 test("should successfully submit delegate resignation", async (t) => {
@@ -40,7 +40,7 @@ test("should successfully submit delegate resignation", async (t) => {
 	await t.hover(Selector(continueButton));
 	await t.click(Selector(continueButton));
 
-	await t.typeText(Selector("[data-testid=SendEntityResignation__mnemonic]"), "v3wallet2", { replace: true });
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "v3wallet2", { replace: true });
 
 	transactionsMock();
 	walletMock("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");

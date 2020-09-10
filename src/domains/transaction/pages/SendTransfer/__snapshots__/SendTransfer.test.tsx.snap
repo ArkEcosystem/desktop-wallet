@@ -469,7 +469,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                           >
                             <div>
                               <button
-                                class="sc-fzoNJl cdbVKv SelectAddress is-disabled "
+                                class="sc-fzoXWK eIiiwH SelectAddress is-disabled "
                                 data-testid="SelectAddress__wrapper"
                                 disabled=""
                                 type="button"
@@ -506,7 +506,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                           data-testid="recipient-address"
                         >
                           <div
-                            class="sc-fzoyTs iYhWzJ"
+                            class="sc-fzoNJl imnZiX"
                           >
                             <div
                               class="text-theme-neutral-dark hover:text-theme-primary"
@@ -776,7 +776,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -785,7 +785,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -794,7 +794,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -1144,8 +1144,8 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
                 <div
                   data-testid="tab-pabel__active-panel"
                 >
-                  <section
-                    data-testid="SendTransfer__step--third"
+                  <div
+                    data-testid="AuthenticationStep"
                   >
                     <div>
                       <h1
@@ -1159,10 +1159,10 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
                         Enter your twelve word mnemonic to authenticate the transaction.
                       </div>
                       <div
-                        class="grid grid-flow-row"
+                        class="mt-8"
                       >
                         <fieldset
-                          class="sc-AxirZ kMHTdH pt-8 pb-0"
+                          class="sc-AxirZ kMHTdH flex flex-col space-y-2"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -1182,7 +1182,7 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
                             <input
                               aria-invalid="true"
                               class="sc-fznyAO gDCGFa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="Input"
+                              data-testid="AuthenticationStep__mnemonic"
                               name="mnemonic"
                               type="password"
                             />
@@ -1214,7 +1214,7 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
                         </fieldset>
                       </div>
                     </div>
-                  </section>
+                  </div>
                 </div>
                 <div
                   class="flex justify-end mt-10 space-x-3"
@@ -1354,7 +1354,7 @@ exports[`Transaction Send should render 1st step 1`] = `
           >
             <div>
               <button
-                class="sc-fzoNJl cdbVKv SelectAddress  "
+                class="sc-fzoXWK eIiiwH SelectAddress  "
                 data-testid="SelectAddress__wrapper"
                 type="button"
               >
@@ -1390,7 +1390,7 @@ exports[`Transaction Send should render 1st step 1`] = `
           data-testid="recipient-address"
         >
           <div
-            class="sc-fzoyTs iYhWzJ"
+            class="sc-fzoNJl imnZiX"
           >
             <div
               class="text-theme-neutral-dark hover:text-theme-primary"
@@ -1660,7 +1660,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1669,7 +1669,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1678,7 +1678,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1833,7 +1833,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
             class="font-semibold"
           >
             <div
-              class="sc-fzqNqU dyQNW"
+              class="sc-fzoyTs yvXJk"
             >
               <div
                 class="sc-Axmtr dAxPWA"
@@ -2062,117 +2062,6 @@ exports[`Transaction Send should render 2nd step 1`] = `
             </span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`Transaction Send should render 3rd step 1`] = `
-<DocumentFragment>
-  <section
-    data-testid="SendTransfer__step--third"
-  >
-    <div>
-      <h1
-        class="mb-0"
-      >
-        Authenticate
-      </h1>
-      <div
-        class="text-theme-neutral-dark"
-      >
-        Enter your twelve word mnemonic to authenticate the transaction.
-      </div>
-      <div
-        class="grid grid-flow-row"
-      >
-        <fieldset
-          class="sc-AxirZ izhStr pt-8 pb-0"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="mnemonic"
-          >
-            Mnemonic
-            <div
-              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-          <div
-            class="sc-fzqBZW kFWsuJ max-w-20"
-            data-testid="InputPassword"
-          >
-            <input
-              class="sc-fznyAO gDCGFa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="Input"
-              name="mnemonic"
-              type="password"
-            />
-            <div
-              class="sc-fznKkj sc-fzokOt kPKyZX my-px mr-4"
-            >
-              <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                data-testid="InputPassword__toggle"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw dzBdqj"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    eye.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`Transaction Send should render 4th step 1`] = `
-<DocumentFragment>
-  <section
-    data-testid="SendTransfer__step--fourth"
-  >
-    <div>
-      <h1
-        class="mb-0"
-      >
-        Confirm Your Transaction
-      </h1>
-      <svg
-        class="my-8"
-      >
-        confirm-transaction-ledger-banner.svg
-      </svg>
-      <div
-        class="mt-8 text-center text-theme-neutral-dark"
-        data-testid="LedgerConfirmation-description"
-      >
-        Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
-      </div>
-      <div
-        class="inline-flex items-center justify-center w-full mt-8 space-x-3"
-      >
-        <div
-          class="sc-fzpmMD iqtKtR"
-          color="primary"
-        />
-        <span
-          class="font-semibold text-black"
-          data-testid="LedgerConfirmation-loading_message"
-        >
-          Waiting for confirmation ...
-        </span>
       </div>
     </div>
   </section>
@@ -2843,7 +2732,7 @@ exports[`Transaction Send should render registration form without selected walle
                           >
                             <div>
                               <button
-                                class="sc-fzoNJl cdbVKv SelectAddress  "
+                                class="sc-fzoXWK eIiiwH SelectAddress  "
                                 data-testid="SelectAddress__wrapper"
                                 type="button"
                               >
@@ -2879,7 +2768,7 @@ exports[`Transaction Send should render registration form without selected walle
                           data-testid="recipient-address"
                         >
                           <div
-                            class="sc-fzoyTs iYhWzJ"
+                            class="sc-fzoNJl imnZiX"
                           >
                             <div
                               class="text-theme-neutral-dark hover:text-theme-primary"
@@ -3149,7 +3038,7 @@ exports[`Transaction Send should render registration form without selected walle
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3158,7 +3047,7 @@ exports[`Transaction Send should render registration form without selected walle
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3167,7 +3056,7 @@ exports[`Transaction Send should render registration form without selected walle
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3689,7 +3578,7 @@ exports[`Transaction Send should select network first and see select address inp
                           >
                             <div>
                               <button
-                                class="sc-fzoNJl cdbVKv SelectAddress  "
+                                class="sc-fzoXWK eIiiwH SelectAddress  "
                                 data-testid="SelectAddress__wrapper"
                                 type="button"
                               >
@@ -3725,7 +3614,7 @@ exports[`Transaction Send should select network first and see select address inp
                           data-testid="recipient-address"
                         >
                           <div
-                            class="sc-fzoyTs iYhWzJ"
+                            class="sc-fzoNJl imnZiX"
                           >
                             <div
                               class="text-theme-neutral-dark hover:text-theme-primary"
@@ -3995,7 +3884,7 @@ exports[`Transaction Send should select network first and see select address inp
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4004,7 +3893,7 @@ exports[`Transaction Send should select network first and see select address inp
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4013,7 +3902,7 @@ exports[`Transaction Send should select network first and see select address inp
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoXWK jyLfpK relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"

@@ -7,6 +7,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -59,6 +60,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 
 	const handleSubmit = async () => {
 		const mnemonic = getValues("mnemonic");
+		const secondMnemonic = getValues("secondMnemonic");
 		const from = activeWallet.address();
 		const { type = "delegate" } = state || {};
 
@@ -139,7 +141,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 									<TabPanel tabId={1}>{getStepComponent()}</TabPanel>
 									<TabPanel tabId={2}>{getStepComponent()}</TabPanel>
 									<TabPanel tabId={3}>
-										<ThirdStep form={form} passwordType={passwordType} />
+										<AuthenticationStep wallet={activeWallet} />
 									</TabPanel>
 									<TabPanel tabId={4}>{getStepComponent()}</TabPanel>
 
@@ -213,5 +215,4 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 
 SendEntityResignation.defaultProps = {
 	formDefaultData: {},
-	passwordType: "mnemonic",
 };

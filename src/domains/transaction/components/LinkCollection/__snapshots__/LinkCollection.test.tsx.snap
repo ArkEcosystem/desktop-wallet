@@ -35,112 +35,97 @@ exports[`LinkCollection should add and remove links 1`] = `
     <div
       class="mt-4"
     >
-      <div>
-        <div
-          class="flex space-x-2"
+      <div
+        class="grid row-gap-4 col-gap-2"
+        style="grid-template-columns: 40% 60%;"
+      >
+        <fieldset
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="flex flex-col w-2/5"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="type"
           >
+            Add media
             <div
-              class="w-full"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-              >
-                Add media
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-            </div>
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
+          <div
+            class="relative w-full"
+          >
+            <input
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+              data-testid="select-list__input"
+              name="type"
+              readonly=""
+              type="text"
+              value="twitter"
+            />
             <div
-              class="sc-Axmtr jzhOwR flex flex-1"
+              class="relative w-full cursor-pointer"
             >
-              <div
-                class="relative w-full"
-              >
-                <input
-                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                  data-testid="select-list__input"
-                  readonly=""
-                  type="text"
-                  value="twitter"
-                />
-                <div
-                  class="relative w-full cursor-pointer"
+              <div>
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                  class="sc-fzplWN jAabRP  is-selected "
+                  data-testid="select-list__toggle-button"
+                  id="downshift-1-toggle-button"
+                  type="button"
                 >
-                  <div>
-                    <button
-                      aria-expanded="false"
-                      aria-haspopup="listbox"
-                      aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                      class="sc-fzplWN jAabRP  is-selected "
-                      data-testid="select-list__toggle-button"
-                      id="downshift-1-toggle-button"
-                      type="button"
-                    >
-                      Twitter
-                    </button>
-                    <ul
-                      aria-labelledby="downshift-1-label"
-                      class="sc-fznyAO dPDaFu"
-                      id="downshift-1-menu"
-                      role="listbox"
-                      tabindex="-1"
-                    />
-                  </div>
-                  <div
-                    class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
-                  >
-                    <div
-                      class="sc-AxiKw iDEwuj"
-                      height="8"
-                      width="8"
-                    >
-                      <svg>
-                        arrowdown.svg
-                      </svg>
-                    </div>
-                  </div>
+                  Twitter
+                </button>
+                <ul
+                  aria-labelledby="downshift-1-label"
+                  class="sc-fznyAO dPDaFu"
+                  id="downshift-1-menu"
+                  role="listbox"
+                  tabindex="-1"
+                />
+              </div>
+              <div
+                class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
+              >
+                <div
+                  class="sc-AxiKw iDEwuj"
+                  height="8"
+                  width="8"
+                >
+                  <svg>
+                    arrowdown.svg
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="flex-1"
+        </fieldset>
+        <fieldset
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
+        >
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="value"
           >
+            Link
             <div
-              class="mb-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-              >
-                Link
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-            </div>
-            <div
-              class="sc-Axmtr jzhOwR"
-            >
-              <input
-                class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="LinkCollection__input-link"
-                maxlength="255"
-                placeholder=" "
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
+          <input
+            aria-invalid="false"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+            data-testid="LinkCollection__input-link"
+            name="value"
+          />
+        </fieldset>
         <button
-          class="sc-AxjAm fPpool w-full mt-2"
+          class="sc-AxjAm fPpool col-span-2"
           color="primary"
           data-testid="LinkCollection__add-link"
           type="button"
@@ -322,113 +307,97 @@ exports[`LinkCollection should select a specific link type 1`] = `
     <div
       class="mt-4"
     >
-      <div>
-        <div
-          class="flex space-x-2"
+      <div
+        class="grid row-gap-4 col-gap-2"
+        style="grid-template-columns: 40% 60%;"
+      >
+        <fieldset
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
         >
-          <div
-            class="flex flex-col w-2/5"
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="type"
           >
+            Add media
             <div
-              class="w-full"
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
+          <div
+            class="relative w-full"
+          >
+            <input
+              class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+              data-testid="select-list__input"
+              name="type"
+              readonly=""
+              type="text"
+              value=""
+            />
+            <div
+              class="relative w-full cursor-pointer"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-              >
-                Add media
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
+              <div>
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-15-label downshift-15-toggle-button"
+                  class="sc-fzplWN jAabRP   "
+                  data-testid="select-list__toggle-button"
+                  id="downshift-15-toggle-button"
+                  type="button"
                 />
-              </label>
-            </div>
-            <div
-              class="sc-Axmtr jzhOwR flex flex-1"
-            >
+                <ul
+                  aria-labelledby="downshift-15-label"
+                  class="sc-fznyAO dPDaFu"
+                  id="downshift-15-menu"
+                  role="listbox"
+                  tabindex="-1"
+                />
+              </div>
               <div
-                class="relative w-full"
+                class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
               >
-                <input
-                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
-                  data-testid="select-list__input"
-                  readonly=""
-                  type="text"
-                  value=""
-                />
                 <div
-                  class="relative w-full cursor-pointer"
+                  class="sc-AxiKw iDEwuj"
+                  height="8"
+                  width="8"
                 >
-                  <div>
-                    <button
-                      aria-expanded="false"
-                      aria-haspopup="listbox"
-                      aria-labelledby="downshift-8-label downshift-8-toggle-button"
-                      class="sc-fzplWN jAabRP   "
-                      data-testid="select-list__toggle-button"
-                      id="downshift-8-toggle-button"
-                      type="button"
-                    />
-                    <ul
-                      aria-labelledby="downshift-8-label"
-                      class="sc-fznyAO dPDaFu"
-                      id="downshift-8-menu"
-                      role="listbox"
-                      tabindex="-1"
-                    />
-                  </div>
-                  <div
-                    class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
-                  >
-                    <div
-                      class="sc-AxiKw iDEwuj"
-                      height="8"
-                      width="8"
-                    >
-                      <svg>
-                        arrowdown.svg
-                      </svg>
-                    </div>
-                  </div>
+                  <svg>
+                    arrowdown.svg
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="flex-1"
+        </fieldset>
+        <fieldset
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
+        >
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="value"
           >
+            Link
             <div
-              class="mb-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
-                data-testid="FormLabel"
-              >
-                Link
-                <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                  data-testid="FormLabel__required"
-                />
-              </label>
-            </div>
-            <div
-              class="sc-Axmtr jzhOwR"
-            >
-              <input
-                class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                data-testid="LinkCollection__input-link"
-                maxlength="255"
-                placeholder=" "
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
+          <input
+            aria-invalid="false"
+            class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+            data-testid="LinkCollection__input-link"
+            name="value"
+          />
+        </fieldset>
         <button
-          class="sc-AxjAm fPpool w-full mt-2"
+          class="sc-AxjAm fPpool col-span-2"
           color="primary"
           data-testid="LinkCollection__add-link"
-          disabled=""
           type="button"
         >
           Add Link
@@ -564,7 +533,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="font-semibold border-b border-theme-neutral-200"
             >
               <td
-                class="w-16 text-center"
+                class="w-16 text-center align-middle pb-6 pt-2"
               >
                 <input
                   class="sc-fzpans ioBrsH"
@@ -574,17 +543,27 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 />
               </td>
               <td
-                class="w-40 pb-6 pt-2"
+                class="w-40 pb-6 pt-2 align-middle"
               >
+                <input
+                  name="links[0].type"
+                  type="hidden"
+                  value="twitter"
+                />
                 Twitter
               </td>
               <td
-                class="pb-6 pt-2"
+                class="break-all align-middle pb-6 pt-2"
               >
+                <input
+                  name="links[0].value"
+                  type="hidden"
+                  value="testing link"
+                />
                 testing link
               </td>
               <td
-                class="w-16 text-right pb-4"
+                class="w-16 text-right align-middle pb-4"
               >
                 <button
                   class="sc-AxjAm gBWztV"
@@ -608,20 +587,30 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="font-semibold border-b border-theme-neutral-200"
             >
               <td
-                class="w-16 text-center"
+                class="w-16 text-center align-middle py-6"
               />
               <td
                 class="w-40 py-6"
               >
+                <input
+                  name="links[1].type"
+                  type="hidden"
+                  value="facebook"
+                />
                 Facebook
               </td>
               <td
-                class="py-6"
+                class="break-all align-middle py-6"
               >
+                <input
+                  name="links[1].value"
+                  type="hidden"
+                  value="testing link 2"
+                />
                 testing link 2
               </td>
               <td
-                class="w-16 text-right false"
+                class="w-16 text-right align-middle false"
               >
                 <button
                   class="sc-AxjAm gBWztV"

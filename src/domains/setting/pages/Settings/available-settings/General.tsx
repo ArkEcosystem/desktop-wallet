@@ -10,6 +10,7 @@ import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks/env";
 import { PlatformSdkChoices } from "data";
+import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,7 +24,8 @@ type GeneralProps = {
 };
 
 export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
-	const activeProfile = useActiveProfile()!;
+	const activeProfile = useActiveProfile();
+
 	const { t } = useTranslation();
 
 	const { context, register } = formConfig;
@@ -32,7 +34,10 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const nameMaxLength = 42;
 
 	const [avatarImage, setAvatarImage] = useState(activeProfile.settings().get(ProfileSetting.Avatar) || "");
+
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
+	const [isResetProfileOpen, setIsResetProfileOpen] = useState(false);
+
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
 		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
 	);
@@ -318,7 +323,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 				</div>
 
 				<div className="flex justify-between w-full pt-2">
-					<Button color="danger" variant="plain">
+					<Button onClick={() => setIsResetProfileOpen(true)} color="danger" variant="plain">
 						<Icon name="Reset" />
 						<span>{t("COMMON.RESET_DATA")}</span>
 					</Button>
@@ -336,6 +341,14 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 				onClose={() => handleAdvancedMode(false)}
 				onDecline={() => handleAdvancedMode(false)}
 				onAccept={() => handleAdvancedMode(true)}
+			/>
+
+			<ResetProfile
+				isOpen={isResetProfileOpen}
+				profile={activeProfile}
+				onCancel={() => setIsResetProfileOpen(false)}
+				onClose={() => setIsResetProfileOpen(false)}
+				onReset={() => setIsResetProfileOpen(false)}
 			/>
 		</>
 	);
