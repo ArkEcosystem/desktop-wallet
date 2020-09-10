@@ -13,18 +13,34 @@ type Delegate = { address: string; username: string; rank: number };
 type DelegateRowProps = {
 	index: number;
 	delegate: ReadOnlyWallet;
-	selected?: Delegate[];
+	unvotesSelected?: Delegate[];
+	votesSelected?: Delegate[];
 	isVoted?: boolean;
 	isLoading?: boolean;
-	onSelect?: ({ address, username, rank }: Delegate) => void;
+	onUnvoteSelect?: ({ address, username, rank }: Delegate) => void;
+	onVotesSelect?: ({ address, username, rank }: Delegate) => void;
 };
 
-export const DelegateRow = ({ index, delegate, selected, isVoted, isLoading, onSelect }: DelegateRowProps) => {
+export const DelegateRow = ({
+	index,
+	delegate,
+	unvotesSelected,
+	votesSelected,
+	isVoted,
+	isLoading,
+	onUnvoteSelect,
+	onVotesSelect,
+}: DelegateRowProps) => {
 	const { t } = useTranslation();
 
-	const isSelected = useMemo(
-		() => isVoted || !!selected?.find((selectedDelegate) => selectedDelegate.username === delegate.username()),
-		[delegate, isVoted, selected],
+	const isUnvoteSelected = useMemo(
+		() => !!unvotesSelected?.find((selectedDelegate) => selectedDelegate.username === delegate.username()),
+		[delegate, unvotesSelected],
+	);
+
+	const isVoteSelected = useMemo(
+		() => isVoted || !!votesSelected?.find((selectedDelegate) => selectedDelegate.username === delegate.username()),
+		[delegate, isVoted, votesSelected],
 	);
 
 	if (isLoading) {
@@ -33,48 +49,48 @@ export const DelegateRow = ({ index, delegate, selected, isVoted, isLoading, onS
 
 	return (
 		<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
-			<TableCell variant="start" isSelected={isSelected} innerClassName="font-bold">
+			<TableCell variant="start" isSelected={isVoteSelected} innerClassName="font-bold">
 				<div className="flex items-center space-x-3">
 					<Avatar address={delegate.address()} size="lg" noShadow />
 					<span>{delegate.username()}</span>
 				</div>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isVoteSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>#{delegate.rank()}</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isVoteSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>%</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} innerClassName="justify-center">
+			<TableCell isSelected={isVoteSelected} innerClassName="justify-center">
 				<Icon name="Msq" className="text-xl text-theme-primary" />
 			</TableCell>
 
-			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isVoteSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isVoteSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isVoteSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell isSelected={isVoteSelected} innerClassName="font-bold text-theme-neutral-dark">
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelected} variant="end" innerClassName="justify-end">
+			<TableCell isSelected={isVoteSelected} variant="end" innerClassName="justify-end">
 				{isVoted ? (
 					<Button
 						variant="plain"
-						color={isSelected ? "primary" : "danger"}
+						color={!isUnvoteSelected ? "primary" : "danger"}
 						onClick={() =>
-							onSelect?.({
+							onUnvoteSelect?.({
 								address: delegate.address(),
 								username: delegate.username()!,
 								rank: delegate.rank()!,
@@ -82,14 +98,14 @@ export const DelegateRow = ({ index, delegate, selected, isVoted, isLoading, onS
 						}
 						data-testid={`DelegateRow__toggle-${index}`}
 					>
-						{isSelected ? t("COMMON.CURRENT") : t("COMMON.UNSELECTED")}
+						{!isUnvoteSelected ? t("COMMON.CURRENT") : t("COMMON.UNSELECTED")}
 					</Button>
 				) : (
 					<Button
 						variant="plain"
-						color={isSelected ? "danger" : "primary"}
+						color={isVoteSelected ? "danger" : "primary"}
 						onClick={() =>
-							onSelect?.({
+							onVotesSelect?.({
 								address: delegate.address(),
 								username: delegate.username()!,
 								rank: delegate.rank()!,
@@ -97,7 +113,7 @@ export const DelegateRow = ({ index, delegate, selected, isVoted, isLoading, onS
 						}
 						data-testid={`DelegateRow__toggle-${index}`}
 					>
-						{isSelected ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
+						{isVoteSelected ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
 					</Button>
 				)}
 			</TableCell>
@@ -106,7 +122,8 @@ export const DelegateRow = ({ index, delegate, selected, isVoted, isLoading, onS
 };
 
 DelegateRow.defaultProps = {
-	selected: [],
+	unvotesSelected: [],
+	votesSelected: [],
 	isVoted: false,
 	isLoading: false,
 };

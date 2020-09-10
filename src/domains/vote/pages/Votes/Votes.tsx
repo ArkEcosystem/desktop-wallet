@@ -230,15 +230,20 @@ export const Votes = () => {
 							coin={network?.coin()}
 							delegates={delegates}
 							votes={votes}
-							onContinue={(votes) => {
+							onContinue={(unvotes, votes) => {
 								const walletId = hasWalletId
 									? activeWallet.id()
 									: activeProfile.wallets().findByAddress(address)?.id();
 
-								const params = new URLSearchParams({
-									// unvotes: unvotes.join(),
-									votes: votes.join(),
-								});
+								const params = new URLSearchParams();
+
+								if (unvotes.length > 0) {
+									params.append("unvotes", unvotes.join());
+								}
+
+								if (votes.length > 0) {
+									params.append("votes", votes.join());
+								}
 
 								history.push({
 									pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,

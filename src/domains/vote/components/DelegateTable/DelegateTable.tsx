@@ -15,12 +15,13 @@ type DelegateTableProps = {
 	coin?: string;
 	delegates: ReadOnlyWallet[];
 	votes?: ReadOnlyWallet[];
-	onContinue?: (votes: string[]) => void;
+	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
 export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
-	const [selected, setSelected] = useState([] as Delegate[]);
+	const [unvotesSelected, setUnvotesSelected] = useState([] as Delegate[]);
+	const [votesSelected, setVotesSelected] = useState([] as Delegate[]);
 
 	const columns = [
 		{
@@ -65,17 +66,35 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 		},
 	];
 
-	const toggleSelected = (delegate: Delegate) => {
-		if (selected.find((selectedDelegate) => selectedDelegate.username === delegate.username)) {
-			setSelected(selected.filter((selectedDelegate) => selectedDelegate.username !== delegate.username));
+	const toggleUnvotesSelected = (delegate: Delegate) => {
+		if (unvotesSelected.find((selectedDelegate) => selectedDelegate.username === delegate.username)) {
+			setUnvotesSelected(
+				unvotesSelected.filter((selectedDelegate) => selectedDelegate.username !== delegate.username),
+			);
 
 			return;
 		}
 
 		if (coin === "ARK") {
-			setSelected([delegate]);
+			setUnvotesSelected([delegate]);
 		} else {
-			setSelected([...selected, delegate]);
+			setUnvotesSelected([...unvotesSelected, delegate]);
+		}
+	};
+
+	const toggleVotesSelected = (delegate: Delegate) => {
+		if (votesSelected.find((selectedDelegate) => selectedDelegate.username === delegate.username)) {
+			setVotesSelected(
+				votesSelected.filter((selectedDelegate) => selectedDelegate.username !== delegate.username),
+			);
+
+			return;
+		}
+
+		if (coin === "ARK") {
+			setVotesSelected([delegate]);
+		} else {
+			setVotesSelected([...votesSelected, delegate]);
 		}
 	};
 
@@ -99,16 +118,18 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 						<DelegateRow
 							index={index}
 							delegate={delegate}
-							selected={selected}
+							unvotesSelected={unvotesSelected}
+							votesSelected={votesSelected}
 							isVoted={isVoted}
 							isLoading={showSkeleton}
-							onSelect={toggleSelected}
+							onUnvoteSelect={toggleUnvotesSelected}
+							onVotesSelect={toggleVotesSelected}
 						/>
 					);
 				}}
 			</Table>
 
-			{selected.length > 0 && (
+			{(unvotesSelected.length > 0 || votesSelected.length > 0) && (
 				<div
 					className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
 					data-testid="DelegateTable__footer"
@@ -130,7 +151,7 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 												className="text-theme-neutral-900"
 												data-testid="DelegateTable__footer--votes"
 											>
-												{selected.length}
+												{votesSelected.length}
 											</div>
 										</div>
 									</div>
@@ -150,7 +171,7 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 												className="text-theme-neutral-900"
 												data-testid="DelegateTable__footer--unvotes"
 											>
-												0
+												{unvotesSelected.length}
 											</div>
 										</div>
 									</div>
@@ -170,7 +191,7 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 												className="text-theme-neutral-900"
 												data-testid="DelegateTable__footer--total"
 											>
-												{selected.length}/1
+												{coin === "ARK" ? "1/1" : votesSelected.length + unvotesSelected.length}
 											</div>
 										</div>
 									</div>
@@ -178,7 +199,12 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 							</div>
 
 							<Button
-								onClick={() => onContinue?.(selected.map((select) => select.address))}
+								onClick={() =>
+									onContinue?.(
+										unvotesSelected.map((select) => select.address),
+										votesSelected.map((select) => select.address),
+									)
+								}
 								data-testid="DelegateTable__continue-button"
 							>
 								{t("COMMON.CONTINUE")}
