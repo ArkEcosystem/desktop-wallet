@@ -185,6 +185,64 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should emit action on continue button to unvote/vote", async () => {
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
+
+		expect(getAllByTestId("AddressRowSkeleton")).toBeTruthy();
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		expect(selectNetworkInput).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		expect(selectNetworkInput).toHaveValue("Ark Devnet");
+
+		expect(getByTestId("AddressTable")).toBeTruthy();
+
+		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+
+		const selectAddressButton = getByTestId("AddressRow__select-1");
+
+		act(() => {
+			fireEvent.click(selectAddressButton);
+		});
+
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
+		});
+
+		const selectUnvoteButton = getByTestId("DelegateRow__toggle-0");
+
+		act(() => {
+			fireEvent.click(selectUnvoteButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+
+		const selectVoteButton = getByTestId("DelegateRow__toggle-1");
+
+		act(() => {
+			fireEvent.click(selectVoteButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("DelegateTable__continue-button"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should navigate between delegate and vote table", async () => {
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 		const { asFragment, getByTestId } = renderPage(route);

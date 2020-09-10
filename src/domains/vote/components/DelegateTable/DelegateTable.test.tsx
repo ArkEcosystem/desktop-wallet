@@ -6,6 +6,7 @@ import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
 import { DelegateTable } from "./DelegateTable";
 
 let delegates: ReadOnlyWallet[];
+let votes: ReadOnlyWallet[];
 
 describe("DelegateTable", () => {
 	beforeAll(() => {
@@ -19,6 +20,16 @@ describe("DelegateTable", () => {
 					rank: data[index].rank,
 				}),
 		);
+
+		votes = [
+			new ReadOnlyWallet({
+				address: data[0].address,
+				explorerLink: "",
+				publicKey: data[0].publicKey,
+				username: data[0].username,
+				rank: data[0].rank,
+			}),
+		];
 	});
 
 	it("should render", () => {
@@ -35,7 +46,7 @@ describe("DelegateTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select a delegate", () => {
+	it("should select a delegate to vote", () => {
 		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
@@ -48,7 +59,7 @@ describe("DelegateTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should unselect a delegate", () => {
+	it("should unselect a delegate to vote", () => {
 		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
@@ -67,8 +78,40 @@ describe("DelegateTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select multiple delegates", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} maxVotes={10} />);
+	it("should select a delegate to unvote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const selectButton = getByTestId("DelegateRow__toggle-0");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should unselect a delegate to unvote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const selectButton = getByTestId("DelegateRow__toggle-0");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(selectButton).toHaveTextContent("Current");
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select multiple delegates to unvote/vote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={10} />);
 		const selectButtons = [0, 1, 2].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
 
 		act(() => {
@@ -84,11 +127,12 @@ describe("DelegateTable", () => {
 		});
 
 		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
-		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("3");
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("2");
+		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should emit action on continue button", () => {
+	it("should emit action on continue button to vote", () => {
 		const delegateAddress = delegates[0].address()!;
 
 		const onContinue = jest.fn();
@@ -109,6 +153,30 @@ describe("DelegateTable", () => {
 
 		expect(container).toBeTruthy();
 		expect(onContinue).toHaveBeenCalledWith([], [delegateAddress]);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should emit action on continue button to unvote", () => {
+		const delegateAddress = votes[0].address()!;
+
+		const onContinue = jest.fn();
+		const { container, asFragment, getByTestId } = render(
+			<DelegateTable delegates={delegates} maxVotes={1} votes={votes} onContinue={onContinue} />,
+		);
+		const selectButton = getByTestId("DelegateRow__toggle-0");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByTestId("DelegateTable__continue-button"));
+		});
+
+		expect(container).toBeTruthy();
+		expect(onContinue).toHaveBeenCalledWith([delegateAddress], []);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
