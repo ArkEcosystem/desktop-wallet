@@ -103,9 +103,9 @@ test("should show an error if wrong mnemonic", async (t: any) => {
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Type wrong mnemonic
-	await t.typeText(Selector("[data-testid=Input]"), "wrong mnemonic", { replace: true });
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
 	await t.click(Selector("[data-testid=SendIpfs__button--submit]"));
-	await t.expect(Selector("[data-testid=Input]").hasAttribute("aria-invalid")).ok();
+	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
 });
 
 test.requestHooks(walletMock, sendMock)("should send IPFS successfully", async (t) => {
@@ -143,7 +143,7 @@ test.requestHooks(walletMock, sendMock)("should send IPFS successfully", async (
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Type mnemonic
-	await t.typeText(Selector("[data-testid=Input]"), "passphrase", { replace: true });
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase", { replace: true });
 	await t.click(Selector("[data-testid=SendIpfs__button--submit]"));
 
 	// Transaction successful

@@ -74,7 +74,7 @@ test.requestHooks(walletMock, sendMock)("should successfully submit delegate reg
 
 	// Sign transaction
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.AUTHENTICATION_STEP.TITLE).exists).ok();
-	await t.typeText(Selector("[data-testid=InputPassword] input"), "passphrase");
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase");
 	await t.click(Selector("button").withText(translations.COMMON.SEND));
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
 });
