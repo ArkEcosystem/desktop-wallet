@@ -179,5 +179,12 @@ SendEntityUpdate.defaultProps = {
 		videoLinks: [],
 		repositoryLinks: [],
 		socialMediaLinks: [],
+		fee: 0,
+		fees: {
+			static: 5,
+			min: 0,
+			avg: 1,
+			max: 2,
+		},
 	},
 };

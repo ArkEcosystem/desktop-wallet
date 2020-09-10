@@ -5,14 +5,20 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityProvider } from "domains/transaction/entity/providers";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const entityProvider = new EntityProvider();
 
 export const FirstStep = ({ form }: { form: any }) => {
-	const { register } = form;
 	const { t } = useTranslation();
+
+	const { register } = form;
+	const { socialMediaLinks, repositoryLinks, imageLinks, videoLinks, fees, fee } = form.watch();
+
+	useEffect(() => {
+		["socialMediaLinks", "repositoryLinks", "imageLinks", "videoLinks", "fee", "fees"].map(register);
+	}, []);
 
 	return (
 		<div data-testid="SendEntityUpdate__first-step">
@@ -47,6 +53,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 							.sourceControl()
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
+						data={repositoryLinks}
 					/>
 				</TransactionDetail>
 
@@ -58,6 +65,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 							.socialMedia()
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
+						data={socialMediaLinks}
 					/>
 				</TransactionDetail>
 
@@ -71,18 +79,20 @@ export const FirstStep = ({ form }: { form: any }) => {
 						typeName="files"
 						selectionTypes={["flickr"]}
 						selectionTypeTitle="Avatar"
+						data={[...videoLinks, ...imageLinks]}
 					/>
 				</TransactionDetail>
 
 				<TransactionDetail className="pt-6 pb-0">
-					<FormField name="name" className="font-normal">
+					<FormField name="fee" className="font-normal">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee
-							defaultValue={(25 * 1e8).toFixed(0)}
-							min={(1 * 1e8).toFixed(0)}
-							avg={(50 * 1e8).toFixed(0)}
-							max={(100 * 1e8).toFixed(0)}
-							step={1}
+							min={fees.min}
+							avg={fees.avg}
+							max={fees.max}
+							defaultValue={fee || 0}
+							value={fee || 0}
+							step={0.01}
 						/>
 					</FormField>
 				</TransactionDetail>
