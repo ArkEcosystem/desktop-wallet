@@ -1,6 +1,6 @@
 import { Blockfolio, BlockfolioResponse, BlockfolioSignal } from "@arkecosystem/platform-sdk-news";
-import { images } from "app/assets/images";
 import { SvgCollection } from "app/assets/svg";
+import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
 import { Pagination } from "app/components/Pagination";
@@ -14,31 +14,11 @@ import { useTranslation } from "react-i18next";
 
 import { assets, categories as defaultCategories } from "../../data";
 
-const { NoResultsBanner } = images.news.common;
-
 type Props = {
 	defaultCategories?: any[];
 	defaultAssets: any[];
 	selectedCoin?: string;
 	itemsPerPage?: number;
-};
-
-const EmptyScreen = () => {
-	const { t } = useTranslation();
-	return (
-		<div
-			className="flex flex-col justify-center h-full text-center border-2 rounded-lg border-theme-primary-contrast bg-theme-background"
-			data-testid="News__empty-results"
-		>
-			<div className="bg-theme-background">
-				<div className="mb-4 text-lg font-bold">{t("NEWS.PAGE_NEWS.RESULT_NOT_FOUND.TITLE")}</div>
-				<div className="mb-8 text-md">{t("NEWS.PAGE_NEWS.RESULT_NOT_FOUND.DESCRIPTION")}</div>
-				<div className="mx-auto my-4 w-128">
-					<NoResultsBanner />
-				</div>
-			</div>
-		</div>
-	);
 };
 
 export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerPage }: Props) => {
@@ -127,7 +107,13 @@ export const News = ({ defaultCategories, defaultAssets, selectedCoin, itemsPerP
 			<Section hasBackground={false}>
 				<div className="container flex space-x-8">
 					<div className="flex-none w-4/6">
-						{!isLoading && news.length === 0 && <EmptyScreen />}
+						{!isLoading && news.length === 0 && (
+							<EmptyResults
+								className="border-2 rounded-lg border-theme-primary-contrast"
+								title={t("COMMON.EMPTY_RESULTS.TITLE")}
+								subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+							/>
+						)}
 
 						{isLoading && (
 							<div className="space-y-6">

@@ -330,8 +330,7 @@ describe("Contacts", () => {
 
 	describe("without contacts", () => {
 		beforeEach(async () => {
-			firstContactId = profile.contacts().values()[0].id();
-			profile.contacts().forget(firstContactId);
+			profile.contacts().flush();
 
 			const contactsURL = `/profiles/${profile.id()}/contacts`;
 			history.push(contactsURL);

@@ -2,7 +2,7 @@ import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter } from "testing-library";
 
 import { WalletListItem } from "./WalletListItem";
 
@@ -143,4 +143,37 @@ describe("WalletListItem", () => {
 
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 	});
+
+	it.each(["ac38fe6d-4b67-4ef1-85be-17c5f6841129", "fake id"])(
+		"should set shadow color on mouse events",
+		(activeWalletId) => {
+			const setState = jest.fn();
+			const useStateSpy = jest.spyOn(React, "useState");
+
+			useStateSpy.mockImplementation((state) => [state, setState]);
+
+			const { asFragment, getByTestId } = render(
+				<table>
+					<tbody>
+						<WalletListItem wallet={wallet} activeWalletId={activeWalletId} />
+					</tbody>
+				</table>,
+			);
+
+			const testId = `WalletListItem__${wallet.address()}`;
+
+			expect(asFragment()).toMatchSnapshot();
+
+			fireEvent.mouseEnter(getByTestId(testId));
+			fireEvent.mouseLeave(getByTestId(testId));
+
+			expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+
+			if (wallet.id() === activeWalletId) {
+				expect(setState).toHaveBeenCalledWith("--theme-color-success-100");
+			} else {
+				expect(setState).toHaveBeenCalledWith("--theme-background-color");
+			}
+		},
+	);
 });

@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -11,7 +11,7 @@ import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { PlatformSdkChoices } from "data";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -22,11 +22,21 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const { register } = form;
+	const { watch, register } = form;
+	const name = watch("name");
+
 	const nameMaxLength = 42;
 	const passwordMinLength = 6;
 
 	const [avatarImage, setAvatarImage] = useState("");
+
+	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
+
+	useEffect(() => {
+		if ((!avatarImage || isSvg) && name) {
+			setAvatarImage(AvatarSDK.make(name));
+		}
+	}, [name, avatarImage, isSvg, setAvatarImage]);
 
 	const otherItems = [
 		{
@@ -38,21 +48,18 @@ export const CreateProfile = () => {
 		},
 	];
 
-	const submitForm = async ({ name, password, currency, isDarkMode, marketProvider }: any) => {
+	const handleSubmit = async ({ name, password, currency, isDarkMode, marketProvider }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
+
 		const profile = env.profiles().create(formattedName);
 
-		profile.settings().set(ProfileSetting.Avatar, avatarImage);
-		profile.settings().set(ProfileSetting.AdvancedMode, false);
-		profile.settings().set(ProfileSetting.AutomaticSignOutPeriod, 15);
-		profile.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);
-		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
-		profile.settings().set(ProfileSetting.LedgerUpdateMethod, false);
-		profile.settings().set(ProfileSetting.Locale, PlatformSdkChoices.languages[0].value);
 		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
-		profile.settings().set(ProfileSetting.ScreenshotProtection, true);
+		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-		profile.settings().set(ProfileSetting.TimeFormat, PlatformSdkChoices.timeFormats[0].value);
+
+		if (avatarImage && !isSvg) {
+			profile.settings().set(ProfileSetting.Avatar, avatarImage);
+		}
 
 		if (password) {
 			profile.auth().setPassword(password);
@@ -79,11 +86,11 @@ export const CreateProfile = () => {
 
 					<Divider />
 
-					<Form context={form} onSubmit={submitForm} data-testid="CreateProfile__form">
+					<Form context={form} onSubmit={handleSubmit} data-testid="CreateProfile__form">
 						<div className="mt-8">
 							<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
-							<SelectProfileImage value={avatarImage} onSelect={setAvatarImage} />
+							<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
 
 							<div className="relative mt-8 space-y-8">
 								<FormField name="name">

@@ -2,7 +2,7 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
-import { Table } from "app/components/Table";
+import { Table, TableCell } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -16,6 +16,7 @@ const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
 export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 	const { t } = useTranslation();
+
 	const data = [
 		{
 			name: "ChangeNOW Plugin",
@@ -86,29 +87,35 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
-						<tr className="border-b border-dashed border-theme-neutral-200">
-							<td className="text-center w-18">
+						<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
+							<TableCell variant="start" className="w-18">
 								<ChangeNowLogo className="w-12 h-12" />
-							</td>
+							</TableCell>
 
-							<td>
-								<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
-									{rowData.name}
+							<TableCell>
+								<div className="flex flex-col">
+									<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
+										{rowData.name}
+									</div>
+									<div>{rowData.description}</div>
 								</div>
-								<div>{rowData.description}</div>
-							</td>
+							</TableCell>
 
-							<td className="py-10">{rowData.category}</td>
+							<TableCell>
+								<span>{rowData.category}</span>
+							</TableCell>
 
-							<td className="py-10">
+							<TableCell>
 								<ReviewRating rating={rowData.rating} />
-							</td>
+							</TableCell>
 
-							<td className="py-10">v {rowData.version}</td>
+							<TableCell>
+								<span>v {rowData.version}</span>
+							</TableCell>
 
-							<td className="w-16">
+							<TableCell variant="end" className="w-16" innerClassName="justify-end">
 								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
-							</td>
+							</TableCell>
 						</tr>
 					)}
 				</Table>

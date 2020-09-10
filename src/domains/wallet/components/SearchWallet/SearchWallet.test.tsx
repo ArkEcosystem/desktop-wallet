@@ -64,4 +64,27 @@ describe("SearchWallet", () => {
 		fireEvent.click(getByTestId("modal__close-btn"));
 		expect(onClose).toHaveBeenCalled();
 	});
+
+	it("should set shadow color on mouse events", () => {
+		const setState = jest.fn();
+		const useStateSpy = jest.spyOn(React, "useState");
+
+		useStateSpy.mockImplementation((state) => [state, setState]);
+
+		const { getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<SearchWallet isOpen={true} wallets={wallets} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		fireEvent.mouseEnter(getByText(wallets[0].alias()));
+		fireEvent.mouseLeave(getByText(wallets[0].alias()));
+
+		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+		expect(setState).toHaveBeenCalledWith("");
+	});
 });

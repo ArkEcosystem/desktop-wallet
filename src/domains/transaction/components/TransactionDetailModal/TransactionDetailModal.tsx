@@ -16,10 +16,10 @@ type TransactionDetailModalProps = {
 
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
 	const activeProfile = useActiveProfile();
+
 	const ticker = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!;
-	const walletAlias = transactionItem!.isSent()
-		? activeProfile.wallets().findByAddress(transactionItem!.sender())?.alias()
-		: activeProfile.wallets().findByAddress(transactionItem!.recipient())?.alias();
+	const walletAlias = activeProfile.wallets().findByAddress(transactionItem!.sender())?.alias();
+	const recipientWalletAlias = activeProfile.wallets().findByAddress(transactionItem!.recipient())?.alias();
 
 	const transactionType = transactionItem?.type();
 	let TransactionModal;
@@ -56,10 +56,11 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 	return (
 		<TransactionModal
 			isOpen={isOpen}
-			onClose={onClose}
 			transaction={transactionItem}
 			ticker={ticker}
 			walletAlias={walletAlias}
+			recipientWalletAlias={recipientWalletAlias}
+			onClose={onClose}
 		/>
 	);
 };

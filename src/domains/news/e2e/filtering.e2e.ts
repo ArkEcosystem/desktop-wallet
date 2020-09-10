@@ -43,5 +43,5 @@ test("should show no results screen", async (t) => {
 
 	await t.click(Selector(`[data-testid=NewsOptions__submit]`));
 
-	await t.expect(Selector('[data-testid="News__empty-results"]').exists).ok();
+	await t.expect(Selector('[data-testid="EmptyResults"]').exists).ok();
 });
