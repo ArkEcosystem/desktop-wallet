@@ -12,14 +12,14 @@ exports[`TransferDetail should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxheI ijytAL absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxgMl VllkI w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -62,23 +62,28 @@ exports[`TransferDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="mt-2 font-semibold"
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
             >
               <div
                 class="w-full h-full"
               >
                 <img
-                  alt="test"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                  title="test"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
@@ -98,43 +103,30 @@ exports[`TransferDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+              data-testid="Avatar"
             >
               <div
-                class="sc-AxjAm fJvtfB -mr-2 border-black"
+                class="w-full h-full"
               >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
+                <img
+                  alt="transaction.recipient()"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                  title="transaction.recipient()"
+                />
               </div>
             </div>
           </div>
@@ -154,20 +146,28 @@ exports[`TransferDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-AxiKw BrXzA"
-                  color="danger"
+                  class="mt-2 font-semibold"
                 >
-                  100.00000000 BTC
+                  <div
+                    class="sc-AxhUy gRLEpJ"
+                    color="danger"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      100 
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              class="sc-AxjAm fJvtfB border-theme-danger-200 text-theme-danger-dark"
+              class="sc-AxhCb iZzMIT border-theme-danger-contrast text-theme-danger"
             >
               <div
-                class="sc-AxirZ dCVESD"
-                height="25"
-                width="25"
+                class="sc-AxirZ caNxxo"
+                height="21"
+                width="15"
               >
                 <svg>
                   sent.svg
@@ -190,7 +190,11 @@ exports[`TransferDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 
+                </span>
               </div>
             </div>
           </div>
@@ -209,21 +213,17 @@ exports[`TransferDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <div
-                  class="flex justify-between"
-                >
-                  Test
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      smartbridge.svg
-                    </svg>
-                  </div>
-                </div>
+                Test
               </div>
+            </div>
+            <div
+              class="sc-AxirZ eEbZjj"
+              height="20"
+              width="20"
+            >
+              <svg>
+                smartbridge.svg
+              </svg>
             </div>
           </div>
           <div
@@ -263,7 +263,9 @@ exports[`TransferDetail should render a modal 1`] = `
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -300,23 +302,35 @@ exports[`TransferDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <a
+                  class="sc-AxiKw dnFIyt inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  data-testid="Link"
+                  rel="noopener noreferrer"
+                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
-                  ee4175…3ecefe
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    ee4175091d9f4…9d09bcf3ecefe
+                  </span>
+                </a>
                 <span
                   class="inline-block ml-4 text-theme-primary-300"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
                   </div>
                 </span>
               </div>
@@ -337,23 +351,34 @@ exports[`TransferDetail should render a modal 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <a
+                  class="sc-AxiKw dnFIyt inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  data-testid="Link"
+                  rel="noopener noreferrer"
                 >
-                  adsad1…203e12
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    adsad12312xsd1w312e1s13203e12
+                  </span>
+                </a>
                 <span
                   class="inline-block ml-4 text-theme-primary-300"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
                   </div>
                 </span>
               </div>
@@ -376,14 +401,14 @@ exports[`TransferDetail should render as confirmed 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxheI ijytAL absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxgMl VllkI w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -426,23 +451,28 @@ exports[`TransferDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="mt-2 font-semibold"
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
             >
               <div
                 class="w-full h-full"
               >
                 <img
-                  alt="test"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                  title="test"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
@@ -462,43 +492,30 @@ exports[`TransferDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+              data-testid="Avatar"
             >
               <div
-                class="sc-AxjAm fJvtfB -mr-2 border-black"
+                class="w-full h-full"
               >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
+                <img
+                  alt="transaction.recipient()"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                  title="transaction.recipient()"
+                />
               </div>
             </div>
           </div>
@@ -518,20 +535,28 @@ exports[`TransferDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-AxiKw BrXzA"
-                  color="danger"
+                  class="mt-2 font-semibold"
                 >
-                  100.00000000 BTC
+                  <div
+                    class="sc-AxhUy gRLEpJ"
+                    color="danger"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      100 
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              class="sc-AxjAm fJvtfB border-theme-danger-200 text-theme-danger-dark"
+              class="sc-AxhCb iZzMIT border-theme-danger-contrast text-theme-danger"
             >
               <div
-                class="sc-AxirZ dCVESD"
-                height="25"
-                width="25"
+                class="sc-AxirZ caNxxo"
+                height="21"
+                width="15"
               >
                 <svg>
                   sent.svg
@@ -554,7 +579,11 @@ exports[`TransferDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 
+                </span>
               </div>
             </div>
           </div>
@@ -573,21 +602,17 @@ exports[`TransferDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                <div
-                  class="flex justify-between"
-                >
-                  Test
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      smartbridge.svg
-                    </svg>
-                  </div>
-                </div>
+                Test
               </div>
+            </div>
+            <div
+              class="sc-AxirZ eEbZjj"
+              height="20"
+              width="20"
+            >
+              <svg>
+                smartbridge.svg
+              </svg>
             </div>
           </div>
           <div
@@ -627,7 +652,9 @@ exports[`TransferDetail should render as confirmed 1`] = `
                 <div
                   class="flex"
                 >
-                  Well Confirmed
+                  <span>
+                    Well confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500"
                   >
@@ -664,23 +691,35 @@ exports[`TransferDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <a
+                  class="sc-AxiKw dnFIyt inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  data-testid="Link"
+                  rel="noopener noreferrer"
+                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
-                  ee4175…3ecefe
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    ee4175091d9f4…9d09bcf3ecefe
+                  </span>
+                </a>
                 <span
                   class="inline-block ml-4 text-theme-primary-300"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
                   </div>
                 </span>
               </div>
@@ -701,23 +740,34 @@ exports[`TransferDetail should render as confirmed 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <a
+                  class="sc-AxiKw dnFIyt inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  data-testid="Link"
+                  rel="noopener noreferrer"
                 >
-                  adsad1…203e12
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    adsad12312xsd1w312e1s13203e12
+                  </span>
+                </a>
                 <span
                   class="inline-block ml-4 text-theme-primary-300"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
                   </div>
                 </span>
               </div>
@@ -740,14 +790,14 @@ exports[`TransferDetail should render as not is sent 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxheI ijytAL absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxgMl VllkI w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -790,23 +840,28 @@ exports[`TransferDetail should render as not is sent 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="mt-2 font-semibold"
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
             >
               <div
                 class="w-full h-full"
               >
                 <img
-                  alt="test"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                  title="test"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
@@ -826,43 +881,30 @@ exports[`TransferDetail should render as not is sent 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+              data-testid="Avatar"
             >
               <div
-                class="sc-AxjAm fJvtfB -mr-2 border-black"
+                class="w-full h-full"
               >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
+                <img
+                  alt="transaction.recipient()"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                  title="transaction.recipient()"
+                />
               </div>
             </div>
           </div>
@@ -882,20 +924,28 @@ exports[`TransferDetail should render as not is sent 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-AxiKw djbzVd"
-                  color="success"
+                  class="mt-2 font-semibold"
                 >
-                  100.00000000 BTC
+                  <div
+                    class="sc-AxhUy eCrePA"
+                    color="success"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      100 
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              class="sc-AxjAm fJvtfB border-theme-success-200 text-theme-success-dark"
+              class="sc-AxhCb iZzMIT border-theme-success-300 text-theme-success"
             >
               <div
-                class="sc-AxirZ dCVESD"
-                height="25"
-                width="25"
+                class="sc-AxirZ caNxxo"
+                height="21"
+                width="15"
               >
                 <svg>
                   received.svg
@@ -918,7 +968,11 @@ exports[`TransferDetail should render as not is sent 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 
+                </span>
               </div>
             </div>
           </div>
@@ -937,21 +991,17 @@ exports[`TransferDetail should render as not is sent 1`] = `
               <div
                 class="font-semibold"
               >
-                <div
-                  class="flex justify-between"
-                >
-                  Test
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      smartbridge.svg
-                    </svg>
-                  </div>
-                </div>
+                Test
               </div>
+            </div>
+            <div
+              class="sc-AxirZ eEbZjj"
+              height="20"
+              width="20"
+            >
+              <svg>
+                smartbridge.svg
+              </svg>
             </div>
           </div>
           <div
@@ -991,7 +1041,9 @@ exports[`TransferDetail should render as not is sent 1`] = `
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -1028,23 +1080,35 @@ exports[`TransferDetail should render as not is sent 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <a
+                  class="sc-AxiKw dnFIyt inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  data-testid="Link"
+                  rel="noopener noreferrer"
+                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
-                  ee4175…3ecefe
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    ee4175091d9f4…9d09bcf3ecefe
+                  </span>
+                </a>
                 <span
                   class="inline-block ml-4 text-theme-primary-300"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
                   </div>
                 </span>
               </div>
@@ -1065,23 +1129,34 @@ exports[`TransferDetail should render as not is sent 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <a
+                  class="sc-AxiKw dnFIyt inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  data-testid="Link"
+                  rel="noopener noreferrer"
                 >
-                  adsad1…203e12
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    adsad12312xsd1w312e1s13203e12
+                  </span>
+                </a>
                 <span
                   class="inline-block ml-4 text-theme-primary-300"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
                   </div>
                 </span>
               </div>
@@ -1104,14 +1179,14 @@ exports[`TransferDetail should render with wallet alias 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-AxheI ijytAL absolute top-0 left-0 right-0 z-50 flex flex-col p-10 mx-auto mt-24 mb-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxhCb gcoSL w-11 h-11"
+          class="sc-AxgMl VllkI w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
@@ -1154,23 +1229,34 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="mt-2 font-semibold"
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  <span
+                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B…s6YUYD
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
               data-testid="Avatar"
             >
               <div
                 class="w-full h-full"
               >
                 <img
-                  alt="test"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                  title="test"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
@@ -1190,44 +1276,30 @@ exports[`TransferDetail should render with wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                <span
-                  class="sc-AxgMl fFPQpl ml-2 text-theme-neutral"
-                  data-testid="TruncateMiddle"
+                <div
+                  class="inline-block truncate align-middle"
                 >
-                  D8rr7B…s6YUYD
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                </div>
               </div>
             </div>
             <div
-              class="flex items-center"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+              data-testid="Avatar"
             >
               <div
-                class="sc-AxjAm fJvtfB -mr-2 border-black"
+                class="w-full h-full"
               >
-                <div
-                  class="sc-AxirZ dCVESD"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
+                <img
+                  alt="transaction.recipient()"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                  title="transaction.recipient()"
+                />
               </div>
             </div>
           </div>
@@ -1247,20 +1319,28 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-AxiKw djbzVd"
-                  color="success"
+                  class="mt-2 font-semibold"
                 >
-                  100.00000000 BTC
+                  <div
+                    class="sc-AxhUy eCrePA"
+                    color="success"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      100 
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              class="sc-AxjAm fJvtfB border-theme-success-200 text-theme-success-dark"
+              class="sc-AxhCb iZzMIT border-theme-success-300 text-theme-success"
             >
               <div
-                class="sc-AxirZ dCVESD"
-                height="25"
-                width="25"
+                class="sc-AxirZ caNxxo"
+                height="21"
+                width="15"
               >
                 <svg>
                   received.svg
@@ -1283,7 +1363,11 @@ exports[`TransferDetail should render with wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                21.00000000 BTC
+                <span
+                  data-testid="Amount"
+                >
+                  21 
+                </span>
               </div>
             </div>
           </div>
@@ -1302,21 +1386,17 @@ exports[`TransferDetail should render with wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                <div
-                  class="flex justify-between"
-                >
-                  Test
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      smartbridge.svg
-                    </svg>
-                  </div>
-                </div>
+                Test
               </div>
+            </div>
+            <div
+              class="sc-AxirZ eEbZjj"
+              height="20"
+              width="20"
+            >
+              <svg>
+                smartbridge.svg
+              </svg>
             </div>
           </div>
           <div
@@ -1356,7 +1436,9 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                 <div
                   class="flex"
                 >
-                  Not Confirmed
+                  <span>
+                    Not confirmed
+                  </span>
                   <div
                     class="flex w-6 h-6 ml-2 rounded-full bg-theme-danger-200 text-theme-danger-500"
                   >
@@ -1393,23 +1475,35 @@ exports[`TransferDetail should render with wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <a
+                  class="sc-AxiKw dnFIyt inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  data-testid="Link"
+                  rel="noopener noreferrer"
+                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
-                  ee4175…3ecefe
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    ee4175091d9f4…9d09bcf3ecefe
+                  </span>
+                </a>
                 <span
                   class="inline-block ml-4 text-theme-primary-300"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
                   </div>
                 </span>
               </div>
@@ -1430,23 +1524,34 @@ exports[`TransferDetail should render with wallet alias 1`] = `
               <div
                 class="font-semibold"
               >
-                <span
-                  class="sc-AxgMl fFPQpl text-theme-primary-dark"
-                  data-testid="TruncateMiddle"
+                <a
+                  class="sc-AxiKw dnFIyt inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                  data-testid="Link"
+                  rel="noopener noreferrer"
                 >
-                  adsad1…203e12
-                </span>
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary-dark"
+                    data-testid="TruncateMiddle"
+                  >
+                    adsad12312xsd1w312e1s13203e12
+                  </span>
+                </a>
                 <span
                   class="inline-block ml-4 text-theme-primary-300"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
                   </div>
                 </span>
               </div>
