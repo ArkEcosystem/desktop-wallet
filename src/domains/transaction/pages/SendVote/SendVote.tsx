@@ -9,13 +9,13 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useQueryParams } from "app/hooks";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
 import { FourthStep } from "./Step4";
 
 export const SendVote = () => {
@@ -89,7 +89,7 @@ export const SendVote = () => {
 
 	const submitForm = async () => {
 		clearError("mnemonic");
-		const { fee, mnemonic, senderAddress } = getValues();
+		const { fee, mnemonic, secondMnemonic, senderAddress } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		try {
@@ -98,6 +98,7 @@ export const SendVote = () => {
 				from: senderAddress,
 				sign: {
 					mnemonic,
+					secondMnemonic,
 				},
 			};
 
@@ -174,7 +175,7 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep />
+								<AuthenticationStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<FourthStep

@@ -4,8 +4,11 @@ import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
+import { EntityProvider } from "domains/transaction/entity/providers";
 import React from "react";
 import { useTranslation } from "react-i18next";
+
+const entityProvider = new EntityProvider();
 
 export const FirstStep = ({ form }: { form: any }) => {
 	const { register } = form;
@@ -40,11 +43,9 @@ export const FirstStep = ({ form }: { form: any }) => {
 					<LinkCollection
 						title={t("TRANSACTION.REPOSITORIES.TITLE")}
 						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
-						types={[
-							{ label: "BitBucket", value: "bitbucket" },
-							{ label: "GitHub", value: "github" },
-							{ label: "GitLab", value: "gitlab" },
-						]}
+						types={entityProvider
+							.sourceControl()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
 					/>
 				</TransactionDetail>
@@ -53,11 +54,9 @@ export const FirstStep = ({ form }: { form: any }) => {
 					<LinkCollection
 						title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
 						description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
-						types={[
-							{ label: "Facebook", value: "facebook" },
-							{ label: "Twitter", value: "twitter" },
-							{ label: "LinkedIn", value: "linkedin" },
-						]}
+						types={entityProvider
+							.socialMedia()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
 					/>
 				</TransactionDetail>
@@ -66,11 +65,9 @@ export const FirstStep = ({ form }: { form: any }) => {
 					<LinkCollection
 						title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
 						description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
-						types={[
-							{ label: "YouTube", value: "youtube" },
-							{ label: "Vimeo", value: "vimeo" },
-							{ label: "Flickr", value: "flickr" },
-						]}
+						types={entityProvider
+							.media()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="files"
 						selectionTypes={["flickr"]}
 						selectionTypeTitle="Avatar"

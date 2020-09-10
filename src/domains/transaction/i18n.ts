@@ -7,6 +7,7 @@ export const translations: { [key: string]: any } = {
 	AMOUNT: "Amount",
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
+	CONFIRMATIONS_COUNT: "{{count}} Confirmations",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
 	DELEGATE_NAME_TOO_LONG: "Delegate Name too long (max 20 characters)",
@@ -16,11 +17,14 @@ export const translations: { [key: string]: any } = {
 	ID: "ID",
 	INVALID_DELEGATE_NAME: "Invalid Delegate Name",
 	INVALID_MNEMONIC: "Invalid Mnemonic",
+	INVALID_URL: "Invalid URL",
 	IPFS_HASH: "IPFS Hash",
 	MNEMONIC: "Mnemonic",
 	MULTIPLE: "Multiple",
 	NAME: "Name",
 	NETWORK: "Network",
+	NOT_CONFIRMED: "Not confirmed",
+	RECEIVED: "Received",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
 	RECIPIENTS_HELPTEXT: "A multiple recipient transaction allows up to {{count}} recipients in one transaction",
@@ -28,6 +32,7 @@ export const translations: { [key: string]: any } = {
 	SECOND_MNEMONIC: "2nd Mnemonic",
 	SEND_ALL: "Send All",
 	SENDER: "Sender",
+	SENT: "Sent",
 	SIGN: "Sign",
 	SIGN_CONTINUE: "Sign & Continue",
 	SIGNATURES: "Signatures",
@@ -43,6 +48,7 @@ export const translations: { [key: string]: any } = {
 	VOTER: "Voter",
 	VOTES: "Votes",
 	WEBSITE: "Website",
+	WELL_CONFIRMED: "Well confirmed",
 	YOUR_ADDRESS: "Your address",
 
 	FEES: {
@@ -52,6 +58,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	TRANSACTION_TYPES: {
+		BUSINESS_REGISTRATION: "Business Registration",
 		BUSINESS_UPDATE: "Business Update",
 		VOTE: "Vote",
 	},
@@ -105,6 +112,12 @@ export const translations: { [key: string]: any } = {
 		TWITTER: "Twitter",
 		VIMEO: "Vimeo",
 		YOUTUBE: "YouTube",
+	},
+
+	ENTITY: {
+		DISPLAY_NAME: "Display Name",
+		INVALID_NAME: "Invalid Entity Name",
+		INVALID_DESCRIPTION: "Invalid Entity Description",
 	},
 
 	PAGE_REGISTRATION: {
