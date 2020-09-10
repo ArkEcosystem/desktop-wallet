@@ -1,62 +1,64 @@
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { Link } from "app/components/Link";
 import React from "react";
-import { useTranslation } from "react-i18next";
 
-type Link = {
-	link: string;
-	type: string;
-};
+import { EntityLink } from "../LinkCollection/LinkCollection.models";
+
+export type ProviderEntityLink = { displayName: string } & EntityLink;
 
 type LinkListProps = {
 	description: string;
-	links: Link[];
+	links: ProviderEntityLink[];
 	title: string;
 };
 
 const linkIcons: Record<string, string> = {
 	bitbucket: "BitBucket",
-	facebook: "Facebook",
-	flickr: "Flickr",
 	github: "GitHub",
 	gitlab: "GitLab",
-	linkedin: "LinkedIn",
 	npm: "Npm",
+
+	discord: "Discord",
+	facebook: "Facebook",
+	instagram: "Instagram",
+	linkedin: "LinkedIn",
+	medium: "Medium",
+	reddit: "Reddit",
+	telegram: "Send",
+	slack: "Slack",
 	twitter: "Twitter",
-	vimeo: "Vimeo",
 	youtube: "YouTube",
+
+	imgur: "Imgur",
+	flickr: "Flickr",
+	vimeo: "Vimeo",
 };
 
-const LinkItem = ({ link }: { link: Link }) => {
-	const { t } = useTranslation();
+const LinkItem = ({ link }: { link: ProviderEntityLink }) => (
+	<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 first:border-0">
+		<div className="flex justify-between flex-1">
+			<div>
+				<div className="text-sm font-semibold text-theme-neutral">{link.displayName}</div>
 
-	return (
-		<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 first:border-0">
-			<div className="flex justify-between flex-1">
-				<div>
-					<div className="text-sm font-semibold text-theme-neutral">
-						{t(`TRANSACTION.LINK_TYPES.${link.type.toUpperCase()}`)}
-					</div>
-
-					<a href={link.link} className="inline-block mt-2 font-semibold link">
-						{link.link}
-					</a>
-				</div>
-
-				<Circle className="my-auto border-black bg-theme-background" size="lg">
-					<Icon name={linkIcons[link.type]} width={20} height={20} />
-				</Circle>
+				<Link to={link.value} className="inline-block mt-2 font-semibold link">
+					{link.value}
+				</Link>
 			</div>
+
+			<Circle className="my-auto border-black bg-theme-background" size="lg">
+				<Icon name={linkIcons[link.type]} width={20} height={20} />
+			</Circle>
 		</div>
-	);
-};
+	</div>
+);
 
 export const LinkList = ({ description, links, title }: LinkListProps) => {
 	const [isExpanded, setIsExpanded] = React.useState(false);
 
 	const items = [];
 	for (const link of links) {
-		items.push(<LinkItem key={`${link.type}-${link.link}`} link={link} />);
+		items.push(<LinkItem key={`${link.type}-${link.value}`} link={link} />);
 	}
 
 	return (

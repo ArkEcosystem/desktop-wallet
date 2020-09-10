@@ -8,32 +8,35 @@ const types = [
 	{
 		label: "Facebook",
 		value: "facebook",
+		validate: () => true,
 	},
 	{
 		label: "Twitter",
 		value: "twitter",
+		validate: () => true,
 	},
 	{
 		label: "Instagram",
 		value: "instagram",
+		validate: () => true,
 	},
 ];
 
 const links = [
 	{
-		link: "test",
+		value: "test",
 		type: "facebook",
 	},
 	{
-		link: "test 2",
+		value: "test 2",
 		type: "twitter",
 	},
 	{
-		link: "test 3",
+		value: "test 3",
 		type: "linkedin",
 	},
 	{
-		link: "test 4",
+		value: "test 4",
 		type: "twitter",
 	},
 ];
