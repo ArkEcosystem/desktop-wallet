@@ -166,7 +166,7 @@ export const MyRegistrations = () => {
 
 			{hasNoRegistrations && <EmptyRegistrations />}
 
-			{showEmptySearchResults && (
+			{!hasNoRegistrations && showEmptySearchResults && (
 				<EmptyResults
 					className="flex-1"
 					title={t("COMMON.EMPTY_RESULTS.TITLE")}
