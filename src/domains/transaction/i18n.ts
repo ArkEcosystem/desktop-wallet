@@ -7,6 +7,7 @@ export const translations: { [key: string]: any } = {
 	AMOUNT: "Amount",
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
+	CONFIRMATIONS_COUNT: "{{count}} Confirmations",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
 	DELEGATE_NAME_TOO_LONG: "Delegate Name too long (max 20 characters)",
@@ -21,6 +22,8 @@ export const translations: { [key: string]: any } = {
 	MULTIPLE: "Multiple",
 	NAME: "Name",
 	NETWORK: "Network",
+	NOT_CONFIRMED: "Not confirmed",
+	RECEIVED: "Received",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
 	RECIPIENTS_HELPTEXT: "A multiple recipient transaction allows up to {{count}} recipients in one transaction",
@@ -28,6 +31,7 @@ export const translations: { [key: string]: any } = {
 	SECOND_MNEMONIC: "2nd Mnemonic",
 	SEND_ALL: "Send All",
 	SENDER: "Sender",
+	SENT: "Sent",
 	SIGN: "Sign",
 	SIGN_CONTINUE: "Sign & Continue",
 	SIGNATURES: "Signatures",
@@ -43,6 +47,7 @@ export const translations: { [key: string]: any } = {
 	VOTER: "Voter",
 	VOTES: "Votes",
 	WEBSITE: "Website",
+	WELL_CONFIRMED: "Well confirmed",
 	YOUR_ADDRESS: "Your address",
 
 	FEES: {
