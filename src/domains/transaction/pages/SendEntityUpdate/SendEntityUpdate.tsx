@@ -5,6 +5,7 @@ import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -30,6 +31,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	const { formState } = form;
 	const { isValid } = formState;
 
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
@@ -64,6 +66,12 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 
 		fetchTransaction();
 	}, [transactionId, activeWallet]);
+
+	useEffect(() => {
+		const fees = env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "entityUpdate");
+		form.setValue("fees", fees);
+		form.setValue("fee", fees.avg);
+	}, [env, activeWallet]);
 
 	useEffect(() => {
 		const fetchIpfs = async () => {
@@ -181,10 +189,10 @@ SendEntityUpdate.defaultProps = {
 		socialMediaLinks: [],
 		fee: 0,
 		fees: {
-			static: 5,
-			min: 0,
-			avg: 1,
-			max: 2,
+			static: "5",
+			min: "0",
+			avg: "1",
+			max: "2",
 		},
 	},
 };

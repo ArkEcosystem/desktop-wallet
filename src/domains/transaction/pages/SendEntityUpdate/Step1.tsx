@@ -13,7 +13,7 @@ const entityProvider = new EntityProvider();
 export const FirstStep = ({ form }: { form: any }) => {
 	const { t } = useTranslation();
 
-	const { register } = form;
+	const { register, setValue } = form;
 	const { socialMediaLinks, repositoryLinks, imageLinks, videoLinks, fees, fee } = form.watch();
 
 	useEffect(() => {
@@ -93,6 +93,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}
+							onChange={(value: any) => setValue("fee", value, true)}
 						/>
 					</FormField>
 				</TransactionDetail>
