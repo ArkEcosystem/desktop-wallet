@@ -121,7 +121,7 @@ export const TransferDetail = ({
 						<Amount
 							ticker={exchangeCurrency}
 							value={transaction.amount().times(transaction.wallet().data().get(WalletData.ExchangeRate))}
-							className="text-theme-neutral-light ml-1"
+							className="ml-1 text-theme-neutral-light"
 						/>
 					)}
 				</div>
