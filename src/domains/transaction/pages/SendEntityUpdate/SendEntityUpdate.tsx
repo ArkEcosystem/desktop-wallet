@@ -183,10 +183,10 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 
 SendEntityUpdate.defaultProps = {
 	formDefaultData: {
-		imageLinks: [],
-		videoLinks: [],
-		repositoryLinks: [],
-		socialMediaLinks: [],
+		images: [],
+		videos: [],
+		sourceControl: [],
+		socialMedia: [],
 		fee: 0,
 		fees: {
 			static: "5",

@@ -14,10 +14,10 @@ export const FirstStep = ({ form }: { form: any }) => {
 	const { t } = useTranslation();
 
 	const { register, setValue } = form;
-	const { socialMediaLinks, repositoryLinks, imageLinks, videoLinks, fees, fee } = form.watch();
+	const { socialMedia, sourceControl, images, videos, fees, fee } = form.watch();
 
 	useEffect(() => {
-		["socialMediaLinks", "repositoryLinks", "imageLinks", "videoLinks", "fee", "fees"].map(register);
+		["socialMedia", "sourceControl", "images", "videos", "fee", "fees"].map(register);
 	}, []);
 
 	return (
@@ -31,17 +31,17 @@ export const FirstStep = ({ form }: { form: any }) => {
 				<TransactionDetail border={false} className="pb-8">
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input type="text" ref={register} defaultValue="ROBank Ecosystem" />
+						<Input type="text" ref={register} />
 					</FormField>
 
 					<FormField name="description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea ref={register} defaultValue="Not a trustworthy bank" />
+						<TextArea ref={register} />
 					</FormField>
 
 					<FormField name="website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input type="website" ref={register} defaultValue="http://robank.com" />
+						<Input type="website" ref={register} />
 					</FormField>
 				</TransactionDetail>
 
@@ -53,7 +53,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 							.sourceControl()
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
-						data={repositoryLinks}
+						data={sourceControl}
 					/>
 				</TransactionDetail>
 
@@ -65,7 +65,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 							.socialMedia()
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
-						data={socialMediaLinks}
+						data={socialMedia}
 					/>
 				</TransactionDetail>
 
@@ -79,7 +79,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 						typeName="files"
 						selectionTypes={["flickr"]}
 						selectionTypeTitle="Avatar"
-						data={[...videoLinks, ...imageLinks]}
+						data={[...videos, ...images]}
 					/>
 				</TransactionDetail>
 
