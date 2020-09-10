@@ -124,41 +124,7 @@ describe("SendEntityResignation", () => {
 			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
 		});
 
-		expect(getByTestId("SendEntityResignation__third-step")).toBeTruthy();
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render 3rd step with password", async () => {
-		const { asFragment, getByTestId } = renderPage({ passwordType: "password" });
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-
-		expect(getByTestId("SendEntityResignation__third-step")).toBeTruthy();
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render 3rd step with ledger", async () => {
-		const { asFragment, getByTestId } = renderPage({ passwordType: "ledger" });
-
-		await waitFor(() => expect(getByTestId("SendEntityResignation__first-step")).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-		await act(async () => {
-			fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
-		});
-
-		expect(getByTestId("SendEntityResignation__third-step")).toBeTruthy();
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
 		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -180,7 +146,7 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityResignation__mnemonic"), {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
@@ -191,10 +157,10 @@ describe("SendEntityResignation", () => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("SendEntityResignation__mnemonic")).toHaveAttribute("aria-invalid"));
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveAttribute("aria-invalid"));
 		await waitFor(() => expect(getByTestId("SendEntityResignation__send-button")).toBeDisabled());
 
-		expect(getByTestId("SendEntityResignation__third-step")).toBeTruthy();
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
 		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment()).toMatchSnapshot();
 
@@ -220,7 +186,7 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityResignation__mnemonic"), {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
@@ -259,7 +225,7 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityResignation__mnemonic"), {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
@@ -302,7 +268,7 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityResignation__mnemonic"), {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},

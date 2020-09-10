@@ -4,18 +4,15 @@ import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
-import React, { useEffect } from "react";
+import { EntityProvider } from "domains/transaction/entity/providers";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
+const entityProvider = new EntityProvider();
+
 export const FirstStep = ({ form }: { form: any }) => {
-	const { t } = useTranslation();
-
 	const { register } = form;
-	const { socialMediaLinks, repositoryLinks, imageLinks, videoLinks } = form.watch();
-
-	useEffect(() => {
-		["socialMediaLinks", "repositoryLinks", "imageLinks", "videoLinks"].map(register);
-	}, []);
+	const { t } = useTranslation();
 
 	return (
 		<div data-testid="SendEntityUpdate__first-step">
@@ -28,17 +25,17 @@ export const FirstStep = ({ form }: { form: any }) => {
 				<TransactionDetail border={false} className="pb-8">
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input type="text" ref={register} />
+						<Input type="text" ref={register} defaultValue="ROBank Ecosystem" />
 					</FormField>
 
 					<FormField name="description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea ref={register} />
+						<TextArea ref={register} defaultValue="Not a trustworthy bank" />
 					</FormField>
 
 					<FormField name="website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input type="website" ref={register} />
+						<Input type="website" ref={register} defaultValue="http://robank.com" />
 					</FormField>
 				</TransactionDetail>
 
@@ -46,13 +43,10 @@ export const FirstStep = ({ form }: { form: any }) => {
 					<LinkCollection
 						title={t("TRANSACTION.REPOSITORIES.TITLE")}
 						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
-						types={[
-							{ label: "BitBucket", value: "bitbucket" },
-							{ label: "GitHub", value: "github" },
-							{ label: "GitLab", value: "gitlab" },
-						]}
+						types={entityProvider
+							.sourceControl()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
-						data={repositoryLinks}
 					/>
 				</TransactionDetail>
 
@@ -60,13 +54,10 @@ export const FirstStep = ({ form }: { form: any }) => {
 					<LinkCollection
 						title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
 						description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
-						types={[
-							{ label: "Facebook", value: "facebook" },
-							{ label: "Twitter", value: "twitter" },
-							{ label: "LinkedIn", value: "linkedin" },
-						]}
+						types={entityProvider
+							.socialMedia()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
-						data={socialMediaLinks}
 					/>
 				</TransactionDetail>
 
@@ -74,15 +65,12 @@ export const FirstStep = ({ form }: { form: any }) => {
 					<LinkCollection
 						title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
 						description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
-						types={[
-							{ label: "YouTube", value: "youtube" },
-							{ label: "Vimeo", value: "vimeo" },
-							{ label: "Flickr", value: "flickr" },
-						]}
+						types={entityProvider
+							.media()
+							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="files"
 						selectionTypes={["flickr"]}
 						selectionTypeTitle="Avatar"
-						data={[...videoLinks, ...imageLinks]}
 					/>
 				</TransactionDetail>
 
