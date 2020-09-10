@@ -85,6 +85,7 @@ export const translations: { [key: string]: any } = {
 	MOST_POPULAR: "Most popular",
 	MULTISIGNATURE: "Multisignature",
 	NAME: "Name",
+	DESCRIPTION: "Description",
 	NETWORK_NAME: "This name is provided by the network",
 	NETWORK: "Network",
 	NEXT: "Next",

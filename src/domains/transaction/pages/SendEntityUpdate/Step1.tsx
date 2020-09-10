@@ -1,7 +1,8 @@
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText,FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useValidation } from "app/hooks/validations";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityProvider } from "domains/transaction/entity/providers";
@@ -15,6 +16,8 @@ export const FirstStep = ({ form }: { form: any }) => {
 
 	const { register, setValue } = form;
 	const { socialMedia, sourceControl, images, videos, fees, fee } = form.watch();
+
+	const { sendEntityUpdate } = useValidation();
 
 	useEffect(() => {
 		["socialMedia", "sourceControl", "images", "videos", "fee", "fees"].map(register);
@@ -31,17 +34,20 @@ export const FirstStep = ({ form }: { form: any }) => {
 				<TransactionDetail border={false} className="pb-8">
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input type="text" ref={register} />
+						<Input type="text" ref={register(sendEntityUpdate.name())} />
+						<FormHelperText />
 					</FormField>
 
 					<FormField name="description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea ref={register} />
+						<TextArea ref={register(sendEntityUpdate.description())} />
+						<FormHelperText />
 					</FormField>
 
 					<FormField name="website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input type="website" ref={register} />
+						<Input type="website" ref={register(sendEntityUpdate.website())} />
+						<FormHelperText />
 					</FormField>
 				</TransactionDetail>
 
