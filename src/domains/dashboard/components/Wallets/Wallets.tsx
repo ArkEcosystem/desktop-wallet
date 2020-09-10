@@ -99,7 +99,7 @@ export const Wallets = ({
 		setHasMoreWallets(false);
 	};
 
-	const handleRowClick = (walletId: string) => {
+	const handleClick = (walletId: string) => {
 		history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}`);
 	};
 
@@ -133,7 +133,7 @@ export const Wallets = ({
 						{wallets.length > 0 && (
 							<div>
 								<Table columns={listColumns} data={loadListWallets()}>
-									{(rowData: any) => <WalletListItem {...rowData} onRowClick={handleRowClick} />}
+									{(rowData: any) => <WalletListItem {...rowData} onClick={handleClick} />}
 								</Table>
 
 								{hasMoreWallets && (

@@ -62,7 +62,7 @@ const WalletTable = ({
 	return (
 		<Table columns={columns} data={wallets}>
 			{(wallet: ReadWriteWallet) => (
-				<WalletListItem wallet={wallet} activeWalletId={activeWalletId} onRowClick={onRowClick} />
+				<WalletListItem wallet={wallet} activeWalletId={activeWalletId} onClick={onRowClick} />
 			)}
 		</Table>
 	);

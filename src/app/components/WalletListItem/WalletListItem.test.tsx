@@ -124,7 +124,7 @@ describe("WalletListItem", () => {
 					<Route path="/profiles/:profileId/dashboard">
 						<WalletListItem
 							wallet={wallet}
-							onRowClick={() => history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}`)}
+							onClick={() => history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}`)}
 						/>
 					</Route>
 				</tbody>

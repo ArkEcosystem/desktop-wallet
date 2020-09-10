@@ -67,7 +67,7 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -82,7 +82,7 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
 		const businessRegistrations = getByTestId("BusinessRegistrations");
 		await waitFor(() =>
@@ -102,7 +102,7 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
 		const plugins = getByTestId("PluginRegistrations");
 		await waitFor(() => expect(within(plugins).getAllByTestId("EntityTableRowItem").length).toEqual(4));
@@ -120,7 +120,7 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
 		const registerButton = getByTestId("MyRegistrations__cta-register");
 		act(() => {
@@ -141,14 +141,14 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual());
 
-		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--1");
+		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--1");
 		act(() => {
 			fireEvent.click(resignOption);
 		});
@@ -170,14 +170,14 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--0");
+		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--0");
 		act(() => {
 			fireEvent.click(resignOption);
 		});

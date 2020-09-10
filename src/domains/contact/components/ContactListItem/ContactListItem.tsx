@@ -7,7 +7,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -28,15 +28,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 				.addresses()
 				.values()
 				.map((address: ContactAddress, index: number) => (
-					<tr
-						key={index}
-						className={`group transition-colors duration-100 ${
-							index === 0 || index === contact.addresses().count() - 1
-								? "border-b border-dashed border-theme-neutral-200"
-								: ""
-						}
-						`}
-					>
+					<TableRow key={index} border={index === 0 || index === contact.addresses().count() - 1}>
 						<TableCell variant="start">
 							{index === 0 && (
 								<div className="flex items-center space-x-3">
@@ -136,7 +128,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 								</Button>
 							)}
 						</TableCell>
-					</tr>
+					</TableRow>
 				))}
 		</>
 	);

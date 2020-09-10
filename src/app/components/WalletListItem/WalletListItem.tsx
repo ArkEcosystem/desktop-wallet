@@ -6,7 +6,7 @@ import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -19,7 +19,7 @@ export type WalletListItemProps = {
 	actions?: string | any[];
 	variant?: "condensed";
 	onAction?: any;
-	onRowClick?: (walletId: string) => void;
+	onClick?: (walletId: string) => void;
 };
 
 export const WalletListItem = ({
@@ -29,7 +29,7 @@ export const WalletListItem = ({
 	actions,
 	variant,
 	onAction,
-	onRowClick,
+	onClick,
 }: WalletListItemProps) => {
 	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
 	const hasActions = useMemo(() => actions && actions.length > 0, [actions]);
@@ -64,12 +64,8 @@ export const WalletListItem = ({
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
 	return (
-		<tr
-			data-testid={`WalletListItem__${wallet.address()}`}
-			className={`border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 ${
-				typeof onRowClick === "function" ? "cursor-pointer" : ""
-			}`}
-			onClick={() => onRowClick?.(wallet.id())}
+		<TableRow
+			onClick={() => onClick?.(wallet.id())}
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor(defaultShadowColor)}
 		>
@@ -119,6 +115,6 @@ export const WalletListItem = ({
 					</div>
 				</TableCell>
 			)}
-		</tr>
+		</TableRow>
 	);
 };

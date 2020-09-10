@@ -2,7 +2,7 @@ import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
@@ -48,15 +48,11 @@ export const TransactionRow = ({
 		);
 
 	return (
-		<tr
-			data-testid="TransactionRow"
-			className={`border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 ${
-				typeof onClick === "function" ? "cursor-pointer" : ""
-			}`}
-			{...props}
+		<TableRow
 			onClick={onClick}
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
+			{...props}
 		>
 			{showExplorerLink && (
 				<TableCell variant="start">
@@ -115,7 +111,7 @@ export const TransactionRow = ({
 					</span>
 				</TableCell>
 			)}
-		</tr>
+		</TableRow>
 	);
 };
 
