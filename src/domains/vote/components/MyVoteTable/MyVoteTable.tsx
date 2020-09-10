@@ -7,10 +7,11 @@ import { useHistory, useParams } from "react-router-dom";
 
 type MyVoteTableProps = {
 	address: string;
+	maxVotes: number;
 	votes: ReadOnlyWallet[];
 };
 
-export const MyVoteTable = ({ address, votes }: MyVoteTableProps) => {
+export const MyVoteTable = ({ address, maxVotes, votes }: MyVoteTableProps) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 	const { walletId: hasWalletId } = useParams();
@@ -25,6 +26,7 @@ export const MyVoteTable = ({ address, votes }: MyVoteTableProps) => {
 				<DelegateTable
 					title={t("VOTE.MY_VOTE_TABLE.TITLE")}
 					delegates={votes}
+					maxVotes={maxVotes}
 					votes={votes}
 					onContinue={(unvotes) => {
 						const walletId = hasWalletId

@@ -16,9 +16,9 @@ export default {
 };
 
 export const Default = ({ delegates }: { delegates: ReadOnlyWallet[] }) => (
-	<DelegateTable coin="ARK" delegates={delegates} />
+	<DelegateTable delegates={delegates} maxVotes={1} />
 );
 
 export const SelectMultiple = ({ delegates }: { delegates: ReadOnlyWallet[] }) => (
-	<DelegateTable coin="LSK" delegates={delegates} />
+	<DelegateTable delegates={delegates} maxVotes={1} />
 );

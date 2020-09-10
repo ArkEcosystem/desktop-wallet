@@ -12,13 +12,13 @@ type Delegate = { address: string; username: string; rank: number };
 
 type DelegateTableProps = {
 	title?: string;
-	coin?: string;
 	delegates: ReadOnlyWallet[];
+	maxVotes: number;
 	votes?: ReadOnlyWallet[];
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
-export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: DelegateTableProps) => {
+export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [selectedUnvotes, setSelectedUnvotes] = useState([] as Delegate[]);
 	const [selectedVotes, setSelectedVotes] = useState([] as Delegate[]);
@@ -75,7 +75,7 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 			return;
 		}
 
-		if (coin === "ARK") {
+		if (maxVotes === 1) {
 			setSelectedUnvotes([delegate]);
 		} else {
 			setSelectedUnvotes([...selectedUnvotes, delegate]);
@@ -89,7 +89,7 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 			return;
 		}
 
-		if (coin === "ARK") {
+		if (maxVotes === 1) {
 			setSelectedVotes([delegate]);
 		} else {
 			setSelectedVotes([...selectedVotes, delegate]);
@@ -189,7 +189,7 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 												className="text-theme-neutral-900"
 												data-testid="DelegateTable__footer--total"
 											>
-												{coin === "ARK" ? "1/1" : getTotalVotes()}
+												{maxVotes === 1 ? "1/1" : getTotalVotes()}
 											</div>
 										</div>
 									</div>
@@ -216,7 +216,6 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 };
 
 DelegateTable.defaultProps = {
-	coin: "ARK",
 	delegates: [],
 	votes: [],
 };
