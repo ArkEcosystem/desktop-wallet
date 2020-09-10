@@ -3581,12 +3581,12 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzqBZW gfBeGq justify-end"
                       >
                         <button
-                          class="sc-fznKkj eqyWCu"
-                          color="primary"
+                          class="sc-fznKkj dMzuSY"
+                          color="danger"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
-                          Current
+                          Unselected
                         </button>
                       </div>
                     </td>
@@ -3980,7 +3980,7 @@ exports[`Votes should select a delegate 1`] = `
                             class="text-theme-neutral-900"
                             data-testid="DelegateTable__footer--votes"
                           >
-                            1
+                            0
                           </div>
                         </div>
                       </div>
@@ -4016,7 +4016,7 @@ exports[`Votes should select a delegate 1`] = `
                             class="text-theme-neutral-900"
                             data-testid="DelegateTable__footer--unvotes"
                           >
-                            0
+                            1
                           </div>
                         </div>
                       </div>

@@ -95,6 +95,7 @@ const InputAddress = ({ address, profile }: { address: string; profile: Profile 
 };
 
 export const Votes = () => {
+	const { t } = useTranslation();
 	const history = useHistory();
 	const { walletId: hasWalletId } = useParams();
 	const { env } = useEnvironmentContext();
@@ -107,8 +108,6 @@ export const Votes = () => {
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
-
-	const { t } = useTranslation();
 
 	const crumbs = [
 		{
@@ -252,7 +251,7 @@ export const Votes = () => {
 							}}
 						/>
 					) : (
-						<MyVoteTable votes={votes} />
+						<MyVoteTable address={address} votes={votes} />
 					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />

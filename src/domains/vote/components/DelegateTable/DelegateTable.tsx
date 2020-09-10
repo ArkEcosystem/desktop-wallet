@@ -20,8 +20,8 @@ type DelegateTableProps = {
 
 export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
-	const [unvotesSelected, setUnvotesSelected] = useState([] as Delegate[]);
-	const [votesSelected, setVotesSelected] = useState([] as Delegate[]);
+	const [selectedUnvotes, setSelectedUnvotes] = useState([] as Delegate[]);
+	const [selectedVotes, setSelectedVotes] = useState([] as Delegate[]);
 
 	const columns = [
 		{
@@ -66,35 +66,33 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 		},
 	];
 
+	const getTotalVotes = () => selectedVotes.length + selectedUnvotes.length;
+
 	const toggleUnvotesSelected = (delegate: Delegate) => {
-		if (unvotesSelected.find((selectedDelegate) => selectedDelegate.username === delegate.username)) {
-			setUnvotesSelected(
-				unvotesSelected.filter((selectedDelegate) => selectedDelegate.username !== delegate.username),
-			);
+		if (selectedUnvotes.find((selected) => selected.username === delegate.username)) {
+			setSelectedUnvotes(selectedUnvotes.filter((selected) => selected.username !== delegate.username));
 
 			return;
 		}
 
 		if (coin === "ARK") {
-			setUnvotesSelected([delegate]);
+			setSelectedUnvotes([delegate]);
 		} else {
-			setUnvotesSelected([...unvotesSelected, delegate]);
+			setSelectedUnvotes([...selectedUnvotes, delegate]);
 		}
 	};
 
 	const toggleVotesSelected = (delegate: Delegate) => {
-		if (votesSelected.find((selectedDelegate) => selectedDelegate.username === delegate.username)) {
-			setVotesSelected(
-				votesSelected.filter((selectedDelegate) => selectedDelegate.username !== delegate.username),
-			);
+		if (selectedVotes.find((selected) => selected.username === delegate.username)) {
+			setSelectedVotes(selectedVotes.filter((selected) => selected.username !== delegate.username));
 
 			return;
 		}
 
 		if (coin === "ARK") {
-			setVotesSelected([delegate]);
+			setSelectedVotes([delegate]);
 		} else {
-			setVotesSelected([...votesSelected, delegate]);
+			setSelectedVotes([...selectedVotes, delegate]);
 		}
 	};
 
@@ -118,18 +116,18 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 						<DelegateRow
 							index={index}
 							delegate={delegate}
-							unvotesSelected={unvotesSelected}
-							votesSelected={votesSelected}
+							selectedUnvotes={selectedUnvotes}
+							selectedVotes={selectedVotes}
 							isVoted={isVoted}
 							isLoading={showSkeleton}
 							onUnvoteSelect={toggleUnvotesSelected}
-							onVotesSelect={toggleVotesSelected}
+							onVoteSelect={toggleVotesSelected}
 						/>
 					);
 				}}
 			</Table>
 
-			{(unvotesSelected.length > 0 || votesSelected.length > 0) && (
+			{(selectedUnvotes.length > 0 || selectedVotes.length > 0) && (
 				<div
 					className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
 					data-testid="DelegateTable__footer"
@@ -151,7 +149,7 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 												className="text-theme-neutral-900"
 												data-testid="DelegateTable__footer--votes"
 											>
-												{votesSelected.length}
+												{selectedVotes.length}
 											</div>
 										</div>
 									</div>
@@ -171,7 +169,7 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 												className="text-theme-neutral-900"
 												data-testid="DelegateTable__footer--unvotes"
 											>
-												{unvotesSelected.length}
+												{selectedUnvotes.length}
 											</div>
 										</div>
 									</div>
@@ -191,7 +189,7 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 												className="text-theme-neutral-900"
 												data-testid="DelegateTable__footer--total"
 											>
-												{coin === "ARK" ? "1/1" : votesSelected.length + unvotesSelected.length}
+												{coin === "ARK" ? "1/1" : getTotalVotes()}
 											</div>
 										</div>
 									</div>
@@ -201,8 +199,8 @@ export const DelegateTable = ({ title, coin, delegates, votes, onContinue }: Del
 							<Button
 								onClick={() =>
 									onContinue?.(
-										unvotesSelected.map((select) => select.address),
-										votesSelected.map((select) => select.address),
+										selectedUnvotes.map((select) => select.address),
+										selectedVotes.map((select) => select.address),
 									)
 								}
 								data-testid="DelegateTable__continue-button"
