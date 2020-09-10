@@ -68,9 +68,16 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 			if (type === "entity") {
 				// Define entity
 				const { entity } = state;
+				const entityData = entity.data();
+				const asset = entityData.asset();
+
 				transactionId = await activeWallet.transaction().signEntityResignation({
 					from,
-					data: entity.data,
+					data: {
+						type: asset.type,
+						subType: asset.subType,
+						registrationId: entityData.id(),
+					},
 					fee: fees.static,
 					sign: {
 						mnemonic,
@@ -94,6 +101,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 			handleNext();
 		} catch (error) {
 			// TODO: Handle/Map various error messages
+			console.log({ error });
 			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
 		}
 	};
