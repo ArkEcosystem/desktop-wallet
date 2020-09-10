@@ -187,6 +187,25 @@ export const Votes = () => {
 		loadDelegates(wallet);
 	};
 
+	const handleContinue = (unvotes: string[], votes: string[]) => {
+		const walletId = hasWalletId ? activeWallet.id() : activeProfile.wallets().findByAddress(address)?.id();
+
+		const params = new URLSearchParams();
+
+		if (unvotes?.length > 0) {
+			params.append("unvotes", unvotes.join());
+		}
+
+		if (votes?.length > 0) {
+			params.append("votes", votes.join());
+		}
+
+		history.push({
+			pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
+			search: `?${params}`,
+		});
+	};
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -229,29 +248,14 @@ export const Votes = () => {
 							delegates={delegates}
 							maxVotes={network?.maximumVotes() as number}
 							votes={votes}
-							onContinue={(unvotes, votes) => {
-								const walletId = hasWalletId
-									? activeWallet.id()
-									: activeProfile.wallets().findByAddress(address)?.id();
-
-								const params = new URLSearchParams();
-
-								if (unvotes.length > 0) {
-									params.append("unvotes", unvotes.join());
-								}
-
-								if (votes.length > 0) {
-									params.append("votes", votes.join());
-								}
-
-								history.push({
-									pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
-									search: `?${params}`,
-								});
-							}}
+							onContinue={handleContinue}
 						/>
 					) : (
-						<MyVoteTable address={address} maxVotes={network?.maximumVotes() as number} votes={votes} />
+						<MyVoteTable
+							maxVotes={network?.maximumVotes() as number}
+							votes={votes}
+							onContinue={handleContinue}
+						/>
 					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />

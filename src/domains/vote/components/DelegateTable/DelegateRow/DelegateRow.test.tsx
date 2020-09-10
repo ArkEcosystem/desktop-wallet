@@ -37,7 +37,7 @@ describe("DelegateRow", () => {
 		const { container, asFragment, getByTestId } = render(
 			<table>
 				<tbody>
-					<DelegateRow index={0} delegate={delegate} onSelect={onSelect} />
+					<DelegateRow index={0} delegate={delegate} onVoteSelect={onSelect} />
 				</tbody>
 			</table>,
 		);
@@ -67,7 +67,7 @@ describe("DelegateRow", () => {
 		const { container, asFragment, getByTestId } = render(
 			<table>
 				<tbody>
-					<DelegateRow index={1} delegate={delegate} selected={selected} />
+					<DelegateRow index={1} delegate={delegate} selectedVotes={selected} />
 				</tbody>
 			</table>,
 		);

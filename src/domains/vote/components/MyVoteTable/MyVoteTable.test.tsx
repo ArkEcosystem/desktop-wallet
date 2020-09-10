@@ -5,7 +5,7 @@ import { MyVoteTable } from "./MyVoteTable";
 
 describe("MyVoteTable", () => {
 	it("should render", () => {
-		const { asFragment, container } = render(<MyVoteTable />);
+		const { asFragment, container } = render(<MyVoteTable maxVotes={1} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

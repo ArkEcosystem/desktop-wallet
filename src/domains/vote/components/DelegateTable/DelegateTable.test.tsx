@@ -22,21 +22,21 @@ describe("DelegateTable", () => {
 	});
 
 	it("should render", () => {
-		const { container, asFragment } = render(<DelegateTable coin="ARK" delegates={delegates} />);
+		const { container, asFragment } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with empty list", () => {
-		const { container, asFragment } = render(<DelegateTable coin="ARK" delegates={[]} />);
+		const { container, asFragment } = render(<DelegateTable delegates={[]} maxVotes={1} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select a delegate", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable coin="ARK" delegates={delegates} />);
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
@@ -49,7 +49,7 @@ describe("DelegateTable", () => {
 	});
 
 	it("should unselect a delegate", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable coin="ARK" delegates={delegates} />);
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
@@ -68,7 +68,7 @@ describe("DelegateTable", () => {
 	});
 
 	it("should select multiple delegates", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable coin="LSK" delegates={delegates} />);
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} maxVotes={10} />);
 		const selectButtons = [0, 1, 2].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
 
 		act(() => {
@@ -93,7 +93,7 @@ describe("DelegateTable", () => {
 
 		const onContinue = jest.fn();
 		const { container, asFragment, getByTestId } = render(
-			<DelegateTable coin="ARK" delegates={delegates} onContinue={onContinue} />,
+			<DelegateTable delegates={delegates} maxVotes={1} onContinue={onContinue} />,
 		);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
@@ -108,7 +108,7 @@ describe("DelegateTable", () => {
 		});
 
 		expect(container).toBeTruthy();
-		expect(onContinue).toHaveBeenCalledWith([delegateAddress]);
+		expect(onContinue).toHaveBeenCalledWith([], [delegateAddress]);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

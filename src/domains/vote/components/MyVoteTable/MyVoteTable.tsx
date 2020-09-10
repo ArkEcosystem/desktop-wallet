@@ -1,22 +1,16 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
-import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useHistory, useParams } from "react-router-dom";
 
 type MyVoteTableProps = {
-	address: string;
 	maxVotes: number;
-	votes: ReadOnlyWallet[];
+	votes?: ReadOnlyWallet[];
+	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
-export const MyVoteTable = ({ address, maxVotes, votes }: MyVoteTableProps) => {
+export const MyVoteTable = ({ maxVotes, votes, onContinue }: MyVoteTableProps) => {
 	const { t } = useTranslation();
-	const history = useHistory();
-	const { walletId: hasWalletId } = useParams();
-	const activeProfile = useActiveProfile();
-	const activeWallet = useActiveWallet();
 
 	const hasVotes = votes && votes.length > 0;
 
@@ -28,20 +22,7 @@ export const MyVoteTable = ({ address, maxVotes, votes }: MyVoteTableProps) => {
 					delegates={votes}
 					maxVotes={maxVotes}
 					votes={votes}
-					onContinue={(unvotes) => {
-						const walletId = hasWalletId
-							? activeWallet.id()
-							: activeProfile.wallets().findByAddress(address)?.id();
-
-						const params = new URLSearchParams({
-							unvotes: unvotes.join(),
-						});
-
-						history.push({
-							pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
-							search: `?${params}`,
-						});
-					}}
+					onContinue={onContinue}
 				/>
 			) : (
 				<>
