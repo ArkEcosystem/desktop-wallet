@@ -22,6 +22,7 @@ export const translations: { [key: string]: any } = {
 		NAME: "Delegate Name",
 		PAYOUT_INTERVAL: "Payout",
 		UNVOTES: "Unvotes",
+		TOOLTIP_TEXT: "You can only vote for one delegate at a time",
 		TOTAL: "Total",
 		VOTE: "Vote",
 		VOTES: "Votes",

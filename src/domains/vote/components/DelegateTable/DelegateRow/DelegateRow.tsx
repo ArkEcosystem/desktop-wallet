@@ -1,4 +1,5 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
@@ -119,21 +120,44 @@ export const DelegateRow = ({
 						{!isSelectedUnvote ? t("COMMON.CURRENT") : t("COMMON.UNSELECTED")}
 					</Button>
 				) : (
-					<Button
-						variant="plain"
-						color={isSelectedVote ? "success" : "primary"}
-						disabled={isVoteDisabled}
-						onClick={() =>
-							onVoteSelect?.({
-								address: delegate.address(),
-								username: delegate.username()!,
-								rank: delegate.rank()!,
-							})
-						}
-						data-testid={`DelegateRow__toggle-${index}`}
-					>
-						{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
-					</Button>
+					// Add `<span>` wrapper to show the tooltip when the button is disabled.
+					// https://github.com/atomiks/tippyjs-react/issues/123#issuecomment-535148835
+					<Tippy content={t("VOTE.DELEGATE_TABLE.TOOLTIP_TEXT")} disabled={!isVoteDisabled}>
+						{isVoteDisabled ? (
+							<span>
+								<Button
+									variant="plain"
+									color={isSelectedVote ? "success" : "primary"}
+									disabled={isVoteDisabled}
+									onClick={() =>
+										onVoteSelect?.({
+											address: delegate.address(),
+											username: delegate.username()!,
+											rank: delegate.rank()!,
+										})
+									}
+									data-testid={`DelegateRow__toggle-${index}`}
+								>
+									{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
+								</Button>
+							</span>
+						) : (
+							<Button
+								variant="plain"
+								color={isSelectedVote ? "success" : "primary"}
+								onClick={() =>
+									onVoteSelect?.({
+										address: delegate.address(),
+										username: delegate.username()!,
+										rank: delegate.rank()!,
+									})
+								}
+								data-testid={`DelegateRow__toggle-${index}`}
+							>
+								{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
+							</Button>
+						)}
+					</Tippy>
 				)}
 			</TableCell>
 		</tr>
