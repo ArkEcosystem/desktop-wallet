@@ -187,4 +187,168 @@ describe("MyRegistrations", () => {
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should search and find delegate wallet", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		const headerSearchBar = getByTestId("header-search-bar__input");
+
+		act(() => {
+			fireEvent.change(within(headerSearchBar).getByTestId("Input"), {
+				target: {
+					value: "testwallet",
+				},
+			});
+		});
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem")).toHaveLength(1));
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should search and find business entity", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		const headerSearchBar = getByTestId("header-search-bar__input");
+
+		act(() => {
+			fireEvent.change(within(headerSearchBar).getByTestId("Input"), {
+				target: {
+					value: "ark wallet 2",
+				},
+			});
+		});
+
+		const businessRegistrations = getByTestId("BusinessRegistrations");
+		await waitFor(() =>
+			expect(within(businessRegistrations).getAllByTestId("EntityTableRowItem").length).not.toEqual(0),
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should search and find plugin entity", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		const headerSearchBar = getByTestId("header-search-bar__input");
+
+		act(() => {
+			fireEvent.change(within(headerSearchBar).getByTestId("Input"), {
+				target: {
+					value: "ark wallet 2",
+				},
+			});
+		});
+
+		const plugins = getByTestId("PluginRegistrations");
+		await waitFor(() => expect(within(plugins).getAllByTestId("EntityTableRowItem").length).not.toEqual(0));
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should search and see empty results screen", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		const headerSearchBar = getByTestId("header-search-bar__input");
+
+		act(() => {
+			fireEvent.change(within(headerSearchBar).getByTestId("Input"), {
+				target: {
+					value: "1234567890",
+				},
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("EmptyResults")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should reset search results when clicking search reset button", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		const headerSearchBar = getByTestId("header-search-bar__input");
+
+		act(() => {
+			fireEvent.change(within(headerSearchBar).getByTestId("Input"), {
+				target: {
+					value: "1234567890",
+				},
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("EmptyResults")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__reset"));
+		});
+
+		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
