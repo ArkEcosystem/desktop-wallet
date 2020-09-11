@@ -16,7 +16,7 @@ type EntityFirstStepProps = {
 
 export const EntityFirstStep = ({ entity, fees }: EntityFirstStepProps) => {
 	const { t } = useTranslation();
-	const { data }: any = entity.asset();
+	const { data }: any = entity.data().asset();
 
 	return (
 		<div data-testid="SendEntityResignation__first-step">

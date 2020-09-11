@@ -16,7 +16,7 @@ export const EntitySecondStep = ({ entity, fees }: any) => {
 	const { t } = useTranslation();
 	const coinName = entity.wallet().manifest().get("name");
 	const network = `${coinName} ${entity.wallet().network().name()}`;
-	const { data }: any = entity?.asset();
+	const { data }: any = entity.data().asset();
 
 	return (
 		<div data-testid="SendEntityResignation__second-step">

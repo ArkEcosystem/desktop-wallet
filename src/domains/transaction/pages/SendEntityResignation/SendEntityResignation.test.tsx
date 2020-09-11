@@ -57,7 +57,10 @@ const transactionResponse = {
 };
 
 const entity = {
-	asset: () => entityFixture.data[0].asset,
+	data: () => ({
+		asset: () => entityFixture.data[0].asset,
+		id: () => "test id",
+	}),
 	sender: () => entityFixture.data[0].sender,
 	wallet: () => ({
 		alias: () => "test",
@@ -248,6 +251,7 @@ describe("SendEntityResignation", () => {
 
 	it("should succesfully sign and submit an entity resignation transaction", async () => {
 		history.push(resignRegistrationURL, { type: "entity", entity });
+
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signEntityResignation")
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
