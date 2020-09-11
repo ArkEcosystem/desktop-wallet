@@ -50,7 +50,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	useEffect(() => {
 		const transactionTypes = {
 			entity: "entityResignation",
-			delegate: "entityResignation",
+			delegate: "delegateResignation",
 		};
 
 		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), transactionTypes[type]));
