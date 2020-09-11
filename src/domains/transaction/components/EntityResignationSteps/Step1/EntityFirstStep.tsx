@@ -13,7 +13,6 @@ import { EntityResignationStepProps } from "../EntityResignationSteps.models";
 export const EntityFirstStep = ({ entity, fees }: EntityResignationStepProps) => {
 	const { t } = useTranslation();
 	const { data }: any = entity.data().asset();
-	console.log({ entity });
 
 	return (
 		<div data-testid="SendEntityResignation__first-step">
