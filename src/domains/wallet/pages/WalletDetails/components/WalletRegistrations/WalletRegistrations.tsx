@@ -1,76 +1,56 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { Enums } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { WalletRegistrationsSkeleton } from "./WalletRegistrationsSkeleton";
 
-const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
-	const items = icons.slice(0, limit);
-	const rest = Math.max(0, icons.length - limit);
-
-	return (
-		<div data-testid="WalletRegistrations__icon-list" className="flex items-center -space-x-2">
-			{items.map((item) => (
-				<Circle
-					data-testid="WalletRegistrations__icon-list__icon"
-					key={item}
-					size="lg"
-					className="bg-theme-background border-theme-text text-theme-text"
-				>
-					<Icon name={item} className="text-xl" />
-				</Circle>
-			))}
-			{rest > 0 && (
-				<Circle
-					data-testid="WalletRegistrations__icon-list__rest"
-					size="lg"
-					className="text-lg font-bold bg-theme-background border-theme-text text-theme-text"
-				>
-					+{rest}
-				</Circle>
-			)}
-		</div>
-	);
+type DelegateInfo = {
+	username?: string;
+	isResigned: boolean;
 };
 
 type WalletRegistrationsProps = {
-	business?: { name: string };
-	delegate?: Contracts.WalletData;
-	hasBridgechains?: boolean;
-	hasPlugins?: boolean;
-	hasSecondSignature?: boolean;
+	delegate?: DelegateInfo;
+	entities: Contracts.Entity[];
 	isLoading?: boolean;
-	isMultisig?: boolean;
+	isMultiSignature?: boolean;
+	isSecondSignature?: boolean;
 	onButtonClick: () => void;
 };
 
 export const WalletRegistrations = ({
-	business,
 	delegate,
-	hasBridgechains,
-	hasPlugins,
-	hasSecondSignature,
+	entities,
 	isLoading,
-	isMultisig,
+	isMultiSignature,
+	isSecondSignature,
 	onButtonClick,
 }: WalletRegistrationsProps) => {
 	const { t } = useTranslation();
 
-	// @ts-ignore
-	const iconsList: string[] = [
-		hasSecondSignature && "Key",
-		hasBridgechains && "Bridgechain",
-		hasPlugins && "Plugin",
-		isMultisig && "Multisig",
-	].filter(Boolean);
-
-	const registrationCount = Number(!!delegate) + Number(!!business); // + registrations.length;
+	const registrationCount =
+		Number(!!delegate) + Number(!!isMultiSignature) + Number(!!isSecondSignature) + entities.length;
 	const hasNoRegistrations = registrationCount === 0;
+
+	const showInactiveIcons = !isSecondSignature || !isMultiSignature || !entities.length;
+
+	const { businesses, plugins } = useMemo(() => {
+		const filterEntities = (type: number): Contracts.Entity[] =>
+			entities.filter((entity: Contracts.Entity) => entity.type === type);
+
+		return {
+			businesses: filterEntities(Enums.EntityType.Business),
+			plugins: filterEntities(Enums.EntityType.Plugin),
+		};
+	}, [entities]);
+
+	const lengthRemaining = entities.length - businesses.length - plugins.length;
 
 	const renderRegistrations = () => {
 		if (hasNoRegistrations) {
@@ -94,7 +74,7 @@ export const WalletRegistrations = ({
 			);
 		}
 
-		const renderIcon = (icon: string, active?: boolean, tooltip?: string) => {
+		const renderIcon = (icon: string, tooltip?: string, active?: boolean) => {
 			const iconStyle = active
 				? "border-theme-text text-theme-text"
 				: "border-theme-neutral-light text-theme-neutral-light";
@@ -108,25 +88,74 @@ export const WalletRegistrations = ({
 			return tooltip ? <Tippy content={tooltip}>{circle}</Tippy> : circle;
 		};
 
+		const renderBusinessIcon = () => {
+			if (!businesses.length) return;
+
+			if (businesses.length === 1) {
+				return renderIcon("Business", `${t("COMMON.BUSINESS")}: ${businesses[0].name}`, true);
+			}
+
+			return renderIcon("Business", `${t("COMMON.BUSINESS_COUNT", { count: businesses.length })}`, true);
+		};
+
+		const renderPluginIcon = () => {
+			if (!plugins.length) return;
+
+			if (plugins.length === 1) {
+				return renderIcon("Plugin", `${t("COMMON.PLUGIN")}: ${plugins[0].name}`, true);
+			}
+
+			return renderIcon("Plugin", `${t("COMMON.PLUGIN_COUNT", { count: plugins.length })}`, true);
+		};
+
 		return (
 			<div className="flex items-center h-11">
 				<div className="flex items-center mr-8 -space-x-2">
-					{hasSecondSignature && renderIcon("Key", true, t("COMMON.SECOND_SIGNATURE"))}
+					{isSecondSignature && renderIcon("Key", t("COMMON.SECOND_SIGNATURE"), true)}
 
-					{delegate && renderIcon("Delegate", true, `${t("COMMON.DELEGATE")}: ${delegate.username()}`)}
+					{isMultiSignature && renderIcon("Multisig", t("COMMON.MULTISIGNATURE"), true)}
+
+					{delegate &&
+						renderIcon(
+							delegate.isResigned ? "DelegateResigned" : "Delegate",
+							delegate.isResigned
+								? `${t("COMMON.DELEGATE")}: ${delegate.username} (${t("COMMON.RESIGNED")})`
+								: `${t("COMMON.DELEGATE")}: ${delegate.username}`,
+							true,
+						)}
+
+					{renderBusinessIcon()}
+
+					{renderPluginIcon()}
+
+					{lengthRemaining > 0 && (
+						<Circle size="lg" className="relative border-theme-text text-theme-text">
+							<span className="font-semibold">+{lengthRemaining}</span>
+						</Circle>
+					)}
 				</div>
 
-				{(!hasSecondSignature || !hasPlugins || !hasBridgechains) && (
-					<div className="flex items-center pl-8 border-l border-theme-neutral-300 -space-x-2">
-						{!hasSecondSignature && renderIcon("Key")}
+				{showInactiveIcons && (
+					<div
+						data-testid="WalletRegistrations__inactive"
+						className="flex items-center pl-8 border-l border-theme-neutral-300 -space-x-2"
+					>
+						{!isSecondSignature && renderIcon("Key")}
 
-						{!hasPlugins && renderIcon("Plugin")}
+						{!isMultiSignature && renderIcon("Multisig")}
 
-						{!hasBridgechains && renderIcon("Bridgechain")}
+						{!delegate && renderIcon("Delegate")}
+
+						{entities.length === 0 && renderIcon("Entity")}
 					</div>
 				)}
 
-				<Button variant="plain" className="ml-auto" onClick={() => onButtonClick()}>
+				<Button
+					variant="plain"
+					className="ml-auto"
+					onClick={() => onButtonClick()}
+					data-testid="WalletRegistrations__button"
+				>
 					{t("COMMON.SHOW_ALL")}
 				</Button>
 			</div>
@@ -137,10 +166,14 @@ export const WalletRegistrations = ({
 		<section data-testid="WalletRegistrations">
 			<div className="flex mb-4">
 				<h2 className="font-bold mb-0">{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.TITLE")}</h2>
-				<span className="font-bold text-2xl text-theme-neutral-light ml-1">(0)</span>
+				<span className="font-bold text-2xl text-theme-neutral-light ml-1">({registrationCount})</span>
 			</div>
 
 			{isLoading ? <WalletRegistrationsSkeleton /> : renderRegistrations()}
 		</section>
 	);
+};
+
+WalletRegistrations.defaultProps = {
+	entities: [],
 };

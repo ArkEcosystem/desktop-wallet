@@ -21,8 +21,7 @@ type WalletVoteProps = {
 export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: WalletVoteProps) => {
 	const { t } = useTranslation();
 
-	const voteCount = (votes || []).length;
-	const hasNoVotes = voteCount === 0;
+	const hasNoVotes = votes.length === 0;
 
 	const renderVotes = () => {
 		if (hasNoVotes) {
@@ -155,7 +154,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 				<h2 className="font-bold mb-0">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}</h2>
 				{!isLoading && (
 					<span className="font-bold text-2xl text-theme-neutral-light ml-1">
-						({voteCount}/{maxVotes})
+						({votes.length}/{maxVotes})
 					</span>
 				)}
 			</div>

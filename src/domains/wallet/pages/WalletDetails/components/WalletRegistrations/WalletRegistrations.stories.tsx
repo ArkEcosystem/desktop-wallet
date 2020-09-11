@@ -11,12 +11,13 @@ export const Default = () => (
 	<WalletsDecorator count={1} withDelegate={true}>
 		{({ delegate }: { delegate: Contracts.WalletData }) => (
 			<WalletRegistrations
-				business={{ name: "ROBank Eco" }}
-				delegate={delegate}
-				hasBridgechains
-				hasPlugins
-				hasSecondSignature
-				isMultisig
+				delegate={{
+					username: delegate.username()!,
+					isResigned: delegate.isResignedDelegate(),
+				}}
+				entities={[]}
+				isMultiSignature
+				isSecondSignature
 				onButtonClick={action("onButtonClick")}
 			/>
 		)}

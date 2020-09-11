@@ -21,6 +21,7 @@ import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { Currencies } from "./currencies";
 import { ReactComponent as Dash } from "./dash.svg";
+import { ReactComponent as DelegateResigned } from "./delegate-resigned.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
@@ -118,6 +119,7 @@ export const SvgCollection: any = {
 	CrossSlim,
 	Dash,
 	Delegate,
+	DelegateResigned,
 	Discord,
 	Download,
 	Edit,

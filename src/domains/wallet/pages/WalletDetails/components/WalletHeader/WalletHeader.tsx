@@ -163,7 +163,7 @@ export const WalletHeader = ({
 											className={currencyDelta < 0 ? "rotate-180" : ""}
 											width={10}
 										/>
-										<span className="ml-1">1.5%</span>
+										<span className="ml-1">{currencyDelta}%</span>
 									</span>
 								)}
 							</div>

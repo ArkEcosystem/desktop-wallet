@@ -92,6 +92,33 @@ describe("WalletHeader", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it.each([-5, 5])("should show currency delta (%s%)", (delta) => {
+		const { getByTestId, getByText, asFragment } = render(
+			<WalletHeader
+				address="abc"
+				balance={BigNumber.make(0)}
+				coin="Ark"
+				currencyDelta={delta}
+				isLedger
+				isMultisig
+				isStarred
+				network="mainnet"
+				ticker="ARK"
+				onDeleteWallet={onDeleteWallet}
+				onSignMessage={onSignMessage}
+				onStar={onStar}
+				onStoreHash={onStoreHash}
+				onUpdateWalletName={onUpdateWalletName}
+				onVerifyMessage={onVerifyMessage}
+			/>,
+		);
+
+		expect(getByText("arrowup.svg")).toBeTruthy();
+		expect(getByText(`${delta}%`)).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should handle sign message", () => {
 		const { getByTestId } = render(
 			<WalletHeader

@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
-import { ProfileSetting, ReadOnlyWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
@@ -22,14 +20,8 @@ type WalletDetailsProps = {
 	txSkeletonRowsLimit?: number;
 };
 
-type WalletInfo = {
-	transactions: ExtendedTransactionData[];
-	walletData?: Contracts.WalletData;
-	votes?: ReadOnlyWallet[];
-};
-
 export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
-	const [data, setData] = useState<WalletInfo>({ transactions: [] });
+	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
@@ -38,19 +30,19 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const { t } = useTranslation();
-	const { env, persist } = useEnvironmentContext();
+
+	const { persist } = useEnvironmentContext();
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
-	const maxVotes = useMemo(() => activeWallet.network().maximumVotes(), [activeWallet]);
 
 	const coinName = activeWallet.coinId();
 	const networkId = activeWallet.networkId();
 	const ticker = activeWallet.currency();
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
-	const { transactions, walletData, votes } = data;
+
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 
 	const crumbs = [
@@ -62,31 +54,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	useEffect(() => {
 		const fetchAllData = async () => {
-			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
-
-			let walletData: Contracts.WalletData | undefined;
-			let votes: ReadOnlyWallet[] = [];
-
-			try {
-				walletData = await activeWallet.client().wallet(activeWallet.address());
-				console.log(walletData);
-				votes = activeWallet.votes();
-				// votes = env.delegates().all("ARK", "devnet").slice(0, 10);
-			} catch {
-				votes = [];
-			}
-
-			setData({
-				walletData,
-				transactions,
-				votes,
-			});
+			setTransactions((await activeWallet.transactions({ limit: 10 })).items());
 
 			setIsLoading(false);
 		};
 
 		fetchAllData();
-	}, [activeWallet, env]);
+	}, [activeWallet]);
 
 	const handleDeleteWallet = async () => {
 		activeProfile.wallets().forget(activeWallet.id());
@@ -116,10 +90,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		//TODO: Fetch more type based / ex: pending and confirmed txs
 		const nextPage = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
 
-		return transactions && setData({ ...data, transactions: transactions?.concat(nextPage) });
+		return transactions && setTransactions(transactions?.concat(nextPage));
 	};
 
 	const handleVoteButton = (address?: string) => {
+		/* istanbul ignore else */
 		if (address) {
 			return history.push({
 				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
@@ -127,6 +102,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 			});
 		}
 
+		/* istanbul ignore next */
 		history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`);
 	};
 
@@ -168,8 +144,8 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					<div className="flex">
 						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
 							<WalletVote
-								votes={votes}
-								maxVotes={maxVotes}
+								votes={activeWallet.hasSyncedWithNetwork() ? activeWallet.votes() : []}
+								maxVotes={activeWallet.network().maximumVotes()}
 								isLoading={isLoading}
 								onButtonClick={handleVoteButton}
 							/>
@@ -177,19 +153,22 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 						<div className="w-1/2 pl-12">
 							<WalletRegistrations
-								business={undefined}
 								delegate={
 									activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
-										? walletData
+										? {
+												username: activeWallet.username(),
+												isResigned: activeWallet.isResignedDelegate(),
+										  }
 										: undefined
 								}
-								hasBridgechains={false} // @TODO
-								hasSecondSignature={
+								entities={activeWallet.hasSyncedWithNetwork() ? activeWallet.entities() : []}
+								isLoading={isLoading}
+								isMultiSignature={
+									activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()
+								}
+								isSecondSignature={
 									activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()
 								}
-								hasPlugins={false} // @TODO
-								isLoading={isLoading}
-								isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
 								onButtonClick={handleRegistrationsButton}
 							/>
 						</div>
