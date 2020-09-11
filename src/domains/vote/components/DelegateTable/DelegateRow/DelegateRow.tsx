@@ -125,20 +125,8 @@ export const DelegateRow = ({
 					<Tippy content={t("VOTE.DELEGATE_TABLE.TOOLTIP_TEXT")} disabled={!isVoteDisabled}>
 						{isVoteDisabled ? (
 							<span>
-								<Button
-									variant="plain"
-									color={isSelectedVote ? "success" : "primary"}
-									disabled={isVoteDisabled}
-									onClick={() =>
-										onVoteSelect?.({
-											address: delegate.address(),
-											username: delegate.username()!,
-											rank: delegate.rank()!,
-										})
-									}
-									data-testid={`DelegateRow__toggle-${index}`}
-								>
-									{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
+								<Button variant="plain" color="primary" disabled>
+									{t("COMMON.NOT_SELECTED")}
 								</Button>
 							</span>
 						) : (
