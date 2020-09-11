@@ -9,12 +9,12 @@ exports[`WalletVote should render 1`] = `
       class="flex mb-4"
     >
       <h2
-        class="font-bold mb-0"
+        class="mb-0 font-bold"
       >
         My Vote
       </h2>
       <span
-        class="font-bold text-2xl text-theme-neutral-light ml-1"
+        class="ml-1 text-2xl font-bold text-theme-neutral-light"
       >
         (1/1)
       </span>
@@ -54,7 +54,7 @@ exports[`WalletVote should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col h-full justify-between ml-4 mr-8"
+        class="flex flex-col justify-between h-full ml-4 mr-8"
       >
         <span
           class="text-sm font-semibold text-theme-neutral"
@@ -73,7 +73,7 @@ exports[`WalletVote should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col h-full items-center justify-between pl-8 border-l border-theme-neutral-300"
+        class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300"
       >
         <span
           class="text-sm font-semibold text-theme-neutral"
@@ -112,7 +112,7 @@ exports[`WalletVote should render loading state 1`] = `
       class="flex mb-4"
     >
       <h2
-        class="font-bold mb-0"
+        class="mb-0 font-bold"
       >
         My Vote
       </h2>
@@ -181,12 +181,12 @@ exports[`WalletVote should render multiple votes 1`] = `
       class="flex mb-4"
     >
       <h2
-        class="font-bold mb-0"
+        class="mb-0 font-bold"
       >
         My Vote
       </h2>
       <span
-        class="font-bold text-2xl text-theme-neutral-light ml-1"
+        class="ml-1 text-2xl font-bold text-theme-neutral-light"
       >
         (2/1)
       </span>
@@ -273,12 +273,12 @@ exports[`WalletVote should render multiple votes 2`] = `
       class="flex mb-4"
     >
       <h2
-        class="font-bold mb-0"
+        class="mb-0 font-bold"
       >
         My Vote
       </h2>
       <span
-        class="font-bold text-2xl text-theme-neutral-light ml-1"
+        class="ml-1 text-2xl font-bold text-theme-neutral-light"
       >
         (3/1)
       </span>
@@ -383,12 +383,12 @@ exports[`WalletVote should render multiple votes 3`] = `
       class="flex mb-4"
     >
       <h2
-        class="font-bold mb-0"
+        class="mb-0 font-bold"
       >
         My Vote
       </h2>
       <span
-        class="font-bold text-2xl text-theme-neutral-light ml-1"
+        class="ml-1 text-2xl font-bold text-theme-neutral-light"
       >
         (4/1)
       </span>
@@ -484,12 +484,12 @@ exports[`WalletVote should render the maximum votes 1`] = `
       class="flex mb-4"
     >
       <h2
-        class="font-bold mb-0"
+        class="mb-0 font-bold"
       >
         My Votes
       </h2>
       <span
-        class="font-bold text-2xl text-theme-neutral-light ml-1"
+        class="ml-1 text-2xl font-bold text-theme-neutral-light"
       >
         (0/101)
       </span>
@@ -564,12 +564,12 @@ exports[`WalletVote should render without votes 1`] = `
       class="flex mb-4"
     >
       <h2
-        class="font-bold mb-0"
+        class="mb-0 font-bold"
       >
         My Vote
       </h2>
       <span
-        class="font-bold text-2xl text-theme-neutral-light ml-1"
+        class="ml-1 text-2xl font-bold text-theme-neutral-light"
       >
         (0/1)
       </span>

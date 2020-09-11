@@ -72,13 +72,13 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 						<Avatar size="lg" address={delegate.address()} />
 					</div>
 
-					<div className="flex flex-col h-full justify-between ml-4 mr-8">
+					<div className="flex flex-col justify-between h-full ml-4 mr-8">
 						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.DELEGATE")}</span>
 
 						<Address walletName={delegate.username()} />
 					</div>
 
-					<div className="flex flex-col h-full items-center justify-between pl-8 border-l border-theme-neutral-300">
+					<div className="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300">
 						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.STATUS")}</span>
 
 						{rank ? (
@@ -151,9 +151,9 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 	return (
 		<section data-testid="WalletVote">
 			<div className="flex mb-4">
-				<h2 className="font-bold mb-0">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}</h2>
+				<h2 className="mb-0 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}</h2>
 				{!isLoading && (
-					<span className="font-bold text-2xl text-theme-neutral-light ml-1">
+					<span className="ml-1 text-2xl font-bold text-theme-neutral-light">
 						({votes.length}/{maxVotes})
 					</span>
 				)}

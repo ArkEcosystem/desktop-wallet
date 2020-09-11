@@ -9,7 +9,7 @@ exports[`WalletHeader should render 1`] = `
       class="py-8 bg-theme-neutral-900"
     >
       <div
-        class="container flex items-center px-14 mx-auto"
+        class="container flex items-center mx-auto px-14"
       >
         <div
           class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -40,7 +40,7 @@ exports[`WalletHeader should render 1`] = `
             class="flex flex-col overflow-hidden"
           >
             <div
-              class="flex items-center text-theme-neutral-dark space-x-5"
+              class="flex items-center space-x-5 text-theme-neutral-dark"
             >
               <span
                 class="text-sm font-semibold"
@@ -54,12 +54,12 @@ exports[`WalletHeader should render 1`] = `
               class="flex items-center space-x-5"
             >
               <span
-                class="text-white text-lg font-semibold truncate"
+                class="text-lg font-semibold text-white truncate"
               >
                 abc
               </span>
               <div
-                class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
               >
                 <div
                   class="inline-block cursor-pointer"
@@ -100,14 +100,14 @@ exports[`WalletHeader should render 1`] = `
             class="flex flex-col mr-auto"
           >
             <div
-              class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+              class="flex items-center text-sm font-semibold text-theme-neutral-dark"
             >
               <span>
                 Balance:
               </span>
             </div>
             <span
-              class="text-white text-lg font-semibold"
+              class="text-lg font-semibold text-white"
               data-testid="WalletHeader__balance"
             >
               0 ARK
@@ -186,7 +186,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
       class="py-8 bg-theme-neutral-900"
     >
       <div
-        class="container flex items-center px-14 mx-auto"
+        class="container flex items-center mx-auto px-14"
       >
         <div
           class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -217,7 +217,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             class="flex flex-col overflow-hidden"
           >
             <div
-              class="flex items-center text-theme-neutral-dark space-x-5"
+              class="flex items-center space-x-5 text-theme-neutral-dark"
             >
               <span
                 class="text-sm font-semibold"
@@ -258,12 +258,12 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
               class="flex items-center space-x-5"
             >
               <span
-                class="text-white text-lg font-semibold truncate"
+                class="text-lg font-semibold text-white truncate"
               >
                 abc
               </span>
               <div
-                class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
               >
                 <div
                   class="inline-block cursor-pointer"
@@ -304,7 +304,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             class="flex flex-col mr-auto"
           >
             <div
-              class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+              class="flex items-center text-sm font-semibold text-theme-neutral-dark"
             >
               <span>
                 Balance:
@@ -329,7 +329,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
               </span>
             </div>
             <span
-              class="text-white text-lg font-semibold"
+              class="text-lg font-semibold text-white"
               data-testid="WalletHeader__balance"
             >
               0 ARK
@@ -408,7 +408,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
       class="py-8 bg-theme-neutral-900"
     >
       <div
-        class="container flex items-center px-14 mx-auto"
+        class="container flex items-center mx-auto px-14"
       >
         <div
           class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -439,7 +439,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             class="flex flex-col overflow-hidden"
           >
             <div
-              class="flex items-center text-theme-neutral-dark space-x-5"
+              class="flex items-center space-x-5 text-theme-neutral-dark"
             >
               <span
                 class="text-sm font-semibold"
@@ -480,12 +480,12 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
               class="flex items-center space-x-5"
             >
               <span
-                class="text-white text-lg font-semibold truncate"
+                class="text-lg font-semibold text-white truncate"
               >
                 abc
               </span>
               <div
-                class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
               >
                 <div
                   class="inline-block cursor-pointer"
@@ -526,7 +526,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             class="flex flex-col mr-auto"
           >
             <div
-              class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+              class="flex items-center text-sm font-semibold text-theme-neutral-dark"
             >
               <span>
                 Balance:
@@ -551,7 +551,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
               </span>
             </div>
             <span
-              class="text-white text-lg font-semibold"
+              class="text-lg font-semibold text-white"
               data-testid="WalletHeader__balance"
             >
               0 ARK
@@ -630,7 +630,7 @@ exports[`WalletHeader should show modifiers 1`] = `
       class="py-8 bg-theme-neutral-900"
     >
       <div
-        class="container flex items-center px-14 mx-auto"
+        class="container flex items-center mx-auto px-14"
       >
         <div
           class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -661,7 +661,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             class="flex flex-col overflow-hidden"
           >
             <div
-              class="flex items-center text-theme-neutral-dark space-x-5"
+              class="flex items-center space-x-5 text-theme-neutral-dark"
             >
               <span
                 class="text-sm font-semibold"
@@ -702,12 +702,12 @@ exports[`WalletHeader should show modifiers 1`] = `
               class="flex items-center space-x-5"
             >
               <span
-                class="text-white text-lg font-semibold truncate"
+                class="text-lg font-semibold text-white truncate"
               >
                 abc
               </span>
               <div
-                class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
               >
                 <div
                   class="inline-block cursor-pointer"
@@ -748,14 +748,14 @@ exports[`WalletHeader should show modifiers 1`] = `
             class="flex flex-col mr-auto"
           >
             <div
-              class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+              class="flex items-center text-sm font-semibold text-theme-neutral-dark"
             >
               <span>
                 Balance:
               </span>
             </div>
             <span
-              class="text-white text-lg font-semibold"
+              class="text-lg font-semibold text-white"
               data-testid="WalletHeader__balance"
             >
               0 ARK

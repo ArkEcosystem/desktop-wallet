@@ -274,7 +274,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center px-14 mx-auto"
+            class="container flex items-center mx-auto px-14"
           >
             <div
               class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -317,7 +317,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark space-x-5"
+                  class="flex items-center space-x-5 text-theme-neutral-dark"
                 >
                   <span
                     class="text-sm font-semibold"
@@ -331,12 +331,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   class="flex items-center space-x-5"
                 >
                   <span
-                    class="text-white text-lg font-semibold truncate"
+                    class="text-lg font-semibold text-white truncate"
                   >
                     DQpdzcso8cCrhK49FiuKXnDPzK5ev4Wdkw
                   </span>
                   <div
-                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                    class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -377,7 +377,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 class="flex flex-col mr-auto"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                  class="flex items-center text-sm font-semibold text-theme-neutral-dark"
                 >
                   <span>
                     Balance:
@@ -390,7 +390,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   </span>
                 </div>
                 <span
-                  class="text-white text-lg font-semibold"
+                  class="text-lg font-semibold text-white"
                   data-testid="WalletHeader__balance"
                 >
                   0 DARK
@@ -476,12 +476,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     My Vote
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (0/1)
                   </span>
@@ -548,12 +548,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     Registrations
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (0)
                   </span>
@@ -1597,7 +1597,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center px-14 mx-auto"
+            class="container flex items-center mx-auto px-14"
           >
             <div
               class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -1640,7 +1640,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark space-x-5"
+                  class="flex items-center space-x-5 text-theme-neutral-dark"
                 >
                   <span
                     class="text-sm font-semibold"
@@ -1668,12 +1668,12 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   class="flex items-center space-x-5"
                 >
                   <span
-                    class="text-white text-lg font-semibold truncate"
+                    class="text-lg font-semibold text-white truncate"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                   <div
-                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                    class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1714,7 +1714,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 class="flex flex-col mr-auto"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                  class="flex items-center text-sm font-semibold text-theme-neutral-dark"
                 >
                   <span>
                     Balance:
@@ -1727,7 +1727,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </span>
                 </div>
                 <span
-                  class="text-white text-lg font-semibold"
+                  class="text-lg font-semibold text-white"
                   data-testid="WalletHeader__balance"
                 >
                   33.75089801 DARK
@@ -1813,12 +1813,12 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     My Vote
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1/1)
                   </span>
@@ -1858,7 +1858,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full justify-between ml-4 mr-8"
+                    class="flex flex-col justify-between h-full ml-4 mr-8"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -1877,7 +1877,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full items-center justify-between pl-8 border-l border-theme-neutral-300"
+                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -1915,12 +1915,12 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     Registrations
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1)
                   </span>
@@ -1946,7 +1946,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center pl-8 border-l border-theme-neutral-300 -space-x-2"
+                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300"
                     data-testid="WalletRegistrations__inactive"
                   >
                     <div
@@ -3575,7 +3575,7 @@ exports[`WalletDetails should render 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center px-14 mx-auto"
+            class="container flex items-center mx-auto px-14"
           >
             <div
               class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -3618,7 +3618,7 @@ exports[`WalletDetails should render 1`] = `
                 class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark space-x-5"
+                  class="flex items-center space-x-5 text-theme-neutral-dark"
                 >
                   <span
                     class="text-sm font-semibold"
@@ -3648,12 +3648,12 @@ exports[`WalletDetails should render 1`] = `
                   class="flex items-center space-x-5"
                 >
                   <span
-                    class="text-white text-lg font-semibold truncate"
+                    class="text-lg font-semibold text-white truncate"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                   <div
-                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                    class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3694,7 +3694,7 @@ exports[`WalletDetails should render 1`] = `
                 class="flex flex-col mr-auto"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                  class="flex items-center text-sm font-semibold text-theme-neutral-dark"
                 >
                   <span>
                     Balance:
@@ -3707,7 +3707,7 @@ exports[`WalletDetails should render 1`] = `
                   </span>
                 </div>
                 <span
-                  class="text-white text-lg font-semibold"
+                  class="text-lg font-semibold text-white"
                   data-testid="WalletHeader__balance"
                 >
                   33.75089801 DARK
@@ -3793,12 +3793,12 @@ exports[`WalletDetails should render 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     My Vote
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1/1)
                   </span>
@@ -3838,7 +3838,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full justify-between ml-4 mr-8"
+                    class="flex flex-col justify-between h-full ml-4 mr-8"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -3857,7 +3857,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full items-center justify-between pl-8 border-l border-theme-neutral-300"
+                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -3895,12 +3895,12 @@ exports[`WalletDetails should render 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     Registrations
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1)
                   </span>
@@ -3926,7 +3926,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center pl-8 border-l border-theme-neutral-300 -space-x-2"
+                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300"
                     data-testid="WalletRegistrations__inactive"
                   >
                     <div
@@ -5561,7 +5561,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center px-14 mx-auto"
+            class="container flex items-center mx-auto px-14"
           >
             <div
               class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -5604,7 +5604,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark space-x-5"
+                  class="flex items-center space-x-5 text-theme-neutral-dark"
                 >
                   <span
                     class="text-sm font-semibold"
@@ -5618,12 +5618,12 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   class="flex items-center space-x-5"
                 >
                   <span
-                    class="text-white text-lg font-semibold truncate"
+                    class="text-lg font-semibold text-white truncate"
                   >
                     DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs
                   </span>
                   <div
-                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                    class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -5664,7 +5664,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 class="flex flex-col mr-auto"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                  class="flex items-center text-sm font-semibold text-theme-neutral-dark"
                 >
                   <span>
                     Balance:
@@ -5677,7 +5677,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </span>
                 </div>
                 <span
-                  class="text-white text-lg font-semibold"
+                  class="text-lg font-semibold text-white"
                   data-testid="WalletHeader__balance"
                 >
                   0 DARK
@@ -5763,12 +5763,12 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     My Vote
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (0/1)
                   </span>
@@ -5835,12 +5835,12 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     Registrations
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (0)
                   </span>
@@ -7470,7 +7470,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center px-14 mx-auto"
+            class="container flex items-center mx-auto px-14"
           >
             <div
               class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -7513,7 +7513,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark space-x-5"
+                  class="flex items-center space-x-5 text-theme-neutral-dark"
                 >
                   <span
                     class="text-sm font-semibold"
@@ -7527,12 +7527,12 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   class="flex items-center space-x-5"
                 >
                   <span
-                    class="text-white text-lg font-semibold truncate"
+                    class="text-lg font-semibold text-white truncate"
                   >
                     DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z
                   </span>
                   <div
-                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                    class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -7573,7 +7573,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 class="flex flex-col mr-auto"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                  class="flex items-center text-sm font-semibold text-theme-neutral-dark"
                 >
                   <span>
                     Balance:
@@ -7586,7 +7586,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </span>
                 </div>
                 <span
-                  class="text-white text-lg font-semibold"
+                  class="text-lg font-semibold text-white"
                   data-testid="WalletHeader__balance"
                 >
                   0 DARK
@@ -7672,12 +7672,12 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     My Vote
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (0/1)
                   </span>
@@ -7744,12 +7744,12 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     Registrations
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (0)
                   </span>
@@ -9379,7 +9379,7 @@ exports[`WalletDetails should render with timers 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center px-14 mx-auto"
+            class="container flex items-center mx-auto px-14"
           >
             <div
               class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -9422,7 +9422,7 @@ exports[`WalletDetails should render with timers 1`] = `
                 class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark space-x-5"
+                  class="flex items-center space-x-5 text-theme-neutral-dark"
                 >
                   <span
                     class="text-sm font-semibold"
@@ -9450,12 +9450,12 @@ exports[`WalletDetails should render with timers 1`] = `
                   class="flex items-center space-x-5"
                 >
                   <span
-                    class="text-white text-lg font-semibold truncate"
+                    class="text-lg font-semibold text-white truncate"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                   <div
-                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                    class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -9496,7 +9496,7 @@ exports[`WalletDetails should render with timers 1`] = `
                 class="flex flex-col mr-auto"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                  class="flex items-center text-sm font-semibold text-theme-neutral-dark"
                 >
                   <span>
                     Balance:
@@ -9509,7 +9509,7 @@ exports[`WalletDetails should render with timers 1`] = `
                   </span>
                 </div>
                 <span
-                  class="text-white text-lg font-semibold"
+                  class="text-lg font-semibold text-white"
                   data-testid="WalletHeader__balance"
                 >
                   33.75089801 DARK
@@ -9595,12 +9595,12 @@ exports[`WalletDetails should render with timers 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     My Vote
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1/1)
                   </span>
@@ -9640,7 +9640,7 @@ exports[`WalletDetails should render with timers 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full justify-between ml-4 mr-8"
+                    class="flex flex-col justify-between h-full ml-4 mr-8"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -9659,7 +9659,7 @@ exports[`WalletDetails should render with timers 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full items-center justify-between pl-8 border-l border-theme-neutral-300"
+                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -9697,12 +9697,12 @@ exports[`WalletDetails should render with timers 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     Registrations
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1)
                   </span>
@@ -9728,7 +9728,7 @@ exports[`WalletDetails should render with timers 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center pl-8 border-l border-theme-neutral-300 -space-x-2"
+                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300"
                     data-testid="WalletRegistrations__inactive"
                   >
                     <div
@@ -11357,7 +11357,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center px-14 mx-auto"
+            class="container flex items-center mx-auto px-14"
           >
             <div
               class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -11400,7 +11400,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark space-x-5"
+                  class="flex items-center space-x-5 text-theme-neutral-dark"
                 >
                   <span
                     class="text-sm font-semibold"
@@ -11428,12 +11428,12 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   class="flex items-center space-x-5"
                 >
                   <span
-                    class="text-white text-lg font-semibold truncate"
+                    class="text-lg font-semibold text-white truncate"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                   <div
-                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                    class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -11474,7 +11474,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 class="flex flex-col mr-auto"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                  class="flex items-center text-sm font-semibold text-theme-neutral-dark"
                 >
                   <span>
                     Balance:
@@ -11487,7 +11487,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </span>
                 </div>
                 <span
-                  class="text-white text-lg font-semibold"
+                  class="text-lg font-semibold text-white"
                   data-testid="WalletHeader__balance"
                 >
                   33.75089801 DARK
@@ -11573,12 +11573,12 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     My Vote
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1/1)
                   </span>
@@ -11618,7 +11618,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full justify-between ml-4 mr-8"
+                    class="flex flex-col justify-between h-full ml-4 mr-8"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -11637,7 +11637,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full items-center justify-between pl-8 border-l border-theme-neutral-300"
+                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -11675,12 +11675,12 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     Registrations
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1)
                   </span>
@@ -11706,7 +11706,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center pl-8 border-l border-theme-neutral-300 -space-x-2"
+                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300"
                     data-testid="WalletRegistrations__inactive"
                   >
                     <div
@@ -13335,7 +13335,7 @@ exports[`WalletDetails should update wallet name 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center px-14 mx-auto"
+            class="container flex items-center mx-auto px-14"
           >
             <div
               class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
@@ -13378,7 +13378,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark space-x-5"
+                  class="flex items-center space-x-5 text-theme-neutral-dark"
                 >
                   <span
                     class="text-sm font-semibold"
@@ -13408,12 +13408,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="flex items-center space-x-5"
                 >
                   <span
-                    class="text-white text-lg font-semibold truncate"
+                    class="text-lg font-semibold text-white truncate"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                   <div
-                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                    class="flex items-end mb-2 space-x-3 text-theme-neutral-dark"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -13454,7 +13454,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 class="flex flex-col mr-auto"
               >
                 <div
-                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                  class="flex items-center text-sm font-semibold text-theme-neutral-dark"
                 >
                   <span>
                     Balance:
@@ -13467,7 +13467,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </span>
                 </div>
                 <span
-                  class="text-white text-lg font-semibold"
+                  class="text-lg font-semibold text-white"
                   data-testid="WalletHeader__balance"
                 >
                   33.75089801 DARK
@@ -13553,12 +13553,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     My Vote
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1/1)
                   </span>
@@ -13598,7 +13598,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full justify-between ml-4 mr-8"
+                    class="flex flex-col justify-between h-full ml-4 mr-8"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -13617,7 +13617,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col h-full items-center justify-between pl-8 border-l border-theme-neutral-300"
+                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -13655,12 +13655,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="flex mb-4"
                 >
                   <h2
-                    class="font-bold mb-0"
+                    class="mb-0 font-bold"
                   >
                     Registrations
                   </h2>
                   <span
-                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
                   >
                     (1)
                   </span>
@@ -13686,7 +13686,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center pl-8 border-l border-theme-neutral-300 -space-x-2"
+                    class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300"
                     data-testid="WalletRegistrations__inactive"
                   >
                     <div

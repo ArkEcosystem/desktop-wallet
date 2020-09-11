@@ -60,7 +60,7 @@ export const WalletHeader = ({
 	return (
 		<header data-testid="WalletHeader">
 			<div className="py-8 bg-theme-neutral-900">
-				<div className="container flex items-center px-14 mx-auto">
+				<div className="container flex items-center mx-auto px-14">
 					<div className="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800">
 						<div className="flex">
 							<NetworkIcon
@@ -75,7 +75,7 @@ export const WalletHeader = ({
 						</div>
 
 						<div className="flex flex-col overflow-hidden">
-							<div className="flex items-center text-theme-neutral-dark space-x-5">
+							<div className="flex items-center space-x-5 text-theme-neutral-dark">
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
 									{name}
 								</span>
@@ -110,9 +110,9 @@ export const WalletHeader = ({
 							</div>
 
 							<div className="flex items-center space-x-5">
-								<span className="text-white text-lg font-semibold truncate">{address}</span>
+								<span className="text-lg font-semibold text-white truncate">{address}</span>
 
-								<div className="flex items-end text-theme-neutral-dark space-x-3 mb-2">
+								<div className="flex items-end mb-2 space-x-3 text-theme-neutral-dark">
 									<Clipboard data={address} tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}>
 										<Icon
 											name="CopyAddress"
@@ -140,7 +140,7 @@ export const WalletHeader = ({
 
 					<div className="flex items-center space-x-2 h-13 w-1/2 pl-12">
 						<div className="flex flex-col mr-auto">
-							<div className="flex items-center text-theme-neutral-dark text-sm font-semibold">
+							<div className="flex items-center text-sm font-semibold text-theme-neutral-dark">
 								<span>{t("COMMON.BALANCE")}:</span>
 
 								{currencyBalance && (
@@ -172,7 +172,7 @@ export const WalletHeader = ({
 								value={balance}
 								ticker={ticker}
 								data-testid="WalletHeader__balance"
-								className="text-white text-lg font-semibold"
+								className="text-lg font-semibold text-white"
 							/>
 						</div>
 

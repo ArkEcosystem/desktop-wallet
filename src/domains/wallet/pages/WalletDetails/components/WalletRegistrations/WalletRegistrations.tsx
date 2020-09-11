@@ -138,7 +138,7 @@ export const WalletRegistrations = ({
 				{showInactiveIcons && (
 					<div
 						data-testid="WalletRegistrations__inactive"
-						className="flex items-center pl-8 border-l border-theme-neutral-300 -space-x-2"
+						className="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300"
 					>
 						{!isSecondSignature && renderIcon("Key")}
 
@@ -165,8 +165,8 @@ export const WalletRegistrations = ({
 	return (
 		<section data-testid="WalletRegistrations">
 			<div className="flex mb-4">
-				<h2 className="font-bold mb-0">{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.TITLE")}</h2>
-				<span className="font-bold text-2xl text-theme-neutral-light ml-1">({registrationCount})</span>
+				<h2 className="mb-0 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.TITLE")}</h2>
+				<span className="ml-1 text-2xl font-bold text-theme-neutral-light">({registrationCount})</span>
 			</div>
 
 			{isLoading ? <WalletRegistrationsSkeleton /> : renderRegistrations()}
