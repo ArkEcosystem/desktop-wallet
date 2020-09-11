@@ -1,152 +1,171 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 
-type Props = {
-	votes?: ReadOnlyWallet[];
-	onVote?: () => void;
-	onUnvote?: (address: string) => void;
-	defaultIsOpen?: boolean;
+type WalletVoteProps = {
+	votes: ReadOnlyWallet[];
+	maxVotes: number;
 	isLoading?: boolean;
+	onButtonClick: (address?: string) => void;
 };
 
-export const WalletVote = ({ votes, onVote, onUnvote, defaultIsOpen, isLoading }: Props) => {
+export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: WalletVoteProps) => {
 	const { t } = useTranslation();
-	const [isOpen, setIsOpen] = useState(defaultIsOpen!);
 
-	const hasNoVotes = !votes || votes.length === 0;
+	const voteCount = (votes || []).length;
+	const hasNoVotes = voteCount === 0;
+
+	const renderVotes = () => {
+		if (hasNoVotes) {
+			return (
+				<div data-testid="WalletVote__empty" className="flex items-center space-x-4">
+					<div className="flex items-center -space-x-2">
+						<Circle size="lg" className="text-theme-neutral-light">
+							<Icon name="Vote" width={21} height={21} />
+						</Circle>
+
+						<div className="flex -space-x-3">
+							<span className="inline-block">
+								<Circle size="lg" />
+							</span>
+							{maxVotes > 1 && (
+								<span className="inline-block">
+									<Circle size="lg" />
+								</span>
+							)}
+						</div>
+					</div>
+
+					<div className="font-semibold text-theme-text">
+						<span className="mr-2">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
+
+						<Link
+							to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+							isExternal
+							showExternalIcon={false}
+						>
+							{t("COMMON.LEARN_MORE")}
+						</Link>
+					</div>
+				</div>
+			);
+		}
+
+		if (votes && votes.length === 1) {
+			const delegate = votes[0];
+			const rank = delegate.rank();
+
+			return (
+				<div className="flex items-center h-11">
+					<div className="flex items-center -space-x-2">
+						<Circle size="lg" className="border-theme-text text-theme-text">
+							<Icon name="Vote" width={21} height={21} />
+						</Circle>
+						<Avatar size="lg" address={delegate.address()} />
+					</div>
+
+					<div className="flex flex-col h-full justify-between ml-4 mr-8">
+						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.DELEGATE")}</span>
+
+						<Address walletName={delegate.username()} />
+					</div>
+
+					<div className="flex flex-col h-full items-center justify-between pl-8 border-l border-theme-neutral-300">
+						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.STATUS")}</span>
+
+						{rank ? (
+							<Tippy content={`#${rank}`} placement="right">
+								<span>
+									<Icon name="Ok" className="text-theme-success" />
+								</span>
+							</Tippy>
+						) : (
+							<Icon name="StatusClock" className="text-theme-neutral" />
+						)}
+					</div>
+
+					<Button
+						variant="plain"
+						className="ml-auto"
+						onClick={() => onButtonClick(delegate.address())}
+						data-testid="WalletVote__button"
+					>
+						{t("COMMON.UNVOTE")}
+					</Button>
+				</div>
+			);
+		}
+
+		const [first, second, ...rest] = votes;
+
+		const renderAvatar = (address: string, username?: string) => (
+			<Tippy content={username}>
+				<span className="inline-block">
+					<Avatar size="lg" address={address} />
+				</span>
+			</Tippy>
+		);
+
+		return (
+			<div className="flex items-center h-11">
+				<div className="flex items-center -space-x-2">
+					<Circle size="lg" className="border-theme-text text-theme-text">
+						<Icon name="Vote" width={21} height={21} />
+					</Circle>
+
+					<div className="flex -space-x-3">
+						{renderAvatar(first.address(), first.username())}
+
+						{second && renderAvatar(second.address(), second.username())}
+
+						{rest && rest.length === 1 && renderAvatar(rest[0].address(), rest[0].username())}
+
+						{rest && rest.length > 1 && (
+							<Circle size="lg" className="relative border-theme-text text-theme-text">
+								<span className="font-semibold">+{rest.length}</span>
+							</Circle>
+						)}
+					</div>
+				</div>
+
+				<Button
+					variant="plain"
+					className="ml-auto"
+					onClick={() => onButtonClick()}
+					data-testid="WalletVote__button"
+				>
+					{t("COMMON.SHOW_ALL")}
+				</Button>
+			</div>
+		);
+	};
 
 	return (
 		<section data-testid="WalletVote">
-			<h2 className="font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE")}</h2>
-
-			<div className="grid grid-flow-row row-gap-6">
-				{isLoading && <WalletVoteSkeleton />}
-
-				{!isLoading && hasNoVotes ? (
-					<div data-testid="WalletVote__empty" className="flex items-center justify-between">
-						<div className="flex items-center pr-8 space-x-4">
-							<div className="flex items-center -space-x-2">
-								<Circle size="lg" className="text-theme-neutral-light">
-									<Icon name="Vote" width={21} height={21} />
-								</Circle>
-								<Circle size="lg" className="bg-theme-background" />
-							</div>
-
-							<div className="flex flex-col">
-								<span className="text-sm font-semibold text-theme-neutral">
-									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.LABEL")}
-								</span>
-								<div className="font-semibold text-theme-neutral-900">
-									<span className="mr-2">
-										{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY.DESCRIPTION")}
-									</span>
-									<Link to="https://guides.ark.dev/usage-guides/desktop-wallet-voting" isExternal>
-										{t("COMMON.LEARN_MORE")}
-									</Link>
-								</div>
-							</div>
-						</div>
-					</div>
-				) : (
-					votes?.map((delegate: ReadOnlyWallet) => (
-						<div
-							data-testid="WalletVote__delegate"
-							className="flex items-center justify-between"
-							key={delegate.address()}
-						>
-							<div className="flex items-center space-x-4">
-								<div className="flex items-center -space-x-2">
-									<Circle size="lg" className="border-theme-neutral-900 text-theme-neutral-900">
-										<Icon name="Vote" width={21} height={21} />
-									</Circle>
-									<Avatar size="lg" address={delegate.address()} />
-								</div>
-								<div className="flex flex-col justify-between">
-									<span className="text-sm font-semibold text-theme-neutral">
-										{t("COMMON.DELEGATE")}
-									</span>
-									<Address walletName={delegate.username()} address={delegate.address()} />
-								</div>
-							</div>
-
-							<div className="flex items-center">
-								<ul className="flex items-stretch divide-x-1 divide-theme-neutral-300">
-									<li className="flex flex-col items-center justify-between px-10">
-										<span className="text-sm font-semibold text-theme-neutral">
-											{t("COMMON.RANK")}
-										</span>
-										<span
-											data-testid="WalletVote__delegate__rank"
-											className="font-bold text-theme-neutral-dark"
-										>
-											#{delegate.rank()}
-										</span>
-									</li>
-
-									<li className="flex flex-col items-center justify-between px-10">
-										<span className="text-sm font-semibold text-theme-neutral">
-											{t("COMMON.EXPLORER")}
-										</span>
-										<a
-											data-testid="WalletVote__delegate__explorer"
-											href={delegate.explorerLink()}
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											<Icon name="Explorer" className="text-2xl text-theme-primary" />
-										</a>
-									</li>
-
-									<li className="flex flex-col items-center justify-between px-10">
-										<span className="text-sm font-semibold text-theme-neutral">
-											{t("COMMON.MARKETSQUARE")}
-										</span>
-										<a
-											data-testid="WalletVote__delegate__msq"
-											href="https://marketsquare.io"
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											<Icon name="Link" className="text-xl text-theme-primary" />
-										</a>
-									</li>
-
-									<li className="flex flex-col items-center justify-between px-10">
-										<span className="text-sm font-semibold text-theme-neutral">
-											{t("COMMON.STATUS")}
-										</span>
-										<Icon
-											name={delegate.rank() ? "Ok" : "StatusClock"}
-											className={delegate.rank() ? "text-theme-success" : "text-theme-neutral"}
-										/>
-									</li>
-								</ul>
-
-								<Button
-									variant="plain"
-									onClick={() => onUnvote?.(delegate.address())}
-									data-testid="WalletVote__delegate__unvote"
-								>
-									{t("COMMON.UNVOTE")}
-								</Button>
-							</div>
-						</div>
-					))
+			<div className="flex mb-4">
+				<h2 className="font-bold mb-0">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}</h2>
+				{!isLoading && (
+					<span className="font-bold text-2xl text-theme-neutral-light ml-1">
+						({voteCount}/{maxVotes})
+					</span>
 				)}
 			</div>
+
+			{isLoading ? <WalletVoteSkeleton /> : renderVotes()}
 		</section>
 	);
 };
 
 WalletVote.defaultProps = {
-	defaultIsOpen: true,
+	votes: [],
+	maxVotes: 1,
 };

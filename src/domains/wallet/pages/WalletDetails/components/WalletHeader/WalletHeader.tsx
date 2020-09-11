@@ -7,7 +7,7 @@ import { Clipboard } from "app/components/Clipboard";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
@@ -55,8 +55,6 @@ export const WalletHeader = ({
 	onUpdateWalletName,
 	onVerifyMessage,
 }: Props) => {
-	const [showPublicKey, setShowPublicKey] = useState(false);
-
 	const { t } = useTranslation();
 
 	return (
@@ -83,7 +81,7 @@ export const WalletHeader = ({
 								</span>
 
 								<div className="flex items-center space-x-3">
-									{!isLedger && (
+									{isLedger && (
 										<Tippy content={t("COMMON.LEDGER")}>
 											<span data-testid="WalletHeader__ledger">
 												<Icon
@@ -96,7 +94,7 @@ export const WalletHeader = ({
 										</Tippy>
 									)}
 
-									{!isMultisig && (
+									{isMultisig && (
 										<Tippy content={t("COMMON.MULTISIGNATURE")}>
 											<span data-testid="WalletHeader__multisig">
 												<Icon
@@ -114,7 +112,7 @@ export const WalletHeader = ({
 							<div className="flex items-center space-x-5">
 								<span className="text-white text-lg font-semibold truncate">{address}</span>
 
-								<div className="flex items-end text-theme-neutral-dark space-x-3">
+								<div className="flex items-end text-theme-neutral-dark space-x-3 mb-2">
 									<Clipboard data={address} tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}>
 										<Icon
 											name="CopyAddress"

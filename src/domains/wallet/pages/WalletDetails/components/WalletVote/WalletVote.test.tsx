@@ -61,32 +61,40 @@ describe("WalletVote", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render closed", () => {
-		const { getByTestId } = render(<WalletVote votes={votes} defaultIsOpen={false} />);
-		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "true");
+	it("should render a single vote", () => {
+		const { getAllByTestId, getByText } = render(<WalletVote votes={votes} />);
+		expect(getAllByTestId("Avatar")).toHaveLength(1);
+		expect(getByText(votes[0].username())).toBeTruthy();
 	});
 
-	it("should toggle", () => {
-		const { getByTestId } = render(<WalletVote votes={votes} />);
-		act(() => {
-			fireEvent.click(getByTestId("WalletVote__toggle"));
-		});
-		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "true");
+	it("should render multiple votes", () => {
+		const { getAllByTestId, getByText } = render(<WalletVote votes={[...votes, ...votes]} />);
+
+		expect(getAllByTestId("Avatar")).toHaveLength(2);
+		expect(() => getByText(votes[0].username())).toThrow(/Unable to find an element/);
 	});
 
-	it("should render votes", () => {
-		const { getAllByTestId } = render(<WalletVote votes={votes} />);
-		expect(getAllByTestId("WalletVote__delegate")).toHaveLength(votes.length);
-	});
-
-	it("should emit action on unvote", () => {
+	it("should emit action on button (unvote)", () => {
 		const onUnvote = jest.fn();
-		const { getAllByTestId } = render(<WalletVote onUnvote={onUnvote} votes={votes} />);
-		const unvoteButtons = getAllByTestId("WalletVote__delegate__unvote");
-		expect(unvoteButtons).toHaveLength(votes.length);
+
+		const { getByTestId } = render(<WalletVote onUnvote={onUnvote} votes={votes} />);
+
 		act(() => {
-			fireEvent.click(unvoteButtons[0]);
+			fireEvent.click(getByTestId("WalletVote__button"));
 		});
+
 		expect(onUnvote).toHaveBeenCalledWith(votes[0].address());
+	});
+
+	it("should emit action on button (show all)", () => {
+		const onUnvote = jest.fn();
+
+		const { getByTestId } = render(<WalletVote onUnvote={onUnvote} votes={[...votes, ...votes]} />);
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletVote__button"));
+		});
+
+		expect(onUnvote).toHaveBeenCalledWith();
 	});
 });

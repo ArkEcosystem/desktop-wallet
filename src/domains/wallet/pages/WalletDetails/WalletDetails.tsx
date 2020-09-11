@@ -42,7 +42,9 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
+	const maxVotes = useMemo(() => activeWallet.network().maximumVotes(), [activeWallet]);
 
 	const coinName = activeWallet.coinId();
 	const networkId = activeWallet.networkId();
@@ -50,6 +52,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 	const { transactions, walletData, votes } = data;
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
+
 	const crumbs = [
 		{
 			route: dashboardRoute,
@@ -66,7 +69,9 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 			try {
 				walletData = await activeWallet.client().wallet(activeWallet.address());
+				console.log(walletData);
 				votes = activeWallet.votes();
+				// votes = env.delegates().all("ARK", "devnet").slice(0, 10);
 			} catch {
 				votes = [];
 			}
@@ -114,6 +119,21 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		return transactions && setData({ ...data, transactions: transactions?.concat(nextPage) });
 	};
 
+	const handleVoteButton = (address?: string) => {
+		if (address) {
+			return history.push({
+				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
+				search: `?unvotes=${address}`,
+			});
+		}
+
+		history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`);
+	};
+
+	const handleRegistrationsButton = () => {
+		history.push(`/profiles/${activeProfile.id()}/registrations`);
+	};
+
 	/* istanbul ignore next */
 	return (
 		<>
@@ -149,40 +169,28 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
 							<WalletVote
 								votes={votes}
+								maxVotes={maxVotes}
 								isLoading={isLoading}
-								onVote={() =>
-									history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`)
-								}
-								onUnvote={(delegateAddress) =>
-									history.push({
-										pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
-										search: `?unvotes=${delegateAddress}`,
-									})
-								}
+								onButtonClick={handleVoteButton}
 							/>
 						</div>
 
 						<div className="w-1/2 pl-12">
 							<WalletRegistrations
-								isLoading={isLoading}
+								business={undefined}
 								delegate={
 									activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
 										? walletData
 										: undefined
 								}
-								business={undefined}
-								isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
-								hasBridgechains={true}
+								hasBridgechains={false} // @TODO
 								hasSecondSignature={
 									activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()
 								}
-								hasPlugins={true}
-								onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
-								onRegister={() =>
-									history.push(
-										`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-entity-registration`,
-									)
-								}
+								hasPlugins={false} // @TODO
+								isLoading={isLoading}
+								isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
+								onButtonClick={handleRegistrationsButton}
 							/>
 						</div>
 					</div>

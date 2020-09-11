@@ -86,7 +86,6 @@ describe("WalletDetails", () => {
 
 		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -96,7 +95,6 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(blankWallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -106,7 +104,6 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(unvotedWallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -266,7 +263,6 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId, queryAllByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet2.address());
 		expect(queryAllByTestId("WalletBottomSheetMenu")).toHaveLength(0);
 		expect(asFragment()).toMatchSnapshot();
 	});

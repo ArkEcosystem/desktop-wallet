@@ -92,42 +92,6 @@ describe("WalletHeader", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should show publicKey", () => {
-		const address = "abc";
-		const publicKey = "123";
-		const { getByTestId, asFragment } = render(
-			<WalletHeader
-				address={address}
-				balance={BigNumber.make(0)}
-				coin="Ark"
-				currencyBalance={BigNumber.make(10)}
-				exchangeCurrency="USD"
-				network="mainnet"
-				publicKey={publicKey}
-				ticker="ARK"
-				onDeleteWallet={onDeleteWallet}
-				onSignMessage={onSignMessage}
-				onStar={onStar}
-				onStoreHash={onStoreHash}
-				onUpdateWalletName={onUpdateWalletName}
-				onVerifyMessage={onVerifyMessage}
-			/>,
-		);
-
-		expect(getByTestId("WalletHeader__balance")).toBeTruthy();
-		expect(getByTestId("WalletHeader__currency-balance")).toBeTruthy();
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(address);
-
-		act(() => {
-			fireEvent.click(getByTestId("WalletHeader__toggle"));
-		});
-
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(publicKey);
-		expect(() => getByTestId("WalletHeader__balance")).toThrowError();
-		expect(() => getByTestId("WalletHeader__currency-balance")).toThrowError();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should handle sign message", () => {
 		const { getByTestId } = render(
 			<WalletHeader

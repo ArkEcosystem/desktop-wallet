@@ -6,101 +6,67 @@ exports[`WalletRegistrations should render empty mode 1`] = `
     data-testid="WalletRegistrations"
   >
     <div
-      class="flex items-center justify-between"
+      class="flex mb-4"
     >
       <h2
-        class="font-bold"
+        class="font-bold mb-0"
       >
         Registrations
       </h2>
-      <button
-        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-        data-testid="WalletRegistrations__toggle"
+      <span
+        class="font-bold text-2xl text-theme-neutral-light ml-1"
       >
-        <span>
-          Hide
-        </span>
-        <span
-          class="sc-AxhCb kwTXtP"
-        >
-          <div
-            class="sc-AxiKw ksjdLL"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-        </span>
-      </button>
+        (0)
+      </span>
     </div>
     <div
-      aria-hidden="false"
-      data-testid="Collapse"
-      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+      class="flex items-center justify-between"
     >
       <div
-        class="flex items-center justify-between py-4"
+        class="flex items-center pr-8 space-x-4"
+        data-testid="WalletRegistrations__empty"
       >
         <div
-          class="flex items-center pr-8 space-x-4"
-          data-testid="WalletRegistrations__empty"
+          class="flex items-center -space-x-2"
         >
           <div
-            class="flex items-center -space-x-2"
+            class="sc-AxhCb iZzMIT text-theme-neutral-light"
           >
             <div
-              class="sc-AxirZ fFfSST text-theme-neutral-light"
+              class="sc-AxjAm cpczEI text-xl"
+              height="1em"
+              width="1em"
             >
-              <div
-                class="sc-AxiKw dzBdqj text-xl"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  delegate.svg
-                </svg>
-              </div>
+              <svg>
+                delegate.svg
+              </svg>
             </div>
-            <div
-              class="sc-AxirZ fFfSST bg-theme-background"
-            />
           </div>
           <div
-            class="flex flex-col"
-          >
-            <span
-              class="text-sm font-semibold text-theme-neutral"
-            >
-              Type Registrations
-            </span>
-            <span
-              class="font-semibold text-theme-neutral-900"
-            >
-              You haven't registered more than one type of registration.
-              <a
-                class="px-2 text-theme-primary"
-                href="/#"
-              >
-                Learn more
-              </a>
-            </span>
-          </div>
+            class="sc-AxhCb iZzMIT"
+          />
         </div>
         <div
-          class="space-x-2"
+          class="font-semibold text-theme-neutral-900"
         >
-          <button
-            class="sc-AxjAm fPpool"
-            color="primary"
-            data-testid="WalletRegistrations__register"
-            type="button"
+          <span
+            class="mr-2"
           >
-            Register
-          </button>
+            WALLETS.PAGE_WALLET_DETAILS.REGISTATIONS.EMPTY_DESCRIPTION
+          </span>
+          <a
+            class="sc-AxirZ fYobRB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+            data-testid="Link"
+            rel="noopener noreferrer"
+            to="@TODO"
+          >
+            Learn more
+          </a>
         </div>
       </div>
+      <div
+        class="space-x-2"
+      />
     </div>
   </section>
 </DocumentFragment>
@@ -112,103 +78,81 @@ exports[`WalletRegistrations should render loading state 1`] = `
     data-testid="WalletRegistrations"
   >
     <div
-      class="flex items-center justify-between"
+      class="flex mb-4"
     >
       <h2
-        class="font-bold"
+        class="font-bold mb-0"
       >
         Registrations
       </h2>
-      <button
-        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-        data-testid="WalletRegistrations__toggle"
+      <span
+        class="font-bold text-2xl text-theme-neutral-light ml-1"
       >
-        <span>
-          Hide
-        </span>
-        <span
-          class="sc-AxhCb kwTXtP"
-        >
-          <div
-            class="sc-AxiKw ksjdLL"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-        </span>
-      </button>
+        (0)
+      </span>
     </div>
     <div
-      aria-hidden="false"
-      data-testid="Collapse"
-      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+      class="flex items-center justify-between"
     >
       <div
-        class="flex items-center justify-between py-4"
+        class="flex items-center pr-8 space-x-4"
+        data-testid="WalletRegistrations__skeleton"
       >
         <div
-          class="flex items-center pr-8 space-x-4"
-          data-testid="WalletRegistrations__skeleton"
+          class="flex items-center -space-x-2"
         >
           <div
-            class="flex items-center -space-x-2"
-          >
-            <div
-              class="sc-AxirZ fFfSST text-theme-neutral-light"
-            />
-            <div
-              class="sc-AxirZ fFfSST bg-theme-background"
-            />
-          </div>
+            class="sc-AxhCb iZzMIT text-theme-neutral-light"
+          />
           <div
-            class="flex flex-col"
-          >
-            <span
-              class="text-sm font-semibold text-theme-neutral"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 120px; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </span>
-            <span
-              class="font-semibold text-theme-neutral-900"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 120px; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-              <a
-                class="px-2 text-theme-primary"
-                href="/#"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 60px; height: 6px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </a>
-            </span>
-          </div>
+            class="sc-AxhCb iZzMIT bg-theme-background"
+          />
         </div>
         <div
-          class="flex items-center divide-x-1 divide-theme-neutral-light"
-        />
+          class="flex flex-col"
+        >
+          <span
+            class="text-sm font-semibold text-theme-neutral"
+          >
+            <span>
+              <span
+                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                style="width: 120px; height: 6px;"
+              >
+                ‌
+              </span>
+            </span>
+          </span>
+          <span
+            class="font-semibold text-theme-neutral-900"
+          >
+            <span>
+              <span
+                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                style="width: 120px; height: 6px;"
+              >
+                ‌
+              </span>
+            </span>
+            <a
+              class="px-2 text-theme-primary"
+              href="/#"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 60px; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </a>
+          </span>
+        </div>
       </div>
+      <div
+        class="flex items-center divide-x-1 divide-theme-neutral-light"
+      />
     </div>
   </section>
 </DocumentFragment>
@@ -220,114 +164,89 @@ exports[`WalletRegistrations should show delegate 1`] = `
     data-testid="WalletRegistrations"
   >
     <div
-      class="flex items-center justify-between"
+      class="flex mb-4"
     >
       <h2
-        class="font-bold"
+        class="font-bold mb-0"
       >
         Registrations
       </h2>
-      <button
-        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-        data-testid="WalletRegistrations__toggle"
+      <span
+        class="font-bold text-2xl text-theme-neutral-light ml-1"
       >
-        <span>
-          Hide
-        </span>
-        <span
-          class="sc-AxhCb kwTXtP"
-        >
-          <div
-            class="sc-AxiKw ksjdLL"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-        </span>
-      </button>
+        (0)
+      </span>
     </div>
     <div
-      aria-hidden="false"
-      data-testid="Collapse"
-      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+      class="flex items-center justify-between"
     >
       <div
-        class="flex items-center justify-between py-4"
+        class="flex items-center divide-x-1 divide-theme-neutral-light"
       >
         <div
-          class="flex items-center divide-x-1 divide-theme-neutral-light"
+          class="flex items-center pr-8 space-x-4"
         >
           <div
-            class="flex items-center pr-8 space-x-4"
+            class="flex items-center -space-x-2"
           >
             <div
-              class="flex items-center -space-x-2"
+              class="sc-AxhCb iZzMIT border-theme-neutral-900 text-theme-neutral-900"
             >
               <div
-                class="sc-AxirZ fFfSST border-theme-neutral-900 text-theme-neutral-900"
+                class="sc-AxjAm cpczEI text-xl"
+                height="1em"
+                width="1em"
               >
-                <div
-                  class="sc-AxiKw dzBdqj text-xl"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
+                <svg>
+                  delegate.svg
+                </svg>
               </div>
             </div>
             <div
-              class="flex flex-col"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+              data-testid="Avatar"
             >
-              <span
-                class="text-sm font-semibold text-theme-neutral"
+              <div
+                class="w-full h-full"
               >
-                Delegate
-              </span>
-              <span
-                class="font-semibold"
-                data-testid="WalletRegistrations__delegate"
-              >
-                arkx
-              </span>
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
             </div>
           </div>
-          0
+          <div
+            class="flex flex-col"
+          >
+            <span
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              Delegate
+            </span>
+            <span
+              class="font-semibold"
+              data-testid="WalletRegistrations__delegate"
+            >
+              arkx
+            </span>
+          </div>
         </div>
+        0
+      </div>
+      <div
+        class="space-x-2"
+      >
         <div
-          class="space-x-2"
+          data-testid="WalletRegistrations__show-all"
         >
           <button
-            class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-            data-testid="WalletRegistrations__show-all"
-          >
-            Show All
-          </button>
-          <button
-            class="sc-AxjAm fPpool"
+            class="sc-AxiKw MYNNu"
             color="primary"
-            data-testid="WalletRegistrations__register"
             type="button"
           >
-            Register
+            Show All
           </button>
         </div>
       </div>
@@ -342,100 +261,75 @@ exports[`WalletRegistrations should show icons list 1`] = `
     data-testid="WalletRegistrations"
   >
     <div
-      class="flex items-center justify-between"
+      class="flex mb-4"
     >
       <h2
-        class="font-bold"
+        class="font-bold mb-0"
       >
         Registrations
       </h2>
-      <button
-        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-        data-testid="WalletRegistrations__toggle"
+      <span
+        class="font-bold text-2xl text-theme-neutral-light ml-1"
       >
-        <span>
-          Hide
-        </span>
-        <span
-          class="sc-AxhCb kwTXtP"
-        >
-          <div
-            class="sc-AxiKw ksjdLL"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-        </span>
-      </button>
+        (0)
+      </span>
     </div>
     <div
-      aria-hidden="false"
-      data-testid="Collapse"
-      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+      class="flex items-center justify-between"
     >
       <div
-        class="flex items-center justify-between py-4"
+        class="flex items-center divide-x-1 divide-theme-neutral-light"
       >
         <div
-          class="flex items-center divide-x-1 divide-theme-neutral-light"
+          class="pr-8"
         >
           <div
-            class="pr-8"
+            class="flex items-center -space-x-2"
+            data-testid="WalletRegistrations__icon-list"
           >
             <div
-              class="flex items-center -space-x-2"
-              data-testid="WalletRegistrations__icon-list"
+              class="sc-AxhCb iZzMIT bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+              data-testid="WalletRegistrations__icon-list__icon"
             >
               <div
-                class="sc-AxirZ fFfSST bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                data-testid="WalletRegistrations__icon-list__icon"
+                class="sc-AxjAm cpczEI text-xl"
+                height="1em"
+                width="1em"
               >
-                <div
-                  class="sc-AxiKw dzBdqj text-xl"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    key.svg
-                  </svg>
-                </div>
+                <svg>
+                  key.svg
+                </svg>
               </div>
+            </div>
+            <div
+              class="sc-AxhCb iZzMIT bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+              data-testid="WalletRegistrations__icon-list__icon"
+            >
               <div
-                class="sc-AxirZ fFfSST bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                data-testid="WalletRegistrations__icon-list__icon"
+                class="sc-AxjAm cpczEI text-xl"
+                height="1em"
+                width="1em"
               >
-                <div
-                  class="sc-AxiKw dzBdqj text-xl"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    multisig.svg
-                  </svg>
-                </div>
+                <svg>
+                  multisig.svg
+                </svg>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="space-x-2"
+      >
         <div
-          class="space-x-2"
+          data-testid="WalletRegistrations__show-all"
         >
           <button
-            class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-            data-testid="WalletRegistrations__show-all"
-          >
-            Show All
-          </button>
-          <button
-            class="sc-AxjAm fPpool"
+            class="sc-AxiKw MYNNu"
             color="primary"
-            data-testid="WalletRegistrations__register"
             type="button"
           >
-            Register
+            Show All
           </button>
         </div>
       </div>

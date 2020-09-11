@@ -136,18 +136,13 @@ export const translations: { [key: string]: any } = {
 
 		REGISTRATIONS: {
 			TITLE: "Registrations",
-			EMPTY: {
-				LABEL: "Type Registrations",
-				DESCRIPTION: "You have no registrations yet",
-			},
+			EMPTY_DESCRIPTION: "You have no active registrations",
 		},
 
 		VOTES: {
 			TITLE: "My Vote",
-			EMPTY: {
-				LABEL: "Address Delegate",
-				DESCRIPTION: "You have not yet voted for a delegate",
-			},
+			TITLE_plural: "My Votes",
+			EMPTY_DESCRIPTION: "You have not yet voted for a Delegate",
 		},
 
 		OPTIONS: {

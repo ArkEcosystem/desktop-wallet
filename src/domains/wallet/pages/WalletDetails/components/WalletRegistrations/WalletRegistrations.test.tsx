@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
+import {  env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { WalletRegistrations } from "./WalletRegistrations";
 
@@ -22,14 +22,7 @@ describe("WalletRegistrations", () => {
 			<WalletRegistrations isMultisig onShowAll={onShowAll} onRegister={onRegister} />,
 		);
 		fireEvent.click(getByTestId("WalletRegistrations__show-all"));
-		fireEvent.click(getByTestId("WalletRegistrations__register"));
 		expect(onShowAll).toHaveBeenCalled();
-		expect(onRegister).toHaveBeenCalled();
-	});
-
-	it("should render closed", () => {
-		const { getByTestId } = render(<WalletRegistrations defaultIsOpen={false} />);
-		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "true");
 	});
 
 	it("should render loading state", () => {
@@ -37,14 +30,6 @@ describe("WalletRegistrations", () => {
 
 		expect(getByTestId("WalletRegistrations__skeleton")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should toggle", () => {
-		const { getByTestId } = render(<WalletRegistrations />);
-		act(() => {
-			fireEvent.click(getByTestId("WalletRegistrations__toggle"));
-		});
-		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "true");
 	});
 
 	it("should show icons list", () => {

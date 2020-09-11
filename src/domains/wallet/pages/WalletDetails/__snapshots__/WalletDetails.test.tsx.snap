@@ -274,24 +274,24 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center justify-between mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
-              class="flex items-center space-x-4"
+              class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
             >
               <div
                 class="flex"
               >
                 <div
                   aria-label="Ark Devnet"
-                  class="sc-AxhUy cGyvAR -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+                  class="sc-AxhUy ecDeug -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
                   data-testid="NetworkIcon-ARK-devnet"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
+                    class="sc-AxiKw dklFyP"
                     data-testid="NetworkIcon__icon"
-                    height="1em"
-                    width="1em"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       ark.svg
@@ -299,7 +299,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iIPilC"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
                   data-testid="Avatar"
                 >
                   <div
@@ -313,14 +313,89 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   </div>
                 </div>
               </div>
-              <h2
-                class="mb-0 text-white"
-                data-testid="WalletHeader__name"
-              />
+              <div
+                class="flex flex-col overflow-hidden"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark space-x-5"
+                >
+                  <span
+                    class="text-sm font-semibold"
+                    data-testid="WalletHeader__name"
+                  />
+                  <div
+                    class="flex items-center space-x-3"
+                  />
+                </div>
+                <div
+                  class="flex items-center space-x-5"
+                >
+                  <span
+                    class="text-white text-lg font-semibold truncate"
+                  >
+                    DQpdzcso8cCrhK49FiuKXnDPzK5ev4Wdkw
+                  </span>
+                  <div
+                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw bIhqqy hover:text-theme-neutral"
+                        height="21"
+                        width="13"
+                      >
+                        <svg>
+                          copy-address.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw glFzMu hover:text-theme-neutral"
+                        height="21"
+                        width="17"
+                      >
+                        <svg>
+                          copy-key.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="flex items-stretch space-x-2"
+              class="flex items-center space-x-2 h-13 w-1/2 pl-12"
             >
+              <div
+                class="flex flex-col mr-auto"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                >
+                  <span>
+                    Balance:
+                  </span>
+                  <span
+                    class="ml-1"
+                    data-testid="WalletHeader__currency-balance"
+                  >
+                    0 BTC
+                  </span>
+                </div>
+                <span
+                  class="text-white text-lg font-semibold"
+                  data-testid="WalletHeader__balance"
+                >
+                  0 DARK
+                </span>
+              </div>
               <div
                 class="my-auto"
               >
@@ -330,7 +405,9 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
-                  <span>
+                  <span
+                    class=""
+                  >
                     <div
                       class="sc-AxiKw dzBdqj"
                       height="1em"
@@ -344,7 +421,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 </button>
               </div>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm kbZyZT my-auto"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -352,6 +429,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 Send
               </button>
               <div
+                class="my-auto"
                 data-testid="WalletHeader__more-button"
               >
                 <div
@@ -378,109 +456,6 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             </div>
           </div>
         </div>
-        <div
-          class="sc-fzpjYC deOkAw"
-        >
-          <div
-            class="container py-16 mx-auto px-14"
-          >
-            <ul
-              class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
-            >
-              <li
-                class="flex flex-col space-y-2"
-              >
-                <div
-                  class="inline-flex items-center space-x-2"
-                >
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-dark"
-                  >
-                    Address
-                  </span>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                      data-testid="WalletHeader__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
-                      />
-                    </div>
-                  </label>
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-light"
-                  >
-                    Public Key
-                  </span>
-                </div>
-                <div>
-                  <span
-                    class="inline-block text-lg font-medium"
-                    data-testid="WalletHeader__address-publickey"
-                  >
-                    DQpdzcso8cCrhK49FiuKXnDPzK5ev4Wdkw
-                  </span>
-                  <span
-                    class="ml-4"
-                    data-testid="WalletHeader__copy-button"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj text-theme-primary-300"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Balance
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__balance"
-                >
-                  0 DARK
-                </span>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Fiat Value
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__currency-balance"
-                >
-                  0 BTC
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div
         class="sc-fzpjYC deOkAw"
@@ -488,47 +463,29 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         <div
           class="container py-16 mx-auto px-14"
         >
-          <section
-            data-testid="WalletVote"
+          <div
+            class="flex"
           >
             <div
-              class="flex items-center justify-between"
+              class="w-1/2 pr-12 border-r border-theme-neutral-300"
             >
-              <h2
-                class="font-bold"
+              <section
+                data-testid="WalletVote"
               >
-                My Vote
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletVote__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
+                <div
+                  class="flex mb-4"
                 >
-                  <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                  <h2
+                    class="font-bold mb-0"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="grid grid-flow-row row-gap-6 py-4"
-              >
+                    My Vote
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0/1)
+                  </span>
+                </div>
                 <div
                   class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
@@ -543,179 +500,131 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="sc-AxhUy dHClEW text-theme-neutral-light"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxiKw jcWfEX"
+                          height="21"
+                          width="21"
                         >
                           <svg>
-                            voted.svg
+                            vote.svg
                           </svg>
                         </div>
                       </div>
                       <div
-                        class="sc-AxhUy dHClEW bg-theme-background"
-                      />
-                    </div>
-                    <div
-                      class="flex flex-col"
-                    >
-                      <span
-                        class="text-sm font-semibold text-theme-neutral"
-                      >
-                        Address Delegate
-                      </span>
-                      <div
-                        class="font-semibold text-theme-neutral-900"
+                        class="flex -space-x-3"
                       >
                         <span
-                          class="mr-2"
+                          class="inline-block"
                         >
-                          You haven't voted for more than one delegate yet.
-                        </span>
-                        <a
-                          class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                        >
-                          Learn more
                           <div
-                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                            data-testid="Link__external"
+                            class="sc-AxhUy dHClEW"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You have not yet voted for a Delegate
+                      </span>
+                      <a
+                        class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="w-1/2 pl-12"
+            >
+              <section
+                data-testid="WalletRegistrations"
+              >
+                <div
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="font-bold mb-0"
+                  >
+                    Registrations
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0)
+                  </span>
+                </div>
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex items-center divide-x-1 divide-theme-neutral-light"
+                  >
+                    <div
+                      class="pr-8"
+                    >
+                      <div
+                        class="flex items-center -space-x-2"
+                        data-testid="WalletRegistrations__icon-list"
+                      >
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              bridgechain.svg
                             </svg>
                           </div>
-                        </a>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              plugin.svg
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletVote__delegate__vote"
-                    type="button"
-                  >
-                    Vote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div
-        class="sc-fzpjYC deOkAw"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <section
-            data-testid="WalletRegistrations"
-          >
-            <div
-              class="flex items-center justify-between"
-            >
-              <h2
-                class="font-bold"
-              >
-                Registrations
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletRegistrations__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
-                >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="flex items-center justify-between py-4"
-              >
-                <div
-                  class="flex items-center divide-x-1 divide-theme-neutral-light"
-                >
-                  <div
-                    class="pr-8"
+                    class="space-x-2"
                   >
                     <div
-                      class="flex items-center -space-x-2"
-                      data-testid="WalletRegistrations__icon-list"
+                      data-testid="WalletRegistrations__show-all"
                     >
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
                       >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            bridgechain.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            plugin.svg
-                          </svg>
-                        </div>
-                      </div>
+                        Show All
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="space-x-2"
-                >
-                  <button
-                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-                    data-testid="WalletRegistrations__show-all"
-                  >
-                    Show All
-                  </button>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletRegistrations__register"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
+              </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
       <div
@@ -1710,24 +1619,24 @@ exports[`WalletDetails should remove wallet name 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center justify-between mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
-              class="flex items-center space-x-4"
+              class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
             >
               <div
                 class="flex"
               >
                 <div
                   aria-label="Ark Devnet"
-                  class="sc-AxhUy cGyvAR -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+                  class="sc-AxhUy ecDeug -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
                   data-testid="NetworkIcon-ARK-devnet"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
+                    class="sc-AxiKw dklFyP"
                     data-testid="NetworkIcon__icon"
-                    height="1em"
-                    width="1em"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       ark.svg
@@ -1735,7 +1644,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iIPilC"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
                   data-testid="Avatar"
                 >
                   <div
@@ -1749,27 +1658,103 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </div>
                 </div>
               </div>
-              <h2
-                class="mb-0 text-white"
-                data-testid="WalletHeader__name"
-              />
-              <span
-                data-testid="WalletHeader__multisig"
+              <div
+                class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-                  height="1em"
-                  width="1em"
+                  class="flex items-center text-theme-neutral-dark space-x-5"
                 >
-                  <svg>
-                    multisig.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                    data-testid="WalletHeader__name"
+                  />
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span
+                      data-testid="WalletHeader__multisig"
+                    >
+                      <div
+                        class="sc-AxiKw bctdez hover:text-theme-neutral"
+                        height="16"
+                        width="16"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
-              </span>
+                <div
+                  class="flex items-center space-x-5"
+                >
+                  <span
+                    class="text-white text-lg font-semibold truncate"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                  <div
+                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw bIhqqy hover:text-theme-neutral"
+                        height="21"
+                        width="13"
+                      >
+                        <svg>
+                          copy-address.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw glFzMu hover:text-theme-neutral"
+                        height="21"
+                        width="17"
+                      >
+                        <svg>
+                          copy-key.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="flex items-stretch space-x-2"
+              class="flex items-center space-x-2 h-13 w-1/2 pl-12"
             >
+              <div
+                class="flex flex-col mr-auto"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                >
+                  <span>
+                    Balance:
+                  </span>
+                  <span
+                    class="ml-1"
+                    data-testid="WalletHeader__currency-balance"
+                  >
+                    0 BTC
+                  </span>
+                </div>
+                <span
+                  class="text-white text-lg font-semibold"
+                  data-testid="WalletHeader__balance"
+                >
+                  33.75089801 DARK
+                </span>
+              </div>
               <div
                 class="my-auto"
               >
@@ -1779,7 +1764,9 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
-                  <span>
+                  <span
+                    class=""
+                  >
                     <div
                       class="sc-AxiKw dzBdqj"
                       height="1em"
@@ -1793,7 +1780,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm kbZyZT my-auto"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -1801,6 +1788,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 Send
               </button>
               <div
+                class="my-auto"
                 data-testid="WalletHeader__more-button"
               >
                 <div
@@ -1827,109 +1815,6 @@ exports[`WalletDetails should remove wallet name 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="sc-fzpjYC deOkAw"
-        >
-          <div
-            class="container py-16 mx-auto px-14"
-          >
-            <ul
-              class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
-            >
-              <li
-                class="flex flex-col space-y-2"
-              >
-                <div
-                  class="inline-flex items-center space-x-2"
-                >
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-dark"
-                  >
-                    Address
-                  </span>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                      data-testid="WalletHeader__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
-                      />
-                    </div>
-                  </label>
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-light"
-                  >
-                    Public Key
-                  </span>
-                </div>
-                <div>
-                  <span
-                    class="inline-block text-lg font-medium"
-                    data-testid="WalletHeader__address-publickey"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                  <span
-                    class="ml-4"
-                    data-testid="WalletHeader__copy-button"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj text-theme-primary-300"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Balance
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__balance"
-                >
-                  33.75089801 DARK
-                </span>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Fiat Value
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__currency-balance"
-                >
-                  0 BTC
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div
         class="sc-fzpjYC deOkAw"
@@ -1937,47 +1822,29 @@ exports[`WalletDetails should remove wallet name 1`] = `
         <div
           class="container py-16 mx-auto px-14"
         >
-          <section
-            data-testid="WalletVote"
+          <div
+            class="flex"
           >
             <div
-              class="flex items-center justify-between"
+              class="w-1/2 pr-12 border-r border-theme-neutral-300"
             >
-              <h2
-                class="font-bold"
+              <section
+                data-testid="WalletVote"
               >
-                My Vote
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletVote__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
+                <div
+                  class="flex mb-4"
                 >
-                  <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                  <h2
+                    class="font-bold mb-0"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="grid grid-flow-row row-gap-6 py-4"
-              >
+                    My Vote
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0/1)
+                  </span>
+                </div>
                 <div
                   class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
@@ -1992,185 +1859,137 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="sc-AxhUy dHClEW text-theme-neutral-light"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxiKw jcWfEX"
+                          height="21"
+                          width="21"
                         >
                           <svg>
-                            voted.svg
+                            vote.svg
                           </svg>
                         </div>
                       </div>
                       <div
-                        class="sc-AxhUy dHClEW bg-theme-background"
-                      />
-                    </div>
-                    <div
-                      class="flex flex-col"
-                    >
-                      <span
-                        class="text-sm font-semibold text-theme-neutral"
-                      >
-                        Address Delegate
-                      </span>
-                      <div
-                        class="font-semibold text-theme-neutral-900"
+                        class="flex -space-x-3"
                       >
                         <span
-                          class="mr-2"
+                          class="inline-block"
                         >
-                          You haven't voted for more than one delegate yet.
-                        </span>
-                        <a
-                          class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                        >
-                          Learn more
                           <div
-                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                            data-testid="Link__external"
+                            class="sc-AxhUy dHClEW"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You have not yet voted for a Delegate
+                      </span>
+                      <a
+                        class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="w-1/2 pl-12"
+            >
+              <section
+                data-testid="WalletRegistrations"
+              >
+                <div
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="font-bold mb-0"
+                  >
+                    Registrations
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0)
+                  </span>
+                </div>
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex items-center divide-x-1 divide-theme-neutral-light"
+                  >
+                    <div
+                      class="pr-8"
+                    >
+                      <div
+                        class="flex items-center -space-x-2"
+                        data-testid="WalletRegistrations__icon-list"
+                      >
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              bridgechain.svg
                             </svg>
                           </div>
-                        </a>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              plugin.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__rest"
+                        >
+                          +1
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletVote__delegate__vote"
-                    type="button"
-                  >
-                    Vote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div
-        class="sc-fzpjYC deOkAw"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <section
-            data-testid="WalletRegistrations"
-          >
-            <div
-              class="flex items-center justify-between"
-            >
-              <h2
-                class="font-bold"
-              >
-                Registrations
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletRegistrations__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
-                >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="flex items-center justify-between py-4"
-              >
-                <div
-                  class="flex items-center divide-x-1 divide-theme-neutral-light"
-                >
-                  <div
-                    class="pr-8"
+                    class="space-x-2"
                   >
                     <div
-                      class="flex items-center -space-x-2"
-                      data-testid="WalletRegistrations__icon-list"
+                      data-testid="WalletRegistrations__show-all"
                     >
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
                       >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            bridgechain.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            plugin.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__rest"
-                      >
-                        +1
-                      </div>
+                        Show All
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="space-x-2"
-                >
-                  <button
-                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-                    data-testid="WalletRegistrations__show-all"
-                  >
-                    Show All
-                  </button>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletRegistrations__register"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
+              </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
       <div
@@ -3745,24 +3564,24 @@ exports[`WalletDetails should render 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center justify-between mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
-              class="flex items-center space-x-4"
+              class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
             >
               <div
                 class="flex"
               >
                 <div
                   aria-label="Ark Devnet"
-                  class="sc-AxhUy cGyvAR -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+                  class="sc-AxhUy ecDeug -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
                   data-testid="NetworkIcon-ARK-devnet"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
+                    class="sc-AxiKw dklFyP"
                     data-testid="NetworkIcon__icon"
-                    height="1em"
-                    width="1em"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       ark.svg
@@ -3770,7 +3589,7 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iIPilC"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
                   data-testid="Avatar"
                 >
                   <div
@@ -3784,29 +3603,105 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                 </div>
               </div>
-              <h2
-                class="mb-0 text-white"
-                data-testid="WalletHeader__name"
-              >
-                ARK Wallet 1
-              </h2>
-              <span
-                data-testid="WalletHeader__multisig"
+              <div
+                class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-                  height="1em"
-                  width="1em"
+                  class="flex items-center text-theme-neutral-dark space-x-5"
                 >
-                  <svg>
-                    multisig.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                    data-testid="WalletHeader__name"
+                  >
+                    ARK Wallet 1
+                  </span>
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span
+                      data-testid="WalletHeader__multisig"
+                    >
+                      <div
+                        class="sc-AxiKw bctdez hover:text-theme-neutral"
+                        height="16"
+                        width="16"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
-              </span>
+                <div
+                  class="flex items-center space-x-5"
+                >
+                  <span
+                    class="text-white text-lg font-semibold truncate"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                  <div
+                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw bIhqqy hover:text-theme-neutral"
+                        height="21"
+                        width="13"
+                      >
+                        <svg>
+                          copy-address.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw glFzMu hover:text-theme-neutral"
+                        height="21"
+                        width="17"
+                      >
+                        <svg>
+                          copy-key.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="flex items-stretch space-x-2"
+              class="flex items-center space-x-2 h-13 w-1/2 pl-12"
             >
+              <div
+                class="flex flex-col mr-auto"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                >
+                  <span>
+                    Balance:
+                  </span>
+                  <span
+                    class="ml-1"
+                    data-testid="WalletHeader__currency-balance"
+                  >
+                    0 BTC
+                  </span>
+                </div>
+                <span
+                  class="text-white text-lg font-semibold"
+                  data-testid="WalletHeader__balance"
+                >
+                  33.75089801 DARK
+                </span>
+              </div>
               <div
                 class="my-auto"
               >
@@ -3816,7 +3711,9 @@ exports[`WalletDetails should render 1`] = `
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
-                  <span>
+                  <span
+                    class=""
+                  >
                     <div
                       class="sc-AxiKw dzBdqj"
                       height="1em"
@@ -3830,7 +3727,7 @@ exports[`WalletDetails should render 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm kbZyZT my-auto"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -3838,6 +3735,7 @@ exports[`WalletDetails should render 1`] = `
                 Send
               </button>
               <div
+                class="my-auto"
                 data-testid="WalletHeader__more-button"
               >
                 <div
@@ -3864,109 +3762,6 @@ exports[`WalletDetails should render 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="sc-fzpjYC deOkAw"
-        >
-          <div
-            class="container py-16 mx-auto px-14"
-          >
-            <ul
-              class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
-            >
-              <li
-                class="flex flex-col space-y-2"
-              >
-                <div
-                  class="inline-flex items-center space-x-2"
-                >
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-dark"
-                  >
-                    Address
-                  </span>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                      data-testid="WalletHeader__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
-                      />
-                    </div>
-                  </label>
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-light"
-                  >
-                    Public Key
-                  </span>
-                </div>
-                <div>
-                  <span
-                    class="inline-block text-lg font-medium"
-                    data-testid="WalletHeader__address-publickey"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                  <span
-                    class="ml-4"
-                    data-testid="WalletHeader__copy-button"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj text-theme-primary-300"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Balance
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__balance"
-                >
-                  33.75089801 DARK
-                </span>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Fiat Value
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__currency-balance"
-                >
-                  0 BTC
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div
         class="sc-fzpjYC deOkAw"
@@ -3974,47 +3769,29 @@ exports[`WalletDetails should render 1`] = `
         <div
           class="container py-16 mx-auto px-14"
         >
-          <section
-            data-testid="WalletVote"
+          <div
+            class="flex"
           >
             <div
-              class="flex items-center justify-between"
+              class="w-1/2 pr-12 border-r border-theme-neutral-300"
             >
-              <h2
-                class="font-bold"
+              <section
+                data-testid="WalletVote"
               >
-                My Vote
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletVote__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
+                <div
+                  class="flex mb-4"
                 >
-                  <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                  <h2
+                    class="font-bold mb-0"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="grid grid-flow-row row-gap-6 py-4"
-              >
+                    My Vote
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0/1)
+                  </span>
+                </div>
                 <div
                   class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
@@ -4029,185 +3806,137 @@ exports[`WalletDetails should render 1`] = `
                         class="sc-AxhUy dHClEW text-theme-neutral-light"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxiKw jcWfEX"
+                          height="21"
+                          width="21"
                         >
                           <svg>
-                            voted.svg
+                            vote.svg
                           </svg>
                         </div>
                       </div>
                       <div
-                        class="sc-AxhUy dHClEW bg-theme-background"
-                      />
-                    </div>
-                    <div
-                      class="flex flex-col"
-                    >
-                      <span
-                        class="text-sm font-semibold text-theme-neutral"
-                      >
-                        Address Delegate
-                      </span>
-                      <div
-                        class="font-semibold text-theme-neutral-900"
+                        class="flex -space-x-3"
                       >
                         <span
-                          class="mr-2"
+                          class="inline-block"
                         >
-                          You haven't voted for more than one delegate yet.
-                        </span>
-                        <a
-                          class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                        >
-                          Learn more
                           <div
-                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                            data-testid="Link__external"
+                            class="sc-AxhUy dHClEW"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You have not yet voted for a Delegate
+                      </span>
+                      <a
+                        class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="w-1/2 pl-12"
+            >
+              <section
+                data-testid="WalletRegistrations"
+              >
+                <div
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="font-bold mb-0"
+                  >
+                    Registrations
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0)
+                  </span>
+                </div>
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex items-center divide-x-1 divide-theme-neutral-light"
+                  >
+                    <div
+                      class="pr-8"
+                    >
+                      <div
+                        class="flex items-center -space-x-2"
+                        data-testid="WalletRegistrations__icon-list"
+                      >
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              bridgechain.svg
                             </svg>
                           </div>
-                        </a>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              plugin.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__rest"
+                        >
+                          +1
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletVote__delegate__vote"
-                    type="button"
-                  >
-                    Vote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div
-        class="sc-fzpjYC deOkAw"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <section
-            data-testid="WalletRegistrations"
-          >
-            <div
-              class="flex items-center justify-between"
-            >
-              <h2
-                class="font-bold"
-              >
-                Registrations
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletRegistrations__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
-                >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="flex items-center justify-between py-4"
-              >
-                <div
-                  class="flex items-center divide-x-1 divide-theme-neutral-light"
-                >
-                  <div
-                    class="pr-8"
+                    class="space-x-2"
                   >
                     <div
-                      class="flex items-center -space-x-2"
-                      data-testid="WalletRegistrations__icon-list"
+                      data-testid="WalletRegistrations__show-all"
                     >
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
                       >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            bridgechain.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            plugin.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__rest"
-                      >
-                        +1
-                      </div>
+                        Show All
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="space-x-2"
-                >
-                  <button
-                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-                    data-testid="WalletRegistrations__show-all"
-                  >
-                    Show All
-                  </button>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletRegistrations__register"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
+              </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
       <div
@@ -5788,24 +5517,24 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center justify-between mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
-              class="flex items-center space-x-4"
+              class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
             >
               <div
                 class="flex"
               >
                 <div
                   aria-label="Ark Devnet"
-                  class="sc-AxhUy cGyvAR -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+                  class="sc-AxhUy ecDeug -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
                   data-testid="NetworkIcon-ARK-devnet"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
+                    class="sc-AxiKw dklFyP"
                     data-testid="NetworkIcon__icon"
-                    height="1em"
-                    width="1em"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       ark.svg
@@ -5813,7 +5542,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iIPilC"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
                   data-testid="Avatar"
                 >
                   <div
@@ -5827,14 +5556,89 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </div>
                 </div>
               </div>
-              <h2
-                class="mb-0 text-white"
-                data-testid="WalletHeader__name"
-              />
+              <div
+                class="flex flex-col overflow-hidden"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark space-x-5"
+                >
+                  <span
+                    class="text-sm font-semibold"
+                    data-testid="WalletHeader__name"
+                  />
+                  <div
+                    class="flex items-center space-x-3"
+                  />
+                </div>
+                <div
+                  class="flex items-center space-x-5"
+                >
+                  <span
+                    class="text-white text-lg font-semibold truncate"
+                  >
+                    DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs
+                  </span>
+                  <div
+                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw bIhqqy hover:text-theme-neutral"
+                        height="21"
+                        width="13"
+                      >
+                        <svg>
+                          copy-address.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw glFzMu hover:text-theme-neutral"
+                        height="21"
+                        width="17"
+                      >
+                        <svg>
+                          copy-key.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="flex items-stretch space-x-2"
+              class="flex items-center space-x-2 h-13 w-1/2 pl-12"
             >
+              <div
+                class="flex flex-col mr-auto"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                >
+                  <span>
+                    Balance:
+                  </span>
+                  <span
+                    class="ml-1"
+                    data-testid="WalletHeader__currency-balance"
+                  >
+                    0 BTC
+                  </span>
+                </div>
+                <span
+                  class="text-white text-lg font-semibold"
+                  data-testid="WalletHeader__balance"
+                >
+                  0 DARK
+                </span>
+              </div>
               <div
                 class="my-auto"
               >
@@ -5844,7 +5648,9 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
-                  <span>
+                  <span
+                    class=""
+                  >
                     <div
                       class="sc-AxiKw dzBdqj"
                       height="1em"
@@ -5858,7 +5664,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm kbZyZT my-auto"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -5866,6 +5672,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 Send
               </button>
               <div
+                class="my-auto"
                 data-testid="WalletHeader__more-button"
               >
                 <div
@@ -5892,109 +5699,6 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="sc-fzpjYC deOkAw"
-        >
-          <div
-            class="container py-16 mx-auto px-14"
-          >
-            <ul
-              class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
-            >
-              <li
-                class="flex flex-col space-y-2"
-              >
-                <div
-                  class="inline-flex items-center space-x-2"
-                >
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-dark"
-                  >
-                    Address
-                  </span>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                      data-testid="WalletHeader__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
-                      />
-                    </div>
-                  </label>
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-light"
-                  >
-                    Public Key
-                  </span>
-                </div>
-                <div>
-                  <span
-                    class="inline-block text-lg font-medium"
-                    data-testid="WalletHeader__address-publickey"
-                  >
-                    DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs
-                  </span>
-                  <span
-                    class="ml-4"
-                    data-testid="WalletHeader__copy-button"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj text-theme-primary-300"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Balance
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__balance"
-                >
-                  0 DARK
-                </span>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Fiat Value
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__currency-balance"
-                >
-                  0 BTC
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div
         class="sc-fzpjYC deOkAw"
@@ -6002,47 +5706,29 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         <div
           class="container py-16 mx-auto px-14"
         >
-          <section
-            data-testid="WalletVote"
+          <div
+            class="flex"
           >
             <div
-              class="flex items-center justify-between"
+              class="w-1/2 pr-12 border-r border-theme-neutral-300"
             >
-              <h2
-                class="font-bold"
+              <section
+                data-testid="WalletVote"
               >
-                My Vote
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletVote__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
+                <div
+                  class="flex mb-4"
                 >
-                  <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                  <h2
+                    class="font-bold mb-0"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="grid grid-flow-row row-gap-6 py-4"
-              >
+                    My Vote
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0/1)
+                  </span>
+                </div>
                 <div
                   class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
@@ -6057,179 +5743,131 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="sc-AxhUy dHClEW text-theme-neutral-light"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxiKw jcWfEX"
+                          height="21"
+                          width="21"
                         >
                           <svg>
-                            voted.svg
+                            vote.svg
                           </svg>
                         </div>
                       </div>
                       <div
-                        class="sc-AxhUy dHClEW bg-theme-background"
-                      />
-                    </div>
-                    <div
-                      class="flex flex-col"
-                    >
-                      <span
-                        class="text-sm font-semibold text-theme-neutral"
-                      >
-                        Address Delegate
-                      </span>
-                      <div
-                        class="font-semibold text-theme-neutral-900"
+                        class="flex -space-x-3"
                       >
                         <span
-                          class="mr-2"
+                          class="inline-block"
                         >
-                          You haven't voted for more than one delegate yet.
-                        </span>
-                        <a
-                          class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                        >
-                          Learn more
                           <div
-                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                            data-testid="Link__external"
+                            class="sc-AxhUy dHClEW"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You have not yet voted for a Delegate
+                      </span>
+                      <a
+                        class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="w-1/2 pl-12"
+            >
+              <section
+                data-testid="WalletRegistrations"
+              >
+                <div
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="font-bold mb-0"
+                  >
+                    Registrations
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0)
+                  </span>
+                </div>
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex items-center divide-x-1 divide-theme-neutral-light"
+                  >
+                    <div
+                      class="pr-8"
+                    >
+                      <div
+                        class="flex items-center -space-x-2"
+                        data-testid="WalletRegistrations__icon-list"
+                      >
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              bridgechain.svg
                             </svg>
                           </div>
-                        </a>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              plugin.svg
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletVote__delegate__vote"
-                    type="button"
-                  >
-                    Vote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div
-        class="sc-fzpjYC deOkAw"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <section
-            data-testid="WalletRegistrations"
-          >
-            <div
-              class="flex items-center justify-between"
-            >
-              <h2
-                class="font-bold"
-              >
-                Registrations
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletRegistrations__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
-                >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="flex items-center justify-between py-4"
-              >
-                <div
-                  class="flex items-center divide-x-1 divide-theme-neutral-light"
-                >
-                  <div
-                    class="pr-8"
+                    class="space-x-2"
                   >
                     <div
-                      class="flex items-center -space-x-2"
-                      data-testid="WalletRegistrations__icon-list"
+                      data-testid="WalletRegistrations__show-all"
                     >
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
                       >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            bridgechain.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            plugin.svg
-                          </svg>
-                        </div>
-                      </div>
+                        Show All
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="space-x-2"
-                >
-                  <button
-                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-                    data-testid="WalletRegistrations__show-all"
-                  >
-                    Show All
-                  </button>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletRegistrations__register"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
+              </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
       <div
@@ -7810,24 +7448,24 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center justify-between mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
-              class="flex items-center space-x-4"
+              class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
             >
               <div
                 class="flex"
               >
                 <div
                   aria-label="Ark Devnet"
-                  class="sc-AxhUy cGyvAR -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+                  class="sc-AxhUy ecDeug -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
                   data-testid="NetworkIcon-ARK-devnet"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
+                    class="sc-AxiKw dklFyP"
                     data-testid="NetworkIcon__icon"
-                    height="1em"
-                    width="1em"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       ark.svg
@@ -7835,7 +7473,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iIPilC"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
                   data-testid="Avatar"
                 >
                   <div
@@ -7849,14 +7487,89 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </div>
                 </div>
               </div>
-              <h2
-                class="mb-0 text-white"
-                data-testid="WalletHeader__name"
-              />
+              <div
+                class="flex flex-col overflow-hidden"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark space-x-5"
+                >
+                  <span
+                    class="text-sm font-semibold"
+                    data-testid="WalletHeader__name"
+                  />
+                  <div
+                    class="flex items-center space-x-3"
+                  />
+                </div>
+                <div
+                  class="flex items-center space-x-5"
+                >
+                  <span
+                    class="text-white text-lg font-semibold truncate"
+                  >
+                    DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z
+                  </span>
+                  <div
+                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw bIhqqy hover:text-theme-neutral"
+                        height="21"
+                        width="13"
+                      >
+                        <svg>
+                          copy-address.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw glFzMu hover:text-theme-neutral"
+                        height="21"
+                        width="17"
+                      >
+                        <svg>
+                          copy-key.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="flex items-stretch space-x-2"
+              class="flex items-center space-x-2 h-13 w-1/2 pl-12"
             >
+              <div
+                class="flex flex-col mr-auto"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                >
+                  <span>
+                    Balance:
+                  </span>
+                  <span
+                    class="ml-1"
+                    data-testid="WalletHeader__currency-balance"
+                  >
+                    0 BTC
+                  </span>
+                </div>
+                <span
+                  class="text-white text-lg font-semibold"
+                  data-testid="WalletHeader__balance"
+                >
+                  0 DARK
+                </span>
+              </div>
               <div
                 class="my-auto"
               >
@@ -7866,7 +7579,9 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
-                  <span>
+                  <span
+                    class=""
+                  >
                     <div
                       class="sc-AxiKw dzBdqj"
                       height="1em"
@@ -7880,7 +7595,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm kbZyZT my-auto"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -7888,6 +7603,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 Send
               </button>
               <div
+                class="my-auto"
                 data-testid="WalletHeader__more-button"
               >
                 <div
@@ -7914,109 +7630,6 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="sc-fzpjYC deOkAw"
-        >
-          <div
-            class="container py-16 mx-auto px-14"
-          >
-            <ul
-              class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
-            >
-              <li
-                class="flex flex-col space-y-2"
-              >
-                <div
-                  class="inline-flex items-center space-x-2"
-                >
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-dark"
-                  >
-                    Address
-                  </span>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                      data-testid="WalletHeader__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
-                      />
-                    </div>
-                  </label>
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-light"
-                  >
-                    Public Key
-                  </span>
-                </div>
-                <div>
-                  <span
-                    class="inline-block text-lg font-medium"
-                    data-testid="WalletHeader__address-publickey"
-                  >
-                    DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z
-                  </span>
-                  <span
-                    class="ml-4"
-                    data-testid="WalletHeader__copy-button"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj text-theme-primary-300"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Balance
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__balance"
-                >
-                  0 DARK
-                </span>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Fiat Value
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__currency-balance"
-                >
-                  0 BTC
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div
         class="sc-fzpjYC deOkAw"
@@ -8024,47 +7637,29 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         <div
           class="container py-16 mx-auto px-14"
         >
-          <section
-            data-testid="WalletVote"
+          <div
+            class="flex"
           >
             <div
-              class="flex items-center justify-between"
+              class="w-1/2 pr-12 border-r border-theme-neutral-300"
             >
-              <h2
-                class="font-bold"
+              <section
+                data-testid="WalletVote"
               >
-                My Vote
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletVote__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
+                <div
+                  class="flex mb-4"
                 >
-                  <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                  <h2
+                    class="font-bold mb-0"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="grid grid-flow-row row-gap-6 py-4"
-              >
+                    My Vote
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0/1)
+                  </span>
+                </div>
                 <div
                   class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
@@ -8079,179 +7674,131 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="sc-AxhUy dHClEW text-theme-neutral-light"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxiKw jcWfEX"
+                          height="21"
+                          width="21"
                         >
                           <svg>
-                            voted.svg
+                            vote.svg
                           </svg>
                         </div>
                       </div>
                       <div
-                        class="sc-AxhUy dHClEW bg-theme-background"
-                      />
-                    </div>
-                    <div
-                      class="flex flex-col"
-                    >
-                      <span
-                        class="text-sm font-semibold text-theme-neutral"
-                      >
-                        Address Delegate
-                      </span>
-                      <div
-                        class="font-semibold text-theme-neutral-900"
+                        class="flex -space-x-3"
                       >
                         <span
-                          class="mr-2"
+                          class="inline-block"
                         >
-                          You haven't voted for more than one delegate yet.
-                        </span>
-                        <a
-                          class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                        >
-                          Learn more
                           <div
-                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                            data-testid="Link__external"
+                            class="sc-AxhUy dHClEW"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You have not yet voted for a Delegate
+                      </span>
+                      <a
+                        class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="w-1/2 pl-12"
+            >
+              <section
+                data-testid="WalletRegistrations"
+              >
+                <div
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="font-bold mb-0"
+                  >
+                    Registrations
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0)
+                  </span>
+                </div>
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex items-center divide-x-1 divide-theme-neutral-light"
+                  >
+                    <div
+                      class="pr-8"
+                    >
+                      <div
+                        class="flex items-center -space-x-2"
+                        data-testid="WalletRegistrations__icon-list"
+                      >
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              bridgechain.svg
                             </svg>
                           </div>
-                        </a>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              plugin.svg
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletVote__delegate__vote"
-                    type="button"
-                  >
-                    Vote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div
-        class="sc-fzpjYC deOkAw"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <section
-            data-testid="WalletRegistrations"
-          >
-            <div
-              class="flex items-center justify-between"
-            >
-              <h2
-                class="font-bold"
-              >
-                Registrations
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletRegistrations__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
-                >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="flex items-center justify-between py-4"
-              >
-                <div
-                  class="flex items-center divide-x-1 divide-theme-neutral-light"
-                >
-                  <div
-                    class="pr-8"
+                    class="space-x-2"
                   >
                     <div
-                      class="flex items-center -space-x-2"
-                      data-testid="WalletRegistrations__icon-list"
+                      data-testid="WalletRegistrations__show-all"
                     >
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
                       >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            bridgechain.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            plugin.svg
-                          </svg>
-                        </div>
-                      </div>
+                        Show All
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="space-x-2"
-                >
-                  <button
-                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-                    data-testid="WalletRegistrations__show-all"
-                  >
-                    Show All
-                  </button>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletRegistrations__register"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
+              </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
       <div
@@ -9832,24 +9379,24 @@ exports[`WalletDetails should render with timers 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center justify-between mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
-              class="flex items-center space-x-4"
+              class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
             >
               <div
                 class="flex"
               >
                 <div
                   aria-label="Ark Devnet"
-                  class="sc-AxhUy cGyvAR -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+                  class="sc-AxhUy ecDeug -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
                   data-testid="NetworkIcon-ARK-devnet"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
+                    class="sc-AxiKw dklFyP"
                     data-testid="NetworkIcon__icon"
-                    height="1em"
-                    width="1em"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       ark.svg
@@ -9857,7 +9404,7 @@ exports[`WalletDetails should render with timers 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iIPilC"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
                   data-testid="Avatar"
                 >
                   <div
@@ -9871,27 +9418,103 @@ exports[`WalletDetails should render with timers 1`] = `
                   </div>
                 </div>
               </div>
-              <h2
-                class="mb-0 text-white"
-                data-testid="WalletHeader__name"
-              />
-              <span
-                data-testid="WalletHeader__multisig"
+              <div
+                class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-                  height="1em"
-                  width="1em"
+                  class="flex items-center text-theme-neutral-dark space-x-5"
                 >
-                  <svg>
-                    multisig.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                    data-testid="WalletHeader__name"
+                  />
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span
+                      data-testid="WalletHeader__multisig"
+                    >
+                      <div
+                        class="sc-AxiKw bctdez hover:text-theme-neutral"
+                        height="16"
+                        width="16"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
-              </span>
+                <div
+                  class="flex items-center space-x-5"
+                >
+                  <span
+                    class="text-white text-lg font-semibold truncate"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                  <div
+                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw bIhqqy hover:text-theme-neutral"
+                        height="21"
+                        width="13"
+                      >
+                        <svg>
+                          copy-address.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw glFzMu hover:text-theme-neutral"
+                        height="21"
+                        width="17"
+                      >
+                        <svg>
+                          copy-key.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="flex items-stretch space-x-2"
+              class="flex items-center space-x-2 h-13 w-1/2 pl-12"
             >
+              <div
+                class="flex flex-col mr-auto"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                >
+                  <span>
+                    Balance:
+                  </span>
+                  <span
+                    class="ml-1"
+                    data-testid="WalletHeader__currency-balance"
+                  >
+                    0 BTC
+                  </span>
+                </div>
+                <span
+                  class="text-white text-lg font-semibold"
+                  data-testid="WalletHeader__balance"
+                >
+                  33.75089801 DARK
+                </span>
+              </div>
               <div
                 class="my-auto"
               >
@@ -9901,7 +9524,9 @@ exports[`WalletDetails should render with timers 1`] = `
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
-                  <span>
+                  <span
+                    class=""
+                  >
                     <div
                       class="sc-AxiKw dzBdqj"
                       height="1em"
@@ -9915,7 +9540,7 @@ exports[`WalletDetails should render with timers 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm kbZyZT my-auto"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -9923,6 +9548,7 @@ exports[`WalletDetails should render with timers 1`] = `
                 Send
               </button>
               <div
+                class="my-auto"
                 data-testid="WalletHeader__more-button"
               >
                 <div
@@ -9949,109 +9575,6 @@ exports[`WalletDetails should render with timers 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="sc-fzpjYC deOkAw"
-        >
-          <div
-            class="container py-16 mx-auto px-14"
-          >
-            <ul
-              class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
-            >
-              <li
-                class="flex flex-col space-y-2"
-              >
-                <div
-                  class="inline-flex items-center space-x-2"
-                >
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-dark"
-                  >
-                    Address
-                  </span>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                      data-testid="WalletHeader__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
-                      />
-                    </div>
-                  </label>
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-light"
-                  >
-                    Public Key
-                  </span>
-                </div>
-                <div>
-                  <span
-                    class="inline-block text-lg font-medium"
-                    data-testid="WalletHeader__address-publickey"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                  <span
-                    class="ml-4"
-                    data-testid="WalletHeader__copy-button"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj text-theme-primary-300"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Balance
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__balance"
-                >
-                  33.75089801 DARK
-                </span>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Fiat Value
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__currency-balance"
-                >
-                  0 BTC
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div
         class="sc-fzpjYC deOkAw"
@@ -10059,47 +9582,29 @@ exports[`WalletDetails should render with timers 1`] = `
         <div
           class="container py-16 mx-auto px-14"
         >
-          <section
-            data-testid="WalletVote"
+          <div
+            class="flex"
           >
             <div
-              class="flex items-center justify-between"
+              class="w-1/2 pr-12 border-r border-theme-neutral-300"
             >
-              <h2
-                class="font-bold"
+              <section
+                data-testid="WalletVote"
               >
-                My Vote
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletVote__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
+                <div
+                  class="flex mb-4"
                 >
-                  <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                  <h2
+                    class="font-bold mb-0"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="grid grid-flow-row row-gap-6 py-4"
-              >
+                    My Vote
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0/1)
+                  </span>
+                </div>
                 <div
                   class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
@@ -10114,185 +9619,137 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="sc-AxhUy dHClEW text-theme-neutral-light"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxiKw jcWfEX"
+                          height="21"
+                          width="21"
                         >
                           <svg>
-                            voted.svg
+                            vote.svg
                           </svg>
                         </div>
                       </div>
                       <div
-                        class="sc-AxhUy dHClEW bg-theme-background"
-                      />
-                    </div>
-                    <div
-                      class="flex flex-col"
-                    >
-                      <span
-                        class="text-sm font-semibold text-theme-neutral"
-                      >
-                        Address Delegate
-                      </span>
-                      <div
-                        class="font-semibold text-theme-neutral-900"
+                        class="flex -space-x-3"
                       >
                         <span
-                          class="mr-2"
+                          class="inline-block"
                         >
-                          You haven't voted for more than one delegate yet.
-                        </span>
-                        <a
-                          class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                        >
-                          Learn more
                           <div
-                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                            data-testid="Link__external"
+                            class="sc-AxhUy dHClEW"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You have not yet voted for a Delegate
+                      </span>
+                      <a
+                        class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="w-1/2 pl-12"
+            >
+              <section
+                data-testid="WalletRegistrations"
+              >
+                <div
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="font-bold mb-0"
+                  >
+                    Registrations
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0)
+                  </span>
+                </div>
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex items-center divide-x-1 divide-theme-neutral-light"
+                  >
+                    <div
+                      class="pr-8"
+                    >
+                      <div
+                        class="flex items-center -space-x-2"
+                        data-testid="WalletRegistrations__icon-list"
+                      >
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              bridgechain.svg
                             </svg>
                           </div>
-                        </a>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              plugin.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__rest"
+                        >
+                          +1
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletVote__delegate__vote"
-                    type="button"
-                  >
-                    Vote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div
-        class="sc-fzpjYC deOkAw"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <section
-            data-testid="WalletRegistrations"
-          >
-            <div
-              class="flex items-center justify-between"
-            >
-              <h2
-                class="font-bold"
-              >
-                Registrations
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletRegistrations__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
-                >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="flex items-center justify-between py-4"
-              >
-                <div
-                  class="flex items-center divide-x-1 divide-theme-neutral-light"
-                >
-                  <div
-                    class="pr-8"
+                    class="space-x-2"
                   >
                     <div
-                      class="flex items-center -space-x-2"
-                      data-testid="WalletRegistrations__icon-list"
+                      data-testid="WalletRegistrations__show-all"
                     >
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
                       >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            bridgechain.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            plugin.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__rest"
-                      >
-                        +1
-                      </div>
+                        Show All
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="space-x-2"
-                >
-                  <button
-                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-                    data-testid="WalletRegistrations__show-all"
-                  >
-                    Show All
-                  </button>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletRegistrations__register"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
+              </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
       <div
@@ -11867,24 +11324,24 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center justify-between mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
-              class="flex items-center space-x-4"
+              class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
             >
               <div
                 class="flex"
               >
                 <div
                   aria-label="Ark Devnet"
-                  class="sc-AxhUy cGyvAR -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+                  class="sc-AxhUy ecDeug -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
                   data-testid="NetworkIcon-ARK-devnet"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
+                    class="sc-AxiKw dklFyP"
                     data-testid="NetworkIcon__icon"
-                    height="1em"
-                    width="1em"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       ark.svg
@@ -11892,7 +11349,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iIPilC"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
                   data-testid="Avatar"
                 >
                   <div
@@ -11906,27 +11363,103 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </div>
                 </div>
               </div>
-              <h2
-                class="mb-0 text-white"
-                data-testid="WalletHeader__name"
-              />
-              <span
-                data-testid="WalletHeader__multisig"
+              <div
+                class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-                  height="1em"
-                  width="1em"
+                  class="flex items-center text-theme-neutral-dark space-x-5"
                 >
-                  <svg>
-                    multisig.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                    data-testid="WalletHeader__name"
+                  />
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span
+                      data-testid="WalletHeader__multisig"
+                    >
+                      <div
+                        class="sc-AxiKw bctdez hover:text-theme-neutral"
+                        height="16"
+                        width="16"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
-              </span>
+                <div
+                  class="flex items-center space-x-5"
+                >
+                  <span
+                    class="text-white text-lg font-semibold truncate"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                  <div
+                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw bIhqqy hover:text-theme-neutral"
+                        height="21"
+                        width="13"
+                      >
+                        <svg>
+                          copy-address.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw glFzMu hover:text-theme-neutral"
+                        height="21"
+                        width="17"
+                      >
+                        <svg>
+                          copy-key.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="flex items-stretch space-x-2"
+              class="flex items-center space-x-2 h-13 w-1/2 pl-12"
             >
+              <div
+                class="flex flex-col mr-auto"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                >
+                  <span>
+                    Balance:
+                  </span>
+                  <span
+                    class="ml-1"
+                    data-testid="WalletHeader__currency-balance"
+                  >
+                    0 BTC
+                  </span>
+                </div>
+                <span
+                  class="text-white text-lg font-semibold"
+                  data-testid="WalletHeader__balance"
+                >
+                  33.75089801 DARK
+                </span>
+              </div>
               <div
                 class="my-auto"
               >
@@ -11936,7 +11469,9 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
-                  <span>
+                  <span
+                    class=""
+                  >
                     <div
                       class="sc-AxiKw dzBdqj"
                       height="1em"
@@ -11950,7 +11485,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm kbZyZT my-auto"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -11958,6 +11493,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 Send
               </button>
               <div
+                class="my-auto"
                 data-testid="WalletHeader__more-button"
               >
                 <div
@@ -11984,109 +11520,6 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="sc-fzpjYC deOkAw"
-        >
-          <div
-            class="container py-16 mx-auto px-14"
-          >
-            <ul
-              class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
-            >
-              <li
-                class="flex flex-col space-y-2"
-              >
-                <div
-                  class="inline-flex items-center space-x-2"
-                >
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-dark"
-                  >
-                    Address
-                  </span>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                      data-testid="WalletHeader__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
-                      />
-                    </div>
-                  </label>
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-light"
-                  >
-                    Public Key
-                  </span>
-                </div>
-                <div>
-                  <span
-                    class="inline-block text-lg font-medium"
-                    data-testid="WalletHeader__address-publickey"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                  <span
-                    class="ml-4"
-                    data-testid="WalletHeader__copy-button"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj text-theme-primary-300"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Balance
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__balance"
-                >
-                  33.75089801 DARK
-                </span>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Fiat Value
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__currency-balance"
-                >
-                  0 BTC
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div
         class="sc-fzpjYC deOkAw"
@@ -12094,47 +11527,29 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
         <div
           class="container py-16 mx-auto px-14"
         >
-          <section
-            data-testid="WalletVote"
+          <div
+            class="flex"
           >
             <div
-              class="flex items-center justify-between"
+              class="w-1/2 pr-12 border-r border-theme-neutral-300"
             >
-              <h2
-                class="font-bold"
+              <section
+                data-testid="WalletVote"
               >
-                My Vote
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletVote__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
+                <div
+                  class="flex mb-4"
                 >
-                  <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                  <h2
+                    class="font-bold mb-0"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="grid grid-flow-row row-gap-6 py-4"
-              >
+                    My Vote
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0/1)
+                  </span>
+                </div>
                 <div
                   class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
@@ -12149,185 +11564,137 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="sc-AxhUy dHClEW text-theme-neutral-light"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxiKw jcWfEX"
+                          height="21"
+                          width="21"
                         >
                           <svg>
-                            voted.svg
+                            vote.svg
                           </svg>
                         </div>
                       </div>
                       <div
-                        class="sc-AxhUy dHClEW bg-theme-background"
-                      />
-                    </div>
-                    <div
-                      class="flex flex-col"
-                    >
-                      <span
-                        class="text-sm font-semibold text-theme-neutral"
-                      >
-                        Address Delegate
-                      </span>
-                      <div
-                        class="font-semibold text-theme-neutral-900"
+                        class="flex -space-x-3"
                       >
                         <span
-                          class="mr-2"
+                          class="inline-block"
                         >
-                          You haven't voted for more than one delegate yet.
-                        </span>
-                        <a
-                          class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                        >
-                          Learn more
                           <div
-                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                            data-testid="Link__external"
+                            class="sc-AxhUy dHClEW"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You have not yet voted for a Delegate
+                      </span>
+                      <a
+                        class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="w-1/2 pl-12"
+            >
+              <section
+                data-testid="WalletRegistrations"
+              >
+                <div
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="font-bold mb-0"
+                  >
+                    Registrations
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0)
+                  </span>
+                </div>
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex items-center divide-x-1 divide-theme-neutral-light"
+                  >
+                    <div
+                      class="pr-8"
+                    >
+                      <div
+                        class="flex items-center -space-x-2"
+                        data-testid="WalletRegistrations__icon-list"
+                      >
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              bridgechain.svg
                             </svg>
                           </div>
-                        </a>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              plugin.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__rest"
+                        >
+                          +1
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletVote__delegate__vote"
-                    type="button"
-                  >
-                    Vote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div
-        class="sc-fzpjYC deOkAw"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <section
-            data-testid="WalletRegistrations"
-          >
-            <div
-              class="flex items-center justify-between"
-            >
-              <h2
-                class="font-bold"
-              >
-                Registrations
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletRegistrations__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
-                >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="flex items-center justify-between py-4"
-              >
-                <div
-                  class="flex items-center divide-x-1 divide-theme-neutral-light"
-                >
-                  <div
-                    class="pr-8"
+                    class="space-x-2"
                   >
                     <div
-                      class="flex items-center -space-x-2"
-                      data-testid="WalletRegistrations__icon-list"
+                      data-testid="WalletRegistrations__show-all"
                     >
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
                       >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            bridgechain.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            plugin.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__rest"
-                      >
-                        +1
-                      </div>
+                        Show All
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="space-x-2"
-                >
-                  <button
-                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-                    data-testid="WalletRegistrations__show-all"
-                  >
-                    Show All
-                  </button>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletRegistrations__register"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
+              </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
       <div
@@ -13902,24 +13269,24 @@ exports[`WalletDetails should update wallet name 1`] = `
           class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="container flex items-center justify-between mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
-              class="flex items-center space-x-4"
+              class="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800"
             >
               <div
                 class="flex"
               >
                 <div
                   aria-label="Ark Devnet"
-                  class="sc-AxhUy cGyvAR -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+                  class="sc-AxhUy ecDeug -mr-1 border-theme-neutral-dark text-theme-neutral-dark"
                   data-testid="NetworkIcon-ARK-devnet"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
+                    class="sc-AxiKw dklFyP"
                     data-testid="NetworkIcon__icon"
-                    height="1em"
-                    width="1em"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       ark.svg
@@ -13927,7 +13294,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iIPilC"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
                   data-testid="Avatar"
                 >
                   <div
@@ -13941,29 +13308,105 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </div>
                 </div>
               </div>
-              <h2
-                class="mb-0 text-white"
-                data-testid="WalletHeader__name"
-              >
-                Sample label name
-              </h2>
-              <span
-                data-testid="WalletHeader__multisig"
+              <div
+                class="flex flex-col overflow-hidden"
               >
                 <div
-                  class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-                  height="1em"
-                  width="1em"
+                  class="flex items-center text-theme-neutral-dark space-x-5"
                 >
-                  <svg>
-                    multisig.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                    data-testid="WalletHeader__name"
+                  >
+                    Sample label name
+                  </span>
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span
+                      data-testid="WalletHeader__multisig"
+                    >
+                      <div
+                        class="sc-AxiKw bctdez hover:text-theme-neutral"
+                        height="16"
+                        width="16"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
-              </span>
+                <div
+                  class="flex items-center space-x-5"
+                >
+                  <span
+                    class="text-white text-lg font-semibold truncate"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                  <div
+                    class="flex items-end text-theme-neutral-dark space-x-3 mb-2"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw bIhqqy hover:text-theme-neutral"
+                        height="21"
+                        width="13"
+                      >
+                        <svg>
+                          copy-address.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-AxiKw glFzMu hover:text-theme-neutral"
+                        height="21"
+                        width="17"
+                      >
+                        <svg>
+                          copy-key.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="flex items-stretch space-x-2"
+              class="flex items-center space-x-2 h-13 w-1/2 pl-12"
             >
+              <div
+                class="flex flex-col mr-auto"
+              >
+                <div
+                  class="flex items-center text-theme-neutral-dark text-sm font-semibold"
+                >
+                  <span>
+                    Balance:
+                  </span>
+                  <span
+                    class="ml-1"
+                    data-testid="WalletHeader__currency-balance"
+                  >
+                    0 BTC
+                  </span>
+                </div>
+                <span
+                  class="text-white text-lg font-semibold"
+                  data-testid="WalletHeader__balance"
+                >
+                  33.75089801 DARK
+                </span>
+              </div>
               <div
                 class="my-auto"
               >
@@ -13973,7 +13416,9 @@ exports[`WalletDetails should update wallet name 1`] = `
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
-                  <span>
+                  <span
+                    class=""
+                  >
                     <div
                       class="sc-AxiKw dzBdqj"
                       height="1em"
@@ -13987,7 +13432,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm kbZyZT"
+                class="sc-AxjAm kbZyZT my-auto"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -13995,6 +13440,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 Send
               </button>
               <div
+                class="my-auto"
                 data-testid="WalletHeader__more-button"
               >
                 <div
@@ -14021,109 +13467,6 @@ exports[`WalletDetails should update wallet name 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="sc-fzpjYC deOkAw"
-        >
-          <div
-            class="container py-16 mx-auto px-14"
-          >
-            <ul
-              class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
-            >
-              <li
-                class="flex flex-col space-y-2"
-              >
-                <div
-                  class="inline-flex items-center space-x-2"
-                >
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-dark"
-                  >
-                    Address
-                  </span>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      class="Toggle__Input-qyyifx-0 bXkHfF"
-                      data-testid="WalletHeader__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 jXkMFJ"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 fnvabd"
-                      />
-                    </div>
-                  </label>
-                  <span
-                    class="font-semibold text-sm text-theme-neutral-light"
-                  >
-                    Public Key
-                  </span>
-                </div>
-                <div>
-                  <span
-                    class="inline-block text-lg font-medium"
-                    data-testid="WalletHeader__address-publickey"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                  <span
-                    class="ml-4"
-                    data-testid="WalletHeader__copy-button"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj text-theme-primary-300"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Balance
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__balance"
-                >
-                  33.75089801 DARK
-                </span>
-              </li>
-              <li
-                class="flex flex-col pl-8 space-y-2"
-              >
-                <span
-                  class="text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Fiat Value
-                </span>
-                <span
-                  class="text-lg font-semibold"
-                  data-testid="WalletHeader__currency-balance"
-                >
-                  0 BTC
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div
         class="sc-fzpjYC deOkAw"
@@ -14131,47 +13474,29 @@ exports[`WalletDetails should update wallet name 1`] = `
         <div
           class="container py-16 mx-auto px-14"
         >
-          <section
-            data-testid="WalletVote"
+          <div
+            class="flex"
           >
             <div
-              class="flex items-center justify-between"
+              class="w-1/2 pr-12 border-r border-theme-neutral-300"
             >
-              <h2
-                class="font-bold"
+              <section
+                data-testid="WalletVote"
               >
-                My Vote
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletVote__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
+                <div
+                  class="flex mb-4"
                 >
-                  <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                  <h2
+                    class="font-bold mb-0"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="grid grid-flow-row row-gap-6 py-4"
-              >
+                    My Vote
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0/1)
+                  </span>
+                </div>
                 <div
                   class="flex items-center justify-between"
                   data-testid="WalletVote__empty"
@@ -14186,185 +13511,137 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="sc-AxhUy dHClEW text-theme-neutral-light"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxiKw jcWfEX"
+                          height="21"
+                          width="21"
                         >
                           <svg>
-                            voted.svg
+                            vote.svg
                           </svg>
                         </div>
                       </div>
                       <div
-                        class="sc-AxhUy dHClEW bg-theme-background"
-                      />
-                    </div>
-                    <div
-                      class="flex flex-col"
-                    >
-                      <span
-                        class="text-sm font-semibold text-theme-neutral"
-                      >
-                        Address Delegate
-                      </span>
-                      <div
-                        class="font-semibold text-theme-neutral-900"
+                        class="flex -space-x-3"
                       >
                         <span
-                          class="mr-2"
+                          class="inline-block"
                         >
-                          You haven't voted for more than one delegate yet.
-                        </span>
-                        <a
-                          class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-                        >
-                          Learn more
                           <div
-                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
-                            data-testid="Link__external"
+                            class="sc-AxhUy dHClEW"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-semibold text-theme-neutral-900"
+                    >
+                      <span
+                        class="mr-2"
+                      >
+                        You have not yet voted for a Delegate
+                      </span>
+                      <a
+                        class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="w-1/2 pl-12"
+            >
+              <section
+                data-testid="WalletRegistrations"
+              >
+                <div
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="font-bold mb-0"
+                  >
+                    Registrations
+                  </h2>
+                  <span
+                    class="font-bold text-2xl text-theme-neutral-light ml-1"
+                  >
+                    (0)
+                  </span>
+                </div>
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex items-center divide-x-1 divide-theme-neutral-light"
+                  >
+                    <div
+                      class="pr-8"
+                    >
+                      <div
+                        class="flex items-center -space-x-2"
+                        data-testid="WalletRegistrations__icon-list"
+                      >
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              bridgechain.svg
                             </svg>
                           </div>
-                        </a>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__icon"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              plugin.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          data-testid="WalletRegistrations__icon-list__rest"
+                        >
+                          +1
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletVote__delegate__vote"
-                    type="button"
-                  >
-                    Vote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div
-        class="sc-fzpjYC deOkAw"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <section
-            data-testid="WalletRegistrations"
-          >
-            <div
-              class="flex items-center justify-between"
-            >
-              <h2
-                class="font-bold"
-              >
-                Registrations
-              </h2>
-              <button
-                class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 -mr-4 text-theme-neutral"
-                data-testid="WalletRegistrations__toggle"
-              >
-                <span>
-                  Hide
-                </span>
-                <span
-                  class="sc-fzoiQi gzANzd"
-                >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </span>
-              </button>
-            </div>
-            <div
-              aria-hidden="false"
-              data-testid="Collapse"
-              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-            >
-              <div
-                class="flex items-center justify-between py-4"
-              >
-                <div
-                  class="flex items-center divide-x-1 divide-theme-neutral-light"
-                >
-                  <div
-                    class="pr-8"
+                    class="space-x-2"
                   >
                     <div
-                      class="flex items-center -space-x-2"
-                      data-testid="WalletRegistrations__icon-list"
+                      data-testid="WalletRegistrations__show-all"
                     >
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
+                      <button
+                        class="sc-AxjAm fPpool"
+                        color="primary"
+                        type="button"
                       >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            bridgechain.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__icon"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-xl"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            plugin.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="sc-AxhUy dHClEW text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                        data-testid="WalletRegistrations__icon-list__rest"
-                      >
-                        +1
-                      </div>
+                        Show All
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="space-x-2"
-                >
-                  <button
-                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-                    data-testid="WalletRegistrations__show-all"
-                  >
-                    Show All
-                  </button>
-                  <button
-                    class="sc-AxjAm fPpool"
-                    color="primary"
-                    data-testid="WalletRegistrations__register"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </div>
-              </div>
+              </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
       <div
