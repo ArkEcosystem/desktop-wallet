@@ -16,6 +16,7 @@ type DelegateRowProps = {
 	selectedUnvotes?: Delegate[];
 	selectedVotes?: Delegate[];
 	isVoted?: boolean;
+	isVoteDisabled?: boolean;
 	isLoading?: boolean;
 	onUnvoteSelect?: ({ address, username, rank }: Delegate) => void;
 	onVoteSelect?: ({ address, username, rank }: Delegate) => void;
@@ -27,6 +28,7 @@ export const DelegateRow = ({
 	selectedUnvotes,
 	selectedVotes,
 	isVoted,
+	isVoteDisabled,
 	isLoading,
 	onUnvoteSelect,
 	onVoteSelect,
@@ -120,6 +122,7 @@ export const DelegateRow = ({
 					<Button
 						variant="plain"
 						color={isSelectedVote ? "success" : "primary"}
+						disabled={isVoteDisabled}
 						onClick={() =>
 							onVoteSelect?.({
 								address: delegate.address(),
@@ -141,5 +144,6 @@ DelegateRow.defaultProps = {
 	selectedUnvotes: [],
 	selectedVotes: [],
 	isVoted: false,
+	isVoteDisabled: false,
 	isLoading: false,
 };

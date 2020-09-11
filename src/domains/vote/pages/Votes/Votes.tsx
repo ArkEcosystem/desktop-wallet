@@ -242,20 +242,16 @@ export const Votes = () => {
 			</div>
 
 			<Section className="flex-1">
-				{address ? (
+				{network && address ? (
 					tabItem === "delegate" ? (
 						<DelegateTable
 							delegates={delegates}
-							maxVotes={network?.maximumVotes() as number}
+							maxVotes={network.maximumVotes()}
 							votes={votes}
 							onContinue={handleContinue}
 						/>
 					) : (
-						<MyVoteTable
-							maxVotes={network?.maximumVotes() as number}
-							votes={votes}
-							onContinue={handleContinue}
-						/>
+						<MyVoteTable maxVotes={network.maximumVotes()} votes={votes} onContinue={handleContinue} />
 					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />

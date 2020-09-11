@@ -59,7 +59,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 		loadVotes();
 	}, [env, wallet]);
 
-	const hasVotes = votes && votes?.length > 0;
+	const hasVotes = votes.length > 0;
 
 	if (isLoading) {
 		return <AddressRowSkeleton />;

@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { DelegateRow } from "./DelegateRow";
@@ -22,6 +22,14 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 	const { t } = useTranslation();
 	const [selectedUnvotes, setSelectedUnvotes] = useState([] as Delegate[]);
 	const [selectedVotes, setSelectedVotes] = useState([] as Delegate[]);
+	const [isVoteDisabled, setIsVoteDisabled] = useState(false);
+
+	useEffect(() => {
+		if (votes!.length === maxVotes && selectedUnvotes.length === 0) {
+			setSelectedVotes([]);
+			setIsVoteDisabled(true);
+		}
+	}, [maxVotes, selectedUnvotes, votes]);
 
 	const columns = [
 		{
@@ -77,8 +85,10 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 
 		if (maxVotes === 1) {
 			setSelectedUnvotes([delegate]);
+			setIsVoteDisabled(false);
 		} else {
 			setSelectedUnvotes([...selectedUnvotes, delegate]);
+			setIsVoteDisabled(false);
 		}
 	};
 
@@ -105,7 +115,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 			<h2 className="py-5 text-2xl font-bold">{title ? title : t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={data}>
 				{(delegate: ReadOnlyWallet, index: number) => {
-					const hasVotes = votes && votes.length > 0;
+					const hasVotes = votes!.length > 0;
 					let isVoted = false;
 
 					if (hasVotes) {
@@ -119,6 +129,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 							selectedUnvotes={selectedUnvotes}
 							selectedVotes={selectedVotes}
 							isVoted={isVoted}
+							isVoteDisabled={isVoteDisabled}
 							isLoading={showSkeleton}
 							onUnvoteSelect={toggleUnvotesSelected}
 							onVoteSelect={toggleVotesSelected}
