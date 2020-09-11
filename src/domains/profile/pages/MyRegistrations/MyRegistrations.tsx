@@ -96,6 +96,8 @@ export const MyRegistrations = () => {
 		plugins,
 	]);
 
+	// TODO: Find a better way to carry on entity from registrations to resign page
+	// to avoid use state and also work better with loading states in the send entity resignation
 	const handleAction = ({ action, walletId, entity, type }: any) => {
 		switch (action) {
 			case "register":
