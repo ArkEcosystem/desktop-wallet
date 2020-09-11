@@ -48,20 +48,14 @@ export const CreateProfile = () => {
 		},
 	];
 
-	const submitForm = async ({ name, password, currency, isDarkMode, marketProvider }: any) => {
+	const handleSubmit = async ({ name, password, currency, isDarkMode, marketProvider }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
+
 		const profile = env.profiles().create(formattedName);
 
-		profile.settings().set(ProfileSetting.AdvancedMode, false);
-		profile.settings().set(ProfileSetting.AutomaticSignOutPeriod, 15);
-		profile.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);
-		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
-		profile.settings().set(ProfileSetting.LedgerUpdateMethod, false);
-		profile.settings().set(ProfileSetting.Locale, PlatformSdkChoices.languages[0].value);
 		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
-		profile.settings().set(ProfileSetting.ScreenshotProtection, true);
+		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-		profile.settings().set(ProfileSetting.TimeFormat, PlatformSdkChoices.timeFormats[0].value);
 
 		if (avatarImage && !isSvg) {
 			profile.settings().set(ProfileSetting.Avatar, avatarImage);
@@ -92,7 +86,7 @@ export const CreateProfile = () => {
 
 					<Divider />
 
-					<Form context={form} onSubmit={submitForm} data-testid="CreateProfile__form">
+					<Form context={form} onSubmit={handleSubmit} data-testid="CreateProfile__form">
 						<div className="mt-8">
 							<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 

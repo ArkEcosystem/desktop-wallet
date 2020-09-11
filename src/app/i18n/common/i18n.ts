@@ -225,4 +225,9 @@ export const translations: { [key: string]: any } = {
 			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
 		},
 	},
+
+	EMPTY_RESULTS: {
+		TITLE: "No results",
+		SUBTITLE: "No results found. Refine your search and try again",
+	},
 };
