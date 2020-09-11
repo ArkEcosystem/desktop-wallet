@@ -47,44 +47,60 @@ export const DelegateRow = ({
 		return <DelegateRowSkeleton />;
 	}
 
+	const getColorSelected = (): string => {
+		if (isVoted) {
+			if (!isSelectedUnvote) {
+				return "bg-theme-primary-50";
+			} else {
+				return "bg-theme-danger-50";
+			}
+		} else {
+			if (isSelectedVote) {
+				return "bg-theme-success-50";
+			} else {
+				return "";
+			}
+		}
+	};
+
 	return (
 		<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
-			<TableCell variant="start" isSelected={isSelectedVote} innerClassName="font-bold">
+			<TableCell variant="start" innerClassName={`font-bold ${getColorSelected()}`}>
 				<div className="flex items-center space-x-3">
 					<Avatar address={delegate.address()} size="lg" noShadow />
 					<span>{delegate.username()}</span>
 				</div>
 			</TableCell>
 
-			<TableCell isSelected={isSelectedVote} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
 				<span>#{delegate.rank()}</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelectedVote} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
 				<span>%</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelectedVote} innerClassName="justify-center">
+			<TableCell innerClassName={`justify-center ${getColorSelected()}`}>
 				<Icon name="Msq" className="text-xl text-theme-primary" />
 			</TableCell>
 
-			<TableCell isSelected={isSelectedVote} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelectedVote} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelectedVote} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelectedVote} innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
 				<span>...</span>
 			</TableCell>
 
-			<TableCell isSelected={isSelectedVote} variant="end" innerClassName="justify-end">
+			<TableCell variant="end" innerClassName={`justify-end ${getColorSelected()}`}>
 				{isVoted ? (
 					<Button
 						variant="plain"
@@ -103,7 +119,7 @@ export const DelegateRow = ({
 				) : (
 					<Button
 						variant="plain"
-						color={isSelectedVote ? "danger" : "primary"}
+						color={isSelectedVote ? "success" : "primary"}
 						onClick={() =>
 							onVoteSelect?.({
 								address: delegate.address(),
