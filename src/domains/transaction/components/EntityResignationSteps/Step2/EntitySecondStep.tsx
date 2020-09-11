@@ -10,9 +10,9 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-// import { StepProps } from "./SendEntityResignation.models";
+import { EntityResignationStepProps } from "../EntityResignationSteps.models";
 
-export const EntitySecondStep = ({ entity, fees }: any) => {
+export const EntitySecondStep = ({ entity, fees }: EntityResignationStepProps) => {
 	const { t } = useTranslation();
 	const coinName = entity.wallet().manifest().get("name");
 	const network = `${coinName} ${entity.wallet().network().name()}`;

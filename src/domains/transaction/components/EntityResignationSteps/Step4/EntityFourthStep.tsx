@@ -7,9 +7,9 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-// import { StepProps } from "./SendEntityResignation.models";
+import { EntityResignationStepProps } from "../EntityResignationSteps.models";
 
-export const EntityFourthStep = ({ entity, transaction, fees }: any) => {
+export const EntityFourthStep = ({ entity, transaction, fees }: EntityResignationStepProps) => {
 	const { t } = useTranslation();
 	const { data } = entity;
 

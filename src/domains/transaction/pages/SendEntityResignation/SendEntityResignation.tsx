@@ -48,7 +48,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	];
 
 	useEffect(() => {
-		const transactionTypes = {
+		const transactionTypes: { [key: string]: string } = {
 			entity: "entityResignation",
 			delegate: "delegateResignation",
 		};

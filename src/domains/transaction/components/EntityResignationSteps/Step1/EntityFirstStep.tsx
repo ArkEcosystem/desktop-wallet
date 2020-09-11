@@ -1,4 +1,3 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
@@ -9,14 +8,12 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type EntityFirstStepProps = {
-	entity: any;
-	fees: Contracts.TransactionFee;
-};
+import { EntityResignationStepProps } from "../EntityResignationSteps.models";
 
-export const EntityFirstStep = ({ entity, fees }: EntityFirstStepProps) => {
+export const EntityFirstStep = ({ entity, fees }: EntityResignationStepProps) => {
 	const { t } = useTranslation();
 	const { data }: any = entity.data().asset();
+	console.log({ entity });
 
 	return (
 		<div data-testid="SendEntityResignation__first-step">
