@@ -31,6 +31,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const { state } = location;
+	const { type = "delegate" } = state || {};
 
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
@@ -47,8 +48,13 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 	];
 
 	useEffect(() => {
-		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation"));
-	}, [env, setFees, activeProfile, activeWallet]);
+		const transactionTypes = {
+			entity: "entityResignation",
+			delegate: "entityResignation",
+		};
+
+		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), transactionTypes[type]));
+	}, [env, setFees, activeProfile, activeWallet, type]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -62,7 +68,6 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 		const mnemonic = getValues("mnemonic");
 		const secondMnemonic = getValues("secondMnemonic");
 		const from = activeWallet.address();
-		const { type = "delegate" } = state || {};
 
 		try {
 			let transactionId;
