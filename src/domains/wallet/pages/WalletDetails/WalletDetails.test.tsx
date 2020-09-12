@@ -5,7 +5,16 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "utils/testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { WalletDetails } from "./WalletDetails";
 
@@ -52,6 +61,9 @@ describe("WalletDetails", () => {
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
 
+		await syncDelegates();
+		await wallet.syncVotes();
+
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
 			.query({ page: "1" })
@@ -92,7 +104,6 @@ describe("WalletDetails", () => {
 
 		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -102,8 +113,38 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(blankWallet.address());
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should navigate to vote page when clicking on WalletVote button (unvote)", async () => {
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletVote__button"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith({
+			pathname: `/profiles/${profile.id()}/wallets/${wallet.id()}/send-vote`,
+			search: `?unvotes=${wallet.votes()[0].address()}`,
+		});
+	});
+
+	it("should navigate to registrations page when clicking on WalletRegistrations button", async () => {
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletRegistrations__button"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/registrations`);
 	});
 
 	it("should render when wallet hasn't voted", async () => {
@@ -112,7 +153,6 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(unvotedWallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -272,7 +312,6 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId, queryAllByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet2.address());
 		expect(queryAllByTestId("WalletBottomSheetMenu")).toHaveLength(0);
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -125,6 +125,8 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_WALLET_DETAILS: {
+		COPY_ADDRESS: "Copy Address",
+		COPY_PUBLIC_KEY: "Copy Public Key",
 		PENDING_TRANSACTIONS: "Pending Transactions",
 		TRANSACTION_HISTORY: "Transaction History",
 		YOUR_WALLETS: "Your Wallets",
@@ -134,18 +136,13 @@ export const translations: { [key: string]: any } = {
 
 		REGISTRATIONS: {
 			TITLE: "Registrations",
-			EMPTY: {
-				LABEL: "Type Registrations",
-				DESCRIPTION: "You haven't registered more than one type of registration.",
-			},
+			EMPTY_DESCRIPTION: "You have no active registrations",
 		},
 
 		VOTES: {
 			TITLE: "My Vote",
-			EMPTY: {
-				LABEL: "Address Delegate",
-				DESCRIPTION: "You haven't voted for more than one delegate yet.",
-			},
+			TITLE_plural: "My Votes",
+			EMPTY_DESCRIPTION: "You have not yet voted for a Delegate",
 		},
 
 		OPTIONS: {

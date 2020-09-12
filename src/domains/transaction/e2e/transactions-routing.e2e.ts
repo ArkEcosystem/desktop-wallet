@@ -19,7 +19,7 @@ test("should navigate to my registrations page", async (t) => {
 	await goToWallet(t);
 
 	// Go to my registrations page
-	await t.click(Selector("[data-testid=WalletRegistrations__show-all]"));
+	await t.click(Selector("[data-testid=WalletRegistrations__button]"));
 	await t.expect(Selector("h1").withText(translations.PROFILE.PAGE_MY_REGISTRATIONS.TITLE).exists).ok();
 });
 
