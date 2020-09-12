@@ -1,4 +1,4 @@
-import { FormField, FormHelperText,FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -34,24 +34,35 @@ export const FirstStep = ({ form }: { form: any }) => {
 				<TransactionDetail border={false} className="pb-8">
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input type="text" ref={register(sendEntityUpdate.name())} />
+						<Input
+							type="text"
+							ref={register(sendEntityUpdate.name())}
+							data-testid="SendEntityUpdate__name"
+						/>
 						<FormHelperText />
 					</FormField>
 
 					<FormField name="description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea ref={register(sendEntityUpdate.description())} />
+						<TextArea
+							ref={register(sendEntityUpdate.description())}
+							data-testid="SendEntityUpdate__description"
+						/>
 						<FormHelperText />
 					</FormField>
 
 					<FormField name="website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input type="website" ref={register(sendEntityUpdate.website())} />
+						<Input
+							type="website"
+							ref={register(sendEntityUpdate.website())}
+							data-testid="SendEntityUpdate__website"
+						/>
 						<FormHelperText />
 					</FormField>
 				</TransactionDetail>
 
-				<TransactionDetail className="pb-8">
+				<TransactionDetail className="pb-8" data-testid="SendEntityUpdate__source">
 					<LinkCollection
 						title={t("TRANSACTION.REPOSITORIES.TITLE")}
 						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
