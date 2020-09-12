@@ -4,14 +4,14 @@ import tw, { styled } from "twin.macro";
 type SectionProps = {
 	children: React.ReactNode;
 	hasBackground?: boolean;
-  marginTop?: boolean;
+	marginTop?: boolean;
 	className?: string;
 };
 
 const SectionWrapper = styled.div(({ hasBackground, marginTop }: SectionProps) => [
 	tw`w-full`,
 	hasBackground && tw`bg-theme-background`,
-  marginTop && tw`mt-5`,
+	marginTop && tw`mt-5`,
 ]);
 
 export const Section = ({ children, hasBackground, marginTop, className }: SectionProps) => (
@@ -22,5 +22,5 @@ export const Section = ({ children, hasBackground, marginTop, className }: Secti
 
 Section.defaultProps = {
 	hasBackground: true,
-  marginTop: true,
+	marginTop: true,
 };
