@@ -125,7 +125,12 @@ export const DelegateRow = ({
 					<Tippy content={t("VOTE.DELEGATE_TABLE.TOOLTIP_TEXT")} disabled={!isVoteDisabled}>
 						{isVoteDisabled ? (
 							<span>
-								<Button variant="plain" color="primary" disabled>
+								<Button
+									variant="plain"
+									color="primary"
+									disabled
+									data-testid={`DelegateRow__toggle-${index}`}
+								>
 									{t("COMMON.NOT_SELECTED")}
 								</Button>
 							</span>
