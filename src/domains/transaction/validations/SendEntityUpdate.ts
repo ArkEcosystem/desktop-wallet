@@ -5,6 +5,20 @@ export const sendEntityUpdate = (t: any) => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.NAME"),
 		}),
+		minLength: {
+			value: 3,
+			message: t("COMMON.VALIDATION.MIN_LENGTH", {
+				field: t("COMMON.NAME"),
+				minLength: 3,
+			}),
+		},
+		maxLength: {
+			value: 128,
+			message: t("COMMON.VALIDATION.MAX_LENGTH", {
+				field: t("COMMON.NAME"),
+				maxLength: 128,
+			}),
+		},
 	}),
 	description: () => ({
 		minLength: {
@@ -18,7 +32,7 @@ export const sendEntityUpdate = (t: any) => ({
 			value: 512,
 			message: t("COMMON.VALIDATION.MAX_LENGTH", {
 				field: t("COMMON.DESCRIPTION"),
-				maxLength: 515,
+				maxLength: 512,
 			}),
 		},
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -26,6 +40,9 @@ export const sendEntityUpdate = (t: any) => ({
 		}),
 	}),
 	website: () => ({
+		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+			field: t("COMMON.WEBSITE"),
+		}),
 		validate: {
 			valid: (value: string) => {
 				if (!yup.string().url().isValidSync(value)) {
