@@ -140,7 +140,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
 				/>
 
-				<Section>
+				<Section marginTop={false}>
 					<div className="flex">
 						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
 							<WalletVote
