@@ -31,8 +31,8 @@ test("should navigate to my registrations page", async (t) => {
 	await t.click(Selector("[data-testid=WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
-	await t.hover(Selector("[data-testid=WalletRegistrations__show-all]"));
-	await t.click(Selector("[data-testid=WalletRegistrations__show-all]"));
+	await t.hover(Selector("[data-testid=WalletRegistrations__button]"));
+	await t.click(Selector("[data-testid=WalletRegistrations__button]"));
 
 	await t.expect(Selector("[data-testid=header__title]").exists).ok();
 	await t

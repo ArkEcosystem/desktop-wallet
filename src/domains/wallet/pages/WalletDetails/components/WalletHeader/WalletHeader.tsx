@@ -6,15 +6,14 @@ import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { Section } from "app/components/Layout";
-import { Toggle } from "app/components/Toggle";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	address?: string;
+	address: string;
 	balance: BigNumber;
+	currencyDelta?: number;
 	coin: string;
 	currencyBalance?: BigNumber;
 	exchangeCurrency?: string;
@@ -39,6 +38,7 @@ export const WalletHeader = ({
 	balance,
 	coin,
 	currencyBalance,
+	currencyDelta,
 	exchangeCurrency,
 	isLedger,
 	isMultisig,
@@ -55,43 +55,127 @@ export const WalletHeader = ({
 	onUpdateWalletName,
 	onVerifyMessage,
 }: Props) => {
-	const [showPublicKey, setShowPublicKey] = React.useState(false);
-
 	const { t } = useTranslation();
 
 	return (
 		<header data-testid="WalletHeader">
 			<div className="py-8 bg-theme-neutral-900">
-				<div className="container flex items-center justify-between mx-auto px-14">
-					<div className="flex items-center space-x-4">
+				<div className="container flex items-center mx-auto px-14">
+					<div className="flex items-center space-x-4 h-13 w-1/2 pr-12 border-r border-theme-neutral-800">
 						<div className="flex">
 							<NetworkIcon
 								coin={coin}
 								network={network}
+								size="lg"
+								iconSize={20}
 								className="-mr-1 border-theme-neutral-dark text-theme-neutral-dark"
 								noShadow
 							/>
-							<Avatar address={address} shadowColor="--theme-color-neutral-900" />
+							<Avatar size="lg" address={address} shadowColor="--theme-color-neutral-900" />
 						</div>
-						<h2 data-testid="WalletHeader__name" className="mb-0 text-white">
-							{name}
-						</h2>
-						{isLedger && (
-							<Tippy content={t("COMMON.LEDGER")}>
-								<span data-testid="WalletHeader__ledger">
-									<Icon name="Ledger" className="text-theme-neutral-dark" />
+
+						<div className="flex flex-col overflow-hidden">
+							<div className="flex items-center space-x-5 text-theme-neutral-dark">
+								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
+									{name}
 								</span>
-							</Tippy>
-						)}
-						{isMultisig && (
-							<Tippy content={t("COMMON.MULTISIGNATURE")}>
-								<span data-testid="WalletHeader__multisig">
-									<Icon name="Multisig" className="text-theme-neutral-dark" />
-								</span>
-							</Tippy>
-						)}
+
+								<div className="flex items-center space-x-3">
+									{isLedger && (
+										<Tippy content={t("COMMON.LEDGER")}>
+											<span data-testid="WalletHeader__ledger">
+												<Icon
+													name="Ledger"
+													className="hover:text-theme-neutral"
+													width={16}
+													height={16}
+												/>
+											</span>
+										</Tippy>
+									)}
+
+									{isMultisig && (
+										<Tippy content={t("COMMON.MULTISIGNATURE")}>
+											<span data-testid="WalletHeader__multisig">
+												<Icon
+													name="Multisig"
+													className="hover:text-theme-neutral"
+													width={16}
+													height={16}
+												/>
+											</span>
+										</Tippy>
+									)}
+								</div>
+							</div>
+
+							<div className="flex items-center space-x-5">
+								<span className="text-lg font-semibold text-white truncate">{address}</span>
+
+								<div className="flex items-end mb-2 space-x-3 text-theme-neutral-dark">
+									<Clipboard data={address} tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}>
+										<Icon
+											name="CopyAddress"
+											className="hover:text-theme-neutral"
+											width={13}
+											height={21}
+										/>
+									</Clipboard>
+
+									<Clipboard
+										data={publicKey}
+										tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_PUBLIC_KEY")}
+									>
+										<Icon
+											name="CopyKey"
+											className="hover:text-theme-neutral"
+											width={17}
+											height={21}
+										/>
+									</Clipboard>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div className="flex items-stretch space-x-2">
+
+					<div className="flex items-center space-x-2 h-13 w-1/2 pl-12">
+						<div className="flex flex-col mr-auto">
+							<div className="flex items-center text-sm font-semibold text-theme-neutral-dark">
+								<span>{t("COMMON.BALANCE")}:</span>
+
+								{currencyBalance && (
+									<Amount
+										value={currencyBalance}
+										ticker={exchangeCurrency!}
+										data-testid="WalletHeader__currency-balance"
+										className="ml-1"
+									/>
+								)}
+
+								{!!currencyDelta && (
+									<span
+										className={`inline-flex items-center ml-2 ${
+											currencyDelta > 0 ? "text-theme-success" : "text-theme-danger"
+										}`}
+									>
+										<Icon
+											name="ArrowUp"
+											className={currencyDelta < 0 ? "rotate-180" : ""}
+											width={10}
+										/>
+										<span className="ml-1">{currencyDelta}%</span>
+									</span>
+								)}
+							</div>
+
+							<Amount
+								value={balance}
+								ticker={ticker}
+								data-testid="WalletHeader__balance"
+								className="text-lg font-semibold text-white"
+							/>
+						</div>
+
 						<div className="my-auto">
 							<Button
 								size="icon"
@@ -107,18 +191,18 @@ export const WalletHeader = ({
 											: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
 									}
 								>
-									<span>
+									<span className={isStarred ? "text-theme-warning-400" : ""}>
 										<Icon name={isStarred ? "Star" : "StarOutline"} />
 									</span>
 								</Tippy>
 							</Button>
 						</div>
 
-						<Button data-testid="WalletHeader__send-button" onClick={onSend}>
+						<Button data-testid="WalletHeader__send-button" className="my-auto" onClick={onSend}>
 							{t("COMMON.SEND")}
 						</Button>
 
-						<div data-testid="WalletHeader__more-button">
+						<div data-testid="WalletHeader__more-button" className="my-auto">
 							<Dropdown
 								toggleContent={
 									<Button variant="plain" size="icon" className="text-left">
@@ -168,74 +252,6 @@ export const WalletHeader = ({
 					</div>
 				</div>
 			</div>
-
-			<Section>
-				<ul className="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300">
-					<li className="flex flex-col space-y-2">
-						<div className="inline-flex items-center space-x-2">
-							<span
-								className={`font-semibold text-sm ${
-									!showPublicKey ? "text-theme-neutral-dark" : "text-theme-neutral-light"
-								}`}
-							>
-								{t("COMMON.ADDRESS")}
-							</span>
-							<Toggle
-								data-testid="WalletHeader__toggle"
-								baseColor="--theme-color-primary"
-								disabled={!publicKey}
-								onChange={() => setShowPublicKey(!showPublicKey)}
-							/>
-							<span
-								className={`font-semibold text-sm ${
-									showPublicKey ? "text-theme-neutral-dark" : "text-theme-neutral-light"
-								}`}
-							>
-								{t("COMMON.PUBLIC_KEY")}
-							</span>
-						</div>
-						<div>
-							<span
-								data-testid="WalletHeader__address-publickey"
-								className="inline-block text-lg font-medium"
-							>
-								{showPublicKey ? publicKey : address}
-							</span>
-							<span data-testid="WalletHeader__copy-button" className="ml-4">
-								<Clipboard data={showPublicKey ? publicKey : address}>
-									<Icon name="Copy" className="text-theme-primary-300" />
-								</Clipboard>
-							</span>
-						</div>
-					</li>
-
-					{!showPublicKey && (
-						<li className="flex flex-col pl-8 space-y-2">
-							<span className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.BALANCE")}</span>
-							<Amount
-								value={balance}
-								ticker={ticker}
-								data-testid="WalletHeader__balance"
-								className="text-lg font-semibold"
-							/>
-						</li>
-					)}
-
-					{!showPublicKey && currencyBalance && (
-						<li className="flex flex-col pl-8 space-y-2">
-							<span className="text-sm font-semibold text-theme-neutral-dark">
-								{t("COMMON.FIAT_VALUE")}
-							</span>
-							<Amount
-								value={currencyBalance}
-								ticker={exchangeCurrency!}
-								data-testid="WalletHeader__currency-balance"
-								className="text-lg font-semibold"
-							/>
-						</li>
-					)}
-				</ul>
-			</Section>
 		</header>
 	);
 };
