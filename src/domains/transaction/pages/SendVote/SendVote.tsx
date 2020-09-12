@@ -156,9 +156,11 @@ export const SendVote = () => {
 
 				await env.persist();
 
-				await confirmSendVote(voteTransactionId);
-
 				setTransaction(senderWallet!.transaction().transaction(voteTransactionId));
+
+				handleNext();
+
+				await confirmSendVote(voteTransactionId);
 			} else {
 				const transactionId = await senderWallet!.transaction().signVote({
 					...voteTransactionInput,
@@ -171,12 +173,12 @@ export const SendVote = () => {
 
 				await env.persist();
 
-				await confirmSendVote(transactionId);
-
 				setTransaction(senderWallet!.transaction().transaction(transactionId));
-			}
 
-			handleNext();
+				handleNext();
+
+				await confirmSendVote(transactionId);
+			}
 		} catch (error) {
 			console.error("Could not vote: ", error);
 
