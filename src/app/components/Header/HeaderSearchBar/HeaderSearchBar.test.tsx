@@ -66,7 +66,8 @@ describe("HeaderSearchBar", () => {
 	});
 
 	it("should reset the query", () => {
-		const { getByTestId } = render(<HeaderSearchBar />);
+		const onReset = jest.fn();
+		const { getByTestId } = render(<HeaderSearchBar onReset={onReset} />);
 
 		fireEvent.click(getByTestId("header-search-bar__button"));
 
@@ -87,6 +88,7 @@ describe("HeaderSearchBar", () => {
 		});
 
 		expect(input.value).not.toBe("test");
+		expect(onReset).toHaveBeenCalled();
 	});
 
 	it("should call onSearch", async () => {
@@ -95,6 +97,30 @@ describe("HeaderSearchBar", () => {
 		const onSearch = jest.fn();
 
 		const { getByTestId } = render(<HeaderSearchBar onSearch={onSearch} />);
+
+		fireEvent.click(getByTestId("header-search-bar__button"));
+
+		act(() => {
+			fireEvent.change(getByTestId("Input"), {
+				target: {
+					value: "test",
+				},
+			});
+		});
+
+		await act(async () => {
+			jest.runAllTimers();
+		});
+
+		expect(onSearch).toHaveBeenCalled();
+	});
+
+	it("should set custom debounce timeout form props", async () => {
+		jest.useFakeTimers();
+
+		const onSearch = jest.fn();
+
+		const { getByTestId } = render(<HeaderSearchBar onSearch={onSearch} debounceTimeout={100} />);
 
 		fireEvent.click(getByTestId("header-search-bar__button"));
 
