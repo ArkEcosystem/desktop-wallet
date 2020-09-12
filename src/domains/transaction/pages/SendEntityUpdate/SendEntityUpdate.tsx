@@ -29,8 +29,6 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	const [activeTransaction, setActiveTransaction] = useState<TransactionData>();
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const { formState } = form;
-	const { isValid } = formState;
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -42,7 +40,15 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = () => {
+	const handleNext = async () => {
+		const isValid = await form.triggerValidation();
+
+		if (!isValid) {
+			const firstError = Object.values(form.errors)[0];
+			firstError?.ref?.scrollIntoView?.({ behavior: "smooth", block: "end" });
+			return;
+		}
+
 		setActiveTab(activeTab + 1);
 	};
 
@@ -83,6 +89,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 
 				form.setValue("name", ipfsData.meta.displayName);
 				form.setValue("description", ipfsData.meta.description);
+				form.setValue("website", ipfsData.meta.website);
 				form.setValue("socialMedia", ipfsData.socialMedia || []);
 				form.setValue("sourceControl", ipfsData.sourceControl || []);
 				form.setValue("images", ipfsData.images || []);
@@ -135,11 +142,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 								)}
 
 								{activeTab < 3 && (
-									<Button
-										data-testid="SendEntityUpdate__continue-button"
-										disabled={!isValid}
-										onClick={handleNext}
-									>
+									<Button data-testid="SendEntityUpdate__continue-button" onClick={handleNext}>
 										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
@@ -147,7 +150,6 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 								{activeTab >= 3 && activeTab < 6 && (
 									<Button
 										data-testid="SendEntityUpdate__send-button"
-										disabled={!isValid}
 										onClick={handleNext}
 										className="space-x-2"
 									>
