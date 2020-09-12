@@ -87,19 +87,22 @@ export const SendVote = () => {
 		setActiveTab(activeTab + 1);
 	};
 
-	const confirmSendVote = (type: "unvote" | "vote") =>
+	const confirmSendVote = (txId: string) =>
 		new Promise((resolve) => {
 			const interval = setInterval(async () => {
 				let isConfirmed = false;
 
 				try {
-					await activeWallet.syncVotes();
-					const walletVotes = activeWallet.votes();
+					const txData = await activeWallet.client().transaction(txId);
 
-					isConfirmed =
-						type === "unvote"
+					if (txData) {
+						await activeWallet.syncVotes();
+						const walletVotes = activeWallet.votes();
+
+						isConfirmed = txData.isUnvote()
 							? !walletVotes.find((vote) => vote.address() === unvotes[0].address())
 							: !!walletVotes.find((vote) => vote.address() === votes[0].address());
+					}
 				} catch (error) {
 					isConfirmed = false;
 				}
@@ -140,7 +143,7 @@ export const SendVote = () => {
 
 				await env.persist();
 
-				await confirmSendVote("unvote");
+				await confirmSendVote(unvoteTransactionId);
 
 				const voteTransactionId = await senderWallet!.transaction().signVote({
 					...voteTransactionInput,
@@ -153,15 +156,14 @@ export const SendVote = () => {
 
 				await env.persist();
 
-				await confirmSendVote("vote");
+				await confirmSendVote(voteTransactionId);
 
 				setTransaction(senderWallet!.transaction().transaction(voteTransactionId));
 			} else {
-				const isUnvote = unvotes.length > 0;
 				const transactionId = await senderWallet!.transaction().signVote({
 					...voteTransactionInput,
 					data: {
-						vote: isUnvote ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
+						vote: unvotes.length > 0 ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
 					},
 				});
 
@@ -169,7 +171,7 @@ export const SendVote = () => {
 
 				await env.persist();
 
-				await confirmSendVote(isUnvote ? "unvote" : "vote");
+				await confirmSendVote(transactionId);
 
 				setTransaction(senderWallet!.transaction().transaction(transactionId));
 			}

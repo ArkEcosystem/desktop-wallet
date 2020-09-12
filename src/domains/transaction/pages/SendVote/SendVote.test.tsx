@@ -47,6 +47,8 @@ let votes: ReadOnlyWallet[];
 
 describe("SendVote", () => {
 	beforeAll(async () => {
+		jest.useFakeTimers();
+
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
@@ -62,6 +64,10 @@ describe("SendVote", () => {
 			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
 			.reply(200, transactionFixture);
+	});
+
+	afterAll(() => {
+		jest.useRealTimers();
 	});
 
 	it("should render 1st step", async () => {
@@ -265,7 +271,7 @@ describe("SendVote", () => {
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
 		const params = new URLSearchParams({
-			unvotes: delegateData[0].address,
+			unvotes: delegateData[1].address,
 		});
 
 		history.push({
@@ -288,7 +294,7 @@ describe("SendVote", () => {
 
 			await waitFor(() => expect(rendered.getByTestId("SendVote__step--first")).toBeTruthy());
 			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[0].username),
+				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[1].username),
 			);
 		});
 

@@ -46,6 +46,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 		const loadVotes = () => {
 			if (!hasProperty(wallet, "isLoading")) {
 				let votes: ReadOnlyWallet[] = [];
+
 				try {
 					votes = wallet.votes();
 				} catch {

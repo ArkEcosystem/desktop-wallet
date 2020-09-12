@@ -13,9 +13,6 @@ describe("AddressTable", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
-		await syncDelegates();
-		await wallet.syncVotes();
-
 		nock.disableNetConnect();
 
 		nock("https://dwallets.ark.io")
@@ -23,6 +20,9 @@ describe("AddressTable", () => {
 			.query({ page: "1" })
 			.reply(200, require("tests/fixtures/coins/ark/delegates-devnet.json"))
 			.persist();
+
+		await syncDelegates();
+		await wallet.syncVotes();
 	});
 
 	it("should render", async () => {
