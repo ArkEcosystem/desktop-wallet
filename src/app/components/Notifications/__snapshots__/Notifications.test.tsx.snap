@@ -99,6 +99,7 @@ exports[`Notifications should render plugins 1`] = `
     />
     <div
       class="relative"
+      data-testid="TransactionTable"
     >
       <div
         class="sc-AxirZ TjFbC"
@@ -144,6 +145,7 @@ exports[`Notifications should render transactions 1`] = `
     />
     <div
       class="relative"
+      data-testid="TransactionTable"
     >
       <div
         class="sc-AxirZ TjFbC"
@@ -158,6 +160,7 @@ exports[`Notifications should render transactions 1`] = `
           >
             <tr
               class="sc-AxhCb cqtLjm group"
+              data-testid="TableRow"
             >
               <td
                 class="w-24"

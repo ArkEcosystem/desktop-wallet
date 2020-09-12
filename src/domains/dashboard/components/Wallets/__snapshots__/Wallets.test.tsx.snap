@@ -567,7 +567,9 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
       class="mt-1"
     >
       <div>
-        <div>
+        <div
+          data-testid="WalletTable"
+        >
           <div
             class="sc-AxiKw ksSMAm"
             role="table"
@@ -721,6 +723,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
               >
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -825,6 +828,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -929,6 +933,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -1033,6 +1038,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -1137,6 +1143,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -1241,6 +1248,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -1345,6 +1353,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -1449,6 +1458,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -1553,6 +1563,7 @@ exports[`Wallets should hide the view more button if there are less than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -2232,7 +2243,9 @@ exports[`Wallets should render list 1`] = `
       class="mt-1"
     >
       <div>
-        <div>
+        <div
+          data-testid="WalletTable"
+        >
           <div
             class="sc-AxiKw ksSMAm"
             role="table"
@@ -2386,6 +2399,7 @@ exports[`Wallets should render list 1`] = `
               >
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -2490,6 +2504,7 @@ exports[`Wallets should render list 1`] = `
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -4165,7 +4180,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
       class="mt-1"
     >
       <div>
-        <div>
+        <div
+          data-testid="WalletTable"
+        >
           <div
             class="sc-AxiKw ksSMAm"
             role="table"
@@ -4319,6 +4336,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
               >
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -4423,6 +4441,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -4664,7 +4683,9 @@ exports[`Wallets should render with list view enabled as default and empty walle
       class="mt-1"
     >
       <div>
-        <div>
+        <div
+          data-testid="WalletTable"
+        >
           <div
             class="sc-AxiKw ksSMAm"
             role="table"
@@ -4818,6 +4839,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
               >
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -4922,6 +4944,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5163,7 +5186,9 @@ exports[`Wallets should show the view more button if there are more than 10 wall
       class="mt-1"
     >
       <div>
-        <div>
+        <div
+          data-testid="WalletTable"
+        >
           <div
             class="sc-AxiKw ksSMAm"
             role="table"
@@ -5317,6 +5342,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
               >
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5421,6 +5447,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5525,6 +5552,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5629,6 +5657,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5733,6 +5762,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5837,6 +5867,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5941,6 +5972,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -6045,6 +6077,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -6149,6 +6182,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -6253,6 +6287,7 @@ exports[`Wallets should show the view more button if there are more than 10 wall
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div

@@ -3,7 +3,7 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, within } from "testing-library";
 
 import { WalletBottomSheetMenu } from "./WalletBottomSheetMenu";
 
@@ -108,7 +108,7 @@ describe("WalletBottomSheetMenu", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId(`WalletListItem__${wallets[0].address()}`));
+			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[0].alias()));
 		});
 
 		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "false");
@@ -126,7 +126,7 @@ describe("WalletBottomSheetMenu", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId(`WalletListItem__${wallets[1].address()}`));
+			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[1].alias()));
 		});
 
 		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[1].id()}`);

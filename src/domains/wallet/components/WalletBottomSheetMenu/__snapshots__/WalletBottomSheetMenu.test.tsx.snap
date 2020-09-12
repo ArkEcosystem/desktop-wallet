@@ -63,6 +63,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
             class="sc-AxiKw ksSMAm"
@@ -217,6 +218,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
               >
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -321,6 +323,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                 </tr>
                 <tr
                   class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div

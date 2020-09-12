@@ -32,8 +32,8 @@ describe("TransactionCompactRow", () => {
 			</table>,
 		);
 
-		fireEvent.mouseEnter(getByTestId("TransactionCompactRow"));
-		fireEvent.mouseLeave(getByTestId("TransactionCompactRow"));
+		fireEvent.mouseEnter(getByTestId("TableRow"));
+		fireEvent.mouseLeave(getByTestId("TableRow"));
 
 		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
 		expect(setState).toHaveBeenCalledWith("");

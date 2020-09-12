@@ -36,7 +36,7 @@ beforeEach(() => {
 
 describe("Dashboard", () => {
 	it("should render", async () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -46,14 +46,14 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render wallets", async () => {
 		Promise.resolve().then(() => jest.useFakeTimers());
 
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -63,7 +63,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
 
@@ -103,7 +103,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
 			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
@@ -117,7 +117,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should render portfolio percentage bar", async () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard portfolioPercentages={portfolioPercentages} />
 			</Route>,
@@ -128,12 +128,12 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render portfolio chart", async () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />
 			</Route>,
@@ -144,7 +144,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -160,7 +160,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
@@ -177,7 +177,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should navigate to import page", async () => {
-		const { asFragment, getAllByTestId, getByText } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -188,7 +188,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
 			fireEvent.click(getByText("Import"));
@@ -199,7 +199,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should navigate to create page", async () => {
-		const { asFragment, getAllByTestId, getByText } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />
 			</Route>,
@@ -210,7 +210,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		fireEvent.click(getByText("Create"));
 
@@ -231,7 +231,7 @@ describe("Dashboard", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
-			expect(getAllByTestId("TransactionRow")).toHaveLength(4);
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
 		});
 
 		act(() => {
@@ -242,7 +242,7 @@ describe("Dashboard", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
-			expect(getAllByTestId("TransactionRow")).toHaveLength(8);
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
 		});
 
 		expect(asFragment()).toMatchSnapshot();
@@ -259,10 +259,10 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
-			fireEvent.click(getAllByTestId("TransactionRow")[0]);
+			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
 		});
 
 		await waitFor(() => {

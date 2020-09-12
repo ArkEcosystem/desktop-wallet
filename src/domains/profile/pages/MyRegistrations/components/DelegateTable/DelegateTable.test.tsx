@@ -33,7 +33,7 @@ describe("Welcome", () => {
 	it("should render delegates", async () => {
 		const { asFragment, getAllByTestId } = render(<DelegateTable wallets={delegates} />);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -42,14 +42,14 @@ describe("Welcome", () => {
 		const { asFragment, getAllByTestId } = render(<DelegateTable wallets={delegates} onAction={onAction} />);
 		expect(asFragment()).toMatchSnapshot();
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--1");
+		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--1");
 		act(() => {
 			fireEvent.click(resignOption);
 		});
@@ -62,14 +62,14 @@ describe("Welcome", () => {
 		const { asFragment, getAllByTestId } = render(<DelegateTable wallets={delegates} onAction={onAction} />);
 		expect(asFragment()).toMatchSnapshot();
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--0");
+		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--0");
 		act(() => {
 			fireEvent.click(resignOption);
 		});

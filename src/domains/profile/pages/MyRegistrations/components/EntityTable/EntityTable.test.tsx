@@ -29,7 +29,7 @@ describe("BusinessRegistrationsTable", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(() => getAllByTestId("EntityTableRowItem")).toThrow(/Unable to find an element by/);
+		expect(() => getAllByTestId("TableRow")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should render registrations", async () => {
@@ -37,7 +37,7 @@ describe("BusinessRegistrationsTable", () => {
 			<EntityTable entities={entityRegistrations} title="Entity table" nameColumnHeader="Entity name" />,
 		);
 
-		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -53,14 +53,14 @@ describe("BusinessRegistrationsTable", () => {
 		);
 		expect(asFragment()).toMatchSnapshot();
 
-		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__option--1");
+		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--1");
 		act(() => {
 			fireEvent.click(resignOption);
 		});
@@ -84,14 +84,14 @@ describe("BusinessRegistrationsTable", () => {
 		);
 		expect(asFragment()).toMatchSnapshot();
 
-		await waitFor(() => expect(getAllByTestId("EntityTableRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
 
-		const dropdownToggle = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("EntityTableRowItem")[0]).getByTestId("dropdown__option--0");
+		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--0");
 		act(() => {
 			fireEvent.click(resignOption);
 		});

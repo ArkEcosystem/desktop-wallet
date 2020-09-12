@@ -72,8 +72,8 @@ describe("TransactionRow", () => {
 			</table>,
 		);
 
-		fireEvent.mouseEnter(getByTestId("TransactionRow"));
-		fireEvent.mouseLeave(getByTestId("TransactionRow"));
+		fireEvent.mouseEnter(getByTestId("TableRow"));
+		fireEvent.mouseLeave(getByTestId("TableRow"));
 
 		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
 		expect(setState).toHaveBeenCalledWith("");

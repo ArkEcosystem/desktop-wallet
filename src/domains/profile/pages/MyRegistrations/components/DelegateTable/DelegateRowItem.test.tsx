@@ -34,7 +34,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -64,7 +64,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 
 		expect(getByTestId("DelegateRowItem__address")).toBeTruthy();
 		expect(getByTestId("DelegateRowItem__username")).toBeTruthy();
@@ -87,7 +87,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -100,7 +100,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -114,7 +114,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(getByTestId("DelegateRowItem__actions")).toBeTruthy();
 
 		const dropdownToggle = getByTestId("dropdown__toggle");
@@ -140,7 +140,7 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(getByTestId("DelegateRowItem__actions")).toBeTruthy();
 
 		const dropdownToggle = getByTestId("dropdown__toggle");
@@ -170,8 +170,8 @@ describe("DelegateRowItem", () => {
 			</table>,
 		);
 
-		fireEvent.mouseEnter(getByTestId("DelegateRowItem"));
-		fireEvent.mouseLeave(getByTestId("DelegateRowItem"));
+		fireEvent.mouseEnter(getByTestId("TableRow"));
+		fireEvent.mouseLeave(getByTestId("TableRow"));
 
 		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
 		expect(setState).toHaveBeenCalledWith("");
