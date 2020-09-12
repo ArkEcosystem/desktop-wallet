@@ -58,6 +58,10 @@ test.requestHooks(walletMock, sendMock)("should successfully submit delegate reg
 	// Navigate to Registration page
 	await goToRegistrationPage(t);
 
+	// Choose sender
+	await t.click(Selector("[data-testid=SelectAddress__wrapper]"));
+	await t.click(Selector("[data-testid=SearchWalletListItem__select-2]"));
+
 	// Choose registration type & go to step 2
 	await t.click(Selector("[data-testid=select-list__toggle-button]"));
 	await t.click(Selector("li").withText(translations.COMMON.DELEGATE));

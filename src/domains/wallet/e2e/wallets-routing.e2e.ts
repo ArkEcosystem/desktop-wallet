@@ -10,7 +10,7 @@ test("should navigate to portfolio and access a wallet details", async (t) => {
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
 	await t.click(Selector("[data-testid=WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD]"));
-	await t.expect(Selector("h2").withText("ARK Wallet 1").exists).ok();
+	await t.expect(Selector("span").withText("ARK Wallet 1").exists).ok();
 });
 
 test("should navigate to create wallet page", async (t) => {

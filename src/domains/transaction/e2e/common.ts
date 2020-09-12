@@ -23,6 +23,9 @@ export const goToTransferPage = async (t: any) => {
 };
 
 export const goToRegistrationPage = async (t: any) => {
+	await t.click(Selector('[data-testid="navbar__useractions"]'));
+	await t.expect(Selector("li").withText(translations.COMMON.REGISTRATIONS).exists).ok();
+	await t.click(Selector("li").withText(translations.COMMON.REGISTRATIONS));
 	await t.click(Selector("button").withText(translations.COMMON.REGISTER));
 	await t.expect(Selector("[data-testid=Registration__form]").exists).ok();
 };

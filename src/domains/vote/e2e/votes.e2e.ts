@@ -42,7 +42,7 @@ test("should navigate to votes page from navigation bar", async (t) => {
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 });
 
-test("should navigate to votes page from wallet card", async (t) => {
+test.skip("should navigate to votes page from wallet card", async (t) => {
 	// await t
 	// 	.expect(Selector("[data-testid=WalletRegistrations__skeleton]").exists)
 	// 	.ok()
