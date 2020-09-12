@@ -7,6 +7,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { toasts } from "app/services";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -60,7 +61,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 				const tx = await activeWallet.client().transaction(transactionId);
 				setActiveTransaction(tx as TransactionData);
 			} catch (e) {
-				throw new Error(`Unable to find transaction for [${transactionId}]`);
+				toasts.error(`Unable to find transaction for [${transactionId}]`);
 			}
 		};
 
@@ -87,7 +88,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 				form.setValue("images", ipfsData.images || []);
 				form.setValue("videos", ipfsData.videos || []);
 			} catch (e) {
-				throw new Error(`Unable to find ipfs data for transaction [${transactionId}]`);
+				toasts.error(`Unable to find ipfs data for transaction [${transactionId}]`);
 			}
 		};
 
