@@ -75,12 +75,6 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	}, [transactionId, activeWallet]);
 
 	useEffect(() => {
-		const fees = env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "entityUpdate");
-		form.setValue("fees", fees);
-		form.setValue("fee", fees.avg);
-	}, [env, activeWallet]);
-
-	useEffect(() => {
 		const fetchIpfs = async () => {
 			if (!activeTransaction) return;
 
@@ -101,6 +95,12 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 
 		fetchIpfs();
 	}, [activeTransaction]);
+
+	useEffect(() => {
+		const fees = env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "entityUpdate");
+		form.setValue("fees", fees);
+		form.setValue("fee", fees.avg);
+	}, [env, activeWallet]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -130,7 +130,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
-								{activeTab < 6 && (
+								{activeTab < 6 && activeTab > 1 && (
 									<Button
 										disabled={activeTab === 1}
 										data-testid="SendEntityUpdate__back-button"
