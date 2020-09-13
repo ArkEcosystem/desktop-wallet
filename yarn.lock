@@ -4580,7 +4580,7 @@ del@^4.1.1:
     pify "^4.0.1"
     rimraf "^2.6.3"
 
-del@^5.0.0:
+del@^5.0.0, del@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/del/-/del-5.1.0.tgz#d9487c94e367410e6eff2925ee58c0c84a75b3a7"
   integrity sha512-wH9xOVHnczo9jN2IW68BabcecVPxacIA3g/7z6vhSU/4stOKQzeCRK0yD0A24WiAAUJmmVpWqrERcTxnLo3AnA==
@@ -13205,14 +13205,15 @@ temp-file@^3.3.7:
     async-exit-hook "^2.0.1"
     fs-extra "^8.1.0"
 
-tempy@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/tempy/-/tempy-0.5.0.tgz#2785c89df39fcc4d1714fc554813225e1581d70b"
-  integrity sha512-VEY96x7gbIRfsxqsafy2l5yVxxp3PhwAGoWMyC2D2Zt5DmEv+2tGiPOrquNRpf21hhGnKLVEsuqleqiZmKG/qw==
+tempy@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/tempy/-/tempy-0.7.0.tgz#8249c76a38bd104733a5491410aa84b508e8b503"
+  integrity sha512-YcFJbGum4B10jqKroKsci0kE5eEzRCMCTCa0ATtRC6zApBboaOnug1igqAbRC9SCvyqTRI9Xt8NYVggQr4k9hw==
   dependencies:
+    del "^5.1.0"
     is-stream "^2.0.0"
     temp-dir "^2.0.0"
-    type-fest "^0.12.0"
+    type-fest "^0.16.0"
     unique-string "^2.0.0"
 
 term-size@^2.1.0:
@@ -13624,10 +13625,10 @@ type-fest@^0.11.0:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.11.0.tgz#97abf0872310fed88a5c466b25681576145e33f1"
   integrity sha512-OdjXJxnCN1AvyLSzeKIgXTXxV+99ZuXl3Hpo9XpJAv9MBcHrrJOQ5kV7ypXOuQie+AmWG25hLbiKdwYTifzcfQ==
 
-type-fest@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.12.0.tgz#f57a27ab81c68d136a51fd71467eff94157fa1ee"
-  integrity sha512-53RyidyjvkGpnWPMF9bQgFtWp+Sl8O2Rp13VavmJgfAP9WWG6q6TkrKU8iyJdnwnfgHI6k2hTlgqH4aSdjoTbg==
+type-fest@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.16.0.tgz#3240b891a78b0deae910dbeb86553e552a148860"
+  integrity sha512-eaBzG6MxNzEn9kiwvtre90cXaNLkmadMWa1zQMs3XORCXNbsH/OewwbxC5ia9dCxIxnTAsSxXJaa/p5y8DlvJg==
 
 type-fest@^0.8.0, type-fest@^0.8.1:
   version "0.8.1"
