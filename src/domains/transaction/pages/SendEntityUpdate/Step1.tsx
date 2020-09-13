@@ -6,22 +6,21 @@ import { useValidation } from "app/hooks/validations";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityProvider } from "domains/transaction/entity/providers";
-import React, { useEffect } from "react";
+import React from "react";
+import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 const entityProvider = new EntityProvider();
 
-export const FirstStep = ({ form }: { form: any }) => {
+export const FirstStep = () => {
 	const { t } = useTranslation();
 
-	const { register, setValue } = form;
-	const { socialMedia, sourceControl, images, videos, fees, fee } = form.watch();
+	const form = useFormContext();
+	const { register, setValue, getValues } = form;
+
+	const { fee, fees } = form.watch();
 
 	const { sendEntityUpdate } = useValidation();
-
-	useEffect(() => {
-		["socialMedia", "sourceControl", "images", "videos", "fee", "fees"].map(register);
-	}, []);
 
 	return (
 		<div data-testid="SendEntityUpdate__first-step">
@@ -32,7 +31,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 
 			<div>
 				<TransactionDetail border={false} className="pb-8">
-					<FormField name="name" className="font-normal">
+					<FormField name="ipfsData.meta.displayName" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input
 							type="text"
@@ -42,7 +41,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 						<FormHelperText />
 					</FormField>
 
-					<FormField name="description" className="mt-8 font-normal">
+					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
 						<TextArea
 							ref={register(sendEntityUpdate.description())}
@@ -51,7 +50,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 						<FormHelperText />
 					</FormField>
 
-					<FormField name="website" className="mt-8 font-normal">
+					<FormField name="ipfsData.meta.website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
 						<Input
 							type="website"
@@ -70,7 +69,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 							.sourceControl()
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
-						data={sourceControl}
+						data={getValues("ipfsData.sourceControl") || []}
 					/>
 				</TransactionDetail>
 
@@ -82,7 +81,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 							.socialMedia()
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
-						data={socialMedia}
+						data={getValues("ipfsData.socialMedia") || []}
 					/>
 				</TransactionDetail>
 
@@ -96,7 +95,7 @@ export const FirstStep = ({ form }: { form: any }) => {
 						typeName="files"
 						selectionTypes={["flickr"]}
 						selectionTypeTitle="Avatar"
-						data={[...videos, ...images]}
+						data={[...(getValues("images") || []), ...(getValues("videos") || [])]}
 					/>
 				</TransactionDetail>
 
