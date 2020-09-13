@@ -172,7 +172,7 @@ describe("SendVote", () => {
 				votesMock.mockRestore();
 			}, 3000);
 
-			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 2000 });
 
 			signUnvoteMock.mockRestore();
 			broadcastUnvoteMock.mockRestore();
