@@ -221,7 +221,9 @@ export const SendVote = () => {
 								{activeTab < 4 && (
 									<>
 										<Button
-											disabled={activeTab === 1}
+											disabled={
+												activeTab === 1 || activeTab === 3 ? formState.isSubmitting : false
+											}
 											variant="plain"
 											onClick={handleBack}
 											data-testid="SendVote__button--back"
