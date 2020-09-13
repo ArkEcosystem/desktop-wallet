@@ -46,7 +46,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [ipfsData]);
 
 	return (
-		<div data-testid="BusinessRegistrationForm__step--third">
+		<div data-testid="ReviewStep">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.DESCRIPTION")}</div>
 			<div className="mt-4">

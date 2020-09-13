@@ -117,7 +117,7 @@ describe("EntityRegistrationForm", () => {
 		);
 		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
 
-		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--third")).toBeTruthy());
+		await waitFor(() => expect(screen.getByTestId("ReviewStep")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -140,7 +140,7 @@ describe("EntityRegistrationForm", () => {
 
 		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
 
-		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--third")).toBeTruthy());
+		await waitFor(() => expect(screen.getByTestId("ReviewStep")).toBeTruthy());
 		expect(screen.getByText(ipfsForm.meta.displayName)).toBeInTheDocument();
 		expect(screen.getByText(ipfsForm.meta.description)).toBeInTheDocument();
 		expect(screen.getByText(ipfsForm.meta.website)).toBeInTheDocument();
@@ -160,7 +160,7 @@ describe("EntityRegistrationForm", () => {
 		);
 		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
 
-		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--third")).toBeTruthy());
+		await waitFor(() => expect(screen.getByTestId("ReviewStep")).toBeTruthy());
 		expect(screen.getByText(ipfsForm.meta.displayName)).toBeInTheDocument();
 		expect(screen.getByText(ipfsForm.meta.description)).toBeInTheDocument();
 		expect(screen.getByText(ipfsForm.meta.website)).toBeInTheDocument();
@@ -180,7 +180,7 @@ describe("EntityRegistrationForm", () => {
 		);
 		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
 
-		await waitFor(() => expect(screen.getByTestId("BusinessRegistrationForm__step--third")).toBeTruthy());
+		await waitFor(() => expect(screen.getByTestId("ReviewStep")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
