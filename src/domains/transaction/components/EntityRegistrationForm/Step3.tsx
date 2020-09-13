@@ -121,7 +121,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					</TransactionDetail>
 				)}
 
-				{mediaLinks.length && (
+				{mediaLinks.length > 0 && (
 					<TransactionDetail className="mb-2">
 						<LinkList
 							title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
