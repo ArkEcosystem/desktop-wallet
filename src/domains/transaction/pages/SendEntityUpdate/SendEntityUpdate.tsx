@@ -46,6 +46,12 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	const { transactionId } = useParams();
 
 	useEffect(() => {
+		["fee", "fees", "ipfsData.sourceControl", "ipfsData.socialMedia", "ipfsData.videos", "ipfsData.images"].map(
+			form.register,
+		);
+	}, []);
+
+	useEffect(() => {
 		const fetchTransaction = async () => {
 			try {
 				const tx = await activeWallet.client().transaction(transactionId);
