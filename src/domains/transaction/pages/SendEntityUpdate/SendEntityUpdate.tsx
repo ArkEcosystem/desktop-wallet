@@ -13,8 +13,8 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
+import { ReviewStep as SecondStep } from "../../components/EntityRegistrationForm/Step3";
 import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 import { FourthStep } from "./Step4";
 import { fetchTxIpfsData } from "./utils";
@@ -104,10 +104,10 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep form={form} />
+								<FirstStep />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep />
+								<SecondStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<ThirdStep form={form} passwordType="mnemonic" />
