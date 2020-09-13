@@ -99,6 +99,7 @@ exports[`Notifications should render plugins 1`] = `
     />
     <div
       class="relative"
+      data-testid="TransactionTable"
     >
       <div
         class="sc-AxirZ TjFbC"
@@ -144,6 +145,7 @@ exports[`Notifications should render transactions 1`] = `
     />
     <div
       class="relative"
+      data-testid="TransactionTable"
     >
       <div
         class="sc-AxirZ TjFbC"
@@ -157,8 +159,8 @@ exports[`Notifications should render transactions 1`] = `
             role="rowgroup"
           >
             <tr
-              class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-              data-testid="TransactionCompactRow"
+              class="sc-AxhCb cqtLjm group"
+              data-testid="TableRow"
             >
               <td
                 class="w-24"
@@ -171,7 +173,7 @@ exports[`Notifications should render transactions 1`] = `
                     data-testid="TransactionRowMode"
                   >
                     <div
-                      class="sc-AxhUy hRslHP border-theme-danger-contrast text-theme-danger"
+                      class="sc-AxgMl ittwqV border-theme-danger-contrast text-theme-danger"
                     >
                       <div
                         class="sc-AxjAm cpczEI"
@@ -209,7 +211,7 @@ exports[`Notifications should render transactions 1`] = `
                     class="inline-block truncate align-middle"
                   >
                     <span
-                      class="sc-AxgMl fFPQpl text-theme-text font-semibold text-base"
+                      class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       ASuusX…GQ3kqT
@@ -222,7 +224,7 @@ exports[`Notifications should render transactions 1`] = `
                   class="sc-AxiKw hOGkQU justify-end"
                 >
                   <div
-                    class="sc-AxhCb fgIdEA"
+                    class="sc-AxhUy gRLEpJ"
                     color="danger"
                     data-testid="TransactionRowAmount"
                   >

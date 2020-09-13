@@ -7,7 +7,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -458,7 +458,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         </div>
       </header>
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -527,7 +527,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       You have not yet voted for a Delegate
                     </span>
                     <a
-                      class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
                       to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -591,7 +591,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       You have no active registrations
                     </span>
                     <a
-                      class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
                       to="@TODO"
@@ -606,7 +606,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -621,6 +621,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -784,15 +785,15 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -872,7 +873,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -918,7 +919,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -977,6 +978,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -1140,15 +1142,15 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -1228,7 +1230,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -1274,7 +1276,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -1330,7 +1332,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1342,7 +1344,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -1795,7 +1797,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2004,7 +2006,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2019,6 +2021,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -2182,15 +2185,15 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -2270,7 +2273,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -2316,7 +2319,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -2375,6 +2378,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -2538,15 +2542,15 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -2626,7 +2630,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -2672,7 +2676,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -2753,7 +2757,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoiQi bNcclL"
+              class="sc-fzqARJ hMpgBB"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -2779,6 +2783,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
             class="sc-AxheI dbLFAn"
@@ -2932,8 +2937,8 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -2976,7 +2981,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D8rr7B1d6…VBMs6YUYD
@@ -3031,8 +3036,8 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -3081,7 +3086,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           ARK Wallet 2
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D5sRKWckH…yC3cvJtwb
@@ -3122,8 +3127,8 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -3166,7 +3171,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DTLomV8hp…fDZJnG23z
@@ -3207,8 +3212,8 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -3251,7 +3256,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DHijNjwnQ…womG1J7vs
@@ -3308,7 +3313,7 @@ exports[`WalletDetails should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3320,7 +3325,7 @@ exports[`WalletDetails should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -3775,7 +3780,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3984,7 +3989,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3999,6 +4004,7 @@ exports[`WalletDetails should render 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -4162,15 +4168,15 @@ exports[`WalletDetails should render 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -4250,7 +4256,7 @@ exports[`WalletDetails should render 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -4296,7 +4302,7 @@ exports[`WalletDetails should render 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -4355,6 +4361,7 @@ exports[`WalletDetails should render 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -4518,15 +4525,15 @@ exports[`WalletDetails should render 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -4606,7 +4613,7 @@ exports[`WalletDetails should render 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -4652,7 +4659,7 @@ exports[`WalletDetails should render 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -4733,7 +4740,7 @@ exports[`WalletDetails should render 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoiQi bNcclL"
+              class="sc-fzqARJ hMpgBB"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -4759,6 +4766,7 @@ exports[`WalletDetails should render 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
             class="sc-AxheI dbLFAn"
@@ -4912,8 +4920,8 @@ exports[`WalletDetails should render 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -4962,7 +4970,7 @@ exports[`WalletDetails should render 1`] = `
                           ARK Wallet 1
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D8rr7B1d6…VBMs6YUYD
@@ -5017,8 +5025,8 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5067,7 +5075,7 @@ exports[`WalletDetails should render 1`] = `
                           ARK Wallet 2
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D5sRKWckH…yC3cvJtwb
@@ -5108,8 +5116,8 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5152,7 +5160,7 @@ exports[`WalletDetails should render 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DTLomV8hp…fDZJnG23z
@@ -5193,8 +5201,8 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -5237,7 +5245,7 @@ exports[`WalletDetails should render 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DHijNjwnQ…womG1J7vs
@@ -5294,7 +5302,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5306,7 +5314,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -5745,7 +5753,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5814,7 +5822,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       You have not yet voted for a Delegate
                     </span>
                     <a
-                      class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
                       to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -5878,7 +5886,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       You have no active registrations
                     </span>
                     <a
-                      class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
                       to="@TODO"
@@ -5893,7 +5901,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5908,6 +5916,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -6071,15 +6080,15 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -6159,7 +6168,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -6205,7 +6214,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -6264,6 +6273,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -6427,15 +6437,15 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -6515,7 +6525,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -6561,7 +6571,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -6642,7 +6652,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoiQi bNcclL"
+              class="sc-fzqARJ hMpgBB"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -6668,6 +6678,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
             class="sc-AxheI dbLFAn"
@@ -6821,8 +6832,8 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -6871,7 +6882,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           ARK Wallet 1
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D8rr7B1d6…VBMs6YUYD
@@ -6926,8 +6937,8 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -6976,7 +6987,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           ARK Wallet 2
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D5sRKWckH…yC3cvJtwb
@@ -7017,8 +7028,8 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -7061,7 +7072,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DTLomV8hp…fDZJnG23z
@@ -7102,8 +7113,8 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -7146,7 +7157,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DHijNjwnQ…womG1J7vs
@@ -7203,7 +7214,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7215,7 +7226,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -7654,7 +7665,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7723,7 +7734,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       You have not yet voted for a Delegate
                     </span>
                     <a
-                      class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
                       to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
@@ -7787,7 +7798,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       You have no active registrations
                     </span>
                     <a
-                      class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
                       to="@TODO"
@@ -7802,7 +7813,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7817,6 +7828,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -7980,15 +7992,15 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -8068,7 +8080,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -8114,7 +8126,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -8173,6 +8185,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -8336,15 +8349,15 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -8424,7 +8437,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -8470,7 +8483,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -8551,7 +8564,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoiQi bNcclL"
+              class="sc-fzqARJ hMpgBB"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -8577,6 +8590,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
             class="sc-AxheI dbLFAn"
@@ -8730,8 +8744,8 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -8780,7 +8794,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           ARK Wallet 1
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D8rr7B1d6…VBMs6YUYD
@@ -8835,8 +8849,8 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -8885,7 +8899,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           ARK Wallet 2
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D5sRKWckH…yC3cvJtwb
@@ -8926,8 +8940,8 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -8970,7 +8984,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DTLomV8hp…fDZJnG23z
@@ -9011,8 +9025,8 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -9055,7 +9069,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DHijNjwnQ…womG1J7vs
@@ -9112,7 +9126,7 @@ exports[`WalletDetails should render with timers 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9124,7 +9138,7 @@ exports[`WalletDetails should render with timers 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -9577,7 +9591,7 @@ exports[`WalletDetails should render with timers 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -9786,7 +9800,7 @@ exports[`WalletDetails should render with timers 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -9801,6 +9815,7 @@ exports[`WalletDetails should render with timers 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -9964,15 +9979,15 @@ exports[`WalletDetails should render with timers 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -10052,7 +10067,7 @@ exports[`WalletDetails should render with timers 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -10098,7 +10113,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -10157,6 +10172,7 @@ exports[`WalletDetails should render with timers 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -10320,15 +10336,15 @@ exports[`WalletDetails should render with timers 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -10408,7 +10424,7 @@ exports[`WalletDetails should render with timers 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -10454,7 +10470,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -10535,7 +10551,7 @@ exports[`WalletDetails should render with timers 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoiQi bNcclL"
+              class="sc-fzqARJ hMpgBB"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -10561,6 +10577,7 @@ exports[`WalletDetails should render with timers 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
             class="sc-AxheI dbLFAn"
@@ -10714,8 +10731,8 @@ exports[`WalletDetails should render with timers 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -10758,7 +10775,7 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D8rr7B1d6…VBMs6YUYD
@@ -10813,8 +10830,8 @@ exports[`WalletDetails should render with timers 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -10863,7 +10880,7 @@ exports[`WalletDetails should render with timers 1`] = `
                           ARK Wallet 2
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D5sRKWckH…yC3cvJtwb
@@ -10904,8 +10921,8 @@ exports[`WalletDetails should render with timers 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -10948,7 +10965,7 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DTLomV8hp…fDZJnG23z
@@ -10989,8 +11006,8 @@ exports[`WalletDetails should render with timers 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -11033,7 +11050,7 @@ exports[`WalletDetails should render with timers 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DHijNjwnQ…womG1J7vs
@@ -11090,7 +11107,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11102,7 +11119,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -11555,7 +11572,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -11764,7 +11781,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -11779,6 +11796,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -11942,15 +11960,15 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -12030,7 +12048,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -12076,7 +12094,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -12135,6 +12153,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -12298,15 +12317,15 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -12386,7 +12405,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -12432,7 +12451,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -12513,7 +12532,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoiQi bNcclL"
+              class="sc-fzqARJ hMpgBB"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -12539,6 +12558,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
             class="sc-AxheI dbLFAn"
@@ -12692,8 +12712,8 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -12736,7 +12756,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D8rr7B1d6…VBMs6YUYD
@@ -12791,8 +12811,8 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -12841,7 +12861,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           ARK Wallet 2
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D5sRKWckH…yC3cvJtwb
@@ -12882,8 +12902,8 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -12926,7 +12946,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DTLomV8hp…fDZJnG23z
@@ -12967,8 +12987,8 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -13011,7 +13031,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DHijNjwnQ…womG1J7vs
@@ -13068,7 +13088,7 @@ exports[`WalletDetails should update wallet name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -13080,7 +13100,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -13535,7 +13555,7 @@ exports[`WalletDetails should update wallet name 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzpjYC deOkAw"
+        class="sc-fznxsB dCHLWP"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13744,7 +13764,7 @@ exports[`WalletDetails should update wallet name 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13759,6 +13779,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -13922,15 +13943,15 @@ exports[`WalletDetails should update wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -14010,7 +14031,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -14056,7 +14077,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -14115,6 +14136,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             </h2>
             <div
               class="relative"
+              data-testid="TransactionTable"
             >
               <div
                 class="sc-AxheI dbLFAn"
@@ -14278,15 +14300,15 @@ exports[`WalletDetails should update wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                      data-testid="TransactionRow"
+                      class="sc-AxmLO jYyzyN group"
+                      data-testid="TableRow"
                     >
                       <td>
                         <div
                           class="sc-Axmtr kQCkEW"
                         >
                           <a
-                            class="sc-fzoLsD gvtpON inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fzpans hXnCPB inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -14366,7 +14388,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                             class="inline-block truncate align-middle"
                           >
                             <span
-                              class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                              class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                               data-testid="address__wallet-address"
                             >
                               D5pVkh…xfKwSv
@@ -14412,7 +14434,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           class="sc-Axmtr jJjPRc justify-end"
                         >
                           <div
-                            class="sc-AxmLO jmixdy"
+                            class="sc-fzozJi iTqYGz"
                             color="success"
                             data-testid="TransactionRowAmount"
                           >
@@ -14493,7 +14515,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoiQi bNcclL"
+              class="sc-fzqARJ hMpgBB"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -14519,6 +14541,7 @@ exports[`WalletDetails should update wallet name 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
             class="sc-AxheI dbLFAn"
@@ -14672,8 +14695,8 @@ exports[`WalletDetails should update wallet name 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -14722,7 +14745,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           Sample label name
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D8rr7B1d6…VBMs6YUYD
@@ -14777,8 +14800,8 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -14827,7 +14850,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           ARK Wallet 2
                         </span>
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D5sRKWckH…yC3cvJtwb
@@ -14868,8 +14891,8 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -14912,7 +14935,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DTLomV8hp…fDZJnG23z
@@ -14953,8 +14976,8 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs"
+                  class="sc-AxmLO jYyzyN group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
@@ -14997,7 +15020,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                          class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DHijNjwnQ…womG1J7vs

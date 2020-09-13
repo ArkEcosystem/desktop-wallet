@@ -32,7 +32,7 @@ describe("EntityTableRowItem", () => {
 			</table>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("EntityTableRowItem")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -50,8 +50,8 @@ describe("EntityTableRowItem", () => {
 			</table>,
 		);
 
-		fireEvent.mouseEnter(getByTestId("EntityTableRowItem"));
-		fireEvent.mouseLeave(getByTestId("EntityTableRowItem"));
+		fireEvent.mouseEnter(getByTestId("TableRow"));
+		fireEvent.mouseLeave(getByTestId("TableRow"));
 
 		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
 		expect(setState).toHaveBeenCalledWith("");

@@ -7,7 +7,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -243,7 +243,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -259,7 +259,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznxsB fEAmcI text-theme-neutral-300 pb"
+              class="sc-fznJRM UALdk text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -448,7 +448,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj flex-1"
+        class="sc-fznxsB kTBlBw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -618,7 +618,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -668,7 +668,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -711,7 +711,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -761,7 +761,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -790,7 +790,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -832,7 +832,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -877,7 +877,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -895,6 +895,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             >
               <div
                 class="relative"
+                data-testid="TransactionTable"
               >
                 <div
                   class="sc-AxheI dbLFAn"
@@ -1044,8 +1045,8 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -1109,7 +1110,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -1155,7 +1156,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -1185,8 +1186,8 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -1250,7 +1251,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -1296,7 +1297,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -1326,8 +1327,8 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -1391,7 +1392,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -1437,7 +1438,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -1467,8 +1468,8 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -1532,7 +1533,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -1578,7 +1579,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -1608,8 +1609,8 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -1673,7 +1674,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -1719,7 +1720,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -1749,8 +1750,8 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -1814,7 +1815,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -1860,7 +1861,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -1890,8 +1891,8 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -1955,7 +1956,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -2001,7 +2002,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -2031,8 +2032,8 @@ exports[`Dashboard should fetch more transactions 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -2096,7 +2097,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -2142,7 +2143,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -2199,7 +2200,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2211,7 +2212,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -2435,7 +2436,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-fzpjYC dplAtj flex-1"
+        class="sc-fznxsB kTBlBw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2789,7 +2790,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -2839,7 +2840,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -2882,7 +2883,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -2932,7 +2933,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -2961,7 +2962,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -3003,7 +3004,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -3048,7 +3049,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3066,6 +3067,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
             >
               <div
                 class="relative"
+                data-testid="TransactionTable"
               >
                 <div
                   class="sc-AxheI dbLFAn"
@@ -3215,8 +3217,8 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -3280,7 +3282,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -3326,7 +3328,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -3356,8 +3358,8 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -3421,7 +3423,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -3467,7 +3469,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -3497,8 +3499,8 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -3562,7 +3564,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -3608,7 +3610,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -3638,8 +3640,8 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -3703,7 +3705,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -3749,7 +3751,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -3806,7 +3808,7 @@ exports[`Dashboard should hide transaction view 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3818,7 +3820,7 @@ exports[`Dashboard should hide transaction view 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -4042,7 +4044,7 @@ exports[`Dashboard should hide transaction view 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4058,7 +4060,7 @@ exports[`Dashboard should hide transaction view 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznxsB fEAmcI text-theme-neutral-300 pb"
+              class="sc-fznJRM UALdk text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -4247,7 +4249,7 @@ exports[`Dashboard should hide transaction view 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj flex-1"
+        class="sc-fznxsB kTBlBw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4601,7 +4603,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -4651,7 +4653,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -4694,7 +4696,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -4744,7 +4746,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -4773,7 +4775,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -4815,7 +4817,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -4875,7 +4877,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4887,7 +4889,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -5111,7 +5113,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5127,7 +5129,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznxsB fEAmcI text-theme-neutral-300 pb"
+              class="sc-fznJRM UALdk text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -5316,7 +5318,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj flex-1"
+        class="sc-fznxsB kTBlBw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5486,7 +5488,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -5536,7 +5538,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -5579,7 +5581,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -5629,7 +5631,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -5658,7 +5660,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -5700,7 +5702,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -5745,7 +5747,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5763,6 +5765,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             >
               <div
                 class="relative"
+                data-testid="TransactionTable"
               >
                 <div
                   class="sc-AxheI dbLFAn"
@@ -5912,8 +5915,8 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -5977,7 +5980,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -6023,7 +6026,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -6053,8 +6056,8 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -6118,7 +6121,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -6164,7 +6167,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -6194,8 +6197,8 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -6259,7 +6262,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -6305,7 +6308,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -6335,8 +6338,8 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -6400,7 +6403,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -6446,7 +6449,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -6503,7 +6506,7 @@ exports[`Dashboard should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6515,7 +6518,7 @@ exports[`Dashboard should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -6739,7 +6742,7 @@ exports[`Dashboard should render 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -6755,7 +6758,7 @@ exports[`Dashboard should render 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznxsB fEAmcI text-theme-neutral-300 pb"
+              class="sc-fznJRM UALdk text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -6944,7 +6947,7 @@ exports[`Dashboard should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj flex-1"
+        class="sc-fznxsB kTBlBw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7114,7 +7117,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -7164,7 +7167,7 @@ exports[`Dashboard should render 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -7207,7 +7210,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -7257,7 +7260,7 @@ exports[`Dashboard should render 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -7286,7 +7289,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -7328,7 +7331,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -7373,7 +7376,7 @@ exports[`Dashboard should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -7391,6 +7394,7 @@ exports[`Dashboard should render 1`] = `
             >
               <div
                 class="relative"
+                data-testid="TransactionTable"
               >
                 <div
                   class="sc-AxheI dbLFAn"
@@ -7540,8 +7544,8 @@ exports[`Dashboard should render 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -7605,7 +7609,7 @@ exports[`Dashboard should render 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -7651,7 +7655,7 @@ exports[`Dashboard should render 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -7681,8 +7685,8 @@ exports[`Dashboard should render 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -7746,7 +7750,7 @@ exports[`Dashboard should render 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -7792,7 +7796,7 @@ exports[`Dashboard should render 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -7822,8 +7826,8 @@ exports[`Dashboard should render 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -7887,7 +7891,7 @@ exports[`Dashboard should render 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -7933,7 +7937,7 @@ exports[`Dashboard should render 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -7963,8 +7967,8 @@ exports[`Dashboard should render 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -8028,7 +8032,7 @@ exports[`Dashboard should render 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -8074,7 +8078,7 @@ exports[`Dashboard should render 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -8131,7 +8135,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8143,7 +8147,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -8367,7 +8371,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -8383,7 +8387,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznxsB fEAmcI text-theme-neutral-300 pb"
+              class="sc-fznJRM UALdk text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -8572,7 +8576,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj flex-1"
+        class="sc-fznxsB kTBlBw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -8742,7 +8746,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -8792,7 +8796,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -8835,7 +8839,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -8885,7 +8889,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -8914,7 +8918,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -8956,7 +8960,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -9001,7 +9005,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -9019,6 +9023,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             >
               <div
                 class="relative"
+                data-testid="TransactionTable"
               >
                 <div
                   class="sc-AxheI dbLFAn"
@@ -9168,8 +9173,8 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -9233,7 +9238,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -9279,7 +9284,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -9309,8 +9314,8 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -9374,7 +9379,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -9420,7 +9425,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -9450,8 +9455,8 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -9515,7 +9520,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -9561,7 +9566,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -9591,8 +9596,8 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -9656,7 +9661,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -9702,7 +9707,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -9759,7 +9764,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9771,7 +9776,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -9995,7 +10000,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -10011,7 +10016,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznxsB fEAmcI text-theme-neutral-300 pb"
+              class="sc-fznJRM UALdk text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -10200,7 +10205,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj flex-1"
+        class="sc-fznxsB kTBlBw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -10370,7 +10375,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -10420,7 +10425,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -10463,7 +10468,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -10513,7 +10518,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -10542,7 +10547,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -10584,7 +10589,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -10629,7 +10634,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -10647,6 +10652,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             >
               <div
                 class="relative"
+                data-testid="TransactionTable"
               >
                 <div
                   class="sc-AxheI dbLFAn"
@@ -10796,8 +10802,8 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -10861,7 +10867,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -10907,7 +10913,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -10937,8 +10943,8 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -11002,7 +11008,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -11048,7 +11054,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -11078,8 +11084,8 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -11143,7 +11149,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -11189,7 +11195,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -11219,8 +11225,8 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -11284,7 +11290,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -11330,7 +11336,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -11387,7 +11393,7 @@ exports[`Dashboard should render wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11399,7 +11405,7 @@ exports[`Dashboard should render wallets 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -11623,7 +11629,7 @@ exports[`Dashboard should render wallets 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -11639,7 +11645,7 @@ exports[`Dashboard should render wallets 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznxsB fEAmcI text-theme-neutral-300 pb"
+              class="sc-fznJRM UALdk text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -11828,7 +11834,7 @@ exports[`Dashboard should render wallets 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj flex-1"
+        class="sc-fznxsB kTBlBw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -11998,7 +12004,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -12048,7 +12054,7 @@ exports[`Dashboard should render wallets 1`] = `
                                     ARK Wallet 1
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D8rr…YUYD
@@ -12091,7 +12097,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                         >
                           <div
-                            class="sc-fznJRM fbIrRp"
+                            class="sc-fznWqX bOa-dgO"
                             data-testid="Card"
                           >
                             <div
@@ -12141,7 +12147,7 @@ exports[`Dashboard should render wallets 1`] = `
                                     ARK Wallet 2
                                   </span>
                                   <span
-                                    class="sc-fzozJi jxgYyc text-theme-neutral-light font-semibold text-base"
+                                    class="sc-fzoLsD fqEnxe text-theme-neutral-light font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
                                     D5sR…Jtwb
@@ -12170,7 +12176,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -12212,7 +12218,7 @@ exports[`Dashboard should render wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -12257,7 +12263,7 @@ exports[`Dashboard should render wallets 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -12275,6 +12281,7 @@ exports[`Dashboard should render wallets 1`] = `
             >
               <div
                 class="relative"
+                data-testid="TransactionTable"
               >
                 <div
                   class="sc-AxheI dbLFAn"
@@ -12424,8 +12431,8 @@ exports[`Dashboard should render wallets 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -12489,7 +12496,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -12535,7 +12542,7 @@ exports[`Dashboard should render wallets 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -12565,8 +12572,8 @@ exports[`Dashboard should render wallets 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -12630,7 +12637,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -12676,7 +12683,7 @@ exports[`Dashboard should render wallets 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -12706,8 +12713,8 @@ exports[`Dashboard should render wallets 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -12771,7 +12778,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 D5pVkh…xfKwSv
@@ -12817,7 +12824,7 @@ exports[`Dashboard should render wallets 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -12847,8 +12854,8 @@ exports[`Dashboard should render wallets 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                        data-testid="TransactionRow"
+                        class="sc-AxmLO jYyzyN group"
+                        data-testid="TableRow"
                       >
                         <td
                           class="w-48"
@@ -12912,7 +12919,7 @@ exports[`Dashboard should render wallets 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="sc-fzozJi jxgYyc text-theme-text font-semibold text-base"
+                                class="sc-fzoLsD fqEnxe text-theme-text font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
                                 DKY5ey…bNF53A
@@ -12958,7 +12965,7 @@ exports[`Dashboard should render wallets 1`] = `
                             class="sc-Axmtr jJjPRc justify-end"
                           >
                             <div
-                              class="sc-AxmLO jmixdy"
+                              class="sc-fzozJi iTqYGz"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -13015,7 +13022,7 @@ exports[`Dashboard should render with no wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLag gnHGCp"
+      class="sc-fzoXzr HuCwn"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -13027,7 +13034,7 @@ exports[`Dashboard should render with no wallets 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoXzr cumsaa"
+              class="sc-fzpjYC fJwOPl"
             >
               <svg
                 width="40"
@@ -13251,7 +13258,7 @@ exports[`Dashboard should render with no wallets 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13267,7 +13274,7 @@ exports[`Dashboard should render with no wallets 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fznxsB fEAmcI text-theme-neutral-300 pb"
+              class="sc-fznJRM UALdk text-theme-neutral-300 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -13456,7 +13463,7 @@ exports[`Dashboard should render with no wallets 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj flex-1"
+        class="sc-fznxsB kTBlBw flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13626,7 +13633,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -13668,7 +13675,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -13710,7 +13717,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -13752,7 +13759,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fznJRM izgPeU"
+                            class="sc-fznWqX pplWv"
                             data-testid="Card"
                           >
                             <div
@@ -13797,7 +13804,7 @@ exports[`Dashboard should render with no wallets 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpjYC dplAtj"
+        class="sc-fznxsB kTBlBw"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13815,6 +13822,7 @@ exports[`Dashboard should render with no wallets 1`] = `
             >
               <div
                 class="relative"
+                data-testid="TransactionTable"
               >
                 <div
                   class="sc-AxheI dbLFAn"

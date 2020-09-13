@@ -151,7 +151,7 @@ describe("TransactionTable", () => {
 	it("should render", () => {
 		// @ts-ignore - TODO: brittle fixtures
 		const { getAllByTestId, asFragment } = renderWithRouter(<TransactionTable transactions={transactions} />);
-		expect(getAllByTestId("TransactionRow")).toHaveLength(transactions.length);
+		expect(getAllByTestId("TableRow")).toHaveLength(transactions.length);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -177,7 +177,7 @@ describe("TransactionTable", () => {
 			// @ts-ignore - TODO: brittle fixtures
 			<TransactionTable transactions={transactions} isCompact />,
 		);
-		expect(getAllByTestId("TransactionCompactRow")).toHaveLength(transactions.length);
+		expect(getAllByTestId("TableRow")).toHaveLength(transactions.length);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -210,7 +210,7 @@ describe("TransactionTable", () => {
 			// @ts-ignore - TODO: brittle fixtures
 			<TransactionTable transactions={transactions} onRowClick={onClick} />,
 		);
-		const rows = getAllByTestId("TransactionRow");
+		const rows = getAllByTestId("TableRow");
 		fireEvent.click(rows[0]);
 		expect(onClick).toHaveBeenCalledWith(transactions[0]);
 	});

@@ -4,7 +4,7 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { SearchBar } from "app/components/SearchBar";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -60,7 +60,7 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={plugins}>
 					{(rowData: any) => (
-						<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
+						<TableRow>
 							<TableCell className="w-16">
 								<ChangeNowLogo className="w-12 h-12" />
 							</TableCell>
@@ -89,7 +89,7 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 							<TableCell className="w-16">
 								<Button variant="plain">{t("COMMON.ADD")}</Button>
 							</TableCell>
-						</tr>
+						</TableRow>
 					)}
 				</Table>
 			</div>
