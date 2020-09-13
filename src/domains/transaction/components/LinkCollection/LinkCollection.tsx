@@ -60,7 +60,9 @@ export const LinkCollection = ({
 		keyName: "value",
 	});
 
-	useEffect(() => append(data), [data]);
+	useEffect(() => {
+		if (data.length !== fields.length) append(data);
+	}, [data]);
 
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [selected, setSelected] = useState((null as unknown) as EntityLink);
