@@ -19,16 +19,16 @@ createFixture(`Wallet Details`).beforeEach(async (t) => await goToWallet(t));
 
 test("should load transactions with load more action", async (t) => {
 	// Check for transactions rows
-	await t.expect(Selector("[data-testid=TransactionRow]").exists).ok();
+	await t.expect(Selector("[data-testid=TransactionTable]").exists).ok();
 	await t.expect(Selector("[data-testid=transactions__fetch-more-button]").exists).ok();
 
-	const count = await Selector("[data-testid=TransactionRow]").count;
+	const count = await Selector("[data-testid=TransactionTable] [data-testid=TableRow]").count;
 
 	await scrollToBottom();
 
 	await t.click(Selector("[data-testid=transactions__fetch-more-button]"));
 
-	await t.expect(Selector("[data-testid=TransactionRow]").count).gt(count);
+	await t.expect(Selector("[data-testid=TransactionTable] [data-testid=TableRow]").count).gt(count);
 });
 
 test("should star a wallet", async (t) => {

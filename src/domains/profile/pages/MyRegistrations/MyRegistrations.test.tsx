@@ -57,7 +57,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should render delegate registrations", async () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -67,7 +67,9 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -82,12 +84,10 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
-
-		const businessRegistrations = getByTestId("BusinessRegistrations");
 		await waitFor(() =>
-			expect(within(businessRegistrations).getAllByTestId("EntityTableRowItem").length).toEqual(2),
+			expect(within(getByTestId("BusinessRegistrations")).getAllByTestId("TableRow")).toHaveLength(2),
 		);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -102,10 +102,10 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("PluginRegistrations")).getAllByTestId("TableRow")).toHaveLength(4),
+		);
 
-		const plugins = getByTestId("PluginRegistrations");
-		await waitFor(() => expect(within(plugins).getAllByTestId("EntityTableRowItem").length).toEqual(4));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -120,7 +120,7 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() => expect(getAllByTestId("TableRow")).toBeTruthy());
 
 		const registerButton = getByTestId("MyRegistrations__cta-register");
 		act(() => {
@@ -131,7 +131,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should handle delegate resignation dropdown action", async () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -141,14 +141,20 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
 
-		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(
+			within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")[0],
+		).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--1");
+		const resignOption = within(
+			within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")[0],
+		).getByTestId("dropdown__option--1");
 		act(() => {
 			fireEvent.click(resignOption);
 		});
@@ -160,7 +166,7 @@ describe("MyRegistrations", () => {
 	});
 
 	it("should handle delegate update dropdown action", async () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/registrations">
 				<MyRegistrations />
 			</Route>,
@@ -170,14 +176,20 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
 
-		const dropdownToggle = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__toggle");
+		const dropdownToggle = within(
+			within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")[0],
+		).getByTestId("dropdown__toggle");
 		act(() => {
 			fireEvent.click(dropdownToggle);
 		});
 
-		const resignOption = within(getAllByTestId("DelegateRowItem")[0]).getByTestId("dropdown__option--0");
+		const resignOption = within(
+			within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")[0],
+		).getByTestId("dropdown__option--0");
 		act(() => {
 			fireEvent.click(resignOption);
 		});
@@ -199,7 +211,9 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
@@ -215,7 +229,9 @@ describe("MyRegistrations", () => {
 			});
 		});
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem")).toHaveLength(1));
+		await waitFor(() =>
+			expect(within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -230,7 +246,9 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("BusinessRegistrations")).getAllByTestId("TableRow")).toHaveLength(2),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
@@ -246,10 +264,11 @@ describe("MyRegistrations", () => {
 			});
 		});
 
-		const businessRegistrations = getByTestId("BusinessRegistrations");
 		await waitFor(() =>
-			expect(within(businessRegistrations).getAllByTestId("EntityTableRowItem").length).not.toEqual(0),
+			expect(within(getByTestId("BusinessRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
 		);
+		expect(() => within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toThrow();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -264,7 +283,9 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("PluginRegistrations")).getAllByTestId("TableRow")).toHaveLength(4),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
@@ -280,8 +301,11 @@ describe("MyRegistrations", () => {
 			});
 		});
 
-		const plugins = getByTestId("PluginRegistrations");
-		await waitFor(() => expect(within(plugins).getAllByTestId("EntityTableRowItem").length).not.toEqual(0));
+		await waitFor(() =>
+			expect(within(getByTestId("PluginRegistrations")).getAllByTestId("TableRow")).toHaveLength(2),
+		);
+		expect(() => within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toThrow();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -296,7 +320,9 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
@@ -312,7 +338,13 @@ describe("MyRegistrations", () => {
 			});
 		});
 
-		await waitFor(() => expect(getByTestId("EmptyResults")).toBeTruthy());
+		await waitFor(() => {
+			expect(() => within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toThrow();
+			expect(() => within(getByTestId("BusinessRegistrations")).getAllByTestId("TableRow")).toThrow();
+			expect(() => within(getByTestId("PluginRegistrations")).getAllByTestId("TableRow")).toThrow();
+			expect(getByTestId("EmptyResults")).toBeTruthy();
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -327,7 +359,9 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
@@ -343,12 +377,18 @@ describe("MyRegistrations", () => {
 			});
 		});
 
-		await waitFor(() => expect(getByTestId("EmptyResults")).toBeTruthy());
+		await waitFor(() => {
+			expect(getByTestId("EmptyResults")).toBeTruthy();
+			expect(() => within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toThrow();
+		});
+
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__reset"));
 		});
 
-		await waitFor(() => expect(getAllByTestId("DelegateRowItem").length).toEqual(1));
+		await waitFor(() =>
+			expect(within(getByTestId("DelegateRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

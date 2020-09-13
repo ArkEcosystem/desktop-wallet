@@ -13,6 +13,7 @@ import {
 	renderWithRouter,
 	syncDelegates,
 	waitFor,
+	within,
 } from "utils/testing-library";
 
 import { WalletDetails } from "./WalletDetails";
@@ -40,7 +41,13 @@ const renderPage = async () => {
 			history,
 		},
 	);
-	await waitFor(() => expect(rendered.queryAllByTestId("TransactionRow")).toHaveLength(2));
+
+	const { getAllByTestId } = rendered;
+
+	await waitFor(() =>
+		expect(within(getAllByTestId("TransactionTable")[1]).queryAllByTestId("TableRow")).toHaveLength(1),
+	);
+
 	return rendered;
 };
 
@@ -245,7 +252,7 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => {
-			expect(getAllByTestId("TransactionRow")).toHaveLength(6);
+			expect(within(getAllByTestId("TransactionTable")[1]).queryAllByTestId("TableRow")).toHaveLength(3);
 		});
 	});
 

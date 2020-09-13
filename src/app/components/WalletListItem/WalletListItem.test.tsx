@@ -25,7 +25,7 @@ describe("WalletListItem", () => {
 	});
 
 	it("should render", () => {
-		const { container, getAllByTestId } = renderWithRouter(
+		const { container, getByText } = renderWithRouter(
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
@@ -39,12 +39,14 @@ describe("WalletListItem", () => {
 			},
 		);
 
-		expect(getAllByTestId(`WalletListItem__${wallet.address()}`)).toBeTruthy();
+		expect(getByText(wallet.alias())).toBeTruthy();
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should trigger onAction callback if provided", () => {
-		const fn = jest.fn();
+		const onAction = jest.fn();
+
 		const options = [
 			{ label: "Option 1", value: "1" },
 			{ label: "Option 2", value: "2" },
@@ -54,7 +56,7 @@ describe("WalletListItem", () => {
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
-						<WalletListItem wallet={wallet} actions={options} onAction={fn} />
+						<WalletListItem wallet={wallet} actions={options} onAction={onAction} />
 					</Route>
 				</tbody>
 			</table>,
@@ -78,7 +80,7 @@ describe("WalletListItem", () => {
 		});
 
 		expect(container.querySelectorAll("ul").length).toEqual(0);
-		expect(fn).toHaveBeenCalled();
+		expect(onAction).toHaveBeenCalled();
 	});
 
 	it("should ignore onAction callback if not provided", () => {
@@ -118,13 +120,13 @@ describe("WalletListItem", () => {
 	});
 
 	it("should click a wallet and redirect to it", () => {
-		const { getByTestId } = renderWithRouter(
+		const { getByText } = renderWithRouter(
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
 						<WalletListItem
 							wallet={wallet}
-							onRowClick={() => history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}`)}
+							onClick={() => history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}`)}
 						/>
 					</Route>
 				</tbody>
@@ -138,7 +140,7 @@ describe("WalletListItem", () => {
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/dashboard`);
 
 		act(() => {
-			fireEvent.click(getByTestId(`WalletListItem__${wallet.address()}`));
+			fireEvent.click(getByText(wallet.alias()));
 		});
 
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
@@ -152,7 +154,7 @@ describe("WalletListItem", () => {
 
 			useStateSpy.mockImplementation((state) => [state, setState]);
 
-			const { asFragment, getByTestId } = render(
+			const { asFragment, getByText } = render(
 				<table>
 					<tbody>
 						<WalletListItem wallet={wallet} activeWalletId={activeWalletId} />
@@ -160,12 +162,10 @@ describe("WalletListItem", () => {
 				</table>,
 			);
 
-			const testId = `WalletListItem__${wallet.address()}`;
-
 			expect(asFragment()).toMatchSnapshot();
 
-			fireEvent.mouseEnter(getByTestId(testId));
-			fireEvent.mouseLeave(getByTestId(testId));
+			fireEvent.mouseEnter(getByText(wallet.alias()));
+			fireEvent.mouseLeave(getByText(wallet.alias()));
 
 			expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
 

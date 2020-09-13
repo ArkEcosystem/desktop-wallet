@@ -2,7 +2,7 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, within } from "utils/testing-library";
 
 import { networks } from "../../data";
 import { Wallets } from "./Wallets";
@@ -89,7 +89,7 @@ describe("Wallets", () => {
 	});
 
 	it("should redirect when clicking on row", () => {
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets wallets={wallets} viewType="list" filterProperties={filterProperties} />
 			</Route>,
@@ -100,7 +100,7 @@ describe("Wallets", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId(`WalletListItem__${wallets[0].address()}`));
+			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[0].alias()));
 		});
 
 		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[0].id()}`);

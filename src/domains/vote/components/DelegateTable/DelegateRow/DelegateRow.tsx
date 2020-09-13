@@ -3,7 +3,7 @@ import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -67,7 +67,7 @@ export const DelegateRow = ({
 	};
 
 	return (
-		<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
+		<TableRow>
 			<TableCell variant="start" innerClassName={`font-bold ${getColorSelected()}`}>
 				<div className="flex items-center space-x-3">
 					<Avatar address={delegate.address()} size="lg" noShadow />
@@ -153,7 +153,7 @@ export const DelegateRow = ({
 					</Tippy>
 				)}
 			</TableCell>
-		</tr>
+		</TableRow>
 	);
 };
 

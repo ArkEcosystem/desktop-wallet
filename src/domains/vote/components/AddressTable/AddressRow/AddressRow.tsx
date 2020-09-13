@@ -7,7 +7,7 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -67,7 +67,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 	}
 
 	return (
-		<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
+		<TableRow>
 			<TableCell variant="start">
 				<Avatar size="lg" address={wallet.address()} noShadow />
 			</TableCell>
@@ -135,7 +135,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 					{t("COMMON.SELECT")}
 				</Button>
 			</TableCell>
-		</tr>
+		</TableRow>
 	);
 };
 
