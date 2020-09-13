@@ -18,7 +18,7 @@ export const Page = ({ navbarVariant = "full", profile, crumbs, sidebar, childre
 
 		{crumbs?.length && <Breadcrumbs crumbs={crumbs} className="container py-5 mx-auto font-semibold px-14" />}
 
-		<div className={`flex flex-col flex-1 space-y-5 ${navbarVariant === "full" && !crumbs?.length ? "mt-5" : ""}`}>
+		<div className={`flex flex-col flex-1 ${navbarVariant === "full" && !crumbs?.length ? "mt-5" : ""}`}>
 			{sidebar ? (
 				<div className="flex flex-1 bg-theme-background">
 					<div className="container flex mx-auto">

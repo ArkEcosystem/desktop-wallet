@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Formatted Address should not render without address 1`] = `<div />`;
+exports[`Formatted Address should not render without address 1`] = `
+<div>
+  <div
+    class="inline-block truncate align-middle"
+  />
+</div>
+`;
 
 exports[`Formatted Address should render address only 1`] = `
 <div>

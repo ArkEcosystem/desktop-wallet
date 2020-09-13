@@ -99,7 +99,7 @@ export const TransactionTable = ({
 	const data = showSkeleton ? skeletonRows : transactions;
 
 	return (
-		<div className="relative">
+		<div data-testid="TransactionTable" className="relative">
 			<Table hideHeader={hideHeader} columns={columns} data={data}>
 				{(row: ExtendedTransactionData) =>
 					isCompact ? (

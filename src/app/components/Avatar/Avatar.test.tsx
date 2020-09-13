@@ -10,8 +10,8 @@ describe("Avatar", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with custom size", () => {
-		const { getByTestId, asFragment } = render(<Avatar address="abc" size="sm" />);
+	it.each(["sm", "lg", "xl"])("should render with size", (size) => {
+		const { getByTestId, asFragment } = render(<Avatar address="abc" size={size} />);
 		expect(getByTestId("Avatar")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});

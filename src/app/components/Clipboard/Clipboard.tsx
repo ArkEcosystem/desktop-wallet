@@ -7,11 +7,12 @@ import { useTranslation } from "react-i18next";
 
 type ClipboardProps = {
 	data: string | object;
-	options?: any;
+	tooltip?: string;
+	options?: Record<string, any>;
 	children: React.ReactNode;
 };
 
-export const Clipboard = ({ data, options, children }: ClipboardProps) => {
+export const Clipboard = ({ data, tooltip, options, children }: ClipboardProps) => {
 	const { t } = useTranslation();
 
 	const [hasCopied, copy] = useClipboard({
@@ -25,7 +26,7 @@ export const Clipboard = ({ data, options, children }: ClipboardProps) => {
 
 	return (
 		<Tippy
-			content={hasCopied ? t("COMMON.CLIPBOARD.SUCCESS") : t("COMMON.CLIPBOARD.TOOLTIP_TEXT")}
+			content={hasCopied ? t("COMMON.CLIPBOARD.SUCCESS") : tooltip || t("COMMON.CLIPBOARD.TOOLTIP_TEXT")}
 			hideOnClick={false}
 		>
 			<div data-testid="clipboard__wrapper" className="inline-block cursor-pointer" onClick={() => copy(data)}>
