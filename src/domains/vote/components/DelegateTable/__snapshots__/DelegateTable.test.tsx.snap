@@ -57,11 +57,25 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -85,13 +99,13 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Votes
@@ -115,44 +129,14 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top flex justify-center"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="text-sm text-left select-none text-theme-neutral"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxiKw GMmVY"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
                 </div>
               </div>
             </th>
@@ -165,10 +149,10 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Payout
+                  Comm.
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -195,10 +179,10 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Min.
+                  Payout
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -225,7 +209,37 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Commission (Daily)
@@ -249,7 +263,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -312,25 +326,48 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center bg-theme-danger-50"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-theme-primary"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    ok.svg
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   #
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center bg-theme-danger-50"
               >
@@ -345,43 +382,53 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end bg-theme-danger-50"
               >
@@ -427,25 +474,38 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #2
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -460,43 +520,53 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -542,25 +612,38 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #3
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -575,43 +658,53 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -823,11 +916,25 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -851,13 +958,13 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Votes
@@ -881,44 +988,14 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top flex justify-center"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="text-sm text-left select-none text-theme-neutral"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxiKw GMmVY"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
                 </div>
               </div>
             </th>
@@ -931,10 +1008,10 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Payout
+                  Comm.
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -961,10 +1038,10 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Min.
+                  Payout
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -991,7 +1068,37 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Commission (Daily)
@@ -1015,7 +1122,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1078,25 +1185,38 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center bg-theme-success-50"
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   #
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center bg-theme-success-50"
               >
@@ -1111,43 +1231,53 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end bg-theme-success-50"
               >
@@ -1193,25 +1323,38 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #2
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -1226,43 +1369,53 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -1308,25 +1461,38 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #3
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -1341,43 +1507,53 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -1589,11 +1765,25 @@ exports[`DelegateTable should render 1`] = `
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -1617,13 +1807,13 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Votes
@@ -1647,44 +1837,14 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top flex justify-center"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="text-sm text-left select-none text-theme-neutral"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxiKw GMmVY"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
                 </div>
               </div>
             </th>
@@ -1697,10 +1857,10 @@ exports[`DelegateTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Payout
+                  Comm.
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -1727,10 +1887,10 @@ exports[`DelegateTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Min.
+                  Payout
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -1757,7 +1917,37 @@ exports[`DelegateTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Commission (Daily)
@@ -1781,7 +1971,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1844,25 +2034,38 @@ exports[`DelegateTable should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -1877,43 +2080,53 @@ exports[`DelegateTable should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -1959,25 +2172,38 @@ exports[`DelegateTable should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #2
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -1992,43 +2218,53 @@ exports[`DelegateTable should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -2074,25 +2310,38 @@ exports[`DelegateTable should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #3
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -2107,43 +2356,53 @@ exports[`DelegateTable should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -2222,11 +2481,25 @@ exports[`DelegateTable should render with empty list 1`] = `
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -2250,13 +2523,13 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Votes
@@ -2280,44 +2553,14 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top flex justify-center"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="text-sm text-left select-none text-theme-neutral"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxiKw GMmVY"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
                 </div>
               </div>
             </th>
@@ -2330,10 +2573,10 @@ exports[`DelegateTable should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Payout
+                  Comm.
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -2360,10 +2603,10 @@ exports[`DelegateTable should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Min.
+                  Payout
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -2390,7 +2633,37 @@ exports[`DelegateTable should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Commission (Daily)
@@ -2414,7 +2687,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -3534,11 +3807,25 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -3562,13 +3849,13 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Votes
@@ -3592,44 +3879,14 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top flex justify-center"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="text-sm text-left select-none text-theme-neutral"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxiKw GMmVY"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
                 </div>
               </div>
             </th>
@@ -3642,10 +3899,10 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Payout
+                  Comm.
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -3672,10 +3929,10 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Min.
+                  Payout
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -3702,7 +3959,37 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Commission (Daily)
@@ -3726,7 +4013,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -3789,25 +4076,48 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center bg-theme-danger-50"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-theme-primary"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    ok.svg
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   #
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center bg-theme-danger-50"
               >
@@ -3822,43 +4132,53 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end bg-theme-danger-50"
               >
@@ -3904,25 +4224,38 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #2
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -3937,43 +4270,53 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -4019,25 +4362,38 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #3
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -4052,43 +4408,53 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -4300,11 +4666,25 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -4328,13 +4708,13 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Votes
@@ -4358,44 +4738,14 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top flex justify-center"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="text-sm text-left select-none text-theme-neutral"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxiKw GMmVY"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
                 </div>
               </div>
             </th>
@@ -4408,10 +4758,10 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Payout
+                  Comm.
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -4438,10 +4788,10 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Min.
+                  Payout
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -4468,7 +4818,37 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Commission (Daily)
@@ -4492,7 +4872,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4555,25 +4935,38 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center bg-theme-success-50"
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   #
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center bg-theme-success-50"
               >
@@ -4588,43 +4981,53 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end bg-theme-success-50"
               >
@@ -4670,25 +5073,38 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #2
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -4703,43 +5119,53 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -4785,25 +5211,38 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #3
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -4818,43 +5257,53 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -5066,11 +5515,25 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -5094,13 +5557,13 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Votes
@@ -5124,44 +5587,14 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top flex justify-center"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="text-sm text-left select-none text-theme-neutral"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxiKw GMmVY"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
                 </div>
               </div>
             </th>
@@ -5174,10 +5607,10 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Payout
+                  Comm.
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -5204,10 +5637,10 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Min.
+                  Payout
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -5234,7 +5667,37 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Commission (Daily)
@@ -5258,7 +5721,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -5321,25 +5784,48 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center bg-theme-danger-50"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-theme-primary"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    ok.svg
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   #
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center bg-theme-danger-50"
               >
@@ -5354,43 +5840,53 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-danger-50"
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark bg-theme-danger-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end bg-theme-danger-50"
               >
@@ -5436,25 +5932,38 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center bg-theme-success-50"
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   #2
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center bg-theme-success-50"
               >
@@ -5469,43 +5978,53 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end bg-theme-success-50"
               >
@@ -5551,25 +6070,38 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center bg-theme-success-50"
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   #3
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center bg-theme-success-50"
               >
@@ -5584,43 +6116,53 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-success-50"
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark bg-theme-success-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end bg-theme-success-50"
               >
@@ -5832,11 +6374,25 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -5860,13 +6416,13 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Votes
@@ -5890,44 +6446,14 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top flex justify-center"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="text-sm text-left select-none text-theme-neutral"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxiKw GMmVY"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
                 </div>
               </div>
             </th>
@@ -5940,10 +6466,10 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Payout
+                  Comm.
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -5970,10 +6496,10 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Min.
+                  Payout
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -6000,7 +6526,37 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Commission (Daily)
@@ -6024,7 +6580,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -6087,25 +6643,48 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-primary-50"
+                class="sc-AxhUy eGtEIz justify-center bg-theme-primary-50"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-theme-primary"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    ok.svg
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
               >
                 <span>
                   #
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-primary-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center bg-theme-primary-50"
               >
@@ -6120,43 +6699,53 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-primary-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-primary-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-primary-50"
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark bg-theme-primary-50"
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark bg-theme-primary-50"
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end bg-theme-primary-50"
               >
@@ -6202,25 +6791,38 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #2
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -6235,43 +6837,53 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -6320,25 +6932,38 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #3
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -6353,43 +6978,53 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -6471,11 +7106,25 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -6499,13 +7148,13 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Votes
@@ -6529,44 +7178,14 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top flex justify-center"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="text-sm text-left select-none text-theme-neutral"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-color-neutral"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxiKw GMmVY"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
                 </div>
               </div>
             </th>
@@ -6579,10 +7198,10 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Payout
+                  Comm.
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -6609,10 +7228,10 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                  Min.
+                  Payout
                 </div>
                 <div
                   class="flex items-center ml-2 text-theme-color-neutral"
@@ -6639,7 +7258,37 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-color-neutral"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Commission (Daily)
@@ -6663,7 +7312,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -6726,25 +7375,38 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -6759,43 +7421,53 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -6841,25 +7513,38 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #2
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -6874,43 +7559,53 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
@@ -6956,25 +7651,38 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   #3
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   %
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
                 class="sc-AxhUy eGtEIz justify-center "
               >
@@ -6989,43 +7697,53 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-20"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-center font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
-                class="sc-AxhUy eGtEIz font-bold text-theme-neutral-dark "
+                class="sc-AxhUy eGtEIz justify-end font-bold text-theme-neutral-dark "
               >
                 <span>
                   ...
                 </span>
               </div>
             </td>
-            <td>
+            <td
+              class="w-40"
+            >
               <div
                 class="sc-AxhUy fhUFrJ justify-end "
               >
