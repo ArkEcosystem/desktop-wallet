@@ -1,15 +1,23 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { Link } from "app/components/Link";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const FourthStep = () => {
+type SuccessProps = {
+	transaction: SignedTransactionData;
+	senderWallet: ReadWriteWallet;
+	ipfsData: any;
+};
+export const FourthStep = ({ transaction, senderWallet, ipfsData }: SuccessProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<TransactionSuccessful>
+		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			<TransactionDetail
 				label={t("TRANSACTION.TRANSACTION_TYPE")}
 				extra={
@@ -18,15 +26,25 @@ export const FourthStep = () => {
 					</Circle>
 				}
 			>
-				Update Business
+				{t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION")}
 			</TransactionDetail>
-			<TransactionDetail label={t("TRANSACTION.NAME")}>ROBank Eco</TransactionDetail>
-			<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>Not a trustworthy bank</TransactionDetail>
-			<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
-				<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
-					http://robank.com
-				</a>
-			</TransactionDetail>
+
+			{ipfsData?.meta?.displayName && (
+				<TransactionDetail label={t("TRANSACTION.NAME")}>{ipfsData?.meta?.displayName}</TransactionDetail>
+			)}
+
+			{ipfsData?.meta?.description && (
+				<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>{ipfsData.meta.description}</TransactionDetail>
+			)}
+
+			{ipfsData?.meta?.website && (
+				<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
+					<Link to={ipfsData.meta.website} isExternal>
+						{ipfsData.meta.website}
+					</Link>
+				</TransactionDetail>
+			)}
+
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
