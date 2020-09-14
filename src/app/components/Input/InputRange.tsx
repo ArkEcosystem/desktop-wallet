@@ -37,6 +37,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		const handleRange = (values: number[]) => {
+			console.log("Here", { values });
 			const amount = BigNumber.make(values[0]).divide(fraction).toFixed(0);
 			setValues(values);
 			onChange?.(amount);

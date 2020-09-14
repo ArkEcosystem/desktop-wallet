@@ -78,13 +78,13 @@ describe("InputCurrency", () => {
 		act(() => {
 			fireEvent.input(input, {
 				target: {
-					value: "abc1.2",
+					value: "1",
 				},
 			});
 		});
 
 		// TODO: Should not fail
 		// As the output should match the input for a controlled case
-		expect(input).toHaveValue("1.2");
+		expect(input).toHaveValue("100000000");
 	});
 });

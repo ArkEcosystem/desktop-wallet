@@ -18,6 +18,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 			setAmount(convertValue(defaultValue));
 		}, [defaultValue, convertValue, onChange]);
 
+		// TODO: How we should handle entries with . like 4.1 ?
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 			const currency = convertValue(event.target.value);
 			setAmount(currency);
