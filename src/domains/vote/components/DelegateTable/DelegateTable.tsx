@@ -8,8 +8,6 @@ import { useTranslation } from "react-i18next";
 
 import { DelegateRow } from "./DelegateRow";
 
-type Delegate = { address: string; username: string; rank: number };
-
 type DelegateTableProps = {
 	title?: string;
 	delegates: ReadOnlyWallet[];
@@ -20,16 +18,19 @@ type DelegateTableProps = {
 
 export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }: DelegateTableProps) => {
 	const { t } = useTranslation();
-	const [selectedUnvotes, setSelectedUnvotes] = useState([] as Delegate[]);
-	const [selectedVotes, setSelectedVotes] = useState([] as Delegate[]);
+	const [selectedUnvotes, setSelectedUnvotes] = useState<string[]>([]);
+	const [selectedVotes, setSelectedVotes] = useState<string[]>([]);
 	const [isVoteDisabled, setIsVoteDisabled] = useState(false);
 
+	const hasVotes = votes!.length > 0;
+
 	useEffect(() => {
-		if (votes!.length === maxVotes && selectedUnvotes.length === 0) {
-			setSelectedVotes([]);
+		if (hasVotes && selectedVotes.length === maxVotes) {
 			setIsVoteDisabled(true);
+		} else {
+			setIsVoteDisabled(false);
 		}
-	}, [maxVotes, selectedUnvotes, votes]);
+	}, [hasVotes, maxVotes, selectedVotes]);
 
 	const columns = [
 		{
@@ -88,33 +89,43 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 
 	const getTotalVotes = () => selectedVotes.length + selectedUnvotes.length;
 
-	const toggleUnvotesSelected = (delegate: Delegate) => {
-		if (selectedUnvotes.find((selected) => selected.username === delegate.username)) {
-			setSelectedUnvotes(selectedUnvotes.filter((selected) => selected.username !== delegate.username));
+	const toggleUnvotesSelected = (address: string) => {
+		if (selectedUnvotes.find((delegateAddress) => delegateAddress === address)) {
+			setSelectedUnvotes(selectedUnvotes.filter((delegateAddress) => delegateAddress !== address));
+
+			if (maxVotes === 1 && selectedVotes.length > 0) {
+				setSelectedVotes([]);
+			}
 
 			return;
 		}
 
 		if (maxVotes === 1) {
-			setSelectedUnvotes([delegate]);
-			setIsVoteDisabled(false);
+			setSelectedUnvotes([address]);
 		} else {
-			setSelectedUnvotes([...selectedUnvotes, delegate]);
-			setIsVoteDisabled(false);
+			setSelectedUnvotes([...selectedUnvotes, address]);
 		}
 	};
 
-	const toggleVotesSelected = (delegate: Delegate) => {
-		if (selectedVotes.find((selected) => selected.username === delegate.username)) {
-			setSelectedVotes(selectedVotes.filter((selected) => selected.username !== delegate.username));
+	const toggleVotesSelected = (address: string) => {
+		if (selectedVotes.find((delegateAddress) => delegateAddress === address)) {
+			setSelectedVotes(selectedVotes.filter((delegateAddress) => delegateAddress !== address));
+
+			if (maxVotes === 1 && hasVotes) {
+				setSelectedUnvotes([]);
+			}
 
 			return;
 		}
 
 		if (maxVotes === 1) {
-			setSelectedVotes([delegate]);
+			setSelectedVotes([address]);
+
+			if (hasVotes) {
+				setSelectedUnvotes(votes!.map((vote) => vote.address()));
+			}
 		} else {
-			setSelectedVotes([...selectedVotes, delegate]);
+			setSelectedVotes([...selectedVotes, address]);
 		}
 	};
 
@@ -127,7 +138,6 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 			<h2 className="py-5 text-2xl font-bold">{title ? title : t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={data}>
 				{(delegate: ReadOnlyWallet, index: number) => {
-					const hasVotes = votes!.length > 0;
 					let isVoted = false;
 
 					if (hasVotes) {
@@ -220,12 +230,7 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 							</div>
 
 							<Button
-								onClick={() =>
-									onContinue?.(
-										selectedUnvotes.map((select) => select.address),
-										selectedVotes.map((select) => select.address),
-									)
-								}
+								onClick={() => onContinue?.(selectedUnvotes, selectedVotes)}
 								data-testid="DelegateTable__continue-button"
 							>
 								{t("COMMON.CONTINUE")}

@@ -9,18 +9,16 @@ import { useTranslation } from "react-i18next";
 
 import { DelegateRowSkeleton } from "./DelegateRowSkeleton";
 
-type Delegate = { address: string; username: string; rank: number };
-
 type DelegateRowProps = {
 	index: number;
 	delegate: ReadOnlyWallet;
-	selectedUnvotes?: Delegate[];
-	selectedVotes?: Delegate[];
+	selectedUnvotes?: string[];
+	selectedVotes?: string[];
 	isVoted?: boolean;
 	isVoteDisabled?: boolean;
 	isLoading?: boolean;
-	onUnvoteSelect?: ({ address, username, rank }: Delegate) => void;
-	onVoteSelect?: ({ address, username, rank }: Delegate) => void;
+	onUnvoteSelect?: (address: string) => void;
+	onVoteSelect?: (address: string) => void;
 };
 
 export const DelegateRow = ({
@@ -37,12 +35,12 @@ export const DelegateRow = ({
 	const { t } = useTranslation();
 
 	const isSelectedUnvote = useMemo(
-		() => !!selectedUnvotes?.find((selected) => selected.username === delegate.username()),
+		() => !!selectedUnvotes?.find((delegateAddress) => delegateAddress === delegate.address()),
 		[delegate, selectedUnvotes],
 	);
 
 	const isSelectedVote = useMemo(
-		() => isVoted || !!selectedVotes?.find((selected) => selected.username === delegate.username()),
+		() => isVoted || !!selectedVotes?.find((delegateAddress) => delegateAddress === delegate.address()),
 		[delegate, isVoted, selectedVotes],
 	);
 
@@ -141,13 +139,7 @@ export const DelegateRow = ({
 					<Button
 						variant="plain"
 						color={!isSelectedUnvote ? "primary" : "danger"}
-						onClick={() =>
-							onUnvoteSelect?.({
-								address: delegate.address(),
-								username: delegate.username()!,
-								rank: delegate.rank()!,
-							})
-						}
+						onClick={() => onUnvoteSelect?.(delegate.address())}
 						data-testid={`DelegateRow__toggle-${index}`}
 					>
 						{!isSelectedUnvote ? t("COMMON.CURRENT") : t("COMMON.UNSELECTED")}
@@ -155,8 +147,8 @@ export const DelegateRow = ({
 				) : (
 					// Add `<span>` wrapper to show the tooltip when the button is disabled.
 					// https://github.com/atomiks/tippyjs-react/issues/123#issuecomment-535148835
-					<Tippy content={t("VOTE.DELEGATE_TABLE.TOOLTIP_TEXT")} disabled={!isVoteDisabled}>
-						{isVoteDisabled ? (
+					<Tippy content={t("VOTE.DELEGATE_TABLE.TOOLTIP_TEXT")} disabled={isSelectedVote || !isVoteDisabled}>
+						{!isSelectedVote && isVoteDisabled ? (
 							<span>
 								<Button
 									variant="plain"
@@ -171,13 +163,7 @@ export const DelegateRow = ({
 							<Button
 								variant="plain"
 								color={isSelectedVote ? "success" : "primary"}
-								onClick={() =>
-									onVoteSelect?.({
-										address: delegate.address(),
-										username: delegate.username()!,
-										rank: delegate.rank()!,
-									})
-								}
+								onClick={() => onVoteSelect?.(delegate.address())}
 								data-testid={`DelegateRow__toggle-${index}`}
 							>
 								{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}

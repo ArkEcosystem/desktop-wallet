@@ -48,22 +48,12 @@ describe("DelegateRow", () => {
 		});
 
 		expect(container).toBeTruthy();
-		expect(onSelect).toHaveBeenCalledWith({
-			address: delegate.address(),
-			username: delegate.username(),
-			rank: delegate.rank(),
-		});
+		expect(onSelect).toHaveBeenCalledWith(delegate.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render the selected delegate", () => {
-		const selected = [
-			{
-				address: delegate.address(),
-				username: delegate.username()!,
-				rank: delegate.rank()!,
-			},
-		];
+		const selected = [delegate.address()];
 		const { container, asFragment, getByTestId } = render(
 			<table>
 				<tbody>
