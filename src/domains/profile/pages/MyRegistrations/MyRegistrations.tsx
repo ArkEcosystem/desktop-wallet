@@ -1,10 +1,12 @@
 import { Enums, ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { Loader } from "app/components/Loader";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -12,6 +14,7 @@ import { useHistory } from "react-router-dom";
 
 import { DelegateTable } from "./components/DelegateTable";
 import { EntityTable } from "./components/EntityTable";
+import { filterDelegates, filterEntities } from "./utils";
 
 const { RegisterBanner } = images.common;
 
@@ -32,6 +35,7 @@ const EmptyRegistrations = () => {
 };
 
 export const MyRegistrations = () => {
+	const [query, setQuery] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [delegates, setDelegates] = useState<ReadWriteWallet[]>([]);
 	const [businesses, setBusinesses] = useState<ExtendedTransactionData[]>([]);
@@ -39,12 +43,8 @@ export const MyRegistrations = () => {
 
 	const history = useHistory();
 	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
-
-	const isEmptyRegistrations = useMemo(
-		() => !isLoading && !delegates.length && !businesses.length && !plugins.length,
-		[isLoading, delegates, businesses, plugins],
-	);
 
 	const crumbs = [
 		{
@@ -52,20 +52,6 @@ export const MyRegistrations = () => {
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
-
-	const handleAction = ({ action, walletId }: any) => {
-		switch (action) {
-			case "register":
-				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
-				break;
-			case "resign":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
-				break;
-			case "update":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
-				break;
-		}
-	};
 
 	useEffect(() => {
 		const fetchRegistrations = async () => {
@@ -89,6 +75,41 @@ export const MyRegistrations = () => {
 		fetchRegistrations();
 	}, [activeProfile]);
 
+	const { pluginEntities, businessEntities, delegateWallets } = useMemo(
+		() => ({
+			pluginEntities: filterEntities(plugins, query),
+			businessEntities: filterEntities(businesses, query),
+			delegateWallets: filterDelegates(delegates, env.delegates(), query),
+		}),
+		[query, plugins, businesses, delegates, env],
+	);
+
+	const showEmptySearchResults = useMemo(
+		() => query.trim().length > 0 && !pluginEntities.length && !businessEntities.length && !delegateWallets.length,
+		[pluginEntities, businessEntities, delegateWallets, query],
+	);
+
+	const hasNoRegistrations = useMemo(() => !isLoading && !delegates.length && !businesses.length && !plugins.length, [
+		isLoading,
+		delegates,
+		businesses,
+		plugins,
+	]);
+
+	const handleAction = ({ action, walletId }: any) => {
+		switch (action) {
+			case "register":
+				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
+				break;
+			case "resign":
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
+				break;
+			case "update":
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
+				break;
+		}
+	};
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -97,7 +118,11 @@ export const MyRegistrations = () => {
 					subtitle={t("PROFILE.PAGE_MY_REGISTRATIONS.SUBTITLE")}
 					extra={
 						<div className="flex justify-end space-x-10 divide-x divide-theme-neutral-300">
-							<HeaderSearchBar onSearch={console.log} />
+							<HeaderSearchBar
+								onSearch={(q: string) => setQuery(q)}
+								onReset={() => setQuery("")}
+								debounceTimeout={100}
+							/>
 							<div className="pl-10">
 								<Button
 									data-testid="MyRegistrations__cta-register"
@@ -111,33 +136,45 @@ export const MyRegistrations = () => {
 				/>
 			</Section>
 
-			{isLoading && !isEmptyRegistrations && <Loader />}
+			{isLoading && !hasNoRegistrations && <Loader />}
 
-			{!isLoading && businesses.length > 0 && (
+			{!isLoading && businessEntities.length > 0 && (
 				<div data-testid="BusinessRegistrations">
 					<EntityTable
 						title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
 						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
-						entities={businesses}
+						entities={businessEntities}
 						onAction={handleAction}
 					/>
 				</div>
 			)}
 
-			{!isLoading && plugins.length > 0 && (
+			{!isLoading && pluginEntities.length > 0 && (
 				<div data-testid="PluginRegistrations">
 					<EntityTable
 						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
 						title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
-						entities={plugins}
+						entities={pluginEntities}
 						onAction={handleAction}
 					/>
 				</div>
 			)}
 
-			{!isLoading && delegates.length > 0 && <DelegateTable wallets={delegates} onAction={handleAction} />}
+			{!isLoading && delegateWallets.length > 0 && (
+				<div data-testid="DelegateRegistrations">
+					<DelegateTable wallets={delegateWallets} onAction={handleAction} />
+				</div>
+			)}
 
-			{isEmptyRegistrations && <EmptyRegistrations />}
+			{hasNoRegistrations && <EmptyRegistrations />}
+
+			{!hasNoRegistrations && showEmptySearchResults && (
+				<EmptyResults
+					className="flex-1"
+					title={t("COMMON.EMPTY_RESULTS.TITLE")}
+					subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+				/>
+			)}
 		</Page>
 	);
 };

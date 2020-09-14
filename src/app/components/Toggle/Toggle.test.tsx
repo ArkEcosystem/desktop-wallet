@@ -12,6 +12,14 @@ describe("Toggle", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render with baseColor", () => {
+		const { container, asFragment, getByRole } = render(<Toggle baseColor="--theme-background-color" />);
+
+		expect(container).toBeTruthy();
+		expect(getByRole("checkbox")).not.toHaveAttribute("checked", "");
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should toggle checked", () => {
 		const { asFragment, getByRole } = render(<Toggle />);
 		const toggle = getByRole("checkbox");

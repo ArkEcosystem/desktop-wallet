@@ -92,18 +92,17 @@ describe("WalletHeader", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should show publicKey", () => {
-		const address = "abc";
-		const publicKey = "123";
-		const { getByTestId, asFragment } = render(
+	it.each([-5, 5])("should show currency delta (%s%)", (delta) => {
+		const { getByTestId, getByText, asFragment } = render(
 			<WalletHeader
-				address={address}
+				address="abc"
 				balance={BigNumber.make(0)}
 				coin="Ark"
-				currencyBalance={BigNumber.make(10)}
-				exchangeCurrency="USD"
+				currencyDelta={delta}
+				isLedger
+				isMultisig
+				isStarred
 				network="mainnet"
-				publicKey={publicKey}
 				ticker="ARK"
 				onDeleteWallet={onDeleteWallet}
 				onSignMessage={onSignMessage}
@@ -114,17 +113,9 @@ describe("WalletHeader", () => {
 			/>,
 		);
 
-		expect(getByTestId("WalletHeader__balance")).toBeTruthy();
-		expect(getByTestId("WalletHeader__currency-balance")).toBeTruthy();
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(address);
+		expect(getByText("arrowup.svg")).toBeTruthy();
+		expect(getByText(`${delta}%`)).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getByTestId("WalletHeader__toggle"));
-		});
-
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(publicKey);
-		expect(() => getByTestId("WalletHeader__balance")).toThrowError();
-		expect(() => getByTestId("WalletHeader__currency-balance")).toThrowError();
 		expect(asFragment()).toMatchSnapshot();
 	});
 

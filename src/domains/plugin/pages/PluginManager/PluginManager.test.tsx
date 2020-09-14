@@ -261,7 +261,7 @@ describe("PluginManager", () => {
 		});
 
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
-		expect(consoleSpy).toHaveBeenCalledTimes(2);
+		expect(consoleSpy).toHaveBeenCalledTimes(4);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

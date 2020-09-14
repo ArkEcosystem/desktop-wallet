@@ -24,7 +24,7 @@ describe("PluginListItem", () => {
 			</table>,
 		);
 
-		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("ARK Explorer");
+		expect(getByTestId("TableRow")).toHaveTextContent("ARK Explorer");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -103,7 +103,7 @@ describe("PluginListItem", () => {
 			isOfficial: true,
 		};
 
-		const { asFragment, getByTestId } = render(
+		const { asFragment, getByText } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} />
@@ -111,7 +111,7 @@ describe("PluginListItem", () => {
 			</table>,
 		);
 
-		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("official-ark-plugin.svg");
+		expect(getByText("official-ark-plugin.svg")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -128,7 +128,7 @@ describe("PluginListItem", () => {
 			isGrant: true,
 		};
 
-		const { asFragment, getByTestId } = render(
+		const { asFragment, getByText } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} />
@@ -136,7 +136,8 @@ describe("PluginListItem", () => {
 			</table>,
 		);
 
-		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("grant.svg");
+		expect(getByText("grant.svg")).toBeTruthy();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

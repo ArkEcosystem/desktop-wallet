@@ -4,7 +4,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -47,9 +47,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 	}
 
 	return (
-		<tr
-			data-testid="DelegateRowItem"
-			className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
+		<TableRow
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
@@ -104,7 +102,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 					</Button>
 				</span>
 			</TableCell>
-		</tr>
+		</TableRow>
 	);
 };
 

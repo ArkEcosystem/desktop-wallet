@@ -8,7 +8,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { SearchResource } from "app/components/SearchResource";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -43,8 +43,7 @@ const SearchWalletListItem = ({
 	const { t } = useTranslation();
 
 	return (
-		<tr
-			className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
+		<TableRow
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
@@ -78,7 +77,7 @@ const SearchWalletListItem = ({
 					{t("COMMON.SELECT")}
 				</Button>
 			</TableCell>
-		</tr>
+		</TableRow>
 	);
 };
 

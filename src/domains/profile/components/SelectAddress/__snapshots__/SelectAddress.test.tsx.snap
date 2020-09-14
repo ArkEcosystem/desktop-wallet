@@ -4,13 +4,16 @@ exports[`SelectAddress should render disabled 1`] = `
 <div>
   <div>
     <button
-      class="sc-fznZeY jUYMgc SelectAddress is-disabled "
+      class="sc-fzokOt dprUuD SelectAddress is-disabled "
       data-testid="SelectAddress__wrapper"
       disabled=""
       type="button"
     >
       <div
         class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+      />
+      <div
+        class="inline-block truncate align-middle"
       />
       <div
         class="absolute flex items-center space-x-3 right-4"
@@ -41,12 +44,15 @@ exports[`SelectAddress should render empty 1`] = `
 <div>
   <div>
     <button
-      class="sc-fznZeY jUYMgc SelectAddress  "
+      class="sc-fzokOt dprUuD SelectAddress  "
       data-testid="SelectAddress__wrapper"
       type="button"
     >
       <div
         class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+      />
+      <div
+        class="inline-block truncate align-middle"
       />
       <div
         class="absolute flex items-center space-x-3 right-4"
@@ -77,12 +83,15 @@ exports[`SelectAddress should render invalid 1`] = `
 <div>
   <div>
     <button
-      class="sc-fznZeY jUYMgc SelectAddress  is-invalid"
+      class="sc-fzokOt dprUuD SelectAddress  is-invalid"
       data-testid="SelectAddress__wrapper"
       type="button"
     >
       <div
         class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+      />
+      <div
+        class="inline-block truncate align-middle"
       />
       <div
         class="absolute flex items-center space-x-3 right-4"
@@ -114,7 +123,7 @@ exports[`SelectAddress should render with preselected address 1`] = `
 <div>
   <div>
     <button
-      class="sc-fznZeY jUYMgc SelectAddress  "
+      class="sc-fzokOt dprUuD SelectAddress  "
       data-testid="SelectAddress__wrapper"
       type="button"
     >
@@ -171,12 +180,15 @@ exports[`SelectAddress should render with preselected verified address 1`] = `
 <div>
   <div>
     <button
-      class="sc-fznZeY jUYMgc SelectAddress  "
+      class="sc-fzokOt dprUuD SelectAddress  "
       data-testid="SelectAddress__wrapper"
       type="button"
     >
       <div
         class="sc-AxirZ fuoUNN mx-4 bg-theme-neutral-200 border-theme-neutral-200"
+      />
+      <div
+        class="inline-block truncate align-middle"
       />
       <div
         class="absolute flex items-center space-x-3 right-4"

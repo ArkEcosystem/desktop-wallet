@@ -62,7 +62,7 @@ const WalletTable = ({
 	return (
 		<Table columns={columns} data={wallets}>
 			{(wallet: ReadWriteWallet) => (
-				<WalletListItem wallet={wallet} activeWalletId={activeWalletId} onRowClick={onRowClick} />
+				<WalletListItem wallet={wallet} activeWalletId={activeWalletId} onClick={onRowClick} />
 			)}
 		</Table>
 	);
@@ -130,7 +130,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 
 				<Collapse isOpen={isOpen} maxHeight="20rem">
 					<div className="py-8 bg-theme-background">
-						<div className="container mx-auto px-14">
+						<div data-testid="WalletTable" className="container mx-auto px-14">
 							<WalletTable
 								wallets={wallets}
 								activeWalletId={activeWallet.id()}

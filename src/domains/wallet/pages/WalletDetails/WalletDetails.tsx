@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
-import { ProfileSetting, ReadOnlyWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
@@ -12,25 +10,18 @@ import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
-import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
-import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
-import { WalletVote } from "domains/wallet/components/WalletVote";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+
+import { WalletHeader, WalletRegistrations, WalletVote } from "./components";
 
 type WalletDetailsProps = {
 	txSkeletonRowsLimit?: number;
 };
 
-type WalletInfo = {
-	transactions: ExtendedTransactionData[];
-	walletData?: Contracts.WalletData;
-	votes?: ReadOnlyWallet[];
-};
-
 export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
-	const [data, setData] = useState<WalletInfo>({ transactions: [] });
+	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
@@ -39,18 +30,21 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const { t } = useTranslation();
-	const { env, persist } = useEnvironmentContext();
+
+	const { persist } = useEnvironmentContext();
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const coinName = activeWallet.coinId();
 	const networkId = activeWallet.networkId();
 	const ticker = activeWallet.currency();
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
-	const { transactions, walletData, votes } = data;
+
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
+
 	const crumbs = [
 		{
 			route: dashboardRoute,
@@ -60,29 +54,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 
 	useEffect(() => {
 		const fetchAllData = async () => {
-			const transactions = (await activeWallet.transactions({ limit: 10 })).items();
-
-			let walletData: Contracts.WalletData | undefined;
-			let votes: ReadOnlyWallet[] = [];
-
-			try {
-				walletData = await activeWallet.client().wallet(activeWallet.address());
-				votes = activeWallet.votes();
-			} catch {
-				votes = [];
-			}
-
-			setData({
-				walletData,
-				transactions,
-				votes,
-			});
+			setTransactions((await activeWallet.transactions({ limit: 10 })).items());
 
 			setIsLoading(false);
 		};
 
 		fetchAllData();
-	}, [activeWallet, env]);
+	}, [activeWallet]);
 
 	const handleDeleteWallet = async () => {
 		activeProfile.wallets().forget(activeWallet.id());
@@ -112,7 +90,24 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 		//TODO: Fetch more type based / ex: pending and confirmed txs
 		const nextPage = (await activeProfile.transactionAggregate().transactions({ limit: 10 })).items();
 
-		return transactions && setData({ ...data, transactions: transactions?.concat(nextPage) });
+		return transactions && setTransactions(transactions?.concat(nextPage));
+	};
+
+	const handleVoteButton = (address?: string) => {
+		/* istanbul ignore else */
+		if (address) {
+			return history.push({
+				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
+				search: `?unvotes=${address}`,
+			});
+		}
+
+		/* istanbul ignore next */
+		history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`);
+	};
+
+	const handleRegistrationsButton = () => {
+		history.push(`/profiles/${activeProfile.id()}/registrations`);
 	};
 
 	/* istanbul ignore next */
@@ -145,40 +140,39 @@ export const WalletDetails = ({ txSkeletonRowsLimit }: WalletDetailsProps) => {
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
 				/>
 
-				<Section>
-					<WalletVote
-						votes={votes}
-						isLoading={isLoading}
-						onVote={() =>
-							history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`)
-						}
-						onUnvote={(delegateAddress) =>
-							history.push({
-								pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
-								search: `?unvotes=${delegateAddress}`,
-							})
-						}
-					/>
-				</Section>
+				<Section marginTop={false}>
+					<div className="flex">
+						<div className="w-1/2 pr-12 border-r border-theme-neutral-300">
+							<WalletVote
+								votes={activeWallet.hasSyncedWithNetwork() ? activeWallet.votes() : []}
+								maxVotes={activeWallet.network().maximumVotes()}
+								isLoading={isLoading}
+								onButtonClick={handleVoteButton}
+							/>
+						</div>
 
-				<Section>
-					<WalletRegistrations
-						isLoading={isLoading}
-						delegate={
-							activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate() ? walletData : undefined
-						}
-						business={undefined}
-						isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
-						hasBridgechains={true}
-						hasSecondSignature={activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()}
-						hasPlugins={true}
-						onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
-						onRegister={() =>
-							history.push(
-								`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-entity-registration`,
-							)
-						}
-					/>
+						<div className="w-1/2 pl-12">
+							<WalletRegistrations
+								delegate={
+									activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
+										? {
+												username: activeWallet.username(),
+												isResigned: activeWallet.isResignedDelegate(),
+										  }
+										: undefined
+								}
+								entities={activeWallet.hasSyncedWithNetwork() ? activeWallet.entities() : []}
+								isLoading={isLoading}
+								isMultiSignature={
+									activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()
+								}
+								isSecondSignature={
+									activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()
+								}
+								onButtonClick={handleRegistrationsButton}
+							/>
+						</div>
+					</div>
 				</Section>
 
 				<Section>

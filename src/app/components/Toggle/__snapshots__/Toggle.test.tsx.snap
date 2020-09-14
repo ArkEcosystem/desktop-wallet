@@ -20,6 +20,26 @@ exports[`Toggle should render 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Toggle should render with baseColor 1`] = `
+<DocumentFragment>
+  <label
+    class="flex"
+  >
+    <input
+      class="Toggle__Input-qyyifx-0 bXkHfF"
+      type="checkbox"
+    />
+    <div
+      class="Toggle__Handle-qyyifx-1 jXkMFJ"
+    >
+      <span
+        class="Toggle__HandleInner-qyyifx-2 cHWajb"
+      />
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
 exports[`Toggle should toggle checked 1`] = `
 <DocumentFragment>
   <label
