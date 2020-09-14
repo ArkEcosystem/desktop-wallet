@@ -19,7 +19,7 @@ import { useParams } from "react-router-dom";
 import { ReviewStep as SecondStep } from "../../components/EntityRegistrationForm/Step3";
 import { FirstStep } from "./Step1";
 import { FourthStep } from "./Step4";
-import { fetchTxIpfsData } from "./utils";
+import { fetchTxIpfsData, sendEntityUpdateTransaction } from "./utils";
 
 type SendEntityUpdateProps = {
 	formDefaultData?: any;
@@ -70,6 +70,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 			try {
 				const tx = await activeWallet.client().transaction(transactionId);
 				setActiveTransaction(tx as TransactionData);
+				form.setValue("registrationId", tx.id());
 			} catch (e) {
 				toasts.error(`Unable to find transaction for [${transactionId}]`);
 			}
@@ -99,21 +100,36 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 		form.setValue("fee", fees.avg);
 	}, [env, activeWallet]);
 
-	const handleBack = () => {
-		setActiveTab(activeTab - 1);
-	};
-
 	const handleNext = async () => {
 		const isValid = await form.triggerValidation();
 
-		if (!isValid) {
-			const errors: object = form.errors.ipfsData?.meta;
-			const firstError = Object.values(errors)[0]?.ref;
-			firstError?.scrollIntoView?.({ behavior: "smooth", block: "end" });
-			return;
-		}
+		window.scrollTo({ top: 0, behavior: "smooth" });
+
+		if (!isValid) return;
 
 		setActiveTab(activeTab + 1);
+	};
+
+	const handleBack = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+		setActiveTab(activeTab - 1);
+	};
+
+	const handleSubmit = async () => {
+		const isValid = await form.triggerValidation("mnemonic");
+		if (!isValid) return;
+
+		const loadingToastId = toasts.info("Sending transaction...");
+		try {
+			const transaction = await sendEntityUpdateTransaction({ form, senderWallet: activeWallet, env });
+			toasts.dismiss(loadingToastId);
+
+			setSavedTransaction(transaction);
+			setActiveTab(activeTab + 1);
+		} catch (e) {
+			toasts.dismiss(loadingToastId);
+			toasts.error(String(e), { autoClose: 20000 });
+		}
 	};
 
 	return (
@@ -134,11 +150,17 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 								<ThirdStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep />
+								{savedTransaction && (
+									<FourthStep
+										transaction={savedTransaction}
+										senderWallet={activeWallet}
+										ipfsData={form.getValues("ipfsData")}
+									/>
+								)}
 							</TabPanel>
 
 							<div className="flex justify-end mt-8 space-x-3">
-								{activeTab < 3 && activeTab > 1 && (
+								{activeTab < 4 && activeTab > 1 && (
 									<Button
 										disabled={activeTab === 1}
 										data-testid="SendEntityUpdate__back-button"
@@ -158,7 +180,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 								{activeTab === 3 && (
 									<Button
 										data-testid="SendEntityUpdate__send-button"
-										onClick={handleNext}
+										onClick={handleSubmit}
 										className="space-x-2"
 									>
 										<Icon name="Send" width={20} height={20} />
