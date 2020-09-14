@@ -261,10 +261,10 @@ export const SendVote = () => {
 										<Button
 											variant="plain"
 											className="space-x-2"
-											data-testid="SendVote__button--copy"
+											data-testid="SendVote__button--download"
 										>
-											<Icon name="Copy" />
-											<span>{t("COMMON.COPY")}</span>
+											<Icon name="Download" />
+											<span>{t("COMMON.DOWNLOAD")}</span>
 										</Button>
 									</>
 								)}

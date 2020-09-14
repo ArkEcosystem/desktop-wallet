@@ -60,6 +60,7 @@ export const translations: { [key: string]: any } = {
 	TRANSACTION_TYPES: {
 		BUSINESS_REGISTRATION: "Business Registration",
 		BUSINESS_UPDATE: "Business Update",
+		UNVOTE: "Unvote",
 		VOTE: "Vote",
 	},
 

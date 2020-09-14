@@ -480,6 +480,42 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                           </div>
                         </div>
                         <div
+                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+                          data-testid="TransactionDetail"
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral"
+                            >
+                              Transaction Type
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              Unvote
+                            </div>
+                          </div>
+                          <div
+                            class="ml-1 text-theme-neutral-900"
+                          >
+                            <div
+                              class="sc-AxgMl eqWWwc border-theme-neutral-900 bg-theme-background"
+                            >
+                              <div
+                                class="sc-AxiKw dzBdqj text-xl"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  unvote.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                           data-testid="TransactionDetail"
                         >
@@ -573,12 +609,12 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                               class="sc-AxgMl eqWWwc border-theme-neutral-900 bg-theme-background"
                             >
                               <div
-                                class="sc-AxiKw dzBdqj"
+                                class="sc-AxiKw dzBdqj text-xl"
                                 height="1em"
                                 width="1em"
                               >
                                 <svg>
-                                  voted.svg
+                                  vote.svg
                                 </svg>
                               </div>
                             </div>
@@ -690,7 +726,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                   <button
                     class="sc-AxjAm fPpool space-x-2"
                     color="primary"
-                    data-testid="SendVote__button--copy"
+                    data-testid="SendVote__button--download"
                     type="button"
                   >
                     <div
@@ -699,11 +735,11 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                       width="1em"
                     >
                       <svg>
-                        copy.svg
+                        download.svg
                       </svg>
                     </div>
                     <span>
-                      Copy
+                      Download
                     </span>
                   </button>
                 </div>
@@ -1197,6 +1233,42 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           </div>
                         </div>
                         <div
+                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+                          data-testid="TransactionDetail"
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral"
+                            >
+                              Transaction Type
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              Unvote
+                            </div>
+                          </div>
+                          <div
+                            class="ml-1 text-theme-neutral-900"
+                          >
+                            <div
+                              class="sc-AxgMl eqWWwc border-theme-neutral-900 bg-theme-background"
+                            >
+                              <div
+                                class="sc-AxiKw dzBdqj text-xl"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  unvote.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                           data-testid="TransactionDetail"
                         >
@@ -1266,42 +1338,6 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
-                          data-testid="TransactionDetail"
-                        >
-                          <div
-                            class="flex-1 space-y-2"
-                          >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral"
-                            >
-                              Transaction Type
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              Vote
-                            </div>
-                          </div>
-                          <div
-                            class="ml-1 text-theme-neutral-900"
-                          >
-                            <div
-                              class="sc-AxgMl eqWWwc border-theme-neutral-900 bg-theme-background"
-                            >
-                              <div
-                                class="sc-AxiKw dzBdqj"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  voted.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div
                           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                           data-testid="TransactionDetail"
                         >
@@ -1338,7 +1374,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                   <button
                     class="sc-AxjAm fPpool space-x-2"
                     color="primary"
-                    data-testid="SendVote__button--copy"
+                    data-testid="SendVote__button--download"
                     type="button"
                   >
                     <div
@@ -1347,11 +1383,11 @@ exports[`SendVote should send a unvote transaction 1`] = `
                       width="1em"
                     >
                       <svg>
-                        copy.svg
+                        download.svg
                       </svg>
                     </div>
                     <span>
-                      Copy
+                      Download
                     </span>
                   </button>
                 </div>
@@ -1869,12 +1905,12 @@ exports[`SendVote should send a vote transaction 1`] = `
                               class="sc-AxgMl eqWWwc border-theme-neutral-900 bg-theme-background"
                             >
                               <div
-                                class="sc-AxiKw dzBdqj"
+                                class="sc-AxiKw dzBdqj text-xl"
                                 height="1em"
                                 width="1em"
                               >
                                 <svg>
-                                  voted.svg
+                                  vote.svg
                                 </svg>
                               </div>
                             </div>
@@ -1986,7 +2022,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                   <button
                     class="sc-AxjAm fPpool space-x-2"
                     color="primary"
-                    data-testid="SendVote__button--copy"
+                    data-testid="SendVote__button--download"
                     type="button"
                   >
                     <div
@@ -1995,11 +2031,11 @@ exports[`SendVote should send a vote transaction 1`] = `
                       width="1em"
                     >
                       <svg>
-                        copy.svg
+                        download.svg
                       </svg>
                     </div>
                     <span>
-                      Copy
+                      Download
                     </span>
                   </button>
                 </div>
