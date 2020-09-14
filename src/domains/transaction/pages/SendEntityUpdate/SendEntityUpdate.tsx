@@ -1,4 +1,5 @@
 import { TransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -7,6 +8,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { useValidation } from "app/hooks/validations";
 import { toasts } from "app/services";
 import { AuthenticationStep as ThirdStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useState } from "react";
@@ -27,8 +29,10 @@ type SendEntityUpdateProps = {
 export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpdateProps) => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [activeTransaction, setActiveTransaction] = useState<TransactionData>();
+	const [savedTransaction, setSavedTransaction] = useState<SignedTransactionData>();
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+	const { sendEntityUpdate } = useValidation();
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -46,9 +50,19 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	const { transactionId } = useParams();
 
 	useEffect(() => {
-		["fee", "fees", "ipfsData.sourceControl", "ipfsData.socialMedia", "ipfsData.videos", "ipfsData.images"].map(
-			form.register,
-		);
+		[
+			"fee",
+			"fees",
+			"ipfsData.sourceControl",
+			"ipfsData.socialMedia",
+			"ipfsData.videos",
+			"ipfsData.images",
+			"registrationId",
+		].forEach(form.register);
+
+		form.register("ipfsData.meta.displayName", sendEntityUpdate.name());
+		form.register("ipfsData.meta.description", sendEntityUpdate.description());
+		form.register("ipfsData.meta.website", sendEntityUpdate.website());
 	}, []);
 
 	useEffect(() => {

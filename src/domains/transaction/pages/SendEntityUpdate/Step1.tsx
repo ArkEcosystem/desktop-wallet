@@ -2,11 +2,10 @@ import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useValidation } from "app/hooks/validations";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityProvider } from "domains/transaction/entity/providers";
-import React from "react";
+import React, { ChangeEvent, useCallback } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -16,11 +15,16 @@ export const FirstStep = () => {
 	const { t } = useTranslation();
 
 	const form = useFormContext();
-	const { register, setValue, getValues } = form;
+	const { setValue, getValues } = form;
 
 	const { fee, fees } = form.watch();
 
-	const { sendEntityUpdate } = useValidation();
+	const handleInput = useCallback(
+		(event: ChangeEvent<HTMLInputElement>) => {
+			setValue(event.target.name, event.target.value, true);
+		},
+		[setValue],
+	);
 
 	return (
 		<div data-testid="SendEntityUpdate__first-step">
@@ -35,8 +39,9 @@ export const FirstStep = () => {
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input
 							type="text"
-							ref={register(sendEntityUpdate.name())}
 							data-testid="SendEntityUpdate__name"
+							defaultValue={getValues("ipfsData.meta.displayName")}
+							onChange={handleInput}
 						/>
 						<FormHelperText />
 					</FormField>
@@ -44,8 +49,9 @@ export const FirstStep = () => {
 					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
 						<TextArea
-							ref={register(sendEntityUpdate.description())}
 							data-testid="SendEntityUpdate__description"
+							defaultValue={getValues("ipfsData.meta.description")}
+							onChange={handleInput}
 						/>
 						<FormHelperText />
 					</FormField>
@@ -54,8 +60,9 @@ export const FirstStep = () => {
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
 						<Input
 							type="website"
-							ref={register(sendEntityUpdate.website())}
 							data-testid="SendEntityUpdate__website"
+							defaultValue={getValues("ipfsData.meta.website")}
+							onChange={handleInput}
 						/>
 						<FormHelperText />
 					</FormField>
