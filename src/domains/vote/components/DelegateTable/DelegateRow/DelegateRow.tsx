@@ -68,38 +68,60 @@ export const DelegateRow = ({
 
 	return (
 		<TableRow>
-			<TableCell variant="start" innerClassName={`font-bold ${getColorSelected()}`}>
+			<TableCell variant="start" className="w-20" innerClassName={`font-bold ${getColorSelected()}`}>
 				<div className="flex items-center space-x-3">
 					<Avatar address={delegate.address()} size="lg" noShadow />
 					<span>{delegate.username()}</span>
 				</div>
 			</TableCell>
 
-			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
+			<TableCell className="w-20" innerClassName={`justify-center ${getColorSelected()}`}>
+				{isVoted && <Icon name="Ok" className="text-theme-primary" />}
+			</TableCell>
+
+			<TableCell
+				className="w-20"
+				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+			>
 				<span>#{delegate.rank()}</span>
 			</TableCell>
 
-			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
+			<TableCell
+				className="w-20"
+				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+			>
 				<span>%</span>
 			</TableCell>
 
-			<TableCell innerClassName={`justify-center ${getColorSelected()}`}>
+			<TableCell className="w-20" innerClassName={`justify-center ${getColorSelected()}`}>
 				<Icon name="Msq" className="text-xl text-theme-primary" />
 			</TableCell>
 
-			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
+			<TableCell
+				className="w-20"
+				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+			>
 				<span>...</span>
 			</TableCell>
 
-			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
+			<TableCell
+				className="w-20"
+				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+			>
 				<span>...</span>
 			</TableCell>
 
-			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
+			<TableCell
+				className="w-20"
+				innerClassName={`justify-center font-bold text-theme-neutral-dark ${getColorSelected()}`}
+			>
 				<span>...</span>
 			</TableCell>
 
-			<TableCell innerClassName={`font-bold text-theme-neutral-dark ${getColorSelected()}`}>
+			<TableCell
+				className="w-40"
+				innerClassName={`justify-end font-bold text-theme-neutral-dark ${getColorSelected()}`}
+			>
 				<span>...</span>
 			</TableCell>
 

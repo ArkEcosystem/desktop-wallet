@@ -38,34 +38,46 @@ export const DelegateTable = ({ title, delegates, maxVotes, votes, onContinue }:
 			className: "pl-14",
 		},
 		{
+			Header: t("COMMON.STATUS"),
+			accessor: "status",
+			disableSortBy: true,
+			className: "justify-center",
+		},
+		{
 			Header: t("COMMON.RANK"),
 			accessor: "rank",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.VOTES"),
 			accessor: "votes",
+			className: "justify-center",
 		},
 		{
 			Header: t("COMMON.PROFILE"),
 			accessor: "profile",
 			disableSortBy: true,
-			className: "flex justify-center",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.COMMISSION"),
 			accessor: "commissionPercentage",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.PAYOUT_INTERVAL"),
 			accessor: "payout",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.MIN"),
 			accessor: "min",
+			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
 			accessor: "commissionDaily",
+			className: "justify-end",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.VOTE"),

@@ -76,7 +76,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				<Address address={wallet.address()} walletName={wallet.alias()} maxChars={22} />
 			</TableCell>
 
-			<TableCell className="w-20" innerClassName="text-sm font-bold justify-center">
+			<TableCell className="w-20" innerClassName="justify-center text-sm font-bold">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
@@ -112,7 +112,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				)}
 			</TableCell>
 
-			<TableCell innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName="justify-center font-bold text-theme-neutral-dark">
 				{hasVotes && <span>#{votes[0].rank()}</span>}
 			</TableCell>
 
