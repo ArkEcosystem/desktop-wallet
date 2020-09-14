@@ -1,7 +1,7 @@
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
 
 type PeerListItemProps = {
@@ -15,7 +15,7 @@ type PeerListItemProps = {
 };
 
 export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onAction }: PeerListItemProps) => (
-	<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
+	<TableRow>
 		<TableCell variant="start" innerClassName="space-x-2">
 			<Circle className={coinClass} noShadow>
 				<Icon name={coin!} />
@@ -38,7 +38,7 @@ export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onA
 		<TableCell variant="end" innerClassName="text-theme-neutral-300">
 			{actions?.length && (() => <Dropdown options={actions} onSelect={onAction} />)()}
 		</TableCell>
-	</tr>
+	</TableRow>
 );
 
 PeerListItem.defaultProps = {

@@ -31,8 +31,8 @@ test("should navigate to my registrations page", async (t) => {
 	await t.click(Selector("[data-testid=WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
-	await t.hover(Selector("[data-testid=WalletRegistrations__show-all]"));
-	await t.click(Selector("[data-testid=WalletRegistrations__show-all]"));
+	await t.hover(Selector("[data-testid=WalletRegistrations__button]"));
+	await t.click(Selector("[data-testid=WalletRegistrations__button]"));
 
 	await t.expect(Selector("[data-testid=header__title]").exists).ok();
 	await t
@@ -46,13 +46,13 @@ test("should navigate to my registrations from navigation bar", goToMyRegistrati
 
 test("should render delegates list", async (t: any) => {
 	await goToMyRegistrations(t);
-	await t.expect(Selector("[data-testid=DelegateRowItem]").exists).ok();
+	await t.expect(Selector("[data-testid=DelegateRegistrations]").exists).ok();
 });
 
 test("should handle delegate update action", async (t: any) => {
 	await goToMyRegistrations(t);
 
-	const delegateRowItem = "[data-testid=DelegateRowItem]";
+	const delegateRowItem = "[data-testid=DelegateRegistrations] [data-testid=TableRow]";
 	await selectRegistrationOption(delegateRowItem, "update", t);
 
 	await t
@@ -66,7 +66,7 @@ test("should handle delegate update action", async (t: any) => {
 test("should handle delegate resign action", async (t: any) => {
 	await goToMyRegistrations(t);
 
-	const delegateRowItem = "[data-testid=DelegateRowItem]";
+	const delegateRowItem = "[data-testid=DelegateRegistrations] [data-testid=TableRow]";
 	await selectRegistrationOption(delegateRowItem, "resign", t);
 
 	await t
@@ -79,13 +79,13 @@ test("should handle delegate resign action", async (t: any) => {
 
 test("should render business registrations list", async (t: any) => {
 	await goToMyRegistrations(t);
-	await t.expect(Selector("[data-testid=BusinessRegistrations] [data-testid=EntityTableRowItem]").exists).ok();
+	await t.expect(Selector("[data-testid=BusinessRegistrations] [data-testid=TableRow]").exists).ok();
 });
 
 test("should handle business registration update action", async (t: any) => {
 	await goToMyRegistrations(t);
 
-	const businessRowItem = "[data-testid=BusinessRegistrations] [data-testid=EntityTableRowItem]:nth-child(1)";
+	const businessRowItem = "[data-testid=BusinessRegistrations] [data-testid=TableRow]:nth-child(1)";
 	await selectRegistrationOption(businessRowItem, "update", t);
 
 	await t
@@ -99,7 +99,7 @@ test("should handle business registration update action", async (t: any) => {
 test("should handle business registration resign action", async (t: any) => {
 	await goToMyRegistrations(t);
 
-	const businessRowItem = "[data-testid=BusinessRegistrations] [data-testid=EntityTableRowItem]:nth-child(1)";
+	const businessRowItem = "[data-testid=BusinessRegistrations] [data-testid=TableRow]:nth-child(1)";
 	await selectRegistrationOption(businessRowItem, "resign", t);
 
 	await t
@@ -111,13 +111,13 @@ test("should handle business registration resign action", async (t: any) => {
 
 test("should render plugin registrations list", async (t: any) => {
 	await goToMyRegistrations(t);
-	await t.expect(Selector("[data-testid=PluginRegistrations] [data-testid=EntityTableRowItem]").exists).ok();
+	await t.expect(Selector("[data-testid=PluginRegistrations] [data-testid=TableRow]").exists).ok();
 });
 
 test("should handle plugin registration update action", async (t: any) => {
 	await goToMyRegistrations(t);
 
-	const pluginRowItem = "[data-testid=PluginRegistrations] [data-testid=EntityTableRowItem]";
+	const pluginRowItem = "[data-testid=PluginRegistrations] [data-testid=TableRow]";
 	await selectRegistrationOption(pluginRowItem, "update", t);
 
 	await t
@@ -131,7 +131,7 @@ test("should handle plugin registration update action", async (t: any) => {
 test("should handle plugin registration resign action", async (t: any) => {
 	await goToMyRegistrations(t);
 
-	const pluginRowItem = "[data-testid=PluginRegistrations] [data-testid=EntityTableRowItem]";
+	const pluginRowItem = "[data-testid=PluginRegistrations] [data-testid=TableRow]";
 	await selectRegistrationOption(pluginRowItem, "resign", t);
 
 	await t

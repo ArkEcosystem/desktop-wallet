@@ -168,7 +168,9 @@ export const MyRegistrations = () => {
 			)}
 
 			{!isLoading && delegateWallets.length > 0 && (
-				<DelegateTable wallets={delegateWallets} onAction={handleAction} />
+				<div data-testid="DelegateRegistrations">
+					<DelegateTable wallets={delegateWallets} onAction={handleAction} />
+				</div>
 			)}
 
 			{hasNoRegistrations && <EmptyRegistrations />}

@@ -5,7 +5,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -28,9 +28,7 @@ export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowIte
 	const { data }: any = entity.asset();
 
 	return (
-		<tr
-			data-testid="EntityTableRowItem"
-			className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
+		<TableRow
 			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
@@ -84,6 +82,6 @@ export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowIte
 					/>
 				</Button>
 			</TableCell>
-		</tr>
+		</TableRow>
 	);
 };

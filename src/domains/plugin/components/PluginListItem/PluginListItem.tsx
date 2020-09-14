@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { ReviewRating } from "app/components/ReviewRating";
-import { TableCell } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -19,10 +19,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 	const { t } = useTranslation();
 
 	return (
-		<tr
-			data-testid={`PluginListItem--${plugin.id}`}
-			className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group"
-		>
+		<TableRow>
 			<TableCell variant="start" className="w-20">
 				<ChangeNowLogo className="w-15 h-15" />
 			</TableCell>
@@ -99,6 +96,6 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 					/>
 				)}
 			</TableCell>
-		</tr>
+		</TableRow>
 	);
 };

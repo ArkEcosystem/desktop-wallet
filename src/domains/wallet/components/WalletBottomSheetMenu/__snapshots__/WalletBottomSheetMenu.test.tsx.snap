@@ -63,6 +63,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
       >
         <div
           class="container mx-auto px-14"
+          data-testid="WalletTable"
         >
           <div
             class="sc-AxiKw ksSMAm"
@@ -216,15 +217,15 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
                       class="sc-AxhCb lfPCiI"
                     >
                       <div
-                        class="sc-AxgMl fJeOcY -mr-2 undefined"
+                        class="sc-AxheI cUzwjK -mr-2 undefined"
                       >
                         <div
                           class="sc-AxjAm buCJuk"
@@ -266,7 +267,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                           ARK Wallet 1
                         </span>
                         <span
-                          class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
+                          class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D8rr7B1d6…VBMs6YUYD
@@ -321,15 +322,15 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 group transition-colors duration-100 cursor-pointer"
-                  data-testid="WalletListItem__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  class="sc-AxhUy tuDtX group"
+                  data-testid="TableRow"
                 >
                   <td>
                     <div
                       class="sc-AxhCb hyGNjM"
                     >
                       <div
-                        class="sc-AxgMl eqWWwc -mr-2 undefined"
+                        class="sc-AxheI hiopcG -mr-2 undefined"
                       >
                         <div
                           class="sc-AxjAm buCJuk"
@@ -371,7 +372,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                           ARK Wallet 2
                         </span>
                         <span
-                          class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
+                          class="sc-AxgMl fFPQpl text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D5sRKWckH…yC3cvJtwb
