@@ -1,6 +1,7 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputPassword } from "app/components/Input";
+import { useValidation } from "app/hooks/validations";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import React from "react";
 import { useFormContext } from "react-hook-form";
@@ -11,6 +12,8 @@ export const AuthenticationStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { register } = useFormContext();
 	const isLedger = wallet.isLedger();
 
+	const { authentication } = useValidation();
+
 	return (
 		<div data-testid="AuthenticationStep">
 			{!isLedger && (
@@ -20,14 +23,20 @@ export const AuthenticationStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					<div className="mt-8">
 						<FormField name="mnemonic">
 							<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
-							<InputPassword data-testid="AuthenticationStep__mnemonic" ref={register} />
+							<InputPassword
+								data-testid="AuthenticationStep__mnemonic"
+								ref={register(authentication.mnemonic())}
+							/>
 							<FormHelperText />
 						</FormField>
 
 						{wallet.isSecondSignature() && (
 							<FormField name="secondMnemonic" className="mt-8">
 								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
-								<InputPassword data-testid="AuthenticationStep__second-mnemonic" ref={register} />
+								<InputPassword
+									data-testid="AuthenticationStep__second-mnemonic"
+									ref={register(authentication.secondMnemonic())}
+								/>
 								<FormHelperText />
 							</FormField>
 						)}
