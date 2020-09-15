@@ -12,28 +12,28 @@ import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { useValidation } from "app/hooks/validations";
 import { toasts } from "app/services";
 import { AuthenticationStep as ThirdStep } from "domains/transaction/components/AuthenticationStep";
+import { FormStep as FirstStep } from "domains/transaction/components/EntityRegistrationForm/Step2";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
 import { ReviewStep as SecondStep } from "../../components/EntityRegistrationForm/Step3";
-import { FirstStep } from "./Step1";
 import { FourthStep } from "./Step4";
 import { fetchTxIpfsData, sendEntityUpdateTransaction } from "./utils";
 
 type SendEntityUpdateProps = {
-	formDefaultData?: any;
+	formDefaultValues?: any;
 	onDownload: any;
 };
 
-export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpdateProps) => {
+export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUpdateProps) => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [activeTransaction, setActiveTransaction] = useState<TransactionData>();
 	const [savedTransaction, setSavedTransaction] = useState<SignedTransactionData>();
 	const [isLoading, setIsLoading] = useState(true);
 
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
 	const { setValue, triggerValidation, getValues, register } = form;
 	const { sendEntityUpdate } = useValidation();
 
@@ -63,7 +63,8 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 			"registrationId",
 		].forEach(register);
 
-		register("ipfsData.meta.displayName", sendEntityUpdate.name());
+		register("entityName", sendEntityUpdate.entityName());
+		register("ipfsData.meta.displayName", sendEntityUpdate.displayName());
 		register("ipfsData.meta.description", sendEntityUpdate.description());
 		register("ipfsData.meta.website", sendEntityUpdate.website());
 	}, [register, sendEntityUpdate]);
@@ -89,8 +90,10 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 			try {
 				const ipfsData: any = await fetchTxIpfsData(activeTransaction);
 				setValue("ipfsData", ipfsData);
+				setIsLoading(false);
 			} catch (e) {
-				toasts.error(`Unable to find ipfs data for transaction [${transactionId}]`);
+				toasts.error(`Unable to find ipfs data for transaction [${activeTransaction.id()}]`);
+				setIsLoading(false);
 			}
 		};
 
@@ -224,7 +227,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 };
 
 SendEntityUpdate.defaultProps = {
-	formDefaultData: {
+	formDefaultValues: {
 		fees: {
 			static: "5",
 			min: "0",
