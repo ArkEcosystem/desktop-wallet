@@ -24,29 +24,47 @@ export const FourthStep = ({
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 			{unvotes.length > 0 && (
-				<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
-					<VoteList votes={unvotes} />
-				</TransactionDetail>
+				<>
+					<TransactionDetail
+						label={t("TRANSACTION.TRANSACTION_TYPE")}
+						className="pb-0"
+						extra={
+							<div className="ml-1 text-theme-neutral-900">
+								<Circle className="border-theme-neutral-900 bg-theme-background" size="lg">
+									<Icon name="Unvote" className="text-xl" />
+								</Circle>
+							</div>
+						}
+					>
+						{t("TRANSACTION.TRANSACTION_TYPES.UNVOTE")}
+					</TransactionDetail>
+
+					<TransactionDetail label={`${t("TRANSACTION.UNVOTES")} (${unvotes.length})`}>
+						<VoteList votes={unvotes} />
+					</TransactionDetail>
+				</>
 			)}
 
-			<TransactionDetail
-				label={t("TRANSACTION.TRANSACTION_TYPE")}
-				className="pb-0"
-				extra={
-					<div className="ml-1 text-theme-neutral-900">
-						<Circle className="border-theme-neutral-900 bg-theme-background" size="lg">
-							<Icon name="Voted" />
-						</Circle>
-					</div>
-				}
-			>
-				{t("TRANSACTION.TRANSACTION_TYPES.VOTE")}
-			</TransactionDetail>
-
 			{votes.length > 0 && (
-				<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
-					<VoteList votes={votes} />
-				</TransactionDetail>
+				<>
+					<TransactionDetail
+						label={t("TRANSACTION.TRANSACTION_TYPE")}
+						className="pb-0"
+						extra={
+							<div className="ml-1 text-theme-neutral-900">
+								<Circle className="border-theme-neutral-900 bg-theme-background" size="lg">
+									<Icon name="Vote" className="text-xl" />
+								</Circle>
+							</div>
+						}
+					>
+						{t("TRANSACTION.TRANSACTION_TYPES.VOTE")}
+					</TransactionDetail>
+
+					<TransactionDetail label={`${t("TRANSACTION.VOTES")} (${votes.length})`}>
+						<VoteList votes={votes} />
+					</TransactionDetail>
+				</>
 			)}
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09660435 ARK</TransactionDetail>

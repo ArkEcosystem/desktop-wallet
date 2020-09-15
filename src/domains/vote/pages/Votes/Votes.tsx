@@ -8,6 +8,7 @@ import {
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
+import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
@@ -19,9 +20,50 @@ import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
+import { MyVoteTable } from "domains/vote/components/MyVoteTable";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
+
+type TabsProps = {
+	selected: string;
+	onClick?: (item: string) => void;
+};
+
+const Tabs = ({ selected, onClick }: TabsProps) => {
+	const { t } = useTranslation();
+
+	const getTabItemClass = (item: string) =>
+		selected === item
+			? "theme-neutral-900 border-theme-primary-dark"
+			: "text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent";
+
+	return (
+		<ul className="flex h-20 mr-auto -mt-5 -mb-5" data-testid="Tabs">
+			<li
+				className={`flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getTabItemClass(
+					"delegate",
+				)}`}
+				onClick={() => onClick?.("delegate")}
+				data-testid="Tab__item--delegate"
+			>
+				{t("VOTE.VOTES_PAGE.TABS.SELECT_DELEGATE")}
+			</li>
+			<li className="flex items-center mr-4">
+				<Divider type="vertical" />
+			</li>
+			<li
+				className={`flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getTabItemClass(
+					"vote",
+				)}`}
+				onClick={() => onClick?.("vote")}
+				data-testid="Tab__item--vote"
+			>
+				{t("VOTE.VOTES_PAGE.TABS.MY_VOTE")}
+			</li>
+		</ul>
+	);
+};
 
 const InputAddress = ({ address, profile }: { address: string; profile: Profile }) => {
 	const { t } = useTranslation();
@@ -53,18 +95,19 @@ const InputAddress = ({ address, profile }: { address: string; profile: Profile 
 };
 
 export const Votes = () => {
+	const { t } = useTranslation();
 	const history = useHistory();
 	const { walletId: hasWalletId } = useParams();
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
+	const [tabItem, setTabItem] = useState("delegate");
 	const [network, setNetwork] = useState<NetworkData | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
-
-	const { t } = useTranslation();
+	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
 	const crumbs = [
 		{
@@ -92,6 +135,28 @@ export const Votes = () => {
 			setWallets(activeProfile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
 	}, [activeProfile, network]);
+
+	const loadVotes = useCallback(
+		(address) => {
+			const wallet = activeProfile.wallets().findByAddress(address);
+			let votes: ReadOnlyWallet[] = [];
+
+			try {
+				votes = wallet!.votes();
+			} catch {
+				votes = [];
+			}
+
+			setVotes(votes);
+		},
+		[activeProfile],
+	);
+
+	useEffect(() => {
+		if (address) {
+			loadVotes(address);
+		}
+	}, [address, loadVotes]);
 
 	const loadDelegates = useCallback(
 		(wallet) => {
@@ -122,6 +187,25 @@ export const Votes = () => {
 		loadDelegates(wallet);
 	};
 
+	const handleContinue = (unvotes: string[], votes: string[]) => {
+		const walletId = hasWalletId ? activeWallet.id() : activeProfile.wallets().findByAddress(address)?.id();
+
+		const params = new URLSearchParams();
+
+		if (unvotes?.length > 0) {
+			params.append("unvotes", unvotes.join());
+		}
+
+		if (votes?.length > 0) {
+			params.append("votes", votes.join());
+		}
+
+		history.push({
+			pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
+			search: `?${params}`,
+		});
+	};
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -148,29 +232,27 @@ export const Votes = () => {
 						<InputAddress address={address} profile={activeProfile} />
 					</TransactionDetail>
 				</div>
+
+				{address && (
+					<>
+						<Divider />
+						<Tabs selected={tabItem} onClick={(tabItem) => setTabItem(tabItem)} />
+					</>
+				)}
 			</div>
 
 			<Section className="flex-1">
-				{address ? (
-					<DelegateTable
-						coin={network?.coin()}
-						delegates={delegates}
-						onContinue={(votes) => {
-							const walletId = hasWalletId
-								? activeWallet.id()
-								: activeProfile.wallets().findByAddress(address)?.id();
-
-							const params = new URLSearchParams({
-								// unvotes: unvotes.join(),
-								votes: votes.join(),
-							});
-
-							history.push({
-								pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
-								search: `?${params}`,
-							});
-						}}
-					/>
+				{network && address ? (
+					tabItem === "delegate" ? (
+						<DelegateTable
+							delegates={delegates}
+							maxVotes={network.maximumVotes()}
+							votes={votes}
+							onContinue={handleContinue}
+						/>
+					) : (
+						<MyVoteTable maxVotes={network.maximumVotes()} votes={votes} onContinue={handleContinue} />
+					)
 				) : (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
 				)}

@@ -41,6 +41,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		{
 			Header: t("COMMON.RANK"),
 			accessor: "rank",
+			className: "justify-center",
 		},
 		{
 			Header: t("COMMON.PROFILE"),
