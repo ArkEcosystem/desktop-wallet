@@ -41,6 +41,9 @@ const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationCompone
 		register("ipfsData.socialMedia");
 		register("ipfsData.images");
 		register("ipfsData.videos");
+
+		register("fees");
+		register("fee");
 	}, [register]);
 
 	return (

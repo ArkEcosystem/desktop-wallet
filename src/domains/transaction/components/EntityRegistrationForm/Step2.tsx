@@ -78,7 +78,7 @@ export const FormStep = () => {
 			const images = getValues("ipfsData.images");
 			const newImages = (images || []).map((item: EntityLink) => ({
 				...item,
-				type: item.value === link.value ? "logo" : "image",
+				type: item.value === link?.value ? "logo" : "image",
 			}));
 			setValue("ipfsData.images", newImages);
 			setSelectedAvatar(link);
@@ -86,7 +86,7 @@ export const FormStep = () => {
 		[getValues, setValue, setSelectedAvatar],
 	);
 	return (
-		<div data-testid="BusinessRegistrationForm__step--second">
+		<div data-testid="EntityRegistrationForm">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.DESCRIPTION")}</div>
 
@@ -95,7 +95,7 @@ export const FormStep = () => {
 					<FormField name="entityName" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input
-							data-testid="BusinessRegistrationForm__name"
+							data-testid="EntityRegistrationForm__entity-name"
 							type="text"
 							onChange={handleInput}
 							defaultValue={getValues("entityName")}
@@ -106,7 +106,7 @@ export const FormStep = () => {
 					<FormField name="ipfsData.meta.displayName" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.ENTITY.DISPLAY_NAME")}</FormLabel>
 						<Input
-							data-testid="BusinessRegistrationForm__display-name"
+							data-testid="EntityRegistrationForm__display-name"
 							type="text"
 							onChange={handleInput}
 							defaultValue={getValues("ipfsData.meta.displayName")}
@@ -117,7 +117,7 @@ export const FormStep = () => {
 					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
 						<TextArea
-							data-testid="BusinessRegistrationForm__description"
+							data-testid="EntityRegistrationForm__description"
 							onChange={handleInput}
 							defaultValue={getValues("ipfsData.meta.description")}
 						/>
@@ -127,7 +127,7 @@ export const FormStep = () => {
 					<FormField name="ipfsData.meta.website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
 						<Input
-							data-testid="BusinessRegistrationForm__website"
+							data-testid="EntityRegistrationForm__website"
 							type="text"
 							onChange={handleInput}
 							defaultValue={getValues("ipfsData.meta.website")}
