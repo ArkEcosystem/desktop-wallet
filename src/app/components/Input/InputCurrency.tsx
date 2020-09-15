@@ -20,7 +20,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 			const { value } = event.target;
-			const currency = convertValue(event.target.value);
+			const currency = convertValue(value);
 
 			setAmount(currency);
 			onChange?.(currency);
