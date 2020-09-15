@@ -447,6 +447,49 @@
     >
       {{ $t("TRANSACTION.TYPE.LEGACY_BRIDGECHAIN_UPDATE") }}
     </span>
+    <!-- Unknown type -->
+    <span
+      v-else-if="transaction_isUndefinedRegistration(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.UNDEFINED_REGISTRATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
+      {{ $t("TRANSACTION.TYPE.UNDEFINED_REGISTRATION") }}
+    </span>
+    <span
+      v-else-if="transaction_isUndefinedResignation(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.UNDEFINED_RESIGNATION'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
+      {{ $t("TRANSACTION.TYPE.UNDEFINED_RESIGNATION") }}
+    </span>
+    <span
+      v-else-if="transaction_isUndefinedUpdate(type, group, asset)"
+      v-tooltip="{
+        content: $t('TRANSACTION.TYPE.UNDEFINED_UPDATE'),
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
+      {{ $t("TRANSACTION.TYPE.UNDEFINED_UPDATE") }}
+    </span>
     <span
       v-else
       v-tooltip="{

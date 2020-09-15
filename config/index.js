@@ -79,7 +79,7 @@ exports.TRANSACTION_TYPES = {
   }
 }
 
-exports.TRANSACTION_ENTITY = {
+exports.TRANSACTION_TYPES_ENTITY = {
   TYPE: {
     BUSINESS: 0,
     BRIDGECHAIN: 1, // not used anymore but type is kept

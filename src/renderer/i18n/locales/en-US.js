@@ -1015,7 +1015,12 @@ export default {
       LEGACY_BUSINESS_UPDATE: 'Business Update (Legacy)',
       LEGACY_BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration (Legacy)',
       LEGACY_BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation (Legacy)',
-      LEGACY_BRIDGECHAIN_UPDATE: 'Bridgechain Update (Legacy)'
+      LEGACY_BRIDGECHAIN_UPDATE: 'Bridgechain Update (Legacy)',
+      // Unknown type
+      UNDEFINED_REGISTRATION: 'Registration (Undefined)',
+      UNDEFINED_RESIGNATION: 'Resignation (Undefined)',
+      UNDEFINED_UPDATE: 'Update (Undefined)',
+      UNDEFINED: 'Undefined'
     },
     ERROR: {
       VALIDATION: {
