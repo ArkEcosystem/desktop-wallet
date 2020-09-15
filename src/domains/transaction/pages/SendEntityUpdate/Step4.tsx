@@ -29,21 +29,15 @@ export const FourthStep = ({ transaction, senderWallet, ipfsData }: SuccessProps
 				{t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_REGISTRATION")}
 			</TransactionDetail>
 
-			{ipfsData?.meta?.displayName && (
-				<TransactionDetail label={t("TRANSACTION.NAME")}>{ipfsData?.meta?.displayName}</TransactionDetail>
-			)}
+			<TransactionDetail label={t("TRANSACTION.NAME")}>{ipfsData?.meta?.displayName}</TransactionDetail>
 
-			{ipfsData?.meta?.description && (
-				<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>{ipfsData.meta.description}</TransactionDetail>
-			)}
+			<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>{ipfsData.meta.description}</TransactionDetail>
 
-			{ipfsData?.meta?.website && (
-				<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
-					<Link to={ipfsData.meta.website} isExternal>
-						{ipfsData.meta.website}
-					</Link>
-				</TransactionDetail>
-			)}
+			<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
+				<Link to={ipfsData.meta.website} isExternal>
+					{ipfsData.meta.website}
+				</Link>
+			</TransactionDetail>
 
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}

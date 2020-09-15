@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile,ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
@@ -9,7 +9,7 @@ import { Route } from "react-router-dom";
 import { toast } from "react-toastify";
 import EntityUpdateTransactionFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
 import IpfsFixture from "tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json";
-import BusinessTransactionsFixture from "tests/fixtures/registrations/businesses.json";
+import BusinessEntities from "tests/fixtures/registrations/businesses.json";
 import {
 	act,
 	defaultNetMocks,
@@ -24,6 +24,8 @@ import {
 } from "utils/testing-library";
 
 import { SendEntityUpdate } from "../SendEntityUpdate";
+
+const BusinessTransactionsFixture = BusinessEntities.data[0];
 
 const defaultFormValues = {
 	onDownload: jest.fn(),
@@ -78,7 +80,7 @@ describe("SendEntityUpdate", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions/df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da")
 			.query(true)
-			.reply(200, () => ({ data: BusinessTransactionsFixture.data[0] }))
+			.reply(200, () => ({ data: BusinessTransactionsFixture }))
 			.persist();
 
 		nock("https://platform.ark.io/api")
@@ -89,41 +91,53 @@ describe("SendEntityUpdate", () => {
 			.persist();
 	});
 
-	it("should fetch and fill entity name input from ipfs", async () => {
+	it("should fetch and fill entity name", async () => {
 		const { getByTestId } = renderPage();
 
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
-
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
+	});
+
+	it("should fetch and fill display name input from ipfs", async () => {
+		const { getByTestId } = renderPage();
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(IpfsFixture.data.meta.displayName),
 		);
 	});
 
 	it("should fetch and fill entity description input from ipfs", async () => {
 		const { getByTestId } = renderPage();
 
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
-
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__description")).toHaveValue(IpfsFixture.data.meta.description),
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue(IpfsFixture.data.meta.description),
 		);
 	});
 
 	it("should fetch and fill entity website input from ipfs", async () => {
 		const { getByTestId } = renderPage();
 
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
-
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__website")).toHaveValue(IpfsFixture.data.meta.website),
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue(IpfsFixture.data.meta.website),
 		);
 	});
 
 	it("should fetch and render sourceControl links collection from ipfs", async () => {
 		const { getByTestId, getAllByTestId } = renderPage();
 
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
-		expect(getByTestId("SendEntityUpdate__name")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
 
 		const sourcesLinkCollection = getAllByTestId("LinkCollection__header")[0];
 		expect(sourcesLinkCollection).toBeTruthy();
@@ -137,8 +151,12 @@ describe("SendEntityUpdate", () => {
 	it("should fetch and render socialMedia links collection from ipfs", async () => {
 		const { getByTestId, getAllByTestId } = renderPage();
 
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
-		expect(getByTestId("SendEntityUpdate__name")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
 
 		const sourcesLinkCollection = getAllByTestId("LinkCollection__header")[1];
 		expect(sourcesLinkCollection).toBeTruthy();
@@ -156,7 +174,7 @@ describe("SendEntityUpdate", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions/df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da")
 			.query(true)
-			.reply(200, () => ({ data: BusinessTransactionsFixture.data[0] }));
+			.reply(200, () => ({ data: BusinessTransactionsFixture }));
 
 		const ipfsFixtureEmptyResources = {
 			data: {
@@ -174,26 +192,38 @@ describe("SendEntityUpdate", () => {
 
 		const { getByTestId } = renderPage();
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(ipfsFixtureEmptyResources.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 	});
 
 	it("should fetch and render fees for entity update", async () => {
 		const { getByTestId } = renderPage();
 
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
-		expect(getByTestId("SendEntityUpdate__name")).toBeTruthy();
-		const feeInput = getByTestId("InputCurrency");
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
 
+		const feeInput = getByTestId("InputCurrency");
 		await waitFor(() => expect(feeInput).toHaveValue("50"));
 	});
 
 	it("should update fee", async () => {
 		const { getByTestId, getAllByTestId } = renderPage();
 
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
-		expect(getByTestId("SendEntityUpdate__name")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
+
 		const feeInput = getByTestId("InputCurrency");
 
 		await waitFor(() => expect(feeInput).toHaveValue("50"));
@@ -208,8 +238,12 @@ describe("SendEntityUpdate", () => {
 	it("should fetch and render fees for entity update", async () => {
 		const { getByTestId } = renderPage();
 
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
-		expect(getByTestId("SendEntityUpdate__name")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
 		const feeInput = getByTestId("InputCurrency");
 
 		await waitFor(() => expect(feeInput).toHaveValue("50"));
@@ -219,6 +253,7 @@ describe("SendEntityUpdate", () => {
 		const toastMock = jest.spyOn(toast, "error");
 		const wrongTxUrl = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}/transactions/abc/send-entity-update`;
 		renderPage(wrongTxUrl);
+
 		await waitFor(() =>
 			expect(toastMock).toHaveBeenCalledWith("Unable to find transaction for [abc]", expect.anything()),
 		);
@@ -233,7 +268,7 @@ describe("SendEntityUpdate", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions/df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da")
 			.query(true)
-			.reply(200, () => ({ data: BusinessTransactionsFixture.data[0] }))
+			.reply(200, () => ({ data: BusinessTransactionsFixture }))
 			.persist();
 
 		nock("https://platform.ark.io/api").get("/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV").reply(200, {});
@@ -252,7 +287,7 @@ describe("SendEntityUpdate", () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions/df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da")
 			.query(true)
-			.reply(200, () => ({ data: BusinessTransactionsFixture.data[0] }))
+			.reply(200, () => ({ data: BusinessTransactionsFixture }))
 			.persist();
 
 		nock("https://platform.ark.io/api").get("/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV").reply(404, {});
@@ -264,23 +299,14 @@ describe("SendEntityUpdate", () => {
 		toastMock.mockRestore();
 	});
 
-	it("should render 1st step", async () => {
-		const { asFragment, getByTestId } = renderPage();
-
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
-
-		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should should go back", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		await act(async () => {
@@ -290,126 +316,188 @@ describe("SendEntityUpdate", () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__back-button"));
 		});
 
-		expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should fail validation on name input in first step", async () => {
+	it("should fail validation on entity name input in first step", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		// Required
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityUpdate__name"), { target: { value: " " } });
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: " " } });
 		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 		//
-		await waitFor(() => expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy());
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		// Min length
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityUpdate__name"), { target: { value: "ab" } });
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: "ab" } });
 		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		// Max length
 		act(() => {
 			const longText =
 				"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
-			fireEvent.change(getByTestId("SendEntityUpdate__name"), { target: { value: longText } });
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: longText } });
 		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
-		await waitFor(() => expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should fail validation on display name input in first step", async () => {
+		const { asFragment, getByTestId } = renderPage();
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
+
+		// Required
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__display-name"), { target: { value: " " } });
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+		//
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+
+		// Min length
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__display-name"), { target: { value: "ab" } });
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+
+		// Max length
+		act(() => {
+			const longText =
+				"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
+			fireEvent.change(getByTestId("EntityRegistrationForm__display-name"), { target: { value: longText } });
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should fail validation on description textarea in first step", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		// Required
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityUpdate__description"), { target: { value: " " } });
+			fireEvent.change(getByTestId("EntityRegistrationForm__description"), { target: { value: " " } });
 		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		// Min length
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityUpdate__description"), { target: { value: "ab" } });
+			fireEvent.change(getByTestId("EntityRegistrationForm__description"), { target: { value: "ab" } });
 		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		// Max length
 		act(() => {
 			const longText =
 				"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
-			fireEvent.change(getByTestId("SendEntityUpdate__description"), { target: { value: longText } });
+			fireEvent.change(getByTestId("EntityRegistrationForm__description"), { target: { value: longText } });
 		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should fail validation on website input in first step", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__website")).toHaveValue(IpfsFixture.data.meta.website),
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityUpdate__website"), { target: { value: "wrong url" } });
+			fireEvent.change(getByTestId("EntityRegistrationForm__website"), { target: { value: "wrong url" } });
 		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 2nd step", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		act(() => {
@@ -423,8 +511,11 @@ describe("SendEntityUpdate", () => {
 	it("should render 3rd step", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		await act(async () => {
@@ -442,8 +533,11 @@ describe("SendEntityUpdate", () => {
 		const { asFragment, getByTestId } = renderPage();
 		const loadingToastMock = jest.spyOn(toast, "info");
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		await act(async () => {
@@ -473,8 +567,11 @@ describe("SendEntityUpdate", () => {
 		const { asFragment, getByTestId } = renderPage();
 		const errorToastMock = jest.spyOn(toast, "error");
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		await act(async () => {
@@ -504,8 +601,11 @@ describe("SendEntityUpdate", () => {
 		const { asFragment, getByTestId } = renderPage();
 		const errorToastMock = jest.spyOn(toast, "error");
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		await act(async () => {
@@ -529,8 +629,11 @@ describe("SendEntityUpdate", () => {
 	it("should succesfully submit entity update transaction", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		await act(async () => {
@@ -574,8 +677,11 @@ describe("SendEntityUpdate", () => {
 	it("should handle download transaction button click on step 4", async () => {
 		const { asFragment, getByTestId } = renderPage();
 
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
 		);
 
 		await act(async () => {

@@ -13,12 +13,12 @@ import { useValidation } from "app/hooks/validations";
 import { toasts } from "app/services";
 import { AuthenticationStep as ThirdStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep as FirstStep } from "domains/transaction/components/EntityRegistrationForm/Step2";
+import { ReviewStep as SecondStep } from "domains/transaction/components/EntityRegistrationForm/Step3";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
-import { ReviewStep as SecondStep } from "../../components/EntityRegistrationForm/Step3";
 import { FourthStep } from "./Step4";
 import { fetchTxIpfsData, sendEntityUpdateTransaction } from "./utils";
 
@@ -73,8 +73,12 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 		const fetchTransaction = async () => {
 			try {
 				const tx = await activeWallet.client().transaction(transactionId);
+
 				setActiveTransaction(tx as TransactionData);
 				setValue("registrationId", tx.id());
+
+				const data = tx.asset().data as { name: string };
+				setValue("entityName", data?.name);
 			} catch (e) {
 				toasts.error(`Unable to find transaction for [${transactionId}]`);
 			}
