@@ -18,10 +18,7 @@ export const Default = () => {
 				{...fees}
 				defaultValue={value}
 				step={0.01}
-				onChange={(currency: any) => {
-					console.log({ currency });
-					setValue(currency.value);
-				}}
+				onChange={(currency: any) => setValue(currency.value)}
 			/>
 		</div>
 	);
