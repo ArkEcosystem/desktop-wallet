@@ -20,9 +20,15 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 
 		// TODO: How we should handle entries with . like 4.1 ?
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-			const currency = convertValue(event.target.value);
-			setAmount(currency);
-			onChange?.(currency.value);
+			const regex = new RegExp(/[,.]/);
+			const { value } = event.target;
+			const separatorMatches = regex.exec(value);
+			console.log({ separatorMatches });
+			if (!separatorMatches?.length) {
+				const currency = convertValue(event.target.value);
+				setAmount(currency);
+				onChange?.(currency.value);
+			}
 		};
 
 		return (
