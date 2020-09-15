@@ -1,15 +1,19 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Profile,ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { toast } from "react-toastify";
+import EntityUpdateTransactionFixture from "tests/fixtures/coins/ark/transactions/entity-update.json";
 import IpfsFixture from "tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json";
 import BusinessTransactionsFixture from "tests/fixtures/registrations/businesses.json";
 import {
 	act,
 	defaultNetMocks,
+	env,
 	fireEvent,
 	getDefaultProfileId,
 	getDefaultWalletId,
@@ -45,8 +49,25 @@ const renderPage = (url?: string | undefined) => {
 	);
 };
 
+let wallet: ReadWriteWallet;
+let profile: Profile;
+
+const createTransactionMock = (wallet: ReadWriteWallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => EntityUpdateTransactionFixture.data.id,
+		sender: () => EntityUpdateTransactionFixture.data.sender,
+		recipient: () => EntityUpdateTransactionFixture.data.recipient,
+		amount: () => BigNumber.make(EntityUpdateTransactionFixture.data.amount),
+		fee: () => BigNumber.make(EntityUpdateTransactionFixture.data.fee),
+		data: () => EntityUpdateTransactionFixture.data,
+	});
+
 describe("SendEntityUpdate", () => {
 	beforeAll(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById(getDefaultWalletId());
+
 		await syncDelegates();
 		await syncFees();
 	});
@@ -63,6 +84,8 @@ describe("SendEntityUpdate", () => {
 		nock("https://platform.ark.io/api")
 			.get("/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV")
 			.reply(200, IpfsFixture)
+			.post("/ipfs")
+			.reply(200, { data: { hash: EntityUpdateTransactionFixture.data.asset.data.ipfsData } })
 			.persist();
 	});
 
@@ -213,6 +236,25 @@ describe("SendEntityUpdate", () => {
 			.reply(200, () => ({ data: BusinessTransactionsFixture.data[0] }))
 			.persist();
 
+		nock("https://platform.ark.io/api").get("/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV").reply(200, {});
+
+		const toastMock = jest.spyOn(toast, "error");
+		renderPage();
+		await waitFor(() => expect(toastMock).toBeCalled());
+
+		toastMock.mockRestore();
+	});
+
+	it("should throw error if ipfs data is not fetched and show error in toast", async () => {
+		nock.cleanAll();
+		httpClient.clearCache();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/transactions/df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da")
+			.query(true)
+			.reply(200, () => ({ data: BusinessTransactionsFixture.data[0] }))
+			.persist();
+
 		nock("https://platform.ark.io/api").get("/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV").reply(404, {});
 
 		const toastMock = jest.spyOn(toast, "error");
@@ -262,13 +304,13 @@ describe("SendEntityUpdate", () => {
 
 		// Required
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityUpdate__name"), { target: { value: "" } });
+			fireEvent.change(getByTestId("SendEntityUpdate__name"), { target: { value: " " } });
 		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
-
+		//
 		await waitFor(() => expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
@@ -307,7 +349,7 @@ describe("SendEntityUpdate", () => {
 
 		// Required
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityUpdate__description"), { target: { value: "" } });
+			fireEvent.change(getByTestId("SendEntityUpdate__description"), { target: { value: " " } });
 		});
 
 		act(() => {
@@ -348,23 +390,11 @@ describe("SendEntityUpdate", () => {
 		const { asFragment, getByTestId } = renderPage();
 
 		await waitFor(() =>
-			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+			expect(getByTestId("SendEntityUpdate__website")).toHaveValue(IpfsFixture.data.meta.website),
 		);
 
 		act(() => {
-			fireEvent.change(getByTestId("SendEntityUpdate__website"), { target: { value: "" } });
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("SendEntityUpdate__first-step")).toBeTruthy());
-		expect(asFragment()).toMatchSnapshot();
-
-		// Wrong url
-		act(() => {
-			fireEvent.change(getByTestId("SendEntityUpdate__website"), { target: { value: "http://abc" } });
+			fireEvent.change(getByTestId("SendEntityUpdate__website"), { target: { value: "wrong url" } });
 		});
 
 		act(() => {
@@ -405,65 +435,190 @@ describe("SendEntityUpdate", () => {
 		});
 
 		expect(getByTestId("AuthenticationStep")).toBeTruthy();
-		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	// it("should render 4th step", async () => {
-	// 	const { asFragment, getByTestId } = renderPage();
-	//
-	// 	await waitFor(() =>
-	// 		expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
-	// 	);
-	//
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
-	// 	});
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
-	// 	});
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
-	// 	});
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
-	// 	});
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
-	// 	});
-	//
-	// 	expect(getByTestId("TransactionSuccessful")).toBeTruthy();
-	// 	expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-	// 	expect(asFragment()).toMatchSnapshot();
-	// });
-	//
-	// it("should submit", async () => {
-	// 	const { asFragment, getByTestId } = renderPage();
-	//
-	// 	await waitFor(() =>
-	// 		expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
-	// 	);
-	//
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
-	// 	});
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
-	// 	});
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
-	// 	});
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
-	// 	});
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
-	// 	});
-	// 	await act(async () => {
-	// 		fireEvent.click(getByTestId("SendEntityUpdate__download-button"));
-	// 	});
-	//
-	// 	expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(1);
-	// 	await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	// });
+	it("should show loading toast when submitting send transaction", async () => {
+		const { asFragment, getByTestId } = renderPage();
+		const loadingToastMock = jest.spyOn(toast, "info");
+
+		await waitFor(() =>
+			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+
+		act(() => {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: "wrong mnemonic" } });
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
+		});
+
+		await waitFor(() => expect(loadingToastMock).toHaveBeenCalled());
+
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		loadingToastMock.mockRestore();
+	});
+
+	it("should show error message when wrong mnemonic is entered", async () => {
+		const { asFragment, getByTestId } = renderPage();
+		const errorToastMock = jest.spyOn(toast, "error");
+
+		await waitFor(() =>
+			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+
+		act(() => {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: "wrong mnemonic" } });
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
+		});
+
+		await waitFor(() => expect(errorToastMock).toHaveBeenCalled());
+
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		errorToastMock.mockRestore();
+	});
+
+	it("should require mnemonic field input", async () => {
+		const { asFragment, getByTestId } = renderPage();
+		const errorToastMock = jest.spyOn(toast, "error");
+
+		await waitFor(() =>
+			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveAttribute("aria-invalid"));
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		errorToastMock.mockRestore();
+	});
+
+	it("should succesfully submit entity update transaction", async () => {
+		const { asFragment, getByTestId } = renderPage();
+
+		await waitFor(() =>
+			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+
+		act(() => {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: "passphrase" } });
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("passphrase");
+		});
+		expect(asFragment()).toMatchSnapshot();
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityUpdate")
+			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
+		});
+
+		await waitFor(() => expect(signMock).toBeCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+	});
+
+	it("should handle download transaction button click on step 4", async () => {
+		const { asFragment, getByTestId } = renderPage();
+
+		await waitFor(() =>
+			expect(getByTestId("SendEntityUpdate__name")).toHaveValue(IpfsFixture.data.meta.displayName),
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+
+		act(() => {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: "passphrase" } });
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("passphrase");
+		});
+		expect(asFragment()).toMatchSnapshot();
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityUpdate")
+			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
+		});
+
+		await waitFor(() => expect(signMock).toBeCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__download-button"));
+		});
+
+		await waitFor(() => expect(defaultFormValues.onDownload).toHaveBeenCalled());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+	});
 });

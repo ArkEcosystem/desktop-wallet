@@ -32,6 +32,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	const [savedTransaction, setSavedTransaction] = useState<SignedTransactionData>();
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+	const { setValue, triggerValidation, getValues, register } = form;
 	const { sendEntityUpdate } = useValidation();
 
 	const { env } = useEnvironmentContext();
@@ -58,26 +59,26 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 			"ipfsData.videos",
 			"ipfsData.images",
 			"registrationId",
-		].forEach(form.register);
+		].forEach(register);
 
-		form.register("ipfsData.meta.displayName", sendEntityUpdate.name());
-		form.register("ipfsData.meta.description", sendEntityUpdate.description());
-		form.register("ipfsData.meta.website", sendEntityUpdate.website());
-	}, []);
+		register("ipfsData.meta.displayName", sendEntityUpdate.name());
+		register("ipfsData.meta.description", sendEntityUpdate.description());
+		register("ipfsData.meta.website", sendEntityUpdate.website());
+	}, [register, sendEntityUpdate]);
 
 	useEffect(() => {
 		const fetchTransaction = async () => {
 			try {
 				const tx = await activeWallet.client().transaction(transactionId);
 				setActiveTransaction(tx as TransactionData);
-				form.setValue("registrationId", tx.id());
+				setValue("registrationId", tx.id());
 			} catch (e) {
 				toasts.error(`Unable to find transaction for [${transactionId}]`);
 			}
 		};
 
 		fetchTransaction();
-	}, [transactionId, activeWallet]);
+	}, [transactionId, activeWallet, setValue]);
 
 	useEffect(() => {
 		const fetchIpfs = async () => {
@@ -85,23 +86,24 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 
 			try {
 				const ipfsData: any = await fetchTxIpfsData(activeTransaction);
-				form.setValue("ipfsData", ipfsData);
+				setValue("ipfsData", ipfsData);
 			} catch (e) {
 				toasts.error(`Unable to find ipfs data for transaction [${transactionId}]`);
 			}
 		};
 
 		fetchIpfs();
-	}, [activeTransaction]);
+	}, [activeTransaction, setValue]);
 
 	useEffect(() => {
 		const fees = env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "entityUpdate");
-		form.setValue("fees", fees);
-		form.setValue("fee", fees.avg);
-	}, [env, activeWallet]);
+
+		setValue("fees", fees);
+		setValue("fee", fees.avg);
+	}, [env, activeWallet, setValue]);
 
 	const handleNext = async () => {
-		const isValid = await form.triggerValidation();
+		const isValid = await triggerValidation();
 
 		window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -116,10 +118,11 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	};
 
 	const handleSubmit = async () => {
-		const isValid = await form.triggerValidation("mnemonic");
+		const isValid = await triggerValidation("mnemonic");
 		if (!isValid) return;
 
 		const loadingToastId = toasts.info("Sending transaction...");
+
 		try {
 			const transaction = await sendEntityUpdateTransaction({ form, senderWallet: activeWallet, env });
 			toasts.dismiss(loadingToastId);
@@ -135,7 +138,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload?.(data)}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -154,7 +157,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 									<FourthStep
 										transaction={savedTransaction}
 										senderWallet={activeWallet}
-										ipfsData={form.getValues("ipfsData")}
+										ipfsData={getValues("ipfsData")}
 									/>
 								)}
 							</TabPanel>
