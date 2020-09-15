@@ -11,21 +11,49 @@ import {
 	SendEntityRegistrationDetailsOptions,
 	SendEntityRegistrationForm,
 } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
-import React from "react";
+import React, { useEffect } from "react";
+import { useFormContext } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import * as yup from "yup";
 
 import { FormStep } from "./Step2";
 import { ReviewStep } from "./Step3";
 
-const component = ({ activeTab, wallet, fees }: SendEntityRegistrationComponent) => (
-	<Tabs activeId={activeTab}>
-		<TabPanel tabId={2}>
-			<FormStep fees={fees} />
-		</TabPanel>
-		<TabPanel tabId={3}>
-			<ReviewStep wallet={wallet} />
-		</TabPanel>
-	</Tabs>
-);
+const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationComponent) => {
+	const { t } = useTranslation();
+	const { register } = useFormContext();
+
+	useEffect(() => {
+		register("entityName", { required: true, minLength: 3, maxLength: 40, pattern: /^[a-zA-Z0-9_-]+$/ });
+		register("ipfsData.meta.displayName", { required: true, minLength: 3, maxLength: 128 });
+		register("ipfsData.meta.website", {
+			validate: {
+				valid: (value) => {
+					if (!yup.string().url().isValidSync(value)) {
+						return t<string>("TRANSACTION.INVALID_URL");
+					}
+					return true;
+				},
+			},
+		});
+		register("ipfsData.meta.description", { minLength: 3, maxLength: 512 });
+		register("ipfsData.sourceControl");
+		register("ipfsData.socialMedia");
+		register("ipfsData.images");
+		register("ipfsData.videos");
+	}, [register]);
+
+	return (
+		<Tabs activeId={activeTab}>
+			<TabPanel tabId={2}>
+				<FormStep />
+			</TabPanel>
+			<TabPanel tabId={3}>
+				<ReviewStep wallet={wallet} />
+			</TabPanel>
+		</Tabs>
+	);
+};
 
 const transactionDetails = ({ translations, transaction }: SendEntityRegistrationDetailsOptions) => (
 	<>
@@ -52,12 +80,12 @@ const transactionDetails = ({ translations, transaction }: SendEntityRegistratio
 	</>
 );
 
-component.displayName = "EntityRegistrationForm";
+FormStepsComponent.displayName = "EntityRegistrationForm";
 transactionDetails.displayName = "EntityRegistrationFormTransactionDetails";
 
 export const EntityRegistrationForm: SendEntityRegistrationForm = {
 	tabSteps: 2,
-	component,
+	component: FormStepsComponent,
 	transactionDetails,
 	formFields: ["ipfsData"],
 
