@@ -123,35 +123,11 @@ export default {
       )
     },
 
-    transaction_isDeveloperEntityRegistration (type, typeGroup, asset) {
-      return (
-        this.transaction_isEntityRegistration(type, typeGroup, asset) &&
-        asset.type === TRANSACTION_TYPES_ENTITY.TYPE.DEVELOPER &&
-        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
-      )
-    },
-
-    transaction_isDeveloperEntityResignation (type, typeGroup, asset) {
-      return (
-        this.transaction_isEntityResignation(type, typeGroup, asset) &&
-        asset.type === TRANSACTION_TYPES_ENTITY.TYPE.DEVELOPER &&
-        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
-      )
-    },
-
-    transaction_isDeveloperEntityUpdate (type, typeGroup, asset) {
-      return (
-        this.transaction_isEntityUpdate(type, typeGroup, asset) &&
-        asset.type === TRANSACTION_TYPES_ENTITY.TYPE.DEVELOPER &&
-        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
-      )
-    },
-
     transaction_isCorePluginEntityRegistration (type, typeGroup, asset) {
       return (
         this.transaction_isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN &&
-        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.PLUGIN_CORE
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
       )
     },
 
@@ -159,7 +135,7 @@ export default {
       return (
         this.transaction_isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN &&
-        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.PLUGIN_CORE
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
       )
     },
 
@@ -167,7 +143,7 @@ export default {
       return (
         this.transaction_isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN &&
-        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.PLUGIN_CORE
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
       )
     },
 
@@ -175,7 +151,7 @@ export default {
       return (
         this.transaction_isEntityRegistration(type, typeGroup, asset) &&
         asset.type === TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN &&
-        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.PLUGIN_DESKTOP
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
       )
     },
 
@@ -183,7 +159,7 @@ export default {
       return (
         this.transaction_isEntityResignation(type, typeGroup, asset) &&
         asset.type === TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN &&
-        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.PLUGIN_DESKTOP
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
       )
     },
 
@@ -191,7 +167,31 @@ export default {
       return (
         this.transaction_isEntityUpdate(type, typeGroup, asset) &&
         asset.type === TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN &&
-        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.PLUGIN_DESKTOP
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
+      )
+    },
+
+    transaction_isModuleEntityRegistration (type, typeGroup, asset) {
+      return (
+        this.transaction_isEntityRegistration(type, typeGroup, asset) &&
+        asset.type === TRANSACTION_TYPES_ENTITY.TYPE.MODULE &&
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
+      )
+    },
+
+    transaction_isModuleEntityResignation (type, typeGroup, asset) {
+      return (
+        this.transaction_isEntityResignation(type, typeGroup, asset) &&
+        asset.type === TRANSACTION_TYPES_ENTITY.TYPE.MODULE &&
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
+      )
+    },
+
+    transaction_isModuleEntityUpdate (type, typeGroup, asset) {
+      return (
+        this.transaction_isEntityUpdate(type, typeGroup, asset) &&
+        asset.type === TRANSACTION_TYPES_ENTITY.TYPE.MODULE &&
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
       )
     },
 

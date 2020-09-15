@@ -82,16 +82,14 @@ exports.TRANSACTION_TYPES = {
 exports.TRANSACTION_TYPES_ENTITY = {
   TYPE: {
     BUSINESS: 0,
-    BRIDGECHAIN: 1, // not used anymore but type is kept
-    DEVELOPER: 2,
-    PLUGIN: 3,
+    PRODUCT: 1,
+    PLUGIN: 2,
+    MODULE: 3,
     DELEGATE: 4
   },
 
   SUBTYPE: {
-    NONE: 0,
-    PLUGIN_CORE: 1,
-    PLUGIN_DESKTOP: 2
+    NONE: 0
   },
 
   ACTION: {
