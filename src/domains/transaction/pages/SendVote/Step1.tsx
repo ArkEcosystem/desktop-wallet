@@ -112,7 +112,7 @@ export const FirstStep = ({
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}
-							onChange={(value: any) =>
+							onChange={({ value }: any) =>
 								setValue("fee", value, { shouldValidate: true, shouldDirty: true })
 							}
 						/>

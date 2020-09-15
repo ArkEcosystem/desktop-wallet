@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { act, fireEvent, render, screen } from "testing-library";
+import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { InputCurrency } from "./InputCurrency";
 
@@ -23,7 +23,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith("12300000000");
+		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "12300000000" });
 	});
 
 	it("should accept a custom magnitude", () => {
@@ -39,7 +39,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith("12300");
+		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "12300" });
 	});
 
 	it("should not allow letters", () => {
@@ -55,7 +55,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith("123");
+		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "123" });
 	});
 
 	it("should format with a default value", () => {
@@ -70,21 +70,19 @@ describe("InputCurrency", () => {
 			const [value, setValue] = useState("0.04");
 			return <InputCurrency value={value} onChange={setValue} />;
 		};
-		render(<Component />);
-		const input = screen.getByRole("textbox");
+		const { getByTestId } = render(<Component />);
+		const input = getByTestId("InputCurrency");
 
 		expect(input).toHaveValue("0.04");
 
 		act(() => {
 			fireEvent.input(input, {
 				target: {
-					value: "1",
+					value: "1.23",
 				},
 			});
 		});
 
-		// TODO: Should not fail
-		// As the output should match the input for a controlled case
-		expect(input).toHaveValue("100000000");
+		waitFor(() => expect(input).toHaveValue("1.23"));
 	});
 });

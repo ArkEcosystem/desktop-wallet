@@ -23,17 +23,19 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const [values, setValues] = React.useState<number[]>([BigNumber.make(defaultValue).divide(1e8).toNumber()]);
 		const fraction = Math.pow(10, magnitude! * -1);
 
-		const handleInput = (value: string) => {
-			console.log({ value });
-			if (BigNumber.make(value).divide(1e8).toNumber() > max) {
-				value = BigNumber.make(max).times(1e8).toFixed(0);
+		const handleInput = (currency: { display: string; amount: string }) => {
+			let value = currency.display || BigNumber.make(0);
+
+			if (BigNumber.make(currency.value).divide(1e8).toNumber() > max) {
+				value = BigNumber.make(max);
 			}
 
-			let amount = BigNumber.make(value).times(fraction);
-			amount = amount.toNumber() * 1e8;
+			if (BigNumber.make(currency.value).divide(1e8).toNumber() < min) {
+				value = BigNumber.make(min);
+			}
 
-			setValues([amount]);
-			onChange?.(amount.toFixed(0));
+			setValues([value]);
+			onChange?.(currency);
 		};
 
 		const handleRange = (values: number[]) => {

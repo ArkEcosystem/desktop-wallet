@@ -18,9 +18,9 @@ export const Default = () => {
 				{...fees}
 				defaultValue={value}
 				step={0.01}
-				onChange={(toshi: any) => {
-					console.log({ toshi });
-					setValue(toshi);
+				onChange={(currency: any) => {
+					console.log({ currency });
+					setValue(currency.value);
 				}}
 			/>
 		</div>

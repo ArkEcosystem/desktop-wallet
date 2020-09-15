@@ -197,7 +197,7 @@ export const FormStep = ({ title, description, showEntityNameField = true }: For
 							max={fees.max}
 							defaultValue={fee || 0}
 							step={0.01}
-							onChange={(value: any) =>
+							onChange={({ value }: any) =>
 								setValue("fee", value, { shouldValidate: true, shouldDirty: true })
 							}
 						/>
