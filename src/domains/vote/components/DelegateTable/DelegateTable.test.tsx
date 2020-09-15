@@ -1,4 +1,5 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { translations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 import { data } from "tests/fixtures/coins/ark/delegates-devnet.json";
@@ -56,12 +57,18 @@ describe("DelegateTable", () => {
 
 		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(selectButton).toHaveTextContent(translations.SELECTED);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should unselect a delegate to vote", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
-		const selectButton = getByTestId("DelegateRow__toggle-0");
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const selectButton = getByTestId("DelegateRow__toggle-1");
 
 		act(() => {
 			fireEvent.click(selectButton);
@@ -74,7 +81,7 @@ describe("DelegateTable", () => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(selectButton).toHaveTextContent("Selected");
+		expect(selectButton).toHaveTextContent(translations.SELECTED);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -88,25 +95,60 @@ describe("DelegateTable", () => {
 
 		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
+
+		act(() => {
+			fireEvent.click(selectButton);
+		});
+
+		expect(selectButton).toHaveTextContent(translations.CURRENT);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should unselect a delegate to unvote", () => {
 		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
-		const selectButton = getByTestId("DelegateRow__toggle-0");
+		const selectUnvoteButton = getByTestId("DelegateRow__toggle-0");
+		const selectVoteButton = getByTestId("DelegateRow__toggle-1");
 
 		act(() => {
-			fireEvent.click(selectButton);
+			fireEvent.click(selectUnvoteButton);
+		});
+
+		act(() => {
+			fireEvent.click(selectVoteButton);
 		});
 
 		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
 
 		act(() => {
-			fireEvent.click(selectButton);
+			fireEvent.click(selectUnvoteButton);
 		});
 
-		expect(selectButton).toHaveTextContent("Current");
+		expect(selectUnvoteButton).toHaveTextContent(translations.CURRENT);
+		expect(selectVoteButton).toHaveTextContent(translations.SELECTED);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select a delegate to unvote/vote", () => {
+		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const selectUnvoteButton = getByTestId("DelegateRow__toggle-0");
+		const selectVoteButton = getByTestId("DelegateRow__toggle-1");
+
+		act(() => {
+			fireEvent.click(selectUnvoteButton);
+		});
+
+		act(() => {
+			fireEvent.click(selectVoteButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--unvotes")).toHaveTextContent("1");
+		expect(getByTestId("DelegateTable__footer--votes")).toHaveTextContent("1");
+
+		expect(selectUnvoteButton).toHaveTextContent(translations.UNSELECTED);
+		expect(selectVoteButton).toHaveTextContent(translations.SELECTED);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

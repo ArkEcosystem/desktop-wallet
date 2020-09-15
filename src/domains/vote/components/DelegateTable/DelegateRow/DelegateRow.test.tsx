@@ -57,13 +57,48 @@ describe("DelegateRow", () => {
 		const { container, asFragment, getByTestId } = render(
 			<table>
 				<tbody>
-					<DelegateRow index={1} delegate={delegate} selectedVotes={selected} />
+					<DelegateRow index={0} delegate={delegate} selectedVotes={selected} />
 				</tbody>
 			</table>,
 		);
 
 		expect(container).toBeTruthy();
-		expect(getByTestId("DelegateRow__toggle-1")).toHaveTextContent(translations.SELECTED);
+		expect(getByTestId("DelegateRow__toggle-0")).toHaveTextContent(translations.SELECTED);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render the selected vote", () => {
+		const secondDelegate = new ReadOnlyWallet({
+			address: data[1].address,
+			explorerLink: "",
+			publicKey: data[1].publicKey,
+			username: data[1].username,
+			rank: data[1].rank,
+		});
+
+		const thirdDelegate = new ReadOnlyWallet({
+			address: data[2].address,
+			explorerLink: "",
+			publicKey: data[2].publicKey,
+			username: data[2].username,
+			rank: data[2].rank,
+		});
+
+		const { container, asFragment, getByTestId } = render(
+			<table>
+				<tbody>
+					<DelegateRow index={0} delegate={delegate} isVoted={true} />
+					<DelegateRow index={1} delegate={secondDelegate} />
+					<DelegateRow index={2} delegate={thirdDelegate} isVoteDisabled={true} />
+				</tbody>
+			</table>,
+		);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("DelegateRow__toggle-0")).toHaveTextContent(translations.CURRENT);
+		expect(getByTestId("DelegateRow__toggle-1")).toHaveTextContent(translations.NOT_SELECTED);
+		expect(getByTestId("DelegateRow__toggle-2")).toBeDisabled();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

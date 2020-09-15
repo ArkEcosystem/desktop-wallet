@@ -6,7 +6,7 @@ import { Amount } from "./Amount";
 
 describe("Amount", () => {
 	it("should format currency", () => {
-		const { container, rerender, debug } = render(<Amount value={BigNumber.make("123.456")} ticker="EUR" />);
+		const { container, rerender } = render(<Amount value={BigNumber.make("123.456")} ticker="EUR" />);
 		expect(container).toHaveTextContent("€123.46");
 
 		rerender(<Amount value={BigNumber.make("1")} ticker="EUR" />);
