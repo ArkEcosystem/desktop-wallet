@@ -19,8 +19,7 @@ export const fetchTxIpfsData = async (tx: TransactionData) => {
 };
 
 export const sendEntityUpdateTransaction = async ({ form, senderWallet, env, type }: SignEntityUpdateProps) => {
-	const { getValues } = form;
-	const { fee, entityName = "test", ipfsData, mnemonic, secondMnemonic, registrationId } = getValues({ nest: true });
+	const { fee, entityName, ipfsData, mnemonic, secondMnemonic, registrationId } = form.getValues({ nest: true });
 
 	const sanitizedData = filter(ipfsData, (item) => !isEmpty(item));
 	const entityType = type ?? Enums.EntityType.Business;
