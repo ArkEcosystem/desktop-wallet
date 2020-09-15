@@ -1,4 +1,3 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { TextArea } from "app/components/TextArea";
@@ -7,38 +6,20 @@ import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { EntityLink } from "domains/transaction/components/LinkCollection/LinkCollection.models";
 import { EntityProvider } from "domains/transaction/entity/providers";
-import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
+import React, { ChangeEvent, useCallback, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import * as yup from "yup";
 
 const entityProvider = new EntityProvider();
 
-export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
-	const { t } = useTranslation();
-	const { register, setValue, getValues } = useFormContext();
-	const { fee } = getValues();
+export const FormStep = () => {
 	const [selectedAvatar, setSelectedAvatar] = useState<EntityLink | undefined>();
 
-	useEffect(() => {
-		register("entityName", { required: true, minLength: 3, maxLength: 40, pattern: /^[a-zA-Z0-9_-]+$/ });
-		register("ipfsData.meta.displayName", { required: true, minLength: 3, maxLength: 128 });
-		register("ipfsData.meta.website", {
-			validate: {
-				valid: (value) => {
-					if (!yup.string().url().isValidSync(value)) {
-						return t<string>("TRANSACTION.INVALID_URL");
-					}
-					return true;
-				},
-			},
-		});
-		register("ipfsData.meta.description", { minLength: 3, maxLength: 512 });
-		register("ipfsData.sourceControl");
-		register("ipfsData.socialMedia");
-		register("ipfsData.images");
-		register("ipfsData.videos");
-	}, [register, t]);
+	const { t } = useTranslation();
+
+	const form = useFormContext();
+	const { setValue, getValues } = form;
+	const { fee, fees } = form.watch();
 
 	const handleInput = useCallback(
 		(event: ChangeEvent<HTMLInputElement>) => {
@@ -104,7 +85,6 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 		},
 		[getValues, setValue, setSelectedAvatar],
 	);
-
 	return (
 		<div data-testid="BusinessRegistrationForm__step--second">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
@@ -114,7 +94,12 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 				<div className="pb-8 mt-8">
 					<FormField name="entityName" className="font-normal">
 						<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
-						<Input data-testid="BusinessRegistrationForm__name" type="text" onChange={handleInput} />
+						<Input
+							data-testid="BusinessRegistrationForm__name"
+							type="text"
+							onChange={handleInput}
+							defaultValue={getValues("entityName")}
+						/>
 						<FormHelperText errorMessage={t("TRANSACTION.ENTITY.INVALID_NAME")} />
 					</FormField>
 
@@ -124,19 +109,29 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 							data-testid="BusinessRegistrationForm__display-name"
 							type="text"
 							onChange={handleInput}
+							defaultValue={getValues("ipfsData.meta.displayName")}
 						/>
 						<FormHelperText />
 					</FormField>
 
 					<FormField name="ipfsData.meta.description" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
-						<TextArea data-testid="BusinessRegistrationForm__description" onChange={handleInput} />
+						<TextArea
+							data-testid="BusinessRegistrationForm__description"
+							onChange={handleInput}
+							defaultValue={getValues("ipfsData.meta.description")}
+						/>
 						<FormHelperText errorMessage={t("TRANSACTION.ENTITY.INVALID_DESCRIPTION")} />
 					</FormField>
 
 					<FormField name="ipfsData.meta.website" className="mt-8 font-normal">
 						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
-						<Input data-testid="BusinessRegistrationForm__website" type="text" onChange={handleInput} />
+						<Input
+							data-testid="BusinessRegistrationForm__website"
+							type="text"
+							onChange={handleInput}
+							defaultValue={getValues("ipfsData.meta.website")}
+						/>
 						<FormHelperText />
 					</FormField>
 				</div>
@@ -150,6 +145,7 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
 						onChange={handleSourceControl}
+						data={getValues("ipfsData.sourceControl") || []}
 					/>
 				</TransactionDetail>
 
@@ -162,6 +158,7 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
 						onChange={handleSocialMedia}
+						data={getValues("ipfsData.socialMedia") || []}
 					/>
 				</TransactionDetail>
 
@@ -177,6 +174,7 @@ export const FormStep = ({ fees }: { fees: Contracts.TransactionFee }) => {
 						selectionTypeTitle="Avatar"
 						onChange={handleMedia}
 						onChoose={handleAvatar}
+						data={[...(getValues("images") || []), ...(getValues("videos") || [])]}
 					/>
 				</TransactionDetail>
 
