@@ -11,10 +11,11 @@ import { useTranslation } from "react-i18next";
 
 type EntityTableRowItemProps = {
 	entity: ExtendedTransactionData;
+	type?: string;
 	onAction?: any;
 };
 
-export const EntityTableRowItem = ({ onAction, entity }: EntityTableRowItemProps) => {
+export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowItemProps) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
 	const { t } = useTranslation();
@@ -70,7 +71,13 @@ export const EntityTableRowItem = ({ onAction, entity }: EntityTableRowItemProps
 						toggleIcon="Settings"
 						options={options}
 						onSelect={({ value }: any) =>
-							onAction?.({ walletId: entity.wallet().id(), txId: entity.id(), action: value })
+							onAction?.({
+								walletId: entity.wallet().id(),
+								txId: entity.id(),
+								entity,
+								type,
+								action: value,
+							})
 						}
 					/>
 				</Button>

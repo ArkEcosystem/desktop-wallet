@@ -1,55 +1,44 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Label } from "app/components/Label";
-import { Loader } from "app/components/Loader";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useEnvironmentContext } from "app/contexts";
-import { useActiveWallet } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { StepProps } from "./SendEntityResignation.models";
+import { EntityResignationStepProps } from "../EntityResignationSteps.models";
 
-export const FirstStep = ({ senderWallet, fees }: StepProps) => {
+export const EntityFirstStep = ({ entity, fees }: EntityResignationStepProps) => {
 	const { t } = useTranslation();
-	const activeWallet = useActiveWallet();
-	const { env } = useEnvironmentContext();
-	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
-
-	useEffect(() => {
-		setDelegate(
-			env.delegates().findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address()),
-		);
-	}, [env, activeWallet]);
+	const { data }: any = entity.data().asset();
 
 	return (
 		<div data-testid="SendEntityResignation__first-step">
-			{!delegate && <Loader />}
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.TITLE")}</h1>
+			<h1 className="mb-0">{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.TITLE`)}</h1>
 			<div className="text-theme-neutral-dark">
-				{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.DESCRIPTION")}
+				{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.DESCRIPTION`)}
 			</div>
 
 			<div className="mt-6">
-				<Alert size="lg">{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.WARNING")}</Alert>
+				<Alert size="lg">{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.WARNING`)}</Alert>
 			</div>
 
 			<div>
-				<TransactionDetail extra={<Avatar size="lg" address={activeWallet.address()} />} border={false}>
+				<TransactionDetail extra={<Avatar size="lg" address={entity.sender()} />} border={false}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
 							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
-					<Address address={activeWallet.address()} walletName={activeWallet.alias()} />
+					<Address address={entity.sender()} walletName={entity.wallet().alias()} />
 				</TransactionDetail>
 
-				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate?.username()}</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.ENTITY_NAME")}>
+					{data.name}
+				</TransactionDetail>
 
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="name" className="font-normal">

@@ -1,30 +1,21 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useEnvironmentContext } from "app/contexts";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { StepProps } from "./SendEntityResignation.models";
+import { EntityResignationStepProps } from "../EntityResignationSteps.models";
 
-export const FourthStep = ({ fees, transaction, senderWallet }: StepProps) => {
+export const EntityFourthStep = ({ entity, transaction, fees }: EntityResignationStepProps) => {
 	const { t } = useTranslation();
-	const { env } = useEnvironmentContext();
-	const [delegate, setDelegate] = useState<ReadOnlyWallet>();
-
-	useEffect(() => {
-		setDelegate(
-			env.delegates().findByAddress(senderWallet.coinId(), senderWallet.networkId(), senderWallet.address()),
-		);
-	}, [env, senderWallet]);
+	const { data } = entity;
 
 	return (
 		<div data-testid="SendEntityResignation__fourth-step">
-			<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
+			<TransactionSuccessful transaction={transaction} senderWallet={entity.wallet()}>
 				<TransactionDetail
 					label={t("TRANSACTION.TRANSACTION_TYPE")}
 					extra={
@@ -35,7 +26,7 @@ export const FourthStep = ({ fees, transaction, senderWallet }: StepProps) => {
 				>
 					{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FOURTH_STEP.TITLE")}
 				</TransactionDetail>
-				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{delegate?.username()}</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{data?.name}</TransactionDetail>
 				<TransactionDetail
 					label={t("TRANSACTION.AMOUNT")}
 					extra={

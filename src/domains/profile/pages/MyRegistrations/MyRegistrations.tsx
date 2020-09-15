@@ -96,13 +96,18 @@ export const MyRegistrations = () => {
 		plugins,
 	]);
 
-	const handleAction = ({ action, walletId }: any) => {
+	// TODO: Find a better way to carry on entity from registrations to resign page
+	// to avoid use state and also work better with loading states in the send entity resignation
+	const handleAction = ({ action, walletId, entity, type }: any) => {
 		switch (action) {
 			case "register":
 				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
 				break;
 			case "resign":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`, {
+					entity,
+					type,
+				});
 				break;
 			case "update":
 				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
@@ -143,6 +148,7 @@ export const MyRegistrations = () => {
 					<EntityTable
 						title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
 						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
+						type="entity"
 						entities={businessEntities}
 						onAction={handleAction}
 					/>
@@ -154,6 +160,7 @@ export const MyRegistrations = () => {
 					<EntityTable
 						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
 						title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
+						type="entity"
 						entities={pluginEntities}
 						onAction={handleAction}
 					/>
