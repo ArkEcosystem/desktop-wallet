@@ -24,7 +24,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const fraction = Math.pow(10, magnitude! * -1);
 
 		const handleInput = (currency: { display: string; amount: string }) => {
-			let value = currency.display || BigNumber.make(0);
+			let value = currency.display;
 
 			if (BigNumber.make(currency.value).divide(1e8).toNumber() > max) {
 				value = BigNumber.make(max);
