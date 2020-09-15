@@ -149,11 +149,11 @@ export const SendVote = () => {
 
 				await env.persist();
 
-				await confirmSendVote("vote");
-
 				setTransaction(senderWallet!.transaction().transaction(voteTransactionId));
 
 				handleNext();
+
+				await confirmSendVote("vote");
 			} else {
 				const isUnvote = unvotes.length > 0;
 				const transactionId = await senderWallet!.transaction().signVote({

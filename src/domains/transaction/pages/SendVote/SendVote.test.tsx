@@ -174,6 +174,10 @@ describe("SendVote", () => {
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 2000 });
 
+			await waitFor(() => expect(setInterval).toHaveBeenCalledTimes(2));
+
+			jest.runOnlyPendingTimers();
+
 			signUnvoteMock.mockRestore();
 			broadcastUnvoteMock.mockRestore();
 			transactionUnvoteMock.mockRestore();
