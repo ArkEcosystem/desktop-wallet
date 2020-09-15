@@ -157,7 +157,7 @@ describe("SendEntityResignation", () => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveAttribute("aria-invalid"));
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).not.toHaveAttribute("aria-invalid"));
 		await waitFor(() => expect(getByTestId("SendEntityResignation__send-button")).toBeDisabled());
 
 		expect(getByTestId("AuthenticationStep")).toBeTruthy();
@@ -186,27 +186,35 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
 			});
+
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: "second mnemonic",
+				},
+			});
 		});
+
+		await waitFor(() => expect(getByTestId("SendEntityResignation__send-button")).not.toBeDisabled());
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("SendEntityResignation__fourth-step")).toBeTruthy());
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(signMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
 
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
 	});
 
-	it("should handle download button after succesful submittion", async () => {
+	it("should handle download button after succesfull submittion", async () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signDelegateResignation")
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
@@ -225,12 +233,20 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "test",
+				},
+			});
+
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
 				target: {
 					value: "test",
 				},
 			});
 		});
+
+		await waitFor(() => expect(getByTestId("SendEntityResignation__send-button")).not.toBeDisabled());
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
@@ -268,12 +284,19 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "test",
+				},
+			});
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
 				target: {
 					value: "test",
 				},
 			});
 		});
+
+		await waitFor(() => expect(getByTestId("SendEntityResignation__send-button")).not.toBeDisabled());
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
