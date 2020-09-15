@@ -3,7 +3,7 @@ import React from "react";
 
 import { Input } from "./Input";
 
-type Props = { onChange?: (value: string) => void; magnitude?: number } & Omit<
+type Props = { onChange?: (value: { display: string; value: string }) => void; magnitude?: number } & Omit<
 	React.InputHTMLAttributes<any>,
 	"onChange" | "defaultValue"
 >;

@@ -5,13 +5,13 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export type InputFeeProps = {
-	defaultValue: string;
-	value?: string;
+	defaultValue: any;
+	value?: string | undefined;
 	min: string;
 	avg: string;
 	max: string;
 	step: number;
-	onChange?: (value: string) => void;
+	onChange?: (value: { display: string; value: string }) => void;
 };
 
 // TODO: Remove defaultValue?
@@ -21,9 +21,9 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 	const minHuman = BigNumber.make(min).divide(1e8).toNumber();
 	const maxHuman = BigNumber.make(max).divide(1e8).toNumber();
 
-	const [fee, setFee] = useState<string>(defaultValue);
+	const [fee, setFee] = useState<any>(defaultValue);
 
-	const handleFeeChange = (currency: { display: string; value: string }) => {
+	const handleFeeChange = (currency: any) => {
 		setFee(currency?.value || currency);
 		onChange?.(currency);
 	};
