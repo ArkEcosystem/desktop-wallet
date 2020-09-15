@@ -4,6 +4,7 @@ import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
+import { Loader } from "app/components/Loader";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -30,6 +31,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	const [activeTab, setActiveTab] = useState(1);
 	const [activeTransaction, setActiveTransaction] = useState<TransactionData>();
 	const [savedTransaction, setSavedTransaction] = useState<SignedTransactionData>();
+	const [isLoading, setIsLoading] = useState(true);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const { setValue, triggerValidation, getValues, register } = form;
@@ -138,80 +140,84 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload?.(data)}>
-					<Tabs activeId={activeTab}>
-						<StepIndicator size={4} activeIndex={activeTab} />
+				{isLoading && <Loader />}
 
-						<div className="mt-8">
-							<TabPanel tabId={1}>
-								<FirstStep />
-							</TabPanel>
-							<TabPanel tabId={2}>
-								<SecondStep wallet={activeWallet} />
-							</TabPanel>
-							<TabPanel tabId={3}>
-								<ThirdStep wallet={activeWallet} />
-							</TabPanel>
-							<TabPanel tabId={4}>
-								{savedTransaction && (
-									<FourthStep
-										transaction={savedTransaction}
-										senderWallet={activeWallet}
-										ipfsData={getValues("ipfsData")}
-									/>
-								)}
-							</TabPanel>
+				{!isLoading && (
+					<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload?.(data)}>
+						<Tabs activeId={activeTab}>
+							<StepIndicator size={4} activeIndex={activeTab} />
 
-							<div className="flex justify-end mt-8 space-x-3">
-								{activeTab < 4 && activeTab > 1 && (
-									<Button
-										disabled={activeTab === 1}
-										data-testid="SendEntityUpdate__back-button"
-										variant="plain"
-										onClick={handleBack}
-									>
-										{t("COMMON.BACK")}
-									</Button>
-								)}
+							<div className="mt-8">
+								<TabPanel tabId={1}>
+									<FirstStep />
+								</TabPanel>
+								<TabPanel tabId={2}>
+									<SecondStep wallet={activeWallet} />
+								</TabPanel>
+								<TabPanel tabId={3}>
+									<ThirdStep wallet={activeWallet} />
+								</TabPanel>
+								<TabPanel tabId={4}>
+									{savedTransaction && (
+										<FourthStep
+											transaction={savedTransaction}
+											senderWallet={activeWallet}
+											ipfsData={getValues("ipfsData")}
+										/>
+									)}
+								</TabPanel>
 
-								{activeTab < 3 && (
-									<Button data-testid="SendEntityUpdate__continue-button" onClick={handleNext}>
-										{t("COMMON.CONTINUE")}
-									</Button>
-								)}
-
-								{activeTab === 3 && (
-									<Button
-										data-testid="SendEntityUpdate__send-button"
-										onClick={handleSubmit}
-										className="space-x-2"
-									>
-										<Icon name="Send" width={20} height={20} />
-										<span>{t("COMMON.SEND")}</span>
-									</Button>
-								)}
-
-								{activeTab === 4 && (
-									<div className="flex justify-end space-x-3">
-										<Button data-testid="SendEntityUpdate__wallet-button" variant="plain">
-											{t("COMMON.BACK_TO_WALLET")}
-										</Button>
-
+								<div className="flex justify-end mt-8 space-x-3">
+									{activeTab < 4 && activeTab > 1 && (
 										<Button
-											type="submit"
-											data-testid="SendEntityUpdate__download-button"
+											disabled={activeTab === 1}
+											data-testid="SendEntityUpdate__back-button"
 											variant="plain"
+											onClick={handleBack}
+										>
+											{t("COMMON.BACK")}
+										</Button>
+									)}
+
+									{activeTab < 3 && (
+										<Button data-testid="SendEntityUpdate__continue-button" onClick={handleNext}>
+											{t("COMMON.CONTINUE")}
+										</Button>
+									)}
+
+									{activeTab === 3 && (
+										<Button
+											data-testid="SendEntityUpdate__send-button"
+											onClick={handleSubmit}
 											className="space-x-2"
 										>
-											<Icon name="Download" />
-											<span>{t("COMMON.DOWNLOAD")}</span>
+											<Icon name="Send" width={20} height={20} />
+											<span>{t("COMMON.SEND")}</span>
 										</Button>
-									</div>
-								)}
+									)}
+
+									{activeTab === 4 && (
+										<div className="flex justify-end space-x-3">
+											<Button data-testid="SendEntityUpdate__wallet-button" variant="plain">
+												{t("COMMON.BACK_TO_WALLET")}
+											</Button>
+
+											<Button
+												type="submit"
+												data-testid="SendEntityUpdate__download-button"
+												variant="plain"
+												className="space-x-2"
+											>
+												<Icon name="Download" />
+												<span>{t("COMMON.DOWNLOAD")}</span>
+											</Button>
+										</div>
+									)}
+								</div>
 							</div>
-						</div>
-					</Tabs>
-				</Form>
+						</Tabs>
+					</Form>
+				)}
 			</Section>
 		</Page>
 	);
