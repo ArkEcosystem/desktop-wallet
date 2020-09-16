@@ -1,11 +1,13 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { useActiveProfile } from "app/hooks/env";
-import React from "react";
+import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -21,14 +23,21 @@ type SendEntityUpdateProps = {
 
 export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpdateProps) => {
 	const [activeTab, setActiveTab] = React.useState(1);
-
+	const { env } = useEnvironmentContext();
+	const activeWallet = useActiveWallet();
+	const activeProfile = useActiveProfile();
+	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+
 	const { formState } = form;
 	const { isValid } = formState;
 
-	const activeProfile = useActiveProfile();
-
-	const { t } = useTranslation();
+	const [fees, setFees] = useState<Contracts.TransactionFee>({
+		static: "5",
+		min: "0",
+		avg: "1",
+		max: "2",
+	});
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -37,6 +46,10 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 	const handleNext = () => {
 		setActiveTab(activeTab + 1);
 	};
+
+	useEffect(() => {
+		setFees(env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "entityUpdate"));
+	}, [env, setFees, activeProfile, activeWallet]);
 
 	const crumbs = [
 		{
@@ -54,7 +67,7 @@ export const SendEntityUpdate = ({ formDefaultData, onDownload }: SendEntityUpda
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep form={form} />
+								<FirstStep form={form} fees={fees} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep />
