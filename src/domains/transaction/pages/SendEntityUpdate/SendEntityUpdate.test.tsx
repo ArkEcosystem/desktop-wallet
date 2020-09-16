@@ -669,7 +669,7 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("TransactionSent_ipfs-data")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("TransactionSent__ipfs-data")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		signMock.mockRestore();
@@ -718,7 +718,7 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("TransactionSent_ipfs-data")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("TransactionSent__ipfs-data")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {

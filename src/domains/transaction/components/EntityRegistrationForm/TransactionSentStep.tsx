@@ -49,7 +49,7 @@ export const TransactionSentStep = ({ transaction, senderWallet }: TransactionSe
 			</TransactionDetail>
 
 			{ipfsData && (
-				<div data-testid="TransactionSent_ipfs-data">
+				<div data-testid="TransactionSent__ipfs-data">
 					<TransactionDetail label={t("TRANSACTION.ENTITY.NAME")}>{transaction.data().a}</TransactionDetail>
 
 					<TransactionDetail label={t("TRANSACTION.NAME")}>{ipfsData?.meta?.displayName}</TransactionDetail>
