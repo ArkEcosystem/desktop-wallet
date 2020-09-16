@@ -135,7 +135,7 @@ describe("SendIpfs", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveClass("border-theme-success-200"),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
