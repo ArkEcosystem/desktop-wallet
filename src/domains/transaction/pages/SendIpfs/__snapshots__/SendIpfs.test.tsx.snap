@@ -799,7 +799,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              ARK Devnet
+                              ARK ARK Devnet
                             </div>
                           </div>
                           <div
@@ -1245,7 +1245,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
             <div
               class="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24"
             >
-              Devnet
+              ARK Devnet
             </div>
           </div>
         </div>
@@ -2026,7 +2026,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               <div
                                 aria-label="ARK"
                                 class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-mainnet"
+                                data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"
@@ -2051,7 +2051,57 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               <div
                                 aria-label="ARK Devnet"
                                 class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                                data-testid="NetworkIcon-ARK-devnet"
+                                data-testid="NetworkIcon-ARK-ark.devnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              disabled=""
+                              id="SendTransactionForm__network-item-2"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.mainnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              disabled=""
+                              id="SendTransactionForm__network-item-3"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia Testnet"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.testnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"

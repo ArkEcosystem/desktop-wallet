@@ -406,7 +406,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                               <div
                                 aria-label="ARK"
                                 class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                                data-testid="NetworkIcon-ARK-mainnet"
+                                data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"
@@ -430,7 +430,55 @@ exports[`Transaction Send should display disabled address selection input if sel
                               <div
                                 aria-label="ARK Devnet"
                                 class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-devnet"
+                                data-testid="NetworkIcon-ARK-ark.devnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              id="SendTransactionForm__network-item-2"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.mainnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              id="SendTransactionForm__network-item-3"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia Testnet"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.testnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"
@@ -2721,9 +2769,21 @@ exports[`Transaction Send should render registration form without selected walle
                               role="option"
                             >
                               <div
-                                class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
-                                data-testid="NetworkIcon__placeholder"
-                              />
+                                aria-label="Compendia"
+                                class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                                data-testid="NetworkIcon-ARK-compendia.mainnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </li>
                             <li
                               aria-selected="false"
@@ -2733,9 +2793,21 @@ exports[`Transaction Send should render registration form without selected walle
                               role="option"
                             >
                               <div
-                                class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
-                                data-testid="NetworkIcon__placeholder"
-                              />
+                                aria-label="Compendia Testnet"
+                                class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                                data-testid="NetworkIcon-ARK-compendia.testnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </li>
                           </ul>
                         </fieldset>
@@ -3594,9 +3666,21 @@ exports[`Transaction Send should select network first and see select address inp
                               role="option"
                             >
                               <div
-                                class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
-                                data-testid="NetworkIcon__placeholder"
-                              />
+                                aria-label="Compendia"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.mainnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </li>
                             <li
                               aria-selected="false"
@@ -3606,9 +3690,21 @@ exports[`Transaction Send should select network first and see select address inp
                               role="option"
                             >
                               <div
-                                class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
-                                data-testid="NetworkIcon__placeholder"
-                              />
+                                aria-label="Compendia Testnet"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.testnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
                             </li>
                           </ul>
                         </fieldset>

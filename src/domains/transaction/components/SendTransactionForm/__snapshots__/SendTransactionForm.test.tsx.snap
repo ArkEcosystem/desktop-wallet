@@ -77,7 +77,7 @@ exports[`SendTransactionForm should render 1`] = `
           <div
             aria-label="ARK"
             class="sc-AxirZ bjGJqJ border-theme-danger-light text-theme-danger-400"
-            data-testid="NetworkIcon-ARK-mainnet"
+            data-testid="NetworkIcon-ARK-ark.mainnet"
           >
             <div
               class="sc-AxiKw fubePL"
@@ -101,7 +101,55 @@ exports[`SendTransactionForm should render 1`] = `
           <div
             aria-label="ARK Devnet"
             class="sc-AxirZ bjGJqJ border-theme-primary-100 text-theme-primary-400"
-            data-testid="NetworkIcon-ARK-devnet"
+            data-testid="NetworkIcon-ARK-ark.devnet"
+          >
+            <div
+              class="sc-AxiKw fubePL"
+              data-testid="NetworkIcon__icon"
+              height="26"
+              width="26"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          id="SendTransactionForm__network-item-2"
+          role="option"
+        >
+          <div
+            aria-label="Compendia"
+            class="sc-AxirZ bjGJqJ border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-compendia.mainnet"
+          >
+            <div
+              class="sc-AxiKw fubePL"
+              data-testid="NetworkIcon__icon"
+              height="26"
+              width="26"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          id="SendTransactionForm__network-item-3"
+          role="option"
+        >
+          <div
+            aria-label="Compendia Testnet"
+            class="sc-AxirZ bjGJqJ border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-compendia.testnet"
           >
             <div
               class="sc-AxiKw fubePL"
@@ -357,7 +405,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           <div
             aria-label="ARK"
             class="sc-AxirZ bjGJqJ border-theme-danger-light text-theme-danger-400"
-            data-testid="NetworkIcon-ARK-mainnet"
+            data-testid="NetworkIcon-ARK-ark.mainnet"
           >
             <div
               class="sc-AxiKw fubePL"
@@ -382,7 +430,57 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           <div
             aria-label="ARK Devnet"
             class="sc-AxirZ bjGJqJ border-theme-primary-100 text-theme-primary-400"
-            data-testid="NetworkIcon-ARK-devnet"
+            data-testid="NetworkIcon-ARK-ark.devnet"
+          >
+            <div
+              class="sc-AxiKw fubePL"
+              data-testid="NetworkIcon__icon"
+              height="26"
+              width="26"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          disabled=""
+          id="SendTransactionForm__network-item-2"
+          role="option"
+        >
+          <div
+            aria-label="Compendia"
+            class="sc-AxirZ bjGJqJ border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-compendia.mainnet"
+          >
+            <div
+              class="sc-AxiKw fubePL"
+              data-testid="NetworkIcon__icon"
+              height="26"
+              width="26"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="inline-block cursor-pointer"
+          data-testid="SelectNetwork__NetworkIcon--container"
+          disabled=""
+          id="SendTransactionForm__network-item-3"
+          role="option"
+        >
+          <div
+            aria-label="Compendia Testnet"
+            class="sc-AxirZ bjGJqJ border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-compendia.testnet"
           >
             <div
               class="sc-AxiKw fubePL"
