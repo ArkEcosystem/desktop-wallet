@@ -195,9 +195,9 @@
       {{ $t("TRANSACTION.TYPE.BUSINESS_ENTITY_UPDATE") }}
     </span>
     <span
-      v-else-if="transaction_isCorePluginEntityRegistration(type, group, asset)"
+      v-else-if="transaction_isPluginEntityRegistration(type, group, asset)"
       v-tooltip="{
-        content: $t('TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_REGISTRATION'),
+        content: $t('TRANSACTION.TYPE.PLUGIN_ENTITY_REGISTRATION'),
         container: tooltipContainer,
         delay: { show: 300, hide: 0 },
         show: showTooltip,
@@ -206,12 +206,12 @@
       @mouseover="onMouseOver"
       @mouseout="onMouseOut"
     >
-      {{ $t("TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_REGISTRATION") }}
+      {{ $t("TRANSACTION.TYPE.PLUGIN_ENTITY_REGISTRATION") }}
     </span>
     <span
-      v-else-if="transaction_isCorePluginEntityResignation(type, group, asset)"
+      v-else-if="transaction_isPluginEntityResignation(type, group, asset)"
       v-tooltip="{
-        content: $t('TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_RESIGNATION'),
+        content: $t('TRANSACTION.TYPE.PLUGIN_ENTITY_RESIGNATION'),
         container: tooltipContainer,
         delay: { show: 300, hide: 0 },
         show: showTooltip,
@@ -220,12 +220,12 @@
       @mouseover="onMouseOver"
       @mouseout="onMouseOut"
     >
-      {{ $t("TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_RESIGNATION") }}
+      {{ $t("TRANSACTION.TYPE.PLUGIN_ENTITY_RESIGNATION") }}
     </span>
     <span
-      v-else-if="transaction_isCorePluginEntityUpdate(type, group, asset)"
+      v-else-if="transaction_isPluginEntityUpdate(type, group, asset)"
       v-tooltip="{
-        content: $t('TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_UPDATE'),
+        content: $t('TRANSACTION.TYPE.PLUGIN_ENTITY_UPDATE'),
         container: tooltipContainer,
         delay: { show: 300, hide: 0 },
         show: showTooltip,
@@ -234,49 +234,7 @@
       @mouseover="onMouseOver"
       @mouseout="onMouseOut"
     >
-      {{ $t("TRANSACTION.TYPE.CORE_PLUGIN_ENTITY_UPDATE") }}
-    </span>
-    <span
-      v-else-if="transaction_isDesktopPluginEntityRegistration(type, group, asset)"
-      v-tooltip="{
-        content: $t('TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_REGISTRATION'),
-        container: tooltipContainer,
-        delay: { show: 300, hide: 0 },
-        show: showTooltip,
-        trigger: 'manual'
-      }"
-      @mouseover="onMouseOver"
-      @mouseout="onMouseOut"
-    >
-      {{ $t("TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_REGISTRATION") }}
-    </span>
-    <span
-      v-else-if="transaction_isDesktopPluginEntityResignation(type, group, asset)"
-      v-tooltip="{
-        content: $t('TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_RESIGNATION'),
-        container: tooltipContainer,
-        delay: { show: 300, hide: 0 },
-        show: showTooltip,
-        trigger: 'manual'
-      }"
-      @mouseover="onMouseOver"
-      @mouseout="onMouseOut"
-    >
-      {{ $t("TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_RESIGNATION") }}
-    </span>
-    <span
-      v-else-if="transaction_isDesktopPluginEntityUpdate(type, group, asset)"
-      v-tooltip="{
-        content: $t('TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_UPDATE'),
-        container: tooltipContainer,
-        delay: { show: 300, hide: 0 },
-        show: showTooltip,
-        trigger: 'manual'
-      }"
-      @mouseover="onMouseOver"
-      @mouseout="onMouseOut"
-    >
-      {{ $t("TRANSACTION.TYPE.DESKTOP_PLUGIN_ENTITY_UPDATE") }}
+      {{ $t("TRANSACTION.TYPE.PLUGIN_ENTITY_UPDATE") }}
     </span>
     <span
       v-else-if="transaction_isModuleEntityRegistration(type, group, asset)"
