@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { FormField, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { TextArea } from "app/components/TextArea";
@@ -10,7 +11,12 @@ import { useTranslation } from "react-i18next";
 
 const entityProvider = new EntityProvider();
 
-export const FirstStep = ({ form }: { form: any }) => {
+type FirstStepProps = {
+	form: any;
+	fees: Contracts.TransactionFee;
+};
+
+export const FirstStep = ({ form, fees }: FirstStepProps) => {
 	const { register } = form;
 	const { t } = useTranslation();
 
@@ -78,11 +84,12 @@ export const FirstStep = ({ form }: { form: any }) => {
 					<FormField name="name" className="font-normal">
 						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee
-							defaultValue={(25 * 1e8).toFixed(0)}
-							min={(1 * 1e8).toFixed(0)}
-							avg={(50 * 1e8).toFixed(0)}
-							max={(100 * 1e8).toFixed(0)}
-							step={1}
+							value={fees.static}
+							defaultValue={fees.static}
+							min={fees.min}
+							avg={fees.avg}
+							max={fees.max}
+							step={0.01}
 						/>
 					</FormField>
 				</TransactionDetail>
