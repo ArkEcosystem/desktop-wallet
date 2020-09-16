@@ -40,17 +40,21 @@ export const Dashboard = ({ networks, /* portfolioPercentages ,*/ balances }: Da
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
-	const portfolioPercentages = useMemo(() => Object.keys(balancePerCoin).map((coin) => {
-			for (const network of networks) {
-				if (network.ticker() === coin) {
-					return {
-						...balancePerCoin[coin],
-						label: coin,
-						extra: network.extra?.borderClass,
-					};
+	const portfolioPercentages = useMemo(
+		() =>
+			Object.keys(balancePerCoin).map((coin) => {
+				for (const network of networks) {
+					if (network.ticker() === coin) {
+						return {
+							...balancePerCoin[coin],
+							label: coin,
+							extra: network.extra?.borderClass,
+						};
+					}
 				}
-			}
-		}), [availableNetworks, balancePerCoin]);
+			}),
+		[availableNetworks, balancePerCoin],
+	);
 
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
