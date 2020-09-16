@@ -30,7 +30,6 @@ test("should filter news results", async (t) => {
 
 	await t.expect(Selector('[data-testid="NewsCard"]').exists).ok();
 	await t.expect(Selector('[data-testid="NewsCard__category"]').withText(technical).exists).ok();
-	await t.expect(Selector('[data-testid="NetworkIcon-ETH-eth.mainnet"]').exists).ok();
 	await t.expect(Selector('[data-testid="NewsCard__content"]').withText(query).exists).ok();
 });
 
