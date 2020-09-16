@@ -43,6 +43,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	useEffect(() => {
 		register("fee");
 		register("fees");
+
 		register("network", { required: true });
 		register("registrationType", { required: true });
 		register("senderAddress", { required: true });
@@ -144,7 +145,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 								/>
 							)}
 
-							{registrationForm && feesByType(registrationType.value) && (
+							{registrationForm && form.getValues("fee") && (
 								<>
 									<TabPanel tabId={stepCount - 1}>
 										<AuthenticationStep wallet={activeWallet} />
@@ -234,7 +235,7 @@ SendEntityRegistration.defaultProps = {
 			avg: "1",
 			max: "2",
 		},
-		fee: 0,
+		fee: "0",
 		ipfsData: {
 			meta: {
 				displayName: undefined,
