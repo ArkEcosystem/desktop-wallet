@@ -38,8 +38,13 @@ export const peers = [
 
 export const networks = [
 	{
-		icon: "ARK",
+		icon: "Ark",
 		name: "ARK Ecosystem",
+		className: "text-theme-danger-400 border-theme-danger-light",
+	},
+	{
+		icon: "Compendia",
+		name: "Compendia",
 		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{

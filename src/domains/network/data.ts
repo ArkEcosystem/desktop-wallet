@@ -45,13 +45,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			displayName: "Compendia",
 			borderClass: "border-theme-primary-100",
 			textClass: "text-theme-primary-400",
-			iconName: "Ark",
+			iconName: "Compendia",
 		},
 		"compendia.testnet": {
 			displayName: "Compendia Testnet",
 			borderClass: "border-theme-primary-100",
 			textClass: "text-theme-primary-400",
-			iconName: "Ark",
+			iconName: "Compendia",
 		},
 	},
 	// ATOM: {

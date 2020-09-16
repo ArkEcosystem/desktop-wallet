@@ -322,10 +322,17 @@ export const wallet = wallets[0];
 
 export const networks = [
 	{
-		icon: "ARK",
+		icon: "Ark",
 		name: "ARK Ecosystem",
 		coin: "ARK",
 		network: "ark.devnet",
+		className: "text-theme-danger-400 border-theme-danger-light",
+	},
+	{
+		icon: "Ark",
+		name: "Compendia",
+		coin: "BIND",
+		network: "compendia.devnet",
 		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{
