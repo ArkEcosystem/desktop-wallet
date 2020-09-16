@@ -73,7 +73,7 @@ describe("UpdateContact", () => {
 
 		const newAddress = {
 			name: "Test name",
-			network: "devnet",
+			network: "ark.devnet",
 			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			coin: "ARK",
 		};
@@ -153,7 +153,7 @@ describe("UpdateContact", () => {
 		const newName = "Updated name";
 		const newAddress = {
 			name: "Test Address",
-			network: "devnet",
+			network: "ark.devnet",
 			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			coin: "ARK",
 		};

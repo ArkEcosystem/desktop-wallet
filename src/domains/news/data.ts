@@ -53,7 +53,7 @@ export const coins: any = {
 	ark: {
 		name: "ARK Ecosystem",
 		coin: "ARK",
-		network: "mainnet",
+		network: "ark.mainnet",
 	},
 	btc: {
 		name: "Bitcoin",

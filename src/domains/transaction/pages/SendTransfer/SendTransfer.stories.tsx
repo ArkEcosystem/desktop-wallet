@@ -26,7 +26,7 @@ export const Default = ({
 			address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
 			coin: "ARK",
 			name: "John Doe",
-			network: "devnet",
+			network: "ark.devnet",
 		},
 	]);
 

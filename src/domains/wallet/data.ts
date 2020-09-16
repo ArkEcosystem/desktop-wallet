@@ -325,7 +325,7 @@ export const networks = [
 		icon: "Ark",
 		name: "ARK Ecosystem",
 		coin: "ARK",
-		network: "devnet",
+		network: "ark.devnet",
 		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{

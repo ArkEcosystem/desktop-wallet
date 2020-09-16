@@ -68,7 +68,7 @@ const entity = {
 			get: (key) => "ARK",
 		}),
 		network: () => ({
-			name: () => "devnet",
+			name: () => "ark.devnet",
 		}),
 	}),
 };

@@ -82,7 +82,7 @@ describe("ImportWallet", () => {
 			useForm({
 				defaultValues: {
 					network: {
-						id: () => "devnet",
+						id: () => "ark.devnet",
 						coin: () => "ARK",
 					},
 				},
@@ -126,7 +126,7 @@ describe("ImportWallet", () => {
 			useForm({
 				defaultValues: {
 					network: {
-						id: () => "devnet",
+						id: () => "ark.devnet",
 						coin: () => "ARK",
 					},
 				},
