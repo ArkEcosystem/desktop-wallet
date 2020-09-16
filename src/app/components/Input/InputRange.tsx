@@ -30,10 +30,6 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 				value = BigNumber.make(max).toString();
 			}
 
-			if (BigNumber.make(currency.value).divide(1e8).toNumber() < min) {
-				value = BigNumber.make(min).toString();
-			}
-
 			setValues([value]);
 			onChange?.(currency);
 		};
