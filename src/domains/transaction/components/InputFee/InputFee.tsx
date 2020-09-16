@@ -23,8 +23,8 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 
 	const [fee, setFee] = useState<any>(defaultValue);
 
-	const handleFeeChange = (currency: any) => {
-		setFee(currency?.value || currency);
+	const handleFeeChange = (currency: { display?: string; value: string }) => {
+		setFee(currency.value);
 		onChange?.(currency);
 	};
 
