@@ -45,7 +45,7 @@ describe("InputFee", () => {
 
 		fireEvent.click(getByText(transactionTranslations.FEES.MIN));
 
-		expect(onChange).toHaveBeenCalledWith(min);
+		expect(onChange).toHaveBeenCalledWith({ value: min });
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -58,7 +58,7 @@ describe("InputFee", () => {
 
 		fireEvent.click(getByText(transactionTranslations.FEES.AVERAGE));
 
-		expect(onChange).toHaveBeenCalledWith(avg);
+		expect(onChange).toHaveBeenCalledWith({ value: avg });
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -71,7 +71,7 @@ describe("InputFee", () => {
 
 		fireEvent.click(getByText(transactionTranslations.FEES.MAX));
 
-		expect(onChange).toHaveBeenCalledWith(max);
+		expect(onChange).toHaveBeenCalledWith({ value: max });
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
