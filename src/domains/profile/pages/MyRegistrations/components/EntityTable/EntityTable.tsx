@@ -10,10 +10,11 @@ type Props = {
 	title: string;
 	nameColumnHeader: string;
 	onAction?: any;
+	type?: string;
 	entities: ExtendedTransactionData[];
 };
 
-export const EntityTable = ({ entities, onAction, title, nameColumnHeader }: Props) => {
+export const EntityTable = ({ entities, onAction, title, type, nameColumnHeader }: Props) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -54,7 +55,7 @@ export const EntityTable = ({ entities, onAction, title, nameColumnHeader }: Pro
 			<h2 className="mb-8 font-bold">{title}</h2>
 
 			<Table columns={columns} data={entities}>
-				{(entity: any) => <EntityTableRowItem entity={entity} onAction={onAction} />}
+				{(entity: any) => <EntityTableRowItem entity={entity} type={type} onAction={onAction} />}
 			</Table>
 		</Section>
 	);

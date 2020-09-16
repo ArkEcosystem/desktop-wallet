@@ -2,6 +2,1476 @@
 
 exports[`Votes should emit action on continue button 1`] = `<DocumentFragment />`;
 
+exports[`Votes should emit action on continue button to unvote/vote 1`] = `<DocumentFragment />`;
+
+exports[`Votes should navigate between delegate and vote table 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzpjYC coERBU"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fznxsB gUNIFm"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="overflow-hidden rounded-lg"
+              >
+                <button
+                  class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--send"
+                type="button"
+              >
+                <div
+                  class="sc-AxhCb draJkT p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxhCb draJkT p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-medium text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-AxirZ fFfSST -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxhCb fxrKLH"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxhCb idmnCf"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxhCb jOCPoe"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex items-end justify-between bg-theme-background"
+          >
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                My Votes
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                Manage your cryptoasset staking
+              </div>
+            </div>
+            <div>
+              <div
+                class="relative"
+              >
+                <button
+                  class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                  data-testid="header-search-bar__button"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <div
+                      class="sc-AxhCb VoPpj"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        search.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container mx-auto px-14"
+      >
+        <div
+          class="grid grid-flow-col grid-cols-2 gap-6 -my-5"
+        >
+          <div
+            class="flex items-center py-6 true "
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Network
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
+                >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
+                  <div
+                    class="sc-AxmLO kuiknc"
+                    data-testid="SelectNetworkInput"
+                  >
+                    <div
+                      class="sc-AxgMl sc-AxheI hUEXQW px-4"
+                    >
+                      <div
+                        aria-label="Ark Devnet"
+                        class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
+                        data-testid="SelectNetworkInput__network"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      data-testid="SelectNetworkInput__typeahead"
+                    >
+                      Ark Devnet
+                    </span>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      disabled=""
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value="Ark Devnet"
+                    />
+                  </div>
+                </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  class="grid grid-cols-6 gap-6 mt-6"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    disabled=""
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
+                      data-testid="NetworkIcon-ARK-mainnet"
+                    >
+                      <div
+                        class="sc-AxhCb dCXdPH"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    disabled=""
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ bjGJqJ text-theme-success-500 border-theme-success-200"
+                      data-testid="NetworkIcon-ARK-devnet"
+                    >
+                      <div
+                        class="sc-AxhCb dCXdPH"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center py-6 true mt-2"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Address
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="relative flex items-center pb-24"
+                >
+                  <input
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="Input"
+                    disabled=""
+                    type="text"
+                  />
+                  <div
+                    class="absolute flex items-center justify-between w-full ml-3"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          ARK Wallet 1
+                        </span>
+                        <span
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D8rr7B…s6YUYD
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxhCb VoPpj mr-6"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxiKw cFARgj border-theme-neutral-300"
+          type="horizontal"
+        />
+        <ul
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
+        >
+          <li
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
+          >
+            Select a Delegate
+          </li>
+          <li
+            class="flex items-center mr-4"
+          >
+            <div
+              class="sc-AxiKw hpWYLk border-theme-neutral-300"
+              type="vertical"
+            />
+          </li>
+          <li
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
+          >
+            My Vote
+          </li>
+        </ul>
+      </div>
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            data-testid="DelegateTable"
+          >
+            <h2
+              class="py-5 text-2xl font-bold"
+            >
+              Select a Delegate
+            </h2>
+            <div
+              class="sc-fzokOt kCxAsC"
+              role="table"
+            >
+              <table
+                cellpadding="0"
+                class="table-auto"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Avatar
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          Delegate Name
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Status
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--3"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Rank
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Votes
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--5"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Profile
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--6"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Comm.
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--7"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Payout
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--8"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Min.
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--9"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end"
+                      >
+                        <div>
+                          Commission (Daily)
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--10"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end"
+                      >
+                        <div>
+                          Vote
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="sc-fzqNJr kKraVc group"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      class="w-1"
+                    >
+                      <div
+                        class="sc-fzqBZW fyRzwW bg-theme-primary-50"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold bg-theme-primary-50"
+                      >
+                        <span>
+                          arkx
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center bg-theme-primary-50"
+                      >
+                        <div
+                          class="flex items-center justify-center p-2 rounded-full bg-theme-primary-100"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH text-xs text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              ok.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center bg-theme-primary-50"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            msq.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark bg-theme-primary-50"
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW cSiZQG justify-end bg-theme-primary-50"
+                      >
+                        <button
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-0"
+                          type="button"
+                        >
+                          Current
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="sc-fzqNJr kKraVc group"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      class="w-1"
+                    >
+                      <div
+                        class="sc-fzqBZW fyRzwW"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_42
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          #2
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            msq.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW cSiZQG justify-end "
+                      >
+                        <button
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-1"
+                          type="button"
+                        >
+                          Not Selected
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="sc-fzqNJr kKraVc group"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      class="w-1"
+                    >
+                      <div
+                        class="sc-fzqBZW fyRzwW"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_17
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          #3
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            msq.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW cSiZQG justify-end "
+                      >
+                        <button
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-2"
+                          type="button"
+                        >
+                          Not Selected
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="sc-fzqNJr kKraVc group"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      class="w-1"
+                    >
+                      <div
+                        class="sc-fzqBZW fyRzwW"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          testwallet2
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            msq.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW cSiZQG justify-end "
+                      >
+                        <button
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-3"
+                          type="button"
+                        >
+                          Not Selected
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Votes should render 1`] = `
 <DocumentFragment>
   <div
@@ -95,7 +1565,7 @@ exports[`Votes should render 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-AxiKw fFXzuz p-1"
+                    class="sc-AxhCb draJkT p-1"
                     height="22"
                     width="22"
                   >
@@ -119,7 +1589,7 @@ exports[`Votes should render 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="sc-AxhCb draJkT p-1"
                   height="22"
                   width="22"
                 >
@@ -142,7 +1612,7 @@ exports[`Votes should render 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="sc-AxhCb draJkT p-1"
                   height="22"
                   width="22"
                 >
@@ -192,7 +1662,7 @@ exports[`Votes should render 1`] = `
                     class="text-theme-neutral-dark"
                   >
                     <div
-                      class="sc-AxiKw dzBdqj"
+                      class="sc-AxhCb fxrKLH"
                       height="1em"
                       width="1em"
                     >
@@ -223,7 +1693,7 @@ exports[`Votes should render 1`] = `
                     class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
                     <div
-                      class="sc-AxiKw ksjdLL"
+                      class="sc-AxhCb idmnCf"
                       height="10"
                       width="10"
                     >
@@ -245,7 +1715,7 @@ exports[`Votes should render 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
+        class="sc-AxhCb jOCPoe"
         height="10"
         width="19"
       >
@@ -307,7 +1777,7 @@ exports[`Votes should render 1`] = `
                       Search
                     </span>
                     <div
-                      class="sc-AxiKw dklFyP"
+                      class="sc-AxhCb VoPpj"
                       height="20"
                       width="20"
                     >
@@ -355,11 +1825,11 @@ exports[`Votes should render 1`] = `
                     id="Votes__network-label"
                   />
                   <div
-                    class="sc-Axmtr jzhOwR"
+                    class="sc-AxmLO kuiknc"
                     data-testid="SelectNetworkInput"
                   >
                     <div
-                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                      class="sc-AxgMl sc-AxheI hUEXQW px-4"
                     >
                       <div
                         aria-label="Ark Devnet"
@@ -367,7 +1837,7 @@ exports[`Votes should render 1`] = `
                         data-testid="SelectNetworkInput__network"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
+                          class="sc-AxhCb fxrKLH"
                           data-testid="NetworkIcon__icon"
                           height="1em"
                           width="1em"
@@ -379,7 +1849,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </div>
                     <span
-                      class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                       data-testid="SelectNetworkInput__typeahead"
                     >
                       Ark Devnet
@@ -389,7 +1859,7 @@ exports[`Votes should render 1`] = `
                       aria-controls="Votes__network-menu"
                       aria-labelledby="Votes__network-label"
                       autocomplete="off"
-                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                       data-testid="SelectNetworkInput__input"
                       disabled=""
                       id="Votes__network-input"
@@ -418,7 +1888,7 @@ exports[`Votes should render 1`] = `
                       data-testid="NetworkIcon-ARK-mainnet"
                     >
                       <div
-                        class="sc-AxiKw fubePL"
+                        class="sc-AxhCb dCXdPH"
                         data-testid="NetworkIcon__icon"
                         height="26"
                         width="26"
@@ -443,7 +1913,7 @@ exports[`Votes should render 1`] = `
                       data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
-                        class="sc-AxiKw fubePL"
+                        class="sc-AxhCb dCXdPH"
                         data-testid="NetworkIcon__icon"
                         height="26"
                         width="26"
@@ -477,7 +1947,7 @@ exports[`Votes should render 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -520,7 +1990,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxiKw dklFyP mr-6"
+                      class="sc-AxhCb VoPpj mr-6"
                       height="20"
                       width="20"
                     >
@@ -534,6 +2004,35 @@ exports[`Votes should render 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="sc-AxiKw cFARgj border-theme-neutral-300"
+          type="horizontal"
+        />
+        <ul
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
+        >
+          <li
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
+          >
+            Select a Delegate
+          </li>
+          <li
+            class="flex items-center mr-4"
+          >
+            <div
+              class="sc-AxiKw hpWYLk border-theme-neutral-300"
+              type="vertical"
+            />
+          </li>
+          <li
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
+          >
+            My Vote
+          </li>
+        </ul>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
@@ -594,7 +2093,7 @@ exports[`Votes should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -610,28 +2109,12 @@ exports[`Votes should render 1`] = `
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Rank
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
+                          Status
                         </div>
                       </div>
                     </th>
@@ -644,17 +2127,17 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Votes
+                          Rank
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -670,35 +2153,21 @@ exports[`Votes should render 1`] = `
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top flex justify-center"
-                      >
-                        <div>
-                          Profile
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Comm.
+                          Votes
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -712,23 +2181,37 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
+                      data-testid="table__th--5"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Profile
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Payout
+                          Comm.
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -748,17 +2231,17 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Min.
+                          Payout
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -778,17 +2261,17 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Commission (Daily)
+                          Min.
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -811,6 +2294,36 @@ exports[`Votes should render 1`] = `
                         class="flex flex-inline align-top justify-end"
                       >
                         <div>
+                          Commission (Daily)
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--10"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end"
+                      >
+                        <div>
                           Vote
                         </div>
                         <div
@@ -818,7 +2331,7 @@ exports[`Votes should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -842,7 +2355,7 @@ exports[`Votes should render 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW jvkNTe"
+                        class="sc-fzqBZW fyRzwW bg-theme-primary-50"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -862,37 +2375,64 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW vQhQg font-bold"
+                        class="sc-fzqBZW fRovnQ font-bold bg-theme-primary-50"
                       >
                         <span>
                           arkx
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center bg-theme-primary-50"
+                      >
+                        <div
+                          class="flex items-center justify-center p-2 rounded-full bg-theme-primary-100"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH text-xs text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              ok.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           #
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           %
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg justify-center"
+                        class="sc-fzqBZW fRovnQ justify-center bg-theme-primary-50"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -902,45 +2442,55 @@ exports[`Votes should render 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark bg-theme-primary-50"
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW cULgYW justify-end"
+                        class="sc-fzqBZW cSiZQG justify-end bg-theme-primary-50"
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -948,7 +2498,7 @@ exports[`Votes should render 1`] = `
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
-                          Select
+                          Current
                         </button>
                       </div>
                     </td>
@@ -961,7 +2511,7 @@ exports[`Votes should render 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW jvkNTe"
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -981,37 +2531,50 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW vQhQg font-bold"
+                        class="sc-fzqBZW fRovnQ font-bold "
                       >
                         <span>
                           genesis_42
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #2
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg justify-center"
+                        class="sc-fzqBZW fRovnQ justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -1021,45 +2584,55 @@ exports[`Votes should render 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW cULgYW justify-end"
+                        class="sc-fzqBZW cSiZQG justify-end "
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -1067,7 +2640,7 @@ exports[`Votes should render 1`] = `
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -1080,7 +2653,7 @@ exports[`Votes should render 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW jvkNTe"
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -1100,37 +2673,50 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW vQhQg font-bold"
+                        class="sc-fzqBZW fRovnQ font-bold "
                       >
                         <span>
                           genesis_17
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #3
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg justify-center"
+                        class="sc-fzqBZW fRovnQ justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -1140,45 +2726,55 @@ exports[`Votes should render 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW cULgYW justify-end"
+                        class="sc-fzqBZW cSiZQG justify-end "
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -1186,7 +2782,7 @@ exports[`Votes should render 1`] = `
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -1199,7 +2795,7 @@ exports[`Votes should render 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW jvkNTe"
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -1219,37 +2815,50 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW vQhQg font-bold"
+                        class="sc-fzqBZW fRovnQ font-bold "
                       >
                         <span>
                           testwallet2
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg justify-center"
+                        class="sc-fzqBZW fRovnQ justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -1259,45 +2868,55 @@ exports[`Votes should render 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW cULgYW justify-end"
+                        class="sc-fzqBZW cSiZQG justify-end "
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -1305,7 +2924,7 @@ exports[`Votes should render 1`] = `
                           data-testid="DelegateRow__toggle-3"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -1414,7 +3033,7 @@ exports[`Votes should select a delegate 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-AxiKw fFXzuz p-1"
+                    class="sc-AxhCb draJkT p-1"
                     height="22"
                     width="22"
                   >
@@ -1438,7 +3057,7 @@ exports[`Votes should select a delegate 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="sc-AxhCb draJkT p-1"
                   height="22"
                   width="22"
                 >
@@ -1461,7 +3080,7 @@ exports[`Votes should select a delegate 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="sc-AxhCb draJkT p-1"
                   height="22"
                   width="22"
                 >
@@ -1511,7 +3130,7 @@ exports[`Votes should select a delegate 1`] = `
                     class="text-theme-neutral-dark"
                   >
                     <div
-                      class="sc-AxiKw dzBdqj"
+                      class="sc-AxhCb fxrKLH"
                       height="1em"
                       width="1em"
                     >
@@ -1542,7 +3161,7 @@ exports[`Votes should select a delegate 1`] = `
                     class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
                     <div
-                      class="sc-AxiKw ksjdLL"
+                      class="sc-AxhCb idmnCf"
                       height="10"
                       width="10"
                     >
@@ -1564,7 +3183,7 @@ exports[`Votes should select a delegate 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw bGpsrC"
+        class="sc-AxhCb jOCPoe"
         height="10"
         width="19"
       >
@@ -1626,7 +3245,7 @@ exports[`Votes should select a delegate 1`] = `
                       Search
                     </span>
                     <div
-                      class="sc-AxiKw dklFyP"
+                      class="sc-AxhCb VoPpj"
                       height="20"
                       width="20"
                     >
@@ -1674,11 +3293,11 @@ exports[`Votes should select a delegate 1`] = `
                     id="Votes__network-label"
                   />
                   <div
-                    class="sc-Axmtr jzhOwR"
+                    class="sc-AxmLO kuiknc"
                     data-testid="SelectNetworkInput"
                   >
                     <div
-                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                      class="sc-AxgMl sc-AxheI hUEXQW px-4"
                     >
                       <div
                         aria-label="Ark Devnet"
@@ -1686,7 +3305,7 @@ exports[`Votes should select a delegate 1`] = `
                         data-testid="SelectNetworkInput__network"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
+                          class="sc-AxhCb fxrKLH"
                           data-testid="NetworkIcon__icon"
                           height="1em"
                           width="1em"
@@ -1698,7 +3317,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </div>
                     <span
-                      class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                       data-testid="SelectNetworkInput__typeahead"
                     >
                       Ark Devnet
@@ -1708,7 +3327,7 @@ exports[`Votes should select a delegate 1`] = `
                       aria-controls="Votes__network-menu"
                       aria-labelledby="Votes__network-label"
                       autocomplete="off"
-                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                       data-testid="SelectNetworkInput__input"
                       disabled=""
                       id="Votes__network-input"
@@ -1737,7 +3356,7 @@ exports[`Votes should select a delegate 1`] = `
                       data-testid="NetworkIcon-ARK-mainnet"
                     >
                       <div
-                        class="sc-AxiKw fubePL"
+                        class="sc-AxhCb dCXdPH"
                         data-testid="NetworkIcon__icon"
                         height="26"
                         width="26"
@@ -1762,7 +3381,7 @@ exports[`Votes should select a delegate 1`] = `
                       data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
-                        class="sc-AxiKw fubePL"
+                        class="sc-AxhCb dCXdPH"
                         data-testid="NetworkIcon__icon"
                         height="26"
                         width="26"
@@ -1796,7 +3415,7 @@ exports[`Votes should select a delegate 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -1839,7 +3458,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxiKw dklFyP mr-6"
+                      class="sc-AxhCb VoPpj mr-6"
                       height="20"
                       width="20"
                     >
@@ -1853,6 +3472,35 @@ exports[`Votes should select a delegate 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="sc-AxiKw cFARgj border-theme-neutral-300"
+          type="horizontal"
+        />
+        <ul
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
+        >
+          <li
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
+          >
+            Select a Delegate
+          </li>
+          <li
+            class="flex items-center mr-4"
+          >
+            <div
+              class="sc-AxiKw hpWYLk border-theme-neutral-300"
+              type="vertical"
+            />
+          </li>
+          <li
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
+          >
+            My Vote
+          </li>
+        </ul>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
@@ -1913,7 +3561,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -1929,28 +3577,12 @@ exports[`Votes should select a delegate 1`] = `
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Rank
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
+                          Status
                         </div>
                       </div>
                     </th>
@@ -1963,17 +3595,17 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Votes
+                          Rank
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -1989,35 +3621,21 @@ exports[`Votes should select a delegate 1`] = `
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top flex justify-center"
-                      >
-                        <div>
-                          Profile
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Comm.
+                          Votes
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -2031,23 +3649,37 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
+                      data-testid="table__th--5"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Profile
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Payout
+                          Comm.
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -2067,17 +3699,17 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Min.
+                          Payout
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -2097,17 +3729,17 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
-                          Commission (Daily)
+                          Min.
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -2130,6 +3762,36 @@ exports[`Votes should select a delegate 1`] = `
                         class="flex flex-inline align-top justify-end"
                       >
                         <div>
+                          Commission (Daily)
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--10"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end"
+                      >
+                        <div>
                           Vote
                         </div>
                         <div
@@ -2137,7 +3799,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxhCb AoNtw"
                             height="12"
                             width="15"
                           >
@@ -2161,7 +3823,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW jvkNTe"
+                        class="sc-fzqBZW fyRzwW bg-theme-danger-50"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -2181,37 +3843,64 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW dDHFQE font-bold"
+                        class="sc-fzqBZW fRovnQ font-bold bg-theme-danger-50"
                       >
                         <span>
                           arkx
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center bg-theme-danger-50"
+                      >
+                        <div
+                          class="flex items-center justify-center p-2 rounded-full bg-theme-danger-100"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH text-xs text-theme-danger"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              ok.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           #
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           %
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW dDHFQE justify-center"
+                        class="sc-fzqBZW fRovnQ justify-center bg-theme-danger-50"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -2221,45 +3910,55 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW dDHFQE font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark bg-theme-danger-50"
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW gfBeGq justify-end"
+                        class="sc-fzqBZW cSiZQG justify-end bg-theme-danger-50"
                       >
                         <button
                           class="sc-fznKkj dMzuSY"
@@ -2267,7 +3966,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
-                          Unselect
+                          Unselected
                         </button>
                       </div>
                     </td>
@@ -2280,7 +3979,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW jvkNTe"
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -2300,37 +3999,50 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW vQhQg font-bold"
+                        class="sc-fzqBZW fRovnQ font-bold "
                       >
                         <span>
                           genesis_42
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #2
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg justify-center"
+                        class="sc-fzqBZW fRovnQ justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -2340,45 +4052,55 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW cULgYW justify-end"
+                        class="sc-fzqBZW cSiZQG justify-end "
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -2386,7 +4108,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -2399,7 +4121,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW jvkNTe"
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -2419,37 +4141,50 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW vQhQg font-bold"
+                        class="sc-fzqBZW fRovnQ font-bold "
                       >
                         <span>
                           genesis_17
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #3
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg justify-center"
+                        class="sc-fzqBZW fRovnQ justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -2459,45 +4194,55 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW cULgYW justify-end"
+                        class="sc-fzqBZW cSiZQG justify-end "
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -2505,7 +4250,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -2518,7 +4263,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-1"
                     >
                       <div
-                        class="sc-fzqBZW jvkNTe"
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
@@ -2538,37 +4283,50 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzqBZW vQhQg font-bold"
+                        class="sc-fzqBZW fRovnQ font-bold "
                       >
                         <span>
                           testwallet2
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           #
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           %
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg justify-center"
+                        class="sc-fzqBZW fRovnQ justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -2578,45 +4336,55 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-20"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW vQhQg font-bold text-theme-neutral-dark"
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
                       >
                         <span>
                           ...
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="w-40"
+                    >
                       <div
-                        class="sc-fzqBZW cULgYW justify-end"
+                        class="sc-fzqBZW cSiZQG justify-end "
                       >
                         <button
                           class="sc-fznKkj eqyWCu"
@@ -2624,7 +4392,7 @@ exports[`Votes should select a delegate 1`] = `
                           data-testid="DelegateRow__toggle-3"
                           type="button"
                         >
-                          Select
+                          Not Selected
                         </button>
                       </div>
                     </td>
@@ -2637,36 +4405,1020 @@ exports[`Votes should select a delegate 1`] = `
               data-testid="DelegateTable__footer"
             >
               <div
-                class="flex"
+                class="flex-1"
               >
                 <div
-                  class="px-8 mr-8 font-semibold border-r border-theme-neutral-300"
+                  class="flex justify-between"
                 >
                   <div
-                    class="text-sm text-theme-neutral"
-                  >
-                    Quantity
-                  </div>
-                  <div
-                    class="text-theme-neutral-dark"
-                  >
-                    1/1
-                  </div>
-                </div>
-                <div
-                  class="flex-1"
-                >
-                  <div
-                    class="flex justify-between"
+                    class="flex font-semibold"
                   >
                     <div
-                      class="font-semibold"
+                      class="px-8 border-r border-theme-neutral-300"
                     >
                       <div
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gfBbJl mr-4"
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              vote.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Votes
+                          </div>
+                          <div
+                            class="text-theme-neutral-900"
+                            data-testid="DelegateTable__footer--votes"
+                          >
+                            0
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="px-8 border-r border-theme-neutral-300"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              unvote.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Unvotes
+                          </div>
+                          <div
+                            class="text-theme-neutral-900"
+                            data-testid="DelegateTable__footer--unvotes"
+                          >
+                            1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="px-8"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-AxirZ fFfSST mr-2 bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              vote-unvote.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Total
+                          </div>
+                          <div
+                            class="text-theme-neutral-900"
+                            data-testid="DelegateTable__footer--total"
+                          >
+                            1/1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="sc-fznKkj kfwfRc"
+                    color="primary"
+                    data-testid="DelegateTable__continue-button"
+                    type="button"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Votes should select an address without vote 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzpjYC coERBU"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="sc-fznxsB gUNIFm"
+            >
+              <svg
+                width="40"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex h-20 mr-auto md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-neutral-dark hover:text-theme-neutral-900"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="overflow-hidden rounded-lg"
+              >
+                <button
+                  class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                  color="primary"
+                  data-testid="navbar__buttons--notifications"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      notification.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--send"
+                type="button"
+              >
+                <div
+                  class="sc-AxhCb draJkT p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center overflow-hidden rounded-lg"
+            >
+              <button
+                class="sc-fznKkj bZvceT text-theme-primary-300 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxhCb draJkT p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 mr-4"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-medium text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  91.43089801 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-AxirZ fFfSST -mr-2 border-theme-primary-contrast"
+                >
+                  <span
+                    class="text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxhCb fxrKLH"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxhCb idmnCf"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxhCb jOCPoe"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex items-end justify-between bg-theme-background"
+          >
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                My Votes
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                Manage your cryptoasset staking
+              </div>
+            </div>
+            <div>
+              <div
+                class="relative"
+              >
+                <button
+                  class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                  data-testid="header-search-bar__button"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <div
+                      class="sc-AxhCb VoPpj"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        search.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container mx-auto px-14"
+      >
+        <div
+          class="grid grid-flow-col grid-cols-2 gap-6 -my-5"
+        >
+          <div
+            class="flex items-center py-6 true "
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Network
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
+                >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
+                  <div
+                    class="sc-AxmLO kuiknc"
+                    data-testid="SelectNetworkInput"
+                  >
+                    <div
+                      class="sc-AxgMl sc-AxheI hUEXQW px-4"
+                    >
+                      <div
+                        aria-label="Ark Devnet"
+                        class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
+                        data-testid="SelectNetworkInput__network"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      data-testid="SelectNetworkInput__typeahead"
+                    >
+                      Ark Devnet
+                    </span>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value="Ark Devnet"
+                    />
+                  </div>
+                </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  class="grid grid-cols-6 gap-6 mt-6"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ bjGJqJ text-theme-neutral-light"
+                      data-testid="NetworkIcon-ARK-mainnet"
+                    >
+                      <div
+                        class="sc-AxhCb dCXdPH"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block cursor-pointer"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ bjGJqJ text-theme-success-500 border-theme-success-200"
+                      data-testid="NetworkIcon-ARK-devnet"
+                    >
+                      <div
+                        class="sc-AxhCb dCXdPH"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center py-6 true mt-2"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Address
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="relative flex items-center pb-24"
+                >
+                  <input
+                    class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="Input"
+                    disabled=""
+                    type="text"
+                  />
+                  <div
+                    class="absolute flex items-center justify-between w-full ml-3"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                            title="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          DTLomV…JnG23z
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxhCb VoPpj mr-6"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxiKw cFARgj border-theme-neutral-300"
+          type="horizontal"
+        />
+        <ul
+          class="flex h-20 mr-auto -mt-5 -mb-5"
+          data-testid="Tabs"
+        >
+          <li
+            class="flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md theme-neutral-900 border-theme-primary-dark"
+            data-testid="Tab__item--delegate"
+          >
+            Select a Delegate
+          </li>
+          <li
+            class="flex items-center mr-4"
+          >
+            <div
+              class="sc-AxiKw hpWYLk border-theme-neutral-300"
+              type="vertical"
+            />
+          </li>
+          <li
+            class="flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md text-theme-neutral-dark hover:text-theme-neutral-900 border-transparent"
+            data-testid="Tab__item--vote"
+          >
+            My Vote
+          </li>
+        </ul>
+      </div>
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            data-testid="DelegateTable"
+          >
+            <h2
+              class="py-5 text-2xl font-bold"
+            >
+              Select a Delegate
+            </h2>
+            <div
+              class="sc-fzokOt kCxAsC"
+              role="table"
+            >
+              <table
+                cellpadding="0"
+                class="table-auto"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Avatar
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          Delegate Name
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Status
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--3"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Rank
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Votes
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--5"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Profile
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--6"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Comm.
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--7"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Payout
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--8"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Min.
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--9"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end"
+                      >
+                        <div>
+                          Commission (Daily)
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--10"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end"
+                      >
+                        <div>
+                          Vote
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxhCb AoNtw"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="sc-fzqNJr kKraVc group"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      class="w-1"
+                    >
+                      <div
+                        class="sc-fzqBZW fyRzwW"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
                           data-testid="Avatar"
                         >
                           <div
@@ -2679,33 +5431,552 @@ exports[`Votes should select a delegate 1`] = `
                             />
                           </div>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          arkx
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      >
                         <div
-                          class="flex flex-col"
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            msq.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW cSiZQG justify-end "
+                      >
+                        <button
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-0"
+                          type="button"
+                        >
+                          Not Selected
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="sc-fzqNJr kKraVc group"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      class="w-1"
+                    >
+                      <div
+                        class="sc-fzqBZW fyRzwW"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="text-sm text-theme-neutral-dark"
+                            class="w-full h-full"
                           >
-                            Delegate
-                          </div>
-                          <div
-                            class="text-theme-neutral"
-                          >
-                            arkx - D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
+                            <img
+                              alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                            />
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <button
-                      class="sc-fznKkj kfwfRc"
-                      color="primary"
-                      data-testid="DelegateTable__continue-button"
-                      type="button"
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_42
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
                     >
-                      Continue
-                    </button>
-                  </div>
-                </div>
-              </div>
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          #2
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            msq.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW cSiZQG justify-end "
+                      >
+                        <button
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-1"
+                          type="button"
+                        >
+                          Not Selected
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="sc-fzqNJr kKraVc group"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      class="w-1"
+                    >
+                      <div
+                        class="sc-fzqBZW fyRzwW"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_17
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          #3
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            msq.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW cSiZQG justify-end "
+                      >
+                        <button
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-2"
+                          type="button"
+                        >
+                          Not Selected
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="sc-fzqNJr kKraVc group"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      class="w-1"
+                    >
+                      <div
+                        class="sc-fzqBZW fyRzwW"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          testwallet2
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      />
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          %
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center "
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            msq.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-center font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW fRovnQ justify-end font-bold text-theme-neutral-dark "
+                      >
+                        <span>
+                          ...
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-40"
+                    >
+                      <div
+                        class="sc-fzqBZW cSiZQG justify-end "
+                      >
+                        <button
+                          class="sc-fznKkj eqyWCu"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-3"
+                          type="button"
+                        >
+                          Not Selected
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

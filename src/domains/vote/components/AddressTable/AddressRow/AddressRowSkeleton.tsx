@@ -8,7 +8,7 @@ export const AddressRowSkeleton = () => (
 			<Circle className="bg-theme-neutral-200 border-theme-neutral-200" />
 		</td>
 
-		<td className="w-20 py-5">
+		<td className="py-5">
 			<Skeleton width="80%" height={6} className="mt-4" />
 		</td>
 
