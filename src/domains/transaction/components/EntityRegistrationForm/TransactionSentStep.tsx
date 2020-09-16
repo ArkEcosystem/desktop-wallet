@@ -9,7 +9,7 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import { toasts } from "app/services";
 import { httpClient } from "app/services";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionSentProps = {
