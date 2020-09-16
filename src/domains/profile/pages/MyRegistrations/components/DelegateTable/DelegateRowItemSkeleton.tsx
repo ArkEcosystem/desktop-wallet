@@ -5,7 +5,7 @@ import Skeleton from "react-loading-skeleton";
 export const DelegateRowItemSkeleton = () => (
 	<tr
 		data-testid="DelegateRowItemSkeleton"
-		className="border-b last:border-b-0 border-dashed border-theme-neutral-light"
+		className="border-b border-dashed last:border-b-0 border-theme-neutral-light"
 	>
 		<td className="w-24 py-6 pr-4">
 			<div className="flex items-center">

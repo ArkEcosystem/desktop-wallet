@@ -66,11 +66,11 @@ export const Default = () => {
 								<Address walletName={rowData.walletName} address={rowData.address} />
 							</TableCell>
 
-							<TableCell className="font-semibold justify-end">
+							<TableCell className="justify-end font-semibold">
 								<span>{rowData.balance}</span>
 							</TableCell>
 
-							<TableCell variant="end" className="font-semibold justify-end text-theme-neutral-light">
+							<TableCell variant="end" className="justify-end font-semibold text-theme-neutral-light">
 								<span>{rowData.fiat}</span>
 							</TableCell>
 						</TableRow>
