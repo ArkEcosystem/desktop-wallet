@@ -510,4 +510,367 @@ describe("Registration", () => {
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});
+
+	it("should validate website url", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__website"), { target: { value: "wrong url" } });
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__website")).toHaveAttribute("aria-invalid"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should set fee", async () => {
+		const { getByTestId, getAllByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getAllByTestId("SelectionBarOption")[1]);
+		});
+
+		const feeInput = getByTestId("InputCurrency");
+		await waitFor(() => expect(feeInput).toHaveValue("18"));
+	});
+
+	it("should validate entity name", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: "ab" } });
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveAttribute("aria-invalid"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should validate display name", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__display-name"), { target: { value: "ab" } });
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveAttribute("aria-invalid"),
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should validate description", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__description"), { target: { value: "ab" } });
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__description")).toHaveAttribute("aria-invalid"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should go to review step after succesfully filling form data", async () => {
+		const { asFragment, getByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: {
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("Test-Entity-Name"));
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
+				},
+			});
+		});
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue("Test Entity Display Name"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue("Test Entity Description"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("ReviewStep")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should fill all data including link collections", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: {
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("Test-Entity-Name"));
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
+				},
+			});
+		});
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue("Test Entity Display Name"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue("Test Entity Description"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("EntityRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
+		);
+
+		const toggleLinkCollectionHeader = async (collection: any) => {
+			// Open sourceControl
+			await act(async () => {
+				fireEvent.click(within(collection).getByTestId("LinkCollection__header"));
+			});
+		};
+
+		const addLink = async (collection: any, optionLabel: string, inputValue: string) => {
+			await toggleLinkCollectionHeader(collection);
+
+			const selectButton = within(collection).getByTestId("select-list__toggle-button");
+
+			act(() => {
+				fireEvent.click(selectButton);
+			});
+
+			act(() => {
+				fireEvent.click(within(collection).getByText(optionLabel), { selector: ["role=option"] });
+			});
+
+			await waitFor(() => expect(selectButton).toHaveTextContent(optionLabel));
+
+			act(() => {
+				fireEvent.input(within(collection).getByTestId("LinkCollection__input-link"), {
+					target: {
+						value: inputValue,
+					},
+				});
+			});
+
+			const addedItems = within(collection).queryAllByTestId("LinkCollection__item");
+			const newLength = addedItems.length + 1;
+
+			act(() => {
+				fireEvent.click(within(collection).getByTestId("LinkCollection__add-link"));
+			});
+
+			await waitFor(() => expect(within(collection).getByTestId("LinkCollection__input-link")).toHaveValue(""));
+
+			await waitFor(() =>
+				expect(within(collection).getAllByTestId("LinkCollection__item")).toHaveLength(newLength),
+			);
+			const addedItem = within(collection).getAllByTestId("LinkCollection__item")[newLength - 1];
+			await waitFor(() => expect(addedItem).toBeTruthy());
+			await waitFor(() => expect(addedItem).toHaveTextContent(optionLabel));
+			await waitFor(() => expect(addedItem).toHaveTextContent(inputValue));
+
+			toggleLinkCollectionHeader(collection);
+		};
+
+		const repository = getAllByTestId("LinkCollection")[0];
+		const socialMedia = getAllByTestId("LinkCollection")[1];
+		const media = getAllByTestId("LinkCollection")[2];
+
+		// Add source control link
+		await addLink(repository, "GitHub", "https://github.com/test");
+
+		// Add source media link
+		await addLink(socialMedia, "Facebook", "https://facebook.com/test");
+		await addLink(socialMedia, "Instagram", "https://instagram.com/test");
+
+		// Add media link
+		await addLink(media, "Imgur", "https://i.imgur.com/123456.png");
+
+		await addLink(
+			media,
+			"GitHub",
+			"https://raw.githubusercontent.com/arkecosystem/plugins/master/images/preview-1.jpg",
+		);
+
+		await addLink(media, "YouTube", "https://youtube.com/watch?v=123456");
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

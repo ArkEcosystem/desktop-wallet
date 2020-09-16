@@ -186,6 +186,7 @@ export const LinkCollection = ({
 					<Table columns={columns} data={fields}>
 						{(rowData: any, rowIndex: any) => (
 							<tr
+								data-testid="LinkCollection__item"
 								key={rowData.value}
 								className="font-semibold border-b last:border-b-0 border-theme-neutral-200"
 							>
