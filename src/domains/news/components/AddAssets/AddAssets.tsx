@@ -62,7 +62,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 									size="lg"
 									className="relative m-3 border-theme-neutral-200 text-theme-neutral-300"
 								>
-									<Icon name="Ark" width={20} height={20} />
+									<Icon name="ARK" width={20} height={20} />
 									<Badge className="border-theme-neutral-200" />
 								</Circle>
 							))}

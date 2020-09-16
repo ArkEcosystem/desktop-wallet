@@ -92,7 +92,7 @@ describe("ContactForm", () => {
 				target: { value: "name" },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
@@ -125,7 +125,7 @@ describe("ContactForm", () => {
 				target: { value: "name" },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
@@ -161,7 +161,7 @@ describe("ContactForm", () => {
 				target: { value: validArkDevnetAddress },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
@@ -180,7 +180,7 @@ describe("ContactForm", () => {
 				target: { value: validArkDevnetAddress },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
@@ -238,7 +238,7 @@ describe("ContactForm", () => {
 				target: { value: "name" },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
 
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 

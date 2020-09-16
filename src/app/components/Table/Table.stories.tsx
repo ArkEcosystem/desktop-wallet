@@ -12,7 +12,7 @@ export default {
 export const Default = () => {
 	const data = [
 		{
-			coin: "Ark",
+			coin: "ARK",
 			avatarId: "test",
 			walletName: "My wallet",
 			address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",

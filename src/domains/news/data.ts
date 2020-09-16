@@ -23,7 +23,7 @@ export const categories = [
 
 export const assets = [
 	{
-		name: "Ark",
+		name: "ARK",
 		isSelected: true,
 		coin: "ark",
 	},
@@ -53,7 +53,7 @@ export const coins: any = {
 	ark: {
 		name: "ARK Ecosystem",
 		coin: "ARK",
-		network: "mainnet",
+		network: "ark.mainnet",
 	},
 	btc: {
 		name: "Bitcoin",

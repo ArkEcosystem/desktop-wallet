@@ -6,7 +6,7 @@ import { FilterNetwork } from "./FilterNetwork";
 
 const networks = [
 	{
-		name: "Ark",
+		name: "ARK",
 		isSelected: false,
 	},
 	{

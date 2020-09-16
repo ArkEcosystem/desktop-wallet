@@ -3,7 +3,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const networks = [
 	{
-		name: "Ark",
+		name: "ARK",
 		isSelected: true,
 	},
 	{

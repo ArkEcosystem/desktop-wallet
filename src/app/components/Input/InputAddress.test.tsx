@@ -16,7 +16,7 @@ describe("InputAddress", () => {
 	);
 
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(<TestInputAddress coin="ARK" network="devnet" />);
+		const { getByTestId, asFragment } = render(<TestInputAddress coin="ARK" network="ark.devnet" />);
 		expect(getByTestId("InputAddress__input")).toBeInTheDocument();
 		expect(getByTestId("InputAddress__qr-button")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
@@ -25,7 +25,7 @@ describe("InputAddress", () => {
 	it("should emit event whe clicking on qr button", () => {
 		const onQRButtonClick = jest.fn();
 		const { getByTestId } = render(
-			<TestInputAddress coin="ARK" network="devnet" onQRCodeClick={onQRButtonClick} />,
+			<TestInputAddress coin="ARK" network="ark.devnet" onQRCodeClick={onQRButtonClick} />,
 		);
 		fireEvent.click(getByTestId("InputAddress__qr-button"));
 		expect(onQRButtonClick).toHaveBeenCalled();
@@ -35,7 +35,7 @@ describe("InputAddress", () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm({ mode: "onChange" }));
 		const { register, errors } = result.current;
 
-		const { getByTestId } = render(<TestInputAddress coin="ARK" network="devnet" registerRef={register} />);
+		const { getByTestId } = render(<TestInputAddress coin="ARK" network="ark.devnet" registerRef={register} />);
 
 		act(() => {
 			fireEvent.input(getByTestId("InputAddress__input"), { target: { value: "Abc" } });
@@ -52,7 +52,7 @@ describe("InputAddress", () => {
 		const validAddress = "DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM";
 
 		const { getByTestId } = render(
-			<TestInputAddress coin="ARK" network="devnet" registerRef={register} onValidAddress={onValidAddress} />,
+			<TestInputAddress coin="ARK" network="ark.devnet" registerRef={register} onValidAddress={onValidAddress} />,
 		);
 
 		act(() => {
@@ -71,7 +71,12 @@ describe("InputAddress", () => {
 		const { register, errors } = result.current;
 
 		const { getByTestId } = render(
-			<TestInputAddress coin="ARK" network="devnet" registerRef={register} additionalRules={{ minLength: 10 }} />,
+			<TestInputAddress
+				coin="ARK"
+				network="ark.devnet"
+				registerRef={register}
+				additionalRules={{ minLength: 10 }}
+			/>,
 		);
 
 		act(() => {
