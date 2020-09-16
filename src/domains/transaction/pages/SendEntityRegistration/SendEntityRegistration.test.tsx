@@ -108,7 +108,7 @@ describe("Registration", () => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-devnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark Devnet");
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(asFragment()).toMatchSnapshot();
 	});

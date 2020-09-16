@@ -78,7 +78,7 @@ describe("CreateWallet", () => {
 
 		expect(selectNetworkInput).toHaveAttribute("disabled");
 
-		expect(selectNetworkInput).toHaveValue("Ark Devnet");
+		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 		await waitFor(() => expect(selectNetworkInput).not.toHaveAttribute("disabled"));
 	});
@@ -155,7 +155,7 @@ describe("CreateWallet", () => {
 		expect(getByTestId("CreateWallet__fourth-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		expect(getByTestId("CreateWallet__network-name")).toHaveTextContent("Ark Devnet");
+		expect(getByTestId("CreateWallet__network-name")).toHaveTextContent("ARK Devnet");
 		expect(getByTestId("CreateWallet__wallet-address")).toHaveTextContent("TEST-WALLET-ADDRESS");
 
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");

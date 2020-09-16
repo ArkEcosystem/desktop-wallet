@@ -36,7 +36,7 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			iconName: "Ark",
 		},
 		devnet: {
-			displayName: "Ark Devnet",
+			displayName: "ARK Devnet",
 			borderClass: "border-theme-primary-100",
 			textClass: "text-theme-primary-400",
 			iconName: "Ark",

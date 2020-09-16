@@ -177,7 +177,7 @@ describe("Transaction Send", () => {
 			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-devnet"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark Devnet");
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});

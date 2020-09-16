@@ -75,7 +75,7 @@ describe("Votes", () => {
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(selectNetworkInput).toHaveValue("Ark Devnet");
+		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 
@@ -125,7 +125,7 @@ describe("Votes", () => {
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(selectNetworkInput).toHaveValue("Ark Devnet");
+		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 
@@ -203,7 +203,7 @@ describe("Votes", () => {
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(selectNetworkInput).toHaveValue("Ark Devnet");
+		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 
