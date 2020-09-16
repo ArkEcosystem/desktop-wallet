@@ -123,6 +123,30 @@ export default {
       )
     },
 
+    transaction_isProductEntityRegistration (type, typeGroup, asset) {
+      return (
+        this.transaction_isEntityRegistration(type, typeGroup, asset) &&
+        asset.type === TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT &&
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
+      )
+    },
+
+    transaction_isProductEntityResignation (type, typeGroup, asset) {
+      return (
+        this.transaction_isEntityResignation(type, typeGroup, asset) &&
+        asset.type === TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT &&
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
+      )
+    },
+
+    transaction_isProductEntityUpdate (type, typeGroup, asset) {
+      return (
+        this.transaction_isEntityUpdate(type, typeGroup, asset) &&
+        asset.type === TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT &&
+        asset.subType === TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
+      )
+    },
+
     transaction_isPluginEntityRegistration (type, typeGroup, asset) {
       return (
         this.transaction_isEntityRegistration(type, typeGroup, asset) &&
