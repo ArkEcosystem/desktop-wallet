@@ -80,7 +80,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 				const data = tx.asset().data as { name: string };
 				setValue("entityName", data?.name);
 			} catch (e) {
-				toasts.error(`Unable to find transaction for [${transactionId}]`);
+				toasts.error(t("TRANSACTION.NOT_FOUND", { transactionId }));
 			}
 		};
 
@@ -96,7 +96,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 				setValue("ipfsData", ipfsData);
 				setIsLoading(false);
 			} catch (e) {
-				toasts.error(`Unable to find ipfs data for transaction [${activeTransaction.id()}]`);
+				toasts.error(t("TRANSACTION.IPFS_NOT_FOUND", { transactionId: activeTransaction.id() }));
 				setIsLoading(false);
 			}
 		};
@@ -130,7 +130,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 		const isValid = await triggerValidation("mnemonic");
 		if (!isValid) return;
 
-		const loadingToastId = toasts.info("Sending transaction...");
+		const loadingToastId = toasts.info(t("TRANSACTION.BROADCASTING"));
 
 		try {
 			const transaction = await sendEntityUpdateTransaction({ form, senderWallet: activeWallet, env });
