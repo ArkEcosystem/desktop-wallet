@@ -2,25 +2,28 @@ import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
+import { getNetworkExtendedData } from "domains/network/helpers";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { balances, portfolioPercentages } from "../../data";
+import { balances /* portfolioPercentages */ } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
 	networks?: any;
-	portfolioPercentages?: any[];
+	// portfolioPercentages?: any[];
 };
 
-export const Dashboard = ({ networks, portfolioPercentages, balances }: DashboardProps) => {
-	const activeProfile = useActiveProfile();
+export const Dashboard = ({ networks, /* portfolioPercentages ,*/ balances }: DashboardProps) => {
 	const history = useHistory();
+	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
 
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
@@ -28,10 +31,30 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 
-	const { t } = useTranslation();
+	const [availableNetworks] = useState(() =>
+		env.availableNetworks().map((network) => {
+			const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+			return Object.assign(network, { extra: extended });
+		}),
+	);
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
+	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
+	const portfolioPercentages = useMemo(() => Object.keys(balancePerCoin).map((coin) => {
+			for (const network of networks) {
+				if (network.ticker() === coin) {
+					return {
+						...balancePerCoin[coin],
+						label: coin,
+						extra: network.extra?.borderClass,
+					};
+				}
+			}
+		}), [availableNetworks, balancePerCoin]);
+
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
+
+	const { t } = useTranslation();
 
 	const fetchTransactions = async (flush = false) => {
 		if (flush) {
@@ -130,5 +153,5 @@ export const Dashboard = ({ networks, portfolioPercentages, balances }: Dashboar
 
 Dashboard.defaultProps = {
 	balances,
-	portfolioPercentages,
+	// portfolioPercentages,
 };
