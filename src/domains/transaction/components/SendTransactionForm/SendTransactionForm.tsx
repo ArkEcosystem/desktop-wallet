@@ -14,7 +14,7 @@ type SendTransactionFormProps = {
 	networks: NetworkData[];
 	profile: Profile;
 	children?: React.ReactNode;
-	transactionType?: String;
+	transactionType: string;
 };
 
 export const SendTransactionForm = ({ children, networks, profile, transactionType }: SendTransactionFormProps) => {
