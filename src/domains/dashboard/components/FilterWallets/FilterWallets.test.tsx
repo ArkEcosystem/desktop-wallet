@@ -6,7 +6,7 @@ import { FilterWallets } from "./FilterWallets";
 
 const networks = [
 	{
-		name: "Ark",
+		name: "ARK",
 		isSelected: true,
 	},
 	{

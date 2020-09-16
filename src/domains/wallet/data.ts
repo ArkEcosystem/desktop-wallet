@@ -2,7 +2,7 @@ import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 const baseWallet = {
-	coinIcon: "Ark",
+	coinIcon: "ARK",
 	coinClassName: "text-theme-danger-400 border-theme-danger-200",
 	avatarId: "test1",
 	address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
@@ -322,10 +322,10 @@ export const wallet = wallets[0];
 
 export const networks = [
 	{
-		icon: "Ark",
+		icon: "ARK",
 		name: "ARK Ecosystem",
 		coin: "ARK",
-		network: "devnet",
+		network: "ark.devnet",
 		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{

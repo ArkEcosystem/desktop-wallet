@@ -11,7 +11,7 @@ export default {
 export const Default = () => {
 	const networks = [
 		{
-			name: "Ark",
+			name: "ARK",
 			isSelected: true,
 		},
 		{

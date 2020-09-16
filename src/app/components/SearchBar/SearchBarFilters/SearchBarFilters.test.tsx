@@ -6,7 +6,7 @@ import { SearchBarFilters } from "./SearchBarFilters";
 describe("SearchBarFilters", () => {
 	it("should render", () => {
 		const networks = [
-			{ name: "Ark", isSelected: true },
+			{ name: "ARK", isSelected: true },
 			{ name: "Ethereum", isSelected: true },
 			{ name: "Bitcoin", isSelected: false },
 		];

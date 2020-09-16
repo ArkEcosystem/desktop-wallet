@@ -4,7 +4,7 @@ import { render } from "testing-library";
 import { assets } from "../../data";
 import { AddAssets } from "./AddAssets";
 
-const allAssets = [...Array(27)].map(() => "Ark");
+const allAssets = [...Array(27)].map(() => "ARK");
 
 describe("AddAssets", () => {
 	it("should not render if not open", () => {

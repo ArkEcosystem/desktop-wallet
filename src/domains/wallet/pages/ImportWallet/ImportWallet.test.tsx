@@ -74,7 +74,7 @@ describe("ImportWallet", () => {
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(selectNetworkInput).toHaveValue("Ark Devnet");
+		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 	});
 
 	it("should render 2st step", async () => {
@@ -82,7 +82,7 @@ describe("ImportWallet", () => {
 			useForm({
 				defaultValues: {
 					network: {
-						id: () => "devnet",
+						id: () => "ark.devnet",
 						coin: () => "ARK",
 					},
 				},
@@ -126,7 +126,7 @@ describe("ImportWallet", () => {
 			useForm({
 				defaultValues: {
 					network: {
-						id: () => "devnet",
+						id: () => "ark.devnet",
 						coin: () => "ARK",
 					},
 				},
@@ -141,7 +141,7 @@ describe("ImportWallet", () => {
 		expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		expect(getByTestId("ImportWallet__network-name")).toHaveTextContent("Ark Devnet");
+		expect(getByTestId("ImportWallet__network-name")).toHaveTextContent("ARK Devnet");
 		expect(getByTestId("ImportWallet__wallet-address")).toHaveTextContent(identityAddress);
 
 		const walletNameInput = getByTestId("ImportWallet__name-input");
@@ -183,7 +183,7 @@ describe("ImportWallet", () => {
 			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 			const continueButton = getByTestId("ImportWallet__continue-button");
 			expect(continueButton).toBeTruthy();
@@ -233,7 +233,7 @@ describe("ImportWallet", () => {
 			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 			const continueButton = getByTestId("ImportWallet__continue-button");
 			expect(continueButton).toBeTruthy();
@@ -308,7 +308,7 @@ describe("ImportWallet", () => {
 			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 			const continueButton = getByTestId("ImportWallet__continue-button");
 			expect(continueButton).toBeTruthy();
@@ -388,7 +388,7 @@ describe("ImportWallet", () => {
 			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 			const continueButton = getByTestId("ImportWallet__continue-button");
 			expect(continueButton).toBeTruthy();
@@ -473,7 +473,7 @@ describe("ImportWallet", () => {
 			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 			const continueButton = getByTestId("ImportWallet__continue-button");
 			expect(continueButton).toBeTruthy();
@@ -539,7 +539,7 @@ describe("ImportWallet", () => {
 			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-			expect(selectNetworkInput).toHaveValue("Ark Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 			const continueButton = getByTestId("ImportWallet__continue-button");
 			expect(continueButton).toBeTruthy();

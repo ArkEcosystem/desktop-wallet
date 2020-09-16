@@ -24,11 +24,11 @@ describe("AddressRow", () => {
 		wallet.data().set(WalletFlag.Starred, true);
 		wallet.data().set(WalletFlag.Ledger, true);
 
-		blankWallet = await profile.wallets().importByMnemonic(blankWalletPassphrase, "ARK", "devnet");
-		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
+		blankWallet = await profile.wallets().importByMnemonic(blankWalletPassphrase, "ARK", "ark.devnet");
+		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "ark.devnet");
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
+		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "ark.devnet");
 
 		nock.disableNetConnect();
 
