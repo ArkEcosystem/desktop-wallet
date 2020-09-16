@@ -863,7 +863,6 @@ describe("Registration", () => {
 
 		// Add media link
 		await addLink(media, "Imgur", "https://i.imgur.com/123456.png");
-
 		await addLink(
 			media,
 			"GitHub",
@@ -871,6 +870,15 @@ describe("Registration", () => {
 		);
 
 		await addLink(media, "YouTube", "https://youtube.com/watch?v=123456");
+
+		await toggleLinkCollectionHeader(media);
+		// Select avatar
+		const firstMediaItem = within(media).getAllByTestId("LinkCollection__item")[0];
+
+		act(() => {
+			fireEvent.click(within(firstMediaItem).getByTestId("LinkCollection__selected"));
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

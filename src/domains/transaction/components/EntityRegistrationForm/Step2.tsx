@@ -76,7 +76,7 @@ export const FormStep = () => {
 	const handleAvatar = useCallback(
 		(link: EntityLink) => {
 			const images = getValues("ipfsData.images");
-			const newImages = (images || []).map((item: EntityLink) => ({
+			const newImages = images.map((item: EntityLink) => ({
 				...item,
 				type: item.value === link?.value ? "logo" : "image",
 			}));
@@ -85,6 +85,7 @@ export const FormStep = () => {
 		},
 		[getValues, setValue, setSelectedAvatar],
 	);
+
 	return (
 		<div data-testid="EntityRegistrationForm">
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
@@ -145,7 +146,7 @@ export const FormStep = () => {
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="repository"
 						onChange={handleSourceControl}
-						data={getValues("ipfsData.sourceControl") || []}
+						data={getValues("ipfsData.sourceControl")}
 					/>
 				</TransactionDetail>
 
@@ -158,7 +159,7 @@ export const FormStep = () => {
 							.map(({ displayName: label, id: value, validate }) => ({ label, value, validate }))}
 						typeName="media"
 						onChange={handleSocialMedia}
-						data={getValues("ipfsData.socialMedia") || []}
+						data={getValues("ipfsData.socialMedia")}
 					/>
 				</TransactionDetail>
 
