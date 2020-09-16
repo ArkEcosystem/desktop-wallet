@@ -322,7 +322,7 @@ export const wallet = wallets[0];
 
 export const networks = [
 	{
-		icon: "Ark",
+		icon: "ARK",
 		name: "ARK Ecosystem",
 		coin: "ARK",
 		network: "ark.devnet",
