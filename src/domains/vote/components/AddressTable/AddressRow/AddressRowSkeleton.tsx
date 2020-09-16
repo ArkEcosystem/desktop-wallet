@@ -3,7 +3,7 @@ import React from "react";
 import Skeleton from "react-loading-skeleton";
 
 export const AddressRowSkeleton = () => (
-	<tr className="border-b border-dotted border-theme-neutral-300" data-testid="AddressRowSkeleton">
+	<tr data-testid="AddressRowSkeleton" className="border-b border-dotted last:border-b-0 border-theme-neutral-300">
 		<td className="py-5">
 			<Circle className="bg-theme-neutral-200 border-theme-neutral-200" />
 		</td>

@@ -2,7 +2,7 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
-import { Table, TableCell } from "app/components/Table";
+import { Table, TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -50,8 +50,9 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 
 	const columns = [
 		{
-			Header: " ",
+			Header: "Logo",
 			disableSortBy: true,
+			className: "hidden",
 		},
 		{
 			Header: t("COMMON.NAME"),
@@ -70,8 +71,9 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 			accessor: "version",
 		},
 		{
-			Header: "  ",
+			Header: "Actions",
 			disableSortBy: true,
+			className: "hidden",
 		},
 	];
 
@@ -87,7 +89,7 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
-						<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
+						<TableRow>
 							<TableCell variant="start" className="w-18">
 								<ChangeNowLogo className="w-12 h-12" />
 							</TableCell>
@@ -116,7 +118,7 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 							<TableCell variant="end" className="w-16" innerClassName="justify-end">
 								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
 							</TableCell>
-						</tr>
+						</TableRow>
 					)}
 				</Table>
 			</div>

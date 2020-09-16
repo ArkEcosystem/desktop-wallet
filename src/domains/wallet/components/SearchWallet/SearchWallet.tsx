@@ -126,7 +126,7 @@ export const SearchWallet = ({
 		},
 		{
 			Header: t("COMMON.ACTION"),
-			className: "invisible w-0 text-0",
+			className: "hidden",
 		},
 	];
 

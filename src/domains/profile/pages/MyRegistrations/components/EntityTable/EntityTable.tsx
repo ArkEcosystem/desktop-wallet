@@ -18,7 +18,10 @@ export const EntityTable = ({ entities, onAction, title, type, nameColumnHeader 
 	const { t } = useTranslation();
 
 	const columns = [
-		{ Header: "Avatar", className: "invisible" },
+		{
+			Header: "Avatar",
+			className: "hidden",
+		},
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.ADDRESS"),
 		},
@@ -41,7 +44,10 @@ export const EntityTable = ({ entities, onAction, title, type, nameColumnHeader 
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.REPOSITORY"),
 			className: "justify-center",
 		},
-		{ Header: "Options", className: "invisible" },
+		{
+			Header: "Actions",
+			className: "hidden",
+		},
 	];
 
 	return (

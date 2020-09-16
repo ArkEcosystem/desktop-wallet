@@ -20,7 +20,10 @@ export const DelegateTable = ({ wallets, onAction }: Props) => {
 	const { t } = useTranslation();
 
 	const columns = [
-		{ Header: "Avatar", className: "invisible" },
+		{
+			Header: "Avatar",
+			className: "hidden",
+		},
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.DELEGATE_NAME"),
 		},
