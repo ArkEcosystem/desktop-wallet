@@ -8,12 +8,17 @@
 					"coin": "ARK",
 					"coinConfig": {
 						"network": {
-							"id": "mainnet",
+							"id": "ark.mainnet",
 							"type": "test",
-							"name": "Mainnet",
+							"name": "ARK Mainnet",
 							"explorer": "https://explorer.ark.io/",
-							"currency": { "ticker": "ARK", "symbol": "DѦ" },
-							"crypto": { "slip44": 111 },
+							"currency": {
+								"ticker": "ARK",
+								"symbol": "DѦ"
+							},
+							"crypto": {
+								"slip44": 111
+							},
 							"hosts": [
 								"https://explorer.ark.io",
 								"http://167.114.29.51:4003",
@@ -23,13 +28,19 @@
 								"http://167.114.29.55:4003"
 							],
 							"hostsMultiSignature": [],
-							"voting": { "enabled": true, "singular": true }
+							"voting": {
+								"enabled": true,
+								"singular": true
+							}
 						}
 					},
-					"network": "mainnet",
+					"network": "ark.mainnet",
 					"address": "AHZLH1CwMEGPBxMjuohAgdR79DpezntksA",
 					"publicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
-					"data": { "BALANCE": {}, "SEQUENCE": {} },
+					"data": {
+						"BALANCE": {},
+						"SEQUENCE": {}
+					},
 					"settings": {
 						"AVATAR": "conic-gradient(from 138.92820875068205deg at 10.341003346631878% 56.34369708791203%, #9B2C2C, calc(0 * 100% / 5), transparent 0),conic-gradient(from 501.2404426352248deg at 6.193536608927738% 20.020924742851292%, #FEB2B2, calc(1 * 100% / 5), transparent 0),conic-gradient(from 538.0014084095758deg at 32.870727463865066% 41.693174698534285%, #F6AD55, calc(2 * 100% / 5), transparent 0),conic-gradient(from 86.8716993412581deg at 45.65092691320694% 53.97053076646755%, #2C7A7B, calc(3 * 100% / 5), transparent 0),conic-gradient(from 453.1648835420749deg at 5.017317358847957% 27.456901944771822%, #FC8181, calc(4 * 100% / 5), transparent 0)",
 						"ALIAS": "ARK Wallet 1"
@@ -53,10 +64,20 @@
 					"action": "Read Changelog"
 				}
 			},
-			"plugins": { "data": {}, "blacklist": [] },
-			"data": { "key": "value" },
-			"settings": { "ADVANCED_MODE": "value", "NAME": "John Doe" }
+			"plugins": {
+				"data": {},
+				"blacklist": []
+			},
+			"data": {
+				"key": "value"
+			},
+			"settings": {
+				"ADVANCED_MODE": "value",
+				"NAME": "John Doe"
+			}
 		}
 	},
-	"data": { "key": "value" }
+	"data": {
+		"key": "value"
+	}
 }

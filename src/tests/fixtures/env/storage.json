@@ -8,9 +8,9 @@
 					"coin": "ARK",
 					"coinConfig": {
 						"network": {
-							"id": "devnet",
+							"id": "ark.devnet",
 							"type": "test",
-							"name": "Devnet",
+							"name": "ARK Devnet",
 							"explorer": "https://dexplorer.ark.io/",
 							"currency": {
 								"ticker": "DARK",
@@ -28,7 +28,7 @@
 							}
 						}
 					},
-					"network": "devnet",
+					"network": "ark.devnet",
 					"address": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					"publicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 					"data": {
@@ -52,9 +52,9 @@
 					"coin": "ARK",
 					"coinConfig": {
 						"network": {
-							"id": "devnet",
+							"id": "ark.devnet",
 							"type": "test",
-							"name": "Devnet",
+							"name": "ARK Devnet",
 							"explorer": "https://dexplorer.ark.io/",
 							"currency": {
 								"ticker": "DARK",
@@ -72,7 +72,7 @@
 							}
 						}
 					},
-					"network": "devnet",
+					"network": "ark.devnet",
 					"address": "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 					"publicKey": "03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
 					"data": {
@@ -97,22 +97,19 @@
 					"id": "0e147f96-049f-4d89-bad4-ad3341109907",
 					"name": "Brian",
 					"starred": false,
-					"addresses": [
-						{
-							"id": "01ccbf8c-f9af-4fda-8227-55858631ce4e",
-							"coin": "ARK",
-							"network": "devnet",
-							"name": "Brians Devnet Address",
-							"address": "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-						}
-					]
+					"addresses": [{
+						"id": "01ccbf8c-f9af-4fda-8227-55858631ce4e",
+						"coin": "ARK",
+						"network": "devnet",
+						"name": "Brians Devnet Address",
+						"address": "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+					}]
 				},
 				"0b05d911-fc73-4431-ae4c-cd872cf12a9d": {
 					"id": "0b05d911-fc73-4431-ae4c-cd872cf12a9d",
 					"name": "Rok",
 					"starred": false,
-					"addresses": [
-						{
+					"addresses": [{
 							"id": "84c6cffd-eeef-4d6f-be35-44d88d705841",
 							"coin": "ARK",
 							"network": "devnet",
