@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-export const sendEntityUpdate = (t: any) => ({
+export const entityRegistration = (t: any) => ({
 	entityName: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.NAME"),

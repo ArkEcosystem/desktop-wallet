@@ -1,2 +1,2 @@
-export * from "./SendEntityUpdate";
+export * from "./EntityRegistration";
 export * from "./Authentication";

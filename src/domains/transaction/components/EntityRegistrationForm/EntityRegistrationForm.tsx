@@ -5,6 +5,7 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useValidation } from "app/hooks/validations";
 import { httpClient } from "app/services";
 import {
 	SendEntityRegistrationComponent,
@@ -13,30 +14,20 @@ import {
 } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
-import { useTranslation } from "react-i18next";
-import * as yup from "yup";
 
 import { FormStep } from "./Step2";
 import { ReviewStep } from "./Step3";
 
 const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationComponent) => {
-	const { t } = useTranslation();
 	const { register } = useFormContext();
+	const { entityRegistration } = useValidation();
 
 	useEffect(() => {
-		register("entityName", { required: true, minLength: 3, maxLength: 40, pattern: /^[a-zA-Z0-9_-]+$/ });
-		register("ipfsData.meta.displayName", { required: true, minLength: 3, maxLength: 128 });
-		register("ipfsData.meta.website", {
-			validate: {
-				valid: (value) => {
-					if (!yup.string().url().isValidSync(value)) {
-						return t<string>("TRANSACTION.INVALID_URL");
-					}
-					return true;
-				},
-			},
-		});
-		register("ipfsData.meta.description", { minLength: 3, maxLength: 512 });
+		register("entityName", entityRegistration.entityName());
+		register("ipfsData.meta.displayName", entityRegistration.displayName());
+		register("ipfsData.meta.website", entityRegistration.website());
+		register("ipfsData.meta.description", entityRegistration.description());
+
 		register("ipfsData.sourceControl");
 		register("ipfsData.socialMedia");
 		register("ipfsData.images");

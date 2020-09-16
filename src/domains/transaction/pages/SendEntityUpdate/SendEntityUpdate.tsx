@@ -35,7 +35,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
 	const { setValue, triggerValidation, getValues, register } = form;
-	const { sendEntityUpdate } = useValidation();
+	const { entityRegistration } = useValidation();
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -63,11 +63,11 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 			"registrationId",
 		].forEach(register);
 
-		register("entityName", sendEntityUpdate.entityName());
-		register("ipfsData.meta.displayName", sendEntityUpdate.displayName());
-		register("ipfsData.meta.description", sendEntityUpdate.description());
-		register("ipfsData.meta.website", sendEntityUpdate.website());
-	}, [register, sendEntityUpdate]);
+		register("entityName", entityRegistration.entityName());
+		register("ipfsData.meta.displayName", entityRegistration.displayName());
+		register("ipfsData.meta.description", entityRegistration.description());
+		register("ipfsData.meta.website", entityRegistration.website());
+	}, [register, entityRegistration]);
 
 	useEffect(() => {
 		const fetchTransaction = async () => {
