@@ -322,42 +322,42 @@ export const wallet = wallets[0];
 
 export const networks = [
 	{
-		icon: "Ark",
+		icon: "ARK",
 		name: "ARK Ecosystem",
 		coin: "ARK",
 		network: "ark.devnet",
 		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{
-		icon: "Ark",
+		icon: "BIND",
 		name: "Compendia",
 		coin: "BIND",
 		network: "compendia.devnet",
 		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{
-		icon: "Bitcoin",
+		icon: "BTC",
 		name: "Bitcoin",
 		coin: "BTC",
 		network: "testnet",
 		className: "text-theme-warning-400 border-theme-warning-200",
 	},
 	{
-		icon: "Ethereum",
+		icon: "ETH",
 		name: "Ethereum",
 		coin: "ETH",
 		network: "mainnet",
 		className: "text-theme-neutral-800 border-theme-neutral-600",
 	},
 	{
-		icon: "Lisk",
+		icon: "LSK",
 		name: "Lisk",
 		coin: "LSK",
 		network: "mainnet",
 		className: "text-theme-primary border-theme-primary-400",
 	},
 	{
-		icon: "Ripple",
+		icon: "XRP",
 		name: "Ripple",
 		coin: "XRP",
 		network: "mainnet",

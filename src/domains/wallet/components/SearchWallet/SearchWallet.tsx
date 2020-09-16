@@ -1,6 +1,5 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -148,7 +147,7 @@ export const SearchWallet = ({
 							address={wallet.address()}
 							balance={wallet.balance()}
 							convertedBalance={wallet.convertedBalance()}
-							coinName={upperFirst(wallet.coinId().toLowerCase())}
+							coinName={wallet.coinId()}
 							currency={wallet.currency()}
 							exchangeCurrency={wallet.exchangeCurrency() || "BTC"} // @TODO get default from SDK
 							name={wallet.alias()}

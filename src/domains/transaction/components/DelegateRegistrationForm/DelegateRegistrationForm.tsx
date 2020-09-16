@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
@@ -142,7 +141,7 @@ const ThirdStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
+								{coinName && <Icon name={coinName} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
