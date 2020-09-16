@@ -35,7 +35,7 @@ const FormStepsComponent = ({ activeTab, wallet }: SendEntityRegistrationCompone
 
 		register("fees");
 		register("fee");
-	}, [register]);
+	}, [register, entityRegistration]);
 
 	return (
 		<Tabs activeId={activeTab}>
