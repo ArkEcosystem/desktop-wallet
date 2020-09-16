@@ -22,7 +22,7 @@ export const TransactionRowMode = ({ transaction, circleShadowColor }: Props) =>
 	return (
 		<div data-testid="TransactionRowMode" className="flex items-center -space-x-1">
 			<Tippy content={tooltipContent}>
-				<Circle className={modeCircleStyle} shadowColor={circleShadowColor}>
+				<Circle size="lg" className={modeCircleStyle} shadowColor={circleShadowColor}>
 					<Icon data-testid={`TransactionRowMode__${modeIconName}`} name={modeIconName} />
 				</Circle>
 			</Tippy>

@@ -34,11 +34,12 @@ export const DelegateRow = ({ index, delegate, selected, isLoading, onSelect }: 
 
 	return (
 		<TableRow>
-			<TableCell variant="start" isSelected={isSelected} innerClassName="font-bold">
-				<div className="flex items-center space-x-3">
-					<Avatar address={delegate.address()} size="lg" noShadow />
-					<span>{delegate.username()}</span>
-				</div>
+			<TableCell variant="start" className="w-1">
+				<Avatar className="mr-4" size="lg" address={delegate.address()} noShadow />
+			</TableCell>
+
+			<TableCell isSelected={isSelected} innerClassName="font-bold">
+				<span>{delegate.username()}</span>
 			</TableCell>
 
 			<TableCell isSelected={isSelected} innerClassName="font-bold text-theme-neutral-dark">

@@ -53,8 +53,8 @@ export const TransactionTable = ({
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
-			className: "justify-end",
 			accessor: "amount",
+			className: "justify-end",
 		},
 	];
 
@@ -63,7 +63,7 @@ export const TransactionTable = ({
 			return [
 				{
 					Header: t("COMMON.TYPE"),
-					className: "invisible",
+					className: "hidden",
 				},
 				{
 					Header: t("COMMON.RECIPIENT"),

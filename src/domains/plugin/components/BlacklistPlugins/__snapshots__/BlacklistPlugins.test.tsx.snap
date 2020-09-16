@@ -68,7 +68,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
             class="mt-8 -mb-6"
           >
             <div
-              class="sc-AxhCb kCInKi"
+              class="sc-AxhCb kePquh"
               role="table"
             >
               <table
@@ -86,10 +86,10 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                           
+                          Logo
                         </div>
                       </div>
                     </th>
@@ -160,10 +160,10 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                            
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -173,157 +173,201 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="sc-AxgMl fRZhDw group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-16"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-AxhUy ietzKN"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                        class="sc-AxhUy ekyfZv"
                       >
-                        ARK Explorer
-                      </div>
-                      <div
-                        class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
-                        >
-                          ARK Ecosystem
-                        </span>
                         <div
-                          class="sc-AxjAm pXfjM"
-                          height="15"
-                          width="15"
+                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                         >
-                          <svg>
-                            official-ark-plugin.svg
-                          </svg>
+                          ARK Explorer
+                        </div>
+                        <div
+                          class="inline-flex items-center space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-dark"
+                          >
+                            ARK Ecosystem
+                          </span>
+                          <div
+                            class="sc-AxjAm pXfjM"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              official-ark-plugin.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="py-10 text-right text-theme-neutral-dark"
-                    >
-                      Utility
+                    <td>
+                      <div
+                        class="sc-AxhUy gaxSDd justify-end text-theme-neutral-dark"
+                      >
+                        Utility
+                      </div>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-200"
+                    class="sc-AxgMl fRZhDw group"
+                    data-testid="TableRow"
                   >
                     <td
                       class="w-16"
                     >
-                      <svg
-                        class="w-12 h-12"
+                      <div
+                        class="sc-AxhUy ietzKN"
                       >
-                        changenow-logo.svg
-                      </svg>
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
                     </td>
                     <td>
                       <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                        class="sc-AxhUy ekyfZv"
                       >
-                        Animal Avatars
-                      </div>
-                      <div
-                        class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
-                        >
-                          Breno Polanski
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="py-10 text-right text-theme-neutral-dark"
-                    >
-                      Utility
-                    </td>
-                  </tr>
-                  <tr
-                    class="border-b border-dashed border-theme-neutral-200"
-                  >
-                    <td
-                      class="w-16"
-                    >
-                      <svg
-                        class="w-12 h-12"
-                      >
-                        changenow-logo.svg
-                      </svg>
-                    </td>
-                    <td>
-                      <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                      >
-                        ChangeNOW Plugin
-                      </div>
-                      <div
-                        class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
-                        >
-                          ChangeNOW
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="py-10 text-right text-theme-neutral-dark"
-                    >
-                      Other
-                    </td>
-                  </tr>
-                  <tr
-                    class="border-b border-dashed border-theme-neutral-200"
-                  >
-                    <td
-                      class="w-16"
-                    >
-                      <svg
-                        class="w-12 h-12"
-                      >
-                        changenow-logo.svg
-                      </svg>
-                    </td>
-                    <td>
-                      <div
-                        class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                      >
-                        Bold Ninja
-                      </div>
-                      <div
-                        class="inline-flex items-center space-x-2"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
-                        >
-                          Delegate Fun
-                        </span>
                         <div
-                          class="sc-AxjAm vZRQY"
-                          height="16"
-                          width="16"
+                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                         >
-                          <svg>
-                            grant.svg
-                          </svg>
+                          Animal Avatars
+                        </div>
+                        <div
+                          class="inline-flex items-center space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-dark"
+                          >
+                            Breno Polanski
+                          </span>
                         </div>
                       </div>
                     </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy gaxSDd justify-end text-theme-neutral-dark"
+                      >
+                        Utility
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="sc-AxgMl fRZhDw group"
+                    data-testid="TableRow"
+                  >
                     <td
-                      class="py-10 text-right text-theme-neutral-dark"
+                      class="w-16"
                     >
-                      Game
+                      <div
+                        class="sc-AxhUy ietzKN"
+                      >
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <div
+                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                        >
+                          ChangeNOW Plugin
+                        </div>
+                        <div
+                          class="inline-flex items-center space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-dark"
+                          >
+                            ChangeNOW
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy gaxSDd justify-end text-theme-neutral-dark"
+                      >
+                        Other
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="sc-AxgMl fRZhDw group"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      class="w-16"
+                    >
+                      <div
+                        class="sc-AxhUy ietzKN"
+                      >
+                        <svg
+                          class="w-12 h-12"
+                        >
+                          changenow-logo.svg
+                        </svg>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy ekyfZv"
+                      >
+                        <div
+                          class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                        >
+                          Bold Ninja
+                        </div>
+                        <div
+                          class="inline-flex items-center space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-dark"
+                          >
+                            Delegate Fun
+                          </span>
+                          <div
+                            class="sc-AxjAm vZRQY"
+                            height="16"
+                            width="16"
+                          >
+                            <svg>
+                              grant.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-AxhUy gaxSDd justify-end text-theme-neutral-dark"
+                      >
+                        Game
+                      </div>
                     </td>
                   </tr>
                 </tbody>

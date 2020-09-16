@@ -67,8 +67,8 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 
 	return (
 		<TableRow>
-			<TableCell variant="start">
-				<Avatar size="lg" address={wallet.address()} noShadow />
+			<TableCell variant="start" className="w-1">
+				<Avatar className="mr-4" size="lg" address={wallet.address()} noShadow />
 			</TableCell>
 
 			<TableCell className="w-20">
@@ -91,16 +91,18 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				</div>
 			</TableCell>
 
-			<TableCell innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName="justify-end font-bold text-theme-neutral-dark">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
-			<TableCell>
-				{hasVotes ? (
-					<Avatar size="lg" address={votes[0].address()} noShadow />
-				) : (
-					<Circle size="lg" className="border-theme-neutral-300" noShadow />
-				)}
+			<TableCell className="w-24" innerClassName="justify-end">
+				<div className="mr-4">
+					{hasVotes ? (
+						<Avatar size="lg" address={votes[0].address()} noShadow />
+					) : (
+						<Circle size="lg" className="border-theme-neutral-300" noShadow />
+					)}
+				</div>
 			</TableCell>
 
 			<TableCell innerClassName="font-bold">

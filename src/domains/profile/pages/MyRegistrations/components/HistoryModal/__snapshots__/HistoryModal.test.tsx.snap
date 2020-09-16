@@ -48,7 +48,7 @@ exports[`HistoryModal should render empty state 1`] = `
             class="flex flex-col mt-5"
           >
             <div
-              class="sc-Axmtr dAxPWA self-center"
+              class="sc-Axmtr idwkoD self-center"
               role="table"
             >
               <table
@@ -210,7 +210,7 @@ exports[`HistoryModal should render properly 1`] = `
             class="flex flex-col mt-5"
           >
             <div
-              class="sc-Axmtr dAxPWA self-center"
+              class="sc-Axmtr idwkoD self-center"
               role="table"
             >
               <table
@@ -269,7 +269,7 @@ exports[`HistoryModal should render properly 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dashed border-theme-neutral-300"
+                    class="border-b last:border-b-0 border-dashed border-theme-neutral-300"
                     data-testid="blockchain-table__row"
                   >
                     <td
@@ -306,7 +306,7 @@ exports[`HistoryModal should render properly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-300"
+                    class="border-b last:border-b-0 border-dashed border-theme-neutral-300"
                     data-testid="blockchain-table__row"
                   >
                     <td
@@ -343,7 +343,7 @@ exports[`HistoryModal should render properly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-300"
+                    class="border-b last:border-b-0 border-dashed border-theme-neutral-300"
                     data-testid="blockchain-table__row"
                   >
                     <td
@@ -380,7 +380,7 @@ exports[`HistoryModal should render properly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-300"
+                    class="border-b last:border-b-0 border-dashed border-theme-neutral-300"
                     data-testid="blockchain-table__row"
                   >
                     <td

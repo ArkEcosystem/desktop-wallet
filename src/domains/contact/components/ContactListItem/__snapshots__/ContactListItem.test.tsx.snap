@@ -5,15 +5,17 @@ exports[`ContactListItem should render 1`] = `
   <table>
     <tbody>
       <tr
-        class="sc-Axmtr laKhNM group"
+        class="sc-Axmtr gpPFXd group"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-1"
+        >
           <div
             class="sc-AxheI zaYaN"
           >
             <div
-              class="flex items-center space-x-3"
+              class="mr-4"
             >
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -30,13 +32,19 @@ exports[`ContactListItem should render 1`] = `
                   BR
                 </span>
               </div>
-              <span
-                class="font-semibold"
-                data-testid="ContactListItem__name"
-              >
-                Brian
-              </span>
             </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <span
+              class="font-semibold"
+              data-testid="ContactListItem__name"
+            >
+              Brian
+            </span>
           </div>
         </td>
         <td>
@@ -62,44 +70,49 @@ exports[`ContactListItem should render 1`] = `
           </div>
         </td>
         <td
+          class="w-1 
+								"
+        >
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
           class=""
         >
           <div
             class="sc-AxheI gINGcz"
           >
             <div
-              class="flex items-center space-x-3"
+              class="inline-block truncate align-middle"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                data-testid="Avatar"
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
               >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  D61mfS…J3Dyib
-                </span>
-              </div>
+                D61mfS…J3Dyib
+              </span>
             </div>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxheI gINGcz space-x-2 text-sm font-bold text-center "
+            class="sc-AxheI gINGcz space-x-2 text-sm font-bold justify-center "
           >
             <div
               class="sc-AxiKw bZmbqI border-black"
@@ -157,15 +170,17 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
   <table>
     <tbody>
       <tr
-        class="sc-Axmtr laKhNM group"
+        class="sc-Axmtr gpPFXd group"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-1"
+        >
           <div
             class="sc-AxheI zaYaN"
           >
             <div
-              class="flex items-center space-x-3"
+              class="mr-4"
             >
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -182,13 +197,19 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
                   BR
                 </span>
               </div>
-              <span
-                class="font-semibold"
-                data-testid="ContactListItem__name"
-              >
-                Brian
-              </span>
             </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <span
+              class="font-semibold"
+              data-testid="ContactListItem__name"
+            >
+              Brian
+            </span>
           </div>
         </td>
         <td>
@@ -214,44 +235,49 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
           </div>
         </td>
         <td
+          class="w-1 
+								"
+        >
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
           class=""
         >
           <div
             class="sc-AxheI gINGcz"
           >
             <div
-              class="flex items-center space-x-3"
+              class="inline-block truncate align-middle"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                data-testid="Avatar"
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
               >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  D61mfS…J3Dyib
-                </span>
-              </div>
+                D61mfS…J3Dyib
+              </span>
             </div>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxheI gINGcz space-x-2 text-sm font-bold text-center "
+            class="sc-AxheI gINGcz space-x-2 text-sm font-bold justify-center "
           >
             <div
               class="sc-AxiKw bZmbqI border-black"
@@ -300,12 +326,19 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-Axmtr laKhNM group"
+        class="sc-Axmtr gpPFXd group"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-1"
+        >
           <div
             class="sc-AxheI zaYaN"
+          />
+        </td>
+        <td>
+          <div
+            class="sc-AxheI gINGcz"
           />
         </td>
         <td>
@@ -331,44 +364,49 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
           </div>
         </td>
         <td
+          class="w-1 
+								"
+        >
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
           class=""
         >
           <div
             class="sc-AxheI gINGcz"
           >
             <div
-              class="flex items-center space-x-3"
+              class="inline-block truncate align-middle"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                data-testid="Avatar"
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
               >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  D61mfS…J3Dyib
-                </span>
-              </div>
+                D61mfS…J3Dyib
+              </span>
             </div>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxheI gINGcz space-x-2 text-sm font-bold text-center "
+            class="sc-AxheI gINGcz space-x-2 text-sm font-bold justify-center "
           >
             <div
               class="sc-AxiKw bZmbqI border-black"
@@ -401,15 +439,17 @@ exports[`ContactListItem should render with multiple options 1`] = `
   <table>
     <tbody>
       <tr
-        class="sc-Axmtr laKhNM group"
+        class="sc-Axmtr gpPFXd group"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-1"
+        >
           <div
             class="sc-AxheI zaYaN"
           >
             <div
-              class="flex items-center space-x-3"
+              class="mr-4"
             >
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -426,13 +466,19 @@ exports[`ContactListItem should render with multiple options 1`] = `
                   BR
                 </span>
               </div>
-              <span
-                class="font-semibold"
-                data-testid="ContactListItem__name"
-              >
-                Brian
-              </span>
             </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <span
+              class="font-semibold"
+              data-testid="ContactListItem__name"
+            >
+              Brian
+            </span>
           </div>
         </td>
         <td>
@@ -458,44 +504,49 @@ exports[`ContactListItem should render with multiple options 1`] = `
           </div>
         </td>
         <td
+          class="w-1 
+								"
+        >
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
           class=""
         >
           <div
             class="sc-AxheI gINGcz"
           >
             <div
-              class="flex items-center space-x-3"
+              class="inline-block truncate align-middle"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                data-testid="Avatar"
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
               >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  D61mfS…J3Dyib
-                </span>
-              </div>
+                D61mfS…J3Dyib
+              </span>
             </div>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxheI gINGcz space-x-2 text-sm font-bold text-center "
+            class="sc-AxheI gINGcz space-x-2 text-sm font-bold justify-center "
           >
             <div
               class="sc-AxiKw bZmbqI border-black"
@@ -544,12 +595,19 @@ exports[`ContactListItem should render with multiple options 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-Axmtr laKhNM group"
+        class="sc-Axmtr gpPFXd group"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-1"
+        >
           <div
             class="sc-AxheI zaYaN"
+          />
+        </td>
+        <td>
+          <div
+            class="sc-AxheI gINGcz"
           />
         </td>
         <td>
@@ -575,44 +633,49 @@ exports[`ContactListItem should render with multiple options 1`] = `
           </div>
         </td>
         <td
+          class="w-1 
+								"
+        >
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
           class=""
         >
           <div
             class="sc-AxheI gINGcz"
           >
             <div
-              class="flex items-center space-x-3"
+              class="inline-block truncate align-middle"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                data-testid="Avatar"
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
               >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  D61mfS…J3Dyib
-                </span>
-              </div>
+                D61mfS…J3Dyib
+              </span>
             </div>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxheI gINGcz space-x-2 text-sm font-bold text-center "
+            class="sc-AxheI gINGcz space-x-2 text-sm font-bold justify-center "
           >
             <div
               class="sc-AxiKw bZmbqI border-black"
@@ -645,15 +708,17 @@ exports[`ContactListItem should render with one option 1`] = `
   <table>
     <tbody>
       <tr
-        class="sc-Axmtr laKhNM group"
+        class="sc-Axmtr gpPFXd group"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-1"
+        >
           <div
             class="sc-AxheI zaYaN"
           >
             <div
-              class="flex items-center space-x-3"
+              class="mr-4"
             >
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -670,13 +735,19 @@ exports[`ContactListItem should render with one option 1`] = `
                   BR
                 </span>
               </div>
-              <span
-                class="font-semibold"
-                data-testid="ContactListItem__name"
-              >
-                Brian
-              </span>
             </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <span
+              class="font-semibold"
+              data-testid="ContactListItem__name"
+            >
+              Brian
+            </span>
           </div>
         </td>
         <td>
@@ -702,44 +773,49 @@ exports[`ContactListItem should render with one option 1`] = `
           </div>
         </td>
         <td
+          class="w-1 
+								"
+        >
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
           class=""
         >
           <div
             class="sc-AxheI gINGcz"
           >
             <div
-              class="flex items-center space-x-3"
+              class="inline-block truncate align-middle"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                data-testid="Avatar"
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
               >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  D61mfS…J3Dyib
-                </span>
-              </div>
+                D61mfS…J3Dyib
+              </span>
             </div>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxheI gINGcz space-x-2 text-sm font-bold text-center "
+            class="sc-AxheI gINGcz space-x-2 text-sm font-bold justify-center "
           >
             <div
               class="sc-AxiKw bZmbqI border-black"
@@ -772,12 +848,19 @@ exports[`ContactListItem should render with one option 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-Axmtr laKhNM group"
+        class="sc-Axmtr gpPFXd group"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-1"
+        >
           <div
             class="sc-AxheI zaYaN"
+          />
+        </td>
+        <td>
+          <div
+            class="sc-AxheI gINGcz"
           />
         </td>
         <td>
@@ -803,44 +886,49 @@ exports[`ContactListItem should render with one option 1`] = `
           </div>
         </td>
         <td
+          class="w-1 
+								"
+        >
+          <div
+            class="sc-AxheI gINGcz"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+        <td
           class=""
         >
           <div
             class="sc-AxheI gINGcz"
           >
             <div
-              class="flex items-center space-x-3"
+              class="inline-block truncate align-middle"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                data-testid="Avatar"
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
               >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  D61mfS…J3Dyib
-                </span>
-              </div>
+                D61mfS…J3Dyib
+              </span>
             </div>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxheI gINGcz space-x-2 text-sm font-bold text-center "
+            class="sc-AxheI gINGcz space-x-2 text-sm font-bold justify-center "
           >
             <div
               class="sc-AxiKw bZmbqI border-black"

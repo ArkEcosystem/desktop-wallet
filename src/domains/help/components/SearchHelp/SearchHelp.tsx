@@ -53,7 +53,7 @@ export const SearchHelp = ({ isOpen, data, onClose, onSearch }: SearchHelpProps)
 			<div className="mt-8">
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
-						<tr className="transition-colors duration-100 border-b border-dashed border-theme-neutral-200 group">
+						<tr className="transition-colors duration-100 border-b last:border-b-0 border-dashed border-theme-neutral-200 group">
 							<TableCell variant="start" innerClassName="pr-8">
 								<div className="font-semibold">{rowData.title}</div>
 

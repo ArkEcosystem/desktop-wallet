@@ -22,8 +22,9 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 
 	const columns = [
 		{
-			Header: " ",
+			Header: "Logo",
 			disableSortBy: true,
+			className: "hidden",
 		},
 		{
 			Header: t("COMMON.NAME"),
@@ -40,8 +41,9 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 			className: "justify-center",
 		},
 		{
-			Header: "  ",
+			Header: "Actions",
 			disableSortBy: true,
+			className: "hidden",
 		},
 	];
 
