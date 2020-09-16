@@ -105,7 +105,7 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-devnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
@@ -118,7 +118,7 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
 		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");

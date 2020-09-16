@@ -762,28 +762,10 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               class="sc-fznZeY sc-fzokOt jWugcU px-4"
                             >
                               <div
-                                aria-label="ARK Devnet"
-                                class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
-                              >
-                                <div
-                                  class="sc-AxiKw dzBdqj"
-                                  data-testid="NetworkIcon__icon"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
+                              />
                             </div>
-                            <span
-                              class="sc-fznZeY dHxPUs py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-                              data-testid="SelectNetworkInput__typeahead"
-                            >
-                              ARK Devnet
-                            </span>
                             <input
                               aria-autocomplete="list"
                               aria-controls="SendTransactionForm__network-menu"
@@ -794,7 +776,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               disabled=""
                               id="SendTransactionForm__network-input"
                               placeholder="Enter a network name"
-                              value="ARK Devnet"
+                              value=""
                             />
                           </div>
                         </div>
@@ -813,21 +795,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
-                              class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                              data-testid="NetworkIcon-ARK-mainnet"
-                            >
-                              <div
-                                class="sc-AxiKw fubePL"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  ark.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -838,21 +808,35 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             role="option"
                           >
                             <div
-                              aria-label="ARK Devnet"
-                              class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                              data-testid="NetworkIcon-ARK-devnet"
-                            >
-                              <div
-                                class="sc-AxiKw fubePL"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  ark.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            disabled=""
+                            id="SendTransactionForm__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            disabled=""
+                            id="SendTransactionForm__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                         </ul>
                       </fieldset>
@@ -970,16 +954,16 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 <button
                                   aria-expanded="true"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-37-label downshift-37-toggle-button"
+                                  aria-labelledby="downshift-33-label downshift-33-toggle-button"
                                   class="sc-fzoyTs buZKoP is-open  "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-37-toggle-button"
+                                  id="downshift-33-toggle-button"
                                   type="button"
                                 />
                                 <ul
-                                  aria-labelledby="downshift-37-label"
+                                  aria-labelledby="downshift-33-label"
                                   class="sc-fzoNJl gPmoPk is-open"
-                                  id="downshift-37-menu"
+                                  id="downshift-33-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 >
@@ -987,7 +971,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                     aria-selected="false"
                                     class="select-list-option "
                                     data-testid="select-list__toggle-option-0"
-                                    id="downshift-37-item-0"
+                                    id="downshift-33-item-0"
                                     role="option"
                                   >
                                     <div
@@ -1117,21 +1101,9 @@ exports[`Registration should not set fee if no fee options 1`] = `
             role="option"
           >
             <div
-              aria-label="Ark"
-              class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon-ARK-mainnet"
-            >
-              <div
-                class="sc-AxiKw fubePL"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
           <li
             aria-selected="false"
@@ -1141,21 +1113,33 @@ exports[`Registration should not set fee if no fee options 1`] = `
             role="option"
           >
             <div
-              aria-label="ARK Devnet"
-              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-devnet"
-            >
-              <div
-                class="sc-AxiKw fubePL"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-2"
+            role="option"
+          >
+            <div
+              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-3"
+            role="option"
+          >
+            <div
+              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
         </ul>
       </fieldset>
@@ -1255,18 +1239,18 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 <button
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby="downshift-15-label downshift-15-toggle-button"
+                  aria-labelledby="downshift-11-label downshift-11-toggle-button"
                   class="sc-fzoyTs buZKoP  is-selected "
                   data-testid="select-list__toggle-button"
-                  id="downshift-15-toggle-button"
+                  id="downshift-11-toggle-button"
                   type="button"
                 >
                   Delegate
                 </button>
                 <ul
-                  aria-labelledby="downshift-15-label"
+                  aria-labelledby="downshift-11-label"
                   class="sc-fzoNJl gPmoPk"
-                  id="downshift-15-menu"
+                  id="downshift-11-menu"
                   role="listbox"
                   tabindex="-1"
                 />
@@ -1631,7 +1615,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                               <div
                                 class="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24"
                               >
-                                Devnet
+                                ARK Devnet
                               </div>
                             </div>
                           </div>
@@ -2259,7 +2243,7 @@ exports[`Registration should register delegate 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              ARK Devnet
+                              ARK ARK Devnet
                             </div>
                           </div>
                           <div
@@ -2498,21 +2482,9 @@ exports[`Registration should render 1st step 1`] = `
             role="option"
           >
             <div
-              aria-label="Ark"
-              class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon-ARK-mainnet"
-            >
-              <div
-                class="sc-AxiKw fubePL"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
           <li
             aria-selected="false"
@@ -2522,21 +2494,33 @@ exports[`Registration should render 1st step 1`] = `
             role="option"
           >
             <div
-              aria-label="ARK Devnet"
-              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-devnet"
-            >
-              <div
-                class="sc-AxiKw fubePL"
-                data-testid="NetworkIcon__icon"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-2"
+            role="option"
+          >
+            <div
+              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-3"
+            role="option"
+          >
+            <div
+              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
           </li>
         </ul>
       </fieldset>
@@ -2636,18 +2620,18 @@ exports[`Registration should render 1st step 1`] = `
                 <button
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby="downshift-10-label downshift-10-toggle-button"
+                  aria-labelledby="downshift-6-label downshift-6-toggle-button"
                   class="sc-fzoyTs buZKoP  is-selected "
                   data-testid="select-list__toggle-button"
-                  id="downshift-10-toggle-button"
+                  id="downshift-6-toggle-button"
                   type="button"
                 >
                   Delegate
                 </button>
                 <ul
-                  aria-labelledby="downshift-10-label"
+                  aria-labelledby="downshift-6-label"
                   class="sc-fzoNJl gPmoPk"
-                  id="downshift-10-menu"
+                  id="downshift-6-menu"
                   role="listbox"
                   tabindex="-1"
                 />
@@ -3049,21 +3033,9 @@ exports[`Registration should render registration form without selected wallet 1`
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
-                              class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon-ARK-mainnet"
-                            >
-                              <div
-                                class="sc-AxiKw fubePL"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  ark.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                           <li
                             aria-selected="false"
@@ -3073,21 +3045,33 @@ exports[`Registration should render registration form without selected wallet 1`
                             role="option"
                           >
                             <div
-                              aria-label="ARK Devnet"
-                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-ARK-devnet"
-                            >
-                              <div
-                                class="sc-AxiKw fubePL"
-                                data-testid="NetworkIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  ark.svg
-                                </svg>
-                              </div>
-                            </div>
+                              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="SendTransactionForm__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="SendTransactionForm__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxgMl gOPxRO border-theme-neutral-light text-theme-neutral"
+                              data-testid="NetworkIcon__placeholder"
+                            />
                           </li>
                         </ul>
                       </fieldset>

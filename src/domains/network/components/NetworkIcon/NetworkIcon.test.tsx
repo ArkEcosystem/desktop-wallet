@@ -6,7 +6,7 @@ import { NetworkIcon } from "./NetworkIcon";
 describe("NetworkIcon", () => {
 	it("should render network", () => {
 		const { getByTestId } = render(<NetworkIcon coin="ARK" network="ark.devnet" />, {});
-		expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveAttribute("aria-label", "ARK Devnet");
+		expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(getByTestId("NetworkIcon__icon")).toBeTruthy();
 	});
 

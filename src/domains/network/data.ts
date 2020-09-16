@@ -21,7 +21,7 @@ export interface CoinNetworkExtended {
 
 export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetworkExtended>> = {
 	// ADA: {
-	// 	mainnet: {
+	// 	'ada.mainnet': {
 	// 		displayName: "Ripple",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
@@ -29,13 +29,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 	},
 	// },
 	ARK: {
-		mainnet: {
+		"ark.mainnet": {
 			displayName: "Ark",
 			borderClass: "border-theme-danger-light",
 			textClass: "text-theme-danger-400",
 			iconName: "Ark",
 		},
-		devnet: {
+		"ark.devnet": {
 			displayName: "ARK Devnet",
 			borderClass: "border-theme-primary-100",
 			textClass: "text-theme-primary-400",
@@ -69,13 +69,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 	},
 	// },
 	BTC: {
-		livenet: {
+		"btc.livenet": {
 			displayName: "Bitcoin",
 			borderClass: "border-theme-warning-200",
 			textClass: "text-theme-warning-400",
 			iconName: "Bitcoin",
 		},
-		// testnet: {
+		// 'btc.testnet': {
 		// 	displayName: "Bitcoin Testnet",
 		// 	borderClass: "border-theme-primary-500",
 		// 	textClass: "text-theme-primary-dark",
@@ -139,31 +139,31 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 	},
 	// },
 	// ETH: {
-	// 	mainnet: {
+	// 	'eth.mainnet': {
 	// 		displayName: "Ethereum",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
 	// 		iconName: "Ripple",
 	// 	},
-	// 	goerli: {
+	// 	'eth.goerli': {
 	// 		displayName: "Ethereum Goerli",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
 	// 		iconName: "Ripple",
 	// 	},
-	// 	kovan: {
+	// 	'eth.kovan': {
 	// 		displayName: "Ethereum Kovan",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
 	// 		iconName: "Ripple",
 	// 	},
-	// 	rinkeby: {
+	// 	'eth.rinkeby': {
 	// 		displayName: "Ethereum Rinkeby",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
 	// 		iconName: "Ripple",
 	// 	},
-	// 	ropsten: {
+	// 	'eth.ropsten': {
 	// 		displayName: "Ethereum Ropsten",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
@@ -171,7 +171,7 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 	},
 	// },
 	ETH: {
-		mainnet: {
+		"eth.mainnet": {
 			displayName: "Ethereum",
 			borderClass: "border-theme-neutral-800",
 			textClass: "text-theme-neutral-800",
@@ -179,19 +179,19 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 	},
 	LSK: {
-		mainnet: {
+		"lsk.mainnet": {
 			displayName: "Lisk",
 			borderClass: "border-theme-primary-400",
 			textClass: "text-theme-primary",
 			iconName: "Lisk",
 		},
-		testnet: {
+		"lsk.testnet": {
 			displayName: "Lisk Testnet",
 			borderClass: "border-theme-primary-100",
 			textClass: "text-theme-primary-400",
 			iconName: "Lisk",
 		},
-		// betanet: {
+		// 'lsk.betanet': {
 		// 	displayName: "Lisk Betanet",
 		// 	borderClass: "border-theme-primary-100",
 		// 	textClass: "text-theme-primary-400",
@@ -199,13 +199,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		// },
 	},
 	// NEO: {
-	// 	mainnet: {
+	// 	'neo.mainnet': {
 	// 		displayName: "NEO",
 	// 		borderClass: "border-theme-warning-200",
 	// 		textClass: "text-theme-warning-400",
 	// 		iconName: "Bitcoin",
 	// 	},
-	// 	testnet: {
+	// 	'neo.testnet': {
 	// 		displayName: "NEO Testnet",
 	// 		borderClass: "border-theme-warning-200",
 	// 		textClass: "text-theme-warning-400",
@@ -213,13 +213,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 	},
 	// },
 	// TRX: {
-	// 	mainnet: {
+	// 	'trx.mainnet': {
 	// 		displayName: "Tron",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
 	// 		iconName: "Ripple",
 	// 	},
-	// 	testnet: {
+	// 	'trx.testnet': {
 	// 		displayName: "Tron Testnet",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
@@ -227,13 +227,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 	},
 	// },
 	// XLM: {
-	// 	mainnet: {
+	// 	'trx.mainnet': {
 	// 		displayName: "Stellar",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
 	// 		iconName: "Ripple",
 	// 	},
-	// 	testnet: {
+	// 	'trx.testnet': {
 	// 		displayName: "Stellar Testnet",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
@@ -241,13 +241,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 	},
 	// },
 	// XMR: {
-	// 	mainnet: {
+	// 	'xmr.mainnet': {
 	// 		displayName: "Monero",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
 	// 		iconName: "Ripple",
 	// 	},
-	// 	testnet: {
+	// 	'xmr.testnet': {
 	// 		displayName: "Monero Testnet",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
@@ -255,13 +255,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// 	},
 	// },
 	// XRP: {
-	// 	mainnet: {
+	// 	'xrp.mainnet': {
 	// 		displayName: "Ripple",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",
 	// 		iconName: "Ripple",
 	// 	},
-	// 	testnet: {
+	// 	'xrp.testnet': {
 	// 		displayName: "Ripple Testnet",
 	// 		borderClass: "border-theme-primary-500",
 	// 		textClass: "text-theme-primary-dark",

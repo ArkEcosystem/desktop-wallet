@@ -198,7 +198,7 @@ describe("CreateWallet", () => {
 		}
 		expect(continueButton).toHaveAttribute("disabled");
 
-		expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
+		expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveClass("border-theme-success-200");
 
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 	});
