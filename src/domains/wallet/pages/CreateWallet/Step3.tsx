@@ -7,14 +7,14 @@ import { useTranslation } from "react-i18next";
 import { MnemonicVerification } from "../../components/MnemonicVerification";
 
 export const ThirdStep = () => {
-	const { getValues, register, setValue } = useFormContext();
-	const mnemonic = getValues("mnemonic");
+	const { getValues, register, setValue, watch } = useFormContext();
 	const isVerified: boolean = getValues("verification");
+	const mnemonic = watch("mnemonic");
 
 	const { t } = useTranslation();
 
 	const handleComplete = () => {
-		setValue("verification", true, true);
+		setValue("verification", true, { shouldValidate: true, shouldDirty: true });
 	};
 
 	useEffect(() => {
