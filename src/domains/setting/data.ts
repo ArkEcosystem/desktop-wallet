@@ -38,32 +38,32 @@ export const peers = [
 
 export const networks = [
 	{
-		icon: "Ark",
+		icon: "ARK",
 		name: "ARK Ecosystem",
 		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{
-		icon: "Compendia",
+		icon: "BIND",
 		name: "Compendia",
 		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{
-		icon: "Bitcoin",
+		icon: "BTC",
 		name: "Bitcoin",
 		className: "text-theme-warning-400 border-theme-warning-200",
 	},
 	{
-		icon: "Ethereum",
+		icon: "ETH",
 		name: "Ethereum",
 		className: "text-theme-neutral-800 border-theme-neutral-600",
 	},
 	{
-		icon: "Lisk",
+		icon: "LSK",
 		name: "Lisk",
 		className: "text-theme-primary border-theme-primary-400",
 	},
 	{
-		icon: "Ripple",
+		icon: "XRP",
 		name: "Ripple",
 		className: "text-theme-primary-dark border-theme-primary-500",
 	},
