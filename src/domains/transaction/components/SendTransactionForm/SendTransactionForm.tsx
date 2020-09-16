@@ -14,9 +14,10 @@ type SendTransactionFormProps = {
 	networks: NetworkData[];
 	profile: Profile;
 	children?: React.ReactNode;
+	transactionType?: String;
 };
 
-export const SendTransactionForm = ({ children, networks, profile }: SendTransactionFormProps) => {
+export const SendTransactionForm = ({ children, networks, profile, transactionType }: SendTransactionFormProps) => {
 	const history = useHistory();
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
@@ -39,13 +40,15 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		if (senderWallet) {
-			const transactionFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "transfer");
+			const transactionFees = env
+				.fees()
+				.findByType(senderWallet.coinId(), senderWallet.networkId(), transactionType);
 
 			setFees(transactionFees);
 
 			setValue("fee", transactionFees.avg, true);
 		}
-	}, [env, setFees, setValue, profile, senderAddress]);
+	}, [env, setFees, setValue, profile, senderAddress, transactionType]);
 
 	useEffect(() => {
 		if (network) {
@@ -107,4 +110,8 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 			</FormField>
 		</div>
 	);
+};
+
+SendTransactionForm.defaultProps = {
+	transactionType: "transfer",
 };
