@@ -1,4 +1,4 @@
-import { authentication,sendEntityUpdate } from "domains/transaction/validations";
+import { authentication, sendEntityUpdate } from "domains/transaction/validations";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
