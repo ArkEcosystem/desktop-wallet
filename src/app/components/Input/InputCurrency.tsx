@@ -1,5 +1,5 @@
 import { Currency } from "@arkecosystem/platform-sdk-intl";
-import React from "react";
+import React, { useCallback, useLayoutEffect, useState } from "react";
 
 import { Input } from "./Input";
 
@@ -10,11 +10,11 @@ type Props = { onChange?: (value: { display: string; value: string }) => void; m
 
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 	({ onChange, value, magnitude, ...props }: Props, ref) => {
-		const convertValue = React.useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
+		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
 		const defaultValue = value?.toString() || "";
-		const [amount, setAmount] = React.useState(convertValue(defaultValue));
+		const [amount, setAmount] = useState(convertValue(defaultValue));
 
-		React.useLayoutEffect(() => {
+		useLayoutEffect(() => {
 			setAmount(convertValue(defaultValue));
 		}, [defaultValue, convertValue, onChange]);
 

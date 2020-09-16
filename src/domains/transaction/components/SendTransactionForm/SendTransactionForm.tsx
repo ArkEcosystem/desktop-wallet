@@ -108,7 +108,9 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}
-					onChange={(value: any) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
+					onChange={(currency: { display?: string; value: string }) =>
+						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
+					}
 				/>
 			</FormField>
 		</div>

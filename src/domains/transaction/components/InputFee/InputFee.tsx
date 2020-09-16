@@ -52,7 +52,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 					<SelectionBarOption
 						value={min}
 						isValueChecked={() => fee === min}
-						setCheckedValue={handleFeeChange}
+						setCheckedValue={() => handleFeeChange({ value: min })}
 					>
 						{t("TRANSACTION.FEES.MIN")}
 					</SelectionBarOption>
@@ -60,7 +60,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 					<SelectionBarOption
 						value={avg}
 						isValueChecked={() => fee === avg}
-						setCheckedValue={handleFeeChange}
+						setCheckedValue={() => handleFeeChange({ value: avg })}
 					>
 						{t("TRANSACTION.FEES.AVERAGE")}
 					</SelectionBarOption>
@@ -68,7 +68,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 					<SelectionBarOption
 						value={max}
 						isValueChecked={() => fee === max}
-						setCheckedValue={handleFeeChange}
+						setCheckedValue={() => handleFeeChange({ value: max })}
 					>
 						{t("TRANSACTION.FEES.MAX")}
 					</SelectionBarOption>
