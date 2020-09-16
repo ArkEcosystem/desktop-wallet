@@ -146,22 +146,33 @@ describe("SendEntityResignation", () => {
 		});
 
 		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), {
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
 					value: "test",
 				},
 			});
 		});
 
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("test"));
+
+		act(() => {
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: "test",
+				},
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityResignation__send-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).not.toHaveAttribute("aria-invalid"));
-		await waitFor(() => expect(getByTestId("SendEntityResignation__send-button")).toBeDisabled());
+		await waitFor(() => expect(getByTestId("SendEntityResignation__send-button")).not.toBeDisabled());
 
 		expect(getByTestId("AuthenticationStep")).toBeTruthy();
-		expect(defaultProps.onDownload).toHaveBeenCalledTimes(0);
+		expect(signMock).toHaveBeenCalled();
 		expect(asFragment()).toMatchSnapshot();
 
 		signMock.mockRestore();
