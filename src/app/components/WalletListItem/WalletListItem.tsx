@@ -71,7 +71,7 @@ export const WalletListItem = ({
 		>
 			<TableCell variant="start" isSelected={isSelected}>
 				<Circle className={`-mr-2 ${coinClass}`} size="lg" shadowColor={shadowColor}>
-					{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
+					{coinName && <Icon name={coinName} width={20} height={20} />}
 				</Circle>
 				<Avatar size="lg" address={wallet.address()} shadowColor={shadowColor} />
 			</TableCell>

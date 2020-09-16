@@ -67,7 +67,7 @@ export const FirstStep = ({
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
+								{coinName && <Icon name={coinName} width={20} height={20} />}
 							</Circle>
 						</div>
 					}
