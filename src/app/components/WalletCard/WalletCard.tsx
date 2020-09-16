@@ -108,7 +108,7 @@ export const WalletCard = ({
 				<div className="relative p-2">
 					<div className="flex">
 						<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
-							{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={18} height={16} />}
+							{coinName && <Icon name={coinName} width={18} height={16} />}
 						</Circle>
 						<Avatar size="lg" address={wallet?.address()} />
 					</div>
