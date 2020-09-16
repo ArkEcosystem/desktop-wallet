@@ -2,7 +2,7 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { Table } from "app/components/Table";
+import { Table, TableCell, TableRow } from "app/components/Table";
 import React from "react";
 
 export default {
@@ -12,7 +12,7 @@ export default {
 export const Default = () => {
 	const data = [
 		{
-			coin: "Ark",
+			coin: "ARK",
 			avatarId: "test",
 			walletName: "My wallet",
 			address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -54,25 +54,26 @@ export const Default = () => {
 			<div>
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
-						<tr className="border-b border-theme-neutral-200">
-							<td className="py-4 mt-1">
-								<div className="flex">
-									<Circle>
-										<Icon name={rowData.coin} />
-									</Circle>
-									<Avatar address={rowData.address} />
-								</div>
-							</td>
-							<td className="py-1">
+						<TableRow>
+							<TableCell variant="start">
+								<Circle>
+									<Icon name={rowData.coin} />
+								</Circle>
+								<Avatar address={rowData.address} />
+							</TableCell>
+
+							<TableCell>
 								<Address walletName={rowData.walletName} address={rowData.address} />
-							</td>
-							<td className="py-1 font-semibold text-right">
-								<div>{rowData.balance}</div>
-							</td>
-							<td className="py-1 font-semibold text-right text-theme-neutral-light">
-								<div>{rowData.fiat}</div>
-							</td>
-						</tr>
+							</TableCell>
+
+							<TableCell className="justify-end font-semibold">
+								<span>{rowData.balance}</span>
+							</TableCell>
+
+							<TableCell variant="end" className="justify-end font-semibold text-theme-neutral-light">
+								<span>{rowData.fiat}</span>
+							</TableCell>
+						</TableRow>
 					)}
 				</Table>
 			</div>

@@ -193,11 +193,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -268,7 +264,7 @@ exports[`Transaction Send should display disabled address selection input if sel
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -279,22 +275,22 @@ exports[`Transaction Send should display disabled address selection input if sel
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -361,7 +357,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                                 class="sc-fznZeY sc-fzokOt jWugcU px-4"
                               >
                                 <div
-                                  aria-label="Ark"
+                                  aria-label="ARK"
                                   class="sc-AxgMl eLFBRi border-theme-danger-light text-theme-danger-400"
                                   data-testid="SelectNetworkInput__network"
                                 >
@@ -386,7 +382,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                                 data-testid="SelectNetworkInput__input"
                                 id="SendTransactionForm__network-input"
                                 placeholder="Enter a network name"
-                                value="Ark"
+                                value="ARK"
                               />
                             </div>
                           </div>
@@ -404,9 +400,9 @@ exports[`Transaction Send should display disabled address selection input if sel
                               role="option"
                             >
                               <div
-                                aria-label="Ark"
+                                aria-label="ARK"
                                 class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                                data-testid="NetworkIcon-ARK-mainnet"
+                                data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"
@@ -428,9 +424,9 @@ exports[`Transaction Send should display disabled address selection input if sel
                               role="option"
                             >
                               <div
-                                aria-label="Ark Devnet"
+                                aria-label="ARK Devnet"
                                 class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-devnet"
+                                data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"
@@ -440,6 +436,54 @@ exports[`Transaction Send should display disabled address selection input if sel
                                 >
                                   <svg>
                                     ark.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              id="SendTransactionForm__network-item-2"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.mainnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    bind.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              id="SendTransactionForm__network-item-3"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia Testnet"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.testnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    bind.svg
                                   </svg>
                                 </div>
                               </div>
@@ -469,7 +513,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                           >
                             <div>
                               <button
-                                class="sc-fzpmMD jvETLY SelectAddress is-disabled "
+                                class="sc-fzoXWK eIiiwH SelectAddress is-disabled "
                                 data-testid="SelectAddress__wrapper"
                                 disabled=""
                                 type="button"
@@ -509,7 +553,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                           data-testid="recipient-address"
                         >
                           <div
-                            class="sc-fzoXWK jbZdUf"
+                            class="sc-fzoNJl imnZiX"
                           >
                             <div
                               class="text-theme-neutral-dark hover:text-theme-primary"
@@ -779,7 +823,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -788,7 +832,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -797,7 +841,7 @@ exports[`Transaction Send should display disabled address selection input if sel
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -1037,11 +1081,7 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -1112,7 +1152,7 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1123,22 +1163,22 @@ exports[`Transaction Send should error if wrong mnemonic 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -1357,7 +1397,7 @@ exports[`Transaction Send should render 1st step 1`] = `
           >
             <div>
               <button
-                class="sc-fzpmMD jvETLY SelectAddress  "
+                class="sc-fzoXWK eIiiwH SelectAddress  "
                 data-testid="SelectAddress__wrapper"
                 type="button"
               >
@@ -1396,7 +1436,7 @@ exports[`Transaction Send should render 1st step 1`] = `
           data-testid="recipient-address"
         >
           <div
-            class="sc-fzoXWK jbZdUf"
+            class="sc-fzoNJl imnZiX"
           >
             <div
               class="text-theme-neutral-dark hover:text-theme-primary"
@@ -1666,7 +1706,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1675,7 +1715,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1684,7 +1724,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1739,7 +1779,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
             <div
               class="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24"
             >
-              Devnet
+              ARK Devnet
             </div>
           </div>
         </div>
@@ -1839,10 +1879,10 @@ exports[`Transaction Send should render 2nd step 1`] = `
             class="font-semibold"
           >
             <div
-              class="sc-fzoNJl egTEaG"
+              class="sc-fzoyTs yvXJk"
             >
               <div
-                class="sc-Axmtr dAxPWA"
+                class="sc-Axmtr idwkoD"
                 role="table"
               >
                 <table
@@ -2474,11 +2514,7 @@ exports[`Transaction Send should render registration form without selected walle
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -2549,7 +2585,7 @@ exports[`Transaction Send should render registration form without selected walle
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2560,22 +2596,22 @@ exports[`Transaction Send should render registration form without selected walle
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -2673,9 +2709,9 @@ exports[`Transaction Send should render registration form without selected walle
                               role="option"
                             >
                               <div
-                                aria-label="Ark"
+                                aria-label="ARK"
                                 class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-                                data-testid="NetworkIcon-ARK-mainnet"
+                                data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"
@@ -2697,9 +2733,9 @@ exports[`Transaction Send should render registration form without selected walle
                               role="option"
                             >
                               <div
-                                aria-label="Ark Devnet"
+                                aria-label="ARK Devnet"
                                 class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-                                data-testid="NetworkIcon-ARK-devnet"
+                                data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"
@@ -2709,6 +2745,54 @@ exports[`Transaction Send should render registration form without selected walle
                                 >
                                   <svg>
                                     ark.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              id="SendTransactionForm__network-item-2"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia"
+                                class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                                data-testid="NetworkIcon-ARK-compendia.mainnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    bind.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              id="SendTransactionForm__network-item-3"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia Testnet"
+                                class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                                data-testid="NetworkIcon-ARK-compendia.testnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    bind.svg
                                   </svg>
                                 </div>
                               </div>
@@ -2738,7 +2822,7 @@ exports[`Transaction Send should render registration form without selected walle
                           >
                             <div>
                               <button
-                                class="sc-fzpmMD jvETLY SelectAddress  "
+                                class="sc-fzoXWK eIiiwH SelectAddress  "
                                 data-testid="SelectAddress__wrapper"
                                 type="button"
                               >
@@ -2777,7 +2861,7 @@ exports[`Transaction Send should render registration form without selected walle
                           data-testid="recipient-address"
                         >
                           <div
-                            class="sc-fzoXWK jbZdUf"
+                            class="sc-fzoNJl imnZiX"
                           >
                             <div
                               class="text-theme-neutral-dark hover:text-theme-primary"
@@ -3047,7 +3131,7 @@ exports[`Transaction Send should render registration form without selected walle
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3056,7 +3140,7 @@ exports[`Transaction Send should render registration form without selected walle
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3065,7 +3149,7 @@ exports[`Transaction Send should render registration form without selected walle
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3305,11 +3389,7 @@ exports[`Transaction Send should select network first and see select address inp
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -3380,7 +3460,7 @@ exports[`Transaction Send should select network first and see select address inp
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3391,22 +3471,22 @@ exports[`Transaction Send should select network first and see select address inp
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -3473,7 +3553,7 @@ exports[`Transaction Send should select network first and see select address inp
                                 class="sc-fznZeY sc-fzokOt jWugcU px-4"
                               >
                                 <div
-                                  aria-label="Ark Devnet"
+                                  aria-label="ARK Devnet"
                                   class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
                                   data-testid="SelectNetworkInput__network"
                                 >
@@ -3493,7 +3573,7 @@ exports[`Transaction Send should select network first and see select address inp
                                 class="sc-fznZeY dHxPUs py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                                 data-testid="SelectNetworkInput__typeahead"
                               >
-                                Ark Devnet
+                                ARK Devnet
                               </span>
                               <input
                                 aria-autocomplete="list"
@@ -3504,7 +3584,7 @@ exports[`Transaction Send should select network first and see select address inp
                                 data-testid="SelectNetworkInput__input"
                                 id="SendTransactionForm__network-input"
                                 placeholder="Enter a network name"
-                                value="Ark Devnet"
+                                value="ARK Devnet"
                               />
                             </div>
                           </div>
@@ -3522,9 +3602,9 @@ exports[`Transaction Send should select network first and see select address inp
                               role="option"
                             >
                               <div
-                                aria-label="Ark"
+                                aria-label="ARK"
                                 class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                                data-testid="NetworkIcon-ARK-mainnet"
+                                data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"
@@ -3546,9 +3626,9 @@ exports[`Transaction Send should select network first and see select address inp
                               role="option"
                             >
                               <div
-                                aria-label="Ark Devnet"
+                                aria-label="ARK Devnet"
                                 class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                                data-testid="NetworkIcon-ARK-devnet"
+                                data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
                                   class="sc-AxiKw fubePL"
@@ -3558,6 +3638,54 @@ exports[`Transaction Send should select network first and see select address inp
                                 >
                                   <svg>
                                     ark.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              id="SendTransactionForm__network-item-2"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.mainnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    bind.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="inline-block cursor-pointer"
+                              data-testid="SelectNetwork__NetworkIcon--container"
+                              id="SendTransactionForm__network-item-3"
+                              role="option"
+                            >
+                              <div
+                                aria-label="Compendia Testnet"
+                                class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                                data-testid="NetworkIcon-ARK-compendia.testnet"
+                              >
+                                <div
+                                  class="sc-AxiKw fubePL"
+                                  data-testid="NetworkIcon__icon"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    bind.svg
                                   </svg>
                                 </div>
                               </div>
@@ -3587,7 +3715,7 @@ exports[`Transaction Send should select network first and see select address inp
                           >
                             <div>
                               <button
-                                class="sc-fzpmMD jvETLY SelectAddress  "
+                                class="sc-fzoXWK eIiiwH SelectAddress  "
                                 data-testid="SelectAddress__wrapper"
                                 type="button"
                               >
@@ -3626,7 +3754,7 @@ exports[`Transaction Send should select network first and see select address inp
                           data-testid="recipient-address"
                         >
                           <div
-                            class="sc-fzoXWK jbZdUf"
+                            class="sc-fzoNJl imnZiX"
                           >
                             <div
                               class="text-theme-neutral-dark hover:text-theme-primary"
@@ -3896,7 +4024,7 @@ exports[`Transaction Send should select network first and see select address inp
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3905,7 +4033,7 @@ exports[`Transaction Send should select network first and see select address inp
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3914,7 +4042,7 @@ exports[`Transaction Send should select network first and see select address inp
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxKY eTkpzl relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fzpmMD jaYDMx relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4154,11 +4282,7 @@ exports[`Transaction Send should send a multi payment 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -4229,7 +4353,7 @@ exports[`Transaction Send should send a multi payment 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4240,22 +4364,22 @@ exports[`Transaction Send should send a multi payment 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -4360,7 +4484,7 @@ exports[`Transaction Send should send a multi payment 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              ARK Devnet
+                              ARK ARK Devnet
                             </div>
                           </div>
                           <div
@@ -4717,11 +4841,7 @@ exports[`Transaction Send should send a single transfer 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -4792,7 +4912,7 @@ exports[`Transaction Send should send a single transfer 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4803,22 +4923,22 @@ exports[`Transaction Send should send a single transfer 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -4923,7 +5043,7 @@ exports[`Transaction Send should send a single transfer 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              ARK Devnet
+                              ARK ARK Devnet
                             </div>
                           </div>
                           <div

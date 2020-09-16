@@ -30,9 +30,12 @@ describe("ContactListItem", () => {
 	});
 
 	it("should render with multiple addresses", async () => {
-		await contact
-			.addresses()
-			.create({ coin: "ARK", network: "devnet", name: "test", address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" });
+		await contact.addresses().create({
+			coin: "ARK",
+			network: "ark.devnet",
+			name: "test",
+			address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+		});
 
 		const { asFragment } = render(
 			<table>

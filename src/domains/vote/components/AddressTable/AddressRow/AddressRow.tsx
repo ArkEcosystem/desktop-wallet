@@ -46,6 +46,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 		const loadVotes = () => {
 			if (!hasProperty(wallet, "isLoading")) {
 				let votes: ReadOnlyWallet[] = [];
+
 				try {
 					votes = wallet.votes();
 				} catch {
@@ -59,7 +60,7 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 		loadVotes();
 	}, [env, wallet]);
 
-	const hasVotes = votes && votes?.length > 0;
+	const hasVotes = votes.length > 0;
 
 	if (isLoading) {
 		return <AddressRowSkeleton />;
@@ -67,15 +68,15 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 
 	return (
 		<TableRow>
-			<TableCell variant="start">
-				<Avatar size="lg" address={wallet.address()} noShadow />
+			<TableCell variant="start" className="w-1">
+				<Avatar className="mr-4" size="lg" address={wallet.address()} noShadow />
 			</TableCell>
 
 			<TableCell className="w-20">
 				<Address address={wallet.address()} walletName={wallet.alias()} maxChars={22} />
 			</TableCell>
 
-			<TableCell className="w-20" innerClassName="text-sm font-bold justify-center">
+			<TableCell className="w-20" innerClassName="justify-center text-sm font-bold">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
@@ -91,16 +92,18 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				</div>
 			</TableCell>
 
-			<TableCell innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName="justify-end font-bold text-theme-neutral-dark">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
-			<TableCell>
-				{hasVotes ? (
-					<Avatar size="lg" address={votes[0].address()} noShadow />
-				) : (
-					<Circle size="lg" className="border-theme-neutral-300" noShadow />
-				)}
+			<TableCell className="w-24" innerClassName="justify-end">
+				<div className="mr-4">
+					{hasVotes ? (
+						<Avatar size="lg" address={votes[0].address()} noShadow />
+					) : (
+						<Circle size="lg" className="border-theme-neutral-300" noShadow />
+					)}
+				</div>
 			</TableCell>
 
 			<TableCell innerClassName="font-bold">
@@ -111,24 +114,18 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 				)}
 			</TableCell>
 
-			<TableCell innerClassName="font-bold text-theme-neutral-dark">
+			<TableCell innerClassName="justify-center font-bold text-theme-neutral-dark">
 				{hasVotes && <span>#{votes[0].rank()}</span>}
 			</TableCell>
 
-			<TableCell>
+			<TableCell innerClassName="justify-center">
 				{hasVotes && (
-					<div className="flex justify-center h-full" data-testid="AddressRow__profile">
-						<Icon name="Msq" className="text-xl text-theme-primary" />
-					</div>
+					<Icon name="Msq" className="text-xl text-theme-primary" data-testid="AddressRow__profile" />
 				)}
 			</TableCell>
 
-			<TableCell>
-				{hasVotes && (
-					<div className="flex justify-center h-full" data-testid="AddressRow__status">
-						<Icon name="Ok" className="text-theme-success" />
-					</div>
-				)}
+			<TableCell innerClassName="justify-center">
+				{hasVotes && <Icon name="Ok" className="text-theme-success" data-testid="AddressRow__status" />}
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end">

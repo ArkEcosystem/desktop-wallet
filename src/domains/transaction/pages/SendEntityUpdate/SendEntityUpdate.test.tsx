@@ -211,7 +211,7 @@ describe("SendEntityUpdate", () => {
 		);
 
 		const feeInput = getByTestId("InputCurrency");
-		await waitFor(() => expect(feeInput).toHaveValue("50"));
+		await waitFor(() => expect(feeInput).toHaveValue("0"));
 	});
 
 	it("should update fee", async () => {
@@ -226,13 +226,13 @@ describe("SendEntityUpdate", () => {
 
 		const feeInput = getByTestId("InputCurrency");
 
-		await waitFor(() => expect(feeInput).toHaveValue("50"));
+		await waitFor(() => expect(feeInput).toHaveValue("0"));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("SelectionBarOption")[0]);
 		});
 
-		await waitFor(() => expect(feeInput).toHaveValue("50"));
+		await waitFor(() => expect(feeInput).toHaveValue("0"));
 	});
 
 	it("should fetch and render fees for entity update", async () => {
@@ -246,7 +246,7 @@ describe("SendEntityUpdate", () => {
 		);
 		const feeInput = getByTestId("InputCurrency");
 
-		await waitFor(() => expect(feeInput).toHaveValue("50"));
+		await waitFor(() => expect(feeInput).toHaveValue("0"));
 	});
 
 	it("should throw error if transaction is not found and show error in toast", async () => {

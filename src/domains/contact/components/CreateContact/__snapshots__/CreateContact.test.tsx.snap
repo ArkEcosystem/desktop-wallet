@@ -146,9 +146,9 @@ exports[`CreateContact should render create contact modal 1`] = `
                       role="option"
                     >
                       <div
-                        aria-label="Ark"
+                        aria-label="ARK"
                         class="sc-fznyAO elvvqE border-theme-danger-light text-theme-danger-400"
-                        data-testid="NetworkIcon-ARK-mainnet"
+                        data-testid="NetworkIcon-ARK-ark.mainnet"
                       >
                         <div
                           class="sc-AxirZ hyqZof"
@@ -170,9 +170,9 @@ exports[`CreateContact should render create contact modal 1`] = `
                       role="option"
                     >
                       <div
-                        aria-label="Ark Devnet"
+                        aria-label="ARK Devnet"
                         class="sc-fznyAO elvvqE border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-ARK-devnet"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxirZ hyqZof"
@@ -194,9 +194,21 @@ exports[`CreateContact should render create contact modal 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
-                        data-testid="NetworkIcon__placeholder"
-                      />
+                        aria-label="Compendia"
+                        class="sc-fznyAO elvvqE border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-compendia.mainnet"
+                      >
+                        <div
+                          class="sc-AxirZ hyqZof"
+                          data-testid="NetworkIcon__icon"
+                          height="26"
+                          width="26"
+                        >
+                          <svg>
+                            bind.svg
+                          </svg>
+                        </div>
+                      </div>
                     </li>
                     <li
                       aria-selected="false"
@@ -206,9 +218,21 @@ exports[`CreateContact should render create contact modal 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
-                        data-testid="NetworkIcon__placeholder"
-                      />
+                        aria-label="Compendia Testnet"
+                        class="sc-fznyAO elvvqE border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-compendia.testnet"
+                      >
+                        <div
+                          class="sc-AxirZ hyqZof"
+                          data-testid="NetworkIcon__icon"
+                          height="26"
+                          width="26"
+                        >
+                          <svg>
+                            bind.svg
+                          </svg>
+                        </div>
+                      </div>
                     </li>
                     <li
                       aria-selected="false"
@@ -242,21 +266,9 @@ exports[`CreateContact should render create contact modal 1`] = `
                       role="option"
                     >
                       <div
-                        aria-label="Bitcoin"
-                        class="sc-fznyAO elvvqE border-theme-warning-200 text-theme-warning-400"
-                        data-testid="NetworkIcon-BTC-livenet"
-                      >
-                        <div
-                          class="sc-AxirZ hyqZof"
-                          data-testid="NetworkIcon__icon"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
+                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
+                        data-testid="NetworkIcon__placeholder"
+                      />
                     </li>
                     <li
                       aria-selected="false"
@@ -278,9 +290,21 @@ exports[`CreateContact should render create contact modal 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
-                        data-testid="NetworkIcon__placeholder"
-                      />
+                        aria-label="Bitcoin"
+                        class="sc-fznyAO elvvqE border-theme-warning-200 text-theme-warning-400"
+                        data-testid="NetworkIcon-BTC-btc.livenet"
+                      >
+                        <div
+                          class="sc-AxirZ hyqZof"
+                          data-testid="NetworkIcon__icon"
+                          height="26"
+                          width="26"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
                     </li>
                     <li
                       aria-selected="false"
@@ -386,21 +410,9 @@ exports[`CreateContact should render create contact modal 1`] = `
                       role="option"
                     >
                       <div
-                        aria-label="Lisk"
-                        class="sc-fznyAO elvvqE border-theme-primary-400 text-theme-primary"
-                        data-testid="NetworkIcon-LSK-mainnet"
-                      >
-                        <div
-                          class="sc-AxirZ hyqZof"
-                          data-testid="NetworkIcon__icon"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            lsk.svg
-                          </svg>
-                        </div>
-                      </div>
+                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
+                        data-testid="NetworkIcon__placeholder"
+                      />
                     </li>
                     <li
                       aria-selected="false"
@@ -410,9 +422,21 @@ exports[`CreateContact should render create contact modal 1`] = `
                       role="option"
                     >
                       <div
-                        aria-label="Lisk Testnet"
-                        class="sc-fznyAO elvvqE border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon-LSK-testnet"
+                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
+                        data-testid="NetworkIcon__placeholder"
+                      />
+                    </li>
+                    <li
+                      aria-selected="false"
+                      class="inline-block cursor-pointer"
+                      data-testid="SelectNetwork__NetworkIcon--container"
+                      id="ContactForm__network-item-19"
+                      role="option"
+                    >
+                      <div
+                        aria-label="Lisk"
+                        class="sc-fznyAO elvvqE border-theme-primary-400 text-theme-primary"
+                        data-testid="NetworkIcon-LSK-lsk.mainnet"
                       >
                         <div
                           class="sc-AxirZ hyqZof"
@@ -430,25 +454,25 @@ exports[`CreateContact should render create contact modal 1`] = `
                       aria-selected="false"
                       class="inline-block cursor-pointer"
                       data-testid="SelectNetwork__NetworkIcon--container"
-                      id="ContactForm__network-item-19"
-                      role="option"
-                    >
-                      <div
-                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
-                        data-testid="NetworkIcon__placeholder"
-                      />
-                    </li>
-                    <li
-                      aria-selected="false"
-                      class="inline-block cursor-pointer"
-                      data-testid="SelectNetwork__NetworkIcon--container"
                       id="ContactForm__network-item-20"
                       role="option"
                     >
                       <div
-                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
-                        data-testid="NetworkIcon__placeholder"
-                      />
+                        aria-label="Lisk Testnet"
+                        class="sc-fznyAO elvvqE border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-LSK-lsk.testnet"
+                      >
+                        <div
+                          class="sc-AxirZ hyqZof"
+                          data-testid="NetworkIcon__icon"
+                          height="26"
+                          width="26"
+                        >
+                          <svg>
+                            lsk.svg
+                          </svg>
+                        </div>
+                      </div>
                     </li>
                     <li
                       aria-selected="false"
@@ -539,6 +563,30 @@ exports[`CreateContact should render create contact modal 1`] = `
                       class="inline-block cursor-pointer"
                       data-testid="SelectNetwork__NetworkIcon--container"
                       id="ContactForm__network-item-28"
+                      role="option"
+                    >
+                      <div
+                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
+                        data-testid="NetworkIcon__placeholder"
+                      />
+                    </li>
+                    <li
+                      aria-selected="false"
+                      class="inline-block cursor-pointer"
+                      data-testid="SelectNetwork__NetworkIcon--container"
+                      id="ContactForm__network-item-29"
+                      role="option"
+                    >
+                      <div
+                        class="sc-fznyAO elvvqE border-theme-neutral-light text-theme-neutral"
+                        data-testid="NetworkIcon__placeholder"
+                      />
+                    </li>
+                    <li
+                      aria-selected="false"
+                      class="inline-block cursor-pointer"
+                      data-testid="SelectNetwork__NetworkIcon--container"
+                      id="ContactForm__network-item-30"
                       role="option"
                     >
                       <div

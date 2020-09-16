@@ -28,9 +28,9 @@ export const PluginList = ({
 
 	const columns = [
 		{
-			Header: " ",
+			Header: "Logo",
 			disableSortBy: true,
-			className: "w-18",
+			className: "hidden",
 		},
 		{
 			Header: t("COMMON.NAME"),
@@ -63,8 +63,9 @@ export const PluginList = ({
 			className: "justify-center",
 		},
 		{
-			Header: "  ",
+			Header: "Actions",
 			disableSortBy: true,
+			className: "hidden",
 		},
 	];
 

@@ -53,24 +53,6 @@ export const MyRegistrations = () => {
 		},
 	];
 
-	const handleAction = ({ action, walletId, txId }: any) => {
-		switch (action) {
-			case "register":
-				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
-				break;
-			case "resign":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
-				break;
-			case "update":
-				history.push(
-					`/profiles/${activeProfile.id()}/wallets/${walletId}/transactions/${txId}/send-entity-update`,
-				);
-				break;
-			case "updateDelegate":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
-				break;
-		}
-	};
 	useEffect(() => {
 		const fetchRegistrations = async () => {
 			setIsLoading(true);
@@ -114,6 +96,29 @@ export const MyRegistrations = () => {
 		plugins,
 	]);
 
+	// TODO: Find a better way to carry on entity from registrations to resign page
+	// to avoid use state and also work better with loading states in the send entity resignation
+	const handleAction = ({ action, walletId, entity, type }: any) => {
+		switch (action) {
+			case "register":
+				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
+				break;
+
+			case "resign":
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-resignation`);
+				break;
+
+			case "update":
+				history.push(
+					`/profiles/${activeProfile.id()}/wallets/${walletId}/transactions/${entity.id()}/send-entity-update`,
+				);
+				break;
+			case "updateDelegate":
+				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
+				break;
+		}
+	};
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -147,6 +152,7 @@ export const MyRegistrations = () => {
 					<EntityTable
 						title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
 						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
+						type="entity"
 						entities={businessEntities}
 						onAction={handleAction}
 					/>
@@ -158,6 +164,7 @@ export const MyRegistrations = () => {
 					<EntityTable
 						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
 						title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
+						type="entity"
 						entities={pluginEntities}
 						onAction={handleAction}
 					/>

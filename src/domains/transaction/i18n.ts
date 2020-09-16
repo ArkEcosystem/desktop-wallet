@@ -60,6 +60,7 @@ export const translations: { [key: string]: any } = {
 	TRANSACTION_TYPES: {
 		BUSINESS_REGISTRATION: "Business Registration",
 		BUSINESS_UPDATE: "Business Update",
+		UNVOTE: "Unvote",
 		VOTE: "Vote",
 	},
 
@@ -182,12 +183,19 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_RESIGN_REGISTRATION: {
+		ENTITY_NAME: "Entity Name",
 		FIRST_STEP: {
 			DELEGATE: {
 				TITLE: "Delegate Resignation",
 				DESCRIPTION: "Resign your delegate for always.",
 				WARNING:
 					"Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.",
+			},
+			ENTITY: {
+				TITLE: "Entity Resignation",
+				DESCRIPTION: "Resign your entity for always.",
+				WARNING:
+					"Keep in mind that you cannot restore your entity after the resignation has been registered on the blockchain.",
 			},
 		},
 		SECOND_STEP: {

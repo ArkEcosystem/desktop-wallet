@@ -193,11 +193,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                       class="sc-AxhCb fxrKLH"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -268,7 +264,7 @@ exports[`ImportWallet should go to previous step 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -279,16 +275,16 @@ exports[`ImportWallet should go to previous step 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -394,9 +390,9 @@ exports[`ImportWallet should go to previous step 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -418,9 +414,9 @@ exports[`ImportWallet should go to previous step 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -430,6 +426,54 @@ exports[`ImportWallet should go to previous step 1`] = `
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>
@@ -664,11 +708,7 @@ exports[`ImportWallet should import by address 1`] = `
                       class="sc-AxhCb fxrKLH"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -739,7 +779,7 @@ exports[`ImportWallet should import by address 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -750,16 +790,16 @@ exports[`ImportWallet should import by address 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -865,9 +905,9 @@ exports[`ImportWallet should import by address 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -889,9 +929,9 @@ exports[`ImportWallet should import by address 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -901,6 +941,54 @@ exports[`ImportWallet should import by address 1`] = `
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>
@@ -1135,11 +1223,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                       class="sc-AxhCb fxrKLH"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -1210,7 +1294,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1221,16 +1305,16 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -1336,9 +1420,9 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -1360,9 +1444,9 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -1372,6 +1456,54 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>
@@ -1606,11 +1738,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                       class="sc-AxhCb fxrKLH"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -1681,7 +1809,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1692,16 +1820,16 @@ exports[`ImportWallet should import by mnemonic 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -1807,9 +1935,9 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -1831,9 +1959,9 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -1843,6 +1971,54 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>
@@ -1983,9 +2159,9 @@ exports[`ImportWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              aria-label="Ark"
+              aria-label="ARK"
               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon-ARK-mainnet"
+              data-testid="NetworkIcon-ARK-ark.mainnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -2007,9 +2183,9 @@ exports[`ImportWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              aria-label="Ark Devnet"
+              aria-label="ARK Devnet"
               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-devnet"
+              data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
                 class="sc-AxhCb dCXdPH"
@@ -2019,6 +2195,54 @@ exports[`ImportWallet should render 1st step 1`] = `
               >
                 <svg>
                   ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ImportWallet__network-item-2"
+            role="option"
+          >
+            <div
+              aria-label="Compendia"
+              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-compendia.mainnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  bind.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="ImportWallet__network-item-3"
+            role="option"
+          >
+            <div
+              aria-label="Compendia Testnet"
+              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-compendia.testnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  bind.svg
                 </svg>
               </div>
             </div>
@@ -2188,13 +2412,13 @@ exports[`ImportWallet should render 3st step 1`] = `
             class="text-lg font-medium"
             data-testid="ImportWallet__network-name"
           >
-            Ark Devnet
+            ARK Devnet
           </p>
         </div>
         <div
-          aria-label="Ark Devnet"
+          aria-label="ARK Devnet"
           class="sc-AxgMl ittwqV border-theme-primary-100 text-theme-primary-400"
-          data-testid="NetworkIcon-ARK-devnet"
+          data-testid="NetworkIcon-ARK-ark.devnet"
         >
           <div
             class="sc-AxhCb fxrKLH"
@@ -2469,11 +2693,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                       class="sc-AxhCb fxrKLH"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -2544,7 +2764,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2555,16 +2775,16 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -2670,9 +2890,9 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -2694,9 +2914,9 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -2706,6 +2926,54 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>
@@ -2940,11 +3208,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                       class="sc-AxhCb fxrKLH"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -3015,7 +3279,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3026,16 +3290,16 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -3141,9 +3405,9 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -3165,9 +3429,9 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxhCb dCXdPH"
@@ -3177,6 +3441,54 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="ImportWallet__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxhCb dCXdPH"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>

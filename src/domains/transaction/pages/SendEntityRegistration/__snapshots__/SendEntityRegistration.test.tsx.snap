@@ -193,11 +193,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -268,7 +264,7 @@ exports[`Registration should error for invalid mnemonic 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -279,22 +275,22 @@ exports[`Registration should error for invalid mnemonic 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -611,11 +607,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -686,7 +678,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -697,10 +689,10 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div
@@ -762,7 +754,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               class="sc-fznZeY sc-fzokOt jWugcU px-4"
                             >
                               <div
-                                aria-label="Ark Devnet"
+                                aria-label="ARK Devnet"
                                 class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
                                 data-testid="SelectNetworkInput__network"
                               >
@@ -782,7 +774,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               class="sc-fznZeY dHxPUs py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                               data-testid="SelectNetworkInput__typeahead"
                             >
-                              Ark Devnet
+                              ARK Devnet
                             </span>
                             <input
                               aria-autocomplete="list"
@@ -794,7 +786,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               disabled=""
                               id="SendTransactionForm__network-input"
                               placeholder="Enter a network name"
-                              value="Ark Devnet"
+                              value="ARK Devnet"
                             />
                           </div>
                         </div>
@@ -813,9 +805,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -838,9 +830,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -850,6 +842,56 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            disabled=""
+                            id="SendTransactionForm__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxiKw fubePL"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            disabled=""
+                            id="SendTransactionForm__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxiKw fubePL"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>
@@ -879,7 +921,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                         >
                           <div>
                             <button
-                              class="sc-fzpmMD jvETLY SelectAddress  "
+                              class="sc-fzoXWK eIiiwH SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -971,14 +1013,14 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                   aria-expanded="true"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-37-label downshift-37-toggle-button"
-                                  class="sc-fzoNJl DBMDZ is-open  "
+                                  class="sc-fzoyTs buZKoP is-open  "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-37-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-37-label"
-                                  class="sc-fzoXWK QLTpw is-open"
+                                  class="sc-fzoNJl gPmoPk is-open"
                                   id="downshift-37-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -1117,9 +1159,9 @@ exports[`Registration should not set fee if no fee options 1`] = `
             role="option"
           >
             <div
-              aria-label="Ark"
+              aria-label="ARK"
               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon-ARK-mainnet"
+              data-testid="NetworkIcon-ARK-ark.mainnet"
             >
               <div
                 class="sc-AxiKw fubePL"
@@ -1141,9 +1183,9 @@ exports[`Registration should not set fee if no fee options 1`] = `
             role="option"
           >
             <div
-              aria-label="Ark Devnet"
+              aria-label="ARK Devnet"
               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-devnet"
+              data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
                 class="sc-AxiKw fubePL"
@@ -1153,6 +1195,54 @@ exports[`Registration should not set fee if no fee options 1`] = `
               >
                 <svg>
                   ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-2"
+            role="option"
+          >
+            <div
+              aria-label="Compendia"
+              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-compendia.mainnet"
+            >
+              <div
+                class="sc-AxiKw fubePL"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  bind.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-3"
+            role="option"
+          >
+            <div
+              aria-label="Compendia Testnet"
+              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-compendia.testnet"
+            >
+              <div
+                class="sc-AxiKw fubePL"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  bind.svg
                 </svg>
               </div>
             </div>
@@ -1182,7 +1272,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
         >
           <div>
             <button
-              class="sc-fzpmMD jvETLY SelectAddress  "
+              class="sc-fzoXWK eIiiwH SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
@@ -1256,7 +1346,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-labelledby="downshift-15-label downshift-15-toggle-button"
-                  class="sc-fzoNJl DBMDZ  is-selected "
+                  class="sc-fzoyTs buZKoP  is-selected "
                   data-testid="select-list__toggle-button"
                   id="downshift-15-toggle-button"
                   type="button"
@@ -1265,7 +1355,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 </button>
                 <ul
                   aria-labelledby="downshift-15-label"
-                  class="sc-fzoXWK QLTpw"
+                  class="sc-fzoNJl gPmoPk"
                   id="downshift-15-menu"
                   role="listbox"
                   tabindex="-1"
@@ -1486,11 +1576,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -1561,7 +1647,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1572,22 +1658,22 @@ exports[`Registration should not unregister fields when going back to step 2 onw
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -1631,7 +1717,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                               <div
                                 class="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24"
                               >
-                                Devnet
+                                ARK Devnet
                               </div>
                             </div>
                           </div>
@@ -2052,11 +2138,7 @@ exports[`Registration should register delegate 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -2127,7 +2209,7 @@ exports[`Registration should register delegate 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2138,22 +2220,22 @@ exports[`Registration should register delegate 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div
@@ -2259,7 +2341,7 @@ exports[`Registration should register delegate 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              ARK Devnet
+                              ARK ARK Devnet
                             </div>
                           </div>
                           <div
@@ -2498,9 +2580,9 @@ exports[`Registration should render 1st step 1`] = `
             role="option"
           >
             <div
-              aria-label="Ark"
+              aria-label="ARK"
               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon-ARK-mainnet"
+              data-testid="NetworkIcon-ARK-ark.mainnet"
             >
               <div
                 class="sc-AxiKw fubePL"
@@ -2522,9 +2604,9 @@ exports[`Registration should render 1st step 1`] = `
             role="option"
           >
             <div
-              aria-label="Ark Devnet"
+              aria-label="ARK Devnet"
               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-devnet"
+              data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
                 class="sc-AxiKw fubePL"
@@ -2534,6 +2616,54 @@ exports[`Registration should render 1st step 1`] = `
               >
                 <svg>
                   ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-2"
+            role="option"
+          >
+            <div
+              aria-label="Compendia"
+              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-compendia.mainnet"
+            >
+              <div
+                class="sc-AxiKw fubePL"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  bind.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="SendTransactionForm__network-item-3"
+            role="option"
+          >
+            <div
+              aria-label="Compendia Testnet"
+              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-compendia.testnet"
+            >
+              <div
+                class="sc-AxiKw fubePL"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  bind.svg
                 </svg>
               </div>
             </div>
@@ -2563,7 +2693,7 @@ exports[`Registration should render 1st step 1`] = `
         >
           <div>
             <button
-              class="sc-fzpmMD jvETLY SelectAddress  "
+              class="sc-fzoXWK eIiiwH SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
@@ -2637,7 +2767,7 @@ exports[`Registration should render 1st step 1`] = `
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-labelledby="downshift-10-label downshift-10-toggle-button"
-                  class="sc-fzoNJl DBMDZ  is-selected "
+                  class="sc-fzoyTs buZKoP  is-selected "
                   data-testid="select-list__toggle-button"
                   id="downshift-10-toggle-button"
                   type="button"
@@ -2646,7 +2776,7 @@ exports[`Registration should render 1st step 1`] = `
                 </button>
                 <ul
                   aria-labelledby="downshift-10-label"
-                  class="sc-fzoXWK QLTpw"
+                  class="sc-fzoNJl gPmoPk"
                   id="downshift-10-menu"
                   role="listbox"
                   tabindex="-1"
@@ -2867,11 +2997,7 @@ exports[`Registration should render registration form without selected wallet 1`
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -2942,7 +3068,7 @@ exports[`Registration should render registration form without selected wallet 1`
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2953,10 +3079,10 @@ exports[`Registration should render registration form without selected wallet 1`
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div
@@ -3049,9 +3175,9 @@ exports[`Registration should render registration form without selected wallet 1`
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -3073,9 +3199,9 @@ exports[`Registration should render registration form without selected wallet 1`
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -3085,6 +3211,54 @@ exports[`Registration should render registration form without selected wallet 1`
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="SendTransactionForm__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxiKw fubePL"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="SendTransactionForm__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxiKw fubePL"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>
@@ -3114,7 +3288,7 @@ exports[`Registration should render registration form without selected wallet 1`
                         >
                           <div>
                             <button
-                              class="sc-fzpmMD jvETLY SelectAddress  "
+                              class="sc-fzoXWK eIiiwH SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -3188,14 +3362,14 @@ exports[`Registration should render registration form without selected wallet 1`
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                                  class="sc-fzoNJl DBMDZ   "
+                                  class="sc-fzoyTs buZKoP   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-0-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-0-label"
-                                  class="sc-fzoXWK QLTpw"
+                                  class="sc-fzoNJl gPmoPk"
                                   id="downshift-0-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -3427,11 +3601,7 @@ exports[`Registration should select network first and see select address input c
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -3502,7 +3672,7 @@ exports[`Registration should select network first and see select address input c
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3513,10 +3683,10 @@ exports[`Registration should select network first and see select address input c
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div
@@ -3578,7 +3748,7 @@ exports[`Registration should select network first and see select address input c
                               class="sc-fznZeY sc-fzokOt jWugcU px-4"
                             >
                               <div
-                                aria-label="Ark Devnet"
+                                aria-label="ARK Devnet"
                                 class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
                                 data-testid="SelectNetworkInput__network"
                               >
@@ -3598,7 +3768,7 @@ exports[`Registration should select network first and see select address input c
                               class="sc-fznZeY dHxPUs py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                               data-testid="SelectNetworkInput__typeahead"
                             >
-                              Ark Devnet
+                              ARK Devnet
                             </span>
                             <input
                               aria-autocomplete="list"
@@ -3609,7 +3779,7 @@ exports[`Registration should select network first and see select address input c
                               data-testid="SelectNetworkInput__input"
                               id="SendTransactionForm__network-input"
                               placeholder="Enter a network name"
-                              value="Ark Devnet"
+                              value="ARK Devnet"
                             />
                           </div>
                         </div>
@@ -3627,9 +3797,9 @@ exports[`Registration should select network first and see select address input c
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -3651,9 +3821,9 @@ exports[`Registration should select network first and see select address input c
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -3663,6 +3833,54 @@ exports[`Registration should select network first and see select address input c
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="SendTransactionForm__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxiKw fubePL"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="SendTransactionForm__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxiKw fubePL"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>
@@ -3692,7 +3910,7 @@ exports[`Registration should select network first and see select address input c
                         >
                           <div>
                             <button
-                              class="sc-fzpmMD jvETLY SelectAddress  "
+                              class="sc-fzoXWK eIiiwH SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -3766,14 +3984,14 @@ exports[`Registration should select network first and see select address input c
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                                  class="sc-fzoNJl DBMDZ   "
+                                  class="sc-fzoyTs buZKoP   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-2-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-2-label"
-                                  class="sc-fzoXWK QLTpw"
+                                  class="sc-fzoNJl gPmoPk"
                                   id="downshift-2-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -4005,11 +4223,7 @@ exports[`Registration should select network with unavailable wallets and see sel
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -4080,7 +4294,7 @@ exports[`Registration should select network with unavailable wallets and see sel
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4091,10 +4305,10 @@ exports[`Registration should select network with unavailable wallets and see sel
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
               </ul>
               <div
@@ -4156,7 +4370,7 @@ exports[`Registration should select network with unavailable wallets and see sel
                               class="sc-fznZeY sc-fzokOt jWugcU px-4"
                             >
                               <div
-                                aria-label="Ark"
+                                aria-label="ARK"
                                 class="sc-AxgMl eLFBRi border-theme-danger-light text-theme-danger-400"
                                 data-testid="SelectNetworkInput__network"
                               >
@@ -4181,7 +4395,7 @@ exports[`Registration should select network with unavailable wallets and see sel
                               data-testid="SelectNetworkInput__input"
                               id="SendTransactionForm__network-input"
                               placeholder="Enter a network name"
-                              value="Ark"
+                              value="ARK"
                             />
                           </div>
                         </div>
@@ -4199,9 +4413,9 @@ exports[`Registration should select network with unavailable wallets and see sel
                             role="option"
                           >
                             <div
-                              aria-label="Ark"
+                              aria-label="ARK"
                               class="sc-AxgMl gOPxRO text-theme-success-500 border-theme-success-200"
-                              data-testid="NetworkIcon-ARK-mainnet"
+                              data-testid="NetworkIcon-ARK-ark.mainnet"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -4223,9 +4437,9 @@ exports[`Registration should select network with unavailable wallets and see sel
                             role="option"
                           >
                             <div
-                              aria-label="Ark Devnet"
+                              aria-label="ARK Devnet"
                               class="sc-AxgMl gOPxRO text-theme-neutral-light"
-                              data-testid="NetworkIcon-ARK-devnet"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -4235,6 +4449,54 @@ exports[`Registration should select network with unavailable wallets and see sel
                               >
                                 <svg>
                                   ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="SendTransactionForm__network-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia"
+                              class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                              data-testid="NetworkIcon-ARK-compendia.mainnet"
+                            >
+                              <div
+                                class="sc-AxiKw fubePL"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectNetwork__NetworkIcon--container"
+                            id="SendTransactionForm__network-item-3"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Compendia Testnet"
+                              class="sc-AxgMl gOPxRO text-theme-neutral-light"
+                              data-testid="NetworkIcon-ARK-compendia.testnet"
+                            >
+                              <div
+                                class="sc-AxiKw fubePL"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  bind.svg
                                 </svg>
                               </div>
                             </div>
@@ -4264,7 +4526,7 @@ exports[`Registration should select network with unavailable wallets and see sel
                         >
                           <div>
                             <button
-                              class="sc-fzpmMD jvETLY SelectAddress is-disabled "
+                              class="sc-fzoXWK eIiiwH SelectAddress is-disabled "
                               data-testid="SelectAddress__wrapper"
                               disabled=""
                               type="button"
@@ -4339,14 +4601,14 @@ exports[`Registration should select network with unavailable wallets and see sel
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                                  class="sc-fzoNJl DBMDZ   "
+                                  class="sc-fzoyTs buZKoP   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-6-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-6-label"
-                                  class="sc-fzoXWK QLTpw"
+                                  class="sc-fzoNJl gPmoPk"
                                   id="downshift-6-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -4578,11 +4840,7 @@ exports[`Registration should select registration type & show form 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -4653,7 +4911,7 @@ exports[`Registration should select registration type & show form 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4664,22 +4922,22 @@ exports[`Registration should select registration type & show form 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -4709,7 +4967,7 @@ exports[`Registration should select registration type & show form 1`] = `
                           class="flex rounded-lg overflow-hidden bg-theme-warning"
                         >
                           <div
-                            class="sc-fznMAR bUWrer flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                            class="sc-fznxKY hnCPDr flex items-center justify-center text-theme-warning bg-theme-warning-200"
                           >
                             <div
                               class="sc-AxiKw iRsrJT"
@@ -4722,7 +4980,7 @@ exports[`Registration should select registration type & show form 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-fznxKY iCykvb flex-1 bg-theme-warning-100"
+                            class="sc-fzpmMD coMwhP flex-1 bg-theme-warning-100"
                           >
                             Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
                           </div>
@@ -4861,7 +5119,7 @@ exports[`Registration should select registration type & show form 1`] = `
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4870,7 +5128,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4879,7 +5137,7 @@ exports[`Registration should select registration type & show form 1`] = `
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5118,11 +5376,7 @@ exports[`Registration should should go back and forth & correctly register field
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
+                    />
                   </span>
                 </div>
                 <div
@@ -5193,7 +5447,7 @@ exports[`Registration should should go back and forth & correctly register field
       class="flex flex-col flex-1 "
     >
       <div
-        class="sc-fznJRM kZYZrA flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -5204,22 +5458,22 @@ exports[`Registration should should go back and forth & correctly register field
           >
             <div>
               <ul
-                class="sc-fzoiQi fQHPRZ"
+                class="sc-fznWqX bcUgwz"
               >
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX kPdKVU"
+                  class="sc-fznJRM fanqcP"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
                 <li
-                  class="sc-fznWqX PbNft"
+                  class="sc-fznJRM fiwUGS"
                 />
               </ul>
               <div
@@ -5249,7 +5503,7 @@ exports[`Registration should should go back and forth & correctly register field
                           class="flex rounded-lg overflow-hidden bg-theme-warning"
                         >
                           <div
-                            class="sc-fznMAR bUWrer flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                            class="sc-fznxKY hnCPDr flex items-center justify-center text-theme-warning bg-theme-warning-200"
                           >
                             <div
                               class="sc-AxiKw iRsrJT"
@@ -5262,7 +5516,7 @@ exports[`Registration should should go back and forth & correctly register field
                             </div>
                           </div>
                           <div
-                            class="sc-fznxKY iCykvb flex-1 bg-theme-warning-100"
+                            class="sc-fzpmMD coMwhP flex-1 bg-theme-warning-100"
                           >
                             Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
                           </div>
@@ -5401,7 +5655,7 @@ exports[`Registration should should go back and forth & correctly register field
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5410,7 +5664,7 @@ exports[`Registration should should go back and forth & correctly register field
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -5419,7 +5673,7 @@ exports[`Registration should should go back and forth & correctly register field
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"

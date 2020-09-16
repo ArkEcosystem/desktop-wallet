@@ -26,7 +26,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				network="mainnet"
 				ticker="ARK"
 				onDeleteWallet={onDeleteWallet}
@@ -48,7 +48,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				network="mainnet"
 				ticker="ARK"
 				onDeleteWallet={onDeleteWallet}
@@ -73,7 +73,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				isLedger
 				isMultisig
 				isStarred
@@ -97,7 +97,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				currencyDelta={delta}
 				isLedger
 				isMultisig
@@ -124,7 +124,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				currencyBalance={BigNumber.make(10)}
 				exchangeCurrency="USD"
 				network="mainnet"
@@ -161,7 +161,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				currencyBalance={BigNumber.make(10)}
 				exchangeCurrency="USD"
 				network="mainnet"
@@ -198,7 +198,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				currencyBalance={BigNumber.make(10)}
 				exchangeCurrency="USD"
 				network="mainnet"
@@ -235,7 +235,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				currencyBalance={BigNumber.make(10)}
 				exchangeCurrency="USD"
 				network="mainnet"
@@ -272,7 +272,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				currencyBalance={BigNumber.make(10)}
 				exchangeCurrency="USD"
 				network="mainnet"
@@ -302,7 +302,7 @@ describe("WalletHeader", () => {
 			<WalletHeader
 				address="abc"
 				balance={BigNumber.make(0)}
-				coin="Ark"
+				coin="ARK"
 				currencyBalance={BigNumber.make(10)}
 				exchangeCurrency="USD"
 				network="mainnet"

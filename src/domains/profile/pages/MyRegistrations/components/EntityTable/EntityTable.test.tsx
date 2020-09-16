@@ -25,7 +25,7 @@ describe("BusinessRegistrationsTable", () => {
 
 	it("should render empty state", () => {
 		const { getAllByTestId, asFragment } = render(
-			<EntityTable entities={[]} title="Entity table" nameColumnHeader="Entity name" />,
+			<EntityTable entities={[]} title="Entity table" type="entity" nameColumnHeader="Entity name" />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();
@@ -34,42 +34,16 @@ describe("BusinessRegistrationsTable", () => {
 
 	it("should render registrations", async () => {
 		const { getAllByTestId, asFragment } = render(
-			<EntityTable entities={entityRegistrations} title="Entity table" nameColumnHeader="Entity name" />,
-		);
-
-		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should handle resign dropdown action", async () => {
-		const onAction = jest.fn();
-		const { asFragment, getAllByTestId } = render(
 			<EntityTable
 				entities={entityRegistrations}
 				title="Entity table"
+				type="entity"
 				nameColumnHeader="Entity name"
-				onAction={onAction}
 			/>,
 		);
-		expect(asFragment()).toMatchSnapshot();
 
 		await waitFor(() => expect(getAllByTestId("TableRow").length).toEqual(1));
-
-		const dropdownToggle = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle");
-		act(() => {
-			fireEvent.click(dropdownToggle);
-		});
-
-		const resignOption = within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--1");
-		act(() => {
-			fireEvent.click(resignOption);
-		});
-
-		expect(onAction).toBeCalledWith({
-			walletId: entityRegistrations[0].wallet().id(),
-			txId: entityRegistrations[0].id(),
-			action: "resign",
-		});
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should handle resign dropdown action", async () => {
@@ -78,6 +52,7 @@ describe("BusinessRegistrationsTable", () => {
 			<EntityTable
 				entities={entityRegistrations}
 				title="Entity table"
+				type="entity"
 				nameColumnHeader="Entity name"
 				onAction={onAction}
 			/>,
@@ -98,6 +73,8 @@ describe("BusinessRegistrationsTable", () => {
 
 		expect(onAction).toBeCalledWith({
 			walletId: entityRegistrations[0].wallet().id(),
+			entity: entityRegistrations[0],
+			type: "entity",
 			txId: entityRegistrations[0].id(),
 			action: "update",
 		});

@@ -15,7 +15,7 @@ let unvotedWallet: ReadWriteWallet;
 let emptyProfile: Profile;
 let wallet2: ReadWriteWallet;
 
-const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
+const blankWalletPassphrase = "power return attend drink piece found tragic fire liar page disease combine";
 
 describe("AddressRow", () => {
 	beforeAll(async () => {
@@ -24,14 +24,11 @@ describe("AddressRow", () => {
 		wallet.data().set(WalletFlag.Starred, true);
 		wallet.data().set(WalletFlag.Ledger, true);
 
-		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
-		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
+		blankWallet = await profile.wallets().importByMnemonic(blankWalletPassphrase, "ARK", "ark.devnet");
+		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "ark.devnet");
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
-
-		await syncDelegates();
-		await wallet.syncVotes();
+		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "ark.devnet");
 
 		nock.disableNetConnect();
 
@@ -54,6 +51,9 @@ describe("AddressRow", () => {
 				message: "Wallet not found",
 			})
 			.persist();
+
+		await syncDelegates();
+		await wallet.syncVotes();
 	});
 
 	it("should render", async () => {

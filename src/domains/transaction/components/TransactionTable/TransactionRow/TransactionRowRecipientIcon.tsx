@@ -14,6 +14,7 @@ type Props = {
 
 const Wrapper = ({ children, ...props }: { children: React.ReactNode; className?: string; shadowColor?: string }) => (
 	<Circle
+		size="lg"
 		data-testid="TransactionRowRecipientIcon"
 		className={"border-theme-neutral-900 text-theme-neutral-900"}
 		{...props}
@@ -63,7 +64,7 @@ export const TransactionRowRecipientIcon = ({ type, recipient, recipients, class
 	};
 
 	if (type === "transfer") {
-		return <Avatar address={recipient} shadowColor={circleShadowColor} />;
+		return <Avatar size="lg" address={recipient} shadowColor={circleShadowColor} />;
 	}
 
 	if (type === "multiPayment") {

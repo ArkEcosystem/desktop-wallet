@@ -7,7 +7,7 @@ import { AddAssets } from "./AddAssets";
 export default { title: "Domains / News / Components / Add Assets" };
 
 export const Default = () => {
-	const allAssets = [...Array(27)].map(() => "Ark");
+	const allAssets = [...Array(27)].map(() => "ARK");
 
 	return (
 		<AddAssets

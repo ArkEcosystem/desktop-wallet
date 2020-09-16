@@ -174,10 +174,10 @@ describe("Transaction Send", () => {
 		});
 
 		act(() => {
-			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-devnet"));
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark Devnet");
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
@@ -204,10 +204,10 @@ describe("Transaction Send", () => {
 		});
 
 		act(() => {
-			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-mainnet"));
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 		expect(rendered.getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
@@ -238,7 +238,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveClass("border-theme-success-200"),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
@@ -358,7 +358,7 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			await waitFor(() =>
-				expect(rendered.getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200"),
+				expect(rendered.getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveClass("border-theme-success-200"),
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 

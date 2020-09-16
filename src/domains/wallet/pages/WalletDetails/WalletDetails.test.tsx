@@ -55,11 +55,11 @@ describe("WalletDetails", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
-		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
+		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "ark.devnet");
+		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "ark.devnet");
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "devnet");
+		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "ark.devnet");
 
 		await syncDelegates();
 		await wallet.syncVotes();

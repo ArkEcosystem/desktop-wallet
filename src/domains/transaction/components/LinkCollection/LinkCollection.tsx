@@ -107,7 +107,8 @@ export const LinkCollection = ({
 			accessor: "link",
 		},
 		{
-			Header: " ",
+			Header: "Actions",
+			className: "hidden",
 		},
 	);
 
@@ -184,7 +185,10 @@ export const LinkCollection = ({
 
 					<Table columns={columns} data={fields}>
 						{(rowData: any, rowIndex: any) => (
-							<tr key={rowData.value} className="font-semibold border-b border-theme-neutral-200">
+							<tr
+								key={rowData.value}
+								className="font-semibold border-b last:border-b-0 border-theme-neutral-200"
+							>
 								{selectionTypeTitle && (
 									<td
 										className={`w-16 text-center align-middle ${

@@ -1,7 +1,7 @@
 import { images } from "app/assets/images";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
-import { Table } from "app/components/Table";
+import { Table, TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -19,8 +19,9 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 
 	const columns = [
 		{
-			Header: " ",
+			Header: "Logo",
 			disableSortBy: true,
+			className: "hidden",
 		},
 		{
 			Header: t("COMMON.NAME"),
@@ -32,8 +33,9 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 			className: "justify-end",
 		},
 		{
-			Header: "  ",
+			Header: "Actions",
 			disableSortBy: true,
+			className: "hidden",
 		},
 	];
 
@@ -50,12 +52,12 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={plugins}>
 					{(rowData: any) => (
-						<tr className="border-b border-dashed border-theme-neutral-200">
-							<td className="w-16">
+						<TableRow>
+							<TableCell variant="start" className="w-16">
 								<ChangeNowLogo className="w-12 h-12" />
-							</td>
+							</TableCell>
 
-							<td>
+							<TableCell>
 								<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
 									{rowData.name}
 								</div>
@@ -64,12 +66,12 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
-							</td>
+							</TableCell>
 
-							<td className="py-10 text-right text-theme-neutral-dark">
-								{t(`PLUGINS.CATEGORIES.${rowData.category.toUpperCase()}`)}
-							</td>
-						</tr>
+							<TableCell variant="end" innerClassName="justify-end text-theme-neutral-dark">
+								{t(`PLUGINS.CATEGORIES.${rowData.category?.toUpperCase()}`)}
+							</TableCell>
+						</TableRow>
 					)}
 				</Table>
 			</div>

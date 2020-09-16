@@ -82,7 +82,7 @@ describe("Registration", () => {
 		wallet = profile.wallets().first();
 		secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
 
-		await profile.wallets().importByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", "ARK", "devnet");
+		await profile.wallets().importByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", "ARK", "ark.devnet");
 
 		await syncDelegates();
 		await syncFees();
@@ -105,10 +105,10 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-devnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark Devnet");
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -118,10 +118,10 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 		expect(getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
 		expect(asFragment()).toMatchSnapshot();
 	});
