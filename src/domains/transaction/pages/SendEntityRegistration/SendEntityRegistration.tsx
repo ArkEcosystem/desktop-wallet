@@ -8,6 +8,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { TransactionSentStep as ThirdStep } from "domains/transaction/components/EntityRegistrationForm/TransactionSentStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -15,7 +16,6 @@ import { useHistory } from "react-router-dom";
 
 import { SendEntityRegistrationForm } from "./SendEntityRegistration.models";
 import { FirstStep } from "./Step1";
-import { ThirdStep } from "./Step3";
 
 type SendEntityRegistrationProps = {
 	formDefaultValues?: any;
@@ -151,11 +151,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 										<AuthenticationStep wallet={activeWallet} />
 									</TabPanel>
 									<TabPanel tabId={stepCount}>
-										<ThirdStep
-											transaction={transaction}
-											registrationForm={registrationForm}
-											senderWallet={activeWallet}
-										/>
+										<ThirdStep transaction={transaction} senderWallet={activeWallet} />
 									</TabPanel>
 								</>
 							)}

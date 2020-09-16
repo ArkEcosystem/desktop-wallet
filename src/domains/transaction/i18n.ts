@@ -123,6 +123,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	ENTITY: {
+		NAME: "Entity Name",
 		DISPLAY_NAME: "Display Name",
 		INVALID_NAME: "Invalid Entity Name",
 		INVALID_DESCRIPTION: "Invalid Entity Description",

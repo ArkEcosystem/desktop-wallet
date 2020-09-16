@@ -14,12 +14,12 @@ import { toasts } from "app/services";
 import { AuthenticationStep as ThirdStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep as FirstStep } from "domains/transaction/components/EntityRegistrationForm/Step2";
 import { ReviewStep as SecondStep } from "domains/transaction/components/EntityRegistrationForm/Step3";
+import { TransactionSentStep as FourthStep } from "domains/transaction/components/EntityRegistrationForm/TransactionSentStep";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
-import { FourthStep } from "./Step4";
 import { fetchTxIpfsData, sendEntityUpdateTransaction } from "./utils";
 
 type SendEntityUpdateProps = {
@@ -166,11 +166,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 								</TabPanel>
 								<TabPanel tabId={4}>
 									{savedTransaction && (
-										<FourthStep
-											transaction={savedTransaction}
-											senderWallet={activeWallet}
-											ipfsData={getValues("ipfsData")}
-										/>
+										<FourthStep transaction={savedTransaction} senderWallet={activeWallet} />
 									)}
 								</TabPanel>
 
@@ -238,7 +234,7 @@ SendEntityUpdate.defaultProps = {
 			avg: "1",
 			max: "2",
 		},
-		fee: 0,
+		fee: "0",
 		ipfsData: {
 			meta: {
 				displayName: undefined,

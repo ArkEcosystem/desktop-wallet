@@ -86,6 +86,8 @@ describe("SendEntityUpdate", () => {
 		nock("https://platform.ark.io/api")
 			.get("/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV")
 			.reply(200, IpfsFixture)
+			.get("/ipfs/QmV1n5F9PuBE2ovW9jVfFpxyvWZxYHjSdfLrYL2nDcb1gW")
+			.reply(200, IpfsFixture)
 			.post("/ipfs")
 			.reply(200, { data: { hash: EntityUpdateTransactionFixture.data.asset.data.ipfsData } })
 			.persist();
@@ -667,6 +669,7 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("TransactionSent_ipfs-data")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		signMock.mockRestore();
@@ -715,6 +718,7 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("TransactionSent_ipfs-data")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
