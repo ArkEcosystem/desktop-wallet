@@ -9,6 +9,7 @@ import {
 	getDefaultWalletId,
 	RenderResult,
 	renderWithRouter,
+	syncFees,
 	waitFor,
 } from "testing-library";
 
@@ -20,6 +21,10 @@ const defaultFormValues = {
 };
 
 describe("SendEntityUpdate", () => {
+	beforeAll(async () => {
+		await syncFees();
+	});
+
 	beforeEach(() => {
 		const history = createMemoryHistory();
 		const updateRegistrationURL = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}/send-entity-update`;
