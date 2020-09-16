@@ -204,7 +204,7 @@ describe("Transaction Send", () => {
 		});
 
 		act(() => {
-			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-mainnet"));
+			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
 		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
