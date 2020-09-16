@@ -1017,9 +1017,9 @@ export default {
       LEGACY_BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation (Legacy)',
       LEGACY_BRIDGECHAIN_UPDATE: 'Bridgechain Update (Legacy)',
       // Unknown type
-      UNDEFINED_REGISTRATION: 'Registration (Undefined)',
-      UNDEFINED_RESIGNATION: 'Resignation (Undefined)',
-      UNDEFINED_UPDATE: 'Update (Undefined)',
+      UNDEFINED_REGISTRATION: 'Undefined Registration',
+      UNDEFINED_RESIGNATION: 'Undefined Resignation',
+      UNDEFINED_UPDATE: 'Undefined Update',
       UNDEFINED: 'Undefined'
     },
     ERROR: {
