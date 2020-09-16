@@ -34,7 +34,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 	const [isLoading, setIsLoading] = useState(true);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { setValue, triggerValidation, getValues, register } = form;
+	const { setValue, triggerValidation, register } = form;
 	const { entityRegistration } = useValidation();
 
 	const { env } = useEnvironmentContext();
@@ -85,7 +85,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 		};
 
 		fetchTransaction();
-	}, [transactionId, activeWallet, setValue]);
+	}, [transactionId, activeWallet, setValue, t]);
 
 	useEffect(() => {
 		const fetchIpfs = async () => {
@@ -102,7 +102,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 		};
 
 		fetchIpfs();
-	}, [activeTransaction, setValue]);
+	}, [activeTransaction, setValue, t]);
 
 	useEffect(() => {
 		const fees = env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "entityUpdate");
