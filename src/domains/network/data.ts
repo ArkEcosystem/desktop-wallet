@@ -30,13 +30,25 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	// },
 	ARK: {
 		"ark.mainnet": {
-			displayName: "Ark",
+			displayName: "ARK",
 			borderClass: "border-theme-danger-light",
 			textClass: "text-theme-danger-400",
 			iconName: "Ark",
 		},
 		"ark.devnet": {
 			displayName: "ARK Devnet",
+			borderClass: "border-theme-primary-100",
+			textClass: "text-theme-primary-400",
+			iconName: "Ark",
+		},
+		"compendia.mainnet": {
+			displayName: "Compendia",
+			borderClass: "border-theme-primary-100",
+			textClass: "text-theme-primary-400",
+			iconName: "Ark",
+		},
+		"compendia.testnet": {
+			displayName: "Compendia Testnet",
 			borderClass: "border-theme-primary-100",
 			textClass: "text-theme-primary-400",
 			iconName: "Ark",
