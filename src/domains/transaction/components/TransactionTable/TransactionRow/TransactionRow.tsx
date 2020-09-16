@@ -95,22 +95,20 @@ export const TransactionRow = ({
 				<TransactionRowAmount transaction={transaction} />
 			</TableCell>
 
-			{isSignaturePending && (
-				<TableCell innerClassName="justify-end">
+			<TableCell variant="end" innerClassName="justify-end">
+				{isSignaturePending ? (
 					<Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
 						<Icon name="Edit" />
 						<span>Sign</span>
 					</Button>
-				</TableCell>
-			)}
-
-			{!!exchangeCurrency && !isSignaturePending && (
-				<TableCell variant="end" innerClassName="justify-end">
-					<span data-testid="TransactionRow__currency">
-						<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
-					</span>
-				</TableCell>
-			)}
+				) : (
+					exchangeCurrency && (
+						<span data-testid="TransactionRow__currency">
+							<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
+						</span>
+					)
+				)}
+			</TableCell>
 		</TableRow>
 	);
 };

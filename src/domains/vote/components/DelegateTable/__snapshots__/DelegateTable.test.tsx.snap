@@ -11,7 +11,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -27,11 +27,25 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -55,7 +69,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -69,7 +83,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -99,7 +113,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -129,7 +143,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -143,7 +157,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -173,7 +187,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -203,7 +217,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -233,7 +247,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -263,7 +277,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -296,34 +310,38 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-danger-50"
+                class="sc-AxhUy dVoyKx bg-theme-danger-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
                   </div>
-                  <span>
-                    arkx
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-danger-50"
+              >
+                <span>
+                  arkx
+                </span>
               </div>
             </td>
             <td
@@ -448,34 +466,38 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      />
-                    </div>
+                    <img
+                      alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                    />
                   </div>
-                  <span>
-                    genesis_42
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_42
+                </span>
               </div>
             </td>
             <td
@@ -586,34 +608,38 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      />
-                    </div>
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
                   </div>
-                  <span>
-                    genesis_17
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_17
+                </span>
               </div>
             </td>
             <td
@@ -874,7 +900,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -890,11 +916,25 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -918,7 +958,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -932,7 +972,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -962,7 +1002,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -992,7 +1032,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -1006,7 +1046,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1036,7 +1076,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1066,7 +1106,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1096,7 +1136,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1126,7 +1166,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1159,34 +1199,38 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-success-50"
+                class="sc-AxhUy dVoyKx bg-theme-success-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
                   </div>
-                  <span>
-                    arkx
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-success-50"
+              >
+                <span>
+                  arkx
+                </span>
               </div>
             </td>
             <td
@@ -1297,34 +1341,38 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      />
-                    </div>
+                    <img
+                      alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                    />
                   </div>
-                  <span>
-                    genesis_42
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_42
+                </span>
               </div>
             </td>
             <td
@@ -1435,34 +1483,38 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      />
-                    </div>
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
                   </div>
-                  <span>
-                    genesis_17
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_17
+                </span>
               </div>
             </td>
             <td
@@ -1723,7 +1775,7 @@ exports[`DelegateTable should render 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -1739,11 +1791,25 @@ exports[`DelegateTable should render 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -1767,7 +1833,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -1781,7 +1847,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1811,7 +1877,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1841,7 +1907,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -1855,7 +1921,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1885,7 +1951,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1915,7 +1981,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1945,7 +2011,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -1975,7 +2041,7 @@ exports[`DelegateTable should render 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2008,34 +2074,38 @@ exports[`DelegateTable should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
                   </div>
-                  <span>
-                    arkx
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  arkx
+                </span>
               </div>
             </td>
             <td
@@ -2146,34 +2216,38 @@ exports[`DelegateTable should render 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      />
-                    </div>
+                    <img
+                      alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                    />
                   </div>
-                  <span>
-                    genesis_42
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_42
+                </span>
               </div>
             </td>
             <td
@@ -2284,34 +2358,38 @@ exports[`DelegateTable should render 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      />
-                    </div>
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
                   </div>
-                  <span>
-                    genesis_17
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_17
+                </span>
               </div>
             </td>
             <td
@@ -2439,7 +2517,7 @@ exports[`DelegateTable should render with empty list 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -2455,11 +2533,25 @@ exports[`DelegateTable should render with empty list 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -2483,7 +2575,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -2497,7 +2589,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2527,7 +2619,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2557,7 +2649,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -2571,7 +2663,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2601,7 +2693,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2631,7 +2723,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2661,7 +2753,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2691,7 +2783,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -2724,7 +2816,7 @@ exports[`DelegateTable should render with empty list 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="DelegateRowSkeleton"
           >
             <td
@@ -2852,7 +2944,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="DelegateRowSkeleton"
           >
             <td
@@ -2980,7 +3072,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="DelegateRowSkeleton"
           >
             <td
@@ -3108,7 +3200,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="DelegateRowSkeleton"
           >
             <td
@@ -3236,7 +3328,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="DelegateRowSkeleton"
           >
             <td
@@ -3364,7 +3456,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="DelegateRowSkeleton"
           >
             <td
@@ -3492,7 +3584,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="DelegateRowSkeleton"
           >
             <td
@@ -3620,7 +3712,7 @@ exports[`DelegateTable should render with empty list 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted border-theme-neutral-300"
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300"
             data-testid="DelegateRowSkeleton"
           >
             <td
@@ -3765,7 +3857,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -3781,11 +3873,25 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -3809,7 +3915,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -3823,7 +3929,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -3853,7 +3959,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -3883,7 +3989,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -3897,7 +4003,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -3927,7 +4033,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -3957,7 +4063,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -3987,7 +4093,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4017,7 +4123,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4050,34 +4156,38 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-primary-50"
+                class="sc-AxhUy dVoyKx bg-theme-primary-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
                   </div>
-                  <span>
-                    arkx
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-primary-50"
+              >
+                <span>
+                  arkx
+                </span>
               </div>
             </td>
             <td
@@ -4202,34 +4312,38 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      />
-                    </div>
+                    <img
+                      alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                    />
                   </div>
-                  <span>
-                    genesis_42
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_42
+                </span>
               </div>
             </td>
             <td
@@ -4340,34 +4454,38 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      />
-                    </div>
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
                   </div>
-                  <span>
-                    genesis_17
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_17
+                </span>
               </div>
             </td>
             <td
@@ -4495,7 +4613,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -4511,11 +4629,25 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -4539,7 +4671,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -4553,7 +4685,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4583,7 +4715,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4613,7 +4745,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -4627,7 +4759,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4657,7 +4789,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4687,7 +4819,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4717,7 +4849,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4747,7 +4879,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -4780,34 +4912,38 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-danger-50"
+                class="sc-AxhUy dVoyKx bg-theme-danger-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
                   </div>
-                  <span>
-                    arkx
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-danger-50"
+              >
+                <span>
+                  arkx
+                </span>
               </div>
             </td>
             <td
@@ -4932,34 +5068,38 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-success-50"
+                class="sc-AxhUy dVoyKx bg-theme-success-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      />
-                    </div>
+                    <img
+                      alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                    />
                   </div>
-                  <span>
-                    genesis_42
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-success-50"
+              >
+                <span>
+                  genesis_42
+                </span>
               </div>
             </td>
             <td
@@ -5070,34 +5210,38 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      />
-                    </div>
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
                   </div>
-                  <span>
-                    genesis_17
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_17
+                </span>
               </div>
             </td>
             <td
@@ -5361,7 +5505,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -5377,11 +5521,25 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -5405,7 +5563,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -5419,7 +5577,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -5449,7 +5607,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -5479,7 +5637,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -5493,7 +5651,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -5523,7 +5681,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -5553,7 +5711,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -5583,7 +5741,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -5613,7 +5771,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -5646,34 +5804,38 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
                   </div>
-                  <span>
-                    arkx
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  arkx
+                </span>
               </div>
             </td>
             <td
@@ -5784,34 +5946,38 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      />
-                    </div>
+                    <img
+                      alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                    />
                   </div>
-                  <span>
-                    genesis_42
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_42
+                </span>
               </div>
             </td>
             <td
@@ -5922,34 +6088,38 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      />
-                    </div>
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
                   </div>
-                  <span>
-                    genesis_17
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_17
+                </span>
               </div>
             </td>
             <td
@@ -6077,7 +6247,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -6093,11 +6263,25 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -6121,7 +6305,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -6135,7 +6319,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -6165,7 +6349,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -6195,7 +6379,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -6209,7 +6393,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -6239,7 +6423,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -6269,7 +6453,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -6299,7 +6483,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -6329,7 +6513,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -6362,34 +6546,38 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-danger-50"
+                class="sc-AxhUy dVoyKx bg-theme-danger-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
                   </div>
-                  <span>
-                    arkx
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-danger-50"
+              >
+                <span>
+                  arkx
+                </span>
               </div>
             </td>
             <td
@@ -6514,34 +6702,38 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-success-50"
+                class="sc-AxhUy dVoyKx bg-theme-success-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      />
-                    </div>
+                    <img
+                      alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                    />
                   </div>
-                  <span>
-                    genesis_42
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-success-50"
+              >
+                <span>
+                  genesis_42
+                </span>
               </div>
             </td>
             <td
@@ -6652,34 +6844,38 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-success-50"
+                class="sc-AxhUy dVoyKx bg-theme-success-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      />
-                    </div>
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
                   </div>
-                  <span>
-                    genesis_17
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-success-50"
+              >
+                <span>
+                  genesis_17
+                </span>
               </div>
             </td>
             <td
@@ -6940,7 +7136,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -6956,11 +7152,25 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -6984,7 +7194,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -6998,7 +7208,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7028,7 +7238,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7058,7 +7268,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -7072,7 +7282,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7102,7 +7312,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7132,7 +7342,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7162,7 +7372,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7192,7 +7402,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7225,34 +7435,38 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-primary-50"
+                class="sc-AxhUy dVoyKx bg-theme-primary-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
                   </div>
-                  <span>
-                    arkx
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-primary-50"
+              >
+                <span>
+                  arkx
+                </span>
               </div>
             </td>
             <td
@@ -7377,34 +7591,38 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      />
-                    </div>
+                    <img
+                      alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                    />
                   </div>
-                  <span>
-                    genesis_42
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_42
+                </span>
               </div>
             </td>
             <td
@@ -7515,34 +7733,38 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      />
-                    </div>
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
                   </div>
-                  <span>
-                    genesis_17
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_17
+                </span>
               </div>
             </td>
             <td
@@ -7670,7 +7892,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
       Select a Delegate
     </h2>
     <div
-      class="sc-AxhCb kCInKi"
+      class="sc-AxhCb kePquh"
       role="table"
     >
       <table
@@ -7686,11 +7908,25 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Avatar
+                </div>
+              </div>
+            </th>
+            <th
+              class="text-sm text-left select-none text-theme-neutral"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top pl-14"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Delegate Name
@@ -7714,7 +7950,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--1"
+              data-testid="table__th--2"
               role="columnheader"
             >
               <div
@@ -7728,7 +7964,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--2"
+              data-testid="table__th--3"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7758,7 +7994,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--3"
+              data-testid="table__th--4"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7788,7 +8024,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--4"
+              data-testid="table__th--5"
               role="columnheader"
             >
               <div
@@ -7802,7 +8038,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--5"
+              data-testid="table__th--6"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7832,7 +8068,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--6"
+              data-testid="table__th--7"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7862,7 +8098,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--7"
+              data-testid="table__th--8"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7892,7 +8128,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--8"
+              data-testid="table__th--9"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7922,7 +8158,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             <th
               class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
-              data-testid="table__th--9"
+              data-testid="table__th--10"
               role="columnheader"
               style="cursor: pointer;"
               title="Toggle SortBy"
@@ -7955,34 +8191,38 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold bg-theme-primary-50"
+                class="sc-AxhUy dVoyKx bg-theme-primary-50"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      />
-                    </div>
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
                   </div>
-                  <span>
-                    arkx
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold bg-theme-primary-50"
+              >
+                <span>
+                  arkx
+                </span>
               </div>
             </td>
             <td
@@ -8107,34 +8347,38 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      />
-                    </div>
+                    <img
+                      alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                    />
                   </div>
-                  <span>
-                    genesis_42
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_42
+                </span>
               </div>
             </td>
             <td
@@ -8245,34 +8489,38 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-AxgMl cJuPHR group"
+            class="sc-AxgMl fRZhDw group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-1"
+            >
               <div
-                class="sc-AxhUy dVoyKx font-bold "
+                class="sc-AxhUy dVoyKx"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                    data-testid="Avatar"
+                    class="w-full h-full"
                   >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      />
-                    </div>
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
                   </div>
-                  <span>
-                    genesis_17
-                  </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-AxhUy eGtEIz font-bold "
+              >
+                <span>
+                  genesis_17
+                </span>
               </div>
             </td>
             <td

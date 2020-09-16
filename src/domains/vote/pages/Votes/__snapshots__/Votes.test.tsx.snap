@@ -476,7 +476,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                         width="26"
                       >
                         <svg>
-                          ark.svg
+                          bind.svg
                         </svg>
                       </div>
                     </div>
@@ -501,7 +501,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                         width="26"
                       >
                         <svg>
-                          ark.svg
+                          bind.svg
                         </svg>
                       </div>
                     </div>
@@ -631,7 +631,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt cgkaSl"
+              class="sc-fzokOt kCxAsC"
               role="table"
             >
               <table
@@ -647,11 +647,25 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Avatar
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top pl-14"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Delegate Name
@@ -675,7 +689,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -689,7 +703,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--3"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -719,7 +733,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--3"
+                      data-testid="table__th--4"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -749,7 +763,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
@@ -763,7 +777,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--6"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -793,7 +807,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--7"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -823,7 +837,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--8"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -853,7 +867,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--8"
+                      data-testid="table__th--9"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -883,7 +897,7 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--9"
+                      data-testid="table__th--10"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -916,34 +930,38 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold bg-theme-primary-50"
+                        class="sc-fzqBZW fyRzwW bg-theme-primary-50"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                                title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                              />
-                            </div>
+                            <img
+                              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            />
                           </div>
-                          <span>
-                            arkx
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold bg-theme-primary-50"
+                      >
+                        <span>
+                          arkx
+                        </span>
                       </div>
                     </td>
                     <td
@@ -1068,34 +1086,38 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                                title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                              />
-                            </div>
+                            <img
+                              alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                            />
                           </div>
-                          <span>
-                            genesis_42
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_42
+                        </span>
                       </div>
                     </td>
                     <td
@@ -1206,34 +1228,38 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                                title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                              />
-                            </div>
+                            <img
+                              alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                            />
                           </div>
-                          <span>
-                            genesis_17
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_17
+                        </span>
                       </div>
                     </td>
                     <td
@@ -1344,34 +1370,38 @@ exports[`Votes should navigate between delegate and vote table 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                              />
-                            </div>
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
                           </div>
-                          <span>
-                            testwallet2
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          testwallet2
+                        </span>
                       </div>
                     </td>
                     <td
@@ -1964,7 +1994,7 @@ exports[`Votes should render 1`] = `
                         width="26"
                       >
                         <svg>
-                          ark.svg
+                          bind.svg
                         </svg>
                       </div>
                     </div>
@@ -1989,7 +2019,7 @@ exports[`Votes should render 1`] = `
                         width="26"
                       >
                         <svg>
-                          ark.svg
+                          bind.svg
                         </svg>
                       </div>
                     </div>
@@ -2119,7 +2149,7 @@ exports[`Votes should render 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt cgkaSl"
+              class="sc-fzokOt kCxAsC"
               role="table"
             >
               <table
@@ -2135,11 +2165,25 @@ exports[`Votes should render 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Avatar
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top pl-14"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Delegate Name
@@ -2163,7 +2207,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -2177,7 +2221,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--3"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -2207,7 +2251,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--3"
+                      data-testid="table__th--4"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -2237,7 +2281,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
@@ -2251,7 +2295,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--6"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -2281,7 +2325,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--7"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -2311,7 +2355,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--8"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -2341,7 +2385,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--8"
+                      data-testid="table__th--9"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -2371,7 +2415,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--9"
+                      data-testid="table__th--10"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -2404,34 +2448,38 @@ exports[`Votes should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold bg-theme-primary-50"
+                        class="sc-fzqBZW fyRzwW bg-theme-primary-50"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                                title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                              />
-                            </div>
+                            <img
+                              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            />
                           </div>
-                          <span>
-                            arkx
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold bg-theme-primary-50"
+                      >
+                        <span>
+                          arkx
+                        </span>
                       </div>
                     </td>
                     <td
@@ -2556,34 +2604,38 @@ exports[`Votes should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                                title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                              />
-                            </div>
+                            <img
+                              alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                            />
                           </div>
-                          <span>
-                            genesis_42
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_42
+                        </span>
                       </div>
                     </td>
                     <td
@@ -2694,34 +2746,38 @@ exports[`Votes should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                                title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                              />
-                            </div>
+                            <img
+                              alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                            />
                           </div>
-                          <span>
-                            genesis_17
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_17
+                        </span>
                       </div>
                     </td>
                     <td
@@ -2832,34 +2888,38 @@ exports[`Votes should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                              />
-                            </div>
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
                           </div>
-                          <span>
-                            testwallet2
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          testwallet2
+                        </span>
                       </div>
                     </td>
                     <td
@@ -3452,7 +3512,7 @@ exports[`Votes should select a delegate 1`] = `
                         width="26"
                       >
                         <svg>
-                          ark.svg
+                          bind.svg
                         </svg>
                       </div>
                     </div>
@@ -3477,7 +3537,7 @@ exports[`Votes should select a delegate 1`] = `
                         width="26"
                       >
                         <svg>
-                          ark.svg
+                          bind.svg
                         </svg>
                       </div>
                     </div>
@@ -3607,7 +3667,7 @@ exports[`Votes should select a delegate 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt cgkaSl"
+              class="sc-fzokOt kCxAsC"
               role="table"
             >
               <table
@@ -3623,11 +3683,25 @@ exports[`Votes should select a delegate 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Avatar
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top pl-14"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Delegate Name
@@ -3651,7 +3725,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -3665,7 +3739,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--3"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -3695,7 +3769,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--3"
+                      data-testid="table__th--4"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -3725,7 +3799,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
@@ -3739,7 +3813,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--6"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -3769,7 +3843,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--7"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -3799,7 +3873,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--8"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -3829,7 +3903,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--8"
+                      data-testid="table__th--9"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -3859,7 +3933,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--9"
+                      data-testid="table__th--10"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -3892,34 +3966,38 @@ exports[`Votes should select a delegate 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold bg-theme-danger-50"
+                        class="sc-fzqBZW fyRzwW bg-theme-danger-50"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                                title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                              />
-                            </div>
+                            <img
+                              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            />
                           </div>
-                          <span>
-                            arkx
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold bg-theme-danger-50"
+                      >
+                        <span>
+                          arkx
+                        </span>
                       </div>
                     </td>
                     <td
@@ -4044,34 +4122,38 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                                title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                              />
-                            </div>
+                            <img
+                              alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                            />
                           </div>
-                          <span>
-                            genesis_42
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_42
+                        </span>
                       </div>
                     </td>
                     <td
@@ -4182,34 +4264,38 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                                title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                              />
-                            </div>
+                            <img
+                              alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                            />
                           </div>
-                          <span>
-                            genesis_17
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_17
+                        </span>
                       </div>
                     </td>
                     <td
@@ -4320,34 +4406,38 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                              />
-                            </div>
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
                           </div>
-                          <span>
-                            testwallet2
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          testwallet2
+                        </span>
                       </div>
                     </td>
                     <td
@@ -5069,7 +5159,7 @@ exports[`Votes should select an address without vote 1`] = `
                         width="26"
                       >
                         <svg>
-                          ark.svg
+                          bind.svg
                         </svg>
                       </div>
                     </div>
@@ -5093,7 +5183,7 @@ exports[`Votes should select an address without vote 1`] = `
                         width="26"
                       >
                         <svg>
-                          ark.svg
+                          bind.svg
                         </svg>
                       </div>
                     </div>
@@ -5217,7 +5307,7 @@ exports[`Votes should select an address without vote 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt cgkaSl"
+              class="sc-fzokOt kCxAsC"
               role="table"
             >
               <table
@@ -5233,11 +5323,25 @@ exports[`Votes should select an address without vote 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top hidden"
+                      >
+                        <div>
+                          Avatar
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top pl-14"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Delegate Name
@@ -5261,7 +5365,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -5275,7 +5379,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--2"
+                      data-testid="table__th--3"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -5305,7 +5409,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--3"
+                      data-testid="table__th--4"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -5335,7 +5439,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
@@ -5349,7 +5453,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--5"
+                      data-testid="table__th--6"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -5379,7 +5483,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--7"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -5409,7 +5513,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--8"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -5439,7 +5543,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--8"
+                      data-testid="table__th--9"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -5469,7 +5573,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
-                      data-testid="table__th--9"
+                      data-testid="table__th--10"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -5502,34 +5606,38 @@ exports[`Votes should select an address without vote 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                                title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                              />
-                            </div>
+                            <img
+                              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            />
                           </div>
-                          <span>
-                            arkx
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          arkx
+                        </span>
                       </div>
                     </td>
                     <td
@@ -5640,34 +5748,38 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                                title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                              />
-                            </div>
+                            <img
+                              alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                            />
                           </div>
-                          <span>
-                            genesis_42
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_42
+                        </span>
                       </div>
                     </td>
                     <td
@@ -5778,34 +5890,38 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                                title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                              />
-                            </div>
+                            <img
+                              alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                            />
                           </div>
-                          <span>
-                            genesis_17
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          genesis_17
+                        </span>
                       </div>
                     </td>
                     <td
@@ -5916,34 +6032,38 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr izeygt group"
+                    class="sc-fzqNJr kKraVc group"
                     data-testid="TableRow"
                   >
-                    <td>
+                    <td
+                      class="w-1"
+                    >
                       <div
-                        class="sc-fzqBZW fyRzwW font-bold "
+                        class="sc-fzqBZW fyRzwW"
                       >
                         <div
-                          class="flex items-center space-x-3"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-4"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
-                            data-testid="Avatar"
+                            class="w-full h-full"
                           >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                              />
-                            </div>
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
                           </div>
-                          <span>
-                            testwallet2
-                          </span>
                         </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fzqBZW fRovnQ font-bold "
+                      >
+                        <span>
+                          testwallet2
+                        </span>
                       </div>
                     </td>
                     <td

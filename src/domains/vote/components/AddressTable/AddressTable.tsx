@@ -17,6 +17,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		{
 			accessor: "walletAddressAvatar",
 			disableSortBy: true,
+			className: "hidden",
 		},
 		{
 			Header: t("COMMON.ADDRESS"),
@@ -29,10 +30,12 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		{
 			Header: t("COMMON.BALANCE"),
 			accessor: "balance",
+			className: "justify-end",
 		},
 		{
 			accessor: "delegateAddressAvatar",
 			disableSortBy: true,
+			className: "hidden",
 		},
 		{
 			Header: t("COMMON.DELEGATE"),
