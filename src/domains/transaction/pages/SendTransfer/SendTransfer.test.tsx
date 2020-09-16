@@ -207,7 +207,7 @@ describe("Transaction Send", () => {
 			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
+		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 		expect(rendered.getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});

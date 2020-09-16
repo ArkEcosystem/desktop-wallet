@@ -121,7 +121,7 @@ describe("Registration", () => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Ark");
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 		expect(getByTestId("SelectAddress__wrapper")).toHaveAttribute("disabled");
 		expect(asFragment()).toMatchSnapshot();
 	});

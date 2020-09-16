@@ -51,7 +51,7 @@ export const SecondStep = () => {
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-								<Icon name="Ark" width={20} height={20} />
+								<Icon name="ARK" width={20} height={20} />
 							</Circle>
 						</div>
 					}

@@ -75,7 +75,7 @@ export const WithIcon = () => (
 	<div>
 		<div className="mt-3 mb-10">
 			<Circle className="relative border-theme-success-500 text-theme-success-500">
-				<Icon name="Ark" />
+				<Icon name="ARK" />
 				<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 			</Circle>
 			<Circle className="relative ml-5 border-theme-success-500 text-theme-success-500">

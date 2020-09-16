@@ -23,7 +23,7 @@ export const categories = [
 
 export const assets = [
 	{
-		name: "Ark",
+		name: "ARK",
 		isSelected: true,
 		coin: "ark",
 	},
