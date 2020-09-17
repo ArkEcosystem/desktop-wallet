@@ -10,13 +10,16 @@ exports[`WalletListItem should render 1`] = `
       >
         <td>
           <div
-            class="sc-AxhUy dVoyKx"
+            class="sc-AxhUy dVoyKx -space-x-2"
           >
             <div
-              class="sc-AxirZ fFfSST -mr-2 undefined"
+              aria-label="ARK Devnet"
+              class="sc-AxirZ fFfSST border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
                 class="sc-AxiKw dklFyP"
+                data-testid="NetworkIcon__icon"
                 height="20"
                 width="20"
               >
@@ -150,13 +153,16 @@ exports[`WalletListItem should set shadow color on mouse events 1`] = `
       >
         <td>
           <div
-            class="sc-AxhUy ixOdMh"
+            class="sc-AxhUy ixOdMh -space-x-2"
           >
             <div
-              class="sc-AxirZ oBUZb -mr-2 undefined"
+              aria-label="ARK Devnet"
+              class="sc-AxirZ oBUZb border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
                 class="sc-AxiKw dklFyP"
+                data-testid="NetworkIcon__icon"
                 height="20"
                 width="20"
               >
@@ -290,13 +296,16 @@ exports[`WalletListItem should set shadow color on mouse events 2`] = `
       >
         <td>
           <div
-            class="sc-AxhUy dVoyKx"
+            class="sc-AxhUy dVoyKx -space-x-2"
           >
             <div
-              class="sc-AxirZ fFfSST -mr-2 undefined"
+              aria-label="ARK Devnet"
+              class="sc-AxirZ fFfSST border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
                 class="sc-AxiKw dklFyP"
+                data-testid="NetworkIcon__icon"
                 height="20"
                 width="20"
               >

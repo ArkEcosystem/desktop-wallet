@@ -41,7 +41,7 @@ describe("Wallet Card", () => {
 	it("should render blank", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard isBlank />
+				<WalletCard />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -57,7 +57,7 @@ describe("Wallet Card", () => {
 
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard coinClass="border-theme-warning-200" wallet={wallet} />,
+				<WalletCard wallet={wallet} />,
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -73,7 +73,7 @@ describe("Wallet Card", () => {
 
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard coinClass="border-theme-warning-200" wallet={wallet} />
+				<WalletCard wallet={wallet} />
 			</Route>,
 			{
 				routes: [dashboardURL],

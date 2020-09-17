@@ -193,7 +193,11 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -592,7 +596,11 @@ exports[`SendIpfs should navigate between steps 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -1800,7 +1808,11 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -1966,10 +1978,10 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                   data-testid="SelectNetworkInput__network"
                                 >
                                   <div
-                                    class="sc-AxiKw dzBdqj"
+                                    class="sc-AxiKw dklFyP"
                                     data-testid="NetworkIcon__icon"
-                                    height="1em"
-                                    width="1em"
+                                    height="20"
+                                    width="20"
                                   >
                                     <svg>
                                       ark.svg
