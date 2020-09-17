@@ -22,6 +22,10 @@ test("should fail delegate resignation submittion", async (t: any) => {
 	// Type wrong mnemonic
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
 
+	await t.typeText(Selector("[data-testid=AuthenticationStep__second-mnemonic]"), "wrong second mnemonic", {
+		replace: true,
+	});
+
 	const sendButton = "[data-testid=SendEntityResignation__send-button]";
 	await t.click(Selector(sendButton));
 
@@ -41,6 +45,11 @@ test("should successfully submit delegate resignation", async (t) => {
 	await t.click(Selector(continueButton));
 
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "v3wallet2", { replace: true });
+	await t.typeText(
+		Selector("[data-testid=AuthenticationStep__second-mnemonic]"),
+		"merge warfare desk catch produce typical young submit enemy wool off card",
+		{ replace: true },
+	);
 
 	transactionsMock();
 	walletMock("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
