@@ -1,5 +1,4 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
-import { Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -51,12 +50,12 @@ export const EntityTable = ({ entities, onAction, title, type, nameColumnHeader 
 	];
 
 	return (
-		<Section>
+		<>
 			<h2 className="mb-8 font-bold">{title}</h2>
 
 			<Table columns={columns} data={entities}>
 				{(entity: any) => <EntityTableRowItem entity={entity} type={type} onAction={onAction} />}
 			</Table>
-		</Section>
+		</>
 	);
 };

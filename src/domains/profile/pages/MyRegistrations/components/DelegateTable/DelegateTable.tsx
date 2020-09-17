@@ -1,5 +1,4 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -49,12 +48,12 @@ export const DelegateTable = ({ wallets, onAction }: Props) => {
 	];
 
 	return (
-		<Section>
+		<>
 			<h2 className="mb-8 font-bold">{t("PROFILE.PAGE_MY_REGISTRATIONS.DELEGATE")}</h2>
 
 			<Table columns={columns} data={wallets}>
 				{(wallet: ReadWriteWallet) => <DelegateRowItem wallet={wallet} onAction={onAction} />}
 			</Table>
-		</Section>
+		</>
 	);
 };
