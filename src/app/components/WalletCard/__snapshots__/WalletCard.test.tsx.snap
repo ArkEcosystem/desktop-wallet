@@ -14,15 +14,18 @@ exports[`Wallet Card should render 1`] = `
         class="relative p-2"
       >
         <div
-          class="flex"
+          class="-space-x-2"
         >
           <div
-            class="sc-AxhUy dHClEW border-theme-primary-contrast -mr-2 undefined"
+            aria-label="ARK Devnet"
+            class="sc-AxhUy dHClEW border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-ark.devnet"
           >
             <div
-              class="sc-AxirZ eViLYR"
-              height="16"
-              width="18"
+              class="sc-AxirZ eEbZjj"
+              data-testid="NetworkIcon__icon"
+              height="20"
+              width="20"
             >
               <svg>
                 ark.svg
@@ -175,15 +178,18 @@ exports[`Wallet Card should render with wallet data 1`] = `
         class="relative p-2"
       >
         <div
-          class="flex"
+          class="-space-x-2"
         >
           <div
-            class="sc-AxhUy dHClEW border-theme-primary-contrast -mr-2 border-theme-warning-200"
+            aria-label="ARK Devnet"
+            class="sc-AxhUy dHClEW border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-ark.devnet"
           >
             <div
-              class="sc-AxirZ eViLYR"
-              height="16"
-              width="18"
+              class="sc-AxirZ eEbZjj"
+              data-testid="NetworkIcon__icon"
+              height="20"
+              width="20"
             >
               <svg>
                 ark.svg
@@ -295,15 +301,18 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
         class="relative p-2"
       >
         <div
-          class="flex"
+          class="-space-x-2"
         >
           <div
-            class="sc-AxhUy dHClEW border-theme-primary-contrast -mr-2 border-theme-warning-200"
+            aria-label="ARK Devnet"
+            class="sc-AxhUy dHClEW border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-ark.devnet"
           >
             <div
-              class="sc-AxirZ eViLYR"
-              height="16"
-              width="18"
+              class="sc-AxirZ eEbZjj"
+              data-testid="NetworkIcon__icon"
+              height="20"
+              width="20"
             >
               <svg>
                 ark.svg
