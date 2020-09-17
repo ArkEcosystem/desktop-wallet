@@ -34,18 +34,18 @@ export const SendVote = () => {
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
 		register("senderAddress", { required: true });
 		register("fee", { required: true });
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
@@ -110,7 +110,7 @@ export const SendVote = () => {
 		});
 
 	const submitForm = async () => {
-		clearError("mnemonic");
+		clearErrors("mnemonic");
 		const { fee, mnemonic, secondMnemonic, senderAddress } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
@@ -177,7 +177,7 @@ export const SendVote = () => {
 			console.error("Could not vote: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	};
 

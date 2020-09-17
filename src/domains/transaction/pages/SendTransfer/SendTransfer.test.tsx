@@ -5,7 +5,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	env,
@@ -72,9 +72,9 @@ describe("Transaction Send", () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<FirstStep networks={[]} profile={profile} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendTransfer__step--first")).toBeTruthy();
@@ -99,9 +99,9 @@ describe("Transaction Send", () => {
 		);
 
 		const { asFragment, container, getByTestId } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<SecondStep wallet={wallet} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("SendTransfer__step--second")).toBeTruthy();
@@ -119,9 +119,9 @@ describe("Transaction Send", () => {
 			"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
 		);
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<FifthStep transaction={transaction!} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();

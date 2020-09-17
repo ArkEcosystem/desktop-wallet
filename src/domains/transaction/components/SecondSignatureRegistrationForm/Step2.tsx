@@ -5,13 +5,16 @@ import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { MnemonicList } from "domains/wallet/components/MnemonicList";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const BackupStep = () => {
-	const { getValues, unregister } = useFormContext();
-	const mnemonic = getValues("secondMnemonic");
+	const { getValues, unregister, watch } = useFormContext();
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultMnemonic] = useState(() => watch("secondMnemonic"));
+	const mnemonic = getValues("secondMnemonic") || defaultMnemonic;
 
 	const { t } = useTranslation();
 
