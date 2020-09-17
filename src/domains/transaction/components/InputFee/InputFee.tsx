@@ -7,11 +7,12 @@ import { useTranslation } from "react-i18next";
 
 export type InputFeeProps = {
 	defaultValue: any;
-	value?: string | undefined;
+	value?: any;
 	min: string;
 	avg: string;
 	max: string;
 	step: number;
+	magnitude?: number;
 	onChange?: (value: { display: string; value: string }) => void;
 };
 
@@ -26,7 +27,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step, m
 
 	const [fee, setFee] = useState<any>(defaultValue);
 
-	const handleFeeChange = (currency: { display?: string; value: string }) => {
+	const handleFeeChange = (currency: { display: string; value: string }) => {
 		setFee(currency);
 		onChange?.(currency);
 	};

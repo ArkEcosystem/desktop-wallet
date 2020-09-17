@@ -9,9 +9,9 @@ import { InputGroup } from "./InputGroup";
 
 type Props = {
 	defaultValue: any;
-	value?: string;
-	min: number;
-	max: number;
+	value?: { display: string; value: string };
+	min: string;
+	max: string;
 	step: number;
 	name?: string;
 	magnitude?: number;
@@ -23,13 +23,14 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, defaultValue, magnitude, onChange, value }: Props, ref) => {
 		const [values, setValues] = React.useState<any>([BigNumber.make(defaultValue).divide(1e8)]);
 		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
-		const fraction = Math.pow(10, magnitude! * -1);
+		const maxValues = convertValue(max);
+		const maxValue = BigNumber.make(maxValues.value).divide(1e8).toNumber();
 
 		const handleInput = (currency: { display: string; value: string }) => {
 			let value = currency.display;
 
-			if (BigNumber.make(currency.value).divide(1e8).toNumber() > max) {
-				value = BigNumber.make(max).toString();
+			if (BigNumber.make(currency.value).divide(1e8).toNumber() > maxValue) {
+				value = maxValues.display;
 			}
 
 			setValues([value]);
@@ -44,12 +45,12 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		let trackBackgroundMinValue = values[0];
-		let rangeValues = [Math.min(values[0], max)];
+		let rangeValues = [Math.min(values[0], maxValue)];
 
 		if (values[0]?.value) {
 			const rangeValue = BigNumber.make(values[0].value).divide(1e8);
 			trackBackgroundMinValue = rangeValue;
-			rangeValues = [Math.min(rangeValue.toNumber(), max)];
+			rangeValues = [Math.min(rangeValue.toNumber(), maxValue)];
 		}
 
 		useEffect(() => {
@@ -65,8 +66,8 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						background: getTrackBackground({
 							values: [trackBackgroundMinValue],
 							colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
-							min,
-							max,
+							min: Number(min),
+							max: Number(max),
 						}),
 					}}
 					magnitude={magnitude}

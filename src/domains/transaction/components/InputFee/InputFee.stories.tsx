@@ -18,7 +18,7 @@ export const Default = () => {
 				{...fees}
 				defaultValue={value}
 				step={0.01}
-				onChange={(currency: { display?: string; value: string }) => setValue(currency.display)}
+				onChange={(currency: { display: string; value: string }) => setValue(currency)}
 			/>
 		</div>
 	);
