@@ -25,22 +25,22 @@ export const assets = [
 	{
 		name: "ARK",
 		isSelected: true,
-		coin: "ark",
+		coin: "ARK",
 	},
 	{
 		name: "Ethereum",
 		isSelected: false,
-		coin: "eth",
+		coin: "ETH",
 	},
 	{
 		name: "Bitcoin",
 		isSelected: false,
-		coin: "btc",
+		coin: "BTC",
 	},
 	{
 		name: "Lisk",
 		isSelected: false,
-		coin: "lsk",
+		coin: "LSK",
 	},
 ];
 
@@ -48,7 +48,7 @@ export const coins: any = {
 	eth: {
 		name: "Ethereum",
 		coin: "ETH",
-		network: "mainnet",
+		network: "eth.mainnet",
 	},
 	ark: {
 		name: "ARK Ecosystem",
@@ -58,11 +58,11 @@ export const coins: any = {
 	btc: {
 		name: "Bitcoin",
 		coin: "BTC",
-		network: "livenet",
+		network: "btc.livenet",
 	},
 	lsk: {
 		name: "Lisk",
 		coin: "LSK",
-		network: "mainnet",
+		network: "lsk.mainnet",
 	},
 };
