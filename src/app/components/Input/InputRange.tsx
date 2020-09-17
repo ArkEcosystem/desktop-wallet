@@ -1,6 +1,7 @@
+import { Currency } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Range } from "app/components/Range";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
@@ -21,6 +22,7 @@ type Props = {
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, defaultValue, magnitude, onChange, value }: Props, ref) => {
 		const [values, setValues] = React.useState<any>([BigNumber.make(defaultValue).divide(1e8)]);
+		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
 		const fraction = Math.pow(10, magnitude! * -1);
 
 		const handleInput = (currency: { display: string; value: string }) => {
@@ -35,18 +37,24 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		const handleRange = (values: number[]) => {
-			const amount = BigNumber.make(values[0]).divide(fraction).toFixed(0);
+			const amount = convertValue(values[0].toString());
 
-			setValues([values]);
+			setValues([amount]);
 			onChange?.(amount);
 		};
 
-		const trackBackgroundMinValue = values[0];
-		const rangeValues = [Math.min(values[0], max)];
+		let trackBackgroundMinValue = values[0];
+		let rangeValues = [Math.min(values[0], max)];
+
+		if (values[0].value) {
+			const rangeValue = BigNumber.make(values[0].value).divide(1e8);
+			trackBackgroundMinValue = rangeValue;
+			rangeValues = [Math.min(rangeValue, max)];
+		}
 
 		useEffect(() => {
 			if (value) {
-				setValues([BigNumber.make(value).divide(1e8).toNumber()]);
+				setValues([value.display]);
 			}
 		}, [value]);
 

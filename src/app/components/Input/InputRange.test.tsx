@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, render, waitFor } from "testing-library";
 
 import { InputRange } from "./InputRange";
 
@@ -36,7 +36,7 @@ describe("InputRange", () => {
 		fireEvent.keyDown(thumb, { key: "ArrowRight", code: "ArrowRight" });
 
 		expect(thumb).toHaveAttribute("aria-valuenow", "6");
-		expect(getByTestId("InputCurrency")).toHaveValue("6");
+		waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("6"));
 	});
 
 	it("should not allow a value greater than the maximum", () => {
