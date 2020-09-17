@@ -997,15 +997,15 @@ export default {
       BUSINESS_ENTITY_REGISTRATION: 'Business Registration',
       BUSINESS_ENTITY_RESIGNATION: 'Business Resignation',
       BUSINESS_ENTITY_UPDATE: 'Business Update',
-      DEVELOPER_ENTITY_REGISTRATION: 'Developer Registration',
-      DEVELOPER_ENTITY_RESIGNATION: 'Developer Resignation',
-      DEVELOPER_ENTITY_UPDATE: 'Developer Update',
-      CORE_PLUGIN_ENTITY_REGISTRATION: 'Core Plugin Registration',
-      CORE_PLUGIN_ENTITY_RESIGNATION: 'Core Plugin Resignation',
-      CORE_PLUGIN_ENTITY_UPDATE: 'Core Plugin Update',
-      DESKTOP_PLUGIN_ENTITY_REGISTRATION: 'Desktop Plugin Registration',
-      DESKTOP_PLUGIN_ENTITY_RESIGNATION: 'Desktop Plugin Resignation',
-      DESKTOP_PLUGIN_ENTITY_UPDATE: 'Desktop Plugin Update',
+      PRODUCT_ENTITY_REGISTRATION: 'Product Registration',
+      PRODUCT_ENTITY_RESIGNATION: 'Product Resignation',
+      PRODUCT_ENTITY_UPDATE: 'Product Update',
+      PLUGIN_ENTITY_REGISTRATION: 'Plugin Registration',
+      PLUGIN_ENTITY_RESIGNATION: 'Plugin Resignation',
+      PLUGIN_ENTITY_UPDATE: 'Plugin Update',
+      MODULE_ENTITY_REGISTRATION: 'Module Registration',
+      MODULE_ENTITY_RESIGNATION: 'Module Resignation',
+      MODULE_ENTITY_UPDATE: 'Module Update',
       DELEGATE_ENTITY_REGISTRATION: 'Delegate Registration (AIP36)',
       DELEGATE_ENTITY_RESIGNATION: 'Delegate Resignation (AIP36)',
       DELEGATE_ENTITY_UPDATE: 'Delegate Update',
@@ -1015,7 +1015,12 @@ export default {
       LEGACY_BUSINESS_UPDATE: 'Business Update (Legacy)',
       LEGACY_BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration (Legacy)',
       LEGACY_BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation (Legacy)',
-      LEGACY_BRIDGECHAIN_UPDATE: 'Bridgechain Update (Legacy)'
+      LEGACY_BRIDGECHAIN_UPDATE: 'Bridgechain Update (Legacy)',
+      // Unknown type
+      UNDEFINED_REGISTRATION: 'Undefined Registration',
+      UNDEFINED_RESIGNATION: 'Undefined Resignation',
+      UNDEFINED_UPDATE: 'Undefined Update',
+      UNDEFINED: 'Undefined'
     },
     ERROR: {
       VALIDATION: {
