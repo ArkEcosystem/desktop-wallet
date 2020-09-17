@@ -561,8 +561,39 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                                       data-testid="InputCurrency"
                                       name="fee"
                                       type="text"
-                                      value="0"
+                                      value=""
                                     />
+                                    <div
+                                      class="absolute bottom-0 w-full px-1"
+                                    >
+                                      <div
+                                        class="flex flex-wrap justify-center"
+                                        data-testid="Range"
+                                      >
+                                        <div
+                                          class="sc-fzoyAV cgfxbu"
+                                          data-testid="Range__track"
+                                          style="transform: scale(1); cursor: pointer;"
+                                        >
+                                          <div
+                                            class="sc-fzoLag kxUFqT"
+                                            data-testid="Range__track__filled"
+                                          >
+                                            <div
+                                              aria-valuemax="100"
+                                              aria-valuemin="1"
+                                              aria-valuenow="NaN"
+                                              class="sc-fzoXzr eykVSb"
+                                              data-testid="Range__thumb"
+                                              draggable="false"
+                                              role="slider"
+                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(NaNpx, 0px);"
+                                              tabindex="0"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                                 <div>
@@ -8461,9 +8492,83 @@ exports[`SendEntityUpdate should succesfully submit entity update transaction 1`
                                   height="1em"
                                   width="1em"
                                 >
-                                  <svg>
-                                    eye.svg
-                                  </svg>
+                                  <div
+                                    class="sc-fzqNJr gmzgI"
+                                  >
+                                    <input
+                                      class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                      data-testid="InputCurrency"
+                                      name="name"
+                                      type="text"
+                                      value=""
+                                    />
+                                    <div
+                                      class="absolute bottom-0 w-full px-1"
+                                    >
+                                      <div
+                                        class="flex flex-wrap justify-center"
+                                        data-testid="Range"
+                                      >
+                                        <div
+                                          class="sc-fzoyAV cgfxbu"
+                                          data-testid="Range__track"
+                                          style="transform: scale(1); cursor: pointer;"
+                                        >
+                                          <div
+                                            class="sc-fzoLag kxUFqT"
+                                            data-testid="Range__track__filled"
+                                          >
+                                            <div
+                                              aria-valuemax="100"
+                                              aria-valuemin="1"
+                                              aria-valuenow="NaN"
+                                              class="sc-fzoXzr eykVSb"
+                                              data-testid="Range__thumb"
+                                              draggable="false"
+                                              role="slider"
+                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(NaNpx, 0px);"
+                                              tabindex="0"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <div
+                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                    data-testid="SelectionBar"
+                                    role="radiogroup"
+                                  >
+                                    <button
+                                      aria-checked="false"
+                                      class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                      data-testid="SelectionBarOption"
+                                      role="radio"
+                                      type="button"
+                                    >
+                                      Min
+                                    </button>
+                                    <button
+                                      aria-checked="false"
+                                      class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                      data-testid="SelectionBarOption"
+                                      role="radio"
+                                      type="button"
+                                    >
+                                      Average
+                                    </button>
+                                    <button
+                                      aria-checked="false"
+                                      class="sc-fzqNqU lfdFBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                      data-testid="SelectionBarOption"
+                                      role="radio"
+                                      type="button"
+                                    >
+                                      Max
+                                    </button>
+                                  </div>
                                 </div>
                               </button>
                             </div>

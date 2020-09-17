@@ -2259,8 +2259,39 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
-                                  value="5"
+                                  value=""
                                 />
+                                <div
+                                  class="absolute bottom-0 w-full px-1"
+                                >
+                                  <div
+                                    class="flex flex-wrap justify-center"
+                                    data-testid="Range"
+                                  >
+                                    <div
+                                      class="sc-fzoyAV cgfxbu"
+                                      data-testid="Range__track"
+                                      style="transform: scale(1); cursor: pointer;"
+                                    >
+                                      <div
+                                        class="sc-fzoLag kxUFqT"
+                                        data-testid="Range__track__filled"
+                                      >
+                                        <div
+                                          aria-valuemax="6.63"
+                                          aria-valuemin="0.00357"
+                                          aria-valuenow="NaN"
+                                          class="sc-fzoXzr eykVSb"
+                                          data-testid="Range__thumb"
+                                          draggable="false"
+                                          role="slider"
+                                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(NaNpx, 0px);"
+                                          tabindex="0"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                             <div>

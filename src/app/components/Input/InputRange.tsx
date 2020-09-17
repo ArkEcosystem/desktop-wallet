@@ -46,10 +46,10 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		let trackBackgroundMinValue = values[0];
 		let rangeValues = [Math.min(values[0], max)];
 
-		if (values[0].value) {
+		if (values[0]?.value) {
 			const rangeValue = BigNumber.make(values[0].value).divide(1e8);
 			trackBackgroundMinValue = rangeValue;
-			rangeValues = [Math.min(rangeValue, max)];
+			rangeValues = [Math.min(rangeValue.toNumber(), max)];
 		}
 
 		useEffect(() => {

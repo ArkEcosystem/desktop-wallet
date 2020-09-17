@@ -9566,8 +9566,23 @@ exports[`Registration should validate entity name 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              <fieldset
-                                class="sc-AxirZ izhStr flex flex-col space-y-2"
+                              <div
+                                class="sc-fzqNJr gmzgI"
+                              >
+                                <input
+                                  class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  data-testid="InputCurrency"
+                                  name="fee"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                data-testid="SelectionBar"
+                                role="radiogroup"
                               >
                                 <label
                                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
@@ -10230,8 +10245,23 @@ exports[`Registration should validate website url 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              <fieldset
-                                class="sc-AxirZ izhStr flex flex-col space-y-2"
+                              <div
+                                class="sc-fzqNJr gmzgI"
+                              >
+                                <input
+                                  class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                  data-testid="InputCurrency"
+                                  name="fee"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                data-testid="SelectionBar"
+                                role="radiogroup"
                               >
                                 <label
                                   class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-dark"
