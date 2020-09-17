@@ -26,7 +26,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coin, 
 				<div className="flex flex-col p-4 space-y-8 bg-theme-background">
 					<div className="flex justify-between w-full">
 						<div className="flex items-center space-x-4">
-							<NetworkIcon coin={asset?.coin} network={asset?.network} noShadow />
+							<NetworkIcon size="lg" coin={asset?.coin} network={asset?.network} noShadow />
 
 							<div>
 								<h4 className="text-lg font-semibold" data-testid={`NewsCard__asset-${asset?.name}`}>
