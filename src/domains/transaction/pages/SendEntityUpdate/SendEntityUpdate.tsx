@@ -33,8 +33,8 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 	const [savedTransaction, setSavedTransaction] = useState<SignedTransactionData>();
 	const [isLoading, setIsLoading] = useState(true);
 
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { setValue, triggerValidation, register } = form;
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues, shouldUnregister: false });
+	const { setValue, trigger, register } = form;
 	const { entityRegistration } = useValidation();
 
 	const { env } = useEnvironmentContext();
@@ -53,15 +53,14 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 	const { transactionId } = useParams();
 
 	useEffect(() => {
-		[
-			"fee",
-			"fees",
-			"ipfsData.sourceControl",
-			"ipfsData.socialMedia",
-			"ipfsData.videos",
-			"ipfsData.images",
-			"registrationId",
-		].forEach(register);
+		register("fee");
+		register("fees");
+
+		register("ipfsData.sourceControl");
+		register("ipfsData.socialMedia");
+		register("ipfsData.videos");
+		register("ipfsData.images");
+		register("registrationId");
 
 		register("entityName", entityRegistration.entityName());
 		register("ipfsData.meta.displayName", entityRegistration.displayName());
@@ -93,7 +92,15 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 
 			try {
 				const ipfsData: any = await fetchTxIpfsData(activeTransaction);
-				setValue("ipfsData", ipfsData);
+				setValue("ipfsData.meta.displayName", ipfsData?.meta?.displayName);
+				setValue("ipfsData.meta.description", ipfsData?.meta?.description);
+				setValue("ipfsData.meta.website", ipfsData?.meta?.website);
+
+				setValue("ipfsData.sourceControl", ipfsData?.sourceControl || []);
+				setValue("ipfsData.socialMedia", ipfsData?.socialMedia || []);
+				setValue("ipfsData.videos", ipfsData?.videos || []);
+				setValue("ipfsData.images", ipfsData?.images || []);
+
 				setIsLoading(false);
 			} catch (e) {
 				toasts.error(t("TRANSACTION.IPFS_NOT_FOUND", { transactionId: activeTransaction.id() }));
@@ -112,7 +119,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 	}, [env, activeWallet, setValue]);
 
 	const handleNext = async () => {
-		const isValid = await triggerValidation();
+		const isValid = await trigger();
 
 		window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -127,7 +134,7 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 	};
 
 	const handleSubmit = async () => {
-		const isValid = await triggerValidation("mnemonic");
+		const isValid = await trigger("mnemonic");
 		if (!isValid) return;
 
 		const loadingToastId = toasts.info(t("TRANSACTION.BROADCASTING"));

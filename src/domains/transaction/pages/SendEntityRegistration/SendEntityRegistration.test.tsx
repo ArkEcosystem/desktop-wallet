@@ -569,7 +569,7 @@ describe("Registration", () => {
 		});
 
 		const feeInput = getByTestId("InputCurrency");
-		await waitFor(() => expect(feeInput).toHaveValue("18"));
+		await waitFor(() => expect(feeInput).toHaveValue("0"));
 	});
 
 	it("should validate entity name", async () => {
