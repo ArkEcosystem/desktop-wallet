@@ -45,9 +45,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 			for (const network of availableNetworks) {
 				if (network.ticker() === coin) {
 					return {
-						...balancePerCoin[coin],
 						color: network.extra?.textClass.replace("text-theme-", ""),
 						label: coin,
+						percentage: Number(balancePerCoin[coin].percentage),
 					};
 				}
 			}
