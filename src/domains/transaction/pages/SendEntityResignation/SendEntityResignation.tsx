@@ -111,7 +111,7 @@ export const SendEntityResignation = ({ formDefaultData, onDownload, passwordTyp
 		} catch (error) {
 			// TODO: Handle/Map various error messages
 			console.log({ error });
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	};
 

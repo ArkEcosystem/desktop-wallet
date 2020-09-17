@@ -11,7 +11,7 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { LinkList, ProviderEntityLink } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { EntityProvider } from "domains/transaction/entity/providers";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -21,8 +21,13 @@ const entityProvider = new EntityProvider();
 
 export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
-	const { getValues } = useFormContext();
-	const { ipfsData, fee } = getValues({ nest: true });
+
+	const { getValues, watch } = useFormContext();
+	const { fee } = getValues();
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultIpfsData] = useState(() => watch("ipfsData"));
+	const ipfsData = getValues("ipfsData") || defaultIpfsData;
 
 	const formatLinks = (links: EntityLink[]) =>
 		links.map((link) => {

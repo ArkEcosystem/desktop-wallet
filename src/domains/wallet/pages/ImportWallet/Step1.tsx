@@ -21,7 +21,7 @@ export const FirstStep = () => {
 	}, [register]);
 
 	const handleSelect = (network?: NetworkData | null) => {
-		setValue("network", network, true);
+		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 
 	return (

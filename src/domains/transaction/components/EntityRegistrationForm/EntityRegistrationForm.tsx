@@ -63,7 +63,7 @@ export const EntityRegistrationForm: SendEntityRegistrationForm = {
 
 	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations, type }) => {
 		const { getValues, setValue, setError } = form;
-		const { fee, entityName, ipfsData, mnemonic, senderAddress } = getValues({ nest: true });
+		const { fee, entityName, ipfsData, mnemonic, senderAddress } = getValues();
 		const senderWallet: ReadWriteWallet | undefined = profile.wallets().findByAddress(senderAddress);
 
 		const sanitizedData = filter(ipfsData, (item) => !isEmpty(item));
@@ -94,7 +94,7 @@ export const EntityRegistrationForm: SendEntityRegistrationForm = {
 			console.error("Could not create transaction: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", translations("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: translations("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	},
 };

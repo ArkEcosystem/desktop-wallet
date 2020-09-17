@@ -23,8 +23,9 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 
 	const form = useFormContext();
-	const { getValues, setValue } = form;
-	const { network, senderAddress } = form.watch();
+	const { getValues, setValue, watch } = form;
+	const { network, senderAddress } = watch();
+
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
 		static: "5",
 		min: "0",
@@ -32,7 +33,9 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 		max: "2",
 	});
 
-	const fee = getValues("fee") || null;
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultFee] = useState(() => watch("fee"));
+	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
@@ -43,7 +46,7 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 
 			setFees(transactionFees);
 
-			setValue("fee", transactionFees.avg, true);
+			setValue("fee", transactionFees.avg, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [env, setFees, setValue, profile, senderAddress]);
 
@@ -55,7 +58,7 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
-		setValue("senderAddress", address, true);
+		setValue("senderAddress", address, { shouldValidate: true, shouldDirty: true });
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
 		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-transfer`);
@@ -102,7 +105,7 @@ export const SendTransactionForm = ({ children, networks, profile }: SendTransac
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}
-					onChange={(value: any) => setValue("fee", value, true)}
+					onChange={(value: any) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 				/>
 			</FormField>
 		</div>

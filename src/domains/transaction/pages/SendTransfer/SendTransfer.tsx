@@ -34,7 +34,7 @@ export const SendTransfer = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearError, formState, getValues, register, setError, setValue } = form;
+	const { clearErrors, formState, getValues, register, setError, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -47,11 +47,11 @@ export const SendTransfer = () => {
 	useEffect(() => {
 		if (!activeWallet?.address?.()) return;
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
@@ -59,7 +59,7 @@ export const SendTransfer = () => {
 	}, [activeWallet, networks, setValue]);
 
 	const submitForm = async () => {
-		clearError("mnemonic");
+		clearErrors("mnemonic");
 
 		const { fee, mnemonic, secondMnemonic, recipients, senderAddress, smartbridge } = getValues();
 		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
@@ -109,7 +109,7 @@ export const SendTransfer = () => {
 			console.error("Could not create transaction: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", t("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	};
 

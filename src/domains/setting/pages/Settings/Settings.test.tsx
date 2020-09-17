@@ -348,7 +348,11 @@ describe("Settings", () => {
 		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByTestId("side-menu__item--Password"));
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Password"));
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -363,7 +367,10 @@ describe("Settings", () => {
 		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByTestId("side-menu__item--Password"));
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Password"));
+		});
 
 		const currentPasswordInput = "Password-settings__input--currentPassword";
 
@@ -398,7 +405,10 @@ describe("Settings", () => {
 		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByTestId("side-menu__item--Password"));
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Password"));
+		});
 
 		const currentPasswordInput = "Password-settings__input--currentPassword";
 
@@ -434,7 +444,10 @@ describe("Settings", () => {
 		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByTestId("side-menu__item--Password"));
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Password"));
+		});
 
 		const currentPasswordInput = "Password-settings__input--currentPassword";
 

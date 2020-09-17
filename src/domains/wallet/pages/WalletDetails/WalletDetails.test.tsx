@@ -256,28 +256,6 @@ describe("WalletDetails", () => {
 		});
 	});
 
-	it("should render with timers", async () => {
-		jest.useFakeTimers();
-
-		const { asFragment, getAllByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletDetails txSkeletonRowsLimit={1} />
-			</Route>,
-			{
-				routes: [walletUrl],
-				history,
-			},
-		);
-
-		await act(async () => {
-			jest.advanceTimersByTime(30000);
-		});
-
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
-		expect(asFragment()).toMatchSnapshot();
-		jest.useRealTimers();
-	});
-
 	it("should delete wallet", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));

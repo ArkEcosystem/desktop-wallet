@@ -1,19 +1,22 @@
 import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { MnemonicVerification } from "domains/wallet/components/MnemonicVerification";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const VerificationStep = () => {
-	const { getValues, register, setValue } = useFormContext();
-	const mnemonic = getValues("secondMnemonic");
+	const { getValues, register, setValue, watch } = useFormContext();
 	const isVerified: boolean = getValues("verification");
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultMnemonic] = useState(() => watch("secondMnemonic"));
+	const mnemonic = getValues("secondMnemonic") || defaultMnemonic;
 
 	const { t } = useTranslation();
 
 	const handleComplete = () => {
-		setValue("verification", true, true);
+		setValue("verification", true, { shouldValidate: true, shouldDirty: true });
 	};
 
 	useEffect(() => {

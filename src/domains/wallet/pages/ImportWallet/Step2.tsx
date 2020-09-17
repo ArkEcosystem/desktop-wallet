@@ -11,10 +11,12 @@ import { useTranslation } from "react-i18next";
 
 export const SecondStep = ({ profile }: { profile: Profile }) => {
 	const { env } = useEnvironmentContext();
-	const { getValues, register, unregister } = useFormContext();
+	const { getValues, register, unregister, watch } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
-	const network: NetworkData = getValues("network");
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultNetwork] = useState(() => watch("network"));
+	const network: NetworkData = getValues("network") || defaultNetwork;
 
 	const { t } = useTranslation();
 

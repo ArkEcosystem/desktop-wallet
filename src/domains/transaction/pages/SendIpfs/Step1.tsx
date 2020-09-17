@@ -31,7 +31,12 @@ export const FirstStep = ({ networks, profile }: { networks: NetworkData[]; prof
 									placeholder=" "
 									className="pr-20"
 									defaultValue={hash}
-									onChange={(event: any) => setValue("hash", event.target.value, true)}
+									onChange={(event: any) =>
+										setValue("hash", event.target.value, {
+											shouldValidate: true,
+											shouldDirty: true,
+										})
+									}
 								/>
 							</InputGroup>
 							<FormHelperText />

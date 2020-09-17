@@ -3,7 +3,7 @@ import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 import { AuthenticationStep } from "./AuthenticationStep";
 
@@ -22,11 +22,13 @@ describe("AuthenticationStep", () => {
 		</Form>
 	);
 
-	it("should request mnemonic", () => {
+	it("should request mnemonic", async () => {
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);
+
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
 		const { asFragment } = renderWithRouter(<Component form={result.current} />);
 
-		expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeNull();
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeNull());
 		expect(screen.queryByTestId("AuthenticationStep__mnemonic")).toBeInTheDocument();
 
 		act(() => {
