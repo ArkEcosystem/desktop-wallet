@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	act as actAsync,
@@ -57,9 +58,9 @@ describe("CreateWallet", () => {
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<FirstStep env={env} profile={profile} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
@@ -92,12 +93,11 @@ describe("CreateWallet", () => {
 			}),
 		);
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<SecondStep />
-			</FormContext>,
+			</FormProvider>,
 		);
 
-		expect(getByTestId("CreateWallet__second-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		const writeTextMock = jest.fn();
@@ -123,9 +123,9 @@ describe("CreateWallet", () => {
 			}),
 		);
 		const { getByTestId, getAllByTestId } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<ThirdStep />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("CreateWallet__third-step")).toBeTruthy();
@@ -134,7 +134,7 @@ describe("CreateWallet", () => {
 		expect(form.current.getValues()).toEqual({ verification: undefined });
 	});
 
-	it("should render 4th step", () => {
+	it("should render 4th step", async () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
@@ -147,9 +147,9 @@ describe("CreateWallet", () => {
 		);
 
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<FourthStep nameMaxLength={42} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("CreateWallet__fourth-step")).toBeTruthy();
@@ -161,7 +161,7 @@ describe("CreateWallet", () => {
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
 
 		// Submit
-		act(() => {
+		await act(async () => {
 			fireEvent.change(walletNameInput, { target: { value: "Test" } });
 		});
 

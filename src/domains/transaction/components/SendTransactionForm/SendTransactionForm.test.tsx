@@ -4,7 +4,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	env,
@@ -46,9 +46,9 @@ describe("SendTransactionForm", () => {
 
 		await act(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
-				</FormContext>,
+				</FormProvider>,
 			);
 		});
 
@@ -65,9 +65,9 @@ describe("SendTransactionForm", () => {
 
 		await act(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
-				</FormContext>,
+				</FormProvider>,
 			);
 		});
 
@@ -96,7 +96,7 @@ describe("SendTransactionForm", () => {
 
 		for (const network of env.availableNetworks()) {
 			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
-				form.current.setValue("network", network, true);
+				form.current.setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
@@ -111,9 +111,9 @@ describe("SendTransactionForm", () => {
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/sign-transfer">
-					<FormContext {...form.current}>
+					<FormProvider {...form.current}>
 						<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
-					</FormContext>
+					</FormProvider>
 				</Route>,
 				{
 					routes: [sendUrl],

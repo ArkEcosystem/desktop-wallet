@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 export const AuthenticationStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
+
 	const isLedger = wallet.isLedger();
 
 	const { authentication } = useValidation();

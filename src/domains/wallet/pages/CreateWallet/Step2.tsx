@@ -4,15 +4,18 @@ import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { MnemonicList } from "../../components/MnemonicList";
 
 export const SecondStep = () => {
-	const { getValues, unregister } = useFormContext();
-	const mnemonic = getValues("mnemonic");
+	const { getValues, unregister, watch } = useFormContext();
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultMnemonic] = useState(() => watch("mnemonic"));
+	const mnemonic = getValues("mnemonic") || defaultMnemonic;
 
 	const { t } = useTranslation();
 

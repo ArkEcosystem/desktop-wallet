@@ -193,17 +193,7 @@ export const NavigationBar = ({
 		return name ? (name as string).slice(0, 2).toUpperCase() : undefined;
 	};
 
-	const getCurrencyIcon = () => {
-		// TODO get full name from SDK
-		const currencyIcons: Record<string, string> = {
-			btc: "Bitcoin",
-			eth: "Ethereum",
-		};
-
-		const currency = profile?.settings().get(ProfileSetting.ExchangeCurrency);
-
-		return currency ? currencyIcons[(currency as string).toLowerCase()] : undefined;
-	};
+	const getCurrencyIcon = () => profile?.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>

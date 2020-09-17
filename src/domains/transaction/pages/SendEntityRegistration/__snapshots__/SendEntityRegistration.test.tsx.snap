@@ -193,7 +193,11 @@ exports[`Registration should error for invalid mnemonic 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -607,7 +611,11 @@ exports[`Registration should fill all data including link collections 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -835,8 +843,15 @@ exports[`Registration should fill all data including link collections 1`] = `
                                 data-testid="LinkCollection"
                               >
                                 <div
+<<<<<<< HEAD
                                   class="flex items-center justify-between cursor-pointer"
                                   data-testid="LinkCollection__header"
+=======
+                                  class="sc-AxiKw dklFyP"
+                                  data-testid="NetworkIcon__icon"
+                                  height="20"
+                                  width="20"
+>>>>>>> 3.0-react
                                 >
                                   <span
                                     class="text-lg font-semibold"
@@ -1680,7 +1695,11 @@ exports[`Registration should go to review step after succesfully filling form da
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -2403,7 +2422,11 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -7225,7 +7248,11 @@ exports[`Registration should should go back and forth & correctly register field
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -7760,7 +7787,11 @@ exports[`Registration should validate description 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -7894,10 +7925,35 @@ exports[`Registration should validate description 1`] = `
                             >
                               Name
                               <div
+<<<<<<< HEAD
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
                               />
                             </label>
+=======
+                                aria-label="ARK Devnet"
+                                class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
+                                data-testid="SelectNetworkInput__network"
+                              >
+                                <div
+                                  class="sc-AxiKw dklFyP"
+                                  data-testid="NetworkIcon__icon"
+                                  height="20"
+                                  width="20"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <span
+                              class="sc-fznZeY dHxPUs py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                              data-testid="SelectNetworkInput__typeahead"
+                            >
+                              ARK Devnet
+                            </span>
+>>>>>>> 3.0-react
                             <input
                               class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                               data-testid="EntityRegistrationForm__entity-name"
@@ -8453,7 +8509,11 @@ exports[`Registration should validate display name 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -8609,10 +8669,29 @@ exports[`Registration should validate display name 1`] = `
                             >
                               Display Name
                               <div
+<<<<<<< HEAD
                                 class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
                               />
                             </label>
+=======
+                                aria-label="ARK"
+                                class="sc-AxgMl eLFBRi border-theme-danger-light text-theme-danger-400"
+                                data-testid="SelectNetworkInput__network"
+                              >
+                                <div
+                                  class="sc-AxiKw dklFyP"
+                                  data-testid="NetworkIcon__icon"
+                                  height="20"
+                                  width="20"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+>>>>>>> 3.0-react
                             <input
                               aria-invalid="true"
                               class="sc-fznKkj lbGKPD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -9144,7 +9223,11 @@ exports[`Registration should validate entity name 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div
@@ -9835,7 +9918,11 @@ exports[`Registration should validate website url 1`] = `
                       class="sc-AxiKw dzBdqj"
                       height="1em"
                       width="1em"
-                    />
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
                   </span>
                 </div>
                 <div

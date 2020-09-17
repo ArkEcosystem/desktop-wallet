@@ -4,7 +4,7 @@ import { httpClient } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
 import { wallets } from "domains/wallet/data";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { StubStorage } from "tests/mocks";
 
 import { SendTransactionForm } from "./SendTransactionForm";
@@ -42,9 +42,9 @@ export const Default = () => {
 
 	return (
 		<div className="container mx-auto">
-			<FormContext {...form}>
+			<FormProvider {...form}>
 				<SendTransactionForm {...defaultFormValues} />
-			</FormContext>
+			</FormProvider>
 		</div>
 	);
 };

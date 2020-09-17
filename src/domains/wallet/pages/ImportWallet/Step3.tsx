@@ -6,14 +6,19 @@ import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { getNetworkExtendedData } from "domains/network/helpers";
-import React from "react";
+import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const ThirdStep = ({ address, nameMaxLength }: { address: string; nameMaxLength: number }) => {
-	const { getValues, register } = useFormContext();
-	const network: NetworkData = getValues("network");
+	const { getValues, register, watch } = useFormContext();
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultNetwork] = useState(() => watch("network"));
+	const network: NetworkData = getValues("network") || defaultNetwork;
+
 	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+
 	const { t } = useTranslation();
 
 	return (

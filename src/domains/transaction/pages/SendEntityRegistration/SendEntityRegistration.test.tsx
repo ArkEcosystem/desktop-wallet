@@ -5,7 +5,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import delegateRegistrationFixture from "tests/fixtures/coins/ark/transactions/delegate-registration.json";
 import {
@@ -140,7 +140,7 @@ describe("Registration", () => {
 
 		await act(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<FirstStep
 						networks={env.availableNetworks()}
 						profile={profile}
@@ -148,7 +148,7 @@ describe("Registration", () => {
 						setRegistrationForm={setRegistrationForm}
 						fees={fees}
 					/>
-				</FormContext>,
+				</FormProvider>,
 			);
 
 			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
@@ -168,11 +168,13 @@ describe("Registration", () => {
 					1,
 					"registrationType",
 					{ label: "Delegate", value: "delegateRegistration" },
-					true,
+					{ shouldValidate: true, shouldDirty: true },
 				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
-			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", true));
+			await waitFor(() =>
+				expect(setValueSpy).toHaveBeenNthCalledWith(2, "fee", "1", { shouldValidate: true, shouldDirty: true }),
+			);
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});
@@ -187,7 +189,7 @@ describe("Registration", () => {
 
 		await act(async () => {
 			rendered = render(
-				<FormContext {...form.current}>
+				<FormProvider {...form.current}>
 					<FirstStep
 						networks={env.availableNetworks()}
 						profile={profile}
@@ -195,7 +197,7 @@ describe("Registration", () => {
 						setRegistrationForm={setRegistrationForm}
 						fees={fees}
 					/>
-				</FormContext>,
+				</FormProvider>,
 			);
 
 			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
@@ -215,7 +217,7 @@ describe("Registration", () => {
 					1,
 					"registrationType",
 					{ label: "Delegate", value: "delegateRegistration" },
-					true,
+					{ shouldValidate: true, shouldDirty: true },
 				),
 			);
 			await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));

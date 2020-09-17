@@ -8,7 +8,7 @@ import nock from "nock";
 import React from "react";
 import { useForm } from "react-hook-form";
 import entityRegistrationFixture from "tests/fixtures/coins/ark/transactions/entity-registration.json";
-import { env, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
+import {  env,  getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { EntityRegistrationForm } from "./EntityRegistrationForm";
 
@@ -202,7 +202,7 @@ describe("EntityRegistrationForm", () => {
 
 	it("should sign transaction", async () => {
 		const form = {
-			clearError: jest.fn(),
+			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",
@@ -242,7 +242,7 @@ describe("EntityRegistrationForm", () => {
 
 	it("should sign transaction with a custom entity type", async () => {
 		const form = {
-			clearError: jest.fn(),
+			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",
@@ -296,7 +296,7 @@ describe("EntityRegistrationForm", () => {
 
 	it("should sanitize data before sign", async () => {
 		const form = {
-			clearError: jest.fn(),
+			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",
@@ -365,7 +365,7 @@ describe("EntityRegistrationForm", () => {
 	it("should error if signing fails", async () => {
 		const ipfsData = entityRegistrationFixture.data.asset.data.ipfsData;
 		const form = {
-			clearError: jest.fn(),
+			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",
@@ -397,7 +397,10 @@ describe("EntityRegistrationForm", () => {
 
 		expect(consoleSpy).toHaveBeenCalledTimes(1);
 		expect(form.setValue).toHaveBeenCalledWith("mnemonic", "");
-		expect(form.setError).toHaveBeenCalledWith("mnemonic", "manual", "TRANSACTION.INVALID_MNEMONIC");
+		expect(form.setError).toHaveBeenCalledWith("mnemonic", {
+			type: "manual",
+			message: "TRANSACTION.INVALID_MNEMONIC",
+		});
 
 		expect(broadcastMock).not.toHaveBeenCalled();
 		expect(transactionMock).not.toHaveBeenCalled();

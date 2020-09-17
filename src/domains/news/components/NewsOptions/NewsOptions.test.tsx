@@ -76,7 +76,7 @@ describe("NewsOptions", () => {
 		});
 
 		expect(onAssetChange).toBeCalledWith(
-			expect.arrayContaining([{ coin: "ark", isSelected: true, name: "ARK" }]),
+			expect.arrayContaining([{ coin: "ARK", isSelected: true, name: "ARK" }]),
 			expect.anything(),
 		);
 	});
@@ -102,7 +102,7 @@ describe("NewsOptions", () => {
 		});
 
 		expect(onSubmit).toBeCalledWith({
-			assets: expect.arrayContaining([{ coin: "ark", isSelected: true, name: "ARK" }]),
+			assets: expect.arrayContaining([{ coin: "ARK", isSelected: true, name: "ARK" }]),
 			searchQuery: expect.stringMatching("test query"),
 			categories: expect.arrayContaining([{ isSelected: true, name: translations.CATEGORIES.TECHNICAL }]),
 		});

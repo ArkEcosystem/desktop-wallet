@@ -23,21 +23,21 @@ export const FormStep = () => {
 
 	const handleInput = useCallback(
 		(event: ChangeEvent<HTMLInputElement>) => {
-			setValue(event.target.name, event.target.value, true);
+			setValue(event.target.name, event.target.value, { shouldValidate: true, shouldDirty: true });
 		},
 		[setValue],
 	);
 
 	const handleSourceControl = useCallback(
 		(links: EntityLink[]) => {
-			setValue("ipfsData.sourceControl", links, true);
+			setValue("ipfsData.sourceControl", links, { shouldValidate: true, shouldDirty: true });
 		},
 		[setValue],
 	);
 
 	const handleSocialMedia = useCallback(
 		(links: EntityLink[]) => {
-			setValue("ipfsData.socialMedia", links, true);
+			setValue("ipfsData.socialMedia", links, { shouldValidate: true, shouldDirty: true });
 		},
 		[setValue],
 	);
@@ -189,7 +189,9 @@ export const FormStep = () => {
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}
-							onChange={(value: any) => setValue("fee", value, true)}
+							onChange={(value: any) =>
+								setValue("fee", value, { shouldValidate: true, shouldDirty: true })
+							}
 						/>
 					</FormField>
 				</TransactionDetail>

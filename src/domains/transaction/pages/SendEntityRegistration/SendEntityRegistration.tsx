@@ -52,11 +52,11 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	useEffect(() => {
 		if (!activeWallet?.address?.()) return;
 
-		setValue("senderAddress", activeWallet.address(), true);
+		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, true);
+				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
 				break;
 			}
