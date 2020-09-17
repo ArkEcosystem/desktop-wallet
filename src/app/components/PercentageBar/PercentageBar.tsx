@@ -16,8 +16,10 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => {
 	const { t } = useTranslation();
 
 	const percentageData = useMemo(() => {
-		if (data && data.length > 3) {
-			const lastData = data.splice(3, data.length);
+		const maxCoins = 3;
+
+		if (data && data.length > maxCoins) {
+			const lastData = data.splice(maxCoins, data.length);
 			const otherData = lastData?.reduce(
 				(acc, cur) => ({
 					...acc,
