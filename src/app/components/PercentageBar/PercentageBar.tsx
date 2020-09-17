@@ -1,10 +1,11 @@
 import React from "react";
 
-type BarItem = {
-	value: number | string;
+export type BarItem = {
 	color: string;
 	label: string;
+	percentage: number | string;
 };
+
 type PercentageBarProps = {
 	data?: BarItem[];
 	title?: string;
@@ -27,7 +28,7 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => (
 							/>
 							<div className="inline-block text-sm text-base font-semibold text-theme-neutral-dark">
 								<span>
-									{item.label} - {item.value}%
+									{item.label} - {item.percentage}%
 								</span>
 							</div>
 						</div>
@@ -41,7 +42,7 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => (
 						key={index}
 						className={`h-1 -ml-1 rounded-sm bg-theme-${item.color}`}
 						style={{
-							width: `calc(${item.value}% + 0.25rem)`,
+							width: `calc(${item.percentage}% + 0.25rem)`,
 						}}
 					/>
 				))}

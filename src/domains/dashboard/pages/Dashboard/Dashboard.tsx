@@ -1,7 +1,7 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
-import { PercentageBar } from "app/components/PercentageBar";
+import { BarItem, PercentageBar } from "app/components/PercentageBar";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
@@ -12,15 +12,14 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { balances /* portfolioPercentages */ } from "../../data";
+import { balances } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
 	networks?: any;
-	// portfolioPercentages?: any[];
 };
 
-export const Dashboard = ({ networks, /* portfolioPercentages ,*/ balances }: DashboardProps) => {
+export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	const history = useHistory();
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -43,12 +42,12 @@ export const Dashboard = ({ networks, /* portfolioPercentages ,*/ balances }: Da
 	const portfolioPercentages = useMemo(
 		() =>
 			Object.keys(balancePerCoin).map((coin) => {
-				for (const network of networks) {
+				for (const network of availableNetworks) {
 					if (network.ticker() === coin) {
 						return {
 							...balancePerCoin[coin],
+							color: network.extra?.textClass.replace("text-theme-", ""),
 							label: coin,
-							extra: network.extra?.borderClass,
 						};
 					}
 				}
@@ -116,7 +115,7 @@ export const Dashboard = ({ networks, /* portfolioPercentages ,*/ balances }: Da
 						<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
 						<PercentageBar
 							title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
-							data={portfolioPercentages}
+							data={portfolioPercentages as BarItem[]}
 						/>
 					</Section>
 				)}
@@ -157,5 +156,4 @@ export const Dashboard = ({ networks, /* portfolioPercentages ,*/ balances }: Da
 
 Dashboard.defaultProps = {
 	balances,
-	// portfolioPercentages,
 };
