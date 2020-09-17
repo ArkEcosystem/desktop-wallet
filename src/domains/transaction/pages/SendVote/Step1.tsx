@@ -28,8 +28,9 @@ export const FirstStep = ({
 	const { t } = useTranslation();
 	const form = useFormContext();
 
-	const { getValues, setValue } = form;
-	const { senderAddress } = form.watch();
+	const { getValues, setValue, watch } = form;
+	const { senderAddress } = watch();
+
 	const [fees, setFees] = useState({
 		static: "5",
 		min: "0",
@@ -37,7 +38,10 @@ export const FirstStep = ({
 		max: "2",
 	});
 
-	const fee = getValues("fee") || null;
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultFee] = useState(() => watch("fee"));
+	const fee = getValues("fee") || defaultFee;
+
 	const coinName = wallet.coinId();
 	const network = `${coinName} ${wallet.network().name()}`;
 	const walletName = profile.wallets().findByAddress(senderAddress)?.alias();
@@ -50,7 +54,7 @@ export const FirstStep = ({
 
 			setFees(transactionFees);
 
-			setValue("fee", transactionFees.avg, true);
+			setValue("fee", transactionFees.avg, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [env, setFees, setValue, profile, senderAddress]);
 
@@ -108,7 +112,9 @@ export const FirstStep = ({
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}
-							onChange={(value: any) => setValue("fee", value, true)}
+							onChange={(value: any) =>
+								setValue("fee", value, { shouldValidate: true, shouldDirty: true })
+							}
 						/>
 					</FormField>
 				</TransactionDetail>

@@ -18,7 +18,7 @@ type UpdateWalletNameProps = {
 const { NameWalletBanner } = images.wallet.components.updateWalletName;
 
 export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: UpdateWalletNameProps) => {
-	const methods = useForm({ mode: "onChange", defaultValues: { name } });
+	const methods = useForm<Record<string, any>>({ mode: "onChange", defaultValues: { name } });
 	const { formState, register, setValue } = methods;
 
 	const { t } = useTranslation();

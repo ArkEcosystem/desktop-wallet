@@ -7,14 +7,19 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
-	const { getValues, unregister } = useFormContext();
-	const { fee, hash } = getValues();
+	const { getValues, unregister, watch } = useFormContext();
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [watched] = useState(() => watch());
+	const fee = getValues("fee") || watched.fee;
+	const hash = getValues("hash") || watched.hash;
+
 	const coinName = wallet.coinId();
 
 	useEffect(() => {

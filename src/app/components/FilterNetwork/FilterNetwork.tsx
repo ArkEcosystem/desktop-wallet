@@ -27,12 +27,12 @@ const renderNetworks = (networks: any[], onClick: any) => (
 			>
 				{option.isSelected ? (
 					<Circle size="lg" className="relative border-theme-success-500 text-theme-success-500">
-						<Icon name={option.name} width={20} height={20} />
+						<Icon name={option.coin} width={20} height={20} />
 						<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 					</Circle>
 				) : (
 					<Circle size="lg" className="relative border-theme-neutral-200 text-theme-neutral-300">
-						<Icon name={option.name} width={20} height={20} />
+						<Icon name={option.coin} width={20} height={20} />
 						<Badge className="border-theme-neutral-200" />
 					</Circle>
 				)}

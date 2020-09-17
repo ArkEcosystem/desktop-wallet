@@ -5,7 +5,7 @@ import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
-import { FormContext, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
 	act as actAsync,
@@ -55,9 +55,9 @@ describe("ImportWallet", () => {
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<FirstStep />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
@@ -89,9 +89,9 @@ describe("ImportWallet", () => {
 			}),
 		);
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<SecondStep profile={profile} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
@@ -133,9 +133,9 @@ describe("ImportWallet", () => {
 			}),
 		);
 		const { getByTestId, asFragment } = render(
-			<FormContext {...form.current}>
+			<FormProvider {...form.current}>
 				<ThirdStep address={identityAddress} nameMaxLength={42} />
-			</FormContext>,
+			</FormProvider>,
 		);
 
 		expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
@@ -146,7 +146,7 @@ describe("ImportWallet", () => {
 
 		const walletNameInput = getByTestId("ImportWallet__name-input");
 
-		act(() => {
+		await act(async () => {
 			fireEvent.change(walletNameInput, { target: { value: "Test" } });
 		});
 

@@ -82,18 +82,18 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 	}, [network, profile]);
 
 	const onSelectSender = (address: any) => {
-		setValue("senderAddress", address, true);
+		setValue("senderAddress", address, { shouldValidate: true, shouldDirty: true });
 
 		const wallet = wallets.find((wallet) => wallet.address() === address);
 		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-entity-registration`);
 	};
 
 	const onSelectType = (selectedItem: SendEntityRegistrationType) => {
-		setValue("registrationType", selectedItem, true);
+		setValue("registrationType", selectedItem, { shouldValidate: true, shouldDirty: true });
 		setRegistrationForm(registrationComponents[selectedItem.value]);
 
 		if (fees[selectedItem.value]) {
-			setValue("fee", fees[selectedItem.value].avg, true);
+			setValue("fee", fees[selectedItem.value].avg, { shouldValidate: true, shouldDirty: true });
 		}
 	};
 

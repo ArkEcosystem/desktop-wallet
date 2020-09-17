@@ -18,9 +18,9 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 	const handleSelect = async (network?: NetworkData | null) => {
 		const currentWallet = getValues("wallet");
 
-		setValue("network", network, true);
-		setValue("wallet", null, true);
-		setValue("mnemonic", null, true);
+		setValue("network", network, { shouldValidate: true, shouldDirty: true });
+		setValue("wallet", null, { shouldValidate: true, shouldDirty: true });
+		setValue("mnemonic", null, { shouldValidate: true, shouldDirty: true });
 
 		if (currentWallet) {
 			profile.wallets().forget(currentWallet.id());
@@ -32,8 +32,8 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 
 		setIsGeneratingWallet(true);
 		const { mnemonic, wallet } = await profile.wallets().generate(network.coin(), network.id());
-		setValue("wallet", wallet, true);
-		setValue("mnemonic", mnemonic, true);
+		setValue("wallet", wallet, { shouldValidate: true, shouldDirty: true });
+		setValue("mnemonic", mnemonic, { shouldValidate: true, shouldDirty: true });
 		setIsGeneratingWallet(false);
 	};
 

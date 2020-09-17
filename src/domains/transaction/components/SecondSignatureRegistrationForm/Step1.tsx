@@ -8,8 +8,7 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useEffect } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -17,9 +16,11 @@ import { InputFee } from "../InputFee";
 
 export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFee; wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
-	const { getValues, setValue, register } = useFormContext();
+	const { getValues, setValue, register, watch } = useFormContext();
 
-	const fee = getValues("fee") || null;
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultFee] = useState(() => watch("fee"));
+	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
 		register("secondMnemonic");
@@ -65,7 +66,7 @@ export const GenerationStep = ({ fees, wallet }: { fees: Contracts.TransactionFe
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}
-						onChange={(value: any) => setValue("fee", value, true)}
+						onChange={(value: any) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 					/>
 				</FormField>
 			</div>

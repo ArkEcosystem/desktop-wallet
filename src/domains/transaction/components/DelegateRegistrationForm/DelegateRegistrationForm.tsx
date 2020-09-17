@@ -23,10 +23,13 @@ const SecondStep = ({ fees, wallet }: any) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
-	const { getValues, register, setValue } = useFormContext();
+	const { getValues, register, setValue, watch } = useFormContext();
 	const username = getValues("username");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
-	const fee = getValues("fee") || null;
+
+	// getValues does not get the value of `defaultValues` on first render
+	const [defaultFee] = useState(() => watch("fee"));
+	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
 		setDelegates(env.delegates().all(wallet.coinId(), wallet.networkId()));
@@ -94,7 +97,9 @@ const SecondStep = ({ fees, wallet }: any) => {
 							placeholder=" "
 							className="pr-20"
 							defaultValue={username}
-							onChange={(event: any) => setValue("username", event.target.value, true)}
+							onChange={(event: any) =>
+								setValue("username", event.target.value, { shouldValidate: true, shouldDirty: true })
+							}
 						/>
 					</InputGroup>
 					<FormHelperText />
@@ -109,7 +114,7 @@ const SecondStep = ({ fees, wallet }: any) => {
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}
-						onChange={(value: any) => setValue("fee", value, true)}
+						onChange={(value: any) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 					/>
 				</FormField>
 			</div>
@@ -214,9 +219,9 @@ export const DelegateRegistrationForm: SendEntityRegistrationForm = {
 	formFields: ["username"],
 
 	signTransaction: async ({ env, form, handleNext, profile, setTransaction, translations }: any) => {
-		const { clearError, getValues, setError, setValue } = form;
+		const { clearErrors, getValues, setError, setValue } = form;
 
-		clearError("mnemonic");
+		clearErrors("mnemonic");
 		const { fee, mnemonic, secondMnemonic, senderAddress, username } = getValues();
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
@@ -244,7 +249,7 @@ export const DelegateRegistrationForm: SendEntityRegistrationForm = {
 			console.error("Could not create transaction: ", error);
 
 			setValue("mnemonic", "");
-			setError("mnemonic", "manual", translations("TRANSACTION.INVALID_MNEMONIC"));
+			setError("mnemonic", { type: "manual", message: translations("TRANSACTION.INVALID_MNEMONIC") });
 		}
 	},
 };
