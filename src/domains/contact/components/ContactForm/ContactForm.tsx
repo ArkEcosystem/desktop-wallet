@@ -25,7 +25,7 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	>
 		<div className="mr-4">
 			<div className="flex items-center -space-x-1">
-				<NetworkIcon coin={address.coin} network={address.network} size="lg" iconSize={20} />
+				<NetworkIcon coin={address.coin} network={address.network} size="lg" />
 				<Avatar address={address.address} size="lg" />
 			</div>
 		</div>

@@ -12,7 +12,6 @@ export const Default = () => (
 			<div className="">
 				<div className="mb-10">
 					<WalletCard
-						coinClass="border-theme-neutral-800"
 						wallet={wallets[0]}
 						actions={[
 							{ label: "Action 1", value: "1" },
@@ -24,7 +23,6 @@ export const Default = () => (
 				<div className="mb-10">
 					<WalletCard
 						className="mr-5"
-						coinClass="border-theme-neutral-800"
 						wallet={wallets[1]}
 						actions={[
 							{ label: "Action 1", value: "1" },
@@ -32,7 +30,6 @@ export const Default = () => (
 						]}
 					/>
 					<WalletCard
-						coinClass="border-theme-neutral-800"
 						wallet={wallets[2]}
 						actions={[
 							{ label: "Action 1", value: "1" },
@@ -48,11 +45,11 @@ export const Default = () => (
 export const Blank = () => (
 	<div className="">
 		<div className="mb-5">
-			<WalletCard isBlank={true} className="mr-4" />
+			<WalletCard className="mr-4" />
 		</div>
 		<div className="mb-10">
-			<WalletCard isBlank={true} className="mr-4" />
-			<WalletCard isBlank={true} />
+			<WalletCard className="mr-4" />
+			<WalletCard />
 		</div>
 	</div>
 );

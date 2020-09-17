@@ -222,13 +222,16 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb ghLhNg"
+                      class="sc-AxhCb ghLhNg -space-x-2"
                     >
                       <div
-                        class="sc-AxheI cUzwjK -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxheI cUzwjK border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxjAm buCJuk"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
@@ -327,13 +330,16 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb xlrPM"
+                      class="sc-AxhCb xlrPM -space-x-2"
                     >
                       <div
-                        class="sc-AxheI hiopcG -mr-2 undefined"
+                        aria-label="ARK Devnet"
+                        class="sc-AxheI hiopcG border-theme-primary-100 text-theme-primary-400"
+                        data-testid="NetworkIcon-ARK-ark.devnet"
                       >
                         <div
                           class="sc-AxjAm buCJuk"
+                          data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
                         >
