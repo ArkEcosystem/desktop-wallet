@@ -1,4 +1,5 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { sortByDesc } from "@arkecosystem/utils";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { BarItem, PercentageBar } from "app/components/PercentageBar";
@@ -39,21 +40,21 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
-	const portfolioPercentages = useMemo(
-		() =>
-			Object.keys(balancePerCoin).map((coin) => {
-				for (const network of availableNetworks) {
-					if (network.ticker() === coin) {
-						return {
-							...balancePerCoin[coin],
-							color: network.extra?.textClass.replace("text-theme-", ""),
-							label: coin,
-						};
-					}
+	const portfolioPercentages = useMemo(() => {
+		const data = Object.keys(balancePerCoin).map((coin) => {
+			for (const network of availableNetworks) {
+				if (network.ticker() === coin) {
+					return {
+						...balancePerCoin[coin],
+						color: network.extra?.textClass.replace("text-theme-", ""),
+						label: coin,
+					};
 				}
-			}),
-		[availableNetworks, balancePerCoin],
-	);
+			}
+		});
+
+		return sortByDesc([...data] as BarItem[], "percentage");
+	}, [availableNetworks, balancePerCoin]);
 
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
@@ -115,7 +116,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 						<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
 						<PercentageBar
 							title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
-							data={portfolioPercentages as BarItem[]}
+							data={portfolioPercentages}
 						/>
 					</Section>
 				)}
