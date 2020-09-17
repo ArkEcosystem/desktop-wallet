@@ -60,6 +60,7 @@ describe("SendTransactionForm", () => {
 		form.current.register("fee");
 		form.current.register("senderAddress");
 		form.current.setValue("senderAddress", wallet.address());
+		form.current.setValue("fee", defaultFee);
 
 		let rendered: any;
 
