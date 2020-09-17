@@ -163,7 +163,12 @@ export const SendEntityUpdate = ({ formDefaultValues, onDownload }: SendEntityUp
 
 							<div className="mt-8">
 								<TabPanel tabId={1}>
-									<FirstStep />
+									<FirstStep
+										title={t("TRANSACTION.PAGE_UPDATE_REGISTRATION.FIRST_STEP.BUSINESS.TITLE")}
+										description={t(
+											"TRANSACTION.PAGE_UPDATE_REGISTRATION.FIRST_STEP.BUSINESS.DESCRIPTION",
+										)}
+									/>
 								</TabPanel>
 								<TabPanel tabId={2}>
 									<SecondStep wallet={activeWallet} />

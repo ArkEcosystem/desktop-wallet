@@ -11,8 +11,12 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 const entityProvider = new EntityProvider();
+type FormStepProps = {
+	title?: string;
+	description?: string;
+};
 
-export const FormStep = () => {
+export const FormStep = ({ title, description }: FormStepProps) => {
 	const [selectedAvatar, setSelectedAvatar] = useState<EntityLink | undefined>();
 
 	const { t } = useTranslation();
@@ -88,8 +92,10 @@ export const FormStep = () => {
 
 	return (
 		<div data-testid="EntityRegistrationForm">
-			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
-			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.DESCRIPTION")}</div>
+			<h1 className="mb-0">{title || t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
+			<div className="text-theme-neutral-dark">
+				{description || t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
+			</div>
 
 			<div>
 				<div className="pb-8 mt-8">

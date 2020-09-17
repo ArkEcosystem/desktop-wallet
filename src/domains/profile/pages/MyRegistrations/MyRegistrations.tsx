@@ -114,7 +114,7 @@ export const MyRegistrations = () => {
 				);
 				break;
 			case "updateDelegate":
-				history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}/send-entity-update`);
+				history.push(`/profiles/${activeProfile.id()}/send-entity-registration`);
 				break;
 		}
 	};
