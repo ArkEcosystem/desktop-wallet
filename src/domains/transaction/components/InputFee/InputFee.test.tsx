@@ -4,14 +4,14 @@ import { fireEvent, render } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 
-let value: string;
+let value: { display: string; value: string };
 let min: string;
 let max: string;
 let avg: string;
 
 describe("InputFee", () => {
 	beforeEach(() => {
-		value = (5 * 1e8).toFixed(0);
+		value = { display: "5", value: (5 * 1e8).toFixed(0) };
 		min = (1 * 1e8).toFixed(0);
 		max = (10 * 1e8).toFixed(0);
 		avg = (1.354 * 1e8).toFixed(0);
@@ -29,7 +29,14 @@ describe("InputFee", () => {
 		);
 
 		rerender(
-			<InputFee min={min} max={max} avg={avg} defaultValue={value} value={(1 * 1e8).toFixed(0)} step={0.01} />,
+			<InputFee
+				min={min}
+				max={max}
+				avg={avg}
+				defaultValue={value}
+				value={{ display: "1", value: (1 * 1e8).toFixed(0) }}
+				step={0.01}
+			/>,
 		);
 
 		expect(getByTestId("InputCurrency")).toHaveValue("1");
@@ -45,7 +52,7 @@ describe("InputFee", () => {
 
 		fireEvent.click(getByText(transactionTranslations.FEES.MIN));
 
-		expect(onChange).toHaveBeenCalledWith({ value: min });
+		expect(onChange).toHaveBeenCalledWith({ display: "1", value: min });
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -58,7 +65,7 @@ describe("InputFee", () => {
 
 		fireEvent.click(getByText(transactionTranslations.FEES.AVERAGE));
 
-		expect(onChange).toHaveBeenCalledWith({ value: avg });
+		expect(onChange).toHaveBeenCalledWith({ display: "1.354", value: avg });
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -71,7 +78,7 @@ describe("InputFee", () => {
 
 		fireEvent.click(getByText(transactionTranslations.FEES.MAX));
 
-		expect(onChange).toHaveBeenCalledWith({ value: max });
+		expect(onChange).toHaveBeenCalledWith({ display: "10", value: max });
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
