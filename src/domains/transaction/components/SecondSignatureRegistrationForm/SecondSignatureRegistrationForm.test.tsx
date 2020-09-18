@@ -7,8 +7,9 @@ import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { act } from "react-test-renderer";
 import secondSignatureFixture from "tests/fixtures/coins/ark/transactions/second-signature-registration.json";
-import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationForm";
@@ -70,6 +71,7 @@ describe("SecondSignatureRegistrationForm", () => {
 
 	it("should set fee", async () => {
 		const { result } = renderHook(() => useForm());
+
 		result.current.register("fee");
 
 		render(<Component form={result.current} onSubmit={() => void 0} />);
