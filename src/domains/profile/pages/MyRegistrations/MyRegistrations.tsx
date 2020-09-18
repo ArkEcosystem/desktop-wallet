@@ -144,43 +144,51 @@ export const MyRegistrations = () => {
 			{isLoading && !hasNoRegistrations && <Loader />}
 
 			{!isLoading && businessEntities.length > 0 && (
-				<div data-testid="BusinessRegistrations">
-					<EntityTable
-						title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
-						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
-						type="entity"
-						entities={businessEntities}
-						onAction={handleAction}
-					/>
-				</div>
+				<Section className="flex-1">
+					<div data-testid="BusinessRegistrations">
+						<EntityTable
+							title={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}
+							nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME")}
+							type="entity"
+							entities={businessEntities}
+							onAction={handleAction}
+						/>
+					</div>
+				</Section>
 			)}
 
 			{!isLoading && pluginEntities.length > 0 && (
-				<div data-testid="PluginRegistrations">
-					<EntityTable
-						nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
-						title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
-						type="entity"
-						entities={pluginEntities}
-						onAction={handleAction}
-					/>
-				</div>
+				<Section className="flex-1">
+					<div data-testid="PluginRegistrations">
+						<EntityTable
+							nameColumnHeader={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGIN_NAME")}
+							title={t("PROFILE.PAGE_MY_REGISTRATIONS.PLUGINS")}
+							type="entity"
+							entities={pluginEntities}
+							onAction={handleAction}
+						/>
+					</div>
+				</Section>
 			)}
 
 			{!isLoading && delegateWallets.length > 0 && (
-				<div data-testid="DelegateRegistrations">
-					<DelegateTable wallets={delegateWallets} onAction={handleAction} />
-				</div>
+				<Section className="flex-1">
+					<div data-testid="DelegateRegistrations">
+						<DelegateTable wallets={delegateWallets} onAction={handleAction} />
+					</div>
+				</Section>
 			)}
 
 			{hasNoRegistrations && <EmptyRegistrations />}
 
 			{!hasNoRegistrations && showEmptySearchResults && (
-				<EmptyResults
-					className="flex-1"
-					title={t("COMMON.EMPTY_RESULTS.TITLE")}
-					subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
-				/>
+				<Section className="flex-1">
+					<EmptyResults
+						className="flex-1"
+						title={t("COMMON.EMPTY_RESULTS.TITLE")}
+						subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+					/>
+				</Section>
 			)}
 		</Page>
 	);
