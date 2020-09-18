@@ -5,9 +5,7 @@ exports[`Application root should render without crashing 1`] = `
   "calls": Array [
     Array [
       <BrowserRouter>
-        <App
-          syncInterval={300000}
-        />
+        <App />
       </BrowserRouter>,
       <div
         id="root"
