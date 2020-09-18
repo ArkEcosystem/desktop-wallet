@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { NetworkData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormLabel } from "app/components/Form";
 import { useEnvironmentContext } from "app/contexts";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -109,11 +108,8 @@ export const SendTransactionForm = ({ children, networks, profile, transactionTy
 					defaultValue={fee || 0}
 					value={fee || 0}
 					step={0.01}
-					onChange={(fee: string) => {
-						setValue("fee", BigNumber.make(fee).times(1e8).toString(), {
-							shouldValidate: true,
-							shouldDirty: true,
-						});
+					onChange={(currency: { display: string; value: string }) => {
+						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 					}}
 				/>
 			</FormField>

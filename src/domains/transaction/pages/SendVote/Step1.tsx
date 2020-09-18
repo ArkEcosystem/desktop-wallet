@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -113,11 +112,8 @@ export const FirstStep = ({
 							defaultValue={fee || 0}
 							value={fee || 0}
 							step={0.01}
-							onChange={(fee: string) => {
-								setValue("fee", BigNumber.make(fee).times(1e8).toString(), {
-									shouldValidate: true,
-									shouldDirty: true,
-								});
+							onChange={(currency: { display: string; value: string }) => {
+								setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 							}}
 						/>
 					</FormField>
