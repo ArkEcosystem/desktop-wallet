@@ -8,7 +8,6 @@ import { Route } from "react-router-dom";
 import { act, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { assets } from "../../data";
-import { translations } from "../../i18n";
 import { News } from "./News";
 
 const history = createMemoryHistory();
@@ -50,7 +49,7 @@ describe("News", () => {
 			})
 			.get("/coins/ark/signals?query=NoResult&page=1")
 			.reply(200, require("tests/fixtures/news/empty-response.json"))
-			.get("/coins/ark/signals?query=Hacking&page=1&category=Technical")
+			.get("/coins/ark/signals?categories=Technical&query=Hacking&page=1")
 			.reply(200, require("tests/fixtures/news/filtered.json"))
 			.persist();
 
@@ -174,8 +173,27 @@ describe("News", () => {
 					value: "Hacking",
 				},
 			});
-			fireEvent.click(getByTestId(`NewsOptions__category-${translations.CATEGORIES.TECHNICAL}`));
+			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
 			fireEvent.click(getByTestId("network__option--0"));
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("NewsOptions__submit"));
+		});
+
+		await waitFor(() => {
+			expect(getAllByTestId("NewsCard")).toHaveLength(1);
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.change(getByTestId("NewsOptions__search"), {
+				target: {
+					value: "",
+				},
+			});
+			fireEvent.click(getByTestId("NewsOptions__category-All"));
 		});
 
 		act(() => {
