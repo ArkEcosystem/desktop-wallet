@@ -1,4 +1,5 @@
 import { Currency } from "@arkecosystem/platform-sdk-intl";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React, { useCallback, useLayoutEffect, useState } from "react";
 
 import { Input } from "./Input";
@@ -11,7 +12,8 @@ type Props = { onChange?: (value: { display: string; value: string }) => void; m
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 	({ onChange, value, magnitude, ...props }: Props, ref) => {
 		const convertValue = useCallback((value: string) => Currency.fromString(value, magnitude), [magnitude]);
-		const defaultValue = value?.toString() || "";
+		const defaultValue = value ? BigNumber.make(Number(value)).divide(1e8).toString() : "";
+		console.log({ defaultValue });
 		const [amount, setAmount] = useState(convertValue(defaultValue));
 
 		useLayoutEffect(() => {
